@@ -5,7 +5,7 @@ import android.widget.ScrollView;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class co implements org.telegram.ui.Components.bj0 {
     public final /* synthetic */ fo a;
@@ -31,12 +31,12 @@ public final class co implements org.telegram.ui.Components.bj0 {
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, foVar.getContext(), goVar.getResourceProvider());
-        String M0 = org.telegram.messenger.hd.M0(tL_username.active ? 2131743665 : 2131743672, null);
+        String M0 = org.telegram.messenger.id.M0(tL_username.active ? 2131743667 : 2131743674, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
-        u1Var.T = org.telegram.messenger.hd.M0(tL_username.active ? 2131743664 : 2131743671, null);
-        alertDialog$Builder.k(org.telegram.messenger.hd.M0(tL_username.active ? 2131749324 : 2131745354, null), new a7(this, tL_username, view, 8));
-        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), new org.telegram.messenger.ch(23));
+        u1Var.T = org.telegram.messenger.id.M0(tL_username.active ? 2131743666 : 2131743673, null);
+        alertDialog$Builder.k(org.telegram.messenger.id.M0(tL_username.active ? 2131749326 : 2131745356, null), new a7(this, tL_username, view, 8));
+        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), new org.telegram.messenger.ch(23));
         alertDialog$Builder.p();
     }
 }

@@ -10,7 +10,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class hc0 extends org.telegram.ui.Components.wt0 {
     public final /* synthetic */ ce0 D;
@@ -57,7 +57,7 @@ public final class hc0 extends org.telegram.ui.Components.wt0 {
                 this.b = textView;
                 textView.setTextSize(1, 18.0f);
                 textView.setTypeface(org.telegram.messenger.g0.o());
-                textView.setText(org.telegram.messenger.hd.M0(2131751124, null));
+                textView.setText(org.telegram.messenger.id.M0(2131751124, null));
                 textView.setGravity(17);
                 float f10 = 2.0f;
                 textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
@@ -67,7 +67,7 @@ public final class hc0 extends org.telegram.ui.Components.wt0 {
                 textView2.setTextSize(1, 14.0f);
                 textView2.setGravity(17);
                 textView2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
-                textView2.setText(org.telegram.messenger.hd.M0(2131746080, null));
+                textView2.setText(org.telegram.messenger.id.M0(2131746082, null));
                 addView(textView2, c8.ha.t(-2, -2, 1, 12, 8, 12, 0));
                 lb0 lb0Var = new lb0(1, context, this);
                 this.a = lb0Var;
@@ -105,7 +105,7 @@ public final class hc0 extends org.telegram.ui.Components.wt0 {
         this.b = textView3;
         textView3.setTextSize(1, 18.0f);
         textView3.setTypeface(org.telegram.messenger.g0.o());
-        textView3.setText(org.telegram.messenger.hd.M0(2131751124, null));
+        textView3.setText(org.telegram.messenger.id.M0(2131751124, null));
         textView3.setGravity(17);
         float f102 = 2.0f;
         textView3.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
@@ -115,7 +115,7 @@ public final class hc0 extends org.telegram.ui.Components.wt0 {
         textView22.setTextSize(1, 14.0f);
         textView22.setGravity(17);
         textView22.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
-        textView22.setText(org.telegram.messenger.hd.M0(2131746080, null));
+        textView22.setText(org.telegram.messenger.id.M0(2131746082, null));
         addView(textView22, c8.ha.t(-2, -2, 1, 12, 8, 12, 0));
         lb0 lb0Var2 = new lb0(1, context, this);
         this.a = lb0Var2;
@@ -165,7 +165,7 @@ public final class hc0 extends org.telegram.ui.Components.wt0 {
 
     @Override // org.telegram.ui.Components.wt0
     public String getHeaderName() {
-        return org.telegram.messenger.hd.M0(2131748725, "LoginPassword");
+        return org.telegram.messenger.id.M0(2131748727, "LoginPassword");
     }
 
     @Override // org.telegram.ui.Components.wt0
@@ -247,7 +247,7 @@ public final class hc0 extends org.telegram.ui.Components.wt0 {
             uy0Var.c = i7;
             valueOf.setSpan(new org.telegram.ui.Components.vy0(uy0Var, 0), indexOf, i7, 0);
         }
-        this.d.setText(org.telegram.messenger.g0.m0(org.telegram.messenger.hd.M0(2131746082, null), valueOf));
+        this.d.setText(org.telegram.messenger.g0.m0(org.telegram.messenger.id.M0(2131746084, null), valueOf));
         ce0.b1(this.D, lb0Var);
         lb0Var.requestFocus();
     }

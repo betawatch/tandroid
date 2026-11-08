@@ -25,7 +25,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class sh0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.Components.mj, org.telegram.messenger.ls {
     public int D;
@@ -84,7 +84,7 @@ public final class sh0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
             sh0Var2.N = diVar;
             diVar.E1 = true;
             diVar.r3.setVisibility(8);
-            diVar.d3.setText(org.telegram.messenger.hd.M0(2131752121, null));
+            diVar.d3.setText(org.telegram.messenger.id.M0(2131752121, null));
             sh0Var2.N.e1();
             sh0Var2.N.show();
         } else {
@@ -194,7 +194,7 @@ public final class sh0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         if (str != null && (lastIndexOf = str.lastIndexOf(46)) != -1) {
             str = str.substring(0, lastIndexOf);
         }
-        return (!TextUtils.isEmpty(str) || document == null) ? str : org.telegram.messenger.hd.a0("SoundNameEmpty", null, 2131745279, org.telegram.messenger.hd.u(document.date, true));
+        return (!TextUtils.isEmpty(str) || document == null) ? str : org.telegram.messenger.id.a0("SoundNameEmpty", null, 2131745281, org.telegram.messenger.id.u(document.date, true));
     }
 
     @Override // org.telegram.ui.Components.mj
@@ -219,15 +219,15 @@ public final class sh0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         if (this.K == 0) {
             int i7 = this.L;
             if (i7 == 1) {
-                this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131747867, null));
+                this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131747869, null));
             } else if (i7 == 0) {
-                this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131747868, null));
+                this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131747870, null));
             } else if (i7 == 2) {
-                this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131747869, null));
+                this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131747871, null));
             } else if (i7 == 3) {
-                this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131747865, null));
+                this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131747867, null));
             } else if (i7 == 5 || i7 == 4) {
-                this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131747866, null));
+                this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131747868, null));
             }
         } else {
             this.J = new org.telegram.ui.Components.kn(context, null, false, this.f);
@@ -246,13 +246,13 @@ public final class sh0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
                 this.J.setChatAvatar(M0);
                 this.simpleActionBar.setTitle(M0.title);
             }
-            this.simpleActionBar.setSubtitle(org.telegram.messenger.hd.M0(2131747870, null));
+            this.simpleActionBar.setSubtitle(org.telegram.messenger.id.M0(2131747872, null));
             org.telegram.messenger.g0.E2(this.J.e);
             this.simpleActionBar.addView(this.J.e, c8.ha.d(42, 42.0f, 5, 0.0f, 0.0f, 8.0f, 0.0f));
         }
         org.telegram.ui.ActionBar.e5 l10 = this.simpleActionBar.l();
-        l10.d(2, R.drawable.msg_forward, org.telegram.messenger.g0.L(54.0f), org.telegram.messenger.hd.M0(2131745460, null));
-        l10.d(1, R.drawable.msg_delete, org.telegram.messenger.g0.L(54.0f), org.telegram.messenger.hd.M0(2131751599, null));
+        l10.d(2, R.drawable.msg_forward, org.telegram.messenger.g0.L(54.0f), org.telegram.messenger.id.M0(2131745462, null));
+        l10.d(1, R.drawable.msg_delete, org.telegram.messenger.g0.L(54.0f), org.telegram.messenger.id.M0(2131751599, null));
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         org.telegram.ui.Components.pj0 pj0Var = new org.telegram.ui.Components.pj0(context, null);
@@ -273,21 +273,21 @@ public final class sh0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         this.a.clear();
         this.b.clear();
         for (int i10 = 0; i10 < getMediaDataController().z0.e.size(); i10++) {
-            yf.b bVar = (yf.b) getMediaDataController().z0.e.get(i10);
+            yf.c cVar = (yf.c) getMediaDataController().z0.e.get(i10);
             qh0 qh0Var = new qh0();
             int i11 = this.F;
             this.F = i11 + 1;
             qh0Var.c = i11;
             qh0Var.a = true;
-            qh0Var.d = bVar.c;
-            TLRPC.Document document3 = bVar.a;
+            qh0Var.d = cVar.c;
+            TLRPC.Document document3 = cVar.a;
             String str = document3.file_name_fixed;
             qh0Var.f = str;
             qh0Var.e = document3;
             qh0Var.f = g0(document3, str);
-            qh0Var.g = bVar.b;
+            qh0Var.g = cVar.b;
             qh0 qh0Var2 = this.M;
-            if (qh0Var2 != null && (document = qh0Var2.e) != null && (document2 = bVar.a) != null && document.id == document2.id) {
+            if (qh0Var2 != null && (document = qh0Var2.e) != null && (document2 = cVar.a) != null && document.id == document2.id) {
                 this.M = null;
                 this.G = qh0Var;
             }
@@ -300,13 +300,13 @@ public final class sh0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         int i12 = this.F;
         this.F = i12 + 1;
         qh0Var3.c = i12;
-        qh0Var3.f = org.telegram.messenger.hd.M0(2131748150, null);
+        qh0Var3.f = org.telegram.messenger.id.M0(2131748152, null);
         this.b.add(qh0Var3);
         qh0 qh0Var4 = new qh0();
         int i13 = this.F;
         this.F = i13 + 1;
         qh0Var4.c = i13;
-        qh0Var4.f = org.telegram.messenger.hd.M0(2131751600, null);
+        qh0Var4.f = org.telegram.messenger.id.M0(2131751600, null);
         qh0Var4.b = true;
         this.b.add(qh0Var4);
         qh0 qh0Var5 = this.M;
@@ -362,9 +362,9 @@ public final class sh0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
             }
             arrayList.clear();
             for (int i12 = 0; i12 < getMediaDataController().z0.e.size(); i12++) {
-                yf.b bVar = (yf.b) getMediaDataController().z0.e.get(i12);
+                yf.c cVar = (yf.c) getMediaDataController().z0.e.get(i12);
                 qh0 qh0Var = new qh0();
-                qh0 qh0Var2 = (qh0) hashMap.get(Integer.valueOf(bVar.c));
+                qh0 qh0Var2 = (qh0) hashMap.get(Integer.valueOf(cVar.c));
                 if (qh0Var2 != null) {
                     if (qh0Var2 == this.G) {
                         this.G = qh0Var;
@@ -376,19 +376,19 @@ public final class sh0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
                     qh0Var.c = i13;
                 }
                 qh0Var.a = true;
-                qh0Var.d = bVar.c;
-                TLRPC.Document document3 = bVar.a;
+                qh0Var.d = cVar.c;
+                TLRPC.Document document3 = cVar.a;
                 if (document3 != null) {
                     qh0Var.f = document3.file_name_fixed;
                 } else {
-                    qh0Var.f = new File(bVar.b).getName();
+                    qh0Var.f = new File(cVar.b).getName();
                 }
-                TLRPC.Document document4 = bVar.a;
+                TLRPC.Document document4 = cVar.a;
                 qh0Var.e = document4;
                 qh0Var.f = g0(document4, qh0Var.f);
-                qh0Var.g = bVar.b;
+                qh0Var.g = cVar.b;
                 qh0 qh0Var3 = this.M;
-                if (qh0Var3 != null && (document = qh0Var3.e) != null && (document2 = bVar.a) != null && document.id == document2.id) {
+                if (qh0Var3 != null && (document = qh0Var3.e) != null && (document2 = cVar.a) != null && document.id == document2.id) {
                     this.M = null;
                     this.G = qh0Var;
                 }

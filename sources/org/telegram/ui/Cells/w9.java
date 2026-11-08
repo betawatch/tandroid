@@ -14,12 +14,12 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ch0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class w9 extends FrameLayout {
     public int D;
@@ -94,24 +94,24 @@ public final class w9 extends FrameLayout {
     }
 
     public final void d() {
-        int i7 = hd.a0 ? 5 : 3;
+        int i7 = id.a0 ? 5 : 3;
         TextView textView = this.b;
         textView.setGravity(i7 | 16);
         removeView(textView);
-        int i10 = (hd.a0 ? 5 : 3) | 48;
+        int i10 = (id.a0 ? 5 : 3) | 48;
         float f10 = this.s;
         addView(textView, c8.ha.d(-1, -1.0f, i10, f10, 0.0f, f10, 0.0f));
-        int i11 = hd.a0 ? 3 : 5;
+        int i11 = id.a0 ? 3 : 5;
         org.telegram.ui.Components.j6 j6Var = this.c;
         j6Var.setGravity(i11 | 16);
         removeView(j6Var);
-        addView(j6Var, c8.ha.d(-2, -1.0f, (hd.a0 ? 3 : 5) | 48, f10, 0.0f, f10, 0.0f));
+        addView(j6Var, c8.ha.d(-2, -1.0f, (id.a0 ? 3 : 5) | 48, f10, 0.0f, f10, 0.0f));
         View view = this.d;
         removeView(view);
-        addView(view, c8.ha.d(-2, -2.0f, (hd.a0 ? 5 : 3) | 16, 21.0f, 0.0f, 21.0f, 0.0f));
+        addView(view, c8.ha.d(-2, -2.0f, (id.a0 ? 5 : 3) | 16, 21.0f, 0.0f, 21.0f, 0.0f));
         View view2 = this.f;
         removeView(view2);
-        addView(view2, c8.ha.d(-2, -2.0f, (hd.a0 ? 3 : 5) | 16, f10, 0.0f, f10, 0.0f));
+        addView(view2, c8.ha.d(-2, -2.0f, (id.a0 ? 3 : 5) | 16, f10, 0.0f, f10, 0.0f));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -169,7 +169,7 @@ public final class w9 extends FrameLayout {
             int measuredWidth = getMeasuredWidth();
             float f16 = this.s;
             rectF.set((measuredWidth - org.telegram.messenger.g0.L(f16)) - org.telegram.messenger.g0.L(this.D), measuredHeight - org.telegram.messenger.g0.L(3.0f), getMeasuredWidth() - org.telegram.messenger.g0.L(f16), org.telegram.messenger.g0.L(3.0f) + measuredHeight);
-            if (hd.a0) {
+            if (id.a0) {
                 rectF.left = getMeasuredWidth() - rectF.left;
                 rectF.right = getMeasuredWidth() - rectF.right;
             }
@@ -179,7 +179,7 @@ public final class w9 extends FrameLayout {
         this.c.setAlpha(1.0f - this.y);
         super.dispatchDraw(canvas);
         if (this.h) {
-            canvas.drawLine(hd.a0 ? 0.0f : org.telegram.messenger.g0.L(this.d.getVisibility() == 0 ? 58.0f : 20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (hd.a0 ? r0 : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+            canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(this.d.getVisibility() == 0 ? 58.0f : 20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? r0 : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
         }
     }
 
@@ -192,7 +192,7 @@ public final class w9 extends FrameLayout {
             org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(getContext());
             this.e = l9Var;
             float f10 = this.s - 4;
-            addView(l9Var, c8.ha.d(24, 24.0f, (hd.a0 ? 3 : 5) | 16, f10, 0.0f, f10, 0.0f));
+            addView(l9Var, c8.ha.d(24, 24.0f, (id.a0 ? 3 : 5) | 16, f10, 0.0f, f10, 0.0f));
         }
         return this.e;
     }
@@ -270,7 +270,7 @@ public final class w9 extends FrameLayout {
             measuredWidth = this.H ? org.telegram.messenger.camera.q.w(8.0f, j6Var.getMeasuredWidth(), i11) : (measuredWidth - j6Var.getMeasuredWidth()) - org.telegram.messenger.g0.L(8.0f);
             if (imageView.getVisibility() == 0) {
                 ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) imageView.getLayoutParams();
-                boolean z9 = hd.a0;
+                boolean z9 = id.a0;
                 int i12 = this.s;
                 if (z9) {
                     marginLayoutParams.leftMargin = j6Var.getMeasuredWidth() + org.telegram.messenger.g0.L(i12 + 4);
@@ -313,7 +313,7 @@ public final class w9 extends FrameLayout {
         ch0 ch0Var = this.d;
         if (i7 == 0) {
             ch0Var.setVisibility(8);
-            boolean z9 = hd.a0;
+            boolean z9 = id.a0;
             int i10 = this.s;
             if (z9) {
                 marginLayoutParams.rightMargin = org.telegram.messenger.g0.L(i10);
@@ -327,7 +327,7 @@ public final class w9 extends FrameLayout {
         org.telegram.ui.ActionBar.r6.t(ch0Var, org.telegram.ui.ActionBar.k6.m6, this.a, PorterDuff.Mode.MULTIPLY);
         ch0Var.setBackground(null);
         ch0Var.setVisibility(0);
-        if (hd.a0) {
+        if (id.a0) {
             marginLayoutParams.rightMargin = org.telegram.messenger.g0.L(58.0f);
         } else {
             marginLayoutParams.leftMargin = org.telegram.messenger.g0.L(58.0f);
@@ -361,18 +361,18 @@ public final class w9 extends FrameLayout {
         org.telegram.messenger.camera.q.n(textView, 1, 16.0f, 1, 1);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setGravity((hd.a0 ? 5 : 3) | 16);
+        textView.setGravity((id.a0 ? 5 : 3) | 16);
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.G6, f6Var);
         float f10 = 21;
-        addView(textView, c8.ha.d(-1, -1.0f, (hd.a0 ? 5 : 3) | 48, f10, 0.0f, f10, 0.0f));
-        org.telegram.ui.Components.j6 j6Var = new org.telegram.ui.Components.j6(context, true, true, !hd.a0);
+        addView(textView, c8.ha.d(-1, -1.0f, (id.a0 ? 5 : 3) | 48, f10, 0.0f, f10, 0.0f));
+        org.telegram.ui.Components.j6 j6Var = new org.telegram.ui.Components.j6(context, true, true, !id.a0);
         this.c = j6Var;
         j6Var.b(0.55f, 320L, xq.h);
         j6Var.setTextSize(org.telegram.messenger.g0.L(16.0f));
-        j6Var.setGravity((hd.a0 ? 3 : 5) | 16);
+        j6Var.setGravity((id.a0 ? 3 : 5) | 16);
         org.telegram.ui.ActionBar.r6.Z(j6Var, org.telegram.ui.ActionBar.k6.I6, f6Var);
         float f11 = 17;
-        addView(j6Var, c8.ha.d(-2, -1.0f, (hd.a0 ? 3 : 5) | 48, f11, 0.0f, f11, 0.0f));
+        addView(j6Var, c8.ha.d(-2, -1.0f, (id.a0 ? 3 : 5) | 48, f11, 0.0f, f11, 0.0f));
         ch0 ch0Var = new ch0(context);
         this.d = ch0Var;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
@@ -381,12 +381,12 @@ public final class w9 extends FrameLayout {
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         org.telegram.ui.ActionBar.r6.t(ch0Var, i10, f6Var, mode);
         ch0Var.setVisibility(8);
-        addView(ch0Var, c8.ha.d(-2, -2.0f, (hd.a0 ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
+        addView(ch0Var, c8.ha.d(-2, -2.0f, (id.a0 ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.f = imageView;
         imageView.setScaleType(scaleType);
         imageView.setVisibility(4);
         org.telegram.ui.ActionBar.r6.t(imageView, i10, f6Var, mode);
-        addView(imageView, c8.ha.d(-2, -2.0f, (hd.a0 ? 3 : 5) | 16, f10, 0.0f, f10, 0.0f));
+        addView(imageView, c8.ha.d(-2, -2.0f, (id.a0 ? 3 : 5) | 16, f10, 0.0f, f10, 0.0f));
     }
 }

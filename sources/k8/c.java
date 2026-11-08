@@ -15,14 +15,14 @@ import org.telegram.messenger.ea;
 import org.telegram.messenger.eb;
 import org.telegram.messenger.fa;
 import org.telegram.messenger.ha;
+import org.telegram.messenger.j1;
 import org.telegram.messenger.o;
-import org.telegram.messenger.p1;
 import org.telegram.messenger.y9;
 import org.telegram.ui.Components.jk;
 import org.telegram.ui.x90;
 import v7.i;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class c extends q {
     public final /* synthetic */ int b = 1;
@@ -35,7 +35,7 @@ public final class c extends q {
     }
 
     @Override // a8.q
-    public final boolean K0(int i7, Parcel parcel, Parcel parcel2) {
+    public final boolean k1(int i7, Parcel parcel, Parcel parcel2) {
         v7.a iVar;
         e eVar;
         switch (this.b) {
@@ -89,16 +89,16 @@ public final class c extends q {
                 break;
             case 2:
                 if (i7 == 1) {
-                    a7.a M0 = a7.b.M0(parcel.readStrongBinder());
+                    a7.a m12 = a7.b.m1(parcel.readStrongBinder());
                     v7.b.a(parcel);
-                    ((y9) this.c).b.accept((Location) a7.b.N0(M0));
+                    ((y9) this.c).b.accept((Location) a7.b.n1(m12));
                     parcel2.writeNoException();
                     break;
                 }
                 break;
             case 3:
                 if (i7 == 1) {
-                    ((jk) ((p1) this.c).b).run();
+                    ((jk) ((j1) this.c).b).run();
                     parcel2.writeNoException();
                     break;
                 }
@@ -107,7 +107,7 @@ public final class c extends q {
                 if (i7 == 1) {
                     int readInt = parcel.readInt();
                     v7.b.a(parcel);
-                    db dbVar = (db) ((p1) this.c).b;
+                    db dbVar = (db) ((j1) this.c).b;
                     int i10 = 2;
                     if (readInt != 2) {
                         i10 = 3;
@@ -122,14 +122,14 @@ public final class c extends q {
                 break;
             case 5:
                 if (i7 == 1) {
-                    ((x90) ((p1) this.c).b).run();
+                    ((x90) ((j1) this.c).b).run();
                     parcel2.writeNoException();
                     break;
                 }
                 break;
             default:
                 if (i7 == 1) {
-                    ((jk) ((p1) this.c).b).run();
+                    ((jk) ((j1) this.c).b).run();
                     parcel2.writeNoException();
                     break;
                 }
@@ -139,27 +139,27 @@ public final class c extends q {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(p1 p1Var) {
+    public c(j1 j1Var) {
         super("com.google.android.gms.maps.internal.IOnMapLoadedCallback", 12);
-        this.c = p1Var;
+        this.c = j1Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(p1 p1Var, byte b10) {
+    public c(j1 j1Var, byte b10) {
         super("com.google.android.gms.maps.internal.IOnCameraMoveStartedListener", 12);
-        this.c = p1Var;
+        this.c = j1Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(p1 p1Var, char c10) {
+    public c(j1 j1Var, char c10) {
         super("com.google.android.gms.maps.internal.IOnCameraMoveListener", 12);
-        this.c = p1Var;
+        this.c = j1Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(p1 p1Var, int i7) {
+    public c(j1 j1Var, int i7) {
         super("com.google.android.gms.maps.internal.IOnCameraIdleListener", 12);
-        this.c = p1Var;
+        this.c = j1Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

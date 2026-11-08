@@ -15,9 +15,9 @@ import android.view.animation.LinearInterpolator;
 import j$.util.Objects;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.nt;
+import org.telegram.ui.Components.ot;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class r8 extends View {
     public final boolean D;
@@ -97,7 +97,7 @@ public class r8 extends View {
             if (getParent() instanceof View) {
                 View view = (View) getParent();
                 Objects.requireNonNull(view);
-                icVar.f = new nt(1, view);
+                icVar.f = new ot(1, view);
             }
             icVar.c(true);
             yVar.setHotspot(motionEvent.getX(), motionEvent.getY());

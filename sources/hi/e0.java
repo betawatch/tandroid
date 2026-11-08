@@ -11,7 +11,7 @@ import java.io.File;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
@@ -24,7 +24,7 @@ import org.telegram.ui.Components.za;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class e0 extends za {
     public final f6 a;
@@ -78,7 +78,7 @@ public final class e0 extends za {
         final int i10 = 1;
         if (i7 == 1) {
             ac acVar = new ac(getContext(), f6Var, true);
-            acVar.e(hd.M0(2131753074, null));
+            acVar.e(id.M0(2131753074, null));
             final int i11 = 0;
             acVar.b = new Runnable(this) { // from class: hi.b0
                 public final /* synthetic */ e0 b;
@@ -128,7 +128,7 @@ public final class e0 extends za {
         }
         if (i7 == 2) {
             ac acVar2 = new ac(getContext(), f6Var, true);
-            acVar2.e(hd.M0(2131753073, null));
+            acVar2.e(id.M0(2131753073, null));
             acVar2.b = new Runnable(this) { // from class: hi.b0
                 public final /* synthetic */ e0 b;
 
@@ -208,7 +208,7 @@ public final class e0 extends za {
             }
             d0Var.invalidateSelf();
             if (((Long) b10.first).longValue() <= 0) {
-                textView.setText(hd.M0(2131753071, null));
+                textView.setText(id.M0(2131753071, null));
             } else if (((Long) b10.second).longValue() <= 0) {
                 textView.setText(org.telegram.messenger.g0.i0(((Long) b10.first).longValue(), false, false));
             } else {
@@ -225,7 +225,7 @@ public final class e0 extends za {
             return true;
         }
         if (f0Var.h) {
-            textView.setText(hd.M0(2131753072, null));
+            textView.setText(id.M0(2131753072, null));
             setButton(2);
             if (!d0Var.h) {
                 d0Var.h = true;

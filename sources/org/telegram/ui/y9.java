@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class y9 extends org.telegram.ui.ActionBar.f2 {
     public x9 a;
@@ -68,10 +68,10 @@ public final class y9 extends org.telegram.ui.ActionBar.f2 {
         org.telegram.ui.ActionBar.r6.m(this.actionBar, 1, org.telegram.ui.ActionBar.k6.v8, f6Var);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(org.telegram.messenger.hd.M0(2131751265, null));
+        this.actionBar.setTitle(org.telegram.messenger.id.M0(2131751265, null));
         final int i10 = 0;
         this.actionBar.setActionBarMenuOnItemClick(new w9(this, i10));
-        this.c = this.actionBar.q().h(1, R.drawable.ic_ab_done, org.telegram.messenger.g0.L(56.0f), org.telegram.messenger.hd.M0(2131751355, null));
+        this.c = this.actionBar.q().h(1, R.drawable.ic_ab_done, org.telegram.messenger.g0.L(56.0f), org.telegram.messenger.id.M0(2131751355, null));
         TLRPC.User a22 = org.telegram.messenger.qp.s1(this.currentAccount).a2(Long.valueOf(org.telegram.messenger.p10.i(this.currentAccount).e()));
         if (a22 == null) {
             a22 = org.telegram.messenger.p10.i(this.currentAccount).f();
@@ -99,10 +99,10 @@ public final class y9 extends org.telegram.ui.ActionBar.f2 {
         this.a.setMaxLines(1);
         this.a.setLines(1);
         this.a.setSingleLine(true);
-        this.a.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
+        this.a.setGravity(org.telegram.messenger.id.a0 ? 5 : 3);
         this.a.setInputType(49152);
         this.a.setImeOptions(5);
-        this.a.setHint(org.telegram.messenger.hd.M0(2131750695, null));
+        this.a.setHint(org.telegram.messenger.id.M0(2131750695, null));
         org.telegram.ui.ActionBar.r6.w(this.a, i12, f6Var);
         this.a.setCursorSize(org.telegram.messenger.g0.L(20.0f));
         this.a.setCursorWidth(1.5f);
@@ -146,10 +146,10 @@ public final class y9 extends org.telegram.ui.ActionBar.f2 {
         this.b.setMaxLines(1);
         this.b.setLines(1);
         this.b.setSingleLine(true);
-        this.b.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
+        this.b.setGravity(org.telegram.messenger.id.a0 ? 5 : 3);
         this.b.setInputType(49152);
         this.b.setImeOptions(6);
-        this.b.setHint(org.telegram.messenger.hd.M0(2131749031, null));
+        this.b.setHint(org.telegram.messenger.id.M0(2131749033, null));
         org.telegram.ui.ActionBar.r6.w(this.b, i12, f6Var);
         this.b.setCursorSize(org.telegram.messenger.g0.L(20.0f));
         this.b.setCursorWidth(1.5f);

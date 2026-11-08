@@ -18,7 +18,7 @@ import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.u31;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class du extends fu implements x5, ls {
     public final ij W;
@@ -64,7 +64,7 @@ public final class du extends fu implements x5, ls {
         radialProgress2.r(L, L2, L + L3, L3 + L2);
         jm0 jm0Var = new jm0(null);
         this.Z = jm0Var;
-        jm0Var.h = new p1(this, 15);
+        jm0Var.h = new j1(this, 15);
         k0();
         l0(false);
     }

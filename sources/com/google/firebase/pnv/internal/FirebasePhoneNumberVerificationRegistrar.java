@@ -16,7 +16,7 @@ import kotlin.jvm.internal.j;
 import o9.g;
 import u9.b;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class FirebasePhoneNumberVerificationRegistrar implements ComponentRegistrar {
     /* JADX INFO: Access modifiers changed from: private */
@@ -46,7 +46,7 @@ public final class FirebasePhoneNumberVerificationRegistrar implements Component
     @Override // com.google.firebase.components.ComponentRegistrar
     public List<u9.a> getComponents() {
         j0 a10 = u9.a.a(a.class);
-        a10.a(u9.i.a(g.class));
+        a10.a(u9.j.a(g.class));
         a10.f = new a1(17);
         return d0.a(a10.b());
     }

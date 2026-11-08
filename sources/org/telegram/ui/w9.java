@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class w9 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -152,11 +152,11 @@ public final class w9 extends org.telegram.ui.ActionBar.j {
                                 }
                             } else if (bdVar.y.length() == 0) {
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(bdVar.getParentActivity());
-                                String M0 = org.telegram.messenger.hd.M0(2131752316, null);
+                                String M0 = org.telegram.messenger.id.M0(2131752316, null);
                                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                                 u1Var.R = M0;
-                                u1Var.T = org.telegram.messenger.hd.M0(2131752317, null);
-                                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131752041, null), null);
+                                u1Var.T = org.telegram.messenger.id.M0(2131752317, null);
+                                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131752041, null), null);
                                 bdVar.showDialog(u1Var);
                                 break;
                             } else if (!bdVar.a0) {
@@ -396,7 +396,7 @@ public final class w9 extends org.telegram.ui.ActionBar.j {
                 break;
             case 20:
                 if (i7 == -1) {
-                    ((yb1) obj).a(false, false);
+                    ((zb1) obj).a(false, false);
                     break;
                 }
                 break;
@@ -417,14 +417,14 @@ public final class w9 extends org.telegram.ui.ActionBar.j {
                     int m10 = hVar.m();
                     org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder2.a;
                     if (m10 == 1) {
-                        u1Var2.R = org.telegram.messenger.hd.M0(2131751551, null);
-                        u1Var2.T = org.telegram.messenger.hd.M0(2131751552, null);
+                        u1Var2.R = org.telegram.messenger.id.M0(2131751551, null);
+                        u1Var2.T = org.telegram.messenger.id.M0(2131751552, null);
                     } else {
-                        u1Var2.R = org.telegram.messenger.hd.G(hVar.m(), "DeleteContactsTitle", new Object[0]);
-                        u1Var2.T = org.telegram.messenger.hd.M0(2131751550, null);
+                        u1Var2.R = org.telegram.messenger.id.G(hVar.m(), "DeleteContactsTitle", new Object[0]);
+                        u1Var2.T = org.telegram.messenger.id.M0(2131751550, null);
                     }
-                    alertDialog$Builder2.k(org.telegram.messenger.hd.M0(2131751599, null), new qr(contactsActivity));
-                    alertDialog$Builder2.h(org.telegram.messenger.hd.M0(2131752589, null), new org.telegram.ui.Components.il0(15));
+                    alertDialog$Builder2.k(org.telegram.messenger.id.M0(2131751599, null), new qr(contactsActivity));
+                    alertDialog$Builder2.h(org.telegram.messenger.id.M0(2131752589, null), new org.telegram.ui.Components.il0(15));
                     u1Var2.show();
                     u1Var2.i();
                     break;
@@ -490,7 +490,7 @@ public final class w9 extends org.telegram.ui.ActionBar.j {
                             if (i7 != 200) {
                                 if (i7 == 201) {
                                     ww wwVar3 = new ww(org.telegram.ui.Cells.f1.h(3, "onlySelect", "dialogsType", true));
-                                    wwVar3.C2 = new org.telegram.ui.Components.ax(fwVar, 18);
+                                    wwVar3.C2 = new org.telegram.ui.Components.bx(fwVar, 18);
                                     wwVar2.presentFragment(wwVar3);
                                     break;
                                 }
@@ -505,14 +505,14 @@ public final class w9 extends org.telegram.ui.ActionBar.j {
                     } else if (wwVar2 != null && wwVar2.getParentActivity() != null) {
                         ArrayList arrayList2 = new ArrayList(hashMap.values());
                         AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(wwVar2.getParentActivity());
-                        String G = org.telegram.messenger.hd.G(hashMap.size(), "RemoveDocumentsTitle", new Object[0]);
+                        String G = org.telegram.messenger.id.G(hashMap.size(), "RemoveDocumentsTitle", new Object[0]);
                         org.telegram.ui.ActionBar.u1 u1Var3 = alertDialog$Builder3.a;
                         u1Var3.R = G;
                         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.X2(org.telegram.messenger.hd.G(hashMap.size(), "RemoveDocumentsMessage", new Object[0]))).append((CharSequence) "\n\n").append((CharSequence) org.telegram.messenger.hd.M0(2131746318, null));
+                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(hashMap.size(), "RemoveDocumentsMessage", new Object[0]))).append((CharSequence) "\n\n").append((CharSequence) org.telegram.messenger.id.M0(2131746320, null));
                         u1Var3.T = spannableStringBuilder;
-                        alertDialog$Builder3.h(org.telegram.messenger.hd.M0(2131752589, null), new org.telegram.ui.Components.il0(i15));
-                        alertDialog$Builder3.k(org.telegram.messenger.hd.M0(2131751599, null), new org.telegram.ui.Components.f2(16, fwVar, arrayList2));
+                        alertDialog$Builder3.h(org.telegram.messenger.id.M0(2131752589, null), new org.telegram.ui.Components.il0(i15));
+                        alertDialog$Builder3.k(org.telegram.messenger.id.M0(2131751599, null), new org.telegram.ui.Components.f2(16, fwVar, arrayList2));
                         TextView textView = (TextView) alertDialog$Builder3.p().d(-1);
                         if (textView != null) {
                             org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.q7, null);
@@ -576,15 +576,15 @@ public final class w9 extends org.telegram.ui.ActionBar.j {
                         wwVar.B4(wwVar.D1);
                         break;
                     } else if (i7 == 109) {
-                        org.telegram.ui.Components.fz fzVar = new org.telegram.ui.Components.fz(wwVar, arrayList);
-                        fzVar.q1 = new wr(this, 7);
-                        wwVar.showDialog(fzVar);
+                        org.telegram.ui.Components.gz gzVar = new org.telegram.ui.Components.gz(wwVar, arrayList);
+                        gzVar.q1 = new wr(this, 7);
+                        wwVar.showDialog(gzVar);
                         break;
                     } else if (i7 == 110) {
                         org.telegram.messenger.vo voVar2 = (org.telegram.messenger.vo) wwVar.getMessagesController().T0().get(wwVar.e0[0].h);
-                        ArrayList J0 = org.telegram.ui.Components.fz.J0(wwVar, voVar2, arrayList, false, false);
+                        ArrayList J0 = org.telegram.ui.Components.gz.J0(wwVar, voVar2, arrayList, false, false);
                         if (J0.size() + (voVar2 != null ? voVar2.i.size() : 0) > 100) {
-                            wwVar.showDialog(org.telegram.ui.Components.v4.K(wwVar.getParentActivity(), org.telegram.messenger.hd.M0(2131750811, null), org.telegram.messenger.hd.M0(2131750812, null)).a);
+                            wwVar.showDialog(org.telegram.ui.Components.v4.K(wwVar.getParentActivity(), org.telegram.messenger.id.M0(2131750811, null), org.telegram.messenger.id.M0(2131750812, null)).a);
                             break;
                         } else {
                             if (J0.isEmpty()) {

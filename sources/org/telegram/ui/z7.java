@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class z7 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -54,10 +54,10 @@ public final class z7 implements View.OnClickListener {
                 }
                 break;
             case 3:
-                vf.c.t((Context) this.b, org.telegram.messenger.hd.M0(2131745256, null));
+                vf.c.t((Context) this.b, org.telegram.messenger.id.M0(2131745258, null));
                 break;
             default:
-                ((v91) this.b).L0(true);
+                ((w91) this.b).L0(true);
                 break;
         }
     }

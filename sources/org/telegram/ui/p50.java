@@ -16,7 +16,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class p50 extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public TextView a;
@@ -50,7 +50,7 @@ public final class p50 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         boolean z9 = true;
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(org.telegram.messenger.hd.M0(2131751133, null));
+        this.actionBar.setTitle(org.telegram.messenger.id.M0(2131751133, null));
         this.actionBar.setActionBarMenuOnItemClick(new ux(this, 8));
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
@@ -155,10 +155,10 @@ public final class p50 extends org.telegram.ui.ActionBar.f2 implements org.teleg
             Object[] objArr = new Object[2];
             objArr[0] = str;
             objArr[r17] = str;
-            spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0("EncryptionKeyDescription", null, 2131751132, objArr)));
+            spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("EncryptionKeyDescription", null, 2131751132, objArr)));
             int indexOf = spannableStringBuilder.toString().indexOf("telegram.org");
             if (indexOf != -1) {
-                spannableStringBuilder.setSpan(new org.telegram.ui.Components.d41(org.telegram.messenger.hd.M0(2131751131, null), null), indexOf, indexOf + 12, 33);
+                spannableStringBuilder.setSpan(new org.telegram.ui.Components.d41(org.telegram.messenger.id.M0(2131751131, null), null), indexOf, indexOf + 12, 33);
             }
             this.a.setText(spannableStringBuilder);
         }

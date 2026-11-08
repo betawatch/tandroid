@@ -7,12 +7,12 @@ import org.telegram.messenger.ln;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ox;
+import org.telegram.ui.Components.px;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.co;
 import org.telegram.ui.ss;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d4 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class d4 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new l4((co) this.c, (TLRPC.TL_channels_toggleUsername) this.d, tLObject, (TLRPC.TL_username) this.e, this.b, tL_error));
                 break;
             case 6:
-                org.telegram.messenger.g0.h3(new fi.q1((ox) this.c, (String) this.d, this.b, (String) this.e, tLObject));
+                org.telegram.messenger.g0.h3(new fi.q1((px) this.c, (String) this.d, this.b, (String) this.e, tLObject));
                 break;
             default:
                 org.telegram.messenger.g0.h3(new l4((ss) this.c, tLObject, (fi.d) this.d, this.b, (HashSet) this.e, tL_error));

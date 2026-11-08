@@ -20,7 +20,7 @@ import z7.ma;
 import z7.oa;
 import z7.z6;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class a {
     public volatile Bitmap a;
@@ -29,7 +29,7 @@ public final class a {
     public final int d;
     public final int e;
 
-    public a(Bitmap bitmap, int i7) {
+    public a(int i7, Bitmap bitmap) {
         m.g(bitmap);
         this.a = bitmap;
         this.b = bitmap.getWidth();
@@ -43,12 +43,12 @@ public final class a {
         this.e = -1;
     }
 
-    public static a a(Bitmap bitmap, int i7) {
+    public static a a(int i7, Bitmap bitmap) {
         ma a10;
         Task task;
         a aVar;
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        a aVar2 = new a(bitmap, i7);
+        a aVar2 = new a(i7, bitmap);
         int height = bitmap.getHeight();
         int width = bitmap.getWidth();
         int allocationByteCount = bitmap.getAllocationByteCount();

@@ -11,7 +11,7 @@ import hi.u1;
 import ii.g;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.t3;
 import org.telegram.tgnet.TLRPC;
@@ -26,7 +26,7 @@ import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class b extends na {
     public final nc P1;
@@ -40,13 +40,13 @@ public final class b extends na {
         pj0Var.setPadding(i7, 0, i7, g0.L(130.0f) + g0.n);
         this.k1.setClipToPadding(false);
         d dVar = new d(context, this.I0, true);
-        dVar.setText(hd.M0(2131752589, null));
+        dVar.setText(id.M0(2131752589, null));
         dVar.e();
         dVar.f();
         dVar.setOnClickListener(new g(this, 9));
         boolean V = t3.V(chat);
         d dVar2 = new d(context, this.I0, true);
-        dVar2.setText(hd.M0(V ? 2131751924 : 2131751922, null));
+        dVar2.setText(id.M0(V ? 2131751924 : 2131751922, null));
         dVar2.f();
         dVar2.setOnClickListener(new r(21, this, runnable));
         nc ncVar = new nc(context, 3);
@@ -61,7 +61,7 @@ public final class b extends na {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) "* ");
         spannableStringBuilder.setSpan(new wp(R.drawable.mini_ephemeral_hidden_14, 0), 0, 1, 33);
-        spannableStringBuilder.append((CharSequence) hd.M0(V ? 2131751925 : 2131751923, null));
+        spannableStringBuilder.append((CharSequence) id.M0(V ? 2131751925 : 2131751923, null));
         r6.V(textView, i10, this.I0);
         textView.setText(spannableStringBuilder);
         this.b.addView(dVar2, ha.f(48.0f, -1, 80, g0.L(12.0f) + this.t0, 0, g0.L(12.0f) + this.t0, g0.L(70.0f) + g0.n));

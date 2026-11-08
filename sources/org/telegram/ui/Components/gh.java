@@ -8,9 +8,9 @@ import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class gh extends kt {
+public final class gh extends lt {
     public boolean V;
     public int W;
     public int a0;
@@ -23,7 +23,7 @@ public final class gh extends kt {
         this.c0 = diVar;
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.lt
     public final void c(float f10) {
         di diVar = this.c0;
         diVar.a4 = f10;
@@ -37,7 +37,7 @@ public final class gh extends kt {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         if (this.V) {
-            ys editText = this.c0.y2.getEditText();
+            zs editText = this.c0.y2.getEditText();
             editText.setOffsetY(editText.getOffsetY() - ((this.a0 - editText.getScrollY()) + (this.W - editText.getMeasuredHeight())));
             ValueAnimator ofFloat = ValueAnimator.ofFloat(editText.getOffsetY(), 0.0f);
             ofFloat.addUpdateListener(new bi.de(15, this, editText));
@@ -54,15 +54,15 @@ public final class gh extends kt {
         super.dispatchDraw(canvas);
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.lt
     public final void e() {
         super/*org.telegram.ui.ActionBar.v2*/.dismiss();
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.lt
     public final void f() {
         super.f();
-        gy emojiView = getEmojiView();
+        hy emojiView = getEmojiView();
         if (emojiView != null) {
             emojiView.w0 = false;
             emojiView.x2 = false;
@@ -71,7 +71,7 @@ public final class gh extends kt {
         }
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.lt
     public final void i(ActionMode actionMode, Menu menu) {
         org.telegram.ui.ActionBar.f2 f2Var = this.c0.W1;
         if (f2Var instanceof org.telegram.ui.an) {
@@ -99,7 +99,7 @@ public final class gh extends kt {
         this.c0.J1();
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.lt
     public final void q(int i7, int i10) {
         di diVar = this.c0;
         dh dhVar = diVar.x2;

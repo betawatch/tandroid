@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class vv {
     public final int a;
@@ -98,8 +98,8 @@ public final class vv {
             }
             i10++;
         }
-        Collections.sort(arrayList, new vj(15));
-        Collections.sort(arrayList4, new vj(16));
+        Collections.sort(arrayList, new jl(15));
+        Collections.sort(arrayList4, new jl(16));
         arrayList.addAll(0, arrayList4);
         return true;
     }
@@ -117,7 +117,7 @@ public final class vv {
         if (!z9) {
             this.o = true;
             yr a02 = yr.a0(i7);
-            a02.a.c(new yq(this, a02));
+            a02.a.c(new zq(this, a02));
         }
         this.b = true;
         qp.s1(i7).e7.edit().remove("savedMessagesUnsupported").apply();
@@ -189,7 +189,7 @@ public final class vv {
         tL_messages_getSavedHistory.offset_id = ConnectionsManager.DEFAULT_DATACENTER_ID;
         tL_messages_getSavedHistory.offset_date = ConnectionsManager.DEFAULT_DATACENTER_ID;
         tL_messages_getSavedHistory.add_offset = -1;
-        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getSavedHistory, new p4(this, j3, 2));
+        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getSavedHistory, new v4(this, j3, 2));
     }
 
     public final void g(boolean z9) {
@@ -230,7 +230,7 @@ public final class vv {
                     tL_messages_getSavedDialogs.hash = p12;
                     tL_messages_getSavedDialogs.hash = ui.p(p12, uvVar2.c());
                 }
-                ConnectionsManager.getInstance(i7).sendRequest(tL_messages_getSavedDialogs, new s4(8, this, arrayList2));
+                ConnectionsManager.getInstance(i7).sendRequest(tL_messages_getSavedDialogs, new r4(8, this, arrayList2));
                 return;
             }
             tv tvVar = new tv(this, 0);
@@ -373,7 +373,7 @@ public final class vv {
                 }
             }
         }
-        Collections.sort(arrayList4, new vj(17));
+        Collections.sort(arrayList4, new jl(17));
         arrayList3.addAll(arrayList4);
         int i13 = this.a;
         qs.f(i13).k(qs.g3, new Object[0]);

@@ -15,15 +15,15 @@ import org.telegram.messenger.r3;
 import org.telegram.messenger.s3;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.dt;
-import org.telegram.ui.Components.ex;
-import org.telegram.ui.Components.l10;
+import org.telegram.ui.Components.et;
+import org.telegram.ui.Components.fx;
 import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.vs;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.c40;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class g1 implements ti.m, ls {
     public static g1 w;
@@ -36,7 +36,7 @@ public final class g1 implements ti.m, ls {
     public final int r;
     public long s;
     public final d1 b = new d1(this);
-    public final dt n = new dt(this, 20);
+    public final et n = new et(this, 20);
 
     public g1(int i7) {
         this.r = i7;
@@ -61,7 +61,7 @@ public final class g1 implements ti.m, ls {
     }
 
     public static void k(Activity activity) {
-        ti.q g10;
+        ti.p g10;
         if (d() == null) {
             return;
         }
@@ -81,14 +81,14 @@ public final class g1 implements ti.m, ls {
             g1Var.b.a = q0Var;
             g1Var.a();
             g1Var.s = SystemClock.elapsedRealtime();
-            dt dtVar = g1Var.n;
-            org.telegram.messenger.g0.r(dtVar);
-            org.telegram.messenger.g0.i3(dtVar, 700L);
+            et etVar = g1Var.n;
+            org.telegram.messenger.g0.r(etVar);
+            org.telegram.messenger.g0.i3(etVar, 700L);
             c40 c40Var = c40.u5;
             if (c40Var != null) {
                 c40Var.dismiss();
             }
-            org.telegram.messenger.g0.h3(new l10(11));
+            org.telegram.messenger.g0.h3(new vs(13));
         }
     }
 
@@ -212,8 +212,8 @@ public final class g1 implements ti.m, ls {
             n(false);
         }
         m();
-        org.telegram.messenger.g0.h3(new l10(11));
-        org.telegram.messenger.g0.h3(new l10(10));
+        org.telegram.messenger.g0.h3(new vs(13));
+        org.telegram.messenger.g0.h3(new vs(12));
     }
 
     @Override // ti.m
@@ -255,8 +255,8 @@ public final class g1 implements ti.m, ls {
         q0 q0Var = this.e;
         this.e = null;
         this.b.a = null;
-        this.a.a(new ex(7, this, q0Var));
-        org.telegram.messenger.g0.h3(new l10(11));
+        this.a.a(new fx(7, this, q0Var));
+        org.telegram.messenger.g0.h3(new vs(13));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x002a A[RETURN] */
@@ -354,15 +354,15 @@ public final class g1 implements ti.m, ls {
     }
 
     @Override // ti.m
-    public final void g(ti.q qVar) {
-        q0 q0Var = new q0(qVar);
+    public final void g(ti.p pVar) {
+        q0 q0Var = new q0(pVar);
         this.e = q0Var;
         this.b.a = q0Var;
         a();
         this.s = SystemClock.elapsedRealtime();
-        dt dtVar = this.n;
-        org.telegram.messenger.g0.r(dtVar);
-        org.telegram.messenger.g0.i3(dtVar, 700L);
+        et etVar = this.n;
+        org.telegram.messenger.g0.r(etVar);
+        org.telegram.messenger.g0.i3(etVar, 700L);
     }
 
     @Override // ti.m

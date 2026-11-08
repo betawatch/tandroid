@@ -17,7 +17,7 @@ import bi.qd;
 import c8.ha;
 import n2.n0;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.t3;
@@ -29,7 +29,7 @@ import org.telegram.ui.Components.w70;
 import org.telegram.ui.Components.xq;
 import ug.p1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class r extends FrameLayout {
     public final qd a;
@@ -144,8 +144,8 @@ public final class r extends FrameLayout {
         int i7 = k6.a7;
         f6 f6Var = this.e;
         r6.i(i7, this, f6Var);
-        this.c.setText(hd.a0("BoostingBoostsViaGifts", null, 2131753562, new Object[0]));
-        String a02 = hd.a0(null, null, t3.V(chat) ? 2131753510 : 2131753505, new Object[0]);
+        this.c.setText(id.a0("BoostingBoostsViaGifts", null, 2131753562, new Object[0]));
+        String a02 = id.a0(null, null, t3.V(chat) ? 2131753510 : 2131753505, new Object[0]);
         w70 w70Var = this.d;
         w70Var.setText(a02);
         r6.V(w70Var, k6.r5, f6Var);

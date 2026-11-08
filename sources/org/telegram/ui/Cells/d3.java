@@ -3,14 +3,14 @@ package org.telegram.ui.Cells;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.rz;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class d3 extends LinearLayout implements ls {
     public int a;
@@ -66,21 +66,21 @@ public abstract class d3 extends LinearLayout implements ls {
         TextView textView2 = this.c;
         TextView textView3 = this.e;
         if (requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast) {
-            textView2.setText(hd.M0(2131748143, null));
-            textView.setText(hd.M0(2131748142, null));
+            textView2.setText(id.M0(2131748145, null));
+            textView.setText(id.M0(2131748144, null));
             textView3.setVisibility(0);
-            textView3.setText(hd.M0(2131751752, null));
+            textView3.setText(id.M0(2131751752, null));
             return;
         }
         if (!(requestPeerType instanceof TLRPC.TL_requestPeerTypeChat)) {
-            textView2.setText(hd.M0(2131748139, null));
-            textView.setText(hd.M0(2131748138, null));
+            textView2.setText(id.M0(2131748141, null));
+            textView.setText(id.M0(2131748140, null));
             textView3.setVisibility(8);
         } else {
-            textView2.setText(hd.M0(2131748141, null));
-            textView.setText(hd.M0(2131748140, null));
+            textView2.setText(id.M0(2131748143, null));
+            textView.setText(id.M0(2131748142, null));
             textView3.setVisibility(0);
-            textView3.setText(hd.M0(2131751746, null));
+            textView3.setText(id.M0(2131751746, null));
         }
     }
 }

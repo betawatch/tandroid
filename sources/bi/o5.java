@@ -10,7 +10,7 @@ import org.telegram.ui.an;
 import org.telegram.ui.rg;
 import org.telegram.ui.si;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o5 implements c20 {
     public final /* synthetic */ int a;
@@ -64,7 +64,7 @@ public final /* synthetic */ class o5 implements c20 {
                                 if (spannableStringBuilder.length() > 0) {
                                     spannableStringBuilder.append((CharSequence) " ");
                                 }
-                                spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.I2(org.telegram.messenger.hd.M0(2131749753, null), false, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
+                                spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.I2(org.telegram.messenger.id.M0(2131749755, null), false, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
                                 q5Var.setText(spannableStringBuilder);
                                 break;
                             }
@@ -77,7 +77,7 @@ public final /* synthetic */ class o5 implements c20 {
                     }
                     if (spannableStringBuilder.length() > 0) {
                     }
-                    spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.I2(org.telegram.messenger.hd.M0(2131749753, null), false, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
+                    spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.I2(org.telegram.messenger.id.M0(2131749755, null), false, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
                     q5Var.setText(spannableStringBuilder);
                 }
                 break;
@@ -90,12 +90,12 @@ public final /* synthetic */ class o5 implements c20 {
                 an anVar = siVar.b;
                 if (anVar.getParentActivity() != null) {
                     Activity parentActivity = anVar.getParentActivity();
-                    String M0 = org.telegram.messenger.hd.M0(2131746290, null);
-                    int i12 = org.telegram.messenger.t3.p0(anVar.e) ? 2131746294 : 2131746295;
+                    String M0 = org.telegram.messenger.id.M0(2131746292, null);
+                    int i12 = org.telegram.messenger.t3.p0(anVar.e) ? 2131746296 : 2131746297;
                     long j3 = this.b;
-                    SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, i12, org.telegram.messenger.m5.t(j3)));
-                    String H = l10.longValue() > 0 ? org.telegram.messenger.hd.H(',', "RemoveMessageFeeRefund", (int) l10.longValue()) : null;
-                    String M02 = org.telegram.messenger.hd.M0(2131751817, null);
+                    SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, i12, org.telegram.messenger.m5.t(j3)));
+                    String H = l10.longValue() > 0 ? org.telegram.messenger.id.H(',', "RemoveMessageFeeRefund", (int) l10.longValue()) : null;
+                    String M02 = org.telegram.messenger.id.M0(2131751817, null);
                     rg rgVar = new rg(siVar, j3, this.c, l10, 1);
                     f6Var = ((org.telegram.ui.ActionBar.f2) anVar).resourceProvider;
                     org.telegram.ui.Components.v4.f0(parentActivity, M0, X2, H, M02, rgVar, f6Var, true);

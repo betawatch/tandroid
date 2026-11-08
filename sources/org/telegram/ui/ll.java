@@ -13,7 +13,7 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ll implements org.telegram.ui.Components.wf {
     public int a;
@@ -108,7 +108,7 @@ public final class ll implements org.telegram.ui.Components.wf {
                 i12++;
             }
             if (z10) {
-                org.telegram.ui.Components.cc I = org.telegram.ui.Components.hc.a0(anVar).I(R.raw.hint_swipe_reply, org.telegram.messenger.hd.M0(2131744307, null), org.telegram.messenger.hd.M0(2131744306, null));
+                org.telegram.ui.Components.cc I = org.telegram.ui.Components.hc.a0(anVar).I(R.raw.hint_swipe_reply, org.telegram.messenger.id.M0(2131744309, null), org.telegram.messenger.id.M0(2131744308, null));
                 org.telegram.ui.Components.ch0 ch0Var = ((org.telegram.ui.Components.zb) I.e).a;
                 ch0Var.setScaleX(1.8f);
                 ch0Var.setScaleY(1.8f);
@@ -274,7 +274,7 @@ public final class ll implements org.telegram.ui.Components.wf {
     @Override // org.telegram.ui.Components.wf
     public final boolean X0() {
         org.telegram.ui.Components.t40 t40Var = this.b.p3;
-        return t40Var != null && t40Var.e();
+        return t40Var != null && t40Var.f();
     }
 
     @Override // org.telegram.ui.Components.wf
@@ -297,23 +297,23 @@ public final class ll implements org.telegram.ui.Components.wf {
                 }
                 TLRPC.UserFull userFull = anVar.q8;
                 if (userFull != null && userFull.voice_messages_forbidden) {
-                    anVar.t2.u(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, anVar.Z.c1 ? 2131743595 : 2131743521, anVar.f.first_name)));
+                    anVar.t2.u(org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, anVar.Z.c1 ? 2131743597 : 2131743523, anVar.f.first_name)));
                 } else if (org.telegram.messenger.t3.v(anVar.e) || org.telegram.messenger.t3.s(anVar.e)) {
                     if (org.telegram.messenger.t3.P(20, anVar.e)) {
-                        anVar.t2.u(org.telegram.messenger.hd.M0(2131749536, null));
+                        anVar.t2.u(org.telegram.messenger.id.M0(2131749538, null));
                     } else if (org.telegram.messenger.t3.P(21, anVar.e)) {
-                        anVar.t2.u(org.telegram.messenger.hd.M0(2131749539, null));
+                        anVar.t2.u(org.telegram.messenger.id.M0(2131749541, null));
                     } else if (org.telegram.messenger.t3.P(7, anVar.e)) {
-                        anVar.t2.u(org.telegram.messenger.hd.M0(2131749542, null));
+                        anVar.t2.u(org.telegram.messenger.id.M0(2131749544, null));
                     } else {
                         TLRPC.TL_chatBannedRights tL_chatBannedRights = anVar.e.banned_rights;
                         if (tL_chatBannedRights == null) {
                             return;
                         }
                         if (org.telegram.messenger.g0.D1(tL_chatBannedRights)) {
-                            anVar.t2.u(org.telegram.messenger.hd.M0(2131753955, null));
+                            anVar.t2.u(org.telegram.messenger.id.M0(2131753955, null));
                         } else {
-                            anVar.t2.u(org.telegram.messenger.hd.a0("AttachMediaRestricted", null, 2131753956, org.telegram.messenger.hd.v(anVar.e.banned_rights.until_date)));
+                            anVar.t2.u(org.telegram.messenger.id.a0("AttachMediaRestricted", null, 2131753956, org.telegram.messenger.id.v(anVar.e.banned_rights.until_date)));
                         }
                     }
                 } else {
@@ -357,13 +357,13 @@ public final class ll implements org.telegram.ui.Components.wf {
         if (anVar.p3 == null && CameraView.isCameraAllowed() && anVar.getParentActivity() != null) {
             Activity parentActivity = anVar.getParentActivity();
             ym ymVar = anVar.xa;
-            org.telegram.ui.Components.t40 n40Var = org.telegram.ui.Components.t40.d(org.telegram.messenger.p10.s0) ? new org.telegram.ui.Components.n40(parentActivity, anVar, ymVar) : new org.telegram.ui.Components.o40(parentActivity, anVar, ymVar, true);
+            org.telegram.ui.Components.t40 n40Var = org.telegram.ui.Components.t40.e(org.telegram.messenger.p10.s0) ? new org.telegram.ui.Components.n40(parentActivity, anVar, ymVar) : new org.telegram.ui.Components.o40(parentActivity, anVar, ymVar, true);
             anVar.p3 = n40Var;
             n40Var.setAnimationCallback(new fe(anVar, 0));
             anVar.p3.setTrimCallback(new fe(anVar, 1));
             anVar.p3.setRecordingUiFrameCallback(new wi(anVar));
             anVar.p3.setClipToPadding(false);
-            anVar.p3.h(anVar.K, anVar.x);
+            anVar.p3.i(anVar.K, anVar.x);
             int indexOfChild = anVar.l1.indexOfChild(anVar.T);
             if (indexOfChild < 0) {
                 indexOfChild = anVar.l1.getChildCount();
@@ -373,11 +373,11 @@ public final class ll implements org.telegram.ui.Components.wf {
         org.telegram.ui.Components.t40 t40Var = anVar.p3;
         if (t40Var != null) {
             if (i7 == 0) {
-                t40Var.i(false);
+                t40Var.j(false);
                 anVar.z0.C0();
                 anVar.C0.T();
             } else if (i7 == 1 || i7 == 3 || i7 == 4) {
-                t40Var.g(i7, i10, i11, j3, j10, z9);
+                t40Var.h(i7, i10, i11, j3, j10, z9);
             } else if (i7 == 2 || i7 == 5) {
                 t40Var.a(i7 == 2);
             }
@@ -483,7 +483,7 @@ public final class ll implements org.telegram.ui.Components.wf {
     public final void c1() {
         org.telegram.ui.Components.t40 t40Var = this.b.p3;
         if (t40Var != null) {
-            t40Var.j();
+            t40Var.k();
         }
     }
 

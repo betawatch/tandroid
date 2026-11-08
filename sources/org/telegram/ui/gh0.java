@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gh0 implements Runnable {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class gh0 implements Runnable {
                     if (i10 >= 0 && i10 < arrayList.size()) {
                         ((kh0) arrayList.get(i10)).h = notificationsCustomSettingsActivity.k0();
                     }
-                    ((org.telegram.ui.Cells.t8) view).b(notificationsCustomSettingsActivity.k0(), org.telegram.messenger.hd.M0(2131748988, "LedColor"), true);
+                    ((org.telegram.ui.Cells.t8) view).b(notificationsCustomSettingsActivity.k0(), org.telegram.messenger.id.M0(2131748990, "LedColor"), true);
                     break;
                 }
                 break;
@@ -48,7 +48,7 @@ public final /* synthetic */ class gh0 implements Runnable {
                         ((kh0) arrayList2.get(i10)).f = notificationsCustomSettingsActivity.l0();
                     }
                     org.telegram.ui.Cells.w9 w9Var = (org.telegram.ui.Cells.w9) view;
-                    w9Var.c(org.telegram.messenger.hd.M0(2131747097, "PopupNotification"), notificationsCustomSettingsActivity.l0(), true, w9Var.h);
+                    w9Var.c(org.telegram.messenger.id.M0(2131747099, "PopupNotification"), notificationsCustomSettingsActivity.l0(), true, w9Var.h);
                     break;
                 }
                 break;
@@ -62,7 +62,7 @@ public final /* synthetic */ class gh0 implements Runnable {
                         ((kh0) arrayList3.get(i10)).f = notificationsCustomSettingsActivity.m0();
                     }
                     org.telegram.ui.Cells.w9 w9Var2 = (org.telegram.ui.Cells.w9) view;
-                    w9Var2.c(org.telegram.messenger.hd.M0(2131747905, "NotificationsImportance"), notificationsCustomSettingsActivity.m0(), true, w9Var2.h);
+                    w9Var2.c(org.telegram.messenger.id.M0(2131747907, "NotificationsImportance"), notificationsCustomSettingsActivity.m0(), true, w9Var2.h);
                     break;
                 }
                 break;

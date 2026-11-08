@@ -1,52 +1,27 @@
 package zh;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class k2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m3 b;
+import bi.l5;
+import java.io.Serializable;
+import org.telegram.messenger.a20;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.x31;
 
-    public /* synthetic */ k2(m3 m3Var, int i7) {
-        this.a = i7;
-        this.b = m3Var;
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class k2 implements l5, a20 {
+    public final /* synthetic */ l3 a;
+
+    public /* synthetic */ k2(l3 l3Var) {
+        this.a = l3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                d3 d3Var = this.b.d;
-                if (!d3Var.l.isEmpty()) {
-                    d3Var.l.clear();
-                    d3Var.h();
-                    break;
-                }
-                break;
-            case 1:
-                d3 d3Var2 = this.b.d;
-                if (!d3Var2.k.isEmpty()) {
-                    d3Var2.k.clear();
-                    d3Var2.h();
-                    break;
-                }
-                break;
-            case 2:
-                d3 d3Var3 = this.b.d;
-                if (!d3Var3.j.isEmpty()) {
-                    d3Var3.j.clear();
-                    d3Var3.h();
-                    break;
-                }
-                break;
-            case 3:
-                this.b.d.i(c3.a);
-                break;
-            case 4:
-                this.b.d.i(c3.b);
-                break;
-            default:
-                this.b.d.i(c3.c);
-                break;
-        }
+    @Override // bi.l5
+    public void a(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, boolean z9) {
+        l3.Z(this.a, tL_starGiftUnique, j3, z9);
+    }
+
+    @Override // org.telegram.messenger.a20
+    public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        l3.d0(this.a, (x31) obj);
     }
 }

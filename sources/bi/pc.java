@@ -14,7 +14,7 @@ import org.telegram.ui.Components.w31;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class pc extends w31 {
     public static final /* synthetic */ int b = 0;
@@ -29,7 +29,7 @@ public final class pc extends w31 {
         K.z = i10;
         long j3 = tL_starsTopupOption.stars;
         K.B = j3;
-        K.l = org.telegram.messenger.hd.H(' ', "StarsCount", (int) j3);
+        K.l = org.telegram.messenger.id.H(' ', "StarsCount", (int) j3);
         K.m = tL_starsTopupOption.loadingStorePrice ? null : org.telegram.messenger.r1.i().f(tL_starsTopupOption.amount, tL_starsTopupOption.currency);
         K.G = tL_starsTopupOption;
         return K;
@@ -58,7 +58,7 @@ public final class pc extends w31 {
             charSequence2 = qcVar.f;
         }
         j6Var.setText(charSequence2);
-        float f10 = org.telegram.messenger.hd.a0 ? -1.0f : 1.0f;
+        float f10 = org.telegram.messenger.id.a0 ? -1.0f : 1.0f;
         if (equals) {
             textView.animate().translationX(f10 * (i7 - 1) * org.telegram.messenger.g0.L(2.66f)).setDuration(320L).setInterpolator(xq.h).start();
         } else {

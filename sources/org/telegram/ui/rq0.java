@@ -13,7 +13,7 @@ import android.text.TextUtils;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class rq0 extends View {
     public final Paint a;
@@ -72,15 +72,15 @@ public final class rq0 extends View {
         boolean z10 = false;
         int max = Math.max(0, i7);
         int max2 = Math.max(max, i10);
-        if (org.telegram.messenger.hd.E0().B != null && !TextUtils.equals(this.n, org.telegram.messenger.hd.E0().B.c)) {
+        if (org.telegram.messenger.id.E0().B != null && !TextUtils.equals(this.n, org.telegram.messenger.id.E0().B.c)) {
             c();
         }
-        this.b.t(String.format("%d", Integer.valueOf(org.telegram.messenger.hd.a0 ? max2 : max)), (!z9 || this.w || org.telegram.messenger.hd.a0) ? false : true, true);
-        if (!org.telegram.messenger.hd.a0) {
+        this.b.t(String.format("%d", Integer.valueOf(org.telegram.messenger.id.a0 ? max2 : max)), (!z9 || this.w || org.telegram.messenger.id.a0) ? false : true, true);
+        if (!org.telegram.messenger.id.a0) {
             max = max2;
         }
         String format = String.format("%d", Integer.valueOf(max));
-        if (z9 && !this.w && !org.telegram.messenger.hd.a0) {
+        if (z9 && !this.w && !org.telegram.messenger.id.a0) {
             z10 = true;
         }
         this.h.t(format, z10, true);
@@ -88,8 +88,8 @@ public final class rq0 extends View {
     }
 
     public final void c() {
-        this.n = org.telegram.messenger.hd.E0().B.c;
-        StaticLayout staticLayout = new StaticLayout(org.telegram.messenger.hd.M0(2131747828, null).replace("%1$d", "").replace("%2$d", ""), this.c, org.telegram.messenger.g0.L(200.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+        this.n = org.telegram.messenger.id.E0().B.c;
+        StaticLayout staticLayout = new StaticLayout(org.telegram.messenger.id.M0(2131747830, null).replace("%1$d", "").replace("%2$d", ""), this.c, org.telegram.messenger.g0.L(200.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
         this.d = staticLayout;
         if (staticLayout.getLineCount() >= 1) {
             this.e = this.d.getLineWidth(0);

@@ -19,7 +19,7 @@ import org.telegram.ui.Components.w31;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.q50;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class vc extends w31 {
     public static final /* synthetic */ int b = 0;
@@ -86,24 +86,24 @@ public final class vc extends w31 {
         textView2.setTextSize(1, wcVar.r ? 13.0f : 14.0f);
         if (starsSubscription.canceled || starsSubscription.bot_canceled) {
             long j3 = starsSubscription.until_date;
-            textView2.setText(org.telegram.messenger.hd.a0(null, null, j3 >= currentTime ? 2131744985 : 2131744991, org.telegram.messenger.hd.u(j3, false)));
+            textView2.setText(org.telegram.messenger.id.a0(null, null, j3 >= currentTime ? 2131744987 : 2131744993, org.telegram.messenger.id.u(j3, false)));
             textView.setVisibility(8);
             org.telegram.ui.ActionBar.r6.V(textView4, org.telegram.ui.ActionBar.k6.kk, f6Var);
-            textView4.setText(org.telegram.messenger.hd.M0(starsSubscription.bot_canceled ? z11 ? 2131744976 : 2131744975 : 2131744974, null));
+            textView4.setText(org.telegram.messenger.id.M0(starsSubscription.bot_canceled ? z11 ? 2131744978 : 2131744977 : 2131744976, null));
         } else {
             long j10 = starsSubscription.until_date;
             if (j10 < currentTime) {
-                textView2.setText(org.telegram.messenger.hd.a0(null, null, 2131744991, org.telegram.messenger.hd.u(j10, false)));
+                textView2.setText(org.telegram.messenger.id.a0(null, null, 2131744993, org.telegram.messenger.id.u(j10, false)));
                 textView.setVisibility(8);
-                org.telegram.messenger.camera.q.o(textView4, org.telegram.ui.ActionBar.k6.kk, f6Var, null, 2131744973);
+                org.telegram.messenger.camera.q.o(textView4, org.telegram.ui.ActionBar.k6.kk, f6Var, null, 2131744975);
             } else {
-                textView2.setText(org.telegram.messenger.hd.a0(null, null, 2131744978, org.telegram.messenger.hd.u(j10, false)));
+                textView2.setText(org.telegram.messenger.id.a0(null, null, 2131744980, org.telegram.messenger.id.u(j10, false)));
                 textView.setVisibility(0);
                 textView.setText(dd.a1(false, "⭐️ " + Long.toString(starsSubscription.pricing.amount), 0.8f, null));
                 org.telegram.ui.ActionBar.r6.V(textView4, org.telegram.ui.ActionBar.k6.z6, f6Var);
                 int i10 = starsSubscription.pricing.period;
                 if (i10 == 2592000) {
-                    textView4.setText(org.telegram.messenger.hd.M0(2131745057, null));
+                    textView4.setText(org.telegram.messenger.id.M0(2131745059, null));
                 } else if (i10 == 60) {
                     textView4.setText("per minute");
                 } else if (i10 == 300) {

@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ag extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final fi.l D;
@@ -98,7 +98,7 @@ public final class ag extends FrameLayout implements org.telegram.ui.ActionBar.a
         this.c = org.telegram.ui.ActionBar.k6.d0(org.telegram.messenger.g0.L(5.0f), chatActivityEnterView.f0(org.telegram.ui.ActionBar.k6.eg));
         textPaint.setTextSize(org.telegram.messenger.g0.L(14.0f));
         this.d = context.getDrawable(R.drawable.tooltip_arrow);
-        this.e = org.telegram.messenger.hd.M0(2131745313, "SlideUpToLock");
+        this.e = org.telegram.messenger.id.M0(2131745315, "SlideUpToLock");
         float L = org.telegram.messenger.g0.L(3.0f);
         float L2 = org.telegram.messenger.g0.L(3.0f);
         this.E = getResources().getDrawable(R.drawable.input_mic).mutate();
@@ -131,7 +131,7 @@ public final class ag extends FrameLayout implements org.telegram.ui.ActionBar.a
         ChatActivityEnterView chatActivityEnterView = this.b0;
         chatActivityEnterView.setHintGlass(m3Var2);
         this.b.r(true);
-        this.b.u(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(chatActivityEnterView.c1 ? chatActivityEnterView.O ? 2131743583 : 2131743584 : chatActivityEnterView.O ? 2131743511 : 2131743512, null)));
+        this.b.u(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(chatActivityEnterView.c1 ? chatActivityEnterView.O ? 2131743585 : 2131743586 : chatActivityEnterView.O ? 2131743513 : 2131743514, null)));
         fi.m3 m3Var3 = this.b;
         m3Var3.h = fi.m3.a(m3Var3.getText(), this.b.getTextPaint());
         if (chatActivityEnterView.O) {
@@ -734,12 +734,12 @@ public final class ag extends FrameLayout implements org.telegram.ui.ActionBar.a
                         f fVar = new f(10, this, xfVar);
                         if (org.telegram.messenger.qp.e1().getBoolean("trimvoicehint", true)) {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getContext(), chatActivityEnterView.W3);
-                            String M0 = org.telegram.messenger.hd.M0(2131746347, null);
+                            String M0 = org.telegram.messenger.id.M0(2131746349, null);
                             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                             u1Var.R = M0;
-                            u1Var.T = org.telegram.messenger.hd.M0(2131746348, null);
-                            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747830, null), new u(fVar, 19));
-                            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+                            u1Var.T = org.telegram.messenger.id.M0(2131746350, null);
+                            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747832, null), new u(fVar, 19));
+                            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
                             alertDialog$Builder.p();
                         } else {
                             fVar.run();

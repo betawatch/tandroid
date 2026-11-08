@@ -38,22 +38,21 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.iz;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.cu0;
 import org.telegram.ui.Components.gn;
-import org.telegram.ui.Components.gz;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.hz;
+import org.telegram.ui.Components.iz;
 import org.telegram.ui.Components.kn;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.rt0;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.ru0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class k extends FrameLayout implements te.b, a6, s4 {
     public CharSequence A0;
@@ -96,7 +95,7 @@ public class k extends FrameLayout implements te.b, a6, s4 {
     public boolean R0;
     public cu0 S;
     public kn S0;
-    public hz T;
+    public iz T;
     public boolean T0;
     public Paint.FontMetricsInt U;
     public dh.c U0;
@@ -525,9 +524,9 @@ public class k extends FrameLayout implements te.b, a6, s4 {
         if (str2 == null || !str2.equals(str)) {
             this.f0 = str;
             if (this.x1 != null) {
-                this.x1.b(i7 == 2131751805 ? org.telegram.messenger.g0.I2(hd.M0(2131744114, null), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(2.0f)) : null, true);
+                this.x1.b(i7 == 2131751805 ? org.telegram.messenger.g0.I2(id.M0(2131744116, null), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(2.0f)) : null, true);
             }
-            CharSequence M0 = str != null ? hd.M0(i7, str) : this.c0;
+            CharSequence M0 = str != null ? id.M0(i7, str) : this.c0;
             Drawable drawable = str == null ? this.d0 : null;
             ab.q qVar = this.O0;
             if (str == null || (indexOf = TextUtils.indexOf(M0, "...")) < 0) {
@@ -878,7 +877,7 @@ public class k extends FrameLayout implements te.b, a6, s4 {
                         float y10 = getY();
                         float f11 = f10 - (this.z1 ? f10 : this.D1);
                         rt0Var.getClass();
-                        rt0Var.I(canvas, y10, this.N0, paint, true, org.telegram.messenger.g0.W1(f11, qs.e4, Color.alpha(k6.w0((rt0.E() && iz.o() == i7) ? k6.lg : k6.mg, rt0Var.getResourceProvider()))));
+                        rt0Var.I(canvas, y10, this.N0, paint, true, org.telegram.messenger.g0.W1(f11, qs.e4, Color.alpha(k6.w0((rt0.E() && org.telegram.messenger.iz.o() == i7) ? k6.lg : k6.mg, rt0Var.getResourceProvider()))));
                     }
                 }
                 this.t1 = true;
@@ -957,7 +956,7 @@ public class k extends FrameLayout implements te.b, a6, s4 {
         float f10;
         float f11;
         boolean z10;
-        gz gzVar;
+        hz hzVar;
         r0 r0Var;
         f2 f2Var = this.t0;
         if (f2Var != null && f2Var.getParentLayout() != null) {
@@ -976,7 +975,7 @@ public class k extends FrameLayout implements te.b, a6, s4 {
             canvas.clipRect(0.0f, (-getTranslationY()) + (this.I ? org.telegram.messenger.g0.m : 0), getMeasuredWidth(), getMeasuredHeight());
         }
         boolean drawChild = super.drawChild(canvas, view, j3);
-        if (this.R && !this.i0 && !hd.a0) {
+        if (this.R && !this.i0 && !id.a0) {
             k5[] k5VarArr = this.n;
             if ((view == k5VarArr[0] || view == k5VarArr[1] || (view == this.F0 && this.G0)) && (B0 = k6.B0()) != null) {
                 k5 k5Var = view == this.F0 ? k5VarArr[0] : (k5) view;
@@ -1010,19 +1009,19 @@ public class k extends FrameLayout implements te.b, a6, s4 {
                 if (cu0Var != null) {
                     cu0Var.b(canvas, this);
                 } else {
-                    hz hzVar = this.T;
-                    if (hzVar != null) {
-                        ArrayList arrayList = (ArrayList) hzVar.d;
-                        ArrayList arrayList2 = (ArrayList) hzVar.c;
+                    iz izVar = this.T;
+                    if (izVar != null) {
+                        ArrayList arrayList = (ArrayList) izVar.d;
+                        ArrayList arrayList2 = (ArrayList) izVar.c;
                         if (canvas != null) {
                             int size = arrayList2.size();
                             for (int i7 = 0; i7 < size; i7++) {
-                                gz gzVar2 = (gz) arrayList2.get(i7);
-                                Paint paint = (Paint) gzVar2.k.b;
-                                paint.setColor(gzVar2.j);
-                                paint.setStrokeWidth(org.telegram.messenger.g0.L(1.5f) * gzVar2.i);
-                                paint.setAlpha((int) (gzVar2.f * f10));
-                                canvas.drawPoint(gzVar2.a, gzVar2.b, paint);
+                                hz hzVar2 = (hz) arrayList2.get(i7);
+                                Paint paint = (Paint) hzVar2.k.b;
+                                paint.setColor(hzVar2.j);
+                                paint.setStrokeWidth(org.telegram.messenger.g0.L(1.5f) * hzVar2.i);
+                                paint.setAlpha((int) (hzVar2.f * f10));
+                                canvas.drawPoint(hzVar2.a, hzVar2.b, paint);
                             }
                             SecureRandom secureRandom = Utilities.b;
                             if (secureRandom.nextBoolean() && arrayList2.size() + 8 < 150) {
@@ -1043,24 +1042,24 @@ public class k extends FrameLayout implements te.b, a6, s4 {
                                     float cos = (float) Math.cos(nextInt2);
                                     float sin = (float) Math.sin(nextInt2);
                                     if (arrayList.isEmpty()) {
-                                        gzVar = new gz(hzVar);
+                                        hzVar = new hz(izVar);
                                     } else {
-                                        gzVar = (gz) arrayList.get(0);
+                                        hzVar = (hz) arrayList.get(0);
                                         arrayList.remove(0);
                                     }
-                                    gzVar.a = nextFloat;
-                                    gzVar.b = nextFloat2;
-                                    gzVar.c = cos * 1.5f;
-                                    gzVar.d = sin;
+                                    hzVar.a = nextFloat;
+                                    hzVar.b = nextFloat2;
+                                    hzVar.c = cos * 1.5f;
+                                    hzVar.d = sin;
                                     i11 = i13;
-                                    gzVar.j = i11;
+                                    hzVar.j = i11;
                                     float f14 = f11;
-                                    gzVar.f = f14;
-                                    gzVar.h = 0.0f;
-                                    gzVar.i = Math.max(f14, secureRandom2.nextFloat() * 1.5f);
-                                    gzVar.g = secureRandom2.nextInt(1000) + 1000;
-                                    gzVar.e = (secureRandom2.nextFloat() * 4.0f) + f13;
-                                    arrayList2.add(gzVar);
+                                    hzVar.f = f14;
+                                    hzVar.h = 0.0f;
+                                    hzVar.i = Math.max(f14, secureRandom2.nextFloat() * 1.5f);
+                                    hzVar.g = secureRandom2.nextInt(1000) + 1000;
+                                    hzVar.e = (secureRandom2.nextFloat() * 4.0f) + f13;
+                                    arrayList2.add(hzVar);
                                     i12++;
                                     drawChild = z12;
                                     z11 = z13;
@@ -1071,16 +1070,16 @@ public class k extends FrameLayout implements te.b, a6, s4 {
                             boolean z14 = z11;
                             z9 = drawChild;
                             long currentTimeMillis = System.currentTimeMillis();
-                            long min = Math.min(17L, currentTimeMillis - hzVar.a);
+                            long min = Math.min(17L, currentTimeMillis - izVar.a);
                             int size2 = arrayList2.size();
                             int i14 = 0;
                             while (i14 < size2) {
-                                gz gzVar3 = (gz) arrayList2.get(i14);
-                                float f15 = gzVar3.h;
-                                float f16 = gzVar3.g;
+                                hz hzVar3 = (hz) arrayList2.get(i14);
+                                float f15 = hzVar3.h;
+                                float f16 = hzVar3.g;
                                 if (f15 >= f16) {
                                     if (arrayList.size() < 40) {
-                                        arrayList.add(gzVar3);
+                                        arrayList.add(hzVar3);
                                     }
                                     arrayList2.remove(i14);
                                     i14--;
@@ -1088,22 +1087,22 @@ public class k extends FrameLayout implements te.b, a6, s4 {
                                     z10 = z14;
                                 } else {
                                     z10 = z14;
-                                    gzVar3.f = 1.0f - org.telegram.messenger.g0.F.getInterpolation(f15 / f16);
-                                    float f17 = gzVar3.a;
-                                    float f18 = gzVar3.c;
-                                    float f19 = gzVar3.e;
+                                    hzVar3.f = 1.0f - org.telegram.messenger.g0.F.getInterpolation(f15 / f16);
+                                    float f17 = hzVar3.a;
+                                    float f18 = hzVar3.c;
+                                    float f19 = hzVar3.e;
                                     float f20 = min;
-                                    gzVar3.a = a8.p0.f(f18 * f19, f20, 500.0f, f17);
-                                    float f21 = gzVar3.b;
-                                    float f22 = gzVar3.d;
-                                    gzVar3.b = (((f19 * f22) * f20) / 500.0f) + f21;
-                                    gzVar3.d = (f20 / 100.0f) + f22;
-                                    gzVar3.h += f20;
+                                    hzVar3.a = a8.p0.f(f18 * f19, f20, 500.0f, f17);
+                                    float f21 = hzVar3.b;
+                                    float f22 = hzVar3.d;
+                                    hzVar3.b = (((f19 * f22) * f20) / 500.0f) + f21;
+                                    hzVar3.d = (f20 / 100.0f) + f22;
+                                    hzVar3.h += f20;
                                 }
                                 i14++;
                                 z14 = z10;
                             }
-                            hzVar.a = currentTimeMillis;
+                            izVar.a = currentTimeMillis;
                             invalidate();
                             if (N) {
                                 canvas.restore();
@@ -1154,7 +1153,7 @@ public class k extends FrameLayout implements te.b, a6, s4 {
     }
 
     public final void g() {
-        if (hd.a0) {
+        if (id.a0) {
             return;
         }
         TransitionSet transitionSet = new TransitionSet();
@@ -1491,7 +1490,7 @@ public class k extends FrameLayout implements te.b, a6, s4 {
     @Override // android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         Drawable B0;
-        if (this.R && !this.i0 && !hd.a0 && motionEvent.getAction() == 0 && (B0 = k6.B0()) != null && B0.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+        if (this.R && !this.i0 && !id.a0 && motionEvent.getAction() == 0 && (B0 = k6.B0()) != null && B0.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
             this.V = true;
             cu0 cu0Var = this.S;
             k5[] k5VarArr = this.n;
@@ -1502,19 +1501,19 @@ public class k extends FrameLayout implements te.b, a6, s4 {
                 invalidate();
             } else {
                 this.S = null;
-                hz hzVar = new hz();
-                hzVar.c = new ArrayList();
-                hzVar.d = new ArrayList();
+                iz izVar = new iz();
+                izVar.c = new ArrayList();
+                izVar.d = new ArrayList();
                 Paint paint = new Paint(1);
-                hzVar.b = paint;
+                izVar.b = paint;
                 paint.setStrokeWidth(org.telegram.messenger.g0.L(1.5f));
                 paint.setColor(k6.x0(null, k6.A8, false) & (-1644826));
                 paint.setStrokeCap(Paint.Cap.ROUND);
                 paint.setStyle(Paint.Style.STROKE);
                 for (int i7 = 0; i7 < 20; i7++) {
-                    ((ArrayList) hzVar.d).add(new gz(hzVar));
+                    ((ArrayList) izVar.d).add(new hz(izVar));
                 }
-                this.T = hzVar;
+                this.T = izVar;
                 k5VarArr[0].invalidate();
                 invalidate();
             }
@@ -1846,7 +1845,7 @@ public class k extends FrameLayout implements te.b, a6, s4 {
         this.e.setPadding(org.telegram.messenger.g0.L(1.0f), 0, 0, 0);
         addView(this.e, ha.e(54, 54, 51));
         this.e.setOnClickListener(new b(this, 1));
-        this.e.setContentDescription(hd.M0(2131754878, null));
+        this.e.setContentDescription(id.M0(2131754878, null));
     }
 
     public final y q() {

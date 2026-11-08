@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class er implements Runnable {
     public final /* synthetic */ int a;
@@ -43,12 +43,12 @@ public final /* synthetic */ class er implements Runnable {
                 org.telegram.ui.ActionBar.u1[] u1VarArr = new org.telegram.ui.ActionBar.u1[1];
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context2, f6Var);
                 Object obj = null;
-                String M0 = org.telegram.messenger.hd.M0(2131751959, null);
+                String M0 = org.telegram.messenger.id.M0(2131751959, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
-                u1Var.T = org.telegram.messenger.g0.X2(org.telegram.messenger.hd.G(arrayList.size(), "CommunityBanWillRemoveFromChats", org.telegram.messenger.m5.s(i10, j3)));
-                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747830, null), null);
-                alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+                u1Var.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(arrayList.size(), "CommunityBanWillRemoveFromChats", org.telegram.messenger.m5.s(i10, j3)));
+                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747832, null), null);
+                alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
                 alertDialog$Builder.o(f10);
                 int size = arrayList.size();
                 int i11 = 0;
@@ -69,7 +69,7 @@ public final /* synthetic */ class er implements Runnable {
                         if (N0 != null) {
                             context = context2;
                             z9 = false;
-                            charSequence = org.telegram.messenger.hd.G(N0.participants_count, "Members", new Object[0]);
+                            charSequence = org.telegram.messenger.id.G(N0.participants_count, "Members", new Object[0]);
                         } else {
                             context = context2;
                             z9 = false;

@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class gf extends ze {
     public static q5 Z;
@@ -298,7 +298,7 @@ public final class gf extends ze {
         }
         Pair N0 = g0.N0(str2);
         Bitmap.CompressFormat compressFormat = Bitmap.CompressFormat.JPEG;
-        Bitmap q10 = fi.e7.q(new p1(this, 11), g0.Z0(true), g0.Z0(true), 0, true);
+        Bitmap q10 = fi.e7.q(new j1(this, 11), g0.Z0(true), g0.Z0(true), 0, true);
         if (this.h != null) {
             new File(this.h).delete();
             this.h = null;

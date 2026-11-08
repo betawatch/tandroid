@@ -9,7 +9,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class tp implements Runnable {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class tp implements Runnable {
                 p10 userConfig = messagesController.getUserConfig();
                 int i12 = this.c;
                 if (userConfig.g(i12)[0] != 2147483647L) {
-                    messagesController.U2(i12, 0, 10, false, new uk(messagesController, i12, i10));
+                    messagesController.U2(i12, 0, 10, false, new tk(messagesController, i12, i10));
                     return;
                 } else if (i12 != 1) {
                     messagesController.i4(i12);

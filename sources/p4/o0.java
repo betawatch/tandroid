@@ -2,7 +2,7 @@ package p4;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o0 implements y0, z0 {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class o0 implements y0, z0 {
     public void a(g1 g1Var, v vVar, List list) {
         switch (this.a) {
             case 1:
-                g1Var.b0(this.b.M0(vVar, g1Var, this.c), list);
+                g1Var.b0(this.b.m1(vVar, g1Var, this.c), list);
                 break;
             case 2:
                 c1 c1Var = this.b;
@@ -27,14 +27,14 @@ public final /* synthetic */ class o0 implements y0, z0 {
                 int size = list.size();
                 int i7 = this.c;
                 if (size != 1) {
-                    g1Var.s0(list, c1Var.M0(vVar, g1Var, i7), c1Var.M0(vVar, g1Var, i7 + 1));
+                    g1Var.s0(list, c1Var.m1(vVar, g1Var, i7), c1Var.m1(vVar, g1Var, i7 + 1));
                     break;
                 } else {
-                    g1Var.o(c1Var.M0(vVar, g1Var, i7), (e2.l0) list.get(0));
+                    g1Var.o(c1Var.m1(vVar, g1Var, i7), (e2.l0) list.get(0));
                     break;
                 }
             default:
-                g1Var.b0(this.b.M0(vVar, g1Var, this.c), list);
+                g1Var.b0(this.b.m1(vVar, g1Var, this.c), list);
                 break;
         }
     }
@@ -43,10 +43,10 @@ public final /* synthetic */ class o0 implements y0, z0 {
     public void c(g1 g1Var, v vVar) {
         switch (this.a) {
             case 0:
-                g1Var.Y(this.b.M0(vVar, g1Var, this.c));
+                g1Var.Y(this.b.m1(vVar, g1Var, this.c));
                 break;
             default:
-                g1Var.Q(this.b.M0(vVar, g1Var, this.c));
+                g1Var.Q(this.b.m1(vVar, g1Var, this.c));
                 break;
         }
     }

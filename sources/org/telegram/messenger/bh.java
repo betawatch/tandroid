@@ -6,7 +6,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bh implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -125,7 +125,7 @@ public final /* synthetic */ class bh implements RequestDelegate {
                                     qpVar2.A2 = 1;
                                     qpVar2.C2 = tL_help_promoData.psa_type;
                                 }
-                                qpVar2.D2 = rf.b.q(this.c, this.d);
+                                qpVar2.D2 = rf.b.r(this.c, this.d);
                                 qpVar2.B2 = tL_help_promoData.psa_message;
                                 qpVar2.t2 = tL_help_promoData.expires;
                                 SharedPreferences.Editor edit = qp.e1().edit();
@@ -147,7 +147,7 @@ public final /* synthetic */ class bh implements RequestDelegate {
                                 edit.putInt("nextPromoInfoCheckTime", qpVar2.t2);
                                 edit.commit();
                                 if (!z10) {
-                                    g0.h3(new ik(qpVar2, j3, tL_help_promoData, i10, 4));
+                                    g0.h3(new hk(qpVar2, j3, tL_help_promoData, i10, 4));
                                 }
                                 z9 = z10;
                             }
@@ -156,7 +156,7 @@ public final /* synthetic */ class bh implements RequestDelegate {
                         qpVar2.z2 = j3;
                         if (!tL_help_promoData.proxy) {
                         }
-                        qpVar2.D2 = rf.b.q(this.c, this.d);
+                        qpVar2.D2 = rf.b.r(this.c, this.d);
                         qpVar2.B2 = tL_help_promoData.psa_message;
                         qpVar2.t2 = tL_help_promoData.expires;
                         SharedPreferences.Editor edit2 = qp.e1().edit();

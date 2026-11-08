@@ -17,7 +17,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.Calendar;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.p10;
@@ -36,7 +36,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.ui;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ra extends View implements ls {
     public static final /* synthetic */ int P = 0;
@@ -118,18 +118,18 @@ public final class ra extends View implements ls {
         this.d = my0Var;
         this.K = my0Var.i() + org.telegram.messenger.g0.L(3.0f) + this.K;
         int i10 = this.a;
-        my0 my0Var2 = new my0(hd.M0(org.telegram.messenger.g5.r(i10).x(j3) ? 2131751801 : 2131751800, null), 14.0f, null);
+        my0 my0Var2 = new my0(id.M0(org.telegram.messenger.g5.r(i10).x(j3) ? 2131751801 : 2131751800, null), 14.0f, null);
         this.e = my0Var2;
         this.K = my0Var2.i() + org.telegram.messenger.g0.L(11.0f) + this.K;
         if (peerSettings != null && peerSettings.phone_country != null) {
-            String M0 = hd.M0(2131751797, null);
+            String M0 = id.M0(2131751797, null);
             String str = peerSettings.phone_country;
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            String F0 = hd.F0(str);
+            String F0 = id.F0(str);
             if (!TextUtils.isEmpty(F0)) {
                 spannableStringBuilder.append((CharSequence) F0).append((CharSequence) " ");
             }
-            String i02 = hd.i0(2131751796, str);
+            String i02 = id.i0(2131751796, str);
             if (TextUtils.isEmpty(i02)) {
                 spannableStringBuilder.append((CharSequence) str);
             } else {
@@ -140,7 +140,7 @@ public final class ra extends View implements ls {
             a(org.telegram.messenger.i6.m(spannableStringBuilder, textPaint.getFontMetricsInt(), true, null, 0), M0, false);
         }
         if (peerSettings != null && peerSettings.registration_month != null) {
-            String M02 = hd.M0(2131751795, null);
+            String M02 = id.M0(2131751795, null);
             String str2 = peerSettings.registration_month;
             String[] split = str2.split("\\.");
             if (split.length == 2) {
@@ -149,7 +149,7 @@ public final class ra extends View implements ls {
                 Calendar calendar = Calendar.getInstance();
                 calendar.set(parseInt2, parseInt - 1, 1, 0, 0, 0);
                 calendar.set(14, 0);
-                str2 = hd.e0(calendar.getTimeInMillis() / 1000, true);
+                str2 = id.e0(calendar.getTimeInMillis() / 1000, true);
             }
             a(str2, M02, false);
         }
@@ -163,7 +163,7 @@ public final class ra extends View implements ls {
             this.J = P0;
             int max = Math.max(b22.common_chats_count, P0.g);
             if (max > 0) {
-                this.n = a(hd.G(max, "Groups", new Object[0]), hd.M0(2131751802, null), true);
+                this.n = a(id.G(max, "Groups", new Object[0]), id.M0(2131751802, null), true);
                 int min = Math.min(3, this.J.e.size());
                 org.telegram.ui.Components.y8 y8Var = this.G;
                 y8Var.i(min);
@@ -193,7 +193,7 @@ public final class ra extends View implements ls {
             wpVar.r = L;
             wpVar.s = L2;
             spannableStringBuilder2.setSpan(wpVar, 0, 1, 33);
-            spannableStringBuilder2.append((CharSequence) hd.M0(2131751798, null));
+            spannableStringBuilder2.append((CharSequence) id.M0(2131751798, null));
             this.f = new my0(spannableStringBuilder2, 12.0f, null);
             this.K = this.f.i() + org.telegram.messenger.g0.L(12.0f) + org.telegram.messenger.g0.L(15.33f) + this.K;
         } else if (b22 == null || (botVerification = b22.bot_verification) == null) {
@@ -253,7 +253,7 @@ public final class ra extends View implements ls {
                 b(this.c, qp.s1(i12).C1(this.c));
                 requestLayout();
             } else {
-                qaVar.b = new my0(hd.G(i13, "Groups", new Object[0]), 12.0f, org.telegram.messenger.g0.o());
+                qaVar.b = new my0(id.G(i13, "Groups", new Object[0]), 12.0f, org.telegram.messenger.g0.o());
                 int min = Math.min(3, this.J.e.size());
                 org.telegram.ui.Components.y8 y8Var = this.G;
                 y8Var.i(min);

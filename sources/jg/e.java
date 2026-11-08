@@ -15,7 +15,7 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.d5;
 import org.telegram.messenger.g5;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
@@ -37,7 +37,7 @@ import org.telegram.ui.Components.tm;
 import org.telegram.ui.Components.xi0;
 import org.telegram.ui.Components.yp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class e extends kj0 {
     public ArrayList D;
@@ -435,13 +435,13 @@ public abstract class e extends kj0 {
                 x3 x3Var = (x3) view;
                 int i15 = this.F;
                 if (i15 == 0) {
-                    x3Var.setText(hd.M0(2131751780, null));
+                    x3Var.setText(id.M0(2131751780, null));
                     return;
                 } else if (i15 == 1) {
-                    x3Var.setText(hd.M0(2131745285, null));
+                    x3Var.setText(id.M0(2131745287, null));
                     return;
                 } else {
-                    x3Var.setText(hd.M0(2131745286, null));
+                    x3Var.setText(id.M0(2131745288, null));
                     return;
                 }
             }
@@ -463,13 +463,13 @@ public abstract class e extends kj0 {
             }
             n4 n4Var = (n4) view;
             if (this.K && i10 == 1 && i7 == 1) {
-                n4Var.setText(hd.M0(2131749150, null));
+                n4Var.setText(id.M0(2131749152, null));
                 return;
             } else if (this.F == 1) {
-                n4Var.setText(hd.M0(2131745285, null));
+                n4Var.setText(id.M0(2131745287, null));
                 return;
             } else {
-                n4Var.setText(hd.M0(2131745286, null));
+                n4Var.setText(id.M0(2131745288, null));
                 return;
             }
         }
@@ -499,11 +499,11 @@ public abstract class e extends kj0 {
         }
         if (z10) {
             if (i10 == 0) {
-                m8Var.r(hd.M0(2131749150, null), "", false, R.drawable.settings_invite, -14899731, -15431455, false);
+                m8Var.r(id.M0(2131749152, null), "", false, R.drawable.settings_invite, -14899731, -15431455, false);
                 return;
             } else {
                 if (i10 == 1) {
-                    m8Var.r(hd.M0(2131746368, null), "", false, R.drawable.settings_calls, -11154873, -14175180, false);
+                    m8Var.r(id.M0(2131746370, null), "", false, R.drawable.settings_calls, -11154873, -14175180, false);
                     return;
                 }
                 return;
@@ -511,17 +511,17 @@ public abstract class e extends kj0 {
         }
         if (z9) {
             if (this.G) {
-                m8Var.o(R.drawable.msg_link2, hd.M0(2131752402, null), false);
+                m8Var.o(R.drawable.msg_link2, id.M0(2131752402, null), false);
                 return;
             } else {
-                m8Var.o(R.drawable.msg_link2, hd.M0(2131749109, null), false);
+                m8Var.o(R.drawable.msg_link2, id.M0(2131749111, null), false);
                 return;
             }
         }
         if (i10 == 0) {
-            m8Var.r(hd.M0(2131748272, null), "", false, R.drawable.settings_group, -14899731, -15431455, false);
+            m8Var.r(id.M0(2131748274, null), "", false, R.drawable.settings_group, -14899731, -15431455, false);
         } else if (i10 == 1) {
-            m8Var.r(hd.M0(2131748285, null), "", false, R.drawable.settings_channel, -11154873, -14175180, false);
+            m8Var.r(id.M0(2131748287, null), "", false, R.drawable.settings_channel, -11154873, -14175180, false);
         }
     }
 
@@ -600,7 +600,7 @@ public abstract class e extends kj0 {
             view = view2;
         } else {
             View e3Var = new e3(context, null);
-            e3Var.setPadding(org.telegram.messenger.g0.L(hd.a0 ? 28.0f : 72.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(hd.a0 ? 72.0f : 28.0f), org.telegram.messenger.g0.L(8.0f));
+            e3Var.setPadding(org.telegram.messenger.g0.L(id.a0 ? 28.0f : 72.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(id.a0 ? 72.0f : 28.0f), org.telegram.messenger.g0.L(8.0f));
             view = e3Var;
         }
         return new xi0(view);

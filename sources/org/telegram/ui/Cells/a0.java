@@ -3,7 +3,7 @@ package org.telegram.ui.Cells;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLObject;
@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.g01;
 import org.telegram.ui.Components.my0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class a0 extends View {
     public final org.telegram.ui.ActionBar.f6 a;
@@ -72,7 +72,7 @@ public abstract class a0 extends View {
         my0 my0Var2 = b0Var.e;
         my0Var2.m(1);
         my0Var2.p(9999.0f);
-        my0Var2.q(hd.a0(null, null, 2131753070, t10.p(a22)));
+        my0Var2.q(id.a0(null, null, 2131753070, t10.p(a22)));
         float b10 = (my0Var2.b() / 2.0f) * 1.2f;
         my0Var2.m(4);
         float f10 = (int) (org.telegram.messenger.g0.q.x * 0.95f);

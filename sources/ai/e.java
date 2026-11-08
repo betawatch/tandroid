@@ -39,7 +39,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.f10;
 import org.telegram.messenger.gf;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.v10;
@@ -54,9 +54,9 @@ import org.telegram.ui.Components.j6;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.m20;
 import org.telegram.ui.Components.x31;
-import org.telegram.ui.Components.ys;
+import org.telegram.ui.Components.zs;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements v10 {
     public final /* synthetic */ int a;
@@ -135,7 +135,7 @@ public final /* synthetic */ class e implements v10 {
                     arrayList3.add(K);
                 }
                 if (yVar.h) {
-                    arrayList3.add(x31.e(-1, hd.M0(2131746053, null)));
+                    arrayList3.add(x31.e(-1, id.M0(2131746055, null)));
                     break;
                 } else if (!yVar.f) {
                     for (int i14 = 0; i14 < 3; i14++) {
@@ -148,10 +148,10 @@ public final /* synthetic */ class e implements v10 {
                 m20 m20Var = (m20) obj3;
                 ArrayList arrayList5 = (ArrayList) obj;
                 arrayList5.add(x31.k(m20Var.Q1));
-                arrayList5.add(bi.p0.i(hd.M0(2131750868, null), hd.M0(2131750869, null), R.drawable.msg_gift_premium));
-                arrayList5.add(bi.p0.i(hd.M0(2131750866, null), org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(hd.M0(2131750867, null), new a3.f(m20Var, 16)), true), R.drawable.msg_bot));
-                arrayList5.add(bi.p0.i(hd.M0(2131750864, null), hd.M0(2131750865, null), R.drawable.menu_unlock));
-                arrayList5.add(bi.p0.i(hd.M0(2131750862, null), hd.M0(2131750863, null), R.drawable.menu_feature_paid));
+                arrayList5.add(bi.p0.i(id.M0(2131750868, null), id.M0(2131750869, null), R.drawable.msg_gift_premium));
+                arrayList5.add(bi.p0.i(id.M0(2131750866, null), org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(id.M0(2131750867, null), new a3.f(m20Var, 16)), true), R.drawable.msg_bot));
+                arrayList5.add(bi.p0.i(id.M0(2131750864, null), id.M0(2131750865, null), R.drawable.menu_unlock));
+                arrayList5.add(bi.p0.i(id.M0(2131750862, null), id.M0(2131750863, null), R.drawable.menu_feature_paid));
                 arrayList5.add(x31.D(org.telegram.messenger.g0.L(68.0f)));
                 break;
             case 4:
@@ -183,7 +183,7 @@ public final /* synthetic */ class e implements v10 {
                     aVar.c();
                     int i15 = w1Var.b2.s;
                     if (i15 == 0) {
-                        arrayList7.add(x31.g(org.telegram.messenger.g0.X2(hd.H(',', z10 ? "GiftPreviewCountModelsCrafting" : "GiftPreviewCountModels", arrayList11.size()))));
+                        arrayList7.add(x31.g(org.telegram.messenger.g0.X2(id.H(',', z10 ? "GiftPreviewCountModelsCrafting" : "GiftPreviewCountModels", arrayList11.size()))));
                         int size3 = arrayList11.size();
                         int i16 = 0;
                         while (i16 < size3) {
@@ -192,7 +192,7 @@ public final /* synthetic */ class e implements v10 {
                             arrayList7.add(t1.i(i15, new r1((TL_stars.starGiftAttributeBackdrop) aVar3.c(), (TL_stars.starGiftAttributePattern) aVar2.c(), (TL_stars.starGiftAttributeModel) obj6)));
                         }
                         if (!arrayList8.isEmpty()) {
-                            arrayList7.add(x31.g(org.telegram.messenger.g0.X2(hd.H(',', z10 ? "GiftPreviewCountModelsCrafting2" : "GiftPreviewCountModels", arrayList11.size()))));
+                            arrayList7.add(x31.g(org.telegram.messenger.g0.X2(id.H(',', z10 ? "GiftPreviewCountModelsCrafting2" : "GiftPreviewCountModels", arrayList11.size()))));
                             int size4 = arrayList8.size();
                             int i17 = 0;
                             while (i17 < size4) {
@@ -203,7 +203,7 @@ public final /* synthetic */ class e implements v10 {
                             break;
                         }
                     } else if (i15 == 1) {
-                        arrayList7.add(x31.g(org.telegram.messenger.g0.X2(hd.H(',', "GiftPreviewCountBackdrops", arrayList10.size()))));
+                        arrayList7.add(x31.g(org.telegram.messenger.g0.X2(id.H(',', "GiftPreviewCountBackdrops", arrayList10.size()))));
                         int size5 = arrayList10.size();
                         int i18 = 0;
                         while (i18 < size5) {
@@ -213,7 +213,7 @@ public final /* synthetic */ class e implements v10 {
                         }
                         break;
                     } else if (i15 == 2) {
-                        arrayList7.add(x31.g(org.telegram.messenger.g0.X2(hd.H(',', "GiftPreviewCountSymbols", arrayList9.size()))));
+                        arrayList7.add(x31.g(org.telegram.messenger.g0.X2(id.H(',', "GiftPreviewCountSymbols", arrayList9.size()))));
                         int size6 = arrayList9.size();
                         int i19 = 0;
                         while (i19 < size6) {
@@ -231,7 +231,7 @@ public final /* synthetic */ class e implements v10 {
                 if (wallettransaction != null) {
                     long j3 = wallettransaction.fee;
                     if (j3 > 0) {
-                        textView.setText(hd.V(null, null, 2131743073, org.telegram.ui.Wallet.n0.s(j3, false)));
+                        textView.setText(id.V(null, null, 2131743075, org.telegram.ui.Wallet.m0.s(j3, false)));
                         break;
                     }
                 }
@@ -253,7 +253,7 @@ public final /* synthetic */ class e implements v10 {
                 oc ocVar = (oc) obj3;
                 ArrayList arrayList12 = (ArrayList) obj;
                 arrayList12.add(x31.k(ocVar.P1));
-                arrayList12.add(x31.u(hd.M0(2131744215, null)));
+                arrayList12.add(x31.u(id.M0(2131744217, null)));
                 ArrayList u10 = ea.y(ocVar.a, false).u();
                 if (u10 == null || u10.isEmpty()) {
                     arrayList12.add(x31.p(31));
@@ -272,7 +272,7 @@ public final /* synthetic */ class e implements v10 {
                             K2.z = i20;
                             long j10 = tL_starsGiftOption.stars;
                             K2.B = j10;
-                            K2.l = hd.H(' ', "StarsCount", (int) j10);
+                            K2.l = id.H(' ', "StarsCount", (int) j10);
                             K2.m = tL_starsGiftOption.loadingStorePrice ? null : org.telegram.messenger.r1.i().f(tL_starsGiftOption.amount, tL_starsGiftOption.currency);
                             K2.G = tL_starsGiftOption;
                             arrayList12.add(K2);
@@ -283,7 +283,7 @@ public final /* synthetic */ class e implements v10 {
                     }
                     boolean z11 = ocVar.U1;
                     if (!z11 && i21 > 0) {
-                        String M0 = hd.M0(z11 ? 2131747844 : 2131747835, null);
+                        String M0 = id.M0(z11 ? 2131747846 : 2131747837, null);
                         boolean z12 = !ocVar.U1;
                         int i25 = jc.b;
                         x31 K3 = x31.K(jc.class);
@@ -304,7 +304,7 @@ public final /* synthetic */ class e implements v10 {
                 arrayList13.add(x31.m(aVar4));
                 boolean z13 = tcVar.V1;
                 if (z13) {
-                    arrayList13.add(x31.u(hd.M0(2131744215, null)));
+                    arrayList13.add(x31.u(id.M0(2131744217, null)));
                 }
                 ArrayList z14 = ea.y(tcVar.a, false).z();
                 if (z13) {
@@ -333,7 +333,7 @@ public final /* synthetic */ class e implements v10 {
                         if (i26 < 3) {
                             arrayList13.clear();
                             arrayList13.add(x31.k(aVar4));
-                            arrayList13.add(x31.u(hd.M0(2131744215, null)));
+                            arrayList13.add(x31.u(id.M0(2131744217, null)));
                             int i30 = 0;
                             for (int i31 = 0; i31 < z14.size(); i31++) {
                                 TL_stars.TL_starsTopupOption tL_starsTopupOption2 = (TL_stars.TL_starsTopupOption) z14.get(i31);
@@ -353,7 +353,7 @@ public final /* synthetic */ class e implements v10 {
                                 }
                                 boolean z16 = tcVar.X1;
                                 if (!z16 && i27 > 0) {
-                                    String M02 = hd.M0(z16 ? 2131747844 : 2131747835, null);
+                                    String M02 = id.M0(z16 ? 2131747846 : 2131747837, null);
                                     boolean z17 = !tcVar.X1;
                                     int i34 = jc.b;
                                     x31 K4 = x31.K(jc.class);
@@ -369,7 +369,7 @@ public final /* synthetic */ class e implements v10 {
                         } else if (i26 > 0) {
                             boolean z18 = tcVar.X1;
                             if (!z18 && i27 > 0) {
-                                String M03 = hd.M0(z18 ? 2131747844 : 2131747835, null);
+                                String M03 = id.M0(z18 ? 2131747846 : 2131747837, null);
                                 boolean z19 = !tcVar.X1;
                                 int i35 = jc.b;
                                 x31 K5 = x31.K(jc.class);
@@ -395,7 +395,7 @@ public final /* synthetic */ class e implements v10 {
             case 11:
                 uc ucVar = (uc) obj3;
                 ArrayList arrayList14 = (ArrayList) obj;
-                arrayList14.add(x31.u(hd.M0(2131744215, null)));
+                arrayList14.add(x31.u(id.M0(2131744217, null)));
                 ArrayList z20 = ea.y(ucVar.a, false).z();
                 if (z20 == null || z20.isEmpty()) {
                     arrayList14.add(x31.p(31));
@@ -418,7 +418,7 @@ public final /* synthetic */ class e implements v10 {
                     }
                     boolean z21 = ucVar.R1;
                     if (!z21 && i38 > 0) {
-                        String M04 = hd.M0(z21 ? 2131747844 : 2131747835, null);
+                        String M04 = id.M0(z21 ? 2131747846 : 2131747837, null);
                         boolean z22 = !ucVar.R1;
                         int i40 = jc.b;
                         x31 K6 = x31.K(jc.class);
@@ -541,7 +541,7 @@ public final /* synthetic */ class e implements v10 {
                         runnable.run();
                         break;
                     } else {
-                        ys editText = gVar.getEditText();
+                        zs editText = gVar.getEditText();
                         canvas.saveLayerAlpha(0.0f, 0.0f, editText.getWidth(), editText.getHeight(), qs.e4, 31);
                         runnable.run();
                         canvas.drawRect(0.0f, 0.0f, editText.getWidth(), editText.getHeight(), c11);
@@ -598,7 +598,7 @@ public final /* synthetic */ class e implements v10 {
                 }
                 arrayList21.add(x31.k(m7Var.Q1));
                 arrayList21.add(x31.B(1, null));
-                x31 i49 = x31.i(2, hd.M0(2131744638, null));
+                x31 i49 = x31.i(2, id.M0(2131744640, null));
                 i49.L(m7Var.e2);
                 arrayList21.add(i49);
                 if (m7Var.e2) {
@@ -1083,7 +1083,7 @@ public final /* synthetic */ class e implements v10 {
                     sb2.append(upperCase.toUpperCase());
                 }
                 if (sb2.length() <= 0) {
-                    sb2.append(hd.M0(2131753975, null));
+                    sb2.append(id.M0(2131753975, null));
                 }
                 j6Var.setText(sb2);
                 break;
@@ -1091,7 +1091,7 @@ public final /* synthetic */ class e implements v10 {
                 hi.i1 i1Var = (hi.i1) obj3;
                 ArrayList arrayList23 = (ArrayList) obj;
                 arrayList23.add(x31.j(-1, i1Var.S1));
-                arrayList23.add(x31.C(org.telegram.messenger.g0.X2(hd.a0(null, null, 2131752980, i1Var.Q1))));
+                arrayList23.add(x31.C(org.telegram.messenger.g0.X2(id.a0(null, null, 2131752980, i1Var.Q1))));
                 break;
         }
     }

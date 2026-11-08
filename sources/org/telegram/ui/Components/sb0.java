@@ -13,7 +13,7 @@ import java.util.HashMap;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class sb0 extends FrameLayout {
     public Bitmap a;
@@ -41,7 +41,7 @@ public final class sb0 extends FrameLayout {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:20:0x01d3  */
     /* JADX WARN: Removed duplicated region for block: B:23:0x01ef A[SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r6v1, types: [android.view.View, android.widget.TextView, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ct, tg.b] */
+    /* JADX WARN: Type inference failed for: r6v1, types: [android.view.View, android.widget.TextView, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.dt, tg.b] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -117,7 +117,7 @@ public final class sb0 extends FrameLayout {
                     int i16 = h20Var.p;
                     if (i16 != 1) {
                         i10 = 3;
-                        if (i16 == i7 ? org.telegram.messenger.hd.a0 : !org.telegram.messenger.hd.a0) {
+                        if (i16 == i7 ? org.telegram.messenger.id.a0 : !org.telegram.messenger.id.a0) {
                             i10 = 2;
                         }
                     } else {

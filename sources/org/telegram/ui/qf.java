@@ -9,7 +9,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qf implements Runnable {
     public final /* synthetic */ int a;
@@ -85,10 +85,10 @@ public final /* synthetic */ class qf implements Runnable {
                 an anVar5 = (an) obj2;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
                 if (tL_error.text.startsWith("SLOWMODE_WAIT_")) {
-                    org.telegram.ui.Components.v4.t0(org.telegram.messenger.hd.M0(2131745303, null), anVar5);
+                    org.telegram.ui.Components.v4.t0(org.telegram.messenger.id.M0(2131745305, null), anVar5);
                     break;
                 } else if (tL_error.text.equals("CHAT_SEND_MEDIA_FORBIDDEN")) {
-                    org.telegram.ui.Components.v4.t0(org.telegram.messenger.hd.M0(2131753955, null), anVar5);
+                    org.telegram.ui.Components.v4.t0(org.telegram.messenger.id.M0(2131753955, null), anVar5);
                     break;
                 } else {
                     org.telegram.ui.Components.v4.t0(tL_error.text, anVar5);
@@ -122,7 +122,7 @@ public final /* synthetic */ class qf implements Runnable {
                     anVar6.Y0.l(anVar6.K);
                     anVar6.Y0.s(16.0f);
                     anVar6.Y0.r(true);
-                    anVar6.Y0.u(org.telegram.messenger.hd.M0(2131753102, null));
+                    anVar6.Y0.u(org.telegram.messenger.id.M0(2131753102, null));
                     anVar6.Y0.o(0.0f, 96.0f);
                     anVar6.Y0.setTranslationY(org.telegram.messenger.g0.L(10.0f) + ((view.getTop() - anVar6.Ta) - anVar6.l1.getHeight()));
                     anVar6.l1.addView(anVar6.Y0, c8.ha.e(-1, 100, 87));
@@ -169,7 +169,7 @@ public final /* synthetic */ class qf implements Runnable {
                 Long l10 = (Long) obj;
                 an anVar10 = ((fm) obj2).S2.a;
                 String str = (l10.longValue() >= 0 || (M0 = anVar10.getMessagesController().M0(Long.valueOf(-l10.longValue()))) == null) ? "" : M0.title;
-                org.telegram.messenger.camera.q.s(TextUtils.isEmpty(str) ? org.telegram.messenger.hd.M0(2131746183, null) : org.telegram.messenger.hd.a0(null, null, 2131746184, str), org.telegram.ui.Components.hc.a0(anVar10), R.raw.contact_check, 36);
+                org.telegram.messenger.camera.q.s(TextUtils.isEmpty(str) ? org.telegram.messenger.id.M0(2131746185, null) : org.telegram.messenger.id.a0(null, null, 2131746186, str), org.telegram.ui.Components.hc.a0(anVar10), R.raw.contact_check, 36);
                 break;
             case 19:
                 pn pnVar = (pn) obj2;

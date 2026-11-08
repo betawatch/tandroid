@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class yt implements x5 {
     public static ColorMatrixColorFilter U;
@@ -99,10 +99,10 @@ public final class yt implements x5 {
     public final boolean a() {
         if (this.D) {
             int i7 = iz.a;
-            return rc.e(1024);
+            return sc.e(1024);
         }
         int i10 = iz.a;
-        return rc.e(2048);
+        return sc.e(2048);
     }
 
     public final void b(boolean z9) {
@@ -254,8 +254,8 @@ public final class yt implements x5 {
     }
 
     public final CharSequence f() {
-        String M0 = hd.M0(this.y ? 2131753933 : 2131753948, null);
-        return (!h() || this.T.b()) ? M0 : TextUtils.concat(M0, ", ", hd.M0(2131745263, null));
+        String M0 = id.M0(this.y ? 2131753933 : 2131753948, null);
+        return (!h() || this.T.b()) ? M0 : TextUtils.concat(M0, ", ", id.M0(2131745265, null));
     }
 
     public final boolean g(float f10, float f11) {

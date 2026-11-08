@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class t4 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -52,11 +52,11 @@ public final class t4 extends FrameLayout {
         this.b = i7;
         ((sg.m) this.e).c = i7;
         if (i7 == 0) {
-            textView.setText(org.telegram.messenger.hd.M0(2131747663, null).toUpperCase());
+            textView.setText(org.telegram.messenger.id.M0(2131747665, null).toUpperCase());
         } else if (i7 == 1) {
-            textView.setText(org.telegram.messenger.hd.M0(2131747665, null).toUpperCase());
+            textView.setText(org.telegram.messenger.id.M0(2131747667, null).toUpperCase());
         } else if (i7 == 2) {
-            textView.setText(org.telegram.messenger.hd.M0(2131747666, null).toUpperCase());
+            textView.setText(org.telegram.messenger.id.M0(2131747668, null).toUpperCase());
         }
         b();
     }
@@ -173,18 +173,18 @@ public final class t4 extends FrameLayout {
                 break;
             case 1:
                 Paint paint = (Paint) obj;
-                u71 u71Var = (u71) this.h;
-                v61 v61Var = u71Var.a;
+                v71 v71Var = (v71) this.h;
+                w61 w61Var = v71Var.a;
                 if (this.c) {
                     RectF rectF = org.telegram.messenger.g0.P;
                     rectF.set(0.0f, 0.0f, getWidth(), getHeight());
                     canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.qs.e4, 31);
-                    org.telegram.ui.ActionBar.k6.t(this, u71Var.y0, v61Var);
-                    Paint d = v61Var.d("paintChatActionBackground");
+                    org.telegram.ui.ActionBar.k6.t(this, v71Var.y0, w61Var);
+                    Paint d = w61Var.d("paintChatActionBackground");
                     ColorFilter colorFilter = d.getColorFilter();
                     d.setColorFilter((ColorMatrixColorFilter) this.f);
-                    k71 k71Var = u71Var.y0;
-                    if (k71Var != null && (k71Var.getBackground() instanceof org.telegram.ui.Components.qa0) && u71Var.m1 < 0.0f) {
+                    l71 l71Var = v71Var.y0;
+                    if (l71Var != null && (l71Var.getBackground() instanceof org.telegram.ui.Components.qa0) && v71Var.m1 < 0.0f) {
                         f10 = 0.33f;
                     }
                     int alpha = d.getAlpha();
@@ -192,10 +192,10 @@ public final class t4 extends FrameLayout {
                     canvas.drawRect(rectF, d);
                     d.setAlpha(alpha);
                     d.setColorFilter(colorFilter);
-                    if (u71Var.N1) {
-                        float f11 = u71Var.o1;
+                    if (v71Var.N1) {
+                        float f11 = v71Var.o1;
                         if (f11 > 0.0f) {
-                            canvas.drawColor(i0.a.o(-16777216, (int) (f11 * 255.0f * u71Var.p1)));
+                            canvas.drawColor(i0.a.o(-16777216, (int) (f11 * 255.0f * v71Var.p1)));
                         }
                     }
                     canvas.save();
@@ -278,7 +278,7 @@ public final class t4 extends FrameLayout {
         editTextBoldCursor.setGravity(17);
         editTextBoldCursor.setSingleLine();
         editTextBoldCursor.setImeOptions(6);
-        editTextBoldCursor.setImeActionLabel(org.telegram.messenger.hd.M0(2131751355, null), 6);
+        editTextBoldCursor.setImeActionLabel(org.telegram.messenger.id.M0(2131751355, null), 6);
         editTextBoldCursor.setInputType(2);
         editTextBoldCursor.setTypeface(org.telegram.messenger.g0.o());
         editTextBoldCursor.addTextChangedListener(new fi.h7(this));
@@ -288,9 +288,9 @@ public final class t4 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t4(u71 u71Var, Context context, boolean z9) {
+    public t4(v71 v71Var, Context context, boolean z9) {
         super(context);
-        this.h = u71Var;
+        this.h = v71Var;
         this.c = z9;
         Paint paint = new Paint(3);
         this.e = paint;

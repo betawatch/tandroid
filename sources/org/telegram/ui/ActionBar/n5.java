@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.jl;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.ui;
-import org.telegram.messenger.vj;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -17,7 +17,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.uo;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n5 implements Runnable {
     public final /* synthetic */ int a;
@@ -87,7 +87,7 @@ public final /* synthetic */ class n5 implements Runnable {
                                 if (j6Var3 == null) {
                                     j6Var3 = new j6();
                                     j6Var3.E = i10;
-                                    j6Var3.b = new File(org.telegram.messenger.t0.h(), rf.b.q(str, ".attheme")).getAbsolutePath();
+                                    j6Var3.b = new File(org.telegram.messenger.t0.h(), rf.b.r(str, ".attheme")).getAbsolutePath();
                                     k6.F.add(j6Var3);
                                     k6.G.add(j6Var3);
                                     z11 = true;
@@ -183,7 +183,7 @@ public final /* synthetic */ class n5 implements Runnable {
                         }
                     }
                     k6.y1(true, false);
-                    Collections.sort(k6.F, new vj(25));
+                    Collections.sort(k6.F, new jl(25));
                     if (z11) {
                         qs.e().k(qs.o4, new Object[0]);
                     }

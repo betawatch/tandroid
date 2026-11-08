@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import c8.j9;
 import java.util.ArrayList;
 import org.telegram.messenger.gz;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.ConnectionsManager;
@@ -17,7 +17,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.oy0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x1 implements Runnable {
     public final /* synthetic */ int a;
@@ -130,7 +130,7 @@ public final /* synthetic */ class x1 implements Runnable {
                 ui.b0(a3Var.H).y0(a3Var.I, ui.c2, null);
                 break;
             case 12:
-                vf.c.t(a3Var.getContext(), hd.M0(2131752893, null));
+                vf.c.t(a3Var.getContext(), id.M0(2131752893, null));
                 break;
             case 13:
                 int i13 = a3Var.H;

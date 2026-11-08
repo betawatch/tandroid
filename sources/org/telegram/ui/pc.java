@@ -11,14 +11,14 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class pc extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final int a;
     public final org.telegram.ui.ActionBar.f6 b;
     public final ArrayList c;
     public final e61 d;
-    public final org.telegram.ui.Components.lz e;
+    public final org.telegram.ui.Components.mz e;
     public boolean f;
     public final nc h;
     public boolean n;
@@ -35,11 +35,11 @@ public final class pc extends FrameLayout implements org.telegram.ui.ActionBar.a
         this.y = new HashMap();
         this.a = i7;
         this.b = f6Var;
-        org.telegram.ui.Components.lz lzVar = new org.telegram.ui.Components.lz(getContext(), f6Var);
-        this.e = lzVar;
-        lzVar.setViewType(14);
-        lzVar.setVisibility(0);
-        addView(lzVar, c8.ha.d(-1, 104.0f, 8388611, 16.0f, 13.0f, 16.0f, 6.0f));
+        org.telegram.ui.Components.mz mzVar = new org.telegram.ui.Components.mz(getContext(), f6Var);
+        this.e = mzVar;
+        mzVar.setViewType(14);
+        mzVar.setVisibility(0);
+        addView(mzVar, c8.ha.d(-1, 104.0f, 8388611, 16.0f, 13.0f, 16.0f, 6.0f));
         e61 e61Var = new e61(4, activity, f6Var);
         this.d = e61Var;
         e61Var.setClipToPadding(false);
@@ -61,9 +61,9 @@ public final class pc extends FrameLayout implements org.telegram.ui.ActionBar.a
         f10.l(false);
         f10.q(new oc(this, i7), true);
         if (this.n) {
-            org.telegram.messenger.g0.Z3(lzVar, false, 1.0f, true, false);
+            org.telegram.messenger.g0.Z3(mzVar, false, 1.0f, true, false);
         } else {
-            org.telegram.messenger.g0.Z3(lzVar, true, 1.0f, true, false);
+            org.telegram.messenger.g0.Z3(mzVar, true, 1.0f, true, false);
         }
     }
 

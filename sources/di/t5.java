@@ -8,7 +8,7 @@ import android.view.View;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.pt;
@@ -27,9 +27,9 @@ import org.telegram.ui.e30;
 import org.telegram.ui.gh0;
 import org.telegram.ui.mb;
 import org.telegram.ui.ov;
-import org.telegram.ui.v91;
+import org.telegram.ui.w91;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t5 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final /* synthetic */ class t5 implements View.OnClickListener {
                     TL_stories.TL_storiesStealthMode tL_storiesStealthMode = P1.B;
                     if (tL_storiesStealthMode != null && ConnectionsManager.getInstance(w5Var.a).getCurrentTime() <= tL_storiesStealthMode.cooldown_until_date) {
                         if (!w5Var.j1) {
-                            new hc(w5Var.c, f6Var).t(org.telegram.messenger.g0.X2(hd.M0(2131744885, null)), null).k(true);
+                            new hc(w5Var.c, f6Var).t(org.telegram.messenger.g0.X2(id.M0(2131744887, null)), null).k(true);
                             break;
                         } else {
                             w5Var.dismiss();
@@ -174,9 +174,9 @@ public final /* synthetic */ class t5 implements View.OnClickListener {
                 try {
                     org.telegram.messenger.g0.g(str);
                     if (i11 == profileActivity.N3) {
-                        hc.a0(profileActivity).i(hd.M0(2131752761, null)).j();
+                        hc.a0(profileActivity).i(id.M0(2131752761, null)).j();
                     } else {
-                        hc.a0(profileActivity).i(hd.M0(2131752693, null)).j();
+                        hc.a0(profileActivity).i(id.M0(2131752693, null)).j();
                     }
                     break;
                 } catch (Exception e10) {
@@ -184,19 +184,19 @@ public final /* synthetic */ class t5 implements View.OnClickListener {
                     return;
                 }
             case 6:
-                v91 v91Var = (v91) obj3;
+                w91 w91Var = (w91) obj3;
                 TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) obj2;
                 ActionBarPopupWindow$ActionBarPopupWindowLayout[] actionBarPopupWindow$ActionBarPopupWindowLayoutArr = (ActionBarPopupWindow$ActionBarPopupWindowLayout[]) obj;
-                qp messagesController = v91Var.getMessagesController();
-                long j3 = -v91Var.a;
+                qp messagesController = w91Var.getMessagesController();
+                long j3 = -w91Var.a;
                 if (!messagesController.r2(j3, tL_forumTopic.id, null)) {
                     actionBarPopupWindow$ActionBarPopupWindowLayoutArr[0].getSwipeBack().e(i11);
                     break;
                 } else {
-                    v91Var.getNotificationsController().G(j3, tL_forumTopic.id, false);
-                    v91Var.finishPreviewFragment();
-                    if (hc.a(v91Var)) {
-                        hc.z(v91Var, 4, 0, v91Var.getResourceProvider()).j();
+                    w91Var.getNotificationsController().G(j3, tL_forumTopic.id, false);
+                    w91Var.finishPreviewFragment();
+                    if (hc.a(w91Var)) {
+                        hc.z(w91Var, 4, 0, w91Var.getResourceProvider()).j();
                         break;
                     }
                 }
@@ -207,9 +207,9 @@ public final /* synthetic */ class t5 implements View.OnClickListener {
                 org.telegram.ui.ActionBar.f6 f6Var2 = (org.telegram.ui.ActionBar.f6) obj;
                 if (!dVar2.Q) {
                     dVar2.setLoading(true);
-                    org.telegram.ui.Wallet.k4 k4Var = new org.telegram.ui.Wallet.k4(dVar2, v2Var2, f6Var2, 0);
-                    org.telegram.ui.Wallet.n0 x10 = org.telegram.ui.Wallet.n0.x(i11);
-                    x10.m0(new d10(i11, k4Var, x10));
+                    org.telegram.ui.Wallet.j4 j4Var = new org.telegram.ui.Wallet.j4(dVar2, v2Var2, f6Var2, 0);
+                    org.telegram.ui.Wallet.m0 x10 = org.telegram.ui.Wallet.m0.x(i11);
+                    x10.m0(new d10(i11, j4Var, x10));
                     break;
                 }
                 break;

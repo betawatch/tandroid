@@ -5,7 +5,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class g5 extends androidx.fragment.app.u {
     public int O = -1;
@@ -20,7 +20,7 @@ public abstract class g5 extends androidx.fragment.app.u {
         boolean z9 = iArr.length > 0 && iArr[0] == 0;
         if (i7 == 104) {
             if (!z9) {
-                w(R.raw.permission_request_camera, org.telegram.messenger.hd.M0(2131743286, null));
+                w(R.raw.permission_request_camera, org.telegram.messenger.id.M0(2131743288, null));
                 return true;
             }
             c40 c40Var = c40.u5;
@@ -34,7 +34,7 @@ public abstract class g5 extends androidx.fragment.app.u {
                     org.telegram.messenger.gc.D().i(null);
                     return true;
                 }
-                w(R.raw.permission_request_folder, i7 == 151 ? org.telegram.messenger.hd.M0(2131747300, null) : org.telegram.messenger.hd.M0(2131747298, null));
+                w(R.raw.permission_request_folder, i7 == 151 ? org.telegram.messenger.id.M0(2131747302, null) : org.telegram.messenger.id.M0(2131747300, null));
                 return true;
             }
             if (i7 == 5) {
@@ -42,7 +42,7 @@ public abstract class g5 extends androidx.fragment.app.u {
                     org.telegram.messenger.g5.r(this.O).l();
                     return true;
                 }
-                w(R.raw.permission_request_contacts, org.telegram.messenger.hd.M0(2131747305, null));
+                w(R.raw.permission_request_contacts, org.telegram.messenger.id.M0(2131747307, null));
                 return false;
             }
             if (i7 == 3 || i7 == 150) {
@@ -57,15 +57,15 @@ public abstract class g5 extends androidx.fragment.app.u {
                     }
                 }
                 if (i7 == 150 && (!z10 || !z11)) {
-                    w(R.raw.permission_request_camera, org.telegram.messenger.hd.M0(2131747308, null));
+                    w(R.raw.permission_request_camera, org.telegram.messenger.id.M0(2131747310, null));
                     return true;
                 }
                 if (!z10) {
-                    w(R.raw.permission_request_microphone, org.telegram.messenger.hd.M0(2131747310, null));
+                    w(R.raw.permission_request_microphone, org.telegram.messenger.id.M0(2131747312, null));
                     return true;
                 }
                 if (!z11) {
-                    w(R.raw.permission_request_camera, org.telegram.messenger.hd.M0(2131747307, null));
+                    w(R.raw.permission_request_camera, org.telegram.messenger.id.M0(2131747309, null));
                     return true;
                 }
                 if (org.telegram.messenger.iz.y0) {
@@ -93,7 +93,7 @@ public abstract class g5 extends androidx.fragment.app.u {
                     return true;
                 }
             } else if (!z9) {
-                w(R.raw.permission_request_camera, org.telegram.messenger.hd.M0(2131747307, null));
+                w(R.raw.permission_request_camera, org.telegram.messenger.id.M0(2131747309, null));
             }
         }
         return true;
@@ -107,8 +107,8 @@ public abstract class g5 extends androidx.fragment.app.u {
         SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(str);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.T = X2;
-        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747299, null), new w0(this, 4));
-        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131751772, null), null);
+        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747301, null), new w0(this, 4));
+        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131751772, null), null);
         return u1Var;
     }
 

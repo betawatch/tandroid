@@ -4,7 +4,7 @@ import android.widget.FrameLayout;
 import java.io.File;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class hl implements bt0 {
     public File a;
@@ -33,7 +33,7 @@ public final class hl implements bt0 {
             shutterButton.a(ct0.a);
         } else {
             if (!chatAttachAlertPhotoLayout.x0) {
-                org.telegram.messenger.k5.p(null, 2131749541, new hc(chatAttachAlertPhotoLayout.P, this.c), null);
+                org.telegram.messenger.k5.p(null, 2131749543, new hc(chatAttachAlertPhotoLayout.P, this.c), null);
                 return;
             }
             org.telegram.ui.ActionBar.f2 f2Var = diVar.W1;

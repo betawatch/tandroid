@@ -21,7 +21,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.qp;
@@ -34,7 +34,7 @@ import org.telegram.ui.Components.rt0;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.p90;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class e1 {
     public final q1 a;
@@ -101,7 +101,7 @@ public final class e1 {
                     }
                     c0Var2.b(false);
                     if (q1Var.P5.p1) {
-                        Toast.makeText(q1Var.getContext(), hd.M0(2131748529, null), 1).show();
+                        Toast.makeText(q1Var.getContext(), id.M0(2131748531, null), 1).show();
                     } else {
                         l1 l1Var = q1Var.Ra;
                         if (l1Var != null && !c0Var2.m) {
@@ -702,7 +702,7 @@ public final class e1 {
                                     charSequence = m2Var.d();
                                 } else {
                                     hashMap5 = hashMap9;
-                                    charSequence = hd.M0(2131747381, null);
+                                    charSequence = id.M0(2131747383, null);
                                 }
                                 HashMap hashMap10 = hashMap8;
                                 if ((m2Var instanceof org.telegram.messenger.o2) || ((org.telegram.messenger.o2) m2Var).a != 4) {

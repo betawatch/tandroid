@@ -11,7 +11,7 @@ import fi.d;
 import hi.u1;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t10;
@@ -28,7 +28,7 @@ import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.v4;
 import v4.o0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class a extends na {
     public l41 P1;
@@ -65,14 +65,14 @@ public final class a extends na {
         if (M0 != null) {
             g6Var = g6Var3;
             i7 = -1;
-            g6Var.x(M0, null, M0.title, hd.H(' ', "Members", M0.participants_count), false, false);
+            g6Var.x(M0, null, M0.title, id.H(' ', "Members", M0.participants_count), false, false);
         } else {
             g6Var = g6Var3;
             i7 = -1;
             if (a22 != null) {
                 i10 = -1;
                 g6Var2 = g6Var;
-                g6Var2.x(a22, null, m5.m(a22), hd.M0(2131753156, null), false, false);
+                g6Var2.x(a22, null, m5.m(a22), id.M0(2131753156, null), false, false);
                 frameLayout.addView(g6Var2, ha.c(-2.0f, i10));
                 pj0 pj0Var = this.k1;
                 int i11 = this.t0;
@@ -82,9 +82,9 @@ public final class a extends na {
                 this.k1.setOnItemClickListener(new k(this, 17));
                 d dVar = new d(context, this.I0, true);
                 if (chat == null) {
-                    dVar.setText(hd.M0(t3.w(27, chat) ? 2131751974 : 2131751971, null));
+                    dVar.setText(id.M0(t3.w(27, chat) ? 2131751974 : 2131751971, null));
                 } else {
-                    dVar.setText(hd.M0(2131751939, null));
+                    dVar.setText(id.M0(2131751939, null));
                 }
                 dVar.f();
                 dVar.setOnClickListener(new g(this, c20Var, chat, 13));
@@ -120,12 +120,12 @@ public final class a extends na {
 
     @Override // org.telegram.ui.Components.na
     public final CharSequence O0() {
-        return hd.M0(this.T1 ? 2131751982 : 2131751977, null);
+        return id.M0(this.T1 ? 2131751982 : 2131751977, null);
     }
 
     public final void d1(c20 c20Var, boolean z9, boolean z10) {
         if (z10 && !z9 && !this.T1) {
-            v4.M(getContext(), this.I0, hd.M0(2131751970, null), hd.M0(this.S1 ? 2131751973 : 2131751972, null), hd.M0(2131754486, null), new u7(this, c20Var, z9, 6)).show();
+            v4.M(getContext(), this.I0, id.M0(2131751970, null), id.M0(this.S1 ? 2131751973 : 2131751972, null), id.M0(2131754486, null), new u7(this, c20Var, z9, 6)).show();
         } else {
             c20Var.a(Boolean.valueOf(z9));
             dismiss();

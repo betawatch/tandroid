@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o1 implements Runnable {
     public final /* synthetic */ int a;
@@ -172,7 +172,7 @@ public final /* synthetic */ class o1 implements Runnable {
                 return;
             case 7:
                 org.telegram.messenger.g0.g(((String[]) obj3)[0]);
-                org.telegram.messenger.camera.q.r(null, 2131748920, new org.telegram.ui.Components.hc(((org.telegram.ui.ActionBar.v2) obj2).E, (org.telegram.ui.ActionBar.f6) obj));
+                org.telegram.messenger.camera.q.r(null, 2131748922, new org.telegram.ui.Components.hc(((org.telegram.ui.ActionBar.v2) obj2).E, (org.telegram.ui.ActionBar.f6) obj));
                 return;
             case 8:
                 la.c0((la) obj3, (org.telegram.ui.ActionBar.u1) obj2, (TLRPC.User) obj);
@@ -272,7 +272,7 @@ public final /* synthetic */ class o1 implements Runnable {
                         bg.n0.a(ijVar.k.action.photo, a22, false);
                         anVar5.getUserConfig().w(a22);
                         anVar5.getUserConfig().v(true);
-                        org.telegram.ui.Components.hc.a0(anVar5).V(Collections.singletonList(a22), org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131754219, null)), org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131754220, null), new bh(dlVar, 6)), null).j();
+                        org.telegram.ui.Components.hc.a0(anVar5).V(Collections.singletonList(a22), org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131754219, null)), org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(2131754220, null), new bh(dlVar, 6)), null).j();
                     }
                 }
                 ijVar.q = false;
@@ -354,7 +354,7 @@ public final /* synthetic */ class o1 implements Runnable {
                     org.telegram.messenger.g0.h3(new o1(roVar, new ArrayList(), new ArrayList(), i16));
                     return;
                 }
-                String S0 = org.telegram.messenger.hd.E0().S0(lowerCase, true, false);
+                String S0 = org.telegram.messenger.id.E0().S0(lowerCase, true, false);
                 if (lowerCase.equals(S0) || S0.length() == 0) {
                     S0 = null;
                 }
@@ -370,7 +370,7 @@ public final /* synthetic */ class o1 implements Runnable {
                 while (i18 < arrayList3.size()) {
                     TLRPC.Chat chat = (TLRPC.Chat) arrayList3.get(i18);
                     String lowerCase2 = chat.title.toLowerCase();
-                    String S02 = org.telegram.messenger.hd.E0().S0(lowerCase2, z10, z11);
+                    String S02 = org.telegram.messenger.id.E0().S0(lowerCase2, z10, z11);
                     if (lowerCase2.equals(S02)) {
                         S02 = null;
                     }

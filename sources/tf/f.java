@@ -1,10 +1,10 @@
 package tf;
 
 import java.io.EOFException;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.vy;
 import org.telegram.ui.hy0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class f {
     public final String a;
@@ -20,17 +20,17 @@ public final class f {
         byte b11;
         uf.a aVar = (uf.a) hy0Var.b;
         long j3 = aVar.b;
-        uy uyVar = (uy) hy0Var.d;
+        vy vyVar = (vy) hy0Var.d;
         h hVar = (h) hy0Var.c;
         int i7 = hVar.a;
         int i10 = hVar.a;
         byte b12 = 2;
         if (i7 == 2) {
-            uyVar.getClass();
+            vyVar.getClass();
             byte[] bArr = new byte[3];
             int i11 = 0;
             while (i11 < 3) {
-                int read = ((ab.d) uyVar.b).read(bArr, i11, 3 - i11);
+                int read = ((ab.d) vyVar.b).read(bArr, i11, 3 - i11);
                 if (read <= 0) {
                     throw new EOFException();
                 }
@@ -38,11 +38,11 @@ public final class f {
             }
             this.a = new String(bArr, "ISO-8859-1");
         } else {
-            uyVar.getClass();
+            vyVar.getClass();
             byte[] bArr2 = new byte[4];
             int i12 = 0;
             while (i12 < 4) {
-                int read2 = ((ab.d) uyVar.b).read(bArr2, i12, 4 - i12);
+                int read2 = ((ab.d) vyVar.b).read(bArr2, i12, 4 - i12);
                 if (read2 <= 0) {
                     throw new EOFException();
                 }
@@ -52,15 +52,15 @@ public final class f {
         }
         byte b13 = 8;
         if (i10 == 2) {
-            this.c = ((uyVar.M() & 255) << 16) | ((uyVar.M() & 255) << 8) | (uyVar.M() & 255);
+            this.c = ((vyVar.M() & 255) << 16) | ((vyVar.M() & 255) << 8) | (vyVar.M() & 255);
         } else if (i10 == 3) {
-            this.c = uyVar.O();
+            this.c = vyVar.O();
         } else {
-            this.c = uyVar.P();
+            this.c = vyVar.P();
         }
         if (i10 > 2) {
-            uyVar.M();
-            byte M = uyVar.M();
+            vyVar.M();
+            byte M = vyVar.M();
             byte b14 = 64;
             if (i10 == 3) {
                 b13 = 128;
@@ -79,28 +79,28 @@ public final class f {
             this.f = z10;
             if (i10 == 3) {
                 if (z9) {
-                    this.g = uyVar.O();
+                    this.g = vyVar.O();
                     this.c -= 4;
                 }
                 if (z10) {
-                    uyVar.M();
+                    vyVar.M();
                     this.c--;
                 }
                 if ((M & b10) != 0) {
-                    uyVar.M();
+                    vyVar.M();
                     this.c--;
                 }
             } else {
                 if ((M & b10) != 0) {
-                    uyVar.M();
+                    vyVar.M();
                     this.c--;
                 }
                 if (z10) {
-                    uyVar.M();
+                    vyVar.M();
                     this.c--;
                 }
                 if ((M & b11) != 0) {
-                    this.g = uyVar.P();
+                    this.g = vyVar.P();
                     this.c -= 4;
                 }
             }

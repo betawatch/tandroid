@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l70 extends mo0 {
     public final /* synthetic */ q70 R2;
@@ -19,10 +19,10 @@ public final class l70 extends mo0 {
         String a02;
         if (z9) {
             if (hVar == null || hVar.m() != 1) {
-                a02 = org.telegram.messenger.hd.a0(null, null, 2131749186, org.telegram.messenger.hd.G(i7, "Chats", new Object[0]));
+                a02 = org.telegram.messenger.id.a0(null, null, 2131749188, org.telegram.messenger.id.G(i7, "Chats", new Object[0]));
             } else {
                 long j3 = ((TLRPC.Dialog) hVar.n(0)).id;
-                a02 = (j3 == 0 || j3 == org.telegram.messenger.p10.i(this.a).e()) ? org.telegram.messenger.hd.M0(2131749184, null) : org.telegram.messenger.hd.a0(null, null, 2131749183, org.telegram.messenger.qp.s1(this.a).B1(j3, true));
+                a02 = (j3 == 0 || j3 == org.telegram.messenger.p10.i(this.a).e()) ? org.telegram.messenger.id.M0(2131749186, null) : org.telegram.messenger.id.a0(null, null, 2131749185, org.telegram.messenger.qp.s1(this.a).B1(j3, true));
             }
             this.R2.e(org.telegram.messenger.g0.X2(a02));
         }

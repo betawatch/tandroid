@@ -15,8 +15,8 @@ import android.view.View;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i6;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.a6;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.mu0;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class y extends View implements a6 {
     public final org.telegram.ui.Cells.y D;
@@ -58,7 +58,7 @@ public final class y extends View implements a6 {
         this.d = vVar;
         zg0 zg0Var = new zg0(R.raw.bot_webview_sheet_to_cross, org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(20.0f));
         this.e = zg0Var;
-        this.n = hd.M0(2131752891, null);
+        this.n = id.M0(2131752891, null);
         this.E = true;
         updateColors();
         vVar.n = true;
@@ -76,7 +76,7 @@ public final class y extends View implements a6 {
         k02.setCallback(this);
         zg0Var.setCallback(this);
         zg0Var.R(this);
-        setContentDescription(hd.M0(2131754917, "AccDescrBotMenu"));
+        setContentDescription(id.M0(2131754917, "AccDescrBotMenu"));
     }
 
     @Override // org.telegram.ui.ActionBar.a6

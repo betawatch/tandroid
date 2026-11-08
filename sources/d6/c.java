@@ -9,7 +9,7 @@ import java.net.URL;
 import org.telegram.messenger.d1;
 import q6.m;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class c implements Runnable {
     public static final d1 c = new d1("RevokeAccessOperation", new String[0]);
@@ -33,13 +33,13 @@ public final class c implements Runnable {
             if (responseCode == 200) {
                 status = Status.e;
             } else {
-                Log.e(d1Var.a, d1Var.b("Unable to revoke access!", new Object[0]));
+                Log.e(d1Var.b, d1Var.b("Unable to revoke access!", new Object[0]));
             }
             d1Var.a("Response Code: " + responseCode, new Object[0]);
         } catch (IOException e10) {
-            Log.e(d1Var.a, d1Var.b("IOException when revoking access: ".concat(String.valueOf(e10.toString())), new Object[0]));
+            Log.e(d1Var.b, d1Var.b("IOException when revoking access: ".concat(String.valueOf(e10.toString())), new Object[0]));
         } catch (Exception e11) {
-            Log.e(d1Var.a, d1Var.b("Exception when revoking access: ".concat(String.valueOf(e11.toString())), new Object[0]));
+            Log.e(d1Var.b, d1Var.b("Exception when revoking access: ".concat(String.valueOf(e11.toString())), new Object[0]));
         }
         this.b.a(status);
     }

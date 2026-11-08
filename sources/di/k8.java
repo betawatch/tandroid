@@ -14,19 +14,19 @@ import android.text.TextPaint;
 import android.view.View;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.qu;
+import org.telegram.ui.Components.ru;
 import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.xz;
+import org.telegram.ui.Components.yz;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class k8 extends View implements org.telegram.ui.ActionBar.a6 {
     public static Object I;
@@ -208,7 +208,7 @@ public final class k8 extends View implements org.telegram.ui.ActionBar.a6 {
             return;
         }
         SpannableString spannableString = new SpannableString("x " + tL_messages_stickerSet.set.title);
-        spannableString.setSpan(new xz(org.telegram.ui.ActionBar.k6.Uc, this.h.a), 0, spannableString.length(), 33);
+        spannableString.setSpan(new yz(org.telegram.ui.ActionBar.k6.Uc, this.h.a), 0, spannableString.length(), 33);
         spannableString.setSpan(new u31(org.telegram.messenger.g0.o()), 0, spannableString.length(), 33);
         ArrayList<TLRPC.Document> arrayList = tL_messages_stickerSet.documents;
         int i7 = 0;
@@ -234,7 +234,7 @@ public final class k8 extends View implements org.telegram.ui.ActionBar.a6 {
             charSequence = spannableString.subSequence(2, spannableString.length());
         }
         boolean z9 = this.w;
-        setText(org.telegram.messenger.g0.K2((z9 && this.x) ? hd.M0(2131744696, null) : z9 ? hd.M0(2131744701, null) : hd.M0(2131744693, null), charSequence, "%s"));
+        setText(org.telegram.messenger.g0.K2((z9 && this.x) ? id.M0(2131744698, null) : z9 ? id.M0(2131744703, null) : id.M0(2131744695, null), charSequence, "%s"));
     }
 
     public final void d(boolean z9) {
@@ -280,7 +280,7 @@ public final class k8 extends View implements org.telegram.ui.ActionBar.a6 {
         if (this.d != null) {
             if (this.D > 0.0f) {
                 canvas.save();
-                canvas.translate(getPaddingLeft() - (hd.a0 ? 0.0f : this.e), getPaddingTop());
+                canvas.translate(getPaddingLeft() - (id.a0 ? 0.0f : this.e), getPaddingTop());
                 this.b.setAlpha((int) (this.D * 255.0f));
                 this.d.draw(canvas);
                 org.telegram.ui.Components.r5.drawAnimatedEmojis(canvas, this.d, this.f, 0.0f, null, 0.0f, 0.0f, 0.0f, this.D, this.c);
@@ -289,9 +289,9 @@ public final class k8 extends View implements org.telegram.ui.ActionBar.a6 {
         }
     }
 
-    public qu getAlert() {
+    public ru getAlert() {
         if (this.s != null) {
-            return new qu(null, getContext(), this.a, this.s);
+            return new ru(null, getContext(), this.a, this.s);
         }
         int i7 = -this.G;
         this.G = i7;
@@ -363,7 +363,7 @@ public final class k8 extends View implements org.telegram.ui.ActionBar.a6 {
         CharSequence charSequence;
         String M0;
         SpannableString spannableString = new SpannableString("x " + stickerSetCovered.set.title);
-        spannableString.setSpan(new xz(org.telegram.ui.ActionBar.k6.Uc, this.h.a), 0, spannableString.length(), 33);
+        spannableString.setSpan(new yz(org.telegram.ui.ActionBar.k6.Uc, this.h.a), 0, spannableString.length(), 33);
         spannableString.setSpan(new u31(org.telegram.messenger.g0.o()), 0, spannableString.length(), 33);
         TLRPC.Document document = stickerSetCovered.cover;
         if (document == null && (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered)) {
@@ -385,11 +385,11 @@ public final class k8 extends View implements org.telegram.ui.ActionBar.a6 {
         }
         boolean z9 = this.w;
         if (z9 && this.x) {
-            M0 = hd.M0(2131744696, null);
+            M0 = id.M0(2131744698, null);
         } else if (z9) {
-            M0 = hd.M0(2131744701, null);
+            M0 = id.M0(2131744703, null);
         } else {
-            M0 = hd.M0(2131744693, null);
+            M0 = id.M0(2131744695, null);
         }
         setText(org.telegram.messenger.g0.K2(M0, charSequence, "%s"));
     }
@@ -402,11 +402,11 @@ public final class k8 extends View implements org.telegram.ui.ActionBar.a6 {
         boolean z9 = this.w;
         a80 a80Var = this.h;
         if (z9 && this.x) {
-            setText(org.telegram.messenger.g0.S2(hd.G(i7, "StoryContainsStickersEmoji", new Object[0]), 0, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Uc, a80Var.a), null, null));
+            setText(org.telegram.messenger.g0.S2(id.G(i7, "StoryContainsStickersEmoji", new Object[0]), 0, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Uc, a80Var.a), null, null));
         } else if (z9) {
-            setText(org.telegram.messenger.g0.S2(hd.G(i7, "StoryContainsEmoji", new Object[0]), 0, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Uc, a80Var.a), null, null));
+            setText(org.telegram.messenger.g0.S2(id.G(i7, "StoryContainsEmoji", new Object[0]), 0, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Uc, a80Var.a), null, null));
         } else {
-            setText(org.telegram.messenger.g0.S2(hd.G(i7, "StoryContainsStickers", new Object[0]), 0, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Uc, a80Var.a), null, null));
+            setText(org.telegram.messenger.g0.S2(id.G(i7, "StoryContainsStickers", new Object[0]), 0, org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Uc, a80Var.a), null, null));
         }
     }
 }

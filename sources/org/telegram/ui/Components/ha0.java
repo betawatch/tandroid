@@ -10,7 +10,7 @@ import android.view.View;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ha0 extends View implements org.telegram.ui.ActionBar.a6 {
     public final i6 a;
@@ -39,8 +39,8 @@ public final class ha0 extends View implements org.telegram.ui.ActionBar.a6 {
         i6Var.w(org.telegram.messenger.g0.L(16.0f));
         i6Var.u(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.E8, f6Var));
         i6Var.setCallback(this);
-        i6Var.q(!org.telegram.messenger.hd.a0);
-        if (org.telegram.messenger.hd.a0) {
+        i6Var.q(!org.telegram.messenger.id.a0);
+        if (org.telegram.messenger.id.a0) {
             i6Var.b = 5;
         }
         float L = org.telegram.messenger.g0.L(77.0f);
@@ -70,7 +70,7 @@ public final class ha0 extends View implements org.telegram.ui.ActionBar.a6 {
         if (this.d || z9 != this.e) {
             this.e = z9;
             String str = z9 ? this.f : this.h;
-            boolean z11 = z10 && !org.telegram.messenger.hd.a0;
+            boolean z11 = z10 && !org.telegram.messenger.id.a0;
             i6 i6Var = this.a;
             i6Var.t(str, z11, true);
             da0 da0Var = this.c;
@@ -101,7 +101,7 @@ public final class ha0 extends View implements org.telegram.ui.ActionBar.a6 {
 
     @Override // android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        boolean z9 = org.telegram.messenger.hd.a0;
+        boolean z9 = org.telegram.messenger.id.a0;
         i6 i6Var = this.a;
         da0 da0Var = this.c;
         if (z9) {

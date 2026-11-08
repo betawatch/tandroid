@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ht implements v10 {
     public final /* synthetic */ int a = 0;
@@ -70,7 +70,7 @@ public final /* synthetic */ class ht implements v10 {
                     break;
                 } else if (th2 != null) {
                     a8.g(th2, true);
-                    g0.h3(new yq(15, v10Var, th2));
+                    g0.h3(new zq(15, v10Var, th2));
                     break;
                 } else {
                     TL_account.registerPasskey registerpasskey = new TL_account.registerPasskey();
@@ -117,7 +117,7 @@ public final /* synthetic */ class ht implements v10 {
                     break;
                 } else if (tL_error != null) {
                     if ("SUMMARY_FLOOD_PREMIUM".equalsIgnoreCase(tL_error.text) && (T = LaunchActivity.T()) != null) {
-                        org.telegram.ui.Components.cc K = org.telegram.ui.Components.hc.a0(T).K(R.raw.star_premium_2, hd.M0(2131744332, null), hd.M0(2131744331, null), new rn(3, T));
+                        org.telegram.ui.Components.cc K = org.telegram.ui.Components.hc.a0(T).K(R.raw.star_premium_2, id.M0(2131744334, null), id.M0(2131744333, null), new rn(3, T));
                         K.j = 5000;
                         K.k(true);
                     }

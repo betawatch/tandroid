@@ -5,25 +5,25 @@ import android.widget.FrameLayout;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ql0 extends FrameLayout {
     public long a;
     public TL_stars.starGiftAttributeBackdrop b;
     public TL_stars.starGiftAttributePattern c;
     public final FrameLayout d;
-    public final zh.w0 e;
+    public final zh.v0 e;
     public final org.telegram.ui.Components.l9 f;
-    public final zh.a1 h;
+    public final zh.z0 h;
     public TLRPC.Document n;
 
     public ql0(Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z9) {
         super(context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.d = frameLayout;
-        zh.w0 w0Var = new zh.w0(frameLayout, f6Var, false);
-        this.e = w0Var;
-        frameLayout.setBackground(w0Var);
+        zh.v0 v0Var = new zh.v0(frameLayout, f6Var, false);
+        this.e = v0Var;
+        frameLayout.setBackground(v0Var);
         addView(frameLayout, c8.ha.e(-1, -1, org.telegram.messenger.qs.E1));
         c8.ka.b(frameLayout, 0.025f, 1.25f);
         org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(context);
@@ -33,9 +33,9 @@ public final class ql0 extends FrameLayout {
             this.h = null;
             return;
         }
-        zh.a1 a1Var = new zh.a1(context);
-        this.h = a1Var;
-        addView(a1Var, c8.ha.d(-2, -2.0f, 53, 0.0f, 2.0f, 1.0f, 0.0f));
+        zh.z0 z0Var = new zh.z0(context);
+        this.h = z0Var;
+        addView(z0Var, c8.ha.d(-2, -2.0f, 53, 0.0f, 2.0f, 1.0f, 0.0f));
     }
 
     public final void a(int i7, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
@@ -46,9 +46,9 @@ public final class ql0 extends FrameLayout {
         this.b = (TL_stars.starGiftAttributeBackdrop) bi.ea.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
         this.c = (TL_stars.starGiftAttributePattern) bi.ea.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
         TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = this.b;
-        zh.w0 w0Var = this.e;
-        w0Var.d(stargiftattributebackdrop);
-        w0Var.e(this.c);
+        zh.v0 v0Var = this.e;
+        v0Var.d(stargiftattributebackdrop);
+        v0Var.e(this.c);
     }
 
     public final void b(boolean z9, boolean z10) {

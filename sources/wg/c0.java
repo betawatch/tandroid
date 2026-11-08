@@ -5,7 +5,7 @@ import android.net.Uri;
 import di.s2;
 import fi.r7;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.ConnectionsManager;
@@ -19,7 +19,7 @@ import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.rt0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class c0 extends na {
     public final TLRPC.TL_payments_checkedGiftCode P1;
@@ -104,7 +104,7 @@ public final class c0 extends na {
 
     @Override // org.telegram.ui.Components.na
     public final CharSequence O0() {
-        return this.Q1 ? hd.M0(2131753500, null) : hd.M0(2131753173, null);
+        return this.Q1 ? id.M0(2131753500, null) : id.M0(2131753173, null);
     }
 
     @Override // org.telegram.ui.Components.na

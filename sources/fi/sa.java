@@ -2,19 +2,19 @@ package fi;
 
 import android.animation.ValueAnimator;
 import android.view.MotionEvent;
-import org.telegram.ui.Components.b10;
+import org.telegram.ui.Components.c10;
 import org.telegram.ui.Components.r71;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class sa extends b10 {
+public final class sa extends c10 {
     public final /* synthetic */ ua a;
 
     public sa(ua uaVar) {
         this.a = uaVar;
     }
 
-    @Override // org.telegram.ui.Components.b10
+    @Override // org.telegram.ui.Components.c10
     public final boolean a() {
         y9 y9Var;
         va vaVar = this.a.n0;

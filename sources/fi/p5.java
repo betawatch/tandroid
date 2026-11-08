@@ -29,14 +29,14 @@ import org.telegram.ui.nr;
 import org.telegram.ui.pc0;
 import org.telegram.ui.pn;
 import org.telegram.ui.q11;
-import org.telegram.ui.u71;
-import org.telegram.ui.ya1;
+import org.telegram.ui.v71;
 import org.telegram.ui.ym;
 import org.telegram.ui.yx;
 import org.telegram.ui.z10;
+import org.telegram.ui.za1;
 import org.telegram.ui.zc;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class p5 extends View implements te.b {
     public final /* synthetic */ int a;
@@ -461,11 +461,11 @@ public final class p5 extends View implements te.b {
                     break;
                 }
             case 16:
-                u71 u71Var = (u71) this.c;
-                int currentItem = u71Var.k0.getCurrentItem();
+                v71 v71Var = (v71) this.c;
+                int currentItem = v71Var.k0.getCurrentItem();
                 Paint paint11 = (Paint) this.b;
                 int i12 = org.telegram.ui.ActionBar.k6.pf;
-                paint11.setColor(u71Var.d ? org.telegram.ui.ActionBar.k6.F0(i12) : u71Var.getThemedColor(i12));
+                paint11.setColor(v71Var.d ? org.telegram.ui.ActionBar.k6.F0(i12) : v71Var.getThemedColor(i12));
                 int i13 = 0;
                 while (i13 < 2) {
                     paint11.setAlpha(i13 == currentItem ? qs.e4 : qs.L1);
@@ -478,18 +478,18 @@ public final class p5 extends View implements te.b {
                 paint12.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false));
                 int measuredHeight2 = getMeasuredHeight() - org.telegram.messenger.g0.L(3.0f);
                 canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), measuredHeight2, paint12);
-                q4Var = ((org.telegram.ui.ActionBar.f2) ((ya1) this.c)).parentLayout;
+                q4Var = ((org.telegram.ui.ActionBar.f2) ((za1) this.c)).parentLayout;
                 ((ActionBarLayout) q4Var).q(canvas, measuredHeight2);
                 break;
             case 18:
                 super.onDraw(canvas);
                 int save = canvas.save();
                 canvas.scale(getWidth() / 336.0f, getHeight() / 205.0f);
-                org.telegram.ui.Wallet.z5 z5Var = ((org.telegram.ui.Wallet.c6) this.c).b;
-                if (z5Var != null) {
-                    z5Var.e(canvas, (float[]) this.b);
+                org.telegram.ui.Wallet.y5 y5Var = ((org.telegram.ui.Wallet.b6) this.c).b;
+                if (y5Var != null) {
+                    y5Var.e(canvas, (float[]) this.b);
                 } else {
-                    canvas.drawColor(org.telegram.ui.Wallet.q7.a(-16216082, (float[]) this.b));
+                    canvas.drawColor(org.telegram.ui.Wallet.p7.a(-16216082, (float[]) this.b));
                 }
                 canvas.restoreToCount(save);
                 break;
@@ -677,25 +677,25 @@ public final class p5 extends View implements te.b {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p5(org.telegram.ui.Wallet.c6 c6Var, Context context) {
+    public p5(org.telegram.ui.Wallet.b6 b6Var, Context context) {
         super(context);
         this.a = 18;
-        this.c = c6Var;
+        this.c = b6Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p5(ya1 ya1Var, Context context) {
+    public p5(za1 za1Var, Context context) {
         super(context);
         this.a = 17;
-        this.c = ya1Var;
+        this.c = za1Var;
         this.b = new Paint();
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p5(Context context, u71 u71Var) {
+    public p5(Context context, v71 v71Var) {
         super(context);
         this.a = 16;
-        this.c = u71Var;
+        this.c = v71Var;
         this.b = new Paint(1);
     }
 

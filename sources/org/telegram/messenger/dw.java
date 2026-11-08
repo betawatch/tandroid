@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class dw extends c1 {
     public static volatile dw[] r = new dw[4];
@@ -223,7 +223,7 @@ public final class dw extends c1 {
         if (arrayList2 == null) {
             return;
         }
-        Collections.sort(arrayList2, new vj(18));
+        Collections.sort(arrayList2, new jl(18));
         boolean z10 = false;
         while (true) {
             z9 = true;
@@ -342,14 +342,14 @@ public final class dw extends c1 {
                 TLRPC.TL_messages_discardEncryption tL_messages_discardEncryption = new TLRPC.TL_messages_discardEncryption();
                 tL_messages_discardEncryption.chat_id = i7;
                 tL_messages_discardEncryption.delete_history = z9;
-                getConnectionsManager().sendRequest(tL_messages_discardEncryption, new p4(this, j3, 3));
+                getConnectionsManager().sendRequest(tL_messages_discardEncryption, new v4(this, j3, 3));
             }
             j3 = getMessagesStorage().z(nativeByteBuffer);
         }
         TLRPC.TL_messages_discardEncryption tL_messages_discardEncryption2 = new TLRPC.TL_messages_discardEncryption();
         tL_messages_discardEncryption2.chat_id = i7;
         tL_messages_discardEncryption2.delete_history = z9;
-        getConnectionsManager().sendRequest(tL_messages_discardEncryption2, new p4(this, j3, 3));
+        getConnectionsManager().sendRequest(tL_messages_discardEncryption2, new v4(this, j3, 3));
     }
 
     public final void f(int i7, boolean z9) {

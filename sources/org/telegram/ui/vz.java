@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class vz extends org.telegram.ui.Components.kj0 {
     public final Context r;
@@ -77,7 +77,7 @@ public final class vz extends org.telegram.ui.Components.kj0 {
         }
         if (i7 < this.w.n.size()) {
             view.setAlpha(1.0f);
-            ((org.telegram.ui.Cells.x3) view).setText(org.telegram.messenger.hd.e0(((org.telegram.messenger.ij) ((ArrayList) r1.r.get((String) r1.n.get(i7))).get(0)).k.date, false));
+            ((org.telegram.ui.Cells.x3) view).setText(org.telegram.messenger.id.e0(((org.telegram.messenger.ij) ((ArrayList) r1.r.get((String) r1.n.get(i7))).get(0)).k.date, false));
         }
         return view;
     }
@@ -98,7 +98,7 @@ public final class vz extends org.telegram.ui.Components.kj0 {
             int i12 = d1Var.f;
             boolean z9 = false;
             if (i12 == 0) {
-                ((org.telegram.ui.Cells.x3) view).setText(org.telegram.messenger.hd.e0(((org.telegram.messenger.ij) arrayList2.get(0)).k.date, false));
+                ((org.telegram.ui.Cells.x3) view).setText(org.telegram.messenger.id.e0(((org.telegram.messenger.ij) arrayList2.get(0)).k.date, false));
                 return;
             }
             if (i12 != 1) {
@@ -129,10 +129,10 @@ public final class vz extends org.telegram.ui.Components.kj0 {
         if (i7 == 0) {
             x3Var = new org.telegram.ui.Cells.x3(context, null);
         } else if (i7 != 1) {
-            org.telegram.ui.Components.lz lzVar = new org.telegram.ui.Components.lz(context, null);
-            lzVar.setViewType(5);
-            lzVar.setIsSingleCell(true);
-            x3Var = lzVar;
+            org.telegram.ui.Components.mz mzVar = new org.telegram.ui.Components.mz(context, null);
+            mzVar.setViewType(5);
+            mzVar.setIsSingleCell(true);
+            x3Var = mzVar;
         } else {
             org.telegram.ui.Cells.k7 k7Var = new org.telegram.ui.Cells.k7(1, context, null);
             k7Var.setDelegate(this.s);

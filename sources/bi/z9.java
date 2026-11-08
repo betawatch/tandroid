@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class z9 {
     public final org.telegram.ui.ActionBar.f2 a;
@@ -83,7 +83,7 @@ public final class z9 {
         final int i11 = 1;
         org.telegram.ui.Components.ac acVar = new org.telegram.ui.Components.ac(t6, f2Var.getResourceProvider(), true, false);
         this.e = acVar;
-        acVar.e(org.telegram.messenger.hd.M0(2131745024, null));
+        acVar.e(org.telegram.messenger.id.M0(2131745026, null));
         acVar.b = new Runnable(this) { // from class: bi.y9
             public final /* synthetic */ z9 b;
 

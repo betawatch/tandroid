@@ -26,7 +26,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class zz0 extends FrameLayout implements org.telegram.messenger.ls, org.telegram.ui.ActionBar.a6 {
     public ValueAnimator D;
@@ -140,7 +140,7 @@ public class zz0 extends FrameLayout implements org.telegram.messenger.ls, org.t
     }
 
     public String b() {
-        return org.telegram.messenger.hd.M0(2131752217, null);
+        return org.telegram.messenger.id.M0(2131752217, null);
     }
 
     public int c() {
@@ -462,7 +462,7 @@ public class zz0 extends FrameLayout implements org.telegram.messenger.ls, org.t
                             Drawable drawable2 = uoVar.b;
                             if (drawable2 instanceof qa0) {
                                 qa0 qa0Var6 = (qa0) drawable2;
-                                qa0Var6.s(qa0Var6.u, i26);
+                                qa0Var6.s(i26, qa0Var6.u);
                             }
                             org.telegram.messenger.d4.s.c(new org.telegram.ui.q8(this, uoVar, i26, 26));
                         }
@@ -480,7 +480,7 @@ public class zz0 extends FrameLayout implements org.telegram.messenger.ls, org.t
                 }
                 r3Var2 = this.G.a;
                 if (r3Var2 != null || r3Var2.l()) {
-                    setContentDescription(org.telegram.messenger.hd.M0(2131752217, null));
+                    setContentDescription(org.telegram.messenger.id.M0(2131752217, null));
                 }
                 ig.b bVar = this.G.a.c;
                 if (bVar != null && (str = bVar.b) == null) {
@@ -519,7 +519,7 @@ public class zz0 extends FrameLayout implements org.telegram.messenger.ls, org.t
         r3Var2 = this.G.a;
         if (r3Var2 != null) {
         }
-        setContentDescription(org.telegram.messenger.hd.M0(2131752217, null));
+        setContentDescription(org.telegram.messenger.id.M0(2131752217, null));
     }
 
     public final void g(boolean z9, boolean z10) {

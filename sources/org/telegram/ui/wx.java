@@ -13,7 +13,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wx implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class wx implements View.OnClickListener {
                 String str = eyVar.s;
                 if (str != null) {
                     org.telegram.messenger.g0.g(str);
-                    org.telegram.messenger.camera.q.r(null, 2131748920, org.telegram.ui.Components.hc.a0(eyVar.r));
+                    org.telegram.messenger.camera.q.r(null, 2131748922, org.telegram.ui.Components.hc.a0(eyVar.r));
                     break;
                 }
                 break;
@@ -52,15 +52,15 @@ public final /* synthetic */ class wx implements View.OnClickListener {
                 if (eyVar2.y == null && eyVar2.s != null) {
                     ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(eyVar2.getContext(), null);
                     org.telegram.ui.ActionBar.z0 z0Var = new org.telegram.ui.ActionBar.z0(eyVar2.getContext(), true, false);
-                    z0Var.j(org.telegram.messenger.hd.M0(2131751265, null), org.telegram.messenger.beta.R.drawable.msg_edit, null);
+                    z0Var.j(org.telegram.messenger.id.M0(2131751265, null), org.telegram.messenger.beta.R.drawable.msg_edit, null);
                     actionBarPopupWindow$ActionBarPopupWindowLayout.a(z0Var, c8.ha.o(-1, 48));
                     z0Var.setOnClickListener(new wx(eyVar2, 4));
                     org.telegram.ui.ActionBar.z0 z0Var2 = new org.telegram.ui.ActionBar.z0(eyVar2.getContext(), false, false);
-                    z0Var2.j(org.telegram.messenger.hd.M0(2131750471, null), org.telegram.messenger.beta.R.drawable.msg_qrcode, null);
+                    z0Var2.j(org.telegram.messenger.id.M0(2131750473, null), org.telegram.messenger.beta.R.drawable.msg_qrcode, null);
                     actionBarPopupWindow$ActionBarPopupWindowLayout.a(z0Var2, c8.ha.o(-1, 48));
                     z0Var2.setOnClickListener(new wx(eyVar2, 5));
                     org.telegram.ui.ActionBar.z0 z0Var3 = new org.telegram.ui.ActionBar.z0(eyVar2.getContext(), false, true);
-                    z0Var3.j(org.telegram.messenger.hd.M0(2131751535, null), org.telegram.messenger.beta.R.drawable.msg_delete, null);
+                    z0Var3.j(org.telegram.messenger.id.M0(2131751535, null), org.telegram.messenger.beta.R.drawable.msg_delete, null);
                     int i13 = org.telegram.ui.ActionBar.k6.p7;
                     z0Var3.c(i13, i13);
                     z0Var3.h(0.12f, i13);
@@ -102,7 +102,7 @@ public final /* synthetic */ class wx implements View.OnClickListener {
                 String str2 = eyVar.s;
                 if (str2 != null) {
                     org.telegram.messenger.g0.g(str2);
-                    org.telegram.messenger.camera.q.r(null, 2131748920, org.telegram.ui.Components.hc.a0(eyVar.r));
+                    org.telegram.messenger.camera.q.r(null, 2131748922, org.telegram.ui.Components.hc.a0(eyVar.r));
                     break;
                 }
                 break;
@@ -112,7 +112,7 @@ public final /* synthetic */ class wx implements View.OnClickListener {
                         Intent intent = new Intent("android.intent.action.SEND");
                         intent.setType("text/plain");
                         intent.putExtra("android.intent.extra.TEXT", eyVar.s);
-                        eyVar.r.startActivityForResult(Intent.createChooser(intent, org.telegram.messenger.hd.M0(2131749109, null)), 500);
+                        eyVar.r.startActivityForResult(Intent.createChooser(intent, org.telegram.messenger.id.M0(2131749111, null)), 500);
                         break;
                     } catch (Exception e10) {
                         org.telegram.messenger.a8.g(e10, true);
@@ -134,8 +134,8 @@ public final /* synthetic */ class wx implements View.OnClickListener {
                     int i14 = org.telegram.ui.ActionBar.k6.H5;
                     org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                     u1Var.I = i14;
-                    u1Var.R = org.telegram.messenger.hd.M0(2131750765, null);
-                    alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), new zx(editTextBoldCursor, i11));
+                    u1Var.R = org.telegram.messenger.id.M0(2131750765, null);
+                    alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), new zx(editTextBoldCursor, i11));
                     LinearLayout linearLayout = new LinearLayout(eyVar.getContext());
                     linearLayout.setOrientation(1);
                     alertDialog$Builder.o(linearLayout);
@@ -161,7 +161,7 @@ public final /* synthetic */ class wx implements View.OnClickListener {
                         editTextBoldCursor.setText(tL_exportedChatlistInvite.title);
                         editTextBoldCursor.setSelection(editTextBoldCursor.length());
                     }
-                    alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131745947, null), new a7(eyVar, editTextBoldCursor, alertDialog$Builder, 13));
+                    alertDialog$Builder.k(org.telegram.messenger.id.M0(2131745949, null), new a7(eyVar, editTextBoldCursor, alertDialog$Builder, 13));
                     u1Var.setOnShowListener(new fp(i12, editTextBoldCursor));
                     u1Var.setOnDismissListener(new cy(editTextBoldCursor, i11));
                     u1Var.show();
@@ -176,7 +176,7 @@ public final /* synthetic */ class wx implements View.OnClickListener {
                     g1Var3.d(true);
                 }
                 if (eyVar.s != null) {
-                    org.telegram.ui.Components.lg0 lg0Var = new org.telegram.ui.Components.lg0(eyVar.getContext(), org.telegram.messenger.hd.M0(2131749169, null), eyVar.s, org.telegram.messenger.hd.M0(2131746505, null), false);
+                    org.telegram.ui.Components.lg0 lg0Var = new org.telegram.ui.Components.lg0(eyVar.getContext(), org.telegram.messenger.id.M0(2131749171, null), eyVar.s, org.telegram.messenger.id.M0(2131746507, null), false);
                     lg0Var.I0();
                     lg0Var.show();
                     break;

@@ -11,10 +11,10 @@ import l5.f;
 import m5.a;
 import o5.s;
 import u9.b;
-import u9.i;
-import u9.q;
+import u9.j;
+import u9.r;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class TransportRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-transport";
@@ -41,15 +41,15 @@ public class TransportRegistrar implements ComponentRegistrar {
     public List<u9.a> getComponents() {
         j0 a10 = u9.a.a(f.class);
         a10.d = LIBRARY_NAME;
-        a10.a(i.a(Context.class));
+        a10.a(j.a(Context.class));
         a10.f = new x3(22);
         u9.a b10 = a10.b();
-        j0 b11 = u9.a.b(new q(la.a.class, f.class));
-        b11.a(i.a(Context.class));
+        j0 b11 = u9.a.b(new r(la.a.class, f.class));
+        b11.a(j.a(Context.class));
         b11.f = new x3(23);
         u9.a b12 = b11.b();
-        j0 b13 = u9.a.b(new q(la.b.class, f.class));
-        b13.a(i.a(Context.class));
+        j0 b13 = u9.a.b(new r(la.b.class, f.class));
+        b13.a(j.a(Context.class));
         b13.f = new x3(24);
         return Arrays.asList(b10, b12, b13.b(), h8.a(LIBRARY_NAME, "19.0.0"));
     }

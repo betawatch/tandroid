@@ -14,8 +14,8 @@ import c8.ha;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i6;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
@@ -29,9 +29,9 @@ import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.wo;
-import org.telegram.ui.Components.xz;
+import org.telegram.ui.Components.yz;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class p1 extends FrameLayout {
     public final w8 a;
@@ -58,7 +58,7 @@ public final class p1 extends FrameLayout {
         lVar.setEllipsize(TextUtils.TruncateAt.END);
         r6.V(lVar, k6.z6, f6Var);
         lVar.setTextSize(1, 14.0f);
-        boolean z10 = hd.a0;
+        boolean z10 = id.a0;
         addView(lVar, ha.d(-1, -2.0f, 7, z10 ? i7 : 64.0f, 7.0f, z10 ? 64.0f : i7, 0.0f));
         if (z9) {
             ImageView imageView = new ImageView(context);
@@ -67,7 +67,7 @@ public final class p1 extends FrameLayout {
             imageView.setImageResource(R.drawable.list_reorder);
             r6.t(imageView, k6.Ii, null, PorterDuff.Mode.MULTIPLY);
             imageView.setAlpha(0.0f);
-            addView(imageView, ha.e(50, 50, (hd.a0 ? 3 : 5) | qs.x1));
+            addView(imageView, ha.e(50, 50, (id.a0 ? 3 : 5) | qs.x1));
         } else {
             this.e = null;
         }
@@ -96,9 +96,9 @@ public final class p1 extends FrameLayout {
         spannableStringBuilder.setSpan(new u31(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
         int i7 = k6.G6;
         f6 f6Var = this.f;
-        spannableStringBuilder.setSpan(new xz(i7, f6Var), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new yz(i7, f6Var), 0, spannableStringBuilder.length(), 33);
         if (str3 != null) {
-            spannableStringBuilder.setSpan(new xz(k6.o6, f6Var), 0, Math.min(str3.length() <= 0 ? 1 : str3.length(), spannableStringBuilder.length()), 33);
+            spannableStringBuilder.setSpan(new yz(k6.o6, f6Var), 0, Math.min(str3.length() <= 0 ? 1 : str3.length(), spannableStringBuilder.length()), 33);
         }
         ij ijVar = s1Var.e;
         xh.l lVar = this.c;
@@ -176,7 +176,7 @@ public final class p1 extends FrameLayout {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        float measuredWidth = hd.a0 ? getMeasuredWidth() - org.telegram.messenger.g0.L(51.0f) : org.telegram.messenger.g0.L(15.0f);
+        float measuredWidth = id.a0 ? getMeasuredWidth() - org.telegram.messenger.g0.L(51.0f) : org.telegram.messenger.g0.L(15.0f);
         float L = org.telegram.messenger.g0.L(7.0f);
         float L2 = org.telegram.messenger.g0.L(36.0f);
         float L3 = org.telegram.messenger.g0.L(36.0f);
@@ -189,7 +189,7 @@ public final class p1 extends FrameLayout {
             if (W0 == null) {
                 W0 = k6.k0;
             }
-            canvas.drawRect(org.telegram.messenger.g0.L(hd.a0 ? 0.0f : 64.0f), getMeasuredHeight() - 1, getWidth() - org.telegram.messenger.g0.L(hd.a0 ? 64.0f : 0.0f), getMeasuredHeight(), W0);
+            canvas.drawRect(org.telegram.messenger.g0.L(id.a0 ? 0.0f : 64.0f), getMeasuredHeight() - 1, getWidth() - org.telegram.messenger.g0.L(id.a0 ? 64.0f : 0.0f), getMeasuredHeight(), W0);
         }
     }
 

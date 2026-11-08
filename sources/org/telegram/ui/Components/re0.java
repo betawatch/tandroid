@@ -12,7 +12,7 @@ import java.util.HashSet;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class re0 extends org.telegram.ui.Cells.z implements im0, org.telegram.messenger.x5, org.telegram.ui.ActionBar.a6 {
     public int D;
@@ -94,7 +94,7 @@ public final class re0 extends org.telegram.ui.Cells.z implements im0, org.teleg
             i7 = view.getMeasuredHeight();
             i10 = measuredWidth;
         }
-        org.telegram.ui.ActionBar.k6.q3.p((int) getY(), i10, i7);
+        org.telegram.ui.ActionBar.k6.q3.o((int) getY(), i10, i7);
         org.telegram.ui.ActionBar.t4 t4Var = org.telegram.ui.ActionBar.k6.q3;
         int measuredWidth2 = getMeasuredWidth();
         int measuredHeight = getMeasuredHeight();

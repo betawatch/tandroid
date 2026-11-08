@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class l41 extends rg.b {
     public lg.f E;
@@ -703,7 +703,7 @@ public class l41 extends rg.b {
                     vt0 vt0Var = (vt0) view;
                     vt0Var.b(G.z, null, G.p);
                     vt0Var.setMinAllowedIndex((int) G.B);
-                    vt0Var.setCallback(new ax(G, 25));
+                    vt0Var.setCallback(new bx(G, 25));
                     break;
                 case 15:
                     org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) view;
@@ -814,27 +814,27 @@ public class l41 extends rg.b {
                     TextView textView5 = ydVar.d;
                     if (broadcastRevenueTransaction instanceof TL_stats.TL_broadcastRevenueTransactionWithdrawal) {
                         TL_stats.TL_broadcastRevenueTransactionWithdrawal tL_broadcastRevenueTransactionWithdrawal = (TL_stats.TL_broadcastRevenueTransactionWithdrawal) broadcastRevenueTransaction;
-                        textView4.setText(org.telegram.messenger.hd.M0(2131748354, null));
+                        textView4.setText(org.telegram.messenger.id.M0(2131748356, null));
                         if (tL_broadcastRevenueTransactionWithdrawal.pending) {
-                            textView5.setText(org.telegram.messenger.hd.M0(2131748357, null));
+                            textView5.setText(org.telegram.messenger.id.M0(2131748359, null));
                             z9 = false;
                         } else {
                             z9 = tL_broadcastRevenueTransactionWithdrawal.failed;
                             StringBuilder sb2 = new StringBuilder();
-                            sb2.append(org.telegram.messenger.hd.Q(tL_broadcastRevenueTransactionWithdrawal.date));
-                            sb2.append(z9 ? jg.g.l(2131748358, null, new StringBuilder(" — ")) : "");
+                            sb2.append(org.telegram.messenger.id.Q(tL_broadcastRevenueTransactionWithdrawal.date));
+                            sb2.append(z9 ? jg.g.l(2131748360, null, new StringBuilder(" — ")) : "");
                             textView5.setText(sb2.toString());
                         }
                         j10 = tL_broadcastRevenueTransactionWithdrawal.amount;
                         c10 = 65535;
                     } else {
                         if (broadcastRevenueTransaction instanceof TL_stats.TL_broadcastRevenueTransactionProceeds) {
-                            textView4.setText(org.telegram.messenger.hd.M0(2131748356, null));
-                            textView5.setText(org.telegram.messenger.hd.Q(r5.from_date) + " - " + org.telegram.messenger.hd.Q(r5.to_date));
+                            textView4.setText(org.telegram.messenger.id.M0(2131748358, null));
+                            textView5.setText(org.telegram.messenger.id.Q(r5.from_date) + " - " + org.telegram.messenger.id.Q(r5.to_date));
                             j10 = ((TL_stats.TL_broadcastRevenueTransactionProceeds) broadcastRevenueTransaction).amount;
                         } else if (broadcastRevenueTransaction instanceof TL_stats.TL_broadcastRevenueTransactionRefund) {
-                            textView4.setText(org.telegram.messenger.hd.M0(2131748355, null));
-                            textView5.setText(org.telegram.messenger.hd.Q(r5.from_date));
+                            textView4.setText(org.telegram.messenger.id.M0(2131748357, null));
+                            textView5.setText(org.telegram.messenger.id.Q(r5.from_date));
                             j10 = ((TL_stats.TL_broadcastRevenueTransactionRefund) broadcastRevenueTransaction).amount;
                         }
                         c10 = 1;
@@ -924,9 +924,9 @@ public class l41 extends rg.b {
                         lVar.setText(m10);
                         int i23 = tVar.f.views;
                         if (i23 == 0) {
-                            k5Var4.l(org.telegram.messenger.hd.a0(null, null, 2131748226, new Object[0]), false);
+                            k5Var4.l(org.telegram.messenger.id.a0(null, null, 2131748228, new Object[0]), false);
                         } else {
-                            k5Var4.l(org.telegram.messenger.hd.G(i23, "Clicks", new Object[0]), false);
+                            k5Var4.l(org.telegram.messenger.id.G(i23, "Clicks", new Object[0]), false);
                         }
                         k5Var4.requestLayout();
                         tVar.invalidate();
@@ -956,7 +956,7 @@ public class l41 extends rg.b {
                     Object obj8 = G.G;
                     if (G.q && (obj8 instanceof TLRPC.User) && (i10 = ((TLRPC.User) obj8).bot_active_users) != 0) {
                         if (i10 != 0) {
-                            concat = org.telegram.messenger.hd.H(' ', "BotUsers", i10);
+                            concat = org.telegram.messenger.id.H(' ', "BotUsers", i10);
                             if (!(obj8 instanceof TLRPC.Chat)) {
                             }
                             String str5 = str;
@@ -995,7 +995,7 @@ public class l41 extends rg.b {
                                 if (!(obj8 instanceof TLRPC.Chat)) {
                                     TLRPC.Chat chat = (TLRPC.Chat) obj8;
                                     if (chat.participants_count != 0) {
-                                        String H = (!org.telegram.messenger.t3.T(chat) || chat.megagroup) ? org.telegram.messenger.hd.H(' ', "Members", chat.participants_count) : org.telegram.messenger.hd.H(' ', "Subscribers", chat.participants_count);
+                                        String H = (!org.telegram.messenger.t3.T(chat) || chat.megagroup) ? org.telegram.messenger.id.H(' ', "Members", chat.participants_count) : org.telegram.messenger.id.H(' ', "Subscribers", chat.participants_count);
                                         concat = !TextUtils.isEmpty(concat) ? TextUtils.concat(concat, ", ", H) : H;
                                     }
                                     str = chat.title;
@@ -1046,7 +1046,7 @@ public class l41 extends rg.b {
                         break;
                     }
                 case 34:
-                    ((lz) view).setViewType(G.z);
+                    ((mz) view).setViewType(G.z);
                     break;
                 case 35:
                 case 36:
@@ -1232,8 +1232,8 @@ public class l41 extends rg.b {
                     textView.setSingleLine(true);
                     TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
                     textView.setEllipsize(truncateAt);
-                    textView.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 16);
-                    boolean z10 = org.telegram.messenger.hd.a0;
+                    textView.setGravity((org.telegram.messenger.id.a0 ? 5 : 3) | 16);
+                    boolean z10 = org.telegram.messenger.id.a0;
                     v2Var.addView(textView, c8.ha.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 61.0f : 23.0f, 0.0f, z10 ? 23.0f : 61.0f, 0.0f));
                     TextView textView2 = new TextView(context);
                     v2Var.c = textView2;
@@ -1241,14 +1241,14 @@ public class l41 extends rg.b {
                     org.telegram.messenger.camera.q.n(textView2, 1, 16.0f, 1, 1);
                     textView2.setSingleLine(true);
                     textView2.setEllipsize(truncateAt);
-                    textView2.setGravity((org.telegram.messenger.hd.a0 ? 3 : 5) | 16);
+                    textView2.setGravity((org.telegram.messenger.id.a0 ? 3 : 5) | 16);
                     textView2.setVisibility(8);
-                    v2Var.addView(textView2, c8.ha.d(-2, -1.0f, (org.telegram.messenger.hd.a0 ? 3 : 5) | 48, 23.0f, 0.0f, 23.0f, 0.0f));
+                    v2Var.addView(textView2, c8.ha.d(-2, -1.0f, (org.telegram.messenger.id.a0 ? 3 : 5) | 48, 23.0f, 0.0f, 23.0f, 0.0f));
                     RadioButton radioButton = new RadioButton(context);
                     v2Var.d = radioButton;
                     radioButton.setSize(org.telegram.messenger.g0.L(20.0f));
                     org.telegram.ui.ActionBar.r6.P(radioButton, org.telegram.ui.ActionBar.k6.g7, org.telegram.ui.ActionBar.k6.h7, null);
-                    v2Var.addView(radioButton, c8.ha.d(22, 22.0f, (org.telegram.messenger.hd.a0 ? 3 : 5) | 48, 20.0f, 15.0f, 20.0f, 0.0f));
+                    v2Var.addView(radioButton, c8.ha.d(22, 22.0f, (org.telegram.messenger.id.a0 ? 3 : 5) | 48, 20.0f, 15.0f, 20.0f, 0.0f));
                     v2Var.b();
                     v2Var.setHorizontalPadding(21);
                     n4Var = v2Var;
@@ -1333,9 +1333,9 @@ public class l41 extends rg.b {
                     n4Var = new org.telegram.ui.Cells.t2(context, true);
                     break;
                 case 34:
-                    lz lzVar = new lz(context, f6Var);
-                    lzVar.setIsSingleCell(true);
-                    n4Var = lzVar;
+                    mz mzVar = new mz(context, f6Var);
+                    mzVar.setIsSingleCell(true);
+                    n4Var = mzVar;
                     break;
                 case 35:
                 case 36:

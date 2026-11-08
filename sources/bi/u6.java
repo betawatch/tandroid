@@ -21,7 +21,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.my0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class u6 extends a5.h {
     public org.telegram.ui.Components.i6 D;
@@ -77,7 +77,7 @@ public final class u6 extends a5.h {
             Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
             my0Var.a();
             my0Var.m(1);
-            my0 my0Var2 = new my0(starGift.sold_out ? org.telegram.messenger.hd.M0(2131749966, null) : org.telegram.messenger.hd.G(starGift.availability_total, "Gift2SoldAuctionPreviewGifts", new Object[0]), 13.0f, null);
+            my0 my0Var2 = new my0(starGift.sold_out ? org.telegram.messenger.id.M0(2131749968, null) : org.telegram.messenger.id.G(starGift.availability_total, "Gift2SoldAuctionPreviewGifts", new Object[0]), 13.0f, null);
             this.y = my0Var2;
             my0Var2.p(org.telegram.messenger.g0.L(f14));
             my0Var2.a();
@@ -375,11 +375,11 @@ public final class u6 extends a5.h {
         int currentTime = ConnectionsManager.getInstance(p10.s0).getCurrentTime();
         int i7 = this.G;
         if (currentTime > i7) {
-            this.D.t(org.telegram.messenger.hd.M0(2131750365, null), true, true);
+            this.D.t(org.telegram.messenger.id.M0(2131750367, null), true, true);
         } else {
             int i10 = this.H;
             if (currentTime < i10) {
-                this.D.t(org.telegram.messenger.hd.a0(null, null, 2131750364, org.telegram.messenger.g0.g0(i10 - currentTime, true, false)), true, true);
+                this.D.t(org.telegram.messenger.id.a0(null, null, 2131750366, org.telegram.messenger.g0.g0(i10 - currentTime, true, false)), true, true);
             } else {
                 this.D.t(org.telegram.messenger.g0.g0(i7 - currentTime, true, false), true, true);
             }
@@ -387,6 +387,6 @@ public final class u6 extends a5.h {
         if (currentTime <= this.G || (my0Var = this.y) == null) {
             return;
         }
-        my0Var.q(org.telegram.messenger.hd.M0(2131749966, null));
+        my0Var.q(org.telegram.messenger.id.M0(2131749968, null));
     }
 }

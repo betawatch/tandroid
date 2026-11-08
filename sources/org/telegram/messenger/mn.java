@@ -35,7 +35,7 @@ import org.telegram.ui.Components.hv0;
 import org.telegram.ui.Components.qa0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class mn implements Runnable {
     public final /* synthetic */ int a;
@@ -380,13 +380,13 @@ public final /* synthetic */ class mn implements Runnable {
                                                                     if (mutate2 != 0) {
                                                                     }
                                                                     r36[1].setBounds(qs.r2, qs.t3, c10.getWidth() - 20, qs.f5);
-                                                                    r36[1].p(0, 560, 522);
+                                                                    r36[1].o(0, 560, 522);
                                                                     r36[1].draw(canvas);
                                                                     r36[1].setBounds(qs.r2, 430, c10.getWidth() - 20, 522);
-                                                                    r36[1].p(430, 560, 522);
+                                                                    r36[1].o(430, 560, 522);
                                                                     r36[1].draw(canvas);
                                                                     r36[0].setBounds(20, qs.u5, 399, 415);
-                                                                    r36[0].p(qs.u5, 560, 522);
+                                                                    r36[0].o(qs.u5, 560, 522);
                                                                     r36[0].draw(canvas);
                                                                     paint.setColor(i14);
                                                                     canvas.drawRect(0.0f, c10.getHeight() - 120, c10.getWidth(), c10.getHeight(), paint);
@@ -451,13 +451,13 @@ public final /* synthetic */ class mn implements Runnable {
                                                                         if (mutate2 != 0) {
                                                                         }
                                                                         r362[1].setBounds(qs.r2, qs.t3, c10.getWidth() - 20, qs.f5);
-                                                                        r362[1].p(0, 560, 522);
+                                                                        r362[1].o(0, 560, 522);
                                                                         r362[1].draw(canvas);
                                                                         r362[1].setBounds(qs.r2, 430, c10.getWidth() - 20, 522);
-                                                                        r362[1].p(430, 560, 522);
+                                                                        r362[1].o(430, 560, 522);
                                                                         r362[1].draw(canvas);
                                                                         r362[0].setBounds(20, qs.u5, 399, 415);
-                                                                        r362[0].p(qs.u5, 560, 522);
+                                                                        r362[0].o(qs.u5, 560, 522);
                                                                         r362[0].draw(canvas);
                                                                         paint.setColor(i14);
                                                                         canvas.drawRect(0.0f, c10.getHeight() - 120, c10.getWidth(), c10.getHeight(), paint);
@@ -518,13 +518,13 @@ public final /* synthetic */ class mn implements Runnable {
                                                                         if (mutate2 != 0) {
                                                                         }
                                                                         r3622[1].setBounds(qs.r2, qs.t3, c10.getWidth() - 20, qs.f5);
-                                                                        r3622[1].p(0, 560, 522);
+                                                                        r3622[1].o(0, 560, 522);
                                                                         r3622[1].draw(canvas);
                                                                         r3622[1].setBounds(qs.r2, 430, c10.getWidth() - 20, 522);
-                                                                        r3622[1].p(430, 560, 522);
+                                                                        r3622[1].o(430, 560, 522);
                                                                         r3622[1].draw(canvas);
                                                                         r3622[0].setBounds(20, qs.u5, 399, 415);
-                                                                        r3622[0].p(qs.u5, 560, 522);
+                                                                        r3622[0].o(qs.u5, 560, 522);
                                                                         r3622[0].draw(canvas);
                                                                         paint.setColor(i14);
                                                                         canvas.drawRect(0.0f, c10.getHeight() - 120, c10.getWidth(), c10.getHeight(), paint);
@@ -648,13 +648,13 @@ public final /* synthetic */ class mn implements Runnable {
                                                                 if (mutate2 != 0) {
                                                                 }
                                                                 r36222[1].setBounds(qs.r2, qs.t3, c10.getWidth() - 20, qs.f5);
-                                                                r36222[1].p(0, 560, 522);
+                                                                r36222[1].o(0, 560, 522);
                                                                 r36222[1].draw(canvas);
                                                                 r36222[1].setBounds(qs.r2, 430, c10.getWidth() - 20, 522);
-                                                                r36222[1].p(430, 560, 522);
+                                                                r36222[1].o(430, 560, 522);
                                                                 r36222[1].draw(canvas);
                                                                 r36222[0].setBounds(20, qs.u5, 399, 415);
-                                                                r36222[0].p(qs.u5, 560, 522);
+                                                                r36222[0].o(qs.u5, 560, 522);
                                                                 r36222[0].draw(canvas);
                                                                 paint.setColor(i14);
                                                                 canvas.drawRect(0.0f, c10.getHeight() - 120, c10.getWidth(), c10.getHeight(), paint);
@@ -673,7 +673,7 @@ public final /* synthetic */ class mn implements Runnable {
                                                                 g0.h3(new mn(qpVar, str3, str4, h6Var, j6Var, 7));
                                                             }
                                                         }
-                                                        qa0Var.s(decodeFile, (int) (h6Var.p * 100.0f));
+                                                        qa0Var.s((int) (h6Var.p * 100.0f), decodeFile);
                                                         qa0Var.setBounds(0, 0, c10.getWidth(), c10.getHeight());
                                                         qa0Var.draw(canvas);
                                                     }
@@ -700,13 +700,13 @@ public final /* synthetic */ class mn implements Runnable {
                                                         mutate2.draw(canvas);
                                                     }
                                                     r36222[1].setBounds(qs.r2, qs.t3, c10.getWidth() - 20, qs.f5);
-                                                    r36222[1].p(0, 560, 522);
+                                                    r36222[1].o(0, 560, 522);
                                                     r36222[1].draw(canvas);
                                                     r36222[1].setBounds(qs.r2, 430, c10.getWidth() - 20, 522);
-                                                    r36222[1].p(430, 560, 522);
+                                                    r36222[1].o(430, 560, 522);
                                                     r36222[1].draw(canvas);
                                                     r36222[0].setBounds(20, qs.u5, 399, 415);
-                                                    r36222[0].p(qs.u5, 560, 522);
+                                                    r36222[0].o(qs.u5, 560, 522);
                                                     r36222[0].draw(canvas);
                                                     paint.setColor(i14);
                                                     canvas.drawRect(0.0f, c10.getHeight() - 120, c10.getWidth(), c10.getHeight(), paint);
@@ -745,13 +745,13 @@ public final /* synthetic */ class mn implements Runnable {
                                             if (mutate2 != 0) {
                                             }
                                             r36222[1].setBounds(qs.r2, qs.t3, c10.getWidth() - 20, qs.f5);
-                                            r36222[1].p(0, 560, 522);
+                                            r36222[1].o(0, 560, 522);
                                             r36222[1].draw(canvas);
                                             r36222[1].setBounds(qs.r2, 430, c10.getWidth() - 20, 522);
-                                            r36222[1].p(430, 560, 522);
+                                            r36222[1].o(430, 560, 522);
                                             r36222[1].draw(canvas);
                                             r36222[0].setBounds(20, qs.u5, 399, 415);
-                                            r36222[0].p(qs.u5, 560, 522);
+                                            r36222[0].o(qs.u5, 560, 522);
                                             r36222[0].draw(canvas);
                                             paint.setColor(i14);
                                             canvas.drawRect(0.0f, c10.getHeight() - 120, c10.getWidth(), c10.getHeight(), paint);
@@ -805,13 +805,13 @@ public final /* synthetic */ class mn implements Runnable {
                                             if (mutate2 != 0) {
                                             }
                                             r36222[1].setBounds(qs.r2, qs.t3, c10.getWidth() - 20, qs.f5);
-                                            r36222[1].p(0, 560, 522);
+                                            r36222[1].o(0, 560, 522);
                                             r36222[1].draw(canvas);
                                             r36222[1].setBounds(qs.r2, 430, c10.getWidth() - 20, 522);
-                                            r36222[1].p(430, 560, 522);
+                                            r36222[1].o(430, 560, 522);
                                             r36222[1].draw(canvas);
                                             r36222[0].setBounds(20, qs.u5, 399, 415);
-                                            r36222[0].p(qs.u5, 560, 522);
+                                            r36222[0].o(qs.u5, 560, 522);
                                             r36222[0].draw(canvas);
                                             paint.setColor(i14);
                                             canvas.drawRect(0.0f, c10.getHeight() - 120, c10.getWidth(), c10.getHeight(), paint);
@@ -872,13 +872,13 @@ public final /* synthetic */ class mn implements Runnable {
                                                                 if (mutate2 != 0) {
                                                                 }
                                                                 r36222[1].setBounds(qs.r2, qs.t3, c10.getWidth() - 20, qs.f5);
-                                                                r36222[1].p(0, 560, 522);
+                                                                r36222[1].o(0, 560, 522);
                                                                 r36222[1].draw(canvas);
                                                                 r36222[1].setBounds(qs.r2, 430, c10.getWidth() - 20, 522);
-                                                                r36222[1].p(430, 560, 522);
+                                                                r36222[1].o(430, 560, 522);
                                                                 r36222[1].draw(canvas);
                                                                 r36222[0].setBounds(20, qs.u5, 399, 415);
-                                                                r36222[0].p(qs.u5, 560, 522);
+                                                                r36222[0].o(qs.u5, 560, 522);
                                                                 r36222[0].draw(canvas);
                                                                 paint.setColor(i14);
                                                                 canvas.drawRect(0.0f, c10.getHeight() - 120, c10.getWidth(), c10.getHeight(), paint);
@@ -931,13 +931,13 @@ public final /* synthetic */ class mn implements Runnable {
                                                     if (mutate2 != 0) {
                                                     }
                                                     r36222[1].setBounds(qs.r2, qs.t3, c10.getWidth() - 20, qs.f5);
-                                                    r36222[1].p(0, 560, 522);
+                                                    r36222[1].o(0, 560, 522);
                                                     r36222[1].draw(canvas);
                                                     r36222[1].setBounds(qs.r2, 430, c10.getWidth() - 20, 522);
-                                                    r36222[1].p(430, 560, 522);
+                                                    r36222[1].o(430, 560, 522);
                                                     r36222[1].draw(canvas);
                                                     r36222[0].setBounds(20, qs.u5, 399, 415);
-                                                    r36222[0].p(qs.u5, 560, 522);
+                                                    r36222[0].o(qs.u5, 560, 522);
                                                     r36222[0].draw(canvas);
                                                     paint.setColor(i14);
                                                     canvas.drawRect(0.0f, c10.getHeight() - 120, c10.getWidth(), c10.getHeight(), paint);
@@ -1000,13 +1000,13 @@ public final /* synthetic */ class mn implements Runnable {
                                                     if (mutate2 != 0) {
                                                     }
                                                     r36222[1].setBounds(qs.r2, qs.t3, c10.getWidth() - 20, qs.f5);
-                                                    r36222[1].p(0, 560, 522);
+                                                    r36222[1].o(0, 560, 522);
                                                     r36222[1].draw(canvas);
                                                     r36222[1].setBounds(qs.r2, 430, c10.getWidth() - 20, 522);
-                                                    r36222[1].p(430, 560, 522);
+                                                    r36222[1].o(430, 560, 522);
                                                     r36222[1].draw(canvas);
                                                     r36222[0].setBounds(20, qs.u5, 399, 415);
-                                                    r36222[0].p(qs.u5, 560, 522);
+                                                    r36222[0].o(qs.u5, 560, 522);
                                                     r36222[0].draw(canvas);
                                                     paint.setColor(i14);
                                                     canvas.drawRect(0.0f, c10.getHeight() - 120, c10.getWidth(), c10.getHeight(), paint);
@@ -1038,13 +1038,13 @@ public final /* synthetic */ class mn implements Runnable {
                                             if (mutate2 != 0) {
                                             }
                                             r36222[1].setBounds(qs.r2, qs.t3, c10.getWidth() - 20, qs.f5);
-                                            r36222[1].p(0, 560, 522);
+                                            r36222[1].o(0, 560, 522);
                                             r36222[1].draw(canvas);
                                             r36222[1].setBounds(qs.r2, 430, c10.getWidth() - 20, 522);
-                                            r36222[1].p(430, 560, 522);
+                                            r36222[1].o(430, 560, 522);
                                             r36222[1].draw(canvas);
                                             r36222[0].setBounds(20, qs.u5, 399, 415);
-                                            r36222[0].p(qs.u5, 560, 522);
+                                            r36222[0].o(qs.u5, 560, 522);
                                             r36222[0].draw(canvas);
                                             paint.setColor(i14);
                                             canvas.drawRect(0.0f, c10.getHeight() - 120, c10.getWidth(), c10.getHeight(), paint);
@@ -1074,13 +1074,13 @@ public final /* synthetic */ class mn implements Runnable {
                                         if (mutate2 != 0) {
                                         }
                                         r36222[1].setBounds(qs.r2, qs.t3, c10.getWidth() - 20, qs.f5);
-                                        r36222[1].p(0, 560, 522);
+                                        r36222[1].o(0, 560, 522);
                                         r36222[1].draw(canvas);
                                         r36222[1].setBounds(qs.r2, 430, c10.getWidth() - 20, 522);
-                                        r36222[1].p(430, 560, 522);
+                                        r36222[1].o(430, 560, 522);
                                         r36222[1].draw(canvas);
                                         r36222[0].setBounds(20, qs.u5, 399, 415);
-                                        r36222[0].p(qs.u5, 560, 522);
+                                        r36222[0].o(qs.u5, 560, 522);
                                         r36222[0].draw(canvas);
                                         paint.setColor(i14);
                                         canvas.drawRect(0.0f, c10.getHeight() - 120, c10.getWidth(), c10.getHeight(), paint);
@@ -1136,13 +1136,13 @@ public final /* synthetic */ class mn implements Runnable {
                                 if (mutate2 != 0) {
                                 }
                                 r362222[1].setBounds(qs.r2, qs.t3, c10.getWidth() - 20, qs.f5);
-                                r362222[1].p(0, 560, 522);
+                                r362222[1].o(0, 560, 522);
                                 r362222[1].draw(canvas);
                                 r362222[1].setBounds(qs.r2, 430, c10.getWidth() - 20, 522);
-                                r362222[1].p(430, 560, 522);
+                                r362222[1].o(430, 560, 522);
                                 r362222[1].draw(canvas);
                                 r362222[0].setBounds(20, qs.u5, 399, 415);
-                                r362222[0].p(qs.u5, 560, 522);
+                                r362222[0].o(qs.u5, 560, 522);
                                 r362222[0].draw(canvas);
                                 paint.setColor(i14);
                                 canvas.drawRect(0.0f, c10.getHeight() - 120, c10.getWidth(), c10.getHeight(), paint);
@@ -1205,13 +1205,13 @@ public final /* synthetic */ class mn implements Runnable {
                         if (mutate2 != 0) {
                         }
                         r3622222[1].setBounds(qs.r2, qs.t3, c10.getWidth() - 20, qs.f5);
-                        r3622222[1].p(0, 560, 522);
+                        r3622222[1].o(0, 560, 522);
                         r3622222[1].draw(canvas);
                         r3622222[1].setBounds(qs.r2, 430, c10.getWidth() - 20, 522);
-                        r3622222[1].p(430, 560, 522);
+                        r3622222[1].o(430, 560, 522);
                         r3622222[1].draw(canvas);
                         r3622222[0].setBounds(20, qs.u5, 399, 415);
-                        r3622222[0].p(qs.u5, 560, 522);
+                        r3622222[0].o(qs.u5, 560, 522);
                         r3622222[0].draw(canvas);
                         paint.setColor(i14);
                         canvas.drawRect(0.0f, c10.getHeight() - 120, c10.getWidth(), c10.getHeight(), paint);
@@ -1281,13 +1281,13 @@ public final /* synthetic */ class mn implements Runnable {
                 if (mutate2 != 0) {
                 }
                 r36222222[1].setBounds(qs.r2, qs.t3, c10.getWidth() - 20, qs.f5);
-                r36222222[1].p(0, 560, 522);
+                r36222222[1].o(0, 560, 522);
                 r36222222[1].draw(canvas);
                 r36222222[1].setBounds(qs.r2, 430, c10.getWidth() - 20, 522);
-                r36222222[1].p(430, 560, 522);
+                r36222222[1].o(430, 560, 522);
                 r36222222[1].draw(canvas);
                 r36222222[0].setBounds(20, qs.u5, 399, 415);
-                r36222222[0].p(qs.u5, 560, 522);
+                r36222222[0].o(qs.u5, 560, 522);
                 r36222222[0].draw(canvas);
                 paint.setColor(i14);
                 canvas.drawRect(0.0f, c10.getHeight() - 120, c10.getWidth(), c10.getHeight(), paint);
@@ -1364,13 +1364,13 @@ public final /* synthetic */ class mn implements Runnable {
         if (mutate2 != 0) {
         }
         r362222222[1].setBounds(qs.r2, qs.t3, c10.getWidth() - 20, qs.f5);
-        r362222222[1].p(0, 560, 522);
+        r362222222[1].o(0, 560, 522);
         r362222222[1].draw(canvas);
         r362222222[1].setBounds(qs.r2, 430, c10.getWidth() - 20, 522);
-        r362222222[1].p(430, 560, 522);
+        r362222222[1].o(430, 560, 522);
         r362222222[1].draw(canvas);
         r362222222[0].setBounds(20, qs.u5, 399, 415);
-        r362222222[0].p(qs.u5, 560, 522);
+        r362222222[0].o(qs.u5, 560, 522);
         r362222222[0].draw(canvas);
         paint.setColor(i14);
         canvas.drawRect(0.0f, c10.getHeight() - 120, c10.getWidth(), c10.getHeight(), paint);
@@ -1793,7 +1793,7 @@ public final /* synthetic */ class mn implements Runnable {
             case 17:
                 gz gzVar4 = (gz) this.b;
                 File file4 = (File) this.c;
-                g0.h3(new zj(gzVar4, gzVar4.A(file4.toString(), null, false), (ij) this.d, file4, (sy) this.e, (String) this.f));
+                g0.h3(new yj(gzVar4, gzVar4.A(file4.toString(), null, false), (ij) this.d, file4, (sy) this.e, (String) this.f));
                 break;
             default:
                 f10 f10Var = (f10) this.b;

@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class si extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ Context a;
@@ -113,7 +113,7 @@ public final class si extends org.telegram.ui.ActionBar.j {
                 tL_channels_toggleViewForumAsMessages.channel_id = k00Var.getMessagesController().h1(j11);
                 tL_channels_toggleViewForumAsMessages.enabled = false;
                 k00Var.getConnectionsManager().sendRequest(tL_channels_toggleViewForumAsMessages, new org.telegram.messenger.s1(k00Var, 7));
-                v91.M0(anVar);
+                w91.M0(anVar);
                 return;
             }
             org.telegram.messenger.ij ijVar = null;
@@ -333,7 +333,7 @@ public final class si extends org.telegram.ui.ActionBar.j {
                             }
                             if (i7 == 14) {
                                 org.telegram.ui.ActionBar.z0 z0Var = new org.telegram.ui.ActionBar.z0(0, this.a, anVar.getResourceProvider(), true, true);
-                                z0Var.j(org.telegram.messenger.hd.M0(2131753953, null), R.drawable.input_attach, null);
+                                z0Var.j(org.telegram.messenger.id.M0(2131753953, null), R.drawable.input_attach, null);
                                 z0Var.setOnClickListener(new a(this, i22));
                                 org.telegram.ui.ActionBar.r0 r0Var = anVar.i0;
                                 org.telegram.ui.ActionBar.x xVar = anVar.f0;
@@ -391,7 +391,7 @@ public final class si extends org.telegram.ui.ActionBar.j {
                                 return;
                             }
                             if (i7 == 61) {
-                                v91.M0(anVar);
+                                w91.M0(anVar);
                                 return;
                             }
                             if (i7 == 65) {
@@ -444,12 +444,12 @@ public final class si extends org.telegram.ui.ActionBar.j {
                             }
                             if (i7 == 68) {
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, anVar.getParentActivity(), anVar.getResourceProvider());
-                                String M0 = org.telegram.messenger.hd.M0(2131752707, null);
+                                String M0 = org.telegram.messenger.id.M0(2131752707, null);
                                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                                 u1Var.R = M0;
-                                u1Var.T = org.telegram.messenger.hd.M0(2131752708, null);
-                                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131746320, null), new w0(this, 19));
-                                alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+                                u1Var.T = org.telegram.messenger.id.M0(2131752708, null);
+                                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131746322, null), new w0(this, 19));
+                                alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
                                 anVar.showDialog(u1Var);
                                 TextView textView2 = (TextView) u1Var.d(-1);
                                 if (textView2 != null) {
@@ -470,7 +470,7 @@ public final class si extends org.telegram.ui.ActionBar.j {
                                 return;
                             }
                             if (i7 == 73) {
-                                u81 f02 = u81.f0(-anVar.j6, 0L);
+                                v81 f02 = v81.f0(-anVar.j6, 0L);
                                 f02.D = anVar;
                                 anVar.presentFragment(f02);
                                 return;

@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class q11 extends FrameLayout implements org.telegram.messenger.ls, org.telegram.ui.ActionBar.a6 {
     public static String[] b2;
@@ -115,10 +115,10 @@ public abstract class q11 extends FrameLayout implements org.telegram.messenger.
     public final fi.p5 b0;
     public float b1;
     public int c;
-    public final org.telegram.ui.Components.av[] c0;
+    public final org.telegram.ui.Components.bv[] c0;
     public final org.telegram.ui.ActionBar.f2 c1;
     public int d;
-    public org.telegram.ui.Components.av d0;
+    public org.telegram.ui.Components.bv d0;
     public final int d1;
     public int e;
     public final j01 e0;
@@ -533,7 +533,7 @@ public abstract class q11 extends FrameLayout implements org.telegram.messenger.
         boolean z13;
         ArrayList<TLRPC.Document> arrayList7;
         TLRPC.TL_inputStickerSetID tL_inputStickerSetID;
-        org.telegram.ui.Components.tw twVar;
+        org.telegram.ui.Components.uw uwVar;
         int i20;
         SparseIntArray sparseIntArray4;
         ArrayList arrayList8;
@@ -708,15 +708,15 @@ public abstract class q11 extends FrameLayout implements org.telegram.messenger.
                 i7 = z12 ? 1 : 0;
                 TLRPC.TL_emojiList tL_emojiList3 = this.R ? org.telegram.messenger.ui.b0(i26).J1 : org.telegram.messenger.ui.b0(i26).K1;
                 if (tL_emojiList3 != null && (arrayList10 = tL_emojiList3.document_id) != null && !arrayList10.isEmpty()) {
-                    org.telegram.ui.Components.tw twVar2 = new org.telegram.ui.Components.tw();
-                    twVar2.f = true;
-                    twVar2.g = false;
-                    twVar2.h = true;
-                    twVar2.e = true;
-                    twVar2.b = new TLRPC.TL_stickerSet();
-                    twVar2.a = tL_emojiList3.document_id.get(0);
+                    org.telegram.ui.Components.uw uwVar2 = new org.telegram.ui.Components.uw();
+                    uwVar2.f = true;
+                    uwVar2.g = false;
+                    uwVar2.h = true;
+                    uwVar2.e = true;
+                    uwVar2.b = new TLRPC.TL_stickerSet();
+                    uwVar2.a = tL_emojiList3.document_id.get(0);
                     arrayList18.size();
-                    arrayList18.add(twVar2);
+                    arrayList18.add(uwVar2);
                     int i36 = 0;
                     while (i36 < tL_emojiList3.document_id.size()) {
                         arrayList15.add(new org.telegram.ui.Components.r5(tL_emojiList3.document_id.get(i36).longValue(), (Paint.FontMetricsInt) null));
@@ -1071,22 +1071,22 @@ public abstract class q11 extends FrameLayout implements org.telegram.messenger.
                                     sparseIntArray5.put(arrayList18.size(), this.u0);
                                     this.u0++;
                                     arrayList13.add(Long.valueOf((tL_messages_stickerSet2.set.id * 13) + 9211));
-                                    org.telegram.ui.Components.tw twVar3 = new org.telegram.ui.Components.tw();
-                                    twVar3.f = true;
-                                    twVar3.g = false;
-                                    twVar3.h = true;
+                                    org.telegram.ui.Components.uw uwVar3 = new org.telegram.ui.Components.uw();
+                                    uwVar3.f = true;
+                                    uwVar3.g = false;
+                                    uwVar3.h = true;
                                     if (i27 == 4) {
-                                        twVar3.e = false;
+                                        uwVar3.e = false;
                                     } else {
-                                        twVar3.e = !org.telegram.messenger.ij.W3(tL_messages_stickerSet2);
+                                        uwVar3.e = !org.telegram.messenger.ij.W3(tL_messages_stickerSet2);
                                     }
-                                    twVar3.b = tL_messages_stickerSet2.set;
-                                    twVar3.c = j(tL_messages_stickerSet2.documents, hashSet);
+                                    uwVar3.b = tL_messages_stickerSet2.set;
+                                    uwVar3.c = j(tL_messages_stickerSet2.documents, hashSet);
                                     arrayList18.size();
-                                    arrayList18.add(twVar3);
-                                    this.u0 = twVar3.c.size() + this.u0;
-                                    for (int i55 = 0; i55 < twVar3.c.size(); i55++) {
-                                        arrayList13.add(Long.valueOf((((TLRPC.Document) twVar3.c.get(i55)).id * 13) + 3212));
+                                    arrayList18.add(uwVar3);
+                                    this.u0 = uwVar3.c.size() + this.u0;
+                                    for (int i55 = 0; i55 < uwVar3.c.size(); i55++) {
+                                        arrayList13.add(Long.valueOf((((TLRPC.Document) uwVar3.c.get(i55)).id * 13) + 3212));
                                     }
                                     i21++;
                                     sparseIntArray = sparseIntArray5;
@@ -1147,33 +1147,33 @@ public abstract class q11 extends FrameLayout implements org.telegram.messenger.
                                             this.u0++;
                                             boolean z18 = z13;
                                             arrayList13.add(Long.valueOf((stickerSet.id * 13) + 9211));
-                                            twVar = new org.telegram.ui.Components.tw();
-                                            twVar.d = tL_inputStickerSetID;
-                                            twVar.f = this.B0.contains(Long.valueOf(stickerSet.id));
-                                            twVar.g = true;
+                                            uwVar = new org.telegram.ui.Components.uw();
+                                            uwVar.d = tL_inputStickerSetID;
+                                            uwVar.f = this.B0.contains(Long.valueOf(stickerSet.id));
+                                            uwVar.g = true;
                                             if (i27 != 4) {
-                                                twVar.e = false;
+                                                uwVar.e = false;
                                             } else {
-                                                twVar.e = !z18;
+                                                uwVar.e = !z18;
                                             }
-                                            twVar.b = stickerSet;
-                                            twVar.c = j(arrayList7, hashSet2);
+                                            uwVar.b = stickerSet;
+                                            uwVar.c = j(arrayList7, hashSet2);
                                             arrayList6.size();
-                                            twVar.h = this.A0.contains(Long.valueOf(twVar.b.id));
-                                            if (twVar.c.size() > 24 || twVar.h) {
-                                                this.u0 = twVar.c.size() + this.u0;
-                                                for (i20 = 0; i20 < twVar.c.size(); i20++) {
-                                                    arrayList13.add(Long.valueOf((((TLRPC.Document) twVar.c.get(i20)).id * 13) + 3212));
+                                            uwVar.h = this.A0.contains(Long.valueOf(uwVar.b.id));
+                                            if (uwVar.c.size() > 24 || uwVar.h) {
+                                                this.u0 = uwVar.c.size() + this.u0;
+                                                for (i20 = 0; i20 < uwVar.c.size(); i20++) {
+                                                    arrayList13.add(Long.valueOf((((TLRPC.Document) uwVar.c.get(i20)).id * 13) + 3212));
                                                 }
                                             } else {
                                                 this.u0 += 24;
                                                 for (int i59 = 0; i59 < 23; i59++) {
-                                                    arrayList13.add(Long.valueOf((((TLRPC.Document) twVar.c.get(i59)).id * 13) + 3212));
+                                                    arrayList13.add(Long.valueOf((((TLRPC.Document) uwVar.c.get(i59)).id * 13) + 3212));
                                                 }
-                                                arrayList13.add(Long.valueOf(((twVar.c.size() - 23) * 169) + ((stickerSet.id * 13) - 5531)));
+                                                arrayList13.add(Long.valueOf(((uwVar.c.size() - 23) * 169) + ((stickerSet.id * 13) - 5531)));
                                                 sparseIntArray9.put(this.u0 - 1, arrayList6.size());
                                             }
-                                            if (!twVar.f) {
+                                            if (!uwVar.f) {
                                                 sparseIntArray4 = sparseIntArray11;
                                             } else if (i27 == 4 || i27 == 5 || i27 == 7 || i27 == 6) {
                                                 sparseIntArray4 = sparseIntArray11;
@@ -1183,10 +1183,10 @@ public abstract class q11 extends FrameLayout implements org.telegram.messenger.
                                                 this.u0++;
                                                 arrayList13.add(Long.valueOf((stickerSet.id * 13) + 3321));
                                                 arrayList8 = arrayList6;
-                                                arrayList8.add(twVar);
+                                                arrayList8.add(uwVar);
                                             }
                                             arrayList8 = arrayList6;
-                                            arrayList8.add(twVar);
+                                            arrayList8.add(uwVar);
                                         } else {
                                             sparseIntArray4 = sparseIntArray11;
                                             arrayList8 = arrayList6;
@@ -1217,30 +1217,30 @@ public abstract class q11 extends FrameLayout implements org.telegram.messenger.
                                     this.u0++;
                                     boolean z182 = z13;
                                     arrayList13.add(Long.valueOf((stickerSet.id * 13) + 9211));
-                                    twVar = new org.telegram.ui.Components.tw();
-                                    twVar.d = tL_inputStickerSetID;
-                                    twVar.f = this.B0.contains(Long.valueOf(stickerSet.id));
-                                    twVar.g = true;
+                                    uwVar = new org.telegram.ui.Components.uw();
+                                    uwVar.d = tL_inputStickerSetID;
+                                    uwVar.f = this.B0.contains(Long.valueOf(stickerSet.id));
+                                    uwVar.g = true;
                                     if (i27 != 4) {
                                     }
-                                    twVar.b = stickerSet;
-                                    twVar.c = j(arrayList7, hashSet2);
+                                    uwVar.b = stickerSet;
+                                    uwVar.c = j(arrayList7, hashSet2);
                                     arrayList6.size();
-                                    twVar.h = this.A0.contains(Long.valueOf(twVar.b.id));
-                                    if (twVar.c.size() > 24) {
+                                    uwVar.h = this.A0.contains(Long.valueOf(uwVar.b.id));
+                                    if (uwVar.c.size() > 24) {
                                     }
-                                    this.u0 = twVar.c.size() + this.u0;
-                                    while (i20 < twVar.c.size()) {
+                                    this.u0 = uwVar.c.size() + this.u0;
+                                    while (i20 < uwVar.c.size()) {
                                     }
-                                    if (!twVar.f) {
+                                    if (!uwVar.f) {
                                     }
                                     arrayList8 = arrayList6;
-                                    arrayList8.add(twVar);
+                                    arrayList8.add(uwVar);
                                 }
                                 sparseIntArray4 = sparseIntArray11;
                                 arrayList8 = arrayList6;
                             } else {
-                                if (((org.telegram.ui.Components.tw) arrayList18.get(i57)).b.id == stickerSet4.id) {
+                                if (((org.telegram.ui.Components.uw) arrayList18.get(i57)).b.id == stickerSet4.id) {
                                     int i61 = i56;
                                     sparseIntArray3 = sparseIntArray12;
                                     hashSet2 = hashSet;
@@ -1624,18 +1624,18 @@ public abstract class q11 extends FrameLayout implements org.telegram.messenger.
         if (i14 >= 0) {
             ArrayList arrayList = this.M0;
             if (i14 < arrayList.size()) {
-                org.telegram.ui.Components.tw twVar = (org.telegram.ui.Components.tw) arrayList.get(i14);
-                if (twVar.h) {
+                org.telegram.ui.Components.uw uwVar = (org.telegram.ui.Components.uw) arrayList.get(i14);
+                if (uwVar.h) {
                     return;
                 }
                 boolean z11 = i14 + 1 == arrayList.size();
                 i12 = this.x0.get(i14);
-                this.A0.add(Long.valueOf(twVar.b.id));
+                this.A0.add(Long.valueOf(uwVar.b.id));
                 i10 = 24;
-                i11 = twVar.h ? twVar.c.size() : Math.min(24, twVar.c.size());
-                num = twVar.c.size() > 24 ? Integer.valueOf(i12 + 1 + i11) : null;
-                twVar.h = true;
-                i13 = twVar.c.size();
+                i11 = uwVar.h ? uwVar.c.size() : Math.min(24, uwVar.c.size());
+                num = uwVar.c.size() > 24 ? Integer.valueOf(i12 + 1 + i11) : null;
+                uwVar.h = true;
+                i13 = uwVar.c.size();
                 z10 = z11;
                 if (i13 > i11) {
                     num = Integer.valueOf(i12 + 1 + i11);
@@ -1649,7 +1649,7 @@ public abstract class q11 extends FrameLayout implements org.telegram.messenger.
                 this.P1 = num2.intValue() + num.intValue();
                 this.Q1 = SystemClock.elapsedRealtime();
                 if (z10) {
-                    post(new org.telegram.ui.Components.ow(this, num2.intValue() > i10 / 2 ? 1.5f : 3.5f, num.intValue(), 1));
+                    post(new org.telegram.ui.Components.pw(this, num2.intValue() > i10 / 2 ? 1.5f : 3.5f, num.intValue(), 1));
                     return;
                 }
                 return;
@@ -2269,7 +2269,7 @@ public abstract class q11 extends FrameLayout implements org.telegram.messenger.
         this.M = paint2;
         this.S = new ArrayList();
         this.V = org.telegram.messenger.p10.s0;
-        this.c0 = new org.telegram.ui.Components.av[2];
+        this.c0 = new org.telegram.ui.Components.bv[2];
         this.v0 = new ArrayList();
         this.w0 = new SparseIntArray();
         this.x0 = new SparseIntArray();
@@ -2409,9 +2409,9 @@ public abstract class q11 extends FrameLayout implements org.telegram.messenger.
             org.telegram.ui.ActionBar.f6 f6Var3 = f6Var2;
             int i20 = i15;
             n01 n01Var = new n01(this, context, f6Var3, z12, z13, i20, by0Var, i16, i7);
-            org.telegram.ui.Components.wu wuVar = n01Var.D;
-            if (wuVar != null) {
-                wuVar.setOnLongClickListener(new t(this, i14));
+            org.telegram.ui.Components.xu xuVar = n01Var.D;
+            if (xuVar != null) {
+                xuVar.setOnLongClickListener(new t(this, i14));
             }
             n01Var.U = false;
             if (i20 == 4) {
@@ -2437,9 +2437,9 @@ public abstract class q11 extends FrameLayout implements org.telegram.messenger.
         org.telegram.ui.ActionBar.f6 f6Var4 = f6Var2;
         int i22 = i15;
         int i23 = i13;
-        org.telegram.ui.Components.av[] avVarArr = this.c0;
-        this.d0 = avVarArr[0];
-        avVarArr[1].setVisibility(8);
+        org.telegram.ui.Components.bv[] bvVarArr = this.c0;
+        this.d0 = bvVarArr[0];
+        bvVarArr[1].setVisibility(8);
         j01 j01Var = new j01(context, num8, 1);
         this.e0 = j01Var;
         org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.d7, j01Var, f6Var4);
@@ -2488,15 +2488,15 @@ public abstract class q11 extends FrameLayout implements org.telegram.messenger.
         }
         TextView textView = new TextView(context);
         if (i22 == 4) {
-            textView.setText(org.telegram.messenger.hd.M0(2131748211, null));
+            textView.setText(org.telegram.messenger.id.M0(2131748213, null));
         } else if (i22 == 0 || i22 == 13 || i22 == 12 || i22 == 11 || i22 == 9 || i22 == 10) {
-            textView.setText(org.telegram.messenger.hd.M0(2131748212, null));
+            textView.setText(org.telegram.messenger.id.M0(2131748214, null));
         } else if (i22 == 1 || i22 == 2) {
-            textView.setText(org.telegram.messenger.hd.M0(2131748173, null));
+            textView.setText(org.telegram.messenger.id.M0(2131748175, null));
         } else if (i22 == i23) {
-            textView.setText(org.telegram.messenger.hd.M0(2131748213, null));
+            textView.setText(org.telegram.messenger.id.M0(2131748215, null));
         } else {
-            textView.setText(org.telegram.messenger.hd.M0(2131748202, null));
+            textView.setText(org.telegram.messenger.id.M0(2131748204, null));
         }
         textView.setTextSize(1, 14.0f);
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.Af, f6Var4);

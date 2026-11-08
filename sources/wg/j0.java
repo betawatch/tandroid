@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import c8.ha;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
@@ -20,7 +20,7 @@ import org.telegram.ui.Components.w8;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.c61;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class j0 extends ug.f1 {
     public final ArrayList I2;
@@ -119,26 +119,26 @@ public final class j0 extends ug.f1 {
         this.H2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         w70 w70Var = this.G2[0];
         ArrayList arrayList = this.I2;
-        w70Var.setText(hd.K0(arrayList.size(), "GiftPremiumGiftsSent"));
+        w70Var.setText(id.K0(arrayList.size(), "GiftPremiumGiftsSent"));
         ((ViewGroup.MarginLayoutParams) this.H2.getLayoutParams()).bottomMargin = org.telegram.messenger.g0.L(16.0f);
         ((ViewGroup.MarginLayoutParams) this.H2.getLayoutParams()).topMargin = org.telegram.messenger.g0.L(4.0f);
         int size = arrayList.size();
         if (size == 1) {
-            a02 = hd.a0(null, null, 2131749652, hd.a0(null, null, 2131749654, t10.j((TLRPC.User) arrayList.get(0), true)));
+            a02 = id.a0(null, null, 2131749654, id.a0(null, null, 2131749656, t10.j((TLRPC.User) arrayList.get(0), true)));
         } else if (size == 2) {
-            a02 = hd.a0("GiftPremiumUsersPurchasedManyZero", null, 2131749652, hd.a0("GiftPremiumUsersTwo", null, 2131749647, t10.j((TLRPC.User) arrayList.get(0), true), t10.j((TLRPC.User) arrayList.get(1), true)));
+            a02 = id.a0("GiftPremiumUsersPurchasedManyZero", null, 2131749654, id.a0("GiftPremiumUsersTwo", null, 2131749649, t10.j((TLRPC.User) arrayList.get(0), true), t10.j((TLRPC.User) arrayList.get(1), true)));
         } else if (size != 3) {
-            a02 = hd.G(arrayList.size() - 3, "GiftPremiumUsersPurchasedMany", hd.a0("GiftPremiumUsersThree", null, 2131749648, t10.j((TLRPC.User) arrayList.get(0), true), t10.j((TLRPC.User) arrayList.get(1), true), t10.j((TLRPC.User) arrayList.get(2), true)));
+            a02 = id.G(arrayList.size() - 3, "GiftPremiumUsersPurchasedMany", id.a0("GiftPremiumUsersThree", null, 2131749650, t10.j((TLRPC.User) arrayList.get(0), true), t10.j((TLRPC.User) arrayList.get(1), true), t10.j((TLRPC.User) arrayList.get(2), true)));
         } else {
-            a02 = hd.a0("GiftPremiumUsersPurchasedManyZero", null, 2131749652, hd.a0("GiftPremiumUsersThree", null, 2131749648, t10.j((TLRPC.User) arrayList.get(0), true), t10.j((TLRPC.User) arrayList.get(1), true), t10.j((TLRPC.User) arrayList.get(2), true)));
+            a02 = id.a0("GiftPremiumUsersPurchasedManyZero", null, 2131749654, id.a0("GiftPremiumUsersThree", null, 2131749650, t10.j((TLRPC.User) arrayList.get(0), true), t10.j((TLRPC.User) arrayList.get(1), true), t10.j((TLRPC.User) arrayList.get(2), true)));
         }
         this.H2.setText(org.telegram.messenger.g0.X2(a02));
         this.H2.append("\n");
         this.H2.append("\n");
         if (arrayList.size() == 1) {
-            this.H2.append(org.telegram.messenger.g0.X2(hd.a0("GiftPremiumGiftsSentStatusForUser", null, 2131749667, t10.j((TLRPC.User) arrayList.get(0), true))));
+            this.H2.append(org.telegram.messenger.g0.X2(id.a0("GiftPremiumGiftsSentStatusForUser", null, 2131749669, t10.j((TLRPC.User) arrayList.get(0), true))));
         } else {
-            this.H2.append(org.telegram.messenger.g0.X2(hd.M0(2131749668, "GiftPremiumGiftsSentStatus")));
+            this.H2.append(org.telegram.messenger.g0.X2(id.M0(2131749670, "GiftPremiumGiftsSentStatus")));
         }
     }
 

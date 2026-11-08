@@ -19,7 +19,7 @@ import java.util.concurrent.locks.Lock;
 import m.q3;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class b0 implements e0 {
     public boolean D;
@@ -177,11 +177,11 @@ public final class b0 implements e0 {
                         Integer num = aVar.I;
                         q6.m.g(num);
                         int intValue = num.intValue();
-                        Parcel J0 = eVar.J0();
-                        n7.a.c(J0, iVar);
-                        J0.writeInt(intValue);
-                        J0.writeInt(z9 ? 1 : 0);
-                        eVar.K0(J0, 9);
+                        Parcel j12 = eVar.j1();
+                        n7.a.c(j12, iVar);
+                        j12.writeInt(intValue);
+                        j12.writeInt(z9 ? 1 : 0);
+                        eVar.k1(j12, 9);
                     } catch (RemoteException unused) {
                         Log.w("SignInClientImpl", "Remote service probably died when saveDefaultAccount is called");
                     }
@@ -260,9 +260,9 @@ public final class b0 implements e0 {
                     Integer num = aVar.I;
                     q6.m.g(num);
                     int intValue = num.intValue();
-                    Parcel J0 = eVar.J0();
-                    J0.writeInt(intValue);
-                    eVar.K0(J0, 7);
+                    Parcel j12 = eVar.j1();
+                    j12.writeInt(intValue);
+                    eVar.k1(j12, 7);
                 } catch (RemoteException unused) {
                     Log.w("SignInClientImpl", "Remote service probably died when clearAccountFromSessionStore is called");
                 }

@@ -1,36 +1,14 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
+import android.graphics.drawable.ShapeDrawable;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
-public final class j5 extends View {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ y5 b;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j5(y5 y5Var, Context context, int i7) {
-        super(context);
-        this.a = i7;
-        this.b = y5Var;
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        switch (this.a) {
-            case 0:
-                int size = View.MeasureSpec.getSize(i7);
-                y5 y5Var = this.b;
-                y5Var.Z.measure(View.MeasureSpec.makeMeasureSpec(Math.max(0, size - org.telegram.messenger.g0.L(24.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
-                setMeasuredDimension(size, org.telegram.messenger.g0.L(36.0f) + y5Var.Z.getMeasuredHeight());
-                break;
-            default:
-                y5 y5Var2 = this.b;
-                y5Var2.e.measure(i7, View.MeasureSpec.makeMeasureSpec(0, 0));
-                setMeasuredDimension(View.MeasureSpec.getSize(i7), y5Var2.e.getMeasuredHeight());
-                break;
-        }
+public final class j5 extends ShapeDrawable.ShaderFactory {
+    @Override // android.graphics.drawable.ShapeDrawable.ShaderFactory
+    public final Shader resize(int i7, int i10) {
+        return new LinearGradient(0.0f, 0.0f, 0.0f, i10, -765355, -2148011, Shader.TileMode.CLAMP);
     }
 }

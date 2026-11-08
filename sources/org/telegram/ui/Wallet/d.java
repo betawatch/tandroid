@@ -15,7 +15,7 @@ import org.telegram.ui.Components.x31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements v10 {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class d implements v10 {
                     jVar.a(Long.valueOf(wallettransaction.fee), null);
                     break;
                 } else {
-                    n0.j("emulate disable backup, no transaction: ".concat(str2 != null ? str2 : "NULL_ERROR"));
+                    m0.j("emulate disable backup, no transaction: ".concat(str2 != null ? str2 : "NULL_ERROR"));
                     if (str2 == null) {
                         str2 = "NULL_ERROR";
                     }
@@ -58,45 +58,45 @@ public final /* synthetic */ class d implements v10 {
                     break;
                 }
             case 2:
-                ((v10) this.b).a((k0) obj, (String) obj2);
+                ((v10) this.b).a((j0) obj, (String) obj2);
                 break;
             case 3:
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                ((t) this.b).a((tL_error2 == null && (((TLRPC.Bool) obj) instanceof TLRPC.TL_boolTrue)) ? null : f2.z(tL_error2, "closeSession"));
+                ((t) this.b).a((tL_error2 == null && (((TLRPC.Bool) obj) instanceof TLRPC.TL_boolTrue)) ? null : e2.z(tL_error2, "closeSession"));
                 break;
             case 4:
-                f2 f2Var = (f2) this.b;
+                e2 e2Var = (e2) this.b;
                 TL_wallet.tonConnectSessions tonconnectsessions = (TL_wallet.tonConnectSessions) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                n0 n0Var = f2Var.b;
-                ArrayList arrayList = f2Var.d;
-                f2Var.e = -1;
+                m0 m0Var = e2Var.b;
+                ArrayList arrayList = e2Var.d;
+                e2Var.e = -1;
                 if (tL_error3 == null && tonconnectsessions != null) {
                     arrayList.clear();
                     ArrayList<TL_wallet.tonConnectSession> arrayList2 = tonconnectsessions.sessions;
                     if (arrayList2 != null) {
                         arrayList.addAll(arrayList2);
                     }
-                    n0Var.L();
+                    m0Var.L();
                     break;
                 } else {
-                    f2.z(tL_error3, "getSessions");
-                    n0Var.L();
+                    e2.z(tL_error3, "getSessions");
+                    m0Var.L();
                     break;
                 }
             case 5:
-                ((ArrayList) obj).add(x31.k(((a3) this.b).Q1));
+                ((ArrayList) obj).add(x31.k(((z2) this.b).Q1));
                 break;
             case 6:
-                p3 p3Var = (p3) this.b;
+                o3 o3Var = (o3) this.b;
                 Bitmap bitmap = (Bitmap) obj;
                 Bitmap bitmap2 = (Bitmap) obj2;
-                if (!p3Var.S && !p3Var.R) {
-                    p3Var.G = bitmap;
-                    p3Var.n.invalidate();
-                    p3Var.d();
-                    p3Var.E.a(bitmap2);
-                    p3Var.h.post(new l3(p3Var, 1));
+                if (!o3Var.S && !o3Var.R) {
+                    o3Var.G = bitmap;
+                    o3Var.n.invalidate();
+                    o3Var.d();
+                    o3Var.E.a(bitmap2);
+                    o3Var.h.post(new k3(o3Var, 1));
                     break;
                 } else {
                     bitmap.recycle();
@@ -105,12 +105,12 @@ public final /* synthetic */ class d implements v10 {
                 }
                 break;
             case 7:
-                y5 y5Var = (y5) this.b;
+                x5 x5Var = (x5) this.b;
                 TL_account.Password password = (TL_account.Password) obj;
                 if (password != null) {
-                    y5Var.R0 = true;
-                    y5Var.S0 = password.has_password;
-                    fi.w3 w3Var = y5Var.a;
+                    x5Var.R0 = true;
+                    x5Var.S0 = password.has_password;
+                    fi.w3 w3Var = x5Var.a;
                     if (w3Var != null && (l41Var = w3Var.f3) != null) {
                         l41Var.O(true);
                         break;
@@ -137,15 +137,15 @@ public final /* synthetic */ class d implements v10 {
                 }
                 break;
             case 9:
-                WalletEngine2.HttpTransport.lambda$execute$0((k7) this.b, (TL_toncenter.apiResponse) obj, (TLRPC.TL_error) obj2);
+                WalletEngine2.HttpTransport.lambda$execute$0((j7) this.b, (TL_toncenter.apiResponse) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                ((x9) this.b).h = false;
+                ((w9) this.b).h = false;
                 break;
         }
     }
 
-    public /* synthetic */ d(n0 n0Var, j jVar) {
+    public /* synthetic */ d(m0 m0Var, j jVar) {
         this.a = 1;
         this.b = jVar;
     }

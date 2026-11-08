@@ -8,12 +8,12 @@ import com.google.firebase.pnv.internal.FirebasePhoneNumberVerificationRegistrar
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import org.telegram.messenger.e20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.messenger.w10;
 import org.telegram.messenger.we;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a1 implements NativeInstance.AudioLevelsCallback, org.telegram.ui.ActionBar.r1, g9.k, u9.d, org.telegram.messenger.k9, w10, e20 {
     public final /* synthetic */ int a;
@@ -260,7 +260,7 @@ public final /* synthetic */ class a1 implements NativeInstance.AudioLevelsCallb
     public Object d(Number number, Object obj) {
         Integer num = (Integer) obj;
         if (((Integer) number).intValue() == 0) {
-            return num.intValue() == 0 ? hd.M0(2131748804, null) : hd.H(',', "Stars", num.intValue());
+            return num.intValue() == 0 ? id.M0(2131748806, null) : id.H(',', "Stars", num.intValue());
         }
         return "" + num;
     }

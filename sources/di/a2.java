@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
@@ -23,7 +23,7 @@ import org.telegram.ui.h90;
 import org.telegram.ui.xm0;
 import org.telegram.ui.ym0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class a2 implements View.OnClickListener {
                     edit.putBoolean("storyQualityFull", z10).apply();
                     s12.getNotificationCenter().k(qs.m3, new Object[0]);
                 }
-                new hc(i4Var.L0, i4Var.k0).I(R.raw.chats_infotip, hd.M0(!z9 ? 2131744508 : 2131744511, null), hd.M0(!z9 ? 2131744509 : 2131744512, null)).j();
+                new hc(i4Var.L0, i4Var.k0).I(R.raw.chats_infotip, id.M0(!z9 ? 2131744510 : 2131744513, null), id.M0(!z9 ? 2131744511 : 2131744514, null)).j();
                 z3 z3Var = i4Var.c1;
                 if (z3Var != null) {
                     z3Var.a();

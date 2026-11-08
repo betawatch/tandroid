@@ -49,17 +49,17 @@ import org.telegram.messenger.dz;
 import org.telegram.messenger.fz;
 import org.telegram.messenger.g5;
 import org.telegram.messenger.gz;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.j0;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.m5;
-import org.telegram.messenger.pd;
 import org.telegram.messenger.pi;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.r2;
 import org.telegram.messenger.r3;
+import org.telegram.messenger.rc;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.to;
@@ -67,8 +67,8 @@ import org.telegram.messenger.ts;
 import org.telegram.messenger.ui;
 import org.telegram.messenger.w7;
 import org.telegram.messenger.x2;
+import org.telegram.messenger.x4;
 import org.telegram.messenger.xs;
-import org.telegram.messenger.y4;
 import org.telegram.messenger.yr;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
@@ -98,7 +98,7 @@ import org.telegram.ui.ol;
 import org.telegram.ui.q5;
 import org.telegram.ui.ym;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d0 implements Runnable {
     public final /* synthetic */ int a;
@@ -190,7 +190,7 @@ public final /* synthetic */ class d0 implements Runnable {
                 if (k6.I == k6.J) {
                     k6.T = 2000;
                     k6.U = SystemClock.elapsedRealtime();
-                    org.telegram.messenger.g0.i3(new pd(11), 2100L);
+                    org.telegram.messenger.g0.i3(new rc(13), 2100L);
                 }
             }
             k6.I = j6Var;
@@ -462,7 +462,7 @@ public final /* synthetic */ class d0 implements Runnable {
                 notificationCenter.k(2, 1);
                 g5Var.getNotificationCenter().k(25, new Object[0]);
                 if (z21) {
-                    qs.e().k(qs.P4, 1, hd.a0("DeletedFromYourContacts", null, 2131751467, str2));
+                    qs.e().k(qs.P4, 1, id.a0("DeletedFromYourContacts", null, 2131751467, str2));
                     return;
                 }
                 return;
@@ -481,13 +481,13 @@ public final /* synthetic */ class d0 implements Runnable {
                 w7.G(cVar2.a);
                 File J = w7.J(tL_document, null, true, true);
                 if (!J.exists()) {
-                    org.telegram.messenger.g0.h3(new y4(23, cVar2, tL_document));
+                    org.telegram.messenger.g0.h3(new x4(23, cVar2, tL_document));
                     return;
                 } else {
                     if (z23) {
                         return;
                     }
-                    org.telegram.messenger.g0.h3(new y4(22, mediaController, J));
+                    org.telegram.messenger.g0.h3(new x4(22, mediaController, J));
                     return;
                 }
             case 13:
@@ -878,7 +878,7 @@ public final /* synthetic */ class d0 implements Runnable {
                 ij ijVar4 = (ij) this.e;
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 an anVar2 = lmVar.a;
-                k5.q(null, null, 2131744395, new Object[]{anVar2.getMessagesController().B1(m5.o(message2.from_id), false)}, spannableStringBuilder);
+                k5.q(null, null, 2131744397, new Object[]{anVar2.getMessagesController().B1(m5.o(message2.from_id), false)}, spannableStringBuilder);
                 spannableStringBuilder.append((CharSequence) "\n\n");
                 cg.a m10 = cg.a.m(message2.suggested_post.price);
                 int i37 = m10.a == cg.b.b ? ((j0) anVar2.getMessagesController().x7.f.b).c : ((j0) anVar2.getMessagesController().x7.c.b).c;
@@ -890,28 +890,28 @@ public final /* synthetic */ class d0 implements Runnable {
                 }
                 if (message2.suggested_post.schedule_date == 0) {
                     if (z37) {
-                        k5.q(null, null, 2131744392, new Object[]{m10.f(), hi.j.J0(i37)}, spannableStringBuilder);
+                        k5.q(null, null, 2131744394, new Object[]{m10.f(), hi.j.J0(i37)}, spannableStringBuilder);
                     } else {
-                        k5.q(null, null, 2131744391, new Object[]{m10.f()}, spannableStringBuilder);
+                        k5.q(null, null, 2131744393, new Object[]{m10.f()}, spannableStringBuilder);
                     }
                 } else if (z37) {
-                    k5.q(null, null, 2131744393, new Object[]{m10.f(), e1.K0(message2.suggested_post.schedule_date), hi.j.J0(i37)}, spannableStringBuilder);
+                    k5.q(null, null, 2131744395, new Object[]{m10.f(), e1.K0(message2.suggested_post.schedule_date), hi.j.J0(i37)}, spannableStringBuilder);
                 } else {
-                    k5.q(null, null, 2131744390, new Object[]{m10.f(), e1.K0(message2.suggested_post.schedule_date)}, spannableStringBuilder);
+                    k5.q(null, null, 2131744392, new Object[]{m10.f(), e1.K0(message2.suggested_post.schedule_date)}, spannableStringBuilder);
                 }
                 spannableStringBuilder.append(' ');
                 i16 = ((f2) anVar2).currentAccount;
-                k5.q(null, null, 2131744394, new Object[]{Long.valueOf(qp.s1(i16).x7.i.M1(TimeUnit.HOURS))}, spannableStringBuilder);
+                k5.q(null, null, 2131744396, new Object[]{Long.valueOf(qp.s1(i16).x7.i.M1(TimeUnit.HOURS))}, spannableStringBuilder);
                 cc[] ccVarArr = new cc[1];
                 q5 q5Var = new q5(ccVarArr, 4);
                 u1[] u1VarArr = new u1[1];
-                u1 s02 = v4.s0(anVar2, hd.M0(2131744375, null), spannableStringBuilder, hd.M0(message2.suggested_post.schedule_date == 0 ? 2131748249 : 2131744374, null), false, new u0(lmVar, message2, u1VarArr, ijVar, q5Var, 25));
+                u1 s02 = v4.s0(anVar2, id.M0(2131744377, null), spannableStringBuilder, id.M0(message2.suggested_post.schedule_date == 0 ? 2131748251 : 2131744376, null), false, new u0(lmVar, message2, u1VarArr, ijVar, q5Var, 25));
                 u1VarArr[0] = s02;
                 s02.setOnDismissListener(q5Var);
                 if (z37 && m10.a == cg.b.a) {
                     wa a10 = xa.a(anVar2.getParentActivity());
                     f6Var = ((f2) anVar2).resourceProvider;
-                    cc G = new hc(a10, f6Var).G(R.raw.info, 10, hd.M0(2131744389, null));
+                    cc G = new hc(a10, f6Var).G(R.raw.info, 10, id.M0(2131744391, null));
                     G.j = 60000;
                     G.k(true);
                     ccVarArr[0] = G;

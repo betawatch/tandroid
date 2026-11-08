@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ex extends org.telegram.ui.ActionBar.f2 {
     public ax D;
@@ -163,11 +163,11 @@ public final class ex extends org.telegram.ui.ActionBar.f2 {
             this.actionBar.setOccupyStatusBar(false);
         }
         if (this.x == 0) {
-            this.actionBar.setTitle(org.telegram.messenger.hd.M0(2131742878, null));
+            this.actionBar.setTitle(org.telegram.messenger.id.M0(2131742880, null));
         } else {
-            this.actionBar.setTitle(org.telegram.messenger.hd.M0(2131742869, null));
+            this.actionBar.setTitle(org.telegram.messenger.id.M0(2131742871, null));
         }
-        this.actionBar.q().e(1, org.telegram.messenger.hd.M0(2131751355, null).toUpperCase());
+        this.actionBar.q().e(1, org.telegram.messenger.id.M0(2131751355, null).toUpperCase());
         this.actionBar.setActionBarMenuOnItemClick(new w9(this, 28));
         this.a = new bx(this, context);
         FrameLayout frameLayout = new FrameLayout(context);

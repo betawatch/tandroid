@@ -6,13 +6,13 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import c8.ha;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
     public final f6 a;
@@ -26,8 +26,8 @@ public final class f extends FrameLayout {
         this.b = textView;
         com.google.android.recaptcha.internal.a.q(textView, 1, 14.0f);
         r6.V(textView, k6.f7, f6Var);
-        textView.setGravity((hd.a0 ? 5 : 3) | 16);
-        addView(textView, ha.d(-1, -1.0f, (hd.a0 ? 5 : 3) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
+        textView.setGravity((id.a0 ? 5 : 3) | 16);
+        addView(textView, ha.d(-1, -1.0f, (id.a0 ? 5 : 3) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
     }
 
     @Override // android.widget.FrameLayout, android.view.View

@@ -9,8 +9,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g5;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i6;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
@@ -28,7 +28,7 @@ import org.telegram.ui.Components.xa;
 import org.telegram.ui.an;
 import org.telegram.ui.oy0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class c4 extends vh implements ls {
     public int D;
@@ -153,9 +153,9 @@ public final class c4 extends vh implements ls {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = m10;
-        u1Var.T = hd.M0(2131752917, null);
-        alertDialog$Builder.k(hd.M0(2131752916, null), new u3(this));
-        alertDialog$Builder.h(hd.M0(2131752589, null), null);
+        u1Var.T = id.M0(2131752917, null);
+        alertDialog$Builder.k(id.M0(2131752916, null), new u3(this));
+        alertDialog$Builder.h(id.M0(2131752589, null), null);
         u1Var.show();
         r6.V((TextView) u1Var.d(-1), k6.q7, this.a);
         return false;
@@ -407,7 +407,7 @@ public final class c4 extends vh implements ls {
                 return;
             }
             if (i7 == R.id.menu_tos_bot) {
-                vf.c.t(getContext(), hd.M0(2131752893, null));
+                vf.c.t(getContext(), id.M0(2131752893, null));
                 return;
             }
             if (i7 == R.id.menu_report_bot) {

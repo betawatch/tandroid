@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.widget.TextView;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class v51 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ ThemeActivity a;
@@ -48,10 +48,10 @@ public final class v51 extends org.telegram.ui.ActionBar.j {
                 return;
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.a.getParentActivity());
-            alertDialog$Builder.a.R = org.telegram.messenger.hd.M0(2131744147, "ThemeResetToDefaultsTitle");
-            alertDialog$Builder.a.T = org.telegram.messenger.hd.M0(2131744148, "ThemeResetToDefaultsText");
-            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131746119, "Reset"), new li0(this, 18));
-            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, "Cancel"), null);
+            alertDialog$Builder.a.R = org.telegram.messenger.id.M0(2131744149, "ThemeResetToDefaultsTitle");
+            alertDialog$Builder.a.T = org.telegram.messenger.id.M0(2131744150, "ThemeResetToDefaultsText");
+            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131746121, "Reset"), new li0(this, 18));
+            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, "Cancel"), null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             this.a.showDialog(u1Var);
             TextView textView = (TextView) u1Var.d(-1);

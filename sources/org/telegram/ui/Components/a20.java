@@ -11,9 +11,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.io.File;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.u71;
+import org.telegram.ui.v71;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class a20 extends c5.a {
     public final /* synthetic */ int c;
@@ -55,7 +55,7 @@ public final class a20 extends c5.a {
             case 2:
                 return ((org.telegram.ui.u50) this.d).F.length;
             case 3:
-                return ((u71) this.d).b != 0 ? 1 : 2;
+                return ((v71) this.d).b != 0 ? 1 : 2;
             default:
                 return ((ug.w0) this.d).k1.size();
         }
@@ -92,11 +92,11 @@ public final class a20 extends c5.a {
                 z10Var.setScaleType(ImageView.ScaleType.FIT_XY);
                 z10Var.setLayoutParams(new ViewGroup.LayoutParams(org.telegram.messenger.g0.L(200.0f), -1));
                 if (i7 == 0) {
-                    z10Var.setContentDescription(org.telegram.messenger.hd.M0(2131743253, null));
+                    z10Var.setContentDescription(org.telegram.messenger.id.M0(2131743255, null));
                 } else if (i7 == 1) {
-                    z10Var.setContentDescription(org.telegram.messenger.hd.M0(2131743251, null));
+                    z10Var.setContentDescription(org.telegram.messenger.id.M0(2131743253, null));
                 } else {
-                    z10Var.setContentDescription(org.telegram.messenger.hd.M0(2131743252, null));
+                    z10Var.setContentDescription(org.telegram.messenger.id.M0(2131743254, null));
                 }
                 org.telegram.messenger.rz i13 = org.telegram.messenger.sz.i(org.telegram.messenger.g0.y2(null, i7 == 0 ? R.raw.record_audio : i7 == 1 ? R.raw.record_video_p : R.raw.record_video_l));
                 i13.s = false;
@@ -117,7 +117,7 @@ public final class a20 extends c5.a {
                     imageView2.setImageResource(R.drawable.screencast_big);
                     frameLayout.addView(imageView2, c8.ha.d(82, 82.0f, 17, 0.0f, 0.0f, 0.0f, 60.0f));
                     TextView textView = new TextView(t0Var.getContext());
-                    textView.setText(org.telegram.messenger.hd.M0(2131743224, null));
+                    textView.setText(org.telegram.messenger.id.M0(2131743226, null));
                     textView.setGravity(17);
                     textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
                     textView.setTextColor(-1);
@@ -173,8 +173,8 @@ public final class a20 extends c5.a {
                 textView3.setText(org.telegram.messenger.g0.X2(u50Var.G[i7]));
                 return x5Var;
             case 3:
-                u71 u71Var = (u71) obj;
-                View view = i7 == 0 ? u71Var.u0 : u71Var.n0;
+                v71 v71Var = (v71) obj;
+                View view = i7 == 0 ? v71Var.u0 : v71Var.n0;
                 kVar.addView(view);
                 return view;
             default:
@@ -195,41 +195,41 @@ public final class a20 extends c5.a {
                 } else if (w0Var.v1) {
                     int i16 = w0Var.u1;
                     if (i16 == 4) {
-                        textView4.setText(org.telegram.messenger.hd.M0(2131754353, null));
-                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131754352, null)));
+                        textView4.setText(org.telegram.messenger.id.M0(2131754353, null));
+                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131754352, null)));
                     } else if (i16 == 3) {
-                        textView4.setText(org.telegram.messenger.hd.M0(2131746991, null));
-                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131746989, null)));
+                        textView4.setText(org.telegram.messenger.id.M0(2131746993, null));
+                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131746991, null)));
                     } else if (i16 == 24) {
-                        textView4.setText(org.telegram.messenger.hd.M0(2131746971, null));
-                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131746969, null)));
+                        textView4.setText(org.telegram.messenger.id.M0(2131746973, null));
+                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131746971, null)));
                     } else if (i16 == 10) {
-                        textView4.setText(org.telegram.messenger.hd.M0(2131747019, null));
-                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131747017, null)));
+                        textView4.setText(org.telegram.messenger.id.M0(2131747021, null));
+                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131747019, null)));
                     } else if (i16 == 2) {
-                        textView4.setText(org.telegram.messenger.hd.M0(2131747011, null));
-                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131747009, null)));
+                        textView4.setText(org.telegram.messenger.id.M0(2131747013, null));
+                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131747011, null)));
                     } else if (i16 == 9) {
-                        textView4.setText(org.telegram.messenger.hd.M0(2131747024, null));
-                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131747022, null)));
+                        textView4.setText(org.telegram.messenger.id.M0(2131747026, null));
+                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131747024, null)));
                     } else if (i16 == 8) {
-                        textView4.setText(org.telegram.messenger.hd.M0(2131746961, null));
-                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131746959, null)));
+                        textView4.setText(org.telegram.messenger.id.M0(2131746963, null));
+                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131746961, null)));
                     } else if (i16 == 13) {
-                        textView4.setText(org.telegram.messenger.hd.M0(2131746965, null));
-                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131746964, null)));
+                        textView4.setText(org.telegram.messenger.id.M0(2131746967, null));
+                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131746966, null)));
                     } else if (i16 == 38) {
-                        textView4.setText(org.telegram.messenger.hd.M0(2131747008, null));
-                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131747007, null)));
+                        textView4.setText(org.telegram.messenger.id.M0(2131747010, null));
+                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131747009, null)));
                     } else if (i16 == 22) {
-                        textView4.setText(org.telegram.messenger.hd.M0(2131746958, null));
-                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131746957, null)));
+                        textView4.setText(org.telegram.messenger.id.M0(2131746960, null));
+                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131746959, null)));
                     } else if (i16 == 23) {
-                        textView4.setText(org.telegram.messenger.hd.M0(2131746984, null));
-                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131746983, null)));
+                        textView4.setText(org.telegram.messenger.id.M0(2131746986, null));
+                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131746985, null)));
                     } else if (i16 == 41) {
-                        textView4.setText(org.telegram.messenger.hd.M0(2131746977, null));
-                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131746976, null)));
+                        textView4.setText(org.telegram.messenger.id.M0(2131746979, null));
+                        w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131746978, null)));
                     } else {
                         textView4.setText(charSequence);
                         w70Var.setText(org.telegram.messenger.g0.X2(str));
@@ -250,14 +250,14 @@ public final class a20 extends c5.a {
                     Context context = v0Var.getContext();
                     int i17 = ug.w0.F1;
                     hi.i iVar = new hi.i(context, w0Var.I0, true);
-                    iVar.a(R.drawable.menu_feature_unique, org.telegram.messenger.hd.M0(2131749573, null), org.telegram.messenger.hd.M0(2131749574, null));
+                    iVar.a(R.drawable.menu_feature_unique, org.telegram.messenger.id.M0(2131749575, null), org.telegram.messenger.id.M0(2131749576, null));
                     v0Var.d.addView(r2[0], c8.ha.o(-1, -2));
                     hi.i iVar2 = new hi.i(v0Var.getContext(), w0Var.I0, true);
-                    iVar2.a(R.drawable.menu_feature_tradable, org.telegram.messenger.hd.M0(2131749571, null), org.telegram.messenger.hd.M0(2131749572, null));
+                    iVar2.a(R.drawable.menu_feature_tradable, org.telegram.messenger.id.M0(2131749573, null), org.telegram.messenger.id.M0(2131749574, null));
                     v0Var.d.addView(r2[1], c8.ha.o(-1, -2));
                     hi.i iVar3 = new hi.i(v0Var.getContext(), w0Var.I0, true);
                     hi.i[] iVarArr = {iVar, iVar2, iVar3};
-                    iVar3.a(R.drawable.menu_wear, org.telegram.messenger.hd.M0(2131749569, null), org.telegram.messenger.hd.M0(2131749570, null));
+                    iVar3.a(R.drawable.menu_wear, org.telegram.messenger.id.M0(2131749571, null), org.telegram.messenger.id.M0(2131749572, null));
                     v0Var.d.addView(iVarArr[2], c8.ha.o(-1, -2));
                     v0Var.addView(v0Var.d, c8.ha.k(0.0f, -4.0f, 0.0f, 0.0f, -1, -2));
                 }

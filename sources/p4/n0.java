@@ -2,7 +2,7 @@ package p4;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n0 implements y0, z0, h2.j {
     public final /* synthetic */ c1 a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class n0 implements y0, z0, h2.j {
     @Override // p4.z0
     public void a(g1 g1Var, v vVar, List list) {
         c1 c1Var = this.a;
-        g1Var.s0(list, c1Var.M0(vVar, g1Var, this.b), c1Var.M0(vVar, g1Var, this.c));
+        g1Var.s0(list, c1Var.m1(vVar, g1Var, this.b), c1Var.m1(vVar, g1Var, this.c));
     }
 
     @Override // h2.j
@@ -34,6 +34,6 @@ public final /* synthetic */ class n0 implements y0, z0, h2.j {
     @Override // p4.y0
     public void c(g1 g1Var, v vVar) {
         c1 c1Var = this.a;
-        g1Var.R(c1Var.M0(vVar, g1Var, this.b), c1Var.M0(vVar, g1Var, this.c));
+        g1Var.R(c1Var.m1(vVar, g1Var, this.b), c1Var.m1(vVar, g1Var, this.c));
     }
 }

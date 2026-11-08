@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class q70 extends LinearLayout {
     public boolean D;
@@ -64,7 +64,7 @@ public class q70 extends LinearLayout {
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setImageDrawable(context.getDrawable(R.drawable.ic_ab_other));
-        imageView.setContentDescription(org.telegram.messenger.hd.M0(2131754839, null));
+        imageView.setContentDescription(org.telegram.messenger.id.M0(2131754839, null));
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         frameLayout.addView(imageView, c8.ha.e(40, 48, 21));
         addView(frameLayout, c8.ha.t(-1, -2, 0, 4, 0, 4, 0));
@@ -78,9 +78,9 @@ public class q70 extends LinearLayout {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) "..").setSpan(new wp(0, context.getDrawable(R.drawable.msg_copy_filled)), 0, 1, 0);
         spannableStringBuilder.setSpan(new org.telegram.ui.Cells.r2(org.telegram.messenger.g0.L(6.0f)), 1, 2, 0);
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.M0(2131748925, null));
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.M0(2131748927, null));
         textView2.setText(spannableStringBuilder);
-        textView2.setContentDescription(org.telegram.messenger.hd.M0(2131748925, null));
+        textView2.setContentDescription(org.telegram.messenger.id.M0(2131748927, null));
         textView2.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(org.telegram.messenger.g0.o());
@@ -92,9 +92,9 @@ public class q70 extends LinearLayout {
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
         spannableStringBuilder2.append((CharSequence) "..").setSpan(new wp(0, context.getDrawable(R.drawable.msg_share_filled)), 0, 1, 0);
         spannableStringBuilder2.setSpan(new org.telegram.ui.Cells.r2(org.telegram.messenger.g0.L(6.0f)), 1, 2, 0);
-        spannableStringBuilder2.append((CharSequence) org.telegram.messenger.hd.M0(2131748924, null));
+        spannableStringBuilder2.append((CharSequence) org.telegram.messenger.id.M0(2131748926, null));
         f10.setText(spannableStringBuilder2);
-        f10.setContentDescription(org.telegram.messenger.hd.M0(2131748924, null));
+        f10.setContentDescription(org.telegram.messenger.id.M0(2131748926, null));
         f10.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
         f10.setTextSize(1, 14.0f);
         f10.setTypeface(org.telegram.messenger.g0.o());
@@ -106,7 +106,7 @@ public class q70 extends LinearLayout {
         SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
         spannableStringBuilder3.append((CharSequence) "..").setSpan(new wp(0, context.getDrawable(R.drawable.msg_delete_filled)), 0, 1, 0);
         spannableStringBuilder3.setSpan(new org.telegram.ui.Cells.r2(org.telegram.messenger.g0.L(8.0f)), 1, 2, 0);
-        spannableStringBuilder3.append((CharSequence) org.telegram.messenger.hd.M0(2131751535, null));
+        spannableStringBuilder3.append((CharSequence) org.telegram.messenger.id.M0(2131751535, null));
         spannableStringBuilder3.append((CharSequence) ".").setSpan(new org.telegram.ui.Cells.r2(org.telegram.messenger.g0.L(5.0f)), spannableStringBuilder3.length() - 1, spannableStringBuilder3.length(), 0);
         f11.setText(spannableStringBuilder3);
         f11.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
@@ -154,12 +154,12 @@ public class q70 extends LinearLayout {
                         }
                     default:
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(f2Var2.getParentActivity());
-                        String M0 = org.telegram.messenger.hd.M0(2131751535, null);
+                        String M0 = org.telegram.messenger.id.M0(2131751535, null);
                         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                         u1Var.R = M0;
-                        u1Var.T = org.telegram.messenger.hd.M0(2131751534, null);
-                        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751599, null), new i70(this.b, 0));
-                        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+                        u1Var.T = org.telegram.messenger.id.M0(2131751534, null);
+                        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751599, null), new i70(this.b, 0));
+                        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
                         f2Var2.showDialog(u1Var);
                         break;
                 }
@@ -195,12 +195,12 @@ public class q70 extends LinearLayout {
                         }
                     default:
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(f2Var2.getParentActivity());
-                        String M0 = org.telegram.messenger.hd.M0(2131751535, null);
+                        String M0 = org.telegram.messenger.id.M0(2131751535, null);
                         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                         u1Var.R = M0;
-                        u1Var.T = org.telegram.messenger.hd.M0(2131751534, null);
-                        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751599, null), new i70(this.b, 0));
-                        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+                        u1Var.T = org.telegram.messenger.id.M0(2131751534, null);
+                        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751599, null), new i70(this.b, 0));
+                        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
                         f2Var2.showDialog(u1Var);
                         break;
                 }
@@ -280,7 +280,7 @@ public class q70 extends LinearLayout {
         } else {
             s1Var.setVisibility(0);
             setPadding(org.telegram.messenger.g0.L(19.0f), org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(19.0f), org.telegram.messenger.g0.L(10.0f));
-            ((TextView) s1Var.b).setText(org.telegram.messenger.hd.G(i7, "PeopleJoined", new Object[0]));
+            ((TextView) s1Var.b).setText(org.telegram.messenger.id.G(i7, "PeopleJoined", new Object[0]));
             s1Var.requestLayout();
         }
         if (arrayList != null) {
@@ -385,7 +385,7 @@ public class q70 extends LinearLayout {
         this.b = str;
         TextView textView = this.a;
         if (str == null) {
-            textView.setText(org.telegram.messenger.hd.M0(2131748778, null));
+            textView.setText(org.telegram.messenger.id.M0(2131748780, null));
         } else if (str.startsWith("https://")) {
             textView.setText(str.substring(8));
         } else {

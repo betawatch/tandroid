@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class hs0 extends org.telegram.ui.ActionBar.f2 {
     public final long a;
@@ -74,7 +74,7 @@ public final class hs0 extends org.telegram.ui.ActionBar.f2 {
     }
 
     public final String b0() {
-        return org.telegram.messenger.hd.a0(null, null, 2131747072, hi.j.J0(getMessagesController().J6), String.valueOf(((int) (((this.r * (r0 / 1000.0f)) / 1000.0d) * getMessagesController().c6)) / 100.0d));
+        return org.telegram.messenger.id.a0(null, null, 2131747074, hi.j.J0(getMessagesController().J6), String.valueOf(((int) (((this.r * (r0 / 1000.0f)) / 1000.0d) * getMessagesController().c6)) / 100.0d));
     }
 
     public final boolean c0() {
@@ -84,9 +84,9 @@ public final class hs0 extends org.telegram.ui.ActionBar.f2 {
     @Override // org.telegram.ui.ActionBar.f2
     public final View createView(Context context) {
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131747095, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131747097, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new ux(this, 27));
-        this.e = this.simpleActionBar.n(org.telegram.messenger.hd.M0(2131745947, null));
+        this.e = this.simpleActionBar.n(org.telegram.messenger.id.M0(2131745949, null));
         a0(false);
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
@@ -177,12 +177,12 @@ public final class hs0 extends org.telegram.ui.ActionBar.f2 {
         int i7 = 0;
         if (z9) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-            String M0 = org.telegram.messenger.hd.M0(2131743836, null);
+            String M0 = org.telegram.messenger.id.M0(2131743838, null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.R = M0;
-            u1Var.T = org.telegram.messenger.hd.M0(2131748469, null);
-            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131754216, null), new gs0(this, i7));
-            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131751407, null), new gs0(this, 1));
+            u1Var.T = org.telegram.messenger.id.M0(2131748471, null);
+            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131754216, null), new gs0(this, i7));
+            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131751407, null), new gs0(this, 1));
             showDialog(u1Var);
         }
         return false;

@@ -1,7 +1,7 @@
 package ug;
 
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.t3;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.pp0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class u implements RequestDelegate {
         i0 i0Var = this.b;
         switch (i7) {
             case 0:
-                org.telegram.messenger.g0.h3(new ti.p(7, i0Var, tLObject));
+                org.telegram.messenger.g0.h3(new u9.f(2, i0Var, tLObject));
                 break;
             case 1:
                 if (!(tLObject instanceof TLRPC.TL_boolTrue)) {
@@ -50,13 +50,13 @@ public final /* synthetic */ class u implements RequestDelegate {
                         } else {
                             TLRPC.Chat chat = tL_messages_inactiveChats.chats.get(i10);
                             int currentTime = (ConnectionsManager.getInstance(i0Var2.a).getCurrentTime() - tL_messages_inactiveChats.dates.get(i10).intValue()) / 86400;
-                            String G = currentTime < 30 ? hd.G(currentTime, "Days", new Object[0]) : currentTime < 365 ? hd.G(currentTime / 30, "Months", new Object[0]) : hd.G(currentTime / 365, "Years", new Object[0]);
+                            String G = currentTime < 30 ? id.G(currentTime, "Days", new Object[0]) : currentTime < 365 ? id.G(currentTime / 30, "Months", new Object[0]) : id.G(currentTime / 365, "Years", new Object[0]);
                             if (t3.n0(chat)) {
-                                arrayList.add(hd.a0("InactiveChatSignature", null, 2131749210, hd.G(chat.participants_count, "Members", new Object[0]), G));
+                                arrayList.add(id.a0("InactiveChatSignature", null, 2131749212, id.G(chat.participants_count, "Members", new Object[0]), G));
                             } else if (t3.T(chat)) {
-                                arrayList.add(hd.a0("InactiveChannelSignature", null, 2131749211, G));
+                                arrayList.add(id.a0("InactiveChannelSignature", null, 2131749213, G));
                             } else {
-                                arrayList.add(hd.a0("InactiveChatSignature", null, 2131749210, hd.G(chat.participants_count, "Members", new Object[0]), G));
+                                arrayList.add(id.a0("InactiveChatSignature", null, 2131749212, id.G(chat.participants_count, "Members", new Object[0]), G));
                             }
                             i10++;
                         }

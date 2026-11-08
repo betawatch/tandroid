@@ -29,11 +29,11 @@ import li.k3;
 import li.t3;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
-import org.telegram.messenger.rc;
+import org.telegram.messenger.sc;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
@@ -46,7 +46,7 @@ import org.telegram.ui.Components.kb;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.yl0;
-import org.telegram.ui.Components.ys;
+import org.telegram.ui.Components.zs;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.fw;
@@ -58,7 +58,7 @@ import org.telegram.ui.ww;
 import sg.t0;
 import tg.i2;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements c20 {
     public final /* synthetic */ int a;
@@ -335,7 +335,7 @@ public final /* synthetic */ class c implements c20 {
                     break;
                 }
             case 15:
-                org.telegram.messenger.g0.v1((ys) obj2);
+                org.telegram.messenger.g0.v1((zs) obj2);
                 org.telegram.messenger.g0.i3((Runnable) obj, 80L);
                 break;
             case 16:
@@ -432,7 +432,7 @@ public final /* synthetic */ class c implements c20 {
                 break;
             case 25:
                 ug.q1 q1Var2 = (ug.q1) obj2;
-                boolean e10 = rc.e(131072);
+                boolean e10 = sc.e(131072);
                 if (q1Var2.e != e10) {
                     q1Var2.e = e10;
                     q1Var2.invalidate();
@@ -471,20 +471,20 @@ public final /* synthetic */ class c implements c20 {
                     kb kbVar = new kb(Q.getParentActivity(), Q.getResourceProvider());
                     if (payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfoResults) {
                         kbVar.c(R.raw.chats_infotip, 30, 30, new String[0]);
-                        kbVar.b.setText(hd.M0(2131753371, null));
+                        kbVar.b.setText(id.M0(2131753371, null));
                     } else if (payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfo) {
                         if (((TLRPC.TL_payments_giveawayInfo) payments_giveawayinfo).participating) {
                             kbVar.c(R.raw.forward, 30, 30, new String[0]);
-                            kbVar.b.setText(hd.M0(2131753369, null));
+                            kbVar.b.setText(id.M0(2131753369, null));
                         } else {
                             kbVar.c(R.raw.chats_infotip, 30, 30, new String[0]);
-                            kbVar.b.setText(hd.M0(2131753370, null));
+                            kbVar.b.setText(id.M0(2131753370, null));
                         }
                     }
                     kbVar.b.setSingleLine(false);
                     kbVar.b.setMaxLines(2);
                     ac acVar = new ac(Q.getParentActivity(), Q.getResourceProvider(), true);
-                    acVar.e(hd.M0(2131749009, null));
+                    acVar.e(id.M0(2131749011, null));
                     acVar.b = new fi.q1(payments_giveawayinfo, z13, b10, j3, tL_messageMediaGiveaway2, Q);
                     kbVar.setButton(acVar);
                     cc.g(Q, kbVar, 2750).j();

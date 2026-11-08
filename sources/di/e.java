@@ -11,19 +11,19 @@ import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.gz;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.qp;
 import org.telegram.ui.Cells.ma;
-import org.telegram.ui.Components.l10;
-import org.telegram.ui.Components.vt;
+import org.telegram.ui.Components.vs;
+import org.telegram.ui.Components.wt;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.qy0;
 import org.telegram.ui.rc;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements c20 {
     public final /* synthetic */ int a;
@@ -94,7 +94,7 @@ public final /* synthetic */ class e implements c20 {
                 }
                 break;
             case 12:
-                vt vtVar = vt.O1;
+                wt wtVar = wt.O1;
                 break;
             case 13:
                 View view6 = (View) obj;
@@ -147,7 +147,7 @@ public final /* synthetic */ class e implements c20 {
                         break;
                     }
                 } else {
-                    org.telegram.messenger.g0.h3(new l10(24));
+                    org.telegram.messenger.g0.h3(new vs(26));
                     break;
                 }
                 break;
@@ -167,7 +167,7 @@ public final /* synthetic */ class e implements c20 {
                 break;
             case 23:
                 HashSet hashSet = (HashSet) obj;
-                String str = hd.E0().B.f;
+                String str = id.E0().B.f;
                 hashSet.addAll(qy0.d0());
                 SharedPreferences.Editor edit = qp.e1().edit();
                 if (hashSet.size() == 1 && TextUtils.equals((CharSequence) hashSet.iterator().next(), str)) {
@@ -190,13 +190,13 @@ public final /* synthetic */ class e implements c20 {
                 view10.setScaleY(1.0f);
                 break;
             case 25:
-                ArrayList arrayList = org.telegram.ui.Wallet.v2.a;
+                ArrayList arrayList = org.telegram.ui.Wallet.u2.a;
                 break;
             case 26:
-                ((org.telegram.ui.Wallet.t2) obj).a();
+                ((org.telegram.ui.Wallet.s2) obj).a();
                 break;
             case 27:
-                ((org.telegram.ui.Wallet.t2) obj).b();
+                ((org.telegram.ui.Wallet.s2) obj).b();
                 break;
             case 28:
                 View view11 = (View) obj;

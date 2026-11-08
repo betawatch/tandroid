@@ -21,15 +21,15 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.gc;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.qs;
-import org.telegram.messenger.rc;
+import org.telegram.messenger.sc;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.gu0;
 import org.telegram.ui.Components.ii0;
 import org.telegram.ui.Components.ob0;
-import org.telegram.ui.Components.wu;
 import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.xu;
 import org.telegram.ui.a11;
 import org.telegram.ui.an;
 import org.telegram.ui.e01;
@@ -37,7 +37,7 @@ import org.telegram.ui.l01;
 import org.telegram.ui.o01;
 import org.telegram.ui.s01;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class b0 {
     public final int[] A;
@@ -244,7 +244,7 @@ public final class b0 {
     public static void g(View view, float f10) {
         if (view instanceof a11) {
             ((a11) view).setAnimatedScale(f10);
-        } else if (view instanceof wu) {
+        } else if (view instanceof xu) {
             view.setScaleX(f10);
             view.setScaleY(f10);
         }
@@ -330,7 +330,7 @@ public final class b0 {
         rectF.offset(x10, y10);
         ii0Var.setCustomEmojiEnterProgress(this.j);
         if (z9) {
-            this.w = (iz.o() < 2 || !rc.e(8200)) ? false : r18;
+            this.w = (iz.o() < 2 || !sc.e(8200)) ? false : r18;
             this.k = false;
         } else {
             this.w = false;

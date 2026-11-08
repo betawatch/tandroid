@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class m5 {
     public static boolean A() {
@@ -62,7 +62,7 @@ public abstract class m5 {
         }
         TLRPC.User user = (TLRPC.User) tLObject;
         if (t10.z(user)) {
-            String M0 = hd.M0(2131746265, null);
+            String M0 = id.M0(2131746267, null);
             if (w8Var != null) {
                 w8Var.g(12);
             }
@@ -72,7 +72,7 @@ public abstract class m5 {
             return M0;
         }
         if (t10.B(user)) {
-            String M02 = hd.M0(2131745902, null);
+            String M02 = id.M0(2131745904, null);
             if (w8Var != null) {
                 w8Var.g(1);
             }
@@ -344,13 +344,13 @@ public abstract class m5 {
         int i7 = p10.s0;
         TLObject e22 = qp.s1(i7).e2(j3);
         if (e22 instanceof TLRPC.User) {
-            return hd.d0(i7, (TLRPC.User) e22, null, null);
+            return id.d0(i7, (TLRPC.User) e22, null, null);
         }
         if (!(e22 instanceof TLRPC.Chat)) {
             return "";
         }
         TLRPC.Chat chat = (TLRPC.Chat) e22;
-        return chat.participants_count > 1 ? t3.V(chat) ? hd.H(',', "Subscribers", chat.participants_count) : hd.H(',', "Members", chat.participants_count) : t3.V(chat) ? hd.M0(2131751391, null) : hd.M0(2131754876, null);
+        return chat.participants_count > 1 ? t3.V(chat) ? id.H(',', "Subscribers", chat.participants_count) : id.H(',', "Members", chat.participants_count) : t3.V(chat) ? id.M0(2131751391, null) : id.M0(2131754876, null);
     }
 
     public static void x(TLRPC.Dialog dialog) {

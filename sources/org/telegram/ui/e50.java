@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class e50 extends org.telegram.ui.Components.oj0 {
     public final Context c;
@@ -54,14 +54,14 @@ public final class e50 extends org.telegram.ui.Components.oj0 {
         if (i10 == 0) {
             org.telegram.ui.Cells.w9 w9Var = (org.telegram.ui.Cells.w9) view;
             if (i7 == f50Var.n) {
-                w9Var.b(org.telegram.messenger.hd.M0(2131751762, null), true);
+                w9Var.b(org.telegram.messenger.id.M0(2131751762, null), true);
                 return;
             } else if (i7 == f50Var.s) {
-                w9Var.b(org.telegram.messenger.hd.M0(2131745459, null), false);
+                w9Var.b(org.telegram.messenger.id.M0(2131745461, null), false);
                 return;
             } else {
                 if (i7 == f50Var.r) {
-                    w9Var.b(org.telegram.messenger.hd.M0(2131746024, null), true);
+                    w9Var.b(org.telegram.messenger.id.M0(2131746026, null), true);
                     return;
                 }
                 return;
@@ -85,9 +85,9 @@ public final class e50 extends org.telegram.ui.Components.oj0 {
         if (i7 == f50Var.h) {
             TLRPC.Chat M0 = f50Var.getMessagesController().M0(Long.valueOf(f50Var.d));
             if (!org.telegram.messenger.t3.T(M0) || M0.megagroup) {
-                z8Var.setText(org.telegram.messenger.hd.M0(2131748910, null));
+                z8Var.setText(org.telegram.messenger.id.M0(2131748912, null));
             } else {
-                z8Var.setText(org.telegram.messenger.hd.M0(2131752386, null));
+                z8Var.setText(org.telegram.messenger.id.M0(2131752386, null));
             }
         }
     }
@@ -106,8 +106,8 @@ public final class e50 extends org.telegram.ui.Components.oj0 {
             k8Var.a = textView;
             org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.G6, null);
             textView.setTextSize(1, 16.0f);
-            textView.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 16);
-            k8Var.addView(textView, c8.ha.d(-1, -2.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 48, 23.0f, 10.0f, 23.0f, 10.0f));
+            textView.setGravity((org.telegram.messenger.id.a0 ? 5 : 3) | 16);
+            k8Var.addView(textView, c8.ha.d(-1, -2.0f, (org.telegram.messenger.id.a0 ? 5 : 3) | 48, 23.0f, 10.0f, 23.0f, 10.0f));
             org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.d6, k8Var, null);
             frameLayout = k8Var;
         } else {

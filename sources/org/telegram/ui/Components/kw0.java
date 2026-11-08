@@ -6,7 +6,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class kw0 implements org.telegram.ui.is {
     public final /* synthetic */ ow0 a;
@@ -202,11 +202,11 @@ public final class kw0 implements org.telegram.ui.is {
         org.telegram.ui.ActionBar.f2 parentFragment = mw0Var == null ? null : mw0Var.getParentFragment();
         if (parentFragment != null) {
             if (document != null) {
-                hc.a0(parentFragment).r(document, org.telegram.messenger.hd.M0(2131745546, null), org.telegram.messenger.hd.M0(2131743886, null), v80Var).j();
+                hc.a0(parentFragment).r(document, org.telegram.messenger.id.M0(2131745548, null), org.telegram.messenger.id.M0(2131743888, null), v80Var).j();
                 return;
             }
             ub ubVar = new ub(ow0Var.getContext(), f6Var);
-            ubVar.b.setText(org.telegram.messenger.hd.M0(2131746286, null));
+            ubVar.b.setText(org.telegram.messenger.id.M0(2131746288, null));
             ubVar.a.setImageResource(R.drawable.msg_settings_premium);
             ac acVar = new ac(ow0Var.getContext(), f6Var, true);
             acVar.b = v80Var;
@@ -277,7 +277,7 @@ public final class kw0 implements org.telegram.ui.is {
     }
 
     @Override // org.telegram.ui.is
-    public final /* synthetic */ void u(CharSequence charSequence, String str, ex exVar) {
+    public final /* synthetic */ void u(CharSequence charSequence, String str, fx fxVar) {
     }
 
     @Override // org.telegram.ui.is

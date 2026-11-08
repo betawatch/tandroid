@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x70 implements org.telegram.messenger.c20 {
     public final /* synthetic */ int a;
@@ -22,13 +22,13 @@ public final /* synthetic */ class x70 implements org.telegram.messenger.c20 {
         switch (i7) {
             case 0:
                 boolean booleanValue = ((Boolean) obj).booleanValue();
-                if (launchActivity.o0 != null && booleanValue && org.telegram.messenger.rc.c() < 100 && (lastFragment = launchActivity.o0.getLastFragment()) != null && !(lastFragment instanceof w90)) {
-                    int b10 = org.telegram.messenger.rc.b();
+                if (launchActivity.o0 != null && booleanValue && org.telegram.messenger.sc.c() < 100 && (lastFragment = launchActivity.o0.getLastFragment()) != null && !(lastFragment instanceof w90)) {
+                    int b10 = org.telegram.messenger.sc.b();
                     org.telegram.ui.Components.hc a02 = org.telegram.ui.Components.hc.a0(lastFragment);
                     org.telegram.ui.Components.n9 n9Var = new org.telegram.ui.Components.n9(b10 / 100.0f, lastFragment.getThemedColor(org.telegram.ui.ActionBar.k6.Y5));
-                    String M0 = org.telegram.messenger.hd.M0(2131748714, null);
-                    String a03 = org.telegram.messenger.hd.a0("LowPowerEnabledSubtitle", null, 2131748715, String.format("%d%%", Integer.valueOf(b10)));
-                    String M02 = org.telegram.messenger.hd.M0(2131751436, null);
+                    String M0 = org.telegram.messenger.id.M0(2131748716, null);
+                    String a03 = org.telegram.messenger.id.a0("LowPowerEnabledSubtitle", null, 2131748717, String.format("%d%%", Integer.valueOf(b10)));
+                    String M02 = org.telegram.messenger.id.M0(2131751436, null);
                     s60 s60Var = new s60(launchActivity, 11);
                     a02.getClass();
                     Context W = a02.W();

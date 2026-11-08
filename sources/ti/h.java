@@ -5,13 +5,13 @@ import android.view.View;
 import android.view.WindowManager;
 import di.b3;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
-import org.telegram.ui.Components.b10;
+import org.telegram.messenger.id;
+import org.telegram.ui.Components.c10;
 import org.telegram.ui.Components.j51;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
-public final class h extends b10 {
+public final class h extends c10 {
     public float a;
     public float b;
     public final /* synthetic */ int c;
@@ -22,7 +22,7 @@ public final class h extends b10 {
         this.c = i7;
     }
 
-    @Override // org.telegram.ui.Components.b10
+    @Override // org.telegram.ui.Components.c10
     public final boolean a() {
         i iVar = this.d;
         return (iVar.K || iVar.H || !iVar.c()) ? false : true;
@@ -51,7 +51,7 @@ public final class h extends b10 {
                 j51Var.d(!z9);
                 long j10 = j51Var.o + 10000;
                 j51Var.o = j10;
-                j51Var.p = hd.G((int) (j10 / 1000), "Seconds", new Object[0]);
+                j51Var.p = id.G((int) (j10 / 1000), "Seconds", new Object[0]);
                 mVar.c(j3);
                 j51Var.g(0L);
                 iVar.I = j3 / duration;

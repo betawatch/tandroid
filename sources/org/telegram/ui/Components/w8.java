@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class w8 extends Drawable {
     public static final int[][] L = {new int[]{-636796, -1090751, -612560, -35006}, new int[]{-693938, -690388, -11246, -22717}, new int[]{-8160001, -5217281, -36183, -1938945}, new int[]{-16133536, -10560448, -4070106, -8331477}, new int[]{-10569989, -14692629, -12191817, -14683687}, new int[]{-11694593, -13910017, -14622003, -15801871}, new int[]{-439392, -304000, -19910, -98718}};
@@ -37,7 +37,7 @@ public class w8 extends Drawable {
     public boolean c;
     public int d;
     public int e;
-    public e10 f;
+    public f10 f;
     public boolean g;
     public StaticLayout h;
     public float i;
@@ -162,7 +162,7 @@ public class w8 extends Drawable {
         int i7;
         Drawable[] drawableArr;
         Drawable drawable;
-        e10 e10Var;
+        f10 f10Var;
         int i10;
         int w02;
         int w03;
@@ -236,8 +236,8 @@ public class w8 extends Drawable {
                         TextPaint textPaint = this.a;
                         textPaint.setColor(o4);
                         Paint paint = org.telegram.ui.ActionBar.k6.q0;
-                        if (!this.c && (e10Var = this.f) != null) {
-                            e10Var.b(bounds.left, bounds.top, r0 + width, r7 + width);
+                        if (!this.c && (f10Var = this.f) != null) {
+                            f10Var.b(bounds.left, bounds.top, r0 + width, r7 + width);
                             paint = this.f.c;
                         } else if (this.b) {
                             int o10 = i0.a.o(b(), this.y);
@@ -493,13 +493,13 @@ public class w8 extends Drawable {
             } else if (i7 == 21) {
                 this.c = true;
                 if (this.f == null) {
-                    this.f = new e10();
+                    this.f = new f10();
                 }
                 this.f.d(-8160001, -5217281, -36183, -1938945);
             } else if (i7 == 22) {
                 this.c = true;
                 if (this.f == null) {
-                    this.f = new e10();
+                    this.f = new f10();
                 }
                 this.f.d(-11694593, -13910017, -14622003, -15801871);
             } else {
@@ -628,8 +628,8 @@ public class w8 extends Drawable {
     }
 
     public final void s(int i7) {
-        e10 e10Var = this.f;
-        if (e10Var != null) {
+        f10 f10Var = this.f;
+        if (f10Var != null) {
             this.b = false;
             this.c = true;
         } else {
@@ -639,7 +639,7 @@ public class w8 extends Drawable {
         int[][] iArr = L;
         org.telegram.ui.ActionBar.f6 f6Var = this.z;
         if (i7 < 14) {
-            if (e10Var != null) {
+            if (f10Var != null) {
                 int[] iArr2 = iArr[e(i7)];
                 this.f.d(iArr2[0], iArr2[1], iArr2[2], iArr2[3]);
                 return;

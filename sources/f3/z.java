@@ -3,7 +3,7 @@ package f3;
 import a8.ia;
 import h2.m0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class z implements c0 {
     public final f5.u a;
@@ -48,14 +48,14 @@ public final class z implements c0 {
             return new b0(d0Var, d0Var);
         }
         int c10 = m0.c(uVar, j3);
-        long j10 = uVar.j(c10);
+        long m10 = uVar.m(c10);
         f5.u uVar2 = this.a;
-        d0 d0Var2 = new d0(j10, uVar2.j(c10));
-        if (j10 == j3 || c10 == uVar.b - 1) {
+        d0 d0Var2 = new d0(m10, uVar2.m(c10));
+        if (m10 == j3 || c10 == uVar.b - 1) {
             return new b0(d0Var2, d0Var2);
         }
         int i7 = c10 + 1;
-        return new b0(d0Var2, new d0(uVar.j(i7), uVar2.j(i7)));
+        return new b0(d0Var2, new d0(uVar.m(i7), uVar2.m(i7)));
     }
 
     @Override // f3.c0

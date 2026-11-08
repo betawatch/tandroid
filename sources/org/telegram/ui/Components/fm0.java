@@ -21,7 +21,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class fm0 extends v61 implements org.telegram.ui.xz, org.telegram.messenger.ls, eh.a {
     public static final /* synthetic */ int a1 = 0;
@@ -122,7 +122,7 @@ public abstract class fm0 extends v61 implements org.telegram.ui.xz, org.telegra
         q1Var.setVerticalScrollBarEnabled(true);
         q1Var.setInstantClick(true);
         int i16 = 2;
-        q1Var.setVerticalScrollbarPosition(org.telegram.messenger.hd.a0 ? 1 : 2);
+        q1Var.setVerticalScrollbarPosition(org.telegram.messenger.id.a0 ? 1 : 2);
         v4.b0 b0Var = new v4.b0(1, false);
         this.e0 = b0Var;
         q1Var.setLayoutManager(b0Var);
@@ -140,14 +140,14 @@ public abstract class fm0 extends v61 implements org.telegram.ui.xz, org.telegra
         yzVar.setUiCallback(this);
         yzVar.setVisibility(8);
         yzVar.setChatPreviewDelegate(dvVar);
-        lz lzVar = new lz(context, null);
-        lzVar.setViewType(1);
-        sl0 sl0Var = new sl0(fwVar, context, lzVar, i16);
+        mz mzVar = new mz(context, null);
+        mzVar.setViewType(1);
+        sl0 sl0Var = new sl0(fwVar, context, mzVar, i16);
         this.b0 = sl0Var;
-        sl0Var.d.setText(org.telegram.messenger.hd.M0(2131748166, null));
+        sl0Var.d.setText(org.telegram.messenger.id.M0(2131748168, null));
         sl0Var.e.setVisibility(8);
         sl0Var.setVisibility(8);
-        sl0Var.addView(lzVar, 0);
+        sl0Var.addView(mzVar, 0);
         sl0Var.e(true, false);
         FrameLayout frameLayout = new FrameLayout(context);
         this.W = frameLayout;
@@ -169,21 +169,21 @@ public abstract class fm0 extends v61 implements org.telegram.ui.xz, org.telegra
         pj0Var.setPivotY(0.0f);
         pj0Var.setVerticalScrollBarEnabled(true);
         pj0Var.setInstantClick(true);
-        pj0Var.setVerticalScrollbarPosition(org.telegram.messenger.hd.a0 ? 1 : 2);
+        pj0Var.setVerticalScrollbarPosition(org.telegram.messenger.id.a0 ? 1 : 2);
         v4.b0 b0Var2 = new v4.b0(1, false);
         this.j0 = b0Var2;
         pj0Var.setLayoutManager(b0Var2);
         pj0Var.W1 = true;
         pj0Var.X1 = 0;
         pj0Var.setClipToPadding(false);
-        lz lzVar2 = new lz(context, null);
-        lzVar2.setViewType(1);
-        sl0 sl0Var2 = new sl0(fwVar, context, lzVar2, 3);
+        mz mzVar2 = new mz(context, null);
+        mzVar2.setViewType(1);
+        sl0 sl0Var2 = new sl0(fwVar, context, mzVar2, 3);
         this.i0 = sl0Var2;
-        sl0Var2.d.setText(org.telegram.messenger.hd.M0(2131748166, null));
+        sl0Var2.d.setText(org.telegram.messenger.id.M0(2131748168, null));
         sl0Var2.e.setVisibility(8);
         sl0Var2.setVisibility(8);
-        sl0Var2.addView(lzVar2, 0);
+        sl0Var2.addView(mzVar2, 0);
         sl0Var2.e(true, false);
         frameLayout2.addView(sl0Var2);
         frameLayout2.addView(pj0Var);
@@ -207,20 +207,20 @@ public abstract class fm0 extends v61 implements org.telegram.ui.xz, org.telegra
         pj0Var2.setClipToPadding(false);
         pj0Var2.setVerticalScrollBarEnabled(true);
         pj0Var2.setInstantClick(true);
-        pj0Var2.setVerticalScrollbarPosition(org.telegram.messenger.hd.a0 ? 1 : 2);
+        pj0Var2.setVerticalScrollbarPosition(org.telegram.messenger.id.a0 ? 1 : 2);
         v4.b0 b0Var3 = new v4.b0(1, false);
         this.o0 = b0Var3;
         pj0Var2.setLayoutManager(b0Var3);
         pj0Var2.W1 = true;
         pj0Var2.X1 = 0;
-        lz lzVar3 = new lz(context, null);
-        lzVar3.setViewType(1);
-        sl0 sl0Var3 = new sl0(fwVar, context, lzVar3, i12);
+        mz mzVar3 = new mz(context, null);
+        mzVar3.setViewType(1);
+        sl0 sl0Var3 = new sl0(fwVar, context, mzVar3, i12);
         this.n0 = sl0Var3;
-        sl0Var3.d.setText(org.telegram.messenger.hd.M0(2131748166, null));
+        sl0Var3.d.setText(org.telegram.messenger.id.M0(2131748168, null));
         sl0Var3.e.setVisibility(8);
         sl0Var3.setVisibility(8);
-        sl0Var3.addView(lzVar3, 0);
+        sl0Var3.addView(mzVar3, 0);
         sl0Var3.e(true, false);
         frameLayout3.addView(sl0Var3);
         frameLayout3.addView(pj0Var2);
@@ -244,21 +244,21 @@ public abstract class fm0 extends v61 implements org.telegram.ui.xz, org.telegra
         int i18 = 1;
         pj0Var3.setVerticalScrollBarEnabled(true);
         pj0Var3.setInstantClick(true);
-        pj0Var3.setVerticalScrollbarPosition(org.telegram.messenger.hd.a0 ? 1 : 2);
+        pj0Var3.setVerticalScrollbarPosition(org.telegram.messenger.id.a0 ? 1 : 2);
         v4.b0 b0Var4 = new v4.b0(1, false);
         this.v0 = b0Var4;
         pj0Var3.setLayoutManager(b0Var4);
         pj0Var3.W1 = true;
         pj0Var3.X1 = 0;
         pj0Var3.setClipToPadding(false);
-        lz lzVar4 = new lz(context, null);
-        lzVar4.setViewType(1);
-        sl0 sl0Var4 = new sl0(fwVar, context, lzVar4, i18);
+        mz mzVar4 = new mz(context, null);
+        mzVar4.setViewType(1);
+        sl0 sl0Var4 = new sl0(fwVar, context, mzVar4, i18);
         this.u0 = sl0Var4;
-        sl0Var4.d.setText(org.telegram.messenger.hd.M0(2131748166, null));
+        sl0Var4.d.setText(org.telegram.messenger.id.M0(2131748168, null));
         sl0Var4.e.setVisibility(8);
         sl0Var4.setVisibility(8);
-        sl0Var4.addView(lzVar4, 0);
+        sl0Var4.addView(mzVar4, 0);
         sl0Var4.e(true, false);
         frameLayout4.addView(sl0Var4);
         frameLayout4.addView(pj0Var3);
@@ -383,7 +383,7 @@ public abstract class fm0 extends v61 implements org.telegram.ui.xz, org.telegra
             sl0Var.e.setVisibility(8);
         } else {
             sl0Var.e.setVisibility(0);
-            sl0Var.e.setText(org.telegram.messenger.hd.a0(null, null, 2131748164, str));
+            sl0Var.e.setText(org.telegram.messenger.id.a0(null, null, 2131748166, str));
         }
         yl0 yl0Var = this.d0;
         org.telegram.ui.hw hwVar = yl0Var.U;
@@ -675,14 +675,14 @@ public abstract class fm0 extends v61 implements org.telegram.ui.xz, org.telegra
             x10.g = Q;
             this.H0.addView(this.z0, c8.ha.m(1.0f, 0, -1, wwVar.W ? 18 : 72, 0, 0));
             this.z0.setOnTouchListener(new ei.b(21));
-            org.telegram.ui.ActionBar.r0 h = this.H0.h(203, R.drawable.avd_speed, org.telegram.messenger.g0.L(54.0f), org.telegram.messenger.hd.M0(2131754801, null));
+            org.telegram.ui.ActionBar.r0 h = this.H0.h(203, R.drawable.avd_speed, org.telegram.messenger.g0.L(54.0f), org.telegram.messenger.id.M0(2131754801, null));
             this.D0 = h;
             if (h.getIconView() != null) {
                 org.telegram.ui.ActionBar.r6.t(this.D0.getIconView(), i10, null, PorterDuff.Mode.SRC_IN);
             }
-            this.E0 = this.H0.h(org.telegram.messenger.qs.e3, R.drawable.msg_message, org.telegram.messenger.g0.L(54.0f), org.telegram.messenger.hd.M0(2131754877, null));
-            this.F0 = this.H0.h(org.telegram.messenger.qs.f3, R.drawable.msg_forward, org.telegram.messenger.g0.L(54.0f), org.telegram.messenger.hd.M0(2131750588, null));
-            this.G0 = this.H0.h(org.telegram.messenger.qs.g3, R.drawable.msg_delete, org.telegram.messenger.g0.L(54.0f), org.telegram.messenger.hd.M0(2131751599, null));
+            this.E0 = this.H0.h(org.telegram.messenger.qs.e3, R.drawable.msg_message, org.telegram.messenger.g0.L(54.0f), org.telegram.messenger.id.M0(2131754877, null));
+            this.F0 = this.H0.h(org.telegram.messenger.qs.f3, R.drawable.msg_forward, org.telegram.messenger.g0.L(54.0f), org.telegram.messenger.id.M0(2131750588, null));
+            this.G0 = this.H0.h(org.telegram.messenger.qs.g3, R.drawable.msg_delete, org.telegram.messenger.g0.L(54.0f), org.telegram.messenger.id.M0(2131751599, null));
         }
         if (this.z0 != null) {
             yl0 yl0Var = this.d0;

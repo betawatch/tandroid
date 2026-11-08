@@ -21,18 +21,18 @@ import org.telegram.ui.Components.gh;
 import org.telegram.ui.Components.lg;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.vh;
-import org.telegram.ui.Components.ys;
+import org.telegram.ui.Components.zs;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.an;
 import org.telegram.ui.cv;
-import org.telegram.ui.hc1;
+import org.telegram.ui.ic1;
 import org.telegram.ui.oq0;
 import org.telegram.ui.pn;
 import org.telegram.ui.vw;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class de implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -217,9 +217,9 @@ public final /* synthetic */ class de implements ValueAnimator.AnimatorUpdateLis
                 break;
             case 15:
                 gh ghVar = (gh) this.b;
-                ys ysVar = (ys) this.c;
+                zs zsVar = (zs) this.c;
                 ghVar.getClass();
-                ysVar.setOffsetY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                zsVar.setOffsetY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 di diVar = ghVar.c0;
                 diVar.J1();
                 vh vhVar = diVar.s2;
@@ -322,10 +322,10 @@ public final /* synthetic */ class de implements ValueAnimator.AnimatorUpdateLis
                 waVar.b = intValue2;
                 break;
             case 25:
-                hc1 hc1Var = (hc1) this.b;
+                ic1 ic1Var = (ic1) this.b;
                 ci ciVar = (ci) this.c;
-                hc1Var.getClass();
-                hc1Var.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ic1Var.getClass();
+                ic1Var.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 ciVar.invalidate();
                 break;
             case 26:

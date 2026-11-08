@@ -1,11 +1,11 @@
 package fi;
 
 import android.content.Context;
-import org.telegram.messenger.rc;
+import org.telegram.messenger.sc;
 import org.telegram.ui.Components.uu0;
 import org.telegram.ui.Components.yu0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class d2 extends yu0 {
     public final /* synthetic */ boolean G3;
@@ -20,7 +20,7 @@ public final class d2 extends yu0 {
 
     @Override // org.telegram.ui.Components.yu0
     public final boolean D1() {
-        return rc.e(8200);
+        return sc.e(8200);
     }
 
     @Override // org.telegram.ui.Components.yu0

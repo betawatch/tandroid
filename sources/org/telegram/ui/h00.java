@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_fragment;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class h00 {
     /* JADX WARN: Removed duplicated region for block: B:15:0x00e9  */
@@ -72,17 +72,17 @@ public abstract class h00 {
                 String f10 = org.telegram.messenger.r1.i().f(tL_collectibleInfo.amount, tL_collectibleInfo.currency);
                 String f11 = org.telegram.messenger.r1.i().f(tL_collectibleInfo.crypto_amount, tL_collectibleInfo.crypto_currency);
                 if (i7 != 0) {
-                    str4 = org.telegram.messenger.hd.a0(null, null, 2131750511, rf.b.i("@", str));
+                    str4 = org.telegram.messenger.id.a0(null, null, 2131750513, rf.b.i("@", str));
                     v2Var = v2Var2;
-                    a02 = org.telegram.messenger.hd.a0(null, null, 2131750513, org.telegram.messenger.hd.Q(tL_collectibleInfo.purchase_date), f11, TextUtils.isEmpty(f10) ? "" : a8.p0.p("(", f10, ")"));
+                    a02 = org.telegram.messenger.id.a0(null, null, 2131750515, org.telegram.messenger.id.Q(tL_collectibleInfo.purchase_date), f11, TextUtils.isEmpty(f10) ? "" : a8.p0.p("(", f10, ")"));
                     b10 = org.telegram.ui.Cells.f1.n(org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).U2, "/", str, new StringBuilder());
                 } else {
                     v2Var = v2Var2;
                     if (i7 != 1) {
                         return;
                     }
-                    String a03 = org.telegram.messenger.hd.a0(null, null, 2131750515, pf.b.c().b("+" + str));
-                    a02 = org.telegram.messenger.hd.a0(null, null, 2131750516, org.telegram.messenger.hd.Q(tL_collectibleInfo.purchase_date), f11, TextUtils.isEmpty(f10) ? "" : a8.p0.p("(", f10, ")"));
+                    String a03 = org.telegram.messenger.id.a0(null, null, 2131750517, pf.b.c().b("+" + str));
+                    a02 = org.telegram.messenger.id.a0(null, null, 2131750518, org.telegram.messenger.id.Q(tL_collectibleInfo.purchase_date), f11, TextUtils.isEmpty(f10) ? "" : a8.p0.p("(", f10, ")"));
                     b10 = pf.b.c().b("+" + str);
                     str4 = a03;
                 }
@@ -140,14 +140,14 @@ public abstract class h00 {
                 linearLayout.addView(textView2, c8.ha.t(-1, -2, 1, 32, 0, 32, 19));
                 fi.d dVar = new fi.d(activity, f6Var2, true);
                 dVar.setRoundRadius(24);
-                dVar.i(org.telegram.messenger.hd.M0(2131750512, null), false, true);
+                dVar.i(org.telegram.messenger.id.M0(2131750514, null), false, true);
                 dVar.setOnClickListener(new org.telegram.ui.Components.t41(14, activity, tL_collectibleInfo));
                 linearLayout.addView(dVar, c8.ha.k(6.0f, 0.0f, 6.0f, 0.0f, -1, 48));
                 if (pp0Var != null) {
                     fi.d dVar2 = new fi.d(activity, f6Var2, true);
                     dVar2.setRoundRadius(24);
                     dVar2.e();
-                    dVar2.i(org.telegram.messenger.hd.M0(i7 == 0 ? 2131750514 : 2131750517, null), false, true);
+                    dVar2.i(org.telegram.messenger.id.M0(i7 == 0 ? 2131750516 : 2131750519, null), false, true);
                     dVar2.setOnClickListener(new org.telegram.ui.Components.t41(15, pp0Var, v2Var));
                     linearLayout.addView(dVar2, c8.ha.k(6.0f, 6.0f, 6.0f, 0.0f, -1, 48));
                 }
@@ -210,7 +210,7 @@ public abstract class h00 {
         linearLayout.addView(textView22, c8.ha.t(-1, -2, 1, 32, 0, 32, 19));
         fi.d dVar3 = new fi.d(activity, f6Var2, true);
         dVar3.setRoundRadius(24);
-        dVar3.i(org.telegram.messenger.hd.M0(2131750512, null), false, true);
+        dVar3.i(org.telegram.messenger.id.M0(2131750514, null), false, true);
         dVar3.setOnClickListener(new org.telegram.ui.Components.t41(14, activity, tL_collectibleInfo));
         linearLayout.addView(dVar3, c8.ha.k(6.0f, 0.0f, 6.0f, 0.0f, -1, 48));
         if (pp0Var != null) {

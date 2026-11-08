@@ -20,7 +20,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.aj;
 import org.telegram.messenger.gc;
 import org.telegram.messenger.gz;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.qs;
@@ -33,7 +33,7 @@ import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l4 {
     public int A;
@@ -318,7 +318,7 @@ public final class l4 {
             int i20 = (int) (f18 - f19);
             int i21 = (int) (f17 - f16);
             canvas2.saveLayerAlpha(0.0f, 0.0f, i20, i21, (int) (f31 * 255.0f), 31);
-            this.l.c(canvas, q1Var4, i20, i21, 1.0f, q1Var4.Fc);
+            this.l.c(canvas, q1Var4, i20, i21, 1.0f, q1Var4.Gc);
             canvas2 = canvas;
             q1Var = q1Var4;
             canvas2.restore();
@@ -1307,16 +1307,16 @@ public final class l4 {
             l4Var.g = (int) ((j4Var4.d / 1000.0f) * l4Var.f);
             l4Var.h = (int) (j4Var4.g * j4Var4.i);
             if (l4Var.i) {
-                my0 my0Var = new my0(dd.a1(false, hd.H(',', "UnlockPaidContent", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
+                my0 my0Var = new my0(dd.a1(false, id.H(',', "UnlockPaidContent", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
                 l4Var.q = my0Var;
                 if (my0Var.c > l4Var.g - org.telegram.messenger.g0.L(30.0f)) {
-                    l4Var.q = new my0(dd.a1(false, hd.H(',', "UnlockPaidContentShort", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
+                    l4Var.q = new my0(dd.a1(false, id.H(',', "UnlockPaidContentShort", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
                 }
             }
             if (l4Var.r == null || l4Var.s != tL_messageMediaPaidMedia3.stars_amount) {
                 long j3 = tL_messageMediaPaidMedia3.stars_amount;
                 l4Var.s = j3;
-                l4Var.r = new my0(dd.U0(hd.H(',', "PaidMediaPrice", (int) j3), 0.9f, null), 12.0f, org.telegram.messenger.g0.o());
+                l4Var.r = new my0(dd.U0(id.H(',', "PaidMediaPrice", (int) j3), 0.9f, null), 12.0f, org.telegram.messenger.g0.o());
             }
         }
     }
@@ -1467,10 +1467,10 @@ public final class l4 {
         if (this.i) {
             TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia = ijVar == null ? null : (TLRPC.TL_messageMediaPaidMedia) ijVar.k.media;
             if (tL_messageMediaPaidMedia != null) {
-                my0 my0Var = new my0(dd.a1(z15, hd.H(',', "UnlockPaidContent", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
+                my0 my0Var = new my0(dd.a1(z15, id.H(',', "UnlockPaidContent", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
                 this.q = my0Var;
                 if (my0Var.c > this.g - org.telegram.messenger.g0.L(30.0f)) {
-                    this.q = new my0(dd.a1(false, hd.H(',', "UnlockPaidContentShort", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
+                    this.q = new my0(dd.a1(false, id.H(',', "UnlockPaidContentShort", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
                 }
             }
         }

@@ -7,10 +7,10 @@ import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
 import java.util.HashSet;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.Components.s41;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class y1 extends View implements org.telegram.ui.ActionBar.a6 {
     public final s41 a;
@@ -27,9 +27,9 @@ public final class y1 extends View implements org.telegram.ui.ActionBar.a6 {
         s41 s41Var = new s41();
         this.a = s41Var;
         s41Var.setCallback(this);
-        s41Var.n = hd.M0(2131743828, null);
-        s41Var.o = hd.M0(2131743829, null);
-        s41Var.p = hd.M0(2131743827, null);
+        s41Var.n = id.M0(2131743830, null);
+        s41Var.o = id.M0(2131743831, null);
+        s41Var.p = id.M0(2131743829, null);
         s41Var.j = new f(this, 1);
     }
 

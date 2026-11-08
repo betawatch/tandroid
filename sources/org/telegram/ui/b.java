@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class b {
     public static boolean a;
@@ -66,20 +66,20 @@ public abstract class b {
         textView.setGravity(17);
         f10.addView(textView, c8.ha.t(-1, -2, 17, 0, 0, 0, 23));
         bi.q0 q0Var = new bi.q0(1, context, f6Var);
-        q0Var.a(R.drawable.msg_block2, org.telegram.messenger.hd.M0(2131754707, null), org.telegram.messenger.hd.M0(2131754708, null));
+        q0Var.a(R.drawable.msg_block2, org.telegram.messenger.id.M0(2131754707, null), org.telegram.messenger.id.M0(2131754708, null));
         f10.addView(q0Var, c8.ha.t(-1, -2, 17, 0, 0, 0, 0));
         bi.q0 q0Var2 = new bi.q0(1, context, f6Var);
-        q0Var2.a(R.drawable.menu_privacy, org.telegram.messenger.hd.M0(2131754705, null), org.telegram.messenger.hd.M0(2131754706, null));
+        q0Var2.a(R.drawable.menu_privacy, org.telegram.messenger.id.M0(2131754705, null), org.telegram.messenger.id.M0(2131754706, null));
         f10.addView(q0Var2, c8.ha.t(-1, -2, 17, 0, 0, 0, 0));
         bi.q0 q0Var3 = new bi.q0(1, context, f6Var);
-        q0Var3.a(R.drawable.menu_feature_hourglass, org.telegram.messenger.hd.M0(2131754703, null), org.telegram.messenger.g0.U2(org.telegram.messenger.hd.a0(null, null, 2131754704, org.telegram.messenger.hd.f0(org.telegram.messenger.qp.s1(i7).N6)), new gq0(e0Var, 2)));
+        q0Var3.a(R.drawable.menu_feature_hourglass, org.telegram.messenger.id.M0(2131754703, null), org.telegram.messenger.g0.U2(org.telegram.messenger.id.a0(null, null, 2131754704, org.telegram.messenger.id.f0(org.telegram.messenger.qp.s1(i7).N6)), new gq0(e0Var, 2)));
         f10.addView(q0Var3, c8.ha.t(-1, -2, 17, 0, 0, 0, 0));
         fi.d dVar = new fi.d(context, f6Var, true);
-        dVar.i(org.telegram.messenger.hd.M0(2131754698, null), false, true);
+        dVar.i(org.telegram.messenger.id.M0(2131754698, null), false, true);
         dVar.setOnClickListener(new a(e0Var, 0));
         f10.addView(dVar, c8.ha.t(-1, 48, 7, 0, 13, 0, 4));
         fi.d dVar2 = new fi.d(context, f6Var, false);
-        dVar2.i(org.telegram.messenger.hd.M0(2131754697, null), false, true);
+        dVar2.i(org.telegram.messenger.id.M0(2131754697, null), false, true);
         dVar2.setOnClickListener(new a(r5, i10));
         f10.addView(dVar2, c8.ha.t(-1, 48, 7, 0, 0, 0, 0));
         l10.N = f10;

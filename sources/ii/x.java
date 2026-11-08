@@ -2,15 +2,15 @@ package ii;
 
 import android.view.View;
 import bi.nc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.Components.m61;
-import org.telegram.ui.Wallet.x2;
-import org.telegram.ui.Wallet.z2;
+import org.telegram.ui.Wallet.w2;
+import org.telegram.ui.Wallet.y2;
 import org.telegram.ui.gt;
 import org.telegram.ui.hm0;
 import org.telegram.ui.kt;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class x extends m61 {
     public final /* synthetic */ int a;
@@ -38,8 +38,8 @@ public final class x extends m61 {
                 gtVar.v0(0);
                 break;
             case 3:
-                if (view instanceof x2) {
-                    ((x2) view).getClass();
+                if (view instanceof w2) {
+                    ((w2) view).getClass();
                     break;
                 }
                 break;
@@ -67,7 +67,7 @@ public final class x extends m61 {
                 }
                 return null;
             case 3:
-                return (View) ((z2) this.b).j1.get(i7);
+                return (View) ((y2) this.b).j1.get(i7);
             default:
                 nc ncVar = (nc) this.b;
                 return i7 != 1 ? i7 != 2 ? (sg.o) ncVar.b : (sg.p) ncVar.d : (sg.n) ncVar.c;
@@ -84,7 +84,7 @@ public final class x extends m61 {
             case 2:
                 return 2;
             case 3:
-                return ((z2) this.b).j1.size();
+                return ((y2) this.b).j1.size();
             default:
                 return 3;
         }
@@ -94,9 +94,9 @@ public final class x extends m61 {
     public CharSequence g(int i7) {
         switch (this.a) {
             case 1:
-                return i7 != 0 ? i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : hd.M0(2131748294, null) : hd.M0(2131748292, null) : hd.M0(2131748295, null) : hd.M0(2131748296, null);
+                return i7 != 0 ? i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : id.M0(2131748296, null) : id.M0(2131748294, null) : id.M0(2131748297, null) : id.M0(2131748298, null);
             case 4:
-                return i7 != 1 ? i7 != 2 ? hd.M0(2131747668, null).toUpperCase() : hd.M0(2131747667, null).toUpperCase() : hd.M0(2131747662, null).toUpperCase();
+                return i7 != 1 ? i7 != 2 ? id.M0(2131747670, null).toUpperCase() : id.M0(2131747669, null).toUpperCase() : id.M0(2131747664, null).toUpperCase();
             default:
                 return super.g(i7);
         }

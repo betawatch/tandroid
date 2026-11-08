@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ai extends oj0 {
     public int D;
@@ -324,41 +324,41 @@ public final class ai extends oj0 {
         Context context = this.c;
         if (i7 != i15) {
             if (i7 == this.r) {
-                xhVar.a(17, org.telegram.messenger.hd.M0(2131743195, null), qh.a.N);
+                xhVar.a(17, org.telegram.messenger.id.M0(2131743197, null), qh.a.N);
                 xhVar.setTag(17);
             } else if (i7 == this.n) {
-                xhVar.a(4, org.telegram.messenger.hd.M0(2131752240, null), qh.a.x);
+                xhVar.a(4, org.telegram.messenger.id.M0(2131752240, null), qh.a.x);
                 xhVar.setTag(4);
                 if (Build.VERSION.SDK_INT < 33) {
                 }
             } else if (i7 == this.E) {
-                xhVar.a(6, org.telegram.messenger.hd.M0(2131752220, null), qh.a.D);
+                xhVar.a(6, org.telegram.messenger.id.M0(2131752220, null), qh.a.D);
                 xhVar.setTag(6);
             } else if (i7 == this.s) {
-                xhVar.a(3, org.telegram.messenger.hd.M0(2131753952, null), qh.a.H);
+                xhVar.a(3, org.telegram.messenger.id.M0(2131753952, null), qh.a.H);
                 xhVar.setTag(3);
             } else if (i7 == this.w) {
-                xhVar.a(9, org.telegram.messenger.hd.M0(2131747184, null), qh.a.I);
+                xhVar.a(9, org.telegram.messenger.id.M0(2131747186, null), qh.a.I);
                 xhVar.setTag(9);
             } else {
                 if (i7 != this.y) {
                     if (i7 == this.D) {
-                        xhVar.a(11, org.telegram.messenger.hd.M0(2131753942, null), qh.a.K);
+                        xhVar.a(11, org.telegram.messenger.id.M0(2131753942, null), qh.a.K);
                         xhVar.setTag(11);
                     } else if (i7 == this.x) {
-                        xhVar.a(12, org.telegram.messenger.hd.M0(2131744110, null), qh.a.s);
+                        xhVar.a(12, org.telegram.messenger.id.M0(2131744112, null), qh.a.s);
                         xhVar.setTag(12);
                     } else if (i7 == this.F) {
-                        xhVar.a(13, org.telegram.messenger.hd.M0(2131752209, null), qh.a.E);
+                        xhVar.a(13, org.telegram.messenger.id.M0(2131752209, null), qh.a.E);
                         xhVar.setTag(13);
                     } else if (i7 == this.H) {
-                        xhVar.a(15, org.telegram.messenger.hd.M0(2131752226, null), qh.a.L);
+                        xhVar.a(15, org.telegram.messenger.id.M0(2131752226, null), qh.a.L);
                         xhVar.setTag(15);
                     } else if (i7 == this.G) {
-                        xhVar.a(14, org.telegram.messenger.hd.M0(2131752239, null), qh.a.F);
+                        xhVar.a(14, org.telegram.messenger.id.M0(2131752239, null), qh.a.F);
                         xhVar.setTag(14);
                     } else if (i7 == this.I) {
-                        xhVar.a(16, org.telegram.messenger.hd.M0(2131753983, null), qh.a.M);
+                        xhVar.a(16, org.telegram.messenger.id.M0(2131753983, null), qh.a.M);
                         xhVar.setTag(16);
                         z9 = !org.telegram.messenger.qp.s1(i10).X4();
                         z10 = false;
@@ -378,7 +378,7 @@ public final class ai extends oj0 {
                     }
                     bVar32.setPremiumBadge(z12);
                 }
-                xhVar.a(5, org.telegram.messenger.hd.M0(2131753979, null), qh.a.f);
+                xhVar.a(5, org.telegram.messenger.id.M0(2131753979, null), qh.a.f);
                 xhVar.setTag(5);
             }
             z10 = false;
@@ -389,7 +389,7 @@ public final class ai extends oj0 {
             }
             bVar322.setPremiumBadge(z12);
         }
-        xhVar.a(1, org.telegram.messenger.hd.M0(2131752238, null), qh.a.y);
+        xhVar.a(1, org.telegram.messenger.id.M0(2131752238, null), qh.a.y);
         xhVar.setTag(1);
         z11 = Build.VERSION.SDK_INT < 33 ? false : false;
         z10 = !z11;

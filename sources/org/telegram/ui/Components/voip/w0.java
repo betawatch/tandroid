@@ -3,17 +3,17 @@ package org.telegram.ui.Components.voip;
 import android.animation.ValueAnimator;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
-import org.telegram.ui.yb1;
+import org.telegram.ui.zb1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class w0 extends GestureDetector.SimpleOnGestureListener {
     public boolean a;
     public boolean b;
-    public final /* synthetic */ yb1 c;
+    public final /* synthetic */ zb1 c;
 
-    public w0(yb1 yb1Var) {
-        this.c = yb1Var;
+    public w0(zb1 zb1Var) {
+        this.c = zb1Var;
     }
 
     @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
@@ -29,11 +29,11 @@ public final class w0 extends GestureDetector.SimpleOnGestureListener {
         if (Math.abs(x10) > org.telegram.messenger.g0.a1(true, 0.4f) && Math.abs(x10) / 3.0f > y10 && this.a && !this.b) {
             this.a = false;
             org.telegram.ui.b0 b0Var = new org.telegram.ui.b0(this, x10, 2);
-            yb1 yb1Var = this.c;
-            ValueAnimator valueAnimator = yb1Var.U;
+            zb1 zb1Var = this.c;
+            ValueAnimator valueAnimator = zb1Var.U;
             if (valueAnimator != null) {
                 this.b = true;
-                org.telegram.messenger.g0.i3(b0Var, (valueAnimator.getDuration() - yb1Var.U.getCurrentPlayTime()) + 50);
+                org.telegram.messenger.g0.i3(b0Var, (valueAnimator.getDuration() - zb1Var.U.getCurrentPlayTime()) + 50);
             } else {
                 b0Var.run();
             }

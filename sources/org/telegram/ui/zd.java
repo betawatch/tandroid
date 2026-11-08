@@ -30,7 +30,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class zd extends org.telegram.ui.Components.ht0 implements org.telegram.ui.ActionBar.a6 {
     public static zd t1;
@@ -106,21 +106,21 @@ public final class zd extends org.telegram.ui.Components.ht0 implements org.tele
         this.j1 = false;
         this.k1 = false;
         this.o1 = false;
-        String M0 = org.telegram.messenger.hd.M0(2131748383, null);
+        String M0 = org.telegram.messenger.id.M0(2131748385, null);
         wd wdVar = new wd();
         wdVar.a = false;
         wdVar.b = "TON";
         wdVar.h = "XTR";
         wdVar.c = M0;
         this.p1 = wdVar;
-        String M02 = org.telegram.messenger.hd.M0(2131748382, null);
+        String M02 = org.telegram.messenger.id.M0(2131748384, null);
         wd wdVar2 = new wd();
         wdVar2.a = false;
         wdVar2.b = "TON";
         wdVar2.h = "XTR";
         wdVar2.c = M02;
         this.q1 = wdVar2;
-        String M03 = org.telegram.messenger.hd.M0(2131748381, null);
+        String M03 = org.telegram.messenger.id.M0(2131748383, null);
         wd wdVar3 = new wd();
         wdVar3.a = false;
         wdVar3.b = "TON";
@@ -165,11 +165,11 @@ public final class zd extends org.telegram.ui.Components.ht0 implements org.tele
         }
         TLRPC.Chat M05 = org.telegram.messenger.qp.s1(i7).M0(Long.valueOf(j10));
         int i11 = 3;
-        this.s0 = org.telegram.messenger.g0.H2(org.telegram.messenger.g0.S2(org.telegram.messenger.hd.a0(null, null, 2131748398, 50), -1, 3, new o1(c51Var, activity, f6Var, 12), f6Var), true);
-        this.t0 = org.telegram.messenger.g0.H2(org.telegram.messenger.g0.S2(org.telegram.messenger.hd.M0(org.telegram.messenger.qp.s1(i7).I5 ? 2131748404 : 2131748402, null), -1, 3, new dd(this, 0), null), true);
+        this.s0 = org.telegram.messenger.g0.H2(org.telegram.messenger.g0.S2(org.telegram.messenger.id.a0(null, null, 2131748400, 50), -1, 3, new o1(c51Var, activity, f6Var, 12), f6Var), true);
+        this.t0 = org.telegram.messenger.g0.H2(org.telegram.messenger.g0.S2(org.telegram.messenger.id.M0(org.telegram.messenger.qp.s1(i7).I5 ? 2131748406 : 2131748404, null), -1, 3, new dd(this, 0), null), true);
         int i12 = 1;
-        this.u0 = org.telegram.messenger.g0.H2(org.telegram.messenger.g0.S2(org.telegram.messenger.hd.M0((z10 && z9) ? 2131748378 : z10 ? 2131748380 : 2131748376, null), -1, 3, new ed(this, (z10 && z9) ? 2131748377 : z10 ? 2131748379 : 2131748375, 0), f6Var), true);
-        this.v0 = org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(org.telegram.messenger.t3.V(M05) ? 2131748371 : 2131748370, null), new dd(this, i12)), true);
+        this.u0 = org.telegram.messenger.g0.H2(org.telegram.messenger.g0.S2(org.telegram.messenger.id.M0((z10 && z9) ? 2131748380 : z10 ? 2131748382 : 2131748378, null), -1, 3, new ed(this, (z10 && z9) ? 2131748379 : z10 ? 2131748381 : 2131748377, 0), f6Var), true);
+        this.v0 = org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(org.telegram.messenger.t3.V(M05) ? 2131748373 : 2131748372, null), new dd(this, i12)), true);
         setCommonInsetsManagedExternally(true);
         setGeometry(new f(this, 11));
         this.T0 = new bi.ec(25, activity, this);
@@ -201,7 +201,7 @@ public final class zd extends org.telegram.ui.Components.ht0 implements org.tele
         dVar.setRoundRadius(24);
         this.A0 = dVar;
         dVar.setEnabled(org.telegram.messenger.qp.s1(i7).I5);
-        dVar.i(org.telegram.messenger.hd.M0(2131748350, null), false, true);
+        dVar.i(org.telegram.messenger.id.M0(2131748352, null), false, true);
         dVar.setVisibility(8);
         dVar.setOnClickListener(new org.telegram.ui.ActionBar.l1(7, this, c51Var));
         tVar.addView(dVar, c8.ha.d(-1, 48.0f, 55, 18.0f, 13.0f, 18.0f, 0.0f));
@@ -227,7 +227,7 @@ public final class zd extends org.telegram.ui.Components.ht0 implements org.tele
         bi.u uVar = new bi.u(1, activity, this);
         this.K0 = uVar;
         uVar.setVisibility(8);
-        uVar.setText(org.telegram.messenger.hd.M0(2131752953, null));
+        uVar.setText(org.telegram.messenger.id.M0(2131752953, null));
         uVar.setLeftPadding(org.telegram.messenger.g0.L(36.0f));
         bi.v vVar = new bi.v(activity, 3);
         this.O0 = vVar;
@@ -244,7 +244,7 @@ public final class zd extends org.telegram.ui.Components.ht0 implements org.tele
         vVar.setTypeface(Typeface.DEFAULT);
         org.telegram.ui.ActionBar.r6.D(vVar, org.telegram.ui.ActionBar.k6.ig, f6Var);
         org.telegram.ui.ActionBar.r6.m(vVar, 36, org.telegram.ui.ActionBar.k6.jg, f6Var);
-        vVar.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
+        vVar.setGravity(org.telegram.messenger.id.a0 ? 5 : 3);
         vVar.setOnFocusChangeListener(new fd(this, 0));
         vVar.addTextChangedListener(new od(this));
         LinearLayout linearLayout = new LinearLayout(activity);
@@ -264,14 +264,14 @@ public final class zd extends org.telegram.ui.Components.ht0 implements org.tele
         pdVar.setRoundRadius(24);
         this.G0 = pdVar;
         pdVar.setEnabled(false);
-        pdVar.i(org.telegram.messenger.hd.G(0, "MonetizationStarsWithdraw", new Object[0]), false, true);
+        pdVar.i(org.telegram.messenger.id.G(0, "MonetizationStarsWithdraw", new Object[0]), false, true);
         pdVar.setVisibility(0);
         pdVar.setOnClickListener(new bi.la(this, i7, c51Var, 4));
         fi.d dVar2 = new fi.d(activity, f6Var, true);
         dVar2.setRoundRadius(24);
         this.J0 = dVar2;
         dVar2.setEnabled(false);
-        dVar2.i(org.telegram.messenger.hd.M0(2131748373, null), false, true);
+        dVar2.i(org.telegram.messenger.id.M0(2131748375, null), false, true);
         dVar2.setOnClickListener(new hd(this, i7, j3, activity));
         linearLayout2.addView(pdVar, c8.ha.p(-1, 48, 1.0f, org.telegram.messenger.qs.E1));
         if (org.telegram.messenger.t3.V(M05)) {
@@ -314,14 +314,14 @@ public final class zd extends org.telegram.ui.Components.ht0 implements org.tele
         int i17 = org.telegram.ui.ActionBar.k6.Cj;
         org.telegram.ui.ActionBar.r6.V(textView, i17, null);
         textView.setTag(Integer.valueOf(i17));
-        textView.setText(org.telegram.messenger.hd.M0(2131748776, "LoadingStats"));
+        textView.setText(org.telegram.messenger.id.M0(2131748778, "LoadingStats"));
         textView.setGravity(1);
         TextView textView2 = new TextView(activity);
         textView2.setTextSize(1, 15.0f);
         int i18 = org.telegram.ui.ActionBar.k6.Dj;
         org.telegram.ui.ActionBar.r6.V(textView2, i18, null);
         textView2.setTag(Integer.valueOf(i18));
-        textView2.setText(org.telegram.messenger.hd.M0(2131748775, null));
+        textView2.setText(org.telegram.messenger.id.M0(2131748777, null));
         textView2.setGravity(1);
         e10.addView(ch0Var, c8.ha.t(120, 120, 1, 0, 0, 0, 20));
         e10.addView(textView, c8.ha.t(-2, -2, 1, 0, 0, 0, 10));
@@ -350,11 +350,11 @@ public final class zd extends org.telegram.ui.Components.ht0 implements org.tele
         com.google.android.recaptcha.internal.a.q(textView, 1, 20.0f);
         int i11 = org.telegram.ui.ActionBar.k6.G6;
         org.telegram.ui.ActionBar.r6.V(textView, i11, f6Var);
-        textView.setText(org.telegram.messenger.hd.M0(z9 ? 2131753035 : 2131748388, null));
+        textView.setText(org.telegram.messenger.id.M0(z9 ? 2131753035 : 2131748390, null));
         f10.addView(textView, c8.ha.k(8.0f, 0.0f, 8.0f, 25.0f, -1, -2));
-        f10.addView(new di.a4(context, R.drawable.msg_channel, org.telegram.messenger.hd.M0(z9 ? 2131753044 : 2131748397, null), org.telegram.messenger.hd.M0(z9 ? 2131753043 : 2131748396, null), f6Var), c8.ha.t(-1, -2, 49, 8, 0, 8, 16));
-        f10.addView(new di.a4(context, R.drawable.menu_feature_split, org.telegram.messenger.hd.M0(z9 ? 2131753042 : 2131748395, null), org.telegram.messenger.hd.M0(z9 ? 2131753041 : 2131748394, null), f6Var), c8.ha.t(-1, -2, 49, 8, 0, 8, 16));
-        f10.addView(new di.a4(context, R.drawable.menu_feature_withdrawals, org.telegram.messenger.hd.M0(z9 ? 2131753040 : 2131748393, null), org.telegram.messenger.hd.M0(z9 ? 2131753039 : 2131748392, null), f6Var), c8.ha.t(-1, -2, 49, 8, 0, 8, 16));
+        f10.addView(new di.a4(context, R.drawable.msg_channel, org.telegram.messenger.id.M0(z9 ? 2131753044 : 2131748399, null), org.telegram.messenger.id.M0(z9 ? 2131753043 : 2131748398, null), f6Var), c8.ha.t(-1, -2, 49, 8, 0, 8, 16));
+        f10.addView(new di.a4(context, R.drawable.menu_feature_split, org.telegram.messenger.id.M0(z9 ? 2131753042 : 2131748397, null), org.telegram.messenger.id.M0(z9 ? 2131753041 : 2131748396, null), f6Var), c8.ha.t(-1, -2, 49, 8, 0, 8, 16));
+        f10.addView(new di.a4(context, R.drawable.menu_feature_withdrawals, org.telegram.messenger.id.M0(z9 ? 2131753040 : 2131748395, null), org.telegram.messenger.id.M0(z9 ? 2131753039 : 2131748394, null), f6Var), c8.ha.t(-1, -2, 49, 8, 0, 8, 16));
         View view = new View(context);
         org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.d7, view, f6Var);
         f10.addView(view, c8.ha.n(1.0f / org.telegram.messenger.g0.p, -1, 55, 12, 0, 12, 0));
@@ -371,17 +371,17 @@ public final class zd extends org.telegram.ui.Components.ht0 implements org.tele
         wpVar.b(q5Var.getPaint().getFontMetricsInt());
         wpVar.G = 0.9f;
         spannableString.setSpan(wpVar, 0, spannableString.length(), 33);
-        q5Var.setText(org.telegram.messenger.g0.K2(org.telegram.messenger.hd.M0(z9 ? 2131753036 : 2131748389, null), spannableString, "💎"));
+        q5Var.setText(org.telegram.messenger.g0.K2(org.telegram.messenger.id.M0(z9 ? 2131753036 : 2131748391, null), spannableString, "💎"));
         f10.addView(q5Var, c8.ha.k(8.0f, 20.0f, 8.0f, 0.0f, -1, -2));
         org.telegram.ui.Components.w70 w70Var = new org.telegram.ui.Components.w70(context, f6Var);
         w70Var.setGravity(17);
         w70Var.setTextSize(1, 14.0f);
         org.telegram.ui.ActionBar.r6.V(w70Var, i11, f6Var);
         org.telegram.ui.ActionBar.r6.H(w70Var, org.telegram.ui.ActionBar.k6.Uc, f6Var);
-        w70Var.setText(org.telegram.messenger.g0.d4(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(z9 ? 2131753037 : 2131748390, null)), new bi.k1(19, context, z9)));
+        w70Var.setText(org.telegram.messenger.g0.d4(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(z9 ? 2131753037 : 2131748392, null)), new bi.k1(19, context, z9)));
         f10.addView(w70Var, c8.ha.k(28.0f, 9.0f, 28.0f, 0.0f, -1, -2));
         fi.d h = org.telegram.messenger.k5.h(24, context, f6Var, true);
-        h.i(org.telegram.messenger.hd.M0(2131749530, null), false, true);
+        h.i(org.telegram.messenger.id.M0(2131749532, null), false, true);
         h.setOnClickListener(new gd(l10, i7));
         f10.addView(h, c8.ha.t(-1, 48, 55, 10, 25, 10, 14));
         l10.N = f10;
@@ -436,7 +436,7 @@ public final class zd extends org.telegram.ui.Components.ht0 implements org.tele
         boolean z11 = broadcastRevenueTransaction instanceof TL_stats.TL_broadcastRevenueTransactionWithdrawal;
         if (z11) {
             TL_stats.TL_broadcastRevenueTransactionWithdrawal tL_broadcastRevenueTransactionWithdrawal = (TL_stats.TL_broadcastRevenueTransactionWithdrawal) broadcastRevenueTransaction;
-            M0 = org.telegram.messenger.hd.M0(2131748360, null);
+            M0 = org.telegram.messenger.id.M0(2131748362, null);
             j10 = 0;
             j11 = tL_broadcastRevenueTransactionWithdrawal.date;
             j12 = tL_broadcastRevenueTransactionWithdrawal.amount;
@@ -449,7 +449,7 @@ public final class zd extends org.telegram.ui.Components.ht0 implements org.tele
             j10 = 0;
             if (broadcastRevenueTransaction instanceof TL_stats.TL_broadcastRevenueTransactionProceeds) {
                 TL_stats.TL_broadcastRevenueTransactionProceeds tL_broadcastRevenueTransactionProceeds = (TL_stats.TL_broadcastRevenueTransactionProceeds) broadcastRevenueTransaction;
-                M0 = org.telegram.messenger.hd.M0(2131748362, null);
+                M0 = org.telegram.messenger.id.M0(2131748364, null);
                 j11 = tL_broadcastRevenueTransactionProceeds.from_date;
                 j13 = tL_broadcastRevenueTransactionProceeds.to_date;
                 j12 = tL_broadcastRevenueTransactionProceeds.amount;
@@ -458,7 +458,7 @@ public final class zd extends org.telegram.ui.Components.ht0 implements org.tele
                     return;
                 }
                 TL_stats.TL_broadcastRevenueTransactionRefund tL_broadcastRevenueTransactionRefund = (TL_stats.TL_broadcastRevenueTransactionRefund) broadcastRevenueTransaction;
-                M0 = org.telegram.messenger.hd.M0(2131748361, null);
+                M0 = org.telegram.messenger.id.M0(2131748363, null);
                 j11 = tL_broadcastRevenueTransactionRefund.from_date;
                 j12 = tL_broadcastRevenueTransactionRefund.amount;
                 j13 = 0;
@@ -494,17 +494,17 @@ public final class zd extends org.telegram.ui.Components.ht0 implements org.tele
         textView2.setTextSize(1, 13.0f);
         org.telegram.ui.ActionBar.r6.V(textView2, org.telegram.ui.ActionBar.k6.y6, f6Var);
         if (z9) {
-            textView2.setText(org.telegram.messenger.hd.M0(2131748357, null));
+            textView2.setText(org.telegram.messenger.id.M0(2131748359, null));
         } else if (j15 == j10) {
-            textView2.setText(org.telegram.messenger.hd.Q(j13));
+            textView2.setText(org.telegram.messenger.id.Q(j13));
         } else if (j13 == j10) {
-            textView2.setText(org.telegram.messenger.hd.Q(j15));
+            textView2.setText(org.telegram.messenger.id.Q(j15));
         } else {
-            textView2.setText(org.telegram.messenger.hd.Q(j15) + " - " + org.telegram.messenger.hd.Q(j13));
+            textView2.setText(org.telegram.messenger.id.Q(j15) + " - " + org.telegram.messenger.id.Q(j13));
         }
         if (z10) {
             org.telegram.ui.ActionBar.r6.V(textView2, org.telegram.ui.ActionBar.k6.q7, f6Var);
-            textView2.setText(TextUtils.concat(textView2.getText(), " — ", org.telegram.messenger.hd.M0(2131748358, null)));
+            textView2.setText(TextUtils.concat(textView2.getText(), " — ", org.telegram.messenger.id.M0(2131748360, null)));
         }
         f10.addView(textView2, c8.ha.t(-1, -2, 49, 0, 0, 0, 0));
         TextView textView3 = new TextView(context);
@@ -555,14 +555,14 @@ public final class zd extends org.telegram.ui.Components.ht0 implements org.tele
         if (z11) {
             TL_stats.TL_broadcastRevenueTransactionWithdrawal tL_broadcastRevenueTransactionWithdrawal2 = (TL_stats.TL_broadcastRevenueTransactionWithdrawal) broadcastRevenueTransaction;
             if ((tL_broadcastRevenueTransactionWithdrawal2.flags & 2) != 0) {
-                h.i(org.telegram.messenger.hd.M0(2131748359, null), false, true);
+                h.i(org.telegram.messenger.id.M0(2131748361, null), false, true);
                 h.setOnClickListener(new org.telegram.ui.ActionBar.l1(8, context, tL_broadcastRevenueTransactionWithdrawal2));
                 f10.addView(h, c8.ha.t(-1, 48, 55, 18, 30, 18, 14));
                 l10.N = f10;
                 l10.show();
             }
         }
-        h.i(org.telegram.messenger.hd.M0(2131747830, null), false, true);
+        h.i(org.telegram.messenger.id.M0(2131747832, null), false, true);
         h.setOnClickListener(new gd(l10, i11));
         f10.addView(h, c8.ha.t(-1, 48, 55, 18, 30, 18, 14));
         l10.N = f10;
@@ -575,7 +575,7 @@ public final class zd extends org.telegram.ui.Components.ht0 implements org.tele
         ArrayList arrayList;
         boolean z9 = this.n1 == null;
         this.h1 = tL_payments_starsRevenueStats.usd_rate;
-        o41 i02 = c51.i0(tL_payments_starsRevenueStats.revenue_graph, org.telegram.messenger.hd.M0(2131748399, null), 2, false);
+        o41 i02 = c51.i0(tL_payments_starsRevenueStats.revenue_graph, org.telegram.messenger.id.M0(2131748401, null), 2, false);
         this.n1 = i02;
         if (i02 != null && (bVar = i02.d) != null && (arrayList = bVar.d) != null && !arrayList.isEmpty() && this.n1.d.d.get(0) != null) {
             ((mg.a) this.n1.d.d.get(0)).g = org.telegram.ui.ActionBar.k6.Yj;

@@ -6,7 +6,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z6 implements Runnable {
     public final /* synthetic */ int a;
@@ -98,7 +98,7 @@ public final /* synthetic */ class z6 implements Runnable {
                 }
                 org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
                 if (Q != null) {
-                    hc.a0(Q).Q(R.raw.forward, 36, e10 == org.telegram.messenger.p10.i(b8Var.a).e() ? org.telegram.messenger.hd.M0(2131750497, null) : e10 > 0 ? org.telegram.messenger.hd.a0(null, null, 2131750496, org.telegram.messenger.m5.t(e10)) : org.telegram.messenger.hd.a0(null, null, 2131750501, org.telegram.messenger.m5.t(e10))).j();
+                    hc.a0(Q).Q(R.raw.forward, 36, e10 == org.telegram.messenger.p10.i(b8Var.a).e() ? org.telegram.messenger.id.M0(2131750499, null) : e10 > 0 ? org.telegram.messenger.id.a0(null, null, 2131750498, org.telegram.messenger.m5.t(e10)) : org.telegram.messenger.id.a0(null, null, 2131750503, org.telegram.messenger.m5.t(e10))).j();
                 }
                 k60Var.u();
                 org.telegram.messenger.k5.o(null, 2131753909, new hc((FrameLayout) b8Var.b, b8Var.I0), R.raw.saved_messages, 36);

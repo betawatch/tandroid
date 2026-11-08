@@ -6,7 +6,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class d61 extends org.telegram.ui.Cells.ga {
     public final /* synthetic */ int q3 = 1;
@@ -33,21 +33,21 @@ public final class d61 extends org.telegram.ui.Cells.ga {
                     if ((j6Var.F == null || j6Var.U) && themeActivity.f != 1) {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(themeActivity.getParentActivity());
                         if (j6Var.b == null) {
-                            charSequenceArr = new CharSequence[]{null, org.telegram.messenger.hd.M0(2131750859, "ExportTheme")};
+                            charSequenceArr = new CharSequence[]{null, org.telegram.messenger.id.M0(2131750859, "ExportTheme")};
                             iArr = new int[]{0, R.drawable.msg_shareout};
                             z9 = false;
                         } else {
                             TLRPC.TL_theme tL_theme = j6Var.F;
                             boolean z10 = tL_theme == null || !tL_theme.isDefault;
-                            String M0 = org.telegram.messenger.hd.M0(2131745460, "ShareFile");
-                            String M02 = org.telegram.messenger.hd.M0(2131750859, "ExportTheme");
+                            String M0 = org.telegram.messenger.id.M0(2131745462, "ShareFile");
+                            String M02 = org.telegram.messenger.id.M0(2131750859, "ExportTheme");
                             TLRPC.TL_theme tL_theme2 = j6Var.F;
-                            String M03 = (tL_theme2 == null || (!tL_theme2.isDefault && tL_theme2.creator)) ? org.telegram.messenger.hd.M0(2131751336, "Edit") : null;
+                            String M03 = (tL_theme2 == null || (!tL_theme2.isDefault && tL_theme2.creator)) ? org.telegram.messenger.id.M0(2131751336, "Edit") : null;
                             TLRPC.TL_theme tL_theme3 = j6Var.F;
-                            String M04 = (tL_theme3 == null || !tL_theme3.creator) ? null : org.telegram.messenger.hd.M0(2131744146, "ThemeSetUrl");
+                            String M04 = (tL_theme3 == null || !tL_theme3.creator) ? null : org.telegram.messenger.id.M0(2131744148, "ThemeSetUrl");
                             if (z10) {
                                 c10 = 1;
-                                str = org.telegram.messenger.hd.M0(2131751599, "Delete");
+                                str = org.telegram.messenger.id.M0(2131751599, "Delete");
                             } else {
                                 c10 = 1;
                                 str = null;

@@ -13,7 +13,7 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class a01 extends Drawable {
     public final TextPaint a;
@@ -71,39 +71,39 @@ public final class a01 extends Drawable {
             if (i10 >= 1 && i10 < 60) {
                 str = jg.g.j(i7, "");
                 if (str.length() < 2) {
-                    str = jg.g.l(2131745689, null, com.google.android.recaptcha.internal.a.m(str));
+                    str = jg.g.l(2131745691, null, com.google.android.recaptcha.internal.a.m(str));
                 }
             } else if (i10 >= 60 && i10 < 3600) {
                 str = "" + (i7 / 60);
                 if (str.length() < 2) {
-                    str = jg.g.l(2131745691, null, com.google.android.recaptcha.internal.a.m(str));
+                    str = jg.g.l(2131745693, null, com.google.android.recaptcha.internal.a.m(str));
                 }
             } else if (i10 >= 3600 && i10 < 86400) {
                 str = "" + ((i7 / 60) / 60);
                 if (str.length() < 2) {
-                    str = jg.g.l(2131745692, null, com.google.android.recaptcha.internal.a.m(str));
+                    str = jg.g.l(2131745694, null, com.google.android.recaptcha.internal.a.m(str));
                 }
             } else if (i10 >= 86400 && i10 < 604800) {
                 str = "" + (((i7 / 60) / 60) / 24);
                 if (str.length() < 2) {
-                    str = jg.g.l(2131745693, null, com.google.android.recaptcha.internal.a.m(str));
+                    str = jg.g.l(2131745695, null, com.google.android.recaptcha.internal.a.m(str));
                 }
             } else if (i10 < 2678400) {
                 str = "" + ((((i7 / 60) / 60) / 24) / 7);
                 if (str.length() < 2) {
-                    str = jg.g.l(2131745688, null, com.google.android.recaptcha.internal.a.m(str));
+                    str = jg.g.l(2131745690, null, com.google.android.recaptcha.internal.a.m(str));
                 } else if (str.length() > 2) {
                     str = "c";
                 }
             } else if (i10 < 31449600) {
                 str = "" + ((((i7 / 60) / 60) / 24) / 30);
                 if (str.length() < 2) {
-                    str = jg.g.l(2131745690, null, com.google.android.recaptcha.internal.a.m(str));
+                    str = jg.g.l(2131745692, null, com.google.android.recaptcha.internal.a.m(str));
                 }
             } else {
                 str = "" + ((((i7 / 60) / 60) / 24) / 364);
                 if (str.length() < 2) {
-                    str = jg.g.l(2131745687, null, com.google.android.recaptcha.internal.a.m(str));
+                    str = jg.g.l(2131745689, null, com.google.android.recaptcha.internal.a.m(str));
                 }
             }
             String str2 = str;

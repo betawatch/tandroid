@@ -6,7 +6,7 @@ import android.os.Parcel;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class d extends q implements b {
     public final /* synthetic */ int b;
@@ -20,7 +20,18 @@ public final class d extends q implements b {
     }
 
     @Override // v6.b
-    public void B(Status status, u6.c cVar) {
+    public void C0(Status status, u6.a aVar) {
+        switch (this.b) {
+            case 0:
+                k8.b(status, aVar, this.c);
+                return;
+            default:
+                throw new UnsupportedOperationException();
+        }
+    }
+
+    @Override // v6.b
+    public void K(Status status, u6.c cVar) {
         switch (this.b) {
             case 1:
                 k8.b(status, cVar, this.c);
@@ -31,19 +42,19 @@ public final class d extends q implements b {
     }
 
     @Override // a8.q
-    public final boolean I0(int i7, Parcel parcel, Parcel parcel2) {
+    public final boolean i1(int i7, Parcel parcel, Parcel parcel2) {
         if (i7 == 1) {
             Status status = (Status) n7.a.a(parcel, Status.CREATOR);
             u6.a aVar = (u6.a) n7.a.a(parcel, u6.a.CREATOR);
             n7.a.d(parcel);
-            l0(status, aVar);
+            C0(status, aVar);
             return true;
         }
         if (i7 == 2) {
             Status status2 = (Status) n7.a.a(parcel, Status.CREATOR);
             u6.c cVar = (u6.c) n7.a.a(parcel, u6.c.CREATOR);
             n7.a.d(parcel);
-            B(status2, cVar);
+            K(status2, cVar);
             return true;
         }
         if (i7 == 3) {
@@ -55,16 +66,5 @@ public final class d extends q implements b {
         }
         n7.a.d(parcel);
         throw new UnsupportedOperationException();
-    }
-
-    @Override // v6.b
-    public void l0(Status status, u6.a aVar) {
-        switch (this.b) {
-            case 0:
-                k8.b(status, aVar, this.c);
-                return;
-            default:
-                throw new UnsupportedOperationException();
-        }
     }
 }

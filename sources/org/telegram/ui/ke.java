@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ke implements Runnable {
     public final /* synthetic */ int a;
@@ -28,13 +28,13 @@ public final /* synthetic */ class ke implements Runnable {
                 jk0Var.dismiss();
                 org.telegram.messenger.g0.g(str);
                 a02 = org.telegram.ui.Components.hc.a0(anVar);
-                i7 = 2131746334;
+                i7 = 2131746336;
                 break;
             case 1:
                 jk0Var.dismiss();
                 org.telegram.messenger.g0.g(str);
                 a02 = org.telegram.ui.Components.hc.a0(anVar);
-                i7 = 2131743202;
+                i7 = 2131743204;
                 break;
             case 2:
                 jk0Var.dismiss();
@@ -46,7 +46,7 @@ public final /* synthetic */ class ke implements Runnable {
                 jk0Var.dismiss();
                 org.telegram.messenger.g0.g("@" + str);
                 a02 = org.telegram.ui.Components.hc.a0(anVar);
-                i7 = 2131743666;
+                i7 = 2131743668;
                 break;
         }
         org.telegram.messenger.camera.q.r(null, i7, a02);

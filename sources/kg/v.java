@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import jg.a2;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g5;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.p10;
@@ -46,7 +46,7 @@ import org.telegram.ui.Components.x31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class v extends n41 implements ls {
     public static org.telegram.ui.ActionBar.u1 e;
@@ -90,7 +90,7 @@ public final class v extends n41 implements ls {
         boolean z9 = Q != null && (Q.getFragmentView() instanceof rt0) && ((rt0) Q.getFragmentView()).Q() > org.telegram.messenger.g0.L(20.0f);
         org.telegram.ui.ActionBar.u1[] u1VarArr = new org.telegram.ui.ActionBar.u1[1];
         ?? w1Var = z9 ? new org.telegram.ui.ActionBar.w1(0, activity, f6Var) : new AlertDialog$Builder(0, activity, f6Var);
-        String M0 = hd.M0(2131752699, null);
+        String M0 = id.M0(2131752699, null);
         org.telegram.ui.ActionBar.u1 u1Var = w1Var.a;
         u1Var.R = M0;
         s sVar = new s(activity, f6Var);
@@ -102,7 +102,7 @@ public final class v extends n41 implements ls {
         r6.V(sVar, i12, f6Var);
         r6.m(sVar, 34, k6.Li, f6Var);
         r6.m(sVar, 30, k6.Ke, null);
-        sVar.setHintText(hd.M0(2131752701, null));
+        sVar.setHintText(id.M0(2131752701, null));
         sVar.setSingleLine(true);
         sVar.setFocusable(true);
         r6.G(sVar, k6.k6, k6.l6, k6.p7, f6Var);
@@ -113,14 +113,14 @@ public final class v extends n41 implements ls {
         TextView textView = new TextView(activity);
         r6.V(textView, i12, f6Var);
         textView.setTextSize(1, 16.0f);
-        textView.setText(hd.M0(2131752700, null));
+        textView.setText(id.M0(2131752700, null));
         e10.addView(textView, ha.k(24.0f, 5.0f, 24.0f, 12.0f, -1, -2));
         e10.addView(sVar, ha.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
         w1Var.o(e10);
         u1Var.a = org.telegram.messenger.g0.L(292.0f);
         sVar.setOnEditorActionListener(new p(sVar, i7, tL_businessChatLink, u1VarArr, currentFocus, 0));
-        w1Var.k(hd.M0(2131751355, null), new a2(sVar, i7, tL_businessChatLink, i10));
-        w1Var.h(hd.M0(2131752589, null), new x3(15));
+        w1Var.k(id.M0(2131751355, null), new a2(sVar, i7, tL_businessChatLink, i10));
+        w1Var.h(id.M0(2131752589, null), new x3(15));
         if (z9) {
             e = u1Var;
             u1VarArr[0] = u1Var;
@@ -141,8 +141,8 @@ public final class v extends n41 implements ls {
     @Override // org.telegram.ui.Components.n41
     public final void Z(ArrayList arrayList, l41 l41Var) {
         uy0 uy0Var = null;
-        String M0 = hd.M0(2131752710, null);
-        String M02 = hd.M0(2131752703, null);
+        String M0 = id.M0(2131752710, null);
+        String M02 = id.M0(2131752703, null);
         x31 x31Var = new x31(2);
         x31Var.l = M0;
         x31Var.o = M02;
@@ -151,7 +151,7 @@ public final class v extends n41 implements ls {
         l41Var.V();
         y d = y.d(this.currentAccount);
         if (d.b.size() < qp.s1(d.a).H5) {
-            x31 c10 = x31.c(1, R.drawable.menu_link_create, hd.M0(2131752709, null));
+            x31 c10 = x31.c(1, R.drawable.menu_link_create, id.M0(2131752709, null));
             c10.q = true;
             arrayList.add(c10);
         }
@@ -186,7 +186,7 @@ public final class v extends n41 implements ls {
         if (arrayList3.isEmpty()) {
             return;
         }
-        String a02 = arrayList3.size() == 2 ? hd.a0(null, null, 2131752704, arrayList3.get(0), arrayList3.get(1)) : hd.a0(null, null, 2131752705, arrayList3.get(0));
+        String a02 = arrayList3.size() == 2 ? id.a0(null, null, 2131752704, arrayList3.get(0), arrayList3.get(1)) : id.a0(null, null, 2131752705, arrayList3.get(0));
         SpannableString spannableString = new SpannableString(a02);
         int size2 = arrayList3.size();
         while (i7 < size2) {
@@ -205,7 +205,7 @@ public final class v extends n41 implements ls {
 
     @Override // org.telegram.ui.Components.n41
     public final CharSequence a0() {
-        return hd.M0(2131752710, null);
+        return id.M0(2131752710, null);
     }
 
     @Override // org.telegram.ui.Components.n41
@@ -237,8 +237,8 @@ public final class v extends n41 implements ls {
             if (obj instanceof u) {
                 final TL_account.TL_businessChatLink tL_businessChatLink = ((u) obj).a;
                 k60 H = k60.H(this, view);
-                H.c(R.drawable.msg_copy, hd.M0(2131751767, null), new h9(tL_businessChatLink, 23), false);
-                H.c(R.drawable.msg_share, hd.M0(2131748924, null), new Runnable(this) { // from class: kg.o
+                H.c(R.drawable.msg_copy, id.M0(2131751767, null), new h9(tL_businessChatLink, 23), false);
+                H.c(R.drawable.msg_share, id.M0(2131748926, null), new Runnable(this) { // from class: kg.o
                     public final /* synthetic */ v b;
 
                     {
@@ -264,12 +264,12 @@ public final class v extends n41 implements ls {
                                 break;
                             default:
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, vVar.getParentActivity(), vVar.getResourceProvider());
-                                String M0 = hd.M0(2131752707, null);
+                                String M0 = id.M0(2131752707, null);
                                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                                 u1Var.R = M0;
-                                u1Var.T = hd.M0(2131752708, null);
-                                alertDialog$Builder.k(hd.M0(2131746320, null), new ab.g(20, vVar, tL_businessChatLink2));
-                                alertDialog$Builder.h(hd.M0(2131752589, null), null);
+                                u1Var.T = id.M0(2131752708, null);
+                                alertDialog$Builder.k(id.M0(2131746322, null), new ab.g(20, vVar, tL_businessChatLink2));
+                                alertDialog$Builder.h(id.M0(2131752589, null), null);
                                 vVar.showDialog(u1Var);
                                 TextView textView = (TextView) u1Var.d(-1);
                                 if (textView != null) {
@@ -281,7 +281,7 @@ public final class v extends n41 implements ls {
                     }
                 }, false);
                 final int i10 = 1;
-                H.c(R.drawable.msg_edit, hd.M0(2131746277, null), new Runnable(this) { // from class: kg.o
+                H.c(R.drawable.msg_edit, id.M0(2131746279, null), new Runnable(this) { // from class: kg.o
                     public final /* synthetic */ v b;
 
                     {
@@ -307,12 +307,12 @@ public final class v extends n41 implements ls {
                                 break;
                             default:
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, vVar.getParentActivity(), vVar.getResourceProvider());
-                                String M0 = hd.M0(2131752707, null);
+                                String M0 = id.M0(2131752707, null);
                                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                                 u1Var.R = M0;
-                                u1Var.T = hd.M0(2131752708, null);
-                                alertDialog$Builder.k(hd.M0(2131746320, null), new ab.g(20, vVar, tL_businessChatLink2));
-                                alertDialog$Builder.h(hd.M0(2131752589, null), null);
+                                u1Var.T = id.M0(2131752708, null);
+                                alertDialog$Builder.k(id.M0(2131746322, null), new ab.g(20, vVar, tL_businessChatLink2));
+                                alertDialog$Builder.h(id.M0(2131752589, null), null);
                                 vVar.showDialog(u1Var);
                                 TextView textView = (TextView) u1Var.d(-1);
                                 if (textView != null) {
@@ -324,7 +324,7 @@ public final class v extends n41 implements ls {
                     }
                 }, false);
                 final int i11 = 2;
-                H.c(R.drawable.msg_delete, hd.M0(2131751599, null), new Runnable(this) { // from class: kg.o
+                H.c(R.drawable.msg_delete, id.M0(2131751599, null), new Runnable(this) { // from class: kg.o
                     public final /* synthetic */ v b;
 
                     {
@@ -350,12 +350,12 @@ public final class v extends n41 implements ls {
                                 break;
                             default:
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, vVar.getParentActivity(), vVar.getResourceProvider());
-                                String M0 = hd.M0(2131752707, null);
+                                String M0 = id.M0(2131752707, null);
                                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                                 u1Var.R = M0;
-                                u1Var.T = hd.M0(2131752708, null);
-                                alertDialog$Builder.k(hd.M0(2131746320, null), new ab.g(20, vVar, tL_businessChatLink2));
-                                alertDialog$Builder.h(hd.M0(2131752589, null), null);
+                                u1Var.T = id.M0(2131752708, null);
+                                alertDialog$Builder.k(id.M0(2131746322, null), new ab.g(20, vVar, tL_businessChatLink2));
+                                alertDialog$Builder.h(id.M0(2131752589, null), null);
                                 vVar.showDialog(u1Var);
                                 TextView textView = (TextView) u1Var.d(-1);
                                 if (textView != null) {
@@ -378,7 +378,7 @@ public final class v extends n41 implements ls {
     public final View createView(Context context) {
         setHasOwnBackground(true);
         super.createView(context);
-        this.simpleActionBar.setTitle(hd.M0(2131752710, null));
+        this.simpleActionBar.setTitle(id.M0(2131752710, null));
         this.b.setBackground(null);
         this.a.r1();
         this.a.setSectionsDrawBackground(true);

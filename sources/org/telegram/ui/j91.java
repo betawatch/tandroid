@@ -1,37 +1,28 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class j91 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k91 b;
+import android.content.Context;
+import java.util.ArrayList;
 
-    public /* synthetic */ j91(k91 k91Var, int i7) {
-        this.a = i7;
-        this.b = k91Var;
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+/* loaded from: classes3.dex */
+public final class j91 extends u91 {
+    public final /* synthetic */ w91 o3;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j91(w91 w91Var, Context context) {
+        super(w91Var, context);
+        this.o3 = w91Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                k91 k91Var = this.b;
-                k91Var.F = null;
-                if (k91Var.G != -1) {
-                    k91Var.H.getNotificationCenter().j(k91Var.G);
-                    k91Var.G = -1;
-                    break;
-                }
-                break;
-            default:
-                k91 k91Var2 = this.b;
-                k91Var2.F = null;
-                if (k91Var2.G != -1) {
-                    k91Var2.H.getNotificationCenter().j(k91Var2.G);
-                    k91Var2.G = -1;
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.pj0
+    public final boolean R0() {
+        ArrayList arrayList = this.o3.b;
+        return (getAdapter() == null || this.V1 || (arrayList == null || arrayList.size() != 1 || arrayList.get(0) == null || ((o91) arrayList.get(0)).c == null || ((o91) arrayList.get(0)).c.id != 1 ? getAdapter().b() > 1 : getAdapter().b() > 2)) ? false : true;
+    }
+
+    @Override // org.telegram.ui.u91, org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        super.onLayout(z9, i7, i10, i11, i12);
+        this.o3.C0();
     }
 }

@@ -1,60 +1,70 @@
 package org.telegram.ui;
 
-import android.app.Activity;
 import android.view.View;
-import java.util.HashMap;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class l91 extends View {
-    public final HashMap a;
-    public final /* synthetic */ m91 b;
+public final class l91 extends v4.k {
+    public Runnable F;
+    public int G;
+    public final /* synthetic */ w91 H;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l91(m91 m91Var, Activity activity) {
-        super(activity);
-        this.b = m91Var;
-        this.a = new HashMap();
+    public l91(w91 w91Var) {
+        this.H = w91Var;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int i11;
-        int L;
-        m91 m91Var = this.b;
-        v91 v91Var = m91Var.d;
-        int size = View.MeasureSpec.getSize(i7);
-        int L2 = org.telegram.messenger.g0.L(64.0f);
-        int i12 = 0;
-        int i13 = 0;
-        for (int i14 = 0; i14 < m91Var.F().size(); i14++) {
-            if (m91Var.F().get(i14) != null && ((n91) m91Var.F().get(i14)).c != null) {
-                String str = ((n91) m91Var.F().get(i14)).c.title;
-                HashMap hashMap = this.a;
-                Boolean bool = (Boolean) hashMap.get(str);
-                if (bool == null) {
-                    int L3 = org.telegram.messenger.g0.L(org.telegram.messenger.hd.a0 ? 18.0f : (v91Var.isInPreviewMode() ? 11 : 50) + 4);
-                    if (org.telegram.messenger.hd.a0) {
-                        i11 = size - L3;
-                        L = org.telegram.messenger.g0.L((v91Var.isInPreviewMode() ? 11 : 50) + 13);
-                    } else {
-                        i11 = size - L3;
-                        L = org.telegram.messenger.g0.L(22.0f);
-                    }
-                    bool = Boolean.valueOf(org.telegram.ui.ActionBar.k6.B0[0].measureText(str) <= ((float) ((i11 - L) - ((int) Math.ceil((double) org.telegram.ui.ActionBar.k6.I0.measureText("00:00"))))));
-                    hashMap.put(str, bool);
-                }
-                int L4 = org.telegram.messenger.g0.L((!bool.booleanValue() ? 20 : 0) + 64);
-                if (((n91) m91Var.F().get(i14)).c.id == 1) {
-                    L2 = L4;
-                }
-                if (((n91) m91Var.F().get(i14)).c.hidden) {
-                    i12++;
-                }
-                i13 += L4;
+    @Override // v4.k
+    public final void F() {
+        if (this.G == -1) {
+            this.G = this.H.getNotificationCenter().q(null, this.G, false);
+            Runnable runnable = this.F;
+            if (runnable != null) {
+                org.telegram.messenger.g0.r(runnable);
+                this.F = null;
             }
         }
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.max(0, i12 > 0 ? (((v91Var.N.getMeasuredHeight() - v91Var.N.getPaddingTop()) - v91Var.N.getPaddingBottom()) - i13) + L2 : 0), TLObject.FLAG_30));
+    }
+
+    @Override // v4.k
+    public final void N() {
+        Runnable runnable = this.F;
+        if (runnable != null) {
+            org.telegram.messenger.g0.r(runnable);
+            this.F = null;
+        }
+        k91 k91Var = new k91(this, 0);
+        this.F = k91Var;
+        org.telegram.messenger.g0.h3(k91Var);
+    }
+
+    @Override // v4.k, v4.l0
+    public final void g() {
+        super.g();
+        Runnable runnable = this.F;
+        if (runnable != null) {
+            org.telegram.messenger.g0.r(runnable);
+        }
+        k91 k91Var = new k91(this, 1);
+        this.F = k91Var;
+        org.telegram.messenger.g0.h3(k91Var);
+    }
+
+    @Override // v4.k
+    public final void z(v4.d1 d1Var) {
+        w91 w91Var = this.H;
+        View view = w91Var.c1;
+        if (view == d1Var.a) {
+            view.setTranslationX(0.0f);
+            c91 c91Var = w91Var.O;
+            if (c91Var != null) {
+                c91Var.F.clear();
+            }
+            View view2 = w91Var.c1;
+            if (view2 instanceof t91) {
+                t91 t91Var = (t91) view2;
+                t91Var.setTopicIcon(t91Var.c5);
+            }
+            w91Var.c1 = null;
+        }
     }
 }

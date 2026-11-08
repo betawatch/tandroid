@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class o00 extends org.telegram.ui.ActionBar.f2 {
     public ah.a D;
@@ -94,8 +94,8 @@ public abstract class o00 extends org.telegram.ui.ActionBar.f2 {
         this.F = l02;
         this.c.setLayoutManager(l02);
         v4.b0 b0Var = this.F;
-        if (b0Var instanceof org.telegram.ui.Components.ly) {
-            ((org.telegram.ui.Components.ly) b0Var).R = true;
+        if (b0Var instanceof org.telegram.ui.Components.my) {
+            ((org.telegram.ui.Components.my) b0Var).R = true;
         }
         v4.g0 k02 = k0();
         this.c.setAdapter(k02);
@@ -209,7 +209,7 @@ public abstract class o00 extends org.telegram.ui.ActionBar.f2 {
     public abstract v4.g0 k0();
 
     public v4.b0 l0(Context context) {
-        return this.G ? new org.telegram.ui.Components.ly((org.telegram.messenger.g0.L(68.0f) + this.I) - org.telegram.messenger.g0.L(16.0f), this.c) : new v4.b0();
+        return this.G ? new org.telegram.ui.Components.my((org.telegram.messenger.g0.L(68.0f) + this.I) - org.telegram.messenger.g0.L(16.0f), this.c) : new v4.b0();
     }
 
     public ug.q1 m0() {

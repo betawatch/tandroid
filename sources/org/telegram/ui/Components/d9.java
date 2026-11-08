@@ -18,9 +18,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.v91;
+import org.telegram.ui.w91;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class d9 {
     public static void a(org.telegram.ui.an anVar, int i7, TLRPC.Chat chat, TLRPC.User user, TLRPC.TL_forumTopic tL_forumTopic, long j3, int i10, int i11) {
@@ -283,16 +283,16 @@ public abstract class d9 {
                                     drawable = w8Var;
                                 }
                                 if (c9Var4.a == org.telegram.ui.an.class && org.telegram.messenger.t10.B(user2)) {
-                                    str = org.telegram.messenger.hd.M0(2131745902, null);
+                                    str = org.telegram.messenger.id.M0(2131745904, null);
                                     w8Var.g(1);
                                     l9Var.setImageDrawable(w8Var);
                                 } else if (org.telegram.messenger.t10.z(user2)) {
-                                    str = org.telegram.messenger.hd.M0(2131746265, null);
+                                    str = org.telegram.messenger.id.M0(2131746267, null);
                                     w8Var.g(12);
                                     l9Var.setImageDrawable(w8Var);
                                 } else {
                                     if (org.telegram.messenger.t10.x(user2)) {
-                                        str = org.telegram.messenger.hd.M0(2131749327, null);
+                                        str = org.telegram.messenger.id.M0(2131749329, null);
                                         f2Var.getCurrentAccount();
                                         w8Var.r(user2);
                                         c9Var = c9Var4;
@@ -322,7 +322,7 @@ public abstract class d9 {
                                 l9Var.setImageDrawable(parentActivity.getDrawable(R.drawable.msg_viewchats).mutate());
                                 l9Var.u(org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f));
                                 l9Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.F8, f6Var), PorterDuff.Mode.MULTIPLY));
-                                textView.setText(org.telegram.messenger.hd.M0(2131754301, null));
+                                textView.setText(org.telegram.messenger.id.M0(2131754301, null));
                                 z12 = z18;
                                 z13 = true;
                             }
@@ -425,11 +425,11 @@ public abstract class d9 {
                     i14 = -1;
                 }
                 q4Var = parentLayout;
-                if (parentLayout3.getFragmentStack().size() <= 1 || !(parentLayout3.getFragmentStack().get(parentLayout3.getFragmentStack().size() - 2) instanceof v91)) {
+                if (parentLayout3.getFragmentStack().size() <= 1 || !(parentLayout3.getFragmentStack().get(parentLayout3.getFragmentStack().size() - 2) instanceof w91)) {
                     c9 c9Var6 = new c9();
                     arrayList.add(c9Var6);
                     c9Var6.b = -1;
-                    c9Var6.a = v91.class;
+                    c9Var6.a = w91.class;
                     c9Var6.c = org.telegram.messenger.qp.s1(f2Var.getCurrentAccount()).M0(Long.valueOf(-j3));
                 } else {
                     c9 c9Var7 = new c9();
@@ -439,7 +439,7 @@ public abstract class d9 {
                     c9 c9Var8 = new c9();
                     arrayList.add(c9Var8);
                     c9Var8.b = -1;
-                    c9Var8.a = v91.class;
+                    c9Var8.a = w91.class;
                     c9Var8.c = org.telegram.messenger.qp.s1(f2Var.getCurrentAccount()).M0(Long.valueOf(-j3));
                 }
                 Collections.sort(arrayList, new org.telegram.ui.oe(7));

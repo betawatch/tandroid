@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -45,7 +45,7 @@ import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.n41;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class w0 extends na {
     public final fi.d P1;
@@ -191,7 +191,7 @@ public final class w0 extends na {
     @Override // org.telegram.ui.Components.na
     public final CharSequence O0() {
         int i7 = this.j2;
-        return i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : hd.M0(2131753288, null) : hd.M0(2131753603, null) : hd.M0(2131749679, null);
+        return i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : id.M0(2131753288, null) : id.M0(2131753603, null) : id.M0(2131749681, null);
     }
 
     @Override // org.telegram.ui.Components.na
@@ -270,7 +270,7 @@ public final class w0 extends na {
             u0 u0Var2 = new u0(this, z9, 1);
             ConnectionsManager connectionsManager2 = ConnectionsManager.getInstance(p10.s0);
             TLRPC.TL_help_getCountriesList tL_help_getCountriesList = new TLRPC.TL_help_getCountriesList();
-            tL_help_getCountriesList.lang_code = hd.E0().B != null ? hd.E0().B.c() : Locale.getDefault().getCountry();
+            tL_help_getCountriesList.lang_code = id.E0().B != null ? id.E0().B.c() : Locale.getDefault().getCountry();
             connectionsManager2.sendRequest(tL_help_getCountriesList, new bi.j0(u0Var2, 23));
             return;
         }
@@ -435,7 +435,7 @@ public final class w0 extends na {
 
     public final void k1() {
         int i7 = this.j2;
-        String G = i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : hd.G((int) qp.s1(p10.s0).p0, "BoostingSelectUpToWarningCountriesPlural", new Object[0]) : hd.G((int) s.f(), "BoostingSelectUpToWarningChannelsGroupsPlural", new Object[0]) : hd.M0(2131753272, null);
+        String G = i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : id.G((int) qp.s1(p10.s0).p0, "BoostingSelectUpToWarningCountriesPlural", new Object[0]) : id.G((int) s.f(), "BoostingSelectUpToWarningChannelsGroupsPlural", new Object[0]) : id.M0(2131753272, null);
         k kVar = this.m2;
         if (kVar != null) {
             new hc(kVar.c.c, kVar.b).Q(R.raw.chats_infotip, 36, G).k(true);
@@ -446,7 +446,7 @@ public final class w0 extends na {
         fi.d dVar = this.P1;
         dVar.setShowZero(false);
         int i7 = this.j2;
-        dVar.i(i7 != 1 ? (i7 == 2 || i7 == 3) ? hd.M0(2131745947, null) : "" : hd.M0(2131753289, null), z9, true);
+        dVar.i(i7 != 1 ? (i7 == 2 || i7 == 3) ? id.M0(2131745949, null) : "" : id.M0(2131753289, null), z9, true);
         HashSet hashSet = this.W1;
         dVar.c(hashSet.size(), z9);
         dVar.setEnabled(hashSet.size() > 0);
@@ -461,7 +461,7 @@ public final class w0 extends na {
         arrayList.addAll(arrayList2);
         arrayList2.clear();
         if (this.j2 == 1) {
-            String M0 = hd.M0(2131749551, null);
+            String M0 = id.M0(2131749553, null);
             xg.h hVar = new xg.h(9, false);
             hVar.i = 1;
             hVar.j = R.drawable.menu_random;
@@ -536,7 +536,7 @@ public final class w0 extends na {
         hVar6.l = max;
         arrayList2.add(hVar6);
         if (hashSet.size() > 0 && this.j2 != 3) {
-            x3Var.a(hd.M0(2131743631, null), new s0(this, i13));
+            x3Var.a(id.M0(2131743633, null), new s0(this, i13));
         } else if (z9) {
             x3Var.setRightText(null);
         } else {
@@ -596,15 +596,15 @@ public final class w0 extends na {
         x3 x3Var = this.R1;
         if (i7 == 1) {
             TLRPC.Chat chat = this.i2;
-            H = hd.H(',', t3.V(chat) ? "Subscribers" : "Members", Math.max(0, this.g2.F(chat) - 1));
+            H = id.H(',', t3.V(chat) ? "Subscribers" : "Members", Math.max(0, this.g2.F(chat) - 1));
             x3Var.setLayerHeight(32);
         } else if (i7 == 2) {
-            H = hd.G((int) s.f(), "BoostingSelectUpToGroupChannelPlural", new Object[0]);
+            H = id.G((int) s.f(), "BoostingSelectUpToGroupChannelPlural", new Object[0]);
             x3Var.setLayerHeight(32);
         } else if (i7 != 3) {
             H = "";
         } else {
-            H = hd.G((int) qp.s1(p10.s0).p0, "BoostingSelectUpToCountriesPlural", new Object[0]);
+            H = id.G((int) qp.s1(p10.s0).p0, "BoostingSelectUpToCountriesPlural", new Object[0]);
             x3Var.setLayerHeight(1);
         }
         x3Var.setText(H);

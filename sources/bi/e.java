@@ -7,9 +7,9 @@ import org.telegram.messenger.a20;
 import org.telegram.ui.Components.dt0;
 import org.telegram.ui.Components.ft0;
 import org.telegram.ui.Components.x31;
-import org.telegram.ui.ya1;
+import org.telegram.ui.za1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements te.b, dt0, ft0, org.telegram.ui.ActionBar.r1, a20 {
     public final /* synthetic */ z a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class e implements te.b, dt0, ft0, org.telegram.ui.
     public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
         z zVar = this.a;
         zVar.getClass();
-        zVar.presentFragment(new ya1(6, null));
+        zVar.presentFragment(new za1(6, null));
     }
 
     @Override // org.telegram.ui.Components.ft0

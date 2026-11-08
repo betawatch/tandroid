@@ -7,11 +7,11 @@ import android.widget.FrameLayout;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.sd;
 import org.telegram.ui.Components.wk;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q7 implements Runnable {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class q7 implements Runnable {
                 double d = this.c;
                 double d2 = this.d;
                 try {
-                    List<Address> fromLocation = new Geocoder(org.telegram.messenger.t0.b, hd.E0().y).getFromLocation(d, d2, 1);
+                    List<Address> fromLocation = new Geocoder(org.telegram.messenger.t0.b, id.E0().y).getFromLocation(d, d2, 1);
                     if (fromLocation.isEmpty()) {
                         String c10 = sd.c(d2, d);
                         r7Var.K = c10;

@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class rt0 extends org.telegram.ui.Components.oj0 {
     public final Context c;
@@ -62,7 +62,7 @@ public final class rt0 extends org.telegram.ui.Components.oj0 {
                 TLRPC.Chat M02 = st0Var.getMessagesController().M0(Long.valueOf(-keyAt));
                 if (M02 != null) {
                     int i12 = M02.participants_count;
-                    a5Var.c(M02, null, i12 != 0 ? org.telegram.messenger.hd.G(i12, "Members", new Object[0]) : M02.has_geo ? org.telegram.messenger.hd.M0(2131748641, null) : !org.telegram.messenger.t3.t0(M02) ? org.telegram.messenger.hd.M0(2131748640, null) : org.telegram.messenger.hd.M0(2131748637, null), i7 != st0Var.s - 1);
+                    a5Var.c(M02, null, i12 != 0 ? org.telegram.messenger.id.G(i12, "Members", new Object[0]) : M02.has_geo ? org.telegram.messenger.id.M0(2131748643, null) : !org.telegram.messenger.t3.t0(M02) ? org.telegram.messenger.id.M0(2131748642, null) : org.telegram.messenger.id.M0(2131748639, null), i7 != st0Var.s - 1);
                     return;
                 }
                 return;
@@ -70,10 +70,10 @@ public final class rt0 extends org.telegram.ui.Components.oj0 {
             TLRPC.User a22 = st0Var.getMessagesController().a2(Long.valueOf(keyAt));
             if (a22 != null) {
                 if (a22.bot) {
-                    M0 = org.telegram.messenger.hd.M0(2131753156, null).substring(0, 1).toUpperCase() + org.telegram.messenger.hd.M0(2131753156, null).substring(1);
+                    M0 = org.telegram.messenger.id.M0(2131753156, null).substring(0, 1).toUpperCase() + org.telegram.messenger.id.M0(2131753156, null).substring(1);
                 } else {
                     String str = a22.phone;
-                    M0 = (str == null || str.length() == 0) ? org.telegram.messenger.hd.M0(2131747831, null) : org.telegram.messenger.k5.i(new StringBuilder("+"), a22.phone, pf.b.c());
+                    M0 = (str == null || str.length() == 0) ? org.telegram.messenger.id.M0(2131747833, null) : org.telegram.messenger.k5.i(new StringBuilder("+"), a22.phone, pf.b.c());
                 }
                 a5Var.c(a22, null, M0, i7 != st0Var.s - 1);
                 return;
@@ -92,7 +92,7 @@ public final class rt0 extends org.telegram.ui.Components.oj0 {
             }
             if (i10 == 1) {
                 z8Var.setFixedSize(0);
-                z8Var.setText(org.telegram.messenger.hd.M0(2131753677, null));
+                z8Var.setText(org.telegram.messenger.id.M0(2131753677, null));
                 return;
             } else {
                 z8Var.setFixedSize(8);
@@ -104,10 +104,10 @@ public final class rt0 extends org.telegram.ui.Components.oj0 {
             org.telegram.ui.Cells.x4 x4Var = (org.telegram.ui.Cells.x4) view;
             x4Var.a(org.telegram.ui.ActionBar.k6.v6, org.telegram.ui.ActionBar.k6.u6);
             if (i10 == 1) {
-                x4Var.b(R.drawable.msg_contact_add, 5, org.telegram.messenger.hd.M0(2131753692, null), false);
+                x4Var.b(R.drawable.msg_contact_add, 5, org.telegram.messenger.id.M0(2131753692, null), false);
                 return;
             } else {
-                org.telegram.messenger.hd.M0(2131746867, null);
+                org.telegram.messenger.id.M0(2131746869, null);
                 throw null;
             }
         }
@@ -117,9 +117,9 @@ public final class rt0 extends org.telegram.ui.Components.oj0 {
         org.telegram.ui.Cells.n4 n4Var = (org.telegram.ui.Cells.n4) view;
         if (i7 == st0Var.n) {
             if (i10 == 1) {
-                n4Var.setText(org.telegram.messenger.hd.G(st0Var.getMessagesController().H0, "BlockedUsersCount", new Object[0]));
+                n4Var.setText(org.telegram.messenger.id.G(st0Var.getMessagesController().H0, "BlockedUsersCount", new Object[0]));
             } else {
-                n4Var.setText(org.telegram.messenger.hd.M0(2131746839, null));
+                n4Var.setText(org.telegram.messenger.id.M0(2131746841, null));
             }
         }
     }
@@ -140,7 +140,7 @@ public final class rt0 extends org.telegram.ui.Components.oj0 {
                 frameLayout = n4Var;
             } else {
                 org.telegram.ui.Cells.m8 m8Var = new org.telegram.ui.Cells.m8(viewGroup.getContext());
-                m8Var.k(org.telegram.messenger.hd.M0(2131747914, null), false);
+                m8Var.k(org.telegram.messenger.id.M0(2131747916, null), false);
                 m8Var.g(-1, org.telegram.ui.ActionBar.k6.p7);
                 frameLayout = m8Var;
             }

@@ -37,7 +37,7 @@ import org.telegram.ui.hy0;
 import p2.e;
 import q2.m;
 import r2.c;
-import r2.l;
+import r2.k;
 import s0.b;
 import s2.t;
 import sa.d;
@@ -46,7 +46,7 @@ import w7.s;
 import x2.a;
 import x2.f0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class t51 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.ls {
     public static int j0;
@@ -975,7 +975,7 @@ public class t51 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.ls {
 
                         @Override // x2.f0
                         /* renamed from: e, reason: merged with bridge method [inline-methods] */
-                        public final l b(l0 l0Var2) {
+                        public final k b(l0 l0Var2) {
                             l0Var2.b.getClass();
                             if (this.b == null) {
                                 c cVar = new c();
@@ -1000,7 +1000,7 @@ public class t51 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.ls {
                             this.g.getClass();
                             n nVar = this.a;
                             pb.b bVar = this.j;
-                            return new l(l0Var2, nVar, cVar2, this.h, t6, bVar, new s2.d(nVar, bVar, tVar), this.m, this.k, this.l);
+                            return new k(l0Var2, nVar, cVar2, this.h, t6, bVar, new s2.d(nVar, bVar, tVar), this.m, this.k, this.l);
                         }
                     };
                 }

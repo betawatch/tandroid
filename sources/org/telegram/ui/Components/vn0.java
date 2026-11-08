@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class vn0 implements org.telegram.messenger.ls {
     public final /* synthetic */ TLRPC.Dialog a;
@@ -48,14 +48,14 @@ public final class vn0 implements org.telegram.messenger.ls {
                 kVar.setAlpha(0.0f);
                 if (org.telegram.messenger.t10.u(org.telegram.messenger.qp.s1(mo0Var.a).a2(Long.valueOf(dialog.id)))) {
                     kVar.setTitle(org.telegram.messenger.m5.u(org.telegram.messenger.qp.s1(mo0Var.a).a2(Long.valueOf(dialog.id))));
-                    kVar.setSubtitle(org.telegram.messenger.hd.M0(2131745670, null));
+                    kVar.setSubtitle(org.telegram.messenger.id.M0(2131745672, null));
                 } else if (org.telegram.messenger.t3.o0(mo0Var.a, dialog.id)) {
                     int i11 = mo0Var.a;
                     kVar.setTitle(qg.d.i(i11, org.telegram.messenger.qp.s1(i11).M0(Long.valueOf(-dialog.id)), false));
-                    kVar.setSubtitle(org.telegram.messenger.hd.M0(2131745670, null));
+                    kVar.setSubtitle(org.telegram.messenger.id.M0(2131745672, null));
                 } else {
                     kVar.setTitle(org.telegram.messenger.qp.s1(mo0Var.a).M0(Long.valueOf(-dialog.id)).title);
-                    kVar.setSubtitle(org.telegram.messenger.hd.M0(2131745650, null));
+                    kVar.setSubtitle(org.telegram.messenger.id.M0(2131745652, null));
                 }
                 mo0Var.E2 = mo0Var.D2;
                 r1.g gVar = mo0Var.t2;

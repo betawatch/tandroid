@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class mh0 extends lz {
+public final class mh0 extends mz {
     public final /* synthetic */ rh0 U;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -13,7 +13,7 @@ public final class mh0 extends lz {
         this.U = rh0Var;
     }
 
-    @Override // org.telegram.ui.Components.lz
+    @Override // org.telegram.ui.Components.mz
     public final int getAdditionalHeight() {
         l90 l90Var;
         rh0 rh0Var = this.U;

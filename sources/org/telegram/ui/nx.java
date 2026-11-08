@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class nx extends org.telegram.ui.ActionBar.f2 {
     public long a;
@@ -22,7 +22,7 @@ public final class nx extends org.telegram.ui.ActionBar.f2 {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.simpleActionBar.setActionBarMenuOnItemClick(new w9(this, 29));
-        this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131743982, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131743984, null));
         FrameLayout frameLayout = new FrameLayout(context);
         kx kxVar = new kx(this, new a5(this, 13), new wr(this, 9), null, 0);
         this.f = kxVar;

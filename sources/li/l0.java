@@ -5,9 +5,9 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class l0 {
     public static ArrayList d;
@@ -32,28 +32,28 @@ public final class l0 {
         if (arrayList2 == null) {
             ArrayList arrayList3 = new ArrayList();
             d = arrayList3;
-            arrayList3.add(new l0(R.drawable.iv_h1, hd.M0(2131754030, null), "#", "/h1", "/header", "/title", "/heading"));
-            d.add(new l0(R.drawable.iv_h2, hd.M0(2131754029, null), "##", "/h2"));
-            d.add(new l0(R.drawable.iv_h3, hd.M0(2131754028, null), "###", "/h3"));
-            d.add(new l0(R.drawable.iv_h4, hd.M0(2131754027, null), "####", "/h4"));
-            d.add(new l0(R.drawable.iv_h5, hd.M0(2131754026, null), "#####", "/h5"));
-            d.add(new l0(R.drawable.iv_h6, hd.M0(2131754025, null), "######", "/h6"));
-            d.add(new l0(R.drawable.iv_quote, hd.M0(2131753996, null), "|", "/quote"));
-            d.add(new l0(R.drawable.iv_pullquote, hd.M0(2131753997, null), "/pullquote"));
-            d.add(new l0(R.drawable.iv_code, hd.M0(2131754055, null), "```", "/code", "/pre", "/preformatted"));
-            d.add(new l0(R.drawable.iv_footer, hd.M0(2131754032, null), "/footer"));
-            d.add(new l0(R.drawable.iv_list, hd.M0(2131754051, null), "-", "/list"));
-            d.add(new l0(R.drawable.iv_ordered_list, hd.M0(2131754048, null), "1."));
-            d.add(new l0(R.drawable.iv_todo, hd.M0(2131754004, null), "[]", "/todo", "/checklist"));
-            d.add(new l0(R.drawable.iv_details, hd.M0(2131754046, null), ">", "/toggle", "/details"));
-            d.add(new l0(R.drawable.iv_button, hd.M0(2131746012, null), "/button"));
-            d.add(new l0(R.drawable.iv_table, hd.M0(2131754047, null), "/table"));
-            d.add(new l0(R.drawable.iv_math, hd.M0(2131754049, null), "/math", "/latex", "/expression"));
-            d.add(new l0(R.drawable.iv_divider, hd.M0(2131754053, null), "---"));
-            d.add(new l0(R.drawable.iv_media, hd.M0(2131754052, null), "/image", "/pic", "/picture", "/photo", "/img", "/media"));
-            d.add(new l0(R.drawable.iv_media, hd.M0(2131754045, null), "/video", "/vid", "/media"));
-            d.add(new l0(R.drawable.iv_audio, hd.M0(2131754054, null), "/audio", "/music", "/media"));
-            d.add(new l0(R.drawable.iv_location, hd.M0(2131754050, null), "/map", "/location", "/venue"));
+            arrayList3.add(new l0(R.drawable.iv_h1, id.M0(2131754030, null), "#", "/h1", "/header", "/title", "/heading"));
+            d.add(new l0(R.drawable.iv_h2, id.M0(2131754029, null), "##", "/h2"));
+            d.add(new l0(R.drawable.iv_h3, id.M0(2131754028, null), "###", "/h3"));
+            d.add(new l0(R.drawable.iv_h4, id.M0(2131754027, null), "####", "/h4"));
+            d.add(new l0(R.drawable.iv_h5, id.M0(2131754026, null), "#####", "/h5"));
+            d.add(new l0(R.drawable.iv_h6, id.M0(2131754025, null), "######", "/h6"));
+            d.add(new l0(R.drawable.iv_quote, id.M0(2131753996, null), "|", "/quote"));
+            d.add(new l0(R.drawable.iv_pullquote, id.M0(2131753997, null), "/pullquote"));
+            d.add(new l0(R.drawable.iv_code, id.M0(2131754055, null), "```", "/code", "/pre", "/preformatted"));
+            d.add(new l0(R.drawable.iv_footer, id.M0(2131754032, null), "/footer"));
+            d.add(new l0(R.drawable.iv_list, id.M0(2131754051, null), "-", "/list"));
+            d.add(new l0(R.drawable.iv_ordered_list, id.M0(2131754048, null), "1."));
+            d.add(new l0(R.drawable.iv_todo, id.M0(2131754004, null), "[]", "/todo", "/checklist"));
+            d.add(new l0(R.drawable.iv_details, id.M0(2131754046, null), ">", "/toggle", "/details"));
+            d.add(new l0(R.drawable.iv_button, id.M0(2131746014, null), "/button"));
+            d.add(new l0(R.drawable.iv_table, id.M0(2131754047, null), "/table"));
+            d.add(new l0(R.drawable.iv_math, id.M0(2131754049, null), "/math", "/latex", "/expression"));
+            d.add(new l0(R.drawable.iv_divider, id.M0(2131754053, null), "---"));
+            d.add(new l0(R.drawable.iv_media, id.M0(2131754052, null), "/image", "/pic", "/picture", "/photo", "/img", "/media"));
+            d.add(new l0(R.drawable.iv_media, id.M0(2131754045, null), "/video", "/vid", "/media"));
+            d.add(new l0(R.drawable.iv_audio, id.M0(2131754054, null), "/audio", "/music", "/media"));
+            d.add(new l0(R.drawable.iv_location, id.M0(2131754050, null), "/map", "/location", "/venue"));
             arrayList2 = d;
         }
         int size = arrayList2.size();

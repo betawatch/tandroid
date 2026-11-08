@@ -1,49 +1,24 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.app.Activity;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class g91 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ v91 c;
+public final class g91 extends org.telegram.ui.Components.x50 {
+    public final /* synthetic */ long r2;
+    public final /* synthetic */ i91 s2;
 
-    public /* synthetic */ g91(v91 v91Var, boolean z9, int i7) {
-        this.a = i7;
-        this.c = v91Var;
-        this.b = z9;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g91(i91 i91Var, Context context, int i7, a0.h hVar, long j3, org.telegram.ui.ActionBar.f2 f2Var, long j10) {
+        super(context, i7, hVar, j3, f2Var, null);
+        this.s2 = i91Var;
+        this.r2 = j10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i7;
-        switch (this.a) {
-            case 0:
-                super.onAnimationEnd(animator);
-                boolean z9 = this.b;
-                float f10 = z9 ? 1.0f : 0.0f;
-                v91 v91Var = this.c;
-                v91Var.W0(f10);
-                if (!z9) {
-                    Activity parentActivity = v91Var.getParentActivity();
-                    i7 = ((org.telegram.ui.ActionBar.f2) v91Var).classGuid;
-                    org.telegram.messenger.g0.l3(parentActivity, i7);
-                    v91Var.r0.setVisibility(8);
-                    v91Var.U0(true);
-                    break;
-                } else {
-                    v91Var.q0.setVisibility(8);
-                    break;
-                }
-            default:
-                if (!this.b) {
-                    this.c.o0.setVisibility(8);
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.x50
+    public final boolean R0() {
+        TLRPC.Chat M0 = this.s2.b.getMessagesController().M0(Long.valueOf(this.r2));
+        return M0 != null && org.telegram.messenger.t3.y(3, M0);
     }
 }

@@ -58,7 +58,7 @@ import org.telegram.ui.vw;
 import org.telegram.ui.ww;
 import org.telegram.ui.zc0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w2 implements Runnable {
     public final /* synthetic */ int a;
@@ -134,7 +134,7 @@ public final /* synthetic */ class w2 implements Runnable {
                 if (N0.call != null) {
                     qp.s1(i7).g1(j10, true, new m80(n80Var, a10, j3, f2Var, 0));
                 } else if (f2Var.getParentActivity() != null) {
-                    org.telegram.messenger.k5.o(null, 2131749151, org.telegram.ui.Components.hc.a0(f2Var), R.raw.linkbroken, 36);
+                    org.telegram.messenger.k5.o(null, 2131749153, org.telegram.ui.Components.hc.a0(f2Var), R.raw.linkbroken, 36);
                 }
             }
         }
@@ -162,11 +162,11 @@ public final /* synthetic */ class w2 implements Runnable {
     }
 
     private final void f() {
-        org.telegram.ui.Wallet.k0 k0Var;
+        org.telegram.ui.Wallet.j0 j0Var;
         TL_wallet.mnemonic_decryptedKeyPart mnemonic_decryptedkeypart;
         byte[] bArr;
         byte[] bArr2;
-        org.telegram.ui.Wallet.n0 n0Var = (org.telegram.ui.Wallet.n0) this.b;
+        org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) this.b;
         TL_wallet.encryptedSecretPhrasePart[] encryptedsecretphrasepartArr = (TL_wallet.encryptedSecretPhrasePart[]) this.d;
         long j3 = this.c;
         org.telegram.ui.Wallet.j jVar = (org.telegram.ui.Wallet.j) this.e;
@@ -190,7 +190,7 @@ public final /* synthetic */ class w2 implements Runnable {
                                     bArr3 = (byte[]) bArr5.clone();
                                 } else {
                                     if (bArr5.length != bArr3.length) {
-                                        org.telegram.ui.Wallet.n0.j("getSecretPhrase: part " + i7 + " has length " + mnemonic_decryptedkeypart.share.length + " while other had " + bArr3.length);
+                                        org.telegram.ui.Wallet.m0.j("getSecretPhrase: part " + i7 + " has length " + mnemonic_decryptedkeypart.share.length + " while other had " + bArr3.length);
                                         jVar.a(null, "WALLET_PART_SHARE_UNEQUAL_LENGHTS");
                                         byte[] bArr6 = mnemonic_decryptedkeypart.share;
                                         if (bArr6 != null) {
@@ -222,7 +222,7 @@ public final /* synthetic */ class w2 implements Runnable {
                             throw th;
                         }
                     }
-                    org.telegram.ui.Wallet.n0.j("getSecretPhrase: couldn't decrypt " + i7 + " part");
+                    org.telegram.ui.Wallet.m0.j("getSecretPhrase: couldn't decrypt " + i7 + " part");
                     jVar.a(null, "WALLET_PART_" + i7 + "_CANT_DECRYPT");
                     if (mnemonic_decryptedkeypart != null && (bArr2 = mnemonic_decryptedkeypart.share) != null) {
                         Arrays.fill(bArr2, (byte) 0);
@@ -240,11 +240,11 @@ public final /* synthetic */ class w2 implements Runnable {
                 }
             } catch (Throwable th4) {
                 th = th4;
-                k0Var = null;
+                j0Var = null;
             }
         }
         if (bArr3 == null) {
-            org.telegram.ui.Wallet.n0.j("getSecretPhrase: no parts???");
+            org.telegram.ui.Wallet.m0.j("getSecretPhrase: no parts???");
             jVar.a(null, "WALLET_NO_PARTS");
             if (bArr3 != null) {
                 Arrays.fill(bArr3, (byte) 0);
@@ -252,27 +252,27 @@ public final /* synthetic */ class w2 implements Runnable {
             }
             return;
         }
-        k0Var = new org.telegram.ui.Wallet.k0(bArr3);
+        j0Var = new org.telegram.ui.Wallet.j0(bArr3);
         try {
             Arrays.fill(bArr3, (byte) 0);
-            byte[] secretPhraseToPublicKey = WalletEngine2.secretPhraseToPublicKey(k0Var);
-            TL_wallet.WalletState walletState = n0Var.e;
+            byte[] secretPhraseToPublicKey = WalletEngine2.secretPhraseToPublicKey(j0Var);
+            TL_wallet.WalletState walletState = m0Var.e;
             byte[] bArr8 = walletState instanceof TL_wallet.TL_walletState ? ((TL_wallet.TL_walletState) walletState).public_key : null;
             if (secretPhraseToPublicKey != null && bArr8 != null && Arrays.equals(secretPhraseToPublicKey, bArr8)) {
                 Arrays.fill(bArr3, (byte) 0);
-                org.telegram.ui.Wallet.n0.H("getSecretPhrase, received the phrase!");
-                jVar.a(k0Var, null);
+                org.telegram.ui.Wallet.m0.H("getSecretPhrase, received the phrase!");
+                jVar.a(j0Var, null);
                 return;
             }
-            org.telegram.ui.Wallet.n0.j("getSecretPhrase: mnemonic public key doesn't match one from server: server=" + Utilities.f(bArr8) + " derived=" + Utilities.f(secretPhraseToPublicKey));
-            k0Var.close();
+            org.telegram.ui.Wallet.m0.j("getSecretPhrase: mnemonic public key doesn't match one from server: server=" + Utilities.f(bArr8) + " derived=" + Utilities.f(secretPhraseToPublicKey));
+            j0Var.close();
             jVar.a(null, "WALLET_WORDS_DONT_MATCH");
             Arrays.fill(bArr3, (byte) 0);
         } catch (Throwable th5) {
             th = th5;
-            if (k0Var != null) {
+            if (j0Var != null) {
                 try {
-                    k0Var.close();
+                    j0Var.close();
                 } catch (Throwable th6) {
                     if (bArr3 != null) {
                         Arrays.fill(bArr3, (byte) 0);
@@ -281,7 +281,7 @@ public final /* synthetic */ class w2 implements Runnable {
                 }
             }
             jVar.a(null, th.getMessage() == null ? "NULL_ERROR" : th.getMessage());
-            org.telegram.ui.Wallet.n0.k("getSecretPhrase: encryption error", th);
+            org.telegram.ui.Wallet.m0.k("getSecretPhrase: encryption error", th);
             if (bArr3 != null) {
                 Arrays.fill(bArr3, (byte) 0);
             }
@@ -289,27 +289,27 @@ public final /* synthetic */ class w2 implements Runnable {
     }
 
     private final void g() {
-        org.telegram.ui.Wallet.r0 r0Var = (org.telegram.ui.Wallet.r0) this.b;
+        org.telegram.ui.Wallet.q0 q0Var = (org.telegram.ui.Wallet.q0) this.b;
         c20 c20Var = (c20) this.e;
         String str = (String) this.d;
         if (c20Var == null) {
-            r0Var.getClass();
+            q0Var.getClass();
             return;
         }
-        if (this.c != r0Var.l()) {
+        if (this.c != q0Var.l()) {
             str = "STORAGE_CANCELED";
         }
         c20Var.a(str);
     }
 
     private final void h() {
-        org.telegram.ui.Wallet.r0 r0Var = (org.telegram.ui.Wallet.r0) this.b;
-        org.telegram.ui.Wallet.k0 k0Var = (org.telegram.ui.Wallet.k0) this.d;
+        org.telegram.ui.Wallet.q0 q0Var = (org.telegram.ui.Wallet.q0) this.b;
+        org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) this.d;
         try {
-            ((c20) this.e).a(this.c == r0Var.l() ? k0Var : null);
+            ((c20) this.e).a(this.c == q0Var.l() ? j0Var : null);
         } finally {
-            if (k0Var != null) {
-                k0Var.close();
+            if (j0Var != null) {
+                j0Var.close();
             }
         }
     }
@@ -372,7 +372,7 @@ public final /* synthetic */ class w2 implements Runnable {
                     k7Var.s1(j3, c20Var);
                     return;
                 }
-                org.telegram.ui.Components.cc Q = k7Var.k().Q(R.raw.error, 36, org.telegram.messenger.hd.a0(null, null, 2131743879, "NO_BALANCE"));
+                org.telegram.ui.Components.cc Q = k7Var.k().Q(R.raw.error, 36, org.telegram.messenger.id.a0(null, null, 2131743881, "NO_BALANCE"));
                 Q.t = true;
                 Q.j();
                 return;
@@ -417,9 +417,9 @@ public final /* synthetic */ class w2 implements Runnable {
                 long j13 = this.c;
                 org.telegram.ui.Components.hc a02 = org.telegram.ui.Components.hc.a0(anVar);
                 TLRPC.Document document = starGift2.sticker;
-                String M0 = org.telegram.messenger.hd.M0(2131745110, null);
+                String M0 = org.telegram.messenger.id.M0(2131745112, null);
                 if (charSequence == null) {
-                    charSequence = org.telegram.messenger.g0.X2(org.telegram.messenger.hd.G((int) j13, "StarsGiftCompletedText", new Object[0]));
+                    charSequence = org.telegram.messenger.g0.X2(org.telegram.messenger.id.G((int) j13, "StarsGiftCompletedText", new Object[0]));
                 }
                 a02.s(document, M0, charSequence).k(true);
                 return;
@@ -1022,9 +1022,9 @@ public final /* synthetic */ class w2 implements Runnable {
         this.c = j3;
     }
 
-    public /* synthetic */ w2(org.telegram.ui.Wallet.r0 r0Var, c20 c20Var, long j3, String str) {
+    public /* synthetic */ w2(org.telegram.ui.Wallet.q0 q0Var, c20 c20Var, long j3, String str) {
         this.a = 25;
-        this.b = r0Var;
+        this.b = q0Var;
         this.e = c20Var;
         this.c = j3;
         this.d = str;

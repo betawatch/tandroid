@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import org.json.JSONObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.w7;
@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.qa0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class j6 implements ls {
     public int D;
@@ -571,19 +571,19 @@ public final class j6 implements ls {
 
     public final String n() {
         if ("Blue".equals(this.a)) {
-            return hd.M0(2131744187, null);
+            return id.M0(2131744189, null);
         }
         if ("Dark Blue".equals(this.a)) {
-            return hd.M0(2131744184, null);
+            return id.M0(2131744186, null);
         }
         if ("Arctic Blue".equals(this.a)) {
-            return hd.M0(2131744188, null);
+            return id.M0(2131744190, null);
         }
         if ("Day".equals(this.a)) {
-            return hd.M0(2131744183, null);
+            return id.M0(2131744185, null);
         }
         if ("Night".equals(this.a)) {
-            return hd.M0(2131744176, null);
+            return id.M0(2131744178, null);
         }
         TLRPC.TL_theme tL_theme = this.F;
         return tL_theme != null ? tL_theme.title : this.a;

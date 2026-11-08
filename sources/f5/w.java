@@ -30,11 +30,11 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import org.telegram.messenger.p1;
+import org.telegram.messenger.j1;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.r1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class w extends b {
     public final Context C;
@@ -62,7 +62,7 @@ public final class w extends b {
         h4Var.b = j4Var;
         h4Var.a = u.class;
         try {
-            uVar.s(h4Var);
+            uVar.x(h4Var);
             h4Var.a = "billingOverrideService.getBillingOverride";
             return j4Var;
         } catch (Exception e10) {
@@ -160,8 +160,8 @@ public final class w extends b {
     }
 
     @Override // f5.b
-    public final void c(aa.n nVar, p1 p1Var) {
-        G(7, new t(p1Var, 0), new a9.h(this, nVar, p1Var, 2));
+    public final void c(aa.n nVar, j1 j1Var) {
+        G(7, new t(j1Var, 0), new a9.h(this, nVar, j1Var, 2));
     }
 
     @Override // f5.b

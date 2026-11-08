@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ee0 extends org.telegram.ui.ActionBar.f2 {
     public l4 a;
@@ -34,14 +34,14 @@ public final class ee0 extends org.telegram.ui.ActionBar.f2 {
         long j3;
         u1Var.dismiss();
         if (((org.telegram.messenger.h0) org.telegram.messenger.qp.s1(ee0Var.currentAccount).x7.j0.b).c) {
-            org.telegram.ui.Wallet.n0 x10 = org.telegram.ui.Wallet.n0.x(ee0Var.currentAccount);
+            org.telegram.ui.Wallet.m0 x10 = org.telegram.ui.Wallet.m0.x(ee0Var.currentAccount);
             if (x10.v() > 0) {
                 TL_wallet.WalletState walletState = x10.e;
                 if (!(!(walletState instanceof TL_wallet.TL_walletState) ? false : ((TL_wallet.TL_walletState) walletState).backup_enabled) && !x10.f()) {
                     j3 = x10.v();
-                    for (org.telegram.ui.Wallet.j0 j0Var : x10.H) {
-                        if (!j0Var.e && !j0Var.d) {
-                            long j10 = j0Var.c;
+                    for (org.telegram.ui.Wallet.i0 i0Var : x10.H) {
+                        if (!i0Var.e && !i0Var.d) {
+                            long j10 = i0Var.c;
                             if (j10 > 0) {
                                 j3 += j10;
                             }
@@ -56,12 +56,12 @@ public final class ee0 extends org.telegram.ui.ActionBar.f2 {
             j3 = 0;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ee0Var.getParentActivity());
-        String M0 = org.telegram.messenger.hd.M0(2131748742, null);
+        String M0 = org.telegram.messenger.id.M0(2131748744, null);
         org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder.a;
         u1Var2.R = M0;
-        u1Var2.T = org.telegram.messenger.g0.X2(j3 > 0 ? org.telegram.messenger.hd.a0(null, null, 2131754081, org.telegram.ui.Wallet.n0.s(j3, false)) : org.telegram.messenger.hd.M0(2131754082, null));
-        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131748742, null), new de0(ee0Var));
-        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+        u1Var2.T = org.telegram.messenger.g0.X2(j3 > 0 ? org.telegram.messenger.id.a0(null, null, 2131754081, org.telegram.ui.Wallet.m0.s(j3, false)) : org.telegram.messenger.id.M0(2131754082, null));
+        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131748744, null), new de0(ee0Var));
+        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
         alertDialog$Builder.d(-1);
         alertDialog$Builder.p();
     }
@@ -115,7 +115,7 @@ public final class ee0 extends org.telegram.ui.ActionBar.f2 {
         u1Var.r(500L);
         int i12 = ee0Var.currentAccount;
         zc0 zc0Var = new zc0(7, ee0Var, u1Var);
-        org.telegram.ui.Wallet.n0[] n0VarArr = org.telegram.ui.Wallet.n0.O;
+        org.telegram.ui.Wallet.m0[] m0VarArr = org.telegram.ui.Wallet.m0.O;
         if (((org.telegram.messenger.h0) org.telegram.messenger.qp.s1(i12).x7.j0.b).c) {
             org.telegram.messenger.g0.h3(new org.telegram.ui.Components.r2(i12, zc0Var, 29));
         } else {
@@ -146,7 +146,7 @@ public final class ee0 extends org.telegram.ui.ActionBar.f2 {
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131748740, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131748742, null));
         org.telegram.ui.ActionBar.q4 q4Var = this.parentLayout;
         if (q4Var != null && ((ActionBarLayout) q4Var).S0) {
             this.simpleActionBar.setOccupyStatusBar(false);

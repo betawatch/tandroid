@@ -72,7 +72,7 @@ import org.telegram.ui.Components.vy0;
 import org.telegram.ui.Components.zv0;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class ui extends c1 {
     public static final Pattern R1 = Pattern.compile("\\*\\*(.+?)\\*\\*");
@@ -218,7 +218,7 @@ public final class ui extends c1 {
     public boolean y;
     public TLRPC.Document y0;
     public final a0.h y1;
-    public final yf.c z0;
+    public final yf.d z0;
     public final HashMap z1;
 
     static {
@@ -386,7 +386,7 @@ public final class ui extends c1 {
         U0(false);
         F0(false);
         F0(true);
-        this.z0 = new yf.c(this.currentAccount);
+        this.z0 = new yf.d(this.currentAccount);
         this.e = getMessagesController().e7.getInt("menuBotsUpdateDate", 0);
     }
 
@@ -1013,7 +1013,7 @@ public final class ui extends c1 {
     }
 
     public static void m1(ImageReceiver imageReceiver, hc hcVar, String str) {
-        if (rc.e(8200)) {
+        if (sc.e(8200)) {
             imageReceiver.v1 = "preload";
             imageReceiver.h0(0);
             imageReceiver.q0(hcVar, str, null, null, 0, 11);
@@ -1331,10 +1331,10 @@ public final class ui extends c1 {
         org.telegram.ui.ActionBar.u1 u1Var = aw0Var.a;
         if (z10) {
             aw0Var.d = 1;
-            u1Var.R = hd.M0(2131754131, null);
+            u1Var.R = id.M0(2131754131, null);
         } else {
             aw0Var.d = 0;
-            u1Var.R = hd.M0(2131754126, null);
+            u1Var.R = id.M0(2131754126, null);
         }
         aw0Var.c = new ArrayList(arrayList);
         aw0Var.e = f2Var2;
@@ -1347,9 +1347,9 @@ public final class ui extends c1 {
         textView.setTextSize(1, 16.0f);
         textView.setPadding(g0.L(23.0f), g0.L(10.0f), g0.L(23.0f), 0);
         if (stickerSetCovered.set.masks) {
-            textView.setText(hd.M0(2131754132, null));
+            textView.setText(id.M0(2131754132, null));
         } else {
-            textView.setText(hd.M0(2131754127, null));
+            textView.setText(id.M0(2131754127, null));
         }
         linearLayout.addView(textView, c8.ha.o(-2, -2));
         pj0 pj0Var = new pj0(parentActivity, null);
@@ -1360,9 +1360,9 @@ public final class ui extends c1 {
         pj0Var.setPadding(g0.L(10.0f), 0, g0.L(10.0f), 0);
         pj0Var.setGlowColor(-657673);
         linearLayout.addView(pj0Var, c8.ha.k(0.0f, 10.0f, 0.0f, 0.0f, -1, -2));
-        aw0Var.h(hd.M0(2131752041, null), new il0(11));
+        aw0Var.h(id.M0(2131752041, null), new il0(11));
         if (f2Var2 != null) {
-            aw0Var.k(hd.M0(2131745496, null), new org.telegram.ui.Components.ax(aw0Var, 22));
+            aw0Var.k(id.M0(2131745498, null), new org.telegram.ui.Components.bx(aw0Var, 22));
         }
         f2Var.showDialog(u1Var);
     }
@@ -1455,7 +1455,7 @@ public final class ui extends c1 {
             TL_account.TL_emojiStatuses tL_emojiStatuses = new TL_account.TL_emojiStatuses();
             tL_emojiStatuses.hash = this.D0[0];
             tL_emojiStatuses.statuses = arrayListArr[0];
-            getMessagesStorage().a.c(new k7(this, i7, tL_emojiStatuses, 8));
+            getMessagesStorage().a.c(new l7(this, i7, tL_emojiStatuses, 8));
         }
     }
 
@@ -1540,7 +1540,7 @@ public final class ui extends c1 {
         }
         TLRPC.TL_messages_getAttachMenuBots tL_messages_getAttachMenuBots = new TLRPC.TL_messages_getAttachMenuBots();
         tL_messages_getAttachMenuBots.hash = z10 ? 0L : this.a;
-        getConnectionsManager().sendRequest(tL_messages_getAttachMenuBots, new s4(5, this, jv0Var));
+        getConnectionsManager().sendRequest(tL_messages_getAttachMenuBots, new r4(5, this, jv0Var));
     }
 
     public final void E1(xr xrVar, TLRPC.Message message) {
@@ -1671,7 +1671,7 @@ public final class ui extends c1 {
         return false;
     }
 
-    public final void G0(long j3, long j10, boolean z9, int i7, kk kkVar) {
+    public final void G0(long j3, long j10, boolean z9, int i7, jk jkVar) {
         if (z9) {
             TL_bots.BotInfo botInfo = (TL_bots.BotInfo) this.v1.get(j3 + "_" + j10);
             if (botInfo != null) {
@@ -1679,7 +1679,7 @@ public final class ui extends c1 {
                 return;
             }
         }
-        getMessagesStorage().a.c(new wh(this, j3, j10, kkVar, i7, 0));
+        getMessagesStorage().a.c(new wh(this, j3, j10, jkVar, i7, 0));
     }
 
     public final void G1(final boolean z9, ArrayList arrayList, final ArrayList arrayList2, final int i7, final long j3, final boolean z10) {
@@ -1921,7 +1921,7 @@ public final class ui extends c1 {
 
     public final void L0(TLRPC.StickerSet stickerSet, boolean z9) {
         if (z9) {
-            getMessagesStorage().a.c(new y4(29, this, stickerSet));
+            getMessagesStorage().a.c(new x4(29, this, stickerSet));
             return;
         }
         TLRPC.TL_messages_getStickerSet tL_messages_getStickerSet = new TLRPC.TL_messages_getStickerSet();
@@ -2222,7 +2222,7 @@ public final class ui extends c1 {
         this.B1 = true;
         boolean[] zArr = new boolean[1];
         g0.h3(new em(this, zArr, arrayListArr, mhVar, 15));
-        g0.i3(new y4(28, zArr, mhVar), 900L);
+        g0.i3(new x4(28, zArr, mhVar), 900L);
     }
 
     public final void O0() {
@@ -3621,7 +3621,7 @@ public final class ui extends c1 {
                     String lowerCase = str4.toLowerCase();
                     for (int i11 = 0; i11 < 2; i11++) {
                         if (i11 == 1) {
-                            String S0 = hd.E0().S0(lowerCase, false, false);
+                            String S0 = id.E0().S0(lowerCase, false, false);
                             if (!S0.equals(lowerCase)) {
                                 lowerCase = S0;
                             }
@@ -3892,13 +3892,13 @@ public final class ui extends c1 {
         long j10 = qp.s1(this.currentAccount).l4;
         int i10 = qs.P4;
         if (j3 > j10) {
-            qs.e().k(i10, 4, hd.a0("TooLargeError", null, 2131744043, new Object[0]), hd.a0("ErrorRingtoneSizeTooBig", null, 2131751103, Integer.valueOf(qp.s1(p10.s0).l4 / 1024)));
+            qs.e().k(i10, 4, id.a0("TooLargeError", null, 2131744045, new Object[0]), id.a0("ErrorRingtoneSizeTooBig", null, 2131751103, Integer.valueOf(qp.s1(p10.s0).l4 / 1024)));
             return false;
         }
         for (int i11 = 0; i11 < document.attributes.size(); i11++) {
             TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i11);
             if ((documentAttribute instanceof TLRPC.TL_documentAttributeAudio) && documentAttribute.duration > qp.s1(this.currentAccount).k4) {
-                qs.e().k(i10, 4, hd.a0("TooLongError", null, 2131744042, new Object[0]), hd.a0("ErrorRingtoneDurationTooLong", null, 2131751105, Integer.valueOf(qp.s1(p10.s0).k4)));
+                qs.e().k(i10, 4, id.a0("TooLongError", null, 2131744044, new Object[0]), id.a0("ErrorRingtoneDurationTooLong", null, 2131751105, Integer.valueOf(qp.s1(p10.s0).k4)));
                 return false;
             }
         }
@@ -3908,7 +3908,7 @@ public final class ui extends c1 {
         tL_inputDocument.id = document.id;
         tL_inputDocument.file_reference = document.file_reference;
         tL_inputDocument.access_hash = document.access_hash;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(saveringtone, new s4(i7, this, document));
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(saveringtone, new r4(i7, this, document));
         return true;
     }
 
@@ -4155,18 +4155,18 @@ public final class ui extends c1 {
                     }
                 }
             }
-            org.telegram.ui.Components.zz[] zzVarArr = (org.telegram.ui.Components.zz[]) spanned.getSpans(0, charSequenceArr[0].length(), org.telegram.ui.Components.zz.class);
-            if (zzVarArr != null && zzVarArr.length > 0) {
+            org.telegram.ui.Components.a00[] a00VarArr = (org.telegram.ui.Components.a00[]) spanned.getSpans(0, charSequenceArr[0].length(), org.telegram.ui.Components.a00.class);
+            if (a00VarArr != null && a00VarArr.length > 0) {
                 if (arrayList == null) {
                     arrayList = new ArrayList();
                 }
-                for (org.telegram.ui.Components.zz zzVar : zzVarArr) {
-                    if (zzVar != null) {
+                for (org.telegram.ui.Components.a00 a00Var : a00VarArr) {
+                    if (a00Var != null) {
                         try {
                             TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate = new TLRPC.TL_messageEntityFormattedDate();
-                            tL_messageEntityFormattedDate.offset = spanned.getSpanStart(zzVar);
-                            tL_messageEntityFormattedDate.length = Math.min(spanned.getSpanEnd(zzVar), charSequenceArr[0].length()) - tL_messageEntityFormattedDate.offset;
-                            TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate2 = zzVar.b;
+                            tL_messageEntityFormattedDate.offset = spanned.getSpanStart(a00Var);
+                            tL_messageEntityFormattedDate.length = Math.min(spanned.getSpanEnd(a00Var), charSequenceArr[0].length()) - tL_messageEntityFormattedDate.offset;
+                            TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate2 = a00Var.b;
                             tL_messageEntityFormattedDate.relative = tL_messageEntityFormattedDate2.relative;
                             tL_messageEntityFormattedDate.short_time = tL_messageEntityFormattedDate2.short_time;
                             tL_messageEntityFormattedDate.long_time = tL_messageEntityFormattedDate2.long_time;
@@ -4191,7 +4191,7 @@ public final class ui extends c1 {
                     }
                     for (int i28 = 0; i28 < uRLSpanArr.length; i28++) {
                         URLSpan uRLSpan = uRLSpanArr[i28];
-                        if (!(uRLSpan instanceof d41) && !(uRLSpan instanceof e41) && !(uRLSpan instanceof org.telegram.ui.Components.zz)) {
+                        if (!(uRLSpan instanceof d41) && !(uRLSpan instanceof e41) && !(uRLSpan instanceof org.telegram.ui.Components.a00)) {
                             TLRPC.TL_messageEntityUrl tL_messageEntityUrl = new TLRPC.TL_messageEntityUrl();
                             tL_messageEntityUrl.offset = spanned.getSpanStart(uRLSpanArr[i28]);
                             tL_messageEntityUrl.length = Math.min(spanned.getSpanEnd(uRLSpanArr[i28]), charSequenceArr[0].length()) - tL_messageEntityUrl.offset;
@@ -5664,7 +5664,7 @@ public final class ui extends c1 {
         }
         zArr[i7] = true;
         if (z9) {
-            getMessagesStorage().a.c(new k7(this, i7, c20Var, 6));
+            getMessagesStorage().a.c(new l7(this, i7, c20Var, 6));
             return;
         }
         if (i7 == 3 || i7 == 6) {
@@ -5851,7 +5851,7 @@ public final class ui extends c1 {
                     i11 = getMessagesController().d3;
                 }
                 if (arrayListArr[i7].size() > i11 || z9) {
-                    getMessagesStorage().a.c(new k7(this, i7, z9 ? document : (TLRPC.Document) org.telegram.ui.Cells.f1.k(1, arrayListArr[i7]), 10));
+                    getMessagesStorage().a.c(new l7(this, i7, z9 ? document : (TLRPC.Document) org.telegram.ui.Cells.f1.k(1, arrayListArr[i7]), 10));
                 }
                 if (!z9) {
                     ArrayList arrayList = new ArrayList();
@@ -6363,8 +6363,8 @@ public final class ui extends c1 {
 
     public final void i1(String str, TLRPC.Document document, boolean z9) {
         this.Z.remove(str);
-        yf.c cVar = this.z0;
-        ArrayList arrayList = cVar.e;
+        yf.d dVar = this.z0;
+        ArrayList arrayList = dVar.e;
         boolean z10 = true;
         if (z9) {
             int i7 = 0;
@@ -6373,7 +6373,7 @@ public final class ui extends c1 {
                     z10 = false;
                     break;
                 } else {
-                    if (((yf.b) arrayList.get(i7)).d && str.equals(((yf.b) arrayList.get(i7)).b)) {
+                    if (((yf.c) arrayList.get(i7)).d && str.equals(((yf.c) arrayList.get(i7)).b)) {
                         arrayList.remove(i7);
                         break;
                     }
@@ -6387,20 +6387,20 @@ public final class ui extends c1 {
                     z10 = false;
                     break;
                 } else {
-                    if (((yf.b) arrayList.get(i10)).d && str.equals(((yf.b) arrayList.get(i10)).b)) {
-                        ((yf.b) arrayList.get(i10)).d = false;
-                        ((yf.b) arrayList.get(i10)).a = document;
+                    if (((yf.c) arrayList.get(i10)).d && str.equals(((yf.c) arrayList.get(i10)).b)) {
+                        ((yf.c) arrayList.get(i10)).d = false;
+                        ((yf.c) arrayList.get(i10)).a = document;
                         break;
                     }
                     i10++;
                 }
             }
             if (z10) {
-                cVar.h();
+                dVar.h();
             }
         }
         if (z10) {
-            qs.f(cVar.c).k(qs.e5, new Object[0]);
+            qs.f(dVar.c).k(qs.e5, new Object[0]);
         }
     }
 
@@ -6544,7 +6544,7 @@ public final class ui extends c1 {
 
     public final void k1() {
         ArrayList arrayList = this.h;
-        if (arrayList == null || this.y || !rc.e(8200) || this.currentAccount != p10.s0) {
+        if (arrayList == null || this.y || !sc.e(8200) || this.currentAccount != p10.s0) {
             return;
         }
         this.y = true;
@@ -8171,16 +8171,16 @@ public final class ui extends c1 {
         if (hashMap.containsKey(str)) {
             return;
         }
-        hashMap.put(str, new yf.d(str, this.currentAccount));
-        yf.c cVar = this.z0;
-        cVar.getClass();
-        yf.b bVar = new yf.b();
-        bVar.b = str;
-        int i7 = cVar.d;
-        cVar.d = i7 + 1;
-        bVar.c = i7;
-        bVar.d = true;
-        cVar.e.add(bVar);
+        hashMap.put(str, new yf.e(str, this.currentAccount));
+        yf.d dVar = this.z0;
+        dVar.getClass();
+        yf.c cVar = new yf.c();
+        cVar.b = str;
+        int i7 = dVar.d;
+        dVar.d = i7 + 1;
+        cVar.c = i7;
+        cVar.d = true;
+        dVar.e.add(cVar);
     }
 
     public final void m() {
@@ -8774,7 +8774,7 @@ public final class ui extends c1 {
             z10 = false;
         }
         if (!z9) {
-            getMessagesStorage().a.c(new ik(i7, 2, j3, this, tL_attachMenuBots));
+            getMessagesStorage().a.c(new hk(i7, 2, j3, this, tL_attachMenuBots));
         } else if (z10 || Math.abs((System.currentTimeMillis() / 1000) - i7) >= 3600) {
             E0(false, true, null);
         }
@@ -8806,7 +8806,7 @@ public final class ui extends c1 {
         }
         if (!z9) {
             if (tL_help_premiumPromo != null) {
-                getMessagesStorage().a.c(new k7(this, tL_help_premiumPromo, i7, 7));
+                getMessagesStorage().a.c(new l7(this, tL_help_premiumPromo, i7, 7));
             }
             this.E = false;
         } else if (tL_help_premiumPromo == null || Math.abs((System.currentTimeMillis() / 1000) - i7) >= 86400) {
@@ -8974,9 +8974,9 @@ public final class ui extends c1 {
             } else {
                 if (i7 != c2) {
                     if (t10.z(user)) {
-                        M02 = hd.M0(2131746265, null);
+                        M02 = id.M0(2131746267, null);
                     } else if (t10.B(user)) {
-                        M02 = hd.M0(2131745902, null);
+                        M02 = id.M0(2131745904, null);
                     } else {
                         str = g5.m(0, user.first_name, user.last_name);
                         TLRPC.UserProfilePhoto userProfilePhoto = user.photo;

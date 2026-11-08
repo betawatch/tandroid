@@ -2,20 +2,20 @@ package org.telegram.ui.Cells;
 
 import android.text.Editable;
 import android.text.TextWatcher;
-import org.telegram.ui.Components.ys;
+import org.telegram.ui.Components.zs;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class g3 implements TextWatcher {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ys b;
+    public final /* synthetic */ zs b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ h3 d;
 
-    public g3(h3 h3Var, int i7, ys ysVar, boolean z9) {
+    public g3(h3 h3Var, int i7, zs zsVar, boolean z9) {
         this.d = h3Var;
         this.a = i7;
-        this.b = ysVar;
+        this.b = zsVar;
         this.c = z9;
     }
 
@@ -28,9 +28,9 @@ public final class g3 implements TextWatcher {
             if (i7 > 0 && editable != null && editable.length() > i7) {
                 h3Var.a = true;
                 CharSequence subSequence = editable.subSequence(0, i7);
-                ys ysVar = this.b;
-                ysVar.setText(subSequence);
-                ysVar.setSelection(ysVar.length());
+                zs zsVar = this.b;
+                zsVar.setText(subSequence);
+                zsVar.setSelection(zsVar.length());
                 h3Var.a = false;
             }
             h3Var.b(editable);

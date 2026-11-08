@@ -13,7 +13,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class a21 extends org.telegram.ui.Components.na {
     public TLRPC.Chat P1;
@@ -71,7 +71,7 @@ public final class a21 extends org.telegram.ui.Components.na {
         s11Var.setTextIsSelectable(false);
         s11Var.setOnEditorActionListener(new fa(this, 11));
         s11Var.addTextChangedListener(new t11(this));
-        s11Var.setHint(org.telegram.messenger.hd.M0(2131745758, null));
+        s11Var.setHint(org.telegram.messenger.id.M0(2131745760, null));
         frameLayout2.addView(s11Var, c8.ha.e(-1, -1, org.telegram.messenger.qs.E1));
         frameLayout.addView(frameLayout2, c8.ha.d(-1, 40.0f, 23, 11.0f, 0.0f, 11.0f, 0.0f));
         ViewGroup viewGroup = this.b;
@@ -151,7 +151,7 @@ public final class a21 extends org.telegram.ui.Components.na {
 
     @Override // org.telegram.ui.Components.na
     public final CharSequence O0() {
-        return org.telegram.messenger.hd.M0(2131754210, null);
+        return org.telegram.messenger.id.M0(2131754210, null);
     }
 
     @Override // org.telegram.ui.ActionBar.v2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
@@ -193,12 +193,12 @@ public final class a21 extends org.telegram.ui.Components.na {
     }
 
     public final void f1(boolean z9) {
-        int i7 = org.telegram.messenger.t3.V(this.P1) ? 2131749002 : 2131748993;
+        int i7 = org.telegram.messenger.t3.V(this.P1) ? 2131749004 : 2131748995;
         float L = org.telegram.messenger.g0.L(32.0f);
         fi.d dVar = this.Z1;
-        float max = Math.max(L, ((dVar.getWidth() > 0 ? dVar.getWidth() : org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(20.0f)) - org.telegram.messenger.g0.L(16.0f)) - dVar.getTextPaint().measureText(org.telegram.messenger.hd.M0(i7, null)));
+        float max = Math.max(L, ((dVar.getWidth() > 0 ? dVar.getWidth() : org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(20.0f)) - org.telegram.messenger.g0.L(16.0f)) - dVar.getTextPaint().measureText(org.telegram.messenger.id.M0(i7, null)));
         TLObject tLObject = this.S1;
-        dVar.i(org.telegram.messenger.hd.a0(null, null, i7, TextUtils.ellipsize(tLObject instanceof TLRPC.User ? org.telegram.messenger.t10.k((TLRPC.User) tLObject) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : "", dVar.getTextPaint(), max, TextUtils.TruncateAt.MIDDLE)), z9, true);
+        dVar.i(org.telegram.messenger.id.a0(null, null, i7, TextUtils.ellipsize(tLObject instanceof TLRPC.User ? org.telegram.messenger.t10.k((TLRPC.User) tLObject) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : "", dVar.getTextPaint(), max, TextUtils.TruncateAt.MIDDLE)), z9, true);
     }
 
     @Override // org.telegram.ui.ActionBar.v2

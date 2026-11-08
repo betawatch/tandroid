@@ -24,7 +24,7 @@ import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.rg0;
 import org.telegram.ui.tg0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class fu implements rg0 {
     public boolean D;
@@ -626,14 +626,14 @@ public abstract class fu implements rg0 {
             spannableStringBuilder.append(y10).append(", ");
         }
         k(spannableStringBuilder);
-        return spannableStringBuilder.length() > 0 ? spannableStringBuilder : hd.M0(2131754903, null);
+        return spannableStringBuilder.length() > 0 ? spannableStringBuilder : id.M0(2131754903, null);
     }
 
     public CharSequence y() {
         int i7 = this.E;
-        String M0 = i7 == 0 ? null : hd.M0(i7, null);
+        String M0 = i7 == 0 ? null : id.M0(i7, null);
         int i10 = this.F;
-        String M02 = i10 != 0 ? hd.M0(i10, null) : null;
+        String M02 = i10 != 0 ? id.M0(i10, null) : null;
         return TextUtils.isEmpty(M0) ? M02 : TextUtils.isEmpty(M02) ? M0 : TextUtils.concat(M0, ", ", M02);
     }
 

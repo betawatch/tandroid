@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q6 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -53,7 +53,7 @@ public final /* synthetic */ class q6 implements RequestDelegate {
                         sdVar.a.l(rdVar.a);
                         sdVar.l(rdVar, 1);
                         sdVar.F.delete(iArr[0]);
-                        g0.h3(new kd(sdVar, rdVar, 1));
+                        g0.h3(new ld(sdVar, rdVar, 1));
                         break;
                     }
                 } else {
@@ -110,7 +110,7 @@ public final /* synthetic */ class q6 implements RequestDelegate {
                     } catch (Exception unused) {
                     }
                 }
-                g0.h3(new zj(qpVar2, wallPaper, tL_wallPaperSettings, c6Var, file, str, 0));
+                g0.h3(new yj(qpVar2, wallPaper, tL_wallPaperSettings, c6Var, file, str, 0));
                 break;
             case 4:
                 dw dwVar = (dw) obj4;

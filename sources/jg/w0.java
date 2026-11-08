@@ -8,7 +8,7 @@ import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.camera.CameraInfo;
 import org.telegram.messenger.camera.CameraSession;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.m20;
 import org.telegram.messenger.yr;
 import org.telegram.tgnet.TLObject;
@@ -16,9 +16,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.b90;
 import org.telegram.ui.Components.l9;
-import org.telegram.ui.Wallet.f2;
+import org.telegram.ui.Wallet.e2;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -149,15 +149,15 @@ public final /* synthetic */ class w0 implements Runnable {
                 break;
             default:
                 fi.d dVar = (fi.d) obj7;
-                org.telegram.ui.Wallet.n0 n0Var = (org.telegram.ui.Wallet.n0) obj6;
-                f2 f2Var = n0Var.g;
+                org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) obj6;
+                e2 e2Var = m0Var.g;
                 TL_wallet.tonConnectSession tonconnectsession = (TL_wallet.tonConnectSession) obj5;
-                org.telegram.ui.Wallet.a2 a2Var = (org.telegram.ui.Wallet.a2) obj4;
+                org.telegram.ui.Wallet.z1 z1Var = (org.telegram.ui.Wallet.z1) obj4;
                 TextView textView = (TextView) obj3;
                 l9 l9Var = (l9) obj2;
                 TextView textView2 = (TextView) obj;
                 if (!z10) {
-                    ArrayList arrayList = f2Var.d;
+                    ArrayList arrayList = e2Var.d;
                     int size = arrayList.size();
                     int i12 = 0;
                     while (true) {
@@ -168,7 +168,7 @@ public final /* synthetic */ class w0 implements Runnable {
                             r15 = 0;
                             ArrayList arrayList2 = arrayList;
                             if (tonconnectsession2.id == tonconnectsession.id) {
-                                a2Var.e = tonconnectsession2;
+                                z1Var.e = tonconnectsession2;
                             } else {
                                 i12 = i13;
                                 arrayList = arrayList2;
@@ -177,15 +177,15 @@ public final /* synthetic */ class w0 implements Runnable {
                             r15 = 0;
                         }
                     }
-                    TL_wallet.tonConnectSession tonconnectsession3 = a2Var.e;
+                    TL_wallet.tonConnectSession tonconnectsession3 = z1Var.e;
                     boolean z11 = (tonconnectsession3.manifest == null || tonconnectsession3.manifest_error != null || tonconnectsession3.closed || tonconnectsession3.closing) ? r15 : true;
-                    dVar.setEnabled((!z11 || a2Var.f) ? r15 : true);
+                    dVar.setEnabled((!z11 || z1Var.f) ? r15 : true);
                     TL_wallet.tonConnectManifest tonconnectmanifest = tonconnectsession3.manifest;
                     if (tonconnectmanifest != null) {
                         Object[] objArr = new Object[1];
                         objArr[r15] = tonconnectmanifest.name;
                         str = null;
-                        textView.setText(hd.V(null, null, 2131743161, objArr));
+                        textView.setText(id.V(null, null, 2131743163, objArr));
                         TLRPC.WebDocument webDocument = tonconnectsession3.manifest.icon;
                         if (webDocument != null) {
                             l9Var.p(hc.p(m20.c(webDocument)), "76_76", null, tonconnectsession3.manifest);
@@ -196,21 +196,21 @@ public final /* synthetic */ class w0 implements Runnable {
                     Integer num = tonconnectsession3.manifest_error;
                     if (num == null) {
                         if (!z11) {
-                            textView2.setText(hd.M0((tonconnectsession3.closed || tonconnectsession3.closing) ? 2131742993 : 2131748778, str));
+                            textView2.setText(id.M0((tonconnectsession3.closed || tonconnectsession3.closing) ? 2131742995 : 2131748780, str));
                             break;
                         } else {
-                            f2Var.getClass();
-                            textView2.setText(hd.M0(f2.w(a2Var) ? 2131743162 : 2131743164, str));
+                            e2Var.getClass();
+                            textView2.setText(id.M0(e2.w(z1Var) ? 2131743164 : 2131743166, str));
                             break;
                         }
                     } else {
                         Object[] objArr2 = new Object[1];
                         objArr2[r15] = num;
-                        textView2.setText(hd.a0(str, str, 2131743003, objArr2));
+                        textView2.setText(id.a0(str, str, 2131743005, objArr2));
                         break;
                     }
                 } else {
-                    dVar.setEnabled((!n0Var.G() || n0Var.t() == null || n0Var.y() == null || dVar.Q) ? false : true);
+                    dVar.setEnabled((!m0Var.G() || m0Var.t() == null || m0Var.y() == null || dVar.Q) ? false : true);
                     break;
                 }
                 break;
@@ -228,12 +228,12 @@ public final /* synthetic */ class w0 implements Runnable {
         this.r = runnable;
     }
 
-    public /* synthetic */ w0(boolean z9, fi.d dVar, org.telegram.ui.Wallet.n0 n0Var, TL_wallet.tonConnectSession tonconnectsession, org.telegram.ui.Wallet.a2 a2Var, TextView textView, l9 l9Var, TextView textView2) {
+    public /* synthetic */ w0(boolean z9, fi.d dVar, org.telegram.ui.Wallet.m0 m0Var, TL_wallet.tonConnectSession tonconnectsession, org.telegram.ui.Wallet.z1 z1Var, TextView textView, l9 l9Var, TextView textView2) {
         this.b = z9;
         this.c = dVar;
-        this.d = n0Var;
+        this.d = m0Var;
         this.e = tonconnectsession;
-        this.f = a2Var;
+        this.f = z1Var;
         this.h = textView;
         this.n = l9Var;
         this.r = textView2;

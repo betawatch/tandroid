@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.p10;
@@ -37,9 +37,9 @@ import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.an;
-import org.telegram.ui.v91;
+import org.telegram.ui.w91;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class d {
     public static final /* synthetic */ int a = 0;
@@ -183,11 +183,11 @@ public abstract class d {
             TLRPC.Chat M0 = qp.s1(i7).M0(Long.valueOf(chat.linked_monoforum_id));
             if (M0 != null) {
                 String str = M0.title;
-                return z9 ? str : hd.a0(null, null, 2131748345, str);
+                return z9 ? str : id.a0(null, null, 2131748347, str);
             }
         } else if (chat != null && chat.linked_monoforum_id != 0) {
             String str2 = chat.title;
-            return z9 ? str2 : hd.a0(null, null, 2131748345, str2);
+            return z9 ? str2 : id.a0(null, null, 2131748347, str2);
         }
         if (chat != null) {
             return chat.title;
@@ -340,26 +340,26 @@ public abstract class d {
                 if (((ActionBarLayout) anVar.getParentLayout()).i()) {
                     g0.i3(new b(anVar, 0), 500L);
                 } else {
-                    v91.M0(anVar);
+                    w91.M0(anVar);
                 }
             }
         }
-        if (lastFragment instanceof v91) {
-            v91 v91Var = (v91) lastFragment;
-            long j10 = v91Var.a;
-            if ((-(-j10)) != j3 || v91Var.getMessagesController().M0(Long.valueOf(j3)).forum) {
+        if (lastFragment instanceof w91) {
+            w91 w91Var = (w91) lastFragment;
+            long j10 = w91Var.a;
+            if ((-(-j10)) != j3 || w91Var.getMessagesController().M0(Long.valueOf(j3)).forum) {
                 return;
             }
-            if (v91Var.getParentLayout() != null && ((ActionBarLayout) v91Var.getParentLayout()).i()) {
-                g0.i3(new org.telegram.ui.ActionBar.m5(v91Var, 22), 500L);
+            if (w91Var.getParentLayout() != null && ((ActionBarLayout) w91Var.getParentLayout()).i()) {
+                g0.i3(new org.telegram.ui.ActionBar.m5(w91Var, 22), 500L);
                 return;
             }
-            v91Var.H = true;
+            w91Var.H = true;
             Bundle bundle = new Bundle();
             bundle.putLong("chat_id", j10);
             an anVar2 = new an(bundle);
             anVar2.Ca = true;
-            v91Var.presentFragment(anVar2);
+            w91Var.presentFragment(anVar2);
         }
     }
 }

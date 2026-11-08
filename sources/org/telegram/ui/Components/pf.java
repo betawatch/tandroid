@@ -13,16 +13,16 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class pf implements hx {
+public final class pf implements ix {
     public final /* synthetic */ ChatActivityEnterView a;
 
     public pf(ChatActivityEnterView chatActivityEnterView) {
         this.a = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final boolean A() {
         return this.a.z3;
     }
@@ -50,24 +50,24 @@ public final class pf implements hx {
         }
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final long a() {
         return this.a.Q2;
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final boolean b() {
         org.telegram.ui.an anVar = this.a.P2;
         return anVar != null && anVar.R6();
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final boolean c() {
         org.telegram.ui.an anVar = this.a.P2;
         return anVar != null && anVar.c();
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z9) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         of ofVar = chatActivityEnterView.a3;
@@ -95,7 +95,7 @@ public final class pf implements hx {
         }
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final void e(Object obj, Object obj2) {
         File file;
         ChatActivityEnterView chatActivityEnterView = this.a;
@@ -129,26 +129,26 @@ public final class pf implements hx {
         PhotoViewer.p1().e2(arrayList, 0, 12, false, new nf(this, obj, obj2, gfVar), chatActivityEnterView.P2);
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final int f() {
         int threadMessageId;
         threadMessageId = this.a.getThreadMessageId();
         return threadMessageId;
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final boolean g() {
         ChatActivityEnterView chatActivityEnterView = this.a;
         return chatActivityEnterView.Q2 == org.telegram.messenger.p10.i(chatActivityEnterView.Q).e();
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         org.telegram.messenger.ui.b0(chatActivityEnterView.Q).f2(chatActivityEnterView.O2, stickerSetCovered, 0, chatActivityEnterView.P2, false, false);
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final void i(int i7) {
         int i10 = ChatActivityEnterView.s5;
         ChatActivityEnterView chatActivityEnterView = this.a;
@@ -161,12 +161,12 @@ public final class pf implements hx {
         }
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final boolean j() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final boolean k() {
         ChatActivityEnterView chatActivityEnterView = this.a;
         TextView textView = chatActivityEnterView.X4;
@@ -180,7 +180,7 @@ public final class pf implements hx {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final void l(String str) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         EditText editText = chatActivityEnterView.X4;
@@ -207,7 +207,7 @@ public final class pf implements hx {
         }
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final void m(View view, TLRPC.Document document, String str, Object obj, org.telegram.messenger.ej ejVar, boolean z9, int i7) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         eg egVar = chatActivityEnterView.F0;
@@ -263,7 +263,7 @@ public final class pf implements hx {
         }
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final void n() {
         Activity activity;
         ChatActivityEnterView chatActivityEnterView = this.a;
@@ -272,16 +272,16 @@ public final class pf implements hx {
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, activity, chatActivityEnterView.W3);
-        String M0 = org.telegram.messenger.hd.M0(2131752068, null);
+        String M0 = org.telegram.messenger.id.M0(2131752068, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
-        u1Var.T = org.telegram.messenger.hd.M0(2131752069, null);
-        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131752099, null), new u(this, 17));
-        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+        u1Var.T = org.telegram.messenger.id.M0(2131752069, null);
+        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131752099, null), new u(this, 17));
+        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
         anVar.showDialog(u1Var);
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final void o(t31 t31Var) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         org.telegram.ui.ActionBar.f2 f2Var = chatActivityEnterView.P2;
@@ -299,12 +299,12 @@ public final class pf implements hx {
         }
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final float p() {
         return this.a.w0;
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final void q() {
         org.telegram.ui.ActionBar.f2 f2Var = this.a.P2;
         if (f2Var == null) {
@@ -313,13 +313,13 @@ public final class pf implements hx {
         f2Var.showDialog(new ug.w0(f2Var, 11, false));
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final void r(TLRPC.StickerSetCovered stickerSetCovered) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         org.telegram.messenger.ui.b0(chatActivityEnterView.Q).f2(chatActivityEnterView.O2, stickerSetCovered, 2, chatActivityEnterView.P2, false, false);
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final void s(int i7) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         chatActivityEnterView.Z2.W();
@@ -327,7 +327,7 @@ public final class pf implements hx {
         chatActivityEnterView.post(chatActivityEnterView.s3);
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final void t(ArrayList arrayList) {
         org.telegram.ui.an anVar = this.a.P2;
         if (anVar != null) {
@@ -335,17 +335,17 @@ public final class pf implements hx {
         }
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final void u() {
         this.a.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final void v(View view, Object obj, String str, Object obj2, boolean z9, int i7, int i10) {
         B(view, obj, str, obj2, z9, i7, i10, null, false);
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final void w() {
         org.telegram.ui.an anVar = this.a.P2;
         if (anVar != null) {
@@ -353,7 +353,7 @@ public final class pf implements hx {
         }
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final void x(long j3, TLRPC.Document document, String str, boolean z9) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         EditTextBoldCursor editTextBoldCursor = chatActivityEnterView.X4;
@@ -363,7 +363,7 @@ public final class pf implements hx {
         org.telegram.messenger.g0.h3(new bi.o(this, editTextBoldCursor, str, document, j3, z9));
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final void y(long j3) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         org.telegram.ui.an anVar = chatActivityEnterView.P2;
@@ -377,7 +377,7 @@ public final class pf implements hx {
         }
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final boolean z() {
         return this.a.R1 != 0;
     }

@@ -1,33 +1,70 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.text.TextUtils;
+import android.widget.EditText;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class i81 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m81 b;
+public final class i81 extends org.telegram.ui.ActionBar.n0 {
+    public boolean a = false;
+    public final /* synthetic */ n81 b;
 
-    public /* synthetic */ i81(m81 m81Var, int i7) {
-        this.a = i7;
-        this.b = m81Var;
+    public i81(n81 n81Var) {
+        this.b = n81Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                m81 m81Var = this.b;
-                m81Var.w = 0;
-                m81Var.n.setVisibility(8);
-                break;
-            case 1:
-                this.b.w = 0;
-                break;
-            default:
-                this.b.F.setVisibility(8);
-                break;
+    @Override // org.telegram.ui.ActionBar.n0
+    public final void h() {
+        n81 n81Var = this.b;
+        if (n81Var.a.getVisibility() != 0) {
+            n81Var.a.setVisibility(0);
+            n81Var.a.setAlpha(0.0f);
         }
+        n81Var.r.setVisibility(8);
+        n81Var.d.f();
+        n81Var.a.animate().alpha(1.0f).setDuration(150L).setListener(null).start();
+        n81Var.s.animate().alpha(0.0f).setDuration(150L).setListener(new h81(this, 0)).start();
+        this.a = false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n0
+    public final void l(EditText editText) {
+        String obj = editText.getText().toString();
+        m81 m81Var = this.b.e;
+        if (m81Var.e != null) {
+            Utilities.g.a(m81Var.e);
+            m81Var.e = null;
+        }
+        if (TextUtils.isEmpty(obj)) {
+            m81Var.c.clear();
+            m81Var.d.clear();
+            m81Var.f();
+            m81Var.h.r.setVisibility(8);
+        } else {
+            int i7 = m81Var.f + 1;
+            m81Var.f = i7;
+            org.telegram.messenger.p5 p5Var = Utilities.g;
+            l81 l81Var = new l81(m81Var, obj, i7, 0);
+            m81Var.e = l81Var;
+            p5Var.d(l81Var, 300L);
+        }
+        if (this.a || TextUtils.isEmpty(obj)) {
+            if (this.a && TextUtils.isEmpty(obj)) {
+                h();
+                return;
+            }
+            return;
+        }
+        if (this.b.s.getVisibility() != 0) {
+            this.b.s.setVisibility(0);
+            this.b.s.setAlpha(0.0f);
+        }
+        this.b.a.animate().alpha(0.0f).setDuration(150L).setListener(new h81(this, 1)).start();
+        this.b.e.d.clear();
+        this.b.e.c.clear();
+        this.b.e.f();
+        this.b.s.animate().setListener(null).alpha(1.0f).setDuration(150L).start();
+        this.a = true;
     }
 }

@@ -4,15 +4,15 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Cells.v4;
 import org.telegram.ui.Cells.x3;
-import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class s0 extends c {
     public final Context x;
@@ -22,7 +22,7 @@ public abstract class s0 extends c {
         super(z9, z10);
         this.x = context;
         this.y = f6Var;
-        new lz(context, null).setIsSingleCell(true);
+        new mz(context, null).setIsSingleCell(true);
     }
 
     @Override // org.telegram.ui.Components.oj0
@@ -58,7 +58,7 @@ public abstract class s0 extends c {
             TLRPC.TL_messageMediaVenue H = H(i7);
             ((v4) view).a(H, H != null ? 2 : i7, i7 != b() - 1, false);
         } else if (i10 == 1) {
-            ((x3) view).setText(hd.M0(2131748751, null));
+            ((x3) view).setText(id.M0(2131748753, null));
         }
     }
 

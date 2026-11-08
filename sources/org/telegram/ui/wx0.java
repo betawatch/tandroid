@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class wx0 extends org.telegram.ui.Components.oj0 {
     public final /* synthetic */ Context c;
@@ -74,7 +74,7 @@ public final class wx0 extends org.telegram.ui.Components.oj0 {
             view = z9Var;
         } else if (i7 == 2) {
             org.telegram.ui.Cells.z8 z8Var = new org.telegram.ui.Cells.z8(context);
-            z8Var.setText(org.telegram.messenger.hd.M0(2131751353, null));
+            z8Var.setText(org.telegram.messenger.id.M0(2131751353, null));
             view = z8Var;
         } else if (i7 == 3) {
             zx0 zx0Var = new zx0(ay0Var, context);

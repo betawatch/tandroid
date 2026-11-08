@@ -15,52 +15,52 @@ import android.graphics.Typeface;
 import android.view.TextureView;
 import android.view.animation.LinearInterpolator;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class pz0 extends org.telegram.ui.Cells.q1 {
-    public boolean kd;
-    public final RectF ld;
+    public boolean ld;
     public final RectF md;
-    public RadialGradient nd;
-    public Paint od;
-    public Matrix pd;
-    public final Path qd;
-    public Paint rd;
-    public final Paint sd;
-    public org.telegram.ui.Components.c01 td;
-    public final org.telegram.ui.Components.w5 ud;
-    public final /* synthetic */ int vd;
+    public final RectF nd;
+    public RadialGradient od;
+    public Paint pd;
+    public Matrix qd;
+    public final Path rd;
+    public Paint sd;
+    public final Paint td;
+    public org.telegram.ui.Components.c01 ud;
+    public final org.telegram.ui.Components.w5 vd;
     public final /* synthetic */ int wd;
-    public final /* synthetic */ rz0 xd;
+    public final /* synthetic */ int xd;
+    public final /* synthetic */ rz0 yd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public pz0(rz0 rz0Var, Context context, int i7, org.telegram.ui.ActionBar.f6 f6Var, int i10, int i11) {
         super(context, i7, false, null, f6Var);
-        this.xd = rz0Var;
-        this.vd = i10;
-        this.wd = i11;
-        this.kd = false;
-        this.ld = new RectF();
+        this.yd = rz0Var;
+        this.wd = i10;
+        this.xd = i11;
+        this.ld = false;
         this.md = new RectF();
-        this.qd = new Path();
-        this.sd = new Paint(1);
-        this.ud = new org.telegram.ui.Components.w5(0.0f, this, 0L, 120L, new LinearInterpolator());
+        this.nd = new RectF();
+        this.rd = new Path();
+        this.td = new Paint(1);
+        this.vd = new org.telegram.ui.Components.w5(0.0f, this, 0L, 120L, new LinearInterpolator());
     }
 
     @Override // org.telegram.ui.Cells.q1
     public final void N0(Canvas canvas) {
-        Paint paint = this.od;
-        rz0 rz0Var = this.xd;
+        Paint paint = this.pd;
+        rz0 rz0Var = this.yd;
         if (paint != null) {
             float f10 = rz0Var.s;
             RectF rectF = rz0Var.R;
             if (f10 > 0.0f) {
                 if (rz0Var.Q) {
-                    if (this.Fc) {
+                    if (this.Gc) {
                         Bitmap bitmap = rz0Var.P.getBitmap();
                         if (bitmap != null) {
                             canvas.save();
-                            Path path = this.qd;
+                            Path path = this.rd;
                             path.rewind();
                             path.addCircle(rectF.centerX(), rectF.centerY(), rectF.width() / 2.0f, Path.Direction.CW);
                             canvas.clipPath(path);
@@ -74,28 +74,28 @@ public final class pz0 extends org.telegram.ui.Cells.q1 {
                         float centerX = rectF.centerX();
                         float centerY = rectF.centerY();
                         float width = rectF.width() / 2.0f;
-                        if (this.rd == null) {
+                        if (this.sd == null) {
                             Paint paint2 = new Paint(1);
-                            this.rd = paint2;
+                            this.sd = paint2;
                             paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
                         }
-                        canvas.drawCircle(centerX, centerY, width, this.rd);
+                        canvas.drawCircle(centerX, centerY, width, this.sd);
                     }
-                    getPhotoImage().setAlpha(Math.max(1.0f - this.ud.d(rz0Var.Q), 1.0f - rz0Var.s));
+                    getPhotoImage().setAlpha(Math.max(1.0f - this.vd.d(rz0Var.Q), 1.0f - rz0Var.s));
                     getPhotoImage().h(canvas, null);
                 } else {
                     getPhotoImage().h(canvas, null);
                 }
             }
-            this.pd.reset();
+            this.qd.reset();
             float width2 = (rectF.width() / 76.8f) * rz0Var.w;
-            this.pd.postScale(width2, width2);
-            this.pd.postTranslate(rectF.centerX(), rectF.centerY());
-            this.nd.setLocalMatrix(this.pd);
+            this.qd.postScale(width2, width2);
+            this.qd.postTranslate(rectF.centerX(), rectF.centerY());
+            this.od.setLocalMatrix(this.qd);
             canvas.saveLayerAlpha(rectF, org.telegram.messenger.qs.e4, 31);
             super.N0(canvas);
             canvas.save();
-            canvas.drawRect(rectF, this.od);
+            canvas.drawRect(rectF, this.pd);
             canvas.restore();
             canvas.restore();
         } else {
@@ -103,7 +103,7 @@ public final class pz0 extends org.telegram.ui.Cells.q1 {
         }
         canvas.saveLayerAlpha(rz0Var.R, (int) (rz0Var.w * 178.0f), 31);
         Paint.Style style = Paint.Style.STROKE;
-        Paint paint3 = this.sd;
+        Paint paint3 = this.td;
         paint3.setStyle(style);
         paint3.setStrokeWidth(org.telegram.messenger.g0.L(3.33f));
         paint3.setColor(-1);
@@ -112,19 +112,19 @@ public final class pz0 extends org.telegram.ui.Cells.q1 {
         rectF2.set(rz0Var.R);
         rectF2.inset(org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(7.0f));
         canvas.drawArc(rectF2, -90.0f, (1.0f - rz0Var.a0) * (-360.0f), false, paint3);
-        if (this.td == null) {
+        if (this.ud == null) {
             org.telegram.ui.Components.c01 c01Var = new org.telegram.ui.Components.c01(120);
-            this.td = c01Var;
+            this.ud = c01Var;
             c01Var.b = true;
         }
         paint3.setStrokeWidth(org.telegram.messenger.g0.L(2.8f));
-        this.td.a((1.0f - rz0Var.a0) * (-360.0f), 1.0f, canvas, paint3, rectF2);
+        this.ud.a((1.0f - rz0Var.a0) * (-360.0f), 1.0f, canvas, paint3, rectF2);
         canvas.restore();
     }
 
     @Override // org.telegram.ui.Cells.q1
     public final void O0(Canvas canvas) {
-        float f10 = this.xd.w;
+        float f10 = this.yd.w;
         Typeface typeface = org.telegram.messenger.g0.a;
         super.O0(canvas);
     }
@@ -143,7 +143,7 @@ public final class pz0 extends org.telegram.ui.Cells.q1 {
     public final void o1(Canvas canvas, float f10, Integer num) {
         canvas.save();
         int i7 = -this.N.b;
-        rz0 rz0Var = this.xd;
+        rz0 rz0Var = this.yd;
         canvas.translate(org.telegram.messenger.g0.W1(rz0Var.s, 0, i7), org.telegram.messenger.g0.W1(rz0Var.s, rz0Var.O.getBackgroundDrawableBottom() - getBackgroundDrawableBottom(), r0.n));
         super.o1(canvas, (1.0f - rz0Var.s) * f10, num);
         canvas.restore();
@@ -152,27 +152,27 @@ public final class pz0 extends org.telegram.ui.Cells.q1 {
     @Override // org.telegram.ui.Cells.q1, android.view.View
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
-        rz0 rz0Var = this.xd;
+        rz0 rz0Var = this.yd;
         boolean z9 = rz0Var.S;
         RectF rectF = rz0Var.R;
         if (z9) {
-            boolean z10 = this.kd;
-            RectF rectF2 = this.md;
-            RectF rectF3 = this.ld;
+            boolean z10 = this.ld;
+            RectF rectF2 = this.nd;
+            RectF rectF3 = this.md;
             if (!z10) {
                 rectF3.set(getPhotoImage().K0, getPhotoImage().L0, getPhotoImage().y(), getPhotoImage().A());
                 float min = Math.min(getMeasuredWidth(), getMeasuredHeight()) * 0.92f;
                 rectF2.set((getMeasuredWidth() - min) / 2.0f, (getMeasuredHeight() - min) / 2.0f, (getMeasuredWidth() + min) / 2.0f, (getMeasuredHeight() + min) / 2.0f);
-                this.kd = true;
-                this.nd = new RadialGradient(0.0f, 0.0f, 48.0f, new int[]{-1, -1, 0}, new float[]{0.0f, 0.8f, 1.0f}, Shader.TileMode.CLAMP);
+                this.ld = true;
+                this.od = new RadialGradient(0.0f, 0.0f, 48.0f, new int[]{-1, -1, 0}, new float[]{0.0f, 0.8f, 1.0f}, Shader.TileMode.CLAMP);
                 Paint paint = new Paint(1);
-                this.od = paint;
-                paint.setShader(this.nd);
-                this.od.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-                this.pd = new Matrix();
+                this.pd = paint;
+                paint.setShader(this.od);
+                this.pd.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+                this.qd = new Matrix();
             }
             org.telegram.messenger.g0.Z1(rectF3, rectF2, rz0Var.s, rectF);
-            t3(rectF.left, rectF.top, rectF.width(), rectF.height());
+            u3(rectF.left, rectF.top, rectF.width(), rectF.height());
             getPhotoImage().J0((int) rectF.width());
             if (rz0Var.s <= 0.0f || !rz0Var.Q) {
                 canvas2 = canvas;
@@ -180,7 +180,7 @@ public final class pz0 extends org.telegram.ui.Cells.q1 {
                 canvas2 = canvas;
                 canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.qs.e4, 31);
             }
-            this.Rc = 1.0f - rz0Var.s;
+            this.Sc = 1.0f - rz0Var.s;
         } else {
             canvas2 = canvas;
         }
@@ -192,13 +192,13 @@ public final class pz0 extends org.telegram.ui.Cells.q1 {
 
     @Override // org.telegram.ui.Cells.q1, android.view.View
     public final void onMeasure(int i7, int i10) {
-        setMeasuredDimension(this.vd, this.wd);
+        setMeasuredDimension(this.wd, this.xd);
     }
 
     @Override // android.view.View
     public final void setVisibility(int i7) {
         super.setVisibility(i7);
-        TextureView textureView = this.xd.P;
+        TextureView textureView = this.yd.P;
         if (textureView == null || i7 != 8) {
             return;
         }
@@ -208,7 +208,7 @@ public final class pz0 extends org.telegram.ui.Cells.q1 {
     @Override // org.telegram.ui.Cells.q1
     public final void x1(float f10, Canvas canvas, boolean z9) {
         canvas.save();
-        rz0 rz0Var = this.xd;
+        rz0 rz0Var = this.yd;
         if (rz0Var.S) {
             int i7 = this.z9;
             org.telegram.messenger.ij ijVar = rz0Var.M;
@@ -220,7 +220,7 @@ public final class pz0 extends org.telegram.ui.Cells.q1 {
                 }
                 i10 += 20;
             }
-            canvas.translate(((this.md.right - (org.telegram.messenger.g0.L(8 + i10) + i7)) - this.B9) * rz0Var.s, 0.0f);
+            canvas.translate(((this.nd.right - (org.telegram.messenger.g0.L(8 + i10) + i7)) - this.B9) * rz0Var.s, 0.0f);
         }
         super.x1(f10, canvas, z9);
         canvas.restore();

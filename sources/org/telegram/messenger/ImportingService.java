@@ -5,7 +5,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class ImportingService extends Service implements ls {
     public e0.q a;
@@ -77,17 +77,17 @@ public class ImportingService extends Service implements ls {
             qVar.F.when = System.currentTimeMillis();
             e0.q qVar2 = this.a;
             qVar2.y = dt.j0;
-            qVar2.g(hd.M0(org.telegram.messenger.beta.R.string.AppName, null));
+            qVar2.g(id.M0(org.telegram.messenger.beta.R.string.AppName, null));
             int i12 = 0;
             while (true) {
                 if (i12 >= 4) {
-                    this.a.p(hd.M0(2131749265, null));
-                    this.a.f(hd.M0(2131749265, null));
+                    this.a.p(id.M0(2131749267, null));
+                    this.a.f(id.M0(2131749267, null));
                     break;
                 }
                 if (gz.C(i12).D.m() != 0) {
-                    this.a.p(hd.M0(2131749266, null));
-                    this.a.f(hd.M0(2131749266, null));
+                    this.a.p(id.M0(2131749268, null));
+                    this.a.f(id.M0(2131749268, null));
                     break;
                 }
                 i12++;

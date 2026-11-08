@@ -74,7 +74,7 @@ import org.telegram.ui.bg0;
 import org.telegram.ui.ee;
 import org.telegram.ui.fr0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class f1 implements g9.k, com.google.android.gms.common.api.internal.p, jg.y1, m.f2, li.i0, t4, li.f1, l.i, n2.v, o0.a, b3.j, va, lc, i51, org.telegram.ui.Cells.l1, te.d, d90 {
     public final /* synthetic */ int a;
@@ -452,10 +452,10 @@ public final class f1 implements g9.k, com.google.android.gms.common.api.interna
         f1Var.getClass();
         try {
             l8.b bVar = (l8.b) f1Var.b;
-            Parcel P0 = bVar.P0();
+            Parcel p12 = bVar.p1();
             int i7 = v7.b.a;
-            P0.writeInt(0);
-            bVar.T0(P0, 2);
+            p12.writeInt(0);
+            bVar.t1(p12, 2);
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
         }
@@ -489,10 +489,10 @@ public final class f1 implements g9.k, com.google.android.gms.common.api.interna
         f1Var.getClass();
         try {
             l8.b bVar = (l8.b) f1Var.b;
-            Parcel P0 = bVar.P0();
+            Parcel p12 = bVar.p1();
             int i7 = v7.b.a;
-            P0.writeInt(0);
-            bVar.T0(P0, 3);
+            p12.writeInt(0);
+            bVar.t1(p12, 3);
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
         }
@@ -525,21 +525,21 @@ public final class f1 implements g9.k, com.google.android.gms.common.api.interna
                 j6.q qVar = new j6.q(1, (TaskCompletionSource) obj2);
                 j6.i iVar = (j6.i) ((j6.s) obj).n();
                 String[] strArr = (String[]) this.b;
-                Parcel P0 = iVar.P0();
-                com.google.android.gms.internal.cast.t.d(P0, qVar);
-                P0.writeStringArray(strArr);
-                iVar.U0(P0, 6);
+                Parcel p12 = iVar.p1();
+                com.google.android.gms.internal.cast.t.d(p12, qVar);
+                p12.writeStringArray(strArr);
+                iVar.u1(p12, 6);
                 break;
             case 3:
             default:
                 d6.l lVar = new d6.l((TaskCompletionSource) obj2);
                 l7.i iVar2 = (l7.i) ((l7.c) obj).n();
                 a6.e eVar = (a6.e) this.b;
-                Parcel L0 = iVar2.L0();
+                Parcel l1 = iVar2.l1();
                 int i7 = l7.f.a;
-                L0.writeStrongBinder(lVar);
-                l7.f.c(L0, eVar);
-                iVar2.M0(L0, 1);
+                l1.writeStrongBinder(lVar);
+                l7.f.c(l1, eVar);
+                iVar2.m1(l1, 1);
                 break;
             case 4:
                 j7.g gVar = (j7.g) this.b;
@@ -553,7 +553,7 @@ public final class f1 implements g9.k, com.google.android.gms.common.api.interna
                 obtain.writeStrongBinder(fVar);
                 t7.a.b(obtain, gVar);
                 t7.a.b(obtain, gVar2);
-                ((k7.b) dVar).H0(obtain, 6);
+                ((k7.b) dVar).h1(obtain, 6);
                 break;
         }
     }
@@ -658,10 +658,10 @@ public final class f1 implements g9.k, com.google.android.gms.common.api.interna
         f1Var.getClass();
         try {
             l8.b bVar = (l8.b) f1Var.b;
-            Parcel P0 = bVar.P0();
+            Parcel p12 = bVar.p1();
             int i7 = v7.b.a;
-            P0.writeInt(0);
-            bVar.T0(P0, 1);
+            p12.writeInt(0);
+            bVar.t1(p12, 1);
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
         }

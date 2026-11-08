@@ -1,45 +1,42 @@
 package u9;
 
-import org.telegram.ui.web.a0;
+import j$.util.DesugarCollections;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.Set;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class o implements ua.b {
-    public static final s0.b c = new s0.b(26);
-    public static final ab.m d = new ab.m(2);
-    public ua.a a;
-    public volatile ua.b b;
+    public volatile Set a;
+    public volatile Set b;
 
-    public o(s0.b bVar, ua.b bVar2) {
-        this.a = bVar;
-        this.b = bVar2;
-    }
-
-    public final void a(ua.a aVar) {
-        ua.b bVar;
-        ua.b bVar2;
-        ua.b bVar3 = this.b;
-        ab.m mVar = d;
-        if (bVar3 != mVar) {
-            aVar.c(bVar3);
-            return;
-        }
-        synchronized (this) {
-            bVar = this.b;
-            if (bVar != mVar) {
-                bVar2 = bVar;
-            } else {
-                this.a = new a0(14, this.a, aVar);
-                bVar2 = null;
+    public final synchronized void a() {
+        try {
+            Iterator it = this.a.iterator();
+            while (it.hasNext()) {
+                this.b.add(((ua.b) it.next()).get());
             }
-        }
-        if (bVar2 != null) {
-            aVar.c(bVar);
+            this.a = null;
+        } catch (Throwable th2) {
+            throw th2;
         }
     }
 
     @Override // ua.b
     public final Object get() {
-        return this.b.get();
+        if (this.b == null) {
+            synchronized (this) {
+                try {
+                    if (this.b == null) {
+                        this.b = Collections.newSetFromMap(new ConcurrentHashMap());
+                        a();
+                    }
+                } finally {
+                }
+            }
+        }
+        return DesugarCollections.unmodifiableSet(this.b);
     }
 }

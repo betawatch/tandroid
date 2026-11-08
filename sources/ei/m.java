@@ -10,7 +10,7 @@ import di.x6;
 import fi.e7;
 import java.util.ArrayList;
 import m.q3;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.qp;
@@ -23,7 +23,7 @@ import org.telegram.ui.Components.vi0;
 import org.telegram.ui.Components.xi0;
 import v4.d1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class m extends vi0 {
     public final Context c;
@@ -54,7 +54,7 @@ public class m extends vi0 {
         if (q6Var == null || i7 < 0 || i7 >= q6Var.i.size() || (ijVar = (ij) this.e.i.get(i7)) == null || (storyItem = ijVar.l) == null) {
             return null;
         }
-        return hd.e0(storyItem.date, true);
+        return id.e0(storyItem.date, true);
     }
 
     @Override // org.telegram.ui.Components.vi0

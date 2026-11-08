@@ -1,42 +1,48 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.Editable;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class cb1 extends org.telegram.ui.Cells.k3 {
-    public final /* synthetic */ int E;
-    public final /* synthetic */ UserInfoActivity F;
+public final /* synthetic */ class cb1 implements org.telegram.messenger.c20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ UserInfoActivity b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ cb1(UserInfoActivity userInfoActivity, Context context, String str, org.telegram.ui.ActionBar.f6 f6Var, int i7) {
-        super(context, str, false, false, -1, f6Var);
-        this.E = i7;
-        this.F = userInfoActivity;
+    public /* synthetic */ cb1(UserInfoActivity userInfoActivity, int i7) {
+        this.a = i7;
+        this.b = userInfoActivity;
     }
 
-    @Override // org.telegram.ui.Cells.k3
-    public final void b(Editable editable) {
-        switch (this.E) {
+    @Override // org.telegram.messenger.c20
+    public final void a(Object obj) {
+        int i7 = this.a;
+        UserInfoActivity userInfoActivity = this.b;
+        switch (i7) {
             case 0:
-                this.F.g0(true);
-                break;
-            case 1:
-                this.F.g0(true);
+                userInfoActivity.J = (TL_account.TL_birthday) obj;
+                fi.w3 w3Var = userInfoActivity.y;
+                if (w3Var != null) {
+                    w3Var.f3.O(true);
+                }
+                userInfoActivity.g0(true);
                 break;
             default:
-                UserInfoActivity userInfoActivity = this.F;
-                userInfoActivity.g0(true);
-                userInfoActivity.j0();
+                TLRPC.Chat chat = (TLRPC.Chat) obj;
+                if (userInfoActivity.K != chat) {
+                    userInfoActivity.K = chat;
+                    if (chat != null) {
+                        org.telegram.messenger.k5.o(null, 2131751234, org.telegram.ui.Components.hc.a0(userInfoActivity), R.raw.contact_check, 36);
+                    }
+                    userInfoActivity.g0(true);
+                    fi.w3 w3Var2 = userInfoActivity.y;
+                    if (w3Var2 != null) {
+                        w3Var2.f3.O(true);
+                        break;
+                    }
+                }
                 break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cb1(UserInfoActivity userInfoActivity, Context context, String str, int i7, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, str, true, false, i7, f6Var);
-        this.E = 2;
-        this.F = userInfoActivity;
     }
 }

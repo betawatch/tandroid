@@ -9,8 +9,8 @@ import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i6;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.i5;
@@ -22,7 +22,7 @@ import org.telegram.ui.l00;
 import org.telegram.ui.o30;
 import org.telegram.ui.p30;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class b {
     public boolean a;
@@ -179,13 +179,13 @@ public final class b {
                 i7++;
             } else {
                 ((Paint) this.c).setColor(k6.x0(null, k6.hh, false));
-                this.f = new my0(hd.M0(2131751821, null), 12.0f, g0.o());
-                my0 my0Var = new my0(hd.M0(2131751819, null), 11.0f, null);
+                this.f = new my0(id.M0(2131751821, null), 12.0f, g0.o());
+                my0 my0Var = new my0(id.M0(2131751819, null), 11.0f, null);
                 my0Var.m(99);
                 my0Var.p(g0.L(200.0f));
                 my0Var.l(g0.L(2.66f));
                 this.g = my0Var;
-                this.h = new my0(hd.M0(2131751820, null), 14.0f, g0.o());
+                this.h = new my0(id.M0(2131751820, null), 14.0f, g0.o());
                 b(null);
                 return;
             }

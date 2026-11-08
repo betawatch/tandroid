@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class r20 extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public boolean D;
@@ -184,7 +184,7 @@ public final class r20 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         textView.setTypeface(org.telegram.messenger.g0.o());
         this.w.setTextSize(1, 15.0f);
         org.telegram.ui.ActionBar.r6.V(this.w, org.telegram.ui.ActionBar.k6.nf, getResourceProvider());
-        this.w.setText(org.telegram.messenger.hd.G(k6Var.J, "FoundStories", new Object[0]));
+        this.w.setText(org.telegram.messenger.id.G(k6Var.J, "FoundStories", new Object[0]));
         this.s.addView(this.w, c8.ha.d(-1, -2.0f, 19, 18.0f, 0.0f, 18.0f, 0.0f));
         View view = new View(context);
         org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.d7, view, this.resourceProvider);
@@ -244,7 +244,7 @@ public final class r20 extends org.telegram.ui.ActionBar.f2 implements org.teleg
             }
             TextView textView = this.w;
             if (textView != null) {
-                textView.setText(org.telegram.messenger.hd.G(k6Var.J, "FoundStories", new Object[0]));
+                textView.setText(org.telegram.messenger.id.G(k6Var.J, "FoundStories", new Object[0]));
             }
         }
     }

@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class dh extends FrameLayout {
     public final /* synthetic */ int a;
@@ -79,15 +79,15 @@ public final class dh extends FrameLayout {
                 vh vhVar = diVar.s2;
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = diVar.a2;
                 if (vhVar == chatAttachAlertPhotoLayout) {
-                    accessibilityNodeInfo.setText(org.telegram.messenger.hd.G(chatAttachAlertPhotoLayout.getSelectedItemsCount(), "AccDescrSendPhotos", new Object[0]));
+                    accessibilityNodeInfo.setText(org.telegram.messenger.id.G(chatAttachAlertPhotoLayout.getSelectedItemsCount(), "AccDescrSendPhotos", new Object[0]));
                 } else {
                     vj vjVar = diVar.g2;
                     if (vhVar == vjVar) {
-                        accessibilityNodeInfo.setText(org.telegram.messenger.hd.G(vjVar.getSelectedItemsCount(), "AccDescrSendFiles", new Object[0]));
+                        accessibilityNodeInfo.setText(org.telegram.messenger.id.G(vjVar.getSelectedItemsCount(), "AccDescrSendFiles", new Object[0]));
                     } else {
                         ni niVar = diVar.c2;
                         if (vhVar == niVar) {
-                            accessibilityNodeInfo.setText(org.telegram.messenger.hd.G(niVar.getSelectedItemsCount(), "AccDescrSendAudio", new Object[0]));
+                            accessibilityNodeInfo.setText(org.telegram.messenger.id.G(niVar.getSelectedItemsCount(), "AccDescrSendAudio", new Object[0]));
                         }
                     }
                 }

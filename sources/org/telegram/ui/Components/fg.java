@@ -10,7 +10,7 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.view.View;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class fg extends View {
     public StaticLayout D;
@@ -161,13 +161,13 @@ public final class fg extends View {
                     }
                     i16++;
                     if (i15 != 0) {
-                        hy hyVar = new hy(false);
+                        iy iyVar = new iy(false);
                         if (i14 == length - 2) {
                             i15++;
                         }
                         int i17 = i15 + i12;
-                        spannableStringBuilder.setSpan(hyVar, i12, i17, 33);
-                        spannableStringBuilder2.setSpan(hyVar, i12, i17, 33);
+                        spannableStringBuilder.setSpan(iyVar, i12, i17, 33);
+                        spannableStringBuilder2.setSpan(iyVar, i12, i17, 33);
                         i15 = 0;
                     }
                 } else {
@@ -176,7 +176,7 @@ public final class fg extends View {
                     }
                     i15++;
                     if (i16 != 0) {
-                        this.x.setSpan(new hy(false), i13, i16 + i13, 33);
+                        this.x.setSpan(new iy(false), i13, i16 + i13, 33);
                         i16 = 0;
                     }
                 }
@@ -184,13 +184,13 @@ public final class fg extends View {
                 j12 = j3;
             }
             if (i15 != 0) {
-                hy hyVar2 = new hy(false);
+                iy iyVar2 = new iy(false);
                 int i18 = i15 + i12 + 1;
-                spannableStringBuilder.setSpan(hyVar2, i12, i18, 33);
-                spannableStringBuilder2.setSpan(hyVar2, i12, i18, 33);
+                spannableStringBuilder.setSpan(iyVar2, i12, i18, 33);
+                spannableStringBuilder2.setSpan(iyVar2, i12, i18, 33);
             }
             if (i16 != 0) {
-                this.x.setSpan(new hy(false), i13, i16 + i13, 33);
+                this.x.setSpan(new iy(false), i13, i16 + i13, 33);
             }
             TextPaint textPaint4 = this.F;
             int measuredWidth = getMeasuredWidth();

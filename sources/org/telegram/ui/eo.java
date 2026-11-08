@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class eo extends org.telegram.ui.Components.oj0 {
     public final /* synthetic */ fo c;
@@ -40,14 +40,14 @@ public final class eo extends org.telegram.ui.Components.oj0 {
         if (i10 == 0) {
             org.telegram.ui.Cells.n4 n4Var = (org.telegram.ui.Cells.n4) view;
             org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.d6, n4Var, foVar.n2);
-            n4Var.setText(org.telegram.messenger.hd.M0(2131743645, null));
+            n4Var.setText(org.telegram.messenger.id.M0(2131743647, null));
             return;
         }
         if (i10 != 1) {
             if (i10 != 2) {
                 return;
             }
-            ((org.telegram.ui.Cells.z8) view).setText(org.telegram.messenger.hd.M0(2131743644, null));
+            ((org.telegram.ui.Cells.z8) view).setText(org.telegram.messenger.id.M0(2131743646, null));
             return;
         }
         TLRPC.TL_username tL_username = (TLRPC.TL_username) goVar.N.get(i7 - 1);

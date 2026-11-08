@@ -11,7 +11,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class s extends na implements org.telegram.messenger.ls {
     public final TL_aicompose.AiComposeTone P1;
@@ -119,7 +119,7 @@ public final class s extends na implements org.telegram.messenger.ls {
         this.b.addView(frameLayout4, d);
         fi.d h = org.telegram.messenger.k5.h(24, context, f6Var, true);
         this.X1 = h;
-        h.setText(org.telegram.messenger.hd.M0(d1() ? 2131754980 : 2131755005, null));
+        h.setText(org.telegram.messenger.id.M0(d1() ? 2131754980 : 2131755005, null));
         h.setOnClickListener(new ah.g(this, aiComposeTone, f6Var, 15));
         frameLayout3.addView(h, c8.ha.e(-1, 48, org.telegram.messenger.qs.E1));
         this.Y1.O(false);
@@ -133,7 +133,7 @@ public final class s extends na implements org.telegram.messenger.ls {
             }
             int L = org.telegram.messenger.g0.L((int) (Math.random() * 50.0d));
             int length = spannableStringBuilder.length();
-            spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.M0(2131748778, null));
+            spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.M0(2131748780, null));
             b80 b80Var = new b80(null, L, 0, null);
             b80Var.f = org.telegram.messenger.g0.L(6.0f);
             b80Var.h = 0.5f;
@@ -192,7 +192,7 @@ public final class s extends na implements org.telegram.messenger.ls {
     @Override // org.telegram.messenger.ls
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         if (i7 == org.telegram.messenger.qs.Y3) {
-            this.X1.setText(org.telegram.messenger.hd.M0(d1() ? 2131754980 : 2131755005, null));
+            this.X1.setText(org.telegram.messenger.id.M0(d1() ? 2131754980 : 2131755005, null));
         }
     }
 

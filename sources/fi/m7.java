@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.regex.Pattern;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
@@ -14,7 +14,7 @@ import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class m7 extends org.telegram.ui.Components.na implements ls {
     public bi.o0 P1;
@@ -45,7 +45,7 @@ public final class m7 extends org.telegram.ui.Components.na implements ls {
         Y0();
         this.z1 = org.telegram.messenger.g0.L(4.0f);
         this.A1 = org.telegram.messenger.g0.L(-15.0f);
-        org.telegram.ui.Cells.k3 k3Var = new org.telegram.ui.Cells.k3(context, hd.M0(2131744633, null), true, false, -1, g5Var);
+        org.telegram.ui.Cells.k3 k3Var = new org.telegram.ui.Cells.k3(context, id.M0(2131744635, null), true, false, -1, g5Var);
         this.Q1 = k3Var;
         int i10 = 1;
         g7 g7Var = new g7(this, i10);
@@ -60,7 +60,7 @@ public final class m7 extends org.telegram.ui.Components.na implements ls {
         TextView textView = new TextView(getContext());
         textView.setTextSize(1, 12.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(hd.M0(2131747434, null));
+        textView.setText(id.M0(2131747436, null));
         textView.setPadding(org.telegram.messenger.g0.L(10.0f), 0, org.telegram.messenger.g0.L(10.0f), 0);
         textView.setGravity(17);
         int i12 = org.telegram.ui.ActionBar.k6.o6;
@@ -80,7 +80,7 @@ public final class m7 extends org.telegram.ui.Components.na implements ls {
         textView.setOnClickListener(new bi.r(14, this, hVar));
         hVar.run();
         i3Var.addTextChangedListener(new h7(i7, this, hVar));
-        org.telegram.ui.Cells.k3 k3Var2 = new org.telegram.ui.Cells.k3(context, hd.M0(2131744637, null), true, false, -1, g5Var);
+        org.telegram.ui.Cells.k3 k3Var2 = new org.telegram.ui.Cells.k3(context, id.M0(2131744639, null), true, false, -1, g5Var);
         this.R1 = k3Var2;
         g7 g7Var2 = new g7(this, i10);
         org.telegram.ui.Cells.i3 i3Var2 = k3Var2.d;
@@ -90,7 +90,7 @@ public final class m7 extends org.telegram.ui.Components.na implements ls {
         this.S1 = frameLayout;
         d dVar = new d(context, g5Var, true);
         this.T1 = dVar;
-        dVar.i(hd.M0(2131744646, null), false, true);
+        dVar.i(id.M0(2131744648, null), false, true);
         dVar.setOnClickListener(new f7(this, 1));
         dVar.setEnabled(f1(k3Var.getText().toString()));
         frameLayout.addView(dVar, c8.ha.d(-1, 48.0f, qs.E1, 10.0f, 10.0f, 10.0f, 10.0f));
@@ -163,7 +163,7 @@ public final class m7 extends org.telegram.ui.Components.na implements ls {
 
     @Override // org.telegram.ui.Components.na
     public final CharSequence O0() {
-        return hd.M0(2131744643, null);
+        return id.M0(2131744645, null);
     }
 
     @Override // org.telegram.messenger.ls

@@ -3,9 +3,9 @@ package jg;
 import bi.ub;
 import java.util.Locale;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class a implements Runnable {
                 cVar2.r = null;
                 int i7 = cVar2.s + 1;
                 cVar2.s = i7;
-                Locale locale3 = hd.E0().y;
+                Locale locale3 = id.E0().y;
                 if (cVar2.d) {
                     if (locale3.getLanguage().contains("en")) {
                         locale = locale3;

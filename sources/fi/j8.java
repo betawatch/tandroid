@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
@@ -15,7 +15,7 @@ import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.tm;
 import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class j8 extends rg.b {
     public final Context d;
@@ -240,8 +240,8 @@ public final class j8 extends rg.b {
                     org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.h5, t7Var, f6Var);
                 } else if (i7 == 5) {
                     av0 av0Var = new av0(context, null, 1, f6Var);
-                    av0Var.d.setText(hd.M0(2131748166, null));
-                    av0Var.e.setText(hd.M0(2131745808, null));
+                    av0Var.d.setText(id.M0(2131748168, null));
+                    av0Var.e.setText(id.M0(2131745810, null));
                     av0Var.a.setTranslationY(org.telegram.messenger.g0.L(24.0f));
                     view = av0Var;
                 } else if (i7 == 6) {

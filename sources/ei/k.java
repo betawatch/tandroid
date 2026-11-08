@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.TextView;
 import li.a6;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f6;
@@ -28,7 +28,7 @@ import ug.h0;
 import ug.i0;
 import ug.p1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class k extends TextView {
     public final /* synthetic */ int a;
@@ -42,8 +42,8 @@ public final class k extends TextView {
         this.b = new RectF();
         this.c = i1Var;
         i1Var.a(this);
-        setText(hd.M0(2131743304, null));
-        setContentDescription(hd.M0(2131743304, null));
+        setText(id.M0(2131743306, null));
+        setContentDescription(id.M0(2131743306, null));
         setTextColor(-1);
         setTypeface(g0.o());
         setPadding(g0.L(14.0f), g0.L(4.0f), g0.L(14.0f), g0.L(4.0f));

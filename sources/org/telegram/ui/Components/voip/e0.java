@@ -13,14 +13,14 @@ import org.telegram.messenger.r3;
 import org.telegram.messenger.s3;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.l10;
 import org.telegram.ui.Components.p10;
 import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.vs;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.c40;
 import org.telegram.ui.z10;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class e0 implements ti.m {
     public static e0 e;
@@ -215,7 +215,7 @@ public final class e0 implements ti.m {
         if (c40Var != null && c40Var.getWindow() != null) {
             c40Var.getWindow().getDecorView().setVisibility(0);
         }
-        org.telegram.messenger.g0.h3(new l10(9));
+        org.telegram.messenger.g0.h3(new vs(11));
     }
 
     @Override // ti.m
@@ -294,7 +294,7 @@ public final class e0 implements ti.m {
     @Override // ti.m
     public final void f0(int i7) {
         g.b(i7, true);
-        org.telegram.messenger.g0.i3(new l10(9), 300L);
+        org.telegram.messenger.g0.i3(new vs(11), 300L);
     }
 
     @Override // ti.m
@@ -358,7 +358,7 @@ public final class e0 implements ti.m {
     }
 
     @Override // ti.m
-    public final void g(ti.q qVar) {
+    public final void g(ti.p pVar) {
     }
 
     @Override // ti.m

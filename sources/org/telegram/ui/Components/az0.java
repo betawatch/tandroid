@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class az0 {
     public final int[] A;
@@ -220,7 +220,7 @@ public final class az0 {
         obj.e = new f1(1, arrayList);
         for (int i18 = 0; i18 < arrayList.size(); i18++) {
             if (arrayList.get(i18) instanceof org.telegram.ui.Cells.q1) {
-                ((org.telegram.ui.Cells.q1) arrayList.get(i18)).Fc = true;
+                ((org.telegram.ui.Cells.q1) arrayList.get(i18)).Gc = true;
             }
         }
         obj.C = Bitmap.createBitmap(obj.t, obj.u, Bitmap.Config.ARGB_8888);
@@ -530,7 +530,7 @@ public final class az0 {
                 }
                 for (int i34 = 0; i34 < arrayList.size(); i34++) {
                     if (arrayList.get(i34) instanceof org.telegram.ui.Cells.q1) {
-                        ((org.telegram.ui.Cells.q1) arrayList.get(i34)).Fc = false;
+                        ((org.telegram.ui.Cells.q1) arrayList.get(i34)).Gc = false;
                     }
                 }
             }
@@ -595,7 +595,7 @@ public final class az0 {
         canvas.translate(-this.i, 0.0f);
         boolean z9 = view instanceof org.telegram.ui.Cells.q1;
         if (z9) {
-            ((org.telegram.ui.Cells.q1) view).Fc = true;
+            ((org.telegram.ui.Cells.q1) view).Gc = true;
         }
         boolean z10 = view instanceof org.telegram.ui.Cells.t0;
         if (z10) {
@@ -616,7 +616,7 @@ public final class az0 {
                         avatarImage.h(canvas, null);
                         canvas.restore();
                     }
-                    q1Var.Fc = false;
+                    q1Var.Gc = false;
                 }
                 if (!z9) {
                     canvas.save();

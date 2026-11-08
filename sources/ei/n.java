@@ -21,7 +21,7 @@ import di.s7;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
@@ -37,7 +37,7 @@ import org.telegram.ui.Components.xq;
 import org.telegram.ui.c61;
 import v4.y;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class n extends FrameLayout {
     public static final /* synthetic */ int a0 = 0;
@@ -135,9 +135,9 @@ public final class n extends FrameLayout {
         av0Var.setOnTouchListener(new b(i7));
         av0Var.e(true, false);
         av0Var.b.setVisibility(8);
-        av0Var.d.setText(hd.M0(2131746697, null));
-        av0Var.e.setText(hd.G(qp.s1(sp0Var.b).T5, "ProfileBotPreviewEmptyText", new Object[0]));
-        String M0 = hd.M0(2131746701, null);
+        av0Var.d.setText(id.M0(2131746699, null));
+        av0Var.e.setText(id.G(qp.s1(sp0Var.b).T5, "ProfileBotPreviewEmptyText", new Object[0]));
+        String M0 = id.M0(2131746703, null);
         fi.d dVar = av0Var.f;
         dVar.i(M0, false, true);
         dVar.setVisibility(0);
@@ -147,7 +147,7 @@ public final class n extends FrameLayout {
         int i11 = k6.y6;
         f6 f6Var = sp0Var.c;
         r6.V(kVar2, i11, f6Var);
-        kVar2.setText(hd.M0(2131746702, null));
+        kVar2.setText(id.M0(2131746704, null));
         kVar2.setTextSize(1, 14.0f);
         kVar2.setTextAlignment(4);
         kVar2.setGravity(17);
@@ -265,11 +265,11 @@ public final class n extends FrameLayout {
         int i11 = size > 0 ? 0 : 8;
         ah.a aVar = this.J;
         aVar.setVisibility(i11);
-        String M02 = z9 ? hd.M0(2131746694, null) : hd.a0(null, null, 2131746693, k21.O0(this.a.E, null, null));
-        String M03 = hd.M0(2131746714, null);
+        String M02 = z9 ? id.M0(2131746696, null) : id.a0(null, null, 2131746695, k21.O0(this.a.E, null, null));
+        String M03 = id.M0(2131746716, null);
         s7 s7Var = new s7(this, 9);
         if (z9 || size <= 0) {
-            M0 = hd.M0(z9 ? 2131746696 : 2131746695, null);
+            M0 = id.M0(z9 ? 2131746698 : 2131746697, null);
         } else {
             M0 = null;
         }
@@ -294,18 +294,18 @@ public final class n extends FrameLayout {
         av0 av0Var = this.D;
         if (z9) {
             av0Var.d.setVisibility(0);
-            av0Var.d.setText(hd.M0(2131746697, null));
-            av0Var.e.setText(hd.G(qp.s1(i7).T5, "ProfileBotPreviewEmptyText", new Object[0]));
-            av0Var.f.i(hd.M0(2131746701, null), false, true);
+            av0Var.d.setText(id.M0(2131746699, null));
+            av0Var.e.setText(id.G(qp.s1(i7).T5, "ProfileBotPreviewEmptyText", new Object[0]));
+            av0Var.f.i(id.M0(2131746703, null), false, true);
             kVar2.setVisibility(8);
             dVar2.setVisibility(8);
         } else {
             av0Var.d.setVisibility(8);
-            av0Var.e.setText(hd.a0(null, null, 2131746693, k21.O0(this.a.E, null, null)));
-            av0Var.f.i(hd.M0(2131746701, null), false, true);
+            av0Var.e.setText(id.a0(null, null, 2131746695, k21.O0(this.a.E, null, null)));
+            av0Var.f.i(id.M0(2131746703, null), false, true);
             kVar2.setVisibility(0);
             dVar2.setVisibility(0);
-            dVar2.i(hd.M0(2131746695, null), false, true);
+            dVar2.i(id.M0(2131746697, null), false, true);
             dVar2.setOnClickListener(new c(this, i10));
         }
         av0Var.f.setVisibility(this.w.b() >= qp.s1(i7).T5 ? 8 : 0);

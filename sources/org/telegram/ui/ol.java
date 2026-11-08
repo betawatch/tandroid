@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ol extends org.telegram.ui.Components.rt0 {
     public int f0;
@@ -285,7 +285,7 @@ public final class ol extends org.telegram.ui.Components.rt0 {
         anVar.l1.setBackgroundTranslation(0);
         org.telegram.ui.Components.t40 t40Var = anVar.p3;
         if (t40Var != null) {
-            t40Var.f(0.0f);
+            t40Var.g(0.0f);
         }
         fi.p5 p5Var = anVar.M2;
         if (p5Var != null) {
@@ -1711,9 +1711,9 @@ public final class ol extends org.telegram.ui.Components.rt0 {
             if (gjVar != null && gjVar.getTag() != null) {
                 super.drawChild(canvas3, anVar.m3, SystemClock.uptimeMillis());
             }
-            org.telegram.ui.Components.jz jzVar = anVar.F9;
-            if (jzVar != null) {
-                super.drawChild(canvas3, jzVar, SystemClock.uptimeMillis());
+            org.telegram.ui.Components.kz kzVar = anVar.F9;
+            if (kzVar != null) {
+                super.drawChild(canvas3, kzVar, SystemClock.uptimeMillis());
             }
             wh.i iVar = anVar.qa;
             if (iVar != null) {
@@ -2117,7 +2117,7 @@ public final class ol extends org.telegram.ui.Components.rt0 {
             anVar.ia = null;
         }
         anVar.Qa.j();
-        org.telegram.messenger.g0.h3(new org.telegram.messenger.pd(13));
+        org.telegram.messenger.g0.h3(new org.telegram.messenger.rc(15));
     }
 
     @Override // android.view.View

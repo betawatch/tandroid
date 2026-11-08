@@ -10,7 +10,7 @@ import android.os.SystemClock;
 import android.view.animation.OvershootInterpolator;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l10 extends mh.b {
     public final OvershootInterpolator d;
@@ -522,7 +522,7 @@ public final class l10 extends mh.b {
                     float x112 = com.google.android.recaptcha.internal.a.x(c40Var.F2, 0.807f, 0.5f, 0.878f);
                     float f372 = c40Var.H3;
                     canvas2.scale(f372 * x112, f372 * x112, measuredWidth32, y112);
-                    if (i10 != 1 && !c40Var.u1() && org.telegram.messenger.rc.e(512)) {
+                    if (i10 != 1 && !c40Var.u1() && org.telegram.messenger.sc.e(512)) {
                         canvas2.save();
                         canvas2.scale(1.2f, 1.2f, measuredWidth32, y112);
                         int alpha = paint5.getAlpha();

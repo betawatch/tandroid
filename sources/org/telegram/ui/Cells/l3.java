@@ -5,11 +5,11 @@ import android.graphics.Canvas;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l3 extends FrameLayout {
     public final EditTextBoldCursor a;
@@ -25,11 +25,11 @@ public final class l3 extends FrameLayout {
         editTextBoldCursor.setMaxLines(1);
         editTextBoldCursor.setSingleLine(true);
         editTextBoldCursor.setEllipsize(TextUtils.TruncateAt.END);
-        editTextBoldCursor.setGravity((hd.a0 ? 5 : 3) | 16);
+        editTextBoldCursor.setGravity((id.a0 ? 5 : 3) | 16);
         editTextBoldCursor.setBackgroundDrawable(null);
         editTextBoldCursor.setPadding(0, 0, 0, 0);
         editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | TLObject.FLAG_14);
-        addView(editTextBoldCursor, c8.ha.d(-1, -1.0f, (hd.a0 ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
+        addView(editTextBoldCursor, c8.ha.d(-1, -1.0f, (id.a0 ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
     }
 
     public final void a(String str) {

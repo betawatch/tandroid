@@ -11,24 +11,24 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class y9 extends q1 {
-    public final GestureDetector kd;
-    public final org.telegram.ui.Components.z4 ld;
+    public final GestureDetector ld;
     public final org.telegram.ui.Components.z4 md;
-    public final /* synthetic */ int nd;
-    public final /* synthetic */ z9 od;
+    public final org.telegram.ui.Components.z4 nd;
+    public final /* synthetic */ int od;
+    public final /* synthetic */ z9 pd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public y9(z9 z9Var, Context context, int i7, org.telegram.ui.ActionBar.f6 f6Var, Context context2, int i10) {
         super(context, i7, false, null, f6Var);
-        this.od = z9Var;
-        this.nd = i10;
-        this.kd = new GestureDetector(context2, new x9(0, this));
+        this.pd = z9Var;
+        this.od = i10;
+        this.ld = new GestureDetector(context2, new x9(0, this));
         xq xqVar = xq.g;
-        this.ld = new org.telegram.ui.Components.z4(this, 180L, xqVar, 0);
         this.md = new org.telegram.ui.Components.z4(this, 180L, xqVar, 0);
+        this.nd = new org.telegram.ui.Components.z4(this, 180L, xqVar, 0);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -36,8 +36,8 @@ public final class y9 extends q1 {
         int w02;
         int w03;
         ij messageObject = getMessageObject();
-        org.telegram.ui.Components.z4 z4Var = this.md;
-        org.telegram.ui.Components.z4 z4Var2 = this.ld;
+        org.telegram.ui.Components.z4 z4Var = this.nd;
+        org.telegram.ui.Components.z4 z4Var2 = this.md;
         org.telegram.ui.Components.w8 w8Var = this.A7;
         if (messageObject == null || getMessageObject().c1 < 0) {
             z4Var2.a(w8Var.b(), false);
@@ -67,7 +67,7 @@ public final class y9 extends q1 {
             getAvatarImage().y0(getAvatarImage().K0, (getMeasuredHeight() - getAvatarImage().N0) - org.telegram.messenger.g0.L(4.0f), getAvatarImage().M0, getAvatarImage().N0);
             getAvatarImage().J0((int) (getAvatarImage().N0 / 2.0f));
             getAvatarImage().h(canvas, null);
-        } else if (this.nd == 2) {
+        } else if (this.od == 2) {
             invalidate();
         }
         super.dispatchDraw(canvas);
@@ -75,10 +75,10 @@ public final class y9 extends q1 {
 
     @Override // org.telegram.ui.Cells.q1, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.od.a()) {
+        if (this.pd.a()) {
             return super.onTouchEvent(motionEvent);
         }
-        this.kd.onTouchEvent(motionEvent);
+        this.ld.onTouchEvent(motionEvent);
         return true;
     }
 }

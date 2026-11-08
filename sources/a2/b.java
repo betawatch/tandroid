@@ -41,7 +41,7 @@ import w7.p;
 import y7.e9;
 import z7.ma;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class b implements Callable {
     public final /* synthetic */ int a;
@@ -110,13 +110,13 @@ public final class b implements Callable {
                                         if (bundle == null) {
                                             try {
                                                 com.google.android.gms.internal.play_billing.a aVar2 = (com.google.android.gms.internal.play_billing.a) cVar;
-                                                Parcel V0 = aVar2.V0();
-                                                V0.writeInt(i11);
-                                                V0.writeString(packageName);
-                                                V0.writeString("subs");
-                                                Parcel W0 = aVar2.W0(V0, 1);
-                                                int readInt = W0.readInt();
-                                                W0.recycle();
+                                                Parcel v12 = aVar2.v1();
+                                                v12.writeInt(i11);
+                                                v12.writeString(packageName);
+                                                v12.writeString("subs");
+                                                Parcel w12 = aVar2.w1(v12, 1);
+                                                int readInt = w12.readInt();
+                                                w12.recycle();
                                                 i10 = readInt;
                                             } catch (Exception e10) {
                                                 u.i("BillingClient", "Exception while checking if billing is supported; try to reconnect", e10);
@@ -128,7 +128,7 @@ public final class b implements Callable {
                                                 sVar.c(z11 ? z.h : z.f);
                                             }
                                         } else {
-                                            i10 = ((com.google.android.gms.internal.play_billing.a) cVar).X0(i11, packageName, "subs", bundle);
+                                            i10 = ((com.google.android.gms.internal.play_billing.a) cVar).x1(i11, packageName, "subs", bundle);
                                         }
                                         if (i10 == 0) {
                                             u.g("BillingClient", "highestLevelSupportedForSubs: " + i11);
@@ -152,15 +152,15 @@ public final class b implements Callable {
                                     if (i14 >= 3) {
                                         if (bundle == null) {
                                             com.google.android.gms.internal.play_billing.a aVar3 = (com.google.android.gms.internal.play_billing.a) cVar;
-                                            Parcel V02 = aVar3.V0();
-                                            V02.writeInt(i14);
-                                            V02.writeString(packageName);
-                                            V02.writeString("inapp");
-                                            Parcel W02 = aVar3.W0(V02, 1);
-                                            i13 = W02.readInt();
-                                            W02.recycle();
+                                            Parcel v13 = aVar3.v1();
+                                            v13.writeInt(i14);
+                                            v13.writeString(packageName);
+                                            v13.writeString("inapp");
+                                            Parcel w13 = aVar3.w1(v13, 1);
+                                            i13 = w13.readInt();
+                                            w13.recycle();
                                         } else {
-                                            i13 = ((com.google.android.gms.internal.play_billing.a) cVar).X0(i14, packageName, "inapp", bundle);
+                                            i13 = ((com.google.android.gms.internal.play_billing.a) cVar).x1(i14, packageName, "inapp", bundle);
                                         }
                                         if (i13 == 0) {
                                             bVar3.l = i14;

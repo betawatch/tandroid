@@ -18,7 +18,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class e4 implements RemoteViewsService.RemoteViewsFactory {
     public ArrayList a;
@@ -106,12 +106,12 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
         c cVar = this.d;
         if (this.i) {
             RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_deleted);
-            remoteViews.setTextViewText(R.id.widget_deleted_text, hd.M0(2131742875, null));
+            remoteViews.setTextViewText(R.id.widget_deleted_text, id.M0(2131742877, null));
             return remoteViews;
         }
         if (i7 >= arrayList.size()) {
             RemoteViews remoteViews2 = new RemoteViews(context.getPackageName(), R.layout.widget_edititem);
-            remoteViews2.setTextViewText(R.id.widget_edititem_text, hd.M0(2131744258, null));
+            remoteViews2.setTextViewText(R.id.widget_edititem_text, id.M0(2131744260, null));
             Bundle bundle = new Bundle();
             bundle.putInt("appWidgetId", this.c);
             bundle.putInt("appWidgetType", 0);
@@ -126,7 +126,7 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
         if (m5.E(l10.longValue())) {
             user = qp.s1(cVar.a).a2(l10);
             if (user != null) {
-                str = t10.B(user) ? hd.M0(2131745902, null) : t10.z(user) ? hd.M0(2131746265, null) : t10.x(user) ? hd.M0(2131749327, null) : g5.m(0, user.first_name, user.last_name);
+                str = t10.B(user) ? id.M0(2131745904, null) : t10.z(user) ? id.M0(2131746267, null) : t10.x(user) ? id.M0(2131749329, null) : g5.m(0, user.first_name, user.last_name);
                 if (t10.z(user) || t10.B(user) || (userProfilePhoto = user.photo) == null || (fileLocation = userProfilePhoto.photo_small) == null || fileLocation.volume_id == 0 || fileLocation.local_id == 0) {
                     chat = null;
                     fileLocation = null;
@@ -290,9 +290,9 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
                     TLRPC.Message message = ijVar.k;
                     TLRPC.MessageMedia messageMedia = message.media;
                     if ((messageMedia instanceof TLRPC.TL_messageMediaPhoto) && (messageMedia.photo instanceof TLRPC.TL_photoEmpty) && messageMedia.ttl_seconds != 0) {
-                        charSequence3 = hd.M0(2131753947, null);
+                        charSequence3 = id.M0(2131753947, null);
                     } else if ((messageMedia instanceof TLRPC.TL_messageMediaDocument) && (messageMedia.document instanceof TLRPC.TL_documentEmpty) && messageMedia.ttl_seconds != 0) {
-                        charSequence3 = hd.M0(2131753932, null);
+                        charSequence3 = id.M0(2131753932, null);
                     } else if (ijVar.z != null) {
                         if (ij.M4(message)) {
                             str2 = "📹 ";
@@ -328,7 +328,7 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
                         }
                     }
                 } else {
-                    String M04 = ijVar.Q3() ? hd.M0(2131750502, null) : user2 != null ? t10.j(user2, true).replace("\n", "") : "DELETED";
+                    String M04 = ijVar.Q3() ? id.M0(2131750504, null) : user2 != null ? t10.j(user2, true).replace("\n", "") : "DELETED";
                     CharSequence charSequence7 = ijVar.z;
                     try {
                         if (charSequence7 != null) {
@@ -386,9 +386,9 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
                                 objArr2[0] = replace;
                                 objArr2[c11] = M04;
                                 SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr2));
-                                valueOf2.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.o9, null), M04.length() + 2, valueOf2.length(), 33);
+                                valueOf2.setSpan(new org.telegram.ui.Components.yz(org.telegram.ui.ActionBar.k6.o9, null), M04.length() + 2, valueOf2.length(), 33);
                                 spannableStringBuilder = valueOf2;
-                                spannableStringBuilder.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.k9, null), 0, M04.length() + 1, 33);
+                                spannableStringBuilder.setSpan(new org.telegram.ui.Components.yz(org.telegram.ui.ActionBar.k6.k9, null), 0, M04.length() + 1, 33);
                                 charSequence3 = spannableStringBuilder;
                             }
                             c12 = ' ';
@@ -399,12 +399,12 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
                             objArr22[0] = replace2;
                             objArr22[c11] = M04;
                             SpannableStringBuilder valueOf22 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr22));
-                            valueOf22.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.o9, null), M04.length() + 2, valueOf22.length(), 33);
+                            valueOf22.setSpan(new org.telegram.ui.Components.yz(org.telegram.ui.ActionBar.k6.o9, null), M04.length() + 2, valueOf22.length(), 33);
                             spannableStringBuilder = valueOf22;
-                            spannableStringBuilder.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.k9, null), 0, M04.length() + 1, 33);
+                            spannableStringBuilder.setSpan(new org.telegram.ui.Components.yz(org.telegram.ui.ActionBar.k6.k9, null), 0, M04.length() + 1, 33);
                             charSequence3 = spannableStringBuilder;
                         }
-                        spannableStringBuilder.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.k9, null), 0, M04.length() + 1, 33);
+                        spannableStringBuilder.setSpan(new org.telegram.ui.Components.yz(org.telegram.ui.ActionBar.k6.k9, null), 0, M04.length() + 1, 33);
                         charSequence3 = spannableStringBuilder;
                     } catch (Exception e10) {
                         a8.g(e10, true);
@@ -413,14 +413,14 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
                     spannableStringBuilder = valueOf;
                 }
             }
-            remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, hd.e1(ijVar.k.date));
+            remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, id.e1(ijVar.k.date));
             remoteViews3.setTextViewText(R.id.shortcut_widget_item_message, charSequence3.toString());
             remoteViews3.setTextColor(R.id.shortcut_widget_item_message, color);
         } else {
             if (dialog == null || (i10 = dialog.last_message_date) == 0) {
                 remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, "");
             } else {
-                remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, hd.e1(i10));
+                remoteViews3.setTextViewText(R.id.shortcut_widget_item_time, id.e1(i10));
             }
             remoteViews3.setTextViewText(R.id.shortcut_widget_item_message, "");
         }

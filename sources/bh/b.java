@@ -12,14 +12,14 @@ import di.c4;
 import java.util.Date;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.k5;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.pa;
 import org.telegram.ui.Components.w8;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class b extends pa {
     public final TextView b0;
@@ -42,7 +42,7 @@ public final class b extends pa {
         this.c0.addView(this.b0, ha.c(22.0f, -2));
         this.c0.setPadding(g0.L(8.0f), 0, g0.L(8.0f), 0);
         FrameLayout frameLayout = this.c0;
-        boolean z9 = hd.a0;
+        boolean z9 = id.a0;
         addView(frameLayout, ha.d(-2, -2.0f, (z9 ? 3 : 5) | 48, z9 ? 9 : 0, 9.0f, z9 ? 0 : 9, 0.0f));
     }
 
@@ -64,7 +64,7 @@ public final class b extends pa {
     @Override // org.telegram.ui.Cells.pa, android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.S) {
-            canvas.drawLine(hd.a0 ? 0.0f : g0.L(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (hd.a0 ? g0.L(70.0f) : 0), getMeasuredHeight() - 1, k6.k0);
+            canvas.drawLine(id.a0 ? 0.0f : g0.L(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? g0.L(70.0f) : 0), getMeasuredHeight() - 1, k6.k0);
         }
     }
 
@@ -81,30 +81,30 @@ public final class b extends pa {
             c4 c4Var = this.a;
             w8 w8Var = this.E;
             if (j3 > 0) {
-                k5Var.l(hd.G((int) j3, "BoostingBoostStars", new Object[0]), false);
+                k5Var.l(id.G((int) j3, "BoostingBoostStars", new Object[0]), false);
                 w8Var.g(26);
                 c4Var.e(null, w8Var);
                 k5Var.i(null);
             } else if (boost.unclaimed) {
-                k5Var.l(hd.M0(2131753177, null), false);
+                k5Var.l(id.M0(2131753177, null), false);
                 w8Var.g(18);
                 setAvatarColorByMonths(i7);
                 c4Var.e(null, w8Var);
                 k5Var.i(null);
             } else if (boost.user_id == -1) {
-                k5Var.l(hd.M0(2131753178, null), false);
+                k5Var.l(id.M0(2131753178, null), false);
                 w8Var.g(19);
                 setAvatarColorByMonths(i7);
                 c4Var.e(null, w8Var);
                 k5Var.i(null);
             }
-            String format = hd.E0().o0().format(new Date(boost.expires * 1000));
+            String format = id.E0().o0().format(new Date(boost.expires * 1000));
             long j10 = boost.stars;
             k5 k5Var2 = this.c;
             if (j10 > 0) {
-                k5Var2.l(hd.a0(null, null, 2131753244, format), false);
+                k5Var2.l(id.a0(null, null, 2131753244, format), false);
             } else {
-                k5Var2.l(hd.a0(null, null, 2131753524, format), false);
+                k5Var2.l(id.a0(null, null, 2131753524, format), false);
             }
             if (boost.gift) {
                 if (this.e0 == null) {
@@ -115,7 +115,7 @@ public final class b extends pa {
                 textView.setTextColor(-3240417);
                 textView.setCompoundDrawablesWithIntrinsicBounds(this.e0, (Drawable) null, (Drawable) null, (Drawable) null);
                 textView.setCompoundDrawablePadding(g0.L(4.0f));
-                textView.setText(hd.M0(2131753501, null));
+                textView.setText(id.M0(2131753501, null));
                 frameLayout.setBackground(k6.e0(g0.L(12.0f), g0.L(12.0f), k6.r1(0.2f, -3240417)));
             }
             if (boost.giveaway) {
@@ -127,7 +127,7 @@ public final class b extends pa {
                 textView.setTextColor(-13397548);
                 textView.setCompoundDrawablesWithIntrinsicBounds(this.d0, (Drawable) null, (Drawable) null, (Drawable) null);
                 textView.setCompoundDrawablePadding(g0.L(4.0f));
-                textView.setText(hd.M0(2131753492, null));
+                textView.setText(id.M0(2131753492, null));
                 frameLayout.setBackground(k6.e0(g0.L(12.0f), g0.L(12.0f), k6.r1(0.2f, -13397548)));
             }
         } else {
@@ -148,7 +148,7 @@ public final class b extends pa {
             k5Var.setPadding(0, k5Var.getPaddingTop(), 0, k5Var.getPaddingBottom());
         } else {
             int L = g0.L(22.0f) + ((int) textView.getPaint().measureText(textView.getText().toString()));
-            k5Var.setPadding(hd.a0 ? L : 0, k5Var.getPaddingTop(), hd.a0 ? 0 : L, k5Var.getPaddingBottom());
+            k5Var.setPadding(id.a0 ? L : 0, k5Var.getPaddingTop(), id.a0 ? 0 : L, k5Var.getPaddingBottom());
         }
     }
 }

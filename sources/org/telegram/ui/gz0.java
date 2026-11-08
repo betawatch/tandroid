@@ -5,7 +5,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gz0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -90,65 +90,65 @@ public final /* synthetic */ class gz0 implements ValueAnimator.AnimatorUpdateLi
                 gVar.invalidate();
                 break;
             case 9:
-                u71 u71Var = (u71) this.b;
-                u71Var.getClass();
-                u71Var.p1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                u71Var.y0.invalidate();
-                u71Var.D0.invalidate();
-                u71Var.S1.setAlpha(u71Var.p1);
-                u71Var.R1.invalidate();
-                u71Var.a1();
+                v71 v71Var = (v71) this.b;
+                v71Var.getClass();
+                v71Var.p1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                v71Var.y0.invalidate();
+                v71Var.D0.invalidate();
+                v71Var.S1.setAlpha(v71Var.p1);
+                v71Var.R1.invalidate();
+                v71Var.a1();
                 break;
             case 10:
-                u71 u71Var2 = ((j71) this.b).a;
-                u71Var2.p1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                u71Var2.y0.invalidate();
-                u71Var2.D0.invalidate();
-                u71Var2.S1.setAlpha(u71Var2.p1);
-                u71Var2.R1.invalidate();
-                u71Var2.a1();
+                v71 v71Var2 = ((k71) this.b).a;
+                v71Var2.p1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                v71Var2.y0.invalidate();
+                v71Var2.D0.invalidate();
+                v71Var2.S1.setAlpha(v71Var2.p1);
+                v71Var2.R1.invalidate();
+                v71Var2.a1();
                 break;
             case 11:
-                m81 m81Var = (m81) this.b;
-                m81Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                int childCount = m81Var.a.getChildCount();
+                n81 n81Var = (n81) this.b;
+                n81Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                int childCount = n81Var.a.getChildCount();
                 for (int i10 = 0; i10 < childCount; i10++) {
-                    int R = RecyclerView.R(m81Var.a.getChildAt(i10));
-                    int i11 = m81Var.d.e;
+                    int R = RecyclerView.R(n81Var.a.getChildAt(i10));
+                    int i11 = n81Var.d.e;
                     if (R < i11 || i11 <= 0) {
-                        m81Var.a.getChildAt(i10).setAlpha(1.0f);
+                        n81Var.a.getChildAt(i10).setAlpha(1.0f);
                     } else {
-                        m81Var.a.getChildAt(i10).setAlpha(m81Var.E);
+                        n81Var.a.getChildAt(i10).setAlpha(n81Var.E);
                     }
                 }
                 break;
             case 12:
-                s81 s81Var = (s81) this.b;
-                s81Var.getClass();
-                s81Var.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                s81Var.invalidate();
+                t81 t81Var = (t81) this.b;
+                t81Var.getClass();
+                t81Var.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                t81Var.invalidate();
                 break;
             case 13:
-                v91 v91Var = (v91) this.b;
-                v91Var.getClass();
-                v91Var.W0(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                w91 w91Var = (w91) this.b;
+                w91Var.getClass();
+                w91Var.W0(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 14:
-                s91 s91Var = (s91) this.b;
-                s91Var.getClass();
-                s91Var.j5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                s91Var.n0();
-                break;
-            case 15:
                 t91 t91Var = (t91) this.b;
                 t91Var.getClass();
-                t91Var.setViewsOffset(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                t91Var.j5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                t91Var.n0();
+                break;
+            case 15:
+                u91 u91Var = (u91) this.b;
+                u91Var.getClass();
+                u91Var.setViewsOffset(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                ec1 ec1Var = (ec1) this.b;
-                ec1Var.getClass();
-                ec1Var.x0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ec1Var.x();
+                fc1 fc1Var = (fc1) this.b;
+                fc1Var.getClass();
+                fc1Var.x0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                fc1Var.x();
                 break;
         }
     }

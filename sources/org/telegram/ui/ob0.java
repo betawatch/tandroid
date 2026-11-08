@@ -23,7 +23,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ob0 extends org.telegram.ui.Components.wt0 {
     public Bundle D;
@@ -100,7 +100,7 @@ public final class ob0 extends org.telegram.ui.Components.wt0 {
                 TextView textView = new TextView(context);
                 this.b = textView;
                 com.google.android.recaptcha.internal.a.q(textView, 1, 18.0f);
-                textView.setText(org.telegram.messenger.hd.M0(ce0Var.F != 3 ? 2131752143 : z9 ? 2131743620 : 2131752145, null));
+                textView.setText(org.telegram.messenger.id.M0(ce0Var.F != 3 ? 2131752143 : z9 ? 2131743622 : 2131752145, null));
                 textView.setGravity(17);
                 textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
                 addView(textView, c8.ha.d(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
@@ -125,8 +125,8 @@ public final class ob0 extends org.telegram.ui.Components.wt0 {
                 Drawable drawable = context.getDrawable(R.drawable.googleg_standard_color_18);
                 drawable.setBounds(0, org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(27.0f));
                 spannableStringBuilder.setSpan(new ImageSpan(drawable, 0), 0, 1, 33);
-                spannableStringBuilder.setSpan(new org.telegram.ui.Components.hy(i12), 1, 2, 33);
-                spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.M0(2131745322, null));
+                spannableStringBuilder.setSpan(new org.telegram.ui.Components.iy(i12), 1, 2, 33);
+                spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.M0(2131745324, null));
                 textView2.setText(spannableStringBuilder);
                 textView2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.kb0
                     public final /* synthetic */ ob0 b;
@@ -187,7 +187,7 @@ public final class ob0 extends org.telegram.ui.Components.wt0 {
                 org.telegram.messenger.g0.Z3(frameLayout2, ce0Var.F == 3 && !z9, 1.0f, true, false);
                 mb0 mb0Var = new mb0(context, i11);
                 this.n = mb0Var;
-                mb0Var.setText(org.telegram.messenger.hd.M0(2131748736, null));
+                mb0Var.setText(org.telegram.messenger.id.M0(2131748738, null));
                 mb0Var.setGravity(17);
                 mb0Var.setTextSize(1, 14.0f);
                 mb0Var.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f));
@@ -264,7 +264,7 @@ public final class ob0 extends org.telegram.ui.Components.wt0 {
                 textView3.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
                 textView3.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f));
                 textView3.setMaxLines(2);
-                textView3.setText(org.telegram.messenger.hd.M0(2131746122, null));
+                textView3.setText(org.telegram.messenger.id.M0(2131746124, null));
                 textView3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.kb0
                     public final /* synthetic */ ob0 b;
 
@@ -338,7 +338,7 @@ public final class ob0 extends org.telegram.ui.Components.wt0 {
                 nb0Var.addView(frameLayout3);
                 TextView textView4 = new TextView(context);
                 this.s = textView4;
-                textView4.setText(org.telegram.messenger.hd.M0(2131742862, "WrongCode"));
+                textView4.setText(org.telegram.messenger.id.M0(2131742864, "WrongCode"));
                 textView4.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
                 textView4.setTextSize(1, 15.0f);
                 textView4.setGravity(49);
@@ -362,7 +362,7 @@ public final class ob0 extends org.telegram.ui.Components.wt0 {
         TextView textView5 = new TextView(context);
         this.b = textView5;
         com.google.android.recaptcha.internal.a.q(textView5, 1, 18.0f);
-        textView5.setText(org.telegram.messenger.hd.M0(ce0Var.F != 3 ? 2131752143 : z9 ? 2131743620 : 2131752145, null));
+        textView5.setText(org.telegram.messenger.id.M0(ce0Var.F != 3 ? 2131752143 : z9 ? 2131743622 : 2131752145, null));
         textView5.setGravity(17);
         textView5.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         addView(textView5, c8.ha.d(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
@@ -387,8 +387,8 @@ public final class ob0 extends org.telegram.ui.Components.wt0 {
         Drawable drawable2 = context.getDrawable(R.drawable.googleg_standard_color_18);
         drawable2.setBounds(0, org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(27.0f));
         spannableStringBuilder2.setSpan(new ImageSpan(drawable2, 0), 0, 1, 33);
-        spannableStringBuilder2.setSpan(new org.telegram.ui.Components.hy(i122), 1, 2, 33);
-        spannableStringBuilder2.append((CharSequence) org.telegram.messenger.hd.M0(2131745322, null));
+        spannableStringBuilder2.setSpan(new org.telegram.ui.Components.iy(i122), 1, 2, 33);
+        spannableStringBuilder2.append((CharSequence) org.telegram.messenger.id.M0(2131745324, null));
         textView22.setText(spannableStringBuilder2);
         textView22.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.kb0
             public final /* synthetic */ ob0 b;
@@ -449,7 +449,7 @@ public final class ob0 extends org.telegram.ui.Components.wt0 {
         org.telegram.messenger.g0.Z3(frameLayout22, ce0Var.F == 3 && !z9, 1.0f, true, false);
         mb0 mb0Var3 = new mb0(context, i11);
         this.n = mb0Var3;
-        mb0Var3.setText(org.telegram.messenger.hd.M0(2131748736, null));
+        mb0Var3.setText(org.telegram.messenger.id.M0(2131748738, null));
         mb0Var3.setGravity(17);
         mb0Var3.setTextSize(1, 14.0f);
         mb0Var3.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f));
@@ -526,7 +526,7 @@ public final class ob0 extends org.telegram.ui.Components.wt0 {
         textView32.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         textView32.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f));
         textView32.setMaxLines(2);
-        textView32.setText(org.telegram.messenger.hd.M0(2131746122, null));
+        textView32.setText(org.telegram.messenger.id.M0(2131746124, null));
         textView32.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.kb0
             public final /* synthetic */ ob0 b;
 
@@ -600,7 +600,7 @@ public final class ob0 extends org.telegram.ui.Components.wt0 {
         nb0Var2.addView(frameLayout32);
         TextView textView42 = new TextView(context);
         this.s = textView42;
-        textView42.setText(org.telegram.messenger.hd.M0(2131742862, "WrongCode"));
+        textView42.setText(org.telegram.messenger.id.M0(2131742864, "WrongCode"));
         textView42.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         textView42.setTextSize(1, 15.0f);
         textView42.setGravity(49);
@@ -621,7 +621,7 @@ public final class ob0 extends org.telegram.ui.Components.wt0 {
 
     @Override // org.telegram.ui.Components.wt0
     public String getHeaderName() {
-        return org.telegram.messenger.hd.M0(2131743620, null);
+        return org.telegram.messenger.id.M0(2131743622, null);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -760,10 +760,10 @@ public final class ob0 extends org.telegram.ui.Components.wt0 {
         FrameLayout frameLayout = this.h;
         xh.l lVar = this.c;
         if (i7 == 3) {
-            lVar.setText(org.telegram.messenger.hd.a0(null, null, 2131752142, this.K));
+            lVar.setText(org.telegram.messenger.id.a0(null, null, 2131752142, this.K));
             org.telegram.messenger.g0.Z3(frameLayout, false, 1.0f, true, false);
         } else if (this.P) {
-            lVar.setText(org.telegram.messenger.hd.a0(null, null, 2131743619, this.K));
+            lVar.setText(org.telegram.messenger.id.a0(null, null, 2131743621, this.K));
             org.telegram.messenger.g0.Z3(frameLayout, false, 1.0f, true, false);
         } else {
             org.telegram.messenger.g0.Z3(frameLayout, true, 1.0f, true, false);
@@ -795,7 +795,7 @@ public final class ob0 extends org.telegram.ui.Components.wt0 {
                 uy0Var.c = i12;
                 spannableStringBuilder.setSpan(new org.telegram.ui.Components.vy0(uy0Var, 0), indexOf, i12, 0);
             }
-            lVar.setText(org.telegram.messenger.g0.m0(org.telegram.messenger.hd.M0(2131752144, null), spannableStringBuilder));
+            lVar.setText(org.telegram.messenger.g0.m0(org.telegram.messenger.id.M0(2131752144, null), spannableStringBuilder));
         }
         if (bundle.getBoolean("googleSignInAllowed") && org.telegram.messenger.tt.b.hasServices()) {
             i10 = 0;
@@ -870,7 +870,7 @@ public final class ob0 extends org.telegram.ui.Components.wt0 {
         mb0 mb0Var = this.r;
         if (i7 <= 0 || currentTimeMillis <= 0) {
             mb0Var.setVisibility(0);
-            mb0Var.setText(org.telegram.messenger.hd.M0(2131748730, null));
+            mb0Var.setText(org.telegram.messenger.id.M0(2131748732, null));
             org.telegram.messenger.g0.i3(new hb0(this, i10), 1000L);
             return;
         }
@@ -884,23 +884,23 @@ public final class ob0 extends org.telegram.ui.Components.wt0 {
             i11++;
         }
         if (i11 != 0) {
-            a02 = org.telegram.messenger.hd.a0(null, null, 2131748733, org.telegram.messenger.hd.G(i11, "Days", new Object[0]));
+            a02 = org.telegram.messenger.id.a0(null, null, 2131748735, org.telegram.messenger.id.G(i11, "Days", new Object[0]));
         } else {
             StringBuilder sb2 = new StringBuilder();
             sb2.append(i13 != 0 ? String.format(Locale.ROOT, "%02d:", Integer.valueOf(i13)) : "");
             Locale locale = Locale.ROOT;
             sb2.append(String.format(locale, "%02d:", Integer.valueOf(i15)));
             sb2.append(String.format(locale, "%02d", Integer.valueOf(i16)));
-            a02 = org.telegram.messenger.hd.a0(null, null, 2131748733, sb2.toString());
+            a02 = org.telegram.messenger.id.a0(null, null, 2131748735, sb2.toString());
         }
-        String a03 = org.telegram.messenger.hd.a0(null, null, 2131748732, a02);
+        String a03 = org.telegram.messenger.id.a0(null, null, 2131748734, a02);
         SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(a03);
         int indexOf = a03.indexOf(42);
         int lastIndexOf = a03.lastIndexOf(42);
         if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
             valueOf.replace(lastIndexOf, lastIndexOf + 1, (CharSequence) "");
             valueOf.replace(indexOf, indexOf + 1, (CharSequence) "");
-            valueOf.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.q6, this.W.getResourceProvider()), indexOf, lastIndexOf - 1, 33);
+            valueOf.setSpan(new org.telegram.ui.Components.yz(org.telegram.ui.ActionBar.k6.q6, this.W.getResourceProvider()), indexOf, lastIndexOf - 1, 33);
         }
         mb0Var.setText(valueOf);
         org.telegram.messenger.g0.i3(this.U, 1000L);

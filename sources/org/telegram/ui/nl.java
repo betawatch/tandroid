@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.widget.FrameLayout;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class nl extends org.telegram.ui.ActionBar.i1 {
     public final /* synthetic */ ol x;
@@ -81,7 +81,7 @@ public final class nl extends org.telegram.ui.ActionBar.i1 {
                 anVar.l1.setBackgroundTranslation(i7);
                 org.telegram.ui.Components.t40 t40Var = anVar.p3;
                 if (t40Var != null) {
-                    t40Var.f(f10);
+                    t40Var.g(f10);
                 }
                 fi.p5 p5Var = anVar.M2;
                 if (p5Var != null) {

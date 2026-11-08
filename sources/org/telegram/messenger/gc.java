@@ -45,7 +45,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class gc {
     public static Bitmap M;
@@ -1804,7 +1804,7 @@ public final class gc {
                                                             } else if ("video/x-matroska".equals(hcVar7.i.mime_type)) {
                                                                 str29 = ".mkv";
                                                             }
-                                                            q11 = rf.b.q(q11, str29);
+                                                            q11 = rf.b.r(q11, str29);
                                                             if (ij.L4(hcVar7.i) || ij.t3(hcVar7.i, false) || ij.j4(hcVar7.i) || ij.y(hcVar7.i)) {
                                                                 z18 = false;
                                                             }
@@ -2424,7 +2424,7 @@ public final class gc {
     }
 
     public final void U(xb xbVar, int i7) {
-        g0.h3(new k7(this, xbVar, i7, 4));
+        g0.h3(new l7(this, xbVar, i7, 4));
     }
 
     public final void V(boolean z9) {
@@ -2508,7 +2508,7 @@ public final class gc {
     }
 
     public final void i(Runnable runnable) {
-        ((of.a) this.p.b).execute(new y4(15, this, runnable));
+        ((of.a) this.p.b).execute(new x4(15, this, runnable));
     }
 
     public final void j() {
@@ -2983,7 +2983,7 @@ public final class gc {
                                                                         i20 = i29;
                                                                         if (i20 == 2) {
                                                                             imageReceiver2 = imageReceiver3;
-                                                                            file6 = new File(w7.z(4), rf.b.q(str13, ".enc"));
+                                                                            file6 = new File(w7.z(4), rf.b.r(str13, ".enc"));
                                                                         } else {
                                                                             imageReceiver2 = imageReceiver3;
                                                                         }
@@ -3082,7 +3082,7 @@ public final class gc {
                                                     }
                                                     if (i20 == 2) {
                                                         Pattern pattern = w7.I;
-                                                        ubVar5.r = new File(t0.b.getCacheDir(), rf.b.q(str13, ".enc.key"));
+                                                        ubVar5.r = new File(t0.b.getCacheDir(), rf.b.r(str13, ".enc.key"));
                                                     }
                                                     int i33 = i20;
                                                     ImageReceiver imageReceiver4 = imageReceiver2;
@@ -3117,7 +3117,7 @@ public final class gc {
                                                     }
                                                     String str28 = hcVar2.g;
                                                     if (str28 != null) {
-                                                        ubVar5.q = new File(w7.z(4), rf.b.q(Utilities.a(str28), "_temp.jpg"));
+                                                        ubVar5.q = new File(w7.z(4), rf.b.r(Utilities.a(str28), "_temp.jpg"));
                                                         ubVar5.p = file5;
                                                         if (hcVar2.g.startsWith(str9)) {
                                                             tb tbVar = new tb(gcVar4, ubVar5);
@@ -3380,7 +3380,7 @@ public final class gc {
                                             a8.g(e13, true);
                                         }
                                     }
-                                    Utilities.e.c(new pd(7));
+                                    Utilities.e.c(new rc(9));
                                     return sparseArray;
                                 }
                             } catch (Exception e14) {
@@ -3543,7 +3543,7 @@ public final class gc {
             } else if (r2.a) {
                 a8.b("this Android can't rename files");
             }
-            Utilities.e.c(new pd(7));
+            Utilities.e.c(new rc(9));
         } catch (Exception e22) {
             a8.g(e22, true);
         }

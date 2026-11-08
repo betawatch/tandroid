@@ -32,7 +32,7 @@ import org.telegram.ui.an;
 import org.telegram.ui.g60;
 import org.telegram.ui.rv0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b9 implements c20 {
     public final /* synthetic */ int a;
@@ -155,9 +155,9 @@ public final /* synthetic */ class b9 implements c20 {
                                             int i7 = org.telegram.ui.ActionBar.k6.L5;
                                             alertDialog$Builder.m(R.raw.permission_request_location, 72, org.telegram.ui.ActionBar.k6.x0(null, i7, false), null);
                                             alertDialog$Builder.n(i7, null);
-                                            alertDialog$Builder.a.T = org.telegram.messenger.hd.M0(2131749529, null);
-                                            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751161, null), new fi.qb(context, r4 ? 1 : 0));
-                                            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+                                            alertDialog$Builder.a.T = org.telegram.messenger.id.M0(2131749531, null);
+                                            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751161, null), new fi.qb(context, r4 ? 1 : 0));
+                                            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
                                             alertDialog$Builder.p();
                                         } catch (Exception e10) {
                                             org.telegram.messenger.a8.g(e10, true);

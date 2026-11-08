@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class v90 extends FrameLayout {
     public final /* synthetic */ w90 D;
@@ -43,7 +43,7 @@ public final class v90 extends FrameLayout {
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         org.telegram.ui.ActionBar.r6.t(imageView, i7, null, mode);
         imageView.setVisibility(8);
-        addView(imageView, c8.ha.d(24, 24.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 16, 20.0f, 0.0f, 20.0f, 0.0f));
+        addView(imageView, c8.ha.d(24, 24.0f, (org.telegram.messenger.id.a0 ? 5 : 3) | 16, 20.0f, 0.0f, 20.0f, 0.0f));
         bi.md mdVar = new bi.md(context, 29);
         this.c = mdVar;
         mdVar.setLines(1);
@@ -52,7 +52,7 @@ public final class v90 extends FrameLayout {
         mdVar.setTextSize(1, 16.0f);
         int i10 = org.telegram.ui.ActionBar.k6.G6;
         org.telegram.ui.ActionBar.r6.V(mdVar, i10, null);
-        mdVar.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
+        mdVar.setGravity(org.telegram.messenger.id.a0 ? 5 : 3);
         mdVar.setImportantForAccessibility(2);
         org.telegram.ui.Components.j6 j6Var = new org.telegram.ui.Components.j6(context, false, true, true);
         this.d = j6Var;
@@ -69,8 +69,8 @@ public final class v90 extends FrameLayout {
         LinearLayout linearLayout = new LinearLayout(context);
         this.b = linearLayout;
         linearLayout.setOrientation(0);
-        linearLayout.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
-        if (org.telegram.messenger.hd.a0) {
+        linearLayout.setGravity(org.telegram.messenger.id.a0 ? 5 : 3);
+        if (org.telegram.messenger.id.a0) {
             linearLayout.addView(imageView2, c8.ha.q(16, 16, 0.0f, 16, 0, 0, 6, 0));
             linearLayout.addView(j6Var, c8.ha.q(-2, -2, 0.0f, 16, 0, 0, 6, 0));
             linearLayout.addView(mdVar, c8.ha.p(-2, -2, 1.0f, 16));
@@ -79,7 +79,7 @@ public final class v90 extends FrameLayout {
             linearLayout.addView(j6Var, c8.ha.q(-2, -2, 0.0f, 16, 6, 0, 0, 0));
             linearLayout.addView(imageView2, c8.ha.q(16, 16, 0.0f, 16, 2, 0, 0, 0));
         }
-        addView(linearLayout, c8.ha.d(-1, -2.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 16, 64.0f, 0.0f, 8.0f, 0.0f));
+        addView(linearLayout, c8.ha.d(-1, -2.0f, (org.telegram.messenger.id.a0 ? 5 : 3) | 16, 64.0f, 0.0f, 8.0f, 0.0f));
         Switch r32 = new Switch(context, null);
         this.f = r32;
         r32.setVisibility(8);
@@ -88,7 +88,7 @@ public final class v90 extends FrameLayout {
         int i13 = org.telegram.ui.ActionBar.k6.d6;
         r32.d(i11, i12, i13, i13);
         r32.setImportantForAccessibility(2);
-        addView(r32, c8.ha.d(37, 50.0f, (org.telegram.messenger.hd.a0 ? 3 : 5) | 16, 19.0f, 0.0f, 19.0f, 0.0f));
+        addView(r32, c8.ha.d(37, 50.0f, (org.telegram.messenger.id.a0 ? 3 : 5) | 16, 19.0f, 0.0f, 19.0f, 0.0f));
         org.telegram.ui.Components.wo woVar = new org.telegram.ui.Components.wo(21, context, null);
         this.h = woVar;
         woVar.b(org.telegram.ui.ActionBar.k6.h7, org.telegram.ui.ActionBar.k6.j7, org.telegram.ui.ActionBar.k6.k7);
@@ -97,7 +97,7 @@ public final class v90 extends FrameLayout {
         woVar.setDrawBackgroundAsArc(10);
         woVar.setVisibility(8);
         woVar.setImportantForAccessibility(2);
-        boolean z9 = org.telegram.messenger.hd.a0;
+        boolean z9 = org.telegram.messenger.id.a0;
         addView(woVar, c8.ha.d(21, 21.0f, (z9 ? 5 : 3) | 16, z9 ? 0.0f : 64.0f, 0.0f, z9 ? 64.0f : 0.0f, 0.0f));
         setFocusable(true);
     }
@@ -175,13 +175,13 @@ public final class v90 extends FrameLayout {
     }
 
     public final void c(r90 r90Var, boolean z9) {
-        int d = org.telegram.messenger.rc.d(true);
+        int d = org.telegram.messenger.sc.d(true);
         int i7 = r90Var.e;
         this.x = a(d & i7);
         this.y = a(i7);
         boolean z10 = false;
         String format = String.format("%d/%d", Integer.valueOf(this.x), Integer.valueOf(this.y));
-        if (z9 && !org.telegram.messenger.hd.a0) {
+        if (z9 && !org.telegram.messenger.id.a0) {
             z10 = true;
         }
         this.d.c(format, z10, true);
@@ -190,7 +190,7 @@ public final class v90 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        boolean z9 = org.telegram.messenger.hd.a0;
+        boolean z9 = org.telegram.messenger.id.a0;
         bi.md mdVar = this.c;
         if (z9) {
             if (this.r) {
@@ -228,7 +228,7 @@ public final class v90 extends FrameLayout {
         sb2.append(this.c.getText());
         if (this.w) {
             sb2.append('\n');
-            sb2.append(org.telegram.messenger.hd.a0("Of", null, 2131747828, Integer.valueOf(this.x), Integer.valueOf(this.y)));
+            sb2.append(org.telegram.messenger.id.a0("Of", null, 2131747830, Integer.valueOf(this.x), Integer.valueOf(this.y)));
         }
         accessibilityNodeInfo.setContentDescription(sb2);
     }

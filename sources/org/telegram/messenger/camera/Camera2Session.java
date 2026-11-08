@@ -32,7 +32,7 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.t0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class Camera2Session {
     private CameraCharacteristics cameraCharacteristics;
@@ -65,7 +65,7 @@ public class Camera2Session {
     private boolean opened = false;
     private final Rect cropRegion = new Rect();
 
-    /* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+    /* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
     public class 1 extends CameraDevice.StateCallback {
         final /* synthetic */ String val$cameraId;
 
@@ -100,7 +100,7 @@ public class Camera2Session {
         }
     }
 
-    /* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+    /* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
     public class 2 extends CameraCaptureSession.StateCallback {
         final /* synthetic */ String val$cameraId;
 
@@ -143,7 +143,7 @@ public class Camera2Session {
         }
     }
 
-    /* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+    /* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
     public class 3 implements ImageReader.OnImageAvailableListener {
         final /* synthetic */ File val$file;
         final /* synthetic */ int val$orientation;
@@ -229,7 +229,7 @@ public class Camera2Session {
         }
     }
 
-    /* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+    /* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
     public static class CompareSizesByArea implements Comparator<android.util.Size> {
         @Override // java.util.Comparator
         public int compare(android.util.Size size, android.util.Size size2) {
@@ -558,6 +558,28 @@ public class Camera2Session {
 
     public int getPreviewWidth() {
         return this.previewSize.getWidth();
+    }
+
+    public int getRoundVideoRotationAngle() {
+        try {
+            Context context = t0.b;
+            if (context != null) {
+                int rotation = ((WindowManager) context.getSystemService("window")).getDefaultDisplay().getRotation();
+                if (rotation == 1) {
+                    return 90;
+                }
+                if (rotation == 2) {
+                    return qs.K2;
+                }
+                if (rotation == 3) {
+                    return qs.t4;
+                }
+            }
+            return 0;
+        } catch (Exception e10) {
+            a8.g(e10, true);
+            return 0;
+        }
     }
 
     public int getWorldAngle() {

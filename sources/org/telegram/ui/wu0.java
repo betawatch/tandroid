@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class wu0 implements org.telegram.ui.Components.dj0 {
     public int a = 0;
@@ -99,7 +99,7 @@ public final class wu0 implements org.telegram.ui.Components.dj0 {
         int i21 = 11;
         if (i7 == 6) {
             org.telegram.messenger.yr messagesStorage = wu0Var.c.getMessagesStorage();
-            messagesStorage.a.c(new org.telegram.messenger.qq(messagesStorage, i21));
+            messagesStorage.a.c(new org.telegram.messenger.rq(messagesStorage, i21));
             org.telegram.messenger.iz.D(false);
             org.telegram.messenger.k5.d(org.telegram.messenger.k5.d(org.telegram.messenger.k5.d(org.telegram.messenger.k5.d(org.telegram.messenger.k5.d(org.telegram.messenger.k5.d(org.telegram.messenger.k5.d(org.telegram.messenger.k5.d(org.telegram.messenger.k5.d(org.telegram.messenger.qp.e1().edit().remove("archivehint").remove("proximityhint"), "archivehint_l", "searchpostsnew", "speedhint", "gifhint"), "reminderhint", "soundHint", "themehint", "bganimationhint"), "filterhint", "n_0", "storyprvhint", "storyhint"), "storyhint2", "storydualhint", "storysvddualhint", "stories_camera"), "dualcam", "dualmatrix", "dual_available", "archivehint"), "askNotificationsAfter", "askNotificationsDuration", "viewoncehint", "voicepausehint"), "taptostorysoundhint", "nothanos", "voiceoncehint", "savedhint"), "savedsearchhint", "savedsearchtaghint", "newppsms", "monetizationadshint"), "seekSpeedHintShowed", "unsupport_video/av01", "statusgiftpage", "multistorieshint").remove("trimvoicehint").remove("taptostoryhighlighthint").apply();
             c8.ga.a();
@@ -206,7 +206,7 @@ public final class wu0 implements org.telegram.ui.Components.dj0 {
             }
             if (i7 == 16) {
                 org.telegram.messenger.iz.K();
-                Toast.makeText(wu0Var.c.getParentActivity(), org.telegram.messenger.hd.M0(org.telegram.messenger.iz.J0 ? 2131751619 : 2131751620, null), 0).show();
+                Toast.makeText(wu0Var.c.getParentActivity(), org.telegram.messenger.id.M0(org.telegram.messenger.iz.J0 ? 2131751619 : 2131751620, null), 0).show();
                 return;
             }
             if (i7 == 17) {
@@ -250,7 +250,7 @@ public final class wu0 implements org.telegram.ui.Components.dj0 {
                 if (i7 == 23) {
                     boolean q10 = fi.b1.q(wu0Var.c.getParentActivity());
                     org.telegram.messenger.qp.e1().edit().putBoolean("dual_available", !q10).apply();
-                    Toast.makeText(wu0Var.c.getParentActivity(), org.telegram.messenger.hd.M0(!q10 ? 2131751634 : 2131751636, null), 0).show();
+                    Toast.makeText(wu0Var.c.getParentActivity(), org.telegram.messenger.id.M0(!q10 ? 2131751634 : 2131751636, null), 0).show();
                     return;
                 }
                 if (i7 == 24) {
@@ -529,7 +529,7 @@ public final class wu0 implements org.telegram.ui.Components.dj0 {
             }
             try {
                 org.telegram.messenger.g0.g(UserInfoActivity.e0(userFull.birthday));
-                org.telegram.ui.Components.hc.a0(profileActivity).i(org.telegram.messenger.hd.M0(2131753716, null)).j();
+                org.telegram.ui.Components.hc.a0(profileActivity).i(org.telegram.messenger.id.M0(2131753716, null)).j();
                 return true;
             } catch (Exception e10) {
                 org.telegram.messenger.a8.g(e10, true);
@@ -541,7 +541,7 @@ public final class wu0 implements org.telegram.ui.Components.dj0 {
         if (i12 < 2) {
             boolean z9 = org.telegram.messenger.r2.a;
             try {
-                Toast.makeText(profileActivity.getParentActivity(), org.telegram.messenger.hd.M0(2131751626, "DebugMenuLongPress"), 0).show();
+                Toast.makeText(profileActivity.getParentActivity(), org.telegram.messenger.id.M0(2131751626, "DebugMenuLongPress"), 0).show();
                 return true;
             } catch (Exception e11) {
                 org.telegram.messenger.a8.g(e11, true);
@@ -549,13 +549,13 @@ public final class wu0 implements org.telegram.ui.Components.dj0 {
             }
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, profileActivity.getParentActivity(), profileActivity.z0);
-        String M0 = org.telegram.messenger.hd.M0(2131751647, null);
+        String M0 = org.telegram.messenger.id.M0(2131751647, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
-        String M02 = org.telegram.messenger.hd.M0(2131751630, null);
-        String M03 = org.telegram.messenger.hd.M0(2131751624, null);
-        String M04 = org.telegram.messenger.hd.M0(2131751623, null);
-        String M05 = org.telegram.messenger.hd.M0(2131751622, null);
+        String M02 = org.telegram.messenger.id.M0(2131751630, null);
+        String M03 = org.telegram.messenger.id.M0(2131751624, null);
+        String M04 = org.telegram.messenger.id.M0(2131751623, null);
+        String M05 = org.telegram.messenger.id.M0(2131751622, null);
         boolean z10 = org.telegram.messenger.r2.a;
         if (org.telegram.messenger.iz.y0) {
             str = "DebugMenuDisableCamera";
@@ -564,17 +564,17 @@ public final class wu0 implements org.telegram.ui.Components.dj0 {
             str = "DebugMenuEnableCamera";
             i10 = 2131751633;
         }
-        String M06 = org.telegram.messenger.hd.M0(i10, str);
-        String M07 = org.telegram.messenger.hd.M0(2131751644, "DebugMenuClearMediaCache");
-        String M08 = org.telegram.messenger.hd.M0(2131751646, null);
+        String M06 = org.telegram.messenger.id.M0(i10, str);
+        String M07 = org.telegram.messenger.id.M0(2131751644, "DebugMenuClearMediaCache");
+        String M08 = org.telegram.messenger.id.M0(2131751646, null);
         org.telegram.messenger.t0.u();
         org.telegram.messenger.t0.n();
-        String M09 = org.telegram.messenger.hd.M0(2131751645, "DebugMenuCheckAppUpdate");
-        String M010 = org.telegram.messenger.hd.M0(2131751625, "DebugMenuReadAllDialogs");
-        String M011 = org.telegram.messenger.hd.M0(2131751642, null);
-        String M012 = org.telegram.messenger.hd.M0(org.telegram.messenger.iz.J0 ? 2131751639 : 2131751631, null);
+        String M09 = org.telegram.messenger.id.M0(2131751645, "DebugMenuCheckAppUpdate");
+        String M010 = org.telegram.messenger.id.M0(2131751625, "DebugMenuReadAllDialogs");
+        String M011 = org.telegram.messenger.id.M0(2131751642, null);
+        String M012 = org.telegram.messenger.id.M0(org.telegram.messenger.iz.J0 ? 2131751639 : 2131751631, null);
         org.telegram.messenger.g0.R1();
-        String N0 = org.telegram.messenger.hd.N0(fi.b1.q(profileActivity.getParentActivity()) ? "DebugMenuDualOff" : "DebugMenuDualOn");
+        String N0 = org.telegram.messenger.id.N0(fi.b1.q(profileActivity.getParentActivity()) ? "DebugMenuDualOff" : "DebugMenuDualOn");
         String str3 = org.telegram.messenger.iz.b0 ? "back to TextureView in stories" : "use SurfaceView in stories";
         String str4 = !org.telegram.messenger.iz.d0 ? "Enable Invoice Payment" : "Disable Invoice Payment";
         i11 = ((org.telegram.ui.ActionBar.f2) profileActivity).currentAccount;
@@ -585,7 +585,7 @@ public final class wu0 implements org.telegram.ui.Components.dj0 {
         String str9 = str6;
         if (Build.VERSION.SDK_INT >= 28) {
             c10 = 28;
-            str2 = org.telegram.messenger.hd.M0(org.telegram.messenger.iz.V0 ? 2131751638 : 2131751621, null);
+            str2 = org.telegram.messenger.id.M0(org.telegram.messenger.iz.V0 ? 2131751638 : 2131751621, null);
         } else {
             c10 = 28;
             str2 = null;
@@ -632,7 +632,7 @@ public final class wu0 implements org.telegram.ui.Components.dj0 {
         charSequenceArr[37] = "Make Memory Dump";
         charSequenceArr[38] = null;
         alertDialog$Builder.f(charSequenceArr, new og.j(10, this, this.b));
-        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, "Cancel"), null);
+        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, "Cancel"), null);
         profileActivity.showDialog(u1Var);
         return true;
     }

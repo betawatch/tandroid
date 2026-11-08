@@ -1,29 +1,48 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+import android.content.Context;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class wc1 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ yc1 a;
+public final class wc1 {
+    public org.telegram.ui.Cells.c2 a;
+    public org.telegram.ui.ActionBar.u1 b;
+    public TextView c;
 
-    public wc1(yc1 yc1Var) {
-        this.a = yc1Var;
-    }
-
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i7) {
-        yc1 yc1Var = this.a;
-        org.telegram.messenger.ij ijVar = yc1Var.n;
-        if (i7 == -1) {
-            yc1Var.finishFragment();
-            return;
-        }
-        if (i7 != 1) {
-            if (i7 == 2) {
-                yc1.a0(yc1Var.d, ijVar, yc1Var.getParentActivity(), yc1Var.r, yc1Var.e);
-            }
-        } else if (ijVar != null) {
-            ijVar.k.with_my_score = false;
-            yc1Var.showDialog(org.telegram.ui.Components.mo0.N0(yc1Var.getParentActivity(), ijVar, null, false, yc1Var.h));
-        }
+    public static void a(Context context, org.telegram.messenger.c20 c20Var, Runnable runnable) {
+        wc1 wc1Var = new wc1();
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
+        String M0 = org.telegram.messenger.id.M0(2131744198, null);
+        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+        u1Var.R = M0;
+        LinearLayout f10 = org.telegram.messenger.k5.f(context, 1);
+        TextView textView = new TextView(context);
+        textView.setLetterSpacing(0.025f);
+        org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.j5, null);
+        textView.setTextSize(1, 14.0f);
+        f10.addView(textView, c8.ha.t(-1, -2, 0, 24, 0, 24, 0));
+        org.telegram.ui.Cells.c2 c2Var = new org.telegram.ui.Cells.c2(1, context, null);
+        wc1Var.a = c2Var;
+        c2Var.getTextView().getLayoutParams().width = -1;
+        wc1Var.a.getTextView().setTextSize(1, 14.0f);
+        f10.addView(wc1Var.a, c8.ha.t(-1, 48, 3, 8, 0, 8, 0));
+        boolean[] zArr = new boolean[1];
+        textView.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131752919, null)));
+        wc1Var.a.e(org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(2131752920, null), new bu(context, 8)), "", false, false, false);
+        alertDialog$Builder.o(f10);
+        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751771, null), new org.telegram.ui.Components.u2(1, c20Var, zArr));
+        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), new go0(15));
+        wc1Var.b = u1Var;
+        u1Var.show();
+        TextView textView2 = (TextView) wc1Var.b.d(-1);
+        wc1Var.c = textView2;
+        textView2.setEnabled(false);
+        wc1Var.c.setAlpha(0.5f);
+        wc1Var.a.setOnClickListener(new my0(wc1Var, 11));
+        wc1Var.a.setBackground(org.telegram.ui.ActionBar.k6.h0(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.i6, false), 7, -1));
+        wc1Var.b.setOnDismissListener(new org.telegram.ui.Components.z1(zArr, runnable));
     }
 }

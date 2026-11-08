@@ -22,16 +22,16 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Cells.z5;
 import org.telegram.ui.Components.ch0;
-import org.telegram.ui.Components.dt;
+import org.telegram.ui.Components.et;
 import org.telegram.ui.Components.hc;
+import org.telegram.ui.Wallet.u6;
 import org.telegram.ui.Wallet.v6;
-import org.telegram.ui.Wallet.w6;
 import org.telegram.ui.c51;
 import tg.a2;
 import tg.k2;
 import ug.t1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t0 implements Runnable {
     public final /* synthetic */ int a;
@@ -64,7 +64,7 @@ public final /* synthetic */ class t0 implements Runnable {
         boolean z11 = true;
         switch (this.a) {
             case 0:
-                ((u0) ((dt) this.b).b).D.a.n();
+                ((u0) ((et) this.b).b).D.a.n();
                 return;
             case 1:
                 l1 l1Var = ((m1) this.b).a;
@@ -203,10 +203,10 @@ public final /* synthetic */ class t0 implements Runnable {
                 eVar2.w = null;
                 Choreographer.getInstance().removeFrameCallback(eVar2);
                 eVar2.F = 0L;
-                v6 v6Var = (v6) eVar2;
-                w6 w6Var = v6Var.L;
-                if (w6Var.d == v6Var) {
-                    w6.c(w6Var);
+                u6 u6Var = (u6) eVar2;
+                v6 v6Var = u6Var.L;
+                if (v6Var.d == u6Var) {
+                    v6.c(v6Var);
                     return;
                 }
                 return;

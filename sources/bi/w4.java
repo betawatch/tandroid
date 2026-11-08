@@ -9,20 +9,20 @@ import android.widget.FrameLayout;
 import java.util.regex.Pattern;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.av0;
-import org.telegram.ui.Components.gt;
 import org.telegram.ui.Components.ht;
-import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.jt;
 import org.telegram.ui.Components.mb0;
-import org.telegram.ui.Components.mu;
+import org.telegram.ui.Components.mz;
+import org.telegram.ui.Components.nu;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.qu;
+import org.telegram.ui.Components.ru;
 import org.telegram.ui.Components.w80;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.xw;
+import org.telegram.ui.Components.yw;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ux;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class w4 extends org.telegram.ui.ActionBar.f2 {
     public final /* synthetic */ int a;
@@ -51,18 +51,18 @@ public final class w4 extends org.telegram.ui.ActionBar.f2 {
                 this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
                 org.telegram.ui.ActionBar.k kVar = this.actionBar;
                 w80 w80Var = (w80) this.b;
-                kVar.setTitle(org.telegram.messenger.hd.M0(w80Var.a ? 2131744437 : 2131748634, null));
+                kVar.setTitle(org.telegram.messenger.id.M0(w80Var.a ? 2131744439 : 2131748636, null));
                 org.telegram.ui.ActionBar.r0 a10 = this.actionBar.q().a(0, R.drawable.outline_header_search);
                 a10.N();
                 a10.H = new kg.v1(this, i7);
-                a10.setSearchFieldHint(org.telegram.messenger.hd.M0(2131745837, null));
+                a10.setSearchFieldHint(org.telegram.messenger.id.M0(2131745839, null));
                 a10.setVisibility(8);
                 org.telegram.ui.ActionBar.f2 f2Var = w80Var.g;
                 if (w80Var.m == null) {
                     FrameLayout frameLayout = new FrameLayout(f2Var.getParentActivity());
                     w80Var.m = frameLayout;
                     org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.a7, frameLayout, f2Var.getResourceProvider());
-                    lz b10 = w80Var.b();
+                    mz b10 = w80Var.b();
                     w80Var.q = b10;
                     w80Var.m.addView(b10, -1, -1);
                     av0 c10 = w80Var.c();
@@ -116,7 +116,7 @@ public final class w4 extends org.telegram.ui.ActionBar.f2 {
             case 4:
                 return ((fi.o5) this.b).getContext();
             case 5:
-                return ((ht) this.b).a.getContext();
+                return ((jt) this.b).a.getContext();
         }
     }
 
@@ -141,7 +141,7 @@ public final class w4 extends org.telegram.ui.ActionBar.f2 {
             case 6:
                 return this.currentAccount;
             case 7:
-                return ((xw) this.b).G.c1;
+                return ((yw) this.b).G.c1;
             case 11:
                 return this.currentAccount;
         }
@@ -153,11 +153,11 @@ public final class w4 extends org.telegram.ui.ActionBar.f2 {
         Object obj = this.b;
         switch (i7) {
             case 6:
-                qu quVar = ((mu) obj).y;
-                Pattern pattern = qu.M1;
-                return quVar.b;
+                ru ruVar = ((nu) obj).y;
+                Pattern pattern = ru.M1;
+                return ruVar.b;
             case 7:
-                return ((xw) obj).G.r;
+                return ((yw) obj).G.r;
             case 11:
                 return ((ug.f1) obj).b;
             default:
@@ -171,11 +171,11 @@ public final class w4 extends org.telegram.ui.ActionBar.f2 {
         Object obj = this.b;
         switch (i7) {
             case 6:
-                qu quVar = ((mu) obj).y;
-                Pattern pattern = qu.M1;
-                return (FrameLayout) quVar.b;
+                ru ruVar = ((nu) obj).y;
+                Pattern pattern = ru.M1;
+                return (FrameLayout) ruVar.b;
             case 7:
-                return ((xw) obj).G.r;
+                return ((yw) obj).G.r;
             case 11:
                 return ((ug.f1) obj).E2;
             default:
@@ -225,12 +225,12 @@ public final class w4 extends org.telegram.ui.ActionBar.f2 {
             case 12:
                 return ((org.telegram.ui.ActionBar.f2) this.b).getParentActivity();
             case 13:
-                zh.b4 b4Var = (zh.b4) this.b;
-                Activity ownerActivity = b4Var.getOwnerActivity();
+                zh.a4 a4Var = (zh.a4) this.b;
+                Activity ownerActivity = a4Var.getOwnerActivity();
                 if (ownerActivity == null) {
                     ownerActivity = LaunchActivity.G1;
                 }
-                return ownerActivity == null ? org.telegram.messenger.g0.W(b4Var.getContext()) : ownerActivity;
+                return ownerActivity == null ? org.telegram.messenger.g0.W(a4Var.getContext()) : ownerActivity;
         }
     }
 
@@ -254,17 +254,17 @@ public final class w4 extends org.telegram.ui.ActionBar.f2 {
             default:
                 return super.getResourceProvider();
             case 6:
-                qu quVar = ((mu) obj).y;
-                Pattern pattern = qu.M1;
-                return quVar.I0;
+                ru ruVar = ((nu) obj).y;
+                Pattern pattern = ru.M1;
+                return ruVar.I0;
             case 7:
-                return ((xw) obj).G.Z1;
+                return ((yw) obj).G.Z1;
             case 10:
                 return new di.m2(9, ((org.telegram.ui.web.x0) obj).e);
             case 12:
                 return new fi.g5(2, new di.b());
             case 13:
-                return ((zh.b4) obj).I0;
+                return ((zh.a4) obj).I0;
         }
     }
 
@@ -272,7 +272,7 @@ public final class w4 extends org.telegram.ui.ActionBar.f2 {
     public Dialog getVisibleDialog() {
         switch (this.a) {
             case 5:
-                return new gt(this, ((ht) this.b).a.getContext());
+                return new ht(this, ((jt) this.b).a.getContext());
             default:
                 return super.getVisibleDialog();
         }

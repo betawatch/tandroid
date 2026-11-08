@@ -13,11 +13,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.qt;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.rt;
+import org.telegram.ui.Components.vy;
 import org.telegram.ui.hy0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class t {
     public Context a;
@@ -109,9 +109,9 @@ public final class t {
         jVar.a = q5.a.a(o5.m.a);
         e.a aVar = new e.a(context);
         jVar.b = aVar;
-        jVar.c = q5.a.a(new j2.n(aVar, new qt(aVar, 7), false, 23));
+        jVar.c = q5.a.a(new j2.n(aVar, new rt(aVar, 7), false, 23));
         e.a aVar2 = jVar.b;
-        jVar.d = new uy(aVar2, 27);
+        jVar.d = new vy(aVar2, 27);
         fd.a a10 = q5.a.a(new sg.i0(6, jVar.d, q5.a.a(new org.telegram.ui.Components.n(aVar2))));
         jVar.e = a10;
         sa.d dVar = new sa.d(24);
@@ -119,7 +119,7 @@ public final class t {
         hy0 hy0Var = new hy0(aVar3, a10, dVar, 16);
         fd.a aVar4 = jVar.a;
         fd.a aVar5 = jVar.c;
-        jVar.f = q5.a.a(new h6.m(new r7(aVar4, aVar5, hy0Var, a10, a10, 20), new ga.d(aVar3, aVar5, a10, hy0Var, aVar4, a10, a10, 5), new ab.b0(aVar4, a10, hy0Var, a10, 14), 17));
+        jVar.f = q5.a.a(new h6.m(new r7(aVar4, aVar5, hy0Var, a10, a10, 21), new ga.d(aVar3, aVar5, a10, hy0Var, aVar4, a10, a10, 5), new ab.b0(aVar4, a10, hy0Var, a10, 14), 17));
         return jVar;
     }
 

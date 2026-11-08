@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.k21;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -143,14 +143,14 @@ public final /* synthetic */ class l implements Runnable {
                         arrayList5 = arrayList2;
                         if (tL_error2 == null || !"TO_LANG_INVALID".equals(tL_error2.text)) {
                             if (tL_error2 != null && "QUOTA_EXCEEDED".equals(tL_error2.text)) {
-                                qs.e().k(qs.P4, 1, org.telegram.messenger.hd.M0(2131743948, null));
+                                qs.e().k(qs.P4, 1, org.telegram.messenger.id.M0(2131743950, null));
                             }
                             for (int i12 = 0; i12 < arrayList3.size(); i12++) {
                                 ((z10) arrayList3.get(i12)).a(Boolean.valueOf(z13), (Integer) arrayList5.get(i12), null, b10Var.e);
                             }
                         } else {
                             f10Var.K(j11, false);
-                            qs.e().k(qs.P4, 1, org.telegram.messenger.hd.M0(2131743947, null));
+                            qs.e().k(qs.P4, 1, org.telegram.messenger.id.M0(2131743949, null));
                         }
                         synchronized (f10Var) {
                             for (int i13 = 0; i13 < arrayList5.size(); i13++) {

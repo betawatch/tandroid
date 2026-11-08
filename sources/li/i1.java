@@ -6,14 +6,14 @@ import android.widget.FrameLayout;
 import c8.ha;
 import j$.util.Objects;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.gy;
 import org.telegram.ui.Components.hg;
+import org.telegram.ui.Components.hy;
 import org.telegram.ui.Components.k60;
 import org.telegram.ui.bg0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -67,12 +67,12 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                 b2 b2Var2 = this.b;
                 if (!b2Var2.B0) {
                     if (b2Var2.A0 == null) {
-                        gy gyVar = new gy(b2Var2, true, false, false, b2Var2.getParentActivity(), true, null, b2Var2.O, true, b2Var2.getResourceProvider(), false, false);
-                        b2Var2.A0 = gyVar;
-                        gyVar.setVisibility(8);
-                        gy gyVar2 = b2Var2.A0;
-                        gyVar2.x2 = false;
-                        gyVar2.setDelegate(new s1(b2Var2));
+                        hy hyVar = new hy(b2Var2, true, false, false, b2Var2.getParentActivity(), true, null, b2Var2.O, true, b2Var2.getResourceProvider(), false, false);
+                        b2Var2.A0 = hyVar;
+                        hyVar.setVisibility(8);
+                        hy hyVar2 = b2Var2.A0;
+                        hyVar2.x2 = false;
+                        hyVar2.setDelegate(new s1(b2Var2));
                         int indexOfChild = b2Var2.O.indexOfChild(b2Var2.a0);
                         if (indexOfChild < 0) {
                             indexOfChild = b2Var2.O.getChildCount();
@@ -119,12 +119,12 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                 final k60 H = k60.H(b2Var, view);
                 H.Q = true;
                 a T2 = b2Var.P.T2();
-                H.j(T2 == null || !T2.b(), R.drawable.field_carret_empty, null, hd.M0(2131753999, null), new l1(b2Var, T2, 5));
-                H.j((T2 == null || !T2.b() || T2.a() || T2.c()) ? false : true, R.drawable.iv_list, null, hd.M0(2131754005, null), new l1(b2Var, T2, 6));
-                H.j(T2 != null && T2.b() && !T2.a() && T2.c(), R.drawable.iv_ordered_list, null, hd.M0(2131754002, null), new l1(b2Var, T2, 7));
-                H.j(T2 != null && T2.b() && T2.a() && !T2.c(), R.drawable.iv_todo, null, hd.M0(2131754004, null), new l1(b2Var, T2, 8));
+                H.j(T2 == null || !T2.b(), R.drawable.field_carret_empty, null, id.M0(2131753999, null), new l1(b2Var, T2, 5));
+                H.j((T2 == null || !T2.b() || T2.a() || T2.c()) ? false : true, R.drawable.iv_list, null, id.M0(2131754005, null), new l1(b2Var, T2, 6));
+                H.j(T2 != null && T2.b() && !T2.a() && T2.c(), R.drawable.iv_ordered_list, null, id.M0(2131754002, null), new l1(b2Var, T2, 7));
+                H.j(T2 != null && T2.b() && T2.a() && !T2.c(), R.drawable.iv_todo, null, id.M0(2131754004, null), new l1(b2Var, T2, 8));
                 boolean z9 = T2 != null && (T2.b instanceof TL_iv.pageBlockDetails);
-                String M0 = hd.M0(2131753987, null);
+                String M0 = id.M0(2131753987, null);
                 t3 t3Var = b2Var.P;
                 Objects.requireNonNull(t3Var);
                 H.j(z9, R.drawable.iv_details, null, M0, new b(t3Var, i11));
@@ -133,7 +133,7 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                 if (p22 || s22) {
                     H.k();
                     if (p22) {
-                        H.c(R.drawable.iv_list_tab, hd.M0(2131754013, null), new Runnable() { // from class: li.o1
+                        H.c(R.drawable.iv_list_tab, id.M0(2131754013, null), new Runnable() { // from class: li.o1
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (i10) {
@@ -150,7 +150,7 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                         }, false);
                     }
                     if (s22) {
-                        H.c(R.drawable.iv_list_untab, hd.M0(2131753998, null), new Runnable() { // from class: li.o1
+                        H.c(R.drawable.iv_list_untab, id.M0(2131753998, null), new Runnable() { // from class: li.o1
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (i11) {

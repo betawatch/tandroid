@@ -17,7 +17,7 @@ import c8.ha;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.rz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -26,7 +26,7 @@ import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.wo;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class z0 extends FrameLayout implements a6 {
     public int D;
@@ -74,13 +74,13 @@ public class z0 extends FrameLayout implements a6 {
             this.e.setDrawBackgroundAsArc(-1);
             org.telegram.ui.Components.q5 q5Var = this.a;
             if (i7 != 1) {
-                addView(this.e, ha.e(26, -1, (hd.a0 ? 3 : 5) | 16));
-                q5Var.setPadding(hd.a0 ? org.telegram.messenger.g0.L(34.0f) : 0, 0, hd.a0 ? 0 : org.telegram.messenger.g0.L(34.0f), 0);
+                addView(this.e, ha.e(26, -1, (id.a0 ? 3 : 5) | 16));
+                q5Var.setPadding(id.a0 ? org.telegram.messenger.g0.L(34.0f) : 0, 0, id.a0 ? 0 : org.telegram.messenger.g0.L(34.0f), 0);
             } else {
-                boolean z9 = hd.a0;
+                boolean z9 = id.a0;
                 this.d = !z9;
                 addView(this.e, ha.e(26, -1, (z9 ? 5 : 3) | 16));
-                q5Var.setPadding(!hd.a0 ? org.telegram.messenger.g0.L(34.0f) : 0, 0, !hd.a0 ? 0 : org.telegram.messenger.g0.L(34.0f), 0);
+                q5Var.setPadding(!id.a0 ? org.telegram.messenger.g0.L(34.0f) : 0, 0, !id.a0 ? 0 : org.telegram.messenger.g0.L(34.0f), 0);
             }
         }
     }
@@ -245,7 +245,7 @@ public class z0 extends FrameLayout implements a6 {
             l9 l9Var = new l9(getContext());
             this.h = l9Var;
             l9Var.setRoundRadius(org.telegram.messenger.g0.L(5.0f));
-            addView(this.h, ha.e(28, 28, (hd.a0 ? 5 : 3) | 16));
+            addView(this.h, ha.e(28, 28, (id.a0 ? 5 : 3) | 16));
         }
         this.c.setVisibility(4);
         this.h.j(hcVar, str, rzVar, tL_attachMenuBot);
@@ -357,20 +357,20 @@ public class z0 extends FrameLayout implements a6 {
             this.f = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
             this.f.setColorFilter(this.r, PorterDuff.Mode.MULTIPLY);
-            if (hd.a0) {
+            if (id.a0) {
                 this.f.setScaleX(-1.0f);
             }
-            addView(this.f, ha.e(24, -1, (hd.a0 ? 3 : 5) | 16));
+            addView(this.f, ha.e(24, -1, (id.a0 ? 3 : 5) | 16));
         }
         org.telegram.ui.Components.q5 q5Var = this.a;
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) q5Var.getLayoutParams();
-        if (hd.a0) {
+        if (id.a0) {
             layoutParams.leftMargin = this.f != null ? org.telegram.messenger.g0.L(32.0f) : 0;
         } else {
             layoutParams.rightMargin = this.f != null ? org.telegram.messenger.g0.L(32.0f) : 0;
         }
         q5Var.setLayoutParams(layoutParams);
-        setPadding(org.telegram.messenger.g0.L(hd.a0 ? 8.0f : 18.0f), 0, org.telegram.messenger.g0.L(hd.a0 ? 18.0f : 8.0f), 0);
+        setPadding(org.telegram.messenger.g0.L(id.a0 ? 8.0f : 18.0f), 0, org.telegram.messenger.g0.L(id.a0 ? 18.0f : 8.0f), 0);
         if (i7 == 0) {
             this.f.setVisibility(8);
         } else {
@@ -405,8 +405,8 @@ public class z0 extends FrameLayout implements a6 {
             r6.V(this.b, k6.Oi, this.O);
             this.b.setVisibility(8);
             this.b.setTextSize(1, 13.0f);
-            this.b.setPadding(hd.a0 ? 0 : org.telegram.messenger.g0.L(43.0f), 0, hd.a0 ? org.telegram.messenger.g0.L(43.0f) : 0, 0);
-            addView(this.b, ha.d(-2, -2.0f, (hd.a0 ? 5 : 3) | 16, 0.0f, 10.0f, 0.0f, 0.0f));
+            this.b.setPadding(id.a0 ? 0 : org.telegram.messenger.g0.L(43.0f), 0, id.a0 ? org.telegram.messenger.g0.L(43.0f) : 0, 0);
+            addView(this.b, ha.d(-2, -2.0f, (id.a0 ? 5 : 3) | 16, 0.0f, 10.0f, 0.0f, 0.0f));
         }
         boolean isEmpty = TextUtils.isEmpty(charSequence);
         if ((!isEmpty) != (this.b.getVisibility() == 0)) {
@@ -525,7 +525,7 @@ public class z0 extends FrameLayout implements a6 {
         PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(this.r, PorterDuff.Mode.SRC_IN);
         this.I = porterDuffColorFilter;
         ch0Var.setColorFilter(porterDuffColorFilter);
-        addView(ch0Var, ha.e(-2, 40, (hd.a0 ? 5 : 3) | 16));
+        addView(ch0Var, ha.e(-2, 40, (id.a0 ? 5 : 3) | 16));
         org.telegram.ui.Components.q5 q5Var = new org.telegram.ui.Components.q5(context);
         this.a = q5Var;
         q5Var.setLines(1);
@@ -534,8 +534,8 @@ public class z0 extends FrameLayout implements a6 {
         q5Var.setEllipsize(TextUtils.TruncateAt.END);
         q5Var.setTextColor(this.n);
         q5Var.setTextSize(1, 16.0f);
-        addView(q5Var, ha.e(-2, -2, (hd.a0 ? 5 : 3) | 16));
-        this.d = hd.a0;
+        addView(q5Var, ha.e(-2, -2, (id.a0 ? 5 : 3) | 16));
+        this.d = id.a0;
         a(i7);
     }
 }

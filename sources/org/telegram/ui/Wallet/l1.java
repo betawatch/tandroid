@@ -3,9 +3,9 @@ package org.telegram.ui.Wallet;
 import android.view.ViewTreeObserver;
 import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class l1 implements ViewTreeObserver.OnScrollChangedListener {
+public final /* synthetic */ class l1 implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -14,24 +14,17 @@ public final /* synthetic */ class l1 implements ViewTreeObserver.OnScrollChange
         this.b = obj;
     }
 
-    @Override // android.view.ViewTreeObserver.OnScrollChangedListener
-    public final void onScrollChanged() {
+    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+    public final void onGlobalLayout() {
         switch (this.a) {
             case 0:
                 ((g) this.b).run();
                 break;
-            case 1:
-                c8 c8Var = (c8) this.b;
-                if (c8Var.h1) {
-                    c8Var.f0();
-                    break;
-                }
-                break;
             default:
-                oa oaVar = (oa) this.b;
-                PopupWindow popupWindow = oaVar.s;
+                na naVar = (na) this.b;
+                PopupWindow popupWindow = naVar.s;
                 if (popupWindow != null && popupWindow.isShowing()) {
-                    oaVar.c();
+                    naVar.c();
                     break;
                 }
                 break;

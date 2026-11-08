@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.k60;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -56,10 +56,10 @@ public final /* synthetic */ class y1 implements View.OnClickListener {
         final k7 k7Var = this.b;
         switch (i10) {
             case 0:
-                org.telegram.ui.Wallet.h5 h5Var = k7Var.Z2;
-                if (h5Var != null) {
+                org.telegram.ui.Wallet.g5 g5Var = k7Var.Z2;
+                if (g5Var != null) {
                     k7Var.dismiss();
-                    org.telegram.messenger.g0.i3(new a3.f(h5Var, 22), 250L);
+                    org.telegram.messenger.g0.i3(new a3.f(g5Var, 22), 250L);
                     break;
                 }
                 break;
@@ -74,7 +74,7 @@ public final /* synthetic */ class y1 implements View.OnClickListener {
                     k7Var.S1();
                     break;
                 } else {
-                    org.telegram.messenger.k5.o(null, 2131749831, k7Var.k(), R.raw.info, 36);
+                    org.telegram.messenger.k5.o(null, 2131749833, k7Var.k(), R.raw.info, 36);
                     break;
                 }
                 break;
@@ -121,10 +121,10 @@ public final /* synthetic */ class y1 implements View.OnClickListener {
             case 17:
                 if (view.getAlpha() >= 1.0f) {
                     fi.d dVar = k7Var.c2;
-                    dVar.i(org.telegram.messenger.hd.M0(2131749786, null), true, true);
+                    dVar.i(org.telegram.messenger.id.M0(2131749788, null), true, true);
                     dVar.g(null, true);
                     dVar.setOnClickListener(new y1(k7Var, 28));
-                    k7Var.X1.i(3, org.telegram.messenger.hd.M0(2131749778, null), org.telegram.messenger.hd.M0(2131749779, null), null);
+                    k7Var.X1.i(3, org.telegram.messenger.id.M0(2131749780, null), org.telegram.messenger.id.M0(2131749781, null), null);
                     k7Var.s2(3, true, null);
                     break;
                 }
@@ -176,22 +176,22 @@ public final /* synthetic */ class y1 implements View.OnClickListener {
                 k60 F = k60.F(m5Var, k7Var.I0, view);
                 boolean z11 = (k7Var.H1() == null || !k7.L1(k7Var.a, org.telegram.messenger.m5.o(k7Var.H1().owner_id)) || !(k7Var.y2 instanceof v9) || k7Var.x2 == null || k7Var.B1() == null) ? false : true;
                 TL_stars.SavedStarGift savedStarGift = k7Var.x2;
-                F.l((savedStarGift == null || !savedStarGift.pinned_to_top) ? R.drawable.msg_pin : R.drawable.msg_unpin, org.telegram.messenger.hd.M0((savedStarGift == null || !savedStarGift.pinned_to_top) ? 2131750077 : 2131749883, null), new z1(k7Var, 13), z11);
-                F.l(R.drawable.outline_craft, org.telegram.messenger.hd.M0(2131749800, null), new z1(k7Var, 16), k7Var.o1());
-                F.l(R.drawable.menu_edit_price, org.telegram.messenger.hd.M0(2131750263, null), new z1(k7Var, 17), (k7Var.H1() == null || !k7.L1(k7Var.a, org.telegram.messenger.m5.o(k7Var.H1().owner_id)) || k7Var.H1().resell_amount == null) ? false : true);
-                F.l(R.drawable.msg_link, org.telegram.messenger.hd.M0(2131751762, null), new b4(k7Var, C1, 7), C1 != null);
-                F.l(R.drawable.msg_share, org.telegram.messenger.hd.M0(2131745460, null), new z1(k7Var, 18), C1 != null);
-                F.l(R.drawable.input_suggest_paid_24, org.telegram.messenger.hd.M0(2131749686, null), new z1(k7Var, 19), H12 != null && H12.offer_min_stars > 0);
+                F.l((savedStarGift == null || !savedStarGift.pinned_to_top) ? R.drawable.msg_pin : R.drawable.msg_unpin, org.telegram.messenger.id.M0((savedStarGift == null || !savedStarGift.pinned_to_top) ? 2131750079 : 2131749885, null), new z1(k7Var, 13), z11);
+                F.l(R.drawable.outline_craft, org.telegram.messenger.id.M0(2131749802, null), new z1(k7Var, 16), k7Var.o1());
+                F.l(R.drawable.menu_edit_price, org.telegram.messenger.id.M0(2131750265, null), new z1(k7Var, 17), (k7Var.H1() == null || !k7.L1(k7Var.a, org.telegram.messenger.m5.o(k7Var.H1().owner_id)) || k7Var.H1().resell_amount == null) ? false : true);
+                F.l(R.drawable.msg_link, org.telegram.messenger.id.M0(2131751762, null), new b4(k7Var, C1, 7), C1 != null);
+                F.l(R.drawable.msg_share, org.telegram.messenger.id.M0(2131745462, null), new z1(k7Var, 18), C1 != null);
+                F.l(R.drawable.input_suggest_paid_24, org.telegram.messenger.id.M0(2131749688, null), new z1(k7Var, 19), H12 != null && H12.offer_min_stars > 0);
                 TL_stars.TL_starGiftUnique H13 = k7Var.H1();
                 if (H13 != null && H13.theme_available) {
                     long o4 = org.telegram.messenger.m5.o(H13.owner_id);
                     long o10 = org.telegram.messenger.m5.o(H13.host_id);
                     if ((o4 > 0 && k7.L1(k7Var.a, o4)) || (o10 > 0 && k7.L1(k7Var.a, o10))) {
                         z9 = true;
-                        F.l(R.drawable.msg_colors, org.telegram.messenger.hd.M0(2131749595, null), new z1(k7Var, 20), z9);
+                        F.l(R.drawable.msg_colors, org.telegram.messenger.id.M0(2131749597, null), new z1(k7Var, 20), z9);
                         boolean z12 = k7Var.X2 != null && k7Var.w2 && k7Var.x2 != null && k7.K1(k7Var.a, k7Var.P1);
                         TL_stars.SavedStarGift savedStarGift2 = k7Var.x2;
-                        F.l((savedStarGift2 != null || savedStarGift2.unsaved) ? R.drawable.menu_show_on_profile : R.drawable.menu_hide_from_profile, org.telegram.messenger.hd.M0((savedStarGift2 != null || savedStarGift2.unsaved) ? 2131749979 : 2131750187, null), new z1(k7Var, 6), z12);
+                        F.l((savedStarGift2 != null || savedStarGift2.unsaved) ? R.drawable.menu_show_on_profile : R.drawable.menu_hide_from_profile, org.telegram.messenger.id.M0((savedStarGift2 != null || savedStarGift2.unsaved) ? 2131749981 : 2131750189, null), new z1(k7Var, 6), z12);
                         if (k7Var.X2 == null) {
                             if (k7Var.B1() != null) {
                                 ij ijVar = k7Var.z2;
@@ -206,10 +206,10 @@ public final /* synthetic */ class y1 implements View.OnClickListener {
                                                 L1 = k7.L1(k7Var.a, org.telegram.messenger.m5.o(tL_starGiftUnique.owner_id));
                                                 if (L1) {
                                                     z10 = true;
-                                                    F.l(R.drawable.menu_transfer, org.telegram.messenger.hd.M0(2131749917, null), new z1(k7Var, 21), z10);
-                                                    F.l(R.drawable.menu_transfer, org.telegram.messenger.hd.M0(2131749917, null), new z1(k7Var, i12), k7Var.X2 != null);
-                                                    F.l(R.drawable.msg_view_file, org.telegram.messenger.hd.M0(2131749845, null), new z1(k7Var, 14), (k7Var.x2 == null || k7Var.x1() == 0) ? false : true);
-                                                    F.m(R.drawable.msg_delete, new z1(k7Var, 15), org.telegram.messenger.hd.M0(2131750217, null), k7Var.p1(), true);
+                                                    F.l(R.drawable.menu_transfer, org.telegram.messenger.id.M0(2131749919, null), new z1(k7Var, 21), z10);
+                                                    F.l(R.drawable.menu_transfer, org.telegram.messenger.id.M0(2131749919, null), new z1(k7Var, i12), k7Var.X2 != null);
+                                                    F.l(R.drawable.msg_view_file, org.telegram.messenger.id.M0(2131749847, null), new z1(k7Var, 14), (k7Var.x2 == null || k7Var.x1() == 0) ? false : true);
+                                                    F.m(R.drawable.msg_delete, new z1(k7Var, 15), org.telegram.messenger.id.M0(2131750219, null), k7Var.p1(), true);
                                                     F.t = false;
                                                     F.Y = true;
                                                     F.s = 0;
@@ -239,10 +239,10 @@ public final /* synthetic */ class y1 implements View.OnClickListener {
                             }
                         }
                         z10 = false;
-                        F.l(R.drawable.menu_transfer, org.telegram.messenger.hd.M0(2131749917, null), new z1(k7Var, 21), z10);
-                        F.l(R.drawable.menu_transfer, org.telegram.messenger.hd.M0(2131749917, null), new z1(k7Var, i12), k7Var.X2 != null);
-                        F.l(R.drawable.msg_view_file, org.telegram.messenger.hd.M0(2131749845, null), new z1(k7Var, 14), (k7Var.x2 == null || k7Var.x1() == 0) ? false : true);
-                        F.m(R.drawable.msg_delete, new z1(k7Var, 15), org.telegram.messenger.hd.M0(2131750217, null), k7Var.p1(), true);
+                        F.l(R.drawable.menu_transfer, org.telegram.messenger.id.M0(2131749919, null), new z1(k7Var, 21), z10);
+                        F.l(R.drawable.menu_transfer, org.telegram.messenger.id.M0(2131749919, null), new z1(k7Var, i12), k7Var.X2 != null);
+                        F.l(R.drawable.msg_view_file, org.telegram.messenger.id.M0(2131749847, null), new z1(k7Var, 14), (k7Var.x2 == null || k7Var.x1() == 0) ? false : true);
+                        F.m(R.drawable.msg_delete, new z1(k7Var, 15), org.telegram.messenger.id.M0(2131750219, null), k7Var.p1(), true);
                         F.t = false;
                         F.Y = true;
                         F.s = 0;
@@ -251,18 +251,18 @@ public final /* synthetic */ class y1 implements View.OnClickListener {
                     }
                 }
                 z9 = false;
-                F.l(R.drawable.msg_colors, org.telegram.messenger.hd.M0(2131749595, null), new z1(k7Var, 20), z9);
+                F.l(R.drawable.msg_colors, org.telegram.messenger.id.M0(2131749597, null), new z1(k7Var, 20), z9);
                 if (k7Var.X2 != null) {
                 }
                 TL_stars.SavedStarGift savedStarGift22 = k7Var.x2;
-                F.l((savedStarGift22 != null || savedStarGift22.unsaved) ? R.drawable.menu_show_on_profile : R.drawable.menu_hide_from_profile, org.telegram.messenger.hd.M0((savedStarGift22 != null || savedStarGift22.unsaved) ? 2131749979 : 2131750187, null), new z1(k7Var, 6), z12);
+                F.l((savedStarGift22 != null || savedStarGift22.unsaved) ? R.drawable.menu_show_on_profile : R.drawable.menu_hide_from_profile, org.telegram.messenger.id.M0((savedStarGift22 != null || savedStarGift22.unsaved) ? 2131749981 : 2131750189, null), new z1(k7Var, 6), z12);
                 if (k7Var.X2 == null) {
                 }
                 z10 = false;
-                F.l(R.drawable.menu_transfer, org.telegram.messenger.hd.M0(2131749917, null), new z1(k7Var, 21), z10);
-                F.l(R.drawable.menu_transfer, org.telegram.messenger.hd.M0(2131749917, null), new z1(k7Var, i12), k7Var.X2 != null);
-                F.l(R.drawable.msg_view_file, org.telegram.messenger.hd.M0(2131749845, null), new z1(k7Var, 14), (k7Var.x2 == null || k7Var.x1() == 0) ? false : true);
-                F.m(R.drawable.msg_delete, new z1(k7Var, 15), org.telegram.messenger.hd.M0(2131750217, null), k7Var.p1(), true);
+                F.l(R.drawable.menu_transfer, org.telegram.messenger.id.M0(2131749919, null), new z1(k7Var, 21), z10);
+                F.l(R.drawable.menu_transfer, org.telegram.messenger.id.M0(2131749919, null), new z1(k7Var, i12), k7Var.X2 != null);
+                F.l(R.drawable.msg_view_file, org.telegram.messenger.id.M0(2131749847, null), new z1(k7Var, 14), (k7Var.x2 == null || k7Var.x1() == 0) ? false : true);
+                F.m(R.drawable.msg_delete, new z1(k7Var, 15), org.telegram.messenger.id.M0(2131750219, null), k7Var.p1(), true);
                 F.t = false;
                 F.Y = true;
                 F.s = 0;
@@ -295,12 +295,12 @@ public final /* synthetic */ class y1 implements View.OnClickListener {
                     if (H14 != null) {
                         if (H14.resell_amount != null) {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, k7Var.getContext(), k7Var.I0);
-                            String a02 = org.telegram.messenger.hd.a0(null, null, 2131749885, k7Var.z1());
+                            String a02 = org.telegram.messenger.id.a0(null, null, 2131749887, k7Var.z1());
                             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                             u1Var.R = a02;
-                            u1Var.T = org.telegram.messenger.hd.M0(2131749886, null);
-                            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131750431, null), new o4(k7Var, H14, r6 ? 1 : 0));
-                            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), new a3.l(22));
+                            u1Var.T = org.telegram.messenger.id.M0(2131749888, null);
+                            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131750433, null), new o4(k7Var, H14, r6 ? 1 : 0));
+                            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), new a3.l(22));
                             alertDialog$Builder.p();
                             break;
                         } else {

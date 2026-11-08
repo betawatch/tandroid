@@ -21,8 +21,8 @@ import c8.ha;
 import c8.ka;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i6;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.m5;
@@ -52,7 +52,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.l00;
 import org.telegram.ui.o00;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class q3 extends o00 implements ls {
     public final long R;
@@ -69,12 +69,12 @@ public final class q3 extends o00 implements ls {
 
     public static void A0(q3 q3Var, Context context, TLRPC.User user, TL_payments.connectedBotStarRef connectedbotstarref) {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, q3Var.resourceProvider);
-        String M0 = hd.M0(2131749006, null);
+        String M0 = id.M0(2131749008, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
-        u1Var.T = org.telegram.messenger.g0.X2(hd.a0(null, null, 2131749005, t10.p(user)));
-        alertDialog$Builder.k(hd.M0(2131749004, null), new ab.g(15, q3Var, connectedbotstarref));
-        alertDialog$Builder.h(hd.M0(2131752589, null), null);
+        u1Var.T = org.telegram.messenger.g0.X2(id.a0(null, null, 2131749007, t10.p(user)));
+        alertDialog$Builder.k(id.M0(2131749006, null), new ab.g(15, q3Var, connectedbotstarref));
+        alertDialog$Builder.h(id.M0(2131752589, null), null);
         alertDialog$Builder.d(-1);
         alertDialog$Builder.p();
     }
@@ -150,10 +150,10 @@ public final class q3 extends o00 implements ls {
                 TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) obj;
                 TLRPC.User a22 = qp.s1(q3Var.currentAccount).a2(Long.valueOf(connectedbotstarref.bot_id));
                 k60 H = k60.H(q3Var, view);
-                H.l(R.drawable.msg_bot, hd.M0(2131746707, null), new ha.b(5, q3Var, a22), a22.bot_has_main_app);
-                H.l(R.drawable.msg_bot, hd.M0(2131752912, null), new ha.b(6, q3Var, connectedbotstarref), !a22.bot_has_main_app);
-                H.c(R.drawable.msg_link2, hd.M0(2131751762, null), new fi.x1(q3Var, connectedbotstarref, a22, 14), false);
-                H.m(R.drawable.msg_leave, new ai.d0(q3Var, context, a22, connectedbotstarref, 19), hd.M0(2131749004, null), !connectedbotstarref.revoked, true);
+                H.l(R.drawable.msg_bot, id.M0(2131746709, null), new ha.b(5, q3Var, a22), a22.bot_has_main_app);
+                H.l(R.drawable.msg_bot, id.M0(2131752912, null), new ha.b(6, q3Var, connectedbotstarref), !a22.bot_has_main_app);
+                H.c(R.drawable.msg_link2, id.M0(2131751762, null), new fi.x1(q3Var, connectedbotstarref, a22, 14), false);
+                H.m(R.drawable.msg_leave, new ai.d0(q3Var, context, a22, connectedbotstarref, 19), id.M0(2131749006, null), !connectedbotstarref.revoked, true);
                 H.V(5);
                 H.Z();
                 return true;
@@ -287,7 +287,7 @@ public final class q3 extends o00 implements ls {
         r6.V(textView4, i15, f6Var);
         textView4.setTextSize(1, 20.0f);
         textView4.setGravity(17);
-        textView4.setText(hd.M0(2131752494, null));
+        textView4.setText(id.M0(2131752494, null));
         textView4.setTypeface(org.telegram.messenger.g0.o());
         f10.addView(textView4, ha.k(0.0f, 21.0f, 0.0f, 9.0f, -1, -2));
         LinearLayout linearLayout2 = new LinearLayout(context);
@@ -301,7 +301,7 @@ public final class q3 extends o00 implements ls {
         TextView textView5 = new TextView(context);
         textView5.setTextSize(1, 13.0f);
         r6.V(textView5, i15, f6Var);
-        textView5.setText(hd.a0(null, null, 2131752493, m5.l(i7, starrefprogram.bot_id)));
+        textView5.setText(id.a0(null, null, 2131752493, m5.l(i7, starrefprogram.bot_id)));
         linearLayout2.addView(textView5, ha.t(-2, -2, 16, 11, 0, 0, 0));
         ImageView imageView = new ImageView(context);
         imageView.setScaleType(scaleType);
@@ -320,7 +320,7 @@ public final class q3 extends o00 implements ls {
         qs.i(textView6);
         SpannableString spannableString2 = new SpannableString(dd.N0(starrefprogram.daily_revenue_per_user, 0.95f, ','));
         spannableString2.setSpan(new u31(org.telegram.messenger.g0.o()), 0, spannableString2.length(), 33);
-        textView6.setText(dd.a1(false, hd.V(null, null, 2131752503, spannableString2), 0.725f, null));
+        textView6.setText(dd.a1(false, id.V(null, null, 2131752503, spannableString2), 0.725f, null));
         TextView f11 = org.telegram.messenger.camera.q.f(f10, textView6, ha.k(0.0f, 10.0f, 0.0f, 20.0f, -1, -2), context);
         r6.V(f11, i15, f6Var);
         f11.setTextSize(1, 14.0f);
@@ -330,17 +330,17 @@ public final class q3 extends o00 implements ls {
         String J0 = j.J0(starrefprogram.commission_permille);
         int i18 = starrefprogram.duration_months;
         if (i18 <= 0) {
-            G = hd.M0(2131752501, null);
+            G = id.M0(2131752501, null);
         } else {
             if (i18 < 12 || i18 % 12 != 0) {
                 str = p10;
                 r15 = 0;
-                G = hd.G(i18, "ChannelAffiliateProgramJoinText_Months", new Object[0]);
+                G = id.G(i18, "ChannelAffiliateProgramJoinText_Months", new Object[0]);
                 Object[] objArr = new Object[3];
                 objArr[r15] = str;
                 objArr[1] = J0;
                 objArr[2] = G;
-                f11.setText(i6.m(org.telegram.messenger.g0.X2(hd.a0(null, null, 2131752502, objArr)), f11.getPaint().getFontMetricsInt(), r15, null, r15));
+                f11.setText(i6.m(org.telegram.messenger.g0.X2(id.a0(null, null, 2131752502, objArr)), f11.getPaint().getFontMetricsInt(), r15, null, r15));
                 f10.addView(f11, ha.k(0.0f, 0.0f, 0.0f, 22.0f, -1, -2));
                 if (j3 < 0) {
                     TextView textView7 = new TextView(context);
@@ -386,10 +386,10 @@ public final class q3 extends o00 implements ls {
                     linearLayout = null;
                 }
                 fi.d dVar = new fi.d(context, f6Var, true);
-                dVar.i(hd.M0(2131752508, null), false, true);
+                dVar.i(id.M0(2131752508, null), false, true);
                 f10.addView(dVar, ha.o(-1, 48));
                 w70 w70Var = new w70(context, f6Var);
-                w70Var.setText(org.telegram.messenger.g0.U2(hd.M0(2131752507, null), new pa(context, 8)));
+                w70Var.setText(org.telegram.messenger.g0.U2(id.M0(2131752507, null), new pa(context, 8)));
                 w70Var.setGravity(17);
                 w70Var.setTextSize(1, 12.0f);
                 r6.V(w70Var, k6.B6, f6Var);
@@ -463,7 +463,7 @@ public final class q3 extends o00 implements ls {
                 l10.P(i13);
                 l10.show();
             }
-            G = hd.G(i18 / 12, "ChannelAffiliateProgramJoinText_Years", new Object[0]);
+            G = id.G(i18 / 12, "ChannelAffiliateProgramJoinText_Years", new Object[0]);
         }
         str = p10;
         r15 = 0;
@@ -471,15 +471,15 @@ public final class q3 extends o00 implements ls {
         objArr2[r15] = str;
         objArr2[1] = J0;
         objArr2[2] = G;
-        f11.setText(i6.m(org.telegram.messenger.g0.X2(hd.a0(null, null, 2131752502, objArr2)), f11.getPaint().getFontMetricsInt(), r15, null, r15));
+        f11.setText(i6.m(org.telegram.messenger.g0.X2(id.a0(null, null, 2131752502, objArr2)), f11.getPaint().getFontMetricsInt(), r15, null, r15));
         f10.addView(f11, ha.k(0.0f, 0.0f, 0.0f, 22.0f, -1, -2));
         if (j3 < 0) {
         }
         fi.d dVar2 = new fi.d(context, f6Var, true);
-        dVar2.i(hd.M0(2131752508, null), false, true);
+        dVar2.i(id.M0(2131752508, null), false, true);
         f10.addView(dVar2, ha.o(-1, 48));
         w70 w70Var2 = new w70(context, f6Var);
-        w70Var2.setText(org.telegram.messenger.g0.U2(hd.M0(2131752507, null), new pa(context, 8)));
+        w70Var2.setText(org.telegram.messenger.g0.U2(id.M0(2131752507, null), new pa(context, 8)));
         w70Var2.setGravity(17);
         w70Var2.setTextSize(1, 12.0f);
         r6.V(w70Var2, k6.B6, f6Var);
@@ -628,7 +628,7 @@ public final class q3 extends o00 implements ls {
         r6.V(textView2, i13, f6Var);
         textView2.setTextSize(1, 20.0f);
         textView2.setGravity(17);
-        textView2.setText(hd.M0(2131752482, null));
+        textView2.setText(id.M0(2131752482, null));
         textView2.setTypeface(org.telegram.messenger.g0.o());
         f10.addView(textView2, ha.k(20.0f, 16.0f, 20.0f, 9.33f, -1, -2));
         LinearLayout linearLayout3 = new LinearLayout(context);
@@ -667,7 +667,7 @@ public final class q3 extends o00 implements ls {
         textView4.setTextSize(1, 14.0f);
         textView4.setGravity(17);
         if (connectedbotstarref.revoked) {
-            textView4.setText(org.telegram.messenger.g0.X2(hd.M0(2131752484, null)));
+            textView4.setText(org.telegram.messenger.g0.X2(id.M0(2131752484, null)));
             i10 = i15;
             v2Var = l10;
             linearLayout = linearLayout3;
@@ -680,14 +680,14 @@ public final class q3 extends o00 implements ls {
                 i10 = i15;
                 v2Var = l10;
                 if (i16 <= 0) {
-                    G2 = hd.M0(2131752501, null);
+                    G2 = id.M0(2131752501, null);
                     c11 = 0;
                 } else if (i16 < 12 || i16 % 12 != 0) {
                     c11 = 0;
-                    G2 = hd.G(i16, "ChannelAffiliateProgramJoinText_Months", new Object[0]);
+                    G2 = id.G(i16, "ChannelAffiliateProgramJoinText_Months", new Object[0]);
                 } else {
                     c11 = 0;
-                    G2 = hd.G(i16 / 12, "ChannelAffiliateProgramJoinText_Years", new Object[0]);
+                    G2 = id.G(i16 / 12, "ChannelAffiliateProgramJoinText_Years", new Object[0]);
                 }
                 Object[] objArr = new Object[3];
                 objArr[c11] = J0;
@@ -701,14 +701,14 @@ public final class q3 extends o00 implements ls {
                 String p11 = t10.p(a22);
                 int i17 = connectedbotstarref.duration_months;
                 if (i17 <= 0) {
-                    G = hd.M0(2131752501, null);
+                    G = id.M0(2131752501, null);
                     c10 = 0;
                 } else if (i17 < 12 || i17 % 12 != 0) {
                     c10 = 0;
-                    G = hd.G(i17, "ChannelAffiliateProgramJoinText_Months", new Object[0]);
+                    G = id.G(i17, "ChannelAffiliateProgramJoinText_Months", new Object[0]);
                 } else {
                     c10 = 0;
-                    G = hd.G(i17 / 12, "ChannelAffiliateProgramJoinText_Years", new Object[0]);
+                    G = id.G(i17 / 12, "ChannelAffiliateProgramJoinText_Years", new Object[0]);
                 }
                 Object[] objArr2 = new Object[3];
                 objArr2[c10] = J02;
@@ -783,18 +783,18 @@ public final class q3 extends o00 implements ls {
         f10.addView(textView7, ha.d(-1, -2.0f, 7, 0.0f, 0.0f, 0.0f, 12.0f));
         fi.d dVar = new fi.d(context, f6Var, true);
         if (connectedbotstarref.revoked) {
-            dVar.i(hd.M0(2131752487, null), false, true);
+            dVar.i(id.M0(2131752487, null), false, true);
         } else {
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
             spannableStringBuilder2.append((CharSequence) "c ");
             spannableStringBuilder2.setSpan(new wp(R.drawable.msg_copy_filled, 0), 0, 1, 33);
-            spannableStringBuilder2.append((CharSequence) hd.M0(2131752492, null));
+            spannableStringBuilder2.append((CharSequence) id.M0(2131752492, null));
             dVar.i(spannableStringBuilder2, false, true);
         }
         f10.addView(dVar, ha.o(-1, 48));
         w70 w70Var = new w70(context, f6Var);
         long j10 = connectedbotstarref.participants;
-        w70Var.setText(j10 <= 0 ? hd.a0(null, null, 2131752490, t10.p(a22)) : hd.G((int) j10, "ChannelAffiliateProgramLinkOpened", t10.p(a22)));
+        w70Var.setText(j10 <= 0 ? id.a0(null, null, 2131752490, t10.p(a22)) : id.G((int) j10, "ChannelAffiliateProgramLinkOpened", t10.p(a22)));
         w70Var.setGravity(17);
         w70Var.setTextSize(1, 12.0f);
         r6.V(w70Var, k6.B6, f6Var);
@@ -846,16 +846,16 @@ public final class q3 extends o00 implements ls {
         x31 x31Var = new x31(-2);
         x31Var.c = l00Var;
         arrayList.add(x31Var);
-        arrayList.add(h.i(R.drawable.menu_feature_reliable, hd.M0(2131752513, null), hd.M0(2131752514, null)));
-        arrayList.add(h.i(R.drawable.menu_feature_transparent, hd.M0(2131752511, null), hd.M0(2131752512, null)));
-        arrayList.add(h.i(R.drawable.menu_feature_simple, hd.M0(2131752509, null), hd.M0(2131752510, null)));
+        arrayList.add(h.i(R.drawable.menu_feature_reliable, id.M0(2131752513, null), id.M0(2131752514, null)));
+        arrayList.add(h.i(R.drawable.menu_feature_transparent, id.M0(2131752511, null), id.M0(2131752512, null)));
+        arrayList.add(h.i(R.drawable.menu_feature_simple, id.M0(2131752509, null), id.M0(2131752510, null)));
         arrayList.add(x31.B(1, null));
         bi.n0 g10 = bi.n0.g(this.currentAccount);
         long j3 = this.R;
         bi.k0 d = g10.d(j3);
         ArrayList arrayList2 = d.e;
         if (!arrayList2.isEmpty() || d.c > 0) {
-            arrayList.add(x31.u(hd.M0(2131752481, null)));
+            arrayList.add(x31.u(id.M0(2131752481, null)));
             for (int i11 = 0; i11 < arrayList2.size(); i11++) {
                 TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) arrayList2.get(i11);
                 int i12 = m3.b;
@@ -874,16 +874,16 @@ public final class q3 extends o00 implements ls {
         bi.l0 e10 = bi.n0.g(this.currentAccount).e(j3);
         ArrayList arrayList3 = e10.e;
         if (!arrayList3.isEmpty() || e10.c > 0) {
-            String M0 = hd.M0(2131752480, null);
+            String M0 = id.M0(2131752480, null);
             int i13 = e10.g;
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            spannableStringBuilder.append((CharSequence) hd.M0(2131752479, null)).append((CharSequence) " ");
+            spannableStringBuilder.append((CharSequence) id.M0(2131752479, null)).append((CharSequence) " ");
             if (i13 == 1) {
-                spannableString = new SpannableString(hd.M0(2131752477, null) + "v");
+                spannableString = new SpannableString(id.M0(2131752477, null) + "v");
             } else if (i13 == 2) {
-                spannableString = new SpannableString(hd.M0(2131752476, null) + "v");
+                spannableString = new SpannableString(id.M0(2131752476, null) + "v");
             } else if (i13 == 3) {
-                spannableString = new SpannableString(hd.M0(2131752478, null) + "v");
+                spannableString = new SpannableString(id.M0(2131752478, null) + "v");
             } else {
                 i7 = 0;
                 int i14 = o3.b;
@@ -949,7 +949,7 @@ public final class q3 extends o00 implements ls {
         fVar.b();
         this.T.setStarParticlesView(this.e);
         this.S.addView(this.T, ha.d(qs.U2, 190.0f, 17, 0.0f, 32.0f, 0.0f, 12.0f));
-        j0(hd.M0(2131752472, null), org.telegram.messenger.g0.X2(hd.M0(2131752473, null)), this.S, null);
+        j0(id.M0(2131752472, null), org.telegram.messenger.g0.X2(id.M0(2131752473, null)), this.S, null);
         this.c.setOnItemClickListener(new di.p4(2, this, context));
         this.c.setOnItemLongClickListener(new ab.g(16, this, context));
         v4.k kVar = new v4.k();

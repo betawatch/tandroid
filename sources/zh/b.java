@@ -5,7 +5,7 @@ import android.text.SpannableStringBuilder;
 import android.view.View;
 import bi.dd;
 import c8.ha;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.s9;
 import org.telegram.tgnet.tl.TL_stars;
@@ -20,7 +20,7 @@ import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.w31;
 import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class b extends w31 {
     public static final /* synthetic */ int b = 0;
@@ -40,16 +40,16 @@ public final class b extends w31 {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("*");
         spannableStringBuilder.setSpan(new r5(s9Var.c, k6.s2.getFontMetricsInt()), 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.append(' ');
-        spannableStringBuilder.append((CharSequence) hd.a0(null, null, 2131750308, s9Var.d.title, Integer.valueOf(tL_StarGiftAuctionAcquiredGift.gift_num), Integer.valueOf(tL_StarGiftAuctionAcquiredGift.round)));
+        spannableStringBuilder.append((CharSequence) id.a0(null, null, 2131750310, s9Var.d.title, Integer.valueOf(tL_StarGiftAuctionAcquiredGift.gift_num), Integer.valueOf(tL_StarGiftAuctionAcquiredGift.round)));
         spannableStringBuilder.setSpan(new u31(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
         spannableStringBuilder2.append((CharSequence) dd.a1(false, jg.g.m(tL_StarGiftAuctionAcquiredGift.bid_amount, ',', new StringBuilder("⭐️")), 0.75f, null));
-        String a02 = hd.a0(null, null, 2131750307, Integer.valueOf(tL_StarGiftAuctionAcquiredGift.pos));
+        String a02 = id.a0(null, null, 2131750309, Integer.valueOf(tL_StarGiftAuctionAcquiredGift.pos));
         tx0 tx0Var = new tx0(cVar.getContext(), cVar.a);
         tx0Var.a(spannableStringBuilder).setFilled(true);
-        tx0Var.n(hd.M0(2131750310, null), cVar.b, m5.o(tL_StarGiftAuctionAcquiredGift.peer), new wi.q(10, cVar, onClickListener));
-        tx0Var.g(tL_StarGiftAuctionAcquiredGift.date, hd.M0(2131750314, null));
-        tx0Var.e(hd.M0(2131750315, null), spannableStringBuilder2, a02, null, null);
+        tx0Var.n(id.M0(2131750312, null), cVar.b, m5.o(tL_StarGiftAuctionAcquiredGift.peer), new yf.b(5, cVar, onClickListener));
+        tx0Var.g(tL_StarGiftAuctionAcquiredGift.date, id.M0(2131750316, null));
+        tx0Var.e(id.M0(2131750317, null), spannableStringBuilder2, a02, null, null);
         cVar.addView(tx0Var, ha.c(-2.0f, -1));
     }
 

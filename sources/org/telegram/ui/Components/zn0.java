@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class zn0 extends rt0 {
     public boolean f0;
@@ -75,7 +75,7 @@ public final class zn0 extends rt0 {
 
     @Override // android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
-        if (view instanceof gy) {
+        if (view instanceof hy) {
             mo0 mo0Var = this.p0;
             if (mo0Var.M2 != null) {
                 canvas.save();

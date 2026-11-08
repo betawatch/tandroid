@@ -6,7 +6,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.ShapeDrawable;
 import android.widget.FrameLayout;
 import c8.ha;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.ConnectionsManager;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.i5;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.w8;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public abstract class s1 {
     /* JADX WARN: Multi-variable type inference failed */
@@ -72,13 +72,13 @@ public abstract class s1 {
         frameLayout.addView(frameLayout2, ha.d(-2, -2.0f, 17, 16.0f, 0.0f, 16.0f, 0.0f));
         final boolean[] zArr = new boolean[1];
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity);
-        String M02 = hd.M0(2131752997, null);
+        String M02 = id.M0(2131752997, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M02;
-        u1Var.T = hd.M0(j10 >= 0 ? 2131752998 : 2131752999, null);
+        u1Var.T = id.M0(j10 >= 0 ? 2131752998 : 2131752999, null);
         alertDialog$Builder.o(frameLayout);
-        alertDialog$Builder.h(hd.M0(2131752589, null), null);
-        alertDialog$Builder.k(hd.M0(2131746320, null), new org.telegram.ui.ActionBar.r1() { // from class: hi.q1
+        alertDialog$Builder.h(id.M0(2131752589, null), null);
+        alertDialog$Builder.k(id.M0(2131746322, null), new org.telegram.ui.ActionBar.r1() { // from class: hi.q1
             @Override // org.telegram.ui.ActionBar.r1
             public final void g(org.telegram.ui.ActionBar.u1 u1Var2, int i11) {
                 boolean[] zArr2 = zArr;

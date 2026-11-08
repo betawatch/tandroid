@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.webrtc.EglRenderer;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g60 implements Runnable {
     public final /* synthetic */ int a;
@@ -45,14 +45,15 @@ public final /* synthetic */ class g60 implements Runnable {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0097  */
     /* JADX WARN: Removed duplicated region for block: B:21:0x00ba  */
-    /* JADX WARN: Removed duplicated region for block: B:289:0x0534 A[Catch: Exception -> 0x0437, TRY_ENTER, TryCatch #6 {Exception -> 0x0437, blocks: (B:230:0x0426, B:232:0x042c, B:234:0x043a, B:236:0x0447, B:237:0x044a, B:239:0x0457, B:241:0x045f, B:243:0x0470, B:245:0x0476, B:247:0x047e, B:249:0x0486, B:299:0x054a, B:301:0x054f, B:302:0x0552, B:289:0x0534, B:292:0x0524, B:293:0x053a), top: B:229:0x0426 }] */
-    /* JADX WARN: Removed duplicated region for block: B:291:0x0539  */
-    /* JADX WARN: Removed duplicated region for block: B:299:0x054a A[Catch: Exception -> 0x0437, TryCatch #6 {Exception -> 0x0437, blocks: (B:230:0x0426, B:232:0x042c, B:234:0x043a, B:236:0x0447, B:237:0x044a, B:239:0x0457, B:241:0x045f, B:243:0x0470, B:245:0x0476, B:247:0x047e, B:249:0x0486, B:299:0x054a, B:301:0x054f, B:302:0x0552, B:289:0x0534, B:292:0x0524, B:293:0x053a), top: B:229:0x0426 }] */
+    /* JADX WARN: Removed duplicated region for block: B:289:0x052b A[Catch: Exception -> 0x042e, TRY_ENTER, TryCatch #0 {Exception -> 0x042e, blocks: (B:230:0x041d, B:232:0x0423, B:234:0x0431, B:236:0x043e, B:237:0x0441, B:239:0x044e, B:241:0x0456, B:243:0x0467, B:245:0x046d, B:247:0x0475, B:249:0x047d, B:299:0x0541, B:301:0x0546, B:302:0x0549, B:289:0x052b, B:292:0x051b, B:293:0x0531), top: B:229:0x041d }] */
+    /* JADX WARN: Removed duplicated region for block: B:291:0x0530  */
+    /* JADX WARN: Removed duplicated region for block: B:299:0x0541 A[Catch: Exception -> 0x042e, TryCatch #0 {Exception -> 0x042e, blocks: (B:230:0x041d, B:232:0x0423, B:234:0x0431, B:236:0x043e, B:237:0x0441, B:239:0x044e, B:241:0x0456, B:243:0x0467, B:245:0x046d, B:247:0x0475, B:249:0x047d, B:299:0x0541, B:301:0x0546, B:302:0x0549, B:289:0x052b, B:292:0x051b, B:293:0x0531), top: B:229:0x041d }] */
     /* JADX WARN: Removed duplicated region for block: B:29:0x00a4  */
-    /* JADX WARN: Removed duplicated region for block: B:301:0x054f A[Catch: Exception -> 0x0437, TryCatch #6 {Exception -> 0x0437, blocks: (B:230:0x0426, B:232:0x042c, B:234:0x043a, B:236:0x0447, B:237:0x044a, B:239:0x0457, B:241:0x045f, B:243:0x0470, B:245:0x0476, B:247:0x047e, B:249:0x0486, B:299:0x054a, B:301:0x054f, B:302:0x0552, B:289:0x0534, B:292:0x0524, B:293:0x053a), top: B:229:0x0426 }] */
+    /* JADX WARN: Removed duplicated region for block: B:301:0x0546 A[Catch: Exception -> 0x042e, TryCatch #0 {Exception -> 0x042e, blocks: (B:230:0x041d, B:232:0x0423, B:234:0x0431, B:236:0x043e, B:237:0x0441, B:239:0x044e, B:241:0x0456, B:243:0x0467, B:245:0x046d, B:247:0x0475, B:249:0x047d, B:299:0x0541, B:301:0x0546, B:302:0x0549, B:289:0x052b, B:292:0x051b, B:293:0x0531), top: B:229:0x041d }] */
     /* JADX WARN: Type inference failed for: r7v10, types: [boolean] */
     /* JADX WARN: Type inference failed for: r7v12 */
     /* JADX WARN: Type inference failed for: r7v9 */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:187:0x03b3 -> B:177:0x03ce). Please report as a decompilation issue!!! */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -69,7 +70,7 @@ public final /* synthetic */ class g60 implements Runnable {
         ZipOutputStream zipOutputStream;
         BufferedInputStream bufferedInputStream2;
         boolean z9;
-        oc1 oc1Var;
+        pc1 pc1Var;
         boolean z10;
         int i11;
         TLRPC.WallPaperSettings wallPaperSettings;
@@ -108,7 +109,7 @@ public final /* synthetic */ class g60 implements Runnable {
                     if (!((ApplicationLoaderImpl) org.telegram.messenger.t0.a).q() ? false : org.telegram.messenger.h1.e().j) {
                         return;
                     }
-                    if (z14 || d1Var == null || (org.telegram.messenger.iz.U(d1Var2.a, d1Var.a) && d1Var2.c > d1Var.c)) {
+                    if (z14 || d1Var == null || (org.telegram.messenger.iz.U(d1Var2.b, d1Var.b) && d1Var2.a > d1Var.a)) {
                         ((ApplicationLoaderImpl) org.telegram.messenger.t0.a).getClass();
                         try {
                             new org.telegram.ui.Components.x41(launchActivity2, d1Var2).show();
@@ -148,21 +149,21 @@ public final /* synthetic */ class g60 implements Runnable {
                     return;
                 }
                 if (!tL_error.text.startsWith("FLOOD_WAIT")) {
-                    bk0Var.Q1(org.telegram.messenger.hd.M0(R.string.AppName, null), tL_error.text);
+                    bk0Var.Q1(org.telegram.messenger.id.M0(R.string.AppName, null), tL_error.text);
                     return;
                 }
                 int intValue = Utilities.z(tL_error.text).intValue();
                 if (intValue < 60) {
                     c10 = 0;
-                    G = org.telegram.messenger.hd.G(intValue, "Seconds", new Object[0]);
+                    G = org.telegram.messenger.id.G(intValue, "Seconds", new Object[0]);
                 } else {
                     c10 = 0;
-                    G = org.telegram.messenger.hd.G(intValue / 60, "Minutes", new Object[0]);
+                    G = org.telegram.messenger.id.G(intValue / 60, "Minutes", new Object[0]);
                 }
-                String M0 = org.telegram.messenger.hd.M0(R.string.AppName, null);
+                String M0 = org.telegram.messenger.id.M0(R.string.AppName, null);
                 Object[] objArr = new Object[1];
                 objArr[c10] = G;
-                bk0Var.Q1(M0, org.telegram.messenger.hd.a0("FloodWaitTime", null, 2131750687, objArr));
+                bk0Var.Q1(M0, org.telegram.messenger.id.a0("FloodWaitTime", null, 2131750687, objArr));
                 return;
             case 5:
                 xm0.Z((xm0) this.c, (TLObject) this.d, this.b);
@@ -293,8 +294,10 @@ public final /* synthetic */ class g60 implements Runnable {
                                         try {
                                             e.printStackTrace();
                                             if (bufferedInputStream2 != null) {
+                                                bufferedInputStream2.close();
                                             }
                                             if (zipOutputStream != null) {
+                                                zipOutputStream.close();
                                             }
                                             org.telegram.messenger.g0.h3(new jo0(u1Var2, zArr2, activity, file, 4));
                                             return;
@@ -328,10 +331,8 @@ public final /* synthetic */ class g60 implements Runnable {
                             bufferedInputStream2 = null;
                             e.printStackTrace();
                             if (bufferedInputStream2 != null) {
-                                bufferedInputStream2.close();
                             }
                             if (zipOutputStream != null) {
-                                zipOutputStream.close();
                             }
                             org.telegram.messenger.g0.h3(new jo0(u1Var2, zArr2, activity, file, 4));
                             return;
@@ -375,61 +376,61 @@ public final /* synthetic */ class g60 implements Runnable {
                 TwoStepVerificationActivity.c0((TwoStepVerificationActivity) this.c, this.b, (byte[]) this.d);
                 return;
             case 12:
-                org.telegram.ui.Wallet.w0 w0Var = (org.telegram.ui.Wallet.w0) this.c;
+                org.telegram.ui.Wallet.v0 v0Var = (org.telegram.ui.Wallet.v0) this.c;
                 di.c1 c1Var = (di.c1) this.d;
                 boolean z21 = this.b;
-                if (w0Var.b) {
+                if (v0Var.b) {
                     return;
                 }
                 try {
-                    if (c1Var.b == ((org.telegram.ui.Wallet.r0) c1Var.c).l()) {
-                        c8.va.b = w0Var;
+                    if (c1Var.b == ((org.telegram.ui.Wallet.q0) c1Var.c).l()) {
+                        c8.va.b = v0Var;
                         LaunchActivity launchActivity3 = LaunchActivity.G1;
                         int i17 = Build.VERSION.SDK_INT;
                         if (launchActivity3 != null && !launchActivity3.isFinishing() && !launchActivity3.isDestroyed() && !launchActivity3.s().P()) {
-                            w0Var.e = launchActivity3;
+                            v0Var.e = launchActivity3;
                             try {
                                 if (z21) {
-                                    w0Var.a();
+                                    v0Var.a();
                                 } else if (i17 >= 30) {
-                                    w0Var.d();
+                                    v0Var.d();
                                 } else {
-                                    w0Var.b();
+                                    v0Var.b();
                                 }
                             } catch (Exception e16) {
                                 org.telegram.messenger.a8.g(e16, true);
-                                w0Var.a();
+                                v0Var.a();
                             }
                         }
-                        w0Var.c("AUTH_UNAVAILABLE");
+                        v0Var.c("AUTH_UNAVAILABLE");
                     } else {
-                        w0Var.c("STORAGE_CANCELED");
+                        v0Var.c("STORAGE_CANCELED");
                     }
                     return;
                 } catch (Exception e17) {
                     org.telegram.messenger.a8.g(e17, true);
-                    w0Var.c("AUTH_UNAVAILABLE");
+                    v0Var.c("AUTH_UNAVAILABLE");
                     return;
                 }
             case 13:
-                bg.v0 v0Var = (bg.v0) this.c;
+                bg.v0 v0Var2 = (bg.v0) this.c;
                 boolean z22 = this.b;
-                org.telegram.ui.Wallet.h3 h3Var = (org.telegram.ui.Wallet.h3) this.d;
+                org.telegram.ui.Wallet.g3 g3Var = (org.telegram.ui.Wallet.g3) this.d;
                 org.telegram.ui.ActionBar.f2 T2 = LaunchActivity.T();
-                if (v0Var.b) {
+                if (v0Var2.b) {
                     return;
                 }
                 if (T2 == null) {
-                    v0Var.a();
+                    v0Var2.a();
                     return;
                 } else {
                     if (!z22) {
-                        T2.presentFragment(h3Var);
+                        T2.presentFragment(g3Var);
                         return;
                     }
                     org.telegram.ui.ActionBar.d2 d2Var = new org.telegram.ui.ActionBar.d2();
                     d2Var.a = true;
-                    T2.showAsSheet(h3Var, d2Var);
+                    T2.showAsSheet(g3Var, d2Var);
                     return;
                 }
             case 14:
@@ -471,16 +472,16 @@ public final /* synthetic */ class g60 implements Runnable {
                                 int i20 = wallPaperSettings4.second_background_color;
                                 if (i20 == 0 || (i11 = wallPaperSettings4.third_background_color) == 0) {
                                     z10 = z23;
-                                    oc1Var = new oc1(wallPaperSettings4.background_color, i20, wallPaperSettings4.rotation, null);
+                                    pc1Var = new pc1(wallPaperSettings4.background_color, i20, wallPaperSettings4.rotation, null);
                                 } else {
-                                    oc1Var = new oc1(null, wallPaperSettings4.background_color, i20, i11, wallPaperSettings4.fourth_background_color);
+                                    pc1Var = new pc1(null, wallPaperSettings4.background_color, i20, i11, wallPaperSettings4.fourth_background_color);
                                     z10 = z23;
                                 }
-                                oc1Var.a = wallPaper.slug;
-                                oc1Var.h = wallPaperSettings4.intensity / 100.0f;
-                                oc1Var.f = org.telegram.messenger.g0.s1(wallPaperSettings4.rotation, false);
-                                oc1Var.l = wallPaper;
-                                arrayList3.add(oc1Var);
+                                pc1Var.a = wallPaper.slug;
+                                pc1Var.h = wallPaperSettings4.intensity / 100.0f;
+                                pc1Var.f = org.telegram.messenger.g0.s1(wallPaperSettings4.rotation, false);
+                                pc1Var.l = wallPaper;
+                                arrayList3.add(pc1Var);
                                 i19++;
                                 z23 = z10;
                                 i13 = 1;
@@ -568,23 +569,22 @@ public final /* synthetic */ class g60 implements Runnable {
                     if (d0Var != null) {
                         d0Var.c = size2;
                         d0Var.d = i24;
-                        d0Var.q = wi.d0.j(size2, i24, false);
-                        d0Var.r = wi.d0.j(size2, i24, true);
-                        d0Var.A = false;
-                        d0Var.z = 0L;
+                        d0Var.v();
+                        d0Var.B = false;
+                        d0Var.A = 0L;
                     }
                     tVar.Q = -1L;
-                    tVar.u0 = runnable;
+                    tVar.v0 = runnable;
                     tVar.i.b("GL dual input selected: input=" + (z25 ? 1 : 0));
                     return;
                 }
                 return;
             default:
-                org.telegram.ui.Components.qt qtVar = (org.telegram.ui.Components.qt) this.c;
+                org.telegram.ui.Components.rt rtVar = (org.telegram.ui.Components.rt) this.c;
                 wi.h hVar = (wi.h) this.d;
                 boolean z26 = this.b;
-                wi.t0 t0Var = (wi.t0) qtVar.b;
-                int i25 = t0Var.Z;
+                wi.t0 t0Var = (wi.t0) rtVar.b;
+                int i25 = t0Var.a0;
                 if (i25 == 7 || i25 == 8 || i25 == 9 || i25 == 10) {
                     return;
                 }
@@ -598,9 +598,9 @@ public final /* synthetic */ class g60 implements Runnable {
                 if (m0Var != wi.m0.a) {
                     if (hVar.g) {
                         i12 = 2;
-                        t0Var.a0 = i12;
+                        t0Var.b0 = i12;
                         t0Var.n();
-                        wi.n nVar = t0Var.m;
+                        wi.o oVar = t0Var.m;
                         StringBuilder sb2 = new StringBuilder("camera configured: facing=");
                         sb2.append(m0Var);
                         sb2.append(", mode=");
@@ -614,30 +614,30 @@ public final /* synthetic */ class g60 implements Runnable {
                         sb2.append(", maxZoom=");
                         sb2.append(t0Var.v);
                         sb2.append(", flash=");
-                        int i26 = t0Var.a0;
+                        int i26 = t0Var.b0;
                         sb2.append(i26 == 1 ? i26 != 2 ? i26 != 3 ? "null" : "SCREEN" : "TORCH" : "NONE");
                         sb2.append(", switch=");
                         sb2.append(z26);
-                        nVar.b(sb2.toString());
+                        oVar.b(sb2.toString());
                         if (z26) {
                         }
                         t0Var.y = false;
                         org.telegram.ui.Components.n40 n40Var = (org.telegram.ui.Components.n40) t0Var.d.b;
-                        n40Var.o0 = true;
+                        n40Var.p0 = true;
                         StringBuilder sb3 = new StringBuilder("RoundVideo camera flip session ready: facing=");
                         sb3.append(m0Var);
                         sb3.append(", elapsedMs=");
                         cameraFlipElapsedMs = n40Var.getCameraFlipElapsedMs();
                         sb3.append(cameraFlipElapsedMs);
                         org.telegram.messenger.a8.b(sb3.toString());
-                        org.telegram.ui.Components.n40.m(n40Var);
+                        org.telegram.ui.Components.n40.n(n40Var);
                         t0Var.o();
                         return;
                     }
                     i12 = 1;
-                    t0Var.a0 = i12;
+                    t0Var.b0 = i12;
                     t0Var.n();
-                    wi.n nVar2 = t0Var.m;
+                    wi.o oVar2 = t0Var.m;
                     StringBuilder sb22 = new StringBuilder("camera configured: facing=");
                     sb22.append(m0Var);
                     sb22.append(", mode=");
@@ -651,31 +651,31 @@ public final /* synthetic */ class g60 implements Runnable {
                     sb22.append(", maxZoom=");
                     sb22.append(t0Var.v);
                     sb22.append(", flash=");
-                    int i262 = t0Var.a0;
+                    int i262 = t0Var.b0;
                     sb22.append(i262 == 1 ? i262 != 2 ? i262 != 3 ? "null" : "SCREEN" : "TORCH" : "NONE");
                     sb22.append(", switch=");
                     sb22.append(z26);
-                    nVar2.b(sb22.toString());
+                    oVar2.b(sb22.toString());
                     if (z26) {
                     }
                     t0Var.y = false;
                     org.telegram.ui.Components.n40 n40Var2 = (org.telegram.ui.Components.n40) t0Var.d.b;
-                    n40Var2.o0 = true;
+                    n40Var2.p0 = true;
                     StringBuilder sb32 = new StringBuilder("RoundVideo camera flip session ready: facing=");
                     sb32.append(m0Var);
                     sb32.append(", elapsedMs=");
                     cameraFlipElapsedMs = n40Var2.getCameraFlipElapsedMs();
                     sb32.append(cameraFlipElapsedMs);
                     org.telegram.messenger.a8.b(sb32.toString());
-                    org.telegram.ui.Components.n40.m(n40Var2);
+                    org.telegram.ui.Components.n40.n(n40Var2);
                     t0Var.o();
                     return;
                 }
                 if (t0Var.f != null) {
                     i12 = 3;
-                    t0Var.a0 = i12;
+                    t0Var.b0 = i12;
                     t0Var.n();
-                    wi.n nVar22 = t0Var.m;
+                    wi.o oVar22 = t0Var.m;
                     StringBuilder sb222 = new StringBuilder("camera configured: facing=");
                     sb222.append(m0Var);
                     sb222.append(", mode=");
@@ -689,31 +689,31 @@ public final /* synthetic */ class g60 implements Runnable {
                     sb222.append(", maxZoom=");
                     sb222.append(t0Var.v);
                     sb222.append(", flash=");
-                    int i2622 = t0Var.a0;
+                    int i2622 = t0Var.b0;
                     sb222.append(i2622 == 1 ? i2622 != 2 ? i2622 != 3 ? "null" : "SCREEN" : "TORCH" : "NONE");
                     sb222.append(", switch=");
                     sb222.append(z26);
-                    nVar22.b(sb222.toString());
+                    oVar22.b(sb222.toString());
                     if (!z26 || t0Var.y) {
                         t0Var.y = false;
                         org.telegram.ui.Components.n40 n40Var22 = (org.telegram.ui.Components.n40) t0Var.d.b;
-                        n40Var22.o0 = true;
+                        n40Var22.p0 = true;
                         StringBuilder sb322 = new StringBuilder("RoundVideo camera flip session ready: facing=");
                         sb322.append(m0Var);
                         sb322.append(", elapsedMs=");
                         cameraFlipElapsedMs = n40Var22.getCameraFlipElapsedMs();
                         sb322.append(cameraFlipElapsedMs);
                         org.telegram.messenger.a8.b(sb322.toString());
-                        org.telegram.ui.Components.n40.m(n40Var22);
+                        org.telegram.ui.Components.n40.n(n40Var22);
                         t0Var.o();
                         return;
                     }
                     return;
                 }
                 i12 = 1;
-                t0Var.a0 = i12;
+                t0Var.b0 = i12;
                 t0Var.n();
-                wi.n nVar222 = t0Var.m;
+                wi.o oVar222 = t0Var.m;
                 StringBuilder sb2222 = new StringBuilder("camera configured: facing=");
                 sb2222.append(m0Var);
                 sb2222.append(", mode=");
@@ -727,23 +727,23 @@ public final /* synthetic */ class g60 implements Runnable {
                 sb2222.append(", maxZoom=");
                 sb2222.append(t0Var.v);
                 sb2222.append(", flash=");
-                int i26222 = t0Var.a0;
+                int i26222 = t0Var.b0;
                 sb2222.append(i26222 == 1 ? i26222 != 2 ? i26222 != 3 ? "null" : "SCREEN" : "TORCH" : "NONE");
                 sb2222.append(", switch=");
                 sb2222.append(z26);
-                nVar222.b(sb2222.toString());
+                oVar222.b(sb2222.toString());
                 if (z26) {
                 }
                 t0Var.y = false;
                 org.telegram.ui.Components.n40 n40Var222 = (org.telegram.ui.Components.n40) t0Var.d.b;
-                n40Var222.o0 = true;
+                n40Var222.p0 = true;
                 StringBuilder sb3222 = new StringBuilder("RoundVideo camera flip session ready: facing=");
                 sb3222.append(m0Var);
                 sb3222.append(", elapsedMs=");
                 cameraFlipElapsedMs = n40Var222.getCameraFlipElapsedMs();
                 sb3222.append(cameraFlipElapsedMs);
                 org.telegram.messenger.a8.b(sb3222.toString());
-                org.telegram.ui.Components.n40.m(n40Var222);
+                org.telegram.ui.Components.n40.n(n40Var222);
                 t0Var.o();
                 return;
         }

@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class v41 {
     public TLRPC.User a;
@@ -72,9 +72,9 @@ public final class v41 {
                 }
             }
         }
-        org.telegram.ui.Cells.f1.t("StatisticOpenProfile", 2131744897, arrayList2, R.drawable.msg_openprofile, arrayList4);
+        org.telegram.ui.Cells.f1.t("StatisticOpenProfile", 2131744899, arrayList2, R.drawable.msg_openprofile, arrayList4);
         arrayList3.add(2);
-        arrayList2.add(org.telegram.messenger.hd.M0(2131744895, "StatisticSearchUserHistory"));
+        arrayList2.add(org.telegram.messenger.id.M0(2131744897, "StatisticSearchUserHistory"));
         arrayList4.add(Integer.valueOf(R.drawable.msg_msgbubble3));
         arrayList3.add(1);
         if (z9 && tL_chatChannelParticipant == null) {
@@ -391,12 +391,12 @@ public final class v41 {
                 z10 = channelParticipant.admin_rights == null;
                 if (z10) {
                     str = "SetAsAdmin";
-                    i7 = 2131745548;
+                    i7 = 2131745550;
                 } else {
                     str = "EditAdminRights";
                     i7 = 2131751305;
                 }
-                arrayList2.add(org.telegram.messenger.hd.M0(i7, str));
+                arrayList2.add(org.telegram.messenger.id.M0(i7, str));
                 arrayList4.add(Integer.valueOf(z10 ? R.drawable.msg_admins : R.drawable.msg_permissions));
                 arrayList3.add(0);
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(c51Var.getParentActivity());

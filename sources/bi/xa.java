@@ -3,7 +3,7 @@ package bi;
 import android.content.Context;
 import org.telegram.ui.Components.hu0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xa implements Runnable {
     public final /* synthetic */ int a;
@@ -33,15 +33,15 @@ public final /* synthetic */ class xa implements Runnable {
                 break;
             case 1:
                 v2VarArr[0].dismiss();
-                vf.c.t(context, org.telegram.messenger.hd.M0(2131752035, null));
+                vf.c.t(context, org.telegram.messenger.id.M0(2131752035, null));
                 break;
             case 2:
                 v2VarArr[0].dismiss();
-                vf.c.v(context, org.telegram.messenger.hd.M0(2131752030, null), false);
+                vf.c.v(context, org.telegram.messenger.id.M0(2131752030, null), false);
                 break;
             default:
                 v2VarArr[0].dismiss();
-                vf.c.t(context, org.telegram.messenger.hd.M0(2131752027, null));
+                vf.c.t(context, org.telegram.messenger.id.M0(2131752027, null));
                 break;
         }
     }

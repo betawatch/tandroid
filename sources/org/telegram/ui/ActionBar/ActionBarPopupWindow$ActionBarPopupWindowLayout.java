@@ -26,11 +26,11 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.uy;
 import org.telegram.ui.Components.ve0;
+import org.telegram.ui.Components.vy;
 import org.telegram.ui.c61;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout {
     public final HashMap D;
@@ -597,7 +597,7 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
             ve0Var.J = -1;
             ve0Var.L = new Rect();
             ve0Var.I = f6Var;
-            ve0Var.d = new uy(context, new hi.z3(ve0Var, ViewConfiguration.get(context).getScaledTouchSlop(), 2));
+            ve0Var.d = new vy(context, new hi.z3(ve0Var, ViewConfiguration.get(context).getScaledTouchSlop(), 2));
             paint.setColor(-16777216);
             this.J = ve0Var;
             addView(ve0Var, ha.c(-2.0f, -2));

@@ -6,7 +6,7 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLObject;
@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.my0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class k0 {
     public final q1 a;
@@ -64,7 +64,7 @@ public final class k0 {
         }
         this.d.setTextSize(org.telegram.messenger.g0.L(11.0f));
         boolean q10 = p10.i(q1Var.Z5).q();
-        this.e = hd.M0(q10 ? 2131748329 : 2131743855, null);
+        this.e = id.M0(q10 ? 2131748331 : 2131743857, null);
         this.i.setStyle(Paint.Style.STROKE);
         this.g = true;
         this.h = q10 ? null : q1Var.getContext().getResources().getDrawable(R.drawable.mini_switch_lock).mutate();
@@ -80,10 +80,10 @@ public final class k0 {
         if (tLObject instanceof TLRPC.Chat) {
             int i10 = ((TLRPC.Chat) tLObject).participants_count;
             if (i10 > 1) {
-                return hd.S(null, i10);
+                return id.S(null, i10);
             }
         } else if ((tLObject instanceof TLRPC.User) && (i7 = ((TLRPC.User) tLObject).bot_active_users) > 1) {
-            return hd.S(null, i7);
+            return id.S(null, i7);
         }
         return null;
     }

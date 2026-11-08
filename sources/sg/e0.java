@@ -3,10 +3,10 @@ package sg;
 import android.animation.ValueAnimator;
 import android.graphics.RectF;
 import org.telegram.messenger.p2;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.vy;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -31,9 +31,9 @@ public final /* synthetic */ class e0 implements Runnable {
                     j0Var.h = new RectF();
                 }
                 j0Var.c.a(j0Var.h);
-                uy uyVar = j0Var.a;
-                if (uyVar != null) {
-                    uyVar.b();
+                vy vyVar = j0Var.a;
+                if (vyVar != null) {
+                    vyVar.b();
                     break;
                 }
                 break;
@@ -45,9 +45,9 @@ public final /* synthetic */ class e0 implements Runnable {
                 if (j0Var.H == (z0Var != null)) {
                     if (z0Var != j0Var.d) {
                         j0Var.d = z0Var;
-                        uy uyVar2 = j0Var.a;
-                        if (uyVar2 != null) {
-                            uyVar2.b();
+                        vy vyVar2 = j0Var.a;
+                        if (vyVar2 != null) {
+                            vyVar2.b();
                             break;
                         }
                     }
@@ -65,9 +65,9 @@ public final /* synthetic */ class e0 implements Runnable {
                     j0Var.K.setInterpolator(xq.h);
                     j0Var.K.start();
                     j0Var.d = z0Var;
-                    uy uyVar3 = j0Var.a;
-                    if (uyVar3 != null) {
-                        uyVar3.b();
+                    vy vyVar3 = j0Var.a;
+                    if (vyVar3 != null) {
+                        vyVar3.b();
                     }
                     if (j0Var.H) {
                         p2.y.a();

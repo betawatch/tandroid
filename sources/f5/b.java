@@ -46,12 +46,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import org.telegram.messenger.p1;
+import org.telegram.messenger.j1;
 import org.telegram.messenger.q1;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.r1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class b {
     public final Long A;
@@ -680,7 +680,7 @@ public class b {
                                 if (cVar == null) {
                                     return com.google.android.gms.internal.play_billing.u.c(qs.s1, z.h);
                                 }
-                                return ((com.google.android.gms.internal.play_billing.a) cVar).a1(i23, bVar.g.getPackageName(), str18, str19, bundle2);
+                                return ((com.google.android.gms.internal.play_billing.a) cVar).A1(i23, bVar.g.getPackageName(), str18, str19, bundle2);
                             } catch (DeadObjectException e11) {
                                 f fVar10 = z.h;
                                 String a10 = x.a(e11);
@@ -869,12 +869,12 @@ public class b {
         }
     }
 
-    public void c(aa.n nVar, p1 p1Var) {
-        if (f(new q(this, p1Var, nVar, 1), 30000L, new m9.u(16, this, p1Var), r(), e()) == null) {
+    public void c(aa.n nVar, j1 j1Var) {
+        if (f(new q(this, j1Var, nVar, 1), 30000L, new m9.u(16, this, j1Var), r(), e()) == null) {
             f u10 = u();
             y(25, 7, u10);
             com.google.android.gms.internal.play_billing.p pVar = com.google.android.gms.internal.play_billing.r.b;
-            ((q1) p1Var.b).a(u10, com.google.android.gms.internal.play_billing.v.e);
+            ((q1) j1Var.b).a(u10, com.google.android.gms.internal.play_billing.v.e);
         }
     }
 

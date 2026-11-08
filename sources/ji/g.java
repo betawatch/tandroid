@@ -6,7 +6,7 @@ import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -23,7 +23,7 @@ import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.x31;
 import v4.o0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class g extends w31 {
     public static final /* synthetic */ int b = 0;
@@ -51,7 +51,7 @@ public final class g extends w31 {
         TLRPC.Chat M0 = qp.s1(i7).M0(Long.valueOf(-j3));
         TLRPC.User a22 = qp.s1(i7).a2(Long.valueOf(j3));
         hVar.f.setText(m5.l(p10.s0, j3));
-        hVar.h.setText(g0.Q2(hd.a0(null, null, a22 != null ? 2131751898 : t3.V(M0) ? 2131751897 : 2131751896, m5.u(user)), k6.Wl, null, new m0(16), false));
+        hVar.h.setText(g0.Q2(id.a0(null, null, a22 != null ? 2131751898 : t3.V(M0) ? 2131751897 : 2131751896, m5.u(user)), k6.Wl, null, new m0(16), false));
         if (a22 != null) {
             textView2.setVisibility(8);
         } else if (M0 == null || M0.participants_count <= 0) {
@@ -60,7 +60,7 @@ public final class g extends w31 {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("* ");
             spannableStringBuilder.setSpan(hVar.s, 0, 1, 33);
             long j10 = M0.participants_count;
-            spannableStringBuilder.append((CharSequence) (j10 < 1000000 ? hd.E(j10, ',') : g0.o0((int) j10, 1000000)));
+            spannableStringBuilder.append((CharSequence) (j10 < 1000000 ? id.E(j10, ',') : g0.o0((int) j10, 1000000)));
             textView2.setText(spannableStringBuilder);
             textView2.setVisibility(0);
         }

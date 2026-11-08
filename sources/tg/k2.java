@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import c8.ha;
 import java.util.Iterator;
 import org.telegram.messenger.f6;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.k6;
@@ -19,7 +19,7 @@ import org.telegram.ui.Components.ki0;
 import org.telegram.ui.Components.r5;
 import org.telegram.ui.tb0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class k2 extends j {
     public String A0;
@@ -222,7 +222,7 @@ public final class k2 extends j {
         if (j2Var.getText().length() > 0) {
             j2Var.setHint((CharSequence) null);
         } else {
-            j2Var.setHint(hd.M0(2131744194, null));
+            j2Var.setHint(id.M0(2131744196, null));
             j2Var.setHintTextColor(1627389951);
         }
     }
@@ -316,7 +316,7 @@ public final class k2 extends j {
         int align2 = getAlign();
         if (align2 == 1) {
             i7 = 4;
-        } else if (align2 == 2 ? !hd.a0 : hd.a0) {
+        } else if (align2 == 2 ? !id.a0 : id.a0) {
             i7 = 3;
         }
         this.q0.setTextAlignment(i7);

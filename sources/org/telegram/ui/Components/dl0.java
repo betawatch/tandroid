@@ -12,7 +12,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class dl0 extends FrameLayout implements org.telegram.messenger.ls {
     public int D;
@@ -74,14 +74,14 @@ public final class dl0 extends FrameLayout implements org.telegram.messenger.ls 
         kVar.m = false;
         q1Var.setItemAnimator(kVar);
         q1Var.setOnItemClickListener(new yk0(this, i7, 0));
-        q1Var.setOnItemLongClickListener(new ax(this, 17));
+        q1Var.setOnItemLongClickListener(new bx(this, 17));
         this.N = new si0(q1Var, true);
-        lz lzVar = new lz(getContext(), null);
-        addView(lzVar);
-        lzVar.setUseHeaderOffset(true);
-        lzVar.setViewType(3);
-        lzVar.setVisibility(8);
-        av0 av0Var = new av0(getContext(), lzVar, 1, null);
+        mz mzVar = new mz(getContext(), null);
+        addView(mzVar);
+        mzVar.setUseHeaderOffset(true);
+        mzVar.setViewType(3);
+        mzVar.setVisibility(8);
+        av0 av0Var = new av0(getContext(), mzVar, 1, null);
         this.a = av0Var;
         addView(av0Var);
         q1Var.setEmptyView(av0Var);
@@ -150,7 +150,7 @@ public final class dl0 extends FrameLayout implements org.telegram.messenger.ls 
         if (f2Var.hasStoryViewer()) {
             return;
         }
-        cc I = hc.a0(f2Var).I(R.raw.speed_limit, org.telegram.messenger.hd.M0(z9 ? 2131743803 : 2131751349, null), org.telegram.messenger.g0.K2(org.telegram.messenger.g0.x2(org.telegram.messenger.hd.M0(z9 ? 2131743802 : 2131751348, null), new bi.k1(28, this, z9)), spannableString, "%d"));
+        cc I = hc.a0(f2Var).I(R.raw.speed_limit, org.telegram.messenger.id.M0(z9 ? 2131743805 : 2131751349, null), org.telegram.messenger.g0.K2(org.telegram.messenger.g0.x2(org.telegram.messenger.id.M0(z9 ? 2131743804 : 2131751348, null), new bi.k1(28, this, z9)), spannableString, "%d"));
         I.j = 8000;
         I.k(false);
     }
@@ -203,7 +203,7 @@ public final class dl0 extends FrameLayout implements org.telegram.messenger.ls 
         e(this.h, this.n, z9);
         if (this.r == 0) {
             this.a.e(false, false);
-            this.a.d.setText(org.telegram.messenger.hd.M0(2131745809, null));
+            this.a.d.setText(org.telegram.messenger.id.M0(2131745811, null));
             this.a.e.setVisibility(8);
         }
         this.a.setStickerType(9);

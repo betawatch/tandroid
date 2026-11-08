@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hi implements Runnable {
     public final /* synthetic */ int a;
@@ -146,15 +146,15 @@ public final /* synthetic */ class hi implements Runnable {
             case 18:
                 qp qpVar8 = (qp) obj2;
                 TLRPC.TL_help_appConfig tL_help_appConfig = (TLRPC.TL_help_appConfig) obj;
-                wj wjVar = qpVar8.I7;
+                vj vjVar = qpVar8.I7;
                 if (tL_help_appConfig != null) {
                     TLRPC.JSONValue jSONValue = tL_help_appConfig.config;
                     if (jSONValue instanceof TLRPC.TL_jsonObject) {
                         qpVar8.q((TLRPC.TL_jsonObject) jSONValue);
                     }
                 }
-                g0.r(wjVar);
-                g0.i3(wjVar, 240010L);
+                g0.r(vjVar);
+                g0.i3(vjVar, 240010L);
                 return;
             case 19:
                 c20 c20Var2 = (c20) obj2;

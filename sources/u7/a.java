@@ -10,7 +10,7 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import org.telegram.messenger.z9;
 import q6.h0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Continuation, com.google.android.gms.common.api.internal.p, com.google.android.gms.common.api.internal.n {
     public static final /* synthetic */ a a = new a();
@@ -47,16 +47,16 @@ public final /* synthetic */ class a implements Continuation, com.google.android
                         if (cVar != null && cVar.b() >= 1) {
                             x xVar = (x) kVar.n();
                             e eVar = new e(Boolean.TRUE, taskCompletionSource);
-                            Parcel P0 = xVar.P0();
+                            Parcel p12 = xVar.p1();
                             int i10 = d.a;
-                            P0.writeInt(1);
-                            int r10 = xb.r(P0, 20293);
-                            xb.q(P0, 1, 4);
-                            P0.writeInt(2);
-                            xb.f(P0, 3, iVar);
-                            xb.s(P0, r10);
-                            d.c(P0, eVar);
-                            xVar.T0(P0, 89);
+                            p12.writeInt(1);
+                            int r10 = xb.r(p12, 20293);
+                            xb.q(p12, 1, 4);
+                            p12.writeInt(2);
+                            xb.f(p12, 3, iVar);
+                            xb.s(p12, r10);
+                            d.c(p12, eVar);
+                            xVar.t1(p12, 89);
                         }
                     }
                     x xVar2 = (x) kVar.n();
@@ -66,16 +66,16 @@ public final /* synthetic */ class a implements Continuation, com.google.android
                     IInterface iVar2 = queryLocalInterface instanceof j8.j ? (j8.j) queryLocalInterface : new j8.i(iVar, "com.google.android.gms.location.ILocationCallback", 10);
                     IInterface queryLocalInterface2 = gVar.queryLocalInterface("com.google.android.gms.location.internal.IFusedLocationProviderCallback");
                     IInterface uVar = queryLocalInterface2 instanceof w ? (w) queryLocalInterface2 : new u(gVar, "com.google.android.gms.location.internal.IFusedLocationProviderCallback", 10);
-                    Parcel P02 = xVar2.P0();
+                    Parcel p13 = xVar2.p1();
                     int i12 = d.a;
-                    P02.writeInt(1);
-                    int r11 = xb.r(P02, 20293);
-                    xb.q(P02, 1, 4);
-                    P02.writeInt(2);
-                    xb.f(P02, 5, iVar2.asBinder());
-                    xb.f(P02, 6, uVar.asBinder());
-                    xb.s(P02, r11);
-                    xVar2.T0(P02, 59);
+                    p13.writeInt(1);
+                    int r11 = xb.r(p13, 20293);
+                    xb.q(p13, 1, 4);
+                    p13.writeInt(2);
+                    xb.f(p13, 5, iVar2.asBinder());
+                    xb.f(p13, 6, uVar.asBinder());
+                    xb.s(p13, r11);
+                    xVar2.t1(p13, 59);
                 } else {
                     taskCompletionSource.setResult(Boolean.TRUE);
                 }
@@ -110,23 +110,23 @@ public final /* synthetic */ class a implements Continuation, com.google.android
             if (cVar != null && cVar.b() >= 1) {
                 x xVar = (x) kVar.n();
                 f fVar = new f(0, taskCompletionSource);
-                Parcel P0 = xVar.P0();
+                Parcel p12 = xVar.p1();
                 int i10 = d.a;
-                P0.writeInt(1);
-                aVar.writeToParcel(P0, 0);
-                d.c(P0, fVar);
-                xVar.T0(P0, 82);
+                p12.writeInt(1);
+                aVar.writeToParcel(p12, 0);
+                d.c(p12, fVar);
+                xVar.t1(p12, 82);
                 return;
             }
         }
         x xVar2 = (x) kVar.n();
-        Parcel P02 = xVar2.P0();
+        Parcel p13 = xVar2.p1();
         Parcel obtain = Parcel.obtain();
         try {
             try {
-                xVar2.b.transact(7, P02, obtain, 0);
+                xVar2.b.transact(7, p13, obtain, 0);
                 obtain.readException();
-                P02.recycle();
+                p13.recycle();
                 Location location = (Location) d.a(obtain, Location.CREATOR);
                 obtain.recycle();
                 taskCompletionSource.setResult(location);
@@ -135,7 +135,7 @@ public final /* synthetic */ class a implements Continuation, com.google.android
                 throw e10;
             }
         } catch (Throwable th2) {
-            P02.recycle();
+            p13.recycle();
             throw th2;
         }
     }

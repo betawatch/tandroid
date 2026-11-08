@@ -16,7 +16,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class e8 extends FrameLayout {
     public final org.telegram.ui.ActionBar.k5 a;
@@ -28,7 +28,7 @@ public final class e8 extends FrameLayout {
     public int h;
     public SparseArray n;
     public SparseArray r;
-    public final org.telegram.ui.Components.uy s;
+    public final org.telegram.ui.Components.vy s;
     public final SparseArray w;
     public final SparseArray x;
     public final /* synthetic */ h8 y;
@@ -58,9 +58,9 @@ public final class e8 extends FrameLayout {
         k5Var.setGravity(17);
         org.telegram.ui.ActionBar.r6.Y(k5Var, org.telegram.ui.ActionBar.k6.G6, null);
         addView(k5Var, c8.ha.d(-1, 28.0f, 0, 0.0f, 12.0f, 0.0f, 4.0f));
-        org.telegram.ui.Components.uy uyVar = new org.telegram.ui.Components.uy(context, new c8(this, context));
-        this.s = uyVar;
-        ((GestureDetector) uyVar.b).setIsLongpressEnabled(h8Var.e0 == 0);
+        org.telegram.ui.Components.vy vyVar = new org.telegram.ui.Components.vy(context, new c8(this, context));
+        this.s = vyVar;
+        ((GestureDetector) vyVar.b).setIsLongpressEnabled(h8Var.e0 == 0);
     }
 
     public static void a(e8 e8Var, int i7, int i10) {

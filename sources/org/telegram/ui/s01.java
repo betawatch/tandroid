@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class s01 extends org.telegram.ui.Components.is {
     public int M;
@@ -21,7 +21,7 @@ public final class s01 extends org.telegram.ui.Components.is {
     public ArrayList O;
     public final ArrayList P = new ArrayList();
     public float Q = 1.0f;
-    public final boolean R = org.telegram.messenger.rc.e(8200);
+    public final boolean R = org.telegram.messenger.sc.e(8200);
     public final OvershootInterpolator S = new OvershootInterpolator(3.0f);
     public final /* synthetic */ t01 T;
 

@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class b21 extends v4.s0 {
     public final /* synthetic */ int a;
@@ -38,13 +38,13 @@ public final class b21 extends v4.s0 {
                 break;
             case 3:
                 if (i7 == 0) {
-                    ((u71) this.b).s0 = false;
+                    ((v71) this.b).s0 = false;
                     break;
                 }
                 break;
             case 4:
                 if (i7 == 1) {
-                    org.telegram.messenger.g0.v1(((m81) this.b).getParentActivity().getCurrentFocus());
+                    org.telegram.messenger.g0.v1(((n81) this.b).getParentActivity().getCurrentFocus());
                     break;
                 }
                 break;
@@ -87,19 +87,19 @@ public final class b21 extends v4.s0 {
                 }
                 break;
             case 3:
-                u71 u71Var = (u71) this.b;
-                u71Var.v0.g1();
-                u71Var.s0 = true;
+                v71 v71Var = (v71) this.b;
+                v71Var.v0.g1();
+                v71Var.s0 = true;
                 break;
             case 5:
-                r91 r91Var = (r91) this.b;
-                if (r91Var.o0 && r91Var.a0.N0() + 5 >= r91Var.m0) {
-                    r91Var.L(r91Var.d0);
+                s91 s91Var = (s91) this.b;
+                if (s91Var.o0 && s91Var.a0.N0() + 5 >= s91Var.m0) {
+                    s91Var.L(s91Var.d0);
                 }
-                v91 v91Var = r91Var.v0;
-                if (v91Var.s0) {
+                w91 w91Var = s91Var.v0;
+                if (w91Var.s0) {
                     if (i7 != 0 || i10 != 0) {
-                        org.telegram.messenger.g0.v1(v91Var.p0.getSearchField());
+                        org.telegram.messenger.g0.v1(w91Var.p0.getSearchField());
                         break;
                     }
                 }
@@ -112,9 +112,9 @@ public final class b21 extends v4.s0 {
                     if (abs > 0) {
                         int B = wallpapersListActivity.I.B();
                         if (abs != 0 && L0 + abs > B - 2) {
-                            rc1 rc1Var = wallpapersListActivity.H;
-                            if (!rc1Var.f && rc1Var.s == 0) {
-                                rc1Var.F(rc1Var.h, rc1Var.r, true);
+                            sc1 sc1Var = wallpapersListActivity.H;
+                            if (!sc1Var.f && sc1Var.s == 0) {
+                                sc1Var.F(sc1Var.h, sc1Var.r, true);
                                 break;
                             }
                         }

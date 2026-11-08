@@ -1,39 +1,17 @@
 package r2;
 
-import android.os.SystemClock;
-import java.util.List;
-
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
-public final class g extends a3.d {
-    public int g;
+public final class g {
+    public final s2.k a;
+    public final long b;
+    public final int c;
+    public final boolean d;
 
-    @Override // a3.u
-    public final int d() {
-        return this.g;
-    }
-
-    @Override // a3.u
-    public final void e(long j3, long j10, long j11, List list, y2.m[] mVarArr) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (a(this.g, elapsedRealtime)) {
-            for (int i7 = this.b - 1; i7 >= 0; i7--) {
-                if (!a(i7, elapsedRealtime)) {
-                    this.g = i7;
-                    return;
-                }
-            }
-            throw new IllegalStateException();
-        }
-    }
-
-    @Override // a3.u
-    public final int o() {
-        return 0;
-    }
-
-    @Override // a3.u
-    public final Object r() {
-        return null;
+    public g(s2.k kVar, long j3, int i7) {
+        this.a = kVar;
+        this.b = j3;
+        this.c = i7;
+        this.d = (kVar instanceof s2.h) && ((s2.h) kVar).y;
     }
 }

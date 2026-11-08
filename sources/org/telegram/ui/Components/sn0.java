@@ -6,9 +6,9 @@ import android.graphics.Canvas;
 import android.text.TextUtils;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class sn0 extends kt {
+public final class sn0 extends lt {
     public boolean V;
     public int W;
     public int a0;
@@ -21,7 +21,7 @@ public final class sn0 extends kt {
         this.c0 = mo0Var;
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.lt
     public final void c(float f10) {
         this.c0.Z0();
     }
@@ -29,7 +29,7 @@ public final class sn0 extends kt {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         if (this.V) {
-            ys editText = this.c0.k1.getEditText();
+            zs editText = this.c0.k1.getEditText();
             editText.setOffsetY(editText.getOffsetY() - ((this.a0 - editText.getScrollY()) + (this.W - editText.getMeasuredHeight())));
             ValueAnimator ofFloat = ValueAnimator.ofFloat(editText.getOffsetY(), 0.0f);
             ofFloat.addUpdateListener(new c60(editText, 17));
@@ -46,10 +46,10 @@ public final class sn0 extends kt {
         super.dispatchDraw(canvas);
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.lt
     public final void f() {
         super.f();
-        gy emojiView = getEmojiView();
+        hy emojiView = getEmojiView();
         mo0 mo0Var = this.c0;
         if (emojiView != null) {
             emojiView.w0 = false;
@@ -71,7 +71,7 @@ public final class sn0 extends kt {
         }
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.lt
     public final void q(int i7, int i10) {
         mo0 mo0Var = this.c0;
         rn0 rn0Var = mo0Var.j1;

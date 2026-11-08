@@ -10,15 +10,15 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bj0;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.x71;
+import org.telegram.ui.y71;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class ga extends pj0 implements ls {
     public static final byte[] p3 = new byte[1024];
@@ -102,7 +102,7 @@ public abstract class ga extends pj0 implements ls {
             if (tL_theme.document == null) {
                 org.telegram.ui.ActionBar.f2 f2Var = this.o3;
                 if (f2Var != null) {
-                    f2Var.presentFragment(new x71(j6Var, null, true));
+                    f2Var.presentFragment(new y71(j6Var, null, true));
                     return;
                 }
                 return;
@@ -189,7 +189,7 @@ public abstract class ga extends pj0 implements ls {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.e3) {
-            canvas.drawLine(hd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (hd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+            canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
         }
     }
 

@@ -4,9 +4,9 @@ import android.text.Editable;
 import org.telegram.messenger.iu;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.ws;
+import org.telegram.ui.Components.xs;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r2 implements j5, e1 {
     public final /* synthetic */ t3 a;
@@ -62,9 +62,9 @@ public final /* synthetic */ class r2 implements j5, e1 {
         i4 i4Var2 = new i4(textbutton);
         i4Var2.a(t3Var.m3, g1Var, t3Var.n3);
         text2.setSpan(i4Var2, spanStart, spanEnd, 33);
-        ws wsVar = g1Var.N1;
-        if (wsVar != null) {
-            wsVar.m();
+        xs xsVar = g1Var.N1;
+        if (xsVar != null) {
+            xsVar.m();
         }
         g1Var.p2 = true;
         g1Var.invalidate();

@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.view.View;
 import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z51 implements org.telegram.ui.Components.bj0 {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class z51 implements org.telegram.ui.Components.bj0
                 int i10 = themeActivity.f;
                 org.telegram.ui.ActionBar.j6 D0 = i10 == 1 ? org.telegram.ui.ActionBar.k6.J : org.telegram.ui.ActionBar.k6.D0();
                 if (i7 == h61Var.b() - 1) {
-                    themeActivity.presentFragment(new u71(D0, false, 1, false, i10 == 1));
+                    themeActivity.presentFragment(new v71(D0, false, 1, false, i10 == 1));
                 } else {
                     org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) h61Var.e.get(i7);
                     if (!TextUtils.isEmpty(h6Var.o) && h6Var.a != org.telegram.ui.ActionBar.k6.n) {
@@ -44,7 +44,7 @@ public final /* synthetic */ class z51 implements org.telegram.ui.Components.bj0
                         org.telegram.ui.ActionBar.r3.q(D0, h6Var.a);
                         org.telegram.ui.ActionBar.k6.M1(themeActivity);
                     } else {
-                        themeActivity.presentFragment(new u71(D0, false, 1, i12 >= 100, i10 == 1));
+                        themeActivity.presentFragment(new v71(D0, false, 1, i12 >= 100, i10 == 1));
                     }
                 }
                 int left = view.getLeft();

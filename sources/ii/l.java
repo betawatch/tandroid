@@ -4,7 +4,7 @@ import di.c4;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
@@ -24,7 +24,7 @@ import org.telegram.ui.ld;
 import org.telegram.ui.m31;
 import org.telegram.ui.pn;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a;
@@ -176,7 +176,7 @@ public final /* synthetic */ class l implements Runnable {
                         obj = pnVar.w0;
                     }
                     c4Var.j(e12, "50_50", w8Var, obj);
-                    pnVar.b0.o(R.drawable.msg_addphoto, hd.M0(2131752213, "ChatSetNewPhoto"), true);
+                    pnVar.b0.o(R.drawable.msg_addphoto, id.M0(2131752213, "ChatSetNewPhoto"), true);
                     if (pnVar.R0 == null) {
                         pnVar.R0 = new zg0(R.raw.camera_outline, org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(50.0f), false, null);
                     }

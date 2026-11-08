@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ub0 extends org.telegram.ui.Components.wt0 {
     public boolean D;
@@ -58,7 +58,7 @@ public final class ub0 extends org.telegram.ui.Components.wt0 {
         float f11 = 2.0f;
         textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         textView.setGravity(49);
-        textView.setText(org.telegram.messenger.hd.M0(2131745523, null));
+        textView.setText(org.telegram.messenger.id.M0(2131745525, null));
         addView(textView, c8.ha.t(-2, -2, 1, 8, org.telegram.messenger.g0.O1() ? 16 : 72, 8, 0));
         TextView textView2 = new TextView(context);
         this.d = textView2;
@@ -71,7 +71,7 @@ public final class ub0 extends org.telegram.ui.Components.wt0 {
         while (i13 < this.b.length) {
             org.telegram.ui.Components.lb0 lb0Var = new org.telegram.ui.Components.lb0(context, null);
             this.a[i13] = lb0Var;
-            lb0Var.setText(org.telegram.messenger.hd.M0(i7 == 0 ? i13 == 0 ? 2131747209 : 2131747207 : 2131747441, null));
+            lb0Var.setText(org.telegram.messenger.id.M0(i7 == 0 ? i13 == 0 ? 2131747211 : 2131747209 : 2131747443, null));
             this.b[i13] = new EditTextBoldCursor(context);
             this.b[i13].setCursorSize(org.telegram.messenger.g0.L(20.0f));
             this.b[i13].setCursorWidth(1.5f);
@@ -87,7 +87,7 @@ public final class ub0 extends org.telegram.ui.Components.wt0 {
             }
             this.b[i13].setTypeface(Typeface.DEFAULT);
             int i14 = 3;
-            this.b[i13].setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
+            this.b[i13].setGravity(org.telegram.messenger.id.a0 ? 5 : 3);
             EditTextBoldCursor editTextBoldCursor = this.b[i13];
             boolean z9 = i13 == 0 && i7 == 0;
             float f12 = f11;
@@ -170,9 +170,9 @@ public final class ub0 extends org.telegram.ui.Components.wt0 {
         }
         float f13 = f11;
         if (i7 == 0) {
-            this.d.setText(org.telegram.messenger.hd.M0(2131747208, "PleaseEnterNewFirstPasswordLogin"));
+            this.d.setText(org.telegram.messenger.id.M0(2131747210, "PleaseEnterNewFirstPasswordLogin"));
         } else {
-            this.d.setText(org.telegram.messenger.hd.M0(2131747439, "PasswordHintTextLogin"));
+            this.d.setText(org.telegram.messenger.id.M0(2131747441, "PasswordHintTextLogin"));
         }
         TextView textView3 = new TextView(context);
         this.e = textView3;
@@ -180,7 +180,7 @@ public final class ub0 extends org.telegram.ui.Components.wt0 {
         textView3.setTextSize(1, 15.0f);
         textView3.setLineSpacing(org.telegram.messenger.g0.L(f13), 1.0f);
         textView3.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
-        textView3.setText(org.telegram.messenger.hd.M0(2131742818, null));
+        textView3.setText(org.telegram.messenger.id.M0(2131742820, null));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.addView(textView3, c8.ha.d(-1, 56.0f, 80, 0.0f, 0.0f, 0.0f, 32.0f));
         addView(frameLayout, c8.ha.r(-1, -1, 80));
@@ -243,7 +243,7 @@ public final class ub0 extends org.telegram.ui.Components.wt0 {
 
     @Override // org.telegram.ui.Components.wt0
     public String getHeaderName() {
-        return org.telegram.messenger.hd.M0(2131748265, "NewPassword");
+        return org.telegram.messenger.id.M0(2131748267, "NewPassword");
     }
 
     @Override // org.telegram.ui.Components.wt0

@@ -2,36 +2,36 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l61 implements org.telegram.messenger.c20 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ u71 b;
+    public final /* synthetic */ v71 b;
 
-    public /* synthetic */ l61(u71 u71Var, int i7) {
+    public /* synthetic */ l61(v71 v71Var, int i7) {
         this.a = i7;
-        this.b = u71Var;
+        this.b = v71Var;
     }
 
     @Override // org.telegram.messenger.c20
     public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                u71 u71Var = this.b;
-                u71Var.getClass();
-                u71Var.o1 = ((Float) obj).floatValue();
-                u71Var.y0.invalidate();
-                u71Var.a1();
+                v71 v71Var = this.b;
+                v71Var.getClass();
+                v71Var.o1 = ((Float) obj).floatValue();
+                v71Var.y0.invalidate();
+                v71Var.a1();
                 break;
             case 1:
-                u71 u71Var2 = this.b;
-                u71Var2.W1 = (TL_stories.TL_premium_boostsStatus) obj;
-                u71Var2.V1 = true;
-                u71Var2.m1(true);
-                u71Var2.U1 = false;
+                v71 v71Var2 = this.b;
+                v71Var2.W1 = (TL_stories.TL_premium_boostsStatus) obj;
+                v71Var2.V1 = true;
+                v71Var2.m1(true);
+                v71Var2.U1 = false;
                 break;
             default:
-                u71.Z(this.b, (org.telegram.messenger.e3) obj);
+                v71.Z(this.b, (org.telegram.messenger.e3) obj);
                 break;
         }
     }

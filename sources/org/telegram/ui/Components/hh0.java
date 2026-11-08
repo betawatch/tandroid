@@ -15,10 +15,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class hh0 extends FrameLayout {
-    public final lz a;
+    public final mz a;
     public final TextView b;
     public final z8 c;
     public final ImageView d;
@@ -37,12 +37,12 @@ public final class hh0 extends FrameLayout {
         this.r = new ArrayList();
         this.f = i7;
         this.s = ijVar;
-        lz lzVar = new lz(context, null);
-        this.a = lzVar;
-        lzVar.e(org.telegram.ui.ActionBar.k6.G8, org.telegram.ui.ActionBar.k6.i6, -1);
-        lzVar.setViewType(13);
-        lzVar.setIsSingleCell(false);
-        addView(lzVar, c8.ha.c(-1.0f, -2));
+        mz mzVar = new mz(context, null);
+        this.a = mzVar;
+        mzVar.e(org.telegram.ui.ActionBar.k6.G8, org.telegram.ui.ActionBar.k6.i6, -1);
+        mzVar.setViewType(13);
+        mzVar.setIsSingleCell(false);
+        addView(mzVar, c8.ha.c(-1.0f, -2));
         TextView textView = new TextView(context);
         this.b = textView;
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.E8, null);
@@ -112,16 +112,16 @@ public final class hh0 extends FrameLayout {
         if (i11 > 0) {
             i7 = View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30);
         }
-        lz lzVar = this.a;
-        if (lzVar.getVisibility() != 0) {
+        mz mzVar = this.a;
+        if (mzVar.getVisibility() != 0) {
             super.onMeasure(i7, i10);
             return;
         }
         this.h = true;
-        lzVar.setVisibility(8);
+        mzVar.setVisibility(8);
         super.onMeasure(i7, i10);
-        lzVar.getLayoutParams().width = getMeasuredWidth();
-        lzVar.setVisibility(0);
+        mzVar.getLayoutParams().width = getMeasuredWidth();
+        mzVar.setVisibility(0);
         this.h = false;
         super.onMeasure(i7, i10);
     }

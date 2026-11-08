@@ -6,7 +6,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hq implements Runnable {
     public final /* synthetic */ int D;
@@ -73,11 +73,11 @@ public final /* synthetic */ class hq implements Runnable {
         final org.telegram.ui.Cells.z8 z8Var = this.r;
         final org.telegram.ui.ActionBar.f6 f6Var = this.s;
         if (length < 4 || sb2.length() > 32) {
-            z8Var.setText(org.telegram.messenger.hd.M0(sb2.length() < 4 ? 2131743655 : 2131743656, null));
+            z8Var.setText(org.telegram.messenger.id.M0(sb2.length() < 4 ? 2131743657 : 2131743658, null));
             org.telegram.ui.ActionBar.r6.V(z8Var.getTextView(), org.telegram.ui.ActionBar.k6.q7, f6Var);
             return;
         }
-        z8Var.setText(org.telegram.messenger.hd.M0(2131743667, null));
+        z8Var.setText(org.telegram.messenger.id.M0(2131743669, null));
         org.telegram.ui.ActionBar.r6.V(z8Var.getTextView(), org.telegram.ui.ActionBar.k6.B6, f6Var);
         final int[] iArr = this.w;
         final int i7 = iArr[0];
@@ -142,7 +142,7 @@ public final /* synthetic */ class hq implements Runnable {
                         r2 r2Var3 = r2Var2;
                         org.telegram.ui.ActionBar.f6 f6Var3 = f6Var2;
                         CharSequence d = lq.d(i14, str2, treeSet3, str3, r2Var3, f6Var3);
-                        CharSequence M0 = d != null ? d : org.telegram.messenger.hd.M0(2131751728, null);
+                        CharSequence M0 = d != null ? d : org.telegram.messenger.id.M0(2131751728, null);
                         org.telegram.ui.Cells.z8 z8Var3 = z8Var2;
                         z8Var3.setText(M0);
                         org.telegram.ui.ActionBar.r6.V(z8Var3.getTextView(), org.telegram.ui.ActionBar.k6.q7, f6Var3);

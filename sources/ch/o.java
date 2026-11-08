@@ -25,7 +25,7 @@ import java.util.LinkedHashMap;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.ch;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
@@ -56,7 +56,7 @@ import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.q01;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class o extends f2 implements ls {
     public final Paint D;
@@ -159,7 +159,7 @@ public final class o extends f2 implements ls {
         SpannableStringBuilder spannableStringBuilder3;
         setHasOwnBackground(true);
         TLRPC.Document document = null;
-        this.simpleActionBar.setTitle(hd.M0(2131746386, null));
+        this.simpleActionBar.setTitle(id.M0(2131746388, null));
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 1));
         q41 q41Var = new q41(this, new ai.e(this, 13), null, null);
@@ -235,9 +235,9 @@ public final class o extends f2 implements ls {
         r6.V(textView, i12, null);
         this.f.setTopPadding(12);
         this.f.setBottomPadding(16);
-        this.f.setText(hd.M0(2131746408, null));
+        this.f.setText(id.M0(2131746410, null));
         n4 n4Var = new n4(context);
-        n4Var.setText(hd.M0(2131753759, null));
+        n4Var.setText(id.M0(2131753759, null));
         r6.i(k6.d6, n4Var, null);
         n4Var.setTextSize(15.0f);
         n4Var.setTopMargin(14);
@@ -251,10 +251,10 @@ public final class o extends f2 implements ls {
         b0(this.h, false);
         z8 z8Var2 = new z8(12, context, this.resourceProvider);
         r6.V(z8Var2.getTextView(), i12, null);
-        z8Var2.setText(org.telegram.messenger.g0.S2(hd.M0(2131746405, null), k6.Uc, 0, new h(this, 4), getResourceProvider()));
+        z8Var2.setText(org.telegram.messenger.g0.S2(id.M0(2131746407, null), k6.Uc, 0, new h(this, 4), getResourceProvider()));
         b0(z8Var2, true);
         n4 n4Var2 = new n4(context, this.resourceProvider);
-        n4Var2.setText(hd.M0(2131748666, null));
+        n4Var2.setText(id.M0(2131748668, null));
         b0(n4Var2, false);
         this.n = new t7(context, this.resourceProvider);
         TLRPC.ChatFull chatFull = this.R;
@@ -279,12 +279,12 @@ public final class o extends f2 implements ls {
         z8 z8Var3 = new z8(12, context, this.resourceProvider);
         z8Var3.setTopPadding(12);
         z8Var3.setBottomPadding(16);
-        z8Var3.setText(hd.M0(2131748665, null));
+        z8Var3.setText(id.M0(2131748667, null));
         b0(z8Var3, true);
         if (chatFull.paid_media_allowed) {
             r8 r8Var3 = new r8(context);
             this.r = r8Var3;
-            r8Var3.f(hd.M0(2131752411, null), false, false);
+            r8Var3.f(id.M0(2131752411, null), false, false);
             b0(this.r, false);
             final int i19 = 1;
             this.r.setOnClickListener(new View.OnClickListener(this) { // from class: ch.j
@@ -342,7 +342,7 @@ public final class o extends f2 implements ls {
             r6.V(z8Var4.getTextView(), i12, null);
             z8Var4.setTopPadding(12);
             z8Var4.setBottomPadding(70);
-            z8Var4.setText(org.telegram.messenger.g0.d4(hd.M0(2131752410, null), new h(this, 5)));
+            z8Var4.setText(org.telegram.messenger.g0.d4(id.M0(2131752410, null), new h(this, 5)));
             b0(z8Var4, true);
         } else {
             z8Var3.setBottomPadding(70);
@@ -359,7 +359,7 @@ public final class o extends f2 implements ls {
         r0Var.f();
         r0 r0Var2 = this.s;
         r0Var2.getClass();
-        r0Var2.i(new SpannableStringBuilder(hd.M0(2131746387, null)), false, true);
+        r0Var2.i(new SpannableStringBuilder(id.M0(2131746389, null)), false, true);
         r0Var2.k0 = new SpannableStringBuilder("l");
         wp wpVar = new wp(R.drawable.mini_switch_lock, 0);
         wpVar.n = 1;
@@ -542,7 +542,7 @@ public final class o extends f2 implements ls {
                     i7 = 2;
                 }
             }
-            this.e.f(hd.M0(2131751154, null), (this.Y == i7 || this.a) ? z9 : false, false);
+            this.e.f(id.M0(2131751154, null), (this.Y == i7 || this.a) ? z9 : false, false);
             this.h.I();
             if (chatFull.paid_media_allowed && chatFull.paid_reactions_available) {
                 k0();
@@ -582,7 +582,7 @@ public final class o extends f2 implements ls {
         i7 = 2;
         linkedHashMap = linkedHashMap2;
         z9 = true;
-        this.e.f(hd.M0(2131751154, null), (this.Y == i7 || this.a) ? z9 : false, false);
+        this.e.f(id.M0(2131751154, null), (this.Y == i7 || this.a) ? z9 : false, false);
         this.h.I();
         if (chatFull.paid_media_allowed) {
             k0();
@@ -607,11 +607,11 @@ public final class o extends f2 implements ls {
         }
         if (z9 && z10) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-            String M0 = hd.M0(2131743836, "UnsavedChanges");
+            String M0 = id.M0(2131743838, "UnsavedChanges");
             u1 u1Var = alertDialog$Builder.a;
             u1Var.R = M0;
-            u1Var.T = hd.M0(2131746406, "ReactionApplyChangesDialog");
-            alertDialog$Builder.k(hd.M0(2131754216, "ApplyTheme"), new r1(this) { // from class: ch.g
+            u1Var.T = id.M0(2131746408, "ReactionApplyChangesDialog");
+            alertDialog$Builder.k(id.M0(2131754216, "ApplyTheme"), new r1(this) { // from class: ch.g
                 public final /* synthetic */ o b;
 
                 {
@@ -630,7 +630,7 @@ public final class o extends f2 implements ls {
                     }
                 }
             });
-            alertDialog$Builder.h(hd.M0(2131751407, null), new r1(this) { // from class: ch.g
+            alertDialog$Builder.h(id.M0(2131751407, null), new r1(this) { // from class: ch.g
                 public final /* synthetic */ o b;
 
                 {
@@ -680,7 +680,7 @@ public final class o extends f2 implements ls {
             return;
         }
         if (z9) {
-            hc.a0(this).Q(R.raw.chats_infotip, 36, org.telegram.messenger.g0.X2(hd.G(size, "ReactionReachLvlForReactionShort", Integer.valueOf(size)))).j();
+            hc.a0(this).Q(R.raw.chats_infotip, 36, org.telegram.messenger.g0.X2(id.G(size, "ReactionReachLvlForReactionShort", Integer.valueOf(size)))).j();
         }
         this.s.setLvlRequiredState(this.X);
     }

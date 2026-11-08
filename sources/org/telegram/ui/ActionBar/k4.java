@@ -33,13 +33,13 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import org.telegram.messenger.beta.R;
+import org.telegram.messenger.jl;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
-import org.telegram.messenger.vj;
 import org.telegram.ui.Components.qs;
 import org.telegram.ui.c61;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class k4 {
     public static final x3 p = new x3();
@@ -59,7 +59,7 @@ public final class k4 {
     public MenuItem.OnMenuItemClickListener g = p;
     public boolean h = true;
     public final y3 l = new y3(this);
-    public final vj m = new vj(23);
+    public final jl m = new jl(23);
 
     static {
         Integer valueOf = Integer.valueOf(R.id.menu_regular);
@@ -346,7 +346,7 @@ public final class k4 {
             ArrayAdapter arrayAdapter2 = (ArrayAdapter) h4Var.getAdapter();
             arrayAdapter2.clear();
             if (k4Var.j != null) {
-                Collections.sort(linkedList, new vj(24));
+                Collections.sort(linkedList, new jl(24));
             }
             int size3 = linkedList.size();
             boolean D3 = qp.s1(p10.s0).D3();

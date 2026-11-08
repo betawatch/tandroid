@@ -10,7 +10,7 @@ import org.json.JSONObject;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.p10;
@@ -29,10 +29,9 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.xa;
-import org.telegram.ui.Wallet.f2;
-import org.telegram.ui.Wallet.p1;
+import org.telegram.ui.Wallet.e2;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v0 implements v10 {
     public final /* synthetic */ int a = 1;
@@ -80,7 +79,7 @@ public final /* synthetic */ class v0 implements v10 {
                     if (!y0Var.E) {
                         l1 l1Var = y0Var.b;
                         l1Var.getClass();
-                        l1Var.d1(R.drawable.msg_warning, hd.M0(2131751106, null), null);
+                        l1Var.d1(R.drawable.msg_warning, id.M0(2131751106, null), null);
                         break;
                     }
                 }
@@ -115,25 +114,25 @@ public final /* synthetic */ class v0 implements v10 {
                 new hc(xa.a(context), bVar).E(bVar).j();
                 break;
             case 2:
-                f2 f2Var = (f2) obj5;
+                e2 e2Var = (e2) obj5;
                 c20 c20Var = (c20) obj4;
                 JSONObject jSONObject = (JSONObject) obj3;
                 TLRPC.Bool bool = (TLRPC.Bool) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 if (tL_error2 != null || !(bool instanceof TLRPC.TL_boolTrue)) {
-                    c20Var.a(f2.z(tL_error2, "submitResponse"));
+                    c20Var.a(e2.z(tL_error2, "submitResponse"));
                     break;
                 } else {
                     boolean optBoolean = jSONObject.optBoolean("disconnect");
                     long j10 = this.c;
                     int i12 = this.b;
                     if (!optBoolean) {
-                        f2Var.e(i12, j10, c20Var);
+                        e2Var.e(i12, j10, c20Var);
                         break;
                     } else {
                         TL_wallet.tonConnectCloseSession tonconnectclosesession = new TL_wallet.tonConnectCloseSession();
                         tonconnectclosesession.session_id = j10;
-                        f2Var.f.sendRequestTyped(tonconnectclosesession, new d3.b(1), new p1(f2Var, c20Var, j10, i12, 1));
+                        e2Var.f.sendRequestTyped(tonconnectclosesession, new d3.b(1), new org.telegram.ui.Wallet.o1(e2Var, c20Var, j10, i12, 1));
                         break;
                     }
                 }
@@ -162,11 +161,11 @@ public final /* synthetic */ class v0 implements v10 {
                         f10.addView(new h7(context2, a22, M0), ha.t(-1, -2, 48, 0, -4, 0, 0));
                         TextView textView = new TextView(context2);
                         qs.i(textView);
-                        textView.setText(hd.M0(2131750304, null));
+                        textView.setText(id.M0(2131750306, null));
                         int i14 = k6.j5;
                         k5.n(textView, i14, f6Var, 1, 20.0f);
-                        textView.setGravity(hd.a0 ? 5 : 3);
-                        f10.addView(textView, ha.d(-2, -2.0f, (hd.a0 ? 5 : 3) | 48, 24.0f, 19.0f, 24.0f, 2.0f));
+                        textView.setGravity(id.a0 ? 5 : 3);
+                        f10.addView(textView, ha.d(-2, -2.0f, (id.a0 ? 5 : 3) | 48, 24.0f, 19.0f, 24.0f, 2.0f));
                         TextView textView2 = new TextView(context2);
                         r6.V(textView2, i14, f6Var);
                         textView2.setTextSize(1, 16.0f);
@@ -175,21 +174,21 @@ public final /* synthetic */ class v0 implements v10 {
                         Object[] objArr = new Object[2];
                         objArr[i7] = t6;
                         objArr[1] = t10;
-                        k5.r(null, null, 2131750303, objArr, textView2);
+                        k5.r(null, null, 2131750305, objArr, textView2);
                         f10.addView(textView2, ha.t(-1, -2, 48, 24, 4, 24, 4));
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(i7, context2, f6Var);
                         alertDialog$Builder.o(f10);
-                        alertDialog$Builder.k(hd.M0(2131751771, null), new u5.e(d0Var, 13));
-                        alertDialog$Builder.h(hd.M0(2131752589, null), null);
+                        alertDialog$Builder.k(id.M0(2131751771, null), new u5.e(d0Var, 13));
+                        alertDialog$Builder.h(id.M0(2131752589, null), null);
                         alertDialog$Builder.a.show();
                         break;
                     } else if (s9Var.e.bid_date > 0 && !s9Var.f()) {
-                        zh.m mVar = new zh.m(context2, f6Var, null, s9Var);
-                        mVar.f2 = runnable;
-                        mVar.show();
+                        zh.l lVar = new zh.l(context2, f6Var, null, s9Var);
+                        lVar.f2 = runnable;
+                        lVar.show();
                         break;
                     } else {
-                        new zh.v(context2, f6Var, j11, s9Var.d, runnable).show();
+                        new zh.u(context2, f6Var, j11, s9Var.d, runnable).show();
                         break;
                     }
                 }
@@ -213,8 +212,8 @@ public final /* synthetic */ class v0 implements v10 {
         this.f = runnable;
     }
 
-    public /* synthetic */ v0(f2 f2Var, c20 c20Var, JSONObject jSONObject, long j3, int i7) {
-        this.d = f2Var;
+    public /* synthetic */ v0(e2 e2Var, c20 c20Var, JSONObject jSONObject, long j3, int i7) {
+        this.d = e2Var;
         this.e = c20Var;
         this.f = jSONObject;
         this.c = j3;

@@ -1,8 +1,6 @@
 package gb;
 
-import android.util.Log;
-
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class z0 extends kd.j implements rd.q {
     public int a;
@@ -34,7 +32,10 @@ public final class z0 extends kd.j implements rd.q {
             Throwable th2 = this.c;
             o0 a10 = this.d.b.a(null);
             k0 k0Var = new k0(a10, null, null);
-            Log.d("FirebaseSessions", "Init session datastore failed with exception message: " + th2.getMessage() + ". Emit fallback session " + a10.a);
+            StringBuilder sb2 = new StringBuilder("Init session datastore failed with exception message: ");
+            sb2.append(th2.getMessage());
+            sb2.append(". Emit fallback session ");
+            rf.b.p(sb2, a10.a, "FirebaseSessions");
             this.b = null;
             this.a = 1;
             if (dVar.a(k0Var, this) == aVar) {

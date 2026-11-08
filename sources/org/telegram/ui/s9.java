@@ -37,7 +37,7 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.camera.Size;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class s9 extends org.telegram.ui.ActionBar.f2 {
     public r1.g D;
@@ -247,7 +247,7 @@ public class s9 extends org.telegram.ui.ActionBar.f2 {
             p9Var.addView(this.actionBar);
         }
         if (i7 == 2 || i7 == 3) {
-            this.actionBar.setTitle(org.telegram.messenger.hd.M0(2131753885, null));
+            this.actionBar.setTitle(org.telegram.messenger.id.M0(2131753885, null));
         }
         Paint paint2 = new Paint(1);
         paint2.setPathEffect(org.telegram.ui.Components.r70.c());
@@ -273,16 +273,16 @@ public class s9 extends org.telegram.ui.ActionBar.f2 {
         this.h.setGravity(81);
         this.h.setAlpha(0.0f);
         if (i7 == 0) {
-            this.b.setText(org.telegram.messenger.hd.M0(2131747469, null));
-            this.c.setText(org.telegram.messenger.hd.M0(2131747468, null));
+            this.b.setText(org.telegram.messenger.id.M0(2131747471, null));
+            this.c.setText(org.telegram.messenger.id.M0(2131747470, null));
             org.telegram.ui.ActionBar.r6.V(this.b, org.telegram.ui.ActionBar.k6.G6, null);
             this.h.setTypeface(Typeface.MONOSPACE);
         } else {
             if (i7 == 1 || i7 == 3) {
-                this.b.setText(org.telegram.messenger.hd.M0(2131753885, null));
+                this.b.setText(org.telegram.messenger.id.M0(2131753885, null));
             } else {
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.hd.M0(2131753888, null));
-                String[] strArr = {org.telegram.messenger.hd.M0(2131753893, null), org.telegram.messenger.hd.M0(2131753883, null)};
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.id.M0(2131753888, null));
+                String[] strArr = {org.telegram.messenger.id.M0(2131753893, null), org.telegram.messenger.id.M0(2131753883, null)};
                 int i11 = 0;
                 for (int i12 = 2; i11 < i12; i12 = 2) {
                     String spannableStringBuilder2 = spannableStringBuilder.toString();
@@ -312,7 +312,7 @@ public class s9 extends org.telegram.ui.ActionBar.f2 {
             this.h.setTextSize(1, 16.0f);
             this.h.setPadding(org.telegram.messenger.g0.L(10.0f), 0, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f));
             ci0Var = null;
-            this.h.setText(org.telegram.messenger.hd.M0(2131753887, null));
+            this.h.setText(org.telegram.messenger.id.M0(2131753887, null));
             p9Var.addView(this.h);
             ImageView imageView = new ImageView(context);
             this.s = imageView;

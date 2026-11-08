@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class p10 implements Runnable {
     public final /* synthetic */ c40 a;
@@ -26,15 +26,15 @@ public final class p10 implements Runnable {
         }
         int currentTime = i7 - ConnectionsManager.getInstance(c40Var.k1.a).getCurrentTime();
         if (currentTime >= 86400) {
-            j30Var.l(org.telegram.messenger.hd.G(Math.round(currentTime / 86400.0f), "Days", new Object[0]), false);
+            j30Var.l(org.telegram.messenger.id.G(Math.round(currentTime / 86400.0f), "Days", new Object[0]), false);
         } else {
             j30Var.l(org.telegram.messenger.g0.j0(Math.abs(currentTime)), false);
             if (currentTime < 0 && k5Var.getTag() == null) {
                 k5Var.setTag(1);
-                k5Var.l(org.telegram.messenger.hd.M0(2131743442, null), false);
+                k5Var.l(org.telegram.messenger.id.M0(2131743444, null), false);
             }
         }
-        c40Var.N1.l(org.telegram.messenger.hd.W(3, i7, true), false);
+        c40Var.N1.l(org.telegram.messenger.id.W(3, i7, true), false);
         org.telegram.messenger.g0.i3(c40Var.n4, 1000L);
     }
 }

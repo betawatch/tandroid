@@ -4,9 +4,9 @@ import android.content.Context;
 import android.view.ViewGroup;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class mf extends gy {
+public final class mf extends hy {
     public final /* synthetic */ ChatActivityEnterView V2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,7 +15,7 @@ public final class mf extends gy {
         this.V2 = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.Components.gy, android.view.View
+    @Override // org.telegram.ui.Components.hy, android.view.View
     public final void setTranslationY(float f10) {
         super.setTranslationY(f10);
         ChatActivityEnterView chatActivityEnterView = this.V2;

@@ -6,7 +6,7 @@ import android.os.SystemClock;
 import android.view.TextureView;
 import android.view.View;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class k40 extends TextureView {
     public final /* synthetic */ int a;
@@ -25,13 +25,13 @@ public final class k40 extends TextureView {
         switch (this.a) {
             case 0:
                 n40 n40Var = (n40) this.b;
-                if (!n40Var.H0 && (s0Var = n40Var.Q) != null && s0Var.a == 3) {
-                    n40Var.H0 = true;
+                if (!n40Var.I0 && (s0Var = n40Var.Q) != null && s0Var.a == 3) {
+                    n40Var.I0 = true;
                     try {
-                        n40Var.F0 = SystemClock.elapsedRealtimeNanos();
-                        n40Var.D();
+                        n40Var.G0 = SystemClock.elapsedRealtimeNanos();
+                        n40Var.F();
                     } finally {
-                        n40Var.H0 = false;
+                        n40Var.I0 = false;
                     }
                 }
                 super.invalidate();
@@ -64,11 +64,11 @@ public final class k40 extends TextureView {
         switch (this.a) {
             case 1:
                 super.setTransform(matrix);
-                ry ryVar = ((sd0) this.b).l0;
-                if (ryVar != null) {
+                sy syVar = ((sd0) this.b).l0;
+                if (syVar != null) {
                     int width = getWidth();
                     int height = getHeight();
-                    da daVar = ryVar.I;
+                    da daVar = syVar.I;
                     if (daVar != null) {
                         Matrix matrix2 = daVar.v;
                         matrix.invert(matrix2);
@@ -77,7 +77,7 @@ public final class k40 extends TextureView {
                         matrix2.preScale(f10, f11);
                         matrix2.postScale(1.0f / f10, 1.0f / f11);
                         daVar.c(matrix2);
-                        ryVar.c(false, false, false);
+                        syVar.c(false, false, false);
                         break;
                     }
                 }

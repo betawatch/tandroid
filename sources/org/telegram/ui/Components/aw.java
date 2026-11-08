@@ -1,69 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
+import android.content.Context;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class aw extends p31 {
-    public final /* synthetic */ gy b;
+public final class aw extends ru {
+    public final /* synthetic */ TLRPC.StickerSet N1;
+    public final /* synthetic */ hy O1;
 
-    public aw(gy gyVar) {
-        this.b = gyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public aw(hy hyVar, org.telegram.ui.ActionBar.f2 f2Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, ArrayList arrayList, TLRPC.StickerSet stickerSet) {
+        super(f2Var, context, f6Var, arrayList);
+        this.O1 = hyVar;
+        this.N1 = stickerSet;
     }
 
-    @Override // org.telegram.ui.Components.p31
-    public final boolean a() {
-        return this.b.t1.b();
-    }
-
-    @Override // org.telegram.ui.Components.p31
-    public final String[] b() {
-        return this.b.W0;
-    }
-
-    @Override // org.telegram.ui.Components.p31
-    public final boolean c() {
-        return this.b.t1.c();
-    }
-
-    @Override // org.telegram.ui.Components.p31
-    public final boolean d(i31 i31Var, MotionEvent motionEvent) {
-        org.telegram.ui.ks p10 = org.telegram.ui.ks.p();
-        gy gyVar = this.b;
-        gyVar.getMeasuredHeight();
-        return p10.q(motionEvent, i31Var, gyVar.g2, gyVar.Z1);
-    }
-
-    @Override // org.telegram.ui.Components.p31
-    public final boolean e(i31 i31Var, k kVar, MotionEvent motionEvent) {
-        org.telegram.ui.ks p10 = org.telegram.ui.ks.p();
-        gy gyVar = this.b;
-        gyVar.getMeasuredHeight();
-        return p10.r(motionEvent, i31Var, kVar, gyVar.g2, gyVar.Z1);
-    }
-
-    @Override // org.telegram.ui.Components.p31
-    public final void f(TLRPC.Document document, Object obj, boolean z9, int i7) {
-        this.b.t1.m(null, document, null, obj, null, z9, i7);
-    }
-
-    @Override // org.telegram.ui.Components.p31
-    public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z9) {
-        gy gyVar = this.b;
-        gyVar.t1.r(stickerSetCovered);
-        if (z9) {
-            gyVar.X(true);
+    @Override // org.telegram.ui.Components.ru
+    public final void K0(boolean z9) {
+        hy hyVar = this.O1;
+        ArrayList arrayList = hyVar.p1;
+        TLRPC.StickerSet stickerSet = this.N1;
+        if (!z9) {
+            arrayList.remove(Long.valueOf(stickerSet.id));
+        } else if (!arrayList.contains(Long.valueOf(stickerSet.id))) {
+            arrayList.add(Long.valueOf(stickerSet.id));
         }
+        hyVar.T();
     }
 
-    @Override // org.telegram.ui.Components.p31
-    public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
-        this.b.t1.h(stickerSetCovered);
-    }
-
-    @Override // org.telegram.ui.Components.p31
-    public final void i(String[] strArr) {
-        this.b.W0 = strArr;
+    @Override // org.telegram.ui.Components.ru, org.telegram.ui.ActionBar.v2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
+    public final void dismiss() {
+        this.O1.w2 = false;
+        super.dismiss();
     }
 }

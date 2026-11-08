@@ -1,6 +1,6 @@
 package bi;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a2 implements Runnable {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class a2 implements Runnable {
                 k7Var.U1(j3);
                 break;
             case 5:
-                new zh.h1(k7Var.getContext(), k7Var.a, this.c, null, new y3(k7Var, i10)).show();
+                new zh.g1(k7Var.getContext(), k7Var.a, this.c, null, new y3(k7Var, i10)).show();
                 break;
             case 6:
                 tc tcVar = new tc(k7Var.getContext(), k7Var.I0, this.c, 10, null, new a4(2, k7Var, new boolean[]{false}), 0L);
@@ -53,19 +53,19 @@ public final /* synthetic */ class a2 implements Runnable {
                 k7Var.U1(j3);
                 break;
             case 8:
-                new zh.h1(k7Var.getContext(), k7Var.a, this.c, null, new y3(k7Var, i10)).show();
+                new zh.g1(k7Var.getContext(), k7Var.a, this.c, null, new y3(k7Var, i10)).show();
                 break;
             case 9:
                 k7Var.U1(j3);
                 break;
             case 10:
-                new zh.h1(k7Var.getContext(), k7Var.a, this.c, null, new y3(k7Var, i10)).show();
+                new zh.g1(k7Var.getContext(), k7Var.a, this.c, null, new y3(k7Var, i10)).show();
                 break;
             case 11:
                 k7Var.U1(j3);
                 break;
             default:
-                new zh.h1(k7Var.getContext(), k7Var.a, this.c, null, new y3(k7Var, i10)).show();
+                new zh.g1(k7Var.getContext(), k7Var.a, this.c, null, new y3(k7Var, i10)).show();
                 break;
         }
     }

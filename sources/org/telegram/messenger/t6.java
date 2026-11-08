@@ -9,9 +9,9 @@ import android.view.Menu;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.u31;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
-public final class t6 extends org.telegram.ui.Components.ys {
+public final class t6 extends org.telegram.ui.Components.zs {
     public final org.telegram.ui.Components.z4 Y1;
     public int Z1;
     public final org.telegram.ui.Components.i6 a2;
@@ -48,17 +48,17 @@ public final class t6 extends org.telegram.ui.Components.ys {
             return;
         }
         menu.removeItem(android.R.id.shareText);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(hd.M0(2131753671, null));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(id.M0(2131753671, null));
         spannableStringBuilder.setSpan(new u31(g0.o()), 0, spannableStringBuilder.length(), 33);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_bold, 6, spannableStringBuilder);
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(hd.M0(2131749086, null));
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(id.M0(2131749088, null));
         spannableStringBuilder2.setSpan(new u31(g0.o1("fonts/rmediumitalic.ttf")), 0, spannableStringBuilder2.length(), 33);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_italic, 7, spannableStringBuilder2);
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_link, 8, hd.M0(2131751745, null));
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 9, hd.M0(2131746336, null));
+        menu.add(R.id.menu_groupbolditalic, R.id.menu_link, 8, id.M0(2131751745, null));
+        menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 9, id.M0(2131746338, null));
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ct, android.widget.TextView
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.dt, android.widget.TextView
     public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
         super.onTextChanged(charSequence, i7, i10, i11);
         org.telegram.ui.Components.i6 i6Var = this.a2;

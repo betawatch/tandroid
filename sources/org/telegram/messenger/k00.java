@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class k00 extends c1 {
     public static final int[] n = new int[5];
@@ -486,7 +486,7 @@ public final class k00 extends c1 {
     public final void s(long j3, long j10) {
         ArrayList arrayList = new ArrayList(1);
         arrayList.add(xr.a(-j3, j10));
-        g0.h3(new yq(22, this, arrayList));
+        g0.h3(new zq(22, this, arrayList));
     }
 
     public final void t(long j3, int i7, boolean z9, org.telegram.ui.ActionBar.f2 f2Var) {
@@ -814,7 +814,7 @@ public final class k00 extends c1 {
         ArrayList arrayList = (ArrayList) this.a.f(j3);
         if (arrayList != null) {
             if (this.f.get(j3, 0) > 0) {
-                Collections.sort(arrayList, new vj(21));
+                Collections.sort(arrayList, new jl(21));
             }
             if (z9) {
                 getNotificationCenter().k(qs.q5, Long.valueOf(j3), Boolean.TRUE);

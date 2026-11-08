@@ -11,7 +11,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class r1 extends View implements org.telegram.ui.Cells.h9 {
     public TL_iv.pageBlockEmbedPost D;
@@ -161,7 +161,7 @@ public final class r1 extends View implements org.telegram.ui.Cells.h9 {
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setEnabled(true);
-        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.hd.M0(2131754867, null));
+        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.id.M0(2131754867, null));
         if (this.f != null) {
             sb2.append(", ");
             sb2.append(this.f.d.getText());
@@ -252,7 +252,7 @@ public final class r1 extends View implements org.telegram.ui.Cells.h9 {
                             this.f.w = org.telegram.messenger.g0.L(this.e != null ? 10.0f : 19.0f);
                         }
                         if (this.D.date == 0) {
-                            this.e = g4.o(this.a, this, org.telegram.messenger.hd.E0().h0().format(this.D.date * 1000), null, size - org.telegram.messenger.g0.L((this.r ? 54 : 0) + 50), org.telegram.messenger.g0.L(29.0f), this.D, this.b);
+                            this.e = g4.o(this.a, this, org.telegram.messenger.id.E0().h0().format(this.D.date * 1000), null, size - org.telegram.messenger.g0.L((this.r ? 54 : 0) + 50), org.telegram.messenger.g0.L(29.0f), this.D, this.b);
                         } else {
                             this.e = z2Var5;
                         }

@@ -13,8 +13,8 @@ import di.d4;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i6;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.yr;
@@ -30,13 +30,12 @@ import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.wo;
 import org.telegram.ui.Components.xi0;
-import ti.p;
 import v4.d1;
 import v4.o0;
 import wg.a1;
 import wg.z0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class i extends rg.b {
     public final f6 d;
@@ -57,7 +56,7 @@ public final class i extends rg.b {
         this.d = f6Var;
         a aVar = new a(this, 2);
         yr a02 = yr.a0(p10.s0);
-        a02.a.c(new p(22, a02, aVar));
+        a02.a.c(new u9.f(17, a02, aVar));
     }
 
     @Override // org.telegram.ui.Components.oj0
@@ -278,8 +277,8 @@ public final class i extends rg.b {
             f6 f6Var = this.d;
             if (i7 == 5) {
                 av0 av0Var = new av0(context, null, 1, f6Var);
-                av0Var.d.setText(hd.M0(2131748166, null));
-                av0Var.e.setText(hd.M0(2131745808, null));
+                av0Var.d.setText(id.M0(2131748168, null));
+                av0Var.e.setText(id.M0(2131745810, null));
                 av0Var.a.setTranslationY(g0.L(24.0f));
                 rVar = av0Var;
             } else {

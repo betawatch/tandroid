@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.text.SpannableStringBuilder;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -18,7 +18,7 @@ import org.telegram.ui.Components.f5;
 import org.telegram.ui.Components.i5;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public abstract class o4 {
     public static void a(int i7, long j3, org.telegram.ui.web.n nVar) {
@@ -53,8 +53,8 @@ public abstract class o4 {
         u1Var.c0 = x02;
         u1Var.d0 = -1;
         alertDialog$Builder.n(i10, null);
-        alertDialog$Builder.a.T = org.telegram.messenger.g0.X2(hd.a0(null, null, 2131753088, t10.p(user), t10.p(user)));
-        alertDialog$Builder.k(hd.M0(2131753090, null), new org.telegram.ui.ActionBar.r1() { // from class: hi.h4
+        alertDialog$Builder.a.T = org.telegram.messenger.g0.X2(id.a0(null, null, 2131753088, t10.p(user), t10.p(user)));
+        alertDialog$Builder.k(id.M0(2131753090, null), new org.telegram.ui.ActionBar.r1() { // from class: hi.h4
             @Override // org.telegram.ui.ActionBar.r1
             public final void g(org.telegram.ui.ActionBar.u1 u1Var2, int i11) {
                 int i12 = i7;
@@ -80,7 +80,7 @@ public abstract class o4 {
                 ConnectionsManager.getInstance(i12).sendRequest(toggleuseremojistatuspermission, new bi.f2(zArr4, nVar2, userFull, 8));
             }
         });
-        alertDialog$Builder.h(hd.M0(2131753089, null), null);
+        alertDialog$Builder.h(id.M0(2131753089, null), null);
         org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder.a;
         u1Var2.show();
         u1Var2.setOnDismissListener(new i4(zArr2, zArr, context, i7, user, nVar));
@@ -147,23 +147,23 @@ public abstract class o4 {
                 if (sb2.length() > 0) {
                     sb2.append(" ");
                 }
-                sb2.append(hd.G(i11, "BotEmojiStatusSetRequestForDay", new Object[0]));
+                sb2.append(id.G(i11, "BotEmojiStatusSetRequestForDay", new Object[0]));
             }
             if (i12 > 0) {
                 if (sb2.length() > 0) {
                     sb2.append(" ");
                 }
-                sb2.append(hd.G(i12, "BotEmojiStatusSetRequestForHour", new Object[0]));
+                sb2.append(id.G(i12, "BotEmojiStatusSetRequestForHour", new Object[0]));
             }
             if (round > 0) {
                 if (sb2.length() > 0) {
                     sb2.append(" ");
                 }
-                sb2.append(hd.G(round, "BotEmojiStatusSetRequestForMinute", new Object[0]));
+                sb2.append(id.G(round, "BotEmojiStatusSetRequestForMinute", new Object[0]));
             }
-            X2 = org.telegram.messenger.g0.X2(hd.a0(null, null, 2131753085, t10.p(user), sb2));
+            X2 = org.telegram.messenger.g0.X2(id.a0(null, null, 2131753085, t10.p(user), sb2));
         } else {
-            X2 = org.telegram.messenger.g0.X2(hd.a0(null, null, 2131753086, t10.p(user)));
+            X2 = org.telegram.messenger.g0.X2(id.a0(null, null, 2131753086, t10.p(user)));
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, W, null);
         n4 n4Var = new n4(f10, document);
@@ -175,8 +175,8 @@ public abstract class o4 {
         u1Var.d0 = -1;
         alertDialog$Builder.n(i13, null);
         alertDialog$Builder.a.T = X2;
-        alertDialog$Builder.k(hd.M0(2131753091, null), new g4(i7, zArr2, document, i10, zArr, c20Var));
-        alertDialog$Builder.h(hd.M0(2131752589, null), null);
+        alertDialog$Builder.k(id.M0(2131753091, null), new g4(i7, zArr2, document, i10, zArr, c20Var));
+        alertDialog$Builder.h(id.M0(2131752589, null), null);
         org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder.a;
         u1Var2.show();
         u1Var2.setOnDismissListener(new o0(zArr2, zArr, c20Var));

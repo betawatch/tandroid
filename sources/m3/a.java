@@ -6,6 +6,7 @@ import c8.m9;
 import e2.q0;
 import e2.s0;
 import f3.j0;
+import f3.l;
 import f3.o;
 import f3.p;
 import f3.q;
@@ -17,15 +18,15 @@ import h9.i0;
 import h9.t1;
 import java.util.List;
 import org.telegram.ui.Cells.f1;
-import z3.l;
+import z3.m;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class a implements o {
     public q b;
     public p c;
     public ua d;
-    public l e;
+    public m e;
     public int g;
     public long h;
     public int i;
@@ -35,7 +36,7 @@ public final class a implements o {
 
     @Override // f3.o
     public final boolean b(p pVar) {
-        return m9.a((f3.l) pVar, true);
+        return m9.a((l) pVar, true);
     }
 
     @Override // f3.o
@@ -47,9 +48,9 @@ public final class a implements o {
     public final void d(long j3, long j10) {
         if (j3 != 0) {
             if (this.f == 3) {
-                l lVar = this.e;
-                lVar.getClass();
-                lVar.d(j3, j10);
+                m mVar = this.e;
+                mVar.getClass();
+                mVar.d(j3, j10);
                 return;
             }
             return;
@@ -126,25 +127,25 @@ public final class a implements o {
                         this.c = pVar;
                         this.d = new ua(pVar, this.j);
                     }
-                    l lVar = this.e;
-                    lVar.getClass();
-                    int f10 = lVar.f(this.d, sVar);
+                    m mVar = this.e;
+                    mVar.getClass();
+                    int f10 = mVar.f(this.d, sVar);
                     if (f10 == 1) {
                         sVar.a += this.j;
                     }
                     return f10;
                 }
                 if (this.e == null) {
-                    this.e = new l(k.i, 8);
+                    this.e = new m(k.i, 8);
                 }
                 ua uaVar = new ua(pVar, this.j);
                 this.d = uaVar;
                 if (this.e.b(uaVar)) {
-                    l lVar2 = this.e;
+                    m mVar2 = this.e;
                     long j10 = this.j;
                     q qVar3 = this.b;
                     qVar3.getClass();
-                    lVar2.c(new ua(j10, qVar3, 3));
+                    mVar2.c(new ua(j10, qVar3, 3));
                     this.f = 3;
                 } else {
                     q qVar4 = this.b;
@@ -159,9 +160,9 @@ public final class a implements o {
 
     @Override // f3.o
     public final void release() {
-        l lVar = this.e;
-        if (lVar != null) {
-            lVar.getClass();
+        m mVar = this.e;
+        if (mVar != null) {
+            mVar.getClass();
             this.e = null;
         }
     }

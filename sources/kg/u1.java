@@ -14,7 +14,7 @@ import c8.ha;
 import fi.m3;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
@@ -23,7 +23,7 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.ch0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class u1 extends LinearLayout implements a6 {
     public final /* synthetic */ int a = 0;
@@ -57,29 +57,29 @@ public final class u1 extends LinearLayout implements a6 {
         int i10 = 22;
         if (i7 == 9) {
             ch0Var.setImageResource(R.drawable.large_greeting);
-            textView.setText(hd.M0(2131742897, null));
-            mdVar.setText(hd.M0(2131742898, null));
+            textView.setText(id.M0(2131742899, null));
+            mdVar.setText(id.M0(2131742900, null));
             mdVar.setMaxWidth(Math.min(org.telegram.messenger.g0.L(160.0f), m3.a(mdVar.getText(), mdVar.getPaint())));
         } else if ("hello".equalsIgnoreCase(str)) {
             ch0Var.setImageResource(R.drawable.large_greeting);
-            textView.setText(hd.M0(2131752765, null));
-            mdVar.setText(hd.M0(2131752766, null));
+            textView.setText(id.M0(2131752765, null));
+            mdVar.setText(id.M0(2131752766, null));
             mdVar.setMaxWidth(Math.min(org.telegram.messenger.g0.L(160.0f), m3.a(mdVar.getText(), mdVar.getPaint())));
         } else if ("away".equalsIgnoreCase(str)) {
             ch0Var.setImageResource(R.drawable.large_away);
-            textView.setText(hd.M0(2131752833, null));
-            mdVar.setText(hd.M0(2131752834, null));
+            textView.setText(id.M0(2131752833, null));
+            mdVar.setText(id.M0(2131752834, null));
             mdVar.setMaxWidth(Math.min(org.telegram.messenger.g0.L(160.0f), m3.a(mdVar.getText(), mdVar.getPaint())));
         } else {
             if (i7 == 5) {
                 ch0Var.setImageResource(R.drawable.large_quickreplies);
                 s1 c10 = t1.f(p10.s0).c(j3);
                 String str2 = c10 == null ? str : c10.b;
-                textView.setText(hd.M0(2131752667, null));
+                textView.setText(id.M0(2131752667, null));
                 mdVar.setMaxWidth(org.telegram.messenger.g0.L(208.0f));
                 mdVar.setTextAlignment(2);
                 mdVar.setGravity(3);
-                mdVar.setText(org.telegram.messenger.g0.X2(hd.a0(null, null, 2131752669, str2)));
+                mdVar.setText(org.telegram.messenger.g0.X2(id.a0(null, null, 2131752669, str2)));
                 mdVar.setPadding(org.telegram.messenger.g0.L(28.0f), 0, 0, 0);
                 md mdVar2 = new md(activity, 4);
                 this.e = mdVar2;
@@ -87,7 +87,7 @@ public final class u1 extends LinearLayout implements a6 {
                 mdVar2.setTextAlignment(2);
                 mdVar2.setGravity(3);
                 mdVar2.setTextSize(1, 13.0f);
-                mdVar2.setText(org.telegram.messenger.g0.X2(hd.M0(2131752668, null)));
+                mdVar2.setText(org.telegram.messenger.g0.X2(id.M0(2131752668, null)));
                 mdVar2.setPadding(org.telegram.messenger.g0.L(28.0f), 0, 0, 0);
             }
             i10 = 12;

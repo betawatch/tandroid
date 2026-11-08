@@ -8,7 +8,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class tq extends na {
     public final boolean P1;
@@ -38,14 +38,14 @@ public final class tq extends na {
         if (f1Var != null) {
             naVar.X1 = true;
             fi.d dVar = new fi.d(context, bVar, true);
-            dVar.i(org.telegram.messenger.hd.M0(2131748801, null), false, true);
+            dVar.i(org.telegram.messenger.id.M0(2131748803, null), false, true);
             naVar.b.addView(dVar, c8.ha.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, (z9 ? 52 : 0) + 12));
             dVar.setOnClickListener(new ah.g((Object) naVar, f1Var, dVar, 22));
             if (z9) {
                 fi.d dVar2 = new fi.d(context, bVar, false);
                 dVar2.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.r7, false));
                 dVar2.d.x(org.telegram.messenger.g0.o());
-                dVar2.i(org.telegram.messenger.hd.M0(2131748799, null), false, true);
+                dVar2.i(org.telegram.messenger.id.M0(2131748801, null), false, true);
                 naVar = this;
                 dVar2.setOnClickListener(new bi.jb(this, context, bVar, dVar2, getgroupcallstreamrtmpurl, i7));
                 naVar.b.addView(dVar2, c8.ha.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 12.0f));
@@ -99,7 +99,7 @@ public final class tq extends na {
 
     @Override // org.telegram.ui.Components.na
     public final CharSequence O0() {
-        return org.telegram.messenger.hd.M0(2131744439, null);
+        return org.telegram.messenger.id.M0(2131744441, null);
     }
 
     public tq(org.telegram.ui.ActionBar.f2 f2Var, TLRPC.Peer peer, long j3, boolean z9, r60 r60Var) {
@@ -118,7 +118,7 @@ public final class tq extends na {
         textView.setSingleLine(true);
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(org.telegram.messenger.hd.M0(2131743457, null));
+        textView.setText(org.telegram.messenger.id.M0(2131743459, null));
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.Gi, this.I0);
         int L = org.telegram.messenger.g0.L(8.0f);
         int i7 = org.telegram.ui.ActionBar.k6.Ci;
@@ -137,7 +137,7 @@ public final class tq extends na {
             fi.d dVar = new fi.d(context, this.I0, false);
             dVar.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.r7, false));
             dVar.d.x(org.telegram.messenger.g0.o());
-            dVar.i(org.telegram.messenger.hd.M0(2131748799, null), false, true);
+            dVar.i(org.telegram.messenger.id.M0(2131748801, null), false, true);
             dVar.setOnClickListener(new rq(this, context, dVar, j3, 0));
             this.b.addView(dVar, c8.ha.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 12.0f));
         }

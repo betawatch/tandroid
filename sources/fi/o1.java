@@ -5,17 +5,17 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.p10;
-import org.telegram.ui.Components.gy;
+import org.telegram.ui.Components.hy;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.pu;
 import org.telegram.ui.Components.qu;
-import org.telegram.ui.Components.sw;
-import org.telegram.ui.Components.xw;
+import org.telegram.ui.Components.ru;
+import org.telegram.ui.Components.tw;
+import org.telegram.ui.Components.yw;
 import org.telegram.ui.bm0;
 import org.telegram.ui.jf0;
 import org.telegram.ui.qg0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class o1 extends v4.m0 {
     public final /* synthetic */ int a;
@@ -53,8 +53,8 @@ public final class o1 extends v4.m0 {
                     break;
                 }
             case 2:
-                v vVar = ((qu) this.b).n1;
-                if (!(view instanceof pu)) {
+                v vVar = ((ru) this.b).n1;
+                if (!(view instanceof qu)) {
                     vVar.getClass();
                     if (RecyclerView.R(view) == 1) {
                         rect.top = org.telegram.messenger.g0.L(14.0f);
@@ -67,18 +67,18 @@ public final class o1 extends v4.m0 {
                 }
                 break;
             case 3:
-                gy gyVar = (gy) this.b;
-                sw swVar = gyVar.P;
+                hy hyVar = (hy) this.b;
+                tw twVar = hyVar.P;
                 if (!(view instanceof org.telegram.ui.Cells.j8)) {
-                    if (!(view instanceof pj0) && !(view instanceof xw)) {
+                    if (!(view instanceof pj0) && !(view instanceof yw)) {
                         if (view instanceof org.telegram.ui.Components.l9) {
                             rect.bottom = org.telegram.messenger.g0.L(12.0f);
                             break;
                         }
                     } else {
-                        rect.left = -swVar.getPaddingLeft();
-                        rect.right = -swVar.getPaddingRight();
-                        if (view instanceof xw) {
+                        rect.left = -twVar.getPaddingLeft();
+                        rect.right = -twVar.getPaddingRight();
+                        if (view instanceof yw) {
                             rect.top = org.telegram.messenger.g0.L(8.0f);
                             break;
                         }
@@ -86,7 +86,7 @@ public final class o1 extends v4.m0 {
                 } else {
                     rect.left = org.telegram.messenger.g0.L(5.0f);
                     rect.right = org.telegram.messenger.g0.L(5.0f);
-                    if (RecyclerView.R(view) + 1 > gyVar.R.E && !p10.i(gyVar.c1).q() && !gyVar.U0) {
+                    if (RecyclerView.R(view) + 1 > hyVar.R.E && !p10.i(hyVar.c1).q() && !hyVar.U0) {
                         rect.top = org.telegram.messenger.g0.L(10.0f);
                         break;
                     }

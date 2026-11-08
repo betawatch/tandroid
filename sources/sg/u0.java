@@ -20,11 +20,11 @@ import javax.microedition.khronos.egl.EGLSurface;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.q5;
 import org.telegram.messenger.r2;
-import org.telegram.ui.Components.dt;
+import org.telegram.ui.Components.et;
 import org.telegram.ui.Components.mt0;
 import org.telegram.ui.Components.y9;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class u0 extends q5 {
     public final /* synthetic */ w0 D;
@@ -39,14 +39,14 @@ public final class u0 extends q5 {
     public int r;
     public s0 s;
     public final y9 w;
-    public final dt x;
+    public final et x;
     public final s0 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public u0(w0 w0Var, SurfaceTexture surfaceTexture, y9 y9Var) {
         super("CanvasInternal", true);
         this.D = w0Var;
-        this.x = new dt(this, 29);
+        this.x = new et(this, 29);
         this.y = new s0(this, 0);
         this.w = y9Var;
         this.a = surfaceTexture;

@@ -4,12 +4,12 @@ import a8.p0;
 import bi.w2;
 import java.io.File;
 import java.nio.ByteBuffer;
-import org.telegram.messenger.yk;
+import org.telegram.messenger.xk;
 import org.telegram.ui.ea0;
 import vi.g;
 import vi.h;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -103,7 +103,7 @@ public final /* synthetic */ class b implements Runnable {
                 if (exc3 == null) {
                     h hVar = (h) eVar.c;
                     hVar.a((g) eVar.b, length);
-                    hVar.i.post(new yk(eVar, eVar.a, j3, 4));
+                    hVar.i.post(new xk(eVar, eVar.a, j3, 4));
                 } else {
                     ((h) eVar.c).i.post(new ea0(eVar, eVar.a, exc3, 3));
                 }

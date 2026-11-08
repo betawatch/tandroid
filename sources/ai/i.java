@@ -40,7 +40,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.j20;
 import org.telegram.messenger.p5;
@@ -59,7 +59,7 @@ import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements c20 {
     public final /* synthetic */ int a;
@@ -145,7 +145,7 @@ public final /* synthetic */ class i implements c20 {
                 int i12 = bi.a1.p2[((Integer) obj).intValue()];
                 if (a1Var.g2 != i12) {
                     a1Var.g2 = i12;
-                    a1Var.Y1.setText(hd.G(i12 / 3600, "GiftOfferHours", new Object[0]));
+                    a1Var.Y1.setText(id.G(i12 / 3600, "GiftOfferHours", new Object[0]));
                 }
                 a1Var.e1(true);
                 break;
@@ -180,13 +180,13 @@ public final /* synthetic */ class i implements c20 {
                 if (starGift != null) {
                     if (!(starGift instanceof TL_stars.TL_starGiftUnique)) {
                         int i13 = starGift.availability_remains;
-                        textView.setText(i13 <= 0 ? hd.H(',', "Gift2Availability2ValueNone", starGift.availability_total) : hd.K("Gift2Availability4Value", i13, ',', hd.E(starGift.availability_total, ',')));
+                        textView.setText(i13 <= 0 ? id.H(',', "Gift2Availability2ValueNone", starGift.availability_total) : id.K("Gift2Availability4Value", i13, ',', id.E(starGift.availability_total, ',')));
                         break;
                     } else {
                         if (starGift.availability_remains <= 0) {
-                            str = hd.H(',', "Gift2QuantityIssuedNone", starGift.availability_total);
+                            str = id.H(',', "Gift2QuantityIssuedNone", starGift.availability_total);
                         } else {
-                            str = hd.H(',', "Gift2QuantityIssued1", starGift.availability_issued) + hd.H(',', "Gift2QuantityIssued2", starGift.availability_total);
+                            str = id.H(',', "Gift2QuantityIssued1", starGift.availability_issued) + id.H(',', "Gift2QuantityIssued2", starGift.availability_total);
                         }
                         textView.setText(str);
                         break;

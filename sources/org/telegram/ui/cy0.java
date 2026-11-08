@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.app.Activity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cy0 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class cy0 implements Runnable {
         switch (i7) {
             case 0:
                 final int i11 = 1;
-                org.telegram.ui.Components.hc.a0(anVar).c(org.telegram.messenger.g0.S2(org.telegram.messenger.hd.M0(2131754487, null), -1, 2, new Runnable() { // from class: org.telegram.ui.dy0
+                org.telegram.ui.Components.hc.a0(anVar).c(org.telegram.messenger.g0.S2(org.telegram.messenger.id.M0(2131754487, null), -1, 2, new Runnable() { // from class: org.telegram.ui.dy0
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i11) {
@@ -51,7 +51,7 @@ public final /* synthetic */ class cy0 implements Runnable {
                 break;
             case 1:
                 final int i12 = 0;
-                org.telegram.ui.Components.hc.a0(anVar).c(org.telegram.messenger.g0.S2(org.telegram.messenger.hd.M0(2131754487, null), -1, 2, new Runnable() { // from class: org.telegram.ui.dy0
+                org.telegram.ui.Components.hc.a0(anVar).c(org.telegram.messenger.g0.S2(org.telegram.messenger.id.M0(2131754487, null), -1, 2, new Runnable() { // from class: org.telegram.ui.dy0
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i12) {
@@ -71,7 +71,7 @@ public final /* synthetic */ class cy0 implements Runnable {
                 anVar.gb(ijVar);
                 break;
             default:
-                org.telegram.ui.Components.hc.a0(anVar).c(org.telegram.messenger.g0.S2(org.telegram.messenger.hd.M0(2131754487, null), -1, 2, new Runnable() { // from class: org.telegram.ui.dy0
+                org.telegram.ui.Components.hc.a0(anVar).c(org.telegram.messenger.g0.S2(org.telegram.messenger.id.M0(2131754487, null), -1, 2, new Runnable() { // from class: org.telegram.ui.dy0
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i10) {

@@ -7,14 +7,14 @@ import j$.util.Comparator$-CC;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.u31;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class s2 {
     public final t2 a;
@@ -47,11 +47,11 @@ public final class s2 {
                 boolean z10 = true;
                 if (l10 == null || l10.isEmpty()) {
                     if (qp.s1(i7).q7.e(chat.id)) {
-                        s2Var.g = hd.M0(org.telegram.messenger.t3.p0(chat) ? 2131748189 : 2131748136, null);
+                        s2Var.g = id.M0(org.telegram.messenger.t3.p0(chat) ? 2131748191 : 2131748138, null);
                         return;
                     }
                     qp.s1(i7).q7.n(0, chat.id, true);
-                    s2Var.g = hd.M0(2131748778, null);
+                    s2Var.g = id.M0(2131748780, null);
                     s2Var.e = true;
                     return;
                 }

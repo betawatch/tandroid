@@ -12,8 +12,8 @@ import c8.ha;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i6;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.p10;
@@ -26,7 +26,7 @@ import org.telegram.ui.Components.f5;
 import org.telegram.ui.Components.i5;
 import org.telegram.ui.Components.ri0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class x extends FrameLayout implements ls {
     public static final long[] K = {5449505950283078474L, 5420315771991497307L, 5373141891321699086L, 5373026167722876724L, 5435957248314579621L, 5440354006335495210L, 5436040291507247633L, 5445284980978621387L, 5442983582882601962L, 5409008750893734809L, 5371017798065592581L, 5472030678633684592L, 5467583879948803288L, 5471952986970267163L, 5415696465945173620L, 5397915559037785261L, 5283020991981693429L, 5283051451889756068L, 5282816560128336499L, 5465449362807070392L, 5470012829983580233L};
@@ -275,7 +275,7 @@ public abstract class x extends FrameLayout implements ls {
             str2 = "application/x-tgsticker";
         }
         if (!arrayList10.isEmpty()) {
-            arrayList6.add(new t(0, hd.M0(2131746496, null), arrayList10));
+            arrayList6.add(new t(0, id.M0(2131746498, null), arrayList10));
         }
         ArrayList arrayList11 = new ArrayList();
         HashSet hashSet2 = new HashSet();
@@ -335,7 +335,7 @@ public abstract class x extends FrameLayout implements ls {
             i7 = 1;
         } else {
             i7 = 1;
-            arrayList6.add(new t(1, hd.M0(2131746360, null), arrayList11));
+            arrayList6.add(new t(1, id.M0(2131746362, null), arrayList11));
         }
         arrayList6.addAll(arrayList7);
         int size6 = arrayList6.size();

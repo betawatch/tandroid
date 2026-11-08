@@ -5,7 +5,7 @@ import android.os.SystemClock;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.u10;
@@ -15,10 +15,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.up0;
-import zh.a2;
-import zh.e2;
+import zh.c2;
+import zh.z1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements Runnable {
     public final /* synthetic */ int a;
@@ -83,46 +83,46 @@ public final /* synthetic */ class r implements Runnable {
                     tVar.a0 = (r1 - r2) * 1000000;
                     tVar.i.b("synthetic camera switch started: from=" + m0Var + ", to=" + m0Var2 + ", expectedWaitMs=" + tVar.b0 + ", targetBlurRadiusPx=" + (((tVar.N.a * 4.0f) / 48.0f) * 1.15f) + ", overdueBlurGrowth=0.35, revealMs=" + ((tVar.Z + tVar.a0) / 1000000));
                     tVar.Q = -1L;
-                    handler.removeCallbacks(tVar.x0);
-                    handler.post(tVar.x0);
+                    handler.removeCallbacks(tVar.y0);
+                    handler.post(tVar.y0);
                     return;
                 }
                 return;
             default:
-                final a2 a2Var = (a2) this.b;
+                final z1 z1Var = (z1) this.b;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.c;
-                zh.z0 z0Var = (zh.z0) this.d;
+                zh.y0 y0Var = (zh.y0) this.d;
                 final View view = (View) this.e;
-                up0 up0Var = a2Var.a;
+                up0 up0Var = z1Var.a;
                 if (savedStarGift.unsaved) {
                     savedStarGift.unsaved = false;
-                    z0Var.i(savedStarGift, true, false);
+                    y0Var.i(savedStarGift, true, false);
                     TL_stars.saveStarGift savestargift = new TL_stars.saveStarGift();
-                    savestargift.stargift = a2Var.e.h(savedStarGift);
+                    savestargift.stargift = z1Var.e.h(savedStarGift);
                     savestargift.unsave = savedStarGift.unsaved;
-                    ConnectionsManager.getInstance(a2Var.b).sendRequest(savestargift, null, 64);
+                    ConnectionsManager.getInstance(z1Var.b).sendRequest(savestargift, null, 64);
                 }
                 boolean z9 = savedStarGift.pinned_to_top;
                 final boolean z10 = !z9;
-                if (a2Var.e.o(savedStarGift, z10, false)) {
-                    new e2(a2Var.getContext(), up0Var.c, savedStarGift, a2Var.c, new u10() { // from class: zh.u1
+                if (z1Var.e.o(savedStarGift, z10, false)) {
+                    new c2(z1Var.getContext(), up0Var.c, savedStarGift, z1Var.c, new u10() { // from class: zh.t1
                         @Override // org.telegram.messenger.u10
                         public final Object run() {
-                            ((z0) view).d(z10, true);
-                            a2 a2Var2 = a2.this;
-                            a2Var2.f.v0(0);
-                            return hc.a0(a2Var2.a.a);
+                            ((y0) view).d(z10, true);
+                            z1 z1Var2 = z1.this;
+                            z1Var2.f.v0(0);
+                            return hc.a0(z1Var2.a.a);
                         }
                     }).show();
                     return;
                 }
                 if (z9) {
-                    k5.o(null, 2131749879, hc.a0(up0Var.a), R.raw.ic_unpin, 36);
+                    k5.o(null, 2131749881, hc.a0(up0Var.a), R.raw.ic_unpin, 36);
                 } else {
-                    hc.a0(up0Var.a).I(R.raw.ic_pin, hd.M0(2131750075, null), hd.M0(2131750076, null)).j();
+                    hc.a0(up0Var.a).I(R.raw.ic_pin, id.M0(2131750077, null), id.M0(2131750078, null)).j();
                 }
-                ((zh.z0) view).d(z10, true);
-                a2Var.f.v0(0);
+                ((zh.y0) view).d(z10, true);
+                z1Var.f.v0(0);
                 return;
         }
     }

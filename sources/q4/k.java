@@ -10,7 +10,7 @@ import java.lang.ref.WeakReference;
 import java.util.AbstractCollection;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class k extends Binder implements d {
     public static final /* synthetic */ int b = 0;
@@ -21,7 +21,7 @@ public final class k extends Binder implements d {
         this.a = new WeakReference(lVar);
     }
 
-    public final void H0(b bVar) {
+    public final void h1(b bVar) {
         l lVar = (l) this.a.get();
         if (lVar == null || bVar == null) {
             return;
@@ -55,7 +55,7 @@ public final class k extends Binder implements d {
                     bVar = (b) queryLocalInterface;
                 }
             }
-            H0(bVar);
+            h1(bVar);
             parcel2.getClass();
             parcel2.writeNoException();
             return true;

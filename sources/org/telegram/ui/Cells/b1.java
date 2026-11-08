@@ -24,7 +24,7 @@ import org.telegram.ui.Components.s11;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.Components.zj0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class b1 {
     public final q1 a;
@@ -148,7 +148,7 @@ public final class b1 {
                 canvas.translate(f13 + q1Var.N4, q1Var.getMediaOffsetY() + org.telegram.messenger.g0.L(57.0f) + q1Var.Ta);
                 q1Var.K4.draw(canvas);
                 canvas.restore();
-                if (q1Var.D3()) {
+                if (q1Var.E3()) {
                     return;
                 }
                 if (q1Var.P5.Q3()) {
@@ -193,7 +193,7 @@ public final class b1 {
         canvas.translate(f13 + q1Var.N4, q1Var.getMediaOffsetY() + org.telegram.messenger.g0.L(57.0f) + q1Var.Ta);
         q1Var.K4.draw(canvas);
         canvas.restore();
-        if (q1Var.D3()) {
+        if (q1Var.E3()) {
         }
     }
 

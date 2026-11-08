@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class s31 extends oj0 {
     public final Context c;
@@ -345,7 +345,7 @@ public final class s31 extends oj0 {
             }
             if (i10 != 2) {
                 if (i10 == 4) {
-                    ((org.telegram.ui.Cells.x3) view).setText(org.telegram.messenger.hd.M0(2131747763, null));
+                    ((org.telegram.ui.Cells.x3) view).setText(org.telegram.messenger.id.M0(2131747765, null));
                     return;
                 } else if (i10 != 5) {
                     return;

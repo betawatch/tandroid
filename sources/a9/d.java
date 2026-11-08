@@ -16,7 +16,7 @@ import com.google.android.gms.common.data.DataHolder;
 import m9.u;
 import org.telegram.messenger.WearAuthListenerService;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class d extends q {
     public volatile int b;
@@ -30,7 +30,7 @@ public final class d extends q {
     }
 
     @Override // a8.q
-    public final boolean K0(int i7, Parcel parcel, Parcel parcel2) {
+    public final boolean k1(int i7, Parcel parcel, Parcel parcel2) {
         c0 c0Var;
         if (i7 == 13) {
             Object obj = (k0) i8.a.a(parcel, k0.CREATOR);
@@ -42,7 +42,7 @@ public final class d extends q {
                 c0Var = queryLocalInterface instanceof c0 ? (c0) queryLocalInterface : new c0(readStrongBinder, "com.google.android.gms.wearable.internal.IRpcResponseCallback", 6);
             }
             i8.a.b(parcel);
-            M0(new h(this, obj, c0Var, 0), "onRequestReceived", obj);
+            m1(new h(this, obj, c0Var, 0), "onRequestReceived", obj);
             return true;
         }
         if (i7 == 14) {
@@ -61,56 +61,56 @@ public final class d extends q {
                     sb2.append(valueOf);
                     sb2.append(", rows=");
                     sb2.append(i10);
-                    return !M0(uVar, "onDataItemChanged", sb2.toString()) ? true : true;
+                    return !m1(uVar, "onDataItemChanged", sb2.toString()) ? true : true;
                 } finally {
                     dataHolder.close();
                 }
             case 2:
                 Object obj2 = (k0) i8.a.a(parcel, k0.CREATOR);
                 i8.a.b(parcel);
-                M0(new u(this, obj2, false, 3), "onMessageReceived", obj2);
+                m1(new u(this, obj2, false, 3), "onMessageReceived", obj2);
                 return true;
             case 3:
                 l0 l0Var = (l0) i8.a.a(parcel, l0.CREATOR);
                 i8.a.b(parcel);
-                M0(new i(this, l0Var, 0), "onPeerConnected", l0Var);
+                m1(new i(this, l0Var, 0), "onPeerConnected", l0Var);
                 return true;
             case 4:
                 l0 l0Var2 = (l0) i8.a.a(parcel, l0.CREATOR);
                 i8.a.b(parcel);
-                M0(new i(this, l0Var2, 1), "onPeerDisconnected", l0Var2);
+                m1(new i(this, l0Var2, 1), "onPeerDisconnected", l0Var2);
                 return true;
             case 5:
                 Object createTypedArrayList = parcel.createTypedArrayList(l0.CREATOR);
                 i8.a.b(parcel);
-                M0(new u(this, createTypedArrayList, false, 4), "onConnectedNodes", createTypedArrayList);
+                m1(new u(this, createTypedArrayList, false, 4), "onConnectedNodes", createTypedArrayList);
                 return true;
             case 6:
                 b1 b1Var = (b1) i8.a.a(parcel, b1.CREATOR);
                 i8.a.b(parcel);
-                M0(new i(this, b1Var, 3), "onNotificationReceived", b1Var);
+                m1(new i(this, b1Var, 3), "onNotificationReceived", b1Var);
                 return true;
             case 7:
                 Object obj3 = (b9.e) i8.a.a(parcel, b9.e.CREATOR);
                 i8.a.b(parcel);
-                M0(new u(this, obj3, false, 5), "onChannelEvent", obj3);
+                m1(new u(this, obj3, false, 5), "onChannelEvent", obj3);
                 return true;
             case 8:
                 b9.b bVar = (b9.b) i8.a.a(parcel, b9.b.CREATOR);
                 i8.a.b(parcel);
-                M0(new i(this, bVar, 2), "onConnectedCapabilityChanged", bVar);
+                m1(new i(this, bVar, 2), "onConnectedCapabilityChanged", bVar);
                 return true;
             case 9:
                 v0 v0Var = (v0) i8.a.a(parcel, v0.CREATOR);
                 i8.a.b(parcel);
-                M0(new i(this, v0Var, 4), "onEntityUpdate", v0Var);
+                m1(new i(this, v0Var, 4), "onEntityUpdate", v0Var);
                 return true;
             default:
                 return false;
         }
     }
 
-    public final boolean M0(Runnable runnable, String str, Object obj) {
+    public final boolean m1(Runnable runnable, String str, Object obj) {
         if (Log.isLoggable("WearableLS", 3)) {
             Log.d("WearableLS", String.format("%s: %s %s", str, this.c.a.toString(), obj));
         }

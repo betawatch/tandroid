@@ -37,10 +37,10 @@ import org.telegram.messenger.f6;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.g20;
 import org.telegram.messenger.h20;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.hf;
 import org.telegram.messenger.i20;
 import org.telegram.messenger.i6;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.r2;
@@ -49,19 +49,19 @@ import org.telegram.messenger.video.MediaCodecVideoConvertor;
 import org.telegram.messenger.ye;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RLottieNative;
-import org.telegram.ui.Components.ct;
 import org.telegram.ui.Components.da;
+import org.telegram.ui.Components.dt;
 import org.telegram.ui.Components.i5;
 import org.telegram.ui.Components.r5;
 import org.telegram.ui.Components.s5;
 import org.telegram.ui.Components.v5;
-import org.telegram.ui.Components.vy;
+import org.telegram.ui.Components.wy;
 import org.telegram.ui.Components.xq;
 import sg.b0;
 import tg.i0;
 import tg.m0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class TextureRenderer {
     private static final String FRAGMENT_EXTERNAL_MASK_SHADER = "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nvarying vec2 MTextureCoord;\nuniform samplerExternalOES sTexture;\nuniform sampler2D sMask;\nvoid main() {\n  gl_FragColor = texture2D(sTexture, vTextureCoord) * texture2D(sMask, MTextureCoord).a;\n}\n";
@@ -95,7 +95,7 @@ public class TextureRenderer {
     private final ye cropState;
     private FloatBuffer croppedTextureBuffer;
     private ArrayList<i5> emojiDrawables;
-    private vy filterShaders;
+    private wy filterShaders;
     private int gradientBottomColor;
     private int gradientBottomColorHandle;
     private FloatBuffer gradientTextureBuffer;
@@ -210,9 +210,9 @@ public class TextureRenderer {
         Matrix.setIdentityM(this.mSTMatrix, 0);
         Matrix.setIdentityM(this.mSTMatrixIdentity, 0);
         if (hfVar != null) {
-            vy vyVar = new vy(true, d7Var);
-            this.filterShaders = vyVar;
-            vyVar.f1 = new org.telegram.ui.Components.n(hfVar);
+            wy wyVar = new wy(true, d7Var);
+            this.filterShaders = wyVar;
+            wyVar.f1 = new org.telegram.ui.Components.n(hfVar);
         }
         this.transformedWidth = i20;
         this.transformedHeight = i21;
@@ -592,8 +592,8 @@ public class TextureRenderer {
         int h7;
         int glCreateProgram2;
         if (z9) {
-            int h10 = vy.h(35633, str);
-            if (h10 == 0 || (h7 = vy.h(35632, str2)) == 0 || (glCreateProgram2 = GLES20.glCreateProgram()) == 0) {
+            int h10 = wy.h(35633, str);
+            if (h10 == 0 || (h7 = wy.h(35632, str2)) == 0 || (glCreateProgram2 = GLES20.glCreateProgram()) == 0) {
                 return 0;
             }
             GLES20.glAttachShader(glCreateProgram2, h10);
@@ -607,8 +607,8 @@ public class TextureRenderer {
             GLES20.glDeleteProgram(glCreateProgram2);
             return 0;
         }
-        int h11 = vy.h(35633, str);
-        if (h11 == 0 || (h = vy.h(35632, str2)) == 0 || (glCreateProgram = GLES20.glCreateProgram()) == 0) {
+        int h11 = wy.h(35633, str);
+        if (h11 == 0 || (h = wy.h(35632, str2)) == 0 || (glCreateProgram = GLES20.glCreateProgram()) == 0) {
             return 0;
         }
         GLES20.glAttachShader(glCreateProgram, h11);
@@ -1279,7 +1279,7 @@ public class TextureRenderer {
         int i12 = h20Var.p;
         bVar.setGravity(i12 != 1 ? i12 != 2 ? 19 : 21 : 17);
         int i13 = h20Var.p;
-        bVar.setTextAlignment(i13 != 1 ? (i13 == 2 ? !hd.a0 : hd.a0) ? 3 : 2 : 4);
+        bVar.setTextAlignment(i13 != 1 ? (i13 == 2 ? !id.a0 : id.a0) ? 3 : 2 : 4);
         bVar.setHorizontallyScrolling(false);
         bVar.setImeOptions(TLObject.FLAG_28);
         bVar.setFocusableInTouchMode(true);
@@ -1410,10 +1410,10 @@ public class TextureRenderer {
                 GLES20.glDisable(3042);
                 this.blendEnabled = false;
             }
-            vy vyVar = this.filterShaders;
-            if (vyVar != null) {
-                vyVar.P0 = this.mSTMatrix;
-                vyVar.W0 = false;
+            wy wyVar = this.filterShaders;
+            if (wyVar != null) {
+                wyVar.P0 = this.mSTMatrix;
+                wyVar.W0 = false;
                 GLES20.glViewport(0, 0, this.originalWidth, this.originalHeight);
                 this.filterShaders.f();
                 this.filterShaders.d();
@@ -1476,12 +1476,12 @@ public class TextureRenderer {
                 this.blendEnabled = true;
             }
             if (this.imagePath == null || (iArr = this.paintTexture) == null) {
-                vy vyVar2 = this.filterShaders;
-                if (vyVar2 != null) {
-                    i16 = vyVar2.g(i14 ^ 1);
-                    vy vyVar3 = this.filterShaders;
-                    int i25 = vyVar3.X0;
-                    i18 = vyVar3.Y0;
+                wy wyVar2 = this.filterShaders;
+                if (wyVar2 != null) {
+                    i16 = wyVar2.g(i14 ^ 1);
+                    wy wyVar3 = this.filterShaders;
+                    int i25 = wyVar3.X0;
+                    i18 = wyVar3.Y0;
                     i17 = i25;
                 } else {
                     i16 = -1;
@@ -1564,9 +1564,9 @@ public class TextureRenderer {
                     v5Var.u();
                 }
                 View view = h20Var.I;
-                if (view instanceof ct) {
-                    ct ctVar = (ct) view;
-                    r5.release(ctVar, ctVar.E);
+                if (view instanceof dt) {
+                    dt dtVar = (dt) view;
+                    r5.release(dtVar, dtVar.E);
                 }
                 Bitmap bitmap = h20Var.G;
                 if (bitmap != null) {
@@ -1720,8 +1720,8 @@ public class TextureRenderer {
                 this.blur = null;
             }
             if (this.blur != null) {
-                int h = vy.h(35633, "attribute vec4 position;attribute vec2 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = inputTexCoord;}");
-                int h7 = vy.h(35632, "varying highp vec2 vTextureCoord;uniform sampler2D blurImage;uniform sampler2D maskImage;void main() {gl_FragColor = texture2D(blurImage, vTextureCoord) * texture2D(maskImage, vTextureCoord).a;}");
+                int h = wy.h(35633, "attribute vec4 position;attribute vec2 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = inputTexCoord;}");
+                int h7 = wy.h(35632, "varying highp vec2 vTextureCoord;uniform sampler2D blurImage;uniform sampler2D maskImage;void main() {gl_FragColor = texture2D(blurImage, vTextureCoord) * texture2D(maskImage, vTextureCoord).a;}");
                 if (h == 0 || h7 == 0) {
                     this.blur = null;
                 } else {
@@ -1750,8 +1750,8 @@ public class TextureRenderer {
             }
         }
         if (this.filterShaders != null || this.imagePath != null || this.paintPath != null || this.messagePath != null || this.mediaEntities != null || isCollage()) {
-            int h10 = vy.h(35633, "attribute vec4 position;attribute vec2 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = inputTexCoord;}");
-            int h11 = vy.h(35632, "varying highp vec2 vTextureCoord;uniform sampler2D sTexture;void main() {gl_FragColor = texture2D(sTexture, vTextureCoord);}");
+            int h10 = wy.h(35633, "attribute vec4 position;attribute vec2 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = inputTexCoord;}");
+            int h11 = wy.h(35632, "varying highp vec2 vTextureCoord;uniform sampler2D sTexture;void main() {gl_FragColor = texture2D(sTexture, vTextureCoord);}");
             if (h10 != 0 && h11 != 0) {
                 int glCreateProgram2 = GLES20.glCreateProgram();
                 this.simpleShaderProgram = glCreateProgram2;
@@ -1773,8 +1773,8 @@ public class TextureRenderer {
             }
         }
         if (isCollage()) {
-            int h12 = vy.h(35633, "attribute vec4 position;attribute vec2 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = inputTexCoord;}");
-            int h13 = vy.h(35632, "#extension GL_OES_EGL_image_external : require\n" + "varying highp vec2 vTextureCoord;uniform sampler2D sTexture;void main() {gl_FragColor = texture2D(sTexture, vTextureCoord);}".replaceAll("sampler2D", "samplerExternalOES"));
+            int h12 = wy.h(35633, "attribute vec4 position;attribute vec2 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = inputTexCoord;}");
+            int h13 = wy.h(35632, "#extension GL_OES_EGL_image_external : require\n" + "varying highp vec2 vTextureCoord;uniform sampler2D sTexture;void main() {gl_FragColor = texture2D(sTexture, vTextureCoord);}".replaceAll("sampler2D", "samplerExternalOES"));
             if (h12 != 0 && h13 != 0) {
                 int glCreateProgram3 = GLES20.glCreateProgram();
                 this.simpleShaderProgramOES = glCreateProgram3;
@@ -1795,9 +1795,9 @@ public class TextureRenderer {
                 }
             }
         }
-        vy vyVar = this.filterShaders;
-        if (vyVar != null) {
-            vyVar.a();
+        wy wyVar = this.filterShaders;
+        if (wyVar != null) {
+            wyVar.a();
             this.filterShaders.i(null, 0, this.mTextureID, this.originalWidth, this.originalHeight);
         }
         String str7 = this.imagePath;

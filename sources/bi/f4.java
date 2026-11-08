@@ -5,7 +5,7 @@ import org.telegram.messenger.c20;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xs0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f4 implements c20 {
     public final /* synthetic */ int a = 0;
@@ -32,13 +32,13 @@ public final /* synthetic */ class f4 implements c20 {
                 TLRPC.Document document = (TLRPC.Document) obj2;
                 if (((Boolean) obj).booleanValue()) {
                     ea.y(i10, false).P(j3);
-                    org.telegram.messenger.g0.h3(new aa.s((Object) new k4(j3, i11), (Object) document, (Object) org.telegram.messenger.hd.M0(2131750101, null), 13));
+                    org.telegram.messenger.g0.h3(new aa.s((Object) new k4(j3, i11), (Object) document, (Object) org.telegram.messenger.id.M0(2131750103, null), 13));
                     break;
                 }
                 break;
             case 1:
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj;
-                org.telegram.messenger.g0.i3(new org.telegram.ui.Components.f(3, (org.telegram.ui.Components.cc) obj2, (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null) ? org.telegram.messenger.hd.M0(2131754435, null) : i10 == 1 ? org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0("TopicContainsEmojiPackSingle", null, 2131744023, stickerSet.title)) : i10 == 2 ? org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0("StoryContainsEmojiPackSingle", null, 2131744700, stickerSet.title)) : org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0("MessageContainsEmojiPackSingle", null, 2131748595, stickerSet.title))), Math.max(1L, 750 - (System.currentTimeMillis() - j3)));
+                org.telegram.messenger.g0.i3(new org.telegram.ui.Components.f(3, (org.telegram.ui.Components.cc) obj2, (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null) ? org.telegram.messenger.id.M0(2131754435, null) : i10 == 1 ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("TopicContainsEmojiPackSingle", null, 2131744025, stickerSet.title)) : i10 == 2 ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("StoryContainsEmojiPackSingle", null, 2131744702, stickerSet.title)) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("MessageContainsEmojiPackSingle", null, 2131748597, stickerSet.title))), Math.max(1L, 750 - (System.currentTimeMillis() - j3)));
                 break;
             default:
                 ((xs0) obj2).getStoriesController().b(i10, j3, (ArrayList) obj);

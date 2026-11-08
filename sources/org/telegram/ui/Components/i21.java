@@ -15,7 +15,7 @@ import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class i21 extends FrameLayout {
     public final ImageView a;
@@ -82,27 +82,27 @@ public final class i21 extends FrameLayout {
                         int i16 = 1;
                         Runnable[] runnableArr = new Runnable[1];
                         List list = org.telegram.messenger.f10.M;
-                        ArrayList arrayList = new ArrayList(org.telegram.messenger.hd.E0().N.values());
+                        ArrayList arrayList = new ArrayList(org.telegram.messenger.id.E0().N.values());
                         int i17 = 0;
                         while (i17 < arrayList.size()) {
-                            org.telegram.messenger.ed edVar = (org.telegram.messenger.ed) arrayList.get(i17);
-                            if (edVar == null || (((str2 = edVar.c) != null && str2.endsWith("_raw")) || !"remote".equals(edVar.d))) {
+                            org.telegram.messenger.fd fdVar = (org.telegram.messenger.fd) arrayList.get(i17);
+                            if (fdVar == null || (((str2 = fdVar.c) != null && str2.endsWith("_raw")) || !"remote".equals(fdVar.d))) {
                                 arrayList.remove(i17);
                                 i17--;
                             }
                             i17++;
                         }
-                        Collections.sort(arrayList, new org.telegram.messenger.n00(org.telegram.messenger.hd.E0().B, 1));
+                        Collections.sort(arrayList, new org.telegram.messenger.n00(org.telegram.messenger.id.E0().B, 1));
                         boolean z9 = true;
                         int i18 = 0;
                         while (i18 < arrayList.size()) {
-                            org.telegram.messenger.ed edVar2 = (org.telegram.messenger.ed) arrayList.get(i18);
-                            if (!edVar2.f.equals(k21Var2.q1) && "remote".equals(edVar2.d)) {
-                                TextUtils.equals(k21Var2.r1, edVar2.f);
+                            org.telegram.messenger.fd fdVar2 = (org.telegram.messenger.fd) arrayList.get(i18);
+                            if (!fdVar2.f.equals(k21Var2.q1) && "remote".equals(fdVar2.d)) {
+                                TextUtils.equals(k21Var2.r1, fdVar2.f);
                                 org.telegram.ui.ActionBar.z0 z0Var = new org.telegram.ui.ActionBar.z0(2, i21Var.getContext(), k21Var2.I0, z9, i18 == arrayList.size() - 1);
-                                z0Var.setText(k21.K0(k21.O0(edVar2.f, null, null)));
-                                z0Var.setChecked(TextUtils.equals(k21Var2.r1, edVar2.f));
-                                z0Var.setOnClickListener(new td0(i21Var, runnableArr, edVar2, i16));
+                                z0Var.setText(k21.K0(k21.O0(fdVar2.f, null, null)));
+                                z0Var.setChecked(TextUtils.equals(k21Var2.r1, fdVar2.f));
+                                z0Var.setOnClickListener(new td0(i21Var, runnableArr, fdVar2, i16));
                                 h21Var.addView(z0Var);
                                 z9 = false;
                             }
@@ -133,13 +133,13 @@ public final class i21 extends FrameLayout {
         org.telegram.ui.ActionBar.r6.V(m2Var, i10, k21Var.I0);
         m2Var.setTextSize(1, 20.0f);
         m2Var.setTypeface(org.telegram.messenger.g0.o());
-        m2Var.setText(org.telegram.messenger.hd.M0(2131753766, null));
+        m2Var.setText(org.telegram.messenger.id.M0(2131753766, null));
         m2Var.setPivotX(0.0f);
         m2Var.setPivotY(0.0f);
         addView(m2Var, c8.ha.d(-1, -2.0f, 55, 22.0f, 20.0f, 22.0f, 0.0f));
         org.telegram.ui.c61 c61Var = new org.telegram.ui.c61(16, context, this);
         this.c = c61Var;
-        if (org.telegram.messenger.hd.a0) {
+        if (org.telegram.messenger.id.a0) {
             c61Var.setGravity(5);
         }
         c61Var.setPivotX(0.0f);
@@ -156,12 +156,12 @@ public final class i21 extends FrameLayout {
         ImageView e10 = org.telegram.messenger.camera.q.e(context, R.drawable.search_arrow);
         int i14 = org.telegram.ui.ActionBar.k6.Dj;
         org.telegram.ui.ActionBar.r6.t(e10, i14, k21Var.I0, mode);
-        if (org.telegram.messenger.hd.a0) {
+        if (org.telegram.messenger.id.a0) {
             e10.setScaleX(-1.0f);
         }
         g21 g21Var = new g21(this, context);
         this.e = g21Var;
-        if (org.telegram.messenger.hd.a0) {
+        if (org.telegram.messenger.id.a0) {
             g21Var.setGravity(5);
         }
         g21Var.b(0.25f, 350L, xq.h);
@@ -196,27 +196,27 @@ public final class i21 extends FrameLayout {
                         int i16 = 1;
                         Runnable[] runnableArr = new Runnable[1];
                         List list = org.telegram.messenger.f10.M;
-                        ArrayList arrayList = new ArrayList(org.telegram.messenger.hd.E0().N.values());
+                        ArrayList arrayList = new ArrayList(org.telegram.messenger.id.E0().N.values());
                         int i17 = 0;
                         while (i17 < arrayList.size()) {
-                            org.telegram.messenger.ed edVar = (org.telegram.messenger.ed) arrayList.get(i17);
-                            if (edVar == null || (((str2 = edVar.c) != null && str2.endsWith("_raw")) || !"remote".equals(edVar.d))) {
+                            org.telegram.messenger.fd fdVar = (org.telegram.messenger.fd) arrayList.get(i17);
+                            if (fdVar == null || (((str2 = fdVar.c) != null && str2.endsWith("_raw")) || !"remote".equals(fdVar.d))) {
                                 arrayList.remove(i17);
                                 i17--;
                             }
                             i17++;
                         }
-                        Collections.sort(arrayList, new org.telegram.messenger.n00(org.telegram.messenger.hd.E0().B, 1));
+                        Collections.sort(arrayList, new org.telegram.messenger.n00(org.telegram.messenger.id.E0().B, 1));
                         boolean z9 = true;
                         int i18 = 0;
                         while (i18 < arrayList.size()) {
-                            org.telegram.messenger.ed edVar2 = (org.telegram.messenger.ed) arrayList.get(i18);
-                            if (!edVar2.f.equals(k21Var2.q1) && "remote".equals(edVar2.d)) {
-                                TextUtils.equals(k21Var2.r1, edVar2.f);
+                            org.telegram.messenger.fd fdVar2 = (org.telegram.messenger.fd) arrayList.get(i18);
+                            if (!fdVar2.f.equals(k21Var2.q1) && "remote".equals(fdVar2.d)) {
+                                TextUtils.equals(k21Var2.r1, fdVar2.f);
                                 org.telegram.ui.ActionBar.z0 z0Var = new org.telegram.ui.ActionBar.z0(2, i21Var.getContext(), k21Var2.I0, z9, i18 == arrayList.size() - 1);
-                                z0Var.setText(k21.K0(k21.O0(edVar2.f, null, null)));
-                                z0Var.setChecked(TextUtils.equals(k21Var2.r1, edVar2.f));
-                                z0Var.setOnClickListener(new td0(i21Var, runnableArr, edVar2, i16));
+                                z0Var.setText(k21.K0(k21.O0(fdVar2.f, null, null)));
+                                z0Var.setChecked(TextUtils.equals(k21Var2.r1, fdVar2.f));
+                                z0Var.setOnClickListener(new td0(i21Var, runnableArr, fdVar2, i16));
                                 h21Var.addView(z0Var);
                                 z9 = false;
                             }
@@ -241,7 +241,7 @@ public final class i21 extends FrameLayout {
                 }
             }
         });
-        if (org.telegram.messenger.hd.a0) {
+        if (org.telegram.messenger.id.a0) {
             c61Var.addView(g21Var, c8.ha.t(-2, -2, 16, 0, 0, this.d != null ? 3 : 0, 0));
             if (this.d != null) {
                 c61Var.addView(e10, c8.ha.t(-2, -2, 16, 0, 1, 0, 0));
@@ -281,7 +281,7 @@ public final class i21 extends FrameLayout {
         m2Var.setScaleX(T1);
         m2Var.setScaleY(org.telegram.messenger.g0.T1(0.85f, 1.0f, interpolation));
         m2Var.setTranslationY(org.telegram.messenger.g0.T1(org.telegram.messenger.g0.N(-12.0f), 0.0f, interpolation));
-        boolean z9 = org.telegram.messenger.hd.a0;
+        boolean z9 = org.telegram.messenger.id.a0;
         org.telegram.ui.c61 c61Var = this.c;
         if (!z9) {
             m2Var.setTranslationX(org.telegram.messenger.g0.T1(org.telegram.messenger.g0.N(50.0f), 0.0f, interpolation));

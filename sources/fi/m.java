@@ -28,21 +28,21 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.e20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.et;
 import org.telegram.ui.Components.ft;
+import org.telegram.ui.Components.gt;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.rt0;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.ys;
+import org.telegram.ui.Components.zs;
 import org.telegram.ui.ap0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class m extends FrameLayout {
     public final RectF A0;
@@ -185,7 +185,7 @@ public abstract class m extends FrameLayout {
         gVar.getEditText().setSupportRtlHint(true);
         this.P = new org.telegram.ui.Components.ca(y9Var, gVar.getEditText(), g() ? 1 : 2, false);
         gVar.getEditText().setHintColor(-1);
-        gVar.getEditText().r(hd.M0(2131754454, null), false);
+        gVar.getEditText().r(id.M0(2131754454, null), false);
         paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
         gVar.getEditText().setTranslationX(org.telegram.messenger.g0.L(-26.0f));
         boolean z9 = this instanceof ap0;
@@ -212,7 +212,7 @@ public abstract class m extends FrameLayout {
         xpVar.n = L2;
         jVar3.setImageDrawable(xpVar);
         jVar3.setScaleType(ImageView.ScaleType.CENTER);
-        jVar3.setContentDescription(hd.M0(2131751355, null));
+        jVar3.setContentDescription(id.M0(2131751355, null));
         jVar3.setAlpha(0.0f);
         jVar3.setVisibility(8);
         jVar3.setOnClickListener(new ah.d(this, 20));
@@ -306,7 +306,7 @@ public abstract class m extends FrameLayout {
         if (z9) {
             if (!this.J0) {
                 float T1 = org.telegram.messenger.g0.T1(org.telegram.messenger.g0.N(-1.0f), org.telegram.messenger.g0.N(1.0f), this.n0);
-                ys editText = gVar.getEditText();
+                zs editText = gVar.getEditText();
                 this.w0 = T1;
                 editText.setTranslationY(T1);
             }
@@ -319,7 +319,7 @@ public abstract class m extends FrameLayout {
             f10 = 82.0f;
             float T12 = (org.telegram.messenger.g0.T1(org.telegram.messenger.g0.N(1.0f), org.telegram.messenger.g0.N(-1.0f), this.n0) + f17) - e10;
             if (Math.abs(this.w0 - T12) >= 1.0f && !this.J0) {
-                ys editText2 = gVar.getEditText();
+                zs editText2 = gVar.getEditText();
                 this.w0 = T12;
                 editText2.setTranslationY(T12);
             }
@@ -586,9 +586,9 @@ public abstract class m extends FrameLayout {
                         this.L.b(false);
                         gVar.getEditText().setForceCursorEnd(true);
                         gVar.getEditText().requestFocus();
-                        et etVar = gVar.a;
-                        etVar.requestFocus();
-                        org.telegram.messenger.g0.K3(etVar);
+                        ft ftVar = gVar.a;
+                        ftVar.requestFocus();
+                        org.telegram.messenger.g0.K3(ftVar);
                         gVar.getEditText().setScrollY(0);
                         icVar.c(true);
                         return true;
@@ -760,7 +760,7 @@ public abstract class m extends FrameLayout {
             TextPaint textPaint = this.H;
             textPaint.setColor(-16777216);
             textPaint.setTextSize(org.telegram.messenger.g0.L(16.0f));
-            String M0 = hd.M0(2131754454, null);
+            String M0 = id.M0(2131754454, null);
             this.G = Bitmap.createBitmap((int) Math.ceil(textPaint.measureText(M0)), (int) Math.ceil(textPaint.getFontMetrics().descent - textPaint.getFontMetrics().ascent), Bitmap.Config.ARGB_8888);
             new Canvas(this.G).drawText(M0, 0.0f, -((int) textPaint.getFontMetrics().ascent), textPaint);
         }
@@ -791,9 +791,9 @@ public abstract class m extends FrameLayout {
                 gVar.getEmojiView().A();
                 return true;
             }
-            ft ftVar = gVar.d;
-            if (ftVar != null) {
-                ftVar.A();
+            gt gtVar = gVar.d;
+            if (gtVar != null) {
+                gtVar.A();
                 gVar.d.t(false);
             }
             return true;

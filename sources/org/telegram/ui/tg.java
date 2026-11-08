@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tg implements Runnable {
     public final /* synthetic */ int a;
@@ -39,15 +39,15 @@ public final /* synthetic */ class tg implements Runnable {
                 break;
             case 4:
                 org.telegram.messenger.iz.I(0);
-                ((org.telegram.ui.Cells.w9) view).c.c(org.telegram.messenger.hd.M0(2131744402, null), true, true);
+                ((org.telegram.ui.Cells.w9) view).c.c(org.telegram.messenger.id.M0(2131744404, null), true, true);
                 break;
             case 5:
                 org.telegram.messenger.iz.I(1);
-                ((org.telegram.ui.Cells.w9) view).c.c(org.telegram.messenger.hd.M0(2131744401, null), true, true);
+                ((org.telegram.ui.Cells.w9) view).c.c(org.telegram.messenger.id.M0(2131744403, null), true, true);
                 break;
             default:
                 org.telegram.messenger.iz.I(2);
-                ((org.telegram.ui.Cells.w9) view).c.c(org.telegram.messenger.hd.M0(2131744400, null), true, true);
+                ((org.telegram.ui.Cells.w9) view).c.c(org.telegram.messenger.id.M0(2131744402, null), true, true);
                 break;
         }
     }

@@ -15,7 +15,7 @@ import org.telegram.messenger.gc;
 import org.telegram.messenger.gf;
 import org.telegram.messenger.h20;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.p10;
@@ -27,12 +27,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.gy;
-import org.telegram.ui.Components.lx;
-import org.telegram.ui.Components.ox;
+import org.telegram.ui.Components.hy;
+import org.telegram.ui.Components.mx;
 import org.telegram.ui.Components.pv0;
+import org.telegram.ui.Components.px;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.ys;
+import org.telegram.ui.Components.zs;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.an;
@@ -40,10 +40,10 @@ import org.telegram.ui.hl0;
 import org.telegram.ui.jw;
 import org.telegram.ui.ks;
 import org.telegram.ui.ww;
-import org.telegram.ui.ya1;
+import org.telegram.ui.za1;
 import org.telegram.ui.zd;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q1 implements Runnable {
     public final /* synthetic */ int a;
@@ -214,31 +214,31 @@ public final /* synthetic */ class q1 implements Runnable {
                 }
                 return;
             case 8:
-                ys ysVar = (ys) this.c;
+                zs zsVar = (zs) this.c;
                 boolean z17 = this.b;
                 bi.v vVar = (bi.v) this.d;
                 String str3 = (String) this.f;
                 TextView textView = (TextView) this.e;
-                ClipboardManager clipboardManager = (ClipboardManager) ysVar.getContext().getSystemService("clipboard");
+                ClipboardManager clipboardManager = (ClipboardManager) zsVar.getContext().getSystemService("clipboard");
                 boolean z18 = z17 && (TextUtils.isEmpty(vVar.getText()) || TextUtils.equals(vVar.getText().toString(), str3)) && clipboardManager != null && clipboardManager.hasPrimaryClip();
                 org.telegram.messenger.camera.q.l(textView.animate().alpha(z18 ? 1.0f : 0.0f).scaleX(z18 ? 1.0f : 0.7f).scaleY(z18 ? 1.0f : 0.7f), xq.h, 300L);
                 return;
             case 9:
-                ox oxVar = (ox) this.c;
+                px pxVar = (px) this.c;
                 String str4 = (String) this.f;
                 boolean z19 = this.b;
                 String str5 = (String) this.e;
                 TLObject tLObject4 = (TLObject) this.d;
-                oxVar.a.remove(str5);
-                gy gyVar = oxVar.b;
-                lx lxVar = gyVar.j0;
-                HashMap hashMap = gyVar.l0;
-                if (lxVar.w && lxVar.x.equals(str4)) {
-                    gyVar.j0.E(str4, "", false, true, z19, str5, tLObject4);
+                pxVar.a.remove(str5);
+                hy hyVar = pxVar.b;
+                mx mxVar = hyVar.j0;
+                HashMap hashMap = hyVar.l0;
+                if (mxVar.w && mxVar.x.equals(str4)) {
+                    hyVar.j0.E(str4, "", false, true, z19, str5, tLObject4);
                     return;
                 }
                 if (z19 && (!(tLObject4 instanceof TLRPC.messages_BotResults) || ((TLRPC.messages_BotResults) tLObject4).results.isEmpty())) {
-                    oxVar.a(str4, false);
+                    pxVar.a(str4, false);
                     return;
                 } else {
                     if (!(tLObject4 instanceof TLRPC.messages_BotResults) || hashMap.containsKey(str5)) {
@@ -416,7 +416,7 @@ public final /* synthetic */ class q1 implements Runnable {
                 cc ccVar = wwVar.d4;
                 if (ccVar != null) {
                     org.telegram.ui.Components.tb tbVar = (org.telegram.ui.Components.tb) ccVar.e;
-                    tbVar.d.c(hd.M0(z21 ? 2131742794 : 2131742796, null), true, true);
+                    tbVar.d.c(id.M0(z21 ? 2131742796 : 2131742798, null), true, true);
                     tbVar.setProgress(1.0f);
                     org.telegram.ui.Components.ya button = tbVar.getButton();
                     button.setScaleX(0.6f);
@@ -438,7 +438,7 @@ public final /* synthetic */ class q1 implements Runnable {
                 hl0.n0((hl0) this.c, (TLRPC.TL_error) this.e, this.b, (TLObject) this.d, (String) this.f);
                 return;
             case 14:
-                ya1.Z((ya1) this.c, (TLObject) this.d, this.b, (String) this.f, (TL_account.passwordInputSettings) this.e);
+                za1.Z((za1) this.c, (TLObject) this.d, this.b, (String) this.f, (TL_account.passwordInputSettings) this.e);
                 return;
             case 15:
                 TLRPC.payments_GiveawayInfo payments_giveawayinfo = (TLRPC.payments_GiveawayInfo) this.c;
@@ -466,7 +466,7 @@ public final /* synthetic */ class q1 implements Runnable {
                 long nanoTime = System.nanoTime();
                 try {
                     t0Var.g();
-                    long j3 = t0Var.H;
+                    long j3 = t0Var.I;
                     if (z23) {
                         synchronized (xVar) {
                             xVar.w = true;
@@ -483,9 +483,9 @@ public final /* synthetic */ class q1 implements Runnable {
                         file2 = xVar.a;
                         try {
                             t0Var.c(true);
-                            wi.x xVar2 = t0Var.T;
-                            long j10 = t0Var.J;
-                            long j11 = t0Var.K;
+                            wi.x xVar2 = t0Var.U;
+                            long j10 = t0Var.K;
+                            long j11 = t0Var.L;
                             int i21 = xVar.i();
                             int i22 = t0Var.n.a;
                             int i23 = t0Var.o;
@@ -494,7 +494,7 @@ public final /* synthetic */ class q1 implements Runnable {
                             }
                             n2.p0 a11 = jd.a(file4, xVar2, j10, j11, true, new b7.d(i22, i23, i21));
                             j3 = a11.b;
-                            t0Var.m.b("resume trim remux completed: requested=" + t0Var.J + ".." + t0Var.K + ", actualStartMs=" + a11.a + ", mode=" + ((String) a11.c) + ", retainedDurationMs=" + j3 + ", outputSize=" + t0Var.T.a.length() + ", elapsedMs=" + wi.t0.f(nanoTime));
+                            t0Var.m.b("resume trim remux completed: requested=" + t0Var.K + ".." + t0Var.L + ", actualStartMs=" + a11.a + ", mode=" + ((String) a11.c) + ", retainedDurationMs=" + j3 + ", outputSize=" + t0Var.U.a.length() + ", elapsedMs=" + wi.t0.f(nanoTime));
                         } catch (Exception e12) {
                             e = e12;
                             file = file2;
@@ -531,7 +531,7 @@ public final /* synthetic */ class q1 implements Runnable {
                         file2 = null;
                     }
                     t0Var.g();
-                    t0Var.U = null;
+                    t0Var.V = null;
                     if (!z23) {
                         t0Var.m.b("resume prepared without remux: retainedDurationMs=" + j3 + ", elapsedMs=" + wi.t0.f(nanoTime));
                     }
@@ -609,18 +609,18 @@ public final /* synthetic */ class q1 implements Runnable {
         this.e = f2Var;
     }
 
-    public /* synthetic */ q1(ys ysVar, boolean z9, bi.v vVar, String str, TextView textView) {
+    public /* synthetic */ q1(zs zsVar, boolean z9, bi.v vVar, String str, TextView textView) {
         this.a = 8;
-        this.c = ysVar;
+        this.c = zsVar;
         this.b = z9;
         this.d = vVar;
         this.f = str;
         this.e = textView;
     }
 
-    public /* synthetic */ q1(ox oxVar, String str, boolean z9, String str2, TLObject tLObject) {
+    public /* synthetic */ q1(px pxVar, String str, boolean z9, String str2, TLObject tLObject) {
         this.a = 9;
-        this.c = oxVar;
+        this.c = pxVar;
         this.f = str;
         this.b = z9;
         this.e = str2;
@@ -645,9 +645,9 @@ public final /* synthetic */ class q1 implements Runnable {
         this.e = updatepasswordsettings;
     }
 
-    public /* synthetic */ q1(ya1 ya1Var, TLObject tLObject, boolean z9, String str, TL_account.passwordInputSettings passwordinputsettings) {
+    public /* synthetic */ q1(za1 za1Var, TLObject tLObject, boolean z9, String str, TL_account.passwordInputSettings passwordinputsettings) {
         this.a = 14;
-        this.c = ya1Var;
+        this.c = za1Var;
         this.d = tLObject;
         this.b = z9;
         this.f = str;

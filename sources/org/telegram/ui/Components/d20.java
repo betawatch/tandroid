@@ -8,7 +8,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class d20 extends oj0 {
     public final Context c;
@@ -99,7 +99,7 @@ public final class d20 extends oj0 {
                 if ((!h20Var.T1 || h20Var.U1) && h20Var.g2 == -1 && !arrayList.isEmpty()) {
                     r3 = true;
                 }
-                x4Var.b(R.drawable.msg_link, 7, org.telegram.messenger.hd.M0(2131743391, null), r3);
+                x4Var.b(R.drawable.msg_link, 7, org.telegram.messenger.id.M0(2131743393, null), r3);
                 return;
             }
             return;
@@ -109,12 +109,12 @@ public final class d20 extends oj0 {
         }
         org.telegram.ui.Cells.x3 x3Var = (org.telegram.ui.Cells.x3) view;
         if (i7 == h20Var.g2) {
-            x3Var.setText(org.telegram.messenger.hd.M0(2131752336, null));
+            x3Var.setText(org.telegram.messenger.id.M0(2131752336, null));
         } else if (i7 == h20Var.d2) {
             if (h20Var.Y1) {
-                x3Var.setText(org.telegram.messenger.hd.M0(2131742826, null));
+                x3Var.setText(org.telegram.messenger.id.M0(2131742828, null));
             } else {
-                x3Var.setText(org.telegram.messenger.hd.M0(2131749455, null));
+                x3Var.setText(org.telegram.messenger.id.M0(2131749457, null));
             }
         }
     }
@@ -124,7 +124,7 @@ public final class d20 extends oj0 {
     /* JADX WARN: Type inference failed for: r8v5, types: [org.telegram.ui.Cells.x4] */
     /* JADX WARN: Type inference failed for: r8v6, types: [android.view.View, org.telegram.ui.Cells.x3] */
     /* JADX WARN: Type inference failed for: r8v7, types: [android.view.View] */
-    /* JADX WARN: Type inference failed for: r9v12, types: [org.telegram.ui.Components.lz] */
+    /* JADX WARN: Type inference failed for: r9v12, types: [org.telegram.ui.Components.mz] */
     @Override // v4.g0
     public final v4.d1 x(ViewGroup viewGroup, int i7) {
         org.telegram.ui.Cells.a5 a5Var;
@@ -148,11 +148,11 @@ public final class d20 extends oj0 {
             } else if (i7 != 5) {
                 a5Var = new View(context);
             } else {
-                ?? lzVar = new lz(context, null);
-                lzVar.setViewType(6);
-                lzVar.setIsSingleCell(true);
-                lzVar.e(org.telegram.ui.ActionBar.k6.Tg, org.telegram.ui.ActionBar.k6.Fh, org.telegram.ui.ActionBar.k6.Xg);
-                a5Var = lzVar;
+                ?? mzVar = new mz(context, null);
+                mzVar.setViewType(6);
+                mzVar.setIsSingleCell(true);
+                mzVar.e(org.telegram.ui.ActionBar.k6.Tg, org.telegram.ui.ActionBar.k6.Fh, org.telegram.ui.ActionBar.k6.Xg);
+                a5Var = mzVar;
             }
         } else {
             org.telegram.ui.Cells.a5 a5Var2 = new org.telegram.ui.Cells.a5(this.c, 6, 2, false, null);

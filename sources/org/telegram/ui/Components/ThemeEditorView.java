@@ -24,7 +24,7 @@ import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class ThemeEditorView {
     public static volatile ThemeEditorView p;
@@ -40,11 +40,11 @@ public class ThemeEditorView {
     public a8.r7 m;
     public EditorAlert n;
     public org.telegram.ui.ActionBar.j6 o;
-    public final dt b = new dt(this, 16);
+    public final et b = new et(this, 16);
     public final int g = org.telegram.messenger.g0.L(54.0f);
     public final int h = org.telegram.messenger.g0.L(54.0f);
 
-    /* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+    /* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
     public class EditorAlert extends org.telegram.ui.ActionBar.v2 {
         public static final /* synthetic */ int D1 = 0;
         public boolean A1;
@@ -52,7 +52,7 @@ public class ThemeEditorView {
         public final pz0 i1;
         public final jz0 j1;
         public final FrameLayout k1;
-        public final iy l1;
+        public final jy l1;
         public final vz0 m1;
         public final v4.b0 n1;
         public final qz0 o1;
@@ -138,13 +138,13 @@ public class ThemeEditorView {
             this.j1.setLayoutAnimation(null);
             this.j1.setOnItemClickListener(new k(this, 18));
             this.j1.setOnScrollListener(new kz0(this));
-            iy iyVar = new iy(context, null);
-            this.l1 = iyVar;
-            iyVar.setShowAtCenter(true);
-            iyVar.c();
-            iyVar.setText(org.telegram.messenger.hd.M0(2131748166, null));
-            this.j1.setEmptyView(iyVar);
-            this.b.addView(iyVar, c8.ha.d(-1, -1.0f, 51, 0.0f, 52.0f, 0.0f, 0.0f));
+            jy jyVar = new jy(context, null);
+            this.l1 = jyVar;
+            jyVar.setShowAtCenter(true);
+            jyVar.c();
+            jyVar.setText(org.telegram.messenger.id.M0(2131748168, null));
+            this.j1.setEmptyView(jyVar);
+            this.b.addView(jyVar, c8.ha.d(-1, -1.0f, 51, 0.0f, 52.0f, 0.0f, 0.0f));
             FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, org.telegram.messenger.g0.f1(), 51);
             layoutParams.topMargin = org.telegram.messenger.g0.L(58.0f);
             this.s1[0] = new View(context);
@@ -172,7 +172,7 @@ public class ThemeEditorView {
             textView.setGravity(17);
             textView.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.h0(788529152, 0, -1));
             textView.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
-            textView.setText(org.telegram.messenger.hd.M0(2131752040, null).toUpperCase());
+            textView.setText(org.telegram.messenger.id.M0(2131752040, null).toUpperCase());
             textView.setTypeface(org.telegram.messenger.g0.o());
             frameLayout2.addView(textView, c8.ha.e(-2, -1, 51));
             textView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.hz0
@@ -233,7 +233,7 @@ public class ThemeEditorView {
             textView2.setGravity(17);
             textView2.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.h0(788529152, 0, -1));
             textView2.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
-            textView2.setText(org.telegram.messenger.hd.M0(2131745933, null).toUpperCase());
+            textView2.setText(org.telegram.messenger.id.M0(2131745935, null).toUpperCase());
             textView2.setTypeface(org.telegram.messenger.g0.o());
             frameLayout2.addView(textView2, c8.ha.e(-2, -1, 53));
             textView2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.hz0
@@ -299,7 +299,7 @@ public class ThemeEditorView {
             textView3.setGravity(17);
             textView3.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.h0(788529152, 0, -1));
             textView3.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
-            textView3.setText(org.telegram.messenger.hd.M0(2131752589, null).toUpperCase());
+            textView3.setText(org.telegram.messenger.id.M0(2131752589, null).toUpperCase());
             textView3.setTypeface(org.telegram.messenger.g0.o());
             frameLayout3.addView(textView3, c8.ha.e(-2, -1, 51));
             final int i15 = 2;
@@ -364,7 +364,7 @@ public class ThemeEditorView {
             textView4.setGravity(17);
             textView4.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.h0(788529152, 0, -1));
             textView4.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
-            textView4.setText(org.telegram.messenger.hd.M0(2131751601, null).toUpperCase());
+            textView4.setText(org.telegram.messenger.id.M0(2131751601, null).toUpperCase());
             textView4.setTypeface(org.telegram.messenger.g0.o());
             linearLayout.addView(textView4, c8.ha.e(-2, -1, 51));
             final int i16 = 3;
@@ -426,7 +426,7 @@ public class ThemeEditorView {
             textView5.setGravity(17);
             textView5.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.h0(788529152, 0, -1));
             textView5.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
-            textView5.setText(org.telegram.messenger.hd.M0(2131745947, null).toUpperCase());
+            textView5.setText(org.telegram.messenger.id.M0(2131745949, null).toUpperCase());
             textView5.setTypeface(org.telegram.messenger.g0.o());
             linearLayout.addView(textView5, c8.ha.e(-2, -1, 51));
             final int i17 = 4;
@@ -564,7 +564,7 @@ public class ThemeEditorView {
         /* JADX WARN: Type inference failed for: r6v5 */
         public final void L0(boolean z9) {
             ?? r62;
-            iy iyVar = this.l1;
+            jy jyVar = this.l1;
             View[] viewArr = this.s1;
             FrameLayout frameLayout = this.k1;
             FrameLayout frameLayout2 = this.q1;
@@ -581,7 +581,7 @@ public class ThemeEditorView {
                 this.x1 = this.v1;
                 AnimatorSet animatorSet = new AnimatorSet();
                 Property property = View.ALPHA;
-                animatorSet.playTogether(ObjectAnimator.ofFloat(pz0Var, (Property<pz0, Float>) property, 1.0f), ObjectAnimator.ofFloat(frameLayout3, (Property<FrameLayout, Float>) property, 1.0f), ObjectAnimator.ofFloat(jz0Var, (Property<jz0, Float>) property, 0.0f), ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) property, 0.0f), ObjectAnimator.ofFloat(viewArr[0], (Property<View, Float>) property, 0.0f), ObjectAnimator.ofFloat(iyVar, (Property<iy, Float>) property, 0.0f), ObjectAnimator.ofFloat(frameLayout2, (Property<FrameLayout, Float>) property, 0.0f), ObjectAnimator.ofInt(this, "scrollOffsetY", jz0Var.getPaddingTop()));
+                animatorSet.playTogether(ObjectAnimator.ofFloat(pz0Var, (Property<pz0, Float>) property, 1.0f), ObjectAnimator.ofFloat(frameLayout3, (Property<FrameLayout, Float>) property, 1.0f), ObjectAnimator.ofFloat(jz0Var, (Property<jz0, Float>) property, 0.0f), ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) property, 0.0f), ObjectAnimator.ofFloat(viewArr[0], (Property<View, Float>) property, 0.0f), ObjectAnimator.ofFloat(jyVar, (Property<jy, Float>) property, 0.0f), ObjectAnimator.ofFloat(frameLayout2, (Property<FrameLayout, Float>) property, 0.0f), ObjectAnimator.ofInt(this, "scrollOffsetY", jz0Var.getPaddingTop()));
                 animatorSet.setDuration(150L);
                 animatorSet.setInterpolator(themeEditorView.k);
                 animatorSet.addListener(new mz0(this));
@@ -629,7 +629,7 @@ public class ThemeEditorView {
             ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(view, (Property<View, Float>) property2, fArr5);
             float[] fArr6 = new float[1];
             fArr6[c10] = 1.0f;
-            ObjectAnimator ofFloat6 = ObjectAnimator.ofFloat(iyVar, (Property<iy, Float>) property2, fArr6);
+            ObjectAnimator ofFloat6 = ObjectAnimator.ofFloat(jyVar, (Property<jy, Float>) property2, fArr6);
             float[] fArr7 = new float[1];
             fArr7[c10] = 1.0f;
             ObjectAnimator ofFloat7 = ObjectAnimator.ofFloat(frameLayout2, (Property<FrameLayout, Float>) property2, fArr7);

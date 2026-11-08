@@ -18,7 +18,7 @@ import g6.y;
 import j6.b;
 import q6.m;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class ReconnectionService extends Service {
     public static final b b = new b("ReconnectionService", null);
@@ -30,11 +30,11 @@ public class ReconnectionService extends Service {
         if (uVar != null) {
             try {
                 s sVar = (s) uVar;
-                Parcel P0 = sVar.P0();
-                t.c(P0, intent);
-                Parcel R0 = sVar.R0(P0, 3);
-                IBinder readStrongBinder = R0.readStrongBinder();
-                R0.recycle();
+                Parcel p12 = sVar.p1();
+                t.c(p12, intent);
+                Parcel r12 = sVar.r1(p12, 3);
+                IBinder readStrongBinder = r12.readStrongBinder();
+                r12.recycle();
                 return readStrongBinder;
             } catch (RemoteException e10) {
                 b.a(e10, "Unable to call %s on %s.", "onBind", u.class.getSimpleName());
@@ -53,9 +53,9 @@ public class ReconnectionService extends Service {
         u uVar = null;
         try {
             y yVar = b10.a;
-            Parcel R0 = yVar.R0(yVar.P0(), 7);
-            aVar = a7.b.M0(R0.readStrongBinder());
-            R0.recycle();
+            Parcel r12 = yVar.r1(yVar.p1(), 7);
+            aVar = a7.b.m1(r12.readStrongBinder());
+            r12.recycle();
         } catch (RemoteException e10) {
             g.c.a(e10, "Unable to call %s on %s.", "getWrappedThis", y.class.getSimpleName());
             aVar = null;
@@ -65,9 +65,9 @@ public class ReconnectionService extends Service {
         kVar.getClass();
         try {
             r rVar = kVar.a;
-            Parcel R02 = rVar.R0(rVar.P0(), 5);
-            aVar2 = a7.b.M0(R02.readStrongBinder());
-            R02.recycle();
+            Parcel r13 = rVar.r1(rVar.p1(), 5);
+            aVar2 = a7.b.m1(r13.readStrongBinder());
+            r13.recycle();
         } catch (RemoteException e11) {
             k.b.a(e11, "Unable to call %s on %s.", "getWrappedThis", r.class.getSimpleName());
             aVar2 = null;
@@ -75,7 +75,7 @@ public class ReconnectionService extends Service {
         b bVar = d.a;
         if (aVar != null && aVar2 != null) {
             try {
-                uVar = d.b(getApplicationContext()).Y0(new a7.b(this), aVar, aVar2);
+                uVar = d.b(getApplicationContext()).y1(new a7.b(this), aVar, aVar2);
             } catch (RemoteException | g6.d e12) {
                 d.a.a(e12, "Unable to call %s on %s.", "newReconnectionServiceImpl", f.class.getSimpleName());
             }
@@ -84,7 +84,7 @@ public class ReconnectionService extends Service {
         if (uVar != null) {
             try {
                 s sVar = (s) uVar;
-                sVar.T0(sVar.P0(), 1);
+                sVar.t1(sVar.p1(), 1);
             } catch (RemoteException e13) {
                 b.a(e13, "Unable to call %s on %s.", "onCreate", u.class.getSimpleName());
             }
@@ -98,7 +98,7 @@ public class ReconnectionService extends Service {
         if (uVar != null) {
             try {
                 s sVar = (s) uVar;
-                sVar.T0(sVar.P0(), 4);
+                sVar.t1(sVar.p1(), 4);
             } catch (RemoteException e10) {
                 b.a(e10, "Unable to call %s on %s.", "onDestroy", u.class.getSimpleName());
             }
@@ -112,13 +112,13 @@ public class ReconnectionService extends Service {
         if (uVar != null) {
             try {
                 s sVar = (s) uVar;
-                Parcel P0 = sVar.P0();
-                t.c(P0, intent);
-                P0.writeInt(i7);
-                P0.writeInt(i10);
-                Parcel R0 = sVar.R0(P0, 2);
-                int readInt = R0.readInt();
-                R0.recycle();
+                Parcel p12 = sVar.p1();
+                t.c(p12, intent);
+                p12.writeInt(i7);
+                p12.writeInt(i10);
+                Parcel r12 = sVar.r1(p12, 2);
+                int readInt = r12.readInt();
+                r12.recycle();
                 return readInt;
             } catch (RemoteException e10) {
                 b.a(e10, "Unable to call %s on %s.", "onStartCommand", u.class.getSimpleName());

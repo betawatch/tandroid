@@ -15,7 +15,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.u31;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class s8 extends org.telegram.ui.ActionBar.v2 implements ls {
     public static final /* synthetic */ int U1 = 0;
@@ -316,7 +316,7 @@ public final class s8 extends org.telegram.ui.ActionBar.v2 implements ls {
             }
             y7 y7Var = this.K1;
             if (y7Var != null) {
-                y7Var.l(q8Var, this.s1, this.t1, this.u1, this.x1, this.j1, this.y1, new f2.h(20, dVar, runnable), new di.s7(dVar, 28));
+                y7Var.k(q8Var, this.s1, this.t1, this.u1, this.x1, this.j1, this.y1, new f2.h(20, dVar, runnable), new di.s7(dVar, 28));
                 return;
             } else {
                 runnable.run();
@@ -333,11 +333,11 @@ public final class s8 extends org.telegram.ui.ActionBar.v2 implements ls {
             spannableStringBuilder.append((CharSequence) spannableString);
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getContext(), this.I0);
-        String M0 = hd.M0(2131744490, null);
+        String M0 = id.M0(2131744492, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
-        u1Var.T = org.telegram.messenger.g0.K2(hd.M0(2131744489, null), spannableStringBuilder, "%s");
-        alertDialog$Builder.k(hd.M0(2131746742, null), new a3.h(this, q8Var, runnable, 9));
+        u1Var.T = org.telegram.messenger.g0.K2(id.M0(2131744491, null), spannableStringBuilder, "%s");
+        alertDialog$Builder.k(id.M0(2131746744, null), new a3.h(this, q8Var, runnable, 9));
         jg.g.w(null, 2131752589, alertDialog$Builder, null);
     }
 

@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.app.Activity;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class xh extends org.telegram.ui.Components.qu {
+public final class xh extends org.telegram.ui.Components.ru {
     public final /* synthetic */ an N1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -14,7 +14,7 @@ public final class xh extends org.telegram.ui.Components.qu {
         this.N1 = anVar;
     }
 
-    @Override // org.telegram.ui.Components.qu, org.telegram.ui.ActionBar.v2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
+    @Override // org.telegram.ui.Components.ru, org.telegram.ui.ActionBar.v2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
     public final void dismiss() {
         super.dismiss();
         an anVar = this.N1;

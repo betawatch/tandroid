@@ -18,8 +18,8 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.ch0;
-import org.telegram.ui.Components.dt;
-import org.telegram.ui.Components.gy;
+import org.telegram.ui.Components.et;
+import org.telegram.ui.Components.hy;
 import org.telegram.ui.Components.i60;
 import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.o40;
@@ -32,7 +32,7 @@ import org.telegram.ui.c01;
 import org.telegram.ui.q11;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class h3 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -51,9 +51,9 @@ public final class h3 extends AnimatorListenerAdapter {
     public void onAnimationCancel(Animator animator) {
         switch (this.a) {
             case 6:
-                gy gyVar = (gy) this.d;
-                if (animator.equals(gyVar.M0)) {
-                    gyVar.M0 = null;
+                hy hyVar = (hy) this.d;
+                if (animator.equals(hyVar.M0)) {
+                    hyVar.M0 = null;
                     break;
                 }
                 break;
@@ -166,28 +166,28 @@ public final class h3 extends AnimatorListenerAdapter {
                 break;
             case 5:
                 if (((ab.q) this.d).a) {
-                    ((View) this.c).postDelayed((dt) this.b, 300L);
+                    ((View) this.c).postDelayed((et) this.b, 300L);
                     break;
                 }
                 break;
             case 6:
                 pj0 pj0Var = (pj0) this.c;
                 v4.s sVar = (v4.s) this.b;
-                gy gyVar = (gy) this.d;
-                if (animator.equals(gyVar.M0)) {
+                hy hyVar = (hy) this.d;
+                if (animator.equals(hyVar.M0)) {
                     int L0 = sVar.L0();
                     pj0Var.setTranslationY(0.0f);
-                    if (pj0Var == gyVar.D0) {
-                        pj0Var.setPadding(0, org.telegram.messenger.g0.L(36.0f), 0, org.telegram.messenger.g0.L(44.0f) + gyVar.q2);
-                    } else if (pj0Var == gyVar.h0) {
-                        pj0Var.setPadding(0, gyVar.b1, 0, org.telegram.messenger.g0.L(44.0f) + gyVar.q2);
-                    } else if (pj0Var == gyVar.P) {
-                        pj0Var.setPadding(org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(44.0f) + gyVar.q2);
+                    if (pj0Var == hyVar.D0) {
+                        pj0Var.setPadding(0, org.telegram.messenger.g0.L(36.0f), 0, org.telegram.messenger.g0.L(44.0f) + hyVar.q2);
+                    } else if (pj0Var == hyVar.h0) {
+                        pj0Var.setPadding(0, hyVar.b1, 0, org.telegram.messenger.g0.L(44.0f) + hyVar.q2);
+                    } else if (pj0Var == hyVar.P) {
+                        pj0Var.setPadding(org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(44.0f) + hyVar.q2);
                     }
                     if (L0 != -1) {
                         sVar.h1(L0, 0);
                     }
-                    gyVar.M0 = null;
+                    hyVar.M0 = null;
                     break;
                 }
                 break;
@@ -215,11 +215,11 @@ public final class h3 extends AnimatorListenerAdapter {
                 viewTreeObserver.removeOnPreDrawListener(k60Var.y);
                 if (k60Var.P) {
                     view2.setVisibility(0);
-                    if (view2 instanceof zh.z0) {
-                        zh.z0 z0Var = (zh.z0) view2;
-                        FrameLayout frameLayout = z0Var.d;
+                    if (view2 instanceof zh.y0) {
+                        zh.y0 y0Var = (zh.y0) view2;
+                        FrameLayout frameLayout = y0Var.d;
                         frameLayout.invalidate();
-                        frameLayout.invalidateDrawable(z0Var.e);
+                        frameLayout.invalidateDrawable(y0Var.e);
                         break;
                     }
                 }
@@ -279,6 +279,6 @@ public final class h3 extends AnimatorListenerAdapter {
         this.a = 5;
         this.d = qVar;
         this.c = view;
-        this.b = new dt(this, 1);
+        this.b = new et(this, 1);
     }
 }

@@ -8,7 +8,7 @@ import android.widget.TextView;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class zx0 extends FrameLayout {
     public final org.telegram.ui.Components.g5 a;
@@ -20,7 +20,7 @@ public final class zx0 extends FrameLayout {
         this.b = ay0Var;
         TextView g10 = org.telegram.messenger.k5.g(context, 1, 16.0f);
         org.telegram.ui.ActionBar.r6.V(g10, org.telegram.ui.ActionBar.k6.G6, ay0Var.getResourceProvider());
-        g10.setText(org.telegram.messenger.hd.M0(2131751351, null));
+        g10.setText(org.telegram.messenger.id.M0(2131751351, null));
         addView(g10, c8.ha.d(-1, -2.0f, 23, 20.0f, 0.0f, 48.0f, 0.0f));
         this.a = new org.telegram.ui.Components.g5(org.telegram.messenger.g0.L(24.0f), this);
     }

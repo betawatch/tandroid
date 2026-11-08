@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class k50 extends org.telegram.ui.Components.oj0 {
     public final Context c;
@@ -72,12 +72,12 @@ public final class k50 extends org.telegram.ui.Components.oj0 {
         if (i11 == 1) {
             if (i7 != m50Var.y) {
                 if (i7 == m50Var.K) {
-                    ((org.telegram.ui.Cells.z8) view).setText(org.telegram.messenger.hd.M0(2131754429, null));
+                    ((org.telegram.ui.Cells.z8) view).setText(org.telegram.messenger.id.M0(2131754429, null));
                     return;
                 }
                 return;
             }
-            String M0 = org.telegram.messenger.hd.M0(z9 ? 2131752129 : 2131752114, null);
+            String M0 = org.telegram.messenger.id.M0(z9 ? 2131752129 : 2131752114, null);
             int indexOf = M0.indexOf("@stickers");
             if (indexOf == -1) {
                 ((org.telegram.ui.Cells.z8) view).setText(M0);
@@ -96,10 +96,10 @@ public final class k50 extends org.telegram.ui.Components.oj0 {
         }
         if (i11 == 4) {
             if (i7 == m50Var.H) {
-                ((org.telegram.ui.Cells.n4) view).setText(org.telegram.messenger.hd.M0(2131754434, null));
+                ((org.telegram.ui.Cells.n4) view).setText(org.telegram.messenger.id.M0(2131754434, null));
                 return;
             } else {
-                ((org.telegram.ui.Cells.n4) view).setText(org.telegram.messenger.hd.M0(z9 ? 2131752130 : 2131752115, null));
+                ((org.telegram.ui.Cells.n4) view).setText(org.telegram.messenger.id.M0(z9 ? 2131752130 : 2131752115, null));
                 return;
             }
         }
@@ -110,17 +110,17 @@ public final class k50 extends org.telegram.ui.Components.oj0 {
         boolean z10 = m50Var.J > 0;
         TLRPC.TL_messages_stickerSet tL_messages_stickerSet3 = m50Var.r;
         j50Var.b = z10;
-        org.telegram.ui.Components.ys ysVar = j50Var.a;
+        org.telegram.ui.Components.zs zsVar = j50Var.a;
         i50 i50Var = j50Var.f;
-        ysVar.removeTextChangedListener(i50Var);
+        zsVar.removeTextChangedListener(i50Var);
         if (tL_messages_stickerSet3 == null) {
-            ysVar.setText("");
+            zsVar.setText("");
         } else {
             String str = tL_messages_stickerSet3.set.short_name;
-            ysVar.setText(str);
-            ysVar.setSelection(str.length());
+            zsVar.setText(str);
+            zsVar.setSelection(str.length());
         }
-        ysVar.addTextChangedListener(i50Var);
+        zsVar.addTextChangedListener(i50Var);
     }
 
     /* JADX WARN: Multi-variable type inference failed */

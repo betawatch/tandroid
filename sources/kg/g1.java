@@ -12,7 +12,7 @@ import java.util.HashSet;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.m20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -22,7 +22,7 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.a80;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class g1 extends LinearLayout implements a6 {
     public final f6 a;
@@ -47,16 +47,16 @@ public final class g1 extends LinearLayout implements a6 {
         imageReceiver.J0(org.telegram.messenger.g0.L(4.0f));
         TextView textView = new TextView(context);
         this.d = textView;
-        textView.setGravity(hd.a0 ? 5 : 3);
+        textView.setGravity(id.a0 ? 5 : 3);
         r6.V(textView, i7, f6Var);
         textView.setTextSize(1, 16.0f);
-        boolean z9 = hd.a0;
+        boolean z9 = id.a0;
         addView(textView, ha.t(-1, -2, 55, z9 ? 70 : 18, 10, z9 ? 18 : 70, 4));
         TextView textView2 = new TextView(context);
-        textView2.setGravity(hd.a0 ? 5 : 3);
+        textView2.setGravity(id.a0 ? 5 : 3);
         org.telegram.messenger.camera.q.o(textView2, k6.z6, f6Var, null, 2131752689);
         textView2.setTextSize(1, 13.0f);
-        boolean z10 = hd.a0;
+        boolean z10 = id.a0;
         addView(textView2, ha.t(-1, -2, 55, z10 ? 70 : 18, 0, z10 ? 18 : 70, 8));
         setWillNotDraw(false);
     }
@@ -77,7 +77,7 @@ public final class g1 extends LinearLayout implements a6 {
 
     @Override // android.widget.LinearLayout, android.view.View
     public final void onDraw(Canvas canvas) {
-        float L = hd.a0 ? org.telegram.messenger.g0.L(16.0f) : getWidth() - org.telegram.messenger.g0.L(60.0f);
+        float L = id.a0 ? org.telegram.messenger.g0.L(16.0f) : getWidth() - org.telegram.messenger.g0.L(60.0f);
         float L2 = org.telegram.messenger.g0.L(8.0f);
         float L3 = org.telegram.messenger.g0.L(44.0f);
         float L4 = org.telegram.messenger.g0.L(44.0f);
@@ -90,7 +90,7 @@ public final class g1 extends LinearLayout implements a6 {
             if (W0 == null) {
                 W0 = k6.k0;
             }
-            canvas.drawRect(org.telegram.messenger.g0.L(hd.a0 ? 0.0f : 21.33f), getMeasuredHeight() - 1, getWidth() - org.telegram.messenger.g0.L(hd.a0 ? 21.33f : 0.0f), getMeasuredHeight(), W0);
+            canvas.drawRect(org.telegram.messenger.g0.L(id.a0 ? 0.0f : 21.33f), getMeasuredHeight() - 1, getWidth() - org.telegram.messenger.g0.L(id.a0 ? 21.33f : 0.0f), getMeasuredHeight(), W0);
         }
     }
 

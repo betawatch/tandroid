@@ -1,6 +1,6 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class z7 {
     public float a;
@@ -8,7 +8,36 @@ public final class z7 {
     public float c;
     public float d;
     public float e;
-    public float f;
-    public float g;
-    public float h;
+
+    public z7(float f10, float f11, float f12) {
+        this.b = f10;
+        this.a = f10;
+        this.d = f11;
+        this.e = f12;
+    }
+
+    public final void a(float f10) {
+        this.b = f10;
+        this.a = f10;
+        this.c = 0.0f;
+    }
+
+    public final boolean b(float f10) {
+        float sqrt = this.e * 2.0f * ((float) Math.sqrt(this.d));
+        while (f10 > 0.0f) {
+            float min = Math.min(f10, 0.0020833334f);
+            float f11 = this.c;
+            float f12 = -this.d;
+            float f13 = this.a;
+            float f14 = ((((f13 - this.b) * f12) - (sqrt * f11)) * min) + f11;
+            this.c = f14;
+            this.a = (f14 * min) + f13;
+            f10 -= min;
+        }
+        boolean z9 = Math.abs(this.a - this.b) > 0.002f || Math.abs(this.c) > 0.02f;
+        if (!z9) {
+            a(this.b);
+        }
+        return z9;
+    }
 }

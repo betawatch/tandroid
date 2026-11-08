@@ -15,7 +15,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class t7 extends FrameLayout implements org.telegram.ui.ActionBar.a6, org.telegram.ui.Components.ya0 {
     public boolean D;
@@ -48,11 +48,11 @@ public abstract class t7 extends FrameLayout implements org.telegram.ui.ActionBa
             setClipChildren(false);
             setClipToPadding(false);
         }
-        r7VarArr[0] = new r7(org.telegram.messenger.hd.M0(2131750797, null), 0, new j7(this));
+        r7VarArr[0] = new r7(org.telegram.messenger.id.M0(2131750797, null), 0, new j7(this));
         final int i7 = 1;
-        r7VarArr[1] = new r7(org.telegram.messenger.hd.M0(2131748650, null), 1, new o7(this));
-        r7VarArr[2] = new r7(org.telegram.messenger.hd.M0(2131745415, null), 2, new l7(this));
-        r7VarArr[3] = new r7(org.telegram.messenger.hd.M0(2131748318, null), 3, new q7(this));
+        r7VarArr[1] = new r7(org.telegram.messenger.id.M0(2131748652, null), 1, new o7(this));
+        r7VarArr[2] = new r7(org.telegram.messenger.id.M0(2131745417, null), 2, new l7(this));
+        r7VarArr[3] = new r7(org.telegram.messenger.id.M0(2131748320, null), 3, new q7(this));
         int i10 = 0;
         while (true) {
             r7[] r7VarArr2 = this.r;
@@ -100,7 +100,7 @@ public abstract class t7 extends FrameLayout implements org.telegram.ui.ActionBa
         org.telegram.ui.ActionBar.n6 N = org.telegram.ui.ActionBar.r6.N(i12);
         imageView.setBackground(h02);
         org.telegram.ui.ActionBar.r6.k(imageView, h02, null, N, null);
-        imageView.setContentDescription(org.telegram.messenger.hd.M0(2131752041, null));
+        imageView.setContentDescription(org.telegram.messenger.id.M0(2131752041, null));
         linearLayout.addView(imageView, new LinearLayout.LayoutParams(org.telegram.messenger.g0.L(54.0f), -1));
         this.b.add(imageView);
         final int i13 = 0;
@@ -140,7 +140,7 @@ public abstract class t7 extends FrameLayout implements org.telegram.ui.ActionBa
         if (r0Var.getIconView() != null) {
             org.telegram.ui.ActionBar.r6.t(r0Var.getIconView(), i11, null, PorterDuff.Mode.SRC_IN);
         }
-        r0Var.setContentDescription(org.telegram.messenger.hd.M0(2131751599, null));
+        r0Var.setContentDescription(org.telegram.messenger.id.M0(2131751599, null));
         r0Var.setDuplicateParentStateEnabled(false);
         linearLayout.addView(r0Var, new LinearLayout.LayoutParams(org.telegram.messenger.g0.L(54.0f), -1));
         this.b.add(r0Var);

@@ -20,7 +20,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class gi0 extends FrameLayout {
     public int D;
@@ -119,7 +119,7 @@ public final class gi0 extends FrameLayout {
         }
         gi0Var.d();
         gi0Var.e = o0Var;
-        gi0Var.r = o0Var.a || (o0Var.f != null && ((ii0Var.q() || ii0Var.G0) && org.telegram.messenger.rc.e(8200)));
+        gi0Var.r = o0Var.a || (o0Var.f != null && ((ii0Var.q() || ii0Var.G0) && org.telegram.messenger.sc.e(8200)));
         if (i11 == 4 || gi0Var.e.b) {
             gi0Var.r = false;
         }
@@ -301,7 +301,7 @@ public final class gi0 extends FrameLayout {
             }
         }
         ch.o0 o0Var2 = this.e;
-        if (o0Var2 != null && o0Var2.a && this.F != null && org.telegram.messenger.rc.e(8200) && org.telegram.messenger.rc.e(131072)) {
+        if (o0Var2 != null && o0Var2.a && this.F != null && org.telegram.messenger.sc.e(8200) && org.telegram.messenger.sc.e(131072)) {
             RectF rectF = org.telegram.messenger.g0.P;
             float height = ((int) (getHeight() * 0.7f)) / 2.0f;
             rectF.set((getWidth() / 2.0f) - height, (getHeight() / 2.0f) - height, (getWidth() / 2.0f) + height, (getHeight() / 2.0f) + height);
@@ -364,7 +364,7 @@ public final class gi0 extends FrameLayout {
             TLRPC.TL_availableReaction tL_availableReaction2 = (TLRPC.TL_availableReaction) org.telegram.messenger.ui.b0(ii0Var.J).r.get(this.e.f);
             if (tL_availableReaction2 != null) {
                 org.telegram.messenger.rz f10 = org.telegram.messenger.t5.f(tL_availableReaction2.activate_animation, org.telegram.ui.ActionBar.k6.m6, 0.2f, null);
-                if (!org.telegram.messenger.rc.e(8200) || i7 == 4) {
+                if (!org.telegram.messenger.sc.e(8200) || i7 == 4) {
                     tL_availableReaction = tL_availableReaction2;
                     fi0Var = fi0Var2;
                     boolean z9 = false;
@@ -447,7 +447,7 @@ public final class gi0 extends FrameLayout {
                 accessibilityNodeInfo.setText(str);
                 accessibilityNodeInfo.setEnabled(true);
             } else {
-                accessibilityNodeInfo.setText(org.telegram.messenger.hd.M0(2131754890, null));
+                accessibilityNodeInfo.setText(org.telegram.messenger.id.M0(2131754890, null));
                 accessibilityNodeInfo.setEnabled(true);
             }
         }

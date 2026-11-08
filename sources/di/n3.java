@@ -16,11 +16,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.ez;
 import org.telegram.messenger.gz;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.kp;
 import org.telegram.messenger.p10;
-import org.telegram.messenger.pd;
 import org.telegram.messenger.qp;
+import org.telegram.messenger.rc;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.a41;
@@ -35,7 +35,7 @@ import org.telegram.ui.Components.u80;
 import org.telegram.ui.Components.uy0;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class n3 extends h8 {
     public final /* synthetic */ p9 x0;
@@ -97,7 +97,7 @@ public final class n3 extends h8 {
             if (characterStyle instanceof a41) {
                 a41 a41Var = (a41) characterStyle;
                 org.telegram.messenger.g0.g(a41Var.a.subSequence(a41Var.b, a41Var.c).toString());
-                org.telegram.messenger.camera.q.r(null, 2131744195, new hc(i4Var.L0, this.y0));
+                org.telegram.messenger.camera.q.r(null, 2131744197, new hc(i4Var.L0, this.y0));
                 return;
             } else {
                 if (characterStyle instanceof ClickableSpan) {
@@ -161,7 +161,7 @@ public final class n3 extends h8 {
         l10.Q = true;
         i4 i4Var = this.z0;
         g4 g4Var = i4Var.x1;
-        CharSequence[] charSequenceArr = (g4Var == null || g4Var.d()) ? new CharSequence[]{hd.M0(2131747816, null), hd.M0(2131751767, null)} : new CharSequence[]{hd.M0(2131747816, null)};
+        CharSequence[] charSequenceArr = (g4Var == null || g4Var.d()) ? new CharSequence[]{id.M0(2131747818, null), id.M0(2131751767, null)} : new CharSequence[]{id.M0(2131747818, null)};
         final org.telegram.ui.ActionBar.f6 f6Var2 = this.y0;
         DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: di.m3
             @Override // android.content.DialogInterface.OnClickListener
@@ -197,7 +197,7 @@ public final class n3 extends h8 {
             F.i = 3;
             F.a0(-org.telegram.messenger.g0.L(8.0f), 0.0f);
             final int i10 = 0;
-            F.l(R.drawable.msg_saved, hd.M0(2131744723, null), new Runnable(this) { // from class: di.k3
+            F.l(R.drawable.msg_saved, id.M0(2131744725, null), new Runnable(this) { // from class: di.k3
                 public final /* synthetic */ n3 b;
 
                 {
@@ -218,7 +218,7 @@ public final class n3 extends h8 {
                             long e10 = p10.i(i4Var2.l2).e();
                             g4 g4Var = i4Var2.x1;
                             C.r0(ez.f(tL_document, null, null, e10, null, null, null, null, null, null, false, 0, 0, 0, g4Var != null ? g4Var.a : null, null, false));
-                            new hc(i4Var2.L0, f6Var2).Q(R.raw.saved_messages, 36, org.telegram.messenger.g0.S2(hd.M0(2131744722, null), -1, 2, new pd(19), null)).k(true);
+                            new hc(i4Var2.L0, f6Var2).Q(R.raw.saved_messages, 36, org.telegram.messenger.g0.S2(id.M0(2131744724, null), -1, 2, new rc(21), null)).k(true);
                             break;
                         default:
                             i4 i4Var3 = n3Var.z0;
@@ -234,12 +234,12 @@ public final class n3 extends h8 {
                                 kpVar.e();
                             }
                             ConnectionsManager.getInstance(i4Var3.l2).sendRequest(tL_account_saveMusic, null);
-                            new hc(i4Var3.L0, f6Var2).Q(R.raw.ic_save_to_music, 36, hd.M0(2131744724, null)).k(true);
+                            new hc(i4Var3.L0, f6Var2).Q(R.raw.ic_save_to_music, 36, id.M0(2131744726, null)).k(true);
                             break;
                     }
                 }
             }, document instanceof TLRPC.TL_document);
-            F.c(R.drawable.msg_tone_add, hd.M0(2131744725, null), new Runnable(this) { // from class: di.k3
+            F.c(R.drawable.msg_tone_add, id.M0(2131744727, null), new Runnable(this) { // from class: di.k3
                 public final /* synthetic */ n3 b;
 
                 {
@@ -260,7 +260,7 @@ public final class n3 extends h8 {
                             long e10 = p10.i(i4Var2.l2).e();
                             g4 g4Var = i4Var2.x1;
                             C.r0(ez.f(tL_document, null, null, e10, null, null, null, null, null, null, false, 0, 0, 0, g4Var != null ? g4Var.a : null, null, false));
-                            new hc(i4Var2.L0, f6Var2).Q(R.raw.saved_messages, 36, org.telegram.messenger.g0.S2(hd.M0(2131744722, null), -1, 2, new pd(19), null)).k(true);
+                            new hc(i4Var2.L0, f6Var2).Q(R.raw.saved_messages, 36, org.telegram.messenger.g0.S2(id.M0(2131744724, null), -1, 2, new rc(21), null)).k(true);
                             break;
                         default:
                             i4 i4Var3 = n3Var.z0;
@@ -276,7 +276,7 @@ public final class n3 extends h8 {
                                 kpVar.e();
                             }
                             ConnectionsManager.getInstance(i4Var3.l2).sendRequest(tL_account_saveMusic, null);
-                            new hc(i4Var3.L0, f6Var2).Q(R.raw.ic_save_to_music, 36, hd.M0(2131744724, null)).k(true);
+                            new hc(i4Var3.L0, f6Var2).Q(R.raw.ic_save_to_music, 36, id.M0(2131744726, null)).k(true);
                             break;
                     }
                 }
@@ -296,7 +296,7 @@ public final class n3 extends h8 {
             return;
         }
         if (c8Var.b == null || c8Var.c == null) {
-            cc Q = new hc(i4Var.L0, f6Var).Q(R.raw.error, 36, hd.M0(2131744665, null));
+            cc Q = new hc(i4Var.L0, f6Var).Q(R.raw.error, 36, id.M0(2131744667, null));
             Q.a = 3;
             Q.k(true);
         } else {

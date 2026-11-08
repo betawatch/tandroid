@@ -14,7 +14,7 @@ import android.graphics.Typeface;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class q9 extends v4.m0 implements eh.a {
     public final Rect D;
@@ -59,7 +59,7 @@ public final class q9 extends v4.m0 implements eh.a {
     public final Paint x;
     public final RectF y;
 
-    public q9(pj0 pj0Var, org.telegram.messenger.d20 d20Var, org.telegram.messenger.d20 d20Var2, int i7, float f10, ax axVar, boolean z9, boolean z10, nj0 nj0Var) {
+    public q9(pj0 pj0Var, org.telegram.messenger.d20 d20Var, org.telegram.messenger.d20 d20Var2, int i7, float f10, bx bxVar, boolean z9, boolean z10, nj0 nj0Var) {
         Paint paint = new Paint();
         this.x = paint;
         this.y = new RectF();
@@ -80,7 +80,7 @@ public final class q9 extends v4.m0 implements eh.a {
         this.c = d20Var2;
         this.e = i7;
         this.f = f10;
-        this.d = axVar;
+        this.d = bxVar;
         this.h = z9;
         this.K = z10;
         this.L = nj0Var;

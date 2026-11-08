@@ -36,7 +36,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l71 extends ViewGroup implements q51, AudioManager.OnAudioFocusChangeListener {
     public String D;
@@ -116,12 +116,12 @@ public final class l71 extends ViewGroup implements q51, AudioManager.OnAudioFoc
         addView(fe0Var, c8.ha.e(-1, -1, 17));
         e71 e71Var = new e71(context, context);
         this.b = e71Var;
-        final ax axVar = new ax(this, 28);
-        e71Var.addJavascriptInterface(new Object(axVar) { // from class: org.telegram.ui.Components.WebPlayerView$JavaScriptInterface
-            public final ax a;
+        final bx bxVar = new bx(this, 28);
+        e71Var.addJavascriptInterface(new Object(bxVar) { // from class: org.telegram.ui.Components.WebPlayerView$JavaScriptInterface
+            public final bx a;
 
             {
-                this.a = axVar;
+                this.a = bxVar;
             }
 
             @JavascriptInterface

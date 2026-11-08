@@ -15,11 +15,11 @@ import android.widget.FrameLayout;
 import bi.de;
 import j$.util.Objects;
 import org.telegram.messenger.qs;
-import org.telegram.messenger.rc;
+import org.telegram.messenger.sc;
 import org.telegram.ui.Components.qa0;
 import org.telegram.ui.va;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class u2 extends FrameLayout {
     public final qa0 D;
@@ -69,7 +69,7 @@ public final class u2 extends FrameLayout {
         this.R = false;
         this.S = false;
         this.T = i1Var;
-        boolean e10 = rc.e(512);
+        boolean e10 = sc.e(512);
         this.U = e10;
         this.a = z9 ? new t2() : new qa0(-4958504, -8304404, -14637865, -12612630, false, 0, true);
         this.b = z9 ? new t2() : new qa0(-12224791, -12879119, -16207709, -15226140, false, 0, true);

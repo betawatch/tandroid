@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ln extends LinearLayout {
     public final org.telegram.ui.ActionBar.f6 a;
@@ -59,13 +59,13 @@ public final class ln extends LinearLayout {
         }
         TextView textView3 = new TextView(activity);
         if (i7 == 0) {
-            textView3.setText(org.telegram.messenger.hd.M0(2131751136, null));
+            textView3.setText(org.telegram.messenger.id.M0(2131751136, null));
             textView3.setTextSize(1, 15.0f);
         } else if (i7 == 1) {
-            textView3.setText(org.telegram.messenger.hd.M0(2131749436, null));
+            textView3.setText(org.telegram.messenger.id.M0(2131749438, null));
             textView3.setTextSize(1, 15.0f);
         } else {
-            textView3.setText(org.telegram.messenger.hd.M0(2131752183, null));
+            textView3.setText(org.telegram.messenger.id.M0(2131752183, null));
             textView3.setTextSize(1, 16.0f);
             textView3.setTypeface(org.telegram.messenger.g0.o());
             textView3.setGravity(1);
@@ -74,11 +74,11 @@ public final class ln extends LinearLayout {
         arrayList.add(textView3);
         float f10 = 260.0f;
         textView3.setMaxWidth(org.telegram.messenger.g0.L(260.0f));
-        addView(textView3, c8.ha.t(-2, -2, (i7 != 2 ? org.telegram.messenger.hd.a0 ? 5 : 3 : 1) | 48, 0, 8, 0, i7 != 2 ? 0 : 8));
+        addView(textView3, c8.ha.t(-2, -2, (i7 != 2 ? org.telegram.messenger.id.a0 ? 5 : 3 : 1) | 48, 0, 8, 0, i7 != 2 ? 0 : 8));
         int i11 = 0;
         while (i11 < 4) {
             LinearLayout e10 = org.telegram.messenger.k5.e(activity, 0);
-            addView(e10, c8.ha.t(-2, -2, org.telegram.messenger.hd.a0 ? 5 : 3, 0, 8, 0, 0));
+            addView(e10, c8.ha.t(-2, -2, org.telegram.messenger.id.a0 ? 5 : 3, 0, 8, 0, 0));
             ImageView imageView = new ImageView(activity);
             float f11 = f10;
             int i12 = org.telegram.ui.ActionBar.k6.Wc;
@@ -95,42 +95,42 @@ public final class ln extends LinearLayout {
             textView4.setTextSize(1, 15.0f);
             org.telegram.ui.ActionBar.r6.V(textView4, i12, f6Var);
             this.c.add(textView4);
-            textView4.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 16);
+            textView4.setGravity((org.telegram.messenger.id.a0 ? 5 : 3) | 16);
             textView4.setMaxWidth(org.telegram.messenger.g0.L(f11));
             if (i11 != 0) {
                 if (i11 != 1) {
                     if (i11 != 2) {
                         if (i11 == 3) {
                             if (i7 == 0) {
-                                textView4.setText(org.telegram.messenger.hd.M0(2131751137, null));
+                                textView4.setText(org.telegram.messenger.id.M0(2131751137, null));
                             } else if (i7 == 2) {
-                                textView4.setText(org.telegram.messenger.hd.M0(2131752185, null));
+                                textView4.setText(org.telegram.messenger.id.M0(2131752185, null));
                             } else {
-                                textView4.setText(org.telegram.messenger.hd.M0(2131749444, null));
+                                textView4.setText(org.telegram.messenger.id.M0(2131749446, null));
                             }
                         }
                     } else if (i7 == 0) {
-                        textView4.setText(org.telegram.messenger.hd.M0(2131751138, null));
+                        textView4.setText(org.telegram.messenger.id.M0(2131751138, null));
                     } else if (i7 == 2) {
-                        textView4.setText(org.telegram.messenger.hd.M0(2131752186, null));
+                        textView4.setText(org.telegram.messenger.id.M0(2131752186, null));
                     } else {
-                        textView4.setText(org.telegram.messenger.hd.M0(2131749445, null));
+                        textView4.setText(org.telegram.messenger.id.M0(2131749447, null));
                     }
                 } else if (i7 == 0) {
-                    textView4.setText(org.telegram.messenger.hd.M0(2131751139, null));
+                    textView4.setText(org.telegram.messenger.id.M0(2131751139, null));
                 } else if (i7 == 2) {
-                    textView4.setText(org.telegram.messenger.hd.M0(2131752187, null));
+                    textView4.setText(org.telegram.messenger.id.M0(2131752187, null));
                 } else {
-                    textView4.setText(org.telegram.messenger.hd.M0(2131749446, null));
+                    textView4.setText(org.telegram.messenger.id.M0(2131749448, null));
                 }
             } else if (i7 == 0) {
-                textView4.setText(org.telegram.messenger.hd.M0(2131751140, null));
+                textView4.setText(org.telegram.messenger.id.M0(2131751140, null));
             } else if (i7 == 2) {
-                textView4.setText(org.telegram.messenger.hd.M0(2131752188, null));
+                textView4.setText(org.telegram.messenger.id.M0(2131752188, null));
             } else {
-                textView4.setText(org.telegram.messenger.hd.M0(2131749447, null));
+                textView4.setText(org.telegram.messenger.id.M0(2131749449, null));
             }
-            if (org.telegram.messenger.hd.a0) {
+            if (org.telegram.messenger.id.a0) {
                 e10.addView(textView4, c8.ha.o(-2, -2));
                 if (i7 == 0) {
                     e10.addView(imageView, c8.ha.k(8.0f, 3.0f, 0.0f, 0.0f, -2, -2));

@@ -17,7 +17,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class s8 implements j2.h, j7 {
     public static final ConcurrentHashMap H = new ConcurrentHashMap();
@@ -218,7 +218,7 @@ public final class s8 implements j2.h, j7 {
         int i11 = tL_document3 == null ? 1 : 0;
         CountDownLatch countDownLatch = new CountDownLatch(1);
         i7[] i7VarArr = new i7[1];
-        w7.J.c(new o7(G, i7VarArr, tL_document3, null, obj, e10, this, j10, false, i11, countDownLatch));
+        w7.J.c(new k7(G, i7VarArr, tL_document3, null, obj, e10, this, j10, false, i11, countDownLatch));
         w7.a(countDownLatch, true);
         this.a = i7VarArr[0];
         this.d = 0L;
@@ -371,7 +371,7 @@ public final class s8 implements j2.h, j7 {
                         i7[] i7VarArr = new i7[1];
                         i12 = i11;
                         i13 = i15;
-                        w7.J.c(new o7(G, i7VarArr, tL_document, null, obj, e10, this, j10, false, i18, countDownLatch2));
+                        w7.J.c(new k7(G, i7VarArr, tL_document, null, obj, e10, this, j10, false, i18, countDownLatch2));
                         w7.a(countDownLatch2, true);
                         i7 i7Var2 = i7VarArr[i13 == true ? 1 : 0];
                         i7 i7Var3 = this.a;
@@ -428,7 +428,7 @@ public final class s8 implements j2.h, j7 {
                                     int i19 = tL_document2 == null ? 1 : 0;
                                     CountDownLatch countDownLatch4 = new CountDownLatch(1);
                                     i7[] i7VarArr2 = new i7[1];
-                                    w7.J.c(new o7(G2, i7VarArr2, tL_document2, null, obj2, e11, this, j12, false, i19, countDownLatch4));
+                                    w7.J.c(new k7(G2, i7VarArr2, tL_document2, null, obj2, e11, this, j12, false, i19, countDownLatch4));
                                     w7.a(countDownLatch4, true);
                                     i7 i7Var5 = i7VarArr2[0];
                                     i7 i7Var6 = this.a;

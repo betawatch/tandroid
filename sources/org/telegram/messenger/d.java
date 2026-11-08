@@ -7,7 +7,7 @@ import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements v10 {
     public final /* synthetic */ int a;
@@ -113,7 +113,7 @@ public final /* synthetic */ class d implements v10 {
                     uiVar.getNotificationCenter().k(82, new Object[0]);
                     uiVar.getNotificationCenter().k(83, new Object[0]);
                     uiVar.getNotificationCenter().k(84, new Object[0]);
-                    uiVar.getMessagesStorage().a.c(new y4(27, uiVar, tL_contacts_topPeers));
+                    uiVar.getMessagesStorage().a.c(new x4(27, uiVar, tL_contacts_topPeers));
                     break;
                 } else if (contacts_toppeers instanceof TLRPC.TL_contacts_topPeersDisabled) {
                     uiVar.getUserConfig().V = false;

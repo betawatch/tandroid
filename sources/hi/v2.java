@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t10;
@@ -30,7 +30,7 @@ import org.telegram.ui.an;
 import org.telegram.ui.hl0;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class v2 implements org.telegram.ui.web.d0 {
     public boolean a;
@@ -61,7 +61,7 @@ public final class v2 implements org.telegram.ui.web.d0 {
         TLRPC.User a22 = qp.s1(a3Var.H).a2(Long.valueOf(a3Var.I));
         m4.d0 d0Var = new m4.d0();
         d0Var.a = new t2(this, 0);
-        cc V = new hc(a3Var.q0, a3Var.F).V(Arrays.asList(a22), org.telegram.messenger.g0.X2(hd.a0(null, null, 2131753087, t10.p(a22))), null, d0Var);
+        cc V = new hc(a3Var.q0, a3Var.F).V(Arrays.asList(a22), org.telegram.messenger.g0.X2(id.a0(null, null, 2131753087, t10.p(a22))), null, d0Var);
         V.j = 5000;
         V.k(true);
     }
@@ -86,7 +86,7 @@ public final class v2 implements org.telegram.ui.web.d0 {
     @Override // org.telegram.ui.web.d0
     public final void d(TLRPC.Document document) {
         a3 a3Var = this.d;
-        new hc(a3Var.q0, a3Var.F).q(document, hd.M0(2131753075, null)).k(true);
+        new hc(a3Var.q0, a3Var.F).q(document, id.M0(2131753075, null)).k(true);
     }
 
     @Override // org.telegram.ui.web.d0
@@ -108,7 +108,7 @@ public final class v2 implements org.telegram.ui.web.d0 {
     public final void f(ArrayList arrayList) {
         int size = arrayList.size();
         a3 a3Var = this.d;
-        new hc(a3Var.q0, a3Var.F).Q(R.raw.forward, 36, org.telegram.messenger.g0.X2(size == 1 ? hd.a0(null, null, 2131752973, qp.s1(a3Var.H).B1(((Long) arrayList.get(0)).longValue(), false)) : hd.G(arrayList.size(), "BotSharedToMany", new Object[0]))).k(true);
+        new hc(a3Var.q0, a3Var.F).Q(R.raw.forward, 36, org.telegram.messenger.g0.X2(size == 1 ? id.a0(null, null, 2131752973, qp.s1(a3Var.H).B1(((Long) arrayList.get(0)).longValue(), false)) : id.G(arrayList.size(), "BotSharedToMany", new Object[0]))).k(true);
     }
 
     @Override // org.telegram.ui.web.d0
@@ -340,9 +340,9 @@ public final class v2 implements org.telegram.ui.web.d0 {
         int i7 = 1;
         if (z9) {
             m4.d0 d0Var = new m4.d0();
-            hd.M0(2131743886, null);
+            id.M0(2131743888, null);
             d0Var.a = new t2(this, i7);
-            cc V = new hc(frameLayout, f6Var).V(Arrays.asList(a22), org.telegram.messenger.g0.X2(hd.a0(null, null, 2131753054, t10.p(a22))), null, d0Var);
+            cc V = new hc(frameLayout, f6Var).V(Arrays.asList(a22), org.telegram.messenger.g0.X2(id.a0(null, null, 2131753054, t10.p(a22))), null, d0Var);
             V.j = 5000;
             V.k(true);
             return;
@@ -350,7 +350,7 @@ public final class v2 implements org.telegram.ui.web.d0 {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         k5.q(null, null, 2131753056, new Object[]{t10.p(a22)}, spannableStringBuilder);
         spannableStringBuilder.append((CharSequence) " ");
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.H2(org.telegram.messenger.g0.k2(hd.M0(2131753055, null), new t2(this, 2)), true));
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.H2(org.telegram.messenger.g0.k2(id.M0(2131753055, null), new t2(this, 2)), true));
         cc P = new hc(frameLayout, f6Var).P(R.raw.error, spannableStringBuilder);
         P.j = 5000;
         P.k(true);

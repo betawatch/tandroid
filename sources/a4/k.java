@@ -41,7 +41,7 @@ import org.telegram.ui.Cells.f1;
 import org.telegram.ui.Components.ax0;
 import org.telegram.ui.Components.cx0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class k implements a0 {
     public final /* synthetic */ int a;
@@ -51,8 +51,8 @@ public class k implements a0 {
     public Object e;
     public Object f;
 
-    public /* synthetic */ k(int i7, byte b10) {
-        this.a = i7;
+    public /* synthetic */ k() {
+        this.a = 2;
     }
 
     public static void d(float[] fArr, int i7, float f10, float f11, float f12, float f13) {
@@ -882,7 +882,7 @@ public class k implements a0 {
                 }
                 sb2.append(">>\n");
                 return sb2.toString();
-            case 8:
+            case 7:
                 StringBuilder sb3 = new StringBuilder("JsonReader(source='");
                 sb3.append(this.f);
                 sb3.append("', currentPosition=");
@@ -955,7 +955,7 @@ public class k implements a0 {
     }
 
     public k(int i7) {
-        this.a = 5;
+        this.a = 4;
         this.b = i7;
         int i10 = i7 * 8;
         this.c = new float[i10];
@@ -1285,7 +1285,7 @@ public class k implements a0 {
     }
 
     public k(String source) {
-        this.a = 8;
+        this.a = 7;
         kotlin.jvm.internal.j.e(source, "source");
         wa waVar = new wa((char) 0, 21);
         waVar.c = new Object[8];
@@ -1310,7 +1310,7 @@ public class k implements a0 {
     }
 
     public k(Canvas canvas) {
-        this.a = 7;
+        this.a = 6;
         this.d = new Matrix();
         this.e = new ArrayList();
         this.f = new ArrayList();
@@ -1327,7 +1327,7 @@ public class k implements a0 {
     }
 
     public k(cx0 cx0Var, ax0[] ax0VarArr) {
-        this.a = 6;
+        this.a = 5;
         this.f = cx0Var;
         int length = ax0VarArr.length;
         this.c = new ax0[length];

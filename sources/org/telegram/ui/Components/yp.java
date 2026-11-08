@@ -6,7 +6,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class yp extends LinearLayout {
     public final l9 a;
@@ -23,14 +23,14 @@ public final class yp extends LinearLayout {
         TextView g10 = org.telegram.messenger.k5.g(context, 1, 20.0f);
         org.telegram.ui.ActionBar.r6.V(g10, org.telegram.ui.ActionBar.k6.G6, null);
         g10.setGravity(1);
-        g10.setText(org.telegram.messenger.hd.M0(2131748218, null));
+        g10.setText(org.telegram.messenger.id.M0(2131748220, null));
         g10.setTypeface(org.telegram.messenger.g0.o());
         addView(g10, c8.ha.t(-2, -2, 49, 0, 15, 0, 7));
         TextView textView = new TextView(context);
         textView.setTextSize(1, 14.0f);
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.c7, null);
         textView.setGravity(1);
-        textView.setText(org.telegram.messenger.hd.M0(2131748217, null));
+        textView.setText(org.telegram.messenger.id.M0(2131748219, null));
         textView.setMaxWidth(org.telegram.messenger.g0.L(260.0f));
         textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         addView(textView, c8.ha.t(-2, -2, 49, 0, 0, 0, 19));
@@ -40,7 +40,7 @@ public final class yp extends LinearLayout {
         dVar.setPadding(org.telegram.messenger.g0.L(28.0f), 0, org.telegram.messenger.g0.L(28.0f), 0);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("c");
         spannableStringBuilder.setSpan(new wp(R.drawable.filled_new_contact_24, 0), 0, 1, 33);
-        spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) org.telegram.messenger.hd.M0(2131748282, null));
+        spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) org.telegram.messenger.id.M0(2131748284, null));
         dVar.i(spannableStringBuilder, false, true);
         addView(dVar, c8.ha.r(-2, 44, 49));
     }

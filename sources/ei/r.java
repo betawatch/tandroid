@@ -23,7 +23,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.ls;
@@ -45,7 +45,7 @@ import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class r extends FrameLayout implements a6, ls {
     public static LongSparseArray E;
@@ -120,7 +120,7 @@ public abstract class r extends FrameLayout implements a6, ls {
         diVar.y1(1, false);
         diVar.N2 = true;
         diVar.M2 = false;
-        diVar.d3.setText(hd.M0(2131752121, null));
+        diVar.d3.setText(id.M0(2131752121, null));
         diVar.a2.i0();
         diVar.T3 = new a0((FrameLayout) this, (Object) diVar, (Serializable) str, 21);
         diVar.e1();
@@ -282,16 +282,16 @@ public abstract class r extends FrameLayout implements a6, ls {
                 i10 = 0;
             }
             if (i7 == 0 && i10 == 0) {
-                return hd.M0(2131753014, null);
+                return id.M0(2131753014, null);
             }
             if (i7 > 0) {
-                sb2.append(hd.G(i7, "Images", new Object[0]));
+                sb2.append(id.G(i7, "Images", new Object[0]));
             }
             if (i10 > 0) {
                 if (sb2.length() > 0) {
                     sb2.append(", ");
                 }
-                sb2.append(hd.G(i10, "Videos", new Object[0]));
+                sb2.append(id.G(i10, "Videos", new Object[0]));
             }
         }
         return sb2.toString();
@@ -416,7 +416,7 @@ public abstract class r extends FrameLayout implements a6, ls {
         }
         a aVar = this.n;
         aVar.o(true);
-        SpannableString spannableString = new SpannableString(jg.g.l(2131746710, null, new StringBuilder("+ ")));
+        SpannableString spannableString = new SpannableString(jg.g.l(2131746712, null, new StringBuilder("+ ")));
         wp wpVar = new wp(R.drawable.msg_filled_plus, 0);
         wpVar.H = 0.9f;
         wpVar.I = 0.9f;

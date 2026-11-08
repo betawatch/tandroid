@@ -7,7 +7,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class oj implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -203,7 +203,7 @@ public final /* synthetic */ class oj implements RequestDelegate {
                         N0.available_reactions = tL_messages_setChatAvailableReactions.available_reactions;
                         qpVar4.getMessagesStorage().N1(N0, false);
                     }
-                    g0.h3(new nk(qpVar4, j13, 16));
+                    g0.h3(new mk(qpVar4, j13, 16));
                     break;
                 }
                 break;
@@ -248,7 +248,7 @@ public final /* synthetic */ class oj implements RequestDelegate {
                     }
                     int i16 = i15;
                     yr messagesStorage = qpVar7.getMessagesStorage();
-                    messagesStorage.a.c(new zq(messagesStorage, 0L, -inputPeer.channel_id, i16, 7));
+                    messagesStorage.a.c(new yq(messagesStorage, 0L, -inputPeer.channel_id, i16, 7));
                 }
                 if (j16 != 0) {
                     qpVar7.getMessagesStorage().q1(j16);
@@ -306,9 +306,9 @@ public final /* synthetic */ class oj implements RequestDelegate {
             case 10:
                 k00 k00Var = (k00) this.c;
                 long j19 = this.b;
-                org.telegram.ui.Components.ex exVar = (org.telegram.ui.Components.ex) this.d;
+                org.telegram.ui.Components.fx fxVar = (org.telegram.ui.Components.fx) this.d;
                 k00Var.getClass();
-                g0.h3(new jm(k00Var, tLObject, j19, exVar, 19));
+                g0.h3(new jm(k00Var, tLObject, j19, fxVar, 19));
                 break;
             case 11:
                 g0.h3(new lm((f10) this.c, (z00) this.d, tLObject, tL_error, this.b, 6));

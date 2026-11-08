@@ -15,7 +15,7 @@ import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class i1 implements ti.m {
     public static i1 w;
@@ -269,11 +269,11 @@ public final class i1 implements ti.m {
     }
 
     @Override // ti.m
-    public final void g(ti.q qVar) {
+    public final void g(ti.p pVar) {
         if (this.b == null) {
             return;
         }
-        org.telegram.ui.Components.voip.q0 q0Var = new org.telegram.ui.Components.voip.q0(qVar);
+        org.telegram.ui.Components.voip.q0 q0Var = new org.telegram.ui.Components.voip.q0(pVar);
         this.e = q0Var;
         this.d.a = q0Var;
         g1 g1Var = this.b;

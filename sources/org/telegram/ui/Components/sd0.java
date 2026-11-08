@@ -26,9 +26,9 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class sd0 extends FrameLayout implements ty, fi.ra {
+public final class sd0 extends FrameLayout implements uy, fi.ra {
     public final ImageView A0;
     public final ImageView B0;
     public final Bitmap C0;
@@ -78,7 +78,7 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
     public final TextureView i0;
     public final boolean j0;
     public final boolean k0;
-    public ry l0;
+    public sy l0;
     public final eh m0;
     public final int n;
     public final FrameLayout n0;
@@ -266,7 +266,7 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
         textView.setGravity(17);
         textView.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.h0(-12763843, 0, -1));
         textView.setPadding(org.telegram.messenger.g0.L(20.0f), 0, org.telegram.messenger.g0.L(20.0f), 0);
-        textView.setText(org.telegram.messenger.hd.M0(2131752589, null).toUpperCase());
+        textView.setText(org.telegram.messenger.id.M0(2131752589, null).toUpperCase());
         textView.setTypeface(org.telegram.messenger.g0.o());
         frameLayout2.addView(textView, c8.ha.e(-2, -1, 51));
         TextView textView2 = new TextView(context);
@@ -277,7 +277,7 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
         textView2.setGravity(17);
         textView2.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.h0(-12763843, 0, -1));
         textView2.setPadding(org.telegram.messenger.g0.L(20.0f), 0, org.telegram.messenger.g0.L(20.0f), 0);
-        textView2.setText(org.telegram.messenger.hd.M0(2131751355, null).toUpperCase());
+        textView2.setText(org.telegram.messenger.id.M0(2131751355, null).toUpperCase());
         textView2.setTypeface(org.telegram.messenger.g0.o());
         frameLayout2.addView(textView2, c8.ha.e(-2, -1, 53));
         LinearLayout linearLayout = new LinearLayout(context);
@@ -445,22 +445,22 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
             textView3.setTextSize(1, 12.0f);
             textView3.setGravity(16);
             if (i18 == 0) {
-                String M0 = org.telegram.messenger.hd.M0(2131751693, null);
+                String M0 = org.telegram.messenger.id.M0(2131751693, null);
                 textView3.setText(M0.substring(0, 1).toUpperCase() + M0.substring(1).toLowerCase());
                 textView3.setTextColor(-1);
                 this.u0[i18].b(-1, -1);
             } else if (i18 == 1) {
-                String M02 = org.telegram.messenger.hd.M0(2131751690, null);
+                String M02 = org.telegram.messenger.id.M0(2131751690, null);
                 textView3.setText(M02.substring(0, 1).toUpperCase() + M02.substring(1).toLowerCase());
                 textView3.setTextColor(-1684147);
                 this.u0[i18].b(-1684147, -1684147);
             } else if (i18 == 2) {
-                String M03 = org.telegram.messenger.hd.M0(2131751691, null);
+                String M03 = org.telegram.messenger.id.M0(2131751691, null);
                 textView3.setText(M03.substring(0, 1).toUpperCase() + M03.substring(1).toLowerCase());
                 textView3.setTextColor(-10831009);
                 this.u0[i18].b(-10831009, -10831009);
             } else if (i18 == 3) {
-                String M04 = org.telegram.messenger.hd.M0(2131751692, null);
+                String M04 = org.telegram.messenger.id.M0(2131751692, null);
                 textView3.setText(M04.substring(0, 1).toUpperCase() + M04.substring(1).toLowerCase());
                 textView3.setTextColor(-12734994);
                 this.u0[i18].b(-12734994, -12734994);
@@ -494,9 +494,9 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
                             sd0Var2.T = 0;
                             sd0Var2.e();
                             sd0Var2.o0.setVisibility(4);
-                            ry ryVar = sd0Var2.l0;
-                            if (ryVar != null) {
-                                ryVar.c(false, false, false);
+                            sy syVar = sd0Var2.l0;
+                            if (syVar != null) {
+                                syVar.c(false, false, false);
                                 break;
                             }
                             break;
@@ -507,9 +507,9 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
                             jd0 jd0Var2 = sd0Var3.o0;
                             jd0Var2.setVisibility(0);
                             jd0Var2.setType(1);
-                            ry ryVar2 = sd0Var3.l0;
-                            if (ryVar2 != null) {
-                                ryVar2.c(false, false, false);
+                            sy syVar2 = sd0Var3.l0;
+                            if (syVar2 != null) {
+                                syVar2.c(false, false, false);
                                 break;
                             }
                             break;
@@ -520,9 +520,9 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
                             jd0 jd0Var3 = sd0Var4.o0;
                             jd0Var3.setVisibility(0);
                             jd0Var3.setType(0);
-                            ry ryVar3 = sd0Var4.l0;
-                            if (ryVar3 != null) {
-                                ryVar3.c(false, false, false);
+                            sy syVar3 = sd0Var4.l0;
+                            if (syVar3 != null) {
+                                syVar3.c(false, false, false);
                                 break;
                             }
                             break;
@@ -541,7 +541,7 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
         final int i19 = 1;
         textView4.setTextSize(1, 13.0f);
         textView4.setGravity(1);
-        textView4.setText(org.telegram.messenger.hd.M0(2131753673, null));
+        textView4.setText(org.telegram.messenger.id.M0(2131753673, null));
         frameLayout5.addView(textView4, c8.ha.c(60.0f, 80));
         textView4.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.od0
             public final /* synthetic */ sd0 b;
@@ -570,9 +570,9 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
                         sd0Var2.T = 0;
                         sd0Var2.e();
                         sd0Var2.o0.setVisibility(4);
-                        ry ryVar = sd0Var2.l0;
-                        if (ryVar != null) {
-                            ryVar.c(false, false, false);
+                        sy syVar = sd0Var2.l0;
+                        if (syVar != null) {
+                            syVar.c(false, false, false);
                             break;
                         }
                         break;
@@ -583,9 +583,9 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
                         jd0 jd0Var2 = sd0Var3.o0;
                         jd0Var2.setVisibility(0);
                         jd0Var2.setType(1);
-                        ry ryVar2 = sd0Var3.l0;
-                        if (ryVar2 != null) {
-                            ryVar2.c(false, false, false);
+                        sy syVar2 = sd0Var3.l0;
+                        if (syVar2 != null) {
+                            syVar2.c(false, false, false);
                             break;
                         }
                         break;
@@ -596,9 +596,9 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
                         jd0 jd0Var3 = sd0Var4.o0;
                         jd0Var3.setVisibility(0);
                         jd0Var3.setType(0);
-                        ry ryVar3 = sd0Var4.l0;
-                        if (ryVar3 != null) {
-                            ryVar3.c(false, false, false);
+                        sy syVar3 = sd0Var4.l0;
+                        if (syVar3 != null) {
+                            syVar3.c(false, false, false);
                             break;
                         }
                         break;
@@ -610,7 +610,7 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
         textView5.setCompoundDrawablePadding(org.telegram.messenger.g0.L(2.0f));
         textView5.setTextSize(1, 13.0f);
         textView5.setGravity(1);
-        textView5.setText(org.telegram.messenger.hd.M0(2131753672, null));
+        textView5.setText(org.telegram.messenger.id.M0(2131753672, null));
         frameLayout5.addView(textView5, c8.ha.d(80, 80.0f, 51, 100.0f, 0.0f, 0.0f, 0.0f));
         final int i20 = 2;
         textView5.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.od0
@@ -640,9 +640,9 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
                         sd0Var2.T = 0;
                         sd0Var2.e();
                         sd0Var2.o0.setVisibility(4);
-                        ry ryVar = sd0Var2.l0;
-                        if (ryVar != null) {
-                            ryVar.c(false, false, false);
+                        sy syVar = sd0Var2.l0;
+                        if (syVar != null) {
+                            syVar.c(false, false, false);
                             break;
                         }
                         break;
@@ -653,9 +653,9 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
                         jd0 jd0Var2 = sd0Var3.o0;
                         jd0Var2.setVisibility(0);
                         jd0Var2.setType(1);
-                        ry ryVar2 = sd0Var3.l0;
-                        if (ryVar2 != null) {
-                            ryVar2.c(false, false, false);
+                        sy syVar2 = sd0Var3.l0;
+                        if (syVar2 != null) {
+                            syVar2.c(false, false, false);
                             break;
                         }
                         break;
@@ -666,9 +666,9 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
                         jd0 jd0Var3 = sd0Var4.o0;
                         jd0Var3.setVisibility(0);
                         jd0Var3.setType(0);
-                        ry ryVar3 = sd0Var4.l0;
-                        if (ryVar3 != null) {
-                            ryVar3.c(false, false, false);
+                        sy syVar3 = sd0Var4.l0;
+                        if (syVar3 != null) {
+                            syVar3.c(false, false, false);
                             break;
                         }
                         break;
@@ -680,7 +680,7 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
         textView6.setCompoundDrawablePadding(org.telegram.messenger.g0.L(2.0f));
         textView6.setTextSize(1, 13.0f);
         textView6.setGravity(1);
-        textView6.setText(org.telegram.messenger.hd.M0(2131753674, null));
+        textView6.setText(org.telegram.messenger.id.M0(2131753674, null));
         frameLayout5.addView(textView6, c8.ha.d(80, 80.0f, 51, 200.0f, 0.0f, 0.0f, 0.0f));
         final int i21 = 3;
         textView6.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.od0
@@ -710,9 +710,9 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
                         sd0Var2.T = 0;
                         sd0Var2.e();
                         sd0Var2.o0.setVisibility(4);
-                        ry ryVar = sd0Var2.l0;
-                        if (ryVar != null) {
-                            ryVar.c(false, false, false);
+                        sy syVar = sd0Var2.l0;
+                        if (syVar != null) {
+                            syVar.c(false, false, false);
                             break;
                         }
                         break;
@@ -723,9 +723,9 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
                         jd0 jd0Var2 = sd0Var3.o0;
                         jd0Var2.setVisibility(0);
                         jd0Var2.setType(1);
-                        ry ryVar2 = sd0Var3.l0;
-                        if (ryVar2 != null) {
-                            ryVar2.c(false, false, false);
+                        sy syVar2 = sd0Var3.l0;
+                        if (syVar2 != null) {
+                            syVar2.c(false, false, false);
                             break;
                         }
                         break;
@@ -736,9 +736,9 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
                         jd0 jd0Var3 = sd0Var4.o0;
                         jd0Var3.setVisibility(0);
                         jd0Var3.setType(0);
-                        ry ryVar3 = sd0Var4.l0;
-                        if (ryVar3 != null) {
-                            ryVar3.c(false, false, false);
+                        sy syVar3 = sd0Var4.l0;
+                        if (syVar3 != null) {
+                            syVar3.c(false, false, false);
                             break;
                         }
                         break;
@@ -760,9 +760,9 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
             return;
         }
         this.a = z9;
-        ry ryVar = this.l0;
-        if (ryVar != null) {
-            ryVar.c(false, false, false);
+        sy syVar = this.l0;
+        if (syVar != null) {
+            syVar.c(false, false, false);
         }
     }
 
@@ -776,9 +776,9 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
         boolean z9 = this.j0;
         TextureView textureView = this.i0;
         if (z9) {
-            ry ryVar = this.l0;
-            if (ryVar != null) {
-                ryVar.postRunnable(new oy(ryVar, 0));
+            sy syVar = this.l0;
+            if (syVar != null) {
+                syVar.postRunnable(new py(syVar, 0));
                 this.l0 = null;
             }
             textureView.setVisibility(8);
@@ -791,9 +791,9 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
                 h51Var.setDelegate(null);
                 return;
             }
-            ry ryVar2 = this.l0;
-            if (ryVar2 != null) {
-                ryVar2.d(new n(hfVar));
+            sy syVar2 = this.l0;
+            if (syVar2 != null) {
+                syVar2.d(new n(hfVar));
             }
         }
     }
@@ -920,14 +920,14 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
     }
 
     public Bitmap getBitmap() {
-        ry ryVar = this.l0;
-        if (ryVar == null || !ryVar.f || !ryVar.isAlive()) {
+        sy syVar = this.l0;
+        if (syVar == null || !syVar.f || !syVar.isAlive()) {
             return null;
         }
         CountDownLatch countDownLatch = new CountDownLatch(1);
         Bitmap[] bitmapArr = new Bitmap[1];
         try {
-            if (ryVar.postRunnable(new ng(ryVar, bitmapArr, countDownLatch, 5))) {
+            if (syVar.postRunnable(new ng(syVar, bitmapArr, countDownLatch, 5))) {
                 countDownLatch.await();
             }
         } catch (Exception e10) {
@@ -936,7 +936,7 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
         return bitmapArr[0];
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getBlurAngle() {
         return this.d0;
     }
@@ -945,22 +945,22 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
         return this.o0;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getBlurExcludeBlurSize() {
         return this.c0;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public PointF getBlurExcludePoint() {
         return this.b0;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getBlurExcludeSize() {
         return this.a0;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public int getBlurType() {
         return this.T;
     }
@@ -969,7 +969,7 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
         return this.h0;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getContrastValue() {
         return com.google.android.recaptcha.internal.a.c(this.I, 100.0f, 0.3f, 1.0f);
     }
@@ -982,27 +982,27 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
         return this.g0;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getEnhanceValue() {
         return this.G / 100.0f;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getExposureValue() {
         return this.H / 100.0f;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getFadeValue() {
         return this.L / 100.0f;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getGrainValue() {
         return (this.S / 100.0f) * 0.04f;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getHighlightsValue() {
         return com.google.android.recaptcha.internal.a.y(this.P, 0.75f, 100.0f, 100.0f);
     }
@@ -1014,7 +1014,7 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
         return this.i0;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getSaturationValue() {
         float f10 = this.K / 100.0f;
         if (f10 > 0.0f) {
@@ -1049,37 +1049,37 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
         return hfVar;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getShadowsValue() {
         return com.google.android.recaptcha.internal.a.y(this.Q, 0.55f, 100.0f, 100.0f);
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getSharpenValue() {
         return com.google.android.recaptcha.internal.a.c(this.U, 100.0f, 0.6f, 0.11f);
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getSoftenSkinValue() {
         return this.M / 100.0f;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public int getTintHighlightsColor() {
         return this.O;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getTintHighlightsIntensityValue() {
         return this.O == 0 ? 0.0f : 0.5f;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public int getTintShadowsColor() {
         return this.N;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getTintShadowsIntensityValue() {
         return this.N == 0 ? 0.0f : 0.5f;
     }
@@ -1090,8 +1090,8 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
 
     public Bitmap getUiBlurBitmap() {
         da daVar;
-        ry ryVar = this.l0;
-        if (ryVar == null || (daVar = ryVar.I) == null) {
+        sy syVar = this.l0;
+        if (syVar == null || (daVar = syVar.I) == null) {
             return null;
         }
         synchronized (daVar.n) {
@@ -1106,17 +1106,17 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
         }
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getVignetteValue() {
         return this.R / 100.0f;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getWarmthValue() {
         return this.J / 100.0f;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public final ByteBuffer h() {
         h2.c cVar = this.W;
         cVar.q();
@@ -1147,12 +1147,12 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public final boolean n() {
         return this.a || this.V;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public final boolean o() {
         return !this.W.F();
     }
@@ -1247,14 +1247,14 @@ public final class sd0 extends FrameLayout implements ty, fi.ra {
             }
             View childAt = ehVar.getChildAt(i7);
             if ((childAt instanceof org.telegram.ui.Cells.s5) && RecyclerView.R(childAt) == this.b) {
-                ((org.telegram.ui.Cells.s5) childAt).a(org.telegram.messenger.hd.M0(2131751127, null), 0, this.G);
+                ((org.telegram.ui.Cells.s5) childAt).a(org.telegram.messenger.id.M0(2131751127, null), 0, this.G);
                 break;
             }
             i7++;
         }
-        ry ryVar = this.l0;
-        if (ryVar != null) {
-            ryVar.c(true, false, false);
+        sy syVar = this.l0;
+        if (syVar != null) {
+            syVar.c(true, false, false);
         }
     }
 }

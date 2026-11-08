@@ -28,7 +28,7 @@ import tc.d;
 import tc.e;
 import tc.f;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final c a = new c();
@@ -205,13 +205,13 @@ public abstract class b {
         List list = (List) obj;
         LinkedList linkedList3 = new LinkedList();
         Iterator it = list.iterator();
-        String q10 = rf.b.q(str, "[]");
+        String r10 = rf.b.r(str, "[]");
         if (list.isEmpty()) {
             linkedList3.add(new a(str, ""));
             return linkedList3;
         }
         while (it.hasNext()) {
-            linkedList3.addAll(e(it.next(), q10));
+            linkedList3.addAll(e(it.next(), r10));
         }
         return linkedList3;
     }

@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.Set;
 import org.telegram.ui.hy0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class p extends g {
     public static final j6.b j = new j6.b("MediaRouterProxy", null);
@@ -42,7 +42,7 @@ public final class p extends g {
         rVar.f(new String[]{"com.google.android.gms.cast.FLAG_OUTPUT_SWITCHER_ENABLED"}).addOnCompleteListener(new wf.b(11, this, bVar));
     }
 
-    public final void M0(android.support.v4.media.session.a0 a0Var) {
+    public final void m1(android.support.v4.media.session.a0 a0Var) {
         this.c.getClass();
         s4.x.b();
         s4.e c10 = s4.x.c();
@@ -58,7 +58,7 @@ public final class p extends g {
         }
     }
 
-    public final void N0(s4.r rVar, int i7) {
+    public final void n1(s4.r rVar, int i7) {
         Set set = (Set) this.e.get(rVar);
         if (set == null) {
             return;
@@ -69,7 +69,7 @@ public final class p extends g {
         }
     }
 
-    public final void O0(s4.r rVar) {
+    public final void o1(s4.r rVar) {
         Set set = (Set) this.e.get(rVar);
         if (set == null) {
             return;

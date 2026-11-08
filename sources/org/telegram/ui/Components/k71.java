@@ -8,7 +8,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.regex.Matcher;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class k71 extends AsyncTask {
     public final String a;
@@ -351,7 +351,7 @@ public final class k71 extends AsyncTask {
                     j3.append(c10.substring(matcher.start() + 6, matcher.end()));
                     s5 = j3.toString();
                 } else {
-                    s5 = rf.b.q(s5, "&sts=");
+                    s5 = rf.b.r(s5, "&sts=");
                 }
             }
             this.c[1] = "dash";

@@ -12,7 +12,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class js0 extends oj0 {
     public int E;
@@ -83,10 +83,10 @@ public final class js0 extends oj0 {
                     long j3 = uvVar.a;
                     String str3 = null;
                     if (j3 == 2666000) {
-                        str2 = org.telegram.messenger.hd.M0(2131754252, null);
+                        str2 = org.telegram.messenger.id.M0(2131754252, null);
                     } else if (j3 == org.telegram.messenger.p10.i(i12).e()) {
-                        str2 = org.telegram.messenger.hd.M0(2131748302, null);
-                        str3 = org.telegram.messenger.hd.M0(2131745902, null);
+                        str2 = org.telegram.messenger.id.M0(2131748304, null);
+                        str3 = org.telegram.messenger.id.M0(2131745904, null);
                     } else if (uvVar.a >= 0) {
                         str2 = org.telegram.messenger.t10.p(org.telegram.messenger.qp.s1(i12).a2(Long.valueOf(uvVar.a)));
                     } else {
@@ -198,9 +198,9 @@ public final class js0 extends oj0 {
                 if (sr0VarArr[i11].E == 11 && arrayList2.isEmpty() && this.e.isEmpty()) {
                     xh.l lVar = sr0VarArr[i11].w.d;
                     if (this.y == null || !TextUtils.isEmpty(this.x)) {
-                        a02 = org.telegram.messenger.hd.a0(null, null, 2131748165, this.x);
+                        a02 = org.telegram.messenger.id.a0(null, null, 2131748167, this.x);
                     } else {
-                        String M0 = org.telegram.messenger.hd.M0(2131748163, null);
+                        String M0 = org.telegram.messenger.id.M0(2131748165, null);
                         ch.o0 o0Var = this.y;
                         Paint.FontMetricsInt fontMetricsInt = sr0VarArr[i11].w.d.getPaint().getFontMetricsInt();
                         if (TextUtils.isEmpty(o0Var.f)) {

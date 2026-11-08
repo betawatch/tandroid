@@ -14,7 +14,7 @@ import c8.ka;
 import org.telegram.messenger.au;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
@@ -30,7 +30,7 @@ import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class v extends na {
     public final int P1;
@@ -56,7 +56,7 @@ public final class v extends na {
         FrameLayout frameLayout = new FrameLayout(context);
         this.S1 = frameLayout;
         TextView textView = new TextView(context);
-        textView.setText(hd.M0(2131754060, null));
+        textView.setText(id.M0(2131754060, null));
         final int i11 = 1;
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
@@ -130,7 +130,7 @@ public final class v extends na {
         frameLayout2.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), 0);
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.V1 = frameLayout3;
-        org.telegram.ui.Cells.k3 k3Var = new org.telegram.ui.Cells.k3(context, hd.M0(2131754058, null), true, false, ((org.telegram.messenger.j0) qp.s1(i7).x7.R.b).c, f6Var);
+        org.telegram.ui.Cells.k3 k3Var = new org.telegram.ui.Cells.k3(context, id.M0(2131754058, null), true, false, ((org.telegram.messenger.j0) qp.s1(i7).x7.R.b).c, f6Var);
         this.W1 = k3Var;
         org.telegram.ui.Cells.i3 i3Var = k3Var.d;
         i3Var.setImeOptions(6);
@@ -144,7 +144,7 @@ public final class v extends na {
         frameLayout3.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
         fi.d h = org.telegram.messenger.k5.h(24, context, f6Var, true);
         this.X1 = h;
-        h.i(hd.M0(2131754059, null), false, true);
+        h.i(id.M0(2131754059, null), false, true);
         h.setOnClickListener(new View.OnClickListener(this) { // from class: li.t
             public final /* synthetic */ v b;
 
@@ -215,7 +215,7 @@ public final class v extends na {
 
     @Override // org.telegram.ui.Components.na
     public final CharSequence O0() {
-        return hd.M0(2131754060, null);
+        return id.M0(2131754060, null);
     }
 
     public final void d1() {

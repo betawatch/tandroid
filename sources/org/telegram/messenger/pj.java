@@ -4,7 +4,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pj implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -159,7 +159,7 @@ public final /* synthetic */ class pj implements RequestDelegate {
                 if (tL_error == null) {
                     qp qpVar12 = this.b;
                     qpVar12.getMessagesController().O3((TLRPC.Updates) tLObject, false);
-                    g0.i3(new nk(qpVar12, this.c, 18), 1000L);
+                    g0.i3(new mk(qpVar12, this.c, 18), 1000L);
                     break;
                 }
                 break;
@@ -170,7 +170,7 @@ public final /* synthetic */ class pj implements RequestDelegate {
                     break;
                 } else {
                     qpVar13.getMessagesController().O3((TLRPC.Updates) tLObject, false);
-                    g0.i3(new nk(qpVar13, this.c, 20), 1000L);
+                    g0.i3(new mk(qpVar13, this.c, 20), 1000L);
                     break;
                 }
             case 16:

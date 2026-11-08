@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.content.SharedPreferences;
 import android.util.LongSparseArray;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class sv extends rv {
     public int d;
@@ -31,13 +31,13 @@ public final class sv extends rv {
         StringBuilder sb2 = new StringBuilder();
         if (a()) {
             if (this.a) {
-                sb2.append(hd.M0(2131745921, null));
+                sb2.append(id.M0(2131745923, null));
             }
             if (this.b) {
                 if (sb2.length() != 0) {
                     sb2.append(", ");
                 }
-                sb2.append(hd.M0(2131745914, null));
+                sb2.append(id.M0(2131745916, null));
                 long j3 = this.c;
                 if (j3 > 0 && j3 < 4194304000L) {
                     sb2.append(" (");
@@ -46,14 +46,14 @@ public final class sv extends rv {
                 }
             }
         } else {
-            sb2.append(hd.M0(2131745922, null));
+            sb2.append(id.M0(2131745924, null));
         }
         LongSparseArray m10 = p10.i(i7).m(this.d);
         if (m10.size() != 0) {
             if (sb2.length() != 0) {
                 sb2.append(", ");
             }
-            sb2.append(hd.G(m10.size(), "Exception", Integer.valueOf(m10.size())));
+            sb2.append(id.G(m10.size(), "Exception", Integer.valueOf(m10.size())));
         }
         return sb2;
     }

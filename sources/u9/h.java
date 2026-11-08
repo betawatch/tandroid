@@ -1,27 +1,15 @@
 package u9;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+import java.util.HashSet;
+
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class h {
-    public final q a;
-    public final boolean b;
+    public final a a;
+    public final HashSet b = new HashSet();
+    public final HashSet c = new HashSet();
 
-    public h(q qVar, boolean z9) {
-        this.a = qVar;
-        this.b = z9;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj instanceof h) {
-            h hVar = (h) obj;
-            if (hVar.a.equals(this.a) && hVar.b == this.b) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ Boolean.valueOf(this.b).hashCode();
+    public h(a aVar) {
+        this.a = aVar;
     }
 }

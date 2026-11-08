@@ -12,7 +12,7 @@ import h9.t1;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class r {
     public static final AtomicReference n = new AtomicReference(null);
@@ -69,7 +69,7 @@ public final class r {
             w0Var.a = true;
             this.g = new j2.i(w0Var);
         } else {
-            this.g = new f5.u(dVar, intValue, 11);
+            this.g = new f5.u(dVar, intValue, 12);
         }
         if (i7 == 29) {
             h2.d dVar2 = this.g;

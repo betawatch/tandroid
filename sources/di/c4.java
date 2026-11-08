@@ -11,15 +11,15 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.pa;
 import org.telegram.ui.Cells.ta;
-import org.telegram.ui.Components.wu;
+import org.telegram.ui.Components.xu;
 import org.telegram.ui.bd;
 import org.telegram.ui.d50;
-import org.telegram.ui.oc1;
 import org.telegram.ui.pc0;
 import org.telegram.ui.pc1;
 import org.telegram.ui.pn;
+import org.telegram.ui.qc1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class c4 extends org.telegram.ui.Components.l9 {
     public final /* synthetic */ int G;
@@ -90,7 +90,7 @@ public final class c4 extends org.telegram.ui.Components.l9 {
                 super.onDraw(canvas);
                 ta taVar = (ta) this.H;
                 Object obj = taVar.h;
-                if ((obj instanceof oc1) || (obj instanceof pc1)) {
+                if ((obj instanceof pc1) || (obj instanceof qc1)) {
                     canvas.drawLine(1.0f, 0.0f, getMeasuredWidth() - 1, 0.0f, taVar.s.n);
                     canvas2 = canvas;
                     canvas2.drawLine(0.0f, 0.0f, 0.0f, getMeasuredHeight(), taVar.s.n);
@@ -194,7 +194,7 @@ public final class c4 extends org.telegram.ui.Components.l9 {
             case 8:
                 if (!ch.e0.b(this)) {
                     super.invalidate();
-                    ((wu) this.H).f();
+                    ((xu) this.H).f();
                     break;
                 }
                 break;

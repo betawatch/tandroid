@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v80 implements Runnable {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class v80 implements Runnable {
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
                 bVar.A0(true);
                 editTextBoldCursor.requestFocus();
-                org.telegram.messenger.g0.h3(new at(editTextBoldCursor, i10));
+                org.telegram.messenger.g0.h3(new bt(editTextBoldCursor, i10));
                 break;
             case 1:
                 ob.c cVar = (ob.c) this.b;
@@ -231,7 +231,7 @@ public final /* synthetic */ class v80 implements Runnable {
                 yl0 yl0Var2 = (yl0) this.b;
                 org.telegram.ui.ww wwVar = (org.telegram.ui.ww) this.c;
                 yl0Var2.S();
-                hc.a0(wwVar).c(org.telegram.messenger.hd.M0(2131754488, null)).j();
+                hc.a0(wwVar).c(org.telegram.messenger.id.M0(2131754488, null)).j();
                 break;
             case 9:
                 ((km0) this.b).sendAccessibilityEvent((View) this.c, 4);
@@ -285,7 +285,7 @@ public final /* synthetic */ class v80 implements Runnable {
                 v9Var.j(true);
                 break;
             case 16:
-                hc.a0(((jr0) this.b).f.x1).Q(R.raw.contact_check, 36, org.telegram.messenger.hd.a0(null, null, 2131742837, ((TLRPC.Chat) this.c).title)).k(true);
+                hc.a0(((jr0) this.b).f.x1).Q(R.raw.contact_check, 36, org.telegram.messenger.id.a0(null, null, 2131742839, ((TLRPC.Chat) this.c).title)).k(true);
                 break;
             case 17:
                 ur0 ur0Var = (ur0) this.b;
@@ -326,7 +326,7 @@ public final /* synthetic */ class v80 implements Runnable {
                         sr0 sr0Var2 = sr0VarArr[i19];
                         if (sr0Var2.E == ur0Var2.r) {
                             if (ur0Var2.s == 0 && b11 == 0) {
-                                sr0Var2.w.d.setText(org.telegram.messenger.hd.M0(2131748166, "NoResult"));
+                                sr0Var2.w.d.setText(org.telegram.messenger.id.M0(2131748168, "NoResult"));
                                 sr0VarArr[i19].w.f.setVisibility(8);
                                 sr0VarArr[i19].w.e(false, true);
                             } else if (b10 == 0) {
@@ -354,13 +354,13 @@ public final /* synthetic */ class v80 implements Runnable {
                 s01Var.O = null;
                 org.telegram.messenger.k00 k00Var = org.telegram.messenger.qp.s1(s01Var.a).q7;
                 long j10 = -s01Var.b;
-                ex exVar = new ex(i10, s01Var, str2);
+                fx fxVar = new fx(i10, s01Var, str2);
                 k00Var.getClass();
                 TL_forum.TL_messages_getForumTopics tL_messages_getForumTopics = new TL_forum.TL_messages_getForumTopics();
                 tL_messages_getForumTopics.peer = k00Var.getMessagesController().j1(-j10);
                 tL_messages_getForumTopics.q = str2;
                 tL_messages_getForumTopics.limit = 50;
-                s01Var.N = k00Var.getConnectionsManager().sendRequest(tL_messages_getForumTopics, new org.telegram.messenger.oj(k00Var, j10, exVar, 10));
+                s01Var.N = k00Var.getConnectionsManager().sendRequest(tL_messages_getForumTopics, new org.telegram.messenger.oj(k00Var, j10, fxVar, 10));
                 break;
             case 22:
                 m11 m11Var = (m11) this.b;
@@ -400,10 +400,10 @@ public final /* synthetic */ class v80 implements Runnable {
                 }
                 if (k21Var.L1) {
                     k21Var.dismiss();
-                    org.telegram.messenger.qs.e().k(org.telegram.messenger.qs.P4, 1, org.telegram.messenger.hd.M0(2131743947, null));
+                    org.telegram.messenger.qs.e().k(org.telegram.messenger.qs.P4, 1, org.telegram.messenger.id.M0(2131743949, null));
                     break;
                 } else {
-                    org.telegram.messenger.k5.p(null, 2131743947, new hc((FrameLayout) k21Var.b, k21Var.I0), null);
+                    org.telegram.messenger.k5.p(null, 2131743949, new hc((FrameLayout) k21Var.b, k21Var.I0), null);
                     g21 g21Var = k21Var.t1.e;
                     String str3 = k21Var.s1;
                     k21Var.r1 = str3;

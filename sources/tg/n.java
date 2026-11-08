@@ -6,7 +6,7 @@ import java.util.List;
 import org.telegram.ui.Components.dz0;
 import org.telegram.ui.d10;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -58,7 +58,7 @@ public final /* synthetic */ class n implements Runnable {
                         sg.g gVar = (sg.g) list.get(i7);
                         int m10 = z9 ? gVar.m() : gVar.e();
                         String n10 = gVar.n();
-                        d10 d10Var = new d10(g0Var3, gVar, m10, 24);
+                        d10 d10Var = new d10(g0Var3, gVar, m10, 23);
                         f0 f0Var = new f0(g0Var3, g0Var3.getContext());
                         f0Var.setIcon(m10);
                         f0Var.setText(n10);

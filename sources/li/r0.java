@@ -10,7 +10,7 @@ import bi.ec;
 import c8.ha;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
@@ -20,7 +20,7 @@ import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
 import org.telegram.ui.Components.AnimatedArrowDrawable;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class r0 extends FrameLayout implements org.telegram.ui.ActionBar.a6, h9 {
     public final f6 a;
@@ -49,7 +49,7 @@ public final class r0 extends FrameLayout implements org.telegram.ui.ActionBar.a
         this.d = g1Var;
         g1Var.setAllowNewlines(false);
         g1Var.setTextSize(1, iz.W0);
-        g1Var.setHint(hd.M0(2131754018, null));
+        g1Var.setHint(id.M0(2131754018, null));
         g1Var.setPadding(0, org.telegram.messenger.g0.L(14.0f), 0, org.telegram.messenger.g0.L(12.66f));
         g1Var.setListener(new o0(this));
         g1Var.setDelegate(new l2.y(this, 5));

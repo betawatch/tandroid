@@ -9,14 +9,14 @@ import bi.l1;
 import c8.ha;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.r6;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
     public static final /* synthetic */ int e = 0;
@@ -33,7 +33,7 @@ public final class f extends FrameLayout {
         eVar.setImageResource(R.drawable.smiles_tab_clear);
         r6.t(eVar, k6.Gf, f6Var, PorterDuff.Mode.MULTIPLY);
         eVar.setScaleType(ImageView.ScaleType.CENTER);
-        eVar.setContentDescription(hd.M0(2131754920, null));
+        eVar.setContentDescription(id.M0(2131754920, null));
         eVar.setFocusable(true);
         eVar.setOnClickListener(new l1(1));
         addView(eVar, ha.e(36, 36, 17));

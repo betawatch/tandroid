@@ -8,12 +8,12 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.Locale;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.m20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class j5 extends FrameLayout {
     public final TextView a;
@@ -26,7 +26,7 @@ public final class j5 extends FrameLayout {
         org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(context);
         this.d = l9Var;
         l9Var.getImageReceiver().J0(org.telegram.messenger.g0.L(8.0f));
-        addView(l9Var, c8.ha.d(100, 100.0f, hd.a0 ? 5 : 3, 10.0f, 10.0f, 10.0f, 0.0f));
+        addView(l9Var, c8.ha.d(100, 100.0f, id.a0 ? 5 : 3, 10.0f, 10.0f, 10.0f, 0.0f));
         TextView textView = new TextView(context);
         this.a = textView;
         int i7 = org.telegram.ui.ActionBar.k6.G6;
@@ -38,8 +38,8 @@ public final class j5 extends FrameLayout {
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        textView.setGravity((hd.a0 ? 5 : 3) | 48);
-        boolean z9 = hd.a0;
+        textView.setGravity((id.a0 ? 5 : 3) | 48);
+        boolean z9 = id.a0;
         addView(textView, c8.ha.d(-1, -2.0f, (z9 ? 5 : 3) | 48, z9 ? 10.0f : 123.0f, 9.0f, z9 ? 123.0f : 10.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.b = textView2;
@@ -47,8 +47,8 @@ public final class j5 extends FrameLayout {
         textView2.setTextSize(1, 14.0f);
         textView2.setMaxLines(3);
         textView2.setEllipsize(truncateAt);
-        textView2.setGravity((hd.a0 ? 5 : 3) | 48);
-        boolean z10 = hd.a0;
+        textView2.setGravity((id.a0 ? 5 : 3) | 48);
+        boolean z10 = id.a0;
         addView(textView2, c8.ha.d(-1, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 10.0f : 123.0f, 33.0f, z10 ? 123.0f : 10.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.c = textView3;
@@ -56,8 +56,8 @@ public final class j5 extends FrameLayout {
         org.telegram.messenger.camera.q.n(textView3, 1, 14.0f, 1, 1);
         textView3.setSingleLine(true);
         textView3.setEllipsize(truncateAt);
-        textView3.setGravity((hd.a0 ? 5 : 3) | 48);
-        boolean z11 = hd.a0;
+        textView3.setGravity((id.a0 ? 5 : 3) | 48);
+        boolean z11 = id.a0;
         addView(textView3, c8.ha.d(-1, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 10.0f : 123.0f, 90.0f, z11 ? 123.0f : 10.0f, 9.0f));
     }
 
@@ -81,17 +81,17 @@ public final class j5 extends FrameLayout {
         int i10 = (int) (360 / L);
         org.telegram.ui.Components.l9 l9Var = this.d;
         if (webDocument == null || !webDocument.mime_type.startsWith("image/")) {
-            textView.setLayoutParams(c8.ha.d(-1, -2.0f, (hd.a0 ? 5 : 3) | 48, 17.0f, 9.0f, 17.0f, 0.0f));
-            textView2.setLayoutParams(c8.ha.d(-1, -2.0f, (hd.a0 ? 5 : 3) | 48, 17.0f, 33.0f, 17.0f, 0.0f));
-            textView3.setLayoutParams(c8.ha.d(-1, -2.0f, (hd.a0 ? 5 : 3) | 48, 17.0f, 90.0f, 17.0f, 9.0f));
+            textView.setLayoutParams(c8.ha.d(-1, -2.0f, (id.a0 ? 5 : 3) | 48, 17.0f, 9.0f, 17.0f, 0.0f));
+            textView2.setLayoutParams(c8.ha.d(-1, -2.0f, (id.a0 ? 5 : 3) | 48, 17.0f, 33.0f, 17.0f, 0.0f));
+            textView3.setLayoutParams(c8.ha.d(-1, -2.0f, (id.a0 ? 5 : 3) | 48, 17.0f, 90.0f, 17.0f, 9.0f));
             l9Var.setVisibility(8);
             return;
         }
-        boolean z9 = hd.a0;
+        boolean z9 = id.a0;
         textView.setLayoutParams(c8.ha.d(-1, -2.0f, (z9 ? 5 : 3) | 48, z9 ? 10.0f : 123.0f, 9.0f, z9 ? 123.0f : 10.0f, 0.0f));
-        boolean z10 = hd.a0;
+        boolean z10 = id.a0;
         textView2.setLayoutParams(c8.ha.d(-1, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 10.0f : 123.0f, 33.0f, z10 ? 123.0f : 10.0f, 0.0f));
-        boolean z11 = hd.a0;
+        boolean z11 = id.a0;
         textView3.setLayoutParams(c8.ha.d(-1, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 10.0f : 123.0f, 90.0f, z11 ? 123.0f : 10.0f, 0.0f));
         l9Var.setVisibility(0);
         Locale locale = Locale.US;

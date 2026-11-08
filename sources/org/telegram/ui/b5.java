@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class b5 extends FrameLayout implements org.telegram.messenger.ls {
     public static final /* synthetic */ int F = 0;
@@ -126,7 +126,7 @@ public abstract class b5 extends FrameLayout implements org.telegram.messenger.l
             }
             c5 c5Var = c5VarArr[i10];
             ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = actionBarPopupWindow$ActionBarPopupWindowLayout;
-            org.telegram.ui.ActionBar.z0 c10 = org.telegram.ui.ActionBar.r0.c(i10 == 0, i10 == this.s.length - 1, actionBarPopupWindow$ActionBarPopupWindowLayout2, c5Var.c, org.telegram.messenger.hd.M0(c5Var.b, c5Var.a), false, this.f);
+            org.telegram.ui.ActionBar.z0 c10 = org.telegram.ui.ActionBar.r0.c(i10 == 0, i10 == this.s.length - 1, actionBarPopupWindow$ActionBarPopupWindowLayout2, c5Var.c, org.telegram.messenger.id.M0(c5Var.b, c5Var.a), false, this.f);
             c10.setTag(Integer.valueOf(i10));
             c10.setOnClickListener(new org.telegram.ui.ActionBar.l1(3, this, c5Var));
             i10++;

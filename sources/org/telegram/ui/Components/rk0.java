@@ -26,7 +26,7 @@ import java.util.Map;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class rk0 extends HorizontalScrollView {
     public static final /* synthetic */ int t0 = 0;
@@ -684,7 +684,7 @@ public abstract class rk0 extends HorizontalScrollView {
                     Object tag2 = fv0Var.getTag(R.id.object_tag);
                     Drawable drawable = tag instanceof Drawable ? (Drawable) tag : null;
                     if (tag2 instanceof TLRPC.Document) {
-                        l9Var.j(org.telegram.messenger.hc.b((TLRPC.Document) tag2), !org.telegram.messenger.rc.e(i13) ? "36_36_firstframe" : "36_36_nolimit", null, null);
+                        l9Var.j(org.telegram.messenger.hc.b((TLRPC.Document) tag2), !org.telegram.messenger.sc.e(i13) ? "36_36_firstframe" : "36_36_nolimit", null, null);
                     } else {
                         l9Var.setImageDrawable(drawable);
                     }
@@ -754,7 +754,7 @@ public abstract class rk0 extends HorizontalScrollView {
                     if (k10 != null) {
                         fv0Var.c = true;
                         org.telegram.messenger.rz rzVar = fv0Var.w;
-                        boolean e10 = org.telegram.messenger.rc.e(1);
+                        boolean e10 = org.telegram.messenger.sc.e(1);
                         String str2 = !e10 ? "40_40_firstframe" : "40_40";
                         if (str == null && org.telegram.messenger.ij.O4(document)) {
                             c61Var = c61Var2;

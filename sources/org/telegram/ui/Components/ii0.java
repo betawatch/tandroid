@@ -32,7 +32,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class ii0 extends FrameLayout implements org.telegram.messenger.ls, org.telegram.ui.ActionBar.a6 {
     public static final org.telegram.ui.Cells.g1 l1 = new org.telegram.ui.Cells.g1(Float.class, "transitionProgress", 2);
@@ -487,7 +487,7 @@ public class ii0 extends FrameLayout implements org.telegram.messenger.ls, org.t
                     this.q0 = 1.0f - (f27 * 0.15f);
                 }
                 int save = canvas2.save();
-                if (!org.telegram.messenger.hd.a0 || this.M) {
+                if (!org.telegram.messenger.id.a0 || this.M) {
                     width = getWidth();
                     f10 = 0.125f;
                 } else {
@@ -499,7 +499,7 @@ public class ii0 extends FrameLayout implements org.telegram.messenger.ls, org.t
                 if (f11 != 1.0f) {
                     canvas2.scale(f11, f11, f28, getHeight() / 2.0f);
                 }
-                if (!org.telegram.messenger.hd.a0 || this.M) {
+                if (!org.telegram.messenger.id.a0 || this.M) {
                     max = Math.max(0.25f, this.w);
                     f12 = 0.0f;
                 } else {
@@ -769,7 +769,7 @@ public class ii0 extends FrameLayout implements org.telegram.messenger.ls, org.t
                                                         }
                                                     }
                                                     zq zqVar3 = this.v0;
-                                                    boolean z11 = org.telegram.messenger.rc.e(8200) || org.telegram.messenger.iz.o() >= 1;
+                                                    boolean z11 = org.telegram.messenger.sc.e(8200) || org.telegram.messenger.iz.o() >= 1;
                                                     zqVar3.invalidate();
                                                     ValueAnimator valueAnimator3 = (ValueAnimator) zqVar3.b;
                                                     if (valueAnimator3 != null) {
@@ -890,7 +890,7 @@ public class ii0 extends FrameLayout implements org.telegram.messenger.ls, org.t
                         if (!q10) {
                             canvas.clipPath(path);
                         }
-                        if (!org.telegram.messenger.hd.a0 || this.M) {
+                        if (!org.telegram.messenger.id.a0 || this.M) {
                             i13 = -1;
                         }
                         canvas.translate((1.0f - this.w) * getWidth() * i13, 0.0f);
@@ -927,7 +927,7 @@ public class ii0 extends FrameLayout implements org.telegram.messenger.ls, org.t
                 q10 = q();
                 if (!q10) {
                 }
-                if (!org.telegram.messenger.hd.a0) {
+                if (!org.telegram.messenger.id.a0) {
                 }
                 i13 = -1;
                 canvas.translate((1.0f - this.w) * getWidth() * i13, 0.0f);
@@ -974,7 +974,7 @@ public class ii0 extends FrameLayout implements org.telegram.messenger.ls, org.t
         this.p0 = (f272 * 2.0f) + 1.0f;
         this.q0 = 1.0f - (f272 * 0.15f);
         int save4 = canvas2.save();
-        if (org.telegram.messenger.hd.a0) {
+        if (org.telegram.messenger.id.a0) {
         }
         width = getWidth();
         f10 = 0.125f;
@@ -982,7 +982,7 @@ public class ii0 extends FrameLayout implements org.telegram.messenger.ls, org.t
         f11 = this.w;
         if (f11 != 1.0f) {
         }
-        if (org.telegram.messenger.hd.a0) {
+        if (org.telegram.messenger.id.a0) {
         }
         max = Math.max(0.25f, this.w);
         f12 = 0.0f;
@@ -1026,7 +1026,7 @@ public class ii0 extends FrameLayout implements org.telegram.messenger.ls, org.t
         q10 = q();
         if (!q10) {
         }
-        if (!org.telegram.messenger.hd.a0) {
+        if (!org.telegram.messenger.id.a0) {
         }
         i13 = -1;
         canvas.translate((1.0f - this.w) * getWidth() * i13, 0.0f);
@@ -1069,7 +1069,7 @@ public class ii0 extends FrameLayout implements org.telegram.messenger.ls, org.t
             xq xqVar = xq.f;
             canvas.clipRect(0.0f, (org.telegram.messenger.g0.T1(f14, 0.0f, xqVar.getInterpolation(this.O)) - ((int) Math.ceil((1.0f - this.w) * (rectF.height() / 2.0f)))) - 1.0f, getMeasuredWidth(), org.telegram.messenger.g0.T1(org.telegram.messenger.g0.L(8.0f) + getMeasuredHeight(), getPaddingTop() - g(), xqVar.getInterpolation(this.O)));
         }
-        float width = ((org.telegram.messenger.hd.a0 || this.M) ? this.G : getWidth() - this.G) + this.U0;
+        float width = ((org.telegram.messenger.id.a0 || this.M) ? this.G : getWidth() - this.G) + this.U0;
         float paddingTop = this.L ? getPaddingTop() - g() : (getHeight() - getPaddingBottom()) + g();
         int L = org.telegram.messenger.g0.L(3.0f);
         Drawable drawable = this.i0;
@@ -1106,7 +1106,7 @@ public class ii0 extends FrameLayout implements org.telegram.messenger.ls, org.t
                 canvas.drawCircle(width, f21, f13, paint);
             }
         }
-        boolean z10 = org.telegram.messenger.hd.a0;
+        boolean z10 = org.telegram.messenger.id.a0;
         float f22 = this.E;
         float width2 = this.U0 + this.V0 + ((z10 || this.M) ? this.G - f22 : (getWidth() - this.G) + f22);
         boolean z11 = this.L;

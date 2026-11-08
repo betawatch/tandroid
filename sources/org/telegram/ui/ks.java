@@ -28,7 +28,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ks {
     public static TextPaint f0;
@@ -171,7 +171,7 @@ public final class ks {
                 nVar = nVar3;
                 str2 = null;
             }
-            k60Var.c(R.drawable.ic_ab_back, org.telegram.messenger.hd.M0(2131753756, str2), new bh(actionBarPopupWindow$ActionBarPopupWindowLayout, 15), false);
+            k60Var.c(R.drawable.ic_ab_back, org.telegram.messenger.id.M0(2131753756, str2), new bh(actionBarPopupWindow$ActionBarPopupWindowLayout, 15), false);
             k60Var.k();
             org.telegram.messenger.ij A = ksVar.l.A();
             Activity activity = ksVar.w;
@@ -179,10 +179,10 @@ public final class ks {
                 LaunchActivity launchActivity = (LaunchActivity) activity;
                 org.telegram.ui.ActionBar.f2 lastFragment = (launchActivity.M() == null || launchActivity.M().getLastFragment() == null) ? null : launchActivity.M().getLastFragment();
                 if (lastFragment != null) {
-                    org.telegram.ui.Components.q41 a10 = nVar.a(lastFragment, org.telegram.messenger.ij.B0(A.k), A.f1(), g10.option, F1.voters, new org.telegram.ui.Components.ex(8, ksVar, lastFragment));
+                    org.telegram.ui.Components.q41 a10 = nVar.a(lastFragment, org.telegram.messenger.ij.B0(A.k), A.f1(), g10.option, F1.voters, new org.telegram.ui.Components.fx(8, ksVar, lastFragment));
                     nVar2 = nVar;
                     k60Var.q(a10);
-                    nVar2.setText(org.telegram.messenger.hd.G(F1.voters, "PollVotesCount", new Object[0]));
+                    nVar2.setText(org.telegram.messenger.id.G(F1.voters, "PollVotesCount", new Object[0]));
                     nVar2.a.d(F1.recent_voters, false);
                     nVar2.setLayoutParams(c8.ha.o(-1, 48));
                     int i12 = org.telegram.ui.ActionBar.k6.I5;
@@ -203,7 +203,7 @@ public final class ks {
                 }
             }
             nVar2 = nVar;
-            nVar2.setText(org.telegram.messenger.hd.G(F1.voters, "PollVotesCount", new Object[0]));
+            nVar2.setText(org.telegram.messenger.id.G(F1.voters, "PollVotesCount", new Object[0]));
             nVar2.a.d(F1.recent_voters, false);
             nVar2.setLayoutParams(c8.ha.o(-1, 48));
             int i122 = org.telegram.ui.ActionBar.k6.I5;
@@ -229,7 +229,7 @@ public final class ks {
             i10 = i7;
             str = null;
             f11 = f10;
-            org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_select, org.telegram.messenger.hd.M0(2131747155, null), false, ksVar.c0).setOnClickListener(new zr(ksVar, 2));
+            org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_select, org.telegram.messenger.id.M0(2131747157, null), false, ksVar.c0).setOnClickListener(new zr(ksVar, 2));
         } else {
             f11 = f10;
             i10 = i7;
@@ -237,7 +237,7 @@ public final class ks {
         }
         if (z11) {
             actionBarPopupWindow$ActionBarPopupWindowLayout2 = actionBarPopupWindow$ActionBarPopupWindowLayout;
-            org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, R.drawable.msg_unvote, org.telegram.messenger.hd.M0(2131743825, str), false, ksVar.c0).setOnClickListener(new zr(ksVar, 3));
+            org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, R.drawable.msg_unvote, org.telegram.messenger.id.M0(2131743827, str), false, ksVar.c0).setOnClickListener(new zr(ksVar, 3));
         } else {
             actionBarPopupWindow$ActionBarPopupWindowLayout2 = actionBarPopupWindow$ActionBarPopupWindowLayout;
         }
@@ -383,9 +383,9 @@ public final class ks {
                                 }
                             }
                             i7 = -1;
-                        } else if (childAt instanceof org.telegram.ui.Components.ju) {
+                        } else if (childAt instanceof org.telegram.ui.Components.ku) {
                             imageReceiver.J0(0);
-                        } else if (!(childAt instanceof org.telegram.ui.Components.px) || ((org.telegram.ui.Components.px) childAt).getSpan() == null) {
+                        } else if (!(childAt instanceof org.telegram.ui.Components.qx) || ((org.telegram.ui.Components.qx) childAt).getSpan() == null) {
                             if ((childAt instanceof org.telegram.ui.Components.nw0) && (((org.telegram.ui.Components.nw0) childAt).b instanceof org.telegram.ui.Components.i5)) {
                                 imageReceiver.J0(0);
                             }
@@ -498,9 +498,9 @@ public final class ks {
                                             }
                                             i7 = i10;
                                         } else {
-                                            if (childAt instanceof org.telegram.ui.Components.ju) {
+                                            if (childAt instanceof org.telegram.ui.Components.ku) {
                                                 imageReceiver.J0(0);
-                                            } else if (!(childAt instanceof org.telegram.ui.Components.px) || ((org.telegram.ui.Components.px) childAt).getSpan() == null) {
+                                            } else if (!(childAt instanceof org.telegram.ui.Components.qx) || ((org.telegram.ui.Components.qx) childAt).getSpan() == null) {
                                                 i7 = -1;
                                             } else {
                                                 imageReceiver.J0(0);
@@ -551,13 +551,13 @@ public final class ks {
                                                 if (i7 != 1 || this.m) {
                                                     h2Var2.setScaled(true);
                                                 }
-                                            } else if (view2 instanceof org.telegram.ui.Components.ju) {
-                                                TLRPC.Document document3 = ((org.telegram.ui.Components.ju) view2).getDocument();
+                                            } else if (view2 instanceof org.telegram.ui.Components.ku) {
+                                                TLRPC.Document document3 = ((org.telegram.ui.Components.ku) view2).getDocument();
                                                 if (document3 != null) {
                                                     s(document3, null, org.telegram.messenger.ij.V(document3, null, Integer.valueOf(this.r)), null, null, i7, false, null, f6Var, 0);
                                                 }
-                                            } else if (view2 instanceof org.telegram.ui.Components.px) {
-                                                org.telegram.ui.Components.r5 span = ((org.telegram.ui.Components.px) view2).getSpan();
+                                            } else if (view2 instanceof org.telegram.ui.Components.qx) {
+                                                org.telegram.ui.Components.r5 span = ((org.telegram.ui.Components.qx) view2).getSpan();
                                                 if (span != null) {
                                                     TLRPC.Document document4 = span.document;
                                                     if (document4 == null) {

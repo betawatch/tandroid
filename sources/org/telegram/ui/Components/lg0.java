@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.HashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class lg0 extends org.telegram.ui.ActionBar.v2 {
     public final Bitmap i1;
@@ -69,7 +69,7 @@ public class lg0 extends org.telegram.ui.ActionBar.v2 {
         textView2.setGravity(17);
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(org.telegram.messenger.g0.o());
-        textView2.setText(org.telegram.messenger.hd.M0(2131745449, null));
+        textView2.setText(org.telegram.messenger.id.M0(2131745451, null));
         textView2.setOnClickListener(new lk(20, this, context));
         linearLayout.addView(textView2, c8.ha.t(-1, 48, 80, 16, 15, 16, 3));
         if (z9) {
@@ -78,7 +78,7 @@ public class lg0 extends org.telegram.ui.ActionBar.v2 {
             textView3.setPadding(org.telegram.messenger.g0.L(34.0f), 0, org.telegram.messenger.g0.L(34.0f), 0);
             textView3.setGravity(17);
             textView3.setTextSize(1, 14.0f);
-            textView3.setText(org.telegram.messenger.hd.M0(2131745459, null));
+            textView3.setText(org.telegram.messenger.id.M0(2131745461, null));
             textView3.setOnClickListener(new lk(21, str2, context));
             linearLayout.addView(textView3, c8.ha.t(-1, 48, 80, 16, 3, 16, 16));
         }

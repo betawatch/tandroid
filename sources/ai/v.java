@@ -20,9 +20,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.ew;
 import org.telegram.messenger.gz;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.hk;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
-import org.telegram.messenger.ik;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.qp;
@@ -49,9 +49,10 @@ import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 import org.telegram.ui.Components.a20;
+import org.telegram.ui.Components.ax;
 import org.telegram.ui.Components.gr0;
-import org.telegram.ui.Components.gy;
 import org.telegram.ui.Components.hr;
+import org.telegram.ui.Components.hy;
 import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.is0;
 import org.telegram.ui.Components.k4;
@@ -66,7 +67,6 @@ import org.telegram.ui.Components.v4;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xs0;
 import org.telegram.ui.Components.y41;
-import org.telegram.ui.Components.zw;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PopupNotificationActivity;
 import org.telegram.ui.an;
@@ -78,16 +78,16 @@ import org.telegram.ui.e60;
 import org.telegram.ui.ie0;
 import org.telegram.ui.im0;
 import org.telegram.ui.je0;
-import org.telegram.ui.mb1;
 import org.telegram.ui.mm0;
 import org.telegram.ui.mx;
+import org.telegram.ui.nb1;
 import org.telegram.ui.qm0;
 import org.telegram.ui.web.HttpGetFileTask;
 import org.telegram.ui.ww;
 import org.telegram.ui.xm0;
-import org.telegram.ui.yb1;
+import org.telegram.ui.zb1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -218,16 +218,16 @@ public final /* synthetic */ class v implements View.OnClickListener {
                 break;
             case 15:
                 qb0 qb0Var = (qb0) obj;
-                if (qb0Var.e.getAdapter() instanceof zw) {
-                    gy gyVar = ((zw) qb0Var.e.getAdapter()).c;
-                    if ((i12 != 1 && i12 != 2) || !gyVar.w1) {
+                if (qb0Var.e.getAdapter() instanceof ax) {
+                    hy hyVar = ((ax) qb0Var.e.getAdapter()).c;
+                    if ((i12 != 1 && i12 != 2) || !hyVar.w1) {
                         z9 = false;
-                        if (i12 == 0 && gyVar.v1) {
-                            gyVar.P(true, true, false);
+                        if (i12 == 0 && hyVar.v1) {
+                            hyVar.P(true, true, false);
                             break;
                         }
                     } else {
-                        gyVar.P(true, false, i12 == 1);
+                        hyVar.P(true, false, i12 == 1);
                         break;
                     }
                 } else {
@@ -285,7 +285,7 @@ public final /* synthetic */ class v implements View.OnClickListener {
                                     z10 = z13;
                                     if (a22 != null) {
                                         if (t10.s(a22)) {
-                                            str = hd.M0(2131754252, null);
+                                            str = id.M0(2131754252, null);
                                             z10 = z13;
                                         } else {
                                             str = t10.p(a22);
@@ -295,11 +295,11 @@ public final /* synthetic */ class v implements View.OnClickListener {
                                 }
                             }
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, xs0Var.getContext(), f6Var);
-                            String a02 = arrayList3.size() == 1 ? hd.a0(null, null, z10 ? 2131752081 : 2131752077, str) : hd.G(arrayList3.size(), "ClearHistoryTitleMultiple", new Object[0]);
+                            String a02 = arrayList3.size() == 1 ? id.a0(null, null, z10 ? 2131752081 : 2131752077, str) : id.G(arrayList3.size(), "ClearHistoryTitleMultiple", new Object[0]);
                             u1 u1Var = alertDialog$Builder.a;
                             u1Var.R = a02;
-                            u1Var.T = arrayList3.size() == 1 ? hd.a0(null, null, z10 ? 2131752082 : 2131752083, str) : hd.G(arrayList3.size(), "ClearHistoryMessageMultiple", new Object[0]);
-                            alertDialog$Builder.k(hd.M0(2131746320, null), new r1() { // from class: org.telegram.ui.Components.mp0
+                            u1Var.T = arrayList3.size() == 1 ? id.a0(null, null, z10 ? 2131752082 : 2131752083, str) : id.G(arrayList3.size(), "ClearHistoryMessageMultiple", new Object[0]);
+                            alertDialog$Builder.k(id.M0(2131746322, null), new r1() { // from class: org.telegram.ui.Components.mp0
                                 @Override // org.telegram.ui.ActionBar.r1
                                 public final void g(org.telegram.ui.ActionBar.u1 u1Var2, int i16) {
                                     int i17 = r3;
@@ -309,7 +309,7 @@ public final /* synthetic */ class v implements View.OnClickListener {
                                         case 0:
                                             org.telegram.ui.ActionBar.f2 f2Var2 = xs0Var2.x1;
                                             f2Var2.getMessagesController().P1().s(arrayList4, xs0Var2.l1);
-                                            hc.a0(f2Var2).Q(R.raw.ic_delete, 36, org.telegram.messenger.hd.G(arrayList4.size(), "StoriesDeleted", new Object[0])).j();
+                                            hc.a0(f2Var2).Q(R.raw.ic_delete, 36, org.telegram.messenger.id.G(arrayList4.size(), "StoriesDeleted", new Object[0])).j();
                                             xs0Var2.V(false);
                                             break;
                                         default:
@@ -322,7 +322,7 @@ public final /* synthetic */ class v implements View.OnClickListener {
                                     }
                                 }
                             });
-                            alertDialog$Builder.h(hd.M0(2131752589, null), null);
+                            alertDialog$Builder.h(id.M0(2131752589, null), null);
                             f2Var.showDialog(u1Var);
                             TextView textView = (TextView) u1Var.d(-1);
                             if (textView != null) {
@@ -358,12 +358,12 @@ public final /* synthetic */ class v implements View.OnClickListener {
                             }
                             if (!arrayList4.isEmpty()) {
                                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, xs0Var.getContext(), f6Var);
-                                String M03 = hd.M0(arrayList4.size() > 1 ? 2131751561 : 2131751565, null);
+                                String M03 = id.M0(arrayList4.size() > 1 ? 2131751561 : 2131751565, null);
                                 u1 u1Var2 = alertDialog$Builder2.a;
                                 u1Var2.R = M03;
-                                u1Var2.T = hd.G(arrayList4.size(), "DeleteBotPreviewsSubtitle", new Object[0]);
-                                alertDialog$Builder2.k(hd.M0(2131751599, null), new hr(xs0Var, currentList, arrayList4));
-                                alertDialog$Builder2.h(hd.M0(2131752589, null), new il0(8));
+                                u1Var2.T = id.G(arrayList4.size(), "DeleteBotPreviewsSubtitle", new Object[0]);
+                                alertDialog$Builder2.k(id.M0(2131751599, null), new hr(xs0Var, currentList, arrayList4));
+                                alertDialog$Builder2.h(id.M0(2131752589, null), new il0(8));
                                 u1Var2.show();
                                 u1Var2.i();
                                 break;
@@ -378,11 +378,11 @@ public final /* synthetic */ class v implements View.OnClickListener {
                             }
                             if (!arrayList5.isEmpty()) {
                                 AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(0, xs0Var.getContext(), f6Var);
-                                String M04 = hd.M0(arrayList5.size() > 1 ? 2131751490 : 2131751488, null);
+                                String M04 = id.M0(arrayList5.size() > 1 ? 2131751490 : 2131751488, null);
                                 u1 u1Var3 = alertDialog$Builder3.a;
                                 u1Var3.R = M04;
-                                u1Var3.T = hd.G(arrayList5.size(), "DeleteStoriesSubtitle", new Object[0]);
-                                alertDialog$Builder3.k(hd.M0(2131751599, null), new r1() { // from class: org.telegram.ui.Components.mp0
+                                u1Var3.T = id.G(arrayList5.size(), "DeleteStoriesSubtitle", new Object[0]);
+                                alertDialog$Builder3.k(id.M0(2131751599, null), new r1() { // from class: org.telegram.ui.Components.mp0
                                     @Override // org.telegram.ui.ActionBar.r1
                                     public final void g(org.telegram.ui.ActionBar.u1 u1Var22, int i162) {
                                         int i172 = i11;
@@ -392,7 +392,7 @@ public final /* synthetic */ class v implements View.OnClickListener {
                                             case 0:
                                                 org.telegram.ui.ActionBar.f2 f2Var2 = xs0Var2.x1;
                                                 f2Var2.getMessagesController().P1().s(arrayList42, xs0Var2.l1);
-                                                hc.a0(f2Var2).Q(R.raw.ic_delete, 36, org.telegram.messenger.hd.G(arrayList42.size(), "StoriesDeleted", new Object[0])).j();
+                                                hc.a0(f2Var2).Q(R.raw.ic_delete, 36, org.telegram.messenger.id.G(arrayList42.size(), "StoriesDeleted", new Object[0])).j();
                                                 xs0Var2.V(false);
                                                 break;
                                             default:
@@ -405,7 +405,7 @@ public final /* synthetic */ class v implements View.OnClickListener {
                                         }
                                     }
                                 });
-                                alertDialog$Builder3.h(hd.M0(2131752589, null), new il0(9));
+                                alertDialog$Builder3.h(id.M0(2131752589, null), new il0(9));
                                 u1Var3.show();
                                 u1Var3.i();
                                 break;
@@ -420,7 +420,7 @@ public final /* synthetic */ class v implements View.OnClickListener {
                         if (qp.K2(userFull)) {
                             m3 m3Var = xs0Var.G1;
                             if (m3Var != null) {
-                                m3Var.u(hd.M0(2131750535, null));
+                                m3Var.u(id.M0(2131750535, null));
                                 xs0Var.G1.y(view, true);
                                 break;
                             }
@@ -431,7 +431,7 @@ public final /* synthetic */ class v implements View.OnClickListener {
                         if (f2Var.getMessagesController().o2(M05)) {
                             m3 m3Var2 = xs0Var.G1;
                             if (m3Var2 != null) {
-                                m3Var2.u((!t3.T(M05) || M05.megagroup) ? hd.M0(2131750536, null) : hd.M0(2131750537, null));
+                                m3Var2.u((!t3.T(M05) || M05.megagroup) ? id.M0(2131750536, null) : id.M0(2131750537, null));
                                 xs0Var.G1.y(view, true);
                                 break;
                             }
@@ -440,7 +440,7 @@ public final /* synthetic */ class v implements View.OnClickListener {
                     if (xs0Var.u0()) {
                         m3 m3Var3 = xs0Var.G1;
                         if (m3Var3 != null) {
-                            m3Var3.u(hd.M0(2131750538, "ForwardsRestrictedInfoBot"));
+                            m3Var3.u(id.M0(2131750538, "ForwardsRestrictedInfoBot"));
                             xs0Var.G1.y(view, true);
                             break;
                         }
@@ -561,9 +561,9 @@ public final /* synthetic */ class v implements View.OnClickListener {
                 ((org.telegram.ui.Components.voip.t0) obj).b.x(i12, true);
                 break;
             case 21:
-                yb1 yb1Var = (yb1) obj;
-                if (yb1Var.U == null && view.getAlpha() != 0.0f) {
-                    yb1Var.c(i12, true);
+                zb1 zb1Var = (zb1) obj;
+                if (zb1Var.U == null && view.getAlpha() != 0.0f) {
+                    zb1Var.c(i12, true);
                     break;
                 }
                 break;
@@ -615,9 +615,9 @@ public final /* synthetic */ class v implements View.OnClickListener {
                 je0 je0Var = (je0) obj;
                 ValueAnimator valueAnimator = je0Var.c.S;
                 if (valueAnimator == null || !valueAnimator.isRunning()) {
-                    mb1 mb1Var = je0Var.c;
-                    if (!mb1Var.H) {
-                        if (mb1Var.getCurrentPosition() == i12) {
+                    nb1 nb1Var = je0Var.c;
+                    if (!nb1Var.H) {
+                        if (nb1Var.getCurrentPosition() == i12) {
                             Object c02 = je0Var.c0();
                             if (c02 instanceof ie0) {
                                 ((ie0) c02).v();
@@ -708,7 +708,7 @@ public final /* synthetic */ class v implements View.OnClickListener {
                 int i23 = PopupNotificationActivity.b0;
                 TL_keyboard.KeyboardButtonProto keyboardButtonProto = (TL_keyboard.KeyboardButtonProto) view.getTag();
                 if (keyboardButtonProto != null) {
-                    org.telegram.messenger.g0.h3(new ik(gz.C(i12), ij.B0(ijVar2.k), ijVar2.f1(), keyboardButtonProto.getData(), 10));
+                    org.telegram.messenger.g0.h3(new hk(gz.C(i12), ij.B0(ijVar2.k), ijVar2.f1(), keyboardButtonProto.getData(), 10));
                     break;
                 }
                 break;

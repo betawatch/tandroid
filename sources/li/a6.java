@@ -28,8 +28,8 @@ import java.util.List;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.fj;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i6;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
@@ -42,10 +42,10 @@ import org.telegram.ui.Cells.i9;
 import org.telegram.ui.Cells.t9;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.rg0;
-import org.telegram.ui.Components.ws;
+import org.telegram.ui.Components.xs;
 import org.telegram.ui.Components.zj0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class a6 extends FrameLayout implements org.telegram.ui.ActionBar.a6, h9 {
     public static final /* synthetic */ int a0 = 0;
@@ -117,14 +117,14 @@ public final class a6 extends FrameLayout implements org.telegram.ui.ActionBar.a
         g1Var.setPadding(org.telegram.messenger.g0.L(2.0f), 0, org.telegram.messenger.g0.L(2.0f), 0);
         g1Var.setListener(new u5(this));
         final int i7 = 0;
-        g1Var.setDelegate(new ws(this) { // from class: li.s5
+        g1Var.setDelegate(new xs(this) { // from class: li.s5
             public final /* synthetic */ a6 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.ws
+            @Override // org.telegram.ui.Components.xs
             public final void m() {
                 switch (i7) {
                     case 0:
@@ -163,14 +163,14 @@ public final class a6 extends FrameLayout implements org.telegram.ui.ActionBar.a
         g1Var2.setInputType(147457);
         g1Var2.setListener(new v5(this));
         final int i10 = 1;
-        g1Var2.setDelegate(new ws(this) { // from class: li.s5
+        g1Var2.setDelegate(new xs(this) { // from class: li.s5
             public final /* synthetic */ a6 b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.ws
+            @Override // org.telegram.ui.Components.xs
             public final void m() {
                 switch (i10) {
                     case 0:
@@ -253,34 +253,34 @@ public final class a6 extends FrameLayout implements org.telegram.ui.ActionBar.a
         }
         TL_iv.PageBlock pageBlock = aVar.b;
         if (pageBlock instanceof TL_iv.pageBlockHeading1) {
-            return hd.M0(aVar.p ? 2131754014 : 2131754030, null);
+            return id.M0(aVar.p ? 2131754014 : 2131754030, null);
         }
         if (pageBlock instanceof TL_iv.pageBlockHeading2) {
-            return hd.M0(2131754029, null);
+            return id.M0(2131754029, null);
         }
         if (pageBlock instanceof TL_iv.pageBlockHeading3) {
-            return hd.M0(2131754028, null);
+            return id.M0(2131754028, null);
         }
         if (pageBlock instanceof TL_iv.pageBlockHeading4) {
-            return hd.M0(2131754027, null);
+            return id.M0(2131754027, null);
         }
         if (pageBlock instanceof TL_iv.pageBlockHeading5) {
-            return hd.M0(2131754026, null);
+            return id.M0(2131754026, null);
         }
         if (pageBlock instanceof TL_iv.pageBlockHeading6) {
-            return hd.M0(2131754025, null);
+            return id.M0(2131754025, null);
         }
         if (pageBlock instanceof TL_iv.pageBlockPreformatted) {
-            return hd.M0(2131754019, null);
+            return id.M0(2131754019, null);
         }
         if (pageBlock instanceof TL_iv.pageBlockBlockquote) {
-            return hd.M0(2131754016, null);
+            return id.M0(2131754016, null);
         }
         if (pageBlock instanceof TL_iv.pageBlockPullquote) {
-            return hd.M0(2131754016, null);
+            return id.M0(2131754016, null);
         }
         if (aVar.q) {
-            return hd.M0(2131754015, null);
+            return id.M0(2131754015, null);
         }
         return null;
     }
@@ -595,7 +595,7 @@ public final class a6 extends FrameLayout implements org.telegram.ui.ActionBar.a
             }
             z5 r10 = r(str, this.y);
             if (r10 == null) {
-                r10 = s(rf.b.q(str, " "), this.y);
+                r10 = s(rf.b.r(str, " "), this.y);
             }
             if (r10 != null) {
                 ((c3) this.D).d(this.y, r10.a, r10.b, r10.c, r10.d, r10.e);
@@ -786,7 +786,7 @@ public final class a6 extends FrameLayout implements org.telegram.ui.ActionBar.a
         r6.O(imageView2, 5, i12, -1, 2, f10, f6Var, Q, porterDuffColorFilter).h = mode;
         r6.W(this.w, L, this.a);
         if (TextUtils.isEmpty(str)) {
-            this.w.setText(hd.M0(2131754017, null));
+            this.w.setText(id.M0(2131754017, null));
         } else {
             this.w.setText(fj.b(str));
         }
@@ -996,9 +996,9 @@ public final class a6 extends FrameLayout implements org.telegram.ui.ActionBar.a
             if (c10 > 0 || d > 0) {
                 int L4 = org.telegram.messenger.g0.L(16.0f) + c10;
                 int L5 = org.telegram.messenger.g0.L(16.0f) + d;
-                i7 = hd.a0 ? L5 : L4;
+                i7 = id.a0 ? L5 : L4;
                 int width3 = getWidth();
-                if (!hd.a0) {
+                if (!id.a0) {
                     L4 = L5;
                 }
                 width2 = width3 - L4;
@@ -1224,7 +1224,7 @@ public final class a6 extends FrameLayout implements org.telegram.ui.ActionBar.a
                             c10 += org.telegram.messenger.g0.L(f10);
                             d += org.telegram.messenger.g0.L(f10);
                         }
-                        if (hd.a0) {
+                        if (id.a0) {
                             setPadding(getPaddingLeft() + c10, paddingTop, getPaddingRight() + d, paddingBottom);
                         } else {
                             setPadding(getPaddingLeft() + d, paddingTop, getPaddingRight() + c10, paddingBottom);
@@ -1260,7 +1260,7 @@ public final class a6 extends FrameLayout implements org.telegram.ui.ActionBar.a
                         g1Var2.setTypeface(org.telegram.messenger.g0.o1("fonts/rmedium.ttf"));
                         g1Var2.setTextColorKey(k6.Ci);
                         g1Var2.setAccentHint(true);
-                        g1Var2.setHint(hd.M0(2131754020, null));
+                        g1Var2.setHint(id.M0(2131754020, null));
                         if (pageBlock3 instanceof TL_iv.pageBlockPullquote) {
                             g1Var2.setGravity(49);
                         } else {
@@ -1299,7 +1299,7 @@ public final class a6 extends FrameLayout implements org.telegram.ui.ActionBar.a
         }
         if (z10) {
         }
-        if (hd.a0) {
+        if (id.a0) {
         }
         c(aVar);
         J(aVar.b, false);

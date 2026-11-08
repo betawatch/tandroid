@@ -16,7 +16,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class h90 extends org.telegram.ui.ActionBar.f2 {
     public org.telegram.ui.Cells.z8 D;
@@ -66,7 +66,7 @@ public final class h90 extends org.telegram.ui.ActionBar.f2 {
     public final void a0(int i7) {
         int[] iArr;
         long j3 = i7;
-        this.x.setText(org.telegram.messenger.hd.s(j3, false));
+        this.x.setText(org.telegram.messenger.id.s(j3, false));
         int currentTime = i7 - getConnectionsManager().getCurrentTime();
         ArrayList arrayList = this.O;
         arrayList.clear();
@@ -94,21 +94,21 @@ public final class h90 extends org.telegram.ui.ActionBar.f2 {
         String[] strArr = new String[i12];
         for (int i13 = 0; i13 < i12; i13++) {
             if (i13 == size) {
-                strArr[i13] = org.telegram.messenger.hd.M0(2131748201, null);
+                strArr[i13] = org.telegram.messenger.id.M0(2131748203, null);
             } else if (((Integer) arrayList.get(i13)).intValue() == iArr[0]) {
-                strArr[i13] = org.telegram.messenger.hd.G(1, "Hours", new Object[0]);
+                strArr[i13] = org.telegram.messenger.id.G(1, "Hours", new Object[0]);
             } else if (((Integer) arrayList.get(i13)).intValue() == iArr[1]) {
-                strArr[i13] = org.telegram.messenger.hd.G(1, "Days", new Object[0]);
+                strArr[i13] = org.telegram.messenger.id.G(1, "Days", new Object[0]);
             } else if (((Integer) arrayList.get(i13)).intValue() == iArr[2]) {
-                strArr[i13] = org.telegram.messenger.hd.G(1, "Weeks", new Object[0]);
+                strArr[i13] = org.telegram.messenger.id.G(1, "Weeks", new Object[0]);
             } else {
                 long j10 = currentTime;
                 if (j10 < 86400) {
-                    strArr[i13] = org.telegram.messenger.hd.M0(2131748530, null);
+                    strArr[i13] = org.telegram.messenger.id.M0(2131748532, null);
                 } else if (j10 < 31449600) {
-                    strArr[i13] = org.telegram.messenger.hd.E0().w0().format(1000 * j3);
+                    strArr[i13] = org.telegram.messenger.id.E0().w0().format(1000 * j3);
                 } else {
-                    strArr[i13] = org.telegram.messenger.hd.E0().C0().format(1000 * j3);
+                    strArr[i13] = org.telegram.messenger.id.E0().C0().format(1000 * j3);
                 }
             }
         }
@@ -159,7 +159,7 @@ public final class h90 extends org.telegram.ui.ActionBar.f2 {
         String[] strArr = new String[i13];
         for (int i14 = 0; i14 < i13; i14++) {
             if (i14 == size) {
-                strArr[i14] = org.telegram.messenger.hd.M0(2131748201, null);
+                strArr[i14] = org.telegram.messenger.id.M0(2131748203, null);
             } else {
                 strArr[i14] = ((Integer) arrayList.get(i14)).toString();
             }
@@ -174,7 +174,7 @@ public final class h90 extends org.telegram.ui.ActionBar.f2 {
         while (true) {
             int[] iArr = this.R;
             if (i7 >= iArr.length) {
-                this.c.b(3, null, "1", "10", "100", org.telegram.messenger.hd.M0(2131748201, null));
+                this.c.b(3, null, "1", "10", "100", org.telegram.messenger.id.M0(2131748203, null));
                 return;
             }
             i7 = com.google.android.recaptcha.internal.a.f(iArr[i7], i7, 1, arrayList);
@@ -188,12 +188,12 @@ public final class h90 extends org.telegram.ui.ActionBar.f2 {
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         int i7 = this.a;
         if (i7 == 0) {
-            this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131748271, null));
+            this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131748273, null));
         } else if (i7 == 1) {
-            this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131751278, null));
+            this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131751278, null));
         }
         this.simpleActionBar.setActionBarMenuOnItemClick(new ux(this, 11));
-        this.simpleActionBar.n(org.telegram.messenger.hd.M0(i7 == 0 ? 2131751753 : 2131745947, null));
+        this.simpleActionBar.n(org.telegram.messenger.id.M0(i7 == 0 ? 2131751753 : 2131745949, null));
         b90 b90Var = new b90(this, context);
         org.telegram.ui.Components.hm0 hm0Var = new org.telegram.ui.Components.hm0(context, b90Var, this.resourceProvider, true);
         this.J = hm0Var;
@@ -216,7 +216,7 @@ public final class h90 extends org.telegram.ui.ActionBar.f2 {
         this.J.addView(b90Var);
         org.telegram.ui.Cells.n4 n4Var = new org.telegram.ui.Cells.n4(context);
         this.y = n4Var;
-        n4Var.setText(org.telegram.messenger.hd.M0(2131748981, null));
+        n4Var.setText(org.telegram.messenger.id.M0(2131748983, null));
         b90Var.addView(this.y);
         org.telegram.ui.Components.vt0 vt0Var = new org.telegram.ui.Components.vt0(context, null);
         this.d = vt0Var;
@@ -226,7 +226,7 @@ public final class h90 extends org.telegram.ui.ActionBar.f2 {
         textView.setPadding(org.telegram.messenger.g0.L(22.0f), 0, org.telegram.messenger.g0.L(22.0f), 0);
         this.x.setGravity(16);
         this.x.setTextSize(1, 16.0f);
-        this.x.setHint(org.telegram.messenger.hd.M0(2131744140, null));
+        this.x.setHint(org.telegram.messenger.id.M0(2131744142, null));
         this.x.setOnClickListener(new org.telegram.ui.Components.t41(21, this, context));
         this.d.setCallback(new x80(this, 2));
         ArrayList arrayList = this.O;
@@ -239,15 +239,15 @@ public final class h90 extends org.telegram.ui.ActionBar.f2 {
             }
             i11 = com.google.android.recaptcha.internal.a.f(iArr[i11], i11, 1, arrayList);
         }
-        this.d.b(3, null, org.telegram.messenger.hd.G(1, "Hours", new Object[0]), org.telegram.messenger.hd.G(1, "Days", new Object[0]), org.telegram.messenger.hd.G(1, "Weeks", new Object[0]), org.telegram.messenger.hd.M0(2131748201, null));
+        this.d.b(3, null, org.telegram.messenger.id.G(1, "Hours", new Object[0]), org.telegram.messenger.id.G(1, "Days", new Object[0]), org.telegram.messenger.id.G(1, "Weeks", new Object[0]), org.telegram.messenger.id.M0(2131748203, null));
         b90Var.addView(this.x, c8.ha.o(-1, 50));
         org.telegram.ui.Cells.z8 z8Var = new org.telegram.ui.Cells.z8(12, context, this.resourceProvider);
         this.D = z8Var;
-        z8Var.setText(org.telegram.messenger.hd.M0(2131744141, null));
+        z8Var.setText(org.telegram.messenger.id.M0(2131744143, null));
         b90Var.addView(this.D);
         org.telegram.ui.Cells.n4 n4Var2 = new org.telegram.ui.Cells.n4(context);
         this.E = n4Var2;
-        n4Var2.setText(org.telegram.messenger.hd.M0(2131748979, null));
+        n4Var2.setText(org.telegram.messenger.id.M0(2131748981, null));
         b90Var.addView(this.E);
         org.telegram.ui.Components.vt0 vt0Var2 = new org.telegram.ui.Components.vt0(context, null);
         this.c = vt0Var2;
@@ -259,14 +259,14 @@ public final class h90 extends org.telegram.ui.ActionBar.f2 {
         c90Var.setPadding(org.telegram.messenger.g0.L(22.0f), 0, org.telegram.messenger.g0.L(22.0f), 0);
         this.F.setGravity(16);
         this.F.setTextSize(1, 16.0f);
-        this.F.setHint(org.telegram.messenger.hd.M0(2131743621, null));
+        this.F.setHint(org.telegram.messenger.id.M0(2131743623, null));
         this.F.setKeyListener(DigitsKeyListener.getInstance("0123456789."));
         this.F.setInputType(2);
         this.F.addTextChangedListener(new d90(this, 0));
         b90Var.addView(this.F, c8.ha.o(-1, 50));
         org.telegram.ui.Cells.z8 z8Var2 = new org.telegram.ui.Cells.z8(12, context, this.resourceProvider);
         this.G = z8Var2;
-        z8Var2.setText(org.telegram.messenger.hd.M0(2131743622, null));
+        z8Var2.setText(org.telegram.messenger.id.M0(2131743624, null));
         b90Var.addView(this.G);
         org.telegram.messenger.qp messagesController = getMessagesController();
         long j3 = this.b;
@@ -277,16 +277,16 @@ public final class h90 extends org.telegram.ui.ActionBar.f2 {
         int i12 = org.telegram.ui.ActionBar.k6.d6;
         org.telegram.ui.ActionBar.r6.i(i12, e90Var, null);
         this.f.setTag(Integer.valueOf(i12));
-        this.f.f(org.telegram.messenger.hd.M0(2131754207, null), false, false);
+        this.f.f(org.telegram.messenger.id.M0(2131754207, null), false, false);
         this.f.setOnClickListener(new di.a2(6, this, z9));
         b90Var.addView(this.f, c8.ha.o(-1, 56));
         org.telegram.ui.Cells.z8 z8Var3 = new org.telegram.ui.Cells.z8(12, context, this.resourceProvider);
         this.h = z8Var3;
         if (z9) {
             this.f.setCheckBoxIcon(R.drawable.permission_locked);
-            this.h.setText(org.telegram.messenger.hd.M0(2131754181, null));
+            this.h.setText(org.telegram.messenger.id.M0(2131754181, null));
         } else {
-            z8Var3.setText(org.telegram.messenger.hd.M0(2131754202, null));
+            z8Var3.setText(org.telegram.messenger.id.M0(2131754202, null));
         }
         b90Var.addView(this.h);
         if (M0 == null || M0.username == null) {
@@ -296,7 +296,7 @@ public final class h90 extends org.telegram.ui.ActionBar.f2 {
                 this.n = r8Var;
                 org.telegram.ui.ActionBar.r6.i(i12, r8Var, null);
                 this.n.setDrawCheckRipple(true);
-                this.n.f(org.telegram.messenger.hd.M0(2131746160, null), false, true);
+                this.n.f(org.telegram.messenger.id.M0(2131746162, null), false, true);
                 if (this.e != null) {
                     this.n.setCheckBoxIcon(R.drawable.permission_locked);
                     this.n.setEnabled(false);
@@ -307,7 +307,7 @@ public final class h90 extends org.telegram.ui.ActionBar.f2 {
                 this.s = textView2;
                 textView2.setTextSize(1, 16.0f);
                 org.telegram.ui.ActionBar.r6.V(this.s, org.telegram.ui.ActionBar.k6.A6, null);
-                f90 f90Var = new f90(this, context, org.telegram.messenger.hd.M0(getConnectionsManager().isTestBackend() ? 2131746154 : 2131746155, null), this.resourceProvider);
+                f90 f90Var = new f90(this, context, org.telegram.messenger.id.M0(getConnectionsManager().isTestBackend() ? 2131746156 : 2131746157, null), this.resourceProvider);
                 this.r = f90Var;
                 f90Var.d.setInputType(2);
                 this.r.d.setRawInputType(2);
@@ -339,9 +339,9 @@ public final class h90 extends org.telegram.ui.ActionBar.f2 {
                 org.telegram.ui.Cells.z8 z8Var4 = new org.telegram.ui.Cells.z8(12, context, this.resourceProvider);
                 this.w = z8Var4;
                 if (this.e != null) {
-                    z8Var4.setText(org.telegram.messenger.hd.M0(2131746158, null));
+                    z8Var4.setText(org.telegram.messenger.id.M0(2131746160, null));
                 } else {
-                    z8Var4.setText(org.telegram.messenger.g0.d4(org.telegram.messenger.hd.M0(2131746159, null), new a90(this, 0)));
+                    z8Var4.setText(org.telegram.messenger.g0.d4(org.telegram.messenger.id.M0(2131746161, null), new a90(this, 0)));
                 }
                 b90Var.addView(this.w, c8.ha.o(-1, -2));
             }
@@ -352,7 +352,7 @@ public final class h90 extends org.telegram.ui.ActionBar.f2 {
         this.K.setCursorVisible(false);
         this.K.setFilters(new InputFilter[]{new InputFilter.LengthFilter(32)});
         this.K.setGravity(16);
-        this.K.setHint(org.telegram.messenger.hd.M0(2131748895, null));
+        this.K.setHint(org.telegram.messenger.id.M0(2131748897, null));
         c90 c90Var3 = this.K;
         int i13 = org.telegram.ui.ActionBar.k6.y6;
         org.telegram.ui.ActionBar.r6.E(c90Var3, i13, null);
@@ -366,13 +366,13 @@ public final class h90 extends org.telegram.ui.ActionBar.f2 {
         b90Var.addView(this.K, c8.ha.o(-1, 50));
         org.telegram.ui.Cells.z8 z8Var5 = new org.telegram.ui.Cells.z8(12, context, this.resourceProvider);
         this.L = z8Var5;
-        z8Var5.setText(org.telegram.messenger.hd.M0(2131748896, null));
+        z8Var5.setText(org.telegram.messenger.id.M0(2131748898, null));
         b90Var.addView(this.L);
         if (i7 == 1) {
             org.telegram.ui.Cells.w9 w9Var = new org.telegram.ui.Cells.w9(context);
             this.I = w9Var;
             org.telegram.ui.ActionBar.r6.i(i12, w9Var, null);
-            this.I.b(org.telegram.messenger.hd.M0(2131746024, null), false);
+            this.I.b(org.telegram.messenger.id.M0(2131746026, null), false);
             org.telegram.ui.ActionBar.r6.V(this.I.getTextView(), org.telegram.ui.ActionBar.k6.p7, null);
             this.I.setOnClickListener(new g40(this, 5));
             b90Var.addView(this.I);
@@ -442,7 +442,7 @@ public final class h90 extends org.telegram.ui.ActionBar.f2 {
             }
             org.telegram.ui.Cells.z8 z8Var = this.h;
             if (z8Var != null) {
-                z8Var.setText(org.telegram.messenger.hd.M0(2131754201, null));
+                z8Var.setText(org.telegram.messenger.id.M0(2131754201, null));
             }
         }
         f90 f90Var = this.r;

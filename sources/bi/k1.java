@@ -10,7 +10,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.av;
+import org.telegram.ui.Components.bv;
 import org.telegram.ui.Components.ck0;
 import org.telegram.ui.Components.dl0;
 import org.telegram.ui.Components.g40;
@@ -21,13 +21,13 @@ import org.telegram.ui.Components.sp0;
 import org.telegram.ui.Components.to;
 import org.telegram.ui.Components.uo;
 import org.telegram.ui.Components.vo;
-import org.telegram.ui.Components.vz;
+import org.telegram.ui.Components.wz;
 import org.telegram.ui.Components.xs0;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ll;
 import org.telegram.ui.pn;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k1 implements Runnable {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class k1 implements Runnable {
             case 1:
                 k7 k7Var = (k7) obj;
                 k7Var.getClass();
-                k7Var.p2(k7Var.b3, org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, z9 ? 2131750423 : 2131750420, k7Var.z1())), true);
+                k7Var.p2(k7Var.b3, org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, z9 ? 2131750425 : 2131750422, k7Var.z1())), true);
                 break;
             case 2:
                 k7 k7Var2 = ((f5) obj).V;
@@ -96,7 +96,7 @@ public final /* synthetic */ class k1 implements Runnable {
                 ei.n nVar = (ei.n) obj;
                 sp0 sp0Var = nVar.W;
                 if (z9) {
-                    new ei.q(sp0Var.a, org.telegram.messenger.hd.M0(2131746692, null), new ai.i(sp0Var, 15)).show();
+                    new ei.q(sp0Var.a, org.telegram.messenger.id.M0(2131746694, null), new ai.i(sp0Var, 15)).show();
                     break;
                 } else {
                     sp0Var.b(nVar.a.E);
@@ -199,7 +199,7 @@ public final /* synthetic */ class k1 implements Runnable {
                 r0Var.q0 = true;
                 break;
             case 19:
-                vf.c.t((Context) obj, org.telegram.messenger.hd.M0(z9 ? 2131753038 : 2131748391, null));
+                vf.c.t((Context) obj, org.telegram.messenger.id.M0(z9 ? 2131753038 : 2131748393, null));
                 break;
             case 20:
                 ow0 ow0Var = ((ll) obj).b.r1;
@@ -242,15 +242,15 @@ public final /* synthetic */ class k1 implements Runnable {
                 }
                 break;
             case 23:
-                av avVar = (av) obj;
+                bv bvVar = (bv) obj;
                 if (!z9) {
-                    avVar.E.setVisibility(8);
+                    bvVar.E.setVisibility(8);
                     break;
                 }
                 break;
             case 24:
-                vz vzVar = (vz) obj;
-                vzVar.e1(vzVar.q2, z9);
+                wz wzVar = (wz) obj;
+                wzVar.e1(wzVar.q2, z9);
                 break;
             case 25:
                 r20 r20Var = (r20) obj;
@@ -272,7 +272,7 @@ public final /* synthetic */ class k1 implements Runnable {
                     o40Var.h0 = z9 ? o40Var.j0 : 0L;
                     o40Var.g0 = System.currentTimeMillis();
                     o40Var.i0 = true;
-                    o40Var.v();
+                    o40Var.w();
                     o40Var.invalidate();
                     qs.f(o40Var.e).k(qs.l2, Integer.valueOf(o40Var.U), Boolean.FALSE);
                     break;

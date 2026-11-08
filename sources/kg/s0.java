@@ -7,7 +7,7 @@ import c8.ha;
 import fi.h9;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.p2;
 import org.telegram.messenger.qs;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class s0 extends f2 implements ls {
     public b5 a;
@@ -49,21 +49,21 @@ public final class s0 extends f2 implements ls {
             if (i7 >= iArr2.length) {
                 return;
             }
-            this.e[i7] = hd.G(iArr2[i7], "DaysSchedule", new Object[0]);
+            this.e[i7] = id.G(iArr2[i7], "DaysSchedule", new Object[0]);
             i7++;
         }
     }
 
     public static void Z(s0 s0Var, ArrayList arrayList, l41 l41Var) {
-        String M0 = hd.M0(2131752775, null);
-        String M02 = hd.M0(2131752773, null);
+        String M0 = id.M0(2131752775, null);
+        String M02 = id.M0(2131752773, null);
         x31 x31Var = new x31(2);
         x31Var.l = M0;
         x31Var.o = M02;
         x31Var.m = "RestrictedEmoji";
         x31Var.n = "👋";
         arrayList.add(x31Var);
-        x31 i7 = x31.i(1, hd.M0(2131752769, null));
+        x31 i7 = x31.i(1, id.M0(2131752769, null));
         i7.L(s0Var.r);
         arrayList.add(i7);
         arrayList.add(x31.C(null));
@@ -74,22 +74,22 @@ public final class s0 extends f2 implements ls {
                 x31Var2.G = d;
                 arrayList.add(x31Var2);
             } else {
-                x31 c10 = x31.c(2, R.drawable.msg2_chats_add, hd.M0(2131752774, null));
+                x31 c10 = x31.c(2, R.drawable.msg2_chats_add, id.M0(2131752774, null));
                 c10.q = true;
                 arrayList.add(c10);
             }
             arrayList.add(x31.C(null));
-            arrayList.add(x31.u(hd.M0(2131752688, null)));
-            x31 x10 = x31.x(3, hd.M0(2131752781, null));
+            arrayList.add(x31.u(id.M0(2131752688, null)));
+            x31 x10 = x31.x(3, id.M0(2131752781, null));
             x10.L(s0Var.s);
             arrayList.add(x10);
-            x31 x11 = x31.x(4, hd.M0(2131752776, null));
+            x31 x11 = x31.x(4, id.M0(2131752776, null));
             x11.L(!s0Var.s);
             arrayList.add(x11);
             arrayList.add(x31.C(null));
             s0Var.c.a(arrayList, l41Var, true);
-            arrayList.add(x31.C(hd.M0(2131752770, null)));
-            arrayList.add(x31.u(hd.M0(2131752772, null)));
+            arrayList.add(x31.C(id.M0(2131752770, null)));
+            arrayList.add(x31.u(id.M0(2131752772, null)));
             int i10 = 0;
             while (true) {
                 int[] iArr = s0Var.d;
@@ -110,7 +110,7 @@ public final class s0 extends f2 implements ls {
             x31Var3.C = cVar;
             x31Var3.B = -1L;
             arrayList.add(x31Var3);
-            arrayList.add(x31.C(hd.M0(2131752771, null)));
+            arrayList.add(x31.C(id.M0(2131752771, null)));
         }
     }
 
@@ -183,9 +183,9 @@ public final class s0 extends f2 implements ls {
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(hd.M0(2131752775, null));
+        this.simpleActionBar.setTitle(id.M0(2131752775, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 14));
-        this.a = this.simpleActionBar.n(hd.M0(2131745947, null));
+        this.a = this.simpleActionBar.n(id.M0(2131745949, null));
         a0(false);
         FrameLayout frameLayout = new FrameLayout(context);
         a0 a0Var = new a0(this, new h9(this, 26));
@@ -270,12 +270,12 @@ public final class s0 extends f2 implements ls {
                 return false;
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-            String M0 = hd.M0(2131743836, null);
+            String M0 = id.M0(2131743838, null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.R = M0;
-            u1Var.T = hd.M0(2131752768, null);
-            alertDialog$Builder.k(hd.M0(2131754216, null), new r0(this, i7));
-            alertDialog$Builder.h(hd.M0(2131747579, null), new r0(this, 1));
+            u1Var.T = id.M0(2131752768, null);
+            alertDialog$Builder.k(id.M0(2131754216, null), new r0(this, i7));
+            alertDialog$Builder.h(id.M0(2131747581, null), new r0(this, 1));
             showDialog(u1Var);
         }
         return false;

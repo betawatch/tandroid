@@ -19,7 +19,7 @@ import android.view.ViewConfiguration;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ui0 extends View implements org.telegram.ui.ActionBar.a6 {
     public float D;
@@ -57,7 +57,7 @@ public final class ui0 extends View implements org.telegram.ui.ActionBar.a6 {
     public final boolean g0;
     public float h;
     public int h0;
-    public final dt i0;
+    public final et i0;
     public int j0;
     public float k0;
     public boolean l0;
@@ -89,12 +89,12 @@ public final class ui0 extends View implements org.telegram.ui.ActionBar.a6 {
         this.K = new Path();
         this.L = new float[8];
         this.W = new int[2];
-        this.i0 = new dt(this, 11);
+        this.i0 = new et(this, 11);
         this.o0 = 1.0f;
         this.R = i7;
         if (i7 == 0) {
             textPaint.setTextSize(org.telegram.messenger.g0.L(45.0f));
-            this.g0 = org.telegram.messenger.hd.a0;
+            this.g0 = org.telegram.messenger.id.a0;
         } else {
             this.g0 = false;
             textPaint.setTextSize(org.telegram.messenger.g0.L(13.0f));
@@ -184,13 +184,13 @@ public final class ui0 extends View implements org.telegram.ui.ActionBar.a6 {
                             if (split != null && split2 != null && split.length == 2 && split2.length == 2 && split[1].equals(split2[1])) {
                                 String charSequence = this.w.getText().toString();
                                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
-                                spannableStringBuilder.setSpan(new hy(false), split2[0].length(), charSequence.length(), 0);
+                                spannableStringBuilder.setSpan(new iy(false), split2[0].length(), charSequence.length(), 0);
                                 this.w = new StaticLayout(spannableStringBuilder, textPaint, ((int) textPaint.measureText(charSequence)) + 1, alignment, 1.0f, 0.0f, false);
                                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(F);
-                                spannableStringBuilder2.setSpan(new hy(false), split[0].length(), F.length(), 0);
+                                spannableStringBuilder2.setSpan(new iy(false), split[0].length(), F.length(), 0);
                                 this.x = new StaticLayout(spannableStringBuilder2, textPaint, measureText, alignment, 1.0f, 0.0f, false);
                                 SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(F);
-                                spannableStringBuilder3.setSpan(new hy(false), 0, split[0].length(), 0);
+                                spannableStringBuilder3.setSpan(new iy(false), 0, split[0].length(), 0);
                                 this.y = new StaticLayout(spannableStringBuilder3, textPaint, measureText, alignment, 1.0f, 0.0f, false);
                             } else {
                                 this.x = this.r;
@@ -226,9 +226,9 @@ public final class ui0 extends View implements org.telegram.ui.ActionBar.a6 {
             this.U = true;
             invalidate();
         }
-        dt dtVar = this.i0;
-        org.telegram.messenger.g0.r(dtVar);
-        org.telegram.messenger.g0.i3(dtVar, 2000L);
+        et etVar = this.i0;
+        org.telegram.messenger.g0.r(etVar);
+        org.telegram.messenger.g0.i3(etVar, 2000L);
     }
 
     public final void d() {

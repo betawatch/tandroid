@@ -10,7 +10,7 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.hu0;
-import org.telegram.ui.Components.jz;
+import org.telegram.ui.Components.kz;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
@@ -22,7 +22,7 @@ import org.telegram.ui.an;
 import org.telegram.ui.qj;
 import org.telegram.ui.r80;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class oc extends org.telegram.ui.Components.na implements ls {
     public final nc P1;
@@ -54,10 +54,10 @@ public final class oc extends org.telegram.ui.Components.na implements ls {
         w0(org.telegram.ui.ActionBar.k6.i5);
         nc ncVar = new nc(0, context, f6Var);
         this.P1 = ncVar;
-        ((TextView) ncVar.c).setText(org.telegram.messenger.hd.M0(2131749606, null));
+        ((TextView) ncVar.c).setText(org.telegram.messenger.id.M0(2131749608, null));
         w70 w70Var = (w70) ncVar.d;
         final int i11 = 1;
-        w70Var.setText(TextUtils.concat(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131749608, t10.k(user))), " ", org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131749607, null).replace(' ', (char) 160), new Runnable(this) { // from class: bi.lc
+        w70Var.setText(TextUtils.concat(org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749610, t10.k(user))), " ", org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(2131749609, null).replace(' ', (char) 160), new Runnable(this) { // from class: bi.lc
             public final /* synthetic */ oc b;
 
             {
@@ -78,7 +78,7 @@ public final class oc extends org.telegram.ui.Components.na implements ls {
                         hu0Var.show();
                         break;
                     default:
-                        vf.c.t(ocVar.getContext(), org.telegram.messenger.hd.M0(2131744967, null));
+                        vf.c.t(ocVar.getContext(), org.telegram.messenger.id.M0(2131744969, null));
                         break;
                 }
             }
@@ -95,7 +95,7 @@ public final class oc extends org.telegram.ui.Components.na implements ls {
         w70Var2.setTextSize(1, 12.0f);
         org.telegram.ui.ActionBar.r6.V(w70Var2, org.telegram.ui.ActionBar.k6.B6, f6Var);
         org.telegram.ui.ActionBar.r6.H(w70Var2, org.telegram.ui.ActionBar.k6.Uc, f6Var);
-        w70Var2.setText(org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131744968, null), new Runnable(this) { // from class: bi.lc
+        w70Var2.setText(org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(2131744970, null), new Runnable(this) { // from class: bi.lc
             public final /* synthetic */ oc b;
 
             {
@@ -116,7 +116,7 @@ public final class oc extends org.telegram.ui.Components.na implements ls {
                         hu0Var.show();
                         break;
                     default:
-                        vf.c.t(ocVar.getContext(), org.telegram.messenger.hd.M0(2131744967, null));
+                        vf.c.t(ocVar.getContext(), org.telegram.messenger.id.M0(2131744969, null));
                         break;
                 }
             }
@@ -125,7 +125,7 @@ public final class oc extends org.telegram.ui.Components.na implements ls {
         w70Var2.setMaxWidth(fi.m3.a(w70Var2.getText(), w70Var2.getPaint()));
         frameLayout.addView(w70Var2, c8.ha.e(-2, -1, 17));
         org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.h5, frameLayout, f6Var);
-        this.b.addView(new jz(getContext()), c8.ha.c(-1.0f, -1));
+        this.b.addView(new kz(getContext()), c8.ha.c(-1.0f, -1));
         l41 l41Var = this.T1;
         if (l41Var != null) {
             l41Var.O(false);
@@ -149,10 +149,10 @@ public final class oc extends org.telegram.ui.Components.na implements ls {
         int i7 = 1;
         if (!bool.booleanValue()) {
             if (str != null) {
-                org.telegram.ui.Components.hc.a0(T).Q(R.raw.error, 36, org.telegram.messenger.hd.a0(null, null, 2131743879, str)).j();
+                org.telegram.ui.Components.hc.a0(T).Q(R.raw.error, 36, org.telegram.messenger.id.a0(null, null, 2131743881, str)).j();
             }
         } else {
-            org.telegram.ui.Components.cc L = org.telegram.ui.Components.hc.a0(T).L(R.raw.stars_send, org.telegram.messenger.hd.M0(2131745101, null), org.telegram.messenger.g0.X2(org.telegram.messenger.hd.G((int) x31Var.B, "StarsGiftSentPopupInfo", t10.k(ocVar.R1))), org.telegram.messenger.hd.M0(2131743553, null), new k4(j3, i7));
+            org.telegram.ui.Components.cc L = org.telegram.ui.Components.hc.a0(T).L(R.raw.stars_send, org.telegram.messenger.id.M0(2131745103, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.G((int) x31Var.B, "StarsGiftSentPopupInfo", t10.k(ocVar.R1))), org.telegram.messenger.id.M0(2131743555, null), new k4(j3, i7));
             L.j = 5000;
             L.k(true);
             if (r80Var != null) {

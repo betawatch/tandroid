@@ -18,11 +18,11 @@ import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Cells.t2;
-import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class m1 extends oj0 implements ls {
     public k6 D;
@@ -178,10 +178,10 @@ public final class m1 extends oj0 implements ls {
             f6 f6Var = this.s;
             Context context = this.c;
             if (i7 == 1) {
-                lz lzVar = new lz(context, f6Var);
-                lzVar.setIsSingleCell(true);
-                lzVar.setViewType(7);
-                view = lzVar;
+                mz mzVar = new mz(context, f6Var);
+                mzVar.setIsSingleCell(true);
+                mzVar.setViewType(7);
+                view = mzVar;
             } else if (i7 != 2) {
                 t2Var = null;
             } else {

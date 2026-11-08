@@ -22,8 +22,8 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.c20;
 import org.telegram.ui.Components.el0;
 import org.telegram.ui.Components.kb0;
-import org.telegram.ui.Components.q00;
 import org.telegram.ui.Components.r00;
+import org.telegram.ui.Components.s00;
 import org.telegram.ui.UsersSelectActivity;
 import org.telegram.ui.dv;
 import org.telegram.ui.ec0;
@@ -31,7 +31,7 @@ import org.telegram.ui.go;
 import org.telegram.ui.hz;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class i extends EditTextBoldCursor {
     public final /* synthetic */ int G1;
@@ -44,7 +44,7 @@ public final class i extends EditTextBoldCursor {
         this.H1 = obj;
     }
 
-    @Override // org.telegram.ui.Components.ct, android.view.View
+    @Override // org.telegram.ui.Components.dt, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.G1) {
             case 8:
@@ -54,7 +54,7 @@ public final class i extends EditTextBoldCursor {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ct, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.dt, android.widget.TextView, android.view.View
     public void onDraw(Canvas canvas) {
         switch (this.G1) {
             case 11:
@@ -153,19 +153,19 @@ public final class i extends EditTextBoldCursor {
             default:
                 return super.onKeyDown(i7, keyEvent);
             case 6:
-                r00 r00Var = (r00) this.H1;
-                if (i7 != 67 || r00Var.r.length() != 0 || !r00Var.d()) {
+                s00 s00Var = (s00) this.H1;
+                if (i7 != 67 || s00Var.r.length() != 0 || !s00Var.d()) {
                     return super.onKeyDown(i7, keyEvent);
                 }
-                if (!r00Var.d()) {
+                if (!s00Var.d()) {
                     return true;
                 }
-                o0 o0Var2 = (o0) jg.g.i(1, r00Var.F);
-                q00 q00Var = r00Var.H;
-                if (q00Var != null) {
-                    ((dv) q00Var).h(o0Var2);
+                o0 o0Var2 = (o0) jg.g.i(1, s00Var.F);
+                r00 r00Var = s00Var.H;
+                if (r00Var != null) {
+                    ((dv) r00Var).h(o0Var2);
                 }
-                r00Var.f(o0Var2);
+                s00Var.f(o0Var2);
                 return true;
         }
     }

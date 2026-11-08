@@ -10,7 +10,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class iq implements Runnable {
     public final /* synthetic */ boolean[] D;
@@ -161,8 +161,8 @@ public final /* synthetic */ class iq implements Runnable {
                         org.telegram.messenger.p0 p0Var = org.telegram.messenger.qp.s1(i11).x7;
                         boolean q10 = org.telegram.messenger.p10.i(i11).q();
                         hc hcVar = new hc(v2Var2.E, f6Var2);
-                        String M0 = org.telegram.messenger.hd.M0(2131751736, null);
-                        SpannableStringBuilder O2 = org.telegram.messenger.g0.O2(q10 ? org.telegram.messenger.hd.a0(null, null, 2131751739, Integer.valueOf(((org.telegram.messenger.j0) p0Var.M.b).c)) : org.telegram.messenger.hd.a0(null, null, 2131751738, Integer.valueOf(((org.telegram.messenger.j0) p0Var.M.b).c), Integer.valueOf(((org.telegram.messenger.j0) p0Var.L.b).c)), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.uj, f6Var2), new gp(v2Var2, 2));
+                        String M0 = org.telegram.messenger.id.M0(2131751736, null);
+                        SpannableStringBuilder O2 = org.telegram.messenger.g0.O2(q10 ? org.telegram.messenger.id.a0(null, null, 2131751739, Integer.valueOf(((org.telegram.messenger.j0) p0Var.M.b).c)) : org.telegram.messenger.id.a0(null, null, 2131751738, Integer.valueOf(((org.telegram.messenger.j0) p0Var.M.b).c), Integer.valueOf(((org.telegram.messenger.j0) p0Var.L.b).c)), org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.uj, f6Var2), new gp(v2Var2, 2));
                         fq fqVar = new fq(0, v2Var2, context);
                         int t6 = org.telegram.messenger.g0.t(O2, "@BotFather");
                         if (t6 >= 0) {
@@ -174,7 +174,7 @@ public final /* synthetic */ class iq implements Runnable {
                     } else {
                         String str3 = tL_error.text;
                         if (str3 != null && str3.startsWith("FLOOD_WAIT_")) {
-                            new hc(v2Var2.E, f6Var2).I(R.raw.error, org.telegram.messenger.hd.M0(2131751736, null), org.telegram.messenger.hd.a0(null, null, 2131751737, org.telegram.messenger.hd.z(Integer.parseInt(tL_error.text.substring(11))))).j();
+                            new hc(v2Var2.E, f6Var2).I(R.raw.error, org.telegram.messenger.id.M0(2131751736, null), org.telegram.messenger.id.a0(null, null, 2131751737, org.telegram.messenger.id.z(Integer.parseInt(tL_error.text.substring(11))))).j();
                         } else if ("MANAGER_PERMISSION_MISSING".equalsIgnoreCase(tL_error.text)) {
                             TLRPC.User user3 = user;
                             if (TextUtils.isEmpty(org.telegram.messenger.t10.n(user3))) {
@@ -182,7 +182,7 @@ public final /* synthetic */ class iq implements Runnable {
                             } else {
                                 p10 = "@" + org.telegram.messenger.t10.n(user3);
                             }
-                            new hc(v2Var2.E, f6Var2).Q(R.raw.error, 36, org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.uj, f6Var2), org.telegram.messenger.hd.a0(null, null, 2131751731, p10))).j();
+                            new hc(v2Var2.E, f6Var2).Q(R.raw.error, 36, org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.uj, f6Var2), org.telegram.messenger.id.a0(null, null, 2131751731, p10))).j();
                         } else {
                             org.telegram.ui.Cells.f1.r(v2Var2.E, f6Var2, tL_error, false);
                         }

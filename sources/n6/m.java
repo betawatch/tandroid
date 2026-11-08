@@ -2,7 +2,7 @@ package n6;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class m extends l {
     public final byte[] c;
@@ -13,7 +13,7 @@ public final class m extends l {
     }
 
     @Override // n6.l
-    public final byte[] M0() {
+    public final byte[] m1() {
         return this.c;
     }
 }

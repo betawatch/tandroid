@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class vr extends l41 {
     public final int P;
@@ -45,7 +45,7 @@ public class vr extends l41 {
         this.Q = i10;
         this.R = z9;
         this.S = new ur(i7, new rr(this, 1));
-        this.Y = org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131754177, null), new bi.b(this, f6Var, context)), true);
+        this.Y = org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(2131754177, null), new bi.b(this, f6Var, context)), true);
         O(false);
         org.telegram.messenger.ui.b0(i7).M0(true);
     }
@@ -57,7 +57,7 @@ public class vr extends l41 {
             if (!this.i0) {
                 if (pj0Var != null) {
                     for (int i7 = 0; i7 < pj0Var.getChildCount(); i7++) {
-                        if (!(pj0Var.getChildAt(i7) instanceof lz)) {
+                        if (!(pj0Var.getChildAt(i7) instanceof mz)) {
                         }
                     }
                 }
@@ -71,7 +71,7 @@ public class vr extends l41 {
                 if (i10 >= pj0Var.getChildCount()) {
                     break;
                 }
-                if (!(pj0Var.getChildAt(i10) instanceof lz)) {
+                if (!(pj0Var.getChildAt(i10) instanceof mz)) {
                     i10++;
                 } else if (this.d0 && !this.b0 && !TextUtils.isEmpty(this.g0)) {
                     X(true);

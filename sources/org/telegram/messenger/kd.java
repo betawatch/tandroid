@@ -1,56 +1,52 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class kd implements Runnable {
+public final /* synthetic */ class kd implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ sd b;
-    public final /* synthetic */ rd c;
 
-    public /* synthetic */ kd(sd sdVar, rd rdVar, int i7) {
+    public /* synthetic */ kd(sd sdVar, int i7) {
         this.a = i7;
         this.b = sdVar;
-        this.c = rdVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
                 sd sdVar = this.b;
-                ArrayList arrayList = sdVar.I;
-                rd rdVar = this.c;
-                arrayList.remove(rdVar);
-                sdVar.J.l(rdVar.a);
-                if (arrayList.isEmpty()) {
-                    sd.s();
+                if (tL_error == null) {
+                    sdVar.getMessagesController().O3((TLRPC.Updates) tLObject, false);
+                    break;
+                } else {
+                    sdVar.getClass();
+                    break;
                 }
-                qs.e().k(qs.D4, new Object[0]);
-                break;
             case 1:
                 sd sdVar2 = this.b;
-                ArrayList arrayList2 = sdVar2.I;
-                rd rdVar2 = this.c;
-                arrayList2.remove(rdVar2);
-                sdVar2.J.l(rdVar2.a);
-                if (arrayList2.isEmpty()) {
-                    sd.s();
+                if (tL_error == null) {
+                    sdVar2.getMessagesController().O3((TLRPC.Updates) tLObject, false);
+                    break;
+                } else {
+                    sdVar2.getClass();
+                    break;
                 }
-                qs.e().k(qs.D4, new Object[0]);
-                break;
             default:
+                boolean z9 = tLObject instanceof TLRPC.TL_messages_affectedMessages;
                 sd sdVar3 = this.b;
-                ArrayList arrayList3 = sdVar3.I;
-                rd rdVar3 = this.c;
-                arrayList3.remove(rdVar3);
-                sdVar3.J.l(rdVar3.a);
-                if (arrayList3.isEmpty()) {
-                    sd.s();
+                if (!z9) {
+                    sdVar3.getClass();
+                    break;
+                } else {
+                    TLRPC.TL_messages_affectedMessages tL_messages_affectedMessages = (TLRPC.TL_messages_affectedMessages) tLObject;
+                    sdVar3.getMessagesController().M3(tL_messages_affectedMessages.pts, -1, tL_messages_affectedMessages.pts_count);
+                    break;
                 }
-                qs.e().k(qs.D4, new Object[0]);
-                break;
         }
     }
 }

@@ -19,7 +19,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.k21;
 import org.telegram.ui.b80;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class lm implements Runnable {
     public final /* synthetic */ int a;
@@ -58,14 +58,14 @@ public final /* synthetic */ class lm implements Runnable {
             }
         } else if (tL_error == null || !"TO_LANG_INVALID".equals(tL_error.text)) {
             if (tL_error != null && "QUOTA_EXCEEDED".equals(tL_error.text)) {
-                qs.e().k(qs.P4, 1, hd.M0(2131743948, null));
+                qs.e().k(qs.P4, 1, id.M0(2131743950, null));
             }
             for (int i10 = 0; i10 < arrayList2.size(); i10++) {
                 ((x10) arrayList2.get(i10)).a((Integer) arrayList.get(i10), null, a10Var.d);
             }
         } else {
             f10Var.K(j3, false);
-            qs.e().k(qs.P4, 1, hd.M0(2131743947, null));
+            qs.e().k(qs.P4, 1, id.M0(2131743949, null));
         }
         synchronized (f10Var) {
             for (int i11 = 0; i11 < arrayList.size(); i11++) {
@@ -188,7 +188,7 @@ public final /* synthetic */ class lm implements Runnable {
                         uri = uri2;
                         if (i7 == 0) {
                             final int i13 = 0;
-                            g0.h3(new Runnable() { // from class: org.telegram.messenger.py
+                            g0.h3(new Runnable() { // from class: org.telegram.messenger.oy
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     switch (i13) {
@@ -200,7 +200,7 @@ public final /* synthetic */ class lm implements Runnable {
                                             break;
                                         default:
                                             b80 b80Var2 = b80Var;
-                                            Toast.makeText(t0.b, hd.M0(2131749249, null), 0).show();
+                                            Toast.makeText(t0.b, id.M0(2131749251, null), 0).show();
                                             b80Var2.run(0L);
                                             break;
                                     }
@@ -342,7 +342,7 @@ public final /* synthetic */ class lm implements Runnable {
                                         if (length > 33554432) {
                                             file3.delete();
                                             final int i14 = 2;
-                                            g0.h3(new Runnable() { // from class: org.telegram.messenger.py
+                                            g0.h3(new Runnable() { // from class: org.telegram.messenger.oy
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
                                                     switch (i14) {
@@ -354,7 +354,7 @@ public final /* synthetic */ class lm implements Runnable {
                                                             break;
                                                         default:
                                                             b80 b80Var2 = b80Var;
-                                                            Toast.makeText(t0.b, hd.M0(2131749249, null), 0).show();
+                                                            Toast.makeText(t0.b, id.M0(2131749251, null), 0).show();
                                                             b80Var2.run(0L);
                                                             break;
                                                     }
@@ -370,7 +370,7 @@ public final /* synthetic */ class lm implements Runnable {
                             }
                             if (i7 == 0) {
                                 final int i15 = 1;
-                                g0.h3(new Runnable() { // from class: org.telegram.messenger.py
+                                g0.h3(new Runnable() { // from class: org.telegram.messenger.oy
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i15) {
@@ -382,7 +382,7 @@ public final /* synthetic */ class lm implements Runnable {
                                                 break;
                                             default:
                                                 b80 b80Var2 = b80Var;
-                                                Toast.makeText(t0.b, hd.M0(2131749249, null), 0).show();
+                                                Toast.makeText(t0.b, id.M0(2131749251, null), 0).show();
                                                 b80Var2.run(0L);
                                                 break;
                                         }
@@ -505,14 +505,14 @@ public final /* synthetic */ class lm implements Runnable {
                     }
                 } else if (tL_error == null || !"TO_LANG_INVALID".equals(tL_error.text)) {
                     if (tL_error != null && "QUOTA_EXCEEDED".equals(tL_error.text)) {
-                        qs.e().k(qs.P4, 1, hd.M0(2131743948, null));
+                        qs.e().k(qs.P4, 1, id.M0(2131743950, null));
                     }
                     for (int i21 = 0; i21 < arrayList2.size(); i21++) {
                         ((x10) arrayList2.get(i21)).a((Integer) arrayList.get(i21), null, z00Var.e);
                     }
                 } else {
                     f10Var.K(j14, false);
-                    qs.e().k(qs.P4, 1, hd.M0(2131743947, null));
+                    qs.e().k(qs.P4, 1, id.M0(2131743949, null));
                 }
                 synchronized (f10Var) {
                     for (int i22 = 0; i22 < arrayList.size(); i22++) {

@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.hc;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class w0 implements RequestDelegate {
                                         a1Var2.finishFragment();
                                         break;
                                     } else {
-                                        k5.p(null, 2131743880, hc.a0(a1Var2), null);
+                                        k5.p(null, 2131743882, hc.a0(a1Var2), null);
                                         break;
                                     }
                                 } else {
@@ -52,7 +52,7 @@ public final /* synthetic */ class w0 implements RequestDelegate {
                                         break;
                                     } else {
                                         a1Var2.b.b(false);
-                                        k5.p(null, 2131743880, hc.a0(a1Var2), null);
+                                        k5.p(null, 2131743882, hc.a0(a1Var2), null);
                                         break;
                                     }
                                 } else {
@@ -82,7 +82,7 @@ public final /* synthetic */ class w0 implements RequestDelegate {
                                         a1Var22.finishFragment();
                                         break;
                                     } else {
-                                        k5.p(null, 2131743880, hc.a0(a1Var22), null);
+                                        k5.p(null, 2131743882, hc.a0(a1Var22), null);
                                         break;
                                     }
                                 } else {
@@ -96,7 +96,7 @@ public final /* synthetic */ class w0 implements RequestDelegate {
                                         break;
                                     } else {
                                         a1Var22.b.b(false);
-                                        k5.p(null, 2131743880, hc.a0(a1Var22), null);
+                                        k5.p(null, 2131743882, hc.a0(a1Var22), null);
                                         break;
                                     }
                                 } else {

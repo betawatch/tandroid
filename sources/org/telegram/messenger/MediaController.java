@@ -67,7 +67,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.hy0;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class MediaController implements AudioManager.OnAudioFocusChangeListener, ls, SensorEventListener {
     public static final String[] V1;
@@ -907,7 +907,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                     if (i7 != 0) {
                         try {
                             org.telegram.ui.ActionBar.u1 u1Var2 = new org.telegram.ui.ActionBar.u1(2, context, null);
-                            u1Var2.n(hd.M0(2131748778, null));
+                            u1Var2.n(id.M0(2131748780, null));
                             u1Var2.setCanceledOnTouchOutside(false);
                             u1Var2.setCancelable(true);
                             u1Var2.setOnCancelListener(new ce(zArr, i10));
@@ -950,7 +950,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         boolean[] zArr2 = new boolean[1];
         try {
             org.telegram.ui.ActionBar.u1 u1Var2 = new org.telegram.ui.ActionBar.u1(2, context, null);
-            u1Var2.n(hd.M0(2131748778, null));
+            u1Var2.n(id.M0(2131748780, null));
             u1Var2.setCanceledOnTouchOutside(false);
             u1Var2.setCancelable(true);
             u1Var2.setOnCancelListener(new ce(zArr, i7));
@@ -960,7 +960,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
             a8.g(e10, true);
             u1Var = null;
         }
-        new Thread(new zj(file, file2, zArr, c20Var, u1Var, zArr2)).start();
+        new Thread(new yj(file, file2, zArr, c20Var, u1Var, zArr2)).start();
     }
 
     public static void f(MediaController mediaController, ij ijVar, int[] iArr, boolean z9, boolean z10, int i7) {
@@ -1097,7 +1097,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         qs.f(i7).b(cfVar, qs.Z1);
         org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(2, context, PhotoViewer.p1().P1() ? new di.b() : null);
         cfVar.b = u1Var;
-        u1Var.n(hd.M0(2131748778, null));
+        u1Var.n(id.M0(2131748780, null));
         u1Var.setCancelable(true);
         u1Var.H = true;
         u1Var.setOnCancelListener(new ce(cfVar, 3));
@@ -4439,7 +4439,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         S(ijVar2);
         if (z9) {
             if (z10) {
-                g0.i3(new y4(21, this, ijVar2), 100L);
+                g0.i3(new x4(21, this, ijVar2), 100L);
             } else {
                 R(ijVar2, true);
             }

@@ -17,7 +17,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t0 implements v10 {
     public final /* synthetic */ int a;
@@ -135,7 +135,7 @@ public final /* synthetic */ class t0 implements v10 {
                                 sVar.dismiss();
                                 T = LaunchActivity.T();
                                 if (T == null) {
-                                    org.telegram.ui.Components.hc.a0(T).p(aiComposeTone.emoji_id, org.telegram.messenger.hd.M0(2131754958, null), org.telegram.messenger.hd.a0(null, null, 2131754959, aiComposeTone.title)).j();
+                                    org.telegram.ui.Components.hc.a0(T).p(aiComposeTone.emoji_id, org.telegram.messenger.id.M0(2131754958, null), org.telegram.messenger.id.a0(null, null, 2131754959, aiComposeTone.title)).j();
                                     break;
                                 }
                             }
@@ -179,7 +179,7 @@ public final /* synthetic */ class t0 implements v10 {
                     break;
                 }
             case 7:
-                zh.v vVar = (zh.v) obj5;
+                zh.u uVar = (zh.u) obj5;
                 fi.m3[] m3VarArr2 = (fi.m3[]) obj4;
                 FrameLayout frameLayout3 = (FrameLayout) obj3;
                 View view2 = (View) obj;
@@ -203,7 +203,7 @@ public final /* synthetic */ class t0 implements v10 {
                         }
                     }
                 }
-                fi.m3 m3Var4 = new fi.m3(vVar.getContext(), 3);
+                fi.m3 m3Var4 = new fi.m3(uVar.getContext(), 3);
                 m3VarArr2[0] = m3Var4;
                 m3Var4.r(true);
                 m3Var4.n(11.0f, 8.0f, 11.0f, 7.0f);
@@ -218,15 +218,15 @@ public final /* synthetic */ class t0 implements v10 {
                 m3Var4.w();
                 break;
             default:
-                zh.l3 l3Var = (zh.l3) obj5;
+                zh.k3 k3Var = (zh.k3) obj5;
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj3;
                 ((vf.b) obj4).b();
                 if (((Boolean) obj).booleanValue()) {
-                    n2 n2Var = l3Var.X1;
+                    n2 n2Var = k3Var.X1;
                     if (n2Var != null) {
                         n2Var.a(tL_starGiftUnique);
                     }
-                    l3Var.dismiss();
+                    k3Var.dismiss();
                     break;
                 }
                 break;

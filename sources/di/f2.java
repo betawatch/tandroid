@@ -14,8 +14,8 @@ import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.ii0;
 import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.kz;
 import org.telegram.ui.Components.l51;
+import org.telegram.ui.Components.lz;
 import org.telegram.ui.Components.xa;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
@@ -23,7 +23,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.k41;
 import org.telegram.ui.l41;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f2 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -180,8 +180,8 @@ public final /* synthetic */ class f2 implements View.OnLongClickListener {
                 k41 k41Var = (k41) obj2;
                 ng.f fVar = (ng.f) obj;
                 l41 l41Var = k41Var.d;
-                kz kzVar = k41Var.a;
-                if (kzVar.c) {
+                lz lzVar = k41Var.a;
+                if (lzVar.c) {
                     l41Var.f();
                     ArrayList arrayList = l41Var.n;
                     lg.g gVar = l41Var.c;
@@ -193,7 +193,7 @@ public final /* synthetic */ class f2 implements View.OnLongClickListener {
                             ((ng.f) gVar.d.get(i12)).n = false;
                         }
                     }
-                    kzVar.setChecked(true);
+                    lzVar.setChecked(true);
                     fVar.n = true;
                     l41Var.b.z();
                     if (l41Var.r.c > 0) {

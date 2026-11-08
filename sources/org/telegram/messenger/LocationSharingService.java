@@ -14,7 +14,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class LocationSharingService extends Service implements ls {
     public static final /* synthetic */ int d = 0;
@@ -65,18 +65,18 @@ public class LocationSharingService extends Service implements ls {
                     intent.addCategory("android.intent.category.LAUNCHER");
                     PendingIntent activity = PendingIntent.getActivity(context, 0, intent, 167772160);
                     Intent intent2 = new Intent(context, (Class<?>) StopLiveLocationReceiver.class);
-                    String M0 = hd.M0(2131748838, null);
+                    String M0 = id.M0(2131748840, null);
                     dt.i();
                     e0.q qVar = new e0.q(context, dt.j0);
                     qVar.F.icon = R.drawable.live_loc;
-                    qVar.g(hd.M0(2131748837, null));
+                    qVar.g(id.M0(2131748839, null));
                     qVar.f(M0);
                     e0.l lVar = new e0.l(z9);
                     lVar.f = e0.q.d(M0);
                     qVar.n(lVar);
                     qVar.g = activity;
                     qVar.h(16, true);
-                    qVar.a(0, PendingIntent.getBroadcast(context, 2, intent2, 167772160), hd.M0(2131744839, null));
+                    qVar.a(0, PendingIntent.getBroadcast(context, 2, intent2, 167772160), id.M0(2131744841, null));
                     if (!z11) {
                         qVar.B = j3;
                     }
@@ -101,17 +101,17 @@ public class LocationSharingService extends Service implements ls {
             int i7 = rdVar.h.I1;
             if (m5.E(B0)) {
                 G = t10.j(qp.s1(i7).a2(Long.valueOf(B0)), true);
-                M0 = hd.M0(2131753965, null);
+                M0 = id.M0(2131753965, null);
             } else {
                 TLRPC.Chat M02 = qp.s1(i7).M0(Long.valueOf(-B0));
                 G = M02 != null ? M02.title : "";
-                M0 = hd.M0(2131753964, null);
+                M0 = id.M0(2131753964, null);
             }
         } else {
-            G = hd.G(a10.size(), "Chats", new Object[0]);
-            M0 = hd.M0(2131753963, null);
+            G = id.G(a10.size(), "Chats", new Object[0]);
+            M0 = id.M0(2131753963, null);
         }
-        String format = String.format(M0, hd.M0(2131753966, null), G);
+        String format = String.format(M0, id.M0(2131753966, null), G);
         this.a.p(format);
         this.a.f(format);
         if (z9) {
@@ -176,9 +176,9 @@ public class LocationSharingService extends Service implements ls {
                 dt.i();
                 e0.q qVar3 = this.a;
                 qVar3.y = dt.j0;
-                qVar3.g(hd.M0(R.string.AppName, null));
+                qVar3.g(id.M0(R.string.AppName, null));
                 Intent intent3 = new Intent(t0.b, (Class<?>) StopLiveLocationReceiver.class);
-                this.a.a(0, PendingIntent.getBroadcast(t0.b, 2, intent3, 167772160), hd.M0(2131744839, null));
+                this.a.a(0, PendingIntent.getBroadcast(t0.b, 2, intent3, 167772160), id.M0(2131744841, null));
             }
             c(false);
             Notification b10 = this.a.b();

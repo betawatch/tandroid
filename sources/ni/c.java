@@ -18,11 +18,12 @@ import java.util.concurrent.atomic.AtomicReference;
 import l2.z0;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.bp;
-import org.telegram.messenger.ed;
 import org.telegram.messenger.ez;
+import org.telegram.messenger.fd;
+import org.telegram.messenger.g0;
 import org.telegram.messenger.g5;
 import org.telegram.messenger.gz;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.im;
 import org.telegram.messenger.m5;
@@ -49,7 +50,6 @@ import org.telegram.ui.Cells.i9;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Cells.u;
 import org.telegram.ui.Components.cj0;
-import org.telegram.ui.Components.g0;
 import org.telegram.ui.Components.qa0;
 import org.telegram.ui.Components.qh0;
 import org.telegram.ui.Components.qi0;
@@ -69,8 +69,8 @@ import org.telegram.ui.j1;
 import org.telegram.ui.jb;
 import org.telegram.ui.k3;
 import org.telegram.ui.kp;
-import org.telegram.ui.la1;
 import org.telegram.ui.lm;
+import org.telegram.ui.ma1;
 import org.telegram.ui.mb;
 import org.telegram.ui.n3;
 import org.telegram.ui.oh;
@@ -83,15 +83,15 @@ import org.telegram.ui.si;
 import org.telegram.ui.so;
 import org.telegram.ui.u3;
 import org.telegram.ui.u4;
-import org.telegram.ui.v91;
 import org.telegram.ui.w5;
+import org.telegram.ui.w91;
 import org.telegram.ui.ww;
 import org.telegram.ui.x5;
 import org.telegram.ui.ym;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c implements p, u, cj0, r1, qw, u4, t4, bp, oc, qi0, qh0, qr, ResultCallback, tr, la1 {
+public final /* synthetic */ class c implements p, u, cj0, r1, qw, u4, t4, bp, oc, qi0, qh0, qr, ResultCallback, tr, ma1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -145,21 +145,9 @@ public final /* synthetic */ class c implements p, u, cj0, r1, qw, u4, t4, bp, o
         return false;
     }
 
-    @Override // org.telegram.ui.Components.qh0
-    public void b(long j3, TLRPC.MessagePeerReaction messagePeerReaction) {
-        oh ohVar = (oh) this.b;
-        ij ijVar = (ij) this.c;
-        an anVar = ohVar.p;
-        Bundle bundle = new Bundle();
-        if (j3 > 0) {
-            bundle.putLong("user_id", j3);
-        } else {
-            bundle.putLong("chat_id", -j3);
-        }
-        bundle.putInt("report_reaction_message_id", ijVar.f1());
-        bundle.putLong("report_reaction_from_dialog_id", anVar.j6);
-        anVar.presentFragment(new ProfileActivity(bundle, null));
-        anVar.O7(true);
+    @Override // ni.p
+    public void b(j2.n nVar) {
+        g0.h3(new z0((SpannableString) this.b, nVar, (ya) this.c, 12));
     }
 
     @Override // org.telegram.ui.u4
@@ -183,6 +171,23 @@ public final /* synthetic */ class c implements p, u, cj0, r1, qw, u4, t4, bp, o
                 f2Var.presentFragment(new an(bundle));
             }
         }
+    }
+
+    @Override // org.telegram.ui.Components.qh0
+    public void d(long j3, TLRPC.MessagePeerReaction messagePeerReaction) {
+        oh ohVar = (oh) this.b;
+        ij ijVar = (ij) this.c;
+        an anVar = ohVar.p;
+        Bundle bundle = new Bundle();
+        if (j3 > 0) {
+            bundle.putLong("user_id", j3);
+        } else {
+            bundle.putLong("chat_id", -j3);
+        }
+        bundle.putInt("report_reaction_message_id", ijVar.f1());
+        bundle.putLong("report_reaction_from_dialog_id", anVar.j6);
+        anVar.presentFragment(new ProfileActivity(bundle, null));
+        anVar.O7(true);
     }
 
     @Override // org.telegram.ui.Components.qi0
@@ -305,7 +310,7 @@ public final /* synthetic */ class c implements p, u, cj0, r1, qw, u4, t4, bp, o
                 goVar.getConnectionsManager().sendRequest(tL_channels_updateUsername, new qn(goVar, 0), 64);
                 break;
             case 22:
-                g0 g0Var = (g0) this.b;
+                org.telegram.ui.Components.g0 g0Var = (org.telegram.ui.Components.g0) this.b;
                 TL_aicompose.TL_aiComposeTone tL_aiComposeTone = (TL_aicompose.TL_aiComposeTone) this.c;
                 vf.b h = u1Var.h(-1, true, true);
                 h.d();
@@ -319,9 +324,9 @@ public final /* synthetic */ class c implements p, u, cj0, r1, qw, u4, t4, bp, o
             case 24:
                 TLRPC.TL_langPackLanguage tL_langPackLanguage = (TLRPC.TL_langPackLanguage) this.b;
                 LaunchActivity launchActivity = (LaunchActivity) this.c;
-                ed G0 = hd.E0().G0(tL_langPackLanguage.official ? "remote_" + tL_langPackLanguage.lang_code : "unofficial_" + tL_langPackLanguage.lang_code);
+                fd G0 = id.E0().G0(tL_langPackLanguage.official ? "remote_" + tL_langPackLanguage.lang_code : "unofficial_" + tL_langPackLanguage.lang_code);
                 if (G0 == null) {
-                    G0 = new ed();
+                    G0 = new fd();
                     G0.a = tL_langPackLanguage.native_name;
                     G0.b = tL_langPackLanguage.name;
                     G0.c = tL_langPackLanguage.lang_code;
@@ -334,7 +339,7 @@ public final /* synthetic */ class c implements p, u, cj0, r1, qw, u4, t4, bp, o
                         G0.d = "unofficial";
                     }
                 }
-                hd.E0().c(G0, true, false, false, true, p10.s0, null);
+                id.E0().c(G0, true, false, false, true, p10.s0, null);
                 launchActivity.y0(true);
                 break;
             case 25:
@@ -391,12 +396,7 @@ public final /* synthetic */ class c implements p, u, cj0, r1, qw, u4, t4, bp, o
         }
     }
 
-    @Override // ni.p
-    public void i(j2.n nVar) {
-        org.telegram.messenger.g0.h3(new z0((SpannableString) this.b, nVar, (ya) this.c, 12));
-    }
-
-    @Override // org.telegram.ui.la1
+    @Override // org.telegram.ui.ma1
     public void j(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         ((kp) this.b).u0(tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.c);
     }
@@ -512,7 +512,7 @@ public final /* synthetic */ class c implements p, u, cj0, r1, qw, u4, t4, bp, o
     }
 
     @Override // org.telegram.ui.qw
-    public boolean y(ww wwVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, v91 v91Var) {
+    public boolean y(ww wwVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, w91 w91Var) {
         x5 x5Var = (x5) this.b;
         ww wwVar2 = (ww) this.c;
         ArrayList arrayList2 = x5Var.c;
@@ -562,7 +562,7 @@ public final /* synthetic */ class c implements p, u, cj0, r1, qw, u4, t4, bp, o
                 }
             }
             x5Var.b.v0(i11);
-            org.telegram.messenger.g0.i3(new org.telegram.ui.ActionBar.p(11, x5Var, s2Var), 150L);
+            g0.i3(new org.telegram.ui.ActionBar.p(11, x5Var, s2Var), 150L);
         }
         return true;
     }

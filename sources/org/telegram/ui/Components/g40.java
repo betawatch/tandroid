@@ -38,7 +38,7 @@ import org.telegram.tgnet.TLObject;
 import org.webrtc.EglBase;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class g40 implements Runnable {
     public org.telegram.messenger.q5 B0;
@@ -262,16 +262,16 @@ public final class g40 implements Runnable {
             g40Var.x0 = new p30(g40Var.d, g40Var.e);
             o40 o40Var2 = g40Var.H0;
             Size size = o40Var2.m0[0];
-            String str = (org.telegram.messenger.iz.o() != 0 && o40.l() && (size == null || ((float) Math.max(size.getHeight(), size.getWidth())) * 0.7f >= ((float) org.telegram.messenger.qp.s1(o40Var2.e).v3))) ? "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nuniform vec2 resolution;\nuniform vec2 preview;\nuniform float alpha;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   vec2 c_textureSize = preview;\n   vec2 c_onePixel = (1.0 / c_textureSize);\n   vec2 uv = vTextureCoord;\n   vec2 pixel = uv * c_textureSize + 0.5;\n   vec2 frac = fract(pixel);\n   pixel = (floor(pixel) / c_textureSize) - vec2(c_onePixel);\n   vec4 tl = texture2D(sTexture, pixel + vec2(0.0         , 0.0));\n   vec4 tr = texture2D(sTexture, pixel + vec2(c_onePixel.x, 0.0));\n   vec4 bl = texture2D(sTexture, pixel + vec2(0.0         , c_onePixel.y));\n   vec4 br = texture2D(sTexture, pixel + vec2(c_onePixel.x, c_onePixel.y));\n   vec4 x1 = mix(tl, tr, frac.x);\n   vec4 x2 = mix(bl, br, frac.x);\n   gl_FragColor = mix(x1, x2, frac.y) * alpha;\n}\n" : "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nuniform float alpha;\nuniform vec2 preview;\nuniform vec2 resolution;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   vec4 textColor = texture2D(sTexture, vTextureCoord);\n   gl_FragColor = vec4(textColor.rgb * alpha, alpha);\n}\n";
-            int k10 = o40.k(g40Var.H0, 35633, "uniform mat4 uMVPMatrix;\nuniform mat4 uSTMatrix;\nattribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n   gl_Position = uMVPMatrix * aPosition;\n   vTextureCoord = (uSTMatrix * aTextureCoord).xy;\n}\n");
-            int k11 = o40.k(g40Var.H0, 35632, str);
-            if (k10 == 0 || k11 == 0) {
+            String str = (org.telegram.messenger.iz.o() != 0 && o40.m() && (size == null || ((float) Math.max(size.getHeight(), size.getWidth())) * 0.7f >= ((float) org.telegram.messenger.qp.s1(o40Var2.e).v3))) ? "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nuniform vec2 resolution;\nuniform vec2 preview;\nuniform float alpha;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   vec2 c_textureSize = preview;\n   vec2 c_onePixel = (1.0 / c_textureSize);\n   vec2 uv = vTextureCoord;\n   vec2 pixel = uv * c_textureSize + 0.5;\n   vec2 frac = fract(pixel);\n   pixel = (floor(pixel) / c_textureSize) - vec2(c_onePixel);\n   vec4 tl = texture2D(sTexture, pixel + vec2(0.0         , 0.0));\n   vec4 tr = texture2D(sTexture, pixel + vec2(c_onePixel.x, 0.0));\n   vec4 bl = texture2D(sTexture, pixel + vec2(0.0         , c_onePixel.y));\n   vec4 br = texture2D(sTexture, pixel + vec2(c_onePixel.x, c_onePixel.y));\n   vec4 x1 = mix(tl, tr, frac.x);\n   vec4 x2 = mix(bl, br, frac.x);\n   gl_FragColor = mix(x1, x2, frac.y) * alpha;\n}\n" : "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nuniform float alpha;\nuniform vec2 preview;\nuniform vec2 resolution;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   vec4 textColor = texture2D(sTexture, vTextureCoord);\n   gl_FragColor = vec4(textColor.rgb * alpha, alpha);\n}\n";
+            int l10 = o40.l(g40Var.H0, 35633, "uniform mat4 uMVPMatrix;\nuniform mat4 uSTMatrix;\nattribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n   gl_Position = uMVPMatrix * aPosition;\n   vTextureCoord = (uSTMatrix * aTextureCoord).xy;\n}\n");
+            int l11 = o40.l(g40Var.H0, 35632, str);
+            if (l10 == 0 || l11 == 0) {
                 return;
             }
             int glCreateProgram = GLES20.glCreateProgram();
             g40Var.m0 = glCreateProgram;
-            GLES20.glAttachShader(glCreateProgram, k10);
-            GLES20.glAttachShader(g40Var.m0, k11);
+            GLES20.glAttachShader(glCreateProgram, l10);
+            GLES20.glAttachShader(g40Var.m0, l11);
             GLES20.glLinkProgram(g40Var.m0);
             int[] iArr2 = new int[1];
             GLES20.glGetProgramiv(g40Var.m0, 35714, iArr2, 0);
@@ -693,12 +693,12 @@ public final class g40 implements Runnable {
         t51 t51Var = new t51();
         o40 o40Var = this.H0;
         o40Var.S = t51Var;
-        t51Var.J = new uy(this, 1);
+        t51Var.J = new vy(this, 1);
         t51Var.A0(o40Var.p0);
         o40Var.S.j0(Uri.fromFile(file), "other");
         o40Var.S.h0();
         o40Var.S.t0(true);
-        o40Var.s();
+        o40Var.t();
         AnimatorSet animatorSet = new AnimatorSet();
         LinearLayout linearLayout = o40Var.a1;
         Property property = View.ALPHA;
@@ -728,7 +728,7 @@ public final class g40 implements Runnable {
 
     public final void i(int i7, d40 d40Var) {
         this.T.sendMessage(this.T.obtainMessage(1, i7, 0, d40Var));
-        org.telegram.messenger.g0.h3(new l10(2));
+        org.telegram.messenger.g0.h3(new vs(4));
     }
 
     @Override // java.lang.Runnable

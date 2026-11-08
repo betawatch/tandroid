@@ -83,7 +83,7 @@ import li.t3;
 import li.y3;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.t0;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
@@ -100,7 +100,7 @@ import q4.q;
 import s4.y;
 import s4.z;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class b implements h, h0, ce.c, OnCompleteListener, com.google.android.gms.internal.clearcut.h, k0, n, r3 {
     public static volatile b d;
@@ -947,9 +947,9 @@ public class b implements h, h0, ce.c, OnCompleteListener, com.google.android.gm
     public void i0(int i7) {
         try {
             l8.e eVar = (l8.e) this.b;
-            Parcel P0 = eVar.P0();
-            P0.writeInt(i7);
-            eVar.T0(P0, 16);
+            Parcel p12 = eVar.p1();
+            p12.writeInt(i7);
+            eVar.t1(p12, 16);
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
         }
@@ -983,7 +983,7 @@ public class b implements h, h0, ce.c, OnCompleteListener, com.google.android.gm
             if (p12.E == null || p12.e0 == null || !p12.P1()) {
                 return;
             }
-            new hc(p12.e0, new di.b()).Q(R.raw.forward, 36, !TextUtils.isEmpty(str) ? hd.a0(null, null, 2131752102, str) : hd.M0(2131752103, null)).j();
+            new hc(p12.e0, new di.b()).Q(R.raw.forward, 36, !TextUtils.isEmpty(str) ? id.a0(null, null, 2131752102, str) : id.M0(2131752103, null)).j();
         }
     }
 
@@ -1296,7 +1296,7 @@ public class b implements h, h0, ce.c, OnCompleteListener, com.google.android.gm
                 break;
             default:
                 g6.a c10 = g6.a.c(t0.b);
-                v0.j jVar = new v0.j(12);
+                v0.j jVar = new v0.j(13);
                 c10.getClass();
                 q6.m.d("Must be called from the main thread.");
                 g6.g gVar = c10.c;
@@ -1305,9 +1305,9 @@ public class b implements h, h0, ce.c, OnCompleteListener, com.google.android.gm
                 try {
                     g6.y yVar = gVar.a;
                     g6.j jVar2 = new g6.j(jVar);
-                    Parcel P0 = yVar.P0();
-                    t.d(P0, jVar2);
-                    yVar.T0(P0, 4);
+                    Parcel p12 = yVar.p1();
+                    t.d(p12, jVar2);
+                    yVar.t1(p12, 4);
                 } catch (RemoteException e10) {
                     g6.g.c.a(e10, "Unable to call %s on %s.", "addCastStateListener", g6.y.class.getSimpleName());
                 }

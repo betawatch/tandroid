@@ -9,7 +9,7 @@ import android.widget.EditText;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class br extends ViewGroup {
     public static final /* synthetic */ int x = 0;
@@ -78,7 +78,7 @@ public final class br extends ViewGroup {
                 }
                 i11++;
             } else {
-                zq zqVar = new zq(this, context, new uy(context, new hi.z3(this, ViewConfiguration.get(context).getScaledTouchSlop(), i10)));
+                zq zqVar = new zq(this, context, new vy(context, new hi.z3(this, ViewConfiguration.get(context).getScaledTouchSlop(), i10)));
                 this.a = zqVar;
                 zqVar.setImageResource(R.drawable.msg_clear_input);
                 org.telegram.ui.ActionBar.r6.t(zqVar, org.telegram.ui.ActionBar.k6.G6, null, PorterDuff.Mode.SRC_ATOP);

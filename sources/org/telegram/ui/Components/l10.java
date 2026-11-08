@@ -1,155 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.content.SharedPreferences;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.CallReceiver;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.PremiumPreviewFragment;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l10 implements Runnable {
+public final class l10 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
+    public final /* synthetic */ p10 b;
 
-    public /* synthetic */ l10(int i7) {
+    public /* synthetic */ l10(p10 p10Var, int i7) {
         this.a = i7;
+        this.b = p10Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        hc a02;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                if (VoIPService.getSharedInstance() != null && VoIPService.getSharedInstance().isMicMute()) {
-                    VoIPService.getSharedInstance().setMicMute(false, true, false);
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                p10 p10Var = this.b;
+                p10Var.s.x = (int) floatValue;
+                p10Var.i();
+                n10 n10Var = p10Var.a;
+                if (n10Var.getParent() != null) {
+                    p10Var.n.updateViewLayout(n10Var, p10Var.s);
                     break;
                 }
-                break;
-            case 1:
-                org.telegram.messenger.qs.e().k(98, 512);
-                break;
-            case 2:
-                org.telegram.messenger.qs.e().k(99, 512);
-                break;
-            case 3:
-                org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
-                if (Q != null) {
-                    org.telegram.ui.ActionBar.d2 d2Var = new org.telegram.ui.ActionBar.d2();
-                    d2Var.a = true;
-                    Q.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), d2Var);
-                    break;
-                }
-                break;
-            case 4:
-                int i7 = ny0.f;
-                break;
-            case 5:
-                SharedPreferences.Editor edit = org.telegram.messenger.qp.e1().edit();
-                dz0.f = Boolean.TRUE;
-                edit.putBoolean("nothanos", true).apply();
-                break;
-            case 6:
-                SharedPreferences.Editor edit2 = org.telegram.messenger.qp.e1().edit();
-                dz0.f = Boolean.TRUE;
-                edit2.putBoolean("nothanos", true).apply();
-                break;
-            case 7:
-                int i10 = m11.l0;
-                break;
-            case 8:
-                org.telegram.messenger.vv.h();
-                break;
-            case 9:
-                org.telegram.ui.Components.voip.e0.m();
-                break;
-            case 10:
-                org.telegram.ui.Components.voip.g1.o();
-                break;
-            case 11:
-                org.telegram.messenger.qs.e().k(org.telegram.messenger.qs.F2, new Object[0]);
-                break;
-            case 12:
-                org.telegram.ui.Components.voip.e2.b();
-                break;
-            case 13:
-                org.telegram.ui.Components.voip.f2.d();
-                break;
-            case 14:
-                di.w5.I0();
-                break;
-            case 15:
-                org.telegram.ui.c40 c40Var = org.telegram.ui.c40.u5;
-                if (c40Var != null) {
-                    c40Var.show();
-                    break;
-                }
-                break;
-            case 16:
-                if (VoIPService.getSharedInstance() != null) {
-                    VoIPService.getSharedInstance().setMicMute(false, true, false);
-                    break;
-                }
-                break;
-            case 17:
-                String str = LaunchActivity.B1;
-                break;
-            case 18:
-                String str2 = LaunchActivity.B1;
-                break;
-            case 19:
-                String str3 = LaunchActivity.B1;
-                org.telegram.messenger.t0.E = false;
-                org.telegram.messenger.t0.G = System.currentTimeMillis();
-                break;
-            case 20:
-                break;
-            case 21:
-                CallReceiver.a();
-                break;
-            case 22:
-                CallReceiver.a();
-                break;
-            case 23:
-                hc.X().N(org.telegram.messenger.hd.M0(2131745862, null), org.telegram.messenger.hd.M0(2131751106, null)).j();
-                break;
-            case 24:
-                hc.X().N(org.telegram.messenger.hd.M0(2131745862, null), org.telegram.messenger.hd.M0(2131751106, null)).j();
-                break;
-            case 25:
-                Drawable[] drawableArr = PhotoViewer.Y8;
-                break;
-            case 26:
-                org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
-                if (T != null && (a02 = hc.a0(T)) != null) {
-                    cc I = a02.I(R.raw.msg_antispam, org.telegram.messenger.hd.M0(2131746223, null), org.telegram.messenger.hd.M0(2131746186, null));
-                    I.j = 5000;
-                    I.j();
-                    break;
-                }
-                break;
-            case 27:
-                int i11 = org.telegram.ui.t31.V1;
-                break;
-            case 28:
-                org.telegram.ui.ActionBar.k6.N = false;
-                org.telegram.ui.ActionBar.k6.F(false);
                 break;
             default:
-                if (VoIPService.getSharedState() != null) {
-                    VoIPService.getSharedState().acceptIncomingCall();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                p10 p10Var2 = this.b;
+                p10Var2.s.y = (int) floatValue2;
+                n10 n10Var2 = p10Var2.a;
+                if (n10Var2.getParent() != null) {
+                    p10Var2.n.updateViewLayout(n10Var2, p10Var2.s);
                     break;
                 }
                 break;
         }
-    }
-
-    public /* synthetic */ l10(Object obj, int i7) {
-        this.a = i7;
-    }
-
-    private final void a() {
     }
 }

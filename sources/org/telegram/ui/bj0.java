@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class bj0 implements r9, org.telegram.ui.Components.bi {
     public final /* synthetic */ bk0 a;
@@ -47,10 +47,10 @@ public final class bj0 implements r9, org.telegram.ui.Components.bi {
         if (i7 != 0) {
             if (i7 == 1) {
                 bk0Var.x = "male";
-                bk0Var.Y[4].setText(org.telegram.messenger.hd.M0(2131747507, null));
+                bk0Var.Y[4].setText(org.telegram.messenger.id.M0(2131747509, null));
             } else if (i7 == 2) {
                 bk0Var.x = "female";
-                bk0Var.Y[4].setText(org.telegram.messenger.hd.M0(2131747568, null));
+                bk0Var.Y[4].setText(org.telegram.messenger.id.M0(2131747570, null));
             }
         }
         if (!TextUtils.isEmpty(zrVar.m)) {

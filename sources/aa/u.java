@@ -9,9 +9,9 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.vy;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class u {
     public final Context a;
@@ -26,10 +26,10 @@ public final class u {
     public final w9.a j;
     public final j k;
     public final x9.a l;
-    public final uy m;
+    public final vy m;
     public final ba.e n;
 
-    public u(o9.g gVar, b0 b0Var, x9.a aVar, x xVar, w9.a aVar2, w9.a aVar3, ga.d dVar, j jVar, uy uyVar, ba.e eVar) {
+    public u(o9.g gVar, b0 b0Var, x9.a aVar, x xVar, w9.a aVar2, w9.a aVar3, ga.d dVar, j jVar, vy vyVar, ba.e eVar) {
         this.b = xVar;
         gVar.a();
         this.a = gVar.a;
@@ -39,7 +39,7 @@ public final class u {
         this.j = aVar3;
         this.h = dVar;
         this.k = jVar;
-        this.m = uyVar;
+        this.m = vyVar;
         this.n = eVar;
         System.currentTimeMillis();
         this.c = new q4.q(4);

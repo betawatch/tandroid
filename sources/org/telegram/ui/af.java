@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class af implements Runnable {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class af implements Runnable {
                 if (anVar.getUserConfig().q()) {
                     anVar.mc = null;
                     anVar.vd(true);
-                    org.telegram.ui.Components.hc.a0(anVar).c(org.telegram.messenger.hd.M0(2131754488, null)).j();
+                    org.telegram.ui.Components.hc.a0(anVar).c(org.telegram.messenger.id.M0(2131754488, null)).j();
                     anVar.getMessagesController().o0(true);
                     break;
                 } else {
@@ -150,7 +150,7 @@ public final /* synthetic */ class af implements Runnable {
                 org.telegram.ui.Components.hc.z(anVar, 4, 0, anVar.xa).j();
                 break;
             case 17:
-                org.telegram.ui.Components.hc.a0(anVar).I(R.raw.chats_infotip, org.telegram.messenger.hd.M0(2131753290, null), org.telegram.messenger.hd.M0(2131753291, null)).j();
+                org.telegram.ui.Components.hc.a0(anVar).I(R.raw.chats_infotip, org.telegram.messenger.id.M0(2131753290, null), org.telegram.messenger.id.M0(2131753291, null)).j();
                 break;
             case 18:
                 anVar.finishFragment();

@@ -28,8 +28,8 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.gl;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.fl;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qp;
@@ -56,7 +56,7 @@ import org.telegram.ui.Components.x31;
 import org.telegram.ui.m6;
 import org.telegram.ui.zq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class o1 extends n41 implements ls {
     public i2 e;
@@ -123,24 +123,24 @@ public final class o1 extends n41 implements ls {
     public final void Z(ArrayList arrayList, l41 l41Var) {
         boolean M2 = getMessagesController().M2();
         arrayList.size();
-        String M0 = hd.M0(2131752857, null);
+        String M0 = id.M0(2131752857, null);
         x31 x31Var = new x31(9);
         x31Var.d = 1;
         x31Var.l = M0;
         x31Var.L(M2);
         arrayList.add(x31Var);
-        arrayList.add(x31.C(hd.M0(2131752856, null)));
+        arrayList.add(x31.C(id.M0(2131752856, null)));
         int i7 = 0;
         if (!M2) {
             getMessagesController().O2();
-            x31 i10 = x31.i(17, hd.M0(2131742935, null));
+            x31 i10 = x31.i(17, id.M0(2131742937, null));
             i10.L(getMessagesController().O2());
             arrayList.add(i10);
-            arrayList.add(x31.C(hd.M0(2131742934, null)));
-            arrayList.add(x31.u(hd.M0(2131752865, null)));
+            arrayList.add(x31.C(id.M0(2131742936, null)));
+            arrayList.add(x31.u(id.M0(2131752865, null)));
             arrayList.size();
             i2 i2Var = this.e;
-            String M02 = hd.M0(2131752849, null);
+            String M02 = id.M0(2131752849, null);
             x31 x31Var2 = new x31(3);
             x31Var2.d = 16;
             x31Var2.G = i2Var;
@@ -164,37 +164,37 @@ public final class o1 extends n41 implements ls {
                 K.B = j3;
                 arrayList.add(K);
             }
-            arrayList.add(x31.C(hd.M0(2131752866, null)));
+            arrayList.add(x31.C(id.M0(2131752866, null)));
             if (arrayList2.isEmpty()) {
                 return;
             }
             arrayList.size();
-            x31 e10 = x31.e(5, hd.M0(2131752848, null));
+            x31 e10 = x31.e(5, id.M0(2131752848, null));
             e10.r = true;
             arrayList.add(e10);
             arrayList.add(x31.C(null));
             return;
         }
         arrayList.size();
-        String M03 = hd.M0(2131752862, null);
+        String M03 = id.M0(2131752862, null);
         long j10 = this.n;
         arrayList.add(x31.d(3, R.drawable.menu_clear_cookies, M03, j10 > 0 ? org.telegram.messenger.g0.i0(j10, false, false) : ""));
         arrayList.size();
-        String M04 = hd.M0(2131752864, null);
+        String M04 = id.M0(2131752864, null);
         long j11 = this.h;
         arrayList.add(x31.d(2, R.drawable.menu_clear_cache, M04, j11 > 0 ? org.telegram.messenger.g0.i0(j11, false, false) : ""));
-        arrayList.add(x31.C(hd.M0(2131752860, null)));
+        arrayList.add(x31.C(id.M0(2131752860, null)));
         if (this.r > 0) {
             arrayList.size();
-            arrayList.add(x31.c(9, R.drawable.menu_clear_recent, hd.M0(2131752850, null)));
+            arrayList.add(x31.c(9, R.drawable.menu_clear_recent, id.M0(2131752850, null)));
             arrayList.size();
-            arrayList.add(x31.d(7, R.drawable.menu_clear_cache, hd.M0(2131752855, null), hd.H(',', "BrowserSettingsHistoryPages", (int) this.r)));
+            arrayList.add(x31.d(7, R.drawable.menu_clear_cache, id.M0(2131752855, null), id.H(',', "BrowserSettingsHistoryPages", (int) this.r)));
             arrayList.add(x31.C(null));
         }
-        arrayList.add(x31.u(hd.M0(2131752846, null)));
+        arrayList.add(x31.u(id.M0(2131752846, null)));
         arrayList.size();
         i2 i2Var2 = this.e;
-        String M05 = hd.M0(2131752849, null);
+        String M05 = id.M0(2131752849, null);
         x31 x31Var3 = new x31(3);
         x31Var3.d = 15;
         x31Var3.G = i2Var2;
@@ -219,23 +219,23 @@ public final class o1 extends n41 implements ls {
             K2.B = j12;
             arrayList.add(K2);
         }
-        arrayList.add(x31.C(hd.M0(2131752847, null)));
+        arrayList.add(x31.C(id.M0(2131752847, null)));
         if (!arrayList3.isEmpty()) {
             arrayList.size();
-            x31 e11 = x31.e(5, hd.M0(2131752848, null));
+            x31 e11 = x31.e(5, id.M0(2131752848, null));
             e11.r = true;
             arrayList.add(e11);
             arrayList.add(x31.C(null));
         }
         arrayList.size();
-        arrayList.add(x31.d(6, R.drawable.msg_search, hd.M0(2131745800, null), f1.a().a));
-        arrayList.add(x31.C(hd.M0(2131752842, null)));
+        arrayList.add(x31.d(6, R.drawable.msg_search, id.M0(2131745802, null), f1.a().a));
+        arrayList.add(x31.C(id.M0(2131752842, null)));
         boolean z9 = r2.a;
     }
 
     @Override // org.telegram.ui.Components.n41
     public final CharSequence a0() {
-        return hd.M0(2131752841, null);
+        return id.M0(2131752841, null);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -307,11 +307,11 @@ public final class o1 extends n41 implements ls {
         final int i12 = 2;
         if (i7 == 2) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-            String M0 = hd.M0(2131752864, null);
+            String M0 = id.M0(2131752864, null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.R = M0;
-            u1Var.T = hd.a0(null, null, 2131752863, this.h != 0 ? a8.p0.s(new StringBuilder(" ("), org.telegram.messenger.g0.i0(this.h, false, false), ")") : "");
-            String M02 = hd.M0(2131752101, null);
+            u1Var.T = id.a0(null, null, 2131752863, this.h != 0 ? a8.p0.s(new StringBuilder(" ("), org.telegram.messenger.g0.i0(this.h, false, false), ")") : "");
+            String M02 = id.M0(2131752101, null);
             final Object[] objArr2 = objArr == true ? 1 : 0;
             alertDialog$Builder.k(M02, new org.telegram.ui.ActionBar.r1(this) { // from class: org.telegram.ui.web.l1
                 public final /* synthetic */ o1 b;
@@ -404,13 +404,13 @@ public final class o1 extends n41 implements ls {
                                 messagesController5.y8.inapp_exceptions.clear();
                                 messagesController5.Q4(messagesController5.y8);
                             }
-                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new d3.b(1), new gl(messagesController5, 6));
+                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new d3.b(1), new fl(messagesController5, 6));
                             o1Var4.a.f3.O(true);
                             break;
                     }
                 }
             });
-            alertDialog$Builder.h(hd.M0(2131752589, null), null);
+            alertDialog$Builder.h(id.M0(2131752589, null), null);
             alertDialog$Builder.d(-1);
             alertDialog$Builder.p();
             return;
@@ -418,11 +418,11 @@ public final class o1 extends n41 implements ls {
         final int i13 = 3;
         if (i7 == 3) {
             AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-            String M03 = hd.M0(2131752862, null);
+            String M03 = id.M0(2131752862, null);
             org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder2.a;
             u1Var2.R = M03;
-            u1Var2.T = hd.a0(null, null, 2131752861, this.n != 0 ? a8.p0.s(new StringBuilder(" ("), org.telegram.messenger.g0.i0(this.n, false, false), ")") : "");
-            alertDialog$Builder2.k(hd.M0(2131752101, null), new org.telegram.ui.ActionBar.r1(this) { // from class: org.telegram.ui.web.l1
+            u1Var2.T = id.a0(null, null, 2131752861, this.n != 0 ? a8.p0.s(new StringBuilder(" ("), org.telegram.messenger.g0.i0(this.n, false, false), ")") : "");
+            alertDialog$Builder2.k(id.M0(2131752101, null), new org.telegram.ui.ActionBar.r1(this) { // from class: org.telegram.ui.web.l1
                 public final /* synthetic */ o1 b;
 
                 {
@@ -513,13 +513,13 @@ public final class o1 extends n41 implements ls {
                                 messagesController5.y8.inapp_exceptions.clear();
                                 messagesController5.Q4(messagesController5.y8);
                             }
-                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new d3.b(1), new gl(messagesController5, 6));
+                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new d3.b(1), new fl(messagesController5, 6));
                             o1Var4.a.f3.O(true);
                             break;
                     }
                 }
             });
-            alertDialog$Builder2.h(hd.M0(2131752589, null), null);
+            alertDialog$Builder2.h(id.M0(2131752589, null), null);
             alertDialog$Builder2.d(-1);
             alertDialog$Builder2.p();
             return;
@@ -535,11 +535,11 @@ public final class o1 extends n41 implements ls {
                 j3 = Math.min(j3, ((y0) obj).b);
             }
             AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-            String M04 = hd.M0(2131752855, null);
+            String M04 = id.M0(2131752855, null);
             org.telegram.ui.ActionBar.u1 u1Var3 = alertDialog$Builder3.a;
             u1Var3.R = M04;
-            u1Var3.T = hd.a0(null, null, 2131752854, hd.u(j3 / 1000, false));
-            alertDialog$Builder3.k(hd.M0(2131752101, null), new org.telegram.ui.ActionBar.r1(this) { // from class: org.telegram.ui.web.l1
+            u1Var3.T = id.a0(null, null, 2131752854, id.u(j3 / 1000, false));
+            alertDialog$Builder3.k(id.M0(2131752101, null), new org.telegram.ui.ActionBar.r1(this) { // from class: org.telegram.ui.web.l1
                 public final /* synthetic */ o1 b;
 
                 {
@@ -630,13 +630,13 @@ public final class o1 extends n41 implements ls {
                                 messagesController5.y8.inapp_exceptions.clear();
                                 messagesController5.Q4(messagesController5.y8);
                             }
-                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new d3.b(1), new gl(messagesController5, 6));
+                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new d3.b(1), new fl(messagesController5, 6));
                             o1Var4.a.f3.O(true);
                             break;
                     }
                 }
             });
-            alertDialog$Builder3.h(hd.M0(2131752589, null), null);
+            alertDialog$Builder3.h(id.M0(2131752589, null), null);
             alertDialog$Builder3.d(-1);
             alertDialog$Builder3.p();
             return;
@@ -651,11 +651,11 @@ public final class o1 extends n41 implements ls {
         int i15 = 5;
         if (i7 == 5) {
             AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-            String M05 = hd.M0(2131742938, null);
+            String M05 = id.M0(2131742940, null);
             org.telegram.ui.ActionBar.u1 u1Var4 = alertDialog$Builder4.a;
             u1Var4.R = M05;
-            u1Var4.T = hd.M0(2131742939, null);
-            alertDialog$Builder4.k(hd.M0(2131751599, null), new org.telegram.ui.ActionBar.r1(this) { // from class: org.telegram.ui.web.l1
+            u1Var4.T = id.M0(2131742941, null);
+            alertDialog$Builder4.k(id.M0(2131751599, null), new org.telegram.ui.ActionBar.r1(this) { // from class: org.telegram.ui.web.l1
                 public final /* synthetic */ o1 b;
 
                 {
@@ -746,13 +746,13 @@ public final class o1 extends n41 implements ls {
                                 messagesController5.y8.inapp_exceptions.clear();
                                 messagesController5.Q4(messagesController5.y8);
                             }
-                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new d3.b(1), new gl(messagesController5, 6));
+                            messagesController5.getConnectionsManager().sendRequestTyped(new TL_account.deleteWebBrowserSettingsExceptions(), new d3.b(1), new fl(messagesController5, 6));
                             o1Var4.a.f3.O(true);
                             break;
                     }
                 }
             });
-            alertDialog$Builder4.h(hd.M0(2131752589, null), null);
+            alertDialog$Builder4.h(id.M0(2131752589, null), null);
             alertDialog$Builder4.d(-1);
             alertDialog$Builder4.p();
             return;
@@ -762,7 +762,7 @@ public final class o1 extends n41 implements ls {
             String str = n1Var.e;
             k60 F = k60.F((ViewGroup) this.fragmentView, null, n1Var);
             F.s = 40;
-            F.c(R.drawable.menu_delete_old, hd.M0(2131746320, null), new w(i15, this, str), false);
+            F.c(R.drawable.menu_delete_old, id.M0(2131746322, null), new w(i15, this, str), false);
             F.Z();
             return;
         }
@@ -795,11 +795,11 @@ public final class o1 extends n41 implements ls {
                 r72 = 0;
             }
             AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(getParentActivity());
-            String M06 = hd.M0(2131745800, null);
+            String M06 = id.M0(2131745802, null);
             org.telegram.ui.ActionBar.u1 u1Var5 = alertDialog$Builder5.a;
             u1Var5.R = M06;
             alertDialog$Builder5.o(linearLayout);
-            alertDialog$Builder5.h(hd.M0(2131752589, null), null);
+            alertDialog$Builder5.h(id.M0(2131752589, null), null);
             atomicReference.set(u1Var5);
             showDialog(u1Var5);
             return;
@@ -807,7 +807,7 @@ public final class o1 extends n41 implements ls {
         if (i16 == 15 || i16 == 16) {
             boolean M22 = getMessagesController().M2();
             if (getMessagesController().L2(M22)) {
-                v4.r0(this, hd.M0(2131742936, null), hd.M0(2131742937, null), null);
+                v4.r0(this, id.M0(2131742938, null), id.M0(2131742939, null), null);
                 return;
             }
             Activity parentActivity = getParentActivity();
@@ -818,16 +818,16 @@ public final class o1 extends n41 implements ls {
             View currentFocus = W != null ? W.getCurrentFocus() : null;
             org.telegram.ui.ActionBar.u1[] u1VarArr = new org.telegram.ui.ActionBar.u1[1];
             AlertDialog$Builder alertDialog$Builder6 = new AlertDialog$Builder(0, parentActivity, resourceProvider);
-            String M07 = hd.M0(M22 ? 2131752868 : 2131752867, null);
+            String M07 = id.M0(M22 ? 2131752868 : 2131752867, null);
             org.telegram.ui.ActionBar.u1 u1Var6 = alertDialog$Builder6.a;
             u1Var6.R = M07;
-            u1Var6.T = hd.M0(M22 ? 2131752870 : 2131752869, null);
+            u1Var6.T = id.M0(M22 ? 2131752870 : 2131752869, null);
             u4 u4Var = new u4(parentActivity);
             u4Var.setTextSize(1, 16.0f);
             int i19 = k6.j5;
             r6.V(u4Var, i19, resourceProvider);
             r6.E(u4Var, k6.Li, resourceProvider);
-            u4Var.setHint(hd.M0(2131752871, null));
+            u4Var.setHint(id.M0(2131752871, null));
             u4Var.setInputType(17);
             u4Var.setImeOptions(6);
             u4Var.setSingleLine(true);
@@ -847,8 +847,8 @@ public final class o1 extends n41 implements ls {
             alertDialog$Builder6.c();
             alertDialog$Builder6.o(linearLayout2);
             u1Var6.a = Math.min(org.telegram.messenger.g0.L(320.0f), (org.telegram.messenger.g0.q.x * 85) / 100);
-            alertDialog$Builder6.k(hd.M0(2131751355, null), new org.telegram.ui.Components.u(m6Var, i12));
-            alertDialog$Builder6.h(hd.M0(2131752589, null), new zq(5));
+            alertDialog$Builder6.k(id.M0(2131751355, null), new org.telegram.ui.Components.u(m6Var, i12));
+            alertDialog$Builder6.h(id.M0(2131752589, null), new zq(5));
             u1VarArr[0] = u1Var6;
             u1Var6.j0 = false;
             u1Var6.setOnDismissListener(new org.telegram.ui.Components.p0(u4Var, i10));

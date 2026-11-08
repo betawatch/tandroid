@@ -3,7 +3,7 @@ package com.google.android.gms.common.api.internal;
 import android.os.Parcel;
 import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class h extends a8.q implements i {
     public h() {
@@ -11,13 +11,13 @@ public abstract class h extends a8.q implements i {
     }
 
     @Override // a8.q
-    public final boolean I0(int i7, Parcel parcel, Parcel parcel2) {
+    public final boolean i1(int i7, Parcel parcel, Parcel parcel2) {
         if (i7 != 1) {
             return false;
         }
         Status status = (Status) n7.a.a(parcel, Status.CREATOR);
         n7.a.d(parcel);
-        E(status);
+        N(status);
         return true;
     }
 }

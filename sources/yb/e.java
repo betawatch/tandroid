@@ -35,7 +35,7 @@ import q6.k;
 import q6.m;
 import q6.p;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class e extends pb.e {
     public boolean d = true;
@@ -111,12 +111,13 @@ public final class e extends pb.e {
         Object[] objArr2 = 0;
         Object[] objArr3 = 0;
         Object[] objArr4 = 0;
+        Object[] objArr5 = 0;
         if (taVar.c(a8Var, elapsedRealtime2)) {
             taVar.i.put(a8Var, Long.valueOf(elapsedRealtime2));
             b8 b8Var = new b8();
             b8Var.c = y7.b;
             android.support.v4.media.session.a0 a0Var = new android.support.v4.media.session.a0(4, z9);
-            r7 r7Var = new r7((int) (objArr4 == true ? 1 : 0));
+            r7 r7Var = new r7((int) (objArr5 == true ? 1 : 0), (byte) (objArr4 == true ? 1 : 0));
             r7Var.b = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
             r7Var.c = z7Var;
             r7Var.d = Boolean.valueOf(this.d);

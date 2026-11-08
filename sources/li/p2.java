@@ -34,7 +34,7 @@ import org.telegram.ui.Components.zt0;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.xm0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p2 implements Runnable {
     public final /* synthetic */ int a = 2;
@@ -673,8 +673,8 @@ public final /* synthetic */ class p2 implements Runnable {
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.n0 n0Var = (org.telegram.ui.Wallet.n0) this.d;
-                org.telegram.ui.Wallet.k0 k0Var = (org.telegram.ui.Wallet.k0) this.e;
+                org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) this.d;
+                org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) this.e;
                 TL_wallet.proofChallenge proofchallenge = (TL_wallet.proofChallenge) this.f;
                 v10 v10Var = (v10) this.h;
                 boolean z13 = this.c;
@@ -682,19 +682,19 @@ public final /* synthetic */ class p2 implements Runnable {
                 WalletEngine2.ImportedWalletProof importedWalletProof = null;
                 try {
                     try {
-                        WalletEngine2.ImportedWalletProof createImportProof = z13 ? WalletEngine2.createImportProof(k0Var, proofchallenge.domain, proofchallenge.payload, i33) : WalletEngine2.createOwnershipProof(k0Var, proofchallenge.domain, proofchallenge.payload, i33);
-                        k0Var.close();
+                        WalletEngine2.ImportedWalletProof createImportProof = z13 ? WalletEngine2.createImportProof(j0Var, proofchallenge.domain, proofchallenge.payload, i33) : WalletEngine2.createOwnershipProof(j0Var, proofchallenge.domain, proofchallenge.payload, i33);
+                        j0Var.close();
                         importedWalletProof = createImportProof;
                         e = null;
                     } catch (Exception e21) {
                         e = e21;
-                        org.telegram.ui.Wallet.n0.k("createImportProof", e);
-                        k0Var.close();
+                        org.telegram.ui.Wallet.m0.k("createImportProof", e);
+                        j0Var.close();
                     }
-                    org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.g(n0Var, importedWalletProof, e, v10Var));
+                    org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.g(m0Var, importedWalletProof, e, v10Var));
                     return;
                 } catch (Throwable th7) {
-                    k0Var.close();
+                    j0Var.close();
                     throw th7;
                 }
         }
@@ -727,10 +727,10 @@ public final /* synthetic */ class p2 implements Runnable {
         this.h = user;
     }
 
-    public /* synthetic */ p2(org.telegram.ui.Wallet.n0 n0Var, boolean z9, org.telegram.ui.Wallet.k0 k0Var, TL_wallet.proofChallenge proofchallenge, int i7, v10 v10Var) {
-        this.d = n0Var;
+    public /* synthetic */ p2(org.telegram.ui.Wallet.m0 m0Var, boolean z9, org.telegram.ui.Wallet.j0 j0Var, TL_wallet.proofChallenge proofchallenge, int i7, v10 v10Var) {
+        this.d = m0Var;
         this.c = z9;
-        this.e = k0Var;
+        this.e = j0Var;
         this.f = proofchallenge;
         this.b = i7;
         this.h = v10Var;

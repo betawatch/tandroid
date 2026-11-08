@@ -10,7 +10,7 @@ import h9.t1;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.bp;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
@@ -24,14 +24,14 @@ import org.telegram.ui.an;
 import org.telegram.ui.c40;
 import org.telegram.ui.gz;
 import org.telegram.ui.h30;
-import org.telegram.ui.hb1;
+import org.telegram.ui.ib1;
 import org.telegram.ui.qj;
 import p4.a1;
 import p4.g1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class y implements OnSuccessListener, g7, hb1, r1, bg.p, bp, a1, h2.j, xh.j {
+public final /* synthetic */ class y implements OnSuccessListener, g7, ib1, r1, bg.p, bp, a1, h2.j, xh.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -74,7 +74,7 @@ public final /* synthetic */ class y implements OnSuccessListener, g7, hb1, r1, 
         }
     }
 
-    @Override // org.telegram.ui.hb1
+    @Override // org.telegram.ui.ib1
     public void c(int i7, ArrayList arrayList) {
         switch (this.a) {
             case 2:
@@ -168,8 +168,16 @@ public final /* synthetic */ class y implements OnSuccessListener, g7, hb1, r1, 
         }
     }
 
+    @Override // bg.p
+    public void j(long j3) {
+        i6 i6Var = ((w1) this.c).a.y3;
+        if (i6Var != null) {
+            i6Var.t(id.M((int) j3, this.b), true, true);
+        }
+    }
+
     @Override // p4.a1
-    public Object i(p4.d0 d0Var, p4.v vVar, int i7) {
+    public Object l(p4.d0 d0Var, p4.v vVar, int i7) {
         switch (this.a) {
             case 9:
                 t1 u10 = h9.i0.u((e2.l0) this.c);
@@ -179,14 +187,6 @@ public final /* synthetic */ class y implements OnSuccessListener, g7, hb1, r1, 
                 List list = (List) this.c;
                 boolean z10 = this.b;
                 return d0Var.q(vVar, list, z10 ? -1 : d0Var.t.o0(), z10 ? -9223372036854775807L : d0Var.t.l());
-        }
-    }
-
-    @Override // bg.p
-    public void j(long j3) {
-        i6 i6Var = ((w1) this.c).a.y3;
-        if (i6Var != null) {
-            i6Var.t(hd.M((int) j3, this.b), true, true);
         }
     }
 

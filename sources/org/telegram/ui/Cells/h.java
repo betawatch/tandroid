@@ -9,7 +9,7 @@ import android.text.style.URLSpan;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.d20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.b41;
 import org.telegram.ui.Components.bb;
@@ -19,10 +19,10 @@ import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.k21;
 import org.telegram.ui.Components.kb;
 import org.telegram.ui.jt0;
-import org.telegram.ui.x71;
+import org.telegram.ui.y71;
 import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class h extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -107,7 +107,7 @@ public final class h extends ClickableSpan {
             case 9:
                 ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.b));
                 hc a02 = hc.a0(((jt0) this.c).d);
-                String M0 = hd.M0(2131748920, null);
+                String M0 = id.M0(2131748922, null);
                 org.telegram.ui.ActionBar.f6 resourceProvider = ((jt0) this.c).d.getResourceProvider();
                 a02.getClass();
                 if (org.telegram.messenger.g0.I3()) {
@@ -123,8 +123,8 @@ public final class h extends ClickableSpan {
             case 10:
                 try {
                     ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.b));
-                    if (hc.a((x71) this.c)) {
-                        hc.j((x71) this.c).j();
+                    if (hc.a((y71) this.c)) {
+                        hc.j((y71) this.c).j();
                         break;
                     }
                 } catch (Exception e11) {

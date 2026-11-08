@@ -2,7 +2,7 @@ package wg;
 
 import android.os.Bundle;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.m5;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -11,7 +11,7 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class b0 extends xg.f {
     public final /* synthetic */ c0 r;
@@ -26,7 +26,7 @@ public final class b0 extends xg.f {
     public final void E() {
         c0 c0Var = this.r;
         String str = c0Var.S1;
-        new hc(c0Var.c, c0Var.I0).Q(R.raw.chats_infotip, 36, ((str == null || str.isEmpty()) && c0Var.P1.to_id == -1) ? hd.M0(2131753334, null) : hd.M0(2131753333, null)).k(true);
+        new hc(c0Var.c, c0Var.I0).Q(R.raw.chats_infotip, 36, ((str == null || str.isEmpty()) && c0Var.P1.to_id == -1) ? id.M0(2131753334, null) : id.M0(2131753333, null)).k(true);
     }
 
     @Override // xg.f

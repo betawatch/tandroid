@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -38,14 +38,14 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.dh0;
-import org.telegram.ui.Components.e10;
+import org.telegram.ui.Components.f10;
 import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.pv;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class q extends FrameLayout implements ls, te.b {
     public boolean A0;
@@ -198,7 +198,7 @@ public abstract class q extends FrameLayout implements ls, te.b {
         addView(j6Var, ha.c(-2.0f, -1));
         ImageView imageView = new ImageView(context);
         this.V = imageView;
-        imageView.setContentDescription(hd.M0(R.string.AppName, null));
+        imageView.setContentDescription(id.M0(R.string.AppName, null));
         imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         imageView.setImageResource(R.drawable.telegram_logo_2);
         imageView.setColorFilter(getTextLogoColor(), PorterDuff.Mode.MULTIPLY);
@@ -1236,7 +1236,7 @@ public abstract class q extends FrameLayout implements ls, te.b {
             m3Var.K = Layout.Alignment.ALIGN_CENTER;
             m3Var.o(0.0f, 29.0f);
             this.J = m3Var;
-            SpannableStringBuilder S2 = org.telegram.messenger.g0.S2(hd.N0("StoriesPremiumHint2").replace('\n', ' '), org.telegram.ui.ActionBar.k6.uj, 0, new d(this, 1), null);
+            SpannableStringBuilder S2 = org.telegram.messenger.g0.S2(id.N0("StoriesPremiumHint2").replace('\n', ' '), org.telegram.ui.ActionBar.k6.uj, 0, new d(this, 1), null);
             ClickableSpan[] clickableSpanArr = (ClickableSpan[]) S2.getSpans(0, S2.length(), ClickableSpan.class);
             if (clickableSpanArr != null && clickableSpanArr.length >= 1) {
                 S2.setSpan(new u31(org.telegram.messenger.g0.o()), S2.getSpanStart(clickableSpanArr[0]), S2.getSpanEnd(clickableSpanArr[0]), 33);
@@ -1259,22 +1259,22 @@ public abstract class q extends FrameLayout implements ls, te.b {
     }
 
     public final void o() {
-        e10 e10Var = r7.b;
-        if (e10Var != null) {
-            e10Var.d(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Zk, false), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.al, false), 0, 0);
+        f10 f10Var = r7.b;
+        if (f10Var != null) {
+            f10Var.d(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Zk, false), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.al, false), 0, 0);
         }
-        e10 e10Var2 = r7.c;
-        if (e10Var2 != null) {
-            e10Var2.d(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.bl, false), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.cl, false), 0, 0);
+        f10 f10Var2 = r7.c;
+        if (f10Var2 != null) {
+            f10Var2.d(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.bl, false), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.cl, false), 0, 0);
         }
-        e10[] e10VarArr = r7.a;
-        e10 e10Var3 = e10VarArr[0];
-        if (e10Var3 != null) {
-            e10Var3.d(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Xk, false), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Yk, false), 0, 0);
+        f10[] f10VarArr = r7.a;
+        f10 f10Var3 = f10VarArr[0];
+        if (f10Var3 != null) {
+            f10Var3.d(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Xk, false), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Yk, false), 0, 0);
         }
-        e10 e10Var4 = e10VarArr[1];
-        if (e10Var4 != null) {
-            e10Var4.d(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Vk, false), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Wk, false), 0, 0);
+        f10 f10Var4 = f10VarArr[1];
+        if (f10Var4 != null) {
+            f10Var4.d(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Vk, false), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Wk, false), 0, 0);
         }
         if (r7.d != null) {
             int x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.lk, false);
@@ -1404,7 +1404,7 @@ public abstract class q extends FrameLayout implements ls, te.b {
         if (I) {
             arrayList = arrayList3;
             if (y6Var.M(p10.i(i10).e())) {
-                String M0 = hd.M0(2131743801, null);
+                String M0 = id.M0(2131743803, null);
                 if (M0.indexOf("…") > 0) {
                     if (this.i0 == null) {
                         SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(M0);
@@ -1419,17 +1419,17 @@ public abstract class q extends FrameLayout implements ls, te.b {
                     this.f0 = M0;
                 }
             } else {
-                this.f0 = this.s0 < ((float) org.telegram.messenger.g0.L(50.0f)) ? null : hd.M0(2131748300, null);
+                this.f0 = this.s0 < ((float) org.telegram.messenger.g0.L(50.0f)) ? null : id.M0(2131748302, null);
             }
         } else {
             arrayList = arrayList3;
-            this.f0 = this.s0 < ((float) org.telegram.messenger.g0.L(50.0f)) ? null : hd.G(max, "Stories", new Object[0]);
+            this.f0 = this.s0 < ((float) org.telegram.messenger.g0.L(50.0f)) ? null : id.G(max, "Stories", new Object[0]);
         }
         if (this.g0) {
             z11 = true;
         } else {
             z11 = true;
-            j6Var.c(this.f0, z9 && !hd.a0, true);
+            j6Var.c(this.f0, z9 && !id.a0, true);
         }
         this.a.a((!TextUtils.isEmpty(this.f0) || this.g0) ? z11 : false, z9);
         arrayList5.clear();

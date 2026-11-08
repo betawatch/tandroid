@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public final int[] D;
@@ -49,7 +49,7 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
     public org.telegram.ui.Components.pj0 a;
     public int addExceptionRow;
     public w6 b;
-    public org.telegram.ui.Components.iy c;
+    public org.telegram.ui.Components.jy c;
     public mh0 d;
     public int deleteExceptionsRow;
     public AnimatorSet e;
@@ -78,9 +78,9 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
         super(null);
         this.h = true;
         this.y = new HashMap();
-        this.D = new int[]{2131743614, 2131745367, 2131743613, 2131748722, 2131747820};
-        this.E = new int[]{2131748176, 2131747817, 2131747818, 2131754266};
-        this.F = new int[]{2131747882, 2131747878, 2131747878, 2131747880, 2131747881, 2131747880};
+        this.D = new int[]{2131743616, 2131745369, 2131743615, 2131748724, 2131747822};
+        this.E = new int[]{2131748178, 2131747819, 2131747820, 2131754266};
+        this.F = new int[]{2131747884, 2131747880, 2131747880, 2131747882, 2131747883, 2131747882};
         this.newRow = -1;
         this.showRow = -1;
         this.importantRow = -1;
@@ -167,9 +167,9 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
             if (oh0Var3 != null) {
                 org.telegram.ui.Components.k60 H = org.telegram.ui.Components.k60.H(notificationsCustomSettingsActivity2, view);
                 H.i = 3;
-                H.m(R.drawable.msg_mute, new eh0(notificationsCustomSettingsActivity2, oh0Var3, view, i7, 5), org.telegram.messenger.hd.M0(2131747863, null), oh0Var3.c <= 0 || oh0Var3.f, false);
-                H.m(R.drawable.msg_unmute, new eh0(notificationsCustomSettingsActivity, oh0Var3, view, i7, 0), org.telegram.messenger.hd.M0(2131747860, null), oh0Var3.c > 0 || oh0Var3.f, false);
-                H.m(R.drawable.msg_delete, new eh0(notificationsCustomSettingsActivity, oh0Var3, view, i7, 1), org.telegram.messenger.hd.M0(2131751543, "DeleteException"), !oh0Var3.f, true);
+                H.m(R.drawable.msg_mute, new eh0(notificationsCustomSettingsActivity2, oh0Var3, view, i7, 5), org.telegram.messenger.id.M0(2131747865, null), oh0Var3.c <= 0 || oh0Var3.f, false);
+                H.m(R.drawable.msg_unmute, new eh0(notificationsCustomSettingsActivity, oh0Var3, view, i7, 0), org.telegram.messenger.id.M0(2131747862, null), oh0Var3.c > 0 || oh0Var3.f, false);
+                H.m(R.drawable.msg_delete, new eh0(notificationsCustomSettingsActivity, oh0Var3, view, i7, 1), org.telegram.messenger.id.M0(2131751543, "DeleteException"), !oh0Var3.f, true);
                 H.W(notificationsCustomSettingsActivity.a.U0(view, false));
                 H.Z();
                 return;
@@ -209,9 +209,9 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
                         org.telegram.ui.Components.k60 H2 = org.telegram.ui.Components.k60.H(notificationsCustomSettingsActivity2, view);
                         H2.i = 3;
                         oh0 oh0Var5 = oh0Var2;
-                        H2.m(R.drawable.msg_mute, new eh0(notificationsCustomSettingsActivity2, oh0Var5, view, z13, 2), org.telegram.messenger.hd.M0(2131747863, null), oh0Var2.c <= 0 || oh0Var2.f, false);
-                        H2.m(R.drawable.msg_unmute, new eh0(notificationsCustomSettingsActivity, oh0Var5, view, z13, 3), org.telegram.messenger.hd.M0(2131747860, null), oh0Var5.c > 0 || oh0Var5.f, false);
-                        H2.m(R.drawable.msg_delete, new eh0(notificationsCustomSettingsActivity, oh0Var5, view, i7, 4), org.telegram.messenger.hd.M0(2131751543, str), (z13 || oh0Var5.f) ? false : true, true);
+                        H2.m(R.drawable.msg_mute, new eh0(notificationsCustomSettingsActivity2, oh0Var5, view, z13, 2), org.telegram.messenger.id.M0(2131747865, null), oh0Var2.c <= 0 || oh0Var2.f, false);
+                        H2.m(R.drawable.msg_unmute, new eh0(notificationsCustomSettingsActivity, oh0Var5, view, z13, 3), org.telegram.messenger.id.M0(2131747862, null), oh0Var5.c > 0 || oh0Var5.f, false);
+                        H2.m(R.drawable.msg_delete, new eh0(notificationsCustomSettingsActivity, oh0Var5, view, i7, 4), org.telegram.messenger.id.M0(2131751543, str), (z13 || oh0Var5.f) ? false : true, true);
                         H2.W(notificationsCustomSettingsActivity.a.U0(view, false));
                         H2.Z();
                         return;
@@ -294,12 +294,12 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
         }
         if (i12 == 7) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(notificationsCustomSettingsActivity2.getParentActivity());
-            String M0 = org.telegram.messenger.hd.M0(2131747912, "NotificationsDeleteAllExceptionTitle");
+            String M0 = org.telegram.messenger.id.M0(2131747914, "NotificationsDeleteAllExceptionTitle");
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.R = M0;
-            u1Var.T = org.telegram.messenger.hd.M0(2131747913, "NotificationsDeleteAllExceptionAlert");
-            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751599, "Delete"), new fh0(notificationsCustomSettingsActivity2));
-            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, "Cancel"), null);
+            u1Var.T = org.telegram.messenger.id.M0(2131747915, "NotificationsDeleteAllExceptionAlert");
+            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751599, "Delete"), new fh0(notificationsCustomSettingsActivity2));
+            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, "Cancel"), null);
             notificationsCustomSettingsActivity2.showDialog(u1Var);
             TextView textView = (TextView) u1Var.d(-1);
             if (textView != null) {
@@ -349,7 +349,7 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
                 return;
             }
             final boolean D = org.telegram.messenger.dt.t(i14).D(0L, null, false, false);
-            String[] strArr = {org.telegram.messenger.hd.M0(2131747856, null), org.telegram.messenger.hd.a0("MuteFor", null, 2131748311, org.telegram.messenger.hd.G(1, "Hours", new Object[0])), org.telegram.messenger.hd.a0("MuteFor", null, 2131748311, org.telegram.messenger.hd.G(2, "Days", new Object[0])), null, org.telegram.messenger.hd.M0(2131747857, null)};
+            String[] strArr = {org.telegram.messenger.id.M0(2131747858, null), org.telegram.messenger.id.a0("MuteFor", null, 2131748313, org.telegram.messenger.id.G(1, "Hours", new Object[0])), org.telegram.messenger.id.a0("MuteFor", null, 2131748313, org.telegram.messenger.id.G(2, "Days", new Object[0])), null, org.telegram.messenger.id.M0(2131747859, null)};
             int[] iArr = {R.drawable.notifications_on, R.drawable.notifications_mute1h, R.drawable.notifications_mute2d, R.drawable.notifications_settings, R.drawable.notifications_off};
             LinearLayout linearLayout = new LinearLayout(notificationsCustomSettingsActivity2.getParentActivity());
             linearLayout.setOrientation(1);
@@ -457,7 +457,7 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
                 i14 = i10;
                 notificationsCustomSettingsActivity3 = notificationsCustomSettingsActivity3;
             }
-            String M02 = org.telegram.messenger.hd.M0(2131747923, null);
+            String M02 = org.telegram.messenger.id.M0(2131747925, null);
             org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder2.a;
             u1Var2.R = M02;
             alertDialog$Builder2.o(linearLayout);
@@ -499,7 +499,7 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
                 } else {
                     iArr2[0] = sharedPreferences.getInt("popupChannel", 0);
                 }
-                String[] strArr2 = {org.telegram.messenger.hd.M0(2131748176, null), org.telegram.messenger.hd.M0(2131747817, null), org.telegram.messenger.hd.M0(2131747818, null), org.telegram.messenger.hd.M0(2131754266, null)};
+                String[] strArr2 = {org.telegram.messenger.id.M0(2131748178, null), org.telegram.messenger.id.M0(2131747819, null), org.telegram.messenger.id.M0(2131747820, null), org.telegram.messenger.id.M0(2131754266, null)};
                 LinearLayout e11 = org.telegram.messenger.k5.e(parentActivity, 1);
                 AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(parentActivity);
                 int i17 = 0;
@@ -513,11 +513,11 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
                     j6Var.setOnClickListener(new di.t5(iArr2, i11, alertDialog$Builder3, gh0Var, 2));
                     i17++;
                 }
-                String M03 = org.telegram.messenger.hd.M0(2131747097, null);
+                String M03 = org.telegram.messenger.id.M0(2131747099, null);
                 org.telegram.ui.ActionBar.u1 u1Var3 = alertDialog$Builder3.a;
                 u1Var3.R = M03;
                 alertDialog$Builder3.o(e11);
-                alertDialog$Builder3.k(org.telegram.messenger.hd.M0(2131752589, null), null);
+                alertDialog$Builder3.k(org.telegram.messenger.id.M0(2131752589, null), null);
                 notificationsCustomSettingsActivity2.showDialog(u1Var3);
                 return;
             }
@@ -603,7 +603,7 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
             return;
         }
         if (i12 == 103 || i12 == 104) {
-            boolean z23 = !org.telegram.messenger.hd.a0 ? f10 <= ((float) (view.getMeasuredWidth() - org.telegram.messenger.g0.L(76.0f))) : f10 >= ((float) org.telegram.messenger.g0.L(76.0f));
+            boolean z23 = !org.telegram.messenger.id.a0 ? f10 <= ((float) (view.getMeasuredWidth() - org.telegram.messenger.g0.L(76.0f))) : f10 >= ((float) org.telegram.messenger.g0.L(76.0f));
             SharedPreferences notificationsSettings3 = notificationsCustomSettingsActivity2.getNotificationsSettings();
             if (z23) {
                 String str3 = kh0Var.c == 103 ? "EnableReactionsMessages" : "EnableReactionsStories";
@@ -626,7 +626,7 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
                 boolean z24 = z14;
                 j6Var2.setPadding(org.telegram.messenger.g0.L(4.0f), r42, org.telegram.messenger.g0.L(4.0f), r42);
                 j6VarArr[i18].a(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.g7, r42), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.E5, r42));
-                j6VarArr[i18].b(org.telegram.messenger.hd.M0(i18 == 0 ? 2131747848 : 2131747849, null), i18 == 0 ? !zArr[r42] ? z24 : r42 : zArr[r42]);
+                j6VarArr[i18].b(org.telegram.messenger.id.M0(i18 == 0 ? 2131747850 : 2131747851, null), i18 == 0 ? !zArr[r42] ? z24 : r42 : zArr[r42]);
                 ai.i0 i0Var = j6VarArr[i18];
                 int i19 = org.telegram.ui.ActionBar.k6.i6;
                 org.telegram.ui.ActionBar.r6.R(i0Var, org.telegram.ui.ActionBar.k6.h0(org.telegram.ui.ActionBar.k6.x0(null, i19, r42), 2, -1), null, org.telegram.ui.ActionBar.r6.N(i19), null);
@@ -637,12 +637,12 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
                 r42 = 0;
             }
             AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(0, notificationsCustomSettingsActivity2.getParentActivity(), notificationsCustomSettingsActivity2.resourceProvider);
-            String M04 = org.telegram.messenger.hd.M0(2131747850, null);
+            String M04 = org.telegram.messenger.id.M0(2131747852, null);
             org.telegram.ui.ActionBar.u1 u1Var4 = alertDialog$Builder4.a;
             u1Var4.R = M04;
             alertDialog$Builder4.o(f12);
-            alertDialog$Builder4.h(org.telegram.messenger.hd.M0(2131752589, null), null);
-            alertDialog$Builder4.k(org.telegram.messenger.hd.M0(2131745947, null), new a1.d(notificationsCustomSettingsActivity2, notificationsSettings3, str4, zArr, 17));
+            alertDialog$Builder4.h(org.telegram.messenger.id.M0(2131752589, null), null);
+            alertDialog$Builder4.k(org.telegram.messenger.id.M0(2131745949, null), new a1.d(notificationsCustomSettingsActivity2, notificationsSettings3, str4, zArr, 17));
             notificationsCustomSettingsActivity2.showDialog(u1Var4);
         }
     }
@@ -1126,9 +1126,9 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
         this.f = false;
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         if (this.s == -1) {
-            this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131747911, "NotificationsExceptions"));
+            this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131747913, "NotificationsExceptions"));
         } else {
-            this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131747923, "Notifications"));
+            this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131747925, "Notifications"));
         }
         this.simpleActionBar.setActionBarMenuOnItemClick(new ux(this, 18));
         ArrayList arrayList = this.x;
@@ -1136,15 +1136,15 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
             org.telegram.ui.ActionBar.f5 b10 = this.simpleActionBar.o().b(0, R.drawable.outline_header_search);
             b10.N();
             b10.B0 = new kg.v1(this, 17);
-            b10.setSearchFieldHint(org.telegram.messenger.hd.M0(2131745837, "Search"));
+            b10.setSearchFieldHint(org.telegram.messenger.id.M0(2131745839, "Search"));
         }
         this.d = new mh0(this, context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        org.telegram.ui.Components.iy iyVar = new org.telegram.ui.Components.iy(context, null);
-        this.c = iyVar;
-        iyVar.setTextSize(18);
-        this.c.setText(org.telegram.messenger.hd.M0(2131748210, "NoExceptions"));
+        org.telegram.ui.Components.jy jyVar = new org.telegram.ui.Components.jy(context, null);
+        this.c = jyVar;
+        jyVar.setTextSize(18);
+        this.c.setText(org.telegram.messenger.id.M0(2131748212, "NoExceptions"));
         this.c.c();
         org.telegram.ui.Components.pj0 pj0Var = new org.telegram.ui.Components.pj0(context, null);
         this.a = pj0Var;
@@ -1336,14 +1336,14 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
         int i7 = this.s;
         int i10 = i7 != 0 ? i7 != 1 ? i7 != 2 ? 0 : getNotificationsSettings().getInt("popupChannel", 0) : getNotificationsSettings().getInt("popupAll", 0) : getNotificationsSettings().getInt("popupGroup", 0);
         int[] iArr = this.E;
-        return org.telegram.messenger.hd.M0(iArr[Utilities.j(i10, iArr.length - 1, 0)], null);
+        return org.telegram.messenger.id.M0(iArr[Utilities.j(i10, iArr.length - 1, 0)], null);
     }
 
     public final String m0() {
         int i7 = this.s;
         int i10 = i7 != 0 ? i7 != 1 ? i7 != 2 ? i7 != 3 ? (i7 == 4 || i7 == 5) ? getNotificationsSettings().getInt("priority_react", 1) : 1 : getNotificationsSettings().getInt("priority_stories", 1) : getNotificationsSettings().getInt("priority_channel", 1) : getNotificationsSettings().getInt("priority_messages", 1) : getNotificationsSettings().getInt("priority_group", 1);
         int[] iArr = this.F;
-        return org.telegram.messenger.hd.M0(iArr[Utilities.j(i10, iArr.length - 1, 0)], null);
+        return org.telegram.messenger.id.M0(iArr[Utilities.j(i10, iArr.length - 1, 0)], null);
     }
 
     public final void o0() {
@@ -1366,7 +1366,7 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
             if (uri == null || (ringtone = RingtoneManager.getRingtone(getParentActivity(), uri)) == null) {
                 str = null;
             } else {
-                str = uri.equals(Settings.System.DEFAULT_NOTIFICATION_URI) ? org.telegram.messenger.hd.M0(2131745281, "SoundDefault") : ringtone.getTitle(getParentActivity());
+                str = uri.equals(Settings.System.DEFAULT_NOTIFICATION_URI) ? org.telegram.messenger.id.M0(2131745283, "SoundDefault") : ringtone.getTitle(getParentActivity());
                 ringtone.stop();
             }
             SharedPreferences.Editor edit = getNotificationsSettings().edit();
@@ -1527,22 +1527,22 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
         SharedPreferences notificationsSettings = getNotificationsSettings();
         int i7 = this.s;
         if (i7 != -1) {
-            String M0 = org.telegram.messenger.hd.M0(2131747843, null);
+            String M0 = org.telegram.messenger.id.M0(2131747845, null);
             kh0 kh0Var = new kh0(0, true);
             kh0Var.e = M0;
             arrayList4.add(kh0Var);
             if (i7 == 3) {
                 this.newRow = arrayList4.size();
-                arrayList4.add(kh0.b(101, org.telegram.messenger.hd.M0(2131747838, null), notificationsSettings.getBoolean("EnableAllStories", false)));
+                arrayList4.add(kh0.b(101, org.telegram.messenger.id.M0(2131747840, null), notificationsSettings.getBoolean("EnableAllStories", false)));
                 if (!notificationsSettings.getBoolean("EnableAllStories", false)) {
                     this.importantRow = arrayList4.size();
-                    arrayList4.add(kh0.b(org.telegram.messenger.qs.n1, org.telegram.messenger.hd.M0(2131747840, null), this.r && ((bool = this.n) == null || !bool.booleanValue())));
+                    arrayList4.add(kh0.b(org.telegram.messenger.qs.n1, org.telegram.messenger.id.M0(2131747842, null), this.r && ((bool = this.n) == null || !bool.booleanValue())));
                 }
-                arrayList4.add(kh0.d(-1, org.telegram.messenger.hd.M0(2131744719, null)));
+                arrayList4.add(kh0.d(-1, org.telegram.messenger.id.M0(2131744721, null)));
             } else if (i7 == 4 || i7 == 5) {
                 this.messagesRow = arrayList4.size();
-                String M02 = org.telegram.messenger.hd.M0(2131747839, null);
-                String M03 = org.telegram.messenger.hd.M0(!notificationsSettings.getBoolean("EnableReactionsMessages", true) ? 2131747845 : notificationsSettings.getBoolean("EnableReactionsMessagesContacts", false) ? 2131747847 : 2131747846, null);
+                String M02 = org.telegram.messenger.id.M0(2131747841, null);
+                String M03 = org.telegram.messenger.id.M0(!notificationsSettings.getBoolean("EnableReactionsMessages", true) ? 2131747847 : notificationsSettings.getBoolean("EnableReactionsMessagesContacts", false) ? 2131747849 : 2131747848, null);
                 boolean z10 = notificationsSettings.getBoolean("EnableReactionsMessages", true);
                 kh0 kh0Var2 = new kh0(6, true);
                 kh0Var2.c = org.telegram.messenger.qs.o1;
@@ -1552,8 +1552,8 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
                 kh0Var2.i = z10;
                 arrayList4.add(kh0Var2);
                 this.storiesRow = arrayList4.size();
-                String M04 = org.telegram.messenger.hd.M0(2131747836, null);
-                String M05 = org.telegram.messenger.hd.M0(!notificationsSettings.getBoolean("EnableReactionsStories", true) ? 2131747845 : notificationsSettings.getBoolean("EnableReactionsStoriesContacts", false) ? 2131747847 : 2131747846, null);
+                String M04 = org.telegram.messenger.id.M0(2131747838, null);
+                String M05 = org.telegram.messenger.id.M0(!notificationsSettings.getBoolean("EnableReactionsStories", true) ? 2131747847 : notificationsSettings.getBoolean("EnableReactionsStoriesContacts", false) ? 2131747849 : 2131747848, null);
                 boolean z11 = notificationsSettings.getBoolean("EnableReactionsStories", true);
                 kh0 kh0Var3 = new kh0(6, true);
                 kh0Var3.c = org.telegram.messenger.qs.p1;
@@ -1564,31 +1564,31 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
                 arrayList4.add(kh0Var3);
                 arrayList4.add(kh0.d(-1, null));
             } else {
-                int i10 = i7 == 1 ? 2131747837 : i7 == 0 ? 2131747841 : 2131747842;
+                int i10 = i7 == 1 ? 2131747839 : i7 == 0 ? 2131747843 : 2131747844;
                 this.showRow = arrayList4.size();
-                arrayList4.add(kh0.b(100, org.telegram.messenger.hd.M0(i10, null), getNotificationsController().B(i7)));
+                arrayList4.add(kh0.b(100, org.telegram.messenger.id.M0(i10, null), getNotificationsController().B(i7)));
                 arrayList4.add(kh0.d(-1, null));
             }
-            String M06 = org.telegram.messenger.hd.M0(2131745984, null);
+            String M06 = org.telegram.messenger.id.M0(2131745986, null);
             kh0 kh0Var4 = new kh0(0, true);
             kh0Var4.e = M06;
             arrayList4.add(kh0Var4);
             arrayList4.size();
             if (i7 == 3) {
                 this.showSenderRow = arrayList4.size();
-                arrayList4.add(kh0.b(0, org.telegram.messenger.hd.M0(2131747932, null), !notificationsSettings.getBoolean("EnableHideStoriesSenders", false)));
+                arrayList4.add(kh0.b(0, org.telegram.messenger.id.M0(2131747934, null), !notificationsSettings.getBoolean("EnableHideStoriesSenders", false)));
             } else if (i7 == 4 || i7 == 5) {
                 this.showSenderRow = arrayList4.size();
-                arrayList4.add(kh0.b(0, org.telegram.messenger.hd.M0(2131747932, null), notificationsSettings.getBoolean("EnableReactionsPreview", true)));
+                arrayList4.add(kh0.b(0, org.telegram.messenger.id.M0(2131747934, null), notificationsSettings.getBoolean("EnableReactionsPreview", true)));
             } else {
                 boolean z12 = i7 != 0 ? i7 != 1 ? i7 != 2 ? false : notificationsSettings.getBoolean("EnablePreviewChannel", true) : notificationsSettings.getBoolean("EnablePreviewAll", true) : notificationsSettings.getBoolean("EnablePreviewGroup", true);
                 this.previewRow = arrayList4.size();
-                arrayList4.add(kh0.b(0, org.telegram.messenger.hd.M0(2131748536, null), z12));
+                arrayList4.add(kh0.b(0, org.telegram.messenger.id.M0(2131748538, null), z12));
             }
             this.soundRow = arrayList4.size();
-            String M07 = org.telegram.messenger.hd.M0(2131745284, "Sound");
+            String M07 = org.telegram.messenger.id.M0(2131745286, "Sound");
             SharedPreferences notificationsSettings2 = getNotificationsSettings();
-            String M08 = org.telegram.messenger.hd.M0(2131745281, "SoundDefault");
+            String M08 = org.telegram.messenger.id.M0(2131745283, "SoundDefault");
             arrayList = arrayList3;
             if (i7 == 0) {
                 string = notificationsSettings2.getString("GroupSound", M08);
@@ -1609,16 +1609,16 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
             long j10 = j3;
             if (j10 != 0) {
                 TLRPC.Document c10 = getMediaDataController().z0.c(j10);
-                string = c10 == null ? org.telegram.messenger.hd.M0(2131751680, "CustomSound") : sh0.g0(c10, org.telegram.messenger.w7.B(c10));
+                string = c10 == null ? org.telegram.messenger.id.M0(2131751680, "CustomSound") : sh0.g0(c10, org.telegram.messenger.w7.B(c10));
             } else if (string.equals("NoSound")) {
-                string = org.telegram.messenger.hd.M0(2131748150, "NoSound");
+                string = org.telegram.messenger.id.M0(2131748152, "NoSound");
             } else if (string.equals("Default")) {
-                string = org.telegram.messenger.hd.M0(2131745281, "SoundDefault");
+                string = org.telegram.messenger.id.M0(2131745283, "SoundDefault");
             }
             arrayList4.add(kh0.c(3, M07, string));
             if (this.G) {
                 this.lightColorRow = arrayList4.size();
-                String M09 = org.telegram.messenger.hd.M0(2131748988, "LedColor");
+                String M09 = org.telegram.messenger.id.M0(2131748990, "LedColor");
                 int k02 = k0();
                 kh0 kh0Var5 = new kh0(3, true);
                 kh0Var5.e = M09;
@@ -1626,22 +1626,22 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
                 arrayList4.add(kh0Var5);
                 int i11 = i7 != 0 ? i7 != 1 ? i7 != 2 ? i7 != 3 ? (i7 == 4 || i7 == 5) ? notificationsSettings.getInt("vibrate_react", 0) : 0 : notificationsSettings.getInt("vibrate_stories", 0) : notificationsSettings.getInt("vibrate_channel", 0) : notificationsSettings.getInt("vibrate_messages", 0) : notificationsSettings.getInt("vibrate_group", 0);
                 this.vibrateRow = arrayList4.size();
-                String M010 = org.telegram.messenger.hd.M0(2131743615, "Vibrate");
+                String M010 = org.telegram.messenger.id.M0(2131743617, "Vibrate");
                 int[] iArr = this.D;
-                arrayList4.add(kh0.c(1, M010, org.telegram.messenger.hd.M0(iArr[Utilities.j(i11, iArr.length - 1, 0)], null)));
+                arrayList4.add(kh0.c(1, M010, org.telegram.messenger.id.M0(iArr[Utilities.j(i11, iArr.length - 1, 0)], null)));
                 if (i7 == 1 || i7 == 0) {
                     this.popupRow = arrayList4.size();
-                    arrayList4.add(kh0.c(2, org.telegram.messenger.hd.M0(2131747097, "PopupNotification"), l0()));
+                    arrayList4.add(kh0.c(2, org.telegram.messenger.id.M0(2131747099, "PopupNotification"), l0()));
                 }
                 this.priorityRow = arrayList4.size();
-                arrayList4.add(kh0.c(4, org.telegram.messenger.hd.M0(2131747905, "NotificationsImportance"), m0()));
-                String M011 = org.telegram.messenger.hd.M0(2131747844, null);
+                arrayList4.add(kh0.c(4, org.telegram.messenger.id.M0(2131747907, "NotificationsImportance"), m0()));
+                String M011 = org.telegram.messenger.id.M0(2131747846, null);
                 kh0 kh0Var6 = new kh0(8, true);
                 kh0Var6.e = M011;
                 kh0Var6.d = 0;
                 arrayList4.add(kh0Var6);
             } else {
-                String M012 = org.telegram.messenger.hd.M0(2131747835, null);
+                String M012 = org.telegram.messenger.id.M0(2131747837, null);
                 kh0 kh0Var7 = new kh0(8, true);
                 kh0Var7.e = M012;
                 kh0Var7.d = 1;
@@ -1655,7 +1655,7 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
         if (i7 != 4 && i7 != 5) {
             if (i7 != -1) {
                 this.addExceptionRow = arrayList4.size();
-                String M013 = org.telegram.messenger.hd.M0(2131747922, "NotificationsAddAnException");
+                String M013 = org.telegram.messenger.id.M0(2131747924, "NotificationsAddAnException");
                 kh0 kh0Var8 = new kh0(7, true);
                 kh0Var8.c = 6;
                 kh0Var8.d = R.drawable.msg_contact_add;
@@ -1686,7 +1686,7 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
             ArrayList arrayList5 = this.x;
             if (arrayList5 != null && !arrayList5.isEmpty()) {
                 this.deleteExceptionsRow = arrayList4.size();
-                String M014 = org.telegram.messenger.hd.M0(2131747914, "NotificationsDeleteAllException");
+                String M014 = org.telegram.messenger.id.M0(2131747916, "NotificationsDeleteAllException");
                 kh0 kh0Var11 = new kh0(7, true);
                 kh0Var11.c = 7;
                 kh0Var11.d = 0;

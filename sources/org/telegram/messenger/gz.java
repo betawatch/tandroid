@@ -59,7 +59,7 @@ import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.b80;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class gz extends c1 implements ls {
     public static final p5 I = new p5("mediaSendQueue");
@@ -337,7 +337,7 @@ public final class gz extends c1 implements ls {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void K(ArrayList arrayList, final long j3, boolean z9, boolean z10, boolean z11, final c cVar, long j10, final ij ijVar, final TLRPC.TL_inputPollAnswer tL_inputPollAnswer, final ij ijVar2, final ij ijVar3, final boolean z12, final int i7, final int i10, final TL_stories.StoryItem storyItem, final org.telegram.ui.qm qmVar, final hw hwVar, final long j11, final boolean z13, final long j12, final long j13, final nj njVar, final sh.f fVar, boolean z14, org.telegram.ui.Components.qt qtVar, final boolean z15) {
+    public static void K(ArrayList arrayList, final long j3, boolean z9, boolean z10, boolean z11, final c cVar, long j10, final ij ijVar, final TLRPC.TL_inputPollAnswer tL_inputPollAnswer, final ij ijVar2, final ij ijVar3, final boolean z12, final int i7, final int i10, final TL_stories.StoryItem storyItem, final org.telegram.ui.qm qmVar, final hw hwVar, final long j11, final boolean z13, final long j12, final long j13, final nj njVar, final sh.f fVar, boolean z14, org.telegram.ui.Components.rt rtVar, final boolean z15) {
         String str;
         String str2;
         ?? r52;
@@ -902,7 +902,7 @@ public final class gz extends c1 implements ls {
                                                     hashMap3 = hashMap2;
                                                     j15 = 0;
                                                     cVar2 = cVar;
-                                                    g0.h3(new Runnable() { // from class: org.telegram.messenger.cy
+                                                    g0.h3(new Runnable() { // from class: org.telegram.messenger.ay
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
                                                             ij ijVar4 = ij.this;
@@ -983,7 +983,7 @@ public final class gz extends c1 implements ls {
                                                     hashMap3 = hashMap2;
                                                     j15 = 0;
                                                     cVar2 = cVar;
-                                                    g0.h3(new Runnable() { // from class: org.telegram.messenger.cy
+                                                    g0.h3(new Runnable() { // from class: org.telegram.messenger.ay
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
                                                             ij ijVar4 = ij.this;
@@ -1056,7 +1056,7 @@ public final class gz extends c1 implements ls {
                                         hashMap3 = hashMap2;
                                         j15 = 0;
                                         cVar2 = cVar;
-                                        g0.h3(new Runnable() { // from class: org.telegram.messenger.cy
+                                        g0.h3(new Runnable() { // from class: org.telegram.messenger.ay
                                             @Override // java.lang.Runnable
                                             public final void run() {
                                                 ij ijVar4 = ij.this;
@@ -1152,7 +1152,7 @@ public final class gz extends c1 implements ls {
                         hashMap3 = hashMap2;
                         j15 = 0;
                         cVar2 = cVar;
-                        g0.h3(new Runnable() { // from class: org.telegram.messenger.cy
+                        g0.h3(new Runnable() { // from class: org.telegram.messenger.ay
                             @Override // java.lang.Runnable
                             public final void run() {
                                 ij ijVar4 = ij.this;
@@ -1283,7 +1283,7 @@ public final class gz extends c1 implements ls {
                         final boolean z34 = z23;
                         j14 = j21;
                         cVar2 = cVar;
-                        g0.h3(new Runnable() { // from class: org.telegram.messenger.dy
+                        g0.h3(new Runnable() { // from class: org.telegram.messenger.cy
                             @Override // java.lang.Runnable
                             public final void run() {
                                 ij ijVar4 = ij.this;
@@ -1351,7 +1351,7 @@ public final class gz extends c1 implements ls {
                             str29 = (Build.VERSION.SDK_INT < 30 || !"content".equals(uri2.getScheme())) ? g0.T0(fzVar5.a) : null;
                             str28 = fzVar5.a.toString();
                         }
-                        if (qtVar == null || fzVar5.a == null || !qtVar.h0().hasMimeType("image/png")) {
+                        if (rtVar == null || fzVar5.a == null || !rtVar.h0().hasMimeType("image/png")) {
                             obj12 = "masks";
                             str30 = str28;
                             str31 = str7;
@@ -1693,7 +1693,7 @@ public final class gz extends c1 implements ls {
                                                     i27 = i29;
                                                     final String str64 = str41;
                                                     cVar2 = cVar;
-                                                    g0.h3(new Runnable() { // from class: org.telegram.messenger.fy
+                                                    g0.h3(new Runnable() { // from class: org.telegram.messenger.ey
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
                                                             Bitmap[] bitmapArr2 = bitmapArr;
@@ -1748,7 +1748,7 @@ public final class gz extends c1 implements ls {
                                                 i27 = i29;
                                                 final String str642 = str41;
                                                 cVar2 = cVar;
-                                                g0.h3(new Runnable() { // from class: org.telegram.messenger.fy
+                                                g0.h3(new Runnable() { // from class: org.telegram.messenger.ey
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
                                                         Bitmap[] bitmapArr2 = bitmapArr;
@@ -2100,7 +2100,7 @@ public final class gz extends c1 implements ls {
                                                                     final fz fzVar6 = fzVar;
                                                                     final TLRPC.TL_document tL_document6 = tL_document;
                                                                     cVar2 = cVar;
-                                                                    g0.h3(new Runnable() { // from class: org.telegram.messenger.ey
+                                                                    g0.h3(new Runnable() { // from class: org.telegram.messenger.dy
                                                                         @Override // java.lang.Runnable
                                                                         public final void run() {
                                                                             String str73;
@@ -2243,7 +2243,7 @@ public final class gz extends c1 implements ls {
                                                                     final fz fzVar62 = fzVar;
                                                                     final TLRPC.TL_document tL_document62 = tL_document;
                                                                     cVar2 = cVar;
-                                                                    g0.h3(new Runnable() { // from class: org.telegram.messenger.ey
+                                                                    g0.h3(new Runnable() { // from class: org.telegram.messenger.dy
                                                                         @Override // java.lang.Runnable
                                                                         public final void run() {
                                                                             String str73;
@@ -2388,7 +2388,7 @@ public final class gz extends c1 implements ls {
                                                                 final fz fzVar622 = fzVar;
                                                                 final TLRPC.TL_document tL_document622 = tL_document;
                                                                 cVar2 = cVar;
-                                                                g0.h3(new Runnable() { // from class: org.telegram.messenger.ey
+                                                                g0.h3(new Runnable() { // from class: org.telegram.messenger.dy
                                                                     @Override // java.lang.Runnable
                                                                     public final void run() {
                                                                         String str73;
@@ -2817,7 +2817,7 @@ public final class gz extends c1 implements ls {
                                         final fz fzVar6222 = fzVar;
                                         final TLRPC.TL_document tL_document6222 = tL_document;
                                         cVar2 = cVar;
-                                        g0.h3(new Runnable() { // from class: org.telegram.messenger.ey
+                                        g0.h3(new Runnable() { // from class: org.telegram.messenger.dy
                                             @Override // java.lang.Runnable
                                             public final void run() {
                                                 String str732;
@@ -2936,7 +2936,7 @@ public final class gz extends c1 implements ls {
                             final fz fzVar62222 = fzVar;
                             final TLRPC.TL_document tL_document62222 = tL_document;
                             cVar2 = cVar;
-                            g0.h3(new Runnable() { // from class: org.telegram.messenger.ey
+                            g0.h3(new Runnable() { // from class: org.telegram.messenger.dy
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     String str732;
@@ -3063,8 +3063,8 @@ public final class gz extends c1 implements ls {
         if (j32 != j31 && !z14) {
             z(cVar2, j32, i7);
         }
-        if (qtVar != null) {
-            ((t0.h) qtVar.b).i();
+        if (rtVar != null) {
+            ((t0.h) rtVar.b).i();
         }
         if (arrayList20 != null && !arrayList20.isEmpty()) {
             int i48 = 1;
@@ -3164,7 +3164,7 @@ public final class gz extends c1 implements ls {
         }
         TLRPC.BotInlineMessage botInlineMessage = botInlineResult.send_message;
         if (botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaAuto) {
-            new Thread(new Runnable() { // from class: org.telegram.messenger.ux
+            new Thread(new Runnable() { // from class: org.telegram.messenger.tx
                 /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
                 /* JADX WARN: Multi-variable type inference failed */
                 @Override // java.lang.Runnable
@@ -3865,7 +3865,7 @@ public final class gz extends c1 implements ls {
         C(cVar.a).r0(c11);
     }
 
-    public static void T(c cVar, String str, String str2, Uri uri, String str3, String str4, long j3, ij ijVar, ij ijVar2, TL_stories.StoryItem storyItem, org.telegram.ui.qm qmVar, boolean z9, org.telegram.ui.Components.qt qtVar, hw hwVar) {
+    public static void T(c cVar, String str, String str2, Uri uri, String str3, String str4, long j3, ij ijVar, ij ijVar2, TL_stories.StoryItem storyItem, org.telegram.ui.qm qmVar, boolean z9, org.telegram.ui.Components.rt rtVar, hw hwVar) {
         ArrayList arrayList;
         if ((str == null || str2 == null) && uri == null) {
             return;
@@ -3883,7 +3883,7 @@ public final class gz extends c1 implements ls {
             arrayList2.add(str);
             arrayList3.add(str2);
         }
-        V(0, j3, 0L, 0L, 0L, str3, str4, arrayList2, arrayList3, arrayList4, null, null, null, cVar, ijVar, ijVar2, null, null, hwVar, storyItem, qmVar, qtVar, null, z9, false);
+        V(0, j3, 0L, 0L, 0L, str3, str4, arrayList2, arrayList3, arrayList4, null, null, null, cVar, ijVar, ijVar2, null, null, hwVar, storyItem, qmVar, rtVar, null, z9, false);
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(8:292|293|(7:295|296|297|298|299|300|301)(1:349)|(3:310|311|(3:313|314|(4:316|304|305|306)))|303|304|305|306) */
@@ -4207,7 +4207,7 @@ public final class gz extends c1 implements ls {
                                                                     final TLRPC.TL_document tL_document3 = tL_document;
                                                                     final String str27 = str17;
                                                                     int i21 = i20;
-                                                                    g0.h3(new Runnable() { // from class: org.telegram.messenger.yx
+                                                                    g0.h3(new Runnable() { // from class: org.telegram.messenger.xx
                                                                         @Override // java.lang.Runnable
                                                                         public final void run() {
                                                                             ij ijVar4 = ij.this;
@@ -4309,7 +4309,7 @@ public final class gz extends c1 implements ls {
                                                             final TLRPC.TL_document tL_document32 = tL_document;
                                                             final String str272 = str17;
                                                             int i212 = i202;
-                                                            g0.h3(new Runnable() { // from class: org.telegram.messenger.yx
+                                                            g0.h3(new Runnable() { // from class: org.telegram.messenger.xx
                                                                 @Override // java.lang.Runnable
                                                                 public final void run() {
                                                                     ij ijVar4 = ij.this;
@@ -4406,7 +4406,7 @@ public final class gz extends c1 implements ls {
                                                         final TLRPC.TL_document tL_document322 = tL_document;
                                                         final String str2722 = str17;
                                                         int i2122 = i2022;
-                                                        g0.h3(new Runnable() { // from class: org.telegram.messenger.yx
+                                                        g0.h3(new Runnable() { // from class: org.telegram.messenger.xx
                                                             @Override // java.lang.Runnable
                                                             public final void run() {
                                                                 ij ijVar4 = ij.this;
@@ -4519,7 +4519,7 @@ public final class gz extends c1 implements ls {
                                                             final TLRPC.TL_document tL_document3222 = tL_document;
                                                             final String str27222 = str17;
                                                             int i21222 = i20222;
-                                                            g0.h3(new Runnable() { // from class: org.telegram.messenger.yx
+                                                            g0.h3(new Runnable() { // from class: org.telegram.messenger.xx
                                                                 @Override // java.lang.Runnable
                                                                 public final void run() {
                                                                     ij ijVar4 = ij.this;
@@ -4615,7 +4615,7 @@ public final class gz extends c1 implements ls {
                                                             final TLRPC.TL_document tL_document32222 = tL_document;
                                                             final String str272222 = str17;
                                                             int i212222 = i202222;
-                                                            g0.h3(new Runnable() { // from class: org.telegram.messenger.yx
+                                                            g0.h3(new Runnable() { // from class: org.telegram.messenger.xx
                                                                 @Override // java.lang.Runnable
                                                                 public final void run() {
                                                                     ij ijVar4 = ij.this;
@@ -4729,7 +4729,7 @@ public final class gz extends c1 implements ls {
                                                             final TLRPC.TL_document tL_document322222 = tL_document;
                                                             final String str2722222 = str17;
                                                             int i2122222 = i2022222;
-                                                            g0.h3(new Runnable() { // from class: org.telegram.messenger.yx
+                                                            g0.h3(new Runnable() { // from class: org.telegram.messenger.xx
                                                                 @Override // java.lang.Runnable
                                                                 public final void run() {
                                                                     ij ijVar4 = ij.this;
@@ -5113,7 +5113,7 @@ public final class gz extends c1 implements ls {
                                                                 final TLRPC.TL_document tL_document3222222 = tL_document;
                                                                 final String str27222222 = str17;
                                                                 int i21222222 = i20222222;
-                                                                g0.h3(new Runnable() { // from class: org.telegram.messenger.yx
+                                                                g0.h3(new Runnable() { // from class: org.telegram.messenger.xx
                                                                     @Override // java.lang.Runnable
                                                                     public final void run() {
                                                                         ij ijVar4 = ij.this;
@@ -5167,7 +5167,7 @@ public final class gz extends c1 implements ls {
                                                         final TLRPC.TL_document tL_document32222222 = tL_document;
                                                         final String str272222222 = str17;
                                                         int i212222222 = i202222222;
-                                                        g0.h3(new Runnable() { // from class: org.telegram.messenger.yx
+                                                        g0.h3(new Runnable() { // from class: org.telegram.messenger.xx
                                                             @Override // java.lang.Runnable
                                                             public final void run() {
                                                                 ij ijVar4 = ij.this;
@@ -5281,7 +5281,7 @@ public final class gz extends c1 implements ls {
                                                             final TLRPC.TL_document tL_document322222222 = tL_document;
                                                             final String str2722222222 = str17;
                                                             int i2122222222 = i2022222222;
-                                                            g0.h3(new Runnable() { // from class: org.telegram.messenger.yx
+                                                            g0.h3(new Runnable() { // from class: org.telegram.messenger.xx
                                                                 @Override // java.lang.Runnable
                                                                 public final void run() {
                                                                     ij ijVar4 = ij.this;
@@ -5337,7 +5337,7 @@ public final class gz extends c1 implements ls {
                                                     final TLRPC.TL_document tL_document3222222222 = tL_document;
                                                     final String str27222222222 = str17;
                                                     int i21222222222 = i2022222222;
-                                                    g0.h3(new Runnable() { // from class: org.telegram.messenger.yx
+                                                    g0.h3(new Runnable() { // from class: org.telegram.messenger.xx
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
                                                             ij ijVar4 = ij.this;
@@ -5395,7 +5395,7 @@ public final class gz extends c1 implements ls {
                                         final TLRPC.TL_document tL_document32222222222 = tL_document;
                                         final String str272222222222 = str17;
                                         int i212222222222 = i20222222222;
-                                        g0.h3(new Runnable() { // from class: org.telegram.messenger.yx
+                                        g0.h3(new Runnable() { // from class: org.telegram.messenger.xx
                                             @Override // java.lang.Runnable
                                             public final void run() {
                                                 ij ijVar4 = ij.this;
@@ -5482,7 +5482,7 @@ public final class gz extends c1 implements ls {
                                 final TLRPC.TL_document tL_document322222222222 = tL_document;
                                 final String str2722222222222 = str17;
                                 int i2122222222222 = i202222222222;
-                                g0.h3(new Runnable() { // from class: org.telegram.messenger.yx
+                                g0.h3(new Runnable() { // from class: org.telegram.messenger.xx
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         ij ijVar4 = ij.this;
@@ -5591,7 +5591,7 @@ public final class gz extends c1 implements ls {
                             final TLRPC.TL_document tL_document3222222222222 = tL_document;
                             final String str27222222222222 = str17;
                             int i21222222222222 = i2022222222222;
-                            g0.h3(new Runnable() { // from class: org.telegram.messenger.yx
+                            g0.h3(new Runnable() { // from class: org.telegram.messenger.xx
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     ij ijVar4 = ij.this;
@@ -5686,7 +5686,7 @@ public final class gz extends c1 implements ls {
                     final TLRPC.TL_document tL_document32222222222222 = tL_document;
                     final String str272222222222222 = str17;
                     int i212222222222222 = i20222222222222;
-                    g0.h3(new Runnable() { // from class: org.telegram.messenger.yx
+                    g0.h3(new Runnable() { // from class: org.telegram.messenger.xx
                         @Override // java.lang.Runnable
                         public final void run() {
                             ij ijVar4 = ij.this;
@@ -5721,12 +5721,12 @@ public final class gz extends c1 implements ls {
         return 1;
     }
 
-    public static void V(final int i7, final long j3, final long j10, final long j11, final long j12, final String str, final String str2, final ArrayList arrayList, final ArrayList arrayList2, final ArrayList arrayList3, final ArrayList arrayList4, final ArrayList arrayList5, final ArrayList arrayList6, final c cVar, final ij ijVar, final ij ijVar2, final ij ijVar3, final nj njVar, final hw hwVar, final TL_stories.StoryItem storyItem, final org.telegram.ui.qm qmVar, final org.telegram.ui.Components.qt qtVar, final sh.f fVar, final boolean z9, final boolean z10) {
+    public static void V(final int i7, final long j3, final long j10, final long j11, final long j12, final String str, final String str2, final ArrayList arrayList, final ArrayList arrayList2, final ArrayList arrayList3, final ArrayList arrayList4, final ArrayList arrayList5, final ArrayList arrayList6, final c cVar, final ij ijVar, final ij ijVar2, final ij ijVar3, final nj njVar, final hw hwVar, final TL_stories.StoryItem storyItem, final org.telegram.ui.qm qmVar, final org.telegram.ui.Components.rt rtVar, final sh.f fVar, final boolean z9, final boolean z10) {
         if (arrayList == null && arrayList2 == null && arrayList3 == null) {
             return;
         }
         if (arrayList == null || arrayList2 == null || arrayList.size() == arrayList2.size()) {
-            Utilities.e.c(new Runnable() { // from class: org.telegram.messenger.rx
+            Utilities.e.c(new Runnable() { // from class: org.telegram.messenger.qx
                 @Override // java.lang.Runnable
                 public final void run() {
                     int i10;
@@ -5760,9 +5760,9 @@ public final class gz extends c1 implements ls {
                     ArrayList arrayList9 = arrayList4;
                     ij ijVar6 = ijVar3;
                     boolean z13 = z9;
-                    org.telegram.ui.Components.qt qtVar2 = qtVar;
+                    org.telegram.ui.Components.rt rtVar2 = rtVar;
                     hw hwVar2 = hwVar;
-                    org.telegram.ui.Components.qt qtVar3 = qtVar2;
+                    org.telegram.ui.Components.rt rtVar3 = rtVar2;
                     int i14 = i13;
                     long j17 = j10;
                     boolean z14 = z10;
@@ -5778,7 +5778,7 @@ public final class gz extends c1 implements ls {
                         int i16 = 0;
                         z11 = true;
                         while (i15 < size) {
-                            org.telegram.ui.Components.qt qtVar4 = qtVar3;
+                            org.telegram.ui.Components.rt rtVar4 = rtVar3;
                             String str8 = i15 == 0 ? str7 : null;
                             boolean z15 = z14;
                             if (C || size <= 1 || i16 % 10 != 0 || fVar2 != null) {
@@ -5814,7 +5814,7 @@ public final class gz extends c1 implements ls {
                             String str11 = str6;
                             ArrayList arrayList10 = i15 == 0 ? arrayList7 : null;
                             String str12 = str7;
-                            boolean z16 = qtVar4 == null;
+                            boolean z16 = rtVar4 == null;
                             long j23 = j18;
                             if (!z11) {
                                 j18 = 0;
@@ -5848,7 +5848,7 @@ public final class gz extends c1 implements ls {
                             arrayList9 = arrayList13;
                             str7 = str12;
                             j18 = j23;
-                            qtVar3 = qtVar4;
+                            rtVar3 = rtVar4;
                             i15 = i22;
                             z14 = z15;
                             size = i20;
@@ -5864,7 +5864,7 @@ public final class gz extends c1 implements ls {
                     nj njVar5 = njVar3;
                     String str13 = str6;
                     ArrayList arrayList15 = arrayList9;
-                    org.telegram.ui.Components.qt qtVar5 = qtVar3;
+                    org.telegram.ui.Components.rt rtVar5 = rtVar3;
                     int i23 = i14;
                     String str14 = str7;
                     long j26 = j18;
@@ -5895,7 +5895,7 @@ public final class gz extends c1 implements ls {
                             long j28 = jArr[0];
                             boolean z19 = (fVar2 == null && i26 == 10) || i24 == size2 + (-1);
                             Uri uri2 = (Uri) arrayList16.get(i24);
-                            boolean z20 = qtVar5 == null;
+                            boolean z20 = rtVar5 == null;
                             if (z11) {
                                 i11 = size2;
                                 cVar2 = cVar5;
@@ -5941,8 +5941,8 @@ public final class gz extends c1 implements ls {
                     }
                     c cVar6 = cVar5;
                     int i31 = i10;
-                    if (qtVar5 != null) {
-                        ((t0.h) qtVar5.b).i();
+                    if (rtVar5 != null) {
+                        ((t0.h) rtVar5.b).i();
                     }
                     if (i31 != 0) {
                         g0.h3(new x0(i31, cVar6, 12));
@@ -5970,7 +5970,7 @@ public final class gz extends c1 implements ls {
         V(i7, j3, 0L, 0L, 0L, charSequence2 != null ? charSequence2.toString() : null, str, arrayList, arrayList2, arrayList3, arrayList4, null, null, cVar2, ijVar, ijVar2, null, null, null, null, null, null, null, z9, false);
     }
 
-    public static void X(final c cVar, final ArrayList arrayList, final long j3, final ij ijVar, final ij ijVar2, final TL_stories.StoryItem storyItem, final org.telegram.ui.qm qmVar, final boolean z9, boolean z10, final ij ijVar3, final TLRPC.TL_inputPollAnswer tL_inputPollAnswer, final boolean z11, final int i7, final int i10, final boolean z12, final org.telegram.ui.Components.qt qtVar, final hw hwVar, final long j10, final boolean z13, final long j11, final long j12, final nj njVar, final sh.f fVar, final boolean z14) {
+    public static void X(final c cVar, final ArrayList arrayList, final long j3, final ij ijVar, final ij ijVar2, final TL_stories.StoryItem storyItem, final org.telegram.ui.qm qmVar, final boolean z9, boolean z10, final ij ijVar3, final TLRPC.TL_inputPollAnswer tL_inputPollAnswer, final boolean z11, final int i7, final int i10, final boolean z12, final org.telegram.ui.Components.rt rtVar, final hw hwVar, final long j10, final boolean z13, final long j11, final long j12, final nj njVar, final sh.f fVar, final boolean z14) {
         final boolean z15;
         if (arrayList.isEmpty()) {
             return;
@@ -5994,16 +5994,16 @@ public final class gz extends c1 implements ls {
         I.c(new Runnable() { // from class: org.telegram.messenger.qw
             @Override // java.lang.Runnable
             public final void run() {
-                gz.K(arrayList, j3, z9, z15, z16, cVar, j13, ijVar3, tL_inputPollAnswer, ijVar, ijVar2, z11, i7, i10, storyItem, qmVar, hwVar, j10, z13, j11, j12, njVar, fVar, z14, qtVar, z12);
+                gz.K(arrayList, j3, z9, z15, z16, cVar, j13, ijVar3, tL_inputPollAnswer, ijVar, ijVar2, z11, i7, i10, storyItem, qmVar, hwVar, j10, z13, j11, j12, njVar, fVar, z14, rtVar, z12);
             }
         });
     }
 
-    public static void Y(c cVar, Uri uri, long j3, ij ijVar, ij ijVar2, org.telegram.ui.Components.qt qtVar, ij ijVar3, boolean z9, int i7, hw hwVar) {
-        Z(cVar, null, null, uri, j3, ijVar, ijVar2, null, null, null, qtVar, 0, ijVar3, null, z9, i7, false, null, hwVar, 0L, 0L, 0L, null);
+    public static void Y(c cVar, Uri uri, long j3, ij ijVar, ij ijVar2, org.telegram.ui.Components.rt rtVar, ij ijVar3, boolean z9, int i7, hw hwVar) {
+        Z(cVar, null, null, uri, j3, ijVar, ijVar2, null, null, null, rtVar, 0, ijVar3, null, z9, i7, false, null, hwVar, 0L, 0L, 0L, null);
     }
 
-    public static void Z(c cVar, String str, String str2, Uri uri, long j3, ij ijVar, ij ijVar2, org.telegram.ui.qm qmVar, ArrayList arrayList, ArrayList arrayList2, org.telegram.ui.Components.qt qtVar, int i7, ij ijVar3, j20 j20Var, boolean z9, int i10, boolean z10, CharSequence charSequence, hw hwVar, long j10, long j11, long j12, nj njVar) {
+    public static void Z(c cVar, String str, String str2, Uri uri, long j3, ij ijVar, ij ijVar2, org.telegram.ui.qm qmVar, ArrayList arrayList, ArrayList arrayList2, org.telegram.ui.Components.rt rtVar, int i7, ij ijVar3, j20 j20Var, boolean z9, int i10, boolean z10, CharSequence charSequence, hw hwVar, long j10, long j11, long j12, nj njVar) {
         fz fzVar = new fz();
         fzVar.c = str;
         fzVar.e = str2;
@@ -6019,18 +6019,18 @@ public final class gz extends c1 implements ls {
         fzVar.k = j20Var;
         ArrayList arrayList3 = new ArrayList();
         arrayList3.add(fzVar);
-        X(cVar, arrayList3, j3, ijVar, ijVar2, null, qmVar, z10, false, ijVar3, null, z9, i10, 0, false, qtVar, hwVar, j10, false, j11, j12, njVar, null, false);
+        X(cVar, arrayList3, j3, ijVar, ijVar2, null, qmVar, z10, false, ijVar3, null, z9, i10, 0, false, rtVar, hwVar, j10, false, j11, j12, njVar, null, false);
     }
 
     public static void a0(c cVar, CharSequence charSequence, long j3, long j10, boolean z9, int i7, int i10) {
-        yr.a0(cVar.a).a.c(new nw(charSequence, cVar, j10, j3, z9, i7, i10, 1));
+        yr.a0(cVar.a).a.c(new mw(charSequence, cVar, j10, j3, z9, i7, i10, 1));
     }
 
     public static void b0(final int i7, final int i10, final int i11, final long j3, final long j10, final long j11, final long j12, final CharSequence charSequence, final String str, final String str2, final ArrayList arrayList, final c cVar, final ij ijVar, final ij ijVar2, final ij ijVar3, final nj njVar, final hw hwVar, final j20 j20Var, final TLRPC.Photo photo, final TL_stories.StoryItem storyItem, final org.telegram.ui.qm qmVar, final boolean z9, final boolean z10, final boolean z11) {
         if (str == null || str.length() == 0) {
             return;
         }
-        new Thread(new Runnable() { // from class: org.telegram.messenger.oy
+        new Thread(new Runnable() { // from class: org.telegram.messenger.py
             /* JADX WARN: Removed duplicated region for block: B:100:0x0491  */
             /* JADX WARN: Removed duplicated region for block: B:103:0x049b  */
             /* JADX WARN: Removed duplicated region for block: B:105:0x04a2  */
@@ -6323,7 +6323,7 @@ public final class gz extends c1 implements ls {
                             final String str13 = str5;
                             final TLRPC.PhotoSize photoSize = q10;
                             final c cVar5 = cVar3;
-                            g0.h3(new Runnable() { // from class: org.telegram.messenger.gy
+                            g0.h3(new Runnable() { // from class: org.telegram.messenger.fy
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     String str14;
@@ -6395,7 +6395,7 @@ public final class gz extends c1 implements ls {
                         final String str132 = str5;
                         final TLRPC.PhotoSize photoSize2 = q10;
                         final c cVar52 = cVar3;
-                        g0.h3(new Runnable() { // from class: org.telegram.messenger.gy
+                        g0.h3(new Runnable() { // from class: org.telegram.messenger.fy
                             @Override // java.lang.Runnable
                             public final void run() {
                                 String str14;
@@ -6465,7 +6465,7 @@ public final class gz extends c1 implements ls {
                 final String str1322 = str5;
                 final TLRPC.PhotoSize photoSize22 = q10;
                 final c cVar522 = cVar3;
-                g0.h3(new Runnable() { // from class: org.telegram.messenger.gy
+                g0.h3(new Runnable() { // from class: org.telegram.messenger.fy
                     @Override // java.lang.Runnable
                     public final void run() {
                         String str14;
@@ -7185,7 +7185,7 @@ public final class gz extends c1 implements ls {
                 }
             }
         }
-        getConnectionsManager().sendRequest(tL_messages_uploadMedia, new nx(this, inputMedia, syVar, i10));
+        getConnectionsManager().sendRequest(tL_messages_uploadMedia, new mx(this, inputMedia, syVar, i10));
     }
 
     public final xy B(long j3) {
@@ -7455,7 +7455,7 @@ public final class gz extends c1 implements ls {
                 tL_messages_uploadMedia.media = inputMedia3;
                 final boolean z9 = inputMedia3.spoiler;
                 final int i12 = inputMedia3.ttl_seconds;
-                gzVar.getConnectionsManager().sendRequest(tL_messages_uploadMedia, new RequestDelegate() { // from class: org.telegram.messenger.mx
+                gzVar.getConnectionsManager().sendRequest(tL_messages_uploadMedia, new RequestDelegate() { // from class: org.telegram.messenger.lx
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject4, TLRPC.TL_error tL_error) {
                         g0.h3(new bi.nb(gz.this, tLObject4, syVar2, z9, i12));
@@ -7469,7 +7469,7 @@ public final class gz extends c1 implements ls {
                 TLRPC.TL_inputMediaUploadedPhoto tL_inputMediaUploadedPhoto = new TLRPC.TL_inputMediaUploadedPhoto();
                 tL_inputMediaUploadedPhoto.file = syVar2.j;
                 tL_messages_uploadMedia2.media = tL_inputMediaUploadedPhoto;
-                gzVar.getConnectionsManager().sendRequest(tL_messages_uploadMedia2, new nx(gzVar, inputMedia3, syVar2, 0));
+                gzVar.getConnectionsManager().sendRequest(tL_messages_uploadMedia2, new mx(gzVar, inputMedia3, syVar2, 0));
                 return;
             }
             ij ijVar6 = syVar2.m;
@@ -7608,11 +7608,11 @@ public final class gz extends c1 implements ls {
                     syVar2.E.put(str16 + "_i", ijVar8);
                     TLRPC.PhotoSize photoSize4 = syVar2.g;
                     if (photoSize4 != null && photoSize4.location != null) {
-                        syVar2.E.put(rf.b.q(str16, "_t"), syVar2.g);
+                        syVar2.E.put(rf.b.r(str16, "_t"), syVar2.g);
                     }
                     TLRPC.PhotoSize photoSize5 = syVar2.i;
                     if (photoSize5 != null && photoSize5.location != null) {
-                        syVar2.E.put(rf.b.q(str16, "_ct"), syVar2.i);
+                        syVar2.E.put(rf.b.r(str16, "_ct"), syVar2.i);
                     }
                     syVar2.o.getClass();
                     MediaController.B().h0(ijVar8, false, true, false);
@@ -7688,7 +7688,7 @@ public final class gz extends c1 implements ls {
                                         sb9.append(syVar2.i.location.volume_id);
                                         sb9.append("_");
                                         String n10 = a8.p0.n(syVar2.i.location.local_id, ".jpg", sb9);
-                                        syVar2.E.put(rf.b.q(str19, str18), syVar2.i);
+                                        syVar2.E.put(rf.b.r(str19, str18), syVar2.i);
                                         syVar2.E.put(n10 + "_doc", str19);
                                     }
                                     syVar2.E.put(sb8 + "_o", str19);
@@ -7736,9 +7736,9 @@ public final class gz extends c1 implements ls {
                                 tL_messages_uploadMedia4.peer = inputPeer;
                                 tL_messages_uploadMedia4.media = inputMedia2;
                                 ConnectionsManager connectionsManager = gzVar.getConnectionsManager();
-                                ox oxVar = new ox(size, 0, this, inputMedia2, syVar2, str19, inputFile4);
+                                nx nxVar = new nx(size, 0, this, inputMedia2, syVar2, str19, inputFile4);
                                 syVar2 = syVar2;
-                                connectionsManager.sendRequest(tL_messages_uploadMedia4, oxVar);
+                                connectionsManager.sendRequest(tL_messages_uploadMedia4, nxVar);
                                 r22 = 0;
                                 gzVar = this;
                                 syVar2.o = r22;
@@ -7753,7 +7753,7 @@ public final class gz extends c1 implements ls {
                             syVar2.E.put(str17 + "_i", ijVar8);
                             TLRPC.PhotoSize photoSize8 = syVar2.g;
                             if (photoSize8 != null && photoSize8.location != null) {
-                                syVar2.E.put(rf.b.q(str17, "_t"), syVar2.g);
+                                syVar2.E.put(rf.b.r(str17, "_t"), syVar2.g);
                             }
                             TLRPC.PhotoSize photoSize9 = syVar2.i;
                             if (photoSize9 != null && photoSize9.location != null) {
@@ -7763,7 +7763,7 @@ public final class gz extends c1 implements ls {
                                 sb10.append(syVar2.i.location.volume_id);
                                 sb10.append("_");
                                 String n11 = a8.p0.n(syVar2.i.location.local_id, ".jpg", sb10);
-                                syVar2.E.put(rf.b.q(str17, str), syVar2.i);
+                                syVar2.E.put(rf.b.r(str17, str), syVar2.i);
                                 syVar2.E.put(n11 + "_doc", str17);
                             }
                             j20 j20Var7 = ijVar8.p0;
@@ -7783,7 +7783,7 @@ public final class gz extends c1 implements ls {
                         syVar2.E.put(str21 + "_i", ijVar8);
                         TLRPC.PhotoSize photoSize10 = syVar2.g;
                         if (photoSize10 != null && photoSize10.location != null) {
-                            syVar2.E.put(rf.b.q(str21, "_t"), syVar2.g);
+                            syVar2.E.put(rf.b.r(str21, "_t"), syVar2.g);
                         }
                         j20 j20Var8 = ijVar8.p0;
                         if (j20Var8 == null || !j20Var8.c()) {
@@ -7876,7 +7876,7 @@ public final class gz extends c1 implements ls {
                 TLRPC.TL_messages_uploadMedia tL_messages_uploadMedia = new TLRPC.TL_messages_uploadMedia();
                 tL_messages_uploadMedia.peer = tL_messages_addPollAnswer.peer;
                 tL_messages_uploadMedia.media = tL_messages_addPollAnswer.answer.input_media;
-                getConnectionsManager().sendRequest(tL_messages_uploadMedia, new px(this, tL_messages_addPollAnswer, tLObject, ijVar, str, syVar, z9, syVar2, obj, hashMap, z10));
+                getConnectionsManager().sendRequest(tL_messages_uploadMedia, new ox(this, tL_messages_addPollAnswer, tLObject, ijVar, str, syVar, z9, syVar2, obj, hashMap, z10));
                 return;
             }
             tLObject2 = tLObject;
@@ -7903,23 +7903,23 @@ public final class gz extends c1 implements ls {
         TLRPC.Message message = ijVar.k;
         f0(message, z10);
         bi.ea y11 = bi.ea.y(this.currentAccount, false);
-        ow owVar = new ow(this, tLObject2, ijVar, str, syVar, z9, syVar2, obj, hashMap, z10, 1);
+        nw nwVar = new nw(this, tLObject2, ijVar, str, syVar, z9, syVar2, obj, hashMap, z10, 1);
         if (ijVar.k != null) {
             int f12 = ijVar.f1();
             if (bi.ea.o(tLObject) > 0 && y11.Q.remove(Integer.valueOf(f12))) {
-                y11.R.put(Integer.valueOf(f12), owVar);
+                y11.R.put(Integer.valueOf(f12), nwVar);
                 return;
             }
         }
-        if (f2.b(this.currentAccount).a(tLObject, Collections.singletonList(ijVar), new ow(this, tLObject, ijVar, str, syVar, z9, syVar2, obj, hashMap, z10, 2))) {
-            if (bg.w.g(this.currentAccount).a(tLObject, Collections.singletonList(ijVar), new c20() { // from class: org.telegram.messenger.qx
+        if (f2.b(this.currentAccount).a(tLObject, Collections.singletonList(ijVar), new nw(this, tLObject, ijVar, str, syVar, z9, syVar2, obj, hashMap, z10, 2))) {
+            if (bg.w.g(this.currentAccount).a(tLObject, Collections.singletonList(ijVar), new c20() { // from class: org.telegram.messenger.px
                 @Override // org.telegram.messenger.c20
                 public final void a(Object obj2) {
                     boolean z12 = z10;
                     gz.this.O((TLObject) obj2, ijVar, str, syVar, z9, syVar2, obj, hashMap, z12);
                 }
             })) {
-                message.reqId = getConnectionsManager().sendRequest(tLObject, new px(this, tLObject, ijVar, str, syVar, z9, syVar2, obj, hashMap, z10, message), new o(6, this, message), (tLObject instanceof TLRPC.TL_messages_sendMessage ? 128 : 0) | 68);
+                message.reqId = getConnectionsManager().sendRequest(tLObject, new ox(this, tLObject, ijVar, str, syVar, z9, syVar2, obj, hashMap, z10, message), new o(6, this, message), (tLObject instanceof TLRPC.TL_messages_sendMessage ? 128 : 0) | 68);
                 if (syVar != null) {
                     syVar.d();
                 }
@@ -7933,7 +7933,7 @@ public final class gz extends c1 implements ls {
             f0(((ij) arrayList.get(i7)).k, z9);
         }
         final int i10 = 0;
-        if (bi.ea.y(this.currentAccount, false).c(tLObject, arrayList, new Runnable(this) { // from class: org.telegram.messenger.hx
+        if (bi.ea.y(this.currentAccount, false).c(tLObject, arrayList, new Runnable(this) { // from class: org.telegram.messenger.gx
             public final /* synthetic */ gz b;
 
             {
@@ -7953,7 +7953,7 @@ public final class gz extends c1 implements ls {
             }
         })) {
             final int i11 = 1;
-            if (f2.b(this.currentAccount).a(tLObject, arrayList, new Runnable(this) { // from class: org.telegram.messenger.hx
+            if (f2.b(this.currentAccount).a(tLObject, arrayList, new Runnable(this) { // from class: org.telegram.messenger.gx
                 public final /* synthetic */ gz b;
 
                 {
@@ -7971,14 +7971,14 @@ public final class gz extends c1 implements ls {
                             break;
                     }
                 }
-            }) && bg.w.g(this.currentAccount).a(tLObject, arrayList, new c20() { // from class: org.telegram.messenger.kx
+            }) && bg.w.g(this.currentAccount).a(tLObject, arrayList, new c20() { // from class: org.telegram.messenger.jx
                 @Override // org.telegram.messenger.c20
                 public final void a(Object obj) {
                     boolean z10 = z9;
                     gz.this.P((TLObject) obj, arrayList, arrayList2, arrayList3, syVar, z10);
                 }
             })) {
-                getConnectionsManager().sendRequest(tLObject, new RequestDelegate() { // from class: org.telegram.messenger.lx
+                getConnectionsManager().sendRequest(tLObject, new RequestDelegate() { // from class: org.telegram.messenger.kx
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                         ArrayList arrayList4;
@@ -8020,12 +8020,12 @@ public final class gz extends c1 implements ls {
                                         }
                                         syVar2.s[c10] = true;
                                     }
-                                    g0.h3(new z4(gzVar, tLObject3, c10, syVar2, arrayList5, z10));
+                                    g0.h3(new y4(gzVar, tLObject3, c10, syVar2, arrayList5, z10));
                                     return;
                                 }
                             }
                         }
-                        g0.h3(new vx(gzVar, tL_error, tLObject2, z10, arrayList5, arrayList4, tLObject3));
+                        g0.h3(new ux(gzVar, tL_error, tLObject2, z10, arrayList5, arrayList4, tLObject3));
                     }
                 }, (QuickAckDelegate) null, 68);
             }
@@ -8224,7 +8224,7 @@ public final class gz extends c1 implements ls {
             return;
         }
         yr messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new qq(messagesStorage, 29));
+        messagesStorage.a.c(new rq(messagesStorage, 23));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -8552,7 +8552,7 @@ public final class gz extends c1 implements ls {
                         str = str13;
                         if (c10 == 1) {
                             gzVar = this;
-                            Utilities.e.c(new em(this, syVar5, new File(w7.z(4), Utilities.a(str) + ".gif"), ijVar, 23));
+                            Utilities.e.c(new em(this, syVar5, new File(w7.z(4), Utilities.a(str) + ".gif"), ijVar, 24));
                             i28++;
                             str13 = str;
                         }
@@ -8602,7 +8602,7 @@ public final class gz extends c1 implements ls {
                     bzVar.a(str14, ((Long) objArr[c11]).longValue(), 1.0f);
                     zy zyVar2 = (zy) bzVar.a.get(str14);
                     if (zyVar2 != null) {
-                        zyVar2.a(bzVar.o.currentAccount, inputFile2, new yq(21, bzVar, str14));
+                        zyVar2.a(bzVar.o.currentAccount, inputFile2, new zq(21, bzVar, str14));
                     }
                 }
                 arrayList2 = (ArrayList) gzVar.a.get(str14);
@@ -9023,14 +9023,14 @@ public final class gz extends c1 implements ls {
                         org.telegram.ui.Components.j6 j6Var = wbVar.b;
                         int i17 = z9Var2.g;
                         if (i17 == 1) {
-                            G = hd.M0(2131747702, null);
+                            G = id.M0(2131747704, null);
                             i12 = 0;
                         } else {
                             i12 = 0;
-                            G = hd.G(i17, "PaidMessageSentTitle", new Object[0]);
+                            G = id.G(i17, "PaidMessageSentTitle", new Object[0]);
                         }
                         j6Var.setText(G);
-                        wbVar.c.setText(g0.X2(hd.H(',', "PaidMessageSentSubtitle", Math.max(i12, (int) z9Var2.h))));
+                        wbVar.c.setText(g0.X2(id.H(',', "PaidMessageSentSubtitle", Math.max(i12, (int) z9Var2.h))));
                         wbVar.a.d();
                     }
                 }
@@ -9177,7 +9177,7 @@ public final class gz extends c1 implements ls {
 
     public final void f0(TLRPC.Message message, boolean z9) {
         if (Thread.currentThread() != t0.d.getLooper().getThread()) {
-            g0.h3(new tw(this, message, z9, 2));
+            g0.h3(new sw(this, message, z9, 2));
         } else {
             g0(message, z9);
         }
@@ -9319,19 +9319,19 @@ public final class gz extends c1 implements ls {
         }
         long B0 = ij.B0(ijVar.k);
         long j3 = ijVar.k.random_id;
-        int i10 = 0;
+        char c10 = 1;
         TLRPC.Message message = null;
         if (updates != null) {
             ArrayList<TLRPC.Update> arrayList = updates.updates;
             int size = arrayList.size();
-            int i11 = 0;
+            int i10 = 0;
             while (true) {
-                if (i11 >= size) {
+                if (i10 >= size) {
                     i7 = 0;
                     break;
                 }
-                TLRPC.Update update = arrayList.get(i11);
-                i11++;
+                TLRPC.Update update = arrayList.get(i10);
+                i10++;
                 TLRPC.Update update2 = update;
                 if (update2 instanceof TL_update.TL_updateMessageID) {
                     TL_update.TL_updateMessageID tL_updateMessageID = (TL_update.TL_updateMessageID) update2;
@@ -9341,14 +9341,14 @@ public final class gz extends c1 implements ls {
                     }
                 }
             }
-            for (int i12 = 0; i12 < updates.updates.size(); i12++) {
-                TLRPC.Update update3 = updates.updates.get(i12);
+            for (int i11 = 0; i11 < updates.updates.size(); i11++) {
+                TLRPC.Update update3 = updates.updates.get(i11);
                 if (update3 instanceof TL_update.TL_updateNewMessage) {
                     TL_update.TL_updateNewMessage tL_updateNewMessage = (TL_update.TL_updateNewMessage) update3;
                     TLRPC.Message message2 = tL_updateNewMessage.message;
                     if ((message2.action instanceof TLRPC.TL_messageActionGramTransfer) && message2.out && m5.o(message2.peer_id) == B0 && (i7 == 0 || message2.id == i7)) {
-                        updates.updates.remove(i12);
-                        Utilities.d.c(new hy(this, tL_updateNewMessage, i10));
+                        updates.updates.remove(i11);
+                        Utilities.d.c(new iy(this, tL_updateNewMessage, c10 == true ? 1 : 0));
                         message = message2;
                         break;
                     }
@@ -9366,11 +9366,11 @@ public final class gz extends c1 implements ls {
             i7 = 0;
         }
         TLRPC.Message message3 = message;
-        int i13 = ijVar.k.local_id;
-        if (i13 >= 0) {
-            i13 = ijVar.f1();
+        int i12 = ijVar.k.local_id;
+        if (i12 >= 0) {
+            i12 = ijVar.f1();
         }
-        int i14 = i13;
+        int i13 = i12;
         if (message3 != null) {
             message3.dialog_id = B0;
             message3.local_id = 0;
@@ -9383,31 +9383,31 @@ public final class gz extends c1 implements ls {
             message3.unread = num.intValue() < message3.id;
             ArrayList arrayList2 = new ArrayList();
             arrayList2.add(message3);
-            getMessagesStorage().a.c(new fm(this, j3, B0, i14, message3, arrayList2, ijVar));
+            getMessagesStorage().a.c(new fm(this, j3, B0, i13, message3, arrayList2, ijVar));
             return;
         }
         if (ijVar.f1() > 0) {
-            d0(i14);
-            i0(i14, false);
+            d0(i13);
+            i0(i13, false);
             return;
         }
         if (z9 || i7 != 0) {
             yr messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new gq(messagesStorage, j3, B0, Integer.valueOf(i14), i14, ijVar.k.date));
+            messagesStorage.a.c(new gq(messagesStorage, j3, B0, Integer.valueOf(i13), i13, ijVar.k.date));
             ijVar.k.send_state = 0;
             ijVar.K1 = true;
-            getNotificationCenter().k(qs.J, Integer.valueOf(i14));
+            getNotificationCenter().k(qs.J, Integer.valueOf(i13));
         } else {
             TLRPC.TL_messageService tL_messageService = new TLRPC.TL_messageService();
-            tL_messageService.id = i14;
+            tL_messageService.id = i13;
             tL_messageService.dialog_id = B0;
             getMessagesStorage().N0(0, tL_messageService);
             ijVar.k.send_state = 2;
             ijVar.K1 = true;
-            getNotificationCenter().k(qs.M, Integer.valueOf(i14));
+            getNotificationCenter().k(qs.M, Integer.valueOf(i13));
         }
-        d0(i14);
-        i0(i14, false);
+        d0(i13);
+        i0(i13, false);
     }
 
     public final boolean k0(long j3, ij ijVar, boolean z9) {
@@ -9649,9 +9649,9 @@ public final class gz extends c1 implements ls {
         }
         list.add(str);
         TLObject[] tLObjectArr = new TLObject[1];
-        px pxVar = new px(this, str, list, z10, ijVar, keyboardButtonProto, anVar, twoStepVerificationActivity, tLObjectArr, inputCheckPasswordSRP, z9);
+        ox oxVar = new ox(this, str, list, z10, ijVar, keyboardButtonProto, anVar, twoStepVerificationActivity, tLObjectArr, inputCheckPasswordSRP, z9);
         if (z10) {
-            getMessagesStorage().M(str, pxVar);
+            getMessagesStorage().M(str, oxVar);
             return;
         }
         TL_keyboard.TL_inlineButtonTypeUrlAuth tL_inlineButtonTypeUrlAuth = (TL_keyboard.TL_inlineButtonTypeUrlAuth) cg.c.a(keyboardButtonProto, TL_keyboard.TL_inlineButtonTypeUrlAuth.class);
@@ -9662,7 +9662,7 @@ public final class gz extends c1 implements ls {
             tL_messages_requestUrlAuth.button_id = tL_inlineButtonTypeUrlAuth.button_id;
             tL_messages_requestUrlAuth.flags |= 2;
             tLObjectArr[0] = tL_messages_requestUrlAuth;
-            getConnectionsManager().sendRequest(tL_messages_requestUrlAuth, pxVar, 2);
+            getConnectionsManager().sendRequest(tL_messages_requestUrlAuth, oxVar, 2);
             return;
         }
         if (cg.c.c(keyboardButtonProto, TL_keyboard.TL_inlineButtonTypeBuy.class)) {
@@ -9671,7 +9671,7 @@ public final class gz extends c1 implements ls {
                 tL_payments_getPaymentReceipt.msg_id = ijVar.k.media.receipt_msg_id;
                 tL_payments_getPaymentReceipt.peer = getMessagesController().m1(ijVar.k.peer_id);
                 tLObjectArr[0] = tL_payments_getPaymentReceipt;
-                getConnectionsManager().sendRequest(tL_payments_getPaymentReceipt, pxVar, 2);
+                getConnectionsManager().sendRequest(tL_payments_getPaymentReceipt, oxVar, 2);
                 return;
             }
             TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm = new TLRPC.TL_payments_getPaymentForm();
@@ -9687,7 +9687,7 @@ public final class gz extends c1 implements ls {
                 tL_payments_getPaymentForm.flags |= 1;
             }
             tLObjectArr[0] = tL_payments_getPaymentForm;
-            getConnectionsManager().sendRequest(tL_payments_getPaymentForm, pxVar, 2);
+            getConnectionsManager().sendRequest(tL_payments_getPaymentForm, oxVar, 2);
             return;
         }
         if (ij.d3(ijVar.k)) {
@@ -9695,7 +9695,7 @@ public final class gz extends c1 implements ls {
             tL_getCallbackAnswer.peer = getMessagesController().j1(ij.B0(ijVar.k));
             tL_getCallbackAnswer.id = ijVar.P0();
             tL_getCallbackAnswer.data = keyboardButtonProto.getData();
-            getConnectionsManager().sendRequest(tL_getCallbackAnswer, pxVar, 2);
+            getConnectionsManager().sendRequest(tL_getCallbackAnswer, oxVar, 2);
             return;
         }
         TLRPC.TL_messages_getBotCallbackAnswer tL_messages_getBotCallbackAnswer = new TLRPC.TL_messages_getBotCallbackAnswer();
@@ -9711,7 +9711,7 @@ public final class gz extends c1 implements ls {
             tL_messages_getBotCallbackAnswer.flags |= 1;
             tL_messages_getBotCallbackAnswer.data = keyboardButtonProto.getData();
         }
-        getConnectionsManager().sendRequest(tL_messages_getBotCallbackAnswer, pxVar, 2);
+        getConnectionsManager().sendRequest(tL_messages_getBotCallbackAnswer, oxVar, 2);
     }
 
     public final TLRPC.TL_inputReplyToMessage o(TLRPC.TL_messageReplyHeader tL_messageReplyHeader) {
@@ -9824,11 +9824,11 @@ public final class gz extends c1 implements ls {
                 a8.g(e, true);
                 nativeByteBuffer = nativeByteBuffer2;
                 j10 = getMessagesStorage().z(nativeByteBuffer);
-                getConnectionsManager().sendRequest(tL_messages_sendMedia, new p4(this, j10, 4));
+                getConnectionsManager().sendRequest(tL_messages_sendMedia, new v4(this, j10, 4));
             }
             j10 = getMessagesStorage().z(nativeByteBuffer);
         }
-        getConnectionsManager().sendRequest(tL_messages_sendMedia, new p4(this, j10, 4));
+        getConnectionsManager().sendRequest(tL_messages_sendMedia, new v4(this, j10, 4));
     }
 
     public final ij q(TLRPC.User user, String str, long j3, String str2, boolean z9, boolean z10, long j10) {
@@ -10062,7 +10062,7 @@ public final class gz extends c1 implements ls {
             N1 = m5.k(gzVar2.getMessagesController().J2(j20));
         }
         if (N1 != j10) {
-            org.telegram.ui.Components.v4.X(gzVar2.currentAccount, Math.max(1, arrayList.size()), j20, new c20() { // from class: org.telegram.messenger.sx
+            org.telegram.ui.Components.v4.X(gzVar2.currentAccount, Math.max(1, arrayList.size()), j20, new c20() { // from class: org.telegram.messenger.rx
                 @Override // org.telegram.messenger.c20
                 public final void a(Object obj) {
                     gz gzVar3 = gz.this;
@@ -10959,7 +10959,7 @@ public final class gz extends c1 implements ls {
                                                             arrayList3 = arrayList9;
                                                             peer = peer7;
                                                             z22 = z32;
-                                                            emVar = new em(this, tL_messages_forwardMessages, arrayList11, new tx(i7, j3, hVar9, arrayList9, arrayList11, ijVar3, this, peer7, tL_messages_forwardMessages, i7 != 2147483646, z32), 4);
+                                                            emVar = new em(this, tL_messages_forwardMessages, arrayList11, new sx(i7, j3, hVar9, arrayList9, arrayList11, ijVar3, this, peer7, tL_messages_forwardMessages, i7 != 2147483646, z32), 4);
                                                             gzVar = this;
                                                             if (bi.ea.y(gzVar.currentAccount, false).c(tL_messages_forwardMessages, arrayList11, emVar)) {
                                                                 emVar.run();
@@ -11018,7 +11018,7 @@ public final class gz extends c1 implements ls {
                                                     arrayList3 = arrayList9;
                                                     peer = peer7;
                                                     z22 = z322;
-                                                    emVar = new em(this, tL_messages_forwardMessages, arrayList11, new tx(i7, j3, hVar92, arrayList9, arrayList11, ijVar3, this, peer7, tL_messages_forwardMessages, i7 != 2147483646, z322), 4);
+                                                    emVar = new em(this, tL_messages_forwardMessages, arrayList11, new sx(i7, j3, hVar92, arrayList9, arrayList11, ijVar3, this, peer7, tL_messages_forwardMessages, i7 != 2147483646, z322), 4);
                                                     gzVar = this;
                                                     if (bi.ea.y(gzVar.currentAccount, false).c(tL_messages_forwardMessages, arrayList11, emVar)) {
                                                     }
@@ -11152,7 +11152,7 @@ public final class gz extends c1 implements ls {
                                             arrayList3 = arrayList9;
                                             peer = peer72;
                                             z22 = z3222;
-                                            emVar = new em(this, tL_messages_forwardMessages, arrayList11, new tx(i7, j3, hVar922, arrayList9, arrayList11, ijVar3, this, peer72, tL_messages_forwardMessages, i7 != 2147483646, z3222), 4);
+                                            emVar = new em(this, tL_messages_forwardMessages, arrayList11, new sx(i7, j3, hVar922, arrayList9, arrayList11, ijVar3, this, peer72, tL_messages_forwardMessages, i7 != 2147483646, z3222), 4);
                                             gzVar = this;
                                             if (bi.ea.y(gzVar.currentAccount, false).c(tL_messages_forwardMessages, arrayList11, emVar)) {
                                             }
@@ -11419,7 +11419,7 @@ public final class gz extends c1 implements ls {
                 arrayList3 = arrayList9;
                 peer = peer722;
                 z22 = z32222;
-                emVar = new em(this, tL_messages_forwardMessages, arrayList11, new tx(i7, j3, hVar9222, arrayList9, arrayList11, ijVar3, this, peer722, tL_messages_forwardMessages, i7 != 2147483646, z32222), 4);
+                emVar = new em(this, tL_messages_forwardMessages, arrayList11, new sx(i7, j3, hVar9222, arrayList9, arrayList11, ijVar3, this, peer722, tL_messages_forwardMessages, i7 != 2147483646, z32222), 4);
                 gzVar = this;
                 if (bi.ea.y(gzVar.currentAccount, false).c(tL_messages_forwardMessages, arrayList11, emVar)) {
                 }
@@ -11512,7 +11512,7 @@ public final class gz extends c1 implements ls {
             tL_messages_sendReaction.flags |= 2;
             tL_messages_sendReaction.big = true;
         }
-        getConnectionsManager().sendRequest(tL_messages_sendReaction, new s4(9, this, diVar));
+        getConnectionsManager().sendRequest(tL_messages_sendReaction, new r4(9, this, diVar));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:100:0x06e3, code lost:
@@ -12717,16 +12717,16 @@ public final class gz extends c1 implements ls {
             document2 = document;
         }
         if (ij.t3(document2, false)) {
-            I.c(new Runnable() { // from class: org.telegram.messenger.jy
+            I.c(new Runnable() { // from class: org.telegram.messenger.hy
                 @Override // java.lang.Runnable
                 public final void run() {
                     final Bitmap[] bitmapArr = new Bitmap[1];
                     final TLRPC.Document document3 = document2;
                     String q10 = hc.b(document3).q(null, null, false);
                     String str2 = "video/mp4".equals(document3.mime_type) ? ".mp4" : "video/x-matroska".equals(document3.mime_type) ? ".mkv" : "";
-                    File file = new File(w7.z(3), rf.b.q(q10, str2));
+                    File file = new File(w7.z(3), rf.b.r(q10, str2));
                     if (!file.exists()) {
-                        file = new File(w7.z(2), rf.b.q(q10, str2));
+                        file = new File(w7.z(2), rf.b.r(q10, str2));
                     }
                     final gz gzVar = gz.this;
                     gz.w(gzVar.getAccountInstance(), false, document3, file.getAbsolutePath(), null, 0L, false);
@@ -12748,7 +12748,7 @@ public final class gz extends c1 implements ls {
                     final nj njVar2 = njVar;
                     final CharSequence charSequence2 = charSequence;
                     final boolean z13 = z11;
-                    g0.h3(new Runnable() { // from class: org.telegram.messenger.cx
+                    g0.h3(new Runnable() { // from class: org.telegram.messenger.bx
                         @Override // java.lang.Runnable
                         public final void run() {
                             gz gzVar2 = gz.this;
@@ -12830,7 +12830,7 @@ public final class gz extends c1 implements ls {
         }
         message.rich_message = richMessage;
         message.send_state = 3;
-        int sendRequest = getConnectionsManager().sendRequest(tL_messages_editMessage3, new q4(ijVar, this, tL_messages_editMessage3, f2Var, z9));
+        int sendRequest = getConnectionsManager().sendRequest(tL_messages_editMessage3, new p4(ijVar, this, tL_messages_editMessage3, f2Var, z9));
         TLRPC.Message message2 = ijVar.k;
         if (message2 != null) {
             message2.reqId = sendRequest;
@@ -13250,7 +13250,7 @@ public final class gz extends c1 implements ls {
                                             File file3 = new File(w7.z(4), str14.concat(".jpg"));
                                             if (messageMedia.ttl_seconds != 0 || ((messageMedia.photo.sizes.size() != 1 && photoSize9.w <= 90 && photoSize9.h <= 90) || z11)) {
                                                 i14 = i20;
-                                                file2 = new File(w7.z(4), rf.b.q(str15, ".jpg"));
+                                                file2 = new File(w7.z(4), rf.b.r(str15, ".jpg"));
                                             } else {
                                                 w7.G(gzVar.currentAccount);
                                                 file2 = w7.I(photoSize9);
@@ -13272,7 +13272,7 @@ public final class gz extends c1 implements ls {
                             }
                             i14 = i18;
                             String str16 = photoSize8.location.volume_id + "_" + photoSize8.location.local_id;
-                            new File(w7.z(4), rf.b.q(str16, ".jpg")).delete();
+                            new File(w7.z(4), rf.b.r(str16, ".jpg")).delete();
                             if ("s".equals(photoSize8.type) && photoSize4 != null) {
                                 i13 = i14;
                                 TLRPC.PhotoSize photoSize10 = photoSize4;
@@ -13473,7 +13473,7 @@ public final class gz extends c1 implements ls {
                 String str20 = w13.location.volume_id + "_" + w13.location.local_id;
                 String str21 = w14.location.volume_id + "_" + w14.location.local_id;
                 if (!str20.equals(str21)) {
-                    new File(w7.z(4), str20.concat(str19)).renameTo(new File(w7.z(4), rf.b.q(str21, str19)));
+                    new File(w7.z(4), str20.concat(str19)).renameTo(new File(w7.z(4), rf.b.r(str21, str19)));
                     gc.D().R(str20, str21, hc.c(w14, messageMedia.document), z17);
                     w13.location = w14.location;
                     w13.size = w14.size;
@@ -13545,7 +13545,7 @@ public final class gz extends c1 implements ls {
                                                     photoSize11.size = photoSize12.size;
                                                 }
                                             }
-                                            file = new File(w7.z(4), rf.b.q(str22, str9));
+                                            file = new File(w7.z(4), rf.b.r(str22, str9));
                                             file6.renameTo(file);
                                             z12 = z9;
                                             gc.D().R(sb8, str22, hc.i(photoSize12, photo), z12);
@@ -13582,7 +13582,7 @@ public final class gz extends c1 implements ls {
                         i11 = i22;
                         str9 = str3;
                         String str23 = photoSize11.location.volume_id + "_" + photoSize11.location.local_id;
-                        new File(w7.z(4), rf.b.q(str23, str9)).delete();
+                        new File(w7.z(4), rf.b.r(str23, str9)).delete();
                         if (str13.equals(photoSize11.type) && photoSize3 != null) {
                             photo2 = photo3;
                             i22 = i11;

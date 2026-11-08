@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l20 implements org.telegram.ui.ActionBar.p2 {
     public final /* synthetic */ c40 a;
@@ -34,7 +34,7 @@ public final class l20 implements org.telegram.ui.ActionBar.p2 {
                 c40Var.e2.setVisibility(4);
                 c40Var.e2.setShowingDuration(4000L);
                 c40Var.b.addView(c40Var.e2, c8.ha.d(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
-                c40Var.e2.setText(org.telegram.messenger.hd.M0(2131743439, null));
+                c40Var.e2.setText(org.telegram.messenger.id.M0(2131743441, null));
                 c40Var.e2.b();
             }
             c40Var.e2.setExtraTranslationY(-org.telegram.messenger.g0.m);

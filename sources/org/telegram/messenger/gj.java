@@ -15,7 +15,7 @@ import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.tg0;
 import org.telegram.ui.Components.ug0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class gj {
     public final CharSequence a;
@@ -195,7 +195,7 @@ public final class gj {
                         i21 = ijVar.D == 0 ? ijVar.A2() ? 7 : 12 : 22;
                         i21 = ijVar.a5() ? i21 - 8 : i21;
                         if (h52.getLineCount() > i21) {
-                            String M0 = hd.M0(2131746370, null);
+                            String M0 = id.M0(2131746372, null);
                             f10 = 15.0f;
                             f11 = 32.0f;
                             boolean z25 = true;

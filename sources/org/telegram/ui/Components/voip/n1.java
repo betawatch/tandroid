@@ -20,9 +20,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.pb1;
+import org.telegram.ui.qb1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class n1 extends FrameLayout {
     public float D;
@@ -303,7 +303,7 @@ public final class n1 extends FrameLayout {
         }
         m1 m1Var = this.i0;
         if (m1Var != null) {
-            ((pb1) m1Var).b.d0.d(this.P, this.J);
+            ((qb1) m1Var).b.d0.d(this.P, this.J);
         }
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
         if (getMeasuredHeight() != this.f && getMeasuredWidth() != this.h) {

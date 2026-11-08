@@ -8,7 +8,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class oa {
     public static volatile oa[] g = new oa[4];
@@ -147,7 +147,7 @@ public final class oa {
             if (!isEmpty) {
                 TLObject f22 = qp.s1(i12).f2(str3);
                 if (f22 == null) {
-                    k7 a10 = qp.s1(i12).d2().a(str3, null, new c20() { // from class: org.telegram.messenger.ja
+                    l7 a10 = qp.s1(i12).d2().a(str3, null, new c20() { // from class: org.telegram.messenger.ja
                         @Override // org.telegram.messenger.c20
                         public final void a(Object obj) {
                             oa oaVar = oa.this;

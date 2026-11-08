@@ -7,7 +7,7 @@ import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import d9.g0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 final class bh extends bm {
     final /* synthetic */ Bundle a;
@@ -49,7 +49,7 @@ final class bh extends bm {
             obtain.writeInt(1);
             bundle.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(a10);
-            uVar.I0(obtain, 6);
+            uVar.i1(obtain, 6);
         } catch (RemoteException e10) {
             bn bnVar2 = this.e;
             int i10 = this.d;

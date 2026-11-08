@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class s30 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final class s30 extends AnimatorListenerAdapter {
             default:
                 o40 o40Var3 = this.b;
                 if (animator.equals(o40Var3.d0)) {
-                    o40Var3.c(true);
+                    o40Var3.d(true);
                     o40Var3.f1 = false;
                     o40Var3.setVisibility(4);
                     break;

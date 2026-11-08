@@ -27,12 +27,12 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
 import java.util.Stack;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.hy;
+import org.telegram.ui.Components.iy;
 import org.telegram.ui.Components.mu0;
 import org.telegram.ui.Components.ou0;
 import org.telegram.ui.uw0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class k5 extends View implements Drawable.Callback {
     public final Path A0;
@@ -311,7 +311,7 @@ public class k5 extends View implements Drawable.Callback {
                             int lineStart = this.e.getLineStart(1);
                             CharSequence subSequence = charSequence4.subSequence(0, lineEnd);
                             SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(charSequence4);
-                            valueOf2.setSpan(new hy(z9), 0, lineStart, 0);
+                            valueOf2.setSpan(new iy(z9), 0, lineStart, 0);
                             String subSequence2 = lineEnd < ellipsize.length() ? ellipsize.subSequence(lineEnd, ellipsize.length()) : "…";
                             this.d = new StaticLayout(ellipsize, 0, ellipsize.length(), textPaint, this.P ? org.telegram.messenger.g0.L(2000.0f) : i13 + org.telegram.messenger.g0.L(8.0f), getAlignment(), 1.0f, 0.0f, false);
                             StaticLayout staticLayout = new StaticLayout(subSequence, 0, subSequence.length(), textPaint, this.P ? org.telegram.messenger.g0.L(2000.0f) : i13 + org.telegram.messenger.g0.L(8.0f), getAlignment(), 1.0f, 0.0f, false);

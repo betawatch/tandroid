@@ -5,7 +5,7 @@ import j$.util.Comparator$-CC;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class j5 {
     public int a;
@@ -97,7 +97,7 @@ public final class j5 {
                 str4 = null;
             } else {
                 str = w4Var.c.trim().toLowerCase();
-                str2 = hd.E0().S0(str, true, false);
+                str2 = id.E0().S0(str, true, false);
                 str4 = rf.b.i(" ", str);
                 str3 = rf.b.i(" ", str2);
             }

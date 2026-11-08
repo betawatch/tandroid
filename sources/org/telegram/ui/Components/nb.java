@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.support.SparseLongArray;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class nb extends kb implements org.telegram.messenger.ls {
     public final lb d;
@@ -26,7 +26,7 @@ public final class nb extends kb implements org.telegram.messenger.ls {
         this.d.setClipToPadding(false);
         this.d.setVisibility(0);
         this.d.setBubbleOffset(-org.telegram.messenger.g0.L(80.0f));
-        this.d.setHint(org.telegram.messenger.hd.M0(2131745876, null));
+        this.d.setHint(org.telegram.messenger.id.M0(2131745878, null));
         addView(this.d, c8.ha.d(-2, 92.5f, 1, 0.0f, 36.0f, 0.0f, 0.0f));
         this.d.p(null, null, true);
     }

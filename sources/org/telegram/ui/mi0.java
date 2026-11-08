@@ -8,7 +8,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class mi0 extends org.telegram.ui.Components.w31 {
     public static final /* synthetic */ int b = 0;
@@ -47,15 +47,15 @@ public final class mi0 extends org.telegram.ui.Components.w31 {
             l9Var.setAnimatedEmojiDrawable(null);
         }
         if (TextUtils.isEmpty(passkey.name)) {
-            textView2.setText(org.telegram.messenger.hd.M0(2131747627, null));
+            textView2.setText(org.telegram.messenger.id.M0(2131747629, null));
         } else {
             textView2.setText(passkey.name);
         }
         int i10 = passkey.last_usage_date;
         if (i10 != 0) {
-            textView.setText(org.telegram.messenger.hd.a0(null, null, 2131747633, org.telegram.messenger.hd.x(i10, false)));
+            textView.setText(org.telegram.messenger.id.a0(null, null, 2131747635, org.telegram.messenger.id.x(i10, false)));
         } else {
-            textView.setText(org.telegram.messenger.hd.a0(null, null, 2131747646, org.telegram.messenger.hd.x(passkey.date, false)));
+            textView.setText(org.telegram.messenger.id.a0(null, null, 2131747648, org.telegram.messenger.id.x(passkey.date, false)));
         }
         ni0Var.r.setOnClickListener(onClickListener);
         ni0Var.s = z9;

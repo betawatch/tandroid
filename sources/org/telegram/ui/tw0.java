@@ -17,7 +17,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class tw0 extends org.telegram.ui.Components.oj0 {
     public String D;
@@ -74,9 +74,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         sw0 sw0Var21;
         sw0 sw0Var22;
         final int currentAccount = f2Var.getCurrentAccount();
-        sw0 sw0Var23 = new sw0(500, org.telegram.messenger.hd.L0(2131751265), 0, new qn0(26, f2Var, f2Var.getResourceProvider()));
+        sw0 sw0Var23 = new sw0(500, org.telegram.messenger.id.L0(2131751265), 0, new qn0(26, f2Var, f2Var.getResourceProvider()));
         final int i7 = 24;
-        sw0 sw0Var24 = new sw0(501, org.telegram.messenger.hd.L0(2131752537), 0, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var24 = new sw0(501, org.telegram.messenger.id.L0(2131752537), 0, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i10 = i7;
@@ -160,10 +160,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -213,7 +213,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var24.a("tg://settings/edit/change-number");
         final int i10 = 6;
-        sw0 sw0Var25 = new sw0(502, org.telegram.messenger.hd.L0(2131754468), 0, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var25 = new sw0(502, org.telegram.messenger.id.L0(2131754468), 0, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i10) {
@@ -335,7 +335,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         sw0Var25.a("tg://settings/edit/add-account");
         final int i11 = 17;
         final int i12 = 1;
-        sw0 sw0Var26 = new sw0(1, org.telegram.messenger.hd.L0(2131747921), R.drawable.msg_notifications, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var26 = new sw0(1, org.telegram.messenger.id.L0(2131747923), R.drawable.msg_notifications, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i11) {
@@ -456,7 +456,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var26.a("tg://settings/notifications");
         final int i13 = 29;
-        sw0 sw0Var27 = new sw0(2, org.telegram.messenger.hd.L0(2131747877), org.telegram.messenger.hd.L0(2131747921), R.drawable.msg_notifications, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var27 = new sw0(2, org.telegram.messenger.id.L0(2131747879), org.telegram.messenger.id.L0(2131747923), R.drawable.msg_notifications, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i13) {
@@ -577,7 +577,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var27.a("tg://settings/notifications/private-chats");
         final int i14 = 11;
-        sw0 sw0Var28 = new sw0(3, org.telegram.messenger.hd.L0(2131747906), org.telegram.messenger.hd.L0(2131747921), R.drawable.msg_notifications, new Runnable() { // from class: org.telegram.ui.rw0
+        sw0 sw0Var28 = new sw0(3, org.telegram.messenger.id.L0(2131747908), org.telegram.messenger.id.L0(2131747923), R.drawable.msg_notifications, new Runnable() { // from class: org.telegram.ui.rw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i14) {
@@ -645,11 +645,11 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         sw0Var28.a("tg://settings/notifications/groups");
-        sw0 sw0Var29 = new sw0(4, org.telegram.messenger.hd.L0(2131747920), org.telegram.messenger.hd.L0(2131747921), R.drawable.msg_notifications, new tf0(7, f2Var));
+        sw0 sw0Var29 = new sw0(4, org.telegram.messenger.id.L0(2131747922), org.telegram.messenger.id.L0(2131747923), R.drawable.msg_notifications, new tf0(7, f2Var));
         sw0Var29.a("tg://settings/notifications/channels");
         final int i15 = 19;
-        sw0 sw0Var30 = new sw0(5, org.telegram.messenger.hd.L0(2131743280), "callsSectionRow", org.telegram.messenger.hd.L0(2131747921), R.drawable.msg_notifications, new tf0(i15, f2Var));
-        sw0 sw0Var31 = new sw0(6, org.telegram.messenger.hd.L0(2131753733), "badgeNumberSection", org.telegram.messenger.hd.L0(2131747921), R.drawable.msg_notifications, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var30 = new sw0(5, org.telegram.messenger.id.L0(2131743282), "callsSectionRow", org.telegram.messenger.id.L0(2131747923), R.drawable.msg_notifications, new tf0(i15, f2Var));
+        sw0 sw0Var31 = new sw0(6, org.telegram.messenger.id.L0(2131753733), "badgeNumberSection", org.telegram.messenger.id.L0(2131747923), R.drawable.msg_notifications, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i12) {
@@ -789,7 +789,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i16 = 13;
-        sw0 sw0Var32 = new sw0(7, org.telegram.messenger.hd.L0(2131749218), "inappSectionRow", org.telegram.messenger.hd.L0(2131747921), R.drawable.msg_notifications, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var32 = new sw0(7, org.telegram.messenger.id.L0(2131749220), "inappSectionRow", org.telegram.messenger.id.L0(2131747923), R.drawable.msg_notifications, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i16) {
@@ -928,9 +928,9 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                 }
             }
         });
-        sw0 sw0Var33 = new sw0(8, org.telegram.messenger.hd.L0(2131751790), "contactJoinedRow", org.telegram.messenger.hd.L0(2131747921), R.drawable.msg_notifications, new tf0(23, f2Var));
+        sw0 sw0Var33 = new sw0(8, org.telegram.messenger.id.L0(2131751790), "contactJoinedRow", org.telegram.messenger.id.L0(2131747923), R.drawable.msg_notifications, new tf0(23, f2Var));
         sw0Var33.a("tg://settings/notifications/new-contacts");
-        sw0 sw0Var34 = new sw0(9, org.telegram.messenger.hd.L0(2131747227), "pinnedMessageRow", org.telegram.messenger.hd.L0(2131747921), R.drawable.msg_notifications, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var34 = new sw0(9, org.telegram.messenger.id.L0(2131747229), "pinnedMessageRow", org.telegram.messenger.id.L0(2131747923), R.drawable.msg_notifications, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i7) {
@@ -1070,7 +1070,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         sw0Var34.a("tg://settings/notifications/pinned-messages");
-        sw0 sw0Var35 = new sw0(10, org.telegram.messenger.hd.L0(2131746113), "resetNotificationsRow", org.telegram.messenger.hd.L0(2131747921), R.drawable.msg_notifications, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var35 = new sw0(10, org.telegram.messenger.id.L0(2131746115), "resetNotificationsRow", org.telegram.messenger.id.L0(2131747923), R.drawable.msg_notifications, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i102 = i10;
@@ -1154,10 +1154,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -1206,7 +1206,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         sw0Var35.a("tg://settings/notifications/reset");
-        sw0 sw0Var36 = new sw0(11, org.telegram.messenger.hd.L0(2131747875), "notificationsServiceRow", org.telegram.messenger.hd.L0(2131747921), R.drawable.msg_notifications, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var36 = new sw0(11, org.telegram.messenger.id.L0(2131747877), "notificationsServiceRow", org.telegram.messenger.id.L0(2131747923), R.drawable.msg_notifications, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i102 = i11;
@@ -1290,10 +1290,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -1342,7 +1342,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i17 = 18;
-        sw0 sw0Var37 = new sw0(12, org.telegram.messenger.hd.L0(2131747874), "notificationsServiceConnectionRow", org.telegram.messenger.hd.L0(2131747921), R.drawable.msg_notifications, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var37 = new sw0(12, org.telegram.messenger.id.L0(2131747876), "notificationsServiceConnectionRow", org.telegram.messenger.id.L0(2131747923), R.drawable.msg_notifications, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i102 = i17;
@@ -1426,10 +1426,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -1477,7 +1477,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                 }
             }
         });
-        sw0 sw0Var38 = new sw0(13, org.telegram.messenger.hd.L0(2131746274), "repeatRow", org.telegram.messenger.hd.L0(2131747921), R.drawable.msg_notifications, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var38 = new sw0(13, org.telegram.messenger.id.L0(2131746276), "repeatRow", org.telegram.messenger.id.L0(2131747923), R.drawable.msg_notifications, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i102 = i15;
@@ -1561,10 +1561,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -1613,7 +1613,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i18 = 20;
-        sw0 sw0Var39 = new sw0(100, org.telegram.messenger.hd.L0(2131746770), R.drawable.msg_secret, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var39 = new sw0(100, org.telegram.messenger.id.L0(2131746772), R.drawable.msg_secret, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i102 = i18;
@@ -1697,10 +1697,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -1750,7 +1750,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var39.a("tg://settings/privacy");
         final int i19 = 21;
-        sw0 sw0Var40 = new sw0(org.telegram.messenger.qs.u1, org.telegram.messenger.hd.L0(2131743939), org.telegram.messenger.hd.L0(2131746770), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var40 = new sw0(org.telegram.messenger.qs.u1, org.telegram.messenger.id.L0(2131743941), org.telegram.messenger.id.L0(2131746772), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i102 = i19;
@@ -1834,10 +1834,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -1887,7 +1887,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var40.a("tg://settings/privacy/2sv");
         final int i20 = 0;
-        sw0 sw0Var41 = new sw0(org.telegram.messenger.qs.I1, org.telegram.messenger.hd.L0(2131753850), org.telegram.messenger.hd.L0(2131746770), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.pw0
+        sw0 sw0Var41 = new sw0(org.telegram.messenger.qs.I1, org.telegram.messenger.id.L0(2131753850), org.telegram.messenger.id.L0(2131746772), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.pw0
             @Override // java.lang.Runnable
             public final void run() {
                 int i21 = i20;
@@ -1906,7 +1906,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                             a02.getClass();
                             org.telegram.ui.Components.kb kbVar = new org.telegram.ui.Components.kb(a02.W(), null);
                             kbVar.d(R.raw.voip_muted, new String[0]);
-                            String M0 = org.telegram.messenger.hd.M0(2131746754, null);
+                            String M0 = org.telegram.messenger.id.M0(2131746756, null);
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(M0);
                             int indexOf = M0.indexOf(42);
                             int lastIndexOf = M0.lastIndexOf(42);
@@ -1928,7 +1928,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var41.a("tg://settings/privacy/auto-delete");
         final int i21 = 22;
-        sw0 sw0Var42 = new sw0(org.telegram.messenger.qs.t1, org.telegram.messenger.hd.L0(2131747656), org.telegram.messenger.hd.L0(2131746770), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var42 = new sw0(org.telegram.messenger.qs.t1, org.telegram.messenger.id.L0(2131747658), org.telegram.messenger.id.L0(2131746772), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i102 = i21;
@@ -2012,10 +2012,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -2068,7 +2068,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         if (org.telegram.messenger.iz.m1) {
             sw0Var = sw0Var40;
             final int i22 = 25;
-            sw0Var2 = new sw0(org.telegram.messenger.qs.J1, org.telegram.messenger.hd.L0(2131751203), "emailLoginRow", org.telegram.messenger.hd.L0(2131746770), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.ow0
+            sw0Var2 = new sw0(org.telegram.messenger.qs.J1, org.telegram.messenger.id.L0(2131751203), "emailLoginRow", org.telegram.messenger.id.L0(2131746772), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.ow0
                 @Override // java.lang.Runnable
                 public final void run() {
                     int i102 = i22;
@@ -2152,10 +2152,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                             f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                             break;
                         case 15:
-                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                             break;
                         case 16:
-                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                             break;
                         case 17:
                             f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -2209,7 +2209,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             sw0Var2 = null;
         }
         final int i23 = 26;
-        sw0 sw0Var44 = new sw0(101, org.telegram.messenger.hd.L0(2131753681), org.telegram.messenger.hd.L0(2131746770), R.drawable.msg_secret, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var44 = new sw0(101, org.telegram.messenger.id.L0(2131753681), org.telegram.messenger.id.L0(2131746772), R.drawable.msg_secret, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i102 = i23;
@@ -2293,10 +2293,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -2346,7 +2346,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var44.a("tg://settings/privacy/blocked");
         final int i24 = 27;
-        sw0 sw0Var45 = new sw0(org.telegram.messenger.qs.v1, org.telegram.messenger.hd.L0(2131745552), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var45 = new sw0(org.telegram.messenger.qs.v1, org.telegram.messenger.id.L0(2131745554), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i102 = i24;
@@ -2430,10 +2430,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -2483,7 +2483,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var45.a("tg://settings/devices");
         final int i25 = 28;
-        sw0 sw0Var46 = new sw0(org.telegram.messenger.qs.q1, org.telegram.messenger.hd.L0(2131746789), org.telegram.messenger.hd.L0(2131746770), R.drawable.msg_secret, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var46 = new sw0(org.telegram.messenger.qs.q1, org.telegram.messenger.id.L0(2131746791), org.telegram.messenger.id.L0(2131746772), R.drawable.msg_secret, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i102 = i25;
@@ -2567,10 +2567,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -2620,7 +2620,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var46.a("tg://settings/privacy/phone-number/");
         final int i26 = 29;
-        sw0 sw0Var47 = new sw0(org.telegram.messenger.qs.n1, org.telegram.messenger.hd.L0(2131746814), org.telegram.messenger.hd.L0(2131746770), R.drawable.msg_secret, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var47 = new sw0(org.telegram.messenger.qs.n1, org.telegram.messenger.id.L0(2131746816), org.telegram.messenger.id.L0(2131746772), R.drawable.msg_secret, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i102 = i26;
@@ -2704,10 +2704,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -2757,7 +2757,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var47.a("tg://settings/privacy/last-seen");
         final int i27 = 0;
-        sw0 sw0Var48 = new sw0(org.telegram.messenger.qs.o1, org.telegram.messenger.hd.L0(2131746776), org.telegram.messenger.hd.L0(2131746770), R.drawable.msg_secret, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var48 = new sw0(org.telegram.messenger.qs.o1, org.telegram.messenger.id.L0(2131746778), org.telegram.messenger.id.L0(2131746772), R.drawable.msg_secret, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i27) {
@@ -2878,7 +2878,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var48.a("tg://settings/privacy/profile-photos");
         final int i28 = 1;
-        sw0 sw0Var49 = new sw0(org.telegram.messenger.qs.p1, org.telegram.messenger.hd.L0(2131746836), org.telegram.messenger.hd.L0(2131746770), R.drawable.msg_secret, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var49 = new sw0(org.telegram.messenger.qs.p1, org.telegram.messenger.id.L0(2131746838), org.telegram.messenger.id.L0(2131746772), R.drawable.msg_secret, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i28) {
@@ -2999,7 +2999,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var49.a("tg://settings/privacy/forwards");
         final int i29 = 2;
-        sw0 sw0Var50 = new sw0(org.telegram.messenger.qs.G1, org.telegram.messenger.hd.L0(2131746799), org.telegram.messenger.hd.L0(2131746770), R.drawable.msg_secret, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var50 = new sw0(org.telegram.messenger.qs.G1, org.telegram.messenger.id.L0(2131746801), org.telegram.messenger.id.L0(2131746772), R.drawable.msg_secret, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i29) {
@@ -3120,7 +3120,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var50.a("tg://settings/privacy/calls/p2p");
         final int i30 = 3;
-        sw0 sw0Var51 = new sw0(org.telegram.messenger.qs.r1, org.telegram.messenger.hd.L0(2131752596), org.telegram.messenger.hd.L0(2131746770), R.drawable.msg_secret, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var51 = new sw0(org.telegram.messenger.qs.r1, org.telegram.messenger.id.L0(2131752596), org.telegram.messenger.id.L0(2131746772), R.drawable.msg_secret, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i30) {
@@ -3241,7 +3241,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var51.a("tg://settings/privacy/calls");
         final int i31 = 5;
-        sw0 sw0Var52 = new sw0(org.telegram.messenger.qs.s1, org.telegram.messenger.hd.L0(2131746816), org.telegram.messenger.hd.L0(2131746770), R.drawable.msg_secret, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var52 = new sw0(org.telegram.messenger.qs.s1, org.telegram.messenger.id.L0(2131746818), org.telegram.messenger.id.L0(2131746772), R.drawable.msg_secret, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i31) {
@@ -3362,7 +3362,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var52.a("tg://settings/privacy/invites");
         final int i32 = 1;
-        sw0 sw0Var53 = new sw0(org.telegram.messenger.qs.H1, org.telegram.messenger.hd.L0(2131746757), org.telegram.messenger.hd.L0(2131746770), R.drawable.msg_secret, new Runnable() { // from class: org.telegram.ui.pw0
+        sw0 sw0Var53 = new sw0(org.telegram.messenger.qs.H1, org.telegram.messenger.id.L0(2131746759), org.telegram.messenger.id.L0(2131746772), R.drawable.msg_secret, new Runnable() { // from class: org.telegram.ui.pw0
             @Override // java.lang.Runnable
             public final void run() {
                 int i212 = i32;
@@ -3381,7 +3381,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                             a02.getClass();
                             org.telegram.ui.Components.kb kbVar = new org.telegram.ui.Components.kb(a02.W(), null);
                             kbVar.d(R.raw.voip_muted, new String[0]);
-                            String M0 = org.telegram.messenger.hd.M0(2131746754, null);
+                            String M0 = org.telegram.messenger.id.M0(2131746756, null);
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(M0);
                             int indexOf = M0.indexOf(42);
                             int lastIndexOf = M0.lastIndexOf(42);
@@ -3405,7 +3405,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         if (org.telegram.messenger.qp.s1(currentAccount).Y3) {
             sw0Var3 = sw0Var53;
             final int i33 = 7;
-            sw0Var4 = new sw0(org.telegram.messenger.qs.F1, org.telegram.messenger.hd.L0(2131754171), "newChatsRow", org.telegram.messenger.hd.L0(2131746770), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.qw0
+            sw0Var4 = new sw0(org.telegram.messenger.qs.F1, org.telegram.messenger.id.L0(2131754171), "newChatsRow", org.telegram.messenger.id.L0(2131746772), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.qw0
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i33) {
@@ -3530,7 +3530,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             sw0Var4 = null;
         }
         final int i34 = 8;
-        sw0 sw0Var54 = new sw0(org.telegram.messenger.qs.x1, org.telegram.messenger.hd.L0(2131751597), "deleteAccountRow", org.telegram.messenger.hd.L0(2131746770), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var54 = new sw0(org.telegram.messenger.qs.x1, org.telegram.messenger.id.L0(2131751597), "deleteAccountRow", org.telegram.messenger.id.L0(2131746772), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i34) {
@@ -3651,7 +3651,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var54.a("tg://settings/privacy/self-destruct");
         final int i35 = 9;
-        sw0 sw0Var55 = new sw0(org.telegram.messenger.qs.y1, org.telegram.messenger.hd.L0(2131746796), "paymentsClearRow", org.telegram.messenger.hd.L0(2131746770), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var55 = new sw0(org.telegram.messenger.qs.y1, org.telegram.messenger.id.L0(2131746798), "paymentsClearRow", org.telegram.messenger.id.L0(2131746772), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i35) {
@@ -3772,7 +3772,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var55.a("tg://settings/privacy/data-settings/clear-payment-info");
         final int i36 = 10;
-        sw0 sw0Var56 = new sw0(org.telegram.messenger.qs.z1, org.telegram.messenger.hd.L0(2131742912), org.telegram.messenger.hd.L0(2131746770), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var56 = new sw0(org.telegram.messenger.qs.z1, org.telegram.messenger.id.L0(2131742914), org.telegram.messenger.id.L0(2131746772), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i36) {
@@ -3893,7 +3893,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var56.a("tg://settings/privacy/active-websites");
         final int i37 = 11;
-        sw0 sw0Var57 = new sw0(org.telegram.messenger.qs.A1, org.telegram.messenger.hd.L0(2131744297), "contactsDeleteRow", org.telegram.messenger.hd.L0(2131746770), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var57 = new sw0(org.telegram.messenger.qs.A1, org.telegram.messenger.id.L0(2131744299), "contactsDeleteRow", org.telegram.messenger.id.L0(2131746772), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i37) {
@@ -4014,7 +4014,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var57.a("tg://settings/privacy/data-settings/delete-synced");
         final int i38 = 12;
-        sw0 sw0Var58 = new sw0(org.telegram.messenger.qs.B1, org.telegram.messenger.hd.L0(2131744299), "contactsSyncRow", org.telegram.messenger.hd.L0(2131746770), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var58 = new sw0(org.telegram.messenger.qs.B1, org.telegram.messenger.id.L0(2131744301), "contactsSyncRow", org.telegram.messenger.id.L0(2131746772), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i38) {
@@ -4135,7 +4135,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var58.a("tg://settings/privacy/data-settings/sync-contacts");
         final int i39 = 13;
-        sw0 sw0Var59 = new sw0(org.telegram.messenger.qs.C1, org.telegram.messenger.hd.L0(2131744413), "contactsSuggestRow", org.telegram.messenger.hd.L0(2131746770), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var59 = new sw0(org.telegram.messenger.qs.C1, org.telegram.messenger.id.L0(2131744415), "contactsSuggestRow", org.telegram.messenger.id.L0(2131746772), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i39) {
@@ -4256,7 +4256,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var59.a("tg://settings/privacy/data-settings/suggest-contacts");
         final int i40 = 15;
-        sw0 sw0Var60 = new sw0(org.telegram.messenger.qs.D1, org.telegram.messenger.hd.L0(2131748688), "secretMapRow", org.telegram.messenger.hd.L0(2131746770), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var60 = new sw0(org.telegram.messenger.qs.D1, org.telegram.messenger.id.L0(2131748690), "secretMapRow", org.telegram.messenger.id.L0(2131746772), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i40) {
@@ -4377,7 +4377,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var60.a("tg://settings/privacy/data-settings/map-provider");
         final int i41 = 16;
-        sw0 sw0Var61 = new sw0(org.telegram.messenger.qs.E1, org.telegram.messenger.hd.L0(2131745685), "secretWebpageRow", org.telegram.messenger.hd.L0(2131746770), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var61 = new sw0(org.telegram.messenger.qs.E1, org.telegram.messenger.id.L0(2131745687), "secretWebpageRow", org.telegram.messenger.id.L0(2131746772), R.drawable.msg2_secret, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i41) {
@@ -4498,7 +4498,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var61.a("tg://settings/privacy/data-settings/link-previews");
         final int i42 = 18;
-        sw0 sw0Var62 = new sw0(120, org.telegram.messenger.hd.L0(2131751456), R.drawable.msg2_devices, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var62 = new sw0(120, org.telegram.messenger.id.L0(2131751456), R.drawable.msg2_devices, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i42) {
@@ -4619,7 +4619,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var62.a("tg://settings/devices");
         final int i43 = 19;
-        sw0 sw0Var63 = new sw0(org.telegram.messenger.qs.F1, org.telegram.messenger.hd.L0(2131744209), "terminateAllSessionsRow", org.telegram.messenger.hd.L0(2131751456), R.drawable.msg2_devices, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var63 = new sw0(org.telegram.messenger.qs.F1, org.telegram.messenger.id.L0(2131744211), "terminateAllSessionsRow", org.telegram.messenger.id.L0(2131751456), R.drawable.msg2_devices, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i43) {
@@ -4740,7 +4740,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var63.a("tg://settings/devices/terminate-sessions");
         final int i44 = 20;
-        sw0 sw0Var64 = new sw0(org.telegram.messenger.qs.G1, org.telegram.messenger.hd.L0(2131748916), org.telegram.messenger.hd.L0(2131751456), R.drawable.msg2_devices, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var64 = new sw0(org.telegram.messenger.qs.G1, org.telegram.messenger.id.L0(2131748918), org.telegram.messenger.id.L0(2131751456), R.drawable.msg2_devices, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i44) {
@@ -4861,7 +4861,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var64.a("tg://settings/devices/link-desktop");
         final int i45 = 21;
-        sw0 sw0Var65 = new sw0(org.telegram.messenger.qs.e3, org.telegram.messenger.hd.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var65 = new sw0(org.telegram.messenger.qs.e3, org.telegram.messenger.id.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i45) {
@@ -4982,7 +4982,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var65.a("tg://settings/privacy/data-settings");
         final int i46 = 22;
-        sw0 sw0Var66 = new sw0(org.telegram.messenger.qs.f3, org.telegram.messenger.hd.L0(2131751677), "usageSectionRow", org.telegram.messenger.hd.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var66 = new sw0(org.telegram.messenger.qs.f3, org.telegram.messenger.id.L0(2131751677), "usageSectionRow", org.telegram.messenger.id.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i46) {
@@ -5102,7 +5102,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i47 = 23;
-        sw0 sw0Var67 = new sw0(org.telegram.messenger.qs.g3, org.telegram.messenger.hd.L0(2131744817), org.telegram.messenger.hd.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var67 = new sw0(org.telegram.messenger.qs.g3, org.telegram.messenger.id.L0(2131744819), org.telegram.messenger.id.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i47) {
@@ -5223,7 +5223,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var67.a("tg://settings/data/storage");
         final int i48 = 24;
-        sw0 sw0Var68 = new sw0(203, org.telegram.messenger.hd.L0(2131749059), "keepMediaRow", org.telegram.messenger.hd.L0(2131751678), org.telegram.messenger.hd.L0(2131744817), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var68 = new sw0(203, org.telegram.messenger.id.L0(2131749061), "keepMediaRow", org.telegram.messenger.id.L0(2131751678), org.telegram.messenger.id.L0(2131744819), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i48) {
@@ -5343,7 +5343,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i49 = 26;
-        sw0 sw0Var69 = new sw0(org.telegram.messenger.qs.i3, org.telegram.messenger.hd.L0(2131752075), "cacheRow", org.telegram.messenger.hd.L0(2131751678), org.telegram.messenger.hd.L0(2131744817), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var69 = new sw0(org.telegram.messenger.qs.i3, org.telegram.messenger.id.L0(2131752075), "cacheRow", org.telegram.messenger.id.L0(2131751678), org.telegram.messenger.id.L0(2131744819), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i49) {
@@ -5463,7 +5463,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i50 = 27;
-        sw0 sw0Var70 = new sw0(org.telegram.messenger.qs.j3, org.telegram.messenger.hd.L0(2131748773), "databaseRow", org.telegram.messenger.hd.L0(2131751678), org.telegram.messenger.hd.L0(2131744817), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var70 = new sw0(org.telegram.messenger.qs.j3, org.telegram.messenger.id.L0(2131748775), "databaseRow", org.telegram.messenger.id.L0(2131751678), org.telegram.messenger.id.L0(2131744819), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i50) {
@@ -5583,7 +5583,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i51 = 28;
-        sw0 sw0Var71 = new sw0(org.telegram.messenger.qs.k3, org.telegram.messenger.hd.L0(2131748297), org.telegram.messenger.hd.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.qw0
+        sw0 sw0Var71 = new sw0(org.telegram.messenger.qs.k3, org.telegram.messenger.id.L0(2131748299), org.telegram.messenger.id.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.qw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i51) {
@@ -5704,7 +5704,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var71.a("tg://settings/data/usage");
         final int i52 = 0;
-        sw0 sw0Var72 = new sw0(org.telegram.messenger.qs.l3, org.telegram.messenger.hd.L0(2131753767), "mediaDownloadSectionRow", org.telegram.messenger.hd.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
+        sw0 sw0Var72 = new sw0(org.telegram.messenger.qs.l3, org.telegram.messenger.id.L0(2131753767), "mediaDownloadSectionRow", org.telegram.messenger.id.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i52) {
@@ -5772,7 +5772,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i53 = 1;
-        sw0 sw0Var73 = new sw0(208, org.telegram.messenger.hd.L0(2131742885), org.telegram.messenger.hd.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
+        sw0 sw0Var73 = new sw0(208, org.telegram.messenger.id.L0(2131742887), org.telegram.messenger.id.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i53) {
@@ -5840,7 +5840,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i54 = 2;
-        sw0 sw0Var74 = new sw0(org.telegram.messenger.qs.m3, org.telegram.messenger.hd.L0(2131742887), org.telegram.messenger.hd.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
+        sw0 sw0Var74 = new sw0(org.telegram.messenger.qs.m3, org.telegram.messenger.id.L0(2131742889), org.telegram.messenger.id.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i54) {
@@ -5908,7 +5908,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i55 = 3;
-        sw0 sw0Var75 = new sw0(org.telegram.messenger.qs.n3, org.telegram.messenger.hd.L0(2131742886), org.telegram.messenger.hd.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
+        sw0 sw0Var75 = new sw0(org.telegram.messenger.qs.n3, org.telegram.messenger.id.L0(2131742888), org.telegram.messenger.id.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i55) {
@@ -5976,7 +5976,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i56 = 4;
-        sw0 sw0Var76 = new sw0(org.telegram.messenger.qs.o3, org.telegram.messenger.hd.L0(2131746112), "resetDownloadRow", org.telegram.messenger.hd.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
+        sw0 sw0Var76 = new sw0(org.telegram.messenger.qs.o3, org.telegram.messenger.id.L0(2131746114), "resetDownloadRow", org.telegram.messenger.id.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i56) {
@@ -6045,7 +6045,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var76.a("tg://settings/data/auto-download/reset");
         final int i57 = 5;
-        sw0 sw0Var77 = new sw0(org.telegram.messenger.qs.s3, org.telegram.messenger.hd.L0(2131744439), "streamSectionRow", org.telegram.messenger.hd.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
+        sw0 sw0Var77 = new sw0(org.telegram.messenger.qs.s3, org.telegram.messenger.id.L0(2131744441), "streamSectionRow", org.telegram.messenger.id.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i57) {
@@ -6113,7 +6113,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i58 = 7;
-        sw0 sw0Var78 = new sw0(org.telegram.messenger.qs.t3, org.telegram.messenger.hd.L0(2131751145), "enableStreamRow", org.telegram.messenger.hd.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
+        sw0 sw0Var78 = new sw0(org.telegram.messenger.qs.t3, org.telegram.messenger.id.L0(2131751145), "enableStreamRow", org.telegram.messenger.id.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i58) {
@@ -6181,7 +6181,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i59 = 8;
-        sw0 sw0Var79 = new sw0(org.telegram.messenger.qs.u3, org.telegram.messenger.hd.L0(2131752596), "callsSectionRow", org.telegram.messenger.hd.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
+        sw0 sw0Var79 = new sw0(org.telegram.messenger.qs.u3, org.telegram.messenger.id.L0(2131752596), "callsSectionRow", org.telegram.messenger.id.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i59) {
@@ -6249,7 +6249,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i60 = 9;
-        sw0 sw0Var80 = new sw0(org.telegram.messenger.qs.v3, org.telegram.messenger.hd.L0(2131743230), "useLessDataForCallsRow", org.telegram.messenger.hd.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
+        sw0 sw0Var80 = new sw0(org.telegram.messenger.qs.v3, org.telegram.messenger.id.L0(2131743232), "useLessDataForCallsRow", org.telegram.messenger.id.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i60) {
@@ -6318,7 +6318,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var80.a("tg://settings/data/use-less-data");
         final int i61 = 10;
-        sw0 sw0Var81 = new sw0(org.telegram.messenger.qs.w3, org.telegram.messenger.hd.L0(2131743259), "quickRepliesRow", org.telegram.messenger.hd.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
+        sw0 sw0Var81 = new sw0(org.telegram.messenger.qs.w3, org.telegram.messenger.id.L0(2131743261), "quickRepliesRow", org.telegram.messenger.id.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i61) {
@@ -6386,7 +6386,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i62 = 12;
-        sw0 sw0Var82 = new sw0(org.telegram.messenger.qs.x3, org.telegram.messenger.hd.L0(2131746600), org.telegram.messenger.hd.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
+        sw0 sw0Var82 = new sw0(org.telegram.messenger.qs.x3, org.telegram.messenger.id.L0(2131746602), org.telegram.messenger.id.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i62) {
@@ -6455,7 +6455,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var82.a("tg://settings/data/proxy");
         final int i63 = 13;
-        sw0 sw0Var83 = new sw0(org.telegram.messenger.qs.w1, org.telegram.messenger.hd.L0(2131746840), "clearDraftsRow", org.telegram.messenger.hd.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
+        sw0 sw0Var83 = new sw0(org.telegram.messenger.qs.w1, org.telegram.messenger.id.L0(2131746842), "clearDraftsRow", org.telegram.messenger.id.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i63) {
@@ -6524,7 +6524,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var83.a("tg://settings/privacy/data-settings/delete-cloud-drafts");
         final int i64 = 14;
-        sw0 sw0Var84 = new sw0(org.telegram.messenger.qs.z3, org.telegram.messenger.hd.L0(2131745930), "saveToGallerySectionRow", org.telegram.messenger.hd.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
+        sw0 sw0Var84 = new sw0(org.telegram.messenger.qs.z3, org.telegram.messenger.id.L0(2131745932), "saveToGallerySectionRow", org.telegram.messenger.id.L0(2131751678), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i64) {
@@ -6592,7 +6592,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i65 = 15;
-        sw0 sw0Var85 = new sw0(org.telegram.messenger.qs.A3, org.telegram.messenger.hd.L0(2131745920), "saveToGalleryPeerRow", org.telegram.messenger.hd.L0(2131751678), org.telegram.messenger.hd.L0(2131745930), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
+        sw0 sw0Var85 = new sw0(org.telegram.messenger.qs.A3, org.telegram.messenger.id.L0(2131745922), "saveToGalleryPeerRow", org.telegram.messenger.id.L0(2131751678), org.telegram.messenger.id.L0(2131745932), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i65) {
@@ -6661,7 +6661,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var85.a("tg://settings/data/save-to-photos/chats");
         final int i66 = 16;
-        sw0 sw0Var86 = new sw0(org.telegram.messenger.qs.B3, org.telegram.messenger.hd.L0(2131745927), "saveToGalleryGroupsRow", org.telegram.messenger.hd.L0(2131751678), org.telegram.messenger.hd.L0(2131745930), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
+        sw0 sw0Var86 = new sw0(org.telegram.messenger.qs.B3, org.telegram.messenger.id.L0(2131745929), "saveToGalleryGroupsRow", org.telegram.messenger.id.L0(2131751678), org.telegram.messenger.id.L0(2131745932), R.drawable.msg2_data, new Runnable() { // from class: org.telegram.ui.rw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i66) {
@@ -6729,44 +6729,44 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         sw0Var86.a("tg://settings/data/save-to-photos/groups");
-        sw0 sw0Var87 = new sw0(org.telegram.messenger.qs.C3, org.telegram.messenger.hd.L0(2131745929), "saveToGalleryChannelsRow", org.telegram.messenger.hd.L0(2131751678), org.telegram.messenger.hd.L0(2131745930), R.drawable.msg2_data, new tf0(2, f2Var));
+        sw0 sw0Var87 = new sw0(org.telegram.messenger.qs.C3, org.telegram.messenger.id.L0(2131745931), "saveToGalleryChannelsRow", org.telegram.messenger.id.L0(2131751678), org.telegram.messenger.id.L0(2131745932), R.drawable.msg2_data, new tf0(2, f2Var));
         sw0Var87.a("tg://settings/data/save-to-photos/channels");
-        sw0 sw0Var88 = new sw0(org.telegram.messenger.qs.X4, org.telegram.messenger.hd.L0(2131752210), R.drawable.msg2_discussion, new tf0(3, f2Var));
+        sw0 sw0Var88 = new sw0(org.telegram.messenger.qs.X4, org.telegram.messenger.id.L0(2131752210), R.drawable.msg2_discussion, new tf0(3, f2Var));
         sw0Var88.a("tg://settings/appearance/themes");
-        sw0 sw0Var89 = new sw0(org.telegram.messenger.qs.Y4, org.telegram.messenger.hd.L0(2131744192), "textSizeHeaderRow", org.telegram.messenger.hd.L0(2131752210), R.drawable.msg2_discussion, new tf0(4, f2Var));
+        sw0 sw0Var89 = new sw0(org.telegram.messenger.qs.Y4, org.telegram.messenger.id.L0(2131744194), "textSizeHeaderRow", org.telegram.messenger.id.L0(2131752210), R.drawable.msg2_discussion, new tf0(4, f2Var));
         sw0Var89.a("tg://settings/appearance/text-size");
-        sw0 sw0Var90 = new sw0(org.telegram.messenger.qs.Z4, org.telegram.messenger.hd.L0(2131752550), org.telegram.messenger.hd.L0(2131752210), R.drawable.msg2_discussion, new tf0(5, f2Var));
+        sw0 sw0Var90 = new sw0(org.telegram.messenger.qs.Z4, org.telegram.messenger.id.L0(2131752550), org.telegram.messenger.id.L0(2131752210), R.drawable.msg2_discussion, new tf0(5, f2Var));
         sw0Var90.a("tg://settings/appearance/wallpapers");
-        sw0 sw0Var91 = new sw0(org.telegram.messenger.qs.a5, org.telegram.messenger.hd.L0(2131745539), null, org.telegram.messenger.hd.L0(2131752210), org.telegram.messenger.hd.L0(2131752244), R.drawable.msg2_discussion, new tf0(6, f2Var));
-        sw0 sw0Var92 = new sw0(org.telegram.messenger.qs.b5, org.telegram.messenger.hd.L0(2131746109), "resetRow", org.telegram.messenger.hd.L0(2131752210), org.telegram.messenger.hd.L0(2131752244), R.drawable.msg2_discussion, new tf0(8, f2Var));
-        sw0 sw0Var93 = new sw0(org.telegram.messenger.qs.d5, org.telegram.messenger.hd.L0(2131752011), "themeHeaderRow", org.telegram.messenger.hd.L0(2131752210), R.drawable.msg2_discussion, new tf0(9, f2Var));
-        sw0 sw0Var94 = new sw0(org.telegram.messenger.qs.q5, org.telegram.messenger.hd.L0(2131752878), null, org.telegram.messenger.hd.L0(2131752210), R.drawable.msg2_discussion, new tf0(10, f2Var));
-        sw0 sw0Var95 = new sw0(org.telegram.messenger.qs.r5, org.telegram.messenger.hd.L0(2131751713), "createNewThemeRow", org.telegram.messenger.hd.L0(2131752210), org.telegram.messenger.hd.L0(2131752878), R.drawable.msg2_discussion, new tf0(11, f2Var));
+        sw0 sw0Var91 = new sw0(org.telegram.messenger.qs.a5, org.telegram.messenger.id.L0(2131745541), null, org.telegram.messenger.id.L0(2131752210), org.telegram.messenger.id.L0(2131752244), R.drawable.msg2_discussion, new tf0(6, f2Var));
+        sw0 sw0Var92 = new sw0(org.telegram.messenger.qs.b5, org.telegram.messenger.id.L0(2131746111), "resetRow", org.telegram.messenger.id.L0(2131752210), org.telegram.messenger.id.L0(2131752244), R.drawable.msg2_discussion, new tf0(8, f2Var));
+        sw0 sw0Var93 = new sw0(org.telegram.messenger.qs.d5, org.telegram.messenger.id.L0(2131752011), "themeHeaderRow", org.telegram.messenger.id.L0(2131752210), R.drawable.msg2_discussion, new tf0(9, f2Var));
+        sw0 sw0Var94 = new sw0(org.telegram.messenger.qs.q5, org.telegram.messenger.id.L0(2131752878), null, org.telegram.messenger.id.L0(2131752210), R.drawable.msg2_discussion, new tf0(10, f2Var));
+        sw0 sw0Var95 = new sw0(org.telegram.messenger.qs.r5, org.telegram.messenger.id.L0(2131751713), "createNewThemeRow", org.telegram.messenger.id.L0(2131752210), org.telegram.messenger.id.L0(2131752878), R.drawable.msg2_discussion, new tf0(11, f2Var));
         sw0Var95.a("tg://settings/appearance/themes/create");
-        sw0 sw0Var96 = new sw0(org.telegram.messenger.qs.s5, org.telegram.messenger.hd.L0(2131752840), "bubbleRadiusHeaderRow", org.telegram.messenger.hd.L0(2131752210), R.drawable.msg2_discussion, new tf0(13, f2Var));
+        sw0 sw0Var96 = new sw0(org.telegram.messenger.qs.s5, org.telegram.messenger.id.L0(2131752840), "bubbleRadiusHeaderRow", org.telegram.messenger.id.L0(2131752210), R.drawable.msg2_discussion, new tf0(13, f2Var));
         sw0Var96.a("tg://settings/appearance/message-corners");
-        sw0 sw0Var97 = new sw0(org.telegram.messenger.qs.t5, org.telegram.messenger.hd.L0(2131752225), "chatListHeaderRow", org.telegram.messenger.hd.L0(2131752210), R.drawable.msg2_discussion, new tf0(14, f2Var));
-        sw0 sw0Var98 = new sw0(org.telegram.messenger.qs.u5, org.telegram.messenger.hd.L0(2131752222), "swipeGestureHeaderRow", org.telegram.messenger.hd.L0(2131752210), R.drawable.msg2_discussion, new tf0(15, f2Var));
-        sw0 sw0Var99 = new sw0(org.telegram.messenger.qs.v5, org.telegram.messenger.hd.L0(2131754240), "appIconHeaderRow", org.telegram.messenger.hd.L0(2131752210), R.drawable.msg2_discussion, new tf0(16, f2Var));
+        sw0 sw0Var97 = new sw0(org.telegram.messenger.qs.t5, org.telegram.messenger.id.L0(2131752225), "chatListHeaderRow", org.telegram.messenger.id.L0(2131752210), R.drawable.msg2_discussion, new tf0(14, f2Var));
+        sw0 sw0Var98 = new sw0(org.telegram.messenger.qs.u5, org.telegram.messenger.id.L0(2131752222), "swipeGestureHeaderRow", org.telegram.messenger.id.L0(2131752210), R.drawable.msg2_discussion, new tf0(15, f2Var));
+        sw0 sw0Var99 = new sw0(org.telegram.messenger.qs.v5, org.telegram.messenger.id.L0(2131754240), "appIconHeaderRow", org.telegram.messenger.id.L0(2131752210), R.drawable.msg2_discussion, new tf0(16, f2Var));
         sw0Var99.a("tg://settings/appearance/app-icon");
-        sw0 sw0Var100 = new sw0(org.telegram.messenger.qs.c5, org.telegram.messenger.hd.L0(2131753784), org.telegram.messenger.hd.L0(2131752210), R.drawable.msg2_discussion, new tf0(17, f2Var));
-        sw0 sw0Var101 = new sw0(org.telegram.messenger.qs.z5, org.telegram.messenger.hd.L0(2131748248), "nextMediaTapRow", org.telegram.messenger.hd.L0(2131752210), R.drawable.msg2_discussion, new tf0(18, f2Var));
+        sw0 sw0Var100 = new sw0(org.telegram.messenger.qs.c5, org.telegram.messenger.id.L0(2131753784), org.telegram.messenger.id.L0(2131752210), R.drawable.msg2_discussion, new tf0(17, f2Var));
+        sw0 sw0Var101 = new sw0(org.telegram.messenger.qs.z5, org.telegram.messenger.id.L0(2131748250), "nextMediaTapRow", org.telegram.messenger.id.L0(2131752210), R.drawable.msg2_discussion, new tf0(18, f2Var));
         sw0Var101.a("tg://settings/appearance/tap-for-next-media");
-        sw0 sw0Var102 = new sw0(org.telegram.messenger.qs.y5, org.telegram.messenger.hd.L0(2131746426), "raiseToListenRow", org.telegram.messenger.hd.L0(2131752210), R.drawable.msg2_discussion, new tf0(20, f2Var));
+        sw0 sw0Var102 = new sw0(org.telegram.messenger.qs.y5, org.telegram.messenger.id.L0(2131746428), "raiseToListenRow", org.telegram.messenger.id.L0(2131752210), R.drawable.msg2_discussion, new tf0(20, f2Var));
         sw0Var102.a("tg://settings/data/raise-to-listen");
-        sw0 sw0Var103 = new sw0(org.telegram.messenger.qs.h5, org.telegram.messenger.hd.L0(2131746424), "raiseToSpeakRow", org.telegram.messenger.hd.L0(2131752210), R.drawable.msg2_discussion, new tf0(21, f2Var));
+        sw0 sw0Var103 = new sw0(org.telegram.messenger.qs.h5, org.telegram.messenger.id.L0(2131746426), "raiseToSpeakRow", org.telegram.messenger.id.L0(2131752210), R.drawable.msg2_discussion, new tf0(21, f2Var));
         sw0Var103.a("tg://settings/data/raise-to-speak");
-        sw0 sw0Var104 = new sw0(org.telegram.messenger.qs.x5, org.telegram.messenger.hd.L0(2131747431), "pauseOnMediaRow", org.telegram.messenger.hd.L0(2131752210), R.drawable.msg2_discussion, new tf0(22, f2Var));
+        sw0 sw0Var104 = new sw0(org.telegram.messenger.qs.x5, org.telegram.messenger.id.L0(2131747433), "pauseOnMediaRow", org.telegram.messenger.id.L0(2131752210), R.drawable.msg2_discussion, new tf0(22, f2Var));
         sw0Var104.a("tg://settings/data/pause-music");
-        sw0 sw0Var105 = new sw0(org.telegram.messenger.qs.w5, org.telegram.messenger.hd.L0(2131748438), "bluetoothScoRow", org.telegram.messenger.hd.L0(2131752210), R.drawable.msg2_discussion, new tf0(24, f2Var));
-        sw0 sw0Var106 = new sw0(org.telegram.messenger.qs.f5, org.telegram.messenger.hd.L0(2131751439), "directShareRow", org.telegram.messenger.hd.L0(2131752210), R.drawable.msg2_discussion, new tf0(25, f2Var));
-        sw0 sw0Var107 = new sw0(org.telegram.messenger.qs.i5, org.telegram.messenger.hd.L0(2131745633), "sendByEnterRow", org.telegram.messenger.hd.L0(2131752210), R.drawable.msg2_discussion, new tf0(26, f2Var));
-        sw0 sw0Var108 = new sw0(org.telegram.messenger.qs.p5, org.telegram.messenger.hd.L0(2131751368), "distanceRow", org.telegram.messenger.hd.L0(2131752210), R.drawable.msg2_discussion, new tf0(27, f2Var));
-        sw0 sw0Var109 = new sw0(600, org.telegram.messenger.hd.L0(2131744858), R.drawable.msg2_sticker, new tf0(28, f2Var));
+        sw0 sw0Var105 = new sw0(org.telegram.messenger.qs.w5, org.telegram.messenger.id.L0(2131748440), "bluetoothScoRow", org.telegram.messenger.id.L0(2131752210), R.drawable.msg2_discussion, new tf0(24, f2Var));
+        sw0 sw0Var106 = new sw0(org.telegram.messenger.qs.f5, org.telegram.messenger.id.L0(2131751439), "directShareRow", org.telegram.messenger.id.L0(2131752210), R.drawable.msg2_discussion, new tf0(25, f2Var));
+        sw0 sw0Var107 = new sw0(org.telegram.messenger.qs.i5, org.telegram.messenger.id.L0(2131745635), "sendByEnterRow", org.telegram.messenger.id.L0(2131752210), R.drawable.msg2_discussion, new tf0(26, f2Var));
+        sw0 sw0Var108 = new sw0(org.telegram.messenger.qs.p5, org.telegram.messenger.id.L0(2131751368), "distanceRow", org.telegram.messenger.id.L0(2131752210), R.drawable.msg2_discussion, new tf0(27, f2Var));
+        sw0 sw0Var109 = new sw0(600, org.telegram.messenger.id.L0(2131744860), R.drawable.msg2_sticker, new tf0(28, f2Var));
         sw0Var109.a("tg://settings/appearance/stickers-and-emoji");
-        sw0 sw0Var110 = new sw0(601, org.telegram.messenger.hd.L0(2131744403), "suggestRow", org.telegram.messenger.hd.L0(2131744858), R.drawable.msg2_sticker, new tf0(29, f2Var));
+        sw0 sw0Var110 = new sw0(601, org.telegram.messenger.id.L0(2131744405), "suggestRow", org.telegram.messenger.id.L0(2131744860), R.drawable.msg2_sticker, new tf0(29, f2Var));
         final int i67 = 0;
-        sw0 sw0Var111 = new sw0(602, org.telegram.messenger.hd.L0(2131750834), "featuredStickersHeaderRow", org.telegram.messenger.hd.L0(2131744858), R.drawable.msg2_sticker, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var111 = new sw0(602, org.telegram.messenger.id.L0(2131750834), "featuredStickersHeaderRow", org.telegram.messenger.id.L0(2131744860), R.drawable.msg2_sticker, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i67) {
@@ -6906,7 +6906,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i68 = 2;
-        sw0 sw0Var112 = new sw0(603, org.telegram.messenger.hd.L0(2131748678), null, org.telegram.messenger.hd.L0(2131744858), R.drawable.msg2_sticker, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var112 = new sw0(603, org.telegram.messenger.id.L0(2131748680), null, org.telegram.messenger.id.L0(2131744860), R.drawable.msg2_sticker, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i68) {
@@ -7046,7 +7046,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i69 = 3;
-        sw0 sw0Var113 = new sw0(604, org.telegram.messenger.hd.L0(2131754128), null, org.telegram.messenger.hd.L0(2131744858), R.drawable.msg2_sticker, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var113 = new sw0(604, org.telegram.messenger.id.L0(2131754128), null, org.telegram.messenger.id.L0(2131744860), R.drawable.msg2_sticker, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i69) {
@@ -7187,7 +7187,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var113.a("tg://settings/appearance/stickers-and-emoji/archived");
         final int i70 = 5;
-        sw0 sw0Var114 = new sw0(605, org.telegram.messenger.hd.L0(2131754133), null, org.telegram.messenger.hd.L0(2131744858), R.drawable.msg2_sticker, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var114 = new sw0(605, org.telegram.messenger.id.L0(2131754133), null, org.telegram.messenger.id.L0(2131744860), R.drawable.msg2_sticker, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i70) {
@@ -7327,7 +7327,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i71 = 6;
-        sw0 sw0Var115 = new sw0(606, org.telegram.messenger.hd.L0(2131749033), "largeEmojiRow", org.telegram.messenger.hd.L0(2131744858), R.drawable.msg2_sticker, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var115 = new sw0(606, org.telegram.messenger.id.L0(2131749035), "largeEmojiRow", org.telegram.messenger.id.L0(2131744860), R.drawable.msg2_sticker, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i71) {
@@ -7468,7 +7468,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var115.a("tg://settings/appearance/stickers-and-emoji/emoji/large");
         final int i72 = 7;
-        sw0 sw0Var116 = new sw0(607, org.telegram.messenger.hd.L0(2131748721), null, org.telegram.messenger.hd.L0(2131747065), org.telegram.messenger.hd.L0(2131748849), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var116 = new sw0(607, org.telegram.messenger.id.L0(2131748723), null, org.telegram.messenger.id.L0(2131747067), org.telegram.messenger.id.L0(2131748851), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i72) {
@@ -7608,7 +7608,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i73 = 8;
-        sw0 sw0Var117 = new sw0(608, org.telegram.messenger.hd.L0(2131751197), null, org.telegram.messenger.hd.L0(2131744858), R.drawable.input_smile, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var117 = new sw0(608, org.telegram.messenger.id.L0(2131751197), null, org.telegram.messenger.id.L0(2131744860), R.drawable.input_smile, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i73) {
@@ -7749,7 +7749,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var117.a("tg://settings/appearance/stickers-and-emoji/emoji");
         final int i74 = 9;
-        sw0 sw0Var118 = new sw0(609, org.telegram.messenger.hd.L0(2131744417), "suggestAnimatedEmojiRow", org.telegram.messenger.hd.L0(2131744858), org.telegram.messenger.hd.L0(2131751197), R.drawable.input_smile, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var118 = new sw0(609, org.telegram.messenger.id.L0(2131744419), "suggestAnimatedEmojiRow", org.telegram.messenger.id.L0(2131744860), org.telegram.messenger.id.L0(2131751197), R.drawable.input_smile, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i74) {
@@ -7890,7 +7890,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var118.a("tg://settings/appearance/stickers-and-emoji/emoji/suggest");
         final int i75 = 10;
-        sw0 sw0Var119 = new sw0(610, org.telegram.messenger.hd.L0(2131750836), "featuredStickersHeaderRow", org.telegram.messenger.hd.L0(2131744858), org.telegram.messenger.hd.L0(2131751197), R.drawable.input_smile, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var119 = new sw0(610, org.telegram.messenger.id.L0(2131750836), "featuredStickersHeaderRow", org.telegram.messenger.id.L0(2131744860), org.telegram.messenger.id.L0(2131751197), R.drawable.input_smile, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i75) {
@@ -8030,7 +8030,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i76 = 11;
-        sw0 sw0Var120 = new sw0(611, org.telegram.messenger.hd.L0(2131751351), null, org.telegram.messenger.hd.L0(2131744858), R.drawable.msg2_sticker, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var120 = new sw0(611, org.telegram.messenger.id.L0(2131751351), null, org.telegram.messenger.id.L0(2131744860), R.drawable.msg2_sticker, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i76) {
@@ -8171,7 +8171,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var120.a("tg://settings/appearance/stickers-and-emoji/emoji/quick-reaction");
         final int i77 = 12;
-        sw0 sw0Var121 = new sw0(700, org.telegram.messenger.hd.L0(2131750697), null, R.drawable.msg2_folder, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var121 = new sw0(700, org.telegram.messenger.id.L0(2131750697), null, R.drawable.msg2_folder, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i77) {
@@ -8312,7 +8312,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var121.a("tg://settings/folders");
         final int i78 = 21;
-        sw0 sw0Var122 = new sw0(701, org.telegram.messenger.hd.L0(2131751717), "createFilterRow", org.telegram.messenger.hd.L0(2131750697), R.drawable.msg2_folder, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var122 = new sw0(701, org.telegram.messenger.id.L0(2131751717), "createFilterRow", org.telegram.messenger.id.L0(2131750697), R.drawable.msg2_folder, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i78) {
@@ -8458,7 +8458,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             sw0Var7 = sw0Var115;
             final int i79 = 2;
             sw0Var8 = sw0Var117;
-            sw0Var9 = new sw0(800, org.telegram.messenger.hd.L0(2131744232), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.ow0
+            sw0Var9 = new sw0(800, org.telegram.messenger.id.L0(2131744234), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.ow0
                 @Override // java.lang.Runnable
                 public final void run() {
                     int i102 = i79;
@@ -8542,10 +8542,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                             f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                             break;
                         case 15:
-                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                             break;
                         case 16:
-                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                             break;
                         case 17:
                             f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -8602,7 +8602,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         }
         if (F(currentAccount, 0)) {
             final int i80 = 13;
-            sw0Var10 = new sw0(801, org.telegram.messenger.hd.L0(2131746997), org.telegram.messenger.hd.L0(2131744232), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.ow0
+            sw0Var10 = new sw0(801, org.telegram.messenger.id.L0(2131746999), org.telegram.messenger.id.L0(2131744234), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.ow0
                 @Override // java.lang.Runnable
                 public final void run() {
                     int i102 = i80;
@@ -8686,10 +8686,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                             f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                             break;
                         case 15:
-                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                             break;
                         case 16:
-                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                             break;
                         case 17:
                             f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -8742,7 +8742,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         }
         if (F(currentAccount, 11)) {
             final int i81 = 23;
-            sw0Var11 = new sw0(802, org.telegram.messenger.hd.L0(2131747006), org.telegram.messenger.hd.L0(2131744232), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.ow0
+            sw0Var11 = new sw0(802, org.telegram.messenger.id.L0(2131747008), org.telegram.messenger.id.L0(2131744234), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.ow0
                 @Override // java.lang.Runnable
                 public final void run() {
                     int i102 = i81;
@@ -8826,10 +8826,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                             f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                             break;
                         case 15:
-                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                             break;
                         case 16:
-                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                             break;
                         case 17:
                             f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -8882,7 +8882,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         }
         if (F(currentAccount, 1)) {
             final int i82 = 4;
-            sw0Var12 = new sw0(803, org.telegram.messenger.hd.L0(2131746963), org.telegram.messenger.hd.L0(2131744232), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.qw0
+            sw0Var12 = new sw0(803, org.telegram.messenger.id.L0(2131746965), org.telegram.messenger.id.L0(2131744234), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.qw0
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i82) {
@@ -9006,7 +9006,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         }
         if (F(currentAccount, 2)) {
             final int i83 = 14;
-            sw0Var13 = new sw0(804, org.telegram.messenger.hd.L0(2131747011), org.telegram.messenger.hd.L0(2131744232), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.qw0
+            sw0Var13 = new sw0(804, org.telegram.messenger.id.L0(2131747013), org.telegram.messenger.id.L0(2131744234), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.qw0
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i83) {
@@ -9130,7 +9130,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         }
         if (F(currentAccount, 8)) {
             final int i84 = 25;
-            sw0Var14 = new sw0(805, org.telegram.messenger.hd.L0(2131746961), org.telegram.messenger.hd.L0(2131744232), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.qw0
+            sw0Var14 = new sw0(805, org.telegram.messenger.id.L0(2131746963), org.telegram.messenger.id.L0(2131744234), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.qw0
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i84) {
@@ -9254,7 +9254,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         }
         if (F(currentAccount, 3)) {
             final int i85 = 6;
-            sw0Var15 = new sw0(806, org.telegram.messenger.hd.L0(2131746991), org.telegram.messenger.hd.L0(2131744232), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.rw0
+            sw0Var15 = new sw0(806, org.telegram.messenger.id.L0(2131746993), org.telegram.messenger.id.L0(2131744234), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.rw0
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i85) {
@@ -9326,7 +9326,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         }
         if (F(currentAccount, 4)) {
             final int i86 = 17;
-            sw0Var16 = new sw0(807, org.telegram.messenger.hd.L0(2131746982), org.telegram.messenger.hd.L0(2131744232), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.rw0
+            sw0Var16 = new sw0(807, org.telegram.messenger.id.L0(2131746984), org.telegram.messenger.id.L0(2131744234), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.rw0
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i86) {
@@ -9396,10 +9396,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         } else {
             sw0Var16 = null;
         }
-        sw0 sw0Var123 = F(currentAccount, 5) ? new sw0(808, org.telegram.messenger.hd.L0(2131746975), org.telegram.messenger.hd.L0(2131744232), R.drawable.msg_settings_premium, new tf0(12, f2Var)) : null;
+        sw0 sw0Var123 = F(currentAccount, 5) ? new sw0(808, org.telegram.messenger.id.L0(2131746977), org.telegram.messenger.id.L0(2131744234), R.drawable.msg_settings_premium, new tf0(12, f2Var)) : null;
         if (F(currentAccount, 9)) {
             final int i87 = 4;
-            sw0Var17 = new sw0(809, org.telegram.messenger.hd.L0(2131747024), org.telegram.messenger.hd.L0(2131744232), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.nw0
+            sw0Var17 = new sw0(809, org.telegram.messenger.id.L0(2131747026), org.telegram.messenger.id.L0(2131744234), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.nw0
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i87) {
@@ -9543,7 +9543,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         }
         if (F(currentAccount, 6)) {
             final int i88 = 14;
-            sw0Var18 = new sw0(810, org.telegram.messenger.hd.L0(2131746986), org.telegram.messenger.hd.L0(2131744232), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.nw0
+            sw0Var18 = new sw0(810, org.telegram.messenger.id.L0(2131746988), org.telegram.messenger.id.L0(2131744234), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.nw0
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i88) {
@@ -9687,7 +9687,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         }
         if (F(currentAccount, 7)) {
             final int i89 = 15;
-            sw0Var19 = new sw0(811, org.telegram.messenger.hd.L0(2131747021), org.telegram.messenger.hd.L0(2131744232), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.nw0
+            sw0Var19 = new sw0(811, org.telegram.messenger.id.L0(2131747023), org.telegram.messenger.id.L0(2131744234), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.nw0
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i89) {
@@ -9831,7 +9831,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         }
         if (F(currentAccount, 10)) {
             final int i90 = 16;
-            sw0Var20 = new sw0(812, org.telegram.messenger.hd.L0(2131747019), org.telegram.messenger.hd.L0(2131744232), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.nw0
+            sw0Var20 = new sw0(812, org.telegram.messenger.id.L0(2131747021), org.telegram.messenger.id.L0(2131744234), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.nw0
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i90) {
@@ -9975,7 +9975,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         }
         if (F(currentAccount, 12)) {
             final int i91 = 17;
-            sw0Var21 = new sw0(813, org.telegram.messenger.hd.L0(2131747003), org.telegram.messenger.hd.L0(2131744232), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.nw0
+            sw0Var21 = new sw0(813, org.telegram.messenger.id.L0(2131747005), org.telegram.messenger.id.L0(2131744234), R.drawable.msg_settings_premium, new Runnable() { // from class: org.telegram.ui.nw0
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i91) {
@@ -10118,7 +10118,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             sw0Var21 = null;
         }
         final int i92 = 18;
-        sw0 sw0Var124 = new sw0(900, org.telegram.messenger.hd.L0(2131747065), null, R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var124 = new sw0(900, org.telegram.messenger.id.L0(2131747067), null, R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i92) {
@@ -10259,7 +10259,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var124.a("tg://settings/power-saving");
         final int i93 = 19;
-        sw0 sw0Var125 = new sw0(901, org.telegram.messenger.hd.L0(2131748849), org.telegram.messenger.hd.L0(2131747065), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var125 = new sw0(901, org.telegram.messenger.id.L0(2131748851), org.telegram.messenger.id.L0(2131747067), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i93) {
@@ -10400,7 +10400,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var125.a("tg://settings/power-saving/stickers");
         final int i94 = 20;
-        sw0 sw0Var126 = new sw0(902, org.telegram.messenger.hd.L0(2131748861), null, org.telegram.messenger.hd.L0(2131747065), org.telegram.messenger.hd.L0(2131748849), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var126 = new sw0(902, org.telegram.messenger.id.L0(2131748863), null, org.telegram.messenger.id.L0(2131747067), org.telegram.messenger.id.L0(2131748851), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i94) {
@@ -10540,7 +10540,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i95 = 22;
-        sw0 sw0Var127 = new sw0(903, org.telegram.messenger.hd.L0(2131748863), null, org.telegram.messenger.hd.L0(2131747065), org.telegram.messenger.hd.L0(2131748849), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var127 = new sw0(903, org.telegram.messenger.id.L0(2131748865), null, org.telegram.messenger.id.L0(2131747067), org.telegram.messenger.id.L0(2131748851), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i95) {
@@ -10680,7 +10680,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i96 = 23;
-        sw0 sw0Var128 = new sw0(904, org.telegram.messenger.hd.L0(2131748854), org.telegram.messenger.hd.L0(2131747065), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var128 = new sw0(904, org.telegram.messenger.id.L0(2131748856), org.telegram.messenger.id.L0(2131747067), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i96) {
@@ -10821,7 +10821,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var128.a("tg://settings/power-saving/emoji");
         final int i97 = 25;
-        sw0 sw0Var129 = new sw0(905, org.telegram.messenger.hd.L0(2131748861), null, org.telegram.messenger.hd.L0(2131747065), org.telegram.messenger.hd.L0(2131748854), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var129 = new sw0(905, org.telegram.messenger.id.L0(2131748863), null, org.telegram.messenger.id.L0(2131747067), org.telegram.messenger.id.L0(2131748856), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i97) {
@@ -10961,7 +10961,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i98 = 26;
-        sw0 sw0Var130 = new sw0(906, org.telegram.messenger.hd.L0(2131748860), null, org.telegram.messenger.hd.L0(2131747065), org.telegram.messenger.hd.L0(2131748854), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var130 = new sw0(906, org.telegram.messenger.id.L0(2131748862), null, org.telegram.messenger.id.L0(2131747067), org.telegram.messenger.id.L0(2131748856), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i98) {
@@ -11101,7 +11101,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i99 = 27;
-        sw0 sw0Var131 = new sw0(907, org.telegram.messenger.hd.L0(2131748863), null, org.telegram.messenger.hd.L0(2131747065), org.telegram.messenger.hd.L0(2131748854), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var131 = new sw0(907, org.telegram.messenger.id.L0(2131748865), null, org.telegram.messenger.id.L0(2131747067), org.telegram.messenger.id.L0(2131748856), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i99) {
@@ -11241,7 +11241,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i100 = 28;
-        sw0 sw0Var132 = new sw0(908, org.telegram.messenger.hd.L0(2131748855), org.telegram.messenger.hd.L0(2131747065), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var132 = new sw0(908, org.telegram.messenger.id.L0(2131748857), org.telegram.messenger.id.L0(2131747067), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i100) {
@@ -11382,7 +11382,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var132.a("tg://settings/power-saving/effects");
         final int i101 = 29;
-        sw0 sw0Var133 = new sw0(909, org.telegram.messenger.hd.L0(2131748858), null, org.telegram.messenger.hd.L0(2131747065), org.telegram.messenger.hd.L0(2131748855), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.nw0
+        sw0 sw0Var133 = new sw0(909, org.telegram.messenger.id.L0(2131748860), null, org.telegram.messenger.id.L0(2131747067), org.telegram.messenger.id.L0(2131748857), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.nw0
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i101) {
@@ -11523,7 +11523,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var133.a("tg://settings/power-saving/background");
         final int i102 = 0;
-        sw0 sw0Var134 = new sw0(910, org.telegram.messenger.hd.L0(2131748846), null, org.telegram.messenger.hd.L0(2131747065), org.telegram.messenger.hd.L0(2131748855), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var134 = new sw0(910, org.telegram.messenger.id.L0(2131748848), null, org.telegram.messenger.id.L0(2131747067), org.telegram.messenger.id.L0(2131748857), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i1022 = i102;
@@ -11607,10 +11607,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -11659,7 +11659,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i103 = 1;
-        sw0 sw0Var135 = new sw0(911, org.telegram.messenger.hd.L0(2131748850), null, org.telegram.messenger.hd.L0(2131747065), org.telegram.messenger.hd.L0(2131748855), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var135 = new sw0(911, org.telegram.messenger.id.L0(2131748852), null, org.telegram.messenger.id.L0(2131747067), org.telegram.messenger.id.L0(2131748857), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i1022 = i103;
@@ -11743,10 +11743,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -11796,7 +11796,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         if (org.telegram.messenger.iz.o() >= 1) {
             final int i104 = 3;
-            sw0Var22 = new sw0(org.telegram.messenger.qs.x5, org.telegram.messenger.hd.L0(2131748857), null, org.telegram.messenger.hd.L0(2131747065), org.telegram.messenger.hd.L0(2131748855), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.ow0
+            sw0Var22 = new sw0(org.telegram.messenger.qs.x5, org.telegram.messenger.id.L0(2131748859), null, org.telegram.messenger.id.L0(2131747067), org.telegram.messenger.id.L0(2131748857), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.ow0
                 @Override // java.lang.Runnable
                 public final void run() {
                     int i1022 = i104;
@@ -11880,10 +11880,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                             f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                             break;
                         case 15:
-                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                             break;
                         case 16:
-                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                             break;
                         case 17:
                             f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -11935,7 +11935,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             sw0Var22 = null;
         }
         final int i105 = 4;
-        sw0 sw0Var136 = new sw0(912, org.telegram.messenger.hd.L0(2131748851), null, org.telegram.messenger.hd.L0(2131747065), org.telegram.messenger.hd.L0(2131748855), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var136 = new sw0(912, org.telegram.messenger.id.L0(2131748853), null, org.telegram.messenger.id.L0(2131747067), org.telegram.messenger.id.L0(2131748857), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i1022 = i105;
@@ -12019,10 +12019,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -12071,7 +12071,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             }
         });
         final int i106 = 5;
-        sw0 sw0Var137 = new sw0(913, org.telegram.messenger.hd.L0(2131748856), org.telegram.messenger.hd.L0(2131747065), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var137 = new sw0(913, org.telegram.messenger.id.L0(2131748858), org.telegram.messenger.id.L0(2131747067), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i1022 = i106;
@@ -12155,10 +12155,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -12208,7 +12208,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var137.a("tg://settings/power-saving/call-animations");
         final int i107 = 7;
-        sw0 sw0Var138 = new sw0(org.telegram.messenger.qs.r3, org.telegram.messenger.hd.L0(2131748859), org.telegram.messenger.hd.L0(2131747065), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var138 = new sw0(org.telegram.messenger.qs.r3, org.telegram.messenger.id.L0(2131748861), org.telegram.messenger.id.L0(2131747067), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i1022 = i107;
@@ -12292,10 +12292,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -12345,7 +12345,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var138.a("tg://settings/power-saving/videos");
         final int i108 = 8;
-        sw0 sw0Var139 = new sw0(org.telegram.messenger.qs.q3, org.telegram.messenger.hd.L0(2131748862), org.telegram.messenger.hd.L0(2131747065), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var139 = new sw0(org.telegram.messenger.qs.q3, org.telegram.messenger.id.L0(2131748864), org.telegram.messenger.id.L0(2131747067), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i1022 = i108;
@@ -12429,10 +12429,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -12482,7 +12482,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var139.a("tg://settings/power-saving/gifs");
         final int i109 = 9;
-        sw0 sw0Var140 = new sw0(914, org.telegram.messenger.hd.L0(2131748845), org.telegram.messenger.hd.L0(2131747065), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var140 = new sw0(914, org.telegram.messenger.id.L0(2131748847), org.telegram.messenger.id.L0(2131747067), R.drawable.msg2_battery, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i1022 = i109;
@@ -12566,10 +12566,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -12619,7 +12619,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var140.a("tg://settings/power-saving/transitions");
         final int i110 = 10;
-        sw0 sw0Var141 = new sw0(400, org.telegram.messenger.hd.L0(2131749053), R.drawable.msg2_language, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var141 = new sw0(400, org.telegram.messenger.id.L0(2131749055), R.drawable.msg2_language, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i1022 = i110;
@@ -12703,10 +12703,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -12756,7 +12756,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var141.a("tg://settings/language");
         final int i111 = 11;
-        sw0 sw0Var142 = new sw0(405, org.telegram.messenger.hd.L0(2131745328), org.telegram.messenger.hd.L0(2131749053), R.drawable.msg2_language, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var142 = new sw0(405, org.telegram.messenger.id.L0(2131745330), org.telegram.messenger.id.L0(2131749055), R.drawable.msg2_language, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i1022 = i111;
@@ -12840,10 +12840,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -12894,7 +12894,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         sw0Var142.a("tg://settings/language/show-button");
         if (org.telegram.messenger.qp.s1(currentAccount).T1().s()) {
             final int i112 = 12;
-            sw0 sw0Var143 = new sw0(406, org.telegram.messenger.hd.L0(2131751359), org.telegram.messenger.hd.L0(2131749053), R.drawable.msg2_language, new Runnable() { // from class: org.telegram.ui.ow0
+            sw0 sw0Var143 = new sw0(406, org.telegram.messenger.id.L0(2131751359), org.telegram.messenger.id.L0(2131749055), R.drawable.msg2_language, new Runnable() { // from class: org.telegram.ui.ow0
                 @Override // java.lang.Runnable
                 public final void run() {
                     int i1022 = i112;
@@ -12978,10 +12978,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                             f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                             break;
                         case 15:
-                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                             break;
                         case 16:
-                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                            vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                             break;
                         case 17:
                             f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -13033,7 +13033,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
             sw0Var43 = sw0Var143;
         }
         final int i113 = 14;
-        sw0 sw0Var144 = new sw0(402, org.telegram.messenger.hd.L0(2131753986), org.telegram.messenger.hd.L0(2131745480), R.drawable.msg2_help, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var144 = new sw0(402, org.telegram.messenger.id.L0(2131753986), org.telegram.messenger.id.L0(2131745482), R.drawable.msg2_help, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i1022 = i113;
@@ -13117,10 +13117,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -13170,7 +13170,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var144.a("tg://settings/ask-question");
         final int i114 = 15;
-        sw0 sw0Var145 = new sw0(403, org.telegram.messenger.hd.L0(2131744243), org.telegram.messenger.hd.L0(2131745480), R.drawable.msg2_help, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var145 = new sw0(403, org.telegram.messenger.id.L0(2131744245), org.telegram.messenger.id.L0(2131745482), R.drawable.msg2_help, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i1022 = i114;
@@ -13254,10 +13254,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -13307,7 +13307,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         });
         sw0Var145.a("tg://settings/faq");
         final int i115 = 16;
-        sw0 sw0Var146 = new sw0(404, org.telegram.messenger.hd.L0(2131746782), org.telegram.messenger.hd.L0(2131745480), R.drawable.msg2_help, new Runnable() { // from class: org.telegram.ui.ow0
+        sw0 sw0Var146 = new sw0(404, org.telegram.messenger.id.L0(2131746784), org.telegram.messenger.id.L0(2131745482), R.drawable.msg2_help, new Runnable() { // from class: org.telegram.ui.ow0
             @Override // java.lang.Runnable
             public final void run() {
                 int i1022 = i115;
@@ -13391,10 +13391,10 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
                         f2Var2.showDialog(org.telegram.ui.Components.v4.R(f2Var2, null));
                         break;
                     case 15:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131744241, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131744243, null));
                         break;
                     case 16:
-                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131746780, null));
+                        vf.c.t(f2Var2.getParentActivity(), org.telegram.messenger.id.M0(2131746782, null));
                         break;
                     case 17:
                         f2Var2.presentFragment(new NotificationsSettingsActivity());
@@ -13490,7 +13490,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         }
         this.F = true;
         TLRPC.TL_messages_getWebPage tL_messages_getWebPage = new TLRPC.TL_messages_getWebPage();
-        tL_messages_getWebPage.url = org.telegram.messenger.hd.M0(2131744241, null);
+        tL_messages_getWebPage.url = org.telegram.messenger.id.M0(2131744243, null);
         tL_messages_getWebPage.hash = 0;
         ConnectionsManager.getInstance(i7).sendRequest(tL_messages_getWebPage, new l(this, 20));
     }
@@ -13516,7 +13516,7 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         if (f2Var instanceof ProfileActivity) {
             try {
                 ((ProfileActivity) f2Var).O.b.getImageReceiver().P0(false);
-                ((ProfileActivity) this.e).O.d.setText(org.telegram.messenger.hd.M0(2131745478, null));
+                ((ProfileActivity) this.e).O.d.setText(org.telegram.messenger.id.M0(2131745480, null));
             } catch (Exception e10) {
                 org.telegram.messenger.a8.g(e10, true);
             }
@@ -13608,13 +13608,13 @@ public class tw0 extends org.telegram.ui.Components.oj0 {
         View view = d1Var.a;
         if (i10 != 0) {
             if (i10 == 1) {
-                ((org.telegram.ui.Cells.x3) view).setText(org.telegram.messenger.hd.M0(2131745483, null));
+                ((org.telegram.ui.Cells.x3) view).setText(org.telegram.messenger.id.M0(2131745485, null));
                 return;
             } else {
                 if (i10 != 2) {
                     return;
                 }
-                ((org.telegram.ui.Cells.n4) view).setText(org.telegram.messenger.hd.M0(2131745470, null));
+                ((org.telegram.ui.Cells.n4) view).setText(org.telegram.messenger.id.M0(2131745472, null));
                 return;
             }
         }

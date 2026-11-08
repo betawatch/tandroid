@@ -1,25 +1,18 @@
 package org.telegram.ui;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class c91 implements View.OnClickListener {
-    public final /* synthetic */ v91 a;
+public final class c91 extends v4.y {
+    public final /* synthetic */ w91 S;
 
-    public c91(v91 v91Var) {
-        this.a = v91Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c91(w91 w91Var, v91 v91Var) {
+        super(v91Var);
+        this.S = w91Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        v91 v91Var = this.a;
-        if (v91Var.M == 1) {
-            org.telegram.ui.Components.v4.g0(v91Var, -v91Var.a, null, v91Var.g(), null, false, v91Var.J, new na(this, 4), v91Var.getResourceProvider());
-            return;
-        }
-        v91Var.getMessagesController().m(v91Var.a, v91Var.getUserConfig().f(), 0, null, v91Var, false, new w81(v91Var, 2), new x81(v91Var), null);
-        org.telegram.messenger.qs.e().k(org.telegram.messenger.qs.I4, new Object[0]);
-        v91Var.S0(false);
+    @Override // v4.y
+    public final boolean s() {
+        return this.S.y > 0;
     }
 }

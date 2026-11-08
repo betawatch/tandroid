@@ -12,7 +12,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class bq {
     public float A;
@@ -294,10 +294,10 @@ public final class bq {
                     for (int i10 = 0; i10 < str.length(); i10++) {
                         if (str.charAt(i10) == o02.charAt(i10)) {
                             int i11 = i10 + 1;
-                            spannableStringBuilder.setSpan(new hy(z10), i10, i11, 0);
-                            spannableStringBuilder2.setSpan(new hy(z10), i10, i11, 0);
+                            spannableStringBuilder.setSpan(new iy(z10), i10, i11, 0);
+                            spannableStringBuilder2.setSpan(new iy(z10), i10, i11, 0);
                         } else {
-                            spannableStringBuilder3.setSpan(new hy(z10), i10, i10 + 1, 0);
+                            spannableStringBuilder3.setSpan(new iy(z10), i10, i10 + 1, 0);
                         }
                     }
                     int max = Math.max(org.telegram.messenger.g0.L(12.0f), (int) Math.ceil(this.e.measureText(str.toString())));

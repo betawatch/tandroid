@@ -24,7 +24,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class j30 implements org.telegram.messenger.ls, org.telegram.ui.om0 {
     public org.telegram.messenger.ij D;
@@ -360,9 +360,9 @@ public final class j30 implements org.telegram.messenger.ls, org.telegram.ui.om0
             int i11 = diVar.K2;
             TextView textView = diVar.d3;
             if (i11 == 2) {
-                textView.setText(org.telegram.messenger.hd.M0(2131752121, null));
+                textView.setText(org.telegram.messenger.id.M0(2131752121, null));
             } else {
-                textView.setText(org.telegram.messenger.hd.M0(2131752123, null));
+                textView.setText(org.telegram.messenger.id.M0(2131752123, null));
             }
             if (chatAttachAlertPhotoLayout != null) {
                 di diVar2 = chatAttachAlertPhotoLayout.b;
@@ -374,9 +374,9 @@ public final class j30 implements org.telegram.messenger.ls, org.telegram.ui.om0
         }
         int i12 = this.U;
         if (i12 == 1) {
-            this.c.d3.setText(org.telegram.messenger.hd.a0("SetPhotoFor", null, 2131745519, this.L.first_name));
+            this.c.d3.setText(org.telegram.messenger.id.a0("SetPhotoFor", null, 2131745521, this.L.first_name));
         } else if (i12 == 2) {
-            this.c.d3.setText(org.telegram.messenger.hd.a0("SuggestPhotoFor", null, 2131744407, this.L.first_name));
+            this.c.d3.setText(org.telegram.messenger.id.a0("SuggestPhotoFor", null, 2131744409, this.L.first_name));
         }
     }
 
@@ -537,13 +537,13 @@ public final class j30 implements org.telegram.messenger.ls, org.telegram.ui.om0
         }
         org.telegram.ui.ActionBar.v2 h = org.telegram.messenger.camera.q.h(this.a.getParentActivity(), false, 1, null);
         if (i7 == 1) {
-            h.O = org.telegram.messenger.hd.a0("SetPhotoFor", null, 2131745519, this.L.first_name);
+            h.O = org.telegram.messenger.id.a0("SetPhotoFor", null, 2131745521, this.L.first_name);
             h.P = true;
         } else if (i7 == 2) {
-            h.O = org.telegram.messenger.hd.a0("SuggestPhotoFor", null, 2131744407, this.L.first_name);
+            h.O = org.telegram.messenger.id.a0("SuggestPhotoFor", null, 2131744409, this.L.first_name);
             h.P = true;
         } else {
-            h.O = org.telegram.messenger.hd.M0(2131752123, null);
+            h.O = org.telegram.messenger.id.M0(2131752123, null);
             h.P = true;
         }
         ArrayList arrayList = new ArrayList();

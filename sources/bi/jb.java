@@ -27,7 +27,7 @@ import org.telegram.ui.Components.tq;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.d10;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jb implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -157,12 +157,12 @@ public final /* synthetic */ class jb implements View.OnClickListener {
                 break;
             case 4:
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, (Context) obj3, (di.b) obj2);
-                String M0 = org.telegram.messenger.hd.M0(2131748797, null);
+                String M0 = org.telegram.messenger.id.M0(2131748799, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
-                u1Var.T = org.telegram.messenger.hd.M0(2131748798, null);
-                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131746025, null), new bg.f0((tq) obj4, (fi.d) obj5, (TL_phone.getGroupCallStreamRtmpUrl) obj, this.b, 3));
-                alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+                u1Var.T = org.telegram.messenger.id.M0(2131748800, null);
+                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131746027, null), new bg.f0((tq) obj4, (fi.d) obj5, (TL_phone.getGroupCallStreamRtmpUrl) obj, this.b, 3));
+                alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
                 alertDialog$Builder.d(-1);
                 alertDialog$Builder.p();
                 break;
@@ -170,11 +170,11 @@ public final /* synthetic */ class jb implements View.OnClickListener {
                 org.telegram.ui.ActionBar.f6 f6Var2 = (org.telegram.ui.ActionBar.f6) obj4;
                 TL_wallet.walletTransaction[] wallettransactionArr = (TL_wallet.walletTransaction[]) obj2;
                 Context context = (Context) obj;
-                k60 F = k60.F(((org.telegram.ui.Wallet.a3[]) obj5)[0].c, f6Var2, (ImageView) obj3);
+                k60 F = k60.F(((org.telegram.ui.Wallet.z2[]) obj5)[0].c, f6Var2, (ImageView) obj3);
                 if (!TextUtils.isEmpty(wallettransactionArr[0].tx_hash)) {
-                    F.c(R.drawable.msg_search, org.telegram.messenger.hd.M0(2131742964, null), new d10(context, i11, wallettransactionArr, 15), false);
+                    F.c(R.drawable.msg_search, org.telegram.messenger.id.M0(2131742966, null), new d10(context, i11, wallettransactionArr, 15), false);
                 }
-                F.c(R.drawable.wallet_help, org.telegram.messenger.hd.M0(2131742962, null), new b(i10, context, f6Var2), false);
+                F.c(R.drawable.wallet_help, org.telegram.messenger.id.M0(2131742964, null), new b(i10, context, f6Var2), false);
                 F.a0(0.0f, -org.telegram.messenger.g0.L(48.0f));
                 F.Z();
                 break;
@@ -217,8 +217,8 @@ public final /* synthetic */ class jb implements View.OnClickListener {
         this.h = c20Var;
     }
 
-    public /* synthetic */ jb(org.telegram.ui.Wallet.a3[] a3VarArr, org.telegram.ui.ActionBar.f6 f6Var, ImageView imageView, TL_wallet.walletTransaction[] wallettransactionArr, Context context, int i7) {
-        this.c = a3VarArr;
+    public /* synthetic */ jb(org.telegram.ui.Wallet.z2[] z2VarArr, org.telegram.ui.ActionBar.f6 f6Var, ImageView imageView, TL_wallet.walletTransaction[] wallettransactionArr, Context context, int i7) {
+        this.c = z2VarArr;
         this.d = f6Var;
         this.e = imageView;
         this.f = wallettransactionArr;

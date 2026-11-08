@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class j31 extends ky {
+public final class j31 extends ly {
     public final /* synthetic */ t31 Y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -14,7 +14,7 @@ public final class j31 extends ky {
         this.Y = t31Var;
     }
 
-    @Override // org.telegram.ui.Components.ky
+    @Override // org.telegram.ui.Components.ly
     public final boolean D1() {
         t31 t31Var = this.Y;
         return t31Var.n.getAdapter() == t31Var.w;
@@ -22,7 +22,7 @@ public final class j31 extends ky {
 
     @Override // v4.b0
     public final boolean Y0() {
-        return org.telegram.messenger.hd.a0;
+        return org.telegram.messenger.id.a0;
     }
 
     @Override // v4.s, v4.b0, v4.n0

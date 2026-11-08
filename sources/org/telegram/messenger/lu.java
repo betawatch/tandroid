@@ -12,7 +12,7 @@ import android.view.View;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.AnimatedArrowDrawable;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class lu extends fu {
     public final TL_iv.pageBlockDetails W;
@@ -54,7 +54,7 @@ public final class lu extends fu {
 
     @Override // org.telegram.messenger.fu
     public final CharSequence D() {
-        return hd.M0(this.W.open ? 2131754882 : 2131754892, null);
+        return id.M0(this.W.open ? 2131754882 : 2131754892, null);
     }
 
     @Override // org.telegram.messenger.fu
@@ -62,7 +62,7 @@ public final class lu extends fu {
         StaticLayout staticLayout;
         jv jvVar = this.X;
         CharSequence h02 = (jvVar == null || (staticLayout = jvVar.b) == null) ? null : fu.h0(staticLayout.getText());
-        return TextUtils.concat(hd.M0(2131753987, null), ", ", hd.M0(this.W.open ? 2131754882 : 2131754892, null), TextUtils.isEmpty(h02) ? "" : TextUtils.concat(", ", h02));
+        return TextUtils.concat(id.M0(2131753987, null), ", ", id.M0(this.W.open ? 2131754882 : 2131754892, null), TextUtils.isEmpty(h02) ? "" : TextUtils.concat(", ", h02));
     }
 
     @Override // org.telegram.messenger.fu

@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class vk0 extends HorizontalScrollView {
     public boolean a;
@@ -69,34 +69,34 @@ public abstract class vk0 extends HorizontalScrollView {
         int childCount = this.b.getChildCount();
         for (int i7 = 0; i7 < childCount; i7++) {
             View childAt = this.b.getChildAt(i7);
-            if (childAt instanceof wu) {
-                wu wuVar = (wu) childAt;
+            if (childAt instanceof xu) {
+                xu xuVar = (xu) childAt;
                 boolean z9 = childAt.getRight() - getScrollX() > 0 && childAt.getLeft() - getScrollX() < getMeasuredWidth();
                 boolean z10 = this.d && ((valueAnimator = this.c) == null || !valueAnimator.isRunning());
-                if (!wuVar.D && z9 && (zg0Var = wuVar.e) != null && !zg0Var.k0 && !z10) {
-                    wuVar.e.T(true, 0.0f);
-                    wuVar.e.start();
+                if (!xuVar.D && z9 && (zg0Var = xuVar.e) != null && !zg0Var.k0 && !z10) {
+                    xuVar.e.T(true, 0.0f);
+                    xuVar.e.start();
                 }
-                if (wuVar.D != z9) {
-                    wuVar.D = z9;
+                if (xuVar.D != z9) {
+                    xuVar.D = z9;
                     if (z9) {
-                        wuVar.invalidate();
-                        ug.z0 z0Var = wuVar.f;
+                        xuVar.invalidate();
+                        ug.z0 z0Var = xuVar.f;
                         if (z0Var != null) {
                             z0Var.invalidate();
                         }
-                        ug.z0 z0Var2 = wuVar.f;
-                        if (z0Var2 != null && (i5Var = wuVar.x) != null && (z2Var = i5Var.k) != null) {
+                        ug.z0 z0Var2 = xuVar.f;
+                        if (z0Var2 != null && (i5Var = xuVar.x) != null && (z2Var = i5Var.k) != null) {
                             z0Var2.setImageReceiver(z2Var);
                         }
-                        l9 l9Var = wuVar.d;
+                        l9 l9Var = xuVar.d;
                         if (l9Var != null) {
                             l9Var.invalidate();
                         }
                     } else {
-                        wuVar.b();
+                        xuVar.b();
                     }
-                    wuVar.c();
+                    xuVar.c();
                 }
             }
         }

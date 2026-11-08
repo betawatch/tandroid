@@ -2,12 +2,12 @@ package di;
 
 import android.view.KeyEvent;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.ui.Components.ea;
 import org.telegram.ui.vs0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class v7 implements c5.g {
     public final /* synthetic */ int a;
@@ -50,16 +50,16 @@ public final class v7 implements c5.g {
                 ug.w0 w0Var = (ug.w0) callback;
                 ArrayList arrayList = w0Var.k1;
                 if (((vs0) arrayList.get(i7)).a == 0) {
-                    w0Var.E1.setTitle(hd.M0(2131751350, null));
+                    w0Var.E1.setTitle(id.M0(2131751350, null));
                     w0Var.E1.requestLayout();
                 } else if (((vs0) arrayList.get(i7)).a == 14) {
-                    w0Var.E1.setTitle(hd.M0(2131743806, null));
+                    w0Var.E1.setTitle(id.M0(2131743808, null));
                     w0Var.E1.requestLayout();
                 } else if (((vs0) arrayList.get(i7)).a == 40) {
-                    w0Var.E1.setTitle(hd.M0(2131750838, null));
+                    w0Var.E1.setTitle(id.M0(2131750838, null));
                     w0Var.E1.requestLayout();
                 } else if (((vs0) arrayList.get(i7)).a == 28) {
-                    w0Var.E1.setTitle(hd.M0(2131744253, null));
+                    w0Var.E1.setTitle(id.M0(2131744255, null));
                     w0Var.E1.requestLayout();
                 }
                 d();

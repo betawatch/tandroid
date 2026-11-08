@@ -12,7 +12,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class g41 extends org.telegram.ui.Components.oj0 {
     public int c0;
@@ -572,30 +572,30 @@ public final class g41 extends org.telegram.ui.Components.oj0 {
                 cVar.b(c51Var.f0, c51Var.e0);
                 cVar.setPadding(0, org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f));
                 if (i7 == this.c) {
-                    cVar.setTitle(org.telegram.messenger.hd.M0(2131744896, "StatisticOverview"));
+                    cVar.setTitle(org.telegram.messenger.id.M0(2131744898, "StatisticOverview"));
                     return;
                 }
                 if (i7 == this.T) {
-                    cVar.setTitle(org.telegram.messenger.hd.M0(2131744036, "TopAdmins"));
+                    cVar.setTitle(org.telegram.messenger.id.M0(2131744038, "TopAdmins"));
                     return;
                 }
                 if (i7 == this.W) {
-                    cVar.setTitle(org.telegram.messenger.hd.M0(2131744033, "TopInviters"));
+                    cVar.setTitle(org.telegram.messenger.id.M0(2131744035, "TopInviters"));
                     return;
                 } else {
                     if (i7 == this.Q) {
-                        cVar.setTitle(org.telegram.messenger.hd.M0(2131744032, "TopMembers"));
+                        cVar.setTitle(org.telegram.messenger.id.M0(2131744034, "TopMembers"));
                         return;
                     }
                     cVar.c(false);
                     cVar.setPadding(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(15.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(6.0f));
-                    cVar.setTitle(org.telegram.messenger.hd.M0(2131746364, "RecentPostsCapitalize"));
+                    cVar.setTitle(org.telegram.messenger.id.M0(2131746366, "RecentPostsCapitalize"));
                     return;
                 }
             }
             if (d != 14) {
                 if (d == 15) {
-                    ((org.telegram.ui.Cells.x4) view).b(R.drawable.arrow_more, 5, org.telegram.messenger.hd.G(c51Var.N.size() - arrayList2.size(), "ShowVotes", new Object[0]), false);
+                    ((org.telegram.ui.Cells.x4) view).b(R.drawable.arrow_more, 5, org.telegram.messenger.id.G(c51Var.N.size() - arrayList2.size(), "ShowVotes", new Object[0]), false);
                     return;
                 }
                 return;
@@ -752,7 +752,7 @@ public final class g41 extends org.telegram.ui.Components.oj0 {
                 if (!ijVar2.J3()) {
                     charSequence = a8.p0.D(ijVar2.z1(true).trim(), ", ", ijVar2.x1(true).trim());
                 } else if (ijVar2.y4()) {
-                    charSequence = org.telegram.messenger.hd.M0(2131744736, null);
+                    charSequence = org.telegram.messenger.id.M0(2131744738, null);
                 } else {
                     charSequence = ijVar2.z;
                     if (charSequence == null) {
@@ -764,10 +764,10 @@ public final class g41 extends org.telegram.ui.Components.oj0 {
                     spannableStringBuilder.removeSpan(uRLSpan);
                 }
                 w7Var.b.k(org.telegram.messenger.g0.P3(org.telegram.messenger.g0.N2(spannableStringBuilder), null));
-                w7Var.c.setText(String.format(org.telegram.messenger.hd.K0(z41Var.d(), "Views"), org.telegram.messenger.g0.o0(z41Var.d(), 0)));
+                w7Var.c.setText(String.format(org.telegram.messenger.id.K0(z41Var.d(), "Views"), org.telegram.messenger.g0.o0(z41Var.d(), 0)));
                 z41Var2 = z41Var;
                 Date date = new Date((z41Var2.b != null ? 0L : r6.k.date) * 1000);
-                w7Var.e.setText(org.telegram.messenger.hd.a0(null, null, 2131742784, org.telegram.messenger.hd.E0().C0().format(date), org.telegram.messenger.hd.E0().p0().format(date)));
+                w7Var.e.setText(org.telegram.messenger.id.a0(null, null, 2131742786, org.telegram.messenger.id.E0().C0().format(date), org.telegram.messenger.id.E0().p0().format(date)));
                 textView2.setText(org.telegram.messenger.g0.o0(z41Var2.a(), 0));
                 textView.setText(org.telegram.messenger.g0.o0(z41Var2.c(), 0));
                 textView2.setVisibility(z41Var2.a() == 0 ? 0 : 8);
@@ -796,10 +796,10 @@ public final class g41 extends org.telegram.ui.Components.oj0 {
         while (r7 < r6) {
         }
         w7Var.b.k(org.telegram.messenger.g0.P3(org.telegram.messenger.g0.N2(spannableStringBuilder2), null));
-        w7Var.c.setText(String.format(org.telegram.messenger.hd.K0(z41Var.d(), "Views"), org.telegram.messenger.g0.o0(z41Var.d(), 0)));
+        w7Var.c.setText(String.format(org.telegram.messenger.id.K0(z41Var.d(), "Views"), org.telegram.messenger.g0.o0(z41Var.d(), 0)));
         z41Var2 = z41Var;
         Date date2 = new Date((z41Var2.b != null ? 0L : r6.k.date) * 1000);
-        w7Var.e.setText(org.telegram.messenger.hd.a0(null, null, 2131742784, org.telegram.messenger.hd.E0().C0().format(date2), org.telegram.messenger.hd.E0().p0().format(date2)));
+        w7Var.e.setText(org.telegram.messenger.id.a0(null, null, 2131742786, org.telegram.messenger.id.E0().C0().format(date2), org.telegram.messenger.id.E0().p0().format(date2)));
         textView2.setText(org.telegram.messenger.g0.o0(z41Var2.a(), 0));
         textView.setText(org.telegram.messenger.g0.o0(z41Var2.c(), 0));
         textView2.setVisibility(z41Var2.a() == 0 ? 0 : 8);

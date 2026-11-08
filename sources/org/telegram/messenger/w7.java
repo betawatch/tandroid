@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class w7 extends c1 {
     public static Pattern I;
@@ -1174,7 +1174,7 @@ public final class w7 extends c1 {
             if (p7Var != null) {
                 J.a(p7Var);
             }
-            J.c(new n7(this, str, 0));
+            J.c(new o7(this, str, 0));
         }
     }
 
@@ -1226,7 +1226,7 @@ public final class w7 extends c1 {
         if (p7Var != null) {
             J.a(p7Var);
         }
-        J.c(new n7(this, str2, 1));
+        J.c(new o7(this, str2, 1));
         if (!z9 || document == null) {
             return;
         }
@@ -1266,25 +1266,25 @@ public final class w7 extends c1 {
     }
 
     public final void f0(final String str, final c20 c20Var) {
-        final y4 y4Var = new y4(7, this, r0);
-        ls[] lsVarArr = {new ls() { // from class: org.telegram.messenger.m7
+        final x4 x4Var = new x4(7, this, r0);
+        ls[] lsVarArr = {new ls() { // from class: org.telegram.messenger.n7
             @Override // org.telegram.messenger.ls
             public final void didReceivedNotification(int i7, int i10, Object[] objArr) {
                 int i11 = qs.U1;
                 String str2 = str;
                 c20 c20Var2 = c20Var;
-                y4 y4Var2 = y4Var;
+                x4 x4Var2 = x4Var;
                 if (i7 == i11) {
                     if (objArr[0] == str2) {
                         c20Var2.a((TLRPC.InputFile) objArr[1]);
-                        y4Var2.run();
+                        x4Var2.run();
                         return;
                     }
                     return;
                 }
                 if (i7 == qs.V1 && objArr[0] == str2) {
                     c20Var2.a(null);
-                    y4Var2.run();
+                    x4Var2.run();
                 }
             }
         }};
@@ -1304,7 +1304,7 @@ public final class w7 extends c1 {
         if (str == null) {
             return;
         }
-        J.c(new Runnable() { // from class: org.telegram.messenger.l7
+        J.c(new Runnable() { // from class: org.telegram.messenger.m7
             @Override // java.lang.Runnable
             public final void run() {
                 long j10;
@@ -1383,7 +1383,7 @@ public final class w7 extends c1 {
         } else if (m20Var != null) {
             str2 = r(null, m20Var);
         }
-        J.c(new k7(this, str2, i7, 0));
+        J.c(new l7(this, str2, i7, 0));
     }
 
     public final void h0(boolean z9, int i7, String str, boolean z10) {
@@ -1402,7 +1402,7 @@ public final class w7 extends c1 {
         if (arrayList.isEmpty()) {
             return;
         }
-        g0.h3(new y4(8, this, arrayList));
+        g0.h3(new x4(8, this, arrayList));
     }
 
     public final boolean k(String str) {

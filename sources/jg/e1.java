@@ -2,9 +2,9 @@ package jg;
 
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qp;
-import org.telegram.ui.Components.gy;
+import org.telegram.ui.Components.hy;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class e1 {
     public final int a;
@@ -31,8 +31,8 @@ public final class e1 {
                 N = ((i1) this.h).N();
                 break;
             default:
-                gy gyVar = (gy) this.h;
-                if (gyVar.t1 == null || gyVar.getVisibility() != 0 || !gyVar.K0) {
+                hy hyVar = (hy) this.h;
+                if (hyVar.t1 == null || hyVar.getVisibility() != 0 || !hyVar.K0) {
                     N = false;
                     break;
                 } else {

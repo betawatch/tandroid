@@ -4,11 +4,11 @@ import android.location.Address;
 import android.location.Geocoder;
 import java.util.List;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.pa0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -35,7 +35,7 @@ public final /* synthetic */ class t0 implements Runnable {
                 a1 a1Var2 = this.b;
                 pa0 pa0Var = this.c;
                 try {
-                    List<Address> fromLocationName = new Geocoder(a1Var2.getParentActivity(), hd.E0().y).getFromLocationName(a1Var2.y, 1);
+                    List<Address> fromLocationName = new Geocoder(a1Var2.getParentActivity(), id.E0().y).getFromLocationName(a1Var2.y, 1);
                     if (!fromLocationName.isEmpty()) {
                         Address address = fromLocationName.get(0);
                         TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();

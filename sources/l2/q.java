@@ -24,7 +24,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.ez;
 import org.telegram.messenger.gz;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.lc;
 import org.telegram.messenger.p10;
@@ -68,7 +68,7 @@ import org.telegram.ui.qg0;
 import org.telegram.ui.si;
 import org.telegram.ui.w90;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q implements h2.o, qr, db0, lc, t4, dj0, cj0, org.telegram.ui.ActionBar.r1, ma0, yi0, h2.j, ej0 {
     public final /* synthetic */ int a;
@@ -203,7 +203,7 @@ public final /* synthetic */ class q implements h2.o, qr, db0, lc, t4, dj0, cj0,
                         }
                     } else {
                         hashSet.remove(Long.valueOf(j3));
-                        String G = hd.G(qg0Var.h2, "BotMultiContactsSelectorLimit", new Object[0]);
+                        String G = id.G(qg0Var.h2, "BotMultiContactsSelectorLimit", new Object[0]);
                         l2 l2Var = qg0Var.c;
                         new hc(l2Var, qg0Var.I0).Q(R.raw.chats_infotip, 36, G).k(true);
                         try {
@@ -317,9 +317,9 @@ public final /* synthetic */ class q implements h2.o, qr, db0, lc, t4, dj0, cj0,
         calendar.set(2, 0);
         calendar.add(2, i7 - 120);
         if (calendar.get(1) != i10) {
-            return hd.E0().v0().format(calendar.getTimeInMillis());
+            return id.E0().v0().format(calendar.getTimeInMillis());
         }
-        hd E0 = hd.E0();
+        id E0 = id.E0();
         if (E0.r == null) {
             synchronized (E0) {
                 try {
@@ -328,7 +328,7 @@ public final /* synthetic */ class q implements h2.o, qr, db0, lc, t4, dj0, cj0,
                         if (locale == null) {
                             locale = Locale.getDefault();
                         }
-                        E0.r = hd.k(locale, E0.O0(2131742767, "formatterMonthOnly", null), "MMMM");
+                        E0.r = id.k(locale, E0.O0(2131742769, "formatterMonthOnly", null), "MMMM");
                     }
                 } finally {
                 }

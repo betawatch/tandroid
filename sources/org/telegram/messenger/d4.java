@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class d4 extends c1 {
     public static volatile p5 s = new p5("chatThemeQueue");
@@ -279,7 +279,7 @@ public final class d4 extends c1 {
         yr messagesStorage = getMessagesStorage();
         u3 u3Var = new u3(this, 0);
         messagesStorage.getClass();
-        messagesStorage.I(new yq(4, messagesStorage, u3Var));
+        messagesStorage.I(new zq(4, messagesStorage, u3Var));
         n("❌");
         if (this.b.isEmpty()) {
             return;
@@ -319,7 +319,7 @@ public final class d4 extends c1 {
             org.telegram.ui.ActionBar.r3 r3Var = (org.telegram.ui.ActionBar.r3) obj;
             long h = r3Var.h(z9 ? 1 : 0);
             if (h != 0 && !this.a.containsKey(Long.valueOf(h))) {
-                r3Var.p(z9 ? 1 : 0, new p1(this, 1));
+                r3Var.p(z9 ? 1 : 0, new j1(this, 1));
             }
         }
     }
@@ -375,7 +375,7 @@ public final class d4 extends c1 {
             hashMap.put(tL_chatThemeUniqueGift.gift.slug, r3Var);
             yr messagesStorage = getMessagesStorage();
             messagesStorage.getClass();
-            messagesStorage.I(new yq(3, messagesStorage, Collections.singletonList(chatTheme)));
+            messagesStorage.I(new zq(3, messagesStorage, Collections.singletonList(chatTheme)));
         }
     }
 

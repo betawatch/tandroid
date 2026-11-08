@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fe implements org.telegram.ui.Components.p40, org.telegram.ui.Components.s40, org.telegram.ui.ActionBar.r1, org.telegram.ui.Components.on, org.telegram.messenger.qr, org.telegram.ui.Components.oh0, ResultCallback, oi.m, yh.c, lh.a, r40, mr, lh.b, org.telegram.ui.Components.dj0, lh.d {
     public final /* synthetic */ int a;
@@ -69,12 +69,12 @@ public final /* synthetic */ class fe implements org.telegram.ui.Components.p40,
                 } else if (J instanceof String) {
                     if (anVar.W1.getAdapter().J == null) {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, anVar.getParentActivity(), anVar.xa);
-                        String M0 = org.telegram.messenger.hd.M0(R.string.AppName, null);
+                        String M0 = org.telegram.messenger.id.M0(R.string.AppName, null);
                         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                         u1Var.R = M0;
-                        u1Var.T = org.telegram.messenger.hd.M0(2131752062, null);
-                        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131752099, null), new fe(anVar, 12));
-                        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+                        u1Var.T = org.telegram.messenger.id.M0(2131752062, null);
+                        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131752099, null), new fe(anVar, 12));
+                        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
                         anVar.showDialog(u1Var);
                         return true;
                     }

@@ -11,7 +11,7 @@ import java.util.List;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.hy0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class q implements f0 {
     public final p a;
@@ -216,7 +216,7 @@ public final class q implements f0 {
                         tVar.b = ((e2.k0) i0Var3.get(i7)).f;
                         tVar.a = ((e2.k0) i0Var3.get(i7)).g;
                         e2.u uVar = new e2.u(tVar);
-                        org.telegram.ui.web.a0 a0Var = new org.telegram.ui.web.a0(24, this, uVar);
+                        org.telegram.ui.web.a0 a0Var = new org.telegram.ui.web.a0(23, this, uVar);
                         j2.n nVar = this.b;
                         u5.e eVar = new u5.e(a0Var, 10);
                         hy0 hy0Var = new hy0(6);

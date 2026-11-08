@@ -15,7 +15,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class li0 implements org.telegram.messenger.a20, org.telegram.ui.Cells.u5, org.telegram.ui.ActionBar.r1, org.telegram.ui.ActionBar.f1, r0.m, org.telegram.messenger.w10, org.telegram.ui.Cells.z4, org.telegram.messenger.oc, RequestTimeDelegate, org.telegram.ui.ActionBar.e2, org.telegram.ui.Components.dj0, lg.e, jg.y1 {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class li0 implements org.telegram.messenger.a20, or
                 }
                 break;
             default:
-                je0 je0Var = (je0) ((nb1) this.b);
+                je0 je0Var = (je0) ((ob1) this.b);
                 i0.b I02 = org.telegram.messenger.g0.I0(k1Var, false);
                 int i10 = I02.a;
                 je0Var.M = i10;
@@ -83,8 +83,8 @@ public final /* synthetic */ class li0 implements org.telegram.messenger.a20, or
                 SparseArray sparseArray = je0Var.a;
                 int size = sparseArray.size();
                 for (int i13 = 0; i13 < size; i13++) {
-                    lb1 lb1Var = (lb1) sparseArray.valueAt(i13);
-                    if (lb1Var != null && (fragmentView = lb1Var.a.getFragmentView()) != null) {
+                    mb1 mb1Var = (mb1) sparseArray.valueAt(i13);
+                    if (mb1Var != null && (fragmentView = mb1Var.a.getFragmentView()) != null) {
                         r0.i0.b(fragmentView, k1Var);
                     }
                 }
@@ -105,7 +105,7 @@ public final /* synthetic */ class li0 implements org.telegram.messenger.a20, or
                 ((zr0) this.b).e();
                 break;
             default:
-                ((f81) this.b).e();
+                ((g81) this.b).e();
                 break;
         }
     }
@@ -126,7 +126,7 @@ public final /* synthetic */ class li0 implements org.telegram.messenger.a20, or
             case 16:
                 return ((c21) this.b).e1(i7, view);
             default:
-                ((m81) this.b).J.c(i7, view);
+                ((n81) this.b).J.c(i7, view);
                 return true;
         }
     }
@@ -136,10 +136,10 @@ public final /* synthetic */ class li0 implements org.telegram.messenger.a20, or
         Integer num = (Integer) obj;
         PrivacyControlActivity privacyControlActivity = ((jt0) this.b).d;
         if (((Integer) number).intValue() != 0) {
-            return org.telegram.messenger.hd.E(num.intValue(), ',');
+            return org.telegram.messenger.id.E(num.intValue(), ',');
         }
         if (privacyControlActivity.getUserConfig().q()) {
-            return org.telegram.messenger.hd.H(',', "Stars", num.intValue());
+            return org.telegram.messenger.id.H(',', "Stars", num.intValue());
         }
         if (privacyControlActivity.A0 == null) {
             SpannableString spannableString = new SpannableString("l");
@@ -154,7 +154,7 @@ public final /* synthetic */ class li0 implements org.telegram.messenger.a20, or
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) privacyControlActivity.A0);
         spannableStringBuilder.append((CharSequence) " ");
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.H(',', "Stars", num.intValue()));
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.H(',', "Stars", num.intValue()));
         return spannableStringBuilder;
     }
 
@@ -271,16 +271,16 @@ public final /* synthetic */ class li0 implements org.telegram.messenger.a20, or
                 }
                 break;
             case 19:
-                u71 u71Var = ((y61) this.b).a;
-                org.telegram.ui.ActionBar.j6 j6Var = u71Var.f0;
-                org.telegram.ui.ActionBar.k6.l0(j6Var, u71Var.w, true);
+                v71 v71Var = ((z61) this.b).a;
+                org.telegram.ui.ActionBar.j6 j6Var = v71Var.f0;
+                org.telegram.ui.ActionBar.k6.l0(j6Var, v71Var.w, true);
                 org.telegram.ui.ActionBar.k6.p();
                 org.telegram.ui.ActionBar.k6.t1(false, false);
-                org.telegram.messenger.qs.e().k(org.telegram.messenger.qs.t4, j6Var, Boolean.valueOf(u71Var.g0), null, -1);
-                u71Var.finishFragment();
+                org.telegram.messenger.qs.e().k(org.telegram.messenger.qs.t4, j6Var, Boolean.valueOf(v71Var.g0), null, -1);
+                v71Var.finishFragment();
                 break;
             default:
-                ((wa1) this.b).a.J0(true);
+                ((xa1) this.b).a.J0(true);
                 break;
         }
     }
@@ -337,11 +337,11 @@ public final /* synthetic */ class li0 implements org.telegram.messenger.a20, or
 
     @Override // jg.y1
     public void q(int i7) {
-        jb1 jb1Var = (jb1) this.b;
-        if (jb1Var.h == null && !jb1Var.f.e()) {
-            jb1Var.w.f.e(false, true);
+        kb1 kb1Var = (kb1) this.b;
+        if (kb1Var.h == null && !kb1Var.f.e()) {
+            kb1Var.w.f.e(false, true);
         }
-        jb1Var.f();
+        kb1Var.f();
     }
 
     @Override // org.telegram.messenger.oc

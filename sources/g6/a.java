@@ -28,7 +28,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class a {
     public static final j6.b l = new j6.b("CastContext", null);
@@ -84,27 +84,27 @@ public final class a {
             this.b = a10;
             try {
                 l lVar = (l) a10;
-                Parcel R0 = lVar.R0(lVar.P0(), 6);
-                IBinder readStrongBinder = R0.readStrongBinder();
+                Parcel r12 = lVar.r1(lVar.p1(), 6);
+                IBinder readStrongBinder = r12.readStrongBinder();
                 if (readStrongBinder == null) {
                     rVar2 = null;
                 } else {
                     IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.IDiscoveryManager");
                     rVar2 = queryLocalInterface instanceof r ? (r) queryLocalInterface : new r(readStrongBinder, "com.google.android.gms.cast.framework.IDiscoveryManager", 2);
                 }
-                R0.recycle();
+                r12.recycle();
                 this.d = new k(rVar2);
                 try {
                     l lVar2 = (l) a10;
-                    Parcel R02 = lVar2.R0(lVar2.P0(), 5);
-                    IBinder readStrongBinder2 = R02.readStrongBinder();
+                    Parcel r13 = lVar2.r1(lVar2.p1(), 5);
+                    IBinder readStrongBinder2 = r13.readStrongBinder();
                     if (readStrongBinder2 == null) {
                         yVar = null;
                     } else {
                         IInterface queryLocalInterface2 = readStrongBinder2.queryLocalInterface("com.google.android.gms.cast.framework.ISessionManager");
                         yVar = queryLocalInterface2 instanceof y ? (y) queryLocalInterface2 : new y(readStrongBinder2, "com.google.android.gms.cast.framework.ISessionManager", 2);
                     }
-                    R02.recycle();
+                    r13.recycle();
                     g gVar = new g(yVar, context);
                     this.c = gVar;
                     q6.m.f("PrecacheManager", "The log tag cannot be null or empty.");
@@ -134,9 +134,9 @@ public final class a {
                     this.g = cVar;
                     try {
                         l lVar3 = (l) a10;
-                        Parcel P0 = lVar3.P0();
-                        com.google.android.gms.internal.cast.t.d(P0, cVar);
-                        lVar3.T0(P0, 3);
+                        Parcel p12 = lVar3.p1();
+                        com.google.android.gms.internal.cast.t.d(p12, cVar);
+                        lVar3.t1(p12, 3);
                         cVar.c.add(this.h.a);
                         if (!DesugarCollections.unmodifiableList(bVar.x).isEmpty()) {
                             j6.b bVar2 = l;
@@ -255,9 +255,9 @@ public final class a {
         q6.m.d("Must be called from the main thread.");
         try {
             l lVar = (l) this.b;
-            Parcel R0 = lVar.R0(lVar.P0(), 1);
-            Bundle bundle = (Bundle) com.google.android.gms.internal.cast.t.a(R0, Bundle.CREATOR);
-            R0.recycle();
+            Parcel r12 = lVar.r1(lVar.p1(), 1);
+            Bundle bundle = (Bundle) com.google.android.gms.internal.cast.t.a(r12, Bundle.CREATOR);
+            r12.recycle();
             return s4.r.b(bundle);
         } catch (RemoteException e10) {
             l.a(e10, "Unable to call %s on %s.", "getMergedSelectorAsBundle", n.class.getSimpleName());

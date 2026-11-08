@@ -6,7 +6,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fo implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -153,7 +153,7 @@ public final /* synthetic */ class fo implements RequestDelegate {
                                 arrayList4 = arrayList;
                                 z9 = true;
                             }
-                            qpVar2.getMessagesStorage().a.c(new yj(qpVar2, this.c, arrayList4, i10, tL_messages_peerDialogs3, hVar, tL_messages_dialogs, 0));
+                            qpVar2.getMessagesStorage().a.c(new xj(qpVar2, this.c, arrayList4, i10, tL_messages_peerDialogs3, hVar, tL_messages_dialogs, 0));
                             break;
                         }
                     } else {
@@ -164,19 +164,19 @@ public final /* synthetic */ class fo implements RequestDelegate {
                     i11 = i7;
                     while (i11 < size) {
                     }
-                    qpVar2.getMessagesStorage().a.c(new yj(qpVar2, this.c, arrayList4, i10, tL_messages_peerDialogs3, hVar, tL_messages_dialogs, 0));
+                    qpVar2.getMessagesStorage().a.c(new xj(qpVar2, this.c, arrayList4, i10, tL_messages_peerDialogs3, hVar, tL_messages_dialogs, 0));
                 }
                 break;
             case 1:
-                g0.h3(new k7((qp) this.b, tLObject, this.c, 12));
+                g0.h3(new l7((qp) this.b, tLObject, this.c, 12));
                 break;
             case 2:
                 qp qpVar3 = (qp) this.b;
                 if (tL_error == null) {
-                    qpVar3.getMessagesStorage().a.c(new k7(qpVar3, (TLRPC.messages_Dialogs) tLObject, this.c, 14));
+                    qpVar3.getMessagesStorage().a.c(new l7(qpVar3, (TLRPC.messages_Dialogs) tLObject, this.c, 14));
                     break;
                 } else {
-                    g0.h3(new wj(qpVar3, 25));
+                    g0.h3(new vj(qpVar3, 26));
                     break;
                 }
             default:

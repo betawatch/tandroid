@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class n50 extends org.telegram.ui.Components.n41 {
     public boolean e;
@@ -13,32 +13,32 @@ public final class n50 extends org.telegram.ui.Components.n41 {
     public final void Z(ArrayList arrayList, org.telegram.ui.Components.l41 l41Var) {
         org.telegram.ui.ActionBar.a5 a5Var = (org.telegram.ui.ActionBar.a5) xi.e.k.a();
         org.telegram.ui.ActionBar.z4 z4Var = (org.telegram.ui.ActionBar.z4) xi.e.l.a();
-        arrayList.add(org.telegram.ui.Components.x31.u(org.telegram.messenger.hd.M0(2131749339, null)));
-        org.telegram.ui.Components.x31 x10 = org.telegram.ui.Components.x31.x(11, org.telegram.messenger.hd.M0(2131749338, null));
+        arrayList.add(org.telegram.ui.Components.x31.u(org.telegram.messenger.id.M0(2131749341, null)));
+        org.telegram.ui.Components.x31 x10 = org.telegram.ui.Components.x31.x(11, org.telegram.messenger.id.M0(2131749340, null));
         x10.L(a5Var == org.telegram.ui.ActionBar.a5.b);
         arrayList.add(x10);
-        org.telegram.ui.Components.x31 x11 = org.telegram.ui.Components.x31.x(10, org.telegram.messenger.hd.M0(2131749337, null));
+        org.telegram.ui.Components.x31 x11 = org.telegram.ui.Components.x31.x(10, org.telegram.messenger.id.M0(2131749339, null));
         x11.L(a5Var == org.telegram.ui.ActionBar.a5.a);
         arrayList.add(x11);
-        arrayList.add(org.telegram.ui.Components.x31.C(org.telegram.messenger.hd.M0(2131749336, null)));
-        arrayList.add(org.telegram.ui.Components.x31.u(org.telegram.messenger.hd.M0(2131749332, null)));
-        org.telegram.ui.Components.x31 x12 = org.telegram.ui.Components.x31.x(20, org.telegram.messenger.hd.M0(2131749331, null));
+        arrayList.add(org.telegram.ui.Components.x31.C(org.telegram.messenger.id.M0(2131749338, null)));
+        arrayList.add(org.telegram.ui.Components.x31.u(org.telegram.messenger.id.M0(2131749334, null)));
+        org.telegram.ui.Components.x31 x12 = org.telegram.ui.Components.x31.x(20, org.telegram.messenger.id.M0(2131749333, null));
         x12.L(z4Var == org.telegram.ui.ActionBar.z4.a);
         arrayList.add(x12);
-        org.telegram.ui.Components.x31 x13 = org.telegram.ui.Components.x31.x(21, org.telegram.messenger.hd.M0(2131749330, null));
+        org.telegram.ui.Components.x31 x13 = org.telegram.ui.Components.x31.x(21, org.telegram.messenger.id.M0(2131749332, null));
         x13.L(z4Var == org.telegram.ui.ActionBar.z4.b);
         arrayList.add(x13);
         arrayList.add(org.telegram.ui.Components.x31.C(null));
-        arrayList.add(org.telegram.ui.Components.x31.u(org.telegram.messenger.hd.M0(2131749335, null)));
-        org.telegram.ui.Components.x31 i7 = org.telegram.ui.Components.x31.i(30, org.telegram.messenger.hd.M0(2131749334, null));
+        arrayList.add(org.telegram.ui.Components.x31.u(org.telegram.messenger.id.M0(2131749337, null)));
+        org.telegram.ui.Components.x31 i7 = org.telegram.ui.Components.x31.i(30, org.telegram.messenger.id.M0(2131749336, null));
         i7.L(this.e);
         arrayList.add(i7);
-        arrayList.add(org.telegram.ui.Components.x31.C(org.telegram.messenger.hd.M0(2131749333, null)));
+        arrayList.add(org.telegram.ui.Components.x31.C(org.telegram.messenger.id.M0(2131749335, null)));
     }
 
     @Override // org.telegram.ui.Components.n41
     public final CharSequence a0() {
-        return org.telegram.messenger.hd.M0(2131749329, null);
+        return org.telegram.messenger.id.M0(2131749331, null);
     }
 
     @Override // org.telegram.ui.Components.n41
@@ -84,7 +84,7 @@ public final class n50 extends org.telegram.ui.Components.n41 {
             y4Var.g();
             y4Var.requestLayout();
         }
-        this.simpleActionBar.n(org.telegram.messenger.hd.M0(2131745947, null)).a(this.e, false);
+        this.simpleActionBar.n(org.telegram.messenger.id.M0(2131745949, null)).a(this.e, false);
     }
 
     @Override // org.telegram.ui.ActionBar.f2

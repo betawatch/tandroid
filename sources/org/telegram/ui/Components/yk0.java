@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yk0 implements bj0 {
     public final /* synthetic */ int a;
@@ -229,7 +229,7 @@ public final /* synthetic */ class yk0 implements bj0 {
                         org.telegram.ui.yl0 yl0Var = new org.telegram.ui.yl0(bm0Var2, xl0Var);
                         bm0Var2.o0 = yl0Var;
                         h11VarArr[0] = yl0Var;
-                        yl0Var.showAsDropDown(am0Var4, 0, i10, (org.telegram.messenger.hd.a0 ? 3 : 5) | 48);
+                        yl0Var.showAsDropDown(am0Var4, 0, i10, (org.telegram.messenger.id.a0 ? 3 : 5) | 48);
                         h11VarArr[0].b();
                     }
                     break;

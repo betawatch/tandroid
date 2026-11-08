@@ -24,12 +24,12 @@ import org.telegram.messenger.p2;
 import org.telegram.messenger.q5;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.mt0;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.vy;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.y9;
-import org.telegram.ui.r81;
+import org.telegram.ui.s81;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class w0 extends TextureView {
     public boolean D;
@@ -88,7 +88,7 @@ public class w0 extends TextureView {
         paint.setPathEffect(new DashPathEffect(new float[]{org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f)}, 0.0f));
         paint.setShadowLayer(4.0f, 0.0f, 1.5f, TLObject.FLAG_30);
         this.f = i1Var;
-        j0Var.a = new uy(this, 17);
+        j0Var.a = new vy(this, 17);
     }
 
     public final void a() {
@@ -538,7 +538,7 @@ public class w0 extends TextureView {
                                             fArr5[0] = floatValue;
                                         }
                                     });
-                                    wVar.r.addListener(new r81(wVar, 14));
+                                    wVar.r.addListener(new s81(wVar, 14));
                                     wVar.r.setDuration(240L);
                                     wVar.r.setInterpolator(xq.h);
                                     wVar.r.start();
@@ -757,7 +757,7 @@ public class w0 extends TextureView {
         if (u0Var == null) {
             return;
         }
-        u0Var.postRunnable(new org.telegram.ui.web.w(24, this, runnable));
+        u0Var.postRunnable(new org.telegram.ui.web.w(19, this, runnable));
     }
 
     public h getCurrentBrush() {

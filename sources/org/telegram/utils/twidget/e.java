@@ -1,55 +1,94 @@
 package org.telegram.utils.twidget;
 
-import android.graphics.Canvas;
-import android.graphics.RenderNode;
+import android.media.AudioRecordingConfiguration;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
-public final class e extends g {
-    public final RenderNode e;
+public final /* synthetic */ class e implements p4.c0, p4.a1, h2.j {
+    public final /* synthetic */ int a;
 
-    public e(String str, int i7, int i10, int i11, int i12) {
-        super(i7, i10, i11, i12);
-        RenderNode renderNode = new RenderNode(str);
-        this.e = renderNode;
-        renderNode.setPosition(i7, i10, i11, i12);
+    public /* synthetic */ e(int i7) {
+        this.a = i7;
     }
 
-    @Override // org.telegram.utils.twidget.g
-    public final Canvas a() {
-        return this.e.beginRecording(this.c - this.a, this.d - this.b);
+    public static /* bridge */ /* synthetic */ AudioRecordingConfiguration a(Object obj) {
+        return (AudioRecordingConfiguration) obj;
     }
 
-    @Override // org.telegram.utils.twidget.g
-    public final boolean b(Canvas canvas) {
-        return canvas.isHardwareAccelerated();
-    }
-
-    @Override // org.telegram.utils.twidget.g
-    public final void c() {
-        this.e.discardDisplayList();
-    }
-
-    @Override // org.telegram.utils.twidget.g
-    public final void d(Canvas canvas, float f10) {
-        if (this.e.hasDisplayList()) {
-            this.e.setAlpha(f10);
-            canvas.drawRenderNode(this.e);
+    @Override // h2.j
+    public void accept(Object obj) {
+        p4.g1 g1Var = (p4.g1) obj;
+        switch (this.a) {
+            case 20:
+                g1Var.B0();
+                break;
+            case 21:
+                g1Var.b();
+                break;
+            case 22:
+                g1Var.g0();
+                break;
+            case 23:
+            default:
+                g1Var.J0();
+                break;
+            case 24:
+                g1Var.C0();
+                break;
+            case 25:
+                g1Var.L0();
+                break;
+            case 26:
+                g1Var.U();
+                break;
+            case 27:
+                g1Var.E();
+                break;
         }
     }
 
-    @Override // org.telegram.utils.twidget.g
-    public final void e() {
-        this.e.endRecording();
+    @Override // p4.c0
+    public void b(p4.u uVar, int i7) {
+        switch (this.a) {
+            case 15:
+                uVar.getClass();
+                break;
+            case 16:
+                uVar.c(i7);
+                break;
+            default:
+                uVar.getClass();
+                break;
+        }
     }
 
-    @Override // org.telegram.utils.twidget.g
-    public final boolean f() {
-        return this.e.hasDisplayList();
+    @Override // p4.a1
+    public Object l(p4.d0 d0Var, p4.v vVar, int i7) {
+        switch (this.a) {
+            case 18:
+                d0Var.getClass();
+                throw new ClassCastException();
+            case 19:
+                d0Var.getClass();
+                throw new ClassCastException();
+            case 23:
+                return d0Var.n(vVar);
+            default:
+                d0Var.getClass();
+                throw new ClassCastException();
+        }
     }
 
-    @Override // org.telegram.utils.twidget.g
-    public final void g() {
-        this.e.setUseCompositingLayer(true, null);
+    public /* synthetic */ e(Object obj, int i7) {
+        this.a = i7;
+    }
+
+    public /* synthetic */ e(String str, int i7, int i10, p4.q qVar) {
+        this.a = 19;
+    }
+
+    public /* synthetic */ e(boolean z9, p4.i1 i1Var, Bundle bundle) {
+        this.a = 23;
     }
 }

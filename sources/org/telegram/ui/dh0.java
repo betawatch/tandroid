@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class dh0 extends org.telegram.ui.ActionBar.v2 implements org.telegram.messenger.ls {
     public final ch0 i1;
@@ -78,23 +78,23 @@ public final class dh0 extends org.telegram.ui.ActionBar.v2 implements org.teleg
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setTextSize(1, 20.0f);
         textView.setGravity(1);
-        textView.setText(org.telegram.messenger.hd.M0(2131747885, null));
+        textView.setText(org.telegram.messenger.id.M0(2131747887, null));
         textView.setPadding(org.telegram.messenger.g0.L(30.0f), 0, org.telegram.messenger.g0.L(30.0f), 0);
         f10.addView(textView, c8.ha.o(-1, -2));
         TextView textView2 = new TextView(context);
         org.telegram.ui.ActionBar.r6.V(textView2, i12, null);
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity(1);
-        textView2.setText(org.telegram.messenger.hd.M0(2131747886, null));
+        textView2.setText(org.telegram.messenger.id.M0(2131747888, null));
         textView2.setPadding(org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(21.0f));
         f10.addView(textView2, c8.ha.o(-1, -2));
-        f10.addView(new di.a4(R.drawable.msg_message_s, context, org.telegram.messenger.hd.M0(2131747889, null)), c8.ha.o(-1, -2));
-        f10.addView(new di.a4(R.drawable.msg_members_list2, context, org.telegram.messenger.hd.M0(2131747888, null)), c8.ha.o(-1, -2));
-        f10.addView(new di.a4(R.drawable.msg_customize_s, context, org.telegram.messenger.hd.M0(2131747887, null)), c8.ha.o(-1, -2));
+        f10.addView(new di.a4(R.drawable.msg_message_s, context, org.telegram.messenger.id.M0(2131747891, null)), c8.ha.o(-1, -2));
+        f10.addView(new di.a4(R.drawable.msg_members_list2, context, org.telegram.messenger.id.M0(2131747890, null)), c8.ha.o(-1, -2));
+        f10.addView(new di.a4(R.drawable.msg_customize_s, context, org.telegram.messenger.id.M0(2131747889, null)), c8.ha.o(-1, -2));
         this.N = f10;
         P(org.telegram.ui.ActionBar.k6.h5);
         TextView textView3 = new TextView(context);
-        textView3.setText(org.telegram.messenger.hd.M0(z9 ? 2131747883 : 2131747884, null));
+        textView3.setText(org.telegram.messenger.id.M0(z9 ? 2131747885 : 2131747886, null));
         textView3.setGravity(17);
         textView3.setTypeface(org.telegram.messenger.g0.o());
         textView3.setTextSize(1, 14.0f);

@@ -6,9 +6,9 @@ import android.graphics.ColorFilter;
 import android.util.SparseIntArray;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class n01 extends org.telegram.ui.Components.av {
+public final class n01 extends org.telegram.ui.Components.bv {
     public final /* synthetic */ int g0;
     public final /* synthetic */ q11 h0;
 
@@ -19,12 +19,12 @@ public final class n01 extends org.telegram.ui.Components.av {
         this.g0 = i11;
     }
 
-    @Override // org.telegram.ui.Components.av
+    @Override // org.telegram.ui.Components.bv
     public final ColorFilter getEmojiColorFilter() {
         return this.h0.k1;
     }
 
-    @Override // org.telegram.ui.Components.av
+    @Override // org.telegram.ui.Components.bv
     public final boolean h(int i7) {
         int i10;
         f11 f11Var;
@@ -37,18 +37,18 @@ public final class n01 extends org.telegram.ui.Components.av {
         if (i11 == 4 && i7 == 0) {
             q11Var.Q = !q11Var.Q;
             q11Var.d0.setVisibility(8);
-            org.telegram.ui.Components.av avVar = q11Var.c0[q11Var.Q ? 1 : 0];
-            q11Var.d0 = avVar;
-            avVar.setVisibility(0);
+            org.telegram.ui.Components.bv bvVar = q11Var.c0[q11Var.Q ? 1 : 0];
+            q11Var.d0 = bvVar;
+            bvVar.setVisibility(0);
             q11Var.d0.y.setDrawable(getContext().getDrawable(q11Var.Q ? R.drawable.msg_emoji_stickers : R.drawable.msg_emoji_smiles));
-            q11Var.d0.y.setContentDescription(org.telegram.messenger.hd.M0(q11Var.Q ? 2131754756 : 2131751197, null));
+            q11Var.d0.y.setContentDescription(org.telegram.messenger.id.M0(q11Var.Q ? 2131754756 : 2131751197, null));
             q11Var.B(true, false, false);
             q11Var.r0.h1(0, 0);
             return true;
         }
-        org.telegram.ui.Components.wu wuVar = this.E;
-        int i12 = ((wuVar == null || !this.b0) ? 0 : 1) + 1;
-        if (wuVar != null && this.b0 && i7 == 1) {
+        org.telegram.ui.Components.xu xuVar = this.E;
+        int i12 = ((xuVar == null || !this.b0) ? 0 : 1) + 1;
+        if (xuVar != null && this.b0 && i7 == 1) {
             i10 = q11Var.n;
         } else {
             if ((i11 != 4 || i7 != 0) && i7 > 0) {
@@ -70,12 +70,12 @@ public final class n01 extends org.telegram.ui.Components.av {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.av
-    public final void i(org.telegram.ui.Components.wu wuVar) {
+    @Override // org.telegram.ui.Components.bv
+    public final void i(org.telegram.ui.Components.xu xuVar) {
         ValueAnimator valueAnimator = this.h0.V1;
         if (valueAnimator == null || valueAnimator.isRunning()) {
-            wuVar.setScaleX(0.0f);
-            wuVar.setScaleY(0.0f);
+            xuVar.setScaleX(0.0f);
+            xuVar.setScaleY(0.0f);
         }
     }
 }

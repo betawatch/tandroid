@@ -4,12 +4,12 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.zj0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class r1 {
     public final q1 a;
@@ -64,15 +64,15 @@ public final class r1 {
                 }
                 if (this.d) {
                     this.f |= 1;
-                    this.g.add(q1.x0(5, hd.M0(2131743557, "ViewContact"), y10, N));
+                    this.g.add(q1.x0(5, id.M0(2131743559, "ViewContact"), y10, N));
                 }
                 if (this.c) {
                     this.f |= 2;
-                    this.g.add(q1.x0(30, hd.M0(2131745418, "SharedContactMessage"), y10, N));
+                    this.g.add(q1.x0(30, id.M0(2131745420, "SharedContactMessage"), y10, N));
                 }
                 if (this.e) {
                     this.f |= 4;
-                    this.g.add(q1.x0(31, hd.M0(2131745419, "SharedContactAdd"), y10, N));
+                    this.g.add(q1.x0(31, id.M0(2131745421, "SharedContactAdd"), y10, N));
                 }
             }
         }
@@ -101,7 +101,7 @@ public final class r1 {
             L2 -= p0Var.n;
         }
         if (q1Var.w7) {
-            L2 -= org.telegram.messenger.g0.L(q1Var.E3() ? 39.3f : 41.0f);
+            L2 -= org.telegram.messenger.g0.L(q1Var.F3() ? 39.3f : 41.0f);
         }
         int i7 = L2;
         if (q1Var.u2 == null) {

@@ -11,14 +11,14 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.v41;
 import org.telegram.ui.z41;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class w7 extends FrameLayout {
     public final u7 a;
@@ -45,7 +45,7 @@ public abstract class w7 extends FrameLayout {
         u7 u7Var = new u7(this, context, f6Var);
         this.a = u7Var;
         setClipChildren(false);
-        boolean z9 = hd.a0;
+        boolean z9 = id.a0;
         addView(u7Var, c8.ha.d(46, 46.0f, (!z9 ? 8388611 : 8388613) | 16, !z9 ? 12.0f : 16.0f, 0.0f, !z9 ? 16.0f : 12.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
@@ -57,12 +57,12 @@ public abstract class w7 extends FrameLayout {
         v7Var.setTextSize(16);
         v7Var.setMaxLines(1);
         v7Var.setTextColor(-16777216);
-        v7Var.setGravity(hd.a0 ? 5 : 3);
+        v7Var.setGravity(id.a0 ? 5 : 3);
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(-16777216);
-        if (hd.a0) {
+        if (id.a0) {
             f10.addView(textView, c8.ha.r(-2, -2, 80));
             f10.addView(v7Var, c8.ha.q(0, -2, 1.0f, 0, 16, 0, 0, 0));
         } else {
@@ -87,7 +87,7 @@ public abstract class w7 extends FrameLayout {
         textView4.setTextColor(-16777216);
         textView4.setGravity(16);
         LinearLayout f11 = org.telegram.messenger.k5.f(context, 0);
-        if (hd.a0) {
+        if (id.a0) {
             f11.addView(textView3, c8.ha.t(-2, -2, 16, 0, 0, 10, 0));
             f11.addView(textView4, c8.ha.r(-2, -2, 16));
             f11.addView(textView2, c8.ha.q(0, -2, 1.0f, 0, 8, 0, 0, 0));
@@ -97,7 +97,7 @@ public abstract class w7 extends FrameLayout {
             f11.addView(textView3, c8.ha.t(-2, -2, 16, 10, 0, 0, 0));
         }
         linearLayout.addView(f11, c8.ha.d(-1, -2.0f, 8388659, 0.0f, 3.0f, 0.0f, 9.0f));
-        boolean z10 = hd.a0;
+        boolean z10 = id.a0;
         addView(linearLayout, c8.ha.d(-1, -2.0f, 0, !z10 ? 72.0f : 18.0f, 0.0f, !z10 ? 18.0f : 72.0f, 0.0f));
         int i7 = org.telegram.ui.ActionBar.k6.j5;
         org.telegram.ui.ActionBar.r6.Y(v7Var, i7, null);
@@ -135,7 +135,7 @@ public abstract class w7 extends FrameLayout {
             int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.d7, this.s);
             Paint paint = this.h;
             paint.setColor(w02);
-            if (hd.a0) {
+            if (id.a0) {
                 canvas.drawRect(0.0f, getHeight() - 1, getWidth() - org.telegram.messenger.g0.L(72), getHeight(), paint);
             } else {
                 canvas.drawRect(org.telegram.messenger.g0.L(72), getHeight() - 1, getWidth(), getHeight(), paint);

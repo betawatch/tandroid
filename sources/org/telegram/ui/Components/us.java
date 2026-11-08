@@ -9,26 +9,26 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class us implements xs, h2.j, cj0 {
+public final /* synthetic */ class us implements ys, h2.j, cj0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ us(ys ysVar, int i7, int i10, Runnable runnable) {
-        this.c = ysVar;
+    public /* synthetic */ us(zs zsVar, int i7, int i10, Runnable runnable) {
+        this.c = zsVar;
         this.a = i7;
         this.b = i10;
         this.d = runnable;
     }
 
-    @Override // org.telegram.ui.Components.xs
+    @Override // org.telegram.ui.Components.ys
     public void a(String str) {
-        ys ysVar = (ys) this.c;
+        zs zsVar = (zs) this.c;
         Runnable runnable = (Runnable) this.d;
-        Editable text = ysVar.getText();
+        Editable text = zsVar.getText();
         int i7 = this.a;
         int i10 = this.b;
         CharacterStyle[] characterStyleArr = (CharacterStyle[]) text.getSpans(i7, i10, CharacterStyle.class);
@@ -48,12 +48,12 @@ public final /* synthetic */ class us implements xs, h2.j, cj0 {
             }
         }
         try {
-            text.setSpan(ysVar.A(str), i7, i10, 33);
+            text.setSpan(zsVar.A(str), i7, i10, 33);
         } catch (Exception unused) {
         }
-        ws wsVar = ysVar.N1;
-        if (wsVar != null) {
-            wsVar.m();
+        xs xsVar = zsVar.N1;
+        if (xsVar != null) {
+            xsVar.m();
         }
         if (runnable != null) {
             runnable.run();
@@ -90,7 +90,7 @@ public final /* synthetic */ class us implements xs, h2.j, cj0 {
         xg.h hVar = null;
         if (z9) {
             if (i11 != 4) {
-                ((org.telegram.ui.ActionBar.v2) v4.l(f1Var.getContext(), org.telegram.messenger.hd.M0(2131751239, null), org.telegram.messenger.hd.M0(2131751244, null), null, new wg.y0(f1Var, i10), new wg.x0(f1Var, 9), false, false, f1Var.I0).b).show();
+                ((org.telegram.ui.ActionBar.v2) v4.l(f1Var.getContext(), org.telegram.messenger.id.M0(2131751239, null), org.telegram.messenger.id.M0(2131751244, null), null, new wg.y0(f1Var, i10), new wg.x0(f1Var, 9), false, false, f1Var.I0).b).show();
                 return;
             }
             org.telegram.ui.s00 s00Var = f1Var.s2;
@@ -151,13 +151,13 @@ public final /* synthetic */ class us implements xs, h2.j, cj0 {
             }
             if (i11 == 0 || i11 == 2) {
                 if (org.telegram.messenger.t10.b(org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).b2(j3))) {
-                    org.telegram.messenger.camera.q.s(org.telegram.messenger.hd.a0(null, null, 2131743743, org.telegram.messenger.m5.t(j3)), new hc(f1Var.c, f6Var), R.raw.error, 36);
+                    org.telegram.messenger.camera.q.s(org.telegram.messenger.id.a0(null, null, 2131743745, org.telegram.messenger.m5.t(j3)), new hc(f1Var.c, f6Var), R.raw.error, 36);
                     return;
                 }
-                zh.h1 h1Var = new zh.h1(f1Var.getContext(), this.b, j3, wg.s.c(wg.s.b(1, f1Var.j2)), new wg.y0(f1Var, true ? 1 : 0));
+                zh.g1 g1Var = new zh.g1(f1Var.getContext(), this.b, j3, wg.s.c(wg.s.b(1, f1Var.j2)), new wg.y0(f1Var, true ? 1 : 0));
                 org.telegram.messenger.t1 t1Var = f1Var.n2;
-                h1Var.e1(t1Var != null && t1Var.a(j3));
-                h1Var.show();
+                g1Var.e1(t1Var != null && t1Var.a(j3));
+                g1Var.show();
                 return;
             }
             int i14 = 4;

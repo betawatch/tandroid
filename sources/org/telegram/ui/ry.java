@@ -11,7 +11,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ry extends FrameLayout {
     public final TextView a;
@@ -24,10 +24,10 @@ public final class ry extends FrameLayout {
         this.a = textView;
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.q6, null);
         jg.g.v(textView, 1, 16.0f, null, 2131751714);
-        textView.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
-        boolean z9 = org.telegram.messenger.hd.a0;
+        textView.setGravity(org.telegram.messenger.id.a0 ? 5 : 3);
+        boolean z9 = org.telegram.messenger.id.a0;
         textView.setPadding(z9 ? 16 : 0, 0, z9 ? 0 : 16, 0);
-        boolean z10 = org.telegram.messenger.hd.a0;
+        boolean z10 = org.telegram.messenger.id.a0;
         addView(textView, c8.ha.d(-1, -2.0f, 23, z10 ? 0.0f : 64.0f, 0.0f, z10 ? 64.0f : 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.b = imageView;
@@ -39,7 +39,7 @@ public final class ry extends FrameLayout {
         org.telegram.ui.ActionBar.r6.y(this, drawable2, org.telegram.ui.ActionBar.k6.k7, null, mode);
         imageView.setImageDrawable(new org.telegram.ui.Components.xp(drawable, drawable2));
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        boolean z11 = org.telegram.messenger.hd.a0;
+        boolean z11 = org.telegram.messenger.id.a0;
         addView(imageView, c8.ha.d(32, 32.0f, (z11 ? 5 : 3) | 16, z11 ? 0.0f : 16.0f, 0.0f, z11 ? 16.0f : 0.0f, 0.0f));
     }
 

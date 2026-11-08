@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ia0 implements org.telegram.ui.Components.mr0 {
     public final /* synthetic */ pa0 a;
@@ -17,7 +17,7 @@ public final class ia0 implements org.telegram.ui.Components.mr0 {
         pa0 pa0Var = this.a;
         ja0 ja0Var = pa0Var.L0;
         int m0 = ja0Var == null ? 0 : ja0Var.m0(8);
-        pa0Var.M0.setText(org.telegram.messenger.hd.G(m0, "LocationStories", new Object[0]));
+        pa0Var.M0.setText(org.telegram.messenger.id.G(m0, "LocationStories", new Object[0]));
         ha0 ha0Var = pa0Var.P;
         boolean z9 = m0 > 0;
         if (ha0Var.Z != z9) {

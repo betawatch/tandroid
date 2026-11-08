@@ -36,7 +36,7 @@ import org.telegram.messenger.f6;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.qs;
-import org.telegram.messenger.rc;
+import org.telegram.messenger.sc;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.i2;
@@ -46,9 +46,9 @@ import org.telegram.ui.Components.pt0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.vy0;
 import org.telegram.ui.Components.yo;
-import org.telegram.ui.r81;
+import org.telegram.ui.s81;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class f extends Drawable {
     public static final int A;
@@ -394,7 +394,7 @@ public final class f extends Drawable {
             hVar.h = System.currentTimeMillis();
         } else {
             i7 = 128;
-            if (hVar.p && !rc.e(128)) {
+            if (hVar.p && !sc.e(128)) {
                 hVar.d = 0;
                 hVar.a(new Canvas((Bitmap) eVarArr[0].a), new Rect(0, 0, i10, i10));
                 hVar.g.setShader((BitmapShader) eVarArr[0].b);
@@ -405,7 +405,7 @@ public final class f extends Drawable {
         Paint paint = hVar.g;
         paint.setColorFilter(this.v);
         canvas.drawRect(bounds, paint);
-        if (rc.e(i7)) {
+        if (sc.e(i7)) {
             bg.k d = bg.k.d();
             d.getClass();
             bg.k.c();
@@ -512,7 +512,7 @@ public final class f extends Drawable {
         this.r = duration;
         duration.setInterpolator(this.t);
         this.r.addUpdateListener(new i2(this, alpha, 6));
-        this.r.addListener(new r81(this, 24));
+        this.r.addListener(new s81(this, 24));
         this.r.start();
         invalidateSelf();
     }

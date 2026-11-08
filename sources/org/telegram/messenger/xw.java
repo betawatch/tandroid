@@ -1,38 +1,37 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import java.util.HashMap;
+import java.util.List;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class xw implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ gz b;
-    public final /* synthetic */ TLRPC.Message c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ List d;
 
-    public /* synthetic */ xw(gz gzVar, TLRPC.Message message, int i7, int i10) {
-        this.a = i10;
+    public /* synthetic */ xw(gz gzVar, String str, List list, int i7) {
+        this.a = i7;
         this.b = gzVar;
-        this.c = message;
-        this.d = i7;
+        this.c = str;
+        this.d = list;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i7 = this.a;
-        int i10 = this.d;
-        TLRPC.Message message = this.c;
-        gz gzVar = this.b;
-        switch (i7) {
+        switch (this.a) {
             case 0:
-                message.send_state = 2;
-                gzVar.getNotificationCenter().k(23, Integer.valueOf(message.id));
-                gzVar.d0(message.id);
-                gzVar.i0(message.id, i10 != 0);
+                HashMap hashMap = this.b.r;
+                String str = this.c;
+                hashMap.remove(str);
+                this.d.remove(str);
                 break;
             default:
-                message.send_state = 0;
-                gzVar.getNotificationCenter().k(20, Integer.valueOf(i10));
+                HashMap hashMap2 = this.b.r;
+                String str2 = this.c;
+                hashMap2.remove(str2);
+                this.d.remove(str2);
                 break;
         }
     }

@@ -1,7 +1,7 @@
 package bg;
 
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.hc;
@@ -9,7 +9,7 @@ import org.telegram.ui.Components.m11;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j0 implements Runnable {
     public final /* synthetic */ int a;
@@ -63,7 +63,7 @@ public final /* synthetic */ class j0 implements Runnable {
                 anVar.presentFragment(ProfileActivity.A4(j3));
                 break;
             default:
-                hc.a0(anVar).I(R.raw.stars_topup, hd.M0(2131745093, null), org.telegram.messenger.g0.X2(hd.H(',', "StarsGiveawaySentPopupInfo", (int) j3))).k(true);
+                hc.a0(anVar).I(R.raw.stars_topup, id.M0(2131745095, null), org.telegram.messenger.g0.X2(id.H(',', "StarsGiveawaySentPopupInfo", (int) j3))).k(true);
                 break;
         }
     }

@@ -27,7 +27,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.hy0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class i0 {
     public final b0 A;
@@ -1556,9 +1556,9 @@ public abstract class i0 {
         if (tVar3 != null) {
             androidx.activity.h hVar = tVar3.e.x;
             String i7 = rf.b.i("FragmentManager:", rVar != 0 ? a8.p0.s(new StringBuilder(), rVar.e, ":") : "");
-            this.C = hVar.d(rf.b.q(i7, "StartActivityForResult"), new d0(2), new d6.i(this, 8));
-            this.D = hVar.d(rf.b.q(i7, "StartIntentSenderForResult"), new d0(0), new aa.n(this, 4));
-            this.E = hVar.d(rf.b.q(i7, "RequestPermissions"), new d0(1), new cb.c(this, 8));
+            this.C = hVar.d(rf.b.r(i7, "StartActivityForResult"), new d0(2), new d6.i(this, 8));
+            this.D = hVar.d(rf.b.r(i7, "StartIntentSenderForResult"), new d0(0), new aa.n(this, 4));
+            this.E = hVar.d(rf.b.r(i7, "RequestPermissions"), new d0(1), new cb.c(this, 8));
         }
         t tVar4 = this.w;
         if (tVar4 != null) {
@@ -2113,10 +2113,10 @@ public abstract class i0 {
 
     public final void w(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
         int size;
-        String q10 = rf.b.q(str, "    ");
+        String r10 = rf.b.r(str, "    ");
         ui.e eVar = this.c;
         ArrayList arrayList = (ArrayList) eVar.b;
-        String q11 = rf.b.q(str, "    ");
+        String r11 = rf.b.r(str, "    ");
         HashMap hashMap = (HashMap) eVar.c;
         if (!hashMap.isEmpty()) {
             printWriter.print(str);
@@ -2126,7 +2126,7 @@ public abstract class i0 {
                 if (o0Var != null) {
                     r rVar = o0Var.c;
                     printWriter.println(rVar);
-                    rVar.i(q11, fileDescriptor, printWriter, strArr);
+                    rVar.i(r11, fileDescriptor, printWriter, strArr);
                 } else {
                     printWriter.println("null");
                 }
@@ -2169,7 +2169,7 @@ public abstract class i0 {
                 printWriter.print(i11);
                 printWriter.print(": ");
                 printWriter.println(aVar.toString());
-                aVar.g(q10, printWriter, true);
+                aVar.g(r10, printWriter, true);
             }
         }
         printWriter.print(str);

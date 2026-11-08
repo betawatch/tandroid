@@ -1,45 +1,22 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+import org.telegram.tgnet.tl.TL_wallet;
+
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
-public final class z1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ b2 c;
-    public final /* synthetic */ z2 d;
+public final class z1 {
+    public final String a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public TL_wallet.tonConnectSession e;
+    public boolean f;
 
-    public /* synthetic */ z1(boolean[] zArr, b2 b2Var, z2 z2Var, int i7) {
-        this.a = i7;
-        this.b = zArr;
-        this.c = b2Var;
-        this.d = z2Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                if (!this.b[0]) {
-                    if (!this.c.m) {
-                        this.d.dismiss();
-                        break;
-                    } else {
-                        org.telegram.messenger.g0.i3(this, 1000L);
-                        break;
-                    }
-                }
-                break;
-            default:
-                if (!this.b[0]) {
-                    if (!this.c.m) {
-                        this.d.dismiss();
-                        break;
-                    } else {
-                        org.telegram.messenger.g0.i3(this, 1000L);
-                        break;
-                    }
-                }
-                break;
-        }
+    public z1(TL_wallet.tonConnectSession tonconnectsession, String str, String str2, String str3, String str4) {
+        this.e = tonconnectsession;
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
+        this.d = str4;
     }
 }

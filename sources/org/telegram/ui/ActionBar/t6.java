@@ -34,21 +34,21 @@ import org.telegram.ui.Components.g70;
 import org.telegram.ui.Components.gk0;
 import org.telegram.ui.Components.h70;
 import org.telegram.ui.Components.i90;
-import org.telegram.ui.Components.iy;
-import org.telegram.ui.Components.kt;
+import org.telegram.ui.Components.jy;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.ln;
+import org.telegram.ui.Components.lt;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.w7;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.xp;
-import org.telegram.ui.Components.ys;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.Components.zp;
+import org.telegram.ui.Components.zs;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class t6 {
     public final View a;
@@ -75,8 +75,8 @@ public final class t6 {
         this.j = 262148;
         this.d = null;
         this.g = null;
-        if (view instanceof kt) {
-            this.a = ((kt) view).getEditText();
+        if (view instanceof lt) {
+            this.a = ((lt) view).getEditText();
         }
     }
 
@@ -113,17 +113,17 @@ public final class t6 {
             i90Var.b = null;
             return;
         }
-        if (obj instanceof ys) {
+        if (obj instanceof zs) {
             if ((8388608 & i10) != 0) {
-                ys ysVar = (ys) obj;
-                ysVar.setHintColor(i7);
-                ysVar.setHintTextColor(i7);
+                zs zsVar = (zs) obj;
+                zsVar.setHintColor(i7);
+                zsVar.setHintTextColor(i7);
                 return;
             } else if ((16777216 & i10) != 0) {
-                ((ys) obj).setCursorColor(i7);
+                ((zs) obj).setCursorColor(i7);
                 return;
             } else {
-                ((ys) obj).setTextColor(i7);
+                ((zs) obj).setTextColor(i7);
                 return;
             }
         }
@@ -574,11 +574,11 @@ public final class t6 {
                 ((k) view).E(i7, false);
             }
         }
-        if (view instanceof iy) {
+        if (view instanceof jy) {
             if ((i11 & 4) != 0) {
-                ((iy) view).setTextColor(i7);
+                ((jy) view).setTextColor(i7);
             } else if ((i11 & 2048) != 0) {
-                ((iy) view).setProgressBarColor(i7);
+                ((jy) view).setProgressBarColor(i7);
             }
         }
         if (view instanceof RadialProgressView) {
@@ -712,8 +712,8 @@ public final class t6 {
         this.j = i7;
         this.d = clsArr;
         this.g = s6Var;
-        if (view instanceof kt) {
-            this.a = ((kt) view).getEditText();
+        if (view instanceof lt) {
+            this.a = ((lt) view).getEditText();
         }
     }
 
@@ -739,8 +739,8 @@ public final class t6 {
         this.g = s6Var;
         this.l = new HashMap();
         this.m = new HashMap();
-        if (view instanceof kt) {
-            this.a = ((kt) view).getEditText();
+        if (view instanceof lt) {
+            this.a = ((lt) view).getEditText();
         }
     }
 }

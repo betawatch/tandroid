@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class z40 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -38,10 +38,10 @@ public final class z40 extends AnimatorListenerAdapter {
                 ((m31) this.c).n = null;
                 break;
             case 11:
-                ya1 ya1Var = (ya1) this.c;
-                AnimatorSet animatorSet = ya1Var.I;
+                za1 za1Var = (za1) this.c;
+                AnimatorSet animatorSet = za1Var.I;
                 if (animatorSet != null && animatorSet.equals(animator)) {
-                    ya1Var.I = null;
+                    za1Var.I = null;
                     break;
                 }
                 break;
@@ -160,17 +160,17 @@ public final class z40 extends AnimatorListenerAdapter {
                 }
                 break;
             case 10:
-                ((f81) obj).D = z9 ? 1.0f : 0.0f;
+                ((g81) obj).D = z9 ? 1.0f : 0.0f;
                 break;
             case 11:
-                ya1 ya1Var = (ya1) obj;
-                AnimatorSet animatorSet2 = ya1Var.I;
+                za1 za1Var = (za1) obj;
+                AnimatorSet animatorSet2 = za1Var.I;
                 if (animatorSet2 != null && animatorSet2.equals(animator)) {
                     if (z9) {
-                        ya1Var.e.setVisibility(4);
+                        za1Var.e.setVisibility(4);
                         break;
                     } else {
-                        ya1Var.b.setVisibility(4);
+                        za1Var.b.setVisibility(4);
                         break;
                     }
                 }

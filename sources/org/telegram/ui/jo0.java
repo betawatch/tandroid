@@ -34,7 +34,7 @@ import org.telegram.tgnet.tl.TL_fragment;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jo0 implements Runnable {
     public final /* synthetic */ int a;
@@ -402,7 +402,7 @@ public final /* synthetic */ class jo0 implements Runnable {
                 }
                 if (!zArr[0]) {
                     if (activity != null) {
-                        Toast.makeText(activity, org.telegram.messenger.hd.M0(2131751106, null), 0).show();
+                        Toast.makeText(activity, org.telegram.messenger.id.M0(2131751106, null), 0).show();
                         return;
                     }
                     return;
@@ -420,7 +420,7 @@ public final /* synthetic */ class jo0 implements Runnable {
                 }
                 intent.setType("message/rfc822");
                 intent.putExtra("android.intent.extra.EMAIL", "");
-                intent.putExtra("android.intent.extra.SUBJECT", "Logs from " + org.telegram.messenger.hd.E0().z0().format(System.currentTimeMillis()));
+                intent.putExtra("android.intent.extra.SUBJECT", "Logs from " + org.telegram.messenger.id.E0().z0().format(System.currentTimeMillis()));
                 intent.putExtra("android.intent.extra.STREAM", fromFile);
                 if (activity != null) {
                     try {
@@ -612,11 +612,11 @@ public final /* synthetic */ class jo0 implements Runnable {
                 }
                 return;
             case 17:
-                p81 p81Var = (p81) this.c;
+                q81 q81Var = (q81) this.c;
                 TLObject tLObject8 = (TLObject) this.b;
                 String str5 = (String) this.d;
                 org.telegram.ui.ActionBar.u1 u1Var5 = (org.telegram.ui.ActionBar.u1) this.e;
-                u81 u81Var = p81Var.a;
+                v81 v81Var = q81Var.a;
                 if (tLObject8 != null) {
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject8;
                     int i15 = 0;
@@ -627,17 +627,17 @@ public final /* synthetic */ class jo0 implements Runnable {
                             tL_messageActionTopicCreate.title = str5;
                             TLRPC.TL_messageService tL_messageService = new TLRPC.TL_messageService();
                             tL_messageService.action = tL_messageActionTopicCreate;
-                            tL_messageService.peer_id = u81Var.getMessagesController().z1(u81Var.a);
-                            tL_messageService.dialog_id = u81Var.a;
+                            tL_messageService.peer_id = v81Var.getMessagesController().z1(v81Var.a);
+                            tL_messageService.dialog_id = v81Var.a;
                             tL_messageService.id = tL_updateMessageID.id;
                             tL_messageService.date = (int) (System.currentTimeMillis() / 1000);
                             ArrayList arrayList3 = new ArrayList();
-                            i11 = ((org.telegram.ui.ActionBar.f2) u81Var).currentAccount;
+                            i11 = ((org.telegram.ui.ActionBar.f2) v81Var).currentAccount;
                             arrayList3.add(new org.telegram.messenger.ij(i11, tL_messageService, false, false));
-                            TLRPC.Chat M0 = u81Var.getMessagesController().M0(Long.valueOf(-u81Var.a));
+                            TLRPC.Chat M0 = v81Var.getMessagesController().M0(Long.valueOf(-v81Var.a));
                             TLRPC.TL_forumTopic tL_forumTopic = new TLRPC.TL_forumTopic();
                             tL_forumTopic.id = tL_updateMessageID.id;
-                            long j3 = u81Var.b;
+                            long j3 = v81Var.b;
                             if (j3 != 0) {
                                 tL_forumTopic.icon_emoji_id = j3;
                                 tL_forumTopic.flags |= 1;
@@ -648,10 +648,10 @@ public final /* synthetic */ class jo0 implements Runnable {
                             tL_forumTopic.title = str5;
                             tL_forumTopic.top_message = tL_messageService.id;
                             tL_forumTopic.topMessage = tL_messageService;
-                            tL_forumTopic.from_id = u81Var.getMessagesController().z1(u81Var.getUserConfig().n);
+                            tL_forumTopic.from_id = v81Var.getMessagesController().z1(v81Var.getUserConfig().n);
                             tL_forumTopic.notify_settings = new TLRPC.TL_peerNotifySettings();
-                            tL_forumTopic.icon_color = u81Var.E;
-                            an anVar = u81Var.D;
+                            tL_forumTopic.icon_color = v81Var.E;
+                            an anVar = v81Var.D;
                             if (anVar != null) {
                                 anVar.kb();
                                 anVar.ob();
@@ -667,19 +667,19 @@ public final /* synthetic */ class jo0 implements Runnable {
                                 anVar.B9(true);
                                 anVar.M6(true, true);
                                 anVar.db();
-                                u81Var.getMessagesController().q7.q(u81Var.a, tL_forumTopic, true);
-                                u81Var.finishFragment();
+                                v81Var.getMessagesController().q7.q(v81Var.a, tL_forumTopic, true);
+                                v81Var.finishFragment();
                             } else {
                                 Bundle bundle = new Bundle();
-                                bundle.putLong("chat_id", -u81Var.a);
+                                bundle.putLong("chat_id", -v81Var.a);
                                 bundle.putInt("message_id", 1);
                                 bundle.putInt("unread_count", 0);
                                 bundle.putBoolean("historyPreloaded", false);
                                 an anVar2 = new an(bundle);
                                 anVar2.Rb(arrayList3, M0, tL_messageService.id, 1, 1, tL_forumTopic);
                                 anVar2.c = true;
-                                u81Var.getMessagesController().q7.q(u81Var.a, tL_forumTopic, true);
-                                u81Var.presentFragment(anVar2);
+                                v81Var.getMessagesController().q7.q(v81Var.a, tL_forumTopic, true);
+                                v81Var.presentFragment(anVar2);
                             }
                         }
                         i15++;
@@ -692,34 +692,34 @@ public final /* synthetic */ class jo0 implements Runnable {
                 TwoStepVerificationActivity.j0((TwoStepVerificationActivity) this.c, (byte[]) this.d, (TLObject) this.b, (byte[]) this.e);
                 return;
             case 19:
-                ya1 ya1Var = (ya1) this.c;
+                za1 za1Var = (za1) this.c;
                 TLObject tLObject9 = (TLObject) this.b;
                 String str6 = (String) this.d;
                 TLRPC.TL_error tL_error7 = (TLRPC.TL_error) this.e;
                 if (tLObject9 instanceof TLRPC.TL_boolTrue) {
-                    ya1Var.z0(new by0(25, ya1Var, str6));
+                    za1Var.z0(new by0(25, za1Var, str6));
                     return;
                 }
                 if (tL_error7 == null || tL_error7.text.startsWith("CODE_INVALID")) {
-                    ya1Var.D0();
+                    za1Var.D0();
                     return;
                 }
                 if (!tL_error7.text.startsWith("FLOOD_WAIT")) {
-                    ya1Var.L0(org.telegram.messenger.hd.M0(2131743932, null), tL_error7.text);
+                    za1Var.L0(org.telegram.messenger.id.M0(2131743934, null), tL_error7.text);
                     return;
                 }
                 int intValue = Utilities.z(tL_error7.text).intValue();
                 if (intValue < 60) {
                     c10 = 0;
-                    G = org.telegram.messenger.hd.G(intValue, "Seconds", new Object[0]);
+                    G = org.telegram.messenger.id.G(intValue, "Seconds", new Object[0]);
                 } else {
                     c10 = 0;
-                    G = org.telegram.messenger.hd.G(intValue / 60, "Minutes", new Object[0]);
+                    G = org.telegram.messenger.id.G(intValue / 60, "Minutes", new Object[0]);
                 }
-                String M02 = org.telegram.messenger.hd.M0(2131743932, null);
+                String M02 = org.telegram.messenger.id.M0(2131743934, null);
                 Object[] objArr = new Object[1];
                 objArr[c10] = G;
-                ya1Var.L0(M02, org.telegram.messenger.hd.a0("FloodWaitTime", null, 2131750687, objArr));
+                za1Var.L0(M02, org.telegram.messenger.id.a0("FloodWaitTime", null, 2131750687, objArr));
                 return;
             case 20:
                 org.telegram.ui.web.u0 u0Var = (org.telegram.ui.web.u0) this.c;
@@ -783,7 +783,7 @@ public final /* synthetic */ class jo0 implements Runnable {
                             p4.g1 g1Var = d0Var.t;
                             p4.e1 e1Var = d0Var.s;
                             e2.y0 y0Var = m11.b;
-                            p4.e1 a12 = c1Var.a1(e1Var);
+                            p4.e1 A1 = c1Var.A1(e1Var);
                             MediaSession.Token token = ((q4.l) d0Var.h.n.b).c.b;
                             h9.i0 i0Var = m11.c;
                             if (i0Var == null) {
@@ -798,10 +798,10 @@ public final /* synthetic */ class jo0 implements Runnable {
                             e2.y0 t6 = g1Var.t();
                             p4.o1 o1Var = d0Var.j.a;
                             o1Var.getClass();
-                            p4.j jVar = new p4.j(c1Var, i0Var, i0Var2, i0Var3, j1Var, y0Var, t6, new Bundle(o1Var.g), d0Var.A, a12, token);
+                            p4.j jVar = new p4.j(c1Var, i0Var, i0Var2, i0Var3, j1Var, y0Var, t6, new Bundle(o1Var.g), d0Var.A, A1, token);
                             if (!d0Var.j()) {
                                 try {
-                                    ((p4.k) lVar).H0(C.e(), jVar.a(vVar.c));
+                                    ((p4.k) lVar).h1(C.e(), jVar.a(vVar.c));
                                     z9 = true;
                                 } catch (RemoteException unused2) {
                                     z9 = false;

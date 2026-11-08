@@ -7,10 +7,10 @@ import android.graphics.RectF;
 import android.graphics.RenderNode;
 import android.support.v4.media.session.w;
 import java.util.ArrayList;
-import org.telegram.messenger.rc;
+import org.telegram.messenger.sc;
 import org.telegram.messenger.ui;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class g {
     public final boolean a;
@@ -28,7 +28,7 @@ public final class g {
     public Rect m;
 
     public g(boolean z9) {
-        boolean e10 = rc.e(262144);
+        boolean e10 = sc.e(262144);
         this.a = e10;
         this.c = true;
         this.d = (e10 || z9) ? 1 : 8;

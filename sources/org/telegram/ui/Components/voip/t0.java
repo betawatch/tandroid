@@ -14,7 +14,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
@@ -30,7 +30,7 @@ import org.telegram.ui.va;
 import org.telegram.ui.w9;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class t0 extends FrameLayout implements VoIPService.StateListener {
     public final boolean D;
@@ -91,7 +91,7 @@ public abstract class t0 extends FrameLayout implements VoIPService.StateListene
         r6.V(kVar3, i11, null);
         kVar3.setGravity(17);
         kVar3.setTypeface(org.telegram.messenger.g0.o());
-        kVar3.setText(hd.M0(2131743241, null));
+        kVar3.setText(id.M0(2131743243, null));
         int L = org.telegram.messenger.g0.L(6.0f);
         int o4 = i0.a.o(k6.x0(null, i11, false), 76);
         kVar3.setForeground(k6.k0(L, L, L, L, 0, o4, o4));
@@ -116,11 +116,11 @@ public abstract class t0 extends FrameLayout implements VoIPService.StateListene
             this.f[i12].setSingleLine(true);
             this.d.addView(this.f[i12], ha.o(-2, -1));
             if (i12 == 0 && this.D) {
-                this.f[i12].setText(hd.M0(2131743260, null));
+                this.f[i12].setText(id.M0(2131743262, null));
             } else if (i12 == 0 || (i12 == 1 && this.D)) {
-                this.f[i12].setText(hd.M0(2131743406, null));
+                this.f[i12].setText(id.M0(2131743408, null));
             } else {
-                this.f[i12].setText(hd.M0(2131743494, null));
+                this.f[i12].setText(id.M0(2131743496, null));
             }
             this.f[i12].setOnClickListener(new ai.v(this, i12, 20));
             i12++;

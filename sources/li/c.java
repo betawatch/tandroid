@@ -8,7 +8,7 @@ import android.view.KeyEvent;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.f6;
@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.hc;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements v10 {
     public final /* synthetic */ int a = 0;
@@ -82,29 +82,29 @@ public final /* synthetic */ class c implements v10 {
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.b2 b2Var = (org.telegram.ui.Wallet.b2) obj6;
+                org.telegram.ui.Wallet.a2 a2Var = (org.telegram.ui.Wallet.a2) obj6;
                 boolean[] zArr2 = (boolean[]) obj5;
-                org.telegram.ui.Wallet.n0 n0Var = (org.telegram.ui.Wallet.n0) obj4;
+                org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) obj4;
                 TextView textView = (TextView) obj3;
-                org.telegram.ui.Wallet.z2 z2Var = (org.telegram.ui.Wallet.z2) callback;
+                org.telegram.ui.Wallet.y2 y2Var = (org.telegram.ui.Wallet.y2) callback;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
                 String str = (String) obj2;
-                if (!zArr[0] && !b2Var.m && !b2Var.n) {
-                    boolean z10 = b2Var.p;
+                if (!zArr[0] && !a2Var.m && !a2Var.n) {
+                    boolean z10 = a2Var.p;
                     zArr2[0] = z10;
                     dVar.setEnabled(z10);
                     boolean z11 = zArr2[0];
                     if (z11 && !z9) {
-                        SpannableStringBuilder n10 = org.telegram.ui.Wallet.n0.n(wallettransaction.fee, true);
-                        CharSequence m10 = n0Var.m(wallettransaction.fee, true);
-                        textView.setText(TextUtils.isEmpty(m10) ? hd.V(null, null, 2131743121, n10) : hd.V(null, null, 2131743120, n10, m10));
+                        SpannableStringBuilder n10 = org.telegram.ui.Wallet.m0.n(wallettransaction.fee, true);
+                        CharSequence m10 = m0Var.m(wallettransaction.fee, true);
+                        textView.setText(TextUtils.isEmpty(m10) ? id.V(null, null, 2131743123, n10) : id.V(null, null, 2131743122, n10, m10));
                         break;
                     } else if (!z11) {
-                        String M0 = str != null ? str : hd.M0(2131742987, null);
+                        String M0 = str != null ? str : id.M0(2131742989, null);
                         if (str == null) {
-                            org.telegram.ui.Wallet.f2.m("preview", M0);
+                            org.telegram.ui.Wallet.e2.m("preview", M0);
                         }
-                        hc.c0(M0, z2Var.E, f6Var);
+                        hc.c0(M0, y2Var.E, f6Var);
                         break;
                     }
                 }
@@ -112,15 +112,15 @@ public final /* synthetic */ class c implements v10 {
         }
     }
 
-    public /* synthetic */ c(boolean[] zArr, org.telegram.ui.Wallet.b2 b2Var, boolean[] zArr2, fi.d dVar, boolean z9, org.telegram.ui.Wallet.n0 n0Var, TextView textView, org.telegram.ui.Wallet.z2 z2Var, f6 f6Var) {
+    public /* synthetic */ c(boolean[] zArr, org.telegram.ui.Wallet.a2 a2Var, boolean[] zArr2, fi.d dVar, boolean z9, org.telegram.ui.Wallet.m0 m0Var, TextView textView, org.telegram.ui.Wallet.y2 y2Var, f6 f6Var) {
         this.b = zArr;
-        this.f = b2Var;
+        this.f = a2Var;
         this.g = zArr2;
         this.c = dVar;
         this.d = z9;
-        this.h = n0Var;
+        this.h = m0Var;
         this.i = textView;
-        this.j = z2Var;
+        this.j = y2Var;
         this.e = f6Var;
     }
 }

@@ -3,13 +3,13 @@ package cg;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.MathContext;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i0;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class a {
     public final b a;
@@ -84,7 +84,7 @@ public final class a {
     }
 
     public final String d() {
-        StringBuilder sb2 = new StringBuilder(hd.E(a(), ','));
+        StringBuilder sb2 = new StringBuilder(id.E(a(), ','));
         long j3 = this.b % 1000000000;
         if (j3 == 0) {
             return sb2.toString();
@@ -124,10 +124,10 @@ public final class a {
         b bVar = this.a;
         if (j3 == 0) {
             int ordinal = bVar.ordinal();
-            return ordinal != 0 ? ordinal != 1 ? "" : hd.H(' ', "TonCount", (int) a()) : hd.H(' ', "StarsCount", (int) a());
+            return ordinal != 0 ? ordinal != 1 ? "" : id.H(' ', "TonCount", (int) a()) : id.H(' ', "StarsCount", (int) a());
         }
         int ordinal2 = bVar.ordinal();
-        return ordinal2 != 0 ? ordinal2 != 1 ? "" : hd.a0(null, null, 2131744051, b()) : hd.a0(null, null, 2131745114, b());
+        return ordinal2 != 0 ? ordinal2 != 1 ? "" : id.a0(null, null, 2131744053, b()) : id.a0(null, null, 2131745116, b());
     }
 
     public final boolean k() {

@@ -8,7 +8,7 @@ import android.util.Log;
 import com.google.android.gms.cast.CastDevice;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class i extends s4.s {
     public static final j6.b b = new j6.b("MediaRouterCallback", null);
@@ -25,10 +25,10 @@ public final class i extends s4.s {
             h hVar = this.a;
             String str = vVar.c;
             Bundle bundle = vVar.s;
-            Parcel P0 = hVar.P0();
-            P0.writeString(str);
-            t.c(P0, bundle);
-            hVar.T0(P0, 1);
+            Parcel p12 = hVar.p1();
+            p12.writeString(str);
+            t.c(p12, bundle);
+            hVar.t1(p12, 1);
         } catch (RemoteException e10) {
             b.a(e10, "Unable to call %s on %s.", "onRouteAdded", h.class.getSimpleName());
         }
@@ -40,10 +40,10 @@ public final class i extends s4.s {
             h hVar = this.a;
             String str = vVar.c;
             Bundle bundle = vVar.s;
-            Parcel P0 = hVar.P0();
-            P0.writeString(str);
-            t.c(P0, bundle);
-            hVar.T0(P0, 2);
+            Parcel p12 = hVar.p1();
+            p12.writeString(str);
+            t.c(p12, bundle);
+            hVar.t1(p12, 2);
         } catch (RemoteException e10) {
             b.a(e10, "Unable to call %s on %s.", "onRouteChanged", h.class.getSimpleName());
         }
@@ -55,10 +55,10 @@ public final class i extends s4.s {
             h hVar = this.a;
             String str = vVar.c;
             Bundle bundle = vVar.s;
-            Parcel P0 = hVar.P0();
-            P0.writeString(str);
-            t.c(P0, bundle);
-            hVar.T0(P0, 3);
+            Parcel p12 = hVar.p1();
+            p12.writeString(str);
+            t.c(p12, bundle);
+            hVar.t1(p12, 3);
         } catch (RemoteException e10) {
             b.a(e10, "Unable to call %s on %s.", "onRouteRemoved", h.class.getSimpleName());
         }
@@ -133,23 +133,23 @@ public final class i extends s4.s {
             }
         }
         str = str2;
-        Parcel R0 = hVar.R0(hVar.P0(), 7);
-        int readInt = R0.readInt();
-        R0.recycle();
+        Parcel r12 = hVar.r1(hVar.p1(), 7);
+        int readInt = r12.readInt();
+        r12.recycle();
         if (readInt < 220400000) {
             Bundle bundle = vVar.s;
-            Parcel P0 = hVar.P0();
-            P0.writeString(str);
-            t.c(P0, bundle);
-            hVar.T0(P0, 4);
+            Parcel p12 = hVar.p1();
+            p12.writeString(str);
+            t.c(p12, bundle);
+            hVar.t1(p12, 4);
             return;
         }
         Bundle bundle2 = vVar.s;
-        Parcel P02 = hVar.P0();
-        P02.writeString(str);
-        P02.writeString(str2);
-        t.c(P02, bundle2);
-        hVar.T0(P02, 8);
+        Parcel p13 = hVar.p1();
+        p13.writeString(str);
+        p13.writeString(str2);
+        t.c(p13, bundle2);
+        hVar.t1(p13, 8);
     }
 
     @Override // s4.s
@@ -165,11 +165,11 @@ public final class i extends s4.s {
         try {
             h hVar = this.a;
             Bundle bundle = vVar.s;
-            Parcel P0 = hVar.P0();
-            P0.writeString(str);
-            t.c(P0, bundle);
-            P0.writeInt(i7);
-            hVar.T0(P0, 6);
+            Parcel p12 = hVar.p1();
+            p12.writeString(str);
+            t.c(p12, bundle);
+            p12.writeInt(i7);
+            hVar.t1(p12, 6);
         } catch (RemoteException e10) {
             bVar.a(e10, "Unable to call %s on %s.", "onRouteUnselected", h.class.getSimpleName());
         }

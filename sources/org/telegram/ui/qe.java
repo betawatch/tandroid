@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qe implements Runnable {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class qe implements Runnable {
                     for (int i7 = 0; i7 < childCount; i7++) {
                         View childAt = anVar.z0.getChildAt(i7);
                         if ((childAt instanceof org.telegram.ui.Cells.q1) && (messageObject = (q1Var = (org.telegram.ui.Cells.q1) childAt).getMessageObject()) != null && messageObject.T(anVar.U3)) {
-                            q1Var.F3(this.c, true, true);
+                            q1Var.G3(this.c, true, true);
                         }
                     }
                 }
@@ -53,7 +53,7 @@ public final /* synthetic */ class qe implements Runnable {
                 an.b0(this.b, this.c);
                 break;
             case 7:
-                this.b.actionBar.setSubtitle(org.telegram.messenger.hd.G(this.c, "messages", new Object[0]));
+                this.b.actionBar.setSubtitle(org.telegram.messenger.id.G(this.c, "messages", new Object[0]));
                 break;
             case 8:
                 this.b.getConnectionsManager().cancelRequest(this.c, true);

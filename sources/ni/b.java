@@ -4,11 +4,29 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.Spannable;
 import com.google.android.gms.internal.play_billing.s0;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import jg.c1;
+import org.json.JSONObject;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.voip.VoIPPreNotificationService;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.ui.ActionBar.f2;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.Wallet.m0;
+import org.telegram.ui.Wallet.r2;
+import org.telegram.ui.Wallet.u2;
+import org.telegram.utils.twidget.h1;
+import org.telegram.utils.twidget.i0;
+import org.telegram.utils.twidget.k0;
+import org.telegram.utils.twidget.n0;
+import org.telegram.utils.twidget.v0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -28,14 +46,16 @@ public final /* synthetic */ class b implements Runnable {
         this.d = z9;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0092 A[Catch: all -> 0x007f, TryCatch #0 {all -> 0x007f, blocks: (B:9:0x0033, B:11:0x003d, B:14:0x004b, B:16:0x0055, B:20:0x005d, B:22:0x0063, B:24:0x006f, B:30:0x0077, B:31:0x0081, B:33:0x0092, B:35:0x009b, B:37:0x00a1, B:38:0x00ac, B:42:0x00ae), top: B:8:0x0033 }] */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00a1 A[Catch: all -> 0x007f, TryCatch #0 {all -> 0x007f, blocks: (B:9:0x0033, B:11:0x003d, B:14:0x004b, B:16:0x0055, B:20:0x005d, B:22:0x0063, B:24:0x006f, B:30:0x0077, B:31:0x0081, B:33:0x0092, B:35:0x009b, B:37:0x00a1, B:38:0x00ac, B:42:0x00ae), top: B:8:0x0033 }] */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x018f A[Catch: all -> 0x017c, TryCatch #0 {all -> 0x017c, blocks: (B:62:0x0133, B:64:0x013d, B:67:0x014a, B:69:0x0152, B:73:0x015a, B:75:0x0160, B:77:0x016c, B:83:0x0174, B:84:0x017e, B:86:0x018f, B:88:0x0198, B:90:0x019e, B:91:0x01a9, B:95:0x01ab), top: B:61:0x0133 }] */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x019e A[Catch: all -> 0x017c, TryCatch #0 {all -> 0x017c, blocks: (B:62:0x0133, B:64:0x013d, B:67:0x014a, B:69:0x0152, B:73:0x015a, B:75:0x0160, B:77:0x016c, B:83:0x0174, B:84:0x017e, B:86:0x018f, B:88:0x0198, B:90:0x019e, B:91:0x01a9, B:95:0x01ab), top: B:61:0x0133 }] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
         boolean z9;
+        v0 v0Var;
+        TLRPC.User user;
         switch (this.a) {
             case 0:
                 l lVar = (l) this.e;
@@ -85,8 +105,77 @@ public final /* synthetic */ class b implements Runnable {
                     } finally {
                     }
                 }
-            default:
+            case 1:
                 VoIPPreNotificationService.lambda$show$1((Intent) this.e, (TL_phone.PhoneCall) this.f, (Context) this.h, this.b, this.c, this.d);
+                return;
+            default:
+                h1 h1Var = (h1) this.e;
+                int i11 = this.b;
+                long j10 = this.c;
+                JSONObject jSONObject = (JSONObject) this.f;
+                String str2 = (String) this.h;
+                boolean z11 = this.d;
+                if (h1Var.w || (v0Var = h1Var.L) == null) {
+                    return;
+                }
+                if (i11 != 19) {
+                    if (v0Var.e == null) {
+                        v0Var.b(3, null, j10);
+                        return;
+                    }
+                    k0 h = n0.h(v0Var);
+                    if (h == null || !h.i || (z11 && !n0.F(h))) {
+                        v0Var.b(3, null, j10);
+                        return;
+                    }
+                    TLRPC.TL_widgetQueryTypeData tL_widgetQueryTypeData = new TLRPC.TL_widgetQueryTypeData();
+                    tL_widgetQueryTypeData.with_wallet = z11;
+                    n0.w(h, v0Var, j10, tL_widgetQueryTypeData, str2.getBytes(StandardCharsets.UTF_8));
+                    return;
+                }
+                if (v0Var.e == null) {
+                    v0Var.b(3, null, j10);
+                    return;
+                }
+                k0 h7 = n0.h(v0Var);
+                if (h7 != null) {
+                    long j11 = h7.n;
+                    if (j11 != 0) {
+                        user = qp.s1(h7.b).a2(Long.valueOf(j11));
+                        f2 T = LaunchActivity.T();
+                        if (h7 != null || !n0.F(h7) || user == null || !user.bot) {
+                            v0Var.b(5, null, j10);
+                            return;
+                        }
+                        if (T == null || T.getContext() == null) {
+                            v0Var.b(3, null, j10);
+                            return;
+                        }
+                        byte[] bytes = jSONObject.optString("data").getBytes(StandardCharsets.UTF_8);
+                        Context context = T.getContext();
+                        int i12 = h7.b;
+                        f6 resourceProvider = T.getResourceProvider();
+                        i0 i0Var = new i0(h7, v0Var, j10, bytes);
+                        ArrayList arrayList = u2.a;
+                        r2 r2Var = new r2(new boolean[]{false}, i0Var);
+                        m0 x10 = m0.x(i12);
+                        boolean[] zArr = {false};
+                        c1 c1Var = new c1(zArr, context, i12, user, jSONObject, resourceProvider, r2Var, 16);
+                        if (x10.G()) {
+                            c1Var.run();
+                            return;
+                        }
+                        u2.a.add(c1Var);
+                        x10.m0(c1Var);
+                        g0.i3(new org.telegram.ui.Wallet.g(c1Var, zArr, r2Var, 8), 10000L);
+                        return;
+                    }
+                }
+                user = null;
+                f2 T2 = LaunchActivity.T();
+                if (h7 != null) {
+                }
+                v0Var.b(5, null, j10);
                 return;
         }
     }
@@ -98,5 +187,14 @@ public final /* synthetic */ class b implements Runnable {
         this.b = i7;
         this.d = z9;
         this.h = nVar;
+    }
+
+    public /* synthetic */ b(h1 h1Var, int i7, long j3, JSONObject jSONObject, String str, boolean z9) {
+        this.e = h1Var;
+        this.b = i7;
+        this.c = j3;
+        this.f = jSONObject;
+        this.h = str;
+        this.d = z9;
     }
 }

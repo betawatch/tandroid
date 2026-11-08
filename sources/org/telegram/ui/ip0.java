@@ -1,8 +1,8 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class ip0 extends org.telegram.ui.Components.mz {
+public final class ip0 extends org.telegram.ui.Components.nz {
     public final /* synthetic */ ro0 e;
     public final /* synthetic */ PhotoViewer f;
 
@@ -18,24 +18,24 @@ public final class ip0 extends org.telegram.ui.Components.mz {
         StringBuilder sb2 = new StringBuilder();
         PhotoViewer photoViewer = this.f;
         int[] iArr = photoViewer.l3;
-        sb2.append(org.telegram.messenger.hd.G(iArr[0], "Minutes", new Object[0]));
+        sb2.append(org.telegram.messenger.id.G(iArr[0], "Minutes", new Object[0]));
         sb2.append(' ');
-        sb2.append(org.telegram.messenger.hd.G(iArr[1], "Seconds", new Object[0]));
+        sb2.append(org.telegram.messenger.id.G(iArr[1], "Seconds", new Object[0]));
         String sb3 = sb2.toString();
         StringBuilder sb4 = new StringBuilder();
         int[] iArr2 = photoViewer.m3;
-        sb4.append(org.telegram.messenger.hd.G(iArr2[0], "Minutes", new Object[0]));
+        sb4.append(org.telegram.messenger.id.G(iArr2[0], "Minutes", new Object[0]));
         sb4.append(' ');
-        sb4.append(org.telegram.messenger.hd.G(iArr2[1], "Seconds", new Object[0]));
-        return org.telegram.messenger.hd.a0("AccDescrPlayerDuration", null, 2131754806, sb3, sb4.toString());
+        sb4.append(org.telegram.messenger.id.G(iArr2[1], "Seconds", new Object[0]));
+        return org.telegram.messenger.id.a0("AccDescrPlayerDuration", null, 2131754806, sb3, sb4.toString());
     }
 
-    @Override // org.telegram.ui.Components.mz
+    @Override // org.telegram.ui.Components.nz
     public final float k() {
         return this.f.p3.c();
     }
 
-    @Override // org.telegram.ui.Components.mz
+    @Override // org.telegram.ui.Components.nz
     public final void l(float f10) {
         this.e.a(f10);
         PhotoViewer photoViewer = this.f;

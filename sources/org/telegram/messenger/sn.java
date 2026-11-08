@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sn implements Runnable {
     public final /* synthetic */ int a;
@@ -19,18 +19,17 @@ public final /* synthetic */ class sn implements Runnable {
         qp qpVar = this.b;
         switch (i7) {
             case 0:
+                qpVar.I(true);
+                break;
+            case 1:
                 qpVar.getMessagesController().T4(null);
                 qpVar.getNotificationCenter().k(3, Boolean.TRUE);
                 break;
-            case 1:
+            case 2:
                 qpVar.e2 = false;
                 break;
-            case 2:
-                qpVar.getNotificationCenter().k(2, Integer.valueOf(TLObject.FLAG_13));
-                break;
             case 3:
-                qpVar.getNotificationCenter().k(2, Integer.valueOf(TLObject.FLAG_19));
-                qpVar.i5();
+                qpVar.getNotificationCenter().k(2, Integer.valueOf(TLObject.FLAG_13));
                 break;
             case 4:
                 qpVar.getNotificationCenter().k(2, 4);

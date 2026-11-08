@@ -10,7 +10,7 @@ import c8.ha;
 import di.q4;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.ui;
@@ -26,7 +26,7 @@ import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class w1 extends f2 implements ls {
     public q41 a;
@@ -86,18 +86,18 @@ public final class w1 extends f2 implements ls {
         ArrayList arrayList2 = b10.d;
         if (!z9) {
             l41Var.V();
-            String M0 = hd.M0(2131744121, null);
+            String M0 = id.M0(2131744123, null);
             x31 x31Var = new x31(9);
             x31Var.d = -1;
             x31Var.l = M0;
             x31Var.L(w1Var.h);
             arrayList.add(x31Var);
             l41Var.U();
-            arrayList.add(x31.C(hd.a0(null, null, 2131744120, b10.d(w1Var.n, true))));
+            arrayList.add(x31.C(id.a0(null, null, 2131744122, b10.d(w1Var.n, true))));
         }
         l41Var.V();
         if (!z9) {
-            arrayList.add(x31.u(hd.M0(2131744119, null)));
+            arrayList.add(x31.u(id.M0(2131744121, null)));
         }
         boolean z10 = true;
         int i7 = 0;
@@ -141,12 +141,12 @@ public final class w1 extends f2 implements ls {
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(hd.M0(2131744117, null));
+        this.simpleActionBar.setTitle(id.M0(2131744119, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 19));
         f5 b10 = this.simpleActionBar.o().b(1, R.drawable.outline_header_search);
         b10.N();
         b10.B0 = new v1(this, 0);
-        b10.setSearchFieldHint(hd.M0(2131745837, null));
+        b10.setSearchFieldHint(id.M0(2131745839, null));
         FrameLayout frameLayout = new FrameLayout(context);
         q41 q41Var = new q41(this, new hi.u1(this, 13), new q4(this, 27), null);
         this.a = q41Var;
@@ -163,7 +163,7 @@ public final class w1 extends f2 implements ls {
         ui.b0(this.currentAccount).c2(l9Var, "RestrictedEmoji", "🌖", "130_130");
         this.b.addView(l9Var, ha.t(qs.O1, qs.O1, 49, 0, 42, 0, 12));
         TextView textView = new TextView(context);
-        textView.setText(hd.M0(2131744118, null));
+        textView.setText(id.M0(2131744120, null));
         r6.V(textView, k6.y6, this.resourceProvider);
         textView.setTextSize(1, 15.0f);
         this.b.addView(textView, ha.t(-2, -2, 49, 0, 0, 0, 0));

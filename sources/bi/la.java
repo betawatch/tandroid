@@ -33,9 +33,9 @@ import org.telegram.ui.Components.jr0;
 import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.lr;
-import org.telegram.ui.Components.qu;
-import org.telegram.ui.Components.tw;
+import org.telegram.ui.Components.ru;
 import org.telegram.ui.Components.up0;
+import org.telegram.ui.Components.uw;
 import org.telegram.ui.Components.v80;
 import org.telegram.ui.Components.wo;
 import org.telegram.ui.Components.xs0;
@@ -53,11 +53,11 @@ import org.telegram.ui.n41;
 import org.telegram.ui.o01;
 import org.telegram.ui.q01;
 import org.telegram.ui.q11;
-import org.telegram.ui.uc1;
 import org.telegram.ui.v01;
+import org.telegram.ui.vc1;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class la implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -139,11 +139,11 @@ public final /* synthetic */ class la implements View.OnClickListener {
                             twoStepVerificationActivity.x0(new org.telegram.ui.jd(zdVar, c51Var, twoStepVerificationActivity, i12));
                             break;
                         } else {
-                            org.telegram.ui.Components.hc.a0(c51Var).M(zdVar.getContext().getResources().getDrawable(R.drawable.star_small_inner).mutate(), org.telegram.messenger.g0.U2(org.telegram.messenger.hd.G((int) qp.s1(i15).R5, "BotStarsWithdrawMinLimit", new Object[0]), new org.telegram.ui.ed(zdVar, i15, i14))).j();
+                            org.telegram.ui.Components.hc.a0(c51Var).M(zdVar.getContext().getResources().getDrawable(R.drawable.star_small_inner).mutate(), org.telegram.messenger.g0.U2(org.telegram.messenger.id.G((int) qp.s1(i15).R5, "BotStarsWithdrawMinLimit", new Object[0]), new org.telegram.ui.ed(zdVar, i15, i14))).j();
                             break;
                         }
                     } else {
-                        zdVar.P0 = org.telegram.ui.Components.hc.a0(c51Var).Q(R.raw.timer_3, 36, org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131752952, z.w0(zdVar.B0 - currentTime)))).j();
+                        zdVar.P0 = org.telegram.ui.Components.hc.a0(c51Var).Q(R.raw.timer_3, 36, org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131752952, z.w0(zdVar.B0 - currentTime)))).j();
                         break;
                     }
                 }
@@ -173,8 +173,8 @@ public final /* synthetic */ class la implements View.OnClickListener {
                 org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj;
                 k60 F = k60.F(ikVar, f6Var, ikVar.y);
                 F.Q = true;
-                F.c(R.drawable.msg_addbot, org.telegram.messenger.hd.M0(2131743138, null), new org.telegram.ui.q8(ikVar, i15, f6Var, i11), false);
-                F.c(R.drawable.menu_comments, org.telegram.messenger.hd.M0(2131743206, null), new ck(ikVar, r6), false);
+                F.c(R.drawable.msg_addbot, org.telegram.messenger.id.M0(2131743140, null), new org.telegram.ui.q8(ikVar, i15, f6Var, i11), false);
+                F.c(R.drawable.menu_comments, org.telegram.messenger.id.M0(2131743208, null), new ck(ikVar, r6), false);
                 F.s = 0;
                 F.a0(0.0f, -org.telegram.messenger.g0.L(48.0f));
                 F.Z();
@@ -205,11 +205,11 @@ public final /* synthetic */ class la implements View.OnClickListener {
                     break;
                 } else {
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(lrVar.getContext());
-                    String M0 = org.telegram.messenger.hd.M0(2131743720, null);
+                    String M0 = org.telegram.messenger.id.M0(2131743722, null);
                     org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                     u1Var.R = M0;
-                    u1Var.T = org.telegram.messenger.hd.M0(2131743719, null);
-                    alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747830, null), null);
+                    u1Var.T = org.telegram.messenger.id.M0(2131743721, null);
+                    alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747832, null), null);
                     u1Var.show();
                     break;
                 }
@@ -258,7 +258,7 @@ public final /* synthetic */ class la implements View.OnClickListener {
                             if (i19 != 1) {
                                 if (i19 != 3) {
                                     AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(f2Var.getParentActivity());
-                                    alertDialog$Builder2.f(new CharSequence[]{org.telegram.messenger.hd.M0(2131751767, null)}, new og.j(5, ad0Var, f0Var));
+                                    alertDialog$Builder2.f(new CharSequence[]{org.telegram.messenger.id.M0(2131751767, null)}, new og.j(5, ad0Var, f0Var));
                                     alertDialog$Builder2.p();
                                     break;
                                 } else {
@@ -333,9 +333,9 @@ public final /* synthetic */ class la implements View.OnClickListener {
                 saveToGallerySettingsActivity.presentFragment(new SaveToGallerySettingsActivity(bundle));
                 break;
             case 18:
-                tw twVar = (tw) obj;
+                uw uwVar = (uw) obj;
                 q11 q11Var = ((q01) obj2).c;
-                if (!twVar.e && !p10.i(q11Var.V).q()) {
+                if (!uwVar.e && !p10.i(q11Var.V).q()) {
                     org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
                     if (Q != null) {
                         Q.showDialog(new ug.w0(q11Var.c1, q11Var.getContext(), q11Var.V, 11, false));
@@ -357,21 +357,21 @@ public final /* synthetic */ class la implements View.OnClickListener {
                     if (num != null) {
                         q11Var.i(num.intValue(), view2);
                     }
-                    qu.J0(null, twVar.b, false, null, null);
-                    q11Var.B0.add(Long.valueOf(twVar.b.id));
+                    ru.J0(null, uwVar.b, false, null, null);
+                    q11Var.B0.add(Long.valueOf(uwVar.b.id));
                     q11Var.B(true, true, true);
                     break;
                 }
                 break;
             case 19:
                 ((org.telegram.ui.Wallet.k) obj).a(Integer.valueOf(i15));
-                ((org.telegram.ui.Wallet.t5) obj2).setSelected(i15);
+                ((org.telegram.ui.Wallet.s5) obj2).setSelected(i15);
                 break;
             case 20:
                 fi.d dVar = (fi.d) obj2;
                 org.telegram.ui.ActionBar.v2 v2Var = (org.telegram.ui.ActionBar.v2) obj;
                 if (!dVar.Q) {
-                    a8.r7 r7Var = uc1.d;
+                    a8.r7 r7Var = vc1.d;
                     if (r7Var != null && ((byte[]) r7Var.e) != null) {
                         dVar.setLoading(true);
                         TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth = new TLRPC.TL_messages_requestUrlAuth();
@@ -427,7 +427,7 @@ public final /* synthetic */ class la implements View.OnClickListener {
                 wo woVar = up0Var.F;
                 woVar.a(!woVar.a.q, true);
                 boolean z11 = woVar.a.q;
-                org.telegram.ui.Components.hc.a0(f2Var3).P(z11 ? R.raw.silent_unmute : R.raw.silent_mute, org.telegram.messenger.hd.M0(z11 ? 2131750255 : 2131750254, null)).j();
+                org.telegram.ui.Components.hc.a0(f2Var3).P(z11 ? R.raw.silent_unmute : R.raw.silent_mute, org.telegram.messenger.id.M0(z11 ? 2131750257 : 2131750256, null)).j();
                 up0Var.d.h = Boolean.valueOf(z11);
                 if (up0Var.H >= 0) {
                     ConnectionsManager.getInstance(i15).cancelRequest(up0Var.H, true);

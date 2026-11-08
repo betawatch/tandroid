@@ -24,12 +24,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gf;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class b3 extends FrameLayout {
     public static int d0;
@@ -343,12 +343,12 @@ public final class b3 extends FrameLayout {
         this.S = e7Var;
         if (i7 > 0) {
             this.F = null;
-            g(hd.G(i7, "StoryDrafts", new Object[0]));
+            g(id.G(i7, "StoryDrafts", new Object[0]));
             this.x = false;
-            this.O = hd.G(i7, "StoryDrafts", new Object[0]);
+            this.O = id.G(i7, "StoryDrafts", new Object[0]);
         } else {
             if (e7Var != null && e7Var.c) {
-                StaticLayout staticLayout = new StaticLayout(hd.N0("StoryDraft"), this.s, getMeasuredWidth() > 0 ? getMeasuredWidth() : org.telegram.messenger.g0.q.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                StaticLayout staticLayout = new StaticLayout(id.N0("StoryDraft"), this.s, getMeasuredWidth() > 0 ? getMeasuredWidth() : org.telegram.messenger.g0.q.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                 this.F = staticLayout;
                 this.G = staticLayout.getLineCount() > 0 ? this.F.getLineWidth(0) : 0.0f;
                 this.H = this.F.getLineCount() > 0 ? this.F.getLineLeft(0) : 0.0f;
@@ -357,9 +357,9 @@ public final class b3 extends FrameLayout {
             }
             g((e7Var == null || !e7Var.K) ? null : org.telegram.messenger.g0.g0((int) Math.max(0.0f, ((e7Var.a0 - e7Var.Z) * e7Var.h0) / 1000.0f), false, false));
             if (e7Var == null || !e7Var.K) {
-                this.O = hd.M0(2131744683, null);
+                this.O = id.M0(2131744685, null);
             } else {
-                this.O = hd.M0(2131744683, null) + ", " + hd.z((int) Math.max(0.0f, ((e7Var.a0 - e7Var.Z) * e7Var.h0) / 1000.0f));
+                this.O = id.M0(2131744685, null) + ", " + id.z((int) Math.max(0.0f, ((e7Var.a0 - e7Var.Z) * e7Var.h0) / 1000.0f));
             }
         }
         b(e7Var);

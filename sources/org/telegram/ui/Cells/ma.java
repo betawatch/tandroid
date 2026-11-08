@@ -8,12 +8,12 @@ import android.widget.LinearLayout;
 import android.widget.Space;
 import android.widget.TextView;
 import java.util.HashSet;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.l10;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ma extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public static final /* synthetic */ int n = 0;
@@ -36,7 +36,7 @@ public final class ma extends FrameLayout implements org.telegram.ui.ActionBar.a
         textView.setGravity(17);
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(hd.M0(2131743892, null));
+        textView.setText(id.M0(2131743894, null));
         linearLayout.addView(textView, c8.ha.q(-1, -2, 0.0f, 55, 28, 8, 28, 0));
         TextView textView2 = new TextView(activity);
         this.c = textView2;
@@ -53,7 +53,7 @@ public final class ma extends FrameLayout implements org.telegram.ui.ActionBar.a
         laVar.setPadding(org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(7.0f));
         laVar.setTypeface(org.telegram.messenger.g0.o());
         laVar.setTextSize(1, 14.22f);
-        laVar.setText(hd.M0(2131743911, null));
+        laVar.setText(id.M0(2131743913, null));
         linearLayout2.addView(laVar, c8.ha.o(-2, 30));
         linearLayout2.addView(new Space(activity), c8.ha.p(-2, 1, 17.0f, 1));
         la laVar2 = new la(activity);
@@ -61,7 +61,7 @@ public final class ma extends FrameLayout implements org.telegram.ui.ActionBar.a
         laVar2.setPadding(org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(7.0f));
         laVar2.setTypeface(org.telegram.messenger.g0.o());
         laVar2.setTextSize(1, 14.22f);
-        laVar2.setText(hd.M0(2131743901, null));
+        laVar2.setText(id.M0(2131743903, null));
         linearLayout2.addView(laVar2, c8.ha.o(-2, 30));
         linearLayout2.addView(new Space(activity), c8.ha.p(-2, 1, 17.0f, 1));
         linearLayout.addView(linearLayout2, c8.ha.k(28.0f, 4.0f, 28.0f, 8.0f, -1, -2));
@@ -78,7 +78,7 @@ public final class ma extends FrameLayout implements org.telegram.ui.ActionBar.a
         if (!TextUtils.isEmpty(str) && !str2.isEmpty()) {
             str2 = str2.concat(", ");
         }
-        return rf.b.q(str2, str);
+        return rf.b.r(str2, str);
     }
 
     @Override // android.widget.FrameLayout, android.view.View

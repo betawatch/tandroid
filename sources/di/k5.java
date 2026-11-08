@@ -21,7 +21,7 @@ import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.dt;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -29,12 +29,12 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.xs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.ly;
+import org.telegram.ui.Components.my;
 import org.telegram.ui.Components.si0;
 import org.telegram.ui.Components.xj0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class k5 extends FrameLayout implements org.telegram.ui.ActionBar.a6, ls {
     public r5 D;
@@ -70,7 +70,7 @@ public abstract class k5 extends FrameLayout implements org.telegram.ui.ActionBa
     public final b s;
     public final int w;
     public final g5 x;
-    public final ly y;
+    public final my y;
 
     public k5(p9 p9Var, Context context, w4 w4Var, ai.i iVar) {
         super(context);
@@ -94,9 +94,9 @@ public abstract class k5 extends FrameLayout implements org.telegram.ui.ActionBa
         this.r = r4Var;
         r4Var.setClipToPadding(false);
         this.J = new si0(r4Var, true);
-        ly lyVar = new ly(0, r4Var);
-        this.y = lyVar;
-        r4Var.setLayoutManager(lyVar);
+        my myVar = new my(0, r4Var);
+        this.y = myVar;
+        r4Var.setLayoutManager(myVar);
         r4Var.setNestedScrollingEnabled(true);
         g5 g5Var = new g5(this);
         this.x = g5Var;
@@ -127,7 +127,7 @@ public abstract class k5 extends FrameLayout implements org.telegram.ui.ActionBa
         frameLayout.addView(textView);
         v4 v4Var = new v4(this, getContext(), bVar);
         this.L = v4Var;
-        v4Var.setHint(hd.M0(2131745837, null));
+        v4Var.setHint(id.M0(2131745839, null));
         frameLayout.addView(v4Var, ha.d(-1, -1.0f, 51, 0.0f, 36.0f, 0.0f, 0.0f));
         addView(frameLayout);
     }
@@ -490,7 +490,7 @@ public abstract class k5 extends FrameLayout implements org.telegram.ui.ActionBa
                         this.R = false;
                         this.S = false;
                         this.T = false;
-                        textView.setText(hd.M0(this.E.f ? 2131746386 : 2131743538, null));
+                        textView.setText(id.M0(this.E.f ? 2131746388 : 2131743540, null));
                         v4Var.setVisibility(8);
                         a5Var.setVisibility(8);
                         this.e = 46;
@@ -498,7 +498,7 @@ public abstract class k5 extends FrameLayout implements org.telegram.ui.ActionBa
                         a5Var.setVisibility(0);
                         j5 j5Var7 = this.E;
                         if (j5Var7.k) {
-                            textView.setText(hd.M0(j5Var7.f ? 2131746386 : 2131743538, null));
+                            textView.setText(id.M0(j5Var7.f ? 2131746388 : 2131743540, null));
                             this.R = false;
                             this.S = false;
                             this.T = false;
@@ -509,7 +509,7 @@ public abstract class k5 extends FrameLayout implements org.telegram.ui.ActionBa
                                     this.R = false;
                                     this.S = false;
                                     this.T = false;
-                                    textView.setText(hd.M0(this.E.f ? 2131746386 : 2131743538, null));
+                                    textView.setText(id.M0(this.E.f ? 2131746388 : 2131743540, null));
                                 }
                             }
                             this.R = !this.E.f && storyItem.views.views_count >= 15;
@@ -518,7 +518,7 @@ public abstract class k5 extends FrameLayout implements org.telegram.ui.ActionBa
                             boolean z10 = org.telegram.messenger.r2.a;
                             this.S = i13 >= 5;
                             this.T = (storyItem.dialogId < j3 || storyViews4.views_count < 20 || storyItem.contacts || storyItem.close_friends || storyItem.selected_contacts) ? false : true;
-                            textView.setText(hd.M0(this.E.f ? 2131746386 : 2131743538, null));
+                            textView.setText(id.M0(this.E.f ? 2131746388 : 2131743540, null));
                         }
                         v4Var.setVisibility(this.R ? 0 : 8);
                         this.e = this.R ? 96 : 46;
@@ -528,13 +528,13 @@ public abstract class k5 extends FrameLayout implements org.telegram.ui.ActionBa
             this.R = false;
             this.S = false;
             this.T = false;
-            textView.setText(hd.M0(this.E.f ? 2131746386 : 2131743538, null));
+            textView.setText(id.M0(this.E.f ? 2131746388 : 2131743540, null));
             v4Var.setVisibility(8);
             a5Var.setVisibility(8);
             this.e = 46;
         } else {
             this.e = 46;
-            textView.setText(hd.M0(2131743801, null));
+            textView.setText(id.M0(2131743803, null));
             v4Var.setVisibility(8);
             a5Var.setVisibility(8);
         }

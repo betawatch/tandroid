@@ -14,11 +14,11 @@ import android.os.SystemClock;
 import android.util.Size;
 import android.view.Surface;
 import java.util.concurrent.CountDownLatch;
-import org.telegram.ui.Components.qt;
 import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.rt;
 import org.webrtc.EglBase;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class t {
     public EGLSurface B;
@@ -62,7 +62,7 @@ public final class t {
     public long g0;
     public final boolean h;
     public long h0;
-    public final n i;
+    public final o i;
     public long i0;
     public int j;
     public long j0;
@@ -82,23 +82,24 @@ public final class t {
     public final s r;
     public volatile boolean r0;
     public final c s;
-    public volatile boolean s0;
+    public volatile int s0;
     public HandlerThread t;
-    public volatile a t0;
+    public volatile boolean t0;
     public Handler u;
-    public Runnable u0;
+    public volatile a u0;
     public SurfaceTexture v;
-    public boolean v0;
+    public Runnable v0;
     public Surface w;
-    public volatile RuntimeException w0;
+    public boolean w0;
     public SurfaceTexture x;
-    public final o x0;
+    public volatile RuntimeException x0;
     public Surface y;
+    public final q y0;
     public volatile long q = Long.MAX_VALUE;
     public EGLDisplay z = EGL14.EGL_NO_DISPLAY;
     public EGLContext A = EGL14.EGL_NO_CONTEXT;
 
-    public t(Size size, Surface surface, Surface surface2, boolean z9, int i7, int i10, boolean z10, boolean z11, n nVar, s sVar, c cVar) {
+    public t(Size size, Surface surface, Surface surface2, boolean z9, int i7, int i10, boolean z10, boolean z11, o oVar, s sVar, c cVar) {
         EGLSurface eGLSurface = EGL14.EGL_NO_SURFACE;
         this.B = eGLSurface;
         this.C = eGLSurface;
@@ -107,7 +108,7 @@ public final class t {
         this.M = new float[16];
         this.Q = -1L;
         this.S = -1L;
-        this.x0 = new o(this, 1);
+        this.y0 = new q(this, 1);
         this.a = size;
         this.b = size;
         this.c = size;
@@ -122,11 +123,11 @@ public final class t {
         this.n = z10;
         this.o = z10;
         this.h = z11;
-        this.i = nVar;
+        this.i = oVar;
         this.G = i7;
         this.H = i7;
         this.p = 0L;
-        this.s0 = false;
+        this.t0 = false;
         this.r = sVar;
         this.s = cVar;
     }
@@ -174,13 +175,13 @@ public final class t {
             if (z9 != this.F) {
                 return;
             }
-            if (!this.s0) {
+            if (!this.t0) {
                 j(i7, fArr);
-                a aVar = this.t0;
-                if (this.v0 || aVar == null) {
+                a aVar = this.u0;
+                if (this.w0 || aVar == null) {
                     return;
                 }
-                this.v0 = true;
+                this.w0 = true;
                 aVar.run();
                 return;
             }
@@ -251,7 +252,7 @@ public final class t {
                 if (i11 == 3 || i11 == 4) {
                     Handler handler = this.u;
                     if (handler != null) {
-                        handler.removeCallbacks(this.x0);
+                        handler.removeCallbacks(this.y0);
                     }
                     c();
                 }
@@ -260,8 +261,8 @@ public final class t {
             this.i.a("GL error", e10);
             c cVar = this.s;
             if (cVar != null) {
-                qt qtVar = cVar.b;
-                ((t0) qtVar.b).i.post(new j0(qtVar, e10, 1));
+                rt rtVar = cVar.b;
+                ((t0) rtVar.b).i.post(new j0(rtVar, e10, 1));
             }
         }
     }
@@ -325,17 +326,17 @@ public final class t {
                             z10 = z9;
                         } else {
                             d0 d0Var = this.N;
-                            if (d0Var.B) {
+                            if (d0Var.C) {
                                 if (d0Var.e) {
-                                    d0Var.v = d0Var.y;
-                                    d0Var.w = d0Var.x;
+                                    d0Var.w = d0Var.z;
+                                    d0Var.x = d0Var.y;
                                     z10 = z9;
-                                    d0Var.A = z10;
-                                    d0Var.z = elapsedRealtimeNanos;
+                                    d0Var.B = z10;
+                                    d0Var.A = elapsedRealtimeNanos;
                                 } else {
                                     z10 = z9;
                                 }
-                                d0Var.B = false;
+                                d0Var.C = false;
                             } else {
                                 z10 = z9;
                             }
@@ -352,7 +353,7 @@ public final class t {
                         long max3 = Math.max(33L, this.b0);
                         Long.signum(max3);
                         long j13 = (max3 * 1000000) - j3;
-                        this.u.postDelayed(this.x0, Math.min(z10 ? 70L : j12, this.W == 2 ? j12 : Math.max(1L, (j13 + 999999) / 1000000)));
+                        this.u.postDelayed(this.y0, Math.min(z10 ? 70L : j12, this.W == 2 ? j12 : Math.max(1L, (j13 + 999999) / 1000000)));
                         return;
                     }
                 }
@@ -377,8 +378,8 @@ public final class t {
                 this.i.a("GL error", e);
                 c cVar = this.s;
                 if (cVar != null) {
-                    qt qtVar = cVar.b;
-                    ((t0) qtVar.b).i.post(new j0(qtVar, e, 1));
+                    rt rtVar = cVar.b;
+                    ((t0) rtVar.b).i.post(new j0(rtVar, e, 1));
                 }
             }
         } catch (RuntimeException e11) {
@@ -447,7 +448,7 @@ public final class t {
         SurfaceTexture surfaceTexture = new SurfaceTexture(this.D);
         this.v = surfaceTexture;
         surfaceTexture.setDefaultBufferSize(this.a.getWidth(), this.a.getHeight());
-        this.v.setOnFrameAvailableListener(new r(this, 0), this.u);
+        this.v.setOnFrameAvailableListener(new p(this, 1), this.u);
         this.w = new Surface(this.v);
         if (z9) {
             int i11 = iArr4[1];
@@ -459,14 +460,17 @@ public final class t {
             SurfaceTexture surfaceTexture2 = new SurfaceTexture(this.E);
             this.x = surfaceTexture2;
             surfaceTexture2.setDefaultBufferSize(this.a.getWidth(), this.a.getHeight());
-            this.x.setOnFrameAvailableListener(new r(this, 1), this.u);
+            this.x.setOnFrameAvailableListener(new p(this, 0), this.u);
             this.y = new Surface(this.x);
         }
-        Size size = this.a;
-        int i12 = this.j;
-        boolean z10 = this.h;
+        d0 d0Var = new d0(this.g, this.j, this.a, this.h);
+        this.N = d0Var;
+        int i12 = ((this.s0 % 360) + 360) % 360;
+        if (d0Var.s != i12) {
+            d0Var.s = i12;
+            d0Var.v();
+        }
         int i13 = this.g;
-        this.N = new d0(i13, size, i12, z10);
         GLES20.glViewport(0, 0, i13, i13);
     }
 
@@ -519,7 +523,7 @@ public final class t {
         this.i.b(sb2.toString());
         Handler handler = this.u;
         if (handler != null) {
-            handler.removeCallbacks(this.x0);
+            handler.removeCallbacks(this.y0);
         }
         EGLDisplay eGLDisplay = this.z;
         if (eGLDisplay != EGL14.EGL_NO_DISPLAY && (eGLSurface = this.B) != EGL14.EGL_NO_SURFACE && (eGLContext = this.A) != EGL14.EGL_NO_CONTEXT) {
@@ -572,9 +576,9 @@ public final class t {
             if (hVar != null) {
                 hVar.b();
             }
-            int[] iArr = d0Var.t;
+            int[] iArr = d0Var.u;
             GLES20.glDeleteTextures(iArr.length, iArr, 0);
-            int[] iArr2 = d0Var.s;
+            int[] iArr2 = d0Var.t;
             GLES20.glDeleteFramebuffers(iArr2.length, iArr2, 0);
             this.N = null;
         }
@@ -635,9 +639,9 @@ public final class t {
             }
             g();
         }
-        Runnable runnable = this.u0;
+        Runnable runnable = this.v0;
         if (runnable != null) {
-            this.u0 = null;
+            this.v0 = null;
             runnable.run();
         }
     }
@@ -653,7 +657,7 @@ public final class t {
         Handler handler = this.u;
         HandlerThread handlerThread = this.t;
         if (handler != null) {
-            handler.removeCallbacks(this.x0);
+            handler.removeCallbacks(this.y0);
         }
         this.u = null;
         this.t = null;
@@ -688,17 +692,17 @@ public final class t {
         }
         s sVar = this.r;
         if (sVar != null) {
-            m mVar = (m) sVar;
-            long j11 = mVar.C;
+            n nVar = (n) sVar;
+            long j11 = nVar.C;
             int i7 = (int) (j11 % 256);
-            mVar.l[i7] = j3 / 1000;
-            mVar.m[i7] = nanoTime2;
-            mVar.C = j11 + 1;
-            synchronized (mVar) {
-                if (mVar.u != null && !mVar.v) {
-                    d dVar = mVar.u;
-                    mVar.u = null;
-                    mVar.f.b("first synchronized video frame submitted");
+            nVar.l[i7] = j3 / 1000;
+            nVar.m[i7] = nanoTime2;
+            nVar.C = j11 + 1;
+            synchronized (nVar) {
+                if (nVar.u != null && !nVar.v) {
+                    d dVar = nVar.u;
+                    nVar.u = null;
+                    nVar.f.b("first synchronized video frame submitted");
                     dVar.run();
                 }
             }
@@ -712,7 +716,7 @@ public final class t {
         }
         CountDownLatch countDownLatch = new CountDownLatch(1);
         RuntimeException[] runtimeExceptionArr = new RuntimeException[1];
-        handler.post(new p(this, size, i7, z9, runtimeExceptionArr, countDownLatch, 1));
+        handler.post(new r(this, size, i7, z9, runtimeExceptionArr, countDownLatch, 1));
         try {
             countDownLatch.await();
             RuntimeException runtimeException = runtimeExceptionArr[0];

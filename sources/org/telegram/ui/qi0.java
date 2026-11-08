@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.TextView;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qi0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -76,12 +76,12 @@ public final /* synthetic */ class qi0 implements View.OnClickListener {
                 break;
             case 13:
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(bk0Var.getParentActivity());
-                String M0 = org.telegram.messenger.hd.M0(2131744233, null);
+                String M0 = org.telegram.messenger.id.M0(2131744235, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
-                u1Var.T = org.telegram.messenger.hd.M0(2131744234, null);
-                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751599, null), new si0(bk0Var, 5));
-                alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+                u1Var.T = org.telegram.messenger.id.M0(2131744236, null);
+                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751599, null), new si0(bk0Var, 5));
+                alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
                 bk0Var.showDialog(u1Var);
                 TextView textView = (TextView) u1Var.d(-1);
                 if (textView != null) {

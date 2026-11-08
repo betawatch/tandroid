@@ -11,7 +11,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class m4 implements Runnable {
     public final /* synthetic */ int a;
@@ -219,7 +219,7 @@ public final class m4 implements Runnable {
                     }
                     Boolean bool = qg0Var.j2;
                     boolean z9 = bool != null && bool.booleanValue();
-                    org.telegram.ui.Components.ex exVar = new org.telegram.ui.Components.ex(14, qg0Var, str);
+                    org.telegram.ui.Components.fx fxVar = new org.telegram.ui.Components.fx(14, qg0Var, str);
                     int i10 = org.telegram.messenger.p10.s0;
                     ArrayList arrayList = new ArrayList();
                     ArrayList arrayList2 = org.telegram.messenger.g5.r(i10).e0;
@@ -259,7 +259,7 @@ public final class m4 implements Runnable {
                             }
                         }
                     }
-                    exVar.a(arrayList);
+                    fxVar.a(arrayList);
                     break;
                 }
                 break;
@@ -282,18 +282,18 @@ public final class m4 implements Runnable {
                 ((c51) this.b).a0.animate().alpha(1.0f).setDuration(230L);
                 break;
             case 16:
-                m81 m81Var = (m81) this.b;
-                m81Var.F.setVisibility(0);
-                m81Var.F.setAlpha(0.0f);
-                m81Var.F.animate().alpha(1.0f).start();
+                n81 n81Var = (n81) this.b;
+                n81Var.F.setVisibility(0);
+                n81Var.F.setAlpha(0.0f);
+                n81Var.F.animate().alpha(1.0f).start();
                 break;
             default:
-                yc1 yc1Var = (yc1) this.b;
-                org.telegram.messenger.ij ijVar = yc1Var.n;
-                if (ijVar != null && yc1Var.getParentActivity() != null && yc1Var.s != null) {
-                    i7 = ((org.telegram.ui.ActionBar.f2) yc1Var).currentAccount;
+                zc1 zc1Var = (zc1) this.b;
+                org.telegram.messenger.ij ijVar = zc1Var.n;
+                if (ijVar != null && zc1Var.getParentActivity() != null && zc1Var.s != null) {
+                    i7 = ((org.telegram.ui.ActionBar.f2) zc1Var).currentAccount;
                     org.telegram.messenger.qp.s1(i7).C4(6, 0, org.telegram.messenger.ij.B0(ijVar.k), 0L, null);
-                    org.telegram.messenger.g0.i3(yc1Var.s, 25000L);
+                    org.telegram.messenger.g0.i3(zc1Var.s, 25000L);
                     break;
                 }
                 break;

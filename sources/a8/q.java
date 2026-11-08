@@ -9,12 +9,12 @@ import android.os.Parcelable;
 import android.util.Log;
 import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class q extends Binder implements IInterface {
     public final /* synthetic */ int a;
 
-    public static void H0(Parcel parcel) {
+    public static void h1(Parcel parcel) {
         int i7 = t7.a.a;
         int dataAvail = parcel.dataAvail();
         if (dataAvail <= 0) {
@@ -26,21 +26,21 @@ public abstract class q extends Binder implements IInterface {
         throw new BadParcelableException(sb2.toString());
     }
 
-    public abstract boolean I0(int i7, Parcel parcel, Parcel parcel2);
-
-    public abstract boolean J0(int i7, Parcel parcel, Parcel parcel2);
-
-    public boolean K0(int i7, Parcel parcel, Parcel parcel2) {
-        return false;
-    }
-
-    public abstract boolean L0(Parcel parcel, int i7);
-
     @Override // android.os.IInterface
     public IBinder asBinder() {
         int i7 = this.a;
         return this;
     }
+
+    public abstract boolean i1(int i7, Parcel parcel, Parcel parcel2);
+
+    public abstract boolean j1(int i7, Parcel parcel, Parcel parcel2);
+
+    public boolean k1(int i7, Parcel parcel, Parcel parcel2) {
+        return false;
+    }
+
+    public abstract boolean l1(Parcel parcel, int i7);
 
     /* JADX WARN: Code restructure failed: missing block: B:196:0x049e, code lost:
     
@@ -66,7 +66,7 @@ public abstract class q extends Binder implements IInterface {
                 } else if (super.onTransact(i7, parcel, parcel2, i10)) {
                     return true;
                 }
-                return K0(i7, parcel, parcel2);
+                return k1(i7, parcel, parcel2);
             case 2:
                 if (i7 > 16777215) {
                     z9 = super.onTransact(i7, parcel, parcel2, i10);
@@ -171,10 +171,10 @@ public abstract class q extends Binder implements IInterface {
                     kotlin.jvm.internal.j.e(status3, "status");
                     if (!status3.b() || createFromParcel4 == null) {
                         org.telegram.messenger.d1 d1Var = db.d.l;
-                        Log.w(d1Var.a, d1Var.b("Failed to get verification support info. Status: " + status3, new Object[0]));
+                        Log.w(d1Var.b, d1Var.b("Failed to get verification support info. Status: " + status3, new Object[0]));
                     } else {
                         org.telegram.messenger.d1 d1Var2 = db.d.l;
-                        Log.i(d1Var2.a, d1Var2.b("Verification support info received.", new Object[0]));
+                        Log.i(d1Var2.b, d1Var2.b("Verification support info received.", new Object[0]));
                         d1Var2.a("result: " + createFromParcel4, new Object[0]);
                     }
                     k8.a(status3, createFromParcel4, uVar.b);
@@ -230,28 +230,28 @@ public abstract class q extends Binder implements IInterface {
                 } else if (super.onTransact(i7, parcel, parcel2, i10)) {
                     return true;
                 }
-                return K0(i7, parcel, parcel2);
+                return k1(i7, parcel, parcel2);
             case 7:
                 if (i7 <= 16777215) {
                     parcel.enforceInterface(getInterfaceDescriptor());
                 } else if (super.onTransact(i7, parcel, parcel2, i10)) {
                     return true;
                 }
-                return J0(i7, parcel, parcel2);
+                return j1(i7, parcel, parcel2);
             case 8:
                 if (i7 <= 16777215) {
                     parcel.enforceInterface(getInterfaceDescriptor());
                 } else if (super.onTransact(i7, parcel, parcel2, i10)) {
                     return true;
                 }
-                return I0(i7, parcel, parcel2);
+                return i1(i7, parcel, parcel2);
             case 9:
                 if (i7 <= 16777215) {
                     parcel.enforceInterface(getInterfaceDescriptor());
                 } else if (super.onTransact(i7, parcel, parcel2, i10)) {
                     return true;
                 }
-                return K0(i7, parcel, parcel2);
+                return k1(i7, parcel, parcel2);
             case 10:
                 if (i7 > 16777215) {
                     z11 = super.onTransact(i7, parcel, parcel2, i10);
@@ -265,80 +265,80 @@ public abstract class q extends Binder implements IInterface {
                         case 1:
                             Status status4 = (Status) t7.a.a(parcel, Status.CREATOR);
                             j7.m mVar = (j7.m) t7.a.a(parcel, j7.m.CREATOR);
-                            H0(parcel);
-                            fVar.p0(status4, mVar);
+                            h1(parcel);
+                            fVar.H0(status4, mVar);
                             break;
                         case 2:
                             Status status5 = (Status) t7.a.a(parcel, Status.CREATOR);
-                            H0(parcel);
+                            h1(parcel);
                             kotlin.jvm.internal.j.e(status5, "status");
                             throw new UnsupportedOperationException();
                         case 3:
                             Status status6 = (Status) t7.a.a(parcel, Status.CREATOR);
-                            H0(parcel);
+                            h1(parcel);
                             kotlin.jvm.internal.j.e(status6, "status");
                             throw new UnsupportedOperationException();
                         case 4:
                             Status status7 = (Status) t7.a.a(parcel, Status.CREATOR);
-                            H0(parcel);
+                            h1(parcel);
                             kotlin.jvm.internal.j.e(status7, "status");
                             throw new UnsupportedOperationException();
                         case 5:
                             Status status8 = (Status) t7.a.a(parcel, Status.CREATOR);
-                            H0(parcel);
+                            h1(parcel);
                             kotlin.jvm.internal.j.e(status8, "status");
                             throw new UnsupportedOperationException();
                         case 6:
                             Status status9 = (Status) t7.a.a(parcel, Status.CREATOR);
-                            H0(parcel);
+                            h1(parcel);
                             kotlin.jvm.internal.j.e(status9, "status");
                             throw new UnsupportedOperationException();
                         case 7:
                             Status status10 = (Status) t7.a.a(parcel, Status.CREATOR);
                             j7.f fVar2 = (j7.f) t7.a.a(parcel, j7.f.CREATOR);
-                            H0(parcel);
-                            fVar.f0(status10, fVar2);
+                            h1(parcel);
+                            fVar.w0(status10, fVar2);
                             break;
                         case 8:
                             Status status11 = (Status) t7.a.a(parcel, Status.CREATOR);
-                            H0(parcel);
+                            h1(parcel);
                             kotlin.jvm.internal.j.e(status11, "status");
                             throw new UnsupportedOperationException();
                         case 9:
                             Status status12 = (Status) t7.a.a(parcel, Status.CREATOR);
                             j7.c cVar = (j7.c) t7.a.a(parcel, j7.c.CREATOR);
-                            H0(parcel);
-                            fVar.D0(status12, cVar);
+                            h1(parcel);
+                            fVar.a1(status12, cVar);
                             break;
                         case 10:
                             Status status13 = (Status) t7.a.a(parcel, Status.CREATOR);
                             j7.r rVar = (j7.r) t7.a.a(parcel, j7.r.CREATOR);
-                            H0(parcel);
-                            fVar.q0(status13, rVar);
+                            h1(parcel);
+                            fVar.I0(status13, rVar);
                             break;
                         case 11:
                             Status status14 = (Status) t7.a.a(parcel, Status.CREATOR);
-                            H0(parcel);
+                            h1(parcel);
                             kotlin.jvm.internal.j.e(status14, "status");
                             throw new UnsupportedOperationException();
                         case 12:
                             Status status15 = (Status) t7.a.a(parcel, Status.CREATOR);
-                            H0(parcel);
+                            h1(parcel);
                             kotlin.jvm.internal.j.e(status15, "status");
                             throw new UnsupportedOperationException();
                         case 13:
                             Status status16 = (Status) t7.a.a(parcel, Status.CREATOR);
-                            H0(parcel);
+                            h1(parcel);
                             kotlin.jvm.internal.j.e(status16, "status");
                             throw new UnsupportedOperationException();
                         case 14:
                             Status status17 = (Status) t7.a.a(parcel, Status.CREATOR);
-                            H0(parcel);
+                            h1(parcel);
                             kotlin.jvm.internal.j.e(status17, "status");
                             throw new UnsupportedOperationException();
                         case 15:
                             Status status18 = (Status) t7.a.a(parcel, Status.CREATOR);
-                            H0(parcel);
+                            h1(parcel);
                             kotlin.jvm.internal.j.e(status18, "status");
                             throw new UnsupportedOperationException();
                         default:
@@ -352,14 +352,14 @@ public abstract class q extends Binder implements IInterface {
                 } else if (super.onTransact(i7, parcel, parcel2, i10)) {
                     return true;
                 }
-                return L0(parcel, i7);
+                return l1(parcel, i7);
             case 12:
                 if (i7 <= 16777215) {
                     parcel.enforceInterface(getInterfaceDescriptor());
                 } else if (super.onTransact(i7, parcel, parcel2, i10)) {
                     return true;
                 }
-                return K0(i7, parcel, parcel2);
+                return k1(i7, parcel, parcel2);
             default:
                 return super.onTransact(i7, parcel, parcel2, i10);
         }

@@ -8,7 +8,7 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ac extends ya implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.ActionBar.f6 a;
@@ -31,10 +31,10 @@ public final class ac extends ya implements org.telegram.ui.ActionBar.a6 {
             textView.setBackground(org.telegram.ui.ActionBar.k6.h0((h & 16777215) | 419430400, 7, -1));
             this.h = textView.getBackground();
             com.google.android.recaptcha.internal.a.q(textView, 1, 14.0f);
-            org.telegram.messenger.camera.q.o(textView, i7, f6Var, null, 2131743886);
+            org.telegram.messenger.camera.q.o(textView, i7, f6Var, null, 2131743888);
             textView.setGravity(16);
             float f10 = z10 ? 34.0f : 12.0f;
-            boolean z11 = org.telegram.messenger.hd.a0;
+            boolean z11 = org.telegram.messenger.id.a0;
             c8.sa.a(textView, z11 ? 12.0f : f10, 8.0f, z11 ? f10 : 12.0f, 8.0f);
             addView(textView, c8.ha.i(-2.0f, -2.0f, 16, 8.0f, 0.0f, 8.0f, 0.0f));
         }

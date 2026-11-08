@@ -1,40 +1,55 @@
 package org.telegram.messenger;
 
-import android.location.Location;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ld implements q0.a {
+public final /* synthetic */ class ld implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ sd b;
+    public final /* synthetic */ rd c;
 
-    public /* synthetic */ ld(sd sdVar, int i7) {
+    public /* synthetic */ ld(sd sdVar, rd rdVar, int i7) {
         this.a = i7;
         this.b = sdVar;
+        this.c = rdVar;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.m((Location) obj);
+                sd sdVar = this.b;
+                ArrayList arrayList = sdVar.I;
+                rd rdVar = this.c;
+                arrayList.remove(rdVar);
+                sdVar.J.l(rdVar.a);
+                if (arrayList.isEmpty()) {
+                    sd.s();
+                }
+                qs.e().k(qs.D4, new Object[0]);
+                break;
+            case 1:
+                sd sdVar2 = this.b;
+                ArrayList arrayList2 = sdVar2.I;
+                rd rdVar2 = this.c;
+                arrayList2.remove(rdVar2);
+                sdVar2.J.l(rdVar2.a);
+                if (arrayList2.isEmpty()) {
+                    sd.s();
+                }
+                qs.e().k(qs.D4, new Object[0]);
                 break;
             default:
-                sd sdVar = this.b;
-                Integer num = (Integer) obj;
-                sdVar.getClass();
-                int intValue = num.intValue();
-                boolean z9 = true;
-                if (intValue == 0) {
-                    Utilities.d.c(new o10(3, sdVar, z9));
-                    break;
-                } else if (intValue == 1) {
-                    Utilities.d.c(new md(sdVar, num, 0));
-                    break;
-                } else if (intValue == 2) {
-                    Utilities.d.c(new id(sdVar, 4));
-                    break;
+                sd sdVar3 = this.b;
+                ArrayList arrayList3 = sdVar3.I;
+                rd rdVar3 = this.c;
+                arrayList3.remove(rdVar3);
+                sdVar3.J.l(rdVar3.a);
+                if (arrayList3.isEmpty()) {
+                    sd.s();
                 }
+                qs.e().k(qs.D4, new Object[0]);
                 break;
         }
     }

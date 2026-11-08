@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r00 implements org.telegram.ui.Components.dj0, r0.m, NativeInstance.AudioLevelsCallback, org.telegram.ui.ActionBar.e1, org.telegram.ui.ActionBar.m0 {
     public final /* synthetic */ int a;
@@ -124,9 +124,9 @@ public final /* synthetic */ class r00 implements org.telegram.ui.Components.dj0
             if (groupCallParticipant != null) {
                 if (z10Var.b) {
                     for (int i10 = 0; i10 < v10Var.getChildCount(); i10++) {
-                        org.telegram.ui.Components.g10 g10Var = (org.telegram.ui.Components.g10) v10Var.getChildAt(i10);
-                        if (org.telegram.messenger.ij.C1(g10Var.getParticipant().peer) == org.telegram.messenger.ij.C1(groupCallParticipant.peer)) {
-                            g10Var.setAmplitude(fArr[i7] * 15.0f);
+                        org.telegram.ui.Components.h10 h10Var = (org.telegram.ui.Components.h10) v10Var.getChildAt(i10);
+                        if (org.telegram.messenger.ij.C1(h10Var.getParticipant().peer) == org.telegram.messenger.ij.C1(groupCallParticipant.peer)) {
+                            h10Var.setAmplitude(fArr[i7] * 15.0f);
                         }
                     }
                 } else {

@@ -4,7 +4,7 @@ import android.text.Editable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class jm0 implements wm0 {
     public final /* synthetic */ int a;
@@ -29,15 +29,15 @@ public final class jm0 implements wm0 {
         switch (this.a) {
             case 0:
                 mm0 mm0Var = this.d;
-                org.telegram.ui.Components.kt ktVar = mm0Var.M;
+                org.telegram.ui.Components.lt ltVar = mm0Var.M;
                 mm0Var.a = editable;
-                ktVar.setText(editable);
+                ltVar.setText(editable);
                 break;
             default:
                 mm0 mm0Var2 = this.d;
-                org.telegram.ui.Components.kt ktVar2 = mm0Var2.M;
+                org.telegram.ui.Components.lt ltVar2 = mm0Var2.M;
                 mm0Var2.a = editable;
-                ktVar2.setText(editable);
+                ltVar2.setText(editable);
                 break;
         }
     }

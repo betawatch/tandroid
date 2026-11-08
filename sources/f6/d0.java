@@ -3,7 +3,7 @@ package f6;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class d0 extends j6.g {
     public final /* synthetic */ e0 b;
@@ -13,58 +13,22 @@ public final class d0 extends j6.g {
     }
 
     @Override // j6.h
-    public final void C0(String str, byte[] bArr) {
-        e0.H.b("IGNORING: Receive (type=binary, ns=%s) <%d bytes>", str, Integer.valueOf(bArr.length));
-    }
-
-    @Override // j6.h
-    public final void M(int i7) {
-        e0.k(this.b).post(new c0(this, i7, 0));
-    }
-
-    @Override // j6.h
-    public final void P(String str, String str2) {
-        e0.H.b("Receive (type=text, ns=%s) %s", str, str2);
-        e0.k(this.b).post(new a9.h(this, str, str2, 4));
-    }
-
-    @Override // j6.h
-    public final void S(int i7) {
-        this.b.i(i7);
-    }
-
-    @Override // j6.h
-    public final void U(long j3) {
-        e0.f(this.b, j3, 0);
-    }
-
-    @Override // j6.h
-    public final void g(int i7) {
-        e0.g(this.b, i7);
-    }
-
-    @Override // j6.h
-    public final void h(int i7) {
-        e0.k(this.b).post(new c0(this, i7, 1));
-    }
-
-    @Override // j6.h
-    public final void r0(j6.d dVar) {
+    public final void K0(j6.d dVar) {
         e0.k(this.b).post(new m9.u(18, this, dVar));
     }
 
     @Override // j6.h
-    public final void t0(j6.c cVar) {
+    public final void N0(j6.c cVar) {
         e0.k(this.b).post(new m9.u(19, this, cVar));
     }
 
     @Override // j6.h
-    public final void u0(int i7) {
+    public final void O0(int i7) {
         e0.k(this.b).post(new c0(this, i7, 3));
     }
 
     @Override // j6.h
-    public final void w0(d dVar, String str, String str2, boolean z9) {
+    public final void R0(d dVar, String str, String str2, boolean z9) {
         e0 e0Var = this.b;
         e0Var.u = dVar;
         e0Var.v = str;
@@ -80,6 +44,42 @@ public final class d0 extends j6.g {
                 throw th2;
             }
         }
+    }
+
+    @Override // j6.h
+    public final void W(int i7) {
+        e0.k(this.b).post(new c0(this, i7, 0));
+    }
+
+    @Override // j6.h
+    public final void X0(String str, byte[] bArr) {
+        e0.H.b("IGNORING: Receive (type=binary, ns=%s) <%d bytes>", str, Integer.valueOf(bArr.length));
+    }
+
+    @Override // j6.h
+    public final void Z(String str, String str2) {
+        e0.H.b("Receive (type=text, ns=%s) %s", str, str2);
+        e0.k(this.b).post(new a9.h(this, str, str2, 4));
+    }
+
+    @Override // j6.h
+    public final void c0(int i7) {
+        this.b.i(i7);
+    }
+
+    @Override // j6.h
+    public final void f0(long j3) {
+        e0.f(this.b, j3, 0);
+    }
+
+    @Override // j6.h
+    public final void g(int i7) {
+        e0.g(this.b, i7);
+    }
+
+    @Override // j6.h
+    public final void h(int i7) {
+        e0.k(this.b).post(new c0(this, i7, 1));
     }
 
     @Override // j6.h

@@ -10,7 +10,7 @@ import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ul0 extends org.telegram.ui.Components.oj0 {
     public final /* synthetic */ Context c;
@@ -99,7 +99,7 @@ public final class ul0 extends org.telegram.ui.Components.oj0 {
                 if (i7 != bm0Var.R) {
                     if (i7 != bm0Var.W) {
                         if (i7 == bm0Var.g0) {
-                            z8Var.setText(org.telegram.messenger.hd.M0(2131743741, null));
+                            z8Var.setText(org.telegram.messenger.id.M0(2131743743, null));
                             break;
                         }
                     } else {
@@ -109,9 +109,9 @@ public final class ul0 extends org.telegram.ui.Components.oj0 {
                     }
                 } else {
                     if (i11 == 1) {
-                        M0 = org.telegram.messenger.hd.M0(hm0Var.a ? 2131752434 : 2131743753, null);
+                        M0 = org.telegram.messenger.id.M0(hm0Var.a ? 2131752434 : 2131743755, null);
                     } else {
-                        M0 = org.telegram.messenger.hd.M0(hm0Var.a ? 2131752322 : 2131743735, null);
+                        M0 = org.telegram.messenger.id.M0(hm0Var.a ? 2131752322 : 2131743737, null);
                     }
                     z8Var.setText(org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(M0, new org.telegram.ui.Components.r2(this, i11, 21)), true));
                     break;
@@ -126,14 +126,14 @@ public final class ul0 extends org.telegram.ui.Components.oj0 {
                 org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.d6, m8Var, hm0Var.getResourceProvider());
                 m8Var.updateColors();
                 if (i7 == bm0Var.V) {
-                    m8Var.k(org.telegram.messenger.hd.M0(hm0Var.a ? 2131752324 : 2131743738, null), false);
+                    m8Var.k(org.telegram.messenger.id.M0(hm0Var.a ? 2131752324 : 2131743740, null), false);
                     break;
                 }
                 break;
             case 7:
                 org.telegram.ui.Cells.n4 n4Var = (org.telegram.ui.Cells.n4) view;
                 if (i7 == bm0Var.a0) {
-                    n4Var.c(org.telegram.messenger.hd.M0(2131743742, null), false);
+                    n4Var.c(org.telegram.messenger.id.M0(2131743744, null), false);
                 }
                 org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.d6, n4Var, hm0Var.getResourceProvider());
                 break;
@@ -156,7 +156,7 @@ public final class ul0 extends org.telegram.ui.Components.oj0 {
                 hashMap.clear();
                 i10 = ((org.telegram.ui.ActionBar.f2) hm0Var).currentAccount;
                 ArrayList arrayList3 = bi.ea.y(i10, false).I;
-                arrayList2.add(org.telegram.messenger.hd.M0(2131749945, null));
+                arrayList2.add(org.telegram.messenger.id.M0(2131749947, null));
                 int i15 = 0;
                 int i16 = 0;
                 while (i15 < arrayList3.size()) {
@@ -194,16 +194,16 @@ public final class ul0 extends org.telegram.ui.Components.oj0 {
                 ((zl0) view).updateColors();
                 break;
             case 12:
-                zh.z0 z0Var = (zh.z0) view;
+                zh.y0 y0Var = (zh.y0) view;
                 int i17 = i7 - bm0Var.b0;
                 if (bm0Var.J != null && i17 >= 0 && i17 < arrayList.size()) {
                     TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) arrayList.get(i17);
-                    z0Var.h(tL_starGiftUnique2, false, false, false, true, false);
+                    y0Var.h(tL_starGiftUnique2, false, false, false, true, false);
                     TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible2 = bm0Var.r;
                     if ((tL_emojiStatusCollectible2 == null || tL_emojiStatusCollectible2.collectible_id != tL_starGiftUnique2.id) && ((tL_peerColorCollectible2 = bm0Var.s) == null || tL_peerColorCollectible2.collectible_id != tL_starGiftUnique2.id)) {
                         z9 = false;
                     }
-                    z0Var.f(z9, false);
+                    y0Var.f(z9, false);
                     break;
                 }
                 break;
@@ -280,11 +280,11 @@ public final class ul0 extends org.telegram.ui.Components.oj0 {
             case 9:
                 Context context4 = this.c;
                 f6Var4 = ((org.telegram.ui.ActionBar.f2) hm0Var).resourceProvider;
-                org.telegram.ui.Components.lz lzVar = new org.telegram.ui.Components.lz(context4, f6Var4);
-                lzVar.setIsSingleCell(true);
-                lzVar.setViewType(35);
-                lzVar.setTag(-33024);
-                view = lzVar;
+                org.telegram.ui.Components.mz mzVar = new org.telegram.ui.Components.mz(context4, f6Var4);
+                mzVar.setIsSingleCell(true);
+                mzVar.setViewType(35);
+                mzVar.setTag(-33024);
+                view = mzVar;
                 view2 = view;
                 break;
             case 10:
@@ -300,9 +300,9 @@ public final class ul0 extends org.telegram.ui.Components.oj0 {
                 Context context5 = bm0Var.getContext();
                 i11 = ((org.telegram.ui.ActionBar.f2) hm0Var).currentAccount;
                 f6Var5 = ((org.telegram.ui.ActionBar.f2) hm0Var).resourceProvider;
-                View z0Var = new zh.z0(i11, context5, f6Var5);
-                z0Var.setTag(-33024);
-                view = z0Var;
+                View y0Var = new zh.y0(i11, context5, f6Var5);
+                y0Var.setTag(-33024);
+                view = y0Var;
                 view2 = view;
                 break;
         }
@@ -339,16 +339,16 @@ public final class ul0 extends org.telegram.ui.Components.oj0 {
             return;
         }
         if (i7 == 12) {
-            zh.z0 z0Var = (zh.z0) view;
+            zh.y0 y0Var = (zh.y0) view;
             int b11 = d1Var.b() - bm0Var.b0;
             if (bm0Var.J != null && b11 >= 0 && b11 < arrayList.size()) {
                 TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) arrayList.get(b11);
-                z0Var.h(tL_starGiftUnique2, false, false, false, true, false);
+                y0Var.h(tL_starGiftUnique2, false, false, false, true, false);
                 TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible2 = bm0Var.r;
                 if ((tL_emojiStatusCollectible2 == null || tL_emojiStatusCollectible2.collectible_id != tL_starGiftUnique2.id) && ((tL_peerColorCollectible = bm0Var.s) == null || tL_peerColorCollectible.collectible_id != tL_starGiftUnique2.id)) {
                     z9 = false;
                 }
-                z0Var.f(z9, false);
+                y0Var.f(z9, false);
             }
         }
     }

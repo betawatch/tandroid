@@ -6,9 +6,9 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l4 implements Runnable {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class l4 implements Runnable {
                     textView.setPadding(org.telegram.messenger.g0.L(14.0f), 0, org.telegram.messenger.g0.L(14.0f), 0);
                     textView.setTextSize(1, 14.0f);
                     textView.setTag(0);
-                    textView.setText(hd.M0(2131747671, "PaintDelete"));
+                    textView.setText(id.M0(2131747673, "PaintDelete"));
                     textView.setOnClickListener(new View.OnClickListener() { // from class: fi.q4
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
@@ -197,7 +197,7 @@ public final /* synthetic */ class l4 implements Runnable {
                     textView2.setTextSize(1, 14.0f);
                     if ((!x4Var.c() || x4Var.d) && o5Var.c2 <= 0) {
                         textView2.setTag(1);
-                        textView2.setText(hd.M0(2131747669, null));
+                        textView2.setText(id.M0(2131747671, null));
                         final int i13 = 2;
                         textView2.setOnClickListener(new View.OnClickListener() { // from class: fi.q4
                             @Override // android.view.View.OnClickListener
@@ -331,7 +331,7 @@ public final /* synthetic */ class l4 implements Runnable {
                         });
                     } else {
                         textView2.setTag(3);
-                        textView2.setText(hd.M0(2131747434, null));
+                        textView2.setText(id.M0(2131747436, null));
                         textView2.setOnClickListener(new View.OnClickListener() { // from class: fi.q4
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
@@ -466,7 +466,7 @@ public final /* synthetic */ class l4 implements Runnable {
                     linearLayout.addView(textView2, c8.ha.o(-2, 44));
                     f10 = 14.0f;
                 } else if (jVar instanceof tg.n0) {
-                    TextView e02 = o5Var.e0(1, hd.M0(2131747669, null));
+                    TextView e02 = o5Var.e0(1, id.M0(2131747671, null));
                     f10 = 14.0f;
                     e02.setOnClickListener(new View.OnClickListener() { // from class: fi.q4
                         @Override // android.view.View.OnClickListener
@@ -602,7 +602,7 @@ public final /* synthetic */ class l4 implements Runnable {
                 } else {
                     f10 = 14.0f;
                     if (jVar instanceof tg.k0) {
-                        TextView e03 = o5Var.e0(1, hd.M0(2131747669, null));
+                        TextView e03 = o5Var.e0(1, id.M0(2131747671, null));
                         final int i14 = 4;
                         e03.setOnClickListener(new View.OnClickListener() { // from class: fi.q4
                             @Override // android.view.View.OnClickListener
@@ -738,7 +738,7 @@ public final /* synthetic */ class l4 implements Runnable {
                     }
                 }
                 if ((jVar instanceof tg.d2) || (jVar instanceof tg.r1) || (jVar instanceof tg.n1) || (jVar instanceof tg.q1)) {
-                    TextView e04 = o5Var.e0(4, hd.M0(2131750691, null));
+                    TextView e04 = o5Var.e0(4, id.M0(2131750691, null));
                     final int i15 = 5;
                     e04.setOnClickListener(new View.OnClickListener() { // from class: fi.q4
                         @Override // android.view.View.OnClickListener
@@ -884,7 +884,7 @@ public final /* synthetic */ class l4 implements Runnable {
                     textView3.setPadding(org.telegram.messenger.g0.L(f10), 0, org.telegram.messenger.g0.L(f10), 0);
                     textView3.setTextSize(1, f10);
                     textView3.setTag(2);
-                    textView3.setText(hd.M0(2131747674, null));
+                    textView3.setText(id.M0(2131747676, null));
                     final int i16 = 6;
                     textView3.setOnClickListener(new View.OnClickListener() { // from class: fi.q4
                         @Override // android.view.View.OnClickListener
@@ -1028,7 +1028,7 @@ public final /* synthetic */ class l4 implements Runnable {
                     textView4.setPadding(org.telegram.messenger.g0.L(14.0f), 0, org.telegram.messenger.g0.L(14.0f), 0);
                     textView4.setTextSize(1, 14.0f);
                     textView4.setTag(2);
-                    textView4.setText(hd.M0(2131747670, "PaintDuplicate"));
+                    textView4.setText(id.M0(2131747672, "PaintDuplicate"));
                     final int i17 = 7;
                     textView4.setOnClickListener(new View.OnClickListener() { // from class: fi.q4
                         @Override // android.view.View.OnClickListener

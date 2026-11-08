@@ -12,7 +12,7 @@ import c8.ha;
 import java.util.HashSet;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.a6;
 import org.telegram.ui.ActionBar.f6;
@@ -21,7 +21,7 @@ import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.wo;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class n1 extends FrameLayout implements a6 {
     public final w8 a;
@@ -52,7 +52,7 @@ public final class n1 extends FrameLayout implements a6 {
         r6.V(textView, k6.G6, f6Var);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setTextSize(1, 16.0f);
-        boolean z9 = hd.a0;
+        boolean z9 = id.a0;
         addView(textView, ha.d(-1, -2.0f, 7, z9 ? 40.0f : 78.0f, 10.33f, z9 ? 78.0f : 40.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.d = textView2;
@@ -60,7 +60,7 @@ public final class n1 extends FrameLayout implements a6 {
         textView2.setEllipsize(truncateAt);
         r6.V(textView2, k6.z6, f6Var);
         textView2.setTextSize(1, 15.0f);
-        boolean z10 = hd.a0;
+        boolean z10 = id.a0;
         addView(textView2, ha.d(-1, -2.0f, 7, z10 ? 40.0f : 78.0f, 32.0f, z10 ? 78.0f : 40.0f, 0.0f));
         wo woVar = new wo(21, getContext(), f6Var);
         this.e = woVar;
@@ -72,7 +72,7 @@ public final class n1 extends FrameLayout implements a6 {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        float measuredWidth = hd.a0 ? getMeasuredWidth() - org.telegram.messenger.g0.L(65.0f) : org.telegram.messenger.g0.L(9.0f);
+        float measuredWidth = id.a0 ? getMeasuredWidth() - org.telegram.messenger.g0.L(65.0f) : org.telegram.messenger.g0.L(9.0f);
         float L = org.telegram.messenger.g0.L(11.33f);
         float L2 = org.telegram.messenger.g0.L(56.0f);
         float L3 = org.telegram.messenger.g0.L(56.0f);
@@ -86,7 +86,7 @@ public final class n1 extends FrameLayout implements a6 {
             if (W0 == null) {
                 W0 = k6.k0;
             }
-            canvas.drawRect(org.telegram.messenger.g0.L(hd.a0 ? 0.0f : 78.0f), getMeasuredHeight() - 1, getWidth() - org.telegram.messenger.g0.L(hd.a0 ? 78.0f : 0.0f), getMeasuredHeight(), W0);
+            canvas.drawRect(org.telegram.messenger.g0.L(id.a0 ? 0.0f : 78.0f), getMeasuredHeight() - 1, getWidth() - org.telegram.messenger.g0.L(id.a0 ? 78.0f : 0.0f), getMeasuredHeight(), W0);
         }
     }
 
@@ -103,9 +103,9 @@ public final class n1 extends FrameLayout implements a6 {
         Path path = this.f;
         path.rewind();
         float measuredHeight = getMeasuredHeight() / 2.0f;
-        float N = hd.a0 ? org.telegram.messenger.g0.N(29.66f) : getMeasuredWidth() - org.telegram.messenger.g0.N(24.33f);
+        float N = id.a0 ? org.telegram.messenger.g0.N(29.66f) : getMeasuredWidth() - org.telegram.messenger.g0.N(24.33f);
         path.moveTo(N, measuredHeight - org.telegram.messenger.g0.N(5.66f));
-        path.lineTo((org.telegram.messenger.g0.N(5.33f) * (hd.a0 ? -1 : 1)) + N, measuredHeight);
+        path.lineTo((org.telegram.messenger.g0.N(5.33f) * (id.a0 ? -1 : 1)) + N, measuredHeight);
         path.lineTo(N, org.telegram.messenger.g0.N(5.66f) + measuredHeight);
     }
 

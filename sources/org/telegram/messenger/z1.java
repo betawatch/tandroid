@@ -13,7 +13,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z1 implements Runnable {
     public final /* synthetic */ int a;
@@ -174,7 +174,7 @@ public final /* synthetic */ class z1 implements Runnable {
                     long j10 = jArr[r15];
                     yr messagesStorage = f2Var.getMessagesStorage();
                     messagesStorage.getClass();
-                    messagesStorage.I(new zq(messagesStorage, this.b, this.c, j10, 4));
+                    messagesStorage.I(new yq(messagesStorage, this.b, this.c, j10, 4));
                     r15++;
                 }
                 g0.h3(runnable);
@@ -272,7 +272,7 @@ public final /* synthetic */ class z1 implements Runnable {
                 yr yrVar2 = (yr) obj3;
                 long j11 = this.c;
                 TLRPC.TL_updates_channelDifferenceTooLong tL_updates_channelDifferenceTooLong = (TLRPC.TL_updates_channelDifferenceTooLong) obj2;
-                nk nkVar = (nk) obj;
+                mk mkVar = (mk) obj;
                 long j12 = -j11;
                 try {
                     try {
@@ -335,7 +335,7 @@ public final /* synthetic */ class z1 implements Runnable {
                                     e = e13;
                                 }
                                 try {
-                                    g0.h3(new hr(yrVar2, j12, tL_updates_channelDifferenceTooLong, 0));
+                                    g0.h3(new ir(yrVar2, j12, tL_updates_channelDifferenceTooLong, 0));
                                     if (z11) {
                                         i10 = i12;
                                         if (i10 == 1) {
@@ -358,7 +358,7 @@ public final /* synthetic */ class z1 implements Runnable {
                                             if (sQLiteCursor != null) {
                                                 sQLiteCursor.dispose();
                                             }
-                                            nkVar.run();
+                                            mkVar.run();
                                             return;
                                         }
                                     }
@@ -369,7 +369,7 @@ public final /* synthetic */ class z1 implements Runnable {
                                     yrVar2.o(e, z9);
                                     if (sQLiteCursor != null) {
                                     }
-                                    nkVar.run();
+                                    mkVar.run();
                                     return;
                                 }
                             } catch (Throwable th5) {
@@ -399,7 +399,7 @@ public final /* synthetic */ class z1 implements Runnable {
                     e = e18;
                     sQLiteCursor = null;
                 }
-                nkVar.run();
+                mkVar.run();
                 return;
             case 4:
                 a();
@@ -548,13 +548,13 @@ public final /* synthetic */ class z1 implements Runnable {
         this.c = j3;
     }
 
-    public /* synthetic */ z1(yr yrVar, long j3, int i7, TLRPC.TL_updates_channelDifferenceTooLong tL_updates_channelDifferenceTooLong, nk nkVar) {
+    public /* synthetic */ z1(yr yrVar, long j3, int i7, TLRPC.TL_updates_channelDifferenceTooLong tL_updates_channelDifferenceTooLong, mk mkVar) {
         this.a = 3;
         this.d = yrVar;
         this.c = j3;
         this.b = i7;
         this.e = tL_updates_channelDifferenceTooLong;
-        this.f = nkVar;
+        this.f = mkVar;
     }
 
     public /* synthetic */ z1(yr yrVar, ArrayList arrayList, ArrayList arrayList2, int i7, long j3) {

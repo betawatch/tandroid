@@ -12,7 +12,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class oa0 extends org.telegram.ui.Components.rt0 implements r0.l {
     public final /* synthetic */ int f0 = 1;
@@ -21,27 +21,27 @@ public final class oa0 extends org.telegram.ui.Components.rt0 implements r0.l {
     public final /* synthetic */ org.telegram.ui.ActionBar.f2 i0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oa0(org.telegram.ui.Wallet.y5 y5Var, Context context) {
+    public oa0(org.telegram.ui.Wallet.x5 x5Var, Context context) {
         super(context, null);
-        this.i0 = y5Var;
+        this.i0 = x5Var;
         this.g0 = new e2.r0();
     }
 
     public void X() {
         long uptimeMillis = SystemClock.uptimeMillis();
         MotionEvent obtain = MotionEvent.obtain(uptimeMillis, uptimeMillis, 3, 0.0f, 0.0f, 0);
-        org.telegram.ui.Wallet.u5 u5Var = ((org.telegram.ui.Wallet.y5) this.i0).q0;
-        if (u5Var != null) {
-            u5Var.e(obtain);
+        org.telegram.ui.Wallet.t5 t5Var = ((org.telegram.ui.Wallet.x5) this.i0).q0;
+        if (t5Var != null) {
+            t5Var.e(obtain);
         }
         super.dispatchTouchEvent(obtain);
         obtain.recycle();
     }
 
     public boolean Y() {
-        org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) this.i0;
-        bi.t tVar = y5Var.n0;
-        return tVar != null && (tVar.getParent() instanceof View) && ((View) y5Var.n0.getParent()).getTop() <= y5Var.a.getPaddingTop();
+        org.telegram.ui.Wallet.x5 x5Var = (org.telegram.ui.Wallet.x5) this.i0;
+        bi.t tVar = x5Var.n0;
+        return tVar != null && (tVar.getParent() instanceof View) && ((View) x5Var.n0.getParent()).getTop() <= x5Var.a.getPaddingTop();
     }
 
     /* JADX WARN: Finally extract failed */
@@ -82,162 +82,162 @@ public final class oa0 extends org.telegram.ui.Components.rt0 implements r0.l {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.Wallet.u5 u5Var;
-        org.telegram.ui.Wallet.c6 c6Var;
+        org.telegram.ui.Wallet.t5 t5Var;
+        org.telegram.ui.Wallet.b6 b6Var;
         float f10;
         float f11;
-        org.telegram.ui.Wallet.b8 b8Var;
+        org.telegram.ui.Wallet.a8 a8Var;
         boolean z9;
         boolean z10;
         boolean z11;
-        org.telegram.ui.Wallet.b8 b8Var2;
+        org.telegram.ui.Wallet.a8 a8Var2;
         float f12;
         Iterator it;
-        org.telegram.ui.Wallet.b8 b8Var3;
-        org.telegram.ui.Wallet.b8 b8Var4;
+        org.telegram.ui.Wallet.a8 a8Var3;
+        org.telegram.ui.Wallet.a8 a8Var4;
         int i7;
         switch (this.f0) {
             case 1:
-                org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) this.i0;
-                org.telegram.ui.Wallet.c8 c8Var = y5Var.j0;
+                org.telegram.ui.Wallet.x5 x5Var = (org.telegram.ui.Wallet.x5) this.i0;
+                org.telegram.ui.Wallet.b8 b8Var = x5Var.j0;
                 int i10 = 1;
-                if (c8Var != null) {
-                    org.telegram.ui.Wallet.u7 u7Var = c8Var.B1;
-                    LinkedHashMap linkedHashMap = c8Var.f;
-                    org.telegram.ui.Wallet.u7 u7Var2 = c8Var.A1;
+                if (b8Var != null) {
+                    org.telegram.ui.Wallet.t7 t7Var = b8Var.B1;
+                    LinkedHashMap linkedHashMap = b8Var.f;
+                    org.telegram.ui.Wallet.t7 t7Var2 = b8Var.A1;
                     boolean z12 = false;
-                    if (!c8Var.b && ((c6Var = c8Var.c.D) == null || !c6Var.a || c8Var.p0 || c8Var.q0)) {
-                        if (c8Var.a1 || c8Var.s0 || !c8Var.A()) {
-                            z12 = c8Var.p0;
+                    if (!b8Var.b && ((b6Var = b8Var.c.D) == null || !b6Var.a || b8Var.p0 || b8Var.q0)) {
+                        if (b8Var.a1 || b8Var.s0 || !b8Var.A()) {
+                            z12 = b8Var.p0;
                         } else {
-                            if (c8Var.h1) {
-                                c8Var.f0();
+                            if (b8Var.h1) {
+                                b8Var.f0();
                             }
                             int actionMasked = motionEvent.getActionMasked();
                             if (actionMasked == 0) {
-                                c8Var.removeCallbacks(u7Var2);
-                                c8Var.removeCallbacks(u7Var);
-                                c8Var.g0 = null;
-                                c8Var.o0 = false;
-                                c8Var.i0 = false;
-                                c8Var.n0 = false;
-                                c8Var.m0 = false;
-                                c8Var.q0 = false;
-                                c8Var.p0 = false;
-                                c8Var.v0 = motionEvent.getPointerId(0);
+                                b8Var.removeCallbacks(t7Var2);
+                                b8Var.removeCallbacks(t7Var);
+                                b8Var.g0 = null;
+                                b8Var.o0 = false;
+                                b8Var.i0 = false;
+                                b8Var.n0 = false;
+                                b8Var.m0 = false;
+                                b8Var.q0 = false;
+                                b8Var.p0 = false;
+                                b8Var.v0 = motionEvent.getPointerId(0);
                                 float x10 = motionEvent.getX();
                                 float y10 = motionEvent.getY();
                                 float[] fArr = {x10, y10};
-                                c8Var.s.mapPoints(fArr);
-                                org.telegram.ui.Wallet.b8 b8Var5 = c8Var.h0;
-                                if (b8Var5 != null && b8Var5.H == 2) {
-                                    float P = (c8Var.P(b8Var5) * 0.5f) + org.telegram.messenger.g0.L(9.0f);
-                                    double radians = Math.toRadians(b8Var5.i.a);
+                                b8Var.s.mapPoints(fArr);
+                                org.telegram.ui.Wallet.a8 a8Var5 = b8Var.h0;
+                                if (a8Var5 != null && a8Var5.H == 2) {
+                                    float P = (b8Var.P(a8Var5) * 0.5f) + org.telegram.messenger.g0.L(9.0f);
+                                    double radians = Math.toRadians(a8Var5.i.a);
                                     int i11 = -1;
                                     while (i11 <= i10) {
                                         int i12 = i10;
                                         float f13 = i11 * P;
                                         double d = radians;
-                                        float[] L = c8Var.L((((float) Math.cos(d)) * f13) + b8Var5.e.a + b8Var5.n.a, (f13 * ((float) Math.sin(d))) + b8Var5.f.a + b8Var5.o.a);
+                                        float[] L = b8Var.L((((float) Math.cos(d)) * f13) + a8Var5.e.a + a8Var5.n.a, (f13 * ((float) Math.sin(d))) + a8Var5.f.a + a8Var5.o.a);
                                         if (Utilities.t(x10, y10, L[0], L[i12 == true ? 1 : 0]) < org.telegram.messenger.g0.L(22.0f)) {
                                             z11 = i12 == true ? 1 : 0;
                                             z10 = i12;
-                                            c8Var.i0 = z11;
+                                            b8Var.i0 = z11;
                                             if (z11) {
                                                 float f14 = fArr[0];
                                                 float f15 = fArr[z10];
                                                 Iterator it2 = linkedHashMap.values().iterator();
-                                                org.telegram.ui.Wallet.b8 b8Var6 = null;
+                                                org.telegram.ui.Wallet.a8 a8Var6 = null;
                                                 while (it2.hasNext()) {
-                                                    org.telegram.ui.Wallet.b8 b8Var7 = (org.telegram.ui.Wallet.b8) it2.next();
-                                                    if (b8Var7.H != 2 || Utilities.t(f14, f15, b8Var7.e.a, b8Var7.f.a) >= c8Var.P(b8Var7) * 0.44f) {
+                                                    org.telegram.ui.Wallet.a8 a8Var7 = (org.telegram.ui.Wallet.a8) it2.next();
+                                                    if (a8Var7.H != 2 || Utilities.t(f14, f15, a8Var7.e.a, a8Var7.f.a) >= b8Var.P(a8Var7) * 0.44f) {
                                                         f12 = f15;
                                                         it = it2;
                                                     } else {
-                                                        if (b8Var6 != null) {
+                                                        if (a8Var6 != null) {
                                                             f12 = f15;
                                                             it = it2;
-                                                            if (b8Var7.I <= b8Var6.I) {
+                                                            if (a8Var7.I <= a8Var6.I) {
                                                             }
                                                         } else {
                                                             f12 = f15;
                                                             it = it2;
                                                         }
-                                                        b8Var6 = b8Var7;
+                                                        a8Var6 = a8Var7;
                                                     }
                                                     f15 = f12;
                                                     it2 = it;
                                                 }
-                                                b8Var2 = b8Var6;
+                                                a8Var2 = a8Var6;
                                             } else {
-                                                b8Var2 = c8Var.h0;
+                                                a8Var2 = b8Var.h0;
                                             }
-                                            c8Var.g0 = b8Var2;
-                                            if (!c8Var.i0 && b8Var2 != c8Var.h0) {
-                                                c8Var.h0 = null;
-                                                c8Var.f0();
+                                            b8Var.g0 = a8Var2;
+                                            if (!b8Var.i0 && a8Var2 != b8Var.h0) {
+                                                b8Var.h0 = null;
+                                                b8Var.f0();
                                             }
-                                            b8Var3 = c8Var.g0;
-                                            c8Var.u0 = b8Var3 == null ? z10 : false;
-                                            if (b8Var3 == null) {
+                                            a8Var3 = b8Var.g0;
+                                            b8Var.u0 = a8Var3 == null ? z10 : false;
+                                            if (a8Var3 == null) {
                                                 Iterator it3 = linkedHashMap.values().iterator();
                                                 while (true) {
                                                     if (it3.hasNext()) {
-                                                        org.telegram.ui.Wallet.b8 b8Var8 = (org.telegram.ui.Wallet.b8) it3.next();
-                                                        RectF Z = c8Var.Z(b8Var8);
+                                                        org.telegram.ui.Wallet.a8 a8Var8 = (org.telegram.ui.Wallet.a8) it3.next();
+                                                        RectF Z = b8Var.Z(a8Var8);
                                                         if (Z != null && Z.contains(x10, y10)) {
-                                                            if (org.telegram.ui.Wallet.c8.b(b8Var8)) {
-                                                                c8Var.r0 = (Math.abs(x10 - Z.centerX()) >= Z.width() * 0.35f || Math.abs(y10 - Z.centerY()) >= Z.height() * 0.35f) ? false : z10;
-                                                                c8Var.g0 = b8Var8;
+                                                            if (org.telegram.ui.Wallet.b8.b(a8Var8)) {
+                                                                b8Var.r0 = (Math.abs(x10 - Z.centerX()) >= Z.width() * 0.35f || Math.abs(y10 - Z.centerY()) >= Z.height() * 0.35f) ? false : z10;
+                                                                b8Var.g0 = a8Var8;
                                                             }
                                                         }
                                                     }
                                                 }
                                             }
-                                            b8Var4 = c8Var.g0;
-                                            if (b8Var4 == null && ((i7 = b8Var4.H) == 0 || i7 == 2)) {
-                                                c8Var.x0 = x10;
-                                                c8Var.y0 = y10;
+                                            a8Var4 = b8Var.g0;
+                                            if (a8Var4 == null && ((i7 = a8Var4.H) == 0 || i7 == 2)) {
+                                                b8Var.x0 = x10;
+                                                b8Var.y0 = y10;
                                                 SystemClock.uptimeMillis();
-                                                org.telegram.ui.Wallet.b8 b8Var9 = c8Var.g0;
-                                                c8Var.K0 = b8Var9.H;
-                                                c8Var.G0 = b8Var9.e.b;
-                                                c8Var.H0 = b8Var9.f.b;
-                                                c8Var.J0 = b8Var9.i.b;
-                                                c8Var.I0 = b8Var9.h.b;
-                                                VelocityTracker velocityTracker = c8Var.O0;
+                                                org.telegram.ui.Wallet.a8 a8Var9 = b8Var.g0;
+                                                b8Var.K0 = a8Var9.H;
+                                                b8Var.G0 = a8Var9.e.b;
+                                                b8Var.H0 = a8Var9.f.b;
+                                                b8Var.J0 = a8Var9.i.b;
+                                                b8Var.I0 = a8Var9.h.b;
+                                                VelocityTracker velocityTracker = b8Var.O0;
                                                 if (velocityTracker != null) {
                                                     velocityTracker.recycle();
                                                 }
                                                 VelocityTracker obtain = VelocityTracker.obtain();
-                                                c8Var.O0 = obtain;
+                                                b8Var.O0 = obtain;
                                                 obtain.addMovement(motionEvent);
-                                                if (c8Var.i0) {
-                                                    c8Var.B0 = Float.NaN;
-                                                    c8Var.E0 = Float.NaN;
-                                                    c8Var.C0 = 0.0f;
-                                                    org.telegram.ui.Wallet.b8 b8Var10 = c8Var.g0;
-                                                    c8Var.D0 = b8Var10.i.b;
-                                                    c8Var.L0 = false;
-                                                    long j3 = c8Var.N0 + 1;
-                                                    c8Var.N0 = j3;
-                                                    b8Var10.I = j3;
-                                                    c8Var.M(b8Var10, x10, y10);
+                                                if (b8Var.i0) {
+                                                    b8Var.B0 = Float.NaN;
+                                                    b8Var.E0 = Float.NaN;
+                                                    b8Var.C0 = 0.0f;
+                                                    org.telegram.ui.Wallet.a8 a8Var10 = b8Var.g0;
+                                                    b8Var.D0 = a8Var10.i.b;
+                                                    b8Var.L0 = false;
+                                                    long j3 = b8Var.N0 + 1;
+                                                    b8Var.N0 = j3;
+                                                    a8Var10.I = j3;
+                                                    b8Var.M(a8Var10, x10, y10);
                                                 } else {
-                                                    c8Var.postDelayed(u7Var2, c8Var.u0 ? 450L : 500L);
+                                                    b8Var.postDelayed(t7Var2, b8Var.u0 ? 450L : 500L);
                                                 }
-                                                if (c8Var.u0) {
+                                                if (b8Var.u0) {
                                                     boolean z13 = z10;
-                                                    c8Var.p0 = z13;
-                                                    c8Var.getParent().requestDisallowInterceptTouchEvent(z13);
-                                                    c8Var.f0();
+                                                    b8Var.p0 = z13;
+                                                    b8Var.getParent().requestDisallowInterceptTouchEvent(z13);
+                                                    b8Var.f0();
                                                     z12 = z13;
                                                 } else {
-                                                    c8Var.q0 = z10;
-                                                    c8Var.postDelayed(u7Var, 170L);
+                                                    b8Var.q0 = z10;
+                                                    b8Var.postDelayed(t7Var, 170L);
                                                 }
                                             } else {
-                                                c8Var.g0 = null;
+                                                b8Var.g0 = null;
                                             }
                                             z12 = false;
                                         } else {
@@ -249,86 +249,86 @@ public final class oa0 extends org.telegram.ui.Components.rt0 implements r0.l {
                                 }
                                 z10 = i10;
                                 z11 = false;
-                                c8Var.i0 = z11;
+                                b8Var.i0 = z11;
                                 if (z11) {
                                 }
-                                c8Var.g0 = b8Var2;
-                                if (!c8Var.i0) {
-                                    c8Var.h0 = null;
-                                    c8Var.f0();
+                                b8Var.g0 = a8Var2;
+                                if (!b8Var.i0) {
+                                    b8Var.h0 = null;
+                                    b8Var.f0();
                                 }
-                                b8Var3 = c8Var.g0;
-                                c8Var.u0 = b8Var3 == null ? z10 : false;
-                                if (b8Var3 == null) {
+                                a8Var3 = b8Var.g0;
+                                b8Var.u0 = a8Var3 == null ? z10 : false;
+                                if (a8Var3 == null) {
                                 }
-                                b8Var4 = c8Var.g0;
-                                if (b8Var4 == null) {
+                                a8Var4 = b8Var.g0;
+                                if (a8Var4 == null) {
                                 }
-                                c8Var.g0 = null;
+                                b8Var.g0 = null;
                                 z12 = false;
                             } else {
-                                if (c8Var.p0 || c8Var.q0) {
-                                    VelocityTracker velocityTracker2 = c8Var.O0;
+                                if (b8Var.p0 || b8Var.q0) {
+                                    VelocityTracker velocityTracker2 = b8Var.O0;
                                     if (velocityTracker2 != null) {
                                         velocityTracker2.addMovement(motionEvent);
                                     }
-                                    int findPointerIndex = motionEvent.findPointerIndex(c8Var.v0);
-                                    boolean z14 = actionMasked == 6 && motionEvent.getPointerId(motionEvent.getActionIndex()) == c8Var.v0;
+                                    int findPointerIndex = motionEvent.findPointerIndex(b8Var.v0);
+                                    boolean z14 = actionMasked == 6 && motionEvent.getPointerId(motionEvent.getActionIndex()) == b8Var.v0;
                                     if (findPointerIndex >= 0) {
                                         float x11 = motionEvent.getX(findPointerIndex);
                                         float y11 = motionEvent.getY(findPointerIndex);
-                                        if (c8Var.q0) {
-                                            if (actionMasked != 2 || Utilities.t(x11, y11, c8Var.x0, c8Var.y0) <= ViewConfiguration.get(c8Var.getContext()).getScaledTouchSlop()) {
+                                        if (b8Var.q0) {
+                                            if (actionMasked != 2 || Utilities.t(x11, y11, b8Var.x0, b8Var.y0) <= ViewConfiguration.get(b8Var.getContext()).getScaledTouchSlop()) {
                                                 z9 = false;
                                                 if (actionMasked == 1 || actionMasked == 3 || z14) {
-                                                    c8Var.a();
+                                                    b8Var.a();
                                                 }
-                                            } else if (c8Var.r0 && c8Var.g0.H == 0) {
-                                                c8Var.q0 = false;
-                                                c8Var.p0 = true;
-                                                c8Var.removeCallbacks(u7Var);
-                                                ((oa0) c8Var.d.a).X();
-                                                c8Var.getParent().requestDisallowInterceptTouchEvent(true);
-                                                c8Var.W(c8Var.g0, x11, y11);
-                                                c8Var.q(c8Var.g0, x11, y11);
-                                                c8Var.f0();
+                                            } else if (b8Var.r0 && b8Var.g0.H == 0) {
+                                                b8Var.q0 = false;
+                                                b8Var.p0 = true;
+                                                b8Var.removeCallbacks(t7Var);
+                                                ((oa0) b8Var.d.a).X();
+                                                b8Var.getParent().requestDisallowInterceptTouchEvent(true);
+                                                b8Var.W(b8Var.g0, x11, y11);
+                                                b8Var.q(b8Var.g0, x11, y11);
+                                                b8Var.f0();
                                             } else {
                                                 z9 = false;
-                                                c8Var.a();
+                                                b8Var.a();
                                             }
                                             z12 = z9;
                                         } else {
-                                            if (actionMasked == 2 && (b8Var = c8Var.g0) != null) {
-                                                if (c8Var.n0 || c8Var.i0) {
-                                                    c8Var.M(b8Var, x11, y11);
-                                                } else if (Utilities.t(x11, y11, c8Var.x0, c8Var.y0) > ViewConfiguration.get(c8Var.getContext()).getScaledTouchSlop()) {
-                                                    c8Var.removeCallbacks(u7Var2);
-                                                    if (!c8Var.m0 && (c8Var.u0 || c8Var.g0.H == 0)) {
-                                                        c8Var.W(c8Var.g0, x11, y11);
+                                            if (actionMasked == 2 && (a8Var = b8Var.g0) != null) {
+                                                if (b8Var.n0 || b8Var.i0) {
+                                                    b8Var.M(a8Var, x11, y11);
+                                                } else if (Utilities.t(x11, y11, b8Var.x0, b8Var.y0) > ViewConfiguration.get(b8Var.getContext()).getScaledTouchSlop()) {
+                                                    b8Var.removeCallbacks(t7Var2);
+                                                    if (!b8Var.m0 && (b8Var.u0 || b8Var.g0.H == 0)) {
+                                                        b8Var.W(b8Var.g0, x11, y11);
                                                     }
-                                                    if (c8Var.m0) {
-                                                        c8Var.q(c8Var.g0, x11, y11);
+                                                    if (b8Var.m0) {
+                                                        b8Var.q(b8Var.g0, x11, y11);
                                                     }
                                                 }
-                                                c8Var.f0();
+                                                b8Var.f0();
                                             }
                                             if (actionMasked == 1 || actionMasked == 3 || z14) {
-                                                VelocityTracker velocityTracker3 = c8Var.O0;
+                                                VelocityTracker velocityTracker3 = b8Var.O0;
                                                 if (velocityTracker3 != null) {
                                                     velocityTracker3.computeCurrentVelocity(1000);
-                                                    f10 = c8Var.O0.getXVelocity(c8Var.v0);
-                                                    f11 = c8Var.O0.getYVelocity(c8Var.v0);
+                                                    f10 = b8Var.O0.getXVelocity(b8Var.v0);
+                                                    f11 = b8Var.O0.getYVelocity(b8Var.v0);
                                                 } else {
                                                     f10 = 0.0f;
                                                     f11 = 0.0f;
                                                 }
-                                                c8Var.w(f10, f11, actionMasked == 3);
+                                                b8Var.w(f10, f11, actionMasked == 3);
                                             }
                                         }
-                                    } else if (c8Var.q0) {
-                                        c8Var.a();
+                                    } else if (b8Var.q0) {
+                                        b8Var.a();
                                     } else {
-                                        c8Var.w(0.0f, 0.0f, true);
+                                        b8Var.w(0.0f, 0.0f, true);
                                     }
                                     z12 = true;
                                 }
@@ -340,17 +340,17 @@ public final class oa0 extends org.telegram.ui.Components.rt0 implements r0.l {
                         return true;
                     }
                 }
-                org.telegram.ui.Wallet.u5 u5Var2 = y5Var.q0;
-                if (u5Var2 != null) {
-                    u5Var2.e(motionEvent);
+                org.telegram.ui.Wallet.t5 t5Var2 = x5Var.q0;
+                if (t5Var2 != null) {
+                    t5Var2.e(motionEvent);
                 }
                 boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
-                if (motionEvent.getActionMasked() == 1 && (u5Var = y5Var.q0) != null) {
-                    org.telegram.ui.Wallet.l lVar = u5Var.i;
-                    fi.w3 w3Var = u5Var.c;
+                if (motionEvent.getActionMasked() == 1 && (t5Var = x5Var.q0) != null) {
+                    org.telegram.ui.Wallet.l lVar = t5Var.i;
+                    fi.w3 w3Var = t5Var.c;
                     if (w3Var != null) {
                         w3Var.removeCallbacks(lVar);
-                        u5Var.c.post(lVar);
+                        t5Var.c.post(lVar);
                     }
                 }
                 return dispatchTouchEvent;
@@ -382,13 +382,13 @@ public final class oa0 extends org.telegram.ui.Components.rt0 implements r0.l {
                 } else {
                     r0Var.a = 0;
                 }
-                org.telegram.ui.Wallet.u5 u5Var = ((org.telegram.ui.Wallet.y5) this.i0).q0;
-                if (u5Var != null) {
-                    org.telegram.ui.Wallet.l lVar = u5Var.i;
-                    fi.w3 w3Var = u5Var.c;
+                org.telegram.ui.Wallet.t5 t5Var = ((org.telegram.ui.Wallet.x5) this.i0).q0;
+                if (t5Var != null) {
+                    org.telegram.ui.Wallet.l lVar = t5Var.i;
+                    fi.w3 w3Var = t5Var.c;
                     if (w3Var != null) {
                         w3Var.removeCallbacks(lVar);
-                        u5Var.c.post(lVar);
+                        t5Var.c.post(lVar);
                         break;
                     }
                 }
@@ -420,11 +420,11 @@ public final class oa0 extends org.telegram.ui.Components.rt0 implements r0.l {
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) this.i0;
-                if (!this.h0 && i12 != 0 && (y02 = y5Var.y0()) != null) {
-                    if (view != y5Var.a || !Y()) {
+                org.telegram.ui.Wallet.x5 x5Var = (org.telegram.ui.Wallet.x5) this.i0;
+                if (!this.h0 && i12 != 0 && (y02 = x5Var.y0()) != null) {
+                    if (view != x5Var.a || !Y()) {
                         if (view == y02 && i12 < 0) {
-                            iArr[1] = b0(y5Var.a, i12) + iArr[1];
+                            iArr[1] = b0(x5Var.a, i12) + iArr[1];
                             break;
                         }
                     } else {
@@ -487,16 +487,16 @@ public final class oa0 extends org.telegram.ui.Components.rt0 implements r0.l {
         switch (this.f0) {
             case 1:
                 int size = (int) (View.MeasureSpec.getSize(i10) * 0.75f);
-                org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) this.i0;
-                if (y5Var.r != size) {
-                    y5Var.r = size;
-                    org.telegram.ui.Wallet.m5 m5Var = y5Var.e;
-                    if (m5Var != null) {
-                        m5Var.requestLayout();
+                org.telegram.ui.Wallet.x5 x5Var = (org.telegram.ui.Wallet.x5) this.i0;
+                if (x5Var.r != size) {
+                    x5Var.r = size;
+                    org.telegram.ui.Wallet.l5 l5Var = x5Var.e;
+                    if (l5Var != null) {
+                        l5Var.requestLayout();
                     }
-                    org.telegram.ui.Wallet.j5 j5Var = y5Var.f;
-                    if (j5Var != null) {
-                        j5Var.requestLayout();
+                    org.telegram.ui.Wallet.i5 i5Var = x5Var.f;
+                    if (i5Var != null) {
+                        i5Var.requestLayout();
                     }
                 }
                 super.onMeasure(i7, i10);
@@ -509,14 +509,14 @@ public final class oa0 extends org.telegram.ui.Components.rt0 implements r0.l {
 
     @Override // android.view.ViewGroup, android.view.ViewParent
     public boolean onNestedPreFling(View view, float f10, float f11) {
-        org.telegram.ui.Wallet.u5 u5Var;
+        org.telegram.ui.Wallet.t5 t5Var;
         switch (this.f0) {
             case 1:
-                org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) this.i0;
-                if (view != y5Var.y0() || (u5Var = y5Var.q0) == null) {
+                org.telegram.ui.Wallet.x5 x5Var = (org.telegram.ui.Wallet.x5) this.i0;
+                if (view != x5Var.y0() || (t5Var = x5Var.q0) == null) {
                     return false;
                 }
-                return u5Var.a((int) f10, (int) f11);
+                return t5Var.a((int) f10, (int) f11);
             default:
                 return super.onNestedPreFling(view, f10, f11);
         }
@@ -565,7 +565,7 @@ public final class oa0 extends org.telegram.ui.Components.rt0 implements r0.l {
         org.telegram.ui.Components.pj0 currentListView;
         org.telegram.ui.ActionBar.y4 y4Var2;
         org.telegram.ui.Components.q41 y02;
-        org.telegram.ui.Wallet.u5 u5Var;
+        org.telegram.ui.Wallet.t5 t5Var;
         switch (this.f0) {
             case 0:
                 pa0 pa0Var = (pa0) this.i0;
@@ -622,14 +622,14 @@ public final class oa0 extends org.telegram.ui.Components.rt0 implements r0.l {
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) this.i0;
-                if (!this.h0 && (y02 = y5Var.y0()) != null) {
-                    if (i10 != 0 && i11 == 0 && ((view == y5Var.a || view == y02) && (u5Var = y5Var.q0) != null && u5Var.f)) {
-                        u5Var.d = true;
+                org.telegram.ui.Wallet.x5 x5Var = (org.telegram.ui.Wallet.x5) this.i0;
+                if (!this.h0 && (y02 = x5Var.y0()) != null) {
+                    if (i10 != 0 && i11 == 0 && ((view == x5Var.a || view == y02) && (t5Var = x5Var.q0) != null && t5Var.f)) {
+                        t5Var.d = true;
                     }
-                    if (view != y5Var.a || i10 >= 0 || !Y()) {
+                    if (view != x5Var.a || i10 >= 0 || !Y()) {
                         if (view == y02 && i10 > 0) {
-                            iArr[1] = b0(y5Var.a, i10) + iArr[1];
+                            iArr[1] = b0(x5Var.a, i10) + iArr[1];
                             break;
                         }
                     } else {

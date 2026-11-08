@@ -9,7 +9,7 @@ import android.os.RemoteException;
 import android.util.Log;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class d1 {
     public static Context a;
@@ -47,10 +47,10 @@ public abstract class d1 {
                         Context b11 = b(context);
                         b11.getClass();
                         a7.b bVar = new a7.b(b11.getResources());
-                        Parcel P0 = dVar.P0();
-                        v7.b.c(P0, bVar);
-                        P0.writeInt(12451000);
-                        dVar.T0(P0, 6);
+                        Parcel p12 = dVar.p1();
+                        v7.b.c(p12, bVar);
+                        p12.writeInt(12451000);
+                        dVar.t1(p12, 6);
                         return b;
                     } catch (RemoteException e10) {
                         throw new androidx.car.app.j(e10);

@@ -45,7 +45,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class SecretMediaViewer implements org.telegram.messenger.ls, GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener {
     public static volatile SecretMediaViewer v1;
@@ -160,7 +160,7 @@ public class SecretMediaViewer implements org.telegram.messenger.ls, GestureDete
     public boolean i0 = true;
     public final PhotoBackgroundDrawable j0 = new PhotoBackgroundDrawable();
 
-    /* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+    /* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
     public class PhotoBackgroundDrawable extends ColorDrawable {
         public by0 a;
         public int b;
@@ -1050,7 +1050,7 @@ public class SecretMediaViewer implements org.telegram.messenger.ls, GestureDete
                 i11++;
             }
             if (org.telegram.messenger.ij.t3(F0, false)) {
-                this.F.setTitle(org.telegram.messenger.hd.M0(2131751410, null));
+                this.F.setTitle(org.telegram.messenger.id.M0(2131751410, null));
                 String str2 = ijVar.k.attachPath;
                 f10 = 1.0f;
                 photoBackgroundDrawable = photoBackgroundDrawable2;
@@ -1061,7 +1061,7 @@ public class SecretMediaViewer implements org.telegram.messenger.ls, GestureDete
                 photoBackgroundDrawable = photoBackgroundDrawable2;
                 f10 = 1.0f;
                 this.Z = 1;
-                this.F.setTitle(org.telegram.messenger.hd.M0(2131751408, null));
+                this.F.setTitle(org.telegram.messenger.id.M0(2131751408, null));
                 File file = new File(ijVar.k.attachPath);
                 if (file.exists()) {
                     i(file);
@@ -1087,7 +1087,7 @@ public class SecretMediaViewer implements org.telegram.messenger.ls, GestureDete
             i7 = 2;
             photoBackgroundDrawable = photoBackgroundDrawable2;
             f10 = 1.0f;
-            this.F.setTitle(org.telegram.messenger.hd.M0(2131751409, null));
+            this.F.setTitle(org.telegram.messenger.id.M0(2131751409, null));
             TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(ijVar.n0, org.telegram.messenger.g0.Z0(false), false, null, false);
             imageReceiver.p0(org.telegram.messenger.hc.f(w10, ijVar.l0), null, this.g0 != null ? new BitmapDrawable(this.g0.c) : null, -1L, null, ijVar, 2);
             if (w10 != null) {
@@ -1372,7 +1372,7 @@ public class SecretMediaViewer implements org.telegram.messenger.ls, GestureDete
 
     public final void m() {
         this.r.r(true);
-        String M0 = org.telegram.messenger.hd.M0(this.J ? 2131743581 : 2131747261, null);
+        String M0 = org.telegram.messenger.id.M0(this.J ? 2131743583 : 2131747263, null);
         fi.m3 m3Var = this.r;
         m3Var.h = fi.m3.a(M0, m3Var.getTextPaint());
         this.r.u(M0);

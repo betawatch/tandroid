@@ -3,7 +3,7 @@ package h2;
 import e2.i1;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class e0 {
     public Object a;
@@ -45,13 +45,13 @@ public final class e0 {
             str = str.concat(" encodedPayload");
         }
         if (((Long) this.d) == null) {
-            str = rf.b.q(str, " eventMillis");
+            str = rf.b.r(str, " eventMillis");
         }
         if (((Long) this.e) == null) {
-            str = rf.b.q(str, " uptimeMillis");
+            str = rf.b.r(str, " uptimeMillis");
         }
         if (((HashMap) this.f) == null) {
-            str = rf.b.q(str, " autoMetadata");
+            str = rf.b.r(str, " autoMetadata");
         }
         if (str.isEmpty()) {
             return new o5.h((String) this.a, (Integer) this.b, (o5.l) this.c, ((Long) this.d).longValue(), ((Long) this.e).longValue(), (HashMap) this.f, (Integer) this.g, (String) this.h, (byte[]) this.i, (byte[]) this.j);

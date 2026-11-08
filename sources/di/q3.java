@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import java.util.ArrayList;
 import java.util.Collections;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
@@ -12,7 +12,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.oy0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -146,12 +146,12 @@ public final /* synthetic */ class q3 implements View.OnClickListener {
                     z3Var4.a();
                 }
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, i4Var3.getContext(), f6Var);
-                String M0 = hd.M0(2131748816, null);
+                String M0 = id.M0(2131748818, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
-                u1Var.T = hd.M0(2131748817, null);
-                alertDialog$Builder.k(hd.M0(2131748818, null), new ab.g(13, z3Var, p9Var));
-                alertDialog$Builder.h(hd.M0(2131752589, null), null);
+                u1Var.T = id.M0(2131748819, null);
+                alertDialog$Builder.k(id.M0(2131748820, null), new ab.g(13, z3Var, p9Var));
+                alertDialog$Builder.h(id.M0(2131752589, null), null);
                 alertDialog$Builder.d(-1);
                 alertDialog$Builder.p();
                 break;

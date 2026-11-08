@@ -4,9 +4,9 @@ import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
-import org.telegram.ui.r81;
+import org.telegram.ui.s81;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fj0 implements Runnable {
     public final /* synthetic */ int a;
@@ -79,7 +79,7 @@ public final /* synthetic */ class fj0 implements Runnable {
                     ofFloat4.setDuration(600L);
                     ofFloat4.setInterpolator(overshootInterpolator);
                     mVar.d0.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4);
-                    mVar.d0.addListener(new r81(hVar, 22));
+                    mVar.d0.addListener(new s81(hVar, 22));
                     mVar.d0.start();
                     break;
                 } else {

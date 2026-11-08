@@ -13,7 +13,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class cf0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public int D;
@@ -298,7 +298,7 @@ public final class cf0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131749139, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131749141, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new ux(this, 15));
         k0 k0Var = new k0(15, context, this);
         this.fragmentView = k0Var;
@@ -322,7 +322,7 @@ public final class cf0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         kVar.C = false;
         kVar.m = false;
         this.b.setItemAnimator(kVar);
-        this.b.setVerticalScrollbarPosition(org.telegram.messenger.hd.a0 ? 1 : 2);
+        this.b.setVerticalScrollbarPosition(org.telegram.messenger.id.a0 ? 1 : 2);
         frameLayout.addView(this.b, c8.ha.c(-1.0f, -1));
         this.b.setOnItemClickListener(new di.p4(19, this, context));
         this.b.setOnItemLongClickListener(new pe0(this));

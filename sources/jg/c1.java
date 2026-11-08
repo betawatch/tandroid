@@ -20,7 +20,7 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.gz;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.p10;
@@ -56,7 +56,8 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.Wallet.e2;
-import org.telegram.ui.Wallet.s2;
+import org.telegram.ui.Wallet.r2;
+import org.telegram.ui.Wallet.u2;
 import org.telegram.ui.an;
 import org.telegram.ui.c01;
 import org.telegram.ui.ce0;
@@ -74,13 +75,13 @@ import org.telegram.ui.o80;
 import org.telegram.ui.q10;
 import org.telegram.ui.rp;
 import org.telegram.ui.t8;
-import org.telegram.ui.v91;
 import org.telegram.ui.ve;
+import org.telegram.ui.w91;
 import org.telegram.ui.ww;
 import org.telegram.ui.z60;
-import zh.r3;
+import zh.q3;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c1 implements Runnable {
     public final /* synthetic */ int a;
@@ -408,7 +409,7 @@ public final /* synthetic */ class c1 implements Runnable {
                                 } else {
                                     Bundle bundle2 = new Bundle();
                                     bundle2.putLong("chat_id", chatInvite.chat.id);
-                                    launchActivity.t0(v91.J0(launchActivity, bundle2));
+                                    launchActivity.t0(w91.J0(launchActivity, bundle2));
                                 }
                             }
                         }
@@ -423,21 +424,21 @@ public final /* synthetic */ class c1 implements Runnable {
                         }
                     } else if (tL_error3 == null || !tL_error3.text.startsWith("INVITE_HASH_EXPIRED") || LaunchActivity.T() == null) {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(launchActivity);
-                        String M02 = hd.M0(R.string.AppName, null);
+                        String M02 = id.M0(R.string.AppName, null);
                         org.telegram.ui.ActionBar.u1 u1Var3 = alertDialog$Builder.a;
                         u1Var3.R = M02;
                         if (tL_error3.text.startsWith("FLOOD_WAIT")) {
-                            u1Var3.T = hd.M0(2131750688, null);
+                            u1Var3.T = id.M0(2131750688, null);
                         } else if (tL_error3.text.startsWith("INVITE_HASH_EXPIRED")) {
-                            u1Var3.R = hd.M0(2131750876, null);
-                            u1Var3.T = hd.M0(2131749151, null);
+                            u1Var3.R = id.M0(2131750876, null);
+                            u1Var3.T = id.M0(2131749153, null);
                         } else {
-                            u1Var3.T = hd.M0(2131749074, null);
+                            u1Var3.T = id.M0(2131749076, null);
                         }
-                        alertDialog$Builder.k(hd.M0(2131747830, null), null);
+                        alertDialog$Builder.k(id.M0(2131747832, null), null);
                         launchActivity.F0(alertDialog$Builder);
                     } else {
-                        k5.o(null, 2131749151, hc.a0(LaunchActivity.T()), R.raw.linkbroken, 36);
+                        k5.o(null, 2131749153, hc.a0(LaunchActivity.T()), R.raw.linkbroken, 36);
                     }
                     try {
                         q10Var.run();
@@ -478,7 +479,7 @@ public final /* synthetic */ class c1 implements Runnable {
                     a8.d(sb2.toString());
                     f2 Q = LaunchActivity.Q();
                     if (Q != null) {
-                        k5.p(null, 2131748133, hc.a0(Q), null);
+                        k5.p(null, 2131748135, hc.a0(Q), null);
                         break;
                     }
                 }
@@ -506,19 +507,19 @@ public final /* synthetic */ class c1 implements Runnable {
                 if (tL_error5 != null) {
                     if ("SUBSCRIPTION_ALREADY_ACTIVE".equalsIgnoreCase(tL_error5.text)) {
                         a02 = hc.a0((f2) g.i(1, arrayList9));
-                        i7 = 2131747394;
+                        i7 = 2131747396;
                         r32 = 0;
                     } else {
                         r32 = 0;
                         a02 = hc.a0((f2) g.i(1, arrayList9));
-                        i7 = 2131747395;
+                        i7 = 2131747397;
                     }
                     k5.p(r32, i7, a02, r32);
                 } else if (!launchActivity4.isFinishing()) {
                     if (tLObject9 instanceof TLRPC.TL_payments_paymentFormStars) {
-                        r3 r3Var = launchActivity4.X0;
+                        q3 q3Var = launchActivity4.X0;
                         launchActivity4.X0 = null;
-                        ea.y(launchActivity4.O, false).X(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject9, new z60(q10Var2, 1), new l70(r3Var, z9 ? 1 : 0));
+                        ea.y(launchActivity4.O, false).X(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject9, new z60(q10Var2, 1), new l70(q3Var, z9 ? 1 : 0));
                         break;
                     } else {
                         if (tLObject9 instanceof TLRPC.PaymentForm) {
@@ -529,10 +530,10 @@ public final /* synthetic */ class c1 implements Runnable {
                             hl0Var = tLObject9 instanceof TLRPC.PaymentReceipt ? new hl0((TLRPC.PaymentReceipt) tLObject9) : null;
                         }
                         if (hl0Var != null) {
-                            r3 r3Var2 = launchActivity4.X0;
-                            if (r3Var2 != null) {
+                            q3 q3Var2 = launchActivity4.X0;
+                            if (q3Var2 != null) {
                                 launchActivity4.X0 = null;
-                                hl0Var.Z0 = new ve(9, r3Var2);
+                                hl0Var.Z0 = new ve(9, q3Var2);
                             }
                             launchActivity4.t0(hl0Var);
                         }
@@ -559,7 +560,7 @@ public final /* synthetic */ class c1 implements Runnable {
                 int i18 = fVar.a;
                 if (i18 != 0) {
                     ld0Var.e = "BILLING_".concat(org.telegram.messenger.r1.j(i18));
-                    new hc(ce0Var.Z, null).H(R.raw.error, hd.a0(null, null, 2131743879, org.telegram.messenger.r1.j(fVar.a)));
+                    new hc(ce0Var.Z, null).H(R.raw.error, id.a0(null, null, 2131743881, org.telegram.messenger.r1.j(fVar.a)));
                     break;
                 } else if (list != null && !list.isEmpty()) {
                     f5.l lVar = (f5.l) list.get(0);
@@ -587,7 +588,7 @@ public final /* synthetic */ class c1 implements Runnable {
                     break;
                 } else {
                     ld0Var.e = "PRODUCT_NOT_FOUND";
-                    new hc(ce0Var.Z, null).H(R.raw.error, hd.a0(null, null, 2131743879, "PRODUCT_NOT_FOUND"));
+                    new hc(ce0Var.Z, null).H(R.raw.error, id.a0(null, null, 2131743881, "PRODUCT_NOT_FOUND"));
                     break;
                 }
                 break;
@@ -603,22 +604,22 @@ public final /* synthetic */ class c1 implements Runnable {
                     k60 H = k60.H(profileActivity, view);
                     H.W(profileActivity.a.U0(view, false));
                     H.w = false;
-                    H.c(R.drawable.msg_copy, hd.M0(2131751767, null), new d10(profileActivity, str12, i13, 8), false);
-                    H.l(R.drawable.msg_translate, hd.M0(2131743957, null), new jo0(profileActivity, strArr2, str13, str12, 6), zArr2[0]);
+                    H.c(R.drawable.msg_copy, id.M0(2131751767, null), new d10(profileActivity, str12, i13, 8), false);
+                    H.l(R.drawable.msg_translate, id.M0(2131743959, null), new jo0(profileActivity, strArr2, str13, str12, 6), zArr2[0]);
                     H.Z();
                     break;
                 }
                 break;
             case 15:
-                org.telegram.ui.Wallet.f2 f2Var3 = (org.telegram.ui.Wallet.f2) obj6;
-                org.telegram.ui.Wallet.b2 b2Var = (org.telegram.ui.Wallet.b2) obj5;
+                e2 e2Var = (e2) obj6;
+                org.telegram.ui.Wallet.a2 a2Var = (org.telegram.ui.Wallet.a2) obj5;
                 String str14 = (String) obj3;
-                org.telegram.ui.Wallet.k0 k0Var = (org.telegram.ui.Wallet.k0) obj2;
+                org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) obj2;
                 c20 c20Var = (c20) obj;
                 try {
                     JSONObject jSONObject2 = new JSONObject();
-                    String str15 = b2Var.d;
-                    tonconnectsession = b2Var.a;
+                    String str15 = a2Var.d;
+                    tonconnectsession = a2Var.a;
                     JSONObject put2 = jSONObject2.put("id", str15);
                     if (i13 < 0) {
                         put2.put("result", obj4);
@@ -628,21 +629,21 @@ public final /* synthetic */ class c1 implements Runnable {
                         }
                         put2.put("error", new JSONObject().put("code", i13).put("message", str14));
                     }
-                    JSONObject put3 = new JSONObject().put("body", WalletEngine2.tonConnectCrypto(k0Var, tonconnectsession, b2Var.h, b2Var.g, new JSONObject().put("encrypt", put2)).getString("body")).put("traceId", b2Var.i);
-                    if (i13 < 0 && "disconnect".equals(b2Var.e)) {
+                    JSONObject put3 = new JSONObject().put("body", WalletEngine2.tonConnectCrypto(j0Var, tonconnectsession, a2Var.h, a2Var.g, new JSONObject().put("encrypt", put2)).getString("body")).put("traceId", a2Var.i);
+                    if (i13 < 0 && "disconnect".equals(a2Var.e)) {
                         z9 = true;
                     }
                     put = put3.put("disconnect", z9);
                 } catch (Exception e13) {
-                    i11 = org.telegram.ui.Wallet.f2.i("encrypt response", e13);
+                    i11 = e2.i("encrypt response", e13);
                     jSONObject = null;
                 }
-                if (!qp.s1(f2Var3.a).e7.edit().putString(org.telegram.ui.Wallet.f2.l(tonconnectsession.id, b2Var.b), put.toString()).commit()) {
+                if (!qp.s1(e2Var.a).e7.edit().putString(e2.l(tonconnectsession.id, a2Var.b), put.toString()).commit()) {
                     throw new IllegalStateException("Could not save TON Connect response");
                 }
                 jSONObject = put;
                 i11 = null;
-                org.telegram.messenger.g0.h3(new c01(f2Var3, jSONObject, c20Var, i11, b2Var, 3));
+                org.telegram.messenger.g0.h3(new c01(e2Var, jSONObject, c20Var, i11, a2Var, 3));
                 break;
                 break;
             case 16:
@@ -651,33 +652,33 @@ public final /* synthetic */ class c1 implements Runnable {
                 TLRPC.User user3 = (TLRPC.User) obj4;
                 JSONObject jSONObject3 = (JSONObject) obj3;
                 f6 f6Var2 = (f6) obj2;
-                s2 s2Var = (s2) obj;
+                r2 r2Var = (r2) obj;
                 if (!zArr3[0]) {
                     zArr3[0] = true;
                     int i20 = this.b;
-                    org.telegram.ui.Wallet.n0 x10 = org.telegram.ui.Wallet.n0.x(i20);
+                    org.telegram.ui.Wallet.m0 x10 = org.telegram.ui.Wallet.m0.x(i20);
                     String t6 = x10.t();
                     byte[] y10 = x10.y();
                     if (t6 == null || y10 == null || x10.b == null) {
-                        hc.b0(hd.M0(2131742960, null));
-                        s2Var.a();
+                        hc.b0(id.M0(2131742962, null));
+                        r2Var.a();
                         break;
                     } else {
                         int currentTime = ConnectionsManager.getInstance(i20).getCurrentTime();
                         try {
                             if ("signData".equals(jSONObject3.optString("method"))) {
                                 JSONObject jSONObject4 = jSONObject3.getJSONObject("payload");
-                                org.telegram.ui.Wallet.f2.G(t6, jSONObject4);
-                                org.telegram.ui.Wallet.v2.c(context2, i20, user3, jSONObject4, t6, (byte[]) y10.clone(), f6Var2, s2Var);
+                                e2.G(t6, jSONObject4);
+                                u2.c(context2, i20, user3, jSONObject4, t6, (byte[]) y10.clone(), f6Var2, r2Var);
                             } else {
                                 JSONObject jSONObject5 = jSONObject3.getJSONObject("transaction");
-                                org.telegram.ui.Wallet.f2.I(jSONObject5, t6, currentTime);
-                                org.telegram.ui.Wallet.v2.d(context2, i20, user3, new e2(jSONObject5), t6, (byte[]) y10.clone(), f6Var2, s2Var);
+                                e2.I(jSONObject5, t6, currentTime);
+                                u2.d(context2, i20, user3, new org.telegram.ui.Wallet.d2(jSONObject5), t6, (byte[]) y10.clone(), f6Var2, r2Var);
                             }
                             break;
                         } catch (Exception e14) {
-                            hc.b0(org.telegram.ui.Wallet.f2.i("widget call", e14));
-                            s2Var.a();
+                            hc.b0(e2.i("widget call", e14));
+                            r2Var.a();
                             return;
                         }
                     }
@@ -710,7 +711,7 @@ public final /* synthetic */ class c1 implements Runnable {
                 com.google.android.recaptcha.internal.a.s(sb3, qp.s1(i13).U2, "/", (String) obj5, "/c/");
                 sb3.append(((TL_stars.TL_starGiftCollection) obj4).collection_id);
                 String sb4 = sb3.toString();
-                new zh.n1((up0) obj6, (Context) obj3, sb4, sb4, (f6) obj2, (f2) obj).show();
+                new zh.m1((up0) obj6, (Context) obj3, sb4, sb4, (f6) obj2, (f2) obj).show();
                 break;
         }
     }

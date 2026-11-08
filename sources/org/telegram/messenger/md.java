@@ -1,33 +1,40 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+import android.location.Location;
+
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class md implements Runnable {
+public final /* synthetic */ class md implements q0.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ sd b;
-    public final /* synthetic */ Integer c;
 
-    public /* synthetic */ md(sd sdVar, Integer num, int i7) {
+    public /* synthetic */ md(sd sdVar, int i7) {
         this.a = i7;
         this.b = sdVar;
-        this.c = num;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        int i10 = 1;
-        Integer num = this.c;
-        sd sdVar = this.b;
-        switch (i7) {
+    @Override // q0.a
+    public final void accept(Object obj) {
+        switch (this.a) {
             case 0:
-                if (!sdVar.b.isEmpty()) {
-                    g0.h3(new md(sdVar, num, i10));
-                    break;
-                }
+                this.b.m((Location) obj);
                 break;
             default:
-                sdVar.getNotificationCenter().k(76, num);
+                sd sdVar = this.b;
+                Integer num = (Integer) obj;
+                sdVar.getClass();
+                int intValue = num.intValue();
+                boolean z9 = true;
+                if (intValue == 0) {
+                    Utilities.d.c(new o10(3, sdVar, z9));
+                    break;
+                } else if (intValue == 1) {
+                    Utilities.d.c(new nd(sdVar, num, 0));
+                    break;
+                } else if (intValue == 2) {
+                    Utilities.d.c(new jd(sdVar, 4));
+                    break;
+                }
                 break;
         }
     }

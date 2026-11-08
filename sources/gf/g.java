@@ -39,8 +39,8 @@ import org.telegram.messenger.c20;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.gu;
 import org.telegram.messenger.h0;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.hu;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.kv;
 import org.telegram.messenger.l0;
@@ -68,7 +68,7 @@ import org.telegram.ui.rz;
 import org.telegram.ui.xz;
 import w7.s;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class g implements i6.a, xz, y1, com.google.android.gms.common.api.internal.p, im0, t4, i0, w, m.l, ce.c, o0.a, ta, ab, ue.a, lm0 {
     public final /* synthetic */ int a;
@@ -271,11 +271,11 @@ public final class g implements i6.a, xz, y1, com.google.android.gms.common.api.
         l7.a aVar = new l7.a((TaskCompletionSource) obj2);
         l7.i iVar = (l7.i) ((l7.c) obj).n();
         String str = bVar.l;
-        Parcel L0 = iVar.L0();
+        Parcel l1 = iVar.l1();
         int i7 = l7.f.a;
-        L0.writeStrongBinder(aVar);
-        L0.writeString(str);
-        iVar.M0(L0, 2);
+        l1.writeStrongBinder(aVar);
+        l1.writeString(str);
+        iVar.m1(l1, 2);
     }
 
     @Override // li.i0, li.f1
@@ -405,10 +405,10 @@ public final class g implements i6.a, xz, y1, com.google.android.gms.common.api.
             default:
                 StringBuilder sb3 = new StringBuilder();
                 b8 b8Var = (b8) this.b;
-                sb3.append(hd.G(b8Var.t2 / 60, "Minutes", new Object[0]));
+                sb3.append(id.G(b8Var.t2 / 60, "Minutes", new Object[0]));
                 sb3.append(' ');
-                sb3.append(hd.G(b8Var.t2 % 60, "Seconds", new Object[0]));
-                return hd.a0("AccDescrPlayerDuration", null, 2131754806, sb3.toString(), hd.G(b8Var.u2 / 60, "Minutes", new Object[0]) + ' ' + hd.G(b8Var.u2 % 60, "Seconds", new Object[0]));
+                sb3.append(id.G(b8Var.t2 % 60, "Seconds", new Object[0]));
+                return id.a0("AccDescrPlayerDuration", null, 2131754806, sb3.toString(), id.G(b8Var.u2 / 60, "Minutes", new Object[0]) + ' ' + id.G(b8Var.u2 % 60, "Seconds", new Object[0]));
         }
     }
 
@@ -542,7 +542,7 @@ public final class g implements i6.a, xz, y1, com.google.android.gms.common.api.
                     ThemeActivity themeActivity = b61Var.f.e;
                     xi0 xi0Var = (xi0) themeActivity.b.K(themeActivity.f0);
                     if (xi0Var != null) {
-                        ((z8) xi0Var.a).setText(hd.a0("AutoNightBrightnessInfo", null, 2131753794, Integer.valueOf((int) (k6.q * 100.0f))));
+                        ((z8) xi0Var.a).setText(id.a0("AutoNightBrightnessInfo", null, 2131753794, Integer.valueOf((int) (k6.q * 100.0f))));
                     }
                     k6.F(true);
                     break;
@@ -633,7 +633,7 @@ public final class g implements i6.a, xz, y1, com.google.android.gms.common.api.
 
     @Override // i6.a
     public void p(Bitmap bitmap) {
-        ((i6.h) this.b).e(bitmap, 3);
+        ((i6.h) this.b).e(3, bitmap);
     }
 
     @Override // jg.y1

@@ -20,7 +20,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.dt;
 import org.telegram.messenger.gf;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.rs;
@@ -31,7 +31,7 @@ import org.telegram.messenger.yr;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j2 implements Runnable {
     public final /* synthetic */ int a;
@@ -178,7 +178,7 @@ public final /* synthetic */ class j2 implements Runnable {
         Context context2;
         int i23;
         File P0;
-        org.telegram.utils.twidget.u uVar;
+        org.telegram.utils.twidget.v0 v0Var;
         int i24 = 1;
         switch (this.a) {
             case 0:
@@ -484,7 +484,7 @@ public final /* synthetic */ class j2 implements Runnable {
                                                 try {
                                                     i17 = columnIndex2;
                                                     i18 = columnIndex9;
-                                                    weVar7 = new we(0, hd.M0(2131754292, null), gfVar);
+                                                    weVar7 = new we(0, id.M0(2131754292, null), gfVar);
                                                     arrayList2 = arrayList3;
                                                 } catch (Throwable th10) {
                                                     th = th10;
@@ -576,7 +576,7 @@ public final /* synthetic */ class j2 implements Runnable {
                                                     i19 = columnIndex8;
                                                     i20 = columnIndex6;
                                                     i21 = columnIndex7;
-                                                    weVar8 = new we(0, hd.M0(2131754299, null), gfVar);
+                                                    weVar8 = new we(0, id.M0(2131754299, null), gfVar);
                                                     arrayList = arrayList6;
                                                 } catch (Throwable th12) {
                                                     th = th12;
@@ -999,7 +999,7 @@ public final /* synthetic */ class j2 implements Runnable {
                                             try {
                                                 i12 = columnIndex12;
                                                 i13 = columnIndex13;
-                                                we weVar14 = new we(0, hd.M0(2131754287, null), gfVar2);
+                                                we weVar14 = new we(0, id.M0(2131754287, null), gfVar2);
                                                 try {
                                                     weVar14.b = true;
                                                     int i35 = weVar4 != null ? 1 : 0;
@@ -1057,7 +1057,7 @@ public final /* synthetic */ class j2 implements Runnable {
                                         }
                                         if (weVar4 == null) {
                                             i14 = columnIndex15;
-                                            weVar6 = new we(0, hd.M0(2131754299, null), gfVar2);
+                                            weVar6 = new we(0, id.M0(2131754299, null), gfVar2);
                                             try {
                                                 arrayList.add(0, weVar6);
                                             } catch (Throwable th24) {
@@ -1432,22 +1432,22 @@ public final /* synthetic */ class j2 implements Runnable {
                 return;
             case 13:
                 int i40 = this.b;
-                org.telegram.utils.twidget.p.v(i40 + "/", org.telegram.utils.twidget.p.b.keySet());
-                for (org.telegram.utils.twidget.m mVar : org.telegram.utils.twidget.p.a.values()) {
-                    if (mVar.b == i40 && mVar.v.isEmpty() && (uVar = mVar.t) != null) {
-                        uVar.p();
-                        uVar.g = null;
-                        uVar.i = 0;
-                        uVar.k = 0;
-                        uVar.l = false;
+                org.telegram.utils.twidget.n0.x(i40 + "/", org.telegram.utils.twidget.n0.b.keySet());
+                for (org.telegram.utils.twidget.k0 k0Var : org.telegram.utils.twidget.n0.a.values()) {
+                    if (k0Var.b == i40 && k0Var.v.isEmpty() && (v0Var = k0Var.t) != null) {
+                        v0Var.p();
+                        v0Var.g = null;
+                        v0Var.i = 0;
+                        v0Var.k = 0;
+                        v0Var.l = false;
                     }
                 }
                 return;
             default:
                 String i41 = com.google.android.recaptcha.internal.a.i(this.b, "/");
-                org.telegram.utils.twidget.p.v(i41, org.telegram.utils.twidget.p.b.keySet());
-                org.telegram.utils.twidget.p.v(i41, org.telegram.utils.twidget.p.c.keySet());
-                org.telegram.utils.twidget.p.v(i41, org.telegram.utils.twidget.p.d.keySet());
+                org.telegram.utils.twidget.n0.x(i41, org.telegram.utils.twidget.n0.b.keySet());
+                org.telegram.utils.twidget.n0.x(i41, org.telegram.utils.twidget.n0.c.keySet());
+                org.telegram.utils.twidget.n0.x(i41, org.telegram.utils.twidget.n0.d.keySet());
                 return;
         }
     }

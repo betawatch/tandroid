@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class v10 extends org.telegram.ui.Components.pj0 {
     public final /* synthetic */ c40 e3;
@@ -17,22 +17,22 @@ public final class v10 extends org.telegram.ui.Components.pj0 {
 
     @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
-        org.telegram.ui.Components.g10 g10Var = (org.telegram.ui.Components.g10) view;
+        org.telegram.ui.Components.h10 h10Var = (org.telegram.ui.Components.h10) view;
         c40 c40Var = this.e3;
         k30 k30Var = c40Var.H1;
         z10 z10Var = c40Var.R3;
         if (z10Var.r == null && !c40Var.E4.k()) {
-            g10Var.setAlpha(1.0f);
-            g10Var.setTranslationX(0.0f);
-            g10Var.setTranslationY(0.0f);
+            h10Var.setAlpha(1.0f);
+            h10Var.setTranslationX(0.0f);
+            h10Var.setTranslationY(0.0f);
         }
         v10 v10Var = c40Var.d4;
-        g10Var.getClass();
+        h10Var.getClass();
         v10Var.getClass();
-        if (RecyclerView.R(g10Var) == -1 && g10Var.getRenderer() != null) {
+        if (RecyclerView.R(h10Var) == -1 && h10Var.getRenderer() != null) {
             return true;
         }
-        if (g10Var.getTranslationY() == 0.0f || g10Var.getRenderer() == null || g10Var.getRenderer().c == null) {
+        if (h10Var.getTranslationY() == 0.0f || h10Var.getRenderer() == null || h10Var.getRenderer().c == null) {
             return super.drawChild(canvas, view, j3);
         }
         float top = k30Var.getTop() - getTop();

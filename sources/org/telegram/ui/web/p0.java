@@ -5,9 +5,9 @@ import android.view.View;
 import android.webkit.JsPromptResult;
 import android.widget.TextView;
 import org.telegram.messenger.c20;
-import org.telegram.ui.Components.ys;
+import org.telegram.ui.Components.zs;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class p0 implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -34,18 +34,18 @@ public final class p0 implements TextView.OnEditorActionListener {
                 boolean[] zArr = (boolean[]) this.b;
                 if (!zArr[0]) {
                     zArr[0] = true;
-                    ((JsPromptResult) this.c).confirm(((ys) this.d).getText().toString());
+                    ((JsPromptResult) this.c).confirm(((zs) this.d).getText().toString());
                     ((org.telegram.ui.ActionBar.u1) this.e).dismiss();
                 }
                 return true;
             default:
-                zh.o1 o1Var = (zh.o1) this.b;
+                zh.n1 n1Var = (zh.n1) this.b;
                 if (i7 != 6) {
                     return false;
                 }
-                String obj = o1Var.getText().toString();
+                String obj = n1Var.getText().toString();
                 if (obj.length() <= 0 || obj.length() > 12) {
-                    org.telegram.messenger.g0.F3(o1Var);
+                    org.telegram.messenger.g0.F3(n1Var);
                 } else {
                     ((c20) this.c).a(obj);
                     org.telegram.ui.ActionBar.u1 u1Var = ((org.telegram.ui.ActionBar.u1[]) this.d)[0];

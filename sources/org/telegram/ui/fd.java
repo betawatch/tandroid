@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import android.widget.EditText;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fd implements View.OnFocusChangeListener {
     public final /* synthetic */ int a;
@@ -87,12 +87,12 @@ public final /* synthetic */ class fd implements View.OnFocusChangeListener {
                 lb0Var6.b(f10, f10, true);
                 break;
             case 11:
-                x71 x71Var = (x71) obj;
+                y71 y71Var = (y71) obj;
                 if (!z9) {
-                    x71Var.d.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131744186, null)));
+                    y71Var.d.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131744188, null)));
                     break;
                 } else {
-                    x71Var.d.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131744185, null)));
+                    y71Var.d.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131744187, null)));
                     break;
                 }
             default:

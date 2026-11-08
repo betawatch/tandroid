@@ -24,7 +24,7 @@ import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class nd extends View implements te.b {
     public final /* synthetic */ int a = 0;
@@ -43,7 +43,7 @@ public final class nd extends View implements te.b {
         this.d = new Matrix();
         this.b = new Paint(1);
         this.e = new Paint(1);
-        this.f = new my0(org.telegram.messenger.hd.M0(2131745037, null), 14.16f, org.telegram.messenger.g0.o());
+        this.f = new my0(org.telegram.messenger.id.M0(2131745039, null), 14.16f, org.telegram.messenger.g0.o());
     }
 
     public static void a(Canvas canvas, Drawable drawable, float f10, float f11, float f12, float f13) {
@@ -431,7 +431,7 @@ public final class nd extends View implements te.b {
         boolean z9 = false;
         setPadding(0, 0, 0, 0);
         if (k2Var.J0(4)) {
-            fi.g2 g2Var = new fi.g2(this, 4, R.drawable.msg_limit_links, org.telegram.messenger.hd.M0(2131744444, null));
+            fi.g2 g2Var = new fi.g2(this, 4, R.drawable.msg_limit_links, org.telegram.messenger.id.M0(2131744446, null));
             int i7 = fi.k2.y1;
             if (!p10.i(k2Var.a).q()) {
                 Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_mini_lock3).mutate();
@@ -444,7 +444,7 @@ public final class nd extends View implements te.b {
             arrayList.add(g2Var);
         }
         if (k2Var.J0(0)) {
-            arrayList.add(new fi.g2(this, 0, R.drawable.map_pin3, org.telegram.messenger.hd.M0(2131744443, null)));
+            arrayList.add(new fi.g2(this, 0, R.drawable.map_pin3, org.telegram.messenger.id.M0(2131744445, null)));
         }
         int i10 = 3;
         int i11 = 2;
@@ -464,7 +464,7 @@ public final class nd extends View implements te.b {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("___");
                     spannableStringBuilder.setSpan(new b80(org.telegram.messenger.g0.L(68.0f), this), 0, spannableStringBuilder.length(), 33);
                     g2VarArr[0] = new fi.g2(this, spannableStringBuilder);
-                    c8.ia.c(R.raw.permission_request_location, 2131747301, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new String[]{"android.permission.ACCESS_COARSE_LOCATION"}, new b9(i10, new b9(i11, new ai.f1(8, this, g2VarArr), z9), z9));
+                    c8.ia.c(R.raw.permission_request_location, 2131747303, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new String[]{"android.permission.ACCESS_COARSE_LOCATION"}, new b9(i10, new b9(i11, new ai.f1(8, this, g2VarArr), z9), z9));
                     charSequence = spannableStringBuilder;
                 }
             }
@@ -472,10 +472,10 @@ public final class nd extends View implements te.b {
             arrayList.add(g2Var2 == null ? new fi.g2(this, charSequence) : g2Var2);
         }
         if (k2Var.J0(1)) {
-            arrayList.add(new fi.g2(this, 1, R.drawable.filled_widget_music, org.telegram.messenger.hd.M0(2131744445, null)));
+            arrayList.add(new fi.g2(this, 1, R.drawable.filled_widget_music, org.telegram.messenger.id.M0(2131744447, null)));
         }
         if (k2Var.J0(2)) {
-            arrayList.add(new fi.g2(this, 2, R.drawable.filled_premium_camera, org.telegram.messenger.hd.M0(2131744442, null)));
+            arrayList.add(new fi.g2(this, 2, R.drawable.filled_premium_camera, org.telegram.messenger.id.M0(2131744444, null)));
         }
         if (k2Var.J0(3)) {
             arrayList.add(new fi.i2(this));

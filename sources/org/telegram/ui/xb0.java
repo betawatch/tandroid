@@ -14,7 +14,7 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class xb0 extends org.telegram.ui.Components.wt0 {
     public final /* synthetic */ ce0 D;
@@ -59,7 +59,7 @@ public final class xb0 extends org.telegram.ui.Components.wt0 {
                 this.d = textView;
                 textView.setTextSize(1, 18.0f);
                 textView.setTypeface(org.telegram.messenger.g0.o());
-                textView.setText(org.telegram.messenger.hd.M0(2131742804, null));
+                textView.setText(org.telegram.messenger.id.M0(2131742806, null));
                 textView.setGravity(17);
                 textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
                 addView(textView, c8.ha.d(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
@@ -68,11 +68,11 @@ public final class xb0 extends org.telegram.ui.Components.wt0 {
                 textView2.setTextSize(1, 14.0f);
                 textView2.setGravity(1);
                 textView2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
-                textView2.setText(org.telegram.messenger.hd.M0(2131748723, null));
+                textView2.setText(org.telegram.messenger.id.M0(2131748725, null));
                 addView(textView2, c8.ha.t(-2, -2, 1, 12, 8, 12, 0));
                 org.telegram.ui.Components.lb0 lb0Var = new org.telegram.ui.Components.lb0(context, null);
                 this.y = lb0Var;
-                lb0Var.setText(org.telegram.messenger.hd.M0(2131751117, null));
+                lb0Var.setText(org.telegram.messenger.id.M0(2131751117, null));
                 EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
                 this.a = editTextBoldCursor;
                 editTextBoldCursor.setCursorSize(org.telegram.messenger.g0.L(20.0f));
@@ -87,7 +87,7 @@ public final class xb0 extends org.telegram.ui.Components.wt0 {
                 editTextBoldCursor.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 editTextBoldCursor.setTypeface(Typeface.DEFAULT);
                 int i10 = 5;
-                editTextBoldCursor.setGravity(!org.telegram.messenger.hd.a0 ? 5 : 3);
+                editTextBoldCursor.setGravity(!org.telegram.messenger.id.a0 ? 5 : 3);
                 editTextBoldCursor.setOnFocusChangeListener(new fd(this, 4));
                 lb0Var.e(editTextBoldCursor);
                 lb0Var.addView(editTextBoldCursor, c8.ha.e(-1, -2, 48));
@@ -113,7 +113,7 @@ public final class xb0 extends org.telegram.ui.Components.wt0 {
         this.d = textView4;
         textView4.setTextSize(1, 18.0f);
         textView4.setTypeface(org.telegram.messenger.g0.o());
-        textView4.setText(org.telegram.messenger.hd.M0(2131742804, null));
+        textView4.setText(org.telegram.messenger.id.M0(2131742806, null));
         textView4.setGravity(17);
         textView4.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         addView(textView4, c8.ha.d(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
@@ -122,11 +122,11 @@ public final class xb0 extends org.telegram.ui.Components.wt0 {
         textView22.setTextSize(1, 14.0f);
         textView22.setGravity(1);
         textView22.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
-        textView22.setText(org.telegram.messenger.hd.M0(2131748723, null));
+        textView22.setText(org.telegram.messenger.id.M0(2131748725, null));
         addView(textView22, c8.ha.t(-2, -2, 1, 12, 8, 12, 0));
         org.telegram.ui.Components.lb0 lb0Var2 = new org.telegram.ui.Components.lb0(context, null);
         this.y = lb0Var2;
-        lb0Var2.setText(org.telegram.messenger.hd.M0(2131751117, null));
+        lb0Var2.setText(org.telegram.messenger.id.M0(2131751117, null));
         EditTextBoldCursor editTextBoldCursor2 = new EditTextBoldCursor(context);
         this.a = editTextBoldCursor2;
         editTextBoldCursor2.setCursorSize(org.telegram.messenger.g0.L(20.0f));
@@ -141,7 +141,7 @@ public final class xb0 extends org.telegram.ui.Components.wt0 {
         editTextBoldCursor2.setTransformationMethod(PasswordTransformationMethod.getInstance());
         editTextBoldCursor2.setTypeface(Typeface.DEFAULT);
         int i102 = 5;
-        editTextBoldCursor2.setGravity(!org.telegram.messenger.hd.a0 ? 5 : 3);
+        editTextBoldCursor2.setGravity(!org.telegram.messenger.id.a0 ? 5 : 3);
         editTextBoldCursor2.setOnFocusChangeListener(new fd(this, 4));
         lb0Var2.e(editTextBoldCursor2);
         lb0Var2.addView(editTextBoldCursor2, c8.ha.e(-1, -2, 48));
@@ -180,7 +180,7 @@ public final class xb0 extends org.telegram.ui.Components.wt0 {
 
     @Override // org.telegram.ui.Components.wt0
     public String getHeaderName() {
-        return org.telegram.messenger.hd.M0(2131748725, "LoginPassword");
+        return org.telegram.messenger.id.M0(2131748727, "LoginPassword");
     }
 
     @Override // org.telegram.ui.Components.wt0

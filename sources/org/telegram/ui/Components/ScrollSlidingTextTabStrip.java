@@ -20,7 +20,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements org.telegram.ui.ActionBar.a6 {
     public static final /* synthetic */ int o0 = 0;
@@ -51,7 +51,7 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
     public final org.telegram.ui.ActionBar.f6 c;
     public View c0;
     public boolean d;
-    public final dt d0;
+    public final et d0;
     public boolean e;
     public fh.g e0;
     public boolean f;
@@ -85,7 +85,7 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
         this.Q = new SparseIntArray(5);
         this.R = new SparseIntArray(5);
         this.b0 = 200L;
-        this.d0 = new dt(this, 13);
+        this.d0 = new et(this, 13);
         this.f0 = new Path();
         this.g0 = new RectF();
         this.h0 = new RectF();
@@ -301,9 +301,9 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
             this.n = i10;
             this.r = i7;
             boolean z10 = this.H;
-            dt dtVar = this.d0;
+            et etVar = this.d0;
             if (z10) {
-                org.telegram.messenger.g0.r(dtVar);
+                org.telegram.messenger.g0.r(etVar);
                 this.H = false;
             }
             this.S = 0.0f;
@@ -317,7 +317,7 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
                 this.F = jg.g.D(textView.getMeasuredWidth(), this.G, 2, textView.getLeft());
             }
             setEnabled(false);
-            org.telegram.messenger.g0.i3(dtVar, 16L);
+            org.telegram.messenger.g0.i3(etVar, 16L);
             uk0 uk0Var2 = this.b;
             if (uk0Var2 != null) {
                 uk0Var2.b(i7, z9);

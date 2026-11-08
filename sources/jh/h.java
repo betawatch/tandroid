@@ -14,9 +14,9 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.v31;
 import org.telegram.ui.Components.v61;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Wallet.a5;
+import org.telegram.ui.Wallet.z4;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class h extends View {
     public final /* synthetic */ int a = 0;
@@ -88,22 +88,22 @@ public final class h extends View {
                 }
                 break;
             default:
-                a5 a5Var = (a5) this.e;
-                int d12 = a5Var.d1();
+                z4 z4Var = (z4) this.e;
+                int d12 = z4Var.d1();
                 Paint paint2 = this.b;
                 paint2.setColor(d12);
-                ViewGroup viewGroup = a5Var.T1;
+                ViewGroup viewGroup = z4Var.T1;
                 int[] iArr = (int[]) this.c;
                 viewGroup.getLocationInWindow(iArr);
                 int[] iArr2 = (int[]) this.d;
                 getLocationInWindow(iArr2);
                 float f12 = iArr[0] - iArr2[0];
-                View view = ((v61) a5Var.T1).getViewPages()[0];
+                View view = ((v61) z4Var.T1).getViewPages()[0];
                 int paddingLeft = view != null ? view.getPaddingLeft() : 0;
                 int paddingRight = view != null ? view.getPaddingRight() : 0;
                 canvas.save();
-                canvas.clipRect(paddingLeft + f12, 0.0f, (f12 + a5Var.T1.getWidth()) - paddingRight, getHeight());
-                for (View view2 : ((v61) a5Var.T1).getViewPages()) {
+                canvas.clipRect(paddingLeft + f12, 0.0f, (f12 + z4Var.T1.getWidth()) - paddingRight, getHeight());
+                for (View view2 : ((v61) z4Var.T1).getViewPages()) {
                     if (view2 != null && view2.getVisibility() == 0) {
                         canvas.save();
                         canvas.translate(view2.getLeft() + (iArr[0] - iArr2[0]), view2.getTop() + (iArr[1] - iArr2[1]));
@@ -141,9 +141,9 @@ public final class h extends View {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(a5 a5Var, Context context) {
+    public h(z4 z4Var, Context context) {
         super(context);
-        this.e = a5Var;
+        this.e = z4Var;
         this.b = new Paint(1);
         this.c = new int[2];
         this.d = new int[2];

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class g9 extends org.telegram.ui.Components.w31 {
     public static final /* synthetic */ int b = 0;
@@ -21,7 +21,7 @@ public final class g9 extends org.telegram.ui.Components.w31 {
         h9Var.c = chat;
         org.telegram.ui.Components.ag0 ag0Var = h9Var.b;
         ag0Var.setTag(Long.valueOf(chat.id));
-        h9Var.a.x(chat, null, null, (!org.telegram.messenger.t3.T(chat) || chat.megagroup) ? chat.has_geo ? org.telegram.messenger.hd.M0(2131748641, null) : !org.telegram.messenger.t3.t0(chat) ? org.telegram.messenger.hd.M0(2131748640, null).toLowerCase() : org.telegram.messenger.hd.M0(2131748637, null).toLowerCase() : !org.telegram.messenger.t3.t0(chat) ? org.telegram.messenger.hd.M0(2131752329, null).toLowerCase() : org.telegram.messenger.hd.M0(2131752318, null).toLowerCase(), false, false);
+        h9Var.a.x(chat, null, null, (!org.telegram.messenger.t3.T(chat) || chat.megagroup) ? chat.has_geo ? org.telegram.messenger.id.M0(2131748643, null) : !org.telegram.messenger.t3.t0(chat) ? org.telegram.messenger.id.M0(2131748642, null).toLowerCase() : org.telegram.messenger.id.M0(2131748639, null).toLowerCase() : !org.telegram.messenger.t3.t0(chat) ? org.telegram.messenger.id.M0(2131752329, null).toLowerCase() : org.telegram.messenger.id.M0(2131752318, null).toLowerCase(), false, false);
         ag0Var.setOnClickListener(onClickListener);
     }
 

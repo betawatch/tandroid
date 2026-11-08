@@ -3,9 +3,9 @@ package fi;
 import android.net.Uri;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p0 implements c20 {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class p0 implements c20 {
             case 1:
                 Uri uri = (Uri) obj;
                 if (t0Var.c && t0Var.r != null) {
-                    t0Var.n.b(R.raw.ic_save_to_gallery, 3500, hd.N0("VideoSavedHint"));
+                    t0Var.n.b(R.raw.ic_save_to_gallery, 3500, id.N0("VideoSavedHint"));
                     t0Var.c = false;
                     t0Var.d();
                     t0Var.w = uri;
@@ -50,7 +50,7 @@ public final /* synthetic */ class p0 implements c20 {
                 }
                 s0 s0Var3 = new s0(t0Var.getContext());
                 t0Var.n = s0Var3;
-                s0Var3.b(R.raw.ic_save_to_gallery, 2500, hd.N0("PhotoSavedHint"));
+                s0Var3.b(R.raw.ic_save_to_gallery, 2500, id.N0("PhotoSavedHint"));
                 t0Var.b.addView(t0Var.n);
                 t0Var.w = uri2;
                 break;

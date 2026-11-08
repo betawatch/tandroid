@@ -6,7 +6,7 @@ import android.view.View;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class uf0 implements org.telegram.ui.Components.hi0 {
     public final /* synthetic */ org.telegram.ui.ActionBar.f2 a;
@@ -69,7 +69,7 @@ public final class uf0 implements org.telegram.ui.Components.hi0 {
                 } else {
                     j3 = 0;
                     j10 = j11;
-                    bg0Var.P.v3(messageObject, bg0Var.k(messageObject), bg0Var.M.size() > 1, false, false, false);
+                    bg0Var.P.w3(messageObject, bg0Var.k(messageObject), bg0Var.M.size() > 1, false, false, false);
                     bg0Var.d0.setSelectedReactionAnimated(z12 ? null : o0Var2);
                     if (bg0Var.d0.getReactionsWindow() != null && bg0Var.d0.getReactionsWindow().m != null) {
                         ch.w wVar = bg0Var.d0.getReactionsWindow().m;
@@ -142,7 +142,7 @@ public final class uf0 implements org.telegram.ui.Components.hi0 {
                 }
             }
             if (z13 && (f2Var = this.a) != null) {
-                new org.telegram.ui.Components.hc(bg0Var.F, bg0Var.b).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.x2(org.telegram.messenger.hd.M0(2131754253, null), new tf0(i10, f2Var))).j();
+                new org.telegram.ui.Components.hc(bg0Var.F, bg0Var.b).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.x2(org.telegram.messenger.id.M0(2131754253, null), new tf0(i10, f2Var))).j();
             }
             bg0Var.G.invalidate();
         }

@@ -10,7 +10,7 @@ import c8.ha;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.t3;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -23,7 +23,7 @@ import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.ez;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class g1 extends LinearLayout implements a6 {
     public ShapeDrawable a;
@@ -76,21 +76,21 @@ public final class g1 extends LinearLayout implements a6 {
             xpVar.e = L;
             xpVar.f = L2;
             l9Var.setImageDrawable(xpVar);
-            textView2.setText(hd.a0(null, null, 2131749343, str));
-            textView.setText(hd.M0(2131749344, null));
+            textView2.setText(id.a0(null, null, 2131749345, str));
+            textView.setText(id.M0(2131749346, null));
             return;
         }
         w8 w8Var = this.d;
         w8Var.q(chat);
         l9Var.e(chat, w8Var);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(hd.a0(null, null, 2131749341, str + "@" + t3.K(chat, false)));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(id.a0(null, null, 2131749343, str + "@" + t3.K(chat, false)));
         spannableStringBuilder.append((CharSequence) "  d");
         ez ezVar = new ez(8);
         ezVar.f = k6.x0(null, k6.zk, false);
         ezVar.n = false;
         spannableStringBuilder.setSpan(ezVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
         textView2.setText(spannableStringBuilder);
-        textView.setText(hd.M0(2131749342, null));
+        textView.setText(id.M0(2131749344, null));
     }
 
     @Override // android.widget.LinearLayout, android.view.View

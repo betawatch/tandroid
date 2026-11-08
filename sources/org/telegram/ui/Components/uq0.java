@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class uq0 implements uk0 {
     public final /* synthetic */ xs0 a;
@@ -115,7 +115,7 @@ public final class uq0 implements uk0 {
                         if (profileTab != null || (i7 != xs0.p0(profileTab) && xs0Var.U1 != i7)) {
                             k60 H = k60.H(f2Var, view);
                             H.W(org.telegram.ui.ActionBar.k6.d0(org.telegram.messenger.g0.L(24.0f), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false)));
-                            H.c(R.drawable.tabs_reorder, org.telegram.messenger.hd.M0(2131746621, null), new bi.c9(this, C0, i7, 6), false);
+                            H.c(R.drawable.tabs_reorder, org.telegram.messenger.id.M0(2131746623, null), new bi.c9(this, C0, i7, 6), false);
                             H.Z();
                             return true;
                         }
@@ -126,7 +126,7 @@ public final class uq0 implements uk0 {
                     }
                     k60 H2 = k60.H(f2Var, view);
                     H2.W(org.telegram.ui.ActionBar.k6.d0(org.telegram.messenger.g0.L(24.0f), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false)));
-                    H2.c(R.drawable.tabs_reorder, org.telegram.messenger.hd.M0(2131746621, null), new bi.c9(this, C0, i7, 6), false);
+                    H2.c(R.drawable.tabs_reorder, org.telegram.messenger.id.M0(2131746623, null), new bi.c9(this, C0, i7, 6), false);
                     H2.Z();
                     return true;
                 }

@@ -9,7 +9,7 @@ import com.google.android.gms.cast.CastDevice;
 import java.util.HashSet;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class j extends a8.q {
     public final /* synthetic */ int b = 2;
@@ -23,7 +23,7 @@ public final class j extends a8.q {
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // a8.q
-    public final boolean K0(int i7, Parcel parcel, Parcel parcel2) {
+    public final boolean k1(int i7, Parcel parcel, Parcel parcel2) {
         CastDevice castDevice;
         CastDevice castDevice2;
         int i10 = this.b;
@@ -82,10 +82,10 @@ public final class j extends a8.q {
                         if (qVar != null) {
                             try {
                                 o oVar = (o) qVar;
-                                Parcel P0 = oVar.P0();
-                                P0.writeInt(i12);
-                                P0.writeInt(0);
-                                oVar.T0(P0, 6);
+                                Parcel p12 = oVar.p1();
+                                p12.writeInt(i12);
+                                p12.writeInt(0);
+                                oVar.t1(p12, 6);
                             } catch (RemoteException e10) {
                                 c.m.a(e10, "Unable to call %s on %s.", "disconnectFromDevice", q.class.getSimpleName());
                             }

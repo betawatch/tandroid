@@ -11,7 +11,7 @@ import j$.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.Calendar;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
@@ -29,7 +29,7 @@ import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class c1 extends f2 implements ls {
     public q41 a;
@@ -57,7 +57,7 @@ public final class c1 extends f2 implements ls {
                     return;
                 }
                 c1Var.b.b(false);
-                k5.p(null, 2131743880, hc.a0(c1Var), null);
+                k5.p(null, 2131743882, hc.a0(c1Var), null);
                 return;
             }
             if (c1Var.isFinished || c1Var.finishing) {
@@ -68,34 +68,34 @@ public final class c1 extends f2 implements ls {
     }
 
     public static void a0(c1 c1Var, ArrayList arrayList) {
-        String M0 = hd.M0(2131752764, null);
-        String M02 = hd.M0(2131752749, null);
+        String M0 = id.M0(2131752764, null);
+        String M02 = id.M0(2131752749, null);
         x31 x31Var = new x31(2);
         x31Var.l = M0;
         x31Var.o = M02;
         x31Var.k = R.raw.biz_clock;
         arrayList.add(x31Var);
-        x31 i7 = x31.i(-1, hd.M0(2131752729, null));
+        x31 i7 = x31.i(-1, id.M0(2131752729, null));
         i7.L(c1Var.d);
         arrayList.add(i7);
         arrayList.add(x31.B(-100, null));
         if (!c1Var.d) {
             return;
         }
-        arrayList.add(x31.u(hd.M0(2131752764, null)));
+        arrayList.add(x31.u(id.M0(2131752764, null)));
         int i10 = 0;
         while (true) {
             ArrayList[] arrayListArr = c1Var.f;
             if (i10 >= arrayListArr.length) {
                 arrayList.add(x31.B(-101, null));
-                arrayList.add(x31.f(hd.M0(2131752728, null), x1.b(c1Var.currentAccount).d(c1Var.n, false), -2));
+                arrayList.add(x31.f(id.M0(2131752728, null), x1.b(c1Var.currentAccount).d(c1Var.n, false), -2));
                 arrayList.add(x31.B(-102, null));
                 return;
             }
             if (arrayListArr[i10] == null) {
                 arrayListArr[i10] = new ArrayList();
             }
-            String displayName = DayOfWeek.values()[i10].getDisplayName(TextStyle.FULL, hd.E0().y);
+            String displayName = DayOfWeek.values()[i10].getDisplayName(TextStyle.FULL, id.E0().y);
             String str = displayName.substring(0, 1).toUpperCase() + displayName.substring(1);
             String f02 = f0(c1Var.f[i10]);
             x31 x31Var2 = new x31(5);
@@ -170,16 +170,16 @@ public final class c1 extends f2 implements ls {
 
     public static String f0(ArrayList arrayList) {
         if (arrayList.isEmpty()) {
-            return hd.M0(2131752755, null);
+            return id.M0(2131752755, null);
         }
         if (h0(arrayList)) {
-            return hd.M0(2131752754, null);
+            return id.M0(2131752754, null);
         }
         String str = "";
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
             b1 b1Var = (b1) arrayList.get(i7);
             if (i7 > 0) {
-                str = rf.b.q(str, "\n");
+                str = rf.b.r(str, "\n");
             }
             StringBuilder m10 = com.google.android.recaptcha.internal.a.m(str);
             m10.append(b1.a(b1Var.a));
@@ -212,18 +212,18 @@ public final class c1 extends f2 implements ls {
         ArrayList[] e02 = e0(tL_businessWorkHours.weekly_open);
         StringBuilder sb2 = new StringBuilder();
         if (user != null) {
-            sb2.append(hd.a0(null, null, 2131752759, t10.p(user)));
+            sb2.append(id.a0(null, null, 2131752759, t10.p(user)));
             sb2.append("\n");
         }
         for (int i10 = 0; i10 < 7; i10++) {
             ArrayList arrayList = e02[i10];
-            String displayName = DayOfWeek.values()[i10].getDisplayName(TextStyle.FULL, hd.E0().y);
+            String displayName = DayOfWeek.values()[i10].getDisplayName(TextStyle.FULL, id.E0().y);
             sb2.append(displayName.substring(0, 1).toUpperCase() + displayName.substring(1));
             sb2.append(": ");
             if (h0(arrayList)) {
-                sb2.append(hd.M0(2131752741, null));
+                sb2.append(id.M0(2131752741, null));
             } else if (arrayList.isEmpty()) {
-                sb2.append(hd.M0(2131752745, null));
+                sb2.append(id.M0(2131752745, null));
             } else {
                 for (int i11 = 0; i11 < arrayList.size(); i11++) {
                     if (i11 > 0) {
@@ -240,7 +240,7 @@ public final class c1 extends f2 implements ls {
         TLRPC.TL_timezone a10 = x1.b(i7).a(tL_businessWorkHours.timezone_id);
         if (((Calendar.getInstance().getTimeZone().getRawOffset() / 1000) - (a10 == null ? 0 : a10.utc_offset)) / 60 != 0 && a10 != null) {
             x1.b(i7);
-            sb2.append(hd.a0(null, null, 2131752760, x1.e(a10, true)));
+            sb2.append(id.a0(null, null, 2131752760, x1.e(a10, true)));
         }
         return sb2.toString();
     }
@@ -270,9 +270,9 @@ public final class c1 extends f2 implements ls {
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(hd.M0(2131752764, null));
+        this.simpleActionBar.setTitle(id.M0(2131752764, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 16));
-        this.b = this.simpleActionBar.n(hd.M0(2131745947, null));
+        this.b = this.simpleActionBar.n(id.M0(2131745949, null));
         d0(false);
         FrameLayout frameLayout = new FrameLayout(context);
         q41 q41Var = new q41(this, new hi.u1(this, 11), new q4(this, 24), null);

@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class t10 {
     public static boolean A(long j3) {
@@ -78,22 +78,22 @@ public abstract class t10 {
         if (n10 != null) {
             String lowerCase = n10.toLowerCase(Locale.ROOT);
             if (lowerCase.endsWith("agent")) {
-                return hd.M0(2131752944, null);
+                return id.M0(2131752944, null);
             }
             if (lowerCase.endsWith("game")) {
-                return hd.M0(2131752942, null);
+                return id.M0(2131752942, null);
             }
             if (lowerCase.endsWith("app")) {
-                return hd.M0(2131752943, null);
+                return id.M0(2131752943, null);
             }
             if (lowerCase.endsWith("ai")) {
-                return hd.M0(2131752945, null);
+                return id.M0(2131752945, null);
             }
             if (lowerCase.endsWith("gay")) {
-                return hd.M0(2131752941, null);
+                return id.M0(2131752941, null);
             }
         }
-        return hd.M0(2131753156, null);
+        return id.M0(2131753156, null);
     }
 
     public static int e(TLRPC.User user) {
@@ -157,19 +157,19 @@ public abstract class t10 {
         } else if (!z9 && str.length() <= 2) {
             return g5.m(0, user.first_name, user.last_name);
         }
-        return !TextUtils.isEmpty(str) ? str : hd.M0(2131749327, null);
+        return !TextUtils.isEmpty(str) ? str : id.M0(2131749329, null);
     }
 
     public static String k(TLRPC.User user) {
         if (user == null || x(user)) {
-            return hd.M0(2131749327, null);
+            return id.M0(2131749329, null);
         }
         String str = user.first_name;
         if (TextUtils.isEmpty(str)) {
             str = user.last_name;
         }
         if (str == null) {
-            return hd.M0(2131749327, null);
+            return id.M0(2131749329, null);
         }
         int indexOf = str.indexOf(" ", 2);
         return indexOf >= 0 ? str.substring(0, indexOf) : str;
@@ -233,7 +233,7 @@ public abstract class t10 {
 
     public static String p(TLRPC.User user) {
         if (user == null || x(user)) {
-            return hd.M0(2131749327, null);
+            return id.M0(2131749329, null);
         }
         String F2 = g0.F2(g0.D2(g5.m(0, user.first_name, user.last_name)));
         if (F2.length() != 0 || TextUtils.isEmpty(user.phone)) {

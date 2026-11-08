@@ -9,7 +9,7 @@ import org.telegram.ui.Components.ni;
 import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.up0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class w3 extends q41 {
     public final /* synthetic */ int m3 = 4;
@@ -116,8 +116,8 @@ public final class w3 extends q41 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w3(Context context, int i7, zh.q0 q0Var, zh.v1 v1Var, zh.v1 v1Var2, org.telegram.ui.ActionBar.f6 f6Var, up0 up0Var) {
-        super(context, i7, 0, false, q0Var, v1Var, v1Var2, f6Var, 3, 1);
+    public w3(Context context, int i7, zh.p0 p0Var, zh.u1 u1Var, zh.u1 u1Var2, org.telegram.ui.ActionBar.f6 f6Var, up0 up0Var) {
+        super(context, i7, 0, false, p0Var, u1Var, u1Var2, f6Var, 3, 1);
         this.n3 = up0Var;
     }
 }

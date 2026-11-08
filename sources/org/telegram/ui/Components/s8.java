@@ -12,7 +12,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class s8 extends FrameLayout {
     public float D;
@@ -21,8 +21,8 @@ public abstract class s8 extends FrameLayout {
     public long a;
     public TLRPC.Document b;
     public final di.c4 c;
-    public final e10 d;
-    public final e10 e;
+    public final f10 d;
+    public final f10 e;
     public float f;
     public p8 h;
     public boolean n;
@@ -36,8 +36,8 @@ public abstract class s8 extends FrameLayout {
     public s8(t8 t8Var, Context context) {
         super(context);
         this.F = t8Var;
-        this.d = new e10();
-        this.e = new e10();
+        this.d = new f10();
+        this.e = new f10();
         this.f = 1.0f;
         this.r = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
         this.s = new w5(this, 200L, xq.g);
@@ -110,13 +110,13 @@ public abstract class s8 extends FrameLayout {
             int i10 = p8Var.d;
             int i11 = p8Var.e;
             int i12 = p8Var.f;
-            e10 e10Var = this.d;
-            e10Var.d(i7, i10, i11, i12);
-            Paint paint = e10Var.c;
+            f10 f10Var = this.d;
+            f10Var.d(i7, i10, i11, i12);
+            Paint paint = f10Var.c;
             float f12 = this.D;
             float f13 = this.y;
             float f14 = this.E;
-            e10Var.b(f12 - f13, f14 - f13, f12 + f13, f14 + f13);
+            f10Var.b(f12 - f13, f14 - f13, f12 + f13, f14 + f13);
             if (this.f == 1.0f) {
                 s8Var = this;
                 paint.setAlpha(org.telegram.messenger.qs.e4);
@@ -154,9 +154,9 @@ public abstract class s8 extends FrameLayout {
             float f24 = f23 - f21;
             float f25 = f20 + f21;
             float f26 = f23 + f21;
-            e10 e10Var2 = this.e;
-            e10Var2.b(f22, f24, f25, f26);
-            Paint paint2 = e10Var2.c;
+            f10 f10Var2 = this.e;
+            f10Var2.b(f22, f24, f25, f26);
+            Paint paint2 = f10Var2.c;
             paint2.setAlpha(org.telegram.messenger.qs.e4);
             s8Var = this;
             s8Var.a(canvas, this.D, this.E, measuredWidth, this.y, paint2);

@@ -11,7 +11,7 @@ import c8.ha;
 import java.util.HashSet;
 import org.telegram.messenger.camera.q;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.a6;
@@ -20,7 +20,7 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.da0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class j extends LinearLayout implements a6 {
     public final f6 a;
@@ -56,7 +56,7 @@ public final class j extends LinearLayout implements a6 {
         f11.setMinWidth(g0.L(20.66f));
         f11.setPadding(g0.L(6.33f), 0, g0.L(6.33f), 0);
         f11.setTextSize(1, 16.0f);
-        if (hd.a0) {
+        if (id.a0) {
             addView(f11, ha.j(13.33f, 0.0f));
             addView(f10, ha.q(0, -2, 1.0f, 23, 20, 0, z9 ? 12 : 16, 0));
             addView(frameLayout, ha.t(28, 28, 21, 0, 0, z9 ? 9 : 14, 0));

@@ -4,7 +4,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class tj0 implements v4.r0 {
     public RecyclerView a;
@@ -18,7 +18,7 @@ public final class tj0 implements v4.r0 {
     public final sj0 k;
     public int b = -1;
     public final int j = org.telegram.messenger.g0.L(80.0f);
-    public final dt l = new dt(this, 12);
+    public final et l = new et(this, 12);
 
     public tj0(sj0 sj0Var) {
         this.k = sj0Var;
@@ -31,12 +31,12 @@ public final class tj0 implements v4.r0 {
         float y10 = motionEvent.getY();
         int action = motionEvent.getAction();
         sj0 sj0Var = this.k;
-        dt dtVar = this.l;
+        et etVar = this.l;
         if (action == 1) {
             this.c = false;
             this.g = false;
             this.h = false;
-            org.telegram.messenger.g0.r(dtVar);
+            org.telegram.messenger.g0.r(etVar);
             sj0Var.d(false);
             return;
         }
@@ -49,20 +49,20 @@ public final class tj0 implements v4.r0 {
                 this.h = false;
                 if (!this.g) {
                     this.g = true;
-                    org.telegram.messenger.g0.r(dtVar);
-                    org.telegram.messenger.g0.h3(dtVar);
+                    org.telegram.messenger.g0.r(etVar);
+                    org.telegram.messenger.g0.h3(etVar);
                 }
                 this.i = ((int) (this.d - (y10 - f10))) / 2;
             } else if (y10 >= this.e && y10 <= this.f) {
                 this.g = false;
                 if (!this.h) {
                     this.h = true;
-                    org.telegram.messenger.g0.r(dtVar);
-                    org.telegram.messenger.g0.h3(dtVar);
+                    org.telegram.messenger.g0.r(etVar);
+                    org.telegram.messenger.g0.h3(etVar);
                 }
                 this.i = ((int) ((y10 + this.f) - (this.e + r11))) / 2;
             } else if (this.g || this.h) {
-                org.telegram.messenger.g0.r(dtVar);
+                org.telegram.messenger.g0.r(etVar);
                 this.g = false;
                 this.h = false;
             }

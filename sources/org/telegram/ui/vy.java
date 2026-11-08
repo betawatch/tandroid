@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class vy extends org.telegram.ui.Components.na {
     public int P1;
@@ -40,7 +40,7 @@ public final class vy extends org.telegram.ui.Components.na {
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.Gi, null);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setBackground(org.telegram.ui.ActionBar.z5.f(org.telegram.ui.ActionBar.k6.Ci, 8.0f));
-        textView.setText(org.telegram.messenger.hd.M0(2131750647, null));
+        textView.setText(org.telegram.messenger.id.M0(2131750647, null));
         textView.setGravity(17);
         textView.setOnClickListener(new a(this, 21));
         FrameLayout.LayoutParams d = c8.ha.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 10.0f);
@@ -130,7 +130,7 @@ public final class vy extends org.telegram.ui.Components.na {
         } else {
             obj = "";
         }
-        return org.telegram.messenger.hd.V(null, null, 2131750644, obj);
+        return org.telegram.messenger.id.V(null, null, 2131750644, obj);
     }
 
     public final void g1() {

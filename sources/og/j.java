@@ -24,7 +24,7 @@ import org.telegram.messenger.camera.q;
 import org.telegram.messenger.dt;
 import org.telegram.messenger.f0;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.t0;
@@ -62,8 +62,8 @@ import org.telegram.ui.t3;
 import org.telegram.ui.uz;
 import org.telegram.ui.wu0;
 import org.telegram.ui.ww;
-import org.telegram.ui.x71;
 import org.telegram.ui.xy0;
+import org.telegram.ui.y71;
 import org.telegram.ui.yz;
 import sg.b1;
 import sg.c1;
@@ -72,7 +72,7 @@ import wi.n0;
 import wi.o0;
 import wi.r0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -175,7 +175,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 an anVar = (an) this.b;
                 String str5 = (String) this.c;
                 g0.g(str5);
-                hc.a0(anVar).i(hd.a0(null, null, 2131750885, str5)).j();
+                hc.a0(anVar).i(id.a0(null, null, 2131750885, str5)).j();
                 return;
             case 4:
                 ArrayList arrayList = (ArrayList) this.b;
@@ -198,7 +198,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                     try {
                         ((ClipboardManager) t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", f0Var.c(false)));
                         if (g0.I3()) {
-                            Toast.makeText(ad0Var.p1.getParentActivity(), hd.M0(2131744195, null), 0).show();
+                            Toast.makeText(ad0Var.p1.getParentActivity(), id.M0(2131744197, null), 0).show();
                             return;
                         }
                         return;
@@ -318,7 +318,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
             case 12:
                 l21 l21Var = (l21) this.b;
                 ((ClipboardManager) t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.c));
-                q.r(null, 2131744195, new hc(l21Var.c, null));
+                q.r(null, 2131744197, new hc(l21Var.c, null));
                 return;
             case 13:
                 f61 f61Var = (f61) this.b;
@@ -350,17 +350,17 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                         return;
                     }
                     if (i7 == 3) {
-                        themeActivity.presentFragment(new x71(j6Var, null, false));
+                        themeActivity.presentFragment(new y71(j6Var, null, false));
                         return;
                     }
                     if (themeActivity.getParentActivity() == null) {
                         return;
                     }
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(themeActivity.getParentActivity());
-                    alertDialog$Builder.a.R = hd.M0(2131751485, "DeleteThemeTitle");
-                    alertDialog$Builder.a.T = hd.M0(2131751486, "DeleteThemeAlert");
-                    alertDialog$Builder.k(hd.M0(2131751599, "Delete"), new lk0(18, f61Var, j6Var));
-                    alertDialog$Builder.h(hd.M0(2131752589, "Cancel"), null);
+                    alertDialog$Builder.a.R = id.M0(2131751485, "DeleteThemeTitle");
+                    alertDialog$Builder.a.T = id.M0(2131751486, "DeleteThemeAlert");
+                    alertDialog$Builder.k(id.M0(2131751599, "Delete"), new lk0(18, f61Var, j6Var));
+                    alertDialog$Builder.h(id.M0(2131752589, "Cancel"), null);
                     u1 u1Var = alertDialog$Builder.a;
                     themeActivity.showDialog(u1Var);
                     TextView textView = (TextView) u1Var.d(-1);
@@ -453,7 +453,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                     } else {
                         intent.putExtra("android.intent.extra.STREAM", Uri.fromFile(file));
                     }
-                    themeActivity.startActivityForResult(Intent.createChooser(intent, hd.M0(2131745460, "ShareFile")), 500);
+                    themeActivity.startActivityForResult(Intent.createChooser(intent, id.M0(2131745462, "ShareFile")), 500);
                     return;
                 } catch (Exception e15) {
                     a8.g(e15, true);

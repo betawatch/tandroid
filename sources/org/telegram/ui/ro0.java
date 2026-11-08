@@ -16,7 +16,7 @@ import org.telegram.messenger.BringAppForegroundService;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ro0 implements org.telegram.ui.ActionBar.o0, org.telegram.ui.Components.i51, org.telegram.ui.Components.u51, org.telegram.ui.Components.ed0, ti.m {
     public final /* synthetic */ PhotoViewer a;
@@ -422,7 +422,7 @@ public final class ro0 implements org.telegram.ui.ActionBar.o0, org.telegram.ui.
     }
 
     @Override // ti.m
-    public void g(ti.q qVar) {
+    public void g(ti.p pVar) {
         PhotoViewer photoViewer = this.a;
         photoViewer.R8 = true;
         if (photoViewer.D2) {
@@ -430,12 +430,12 @@ public final class ro0 implements org.telegram.ui.ActionBar.o0, org.telegram.ui.
             if (t51Var != null) {
                 t51Var.z0(null);
                 photoViewer.F2.A0(null);
-                photoViewer.F2.A0(qVar);
+                photoViewer.F2.A0(pVar);
             }
         } else {
             TextureView textureView = photoViewer.B2;
             if (textureView != null) {
-                photoViewer.P8 = qVar;
+                photoViewer.P8 = pVar;
                 org.telegram.messenger.g0.E2(textureView);
                 photoViewer.P8 = null;
             }

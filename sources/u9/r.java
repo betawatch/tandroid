@@ -1,6 +1,44 @@
 package u9;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
-public final class r implements ra.a {
+public final class r {
+    public final Class a;
+    public final Class b;
+
+    public r(Class cls, Class cls2) {
+        this.a = cls;
+        this.b = cls2;
+    }
+
+    public static r a(Class cls) {
+        return new r(q.class, cls);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || r.class != obj.getClass()) {
+            return false;
+        }
+        r rVar = (r) obj;
+        if (this.b.equals(rVar.b)) {
+            return this.a.equals(rVar.a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode() + (this.b.hashCode() * 31);
+    }
+
+    public final String toString() {
+        Class cls = this.b;
+        Class cls2 = this.a;
+        if (cls2 == q.class) {
+            return cls.getName();
+        }
+        return "@" + cls2.getName() + " " + cls.getName();
+    }
 }

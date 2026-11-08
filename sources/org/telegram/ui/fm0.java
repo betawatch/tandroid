@@ -8,7 +8,7 @@ import java.util.HashSet;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class fm0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public org.telegram.messenger.fp D;
@@ -99,22 +99,22 @@ public class fm0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
                 if (M02 == null || M02.participants_count <= 0) {
                     boolean t02 = org.telegram.messenger.t3.t0(M02);
                     if (org.telegram.messenger.t3.V(M02)) {
-                        this.h.l(org.telegram.messenger.hd.M0(t02 ? 2131752318 : 2131752329, null).toLowerCase(), false);
+                        this.h.l(org.telegram.messenger.id.M0(t02 ? 2131752318 : 2131752329, null).toLowerCase(), false);
                     } else {
-                        this.h.l(org.telegram.messenger.hd.M0(t02 ? 2131748637 : 2131748640, null).toLowerCase(), false);
+                        this.h.l(org.telegram.messenger.id.M0(t02 ? 2131748639 : 2131748642, null).toLowerCase(), false);
                     }
                 } else if (org.telegram.messenger.t3.V(M02)) {
-                    this.h.l(org.telegram.messenger.hd.H(',', "Subscribers", M02.participants_count), false);
+                    this.h.l(org.telegram.messenger.id.H(',', "Subscribers", M02.participants_count), false);
                 } else {
-                    this.h.l(org.telegram.messenger.hd.H(',', "Members", M02.participants_count), false);
+                    this.h.l(org.telegram.messenger.id.H(',', "Members", M02.participants_count), false);
                 }
             } else if (org.telegram.messenger.t3.V(M02)) {
-                this.h.l(org.telegram.messenger.hd.H(',', "Subscribers", N0.participants_count), false);
+                this.h.l(org.telegram.messenger.id.H(',', "Subscribers", N0.participants_count), false);
             } else {
-                this.h.l(org.telegram.messenger.hd.H(',', "Members", N0.participants_count), false);
+                this.h.l(org.telegram.messenger.id.H(',', "Members", N0.participants_count), false);
             }
         } else {
-            this.h.l(org.telegram.messenger.hd.M0(2131747825, null), false);
+            this.h.l(org.telegram.messenger.id.M0(2131747827, null), false);
         }
         setWillNotDraw(false);
     }

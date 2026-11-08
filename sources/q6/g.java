@@ -11,7 +11,7 @@ import android.os.RemoteException;
 import android.util.Log;
 import com.google.android.gms.common.api.Scope;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class g extends r6.a {
     public static final Parcelable.Creator<g> CREATOR = new q4.x(11);
@@ -56,9 +56,9 @@ public final class g extends r6.a {
                 try {
                     try {
                         m0 m0Var2 = (m0) m0Var;
-                        Parcel N0 = m0Var2.N0(m0Var2.P0(), 2);
-                        Account account3 = (Account) p7.g.a(N0, Account.CREATOR);
-                        N0.recycle();
+                        Parcel n1 = m0Var2.n1(m0Var2.p1(), 2);
+                        Account account3 = (Account) p7.g.a(n1, Account.CREATOR);
+                        n1.recycle();
                         Binder.restoreCallingIdentity(clearCallingIdentity);
                         account2 = account3;
                     } catch (RemoteException unused) {

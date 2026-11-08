@@ -8,11 +8,11 @@ import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.style.ReplacementSpan;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class b extends ReplacementSpan {
     public final TextPaint a;
@@ -34,7 +34,7 @@ public final class b extends ReplacementSpan {
 
     public final void a() {
         if (this.c == null) {
-            StaticLayout staticLayout = new StaticLayout(hd.M0(2131746407, null), this.a, org.telegram.messenger.g0.q.x, hd.a0 ? Layout.Alignment.ALIGN_OPPOSITE : Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            StaticLayout staticLayout = new StaticLayout(id.M0(2131746409, null), this.a, org.telegram.messenger.g0.q.x, id.a0 ? Layout.Alignment.ALIGN_OPPOSITE : Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
             this.c = staticLayout;
             this.d = staticLayout.getLineWidth(0);
             this.e = this.c.getHeight();

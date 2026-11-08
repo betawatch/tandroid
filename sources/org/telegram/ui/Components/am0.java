@@ -4,7 +4,7 @@ import android.content.Context;
 import android.text.TextUtils;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class am0 extends xr {
     public final /* synthetic */ org.telegram.ui.ww f0;
@@ -27,12 +27,12 @@ public final class am0 extends xr {
         sl0 sl0Var = this.g0.i0;
         sl0Var.e(this.Y || this.Z || (arrayList = this.R) == null || !arrayList.isEmpty() || (arrayList2 = this.S) == null || !arrayList2.isEmpty() || (arrayList3 = this.U) == null || !arrayList3.isEmpty() || (arrayList4 = this.T) == null || !arrayList4.isEmpty(), z9);
         if (!TextUtils.isEmpty(this.d0)) {
-            sl0Var.d.setText(org.telegram.messenger.hd.M0(2131748166, null));
+            sl0Var.d.setText(org.telegram.messenger.id.M0(2131748168, null));
             sl0Var.e.setVisibility(8);
         } else {
-            sl0Var.d.setText(org.telegram.messenger.hd.M0(2131748230, null));
+            sl0Var.d.setText(org.telegram.messenger.id.M0(2131748232, null));
             sl0Var.e.setVisibility(0);
-            sl0Var.e.setText(org.telegram.messenger.hd.M0(2131748231, null));
+            sl0Var.e.setText(org.telegram.messenger.id.M0(2131748233, null));
         }
     }
 }

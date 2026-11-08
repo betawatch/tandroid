@@ -3,7 +3,7 @@ package rc;
 import h2.j0;
 import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final int[] a = {16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15};
@@ -95,8 +95,8 @@ public abstract class d {
     */
     public static void c(f5.u uVar, int[] iArr, int[] iArr2, j0 j0Var) {
         int i7;
-        int o4;
-        int o10;
+        int s5;
+        int s9;
         int i10;
         int i11 = 0;
         while (i11 < iArr2.length) {
@@ -105,27 +105,27 @@ public abstract class d {
                 switch (m10) {
                     case 16:
                         i7 = iArr2[i11 - 1];
-                        o4 = uVar.o(iArr, 2) + 3;
-                        for (i10 = 0; i10 < o4; i10++) {
+                        s5 = uVar.s(iArr, 2) + 3;
+                        for (i10 = 0; i10 < s5; i10++) {
                             iArr2[i11 + i10] = i7;
                         }
-                        i11 += o4 - 1;
+                        i11 += s5 - 1;
                         break;
                     case 17:
-                        o10 = uVar.o(iArr, 3) + 3;
-                        o4 = o10;
+                        s9 = uVar.s(iArr, 3) + 3;
+                        s5 = s9;
                         i7 = 0;
-                        while (i10 < o4) {
+                        while (i10 < s5) {
                         }
-                        i11 += o4 - 1;
+                        i11 += s5 - 1;
                         break;
                     case 18:
-                        o10 = uVar.o(iArr, 7) + 11;
-                        o4 = o10;
+                        s9 = uVar.s(iArr, 7) + 11;
+                        s5 = s9;
                         i7 = 0;
-                        while (i10 < o4) {
+                        while (i10 < s5) {
                         }
-                        i11 += o4 - 1;
+                        i11 += s5 - 1;
                         break;
                     default:
                         throw new ab.a0(String.format("[%s] Bad code length '%d' at the bit index '%d'.", d.class.getSimpleName(), Integer.valueOf(m10), iArr));
@@ -150,125 +150,125 @@ public abstract class d {
                 return m10 + 1;
             case 4:
                 i10 = 1;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 5:
                 i10 = 1;
                 i11 = 7;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 6:
                 i11 = 9;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 7:
                 i11 = 13;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 8:
                 i11 = 17;
                 i10 = 3;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 9:
                 i11 = 25;
                 i10 = 3;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 10:
                 i11 = 33;
                 i10 = 4;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 11:
                 i11 = 49;
                 i10 = 4;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 12:
                 i7 = 65;
                 i10 = 5;
                 i11 = i7;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 13:
                 i7 = 97;
                 i10 = 5;
                 i11 = i7;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 14:
                 i11 = qs.N1;
                 i10 = 6;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 15:
                 i11 = qs.X2;
                 i10 = 6;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 16:
                 i11 = qs.g4;
                 i10 = 7;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 17:
                 i11 = 385;
                 i10 = 7;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 18:
                 i11 = 513;
                 i10 = 8;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 19:
                 i11 = 769;
                 i10 = 8;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 20:
                 i11 = 1025;
                 i10 = 9;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 21:
                 i11 = 1537;
                 i10 = 9;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 22:
                 i11 = 2049;
                 i10 = 10;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 23:
                 i11 = 3073;
                 i10 = 10;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 24:
                 i11 = 4097;
                 i10 = 11;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 25:
                 i11 = 6145;
                 i10 = 11;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 26:
                 i11 = 8193;
                 i10 = 12;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 27:
                 i11 = 12289;
                 i10 = 12;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 28:
                 i11 = 16385;
                 i10 = 13;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             case 29:
                 i11 = 24577;
                 i10 = 13;
-                return uVar.o(iArr, i10) + i11;
+                return uVar.s(iArr, i10) + i11;
             default:
                 throw new ab.a0(String.format("[%s] Bad distance code '%d' at the bit index '%d'.", d.class.getSimpleName(), Integer.valueOf(m10), Integer.valueOf(iArr[0])));
         }
     }
 
     public static void e(f5.u uVar, int[] iArr, j0[] j0VarArr) {
-        int o4 = uVar.o(iArr, 5) + qs.g4;
-        int o10 = uVar.o(iArr, 5) + 1;
-        int o11 = uVar.o(iArr, 4) + 4;
+        int s5 = uVar.s(iArr, 5) + qs.g4;
+        int s9 = uVar.s(iArr, 5) + 1;
+        int s10 = uVar.s(iArr, 4) + 4;
         int[] iArr2 = new int[19];
-        for (int i7 = 0; i7 < o11; i7++) {
-            iArr2[a[i7]] = (byte) uVar.o(iArr, 3);
+        for (int i7 = 0; i7 < s10; i7++) {
+            iArr2[a[i7]] = (byte) uVar.s(iArr, 3);
         }
         j0 j0Var = new j0(iArr2);
-        int[] iArr3 = new int[o4];
+        int[] iArr3 = new int[s5];
         c(uVar, iArr, iArr3, j0Var);
         j0 j0Var2 = new j0(iArr3);
-        int[] iArr4 = new int[o10];
+        int[] iArr4 = new int[s9];
         c(uVar, iArr, iArr4, j0Var);
         j0 j0Var3 = new j0(iArr4);
         j0VarArr[0] = j0Var2;
@@ -290,80 +290,80 @@ public abstract class d {
                 return i7 - 254;
             case qs.o4 /* 265 */:
                 i10 = 11;
-                return uVar.o(iArr, i11) + i10;
+                return uVar.s(iArr, i11) + i10;
             case qs.p4 /* 266 */:
                 i10 = 13;
-                return uVar.o(iArr, i11) + i10;
+                return uVar.s(iArr, i11) + i10;
             case qs.q4 /* 267 */:
                 i10 = 15;
-                return uVar.o(iArr, i11) + i10;
+                return uVar.s(iArr, i11) + i10;
             case qs.r4 /* 268 */:
                 i10 = 17;
-                return uVar.o(iArr, i11) + i10;
+                return uVar.s(iArr, i11) + i10;
             case qs.s4 /* 269 */:
                 i10 = 19;
                 i11 = 2;
-                return uVar.o(iArr, i11) + i10;
+                return uVar.s(iArr, i11) + i10;
             case qs.t4 /* 270 */:
                 i10 = 23;
                 i11 = 2;
-                return uVar.o(iArr, i11) + i10;
+                return uVar.s(iArr, i11) + i10;
             case qs.u4 /* 271 */:
                 i10 = 27;
                 i11 = 2;
-                return uVar.o(iArr, i11) + i10;
+                return uVar.s(iArr, i11) + i10;
             case qs.v4 /* 272 */:
                 i10 = 31;
                 i11 = 2;
-                return uVar.o(iArr, i11) + i10;
+                return uVar.s(iArr, i11) + i10;
             case qs.w4 /* 273 */:
                 i10 = 35;
                 i11 = 3;
-                return uVar.o(iArr, i11) + i10;
+                return uVar.s(iArr, i11) + i10;
             case qs.x4 /* 274 */:
                 i10 = 43;
                 i11 = 3;
-                return uVar.o(iArr, i11) + i10;
+                return uVar.s(iArr, i11) + i10;
             case qs.y4 /* 275 */:
                 i10 = 51;
                 i11 = 3;
-                return uVar.o(iArr, i11) + i10;
+                return uVar.s(iArr, i11) + i10;
             case qs.z4 /* 276 */:
                 i10 = 59;
                 i11 = 3;
-                return uVar.o(iArr, i11) + i10;
+                return uVar.s(iArr, i11) + i10;
             case qs.A4 /* 277 */:
                 i10 = 67;
                 i11 = 4;
-                return uVar.o(iArr, i11) + i10;
+                return uVar.s(iArr, i11) + i10;
             case qs.B4 /* 278 */:
                 i10 = 83;
                 i11 = 4;
-                return uVar.o(iArr, i11) + i10;
+                return uVar.s(iArr, i11) + i10;
             case qs.C4 /* 279 */:
                 i10 = 99;
                 i11 = 4;
-                return uVar.o(iArr, i11) + i10;
+                return uVar.s(iArr, i11) + i10;
             case qs.D4 /* 280 */:
                 i10 = qs.A1;
                 i11 = 4;
-                return uVar.o(iArr, i11) + i10;
+                return uVar.s(iArr, i11) + i10;
             case qs.E4 /* 281 */:
                 i10 = qs.P1;
                 i11 = 5;
-                return uVar.o(iArr, i11) + i10;
+                return uVar.s(iArr, i11) + i10;
             case qs.F4 /* 282 */:
                 i10 = qs.t2;
                 i11 = 5;
-                return uVar.o(iArr, i11) + i10;
+                return uVar.s(iArr, i11) + i10;
             case qs.G4 /* 283 */:
                 i10 = qs.Z2;
                 i11 = 5;
-                return uVar.o(iArr, i11) + i10;
+                return uVar.s(iArr, i11) + i10;
             case qs.H4 /* 284 */:
                 i10 = 227;
                 i11 = 5;
-                return uVar.o(iArr, i11) + i10;
+                return uVar.s(iArr, i11) + i10;
             case qs.I4 /* 285 */:
                 return qs.h4;
             default:

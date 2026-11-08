@@ -5,7 +5,7 @@ import android.content.Context;
 import android.text.SpannableStringBuilder;
 import c8.ha;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.t3;
 import org.telegram.ui.ActionBar.k6;
@@ -15,7 +15,7 @@ import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class z extends b0 {
     public final l9 h;
@@ -70,11 +70,11 @@ public final class z extends b0 {
         if (t3.w(27, d0Var.m1)) {
             wp wpVar = new wp(R.drawable.filled_add_album, 0);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("+ ");
-            spannableStringBuilder.append((CharSequence) hd.M0(2131751989, null));
+            spannableStringBuilder.append((CharSequence) id.M0(2131751989, null));
             spannableStringBuilder.setSpan(wpVar, 0, 1, 33);
             dVar.setText(spannableStringBuilder);
         } else {
-            dVar.setText(hd.M0(2131747830, null));
+            dVar.setText(id.M0(2131747832, null));
         }
         d0Var.o1 = dVar;
         dVar.setOnClickListener(new g(this, i10));

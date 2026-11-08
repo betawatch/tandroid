@@ -6,7 +6,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class hb implements org.telegram.ui.Cells.q0 {
     public final /* synthetic */ jb a;
@@ -99,7 +99,7 @@ public final class hb implements org.telegram.ui.Cells.q0 {
                 mb.F0(mbVar, (TLRPC.TL_messages_exportedChatInvite) obj, mbVar.z0);
                 return;
             } else {
-                org.telegram.messenger.k5.o(null, 2131748912, org.telegram.ui.Components.hc.a0(mbVar), R.raw.linkbroken, 36);
+                org.telegram.messenger.k5.o(null, 2131748914, org.telegram.ui.Components.hc.a0(mbVar), R.raw.linkbroken, 36);
                 return;
             }
         }

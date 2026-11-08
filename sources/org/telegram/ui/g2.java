@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class g2 extends View implements org.telegram.ui.Cells.h9 {
     public final o50 a;
@@ -141,7 +141,7 @@ public final class g2 extends View implements org.telegram.ui.Cells.h9 {
         if (spannableStringBuilder.length() == 0) {
             return;
         }
-        spannableStringBuilder.append((CharSequence) ", ").append((CharSequence) org.telegram.messenger.hd.M0(2131754858, null));
+        spannableStringBuilder.append((CharSequence) ", ").append((CharSequence) org.telegram.messenger.id.M0(2131754858, null));
         accessibilityNodeInfo.setText(spannableStringBuilder);
     }
 
@@ -230,18 +230,18 @@ public final class g2 extends View implements org.telegram.ui.Cells.h9 {
         }
         int i19 = i14;
         if (pagerelatedarticle.published_date != 0 && !TextUtils.isEmpty(pagerelatedarticle.author)) {
-            String format2 = org.telegram.messenger.hd.E0().h0().format(pagerelatedarticle.published_date * 1000);
+            String format2 = org.telegram.messenger.id.E0().h0().format(pagerelatedarticle.published_date * 1000);
             String str2 = pagerelatedarticle.author;
             Object[] objArr = new Object[2];
             objArr[0] = format2;
             objArr[i13] = str2;
-            format = org.telegram.messenger.hd.a0(null, null, 2131754040, objArr);
+            format = org.telegram.messenger.id.a0(null, null, 2131754040, objArr);
         } else if (TextUtils.isEmpty(pagerelatedarticle.author)) {
-            format = pagerelatedarticle.published_date != 0 ? org.telegram.messenger.hd.E0().h0().format(pagerelatedarticle.published_date * 1000) : !TextUtils.isEmpty(pagerelatedarticle.description) ? pagerelatedarticle.description : pagerelatedarticle.url;
+            format = pagerelatedarticle.published_date != 0 ? org.telegram.messenger.id.E0().h0().format(pagerelatedarticle.published_date * 1000) : !TextUtils.isEmpty(pagerelatedarticle.description) ? pagerelatedarticle.description : pagerelatedarticle.url;
         } else {
             Object[] objArr2 = new Object[i13];
             objArr2[0] = pagerelatedarticle.author;
-            format = org.telegram.messenger.hd.a0(null, null, 2131754056, objArr2);
+            format = org.telegram.messenger.id.a0(null, null, 2131754056, objArr2);
         }
         z2 n10 = g4.n(this.a, this, format, null, i12, this.x + i17, this.n, ((e4Var == null || !e4Var.G) && i15 == 0) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.mu0.a(), i19, this.b);
         this.d = n10;

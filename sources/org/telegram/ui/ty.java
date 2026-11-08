@@ -4,7 +4,7 @@ import android.content.Context;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ty extends az {
     public final /* synthetic */ uy E;
@@ -27,7 +27,7 @@ public final class ty extends az {
     public final void c() {
         org.telegram.ui.Components.k60 F = org.telegram.ui.Components.k60.F(this.E.d.c, null, this);
         final int i7 = 0;
-        F.c(R.drawable.msg_copy, org.telegram.messenger.hd.M0(2131751762, null), new Runnable(this) { // from class: org.telegram.ui.sy
+        F.c(R.drawable.msg_copy, org.telegram.messenger.id.M0(2131751762, null), new Runnable(this) { // from class: org.telegram.ui.sy
             public final /* synthetic */ ty b;
 
             {
@@ -55,7 +55,7 @@ public final class ty extends az {
             }
         }, false);
         final int i10 = 1;
-        F.c(R.drawable.msg_qrcode, org.telegram.messenger.hd.M0(2131750471, null), new Runnable(this) { // from class: org.telegram.ui.sy
+        F.c(R.drawable.msg_qrcode, org.telegram.messenger.id.M0(2131750473, null), new Runnable(this) { // from class: org.telegram.ui.sy
             public final /* synthetic */ ty b;
 
             {
@@ -83,7 +83,7 @@ public final class ty extends az {
             }
         }, false);
         final int i11 = 2;
-        F.c(R.drawable.msg_delete, org.telegram.messenger.hd.M0(2131751535, null), new Runnable(this) { // from class: org.telegram.ui.sy
+        F.c(R.drawable.msg_delete, org.telegram.messenger.id.M0(2131751535, null), new Runnable(this) { // from class: org.telegram.ui.sy
             public final /* synthetic */ ty b;
 
             {
@@ -110,7 +110,7 @@ public final class ty extends az {
                 }
             }
         }, true);
-        if (org.telegram.messenger.hd.a0) {
+        if (org.telegram.messenger.id.a0) {
             F.i = 3;
         }
         F.Z();

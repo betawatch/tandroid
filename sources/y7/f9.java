@@ -4,10 +4,10 @@ import a8.wa;
 import a8.xa;
 import android.content.Context;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class f9 implements d9 {
-    public final u9.m a;
+    public final u9.n a;
     public final b9 b;
 
     public f9(Context context, b9 b9Var) {
@@ -16,9 +16,9 @@ public final class f9 implements d9 {
         o5.s.b(context);
         o5.q c10 = o5.s.a().c(aVar);
         if (m5.a.d.contains(new l5.c("json"))) {
-            new u9.m(new xa(c10, 4));
+            new u9.n(new xa(c10, 4));
         }
-        this.a = new u9.m(new xa(c10, 5));
+        this.a = new u9.n(new xa(c10, 5));
     }
 
     @Override // y7.d9

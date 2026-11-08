@@ -7,7 +7,7 @@ import android.os.RemoteException;
 import com.google.android.gms.internal.cast.l4;
 import com.google.android.gms.internal.cast.s6;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class i {
     public final /* synthetic */ c a;
@@ -28,10 +28,10 @@ public final class i {
                 hVar.u();
             }
             o oVar = (o) qVar;
-            Parcel P0 = oVar.P0();
+            Parcel p12 = oVar.p1();
             int i7 = com.google.android.gms.internal.cast.t.a;
-            P0.writeInt(0);
-            oVar.T0(P0, 1);
+            p12.writeInt(0);
+            oVar.t1(p12, 1);
         } catch (RemoteException e10) {
             c.m.a(e10, "Unable to call %s on %s.", "onConnected", q.class.getSimpleName());
         }

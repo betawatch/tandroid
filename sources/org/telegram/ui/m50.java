@@ -11,7 +11,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class m50 extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public int D;
@@ -28,7 +28,7 @@ public final class m50 extends org.telegram.ui.ActionBar.f2 implements org.teleg
     public j50 O;
     public FrameLayout a;
     public org.telegram.ui.Components.av0 b;
-    public org.telegram.ui.Components.lz c;
+    public org.telegram.ui.Components.mz c;
     public org.telegram.ui.Components.pj0 d;
     public k50 e;
     public l50 f;
@@ -124,14 +124,14 @@ public final class m50 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         int i7 = m50Var.n;
         if (tL_messages_stickerSet == null) {
             if (m50Var.r != null) {
-                org.telegram.messenger.k5.o(null, 2131749377, org.telegram.ui.Components.hc.a0(m50Var), R.raw.done, 36);
+                org.telegram.messenger.k5.o(null, 2131749379, org.telegram.ui.Components.hc.a0(m50Var), R.raw.done, 36);
             }
             m50Var.r = null;
             m50Var.s = true;
         } else {
             m50Var.r = tL_messages_stickerSet;
             m50Var.s = false;
-            org.telegram.messenger.k5.o(null, 2131749377, org.telegram.ui.Components.hc.a0(m50Var), R.raw.done, 36);
+            org.telegram.messenger.k5.o(null, 2131749379, org.telegram.ui.Components.hc.a0(m50Var), R.raw.done, 36);
         }
         m50Var.m0();
         m50Var.k0(m50Var.r, false);
@@ -184,13 +184,13 @@ public final class m50 extends org.telegram.ui.ActionBar.f2 implements org.teleg
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(this.N ? 2131749442 : 2131749396, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(this.N ? 2131749444 : 2131749398, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new ux(this, 7));
         org.telegram.ui.ActionBar.f5 b10 = this.simpleActionBar.o().b(0, R.drawable.outline_header_search);
         this.L = b10;
         b10.N();
         b10.B0 = new kg.v1(this, 12);
-        this.L.setSearchFieldHint(org.telegram.messenger.hd.M0(2131745837, null));
+        this.L.setSearchFieldHint(org.telegram.messenger.id.M0(2131745839, null));
         this.e = new k50(this, context);
         this.f = new l50(this, context);
         FrameLayout frameLayout = new FrameLayout(context);
@@ -210,9 +210,9 @@ public final class m50 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.a = frameLayout2;
         org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.d6, frameLayout2, null);
-        org.telegram.ui.Components.lz lzVar = new org.telegram.ui.Components.lz(context, getResourceProvider());
-        this.c = lzVar;
-        lzVar.setViewType(19);
+        org.telegram.ui.Components.mz mzVar = new org.telegram.ui.Components.mz(context, getResourceProvider());
+        this.c = mzVar;
+        mzVar.setViewType(19);
         this.c.setIsSingleCell(true);
         this.c.setItemsCount((int) Math.ceil(org.telegram.messenger.g0.q.y / org.telegram.messenger.g0.N(58.0f)));
         this.a.addView(this.c, c8.ha.c(-1.0f, -1));

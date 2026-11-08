@@ -37,10 +37,10 @@ import org.telegram.ui.Cells.f1;
 import org.telegram.ui.Components.ft0;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.hy0;
-import org.telegram.ui.ya1;
+import org.telegram.ui.za1;
 import x2.q1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, Vector.TLDeserializer, b20, r1, o6, p6, ft0, u9.d {
     public final /* synthetic */ int a;
@@ -370,7 +370,7 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
                 int i10 = k7.s3;
                 break;
             default:
-                k7.c2(new ya1(6, null));
+                k7.c2(new za1(6, null));
                 break;
         }
     }

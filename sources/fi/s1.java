@@ -2,12 +2,12 @@ package fi;
 
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.jy;
+import org.telegram.ui.Components.ky;
 import org.telegram.ui.Components.mt0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class s1 extends jy {
+public final class s1 extends ky {
     public final mt0 X;
     public final /* synthetic */ t1 Y;
 
@@ -24,7 +24,7 @@ public final class s1 extends jy {
         return B();
     }
 
-    @Override // org.telegram.ui.Components.jy
+    @Override // org.telegram.ui.Components.ky
     public final mt0 D1(int i7) {
         TLRPC.Document document;
         ArrayList<TLRPC.DocumentAttribute> arrayList;

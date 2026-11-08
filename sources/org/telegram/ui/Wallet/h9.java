@@ -1,82 +1,116 @@
 package org.telegram.ui.Wallet;
 
-import android.animation.ValueAnimator;
-import android.graphics.drawable.BitmapDrawable;
-import android.view.KeyEvent;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.drawable.GradientDrawable;
+import android.text.Editable;
+import android.text.TextPaint;
+import android.text.TextUtils;
+import android.view.MotionEvent;
+import java.util.ArrayList;
+import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h9 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ float e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ KeyEvent.Callback g;
+public final class h9 extends EditTextBoldCursor {
+    public final org.telegram.ui.Components.w5 G1;
+    public final org.telegram.ui.Components.w5 H1;
+    public float I1;
+    public float J1;
+    public final /* synthetic */ l9 K1;
 
-    public /* synthetic */ h9(KeyEvent.Callback callback, float f10, float f11, float f12, float f13, int i7, int i10) {
-        this.a = i10;
-        this.g = callback;
-        this.b = f10;
-        this.c = f11;
-        this.d = f12;
-        this.e = f13;
-        this.f = i7;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h9(l9 l9Var, Context context) {
+        super(context);
+        this.K1 = l9Var;
+        this.G1 = new org.telegram.ui.Components.w5(this, 180L, xq.h);
+        this.H1 = new org.telegram.ui.Components.w5(this, 320L, l9.S);
+        this.I1 = 1.0f;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                m9 m9Var = (m9) this.g;
-                m9Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                xq xqVar = xq.h;
-                float interpolation = xqVar.getInterpolation(floatValue);
-                float interpolation2 = xqVar.getInterpolation(Math.min(1.0f, (floatValue * 320.0f) / 120.0f));
-                w6 w6Var = m9Var.d;
-                float f10 = this.c;
-                float f11 = this.b;
-                w6Var.setAlpha(((f10 - f11) * interpolation2) + f11);
-                TextView textView = m9Var.f;
-                float f12 = this.e;
-                float f13 = this.d;
-                textView.setAlpha(((f12 - f13) * interpolation2) + f13);
-                FrameLayout frameLayout = m9Var.e;
-                frameLayout.getLayoutParams().width = Math.round(((m9Var.D - r3) * interpolation) + this.f);
-                frameLayout.requestLayout();
-                break;
-            default:
-                yh.l lVar = (yh.l) this.g;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                lVar.y = floatValue2;
-                float f14 = this.b;
-                float z9 = com.google.android.recaptcha.internal.a.z(1.0f, f14, floatValue2, f14);
-                yh.k kVar = lVar.D;
-                kVar.setScaleX(z9);
-                kVar.setScaleY(z9);
-                kVar.setTranslationX((1.0f - lVar.y) * this.c);
-                kVar.setTranslationY((1.0f - lVar.y) * this.d);
-                int i7 = (int) ((1.0f - lVar.y) * this.e);
-                lVar.h.N(i7, i7);
-                float a10 = c8.j9.a((lVar.y * 2.0f) - 1.0f, 0.0f, 1.0f);
-                lVar.c.setAlpha((int) (a10 * 255.0f));
-                lVar.d.setAlpha(a10);
-                lVar.e.setAlpha(a10);
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = lVar.f;
-                actionBarPopupWindow$ActionBarPopupWindowLayout.setTranslationY((1.0f - lVar.y) * this.f);
-                actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(a10);
-                BitmapDrawable bitmapDrawable = lVar.x;
-                if (bitmapDrawable != null) {
-                    bitmapDrawable.setAlpha((int) (lVar.y * 255.0f));
-                }
-                lVar.n.setAlpha(a10);
-                break;
+    @Override // org.telegram.ui.Components.EditTextBoldCursor
+    public final void n(Canvas canvas, GradientDrawable gradientDrawable) {
+        gradientDrawable.setCornerRadius(org.telegram.messenger.g0.N(1.5f));
+        int lineBaseline = getLayout().getLineBaseline(0);
+        Rect bounds = gradientDrawable.getBounds();
+        float f10 = lineBaseline;
+        int round = Math.round(((bounds.top - lineBaseline) * this.I1) + f10);
+        int round2 = Math.round(((bounds.bottom - lineBaseline) * this.I1) + f10);
+        int i7 = bounds.left;
+        int width = bounds.width();
+        if (this.J1 > 0.0f) {
+            float f11 = i7;
+            i7 = Math.round((((((((getWidth() + getScrollX()) - getCompoundPaddingLeft()) - getCompoundPaddingRight()) - getPaint().measureText("0")) - width) - f11) * this.J1) + f11);
         }
+        gradientDrawable.setBounds(i7, round, width + i7, round2);
+        gradientDrawable.draw(canvas);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0082  */
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.dt, android.widget.TextView, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onDraw(Canvas canvas) {
+        float lineLeft;
+        int size;
+        Editable text = getText();
+        int max = Math.max(TextUtils.indexOf((CharSequence) text, '.'), TextUtils.indexOf((CharSequence) text, ','));
+        int i7 = 0;
+        this.I1 = this.G1.e(false, (max < 0 || getSelectionStart() <= max) ? 1.0f : 0.6363636f);
+        this.J1 = this.H1.d(length() == 0);
+        super.onDraw(canvas);
+        l9 l9Var = this.K1;
+        if (l9Var.I >= 1.0f) {
+            return;
+        }
+        TextPaint paint = getPaint();
+        float textSize = paint.getTextSize();
+        float compoundPaddingLeft = getCompoundPaddingLeft();
+        if (length() != 0) {
+            if (getLayout() != null) {
+                lineLeft = getLayout().getLineLeft(0);
+            }
+            float f10 = compoundPaddingLeft;
+            int baseline = getBaseline();
+            ArrayList arrayList = l9Var.L;
+            size = arrayList.size();
+            while (i7 < size) {
+                Object obj = arrayList.get(i7);
+                i7++;
+                j9 j9Var = (j9) obj;
+                paint.setTextSize(j9Var.b ? (28.0f * textSize) / 44.0f : textSize);
+                j9Var.c.b(canvas, paint, j9Var.a, f10, baseline);
+            }
+            paint.setTextSize(textSize);
+        }
+        lineLeft = getScrollX() + l9Var.N;
+        compoundPaddingLeft += lineLeft;
+        float f102 = compoundPaddingLeft;
+        int baseline2 = getBaseline();
+        ArrayList arrayList2 = l9Var.L;
+        size = arrayList2.size();
+        while (i7 < size) {
+        }
+        paint.setTextSize(textSize);
+    }
+
+    @Override // org.telegram.ui.Components.dt, android.widget.TextView
+    public final void onSelectionChanged(int i7, int i10) {
+        super.onSelectionChanged(i7, i10);
+        if (i7 != i10) {
+            this.K1.b();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getActionMasked() == 0) {
+            this.K1.b();
+            this.H1.a(length() == 0);
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

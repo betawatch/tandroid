@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class so extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public oo D;
@@ -35,7 +35,7 @@ public final class so extends org.telegram.ui.ActionBar.f2 implements org.telegr
     public po a;
     public org.telegram.ui.Components.pj0 b;
     public org.telegram.ui.ActionBar.f5 c;
-    public org.telegram.ui.Components.iy d;
+    public org.telegram.ui.Components.jy d;
     public ro e;
     public TLRPC.Chat f;
     public TLRPC.ChatFull h;
@@ -116,20 +116,20 @@ public final class so extends org.telegram.ui.ActionBar.f2 implements org.telegr
         setHasOwnBackground(true);
         this.N = false;
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131751390, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131751390, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new w9(this, 6));
         org.telegram.ui.ActionBar.f5 b10 = this.simpleActionBar.o().b(0, R.drawable.outline_header_search);
         b10.N();
         b10.B0 = new kg.v1(this, 2);
         this.c = b10;
-        b10.setSearchFieldHint(org.telegram.messenger.hd.M0(2131745837, null));
+        b10.setSearchFieldHint(org.telegram.messenger.id.M0(2131745839, null));
         this.e = new ro(this, context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        org.telegram.ui.Components.iy iyVar = new org.telegram.ui.Components.iy(context, null);
-        this.d = iyVar;
-        iyVar.b();
-        this.d.setText(org.telegram.messenger.hd.M0(2131748166, null));
+        org.telegram.ui.Components.jy jyVar = new org.telegram.ui.Components.jy(context, null);
+        this.d = jyVar;
+        jyVar.b();
+        this.d.setText(org.telegram.messenger.id.M0(2131748168, null));
         org.telegram.ui.Components.pj0 pj0Var = new org.telegram.ui.Components.pj0(context, null);
         this.b = pj0Var;
         pj0Var.r1();
@@ -140,7 +140,7 @@ public final class so extends org.telegram.ui.ActionBar.f2 implements org.telegr
         po poVar = new po(this, context);
         this.a = poVar;
         pj0Var2.setAdapter(poVar);
-        this.b.setVerticalScrollbarPosition(org.telegram.messenger.hd.a0 ? 1 : 2);
+        this.b.setVerticalScrollbarPosition(org.telegram.messenger.id.a0 ? 1 : 2);
         frameLayout.addView(this.b, c8.ha.c(-1.0f, -1));
         frameLayout.addView(this.d, c8.ha.c(-1.0f, -1));
         this.b.setOnItemClickListener(new h(this, 4));
@@ -270,8 +270,8 @@ public final class so extends org.telegram.ui.ActionBar.f2 implements org.telegr
         TextView textView = new TextView(getParentActivity());
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.j5, null);
         textView.setTextSize(1, 16.0f);
-        textView.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 48);
-        String a02 = !org.telegram.messenger.t3.t0(chat) ? org.telegram.messenger.hd.a0("DiscussionLinkGroupPublicPrivateAlert", null, 2131751377, chat.title, this.f.title) : !org.telegram.messenger.t3.t0(this.f) ? org.telegram.messenger.hd.a0("DiscussionLinkGroupPrivateAlert", null, 2131751379, chat.title, this.f.title) : org.telegram.messenger.hd.a0("DiscussionLinkGroupPublicAlert", null, 2131751378, chat.title, this.f.title);
+        textView.setGravity((org.telegram.messenger.id.a0 ? 5 : 3) | 48);
+        String a02 = !org.telegram.messenger.t3.t0(chat) ? org.telegram.messenger.id.a0("DiscussionLinkGroupPublicPrivateAlert", null, 2131751377, chat.title, this.f.title) : !org.telegram.messenger.t3.t0(this.f) ? org.telegram.messenger.id.a0("DiscussionLinkGroupPrivateAlert", null, 2131751379, chat.title, this.f.title) : org.telegram.messenger.id.a0("DiscussionLinkGroupPublicAlert", null, 2131751378, chat.title, this.f.title);
         if (N0.hidden_prehistory) {
             a02 = jg.g.l(2131751380, null, rf.b.j(a02, "\n\n"));
         }
@@ -282,22 +282,22 @@ public final class so extends org.telegram.ui.ActionBar.f2 implements org.telegr
         w8Var.u(org.telegram.messenger.g0.L(12.0f));
         org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(getParentActivity());
         l9Var.setRoundRadius(org.telegram.messenger.g0.L(20.0f));
-        frameLayout.addView(l9Var, c8.ha.d(40, 40.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 48, 22.0f, 5.0f, 22.0f, 0.0f));
+        frameLayout.addView(l9Var, c8.ha.d(40, 40.0f, (org.telegram.messenger.id.a0 ? 5 : 3) | 48, 22.0f, 5.0f, 22.0f, 0.0f));
         TextView textView2 = new TextView(getParentActivity());
         org.telegram.messenger.k5.n(textView2, org.telegram.ui.ActionBar.k6.E8, null, 1, 20.0f);
         textView2.setLines(1);
         textView2.setMaxLines(1);
         textView2.setSingleLine(true);
-        textView2.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 16);
+        textView2.setGravity((org.telegram.messenger.id.a0 ? 5 : 3) | 16);
         textView2.setEllipsize(TextUtils.TruncateAt.END);
         textView2.setText(chat.title);
-        boolean z10 = org.telegram.messenger.hd.a0;
+        boolean z10 = org.telegram.messenger.id.a0;
         frameLayout.addView(textView2, c8.ha.d(-1, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 21 : 76, 11.0f, z10 ? 76 : 21, 0.0f));
-        frameLayout.addView(textView, c8.ha.d(-2, -2.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 48, 24.0f, 57.0f, 24.0f, 9.0f));
+        frameLayout.addView(textView, c8.ha.d(-2, -2.0f, (org.telegram.messenger.id.a0 ? 5 : 3) | 48, 24.0f, 57.0f, 24.0f, 9.0f));
         w8Var.q(chat);
         l9Var.e(chat, w8Var);
-        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751381, null), new a7(this, N0, chat, 9));
-        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751381, null), new a7(this, N0, chat, 9));
+        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
         showDialog(alertDialog$Builder.a);
     }
 

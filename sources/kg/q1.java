@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qp;
@@ -46,7 +46,7 @@ import org.telegram.ui.Components.x31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class q1 extends f2 implements ls {
     public static org.telegram.ui.ActionBar.u1 f;
@@ -89,8 +89,8 @@ public final class q1 extends f2 implements ls {
     }
 
     public static void a0(q1 q1Var, ArrayList arrayList, l41 l41Var) {
-        String M0 = hd.M0(2131752683, null);
-        String M02 = hd.M0(2131752670, null);
+        String M0 = id.M0(2131752683, null);
+        String M02 = id.M0(2131752670, null);
         x31 x31Var = new x31(2);
         x31Var.l = M0;
         x31Var.o = M02;
@@ -111,7 +111,7 @@ public final class q1 extends f2 implements ls {
             }
         }
         if (arrayList2.size() + (i10 ^ 1) + (i11 ^ 1) < qp.s1(f10.a).B5) {
-            x31 c10 = x31.c(1, R.drawable.msg_viewintopic, hd.M0(2131752682, null));
+            x31 c10 = x31.c(1, R.drawable.msg_viewintopic, id.M0(2131752682, null));
             c10.q = true;
             arrayList.add(c10);
         }
@@ -129,7 +129,7 @@ public final class q1 extends f2 implements ls {
         }
         l41Var.L();
         l41Var.U();
-        arrayList.add(x31.C(hd.M0(2131752681, null)));
+        arrayList.add(x31.C(id.M0(2131752681, null)));
     }
 
     public static void b0(q1 q1Var, x31 x31Var, View view) {
@@ -174,7 +174,7 @@ public final class q1 extends f2 implements ls {
         boolean z10 = Q != null && (Q.getFragmentView() instanceof rt0) && ((rt0) Q.getFragmentView()).Q() > org.telegram.messenger.g0.L(20.0f);
         org.telegram.ui.ActionBar.u1[] u1VarArr = new org.telegram.ui.ActionBar.u1[1];
         AlertDialog$Builder w1Var = z10 ? new org.telegram.ui.ActionBar.w1(0, activity, f6Var) : new AlertDialog$Builder(0, activity, f6Var);
-        String M0 = hd.M0((s1Var == null && str == null) ? 2131752659 : 2131752673, null);
+        String M0 = id.M0((s1Var == null && str == null) ? 2131752659 : 2131752673, null);
         org.telegram.ui.ActionBar.u1 u1Var = w1Var.a;
         u1Var.R = M0;
         final x0 x0Var = new x0(activity, f6Var);
@@ -184,7 +184,7 @@ public final class q1 extends f2 implements ls {
         int i10 = k6.j5;
         r6.V(x0Var, i10, f6Var);
         r6.m(x0Var, 34, k6.Li, f6Var);
-        x0Var.setHintText(hd.M0(2131752661, null));
+        x0Var.setHintText(id.M0(2131752661, null));
         x0Var.setSingleLine(true);
         x0Var.setFocusable(true);
         r6.G(x0Var, k6.k6, k6.l6, k6.p7, f6Var);
@@ -197,7 +197,7 @@ public final class q1 extends f2 implements ls {
         TextView textView = new TextView(activity);
         r6.V(textView, i10, f6Var);
         textView.setTextSize(1, 16.0f);
-        textView.setText(hd.M0((s1Var == null && str == null) ? 2131752660 : 2131752674, null));
+        textView.setText(id.M0((s1Var == null && str == null) ? 2131752660 : 2131752674, null));
         frameLayout.addView(textView, ha.e(-1, -2, 83));
         TextView textView2 = new TextView(activity);
         r6.V(textView2, k6.q7, f6Var);
@@ -212,8 +212,8 @@ public final class q1 extends f2 implements ls {
         w1Var.o(e10);
         u1Var.a = org.telegram.messenger.g0.L(292.0f);
         x0Var.setOnEditorActionListener(new m1(x0Var, i7, s1Var, textView2, s2Var, c20Var, u1VarArr, currentFocus));
-        w1Var.k(hd.M0(2131751355, null), new j1(x0Var, s2Var, i7, s1Var, textView2, c20Var));
-        w1Var.h(hd.M0(2131752589, null), new x3(16));
+        w1Var.k(id.M0(2131751355, null), new j1(x0Var, s2Var, i7, s1Var, textView2, c20Var));
+        w1Var.h(id.M0(2131752589, null), new x3(16));
         if (z10) {
             f = u1Var;
             r11 = 0;
@@ -274,13 +274,13 @@ public final class q1 extends f2 implements ls {
         setHasOwnBackground(true);
         final int i10 = 0;
         this.simpleActionBar.setBackButtonDrawable(new y1(false));
-        this.simpleActionBar.setTitle(hd.M0(2131752683, null));
+        this.simpleActionBar.setTitle(id.M0(2131752683, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 18));
         e5 l10 = this.simpleActionBar.l();
         f5 b10 = l10.b(1, R.drawable.msg_edit);
         this.c = b10;
-        b10.setContentDescription(hd.M0(2131751336, null));
-        l10.b(2, R.drawable.msg_delete).setContentDescription(hd.M0(2131751599, null));
+        b10.setContentDescription(id.M0(2131751336, null));
+        l10.b(2, R.drawable.msg_delete).setContentDescription(id.M0(2131751599, null));
         l1 l1Var = new l1(context, null, i10);
         q41 q41Var = new q41(this, new v10(this) { // from class: kg.i1
             public final /* synthetic */ q1 b;

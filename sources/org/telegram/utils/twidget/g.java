@@ -1,34 +1,14 @@
 package org.telegram.utils.twidget;
 
-import android.graphics.Canvas;
+import android.graphics.Bitmap;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
-public abstract class g {
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
+public interface g {
+    Bitmap canvasBitmap(int i7);
 
-    public g(int i7, int i10, int i11, int i12) {
-        this.a = i7;
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
-    }
+    Paint font(int i7);
 
-    public abstract Canvas a();
-
-    public abstract boolean b(Canvas canvas);
-
-    public abstract void c();
-
-    public abstract void d(Canvas canvas, float f10);
-
-    public abstract void e();
-
-    public abstract boolean f();
-
-    public void g() {
-    }
+    Bitmap image(int i7);
 }

@@ -32,11 +32,11 @@ import org.telegram.messenger.a8;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.da;
 import org.telegram.ui.Components.mt0;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.vy;
 import org.telegram.ui.Components.y9;
 import org.telegram.ui.vn;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class j0 {
     public final Bitmap A;
@@ -51,7 +51,7 @@ public final class j0 {
     public ValueAnimator K;
     public ValueAnimator L;
     public Paint M;
-    public uy a;
+    public vy a;
     public k0 b;
     public z0 c;
     public z0 d;
@@ -182,9 +182,9 @@ public final class j0 {
             GLES20.glClear(TLObject.FLAG_14);
         }
         GLES20.glBindFramebuffer(36160, 0);
-        uy uyVar = this.a;
-        if (uyVar != null) {
-            uyVar.b();
+        vy vyVar = this.a;
+        if (vyVar != null) {
+            vyVar.b();
         }
         o0 o0Var = this.e;
         o0Var.h = 0;
@@ -212,7 +212,7 @@ public final class j0 {
     */
     public final wa d(k0 k0Var, int i7, RectF rectF) {
         wa m10;
-        uy uyVar;
+        vy vyVar;
         Object obj;
         boolean z9;
         h hVar = this.i;
@@ -304,8 +304,8 @@ public final class j0 {
             GLES20.glTexParameteri(3553, 10241, 9729);
         }
         GLES20.glBindFramebuffer(36160, 0);
-        if (this.s <= 0 && (uyVar = this.a) != null) {
-            uyVar.b();
+        if (this.s <= 0 && (vyVar = this.a) != null) {
+            vyVar.b();
         }
         this.s--;
         o0 o0Var = this.e;
@@ -373,9 +373,9 @@ public final class j0 {
         GLES20.glBindTexture(3553, j());
         GLES20.glTexParameteri(3553, 10241, 9729);
         GLES20.glBindFramebuffer(36160, 0);
-        uy uyVar = this.a;
-        if (uyVar != null && this.s <= 0) {
-            uyVar.b();
+        vy vyVar = this.a;
+        if (vyVar != null && this.s <= 0) {
+            vyVar.b();
         }
         this.s--;
         o0 o0Var = this.e;
@@ -830,9 +830,9 @@ public final class j0 {
             i10 = 36160;
         }
         GLES20.glBindFramebuffer(i10, i7);
-        uy uyVar = this.a;
-        if (uyVar != null) {
-            uyVar.b();
+        vy vyVar = this.a;
+        if (vyVar != null) {
+            vyVar.b();
         }
         RectF rectF3 = this.h;
         if (rectF3 != null) {
@@ -979,7 +979,7 @@ public final class j0 {
     public final void p(wa waVar, boolean z9) {
         ByteBuffer byteBuffer;
         File file;
-        uy uyVar;
+        vy vyVar;
         k1 k1Var;
         if (waVar == null) {
             return;
@@ -1025,8 +1025,8 @@ public final class j0 {
         GLES20.glBindTexture(3553, j3);
         RectF rectF = (RectF) waVar.c;
         GLES20.glTexSubImage2D(3553, 0, (int) rectF.left, (int) rectF.top, (int) rectF.width(), (int) ((RectF) waVar.c).height(), 6408, 5121, byteBuffer);
-        if (this.s <= 0 && (uyVar = this.a) != null) {
-            uyVar.b();
+        if (this.s <= 0 && (vyVar = this.a) != null) {
+            vyVar.b();
         }
         if (!z9 || (file = (File) waVar.d) == null) {
             return;

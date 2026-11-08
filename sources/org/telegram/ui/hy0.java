@@ -47,7 +47,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.zip.Adler32;
 import java.util.zip.InflaterInputStream;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class hy0 implements jy0, t0.h, q5.b, wi.w0, oa.a {
     public final /* synthetic */ int a;
@@ -120,11 +120,11 @@ public class hy0 implements jy0, t0.h, q5.b, wi.w0, oa.a {
     }
 
     public View A(int i7) {
-        return ((RecyclerView) ((org.telegram.ui.Components.uy) this.b).b).getChildAt(i7);
+        return ((RecyclerView) ((org.telegram.ui.Components.vy) this.b).b).getChildAt(i7);
     }
 
     public int B() {
-        return ((RecyclerView) ((org.telegram.ui.Components.uy) this.b).b).getChildCount();
+        return ((RecyclerView) ((org.telegram.ui.Components.vy) this.b).b).getChildCount();
     }
 
     public boolean C() {
@@ -152,11 +152,11 @@ public class hy0 implements jy0, t0.h, q5.b, wi.w0, oa.a {
 
     public void D(View view) {
         ((ArrayList) this.d).add(view);
-        org.telegram.ui.Components.uy uyVar = (org.telegram.ui.Components.uy) this.b;
+        org.telegram.ui.Components.vy vyVar = (org.telegram.ui.Components.vy) this.b;
         v4.d1 U = RecyclerView.U(view);
         if (U != null) {
             View view2 = U.a;
-            RecyclerView recyclerView = (RecyclerView) uyVar.b;
+            RecyclerView recyclerView = (RecyclerView) vyVar.b;
             int i7 = U.s;
             if (i7 != -1) {
                 U.r = i7;
@@ -237,7 +237,7 @@ public class hy0 implements jy0, t0.h, q5.b, wi.w0, oa.a {
                 i7++;
             }
             if (((f3.o) this.c) == null) {
-                String str = "None of the available extractors (" + new g9.l(", ", 0).e(h9.o.y(h9.i0.r(e10), new v0.j(21))) + ") could read the stream.";
+                String str = "None of the available extractors (" + new g9.l(", ", 0).e(h9.o.y(h9.i0.r(e10), new v0.j(22))) + ") could read the stream.";
                 uri.getClass();
                 throw new x2.r1(str, f0Var.f());
             }
@@ -256,7 +256,7 @@ public class hy0 implements jy0, t0.h, q5.b, wi.w0, oa.a {
 
     public void G() {
         int i7;
-        RecyclerView recyclerView = (RecyclerView) ((org.telegram.ui.Components.uy) this.b).b;
+        RecyclerView recyclerView = (RecyclerView) ((org.telegram.ui.Components.vy) this.b).b;
         ((a8.ua) this.c).H();
         ArrayList arrayList = (ArrayList) this.d;
         int size = arrayList.size();
@@ -435,10 +435,10 @@ public class hy0 implements jy0, t0.h, q5.b, wi.w0, oa.a {
 
     public void M(View view) {
         if (((ArrayList) this.d).remove(view)) {
-            org.telegram.ui.Components.uy uyVar = (org.telegram.ui.Components.uy) this.b;
+            org.telegram.ui.Components.vy vyVar = (org.telegram.ui.Components.vy) this.b;
             v4.d1 U = RecyclerView.U(view);
             if (U != null) {
-                RecyclerView recyclerView = (RecyclerView) uyVar.b;
+                RecyclerView recyclerView = (RecyclerView) vyVar.b;
                 int i7 = U.r;
                 if (recyclerView.c0()) {
                     U.s = i7;
@@ -517,7 +517,7 @@ public class hy0 implements jy0, t0.h, q5.b, wi.w0, oa.a {
     }
 
     public void k(int i7, View view, boolean z9) {
-        RecyclerView recyclerView = (RecyclerView) ((org.telegram.ui.Components.uy) this.b).b;
+        RecyclerView recyclerView = (RecyclerView) ((org.telegram.ui.Components.vy) this.b).b;
         int childCount = i7 < 0 ? recyclerView.getChildCount() : z(i7);
         ((a8.ua) this.c).F(childCount, z9);
         if (z9) {
@@ -539,7 +539,7 @@ public class hy0 implements jy0, t0.h, q5.b, wi.w0, oa.a {
     }
 
     public void l(View view, int i7, ViewGroup.LayoutParams layoutParams, boolean z9) {
-        RecyclerView recyclerView = (RecyclerView) ((org.telegram.ui.Components.uy) this.b).b;
+        RecyclerView recyclerView = (RecyclerView) ((org.telegram.ui.Components.vy) this.b).b;
         int childCount = i7 < 0 ? recyclerView.getChildCount() : z(i7);
         ((a8.ua) this.c).F(childCount, z9);
         if (z9) {
@@ -593,7 +593,7 @@ public class hy0 implements jy0, t0.h, q5.b, wi.w0, oa.a {
         v4.d1 U;
         int z9 = z(i7);
         ((a8.ua) this.c).G(z9);
-        RecyclerView recyclerView = (RecyclerView) ((org.telegram.ui.Components.uy) this.b).b;
+        RecyclerView recyclerView = (RecyclerView) ((org.telegram.ui.Components.vy) this.b).b;
         View childAt = recyclerView.getChildAt(z9);
         if (childAt != null && (U = RecyclerView.U(childAt)) != null) {
             if (U.l() && !U.r()) {
@@ -635,12 +635,12 @@ public class hy0 implements jy0, t0.h, q5.b, wi.w0, oa.a {
         int i7 = fVar.c;
         InputStream inputStream2 = (uf.a) this.b;
         if (fVar.d) {
-            org.telegram.ui.Components.uy uyVar = (org.telegram.ui.Components.uy) this.d;
-            uyVar.getClass();
+            org.telegram.ui.Components.vy vyVar = (org.telegram.ui.Components.vy) this.d;
+            vyVar.getClass();
             byte[] bArr = new byte[i7];
             int i10 = 0;
             while (i10 < i7) {
-                int read = ((ab.d) uyVar.b).read(bArr, i10, i7 - i10);
+                int read = ((ab.d) vyVar.b).read(bArr, i10, i7 - i10);
                 if (read <= 0) {
                     throw new EOFException();
                 }
@@ -758,11 +758,11 @@ public class hy0 implements jy0, t0.h, q5.b, wi.w0, oa.a {
     }
 
     public View u(int i7) {
-        return ((RecyclerView) ((org.telegram.ui.Components.uy) this.b).b).getChildAt(z(i7));
+        return ((RecyclerView) ((org.telegram.ui.Components.vy) this.b).b).getChildAt(z(i7));
     }
 
     public int v() {
-        return ((RecyclerView) ((org.telegram.ui.Components.uy) this.b).b).getChildCount() - ((ArrayList) this.d).size();
+        return ((RecyclerView) ((org.telegram.ui.Components.vy) this.b).b).getChildCount() - ((ArrayList) this.d).size();
     }
 
     @Override // wi.w0
@@ -802,7 +802,7 @@ public class hy0 implements jy0, t0.h, q5.b, wi.w0, oa.a {
         if (i7 < 0) {
             return -1;
         }
-        int childCount = ((RecyclerView) ((org.telegram.ui.Components.uy) this.b).b).getChildCount();
+        int childCount = ((RecyclerView) ((org.telegram.ui.Components.vy) this.b).b).getChildCount();
         int i10 = i7;
         while (i10 < childCount) {
             int B = i7 - (i10 - uaVar.B(i10));
@@ -846,7 +846,7 @@ public class hy0 implements jy0, t0.h, q5.b, wi.w0, oa.a {
         this.a = 18;
         uf.a aVar = new uf.a(inputStream, j3, i7);
         this.b = aVar;
-        this.d = new org.telegram.ui.Components.uy(aVar, 19);
+        this.d = new org.telegram.ui.Components.vy(aVar, 19);
         this.c = hVar;
     }
 
@@ -896,9 +896,9 @@ public class hy0 implements jy0, t0.h, q5.b, wi.w0, oa.a {
     public void i() {
     }
 
-    public hy0(org.telegram.ui.Components.uy uyVar) {
+    public hy0(org.telegram.ui.Components.vy vyVar) {
         this.a = 22;
-        this.b = uyVar;
+        this.b = vyVar;
         this.c = new a8.ua(8);
         this.d = new ArrayList();
     }
@@ -936,10 +936,10 @@ public class hy0 implements jy0, t0.h, q5.b, wi.w0, oa.a {
         this.d = yVar;
     }
 
-    public hy0(org.telegram.ui.Components.qt qtVar) {
+    public hy0(org.telegram.ui.Components.rt rtVar) {
         this.a = 12;
         this.a = 12;
-        this.b = qtVar;
+        this.b = rtVar;
         this.c = Choreographer.getInstance();
         this.d = new org.telegram.ui.Components.xy0(this, 1);
     }

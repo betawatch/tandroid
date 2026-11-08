@@ -8,8 +8,8 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.Date;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i6;
+import org.telegram.messenger.id;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -27,13 +27,12 @@ import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.w8;
 import v4.d1;
 import wg.z0;
-import wi.q;
 import yg.c0;
 import yg.d0;
 import yg.r;
 import yg.t;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class f extends oj0 {
     public final f6 c;
@@ -82,8 +81,8 @@ public abstract class f extends oj0 {
         return i10;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:58:0x033b  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0341  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x033c  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0342  */
     @Override // v4.g0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -100,18 +99,18 @@ public abstract class f extends oj0 {
         if (i11 == 0) {
             r rVar = (r) view;
             if (this.d) {
-                rVar.c.setText(hd.a0("BoostingGiftLink", null, 2131753500, new Object[0]));
-                rVar.d.setText(g0.X2(hd.a0("BoostingLinkAllows", null, 2131753343, new Object[0])));
+                rVar.c.setText(id.a0("BoostingGiftLink", null, 2131753500, new Object[0]));
+                rVar.d.setText(g0.X2(id.a0("BoostingLinkAllows", null, 2131753343, new Object[0])));
             } else {
-                rVar.c.setText(hd.a0("BoostingUsedGiftLink", null, 2131753173, new Object[0]));
-                rVar.d.setText(g0.X2(hd.a0("BoostingLinkUsed", null, 2131753339, new Object[0])));
+                rVar.c.setText(id.a0("BoostingUsedGiftLink", null, 2131753173, new Object[0]));
+                rVar.d.setText(g0.X2(id.a0("BoostingLinkUsed", null, 2131753339, new Object[0])));
             }
             TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = this.f;
             if (tL_payments_checkedGiftCode.boost != null) {
                 long j3 = tL_payments_checkedGiftCode.to_id;
                 final a aVar = new a(this, 1);
-                rVar.c.setText(hd.a0("BoostingGiftLink", null, 2131753500, new Object[0]));
-                SpannableStringBuilder X2 = g0.X2(hd.M0(2131753341, null));
+                rVar.c.setText(id.a0("BoostingGiftLink", null, 2131753500, new Object[0]));
+                SpannableStringBuilder X2 = g0.X2(id.M0(2131753341, null));
                 final TLRPC.User a22 = qp.s1(p10.s0).a2(Long.valueOf(j3));
                 final int i14 = 0;
                 rVar.d.setText(g0.K2(X2, g0.S2("**" + t10.p(a22) + "**", k6.Uc, 2, new Runnable() { // from class: yg.n
@@ -129,8 +128,8 @@ public abstract class f extends oj0 {
                 }, rVar.e), "%1$s"));
             }
             if (this.f.to_id == -1) {
-                rVar.c.setText(hd.a0("BoostingGiftLink", null, 2131753500, new Object[0]));
-                rVar.d.setText(g0.X2(hd.a0("BoostingLinkAllowsAnyone", null, 2131753342, new Object[0])));
+                rVar.c.setText(id.a0("BoostingGiftLink", null, 2131753500, new Object[0]));
+                rVar.d.setText(g0.X2(id.a0("BoostingLinkAllowsAnyone", null, 2131753342, new Object[0])));
                 return;
             }
             return;
@@ -162,7 +161,7 @@ public abstract class f extends oj0 {
                     fi.d dVar = aVar2.a;
                     dVar.setShowZero(false);
                     dVar.setEnabled(true);
-                    dVar.i(hd.a0("Close", null, 2131752041, new Object[0]), false, true);
+                    dVar.i(id.a0("Close", null, 2131752041, new Object[0]), false, true);
                     aVar2.setOnClickListener(new ii.g(this, 29));
                     return;
                 }
@@ -176,17 +175,17 @@ public abstract class f extends oj0 {
             TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode3 = this.f;
             if (tL_payments_checkedGiftCode3.boost == null) {
                 if (this.d) {
-                    d0Var.setText(g0.S2(tL_payments_checkedGiftCode3.to_id == -1 ? hd.M0(2131753271, null) : hd.M0(2131753270, null), k6.Uc, 0, new d(this, i12), this.c));
+                    d0Var.setText(g0.S2(tL_payments_checkedGiftCode3.to_id == -1 ? id.M0(2131753271, null) : id.M0(2131753270, null), k6.Uc, 0, new d(this, i12), this.c));
                     return;
                 } else {
                     Date date = new Date(this.f.used_date * 1000);
-                    d0Var.setText(hd.a0("BoostingUsedLinkDate", null, 2131753172, hd.a0("formatDateAtTime", null, 2131742784, hd.E0().C0().format(date), hd.E0().p0().format(date))));
+                    d0Var.setText(id.a0("BoostingUsedLinkDate", null, 2131753172, id.a0("formatDateAtTime", null, 2131742786, id.E0().C0().format(date), id.E0().p0().format(date))));
                     return;
                 }
             }
             String str2 = this.h;
             if (str2 == null || str2.isEmpty()) {
-                d0Var.setText(hd.M0(2131753340, null));
+                d0Var.setText(id.M0(2131753340, null));
                 return;
             } else {
                 d0Var.setFixedSize(14);
@@ -204,7 +203,7 @@ public abstract class f extends oj0 {
         TextView textView2 = c0Var2.b;
         f6 f6Var = c0Var2.n;
         Date date2 = new Date(tL_payments_checkedGiftCode4.date * 1000);
-        c0Var2.e.setText(hd.a0("formatDateAtTime", null, 2131742784, hd.E0().C0().format(date2), hd.E0().p0().format(date2)));
+        c0Var2.e.setText(id.a0("formatDateAtTime", null, 2131742786, id.E0().C0().format(date2), id.E0().p0().format(date2)));
         TextView textView3 = c0Var2.d;
         r6.V(textView3, tL_payments_checkedGiftCode4.via_giveaway ? k6.m5 : k6.j5, f6Var);
         TLRPC.Chat M0 = qp.s1(p10.s0).M0(Long.valueOf(-m5.o(tL_payments_checkedGiftCode4.from_id)));
@@ -212,7 +211,7 @@ public abstract class f extends oj0 {
         if (tL_payments_checkedGiftCode4.via_giveaway) {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
             spannableStringBuilder.append((CharSequence) "**");
-            spannableStringBuilder.append((CharSequence) hd.M0(2131753492, null));
+            spannableStringBuilder.append((CharSequence) id.M0(2131753492, null));
             spannableStringBuilder.append((CharSequence) "**");
             textView3.setText(g0.S2(spannableStringBuilder.toString(), k6.Uc, 0, new Runnable() { // from class: yg.z
                 @Override // java.lang.Runnable
@@ -229,41 +228,40 @@ public abstract class f extends oj0 {
             }, f6Var));
             textView3.setOnClickListener(new z0(4, aVar3, tL_payments_checkedGiftCode4));
         } else {
-            textView3.setText(hd.M0(V ? 2131753165 : 2131753164, null));
+            textView3.setText(id.M0(V ? 2131753165 : 2131753164, null));
             textView3.setOnClickListener(null);
         }
         int i15 = tL_payments_checkedGiftCode4.months;
         if (i15 == 12) {
             i10 = 1;
-            G = hd.G(1, "Years", new Object[0]);
+            G = id.G(1, "Years", new Object[0]);
             c10 = 0;
         } else {
             i10 = 1;
             c10 = 0;
-            G = hd.G(i15, "Months", new Object[0]);
+            G = id.G(i15, "Months", new Object[0]);
         }
         TextView textView4 = c0Var2.c;
         Object[] objArr = new Object[i10];
         objArr[c10] = G;
-        textView4.setText(hd.a0("BoostingTelegramPremiumFor", null, 2131753180, objArr));
-        int i16 = 8;
+        textView4.setText(id.a0("BoostingTelegramPremiumFor", null, 2131753180, objArr));
         if (M0 != null) {
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
             spannableStringBuilder2.append((CharSequence) "**");
             spannableStringBuilder2.append((CharSequence) M0.title);
             spannableStringBuilder2.append((CharSequence) "**");
-            textView.setText(i6.m(g0.S2(spannableStringBuilder2.toString(), k6.Uc, 0, new q(i16, aVar3, M0), f6Var), textView.getPaint().getFontMetricsInt(), false, null, 0));
+            textView.setText(i6.m(g0.S2(spannableStringBuilder2.toString(), k6.Uc, 0, new yf.b(3, aVar3, M0), f6Var), textView.getPaint().getFontMetricsInt(), false, null, 0));
             l9Var2.e(M0, new w8(M0));
             frameLayout.setOnClickListener(new z0(5, aVar3, M0));
         } else {
             final TLRPC.User a23 = qp.s1(p10.s0).a2(Long.valueOf(tL_payments_checkedGiftCode4.from_id.user_id));
-            final int i17 = 0;
+            final int i16 = 0;
             textView.setText(i6.m(t10.j(a23, true), textView.getPaint().getFontMetricsInt(), false, null, 0));
             l9Var2.e(a23, new w8(0, a23));
             frameLayout.setOnClickListener(new View.OnClickListener() { // from class: yg.a0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    switch (i17) {
+                    switch (i16) {
                         case 0:
                             aVar3.a(a23);
                             break;
@@ -277,13 +275,13 @@ public abstract class f extends oj0 {
         if (tL_payments_checkedGiftCode4.to_id == -1 && tL_payments_checkedGiftCode4.via_giveaway) {
             SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
             spannableStringBuilder3.append((CharSequence) "**");
-            spannableStringBuilder3.append((CharSequence) hd.M0(2131753345, null));
+            spannableStringBuilder3.append((CharSequence) id.M0(2131753345, null));
             spannableStringBuilder3.append((CharSequence) "**");
-            final int i18 = 1;
+            final int i17 = 1;
             textView3.setText(g0.S2(spannableStringBuilder3.toString(), k6.Uc, 0, new Runnable() { // from class: yg.z
                 @Override // java.lang.Runnable
                 public final void run() {
-                    switch (i18) {
+                    switch (i17) {
                         case 0:
                             aVar3.a(tL_payments_checkedGiftCode4);
                             break;
@@ -293,7 +291,7 @@ public abstract class f extends oj0 {
                     }
                 }
             }, f6Var));
-            textView2.setText(hd.M0(2131753335, null));
+            textView2.setText(id.M0(2131753335, null));
             r6.V(textView2, k6.j5, f6Var);
             ((ViewGroup.MarginLayoutParams) textView2.getLayoutParams()).leftMargin = 0;
             ((ViewGroup.MarginLayoutParams) textView2.getLayoutParams()).rightMargin = 0;
@@ -303,13 +301,13 @@ public abstract class f extends oj0 {
             if (a24 != null) {
                 SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder();
                 spannableStringBuilder4.append((CharSequence) "**");
-                final int i19 = 1;
+                final int i18 = 1;
                 spannableStringBuilder4.append((CharSequence) t10.j(a24, true));
                 spannableStringBuilder4.append((CharSequence) "**");
                 textView2.setText(i6.m(g0.S2(spannableStringBuilder4.toString(), k6.Uc, 0, new Runnable() { // from class: yg.n
                     @Override // java.lang.Runnable
                     public final void run() {
-                        switch (i19) {
+                        switch (i18) {
                             case 0:
                                 aVar3.a(a24);
                                 break;
@@ -324,7 +322,7 @@ public abstract class f extends oj0 {
                 c0Var.y.setOnClickListener(new View.OnClickListener() { // from class: yg.a0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
-                        switch (i19) {
+                        switch (i18) {
                             case 0:
                                 aVar3.a(a24);
                                 break;

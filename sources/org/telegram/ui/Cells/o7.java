@@ -32,7 +32,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
@@ -40,15 +40,15 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.en0;
-import org.telegram.ui.Components.lz;
 import org.telegram.ui.Components.my0;
+import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class o7 extends FrameLayout {
     public static long E0;
@@ -104,7 +104,7 @@ public class o7 extends FrameLayout {
     public my0 q0;
     public int r;
     public int r0;
-    public lz s;
+    public mz s;
     public final Paint s0;
     public final Paint t0;
     public final org.telegram.ui.Components.w5 u0;
@@ -333,7 +333,7 @@ public class o7 extends FrameLayout {
         float f21;
         int i7;
         int i10;
-        lz lzVar;
+        mz mzVar;
         float padding = getPadding() * f10;
         float f22 = this.V ? padding : 0.0f;
         float d = this.D0.d(this.C0);
@@ -352,7 +352,7 @@ public class o7 extends FrameLayout {
             f14 = 0.0f;
             z10 = true;
         } else {
-            if (getParent() == null || (lzVar = this.s) == null) {
+            if (getParent() == null || (mzVar = this.s) == null) {
                 f13 = 1.0f;
                 f14 = 0.0f;
                 z10 = true;
@@ -360,9 +360,9 @@ public class o7 extends FrameLayout {
                 int measuredWidth2 = ((View) getParent()).getMeasuredWidth();
                 int measuredHeight2 = getMeasuredHeight();
                 float f24 = -getX();
-                lzVar.O = measuredWidth2;
-                lzVar.P = measuredHeight2;
-                lzVar.Q = f24;
+                mzVar.O = measuredWidth2;
+                mzVar.P = measuredHeight2;
+                mzVar.Q = f24;
                 this.s.updateColors();
                 this.s.f();
                 float f25 = (this.S <= 0.5f || this.T == 9.0f || this.r == 9) ? 0.0f : 1.0f;
@@ -504,7 +504,7 @@ public class o7 extends FrameLayout {
                 if (o7Var.n.q4()) {
                     if (o7Var.o0 == null) {
                         f18 = 0.075f;
-                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(jg.g.l(2131748484, null, new StringBuilder("x ")));
+                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(jg.g.l(2131748486, null, new StringBuilder("x ")));
                         spannableStringBuilder.setSpan(new wp(R.drawable.filled_sensitive, 0), 0, 1, 33);
                         o7Var.o0 = new my0(spannableStringBuilder, 14.0f, org.telegram.messenger.g0.o1("fonts/rmedium.ttf"));
                     } else {
@@ -513,7 +513,7 @@ public class o7 extends FrameLayout {
                     my0 my0Var = o7Var.o0;
                     if (f20 < (org.telegram.messenger.g0.L(13) * 2) + my0Var.c) {
                         if (o7Var.p0 == null) {
-                            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(jg.g.l(2131748483, null, new StringBuilder("x ")));
+                            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(jg.g.l(2131748485, null, new StringBuilder("x ")));
                             spannableStringBuilder2.setSpan(new wp(R.drawable.filled_sensitive, 0), 0, 1, 33);
                             o7Var.p0 = new my0(spannableStringBuilder2, 14.0f, org.telegram.messenger.g0.o1("fonts/rmedium.ttf"));
                         }
@@ -521,7 +521,7 @@ public class o7 extends FrameLayout {
                     }
                     if (f20 < (org.telegram.messenger.g0.L(26) * 2) + my0Var.c) {
                         if (o7Var.q0 == null) {
-                            o7Var.q0 = new my0(new SpannableStringBuilder(hd.M0(2131748483, null)), 13.0f, org.telegram.messenger.g0.o1("fonts/rmedium.ttf"));
+                            o7Var.q0 = new my0(new SpannableStringBuilder(id.M0(2131748485, null)), 13.0f, org.telegram.messenger.g0.o1("fonts/rmedium.ttf"));
                         }
                         my0Var = o7Var.q0;
                         i10 = 10;
@@ -966,7 +966,7 @@ public class o7 extends FrameLayout {
                             if (ijVar.G1 != null) {
                                 imageReceiver4.r0(hc.f(w11, ijVar.l0), str4, null, null, ijVar.G1, w11 != null ? w11.size : 0L, null, ijVar5, ij.S5(ijVar.k) ? 2 : 1);
                             } else {
-                                imageReceiver4.r0(hc.f(w11, ijVar.l0), str4, hc.f(w10, ijVar.l0), rf.b.q(str4, "_b"), null, w11 != null ? w11.size : 0L, null, ijVar5, ij.S5(ijVar.k) ? 2 : 1);
+                                imageReceiver4.r0(hc.f(w11, ijVar.l0), str4, hc.f(w10, ijVar.l0), rf.b.r(str4, "_b"), null, w11 != null ? w11.size : 0L, null, ijVar5, ij.S5(ijVar.k) ? 2 : 1);
                             }
                         } else {
                             TLRPC.Document F03 = ijVar.F0();
@@ -979,7 +979,7 @@ public class o7 extends FrameLayout {
                                 if (ijVar.G1 != null) {
                                     imageReceiver4.q0(hc.c(w13, F03), str4, ijVar.G1, null, ijVar5, 0);
                                 } else {
-                                    imageReceiver4.r0(hc.c(w13, F03), str4, hc.c(w12, F03), rf.b.q(str4, "_b"), null, 0L, null, ijVar5, 0);
+                                    imageReceiver4.r0(hc.c(w13, F03), str4, hc.c(w12, F03), rf.b.r(str4, "_b"), null, 0L, null, ijVar5, 0);
                                 }
                             }
                         }
@@ -1006,7 +1006,7 @@ public class o7 extends FrameLayout {
                         if (ijVar.G1 != null) {
                             imageReceiver4.r0(hc.f(w15, ijVar.l0), str4, null, null, ijVar.G1, w15 != null ? w15.size : 0L, null, ijVar5, ij.S5(ijVar.k) ? 2 : 1);
                         } else {
-                            imageReceiver4.r0(hc.f(w15, ijVar.l0), str4, z9 ? null : hc.f(w14, ijVar.l0), rf.b.q(str4, "_b"), null, w15 != null ? w15.size : 0L, null, ijVar5, ij.S5(ijVar.k) ? 2 : 1);
+                            imageReceiver4.r0(hc.f(w15, ijVar.l0), str4, z9 ? null : hc.f(w14, ijVar.l0), rf.b.r(str4, "_b"), null, w15 != null ? w15.size : 0L, null, ijVar5, ij.S5(ijVar.k) ? 2 : 1);
                         }
                     }
                 } else {
@@ -1116,11 +1116,11 @@ public class o7 extends FrameLayout {
             boolean y42 = ijVar.y4();
             StringBuilder sb2 = new StringBuilder();
             if (y42 && this.f0) {
-                sb2.append(hd.M0(2131754753, null));
+                sb2.append(id.M0(2131754753, null));
             }
             if (!ijVar.E3()) {
                 if (ijVar.i4()) {
-                    M0 = hd.M0(2131754782, null);
+                    M0 = id.M0(2131754782, null);
                     L0 = ijVar.L0();
                 } else {
                     if (!ij.M4(ijVar.k)) {
@@ -1128,14 +1128,14 @@ public class o7 extends FrameLayout {
                         if (o12 != null && (storyItem = o12.storyItem) != null && (messageMedia = storyItem.media) != null) {
                             L4 = ij.L4(messageMedia.document);
                             if (L4) {
-                                M02 = hd.M0(2131753948, null);
+                                M02 = id.M0(2131753948, null);
                             }
                         }
                         L4 = false;
                         if (L4) {
                         }
                     }
-                    M0 = hd.M0(2131753933, null);
+                    M0 = id.M0(2131753933, null);
                     L0 = ijVar.L0();
                 }
                 String str = M0;
@@ -1147,22 +1147,22 @@ public class o7 extends FrameLayout {
                 sb2.append(M02);
                 if (i7 > 0) {
                     sb2.append(", ");
-                    sb2.append(hd.z(i7));
+                    sb2.append(id.z(i7));
                 }
                 if (y42 && storyItem2 != null) {
                     storyViews = storyItem2.views;
                     if (storyViews != null && storyViews.views_count > 0) {
                         sb2.append(", ");
-                        sb2.append(hd.G(storyItem2.views.views_count, "Views", new Object[0]));
+                        sb2.append(id.G(storyItem2.views.views_count, "Views", new Object[0]));
                     }
                     if (storyItem2.date > 0) {
                         sb2.append(", ");
-                        sb2.append(hd.a0(null, null, 2131754803, hd.s(storyItem2.date, false)));
+                        sb2.append(id.a0(null, null, 2131754803, id.s(storyItem2.date, false)));
                     }
                 }
                 setContentDescription(sb2.toString());
             }
-            M02 = hd.M0(2131754848, null);
+            M02 = id.M0(2131754848, null);
             i7 = 0;
             if (sb2.length() > 0) {
             }
@@ -1173,7 +1173,7 @@ public class o7 extends FrameLayout {
                 storyViews = storyItem2.views;
                 if (storyViews != null) {
                     sb2.append(", ");
-                    sb2.append(hd.G(storyItem2.views.views_count, "Views", new Object[0]));
+                    sb2.append(id.G(storyItem2.views.views_count, "Views", new Object[0]));
                 }
                 if (storyItem2.date > 0) {
                 }
@@ -1307,8 +1307,8 @@ public class o7 extends FrameLayout {
         return false;
     }
 
-    public void setGradientView(lz lzVar) {
-        this.s = lzVar;
+    public void setGradientView(mz mzVar) {
+        this.s = mzVar;
     }
 
     public void setHighlightProgress(float f10) {

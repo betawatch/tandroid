@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class z10 extends org.telegram.ui.Components.voip.k0 {
     public final /* synthetic */ c40 Q0;
@@ -29,7 +29,7 @@ public final class z10 extends org.telegram.ui.Components.voip.k0 {
         a40 a40Var = c40Var.s3;
         z20 z20Var = c40Var.F1;
         k30 k30Var = c40Var.H1;
-        org.telegram.ui.Components.h10 h10Var = c40Var.g4;
+        org.telegram.ui.Components.i10 i10Var = c40Var.g4;
         z10 z10Var = c40Var.R3;
         v10 v10Var = c40Var.d4;
         c40Var.j2 = z9;
@@ -54,10 +54,10 @@ public final class z10 extends org.telegram.ui.Components.voip.k0 {
             c40Var.l1.requestLayout();
             if (v10Var.getVisibility() != 0) {
                 v10Var.setVisibility(0);
-                h10Var.F(v10Var, true);
-                h10Var.G(v10Var, false);
+                i10Var.F(v10Var, true);
+                i10Var.G(v10Var, false);
             } else {
-                h10Var.F(v10Var, true);
+                i10Var.F(v10Var, true);
                 c40Var.Q0(true);
             }
         } else {
@@ -69,7 +69,7 @@ public final class z10 extends org.telegram.ui.Components.voip.k0 {
                 }
             } else {
                 v10Var.setVisibility(8);
-                h10Var.F(v10Var, false);
+                i10Var.F(v10Var, false);
             }
             if (v10Var.getVisibility() == 0) {
                 for (int i7 = 0; i7 < v10Var.getChildCount(); i7++) {
@@ -79,7 +79,7 @@ public final class z10 extends org.telegram.ui.Components.voip.k0 {
                     childAt.setScaleY(1.0f);
                     childAt.setTranslationX(0.0f);
                     childAt.setTranslationY(0.0f);
-                    ((org.telegram.ui.Components.g10) childAt).setProgressToFullscreen(z10Var.c);
+                    ((org.telegram.ui.Components.h10) childAt).setProgressToFullscreen(z10Var.c);
                 }
             }
         }

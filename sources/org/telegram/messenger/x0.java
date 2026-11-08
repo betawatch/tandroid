@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.l71;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ int a;
@@ -354,7 +354,7 @@ public final /* synthetic */ class x0 implements Runnable {
                 FilesMigrationService filesMigrationService = (FilesMigrationService) this.c;
                 int i37 = this.b;
                 boolean z12 = FilesMigrationService.c;
-                ((NotificationManager) filesMigrationService.getSystemService("notification")).notify(qs.Y4, z8.a(filesMigrationService, dt.j0).setContentTitle(hd.M0(2131748429, null)).setContentText(i37 + "/" + filesMigrationService.a).setSmallIcon(R.drawable.notification).setAutoCancel(false).setProgress(filesMigrationService.a, i37, false).build());
+                ((NotificationManager) filesMigrationService.getSystemService("notification")).notify(qs.Y4, z8.a(filesMigrationService, dt.j0).setContentTitle(id.M0(2131748431, null)).setContentText(i37 + "/" + filesMigrationService.a).setSmallIcon(R.drawable.notification).setAutoCancel(false).setProgress(filesMigrationService.a, i37, false).build());
                 return;
             case 3:
                 org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.c;
@@ -377,8 +377,8 @@ public final /* synthetic */ class x0 implements Runnable {
                     } else if (mediaController.J()) {
                         mediaController.B0(2, 0, false, false);
                     }
-                    org.telegram.ui.Components.vt vtVar = org.telegram.ui.Components.vt.O1;
-                    if (vtVar != null && (l71Var2 = vtVar.j1) != null && l71Var2.x) {
+                    org.telegram.ui.Components.wt wtVar = org.telegram.ui.Components.wt.O1;
+                    if (wtVar != null && (l71Var2 = wtVar.j1) != null && l71Var2.x) {
                         l71Var2.a.g0();
                         l71Var2.n();
                         l71Var2.f0.d(true, true);
@@ -391,8 +391,8 @@ public final /* synthetic */ class x0 implements Runnable {
                     return;
                 }
                 if (i39 == 2) {
-                    org.telegram.ui.Components.vt vtVar2 = org.telegram.ui.Components.vt.O1;
-                    if (vtVar2 != null && (l71Var = vtVar2.j1) != null && l71Var.x) {
+                    org.telegram.ui.Components.wt wtVar2 = org.telegram.ui.Components.wt.O1;
+                    if (wtVar2 != null && (l71Var = wtVar2.j1) != null && l71Var.x) {
                         l71Var.a.g0();
                         l71Var.n();
                         l71Var.f0.d(true, true);
@@ -537,7 +537,7 @@ public final /* synthetic */ class x0 implements Runnable {
                 c cVar = (c) this.c;
                 try {
                     if (i44 == 1) {
-                        qs.e().k(qs.P4, 1, hd.M0(2131743834, null));
+                        qs.e().k(qs.P4, 1, id.M0(2131743836, null));
                     } else if (i44 != 2) {
                         return;
                     } else {

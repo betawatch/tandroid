@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class o10 implements View.OnClickListener {
     public final m4 a = new m4(this, 6);
@@ -170,7 +170,7 @@ public final class o10 implements View.OnClickListener {
                 }
                 LaunchActivity launchActivity = c40Var.Z1;
                 if (launchActivity != null && launchActivity.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
-                    c8.ia.c(R.raw.permission_request_microphone, 2131743284, new String[]{"android.permission.RECORD_AUDIO"}, new String[]{"android.permission.RECORD_AUDIO"}, new di.e(17));
+                    c8.ia.c(R.raw.permission_request_microphone, 2131743286, new String[]{"android.permission.RECORD_AUDIO"}, new String[]{"android.permission.RECORD_AUDIO"}, new di.e(17));
                     return;
                 }
                 c40Var.P1(1, true);

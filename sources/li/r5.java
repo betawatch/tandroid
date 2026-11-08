@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Set;
 import org.telegram.messenger.fj;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.k60;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r5 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -63,7 +63,7 @@ public final /* synthetic */ class r5 implements View.OnClickListener {
                         J.W(k6.d0(org.telegram.messenger.g0.L(3.0f), k6.w0(k6.d6, t3Var2.n3)));
                         J.Z = true;
                         J.X = org.telegram.messenger.g0.L(350.0f);
-                        J.i(new m2(t3Var2, aVar3, 25), hd.M0(2131753999, null), TextUtils.isEmpty(pageblockpreformatted.language));
+                        J.i(new m2(t3Var2, aVar3, 25), id.M0(2131753999, null), TextUtils.isEmpty(pageblockpreformatted.language));
                         if (!TextUtils.isEmpty(pageblockpreformatted.language)) {
                             J.i(null, fj.b(pageblockpreformatted.language), true);
                         }

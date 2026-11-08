@@ -12,7 +12,7 @@ import android.widget.TextView;
 import j$.util.Objects;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.pj0;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.w31;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class b extends w31 {
     public static final /* synthetic */ int b = 0;
@@ -41,7 +41,7 @@ public final class b extends w31 {
         org.telegram.ui.Components.l9 l9Var = cVar.b;
         hc hcVar = null;
         if (TextUtils.isEmpty(nftitem.name)) {
-            textView2.setText(hd.M0(2131743177, null));
+            textView2.setText(id.M0(2131743179, null));
         } else {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(nftitem.name);
             int indexOf = nftitem.name.indexOf(35);
@@ -55,7 +55,7 @@ public final class b extends w31 {
         if (TextUtils.isEmpty(b10) || TextUtils.isEmpty(b11)) {
             textView.setText(nftitem.description);
         } else {
-            textView.setText(hd.V(null, null, 2131743175, b10, b11));
+            textView.setText(id.V(null, null, 2131743177, b10, b11));
         }
         hc c10 = c.c(nftitem, !cVar.f);
         int w02 = org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.y6, cVar.a);

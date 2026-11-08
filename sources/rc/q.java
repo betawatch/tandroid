@@ -9,9 +9,9 @@ import java.io.UnsupportedEncodingException;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Timer;
-import org.telegram.ui.Wallet.z0;
+import org.telegram.ui.Wallet.y0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class q extends z {
     public boolean b;
@@ -45,14 +45,14 @@ public final class q extends z {
             while (i7 < size) {
                 Object obj = arrayList.get(i7);
                 i7++;
-                z0 z0Var = (z0) obj;
+                y0 y0Var = (y0) obj;
                 try {
                     try {
-                        z0Var.getClass();
+                        y0Var.getClass();
                     } catch (Throwable unused) {
                     }
                 } catch (Throwable unused2) {
-                    z0Var.getClass();
+                    y0Var.getClass();
                 }
             }
         }
@@ -77,12 +77,12 @@ public final class q extends z {
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            z0 z0Var = (z0) obj;
+            y0 y0Var = (y0) obj;
             try {
                 try {
-                    z0Var.getClass();
+                    y0Var.getClass();
                 } catch (Throwable unused) {
-                    z0Var.getClass();
+                    y0Var.getClass();
                 }
             } catch (Throwable unused2) {
             }
@@ -109,14 +109,14 @@ public final class q extends z {
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
-                z0 z0Var = (z0) obj;
+                y0 y0Var = (y0) obj;
                 try {
                     try {
-                        z0Var.b((u) qVar.b, str);
+                        y0Var.b((u) qVar.b, str);
                     } catch (Throwable unused2) {
                     }
                 } catch (Throwable unused3) {
-                    z0Var.getClass();
+                    y0Var.getClass();
                 }
             }
         } catch (Throwable th2) {
@@ -126,12 +126,12 @@ public final class q extends z {
             while (i7 < size2) {
                 Object obj2 = arrayList2.get(i7);
                 i7++;
-                z0 z0Var2 = (z0) obj2;
+                y0 y0Var2 = (y0) obj2;
                 try {
                     try {
-                        z0Var2.getClass();
+                        y0Var2.getClass();
                     } catch (Throwable unused4) {
-                        z0Var2.getClass();
+                        y0Var2.getClass();
                     }
                 } catch (Throwable unused5) {
                 }
@@ -166,12 +166,12 @@ public final class q extends z {
             while (i7 < size) {
                 Object obj = arrayList.get(i7);
                 i7++;
-                z0 z0Var = (z0) obj;
+                y0 y0Var = (y0) obj;
                 try {
                     try {
-                        z0Var.getClass();
+                        y0Var.getClass();
                     } catch (Throwable unused) {
-                        z0Var.getClass();
+                        y0Var.getClass();
                     }
                 } catch (Throwable unused2) {
                 }
@@ -200,14 +200,14 @@ public final class q extends z {
         while (i11 < size2) {
             Object obj = arrayList.get(i11);
             i11++;
-            z0 z0Var = (z0) obj;
+            y0 y0Var = (y0) obj;
             try {
                 try {
-                    z0Var.getClass();
+                    y0Var.getClass();
                 } catch (Throwable unused) {
                 }
             } catch (Throwable unused2) {
-                z0Var.getClass();
+                y0Var.getClass();
             }
         }
         int i12 = xVar.e;
@@ -221,12 +221,12 @@ public final class q extends z {
             while (i13 < size3) {
                 Object obj2 = arrayList3.get(i13);
                 i13++;
-                z0 z0Var2 = (z0) obj2;
+                y0 y0Var2 = (y0) obj2;
                 try {
                     try {
-                        z0Var2.getClass();
+                        y0Var2.getClass();
                     } catch (Throwable unused3) {
-                        z0Var2.getClass();
+                        y0Var2.getClass();
                     }
                 } catch (Throwable unused4) {
                 }
@@ -256,14 +256,14 @@ public final class q extends z {
                     while (i7 < size) {
                         Object obj4 = arrayList4.get(i7);
                         i7++;
-                        z0 z0Var3 = (z0) obj4;
+                        y0 y0Var3 = (y0) obj4;
                         try {
                             try {
-                                z0Var3.getClass();
+                                y0Var3.getClass();
                             } catch (Throwable unused5) {
                             }
                         } catch (Throwable unused6) {
-                            z0Var3.getClass();
+                            y0Var3.getClass();
                         }
                     }
                     uVar.g(x.a(1009, vVar.getMessage()));
@@ -307,12 +307,12 @@ public final class q extends z {
             while (i10 < size5) {
                 Object obj5 = arrayList5.get(i10);
                 i10++;
-                z0 z0Var4 = (z0) obj5;
+                y0 y0Var4 = (y0) obj5;
                 try {
                     try {
-                        z0Var4.getClass();
+                        y0Var4.getClass();
                     } catch (Throwable unused7) {
-                        z0Var4.getClass();
+                        y0Var4.getClass();
                     }
                 } catch (Throwable unused8) {
                 }
@@ -355,12 +355,12 @@ public final class q extends z {
                     while (i16 < size6) {
                         Object obj6 = arrayList6.get(i16);
                         i16++;
-                        z0 z0Var5 = (z0) obj6;
+                        y0 y0Var5 = (y0) obj6;
                         try {
                             try {
-                                z0Var5.getClass();
+                                y0Var5.getClass();
                             } catch (Throwable unused9) {
-                                z0Var5.getClass();
+                                y0Var5.getClass();
                             }
                         } catch (Throwable unused10) {
                         }
@@ -373,12 +373,12 @@ public final class q extends z {
                     while (i10 < size7) {
                         Object obj7 = arrayList7.get(i10);
                         i10++;
-                        z0 z0Var6 = (z0) obj7;
+                        y0 y0Var6 = (y0) obj7;
                         try {
                             try {
-                                z0Var6.getClass();
+                                y0Var6.getClass();
                             } catch (Throwable unused11) {
-                                z0Var6.getClass();
+                                y0Var6.getClass();
                             }
                         } catch (Throwable unused12) {
                         }
@@ -396,12 +396,12 @@ public final class q extends z {
                     while (i10 < size8) {
                         Object obj8 = arrayList8.get(i10);
                         i10++;
-                        z0 z0Var7 = (z0) obj8;
+                        y0 y0Var7 = (y0) obj8;
                         try {
                             try {
-                                z0Var7.getClass();
+                                y0Var7.getClass();
                             } catch (Throwable unused13) {
-                                z0Var7.getClass();
+                                y0Var7.getClass();
                             }
                         } catch (Throwable unused14) {
                         }
@@ -415,14 +415,14 @@ public final class q extends z {
             while (i10 < size9) {
                 Object obj9 = arrayList9.get(i10);
                 i10++;
-                z0 z0Var8 = (z0) obj9;
+                y0 y0Var8 = (y0) obj9;
                 try {
                     try {
-                        z0Var8.getClass();
+                        y0Var8.getClass();
                     } catch (Throwable unused15) {
                     }
                 } catch (Throwable unused16) {
-                    z0Var8.getClass();
+                    y0Var8.getClass();
                 }
             }
             if (xVar.a) {
@@ -473,12 +473,12 @@ public final class q extends z {
                                     while (i7 < size) {
                                         Object obj = arrayList.get(i7);
                                         i7++;
-                                        z0 z0Var = (z0) obj;
+                                        y0 y0Var = (y0) obj;
                                         try {
                                             try {
-                                                z0Var.getClass();
+                                                y0Var.getClass();
                                             } catch (Throwable unused) {
-                                                z0Var.getClass();
+                                                y0Var.getClass();
                                             }
                                         } catch (Throwable unused2) {
                                         }

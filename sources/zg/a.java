@@ -28,8 +28,8 @@ import org.telegram.messenger.fp;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.gp;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i6;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.p10;
@@ -48,7 +48,7 @@ import org.telegram.ui.Components.mu0;
 import org.telegram.ui.Components.w8;
 import wg.s;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class a {
     public static final HashMap Y;
@@ -615,40 +615,40 @@ public final class a {
             boolean m32 = ij.m3(ijVar.k);
             TLRPC.Message message = ijVar.k;
             boolean V = t3.V(s12.M0(Long.valueOf(-ij.C1(m32 ? message.fwd_from.from_id : message.peer_id))));
-            SpannableStringBuilder X2 = g0.X2(hd.M0(2131753393, null));
+            SpannableStringBuilder X2 = g0.X2(id.M0(2131753393, null));
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(X2);
             spannableStringBuilder.setSpan(new RelativeSizeSpan(1.05f), 0, X2.length(), 33);
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
             if (this.U) {
-                spannableStringBuilder2.append((CharSequence) g0.X2(hd.H(',', "BoostingStarsGiveawayMsgInfoPlural1", (int) tL_messageMediaGiveaway2.stars)));
+                spannableStringBuilder2.append((CharSequence) g0.X2(id.H(',', "BoostingStarsGiveawayMsgInfoPlural1", (int) tL_messageMediaGiveaway2.stars)));
                 spannableStringBuilder2.append((CharSequence) "\n");
-                spannableStringBuilder2.append((CharSequence) g0.X2(hd.G(tL_messageMediaGiveaway2.quantity, "BoostingStarsGiveawayMsgInfoPlural2", new Object[0])));
+                spannableStringBuilder2.append((CharSequence) g0.X2(id.G(tL_messageMediaGiveaway2.quantity, "BoostingStarsGiveawayMsgInfoPlural2", new Object[0])));
             } else {
-                spannableStringBuilder2.append((CharSequence) g0.X2(hd.H(',', "BoostingGiveawayMsgInfoPlural1", tL_messageMediaGiveaway2.quantity)));
+                spannableStringBuilder2.append((CharSequence) g0.X2(id.H(',', "BoostingGiveawayMsgInfoPlural1", tL_messageMediaGiveaway2.quantity)));
                 spannableStringBuilder2.append((CharSequence) "\n");
-                spannableStringBuilder2.append((CharSequence) g0.X2(hd.G(tL_messageMediaGiveaway2.quantity, "BoostingGiveawayMsgInfoPlural2", hd.G(tL_messageMediaGiveaway2.months, "BoldMonths", new Object[0]))));
+                spannableStringBuilder2.append((CharSequence) g0.X2(id.G(tL_messageMediaGiveaway2.quantity, "BoostingGiveawayMsgInfoPlural2", id.G(tL_messageMediaGiveaway2.months, "BoldMonths", new Object[0]))));
             }
             SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
             spannableStringBuilder3.append((CharSequence) spannableStringBuilder2);
             spannableStringBuilder3.append((CharSequence) "\n\n");
             spannableStringBuilder3.setSpan(new RelativeSizeSpan(0.4f), spannableStringBuilder3.length() - 1, spannableStringBuilder3.length(), 33);
-            SpannableStringBuilder X22 = g0.X2(hd.M0(2131753410, "BoostingGiveawayMsgParticipants"));
+            SpannableStringBuilder X22 = g0.X2(id.M0(2131753410, "BoostingGiveawayMsgParticipants"));
             spannableStringBuilder3.append((CharSequence) X22);
             spannableStringBuilder3.setSpan(new RelativeSizeSpan(1.05f), spannableStringBuilder2.length() + 2, X22.length() + spannableStringBuilder2.length() + 2, 33);
             spannableStringBuilder3.append((CharSequence) "\n");
             if (tL_messageMediaGiveaway2.only_new_subscribers) {
-                spannableStringBuilder3.append((CharSequence) hd.G(tL_messageMediaGiveaway2.channels.size(), V ? "BoostingGiveawayMsgNewSubsPlural" : "BoostingGiveawayMsgNewSubsGroupPlural", new Object[0]));
+                spannableStringBuilder3.append((CharSequence) id.G(tL_messageMediaGiveaway2.channels.size(), V ? "BoostingGiveawayMsgNewSubsPlural" : "BoostingGiveawayMsgNewSubsGroupPlural", new Object[0]));
             } else {
-                spannableStringBuilder3.append((CharSequence) hd.G(tL_messageMediaGiveaway2.channels.size(), V ? "BoostingGiveawayMsgAllSubsPlural" : "BoostingGiveawayMsgAllSubsGroupPlural", new Object[0]));
+                spannableStringBuilder3.append((CharSequence) id.G(tL_messageMediaGiveaway2.channels.size(), V ? "BoostingGiveawayMsgAllSubsPlural" : "BoostingGiveawayMsgAllSubsGroupPlural", new Object[0]));
             }
-            SpannableStringBuilder X23 = g0.X2(hd.M0(2131753168, "BoostingWinnersDate"));
+            SpannableStringBuilder X23 = g0.X2(id.M0(2131753168, "BoostingWinnersDate"));
             SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder(X23);
             spannableStringBuilder4.setSpan(new RelativeSizeSpan(1.05f), 0, X23.length(), 33);
             Date date = new Date(tL_messageMediaGiveaway2.until_date * 1000);
-            String format = hd.E0().s0().format(date);
-            String format2 = hd.E0().p0().format(date);
+            String format = id.E0().s0().format(date);
+            String format2 = id.E0().p0().format(date);
             spannableStringBuilder4.append((CharSequence) "\n");
-            spannableStringBuilder4.append((CharSequence) hd.a0("formatDateAtTime", null, 2131742784, format, format2));
+            spannableStringBuilder4.append((CharSequence) id.a0("formatDateAtTime", null, 2131742786, format, format2));
             TextPaint textPaint2 = this.E;
             Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
             float L2 = g0.L(2.0f);
@@ -672,10 +672,10 @@ public final class a {
             int i20 = i16;
             String str4 = tL_messageMediaGiveaway2.prize_description;
             if (str4 != null && !str4.isEmpty()) {
-                StaticLayout c10 = mu0.c(i6.m(g0.X2(hd.G(tL_messageMediaGiveaway2.quantity, "BoostingGiveawayMsgPrizes", tL_messageMediaGiveaway2.prize_description)), this.H.getFontMetricsInt(), false, null, 0), this.E, i20, Layout.Alignment.ALIGN_CENTER, g0.L(2.0f), TextUtils.TruncateAt.END, i20, 20, true);
+                StaticLayout c10 = mu0.c(i6.m(g0.X2(id.G(tL_messageMediaGiveaway2.quantity, "BoostingGiveawayMsgPrizes", tL_messageMediaGiveaway2.prize_description)), this.H.getFontMetricsInt(), false, null, 0), this.E, i20, Layout.Alignment.ALIGN_CENTER, g0.L(2.0f), TextUtils.TruncateAt.END, i20, 20, true);
                 this.x = c10;
                 this.m = g0.L(22.0f) + c10.getLineBottom(c10.getLineCount() - 1);
-                String M0 = hd.M0(2131753406, null);
+                String M0 = id.M0(2131753406, null);
                 this.o = M0;
                 this.n = this.F.measureText(M0, 0, M0.length());
             }
@@ -689,7 +689,7 @@ public final class a {
                     i21++;
                     String str6 = str5;
                     String displayCountry = new Locale("", str6).getDisplayCountry(Locale.getDefault());
-                    String F0 = hd.F0(str6);
+                    String F0 = id.F0(str6);
                     SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder();
                     if (F0 != null) {
                         spannableStringBuilder5.append((CharSequence) F0).append((CharSequence) " ");
@@ -698,7 +698,7 @@ public final class a {
                     arrayList5.add(spannableStringBuilder5);
                 }
                 if (!arrayList5.isEmpty()) {
-                    this.A = mu0.c(i6.m(g0.X2(hd.a0("BoostingGiveAwayFromCountries", null, 2131753493, TextUtils.join(", ", arrayList5))), this.H.getFontMetricsInt(), false, null, 0), this.H, i20, Layout.Alignment.ALIGN_CENTER, 0.0f, TextUtils.TruncateAt.END, i20, 10, true);
+                    this.A = mu0.c(i6.m(g0.X2(id.a0("BoostingGiveAwayFromCountries", null, 2131753493, TextUtils.join(", ", arrayList5))), this.H.getFontMetricsInt(), false, null, 0), this.H, i20, Layout.Alignment.ALIGN_CENTER, 0.0f, TextUtils.TruncateAt.END, i20, 10, true);
                 }
             }
             int max = Math.max(i10, Math.min(g0.L(38.0f) + i20, Q0));
@@ -722,7 +722,7 @@ public final class a {
                 if (this.t == null) {
                     this.t = g.h(t0.b, org.telegram.messenger.beta.R.drawable.filled_giveaway_stars);
                 }
-                this.u = hd.E((int) tL_messageMediaGiveaway2.stars, ',');
+                this.u = id.E((int) tL_messageMediaGiveaway2.stars, ',');
             } else {
                 this.t = null;
                 this.u = "x" + tL_messageMediaGiveaway2.quantity;

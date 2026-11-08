@@ -74,7 +74,7 @@ import w7.o;
 import w7.q;
 import w7.s;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class a implements k, eg.a, g, fg.a, d, ja.a, b, Continuation, u9.d, IMapsProvider, gh.a, l1, m, u, x5.a {
     public static final /* synthetic */ a b = new a(14);
@@ -519,7 +519,7 @@ public final class a implements k, eg.a, g, fg.a, d, ja.a, b, Continuation, u9.d
 
     @Override // org.telegram.messenger.IMapsProvider
     public int getInstallMapsString() {
-        return 2131749195;
+        return 2131749197;
     }
 
     @Override // org.telegram.messenger.IMapsProvider
@@ -622,12 +622,12 @@ public final class a implements k, eg.a, g, fg.a, d, ja.a, b, Continuation, u9.d
         try {
             l8.a aVar = z0.a;
             q6.m.h(aVar, "CameraUpdateFactory is not initialized");
-            Parcel P0 = aVar.P0();
-            v7.b.b(P0, latLng);
-            Parcel O0 = aVar.O0(P0, 8);
-            a7.a M0 = a7.b.M0(O0.readStrongBinder());
-            O0.recycle();
-            return new ca(new k8.a(M0, 0));
+            Parcel p12 = aVar.p1();
+            v7.b.b(p12, latLng);
+            Parcel o12 = aVar.o1(p12, 8);
+            a7.a m12 = a7.b.m1(o12.readStrongBinder());
+            o12.recycle();
+            return new ca(new k8.a(m12, 0));
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
         }
@@ -639,13 +639,13 @@ public final class a implements k, eg.a, g, fg.a, d, ja.a, b, Continuation, u9.d
         try {
             l8.a aVar = z0.a;
             q6.m.h(aVar, "CameraUpdateFactory is not initialized");
-            Parcel P0 = aVar.P0();
-            v7.b.b(P0, latLngBounds);
-            P0.writeInt(i7);
-            Parcel O0 = aVar.O0(P0, 10);
-            a7.a M0 = a7.b.M0(O0.readStrongBinder());
-            O0.recycle();
-            return new ca(new k8.a(M0, 0));
+            Parcel p12 = aVar.p1();
+            v7.b.b(p12, latLngBounds);
+            p12.writeInt(i7);
+            Parcel o12 = aVar.o1(p12, 10);
+            a7.a m12 = a7.b.m1(o12.readStrongBinder());
+            o12.recycle();
+            return new ca(new k8.a(m12, 0));
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
         }
@@ -657,13 +657,13 @@ public final class a implements k, eg.a, g, fg.a, d, ja.a, b, Continuation, u9.d
         try {
             l8.a aVar = z0.a;
             q6.m.h(aVar, "CameraUpdateFactory is not initialized");
-            Parcel P0 = aVar.P0();
-            v7.b.b(P0, latLng);
-            P0.writeFloat(f10);
-            Parcel O0 = aVar.O0(P0, 9);
-            a7.a M0 = a7.b.M0(O0.readStrongBinder());
-            O0.recycle();
-            return new ca(new k8.a(M0, 0));
+            Parcel p12 = aVar.p1();
+            v7.b.b(p12, latLng);
+            p12.writeFloat(f10);
+            Parcel o12 = aVar.o1(p12, 9);
+            a7.a m12 = a7.b.m1(o12.readStrongBinder());
+            o12.recycle();
+            return new ca(new k8.a(m12, 0));
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
         }
@@ -705,7 +705,7 @@ public final class a implements k, eg.a, g, fg.a, d, ja.a, b, Continuation, u9.d
 
     @Override // org.telegram.messenger.IMapsProvider
     public za onCreateMapView(Context context) {
-        r7 r7Var = new r7(13);
+        r7 r7Var = new r7(13, (byte) 0);
         r7Var.b = new x5(r7Var, context);
         return r7Var;
     }

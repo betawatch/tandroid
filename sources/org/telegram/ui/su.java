@@ -3,7 +3,7 @@ package org.telegram.ui;
 import java.util.Collections;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class su implements Runnable {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class su implements Runnable {
                     str = M0.title;
                     chat = M0;
                 }
-                wwVar2.S = org.telegram.ui.Components.hc.X().V(Collections.singletonList(chat), wwVar2.q4() ? org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0("StoriesMovedToDialogs", null, 2131744759, str)) : org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0("StoriesMovedToContacts", null, 2131744760, org.telegram.messenger.g5.m(15, str, null))), null, d0Var).j();
+                wwVar2.S = org.telegram.ui.Components.hc.X().V(Collections.singletonList(chat), wwVar2.q4() ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("StoriesMovedToDialogs", null, 2131744761, str)) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("StoriesMovedToContacts", null, 2131744762, org.telegram.messenger.g5.m(15, str, null))), null, d0Var).j();
                 break;
             case 1:
                 wwVar.getMessagesController().P1().l0(j3, !z9, false);

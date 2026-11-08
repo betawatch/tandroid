@@ -8,7 +8,7 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class am0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final TextView a;
@@ -30,9 +30,9 @@ public final class am0 extends FrameLayout implements org.telegram.ui.ActionBar.
         boolean z9 = hm0Var.a;
         org.telegram.ui.ActionBar.r6.V(textView, i10, hm0Var.getResourceProvider());
         if (bm0Var.m0 == 1) {
-            textView.setText(org.telegram.messenger.hd.M0(z9 ? 2131752312 : 2131743731, null));
+            textView.setText(org.telegram.messenger.id.M0(z9 ? 2131752312 : 2131743733, null));
         } else {
-            textView.setText(org.telegram.messenger.hd.M0(z9 ? 2131752321 : 2131743734, null));
+            textView.setText(org.telegram.messenger.id.M0(z9 ? 2131752321 : 2131743736, null));
         }
         addView(textView, c8.ha.d(-1, -2.0f, 23, 20.0f, 0.0f, 20.0f, 0.0f));
         this.c = new org.telegram.ui.Components.g5(org.telegram.messenger.g0.L(24.0f), 13, this, false);
@@ -91,15 +91,15 @@ public final class am0 extends FrameLayout implements org.telegram.ui.ActionBar.
         } else {
             g5Var.g(null, z9);
             if (this.b == null) {
-                this.b = new org.telegram.ui.Components.my0(org.telegram.messenger.hd.M0(bm0Var.p0.a ? 2131752311 : 2131743730, null), 16.0f, null);
+                this.b = new org.telegram.ui.Components.my0(org.telegram.messenger.id.M0(bm0Var.p0.a ? 2131752311 : 2131743732, null), 16.0f, null);
             }
         }
     }
 
     public final void c() {
-        boolean z9 = org.telegram.messenger.hd.a0;
+        boolean z9 = org.telegram.messenger.id.a0;
         org.telegram.ui.Components.g5 g5Var = this.c;
-        g5Var.setBounds(z9 ? org.telegram.messenger.g0.L(21.0f) : (getWidth() - g5Var.s) - org.telegram.messenger.g0.L(21.0f), (getHeight() - g5Var.s) / 2, org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(21.0f) + g5Var.s : getWidth() - org.telegram.messenger.g0.L(21.0f), (getHeight() + g5Var.s) / 2);
+        g5Var.setBounds(z9 ? org.telegram.messenger.g0.L(21.0f) : (getWidth() - g5Var.s) - org.telegram.messenger.g0.L(21.0f), (getHeight() - g5Var.s) / 2, org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(21.0f) + g5Var.s : getWidth() - org.telegram.messenger.g0.L(21.0f), (getHeight() + g5Var.s) / 2);
     }
 
     @Override // android.view.ViewGroup, android.view.View

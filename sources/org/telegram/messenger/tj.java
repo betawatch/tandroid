@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import java.util.ArrayList;
 import org.telegram.ui.SecretMediaViewer;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class tj implements Runnable {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final /* synthetic */ class tj implements Runnable {
                             arrayList = arrayList3;
                             qp qpVar2 = qpVar;
                             qpVar = qpVar2;
-                            SecretMediaViewer.f().n1 = new wk(f12, V, j3, qpVar2);
+                            SecretMediaViewer.f().n1 = new vk(f12, V, j3, qpVar2);
                             qs notificationCenter = qpVar.getNotificationCenter();
                             Object[] objArr2 = new Object[1];
                             objArr2[z9 ? 1 : 0] = ijVar.k;

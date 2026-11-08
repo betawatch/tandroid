@@ -23,7 +23,7 @@ import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.PrivacySettingsActivity;
 import org.telegram.ui.gq0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v0 implements v10 {
     public final /* synthetic */ int a;
@@ -224,7 +224,7 @@ public final /* synthetic */ class v0 implements v10 {
                         break;
                     }
                 } else {
-                    new org.telegram.ui.Components.hc(frameLayout, g0Var.I0).I(R.raw.star_premium_2, org.telegram.messenger.hd.M0(2131754989, null), org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131754990, null))).j();
+                    new org.telegram.ui.Components.hc(frameLayout, g0Var.I0).I(R.raw.star_premium_2, org.telegram.messenger.id.M0(2131754989, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131754990, null))).j();
                     g0Var.C2 = true;
                     g0Var.u1(true);
                     break;
@@ -272,7 +272,7 @@ public final /* synthetic */ class v0 implements v10 {
                         break;
                     }
                 } else {
-                    new org.telegram.ui.Components.hc(frameLayout2, g0Var2.I0).I(R.raw.star_premium_2, org.telegram.messenger.hd.M0(2131754989, null), org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131754990, null))).j();
+                    new org.telegram.ui.Components.hc(frameLayout2, g0Var2.I0).I(R.raw.star_premium_2, org.telegram.messenger.id.M0(2131754989, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131754990, null))).j();
                     g0Var2.C2 = true;
                     g0Var2.u1(true);
                     break;
@@ -311,11 +311,11 @@ public final /* synthetic */ class v0 implements v10 {
                 if (!"CANCELLED".equalsIgnoreCase(str3)) {
                     if ("EMPTY".equalsIgnoreCase(str3)) {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context2);
-                        String M0 = org.telegram.messenger.hd.M0(2131747631, null);
+                        String M0 = org.telegram.messenger.id.M0(2131747633, null);
                         org.telegram.ui.ActionBar.u1 u1Var3 = alertDialog$Builder.a;
                         u1Var3.R = M0;
-                        u1Var3.T = org.telegram.messenger.hd.M0(2131747632, null);
-                        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747830, null), null);
+                        u1Var3.T = org.telegram.messenger.id.M0(2131747634, null);
+                        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747832, null), null);
                         u1Var3.setOnDismissListener(new org.telegram.ui.q5(v2Var, 9));
                         alertDialog$Builder.p();
                         break;
@@ -359,7 +359,7 @@ public final /* synthetic */ class v0 implements v10 {
                 if (textView != null && wallettransaction != null) {
                     long j11 = wallettransaction.fee;
                     if (j11 > 0) {
-                        textView.setText(org.telegram.ui.Wallet.y5.w0(i11, j11, f6Var2));
+                        textView.setText(org.telegram.ui.Wallet.x5.w0(i11, j11, f6Var2));
                         break;
                     }
                 }

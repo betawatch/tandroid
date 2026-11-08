@@ -51,9 +51,9 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gc;
 import org.telegram.messenger.iz;
-import org.telegram.messenger.pd;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
+import org.telegram.messenger.rc;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.Components.c9;
@@ -70,7 +70,7 @@ import org.telegram.ui.s60;
 import org.telegram.ui.vm;
 import org.telegram.ui.ym;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class ActionBarLayout extends FrameLayout implements q4, pg.b {
     public static Drawable v1;
@@ -1713,7 +1713,7 @@ public class ActionBarLayout extends FrameLayout implements q4, pg.b {
                 if (k6.I == k6.J) {
                     k6.T = 2000;
                     k6.U = SystemClock.elapsedRealtime();
-                    org.telegram.messenger.g0.i3(new pd(11), 2100L);
+                    org.telegram.messenger.g0.i3(new rc(13), 2100L);
                 }
             }
             k6.I = j6Var3;

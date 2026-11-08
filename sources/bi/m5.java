@@ -28,18 +28,18 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ch0;
-import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ap0;
 import org.telegram.ui.c61;
-import org.telegram.ui.k71;
+import org.telegram.ui.l71;
 import org.telegram.ui.my0;
-import org.telegram.ui.u71;
-import org.telegram.ui.v61;
+import org.telegram.ui.v71;
+import org.telegram.ui.w61;
 import org.telegram.ui.zo0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class m5 extends FrameLayout {
     public static final /* synthetic */ int f = 0;
@@ -61,7 +61,7 @@ public final class m5 extends FrameLayout {
     public void b(boolean z9) {
         ((ImageView) this.b).setVisibility(z9 ? 0 : 8);
         TextView textView = (TextView) this.c;
-        boolean z10 = org.telegram.messenger.hd.a0;
+        boolean z10 = org.telegram.messenger.id.a0;
         textView.setLayoutParams(c8.ha.d(-1, -2.0f, 55, (z10 || !z9) ? 22.0f : 53.0f, 14.0f, (z10 && z9) ? 53.0f : 22.0f, 12.0f));
     }
 
@@ -154,26 +154,26 @@ public final class m5 extends FrameLayout {
                 paint5.setColor(0);
                 float N = org.telegram.messenger.g0.N(1.0f);
                 float N2 = org.telegram.messenger.g0.N(0.33f);
-                u71 u71Var = (u71) this.e;
-                paint5.setShadowLayer(N, 0.0f, N2, i0.a.o(-16777216, (int) (u71Var.S1.getAlpha() * 27.0f)));
+                v71 v71Var = (v71) this.e;
+                paint5.setShadowLayer(N, 0.0f, N2, i0.a.o(-16777216, (int) (v71Var.S1.getAlpha() * 27.0f)));
                 canvas.drawRoundRect(rectF2, L2, L2, paint5);
-                k71 k71Var = u71Var.y0;
-                v61 v61Var = u71Var.a;
-                org.telegram.ui.ActionBar.k6.t(this, k71Var, v61Var);
-                Paint d = v61Var.d("paintChatActionBackground");
+                l71 l71Var = v71Var.y0;
+                w61 w61Var = v71Var.a;
+                org.telegram.ui.ActionBar.k6.t(this, l71Var, w61Var);
+                Paint d = w61Var.d("paintChatActionBackground");
                 int alpha = d.getAlpha();
-                d.setAlpha((int) (u71Var.S1.getAlpha() * alpha));
+                d.setAlpha((int) (v71Var.S1.getAlpha() * alpha));
                 canvas.drawRoundRect(rectF2, L2, L2, d);
                 d.setAlpha(alpha);
-                if (u71Var.N1) {
-                    float f11 = u71Var.o1;
+                if (v71Var.N1) {
+                    float f11 = v71Var.o1;
                     if (f11 > 0.0f) {
-                        paint3.setColor(i0.a.o(-16777216, (int) (f11 * 255.0f * u71Var.p1)));
+                        paint3.setColor(i0.a.o(-16777216, (int) (f11 * 255.0f * v71Var.p1)));
                         canvas.drawRoundRect(rectF2, L2, L2, paint3);
                     }
                 }
                 paint4.setColor(520093695);
-                paint4.setAlpha((int) (u71Var.S1.getAlpha() * 30.0f));
+                paint4.setAlpha((int) (v71Var.S1.getAlpha() * 30.0f));
                 canvas.drawRoundRect(rectF2, L2, L2, paint4);
                 super.dispatchDraw(canvas);
                 break;
@@ -863,10 +863,10 @@ public final class m5 extends FrameLayout {
         this.d = new Path();
     }
 
-    public m5(org.telegram.ui.i9 i9Var, Context context, lz lzVar) {
+    public m5(org.telegram.ui.i9 i9Var, Context context, mz mzVar) {
         super(context);
-        addView(lzVar, c8.ha.c(-1.0f, -1));
-        this.d = lzVar;
+        addView(mzVar, c8.ha.c(-1.0f, -1));
+        this.d = mzVar;
         ch0 ch0Var = new ch0(context);
         this.e = ch0Var;
         ch0Var.f(R.raw.utyan_call, qs.v1, qs.v1, null);
@@ -875,14 +875,14 @@ public final class m5 extends FrameLayout {
         ch0Var.setOnClickListener(new org.telegram.ui.a(this, 9));
         TextView textView = new TextView(context);
         this.b = textView;
-        org.telegram.messenger.camera.q.o(textView, org.telegram.ui.ActionBar.k6.G6, null, null, 2131748698);
+        org.telegram.messenger.camera.q.o(textView, org.telegram.ui.ActionBar.k6.G6, null, null, 2131748700);
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setGravity(17);
         addView(textView, c8.ha.d(-1, -2.0f, 17, 17.0f, 40.0f, 17.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.c = textView2;
-        String a02 = org.telegram.messenger.hd.a0(null, null, 2131748697, Integer.valueOf(i9Var.getMessagesController().P6));
+        String a02 = org.telegram.messenger.id.a0(null, null, 2131748699, Integer.valueOf(i9Var.getMessagesController().P6));
         if (org.telegram.messenger.g0.Q1() && !org.telegram.messenger.g0.P1()) {
             a02 = a02.replace('\n', ' ');
         }
@@ -892,7 +892,7 @@ public final class m5 extends FrameLayout {
         textView2.setGravity(17);
         textView2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         addView(textView2, c8.ha.d(-1, -2.0f, 17, 17.0f, 80.0f, 17.0f, 0.0f));
-        lzVar.setAlpha(0.0f);
+        mzVar.setAlpha(0.0f);
         ch0Var.setAlpha(0.0f);
         textView.setAlpha(0.0f);
         textView2.setAlpha(0.0f);
@@ -933,7 +933,7 @@ public final class m5 extends FrameLayout {
         TextView textView = new TextView(context);
         this.c = textView;
         org.telegram.messenger.camera.q.m(textView, 1, 20.0f);
-        textView.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
+        textView.setGravity(org.telegram.messenger.id.a0 ? 5 : 3);
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.j5, f6Var);
         addView(textView);
         ImageView imageView = new ImageView(context);
@@ -942,7 +942,7 @@ public final class m5 extends FrameLayout {
         this.d = y1Var;
         imageView.setImageDrawable(y1Var);
         y1Var.a(-1);
-        addView(imageView, c8.ha.d(24, 24.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 48, 16.0f, 16.0f, 16.0f, 0.0f));
+        addView(imageView, c8.ha.d(24, 24.0f, (org.telegram.messenger.id.a0 ? 5 : 3) | 48, 16.0f, 16.0f, 16.0f, 0.0f));
         imageView.setOnClickListener(new my0(this, 0));
         b(true);
         setMinimumHeight(org.telegram.messenger.g0.L(56.0f));
@@ -971,9 +971,9 @@ public final class m5 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m5(u71 u71Var, Activity activity) {
+    public m5(v71 v71Var, Activity activity) {
         super(activity);
-        this.e = u71Var;
+        this.e = v71Var;
         this.c = new Paint(1);
         this.b = new Paint(1);
         this.d = new Paint(1);

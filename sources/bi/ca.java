@@ -15,7 +15,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.ym;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ca {
     public final x9 a;
@@ -51,7 +51,7 @@ public final class ca {
         wbVar.c(R.raw.stars_topup, new String[0]);
         wbVar.b.setText(d());
         org.telegram.ui.Components.ac acVar = new org.telegram.ui.Components.ac(t6, anVar.xa, true, false);
-        acVar.e(org.telegram.messenger.hd.M0(2131745024, null));
+        acVar.e(org.telegram.messenger.id.M0(2131745026, null));
         acVar.b = new aa(this, 1);
         da daVar = new da(t6, anVar.xa);
         this.f = daVar;
@@ -198,6 +198,6 @@ public final class ca {
     }
 
     public final String d() {
-        return c() == 2666000 ? org.telegram.messenger.hd.M0(2131745030, null) : (c() == 0 || c() == p10.i(this.q.a).e()) ? org.telegram.messenger.hd.M0(2131745026, null) : org.telegram.messenger.hd.a0(null, null, 2131745025, org.telegram.messenger.m5.t(c()));
+        return c() == 2666000 ? org.telegram.messenger.id.M0(2131745032, null) : (c() == 0 || c() == p10.i(this.q.a).e()) ? org.telegram.messenger.id.M0(2131745028, null) : org.telegram.messenger.id.a0(null, null, 2131745027, org.telegram.messenger.m5.t(c()));
     }
 }

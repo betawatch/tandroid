@@ -18,7 +18,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class kf0 extends View {
     public int D;
@@ -93,7 +93,7 @@ public final class kf0 extends View {
                     paintArr[i7] = paintArr[i10];
                     paintArr[i10] = paint;
                 } else if (xf0Var2.f) {
-                    kf0Var.b(xf0Var2.b, i10);
+                    kf0Var.b(i10, xf0Var2.b);
                 }
                 if (i11 != -1) {
                     kf0Var.f[i11].setShader(null);
@@ -139,7 +139,7 @@ public final class kf0 extends View {
         return org.telegram.messenger.g0.L(1.0f);
     }
 
-    public final void b(Bitmap bitmap, int i7) {
+    public final void b(int i7, Bitmap bitmap) {
         if (i7 >= 2 || bitmap == null || bitmap.isRecycled()) {
             return;
         }

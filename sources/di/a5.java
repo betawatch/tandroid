@@ -14,10 +14,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ha;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.Components.xj0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class a5 extends FrameLayout {
     public final LinearLayout a;
@@ -52,7 +52,7 @@ public final class a5 extends FrameLayout {
         linearLayout.setOrientation(0);
         TextView textView = new TextView(context);
         this.c = textView;
-        textView.setText(hd.M0(2131754286, null));
+        textView.setText(id.M0(2131754286, null));
         int i12 = org.telegram.ui.ActionBar.k6.j5;
         org.telegram.ui.ActionBar.r6.V(textView, i12, bVar);
         textView.setTextSize(1, 14.0f);
@@ -60,7 +60,7 @@ public final class a5 extends FrameLayout {
         textView.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(4.0f));
         TextView textView2 = new TextView(context);
         this.d = textView2;
-        textView2.setText(hd.M0(2131751780, null));
+        textView2.setText(id.M0(2131751780, null));
         org.telegram.ui.ActionBar.r6.V(textView2, i12, bVar);
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(org.telegram.messenger.g0.o());

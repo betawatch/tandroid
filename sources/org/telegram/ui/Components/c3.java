@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c3 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -50,10 +50,10 @@ public final /* synthetic */ class c3 implements View.OnClickListener {
                 ((boolean[]) obj5)[0] = false;
                 int c10 = (int) (v4.c(null, (hb0) obj4, (hb0) callback, (hb0) viewGroup, (hb0) obj3) / 1000);
                 int i10 = iArr[0];
-                ys ysVar = (ys) r0Var.c;
+                zs zsVar = (zs) r0Var.c;
                 int i11 = r0Var.a;
                 int i12 = r0Var.b;
-                Editable text = ysVar.getText();
+                Editable text = zsVar.getText();
                 uy0 uy0Var = new uy0();
                 uy0Var.a |= 128;
                 uy0Var.b = i11;
@@ -63,12 +63,12 @@ public final /* synthetic */ class c3 implements View.OnClickListener {
                 tL_messageEntityFormattedDate.flags = i10;
                 tL_messageEntityFormattedDate.applyFlags();
                 try {
-                    text.setSpan(new zz(text.subSequence(i11, i12).toString(), uy0Var, tL_messageEntityFormattedDate), i11, i12, 33);
+                    text.setSpan(new a00(text.subSequence(i11, i12).toString(), uy0Var, tL_messageEntityFormattedDate), i11, i12, 33);
                 } catch (Exception unused) {
                 }
-                ws wsVar = ysVar.N1;
-                if (wsVar != null) {
-                    wsVar.m();
+                xs xsVar = zsVar.N1;
+                if (xsVar != null) {
+                    xsVar.m();
                 }
                 ((org.telegram.ui.ActionBar.v2) f1Var.b).x0.run();
                 break;
@@ -89,7 +89,7 @@ public final /* synthetic */ class c3 implements View.OnClickListener {
                     F.Z();
                     break;
                 } else {
-                    new hc(frameLayout, f6Var).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.x2(org.telegram.messenger.hd.M0(2131748496, null), new org.telegram.messenger.pd(15))).j();
+                    new hc(frameLayout, f6Var).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.x2(org.telegram.messenger.id.M0(2131748498, null), new org.telegram.messenger.rc(17))).j();
                     break;
                 }
         }

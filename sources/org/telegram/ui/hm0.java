@@ -28,7 +28,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class hm0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public final ri.c D;
@@ -40,7 +40,7 @@ public final class hm0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
     public ImageView J;
     public ImageView K;
     public FrameLayout L;
-    public org.telegram.ui.Components.my M;
+    public org.telegram.ui.Components.ny M;
     public org.telegram.ui.ActionBar.k5 N;
     public FrameLayout O;
     public FrameLayout P;
@@ -406,7 +406,7 @@ public final class hm0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
                 }
                 bm0 bm0Var = this.h;
                 if (bm0Var.h >= 0) {
-                    org.telegram.ui.Components.hc.a0(this.H).M(cm0.a(this.currentAccount, this.h.h), org.telegram.messenger.hd.M0(z10 ? 2131752436 : 2131743757, null)).j();
+                    org.telegram.ui.Components.hc.a0(this.H).M(cm0.a(this.currentAccount, this.h.h), org.telegram.messenger.id.M0(z10 ? 2131752436 : 2131743759, null)).j();
                 } else {
                     if (bm0Var.s == null) {
                         return;
@@ -423,7 +423,7 @@ public final class hm0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
                         int intValue = arrayList.get(0).intValue() | (-16777216);
                         cm0Var = new cm0(intValue, arrayList.size() >= 2 ? arrayList.get(1).intValue() | (-16777216) : intValue, arrayList.size() >= 3 ? arrayList.get(2).intValue() | (-16777216) : intValue, tL_peerColorCollectible.gift_emoji_id);
                     }
-                    a02.M(cm0Var, org.telegram.messenger.hd.M0(z10 ? 2131752436 : 2131743757, null)).j();
+                    a02.M(cm0Var, org.telegram.messenger.id.M0(z10 ? 2131752436 : 2131743759, null)).j();
                 }
                 this.H = null;
             }
@@ -432,11 +432,11 @@ public final class hm0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
                 }
                 bm0 bm0Var2 = this.n;
                 if (bm0Var2.h >= 0) {
-                    org.telegram.ui.Components.hc.a0(this.H).M(cm0.c(this.currentAccount, this.n.h), org.telegram.messenger.hd.M0(z10 ? 2131752326 : 2131743740, null)).j();
+                    org.telegram.ui.Components.hc.a0(this.H).M(cm0.c(this.currentAccount, this.n.h), org.telegram.messenger.id.M0(z10 ? 2131752326 : 2131743742, null)).j();
                 } else if (bm0Var2.n != 0) {
                     org.telegram.ui.Components.hc a03 = org.telegram.ui.Components.hc.a0(this.H);
                     TLRPC.Document e10 = org.telegram.ui.Components.i5.e(this.currentAccount, this.n.n);
-                    String M0 = org.telegram.messenger.hd.M0(z10 ? 2131752325 : 2131743739, null);
+                    String M0 = org.telegram.messenger.id.M0(z10 ? 2131752325 : 2131743741, null);
                     a03.getClass();
                     org.telegram.ui.Components.kb kbVar = new org.telegram.ui.Components.kb(a03.W(), a03.c);
                     boolean D4 = org.telegram.messenger.ij.D4(e10);
@@ -452,7 +452,7 @@ public final class hm0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
                     kbVar.b.setMaxLines(3);
                     a03.b(kbVar, 2750).j();
                 } else {
-                    org.telegram.messenger.k5.o(null, z10 ? 2131752323 : 2131743737, org.telegram.ui.Components.hc.a0(this.H), R.raw.contact_check, 36);
+                    org.telegram.messenger.k5.o(null, z10 ? 2131752323 : 2131743739, org.telegram.ui.Components.hc.a0(this.H), R.raw.contact_check, 36);
                 }
             }
             this.H = null;
@@ -486,16 +486,16 @@ public final class hm0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         if (this.M != null) {
             fi.g1 g1Var = this.I;
             float a10 = c8.j9.a(((g1Var == null ? 0.0f : g1Var.getPositionAnimated()) - 0.333333f) / 0.333333f, 0.0f, 1.0f);
-            org.telegram.ui.Components.my myVar = this.M;
+            org.telegram.ui.Components.ny nyVar = this.M;
             int f10 = i0.a.f(a10, tabsViewBackgroundColor, getThemedColor(org.telegram.ui.ActionBar.k6.d6));
             int f11 = i0.a.f(a10, -1, getThemedColor(org.telegram.ui.ActionBar.k6.a7));
             int f12 = i0.a.f(a10, -1, getThemedColor(org.telegram.ui.ActionBar.k6.z6));
             int f13 = i0.a.f(a10, tabsViewBackgroundColor, getThemedColor(org.telegram.ui.ActionBar.k6.G6));
-            myVar.a.setColor(f10);
-            myVar.b.setColor(f11);
-            myVar.d = f12;
-            myVar.e = f13;
-            myVar.invalidate();
+            nyVar.a.setColor(f10);
+            nyVar.b.setColor(f11);
+            nyVar.d = f12;
+            nyVar.e = f13;
+            nyVar.invalidate();
         }
     }
 
@@ -620,16 +620,16 @@ public final class hm0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         if (z9) {
             org.telegram.ui.ActionBar.k5 k5Var = new org.telegram.ui.ActionBar.k5(context);
             this.N = k5Var;
-            k5Var.l(org.telegram.messenger.hd.M0(2131752427, null), false);
+            k5Var.l(org.telegram.messenger.id.M0(2131752427, null), false);
             this.N.setEllipsizeByGradient(true);
             this.N.setTextSize(20);
             org.telegram.ui.ActionBar.r6.Y(this.N, org.telegram.ui.ActionBar.k6.A8, getResourceProvider());
             this.N.setTypeface(org.telegram.messenger.g0.o());
             this.L.addView(this.N, c8.ha.d(-2, -2.0f, 19, 72.0f, 0.0f, 72.0f, 0.0f));
         } else {
-            org.telegram.ui.Components.my myVar = new org.telegram.ui.Components.my(context);
-            this.M = myVar;
-            myVar.setTabs(org.telegram.messenger.hd.M0(z9 ? 2131752428 : 2131743747, null), org.telegram.messenger.hd.M0(z9 ? 2131752429 : 2131743748, null));
+            org.telegram.ui.Components.ny nyVar = new org.telegram.ui.Components.ny(context);
+            this.M = nyVar;
+            nyVar.setTabs(org.telegram.messenger.id.M0(z9 ? 2131752428 : 2131743749, null), org.telegram.messenger.id.M0(z9 ? 2131752429 : 2131743750, null));
             this.M.r = new il0(this, i10);
             K0();
             this.L.addView(this.M, c8.ha.e(-1, 40, 17));
@@ -867,12 +867,12 @@ public final class hm0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         }
         if (z9 && getVisibleDialog() == null) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-            String M0 = org.telegram.messenger.hd.M0(z10 ? 2131752426 : 2131743746, null);
+            String M0 = org.telegram.messenger.id.M0(z10 ? 2131752426 : 2131743748, null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.R = M0;
-            u1Var.T = org.telegram.messenger.hd.M0(z10 ? 2131752425 : 2131743745, null);
-            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131751370, null), new ll0(this, 1));
-            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131754216, null), new ll0(this, 2));
+            u1Var.T = org.telegram.messenger.id.M0(z10 ? 2131752425 : 2131743747, null);
+            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131751370, null), new ll0(this, 1));
+            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131754216, null), new ll0(this, 2));
             showDialog(u1Var);
             org.telegram.ui.ActionBar.r6.V((TextView) u1Var.d(-2), org.telegram.ui.ActionBar.k6.q7, getResourceProvider());
         }

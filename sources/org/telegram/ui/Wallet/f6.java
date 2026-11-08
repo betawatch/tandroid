@@ -1,46 +1,63 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import j$.util.Objects;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.widget.FrameLayout;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
-public final class f6 extends org.telegram.ui.Components.j6 {
-    public final /* synthetic */ int s;
-    public final /* synthetic */ h6 w;
+public final class f6 extends wp {
+    public final /* synthetic */ g6 L;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f6(h6 h6Var, Context context, int i7) {
-        super(context, false, true, true, true, true);
-        this.s = i7;
-        this.w = h6Var;
+    public f6(g6 g6Var) {
+        super(R.drawable.wallet_gram_large, 0);
+        this.L = g6Var;
     }
 
-    @Override // org.telegram.ui.Components.j6, android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.s) {
-            case 0:
-                float c10 = getDrawable().c();
-                h6 h6Var = this.w;
-                float b10 = h6Var.b();
-                float min = (((c10 > 0.0f ? Math.min(1.0f, h6Var.U / c10) : 1.0f) - b10) * h6Var.T) + b10;
-                h6Var.b = min;
-                int save = canvas.save();
-                canvas.scale(min, min, 0.0f, getHeight() / 2.0f);
-                float e10 = (1.0f - h6Var.T) * h6Var.f0.e(false, h6Var.d0);
-                org.telegram.ui.Components.i6 drawable = getDrawable();
-                Objects.requireNonNull(drawable);
-                h6Var.c(e10, new e3(drawable, 4), new n(15, this, canvas));
-                canvas.restoreToCount(save);
-                break;
-            default:
-                h6 h6Var2 = this.w;
-                float e11 = (1.0f - h6Var2.T) * h6Var2.f0.e(false, h6Var2.d0);
-                org.telegram.ui.Components.i6 drawable2 = getDrawable();
-                Objects.requireNonNull(drawable2);
-                h6Var2.c(e11, new e3(drawable2, 4), new n(16, this, canvas));
-                break;
+    @Override // org.telegram.ui.Components.wp, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        g6 g6Var = this.L;
+        FrameLayout.LayoutParams layoutParams = g6Var.P;
+        if (g6Var.i0) {
+            return;
         }
+        this.x = 1.0f;
+        if (g6Var.a) {
+            float max = Math.max(0.0f, Math.min(1.0f, g6Var.T));
+            if (max == 0.0f) {
+                float intrinsicWidth = this.c.getIntrinsicWidth() * g6Var.b;
+                float intrinsicHeight = this.c.getIntrinsicHeight();
+                float f11 = g6Var.b;
+                float f12 = intrinsicHeight * f11;
+                float f13 = (f11 * f10) + layoutParams.leftMargin;
+                float height = ((g6Var.N.getHeight() / 2.0f) - (f12 / 2.0f)) + layoutParams.topMargin;
+                g6Var.f.set(f13, height, intrinsicWidth + f13, f12 + height);
+            }
+            if (max < 1.0f) {
+                if (g6Var.h0 == null) {
+                    g6Var.h0 = new o6(this.c.getIntrinsicWidth(), this.c.getIntrinsicHeight());
+                    g6Var.m();
+                }
+                Drawable drawable = this.c;
+                g6Var.h0.setBounds(drawable.getBounds());
+                o6 o6Var = g6Var.h0;
+                o6Var.i = g6Var.f0.c;
+                this.c = o6Var;
+                this.d = false;
+                this.x = 1.0f - max;
+                super.draw(canvas, charSequence, i7, i10, f10, i11, i12, i13, paint);
+                this.c = drawable;
+                this.d = true;
+            }
+            this.x = max;
+            if (max == 0.0f) {
+                return;
+            }
+        }
+        super.draw(canvas, charSequence, i7, i10, f10, i11, i12, i13, paint);
     }
 }

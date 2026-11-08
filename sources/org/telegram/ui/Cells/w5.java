@@ -7,7 +7,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gf;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.kf;
 import org.telegram.messenger.qs;
@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.wo;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class w5 extends FrameLayout {
     public org.telegram.ui.Components.l9 a;
@@ -55,13 +55,13 @@ public final class w5 extends FrameLayout {
         l9Var.s(gfVar.J, gfVar.K, true);
         if (gfVar.d()) {
             m5Var.setVisibility(4);
-            setContentDescription(hd.M0(2131753962, null));
+            setContentDescription(id.M0(2131753962, null));
             l9Var.h("thumb://" + i7 + ":" + str2, null, drawable);
             return;
         }
         if (!gfVar.b) {
             m5Var.setVisibility(4);
-            setContentDescription(hd.M0(2131753948, null));
+            setContentDescription(id.M0(2131753948, null));
             l9Var.h("thumb://" + i7 + ":" + str2, null, drawable);
             return;
         }
@@ -69,7 +69,7 @@ public final class w5 extends FrameLayout {
         this.d.setText(org.telegram.messenger.g0.g0(gfVar.E, false, false));
         StringBuilder sb2 = new StringBuilder();
         org.telegram.messenger.camera.q.q(null, 2131753933, sb2, ", ");
-        sb2.append(hd.z(gfVar.E));
+        sb2.append(id.z(gfVar.E));
         setContentDescription(sb2.toString());
         StringBuilder sb3 = new StringBuilder("vthumb://");
         sb3.append(i7);

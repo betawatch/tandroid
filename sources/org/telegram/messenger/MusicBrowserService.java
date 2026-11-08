@@ -8,7 +8,7 @@ import android.service.media.MediaBrowserService;
 import android.widget.Toast;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class MusicBrowserService extends MediaBrowserService {
     @Override // android.service.media.MediaBrowserService, android.app.Service
@@ -56,9 +56,9 @@ public class MusicBrowserService extends MediaBrowserService {
         a10.getClass();
         if (!wz.b()) {
             result.detach();
-            a10.c(str, new p1(result, 12));
+            a10.c(str, new j1(result, 12));
         } else {
-            Toast.makeText(getApplicationContext(), hd.M0(2131751111, null), 1).show();
+            Toast.makeText(getApplicationContext(), id.M0(2131751111, null), 1).show();
             stopSelf();
             result.detach();
         }

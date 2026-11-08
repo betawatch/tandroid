@@ -7,7 +7,7 @@ import android.os.SystemClock;
 import android.widget.ImageView;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class yo0 implements Runnable {
     public final /* synthetic */ int a;
@@ -205,7 +205,7 @@ public final class yo0 implements Runnable {
                                 bitmap = photoViewer16.B3;
                                 photoViewer16.I3 = true;
                                 photoViewer16.T0();
-                                ti.q g10 = photoViewer16.O8.g(photoViewer16.D, bitmap, !photoViewer16.J3);
+                                ti.p g10 = photoViewer16.O8.g(photoViewer16.D, bitmap, !photoViewer16.J3);
                                 photoViewer16.v3 = g10;
                                 photoViewer16.J3 = true;
                                 if (!photoViewer16.D2) {
@@ -250,7 +250,7 @@ public final class yo0 implements Runnable {
                     bitmap = null;
                     photoViewer16.I3 = true;
                     photoViewer16.T0();
-                    ti.q g102 = photoViewer16.O8.g(photoViewer16.D, bitmap, !photoViewer16.J3);
+                    ti.p g102 = photoViewer16.O8.g(photoViewer16.D, bitmap, !photoViewer16.J3);
                     photoViewer16.v3 = g102;
                     photoViewer16.J3 = true;
                     if (!photoViewer16.D2) {

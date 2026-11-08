@@ -7,11 +7,11 @@ import android.view.animation.AccelerateInterpolator;
 import android.widget.FrameLayout;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.ej;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class x7 extends FrameLayout {
     public org.telegram.ui.Components.l9 a;
@@ -104,10 +104,10 @@ public final class x7 extends FrameLayout {
         }
         if (str != null) {
             StringBuilder j3 = rf.b.j(str, " ");
-            j3.append(hd.M0(2131753936, null));
+            j3.append(id.M0(2131753936, null));
             accessibilityNodeInfo.setText(j3.toString());
         } else {
-            accessibilityNodeInfo.setText(hd.M0(2131753936, null));
+            accessibilityNodeInfo.setText(id.M0(2131753936, null));
         }
         accessibilityNodeInfo.setEnabled(true);
     }

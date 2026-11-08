@@ -1,75 +1,37 @@
 package z3;
 
-import a8.ia;
-import f3.i0;
-
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class r {
-    public final boolean a;
-    public final String b;
-    public final i0 c;
-    public final int d;
-    public final byte[] e;
+    public final int a;
+    public final int b;
+    public final long c;
+    public final long d;
+    public final long e;
+    public final long f;
+    public final e2.u g;
+    public final int h;
+    public final long[] i;
+    public final long[] j;
+    public final int k;
+    public final s[] l;
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0052, code lost:
-    
-        if (r6.equals("cbc1") == false) goto L14;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public r(boolean z9, String str, int i7, byte[] bArr, int i10, int i11, byte[] bArr2) {
-        char c10 = 0;
-        int i12 = 1;
-        ia.f((i7 == 0) ^ (bArr2 == null));
-        this.a = z9;
-        this.b = str;
-        this.d = i7;
-        this.e = bArr2;
-        if (str != null) {
-            switch (str.hashCode()) {
-                case 3046605:
-                    break;
-                case 3046671:
-                    if (str.equals("cbcs")) {
-                        c10 = 1;
-                        break;
-                    }
-                    c10 = 65535;
-                    break;
-                case 3049879:
-                    if (str.equals("cenc")) {
-                        c10 = 2;
-                        break;
-                    }
-                    c10 = 65535;
-                    break;
-                case 3049895:
-                    if (str.equals("cens")) {
-                        c10 = 3;
-                        break;
-                    }
-                    c10 = 65535;
-                    break;
-                default:
-                    c10 = 65535;
-                    break;
-            }
-            switch (c10) {
-                case 0:
-                case 1:
-                    i12 = 2;
-                    break;
-                case 2:
-                case 3:
-                    break;
-                default:
-                    h2.a.l("TrackEncryptionBox", "Unsupported protection scheme type '" + str + "'. Assuming AES-CTR crypto mode.");
-                    break;
-            }
-        }
-        this.c = new i0(i12, i10, i11, bArr);
+    public r(int i7, int i10, long j3, long j10, long j11, long j12, e2.u uVar, int i11, s[] sVarArr, int i12, long[] jArr, long[] jArr2) {
+        this.a = i7;
+        this.b = i10;
+        this.c = j3;
+        this.d = j10;
+        this.e = j11;
+        this.f = j12;
+        this.g = uVar;
+        this.h = i11;
+        this.l = sVarArr;
+        this.k = i12;
+        this.i = jArr;
+        this.j = jArr2;
+    }
+
+    public final r a(e2.u uVar) {
+        return new r(this.a, this.b, this.c, this.d, this.e, this.f, uVar, this.h, this.l, this.k, this.i, this.j);
     }
 }

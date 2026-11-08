@@ -9,7 +9,7 @@ import android.view.View;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l00 extends View {
     public final /* synthetic */ int a;
@@ -71,13 +71,13 @@ public final class l00 extends View {
                 break;
             case 15:
                 super.onAttachedToWindow();
-                zh.e1 e1Var = (zh.e1) this.b;
-                if (e1Var != null && !e1Var.i) {
-                    e1Var.i = true;
-                    e1Var.a();
-                    xg.a aVar = new xg.a(e1Var, 3);
-                    e1Var.h = aVar;
-                    org.telegram.messenger.rc.a(aVar);
+                zh.d1 d1Var = (zh.d1) this.b;
+                if (d1Var != null && !d1Var.i) {
+                    d1Var.i = true;
+                    d1Var.a();
+                    xg.a aVar = new xg.a(d1Var, 3);
+                    d1Var.h = aVar;
+                    org.telegram.messenger.sc.a(aVar);
                     break;
                 }
                 break;
@@ -111,12 +111,12 @@ public final class l00 extends View {
                 break;
             case 15:
                 super.onDetachedFromWindow();
-                zh.e1 e1Var = (zh.e1) this.b;
-                if (e1Var != null && e1Var.i) {
-                    e1Var.i = false;
-                    e1Var.a();
-                    xg.a aVar = e1Var.h;
-                    HashSet hashSet = org.telegram.messenger.rc.n;
+                zh.d1 d1Var = (zh.d1) this.b;
+                if (d1Var != null && d1Var.i) {
+                    d1Var.i = false;
+                    d1Var.a();
+                    xg.a aVar = d1Var.h;
+                    HashSet hashSet = org.telegram.messenger.sc.n;
                     if (hashSet != null) {
                         hashSet.remove(aVar);
                         break;
@@ -182,10 +182,10 @@ public final class l00 extends View {
                 ((SecretMediaViewer) this.b).O.a(canvas, this);
                 break;
             case 11:
-                org.telegram.ui.Wallet.h6 h6Var = (org.telegram.ui.Wallet.h6) this.b;
-                float e10 = h6Var.K.e(false, h6Var.J);
-                if (h6Var.Q != null && getWidth() > 0) {
-                    org.telegram.ui.Wallet.h6.a(h6Var, canvas, e10);
+                org.telegram.ui.Wallet.g6 g6Var = (org.telegram.ui.Wallet.g6) this.b;
+                float e10 = g6Var.K.e(false, g6Var.J);
+                if (g6Var.Q != null && getWidth() > 0) {
+                    org.telegram.ui.Wallet.g6.a(g6Var, canvas, e10);
                     break;
                 }
                 break;
@@ -280,7 +280,7 @@ public final class l00 extends View {
                 break;
             case 10:
                 super.setAlpha(f10);
-                View view2 = ((v91) this.b).fragmentView;
+                View view2 = ((w91) this.b).fragmentView;
                 if (view2 != null) {
                     view2.invalidate();
                     break;
@@ -296,14 +296,14 @@ public final class l00 extends View {
     public void setBackground(Drawable drawable) {
         switch (this.a) {
             case 15:
-                if (((zh.e1) this.b) != null) {
+                if (((zh.d1) this.b) != null) {
                     if (isAttachedToWindow()) {
-                        zh.e1 e1Var = (zh.e1) this.b;
-                        if (e1Var.i) {
-                            e1Var.i = false;
-                            e1Var.a();
-                            xg.a aVar = e1Var.h;
-                            HashSet hashSet = org.telegram.messenger.rc.n;
+                        zh.d1 d1Var = (zh.d1) this.b;
+                        if (d1Var.i) {
+                            d1Var.i = false;
+                            d1Var.a();
+                            xg.a aVar = d1Var.h;
+                            HashSet hashSet = org.telegram.messenger.sc.n;
                             if (hashSet != null) {
                                 hashSet.remove(aVar);
                             }
@@ -312,16 +312,16 @@ public final class l00 extends View {
                     this.b = null;
                 }
                 super.setBackground(drawable);
-                if (drawable instanceof zh.e1) {
-                    this.b = (zh.e1) drawable;
+                if (drawable instanceof zh.d1) {
+                    this.b = (zh.d1) drawable;
                     if (isAttachedToWindow()) {
-                        zh.e1 e1Var2 = (zh.e1) this.b;
-                        if (!e1Var2.i) {
-                            e1Var2.i = true;
-                            e1Var2.a();
-                            xg.a aVar2 = new xg.a(e1Var2, 3);
-                            e1Var2.h = aVar2;
-                            org.telegram.messenger.rc.a(aVar2);
+                        zh.d1 d1Var2 = (zh.d1) this.b;
+                        if (!d1Var2.i) {
+                            d1Var2.i = true;
+                            d1Var2.a();
+                            xg.a aVar2 = new xg.a(d1Var2, 3);
+                            d1Var2.h = aVar2;
+                            org.telegram.messenger.sc.a(aVar2);
                             break;
                         }
                     }

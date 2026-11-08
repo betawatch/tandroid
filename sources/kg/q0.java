@@ -16,7 +16,7 @@ import jg.z1;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t10;
@@ -38,7 +38,7 @@ import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class q0 extends f2 {
     public static final int U = -1;
@@ -115,7 +115,7 @@ public final class q0 extends f2 {
         }
         if (tLObject instanceof TLRPC.TL_boolFalse) {
             q0Var.a.b(false);
-            k5.p(null, 2131743880, hc.a0(q0Var), null);
+            k5.p(null, 2131743882, hc.a0(q0Var), null);
             return;
         }
         if (tLObject instanceof TLRPC.Updates) {
@@ -133,12 +133,12 @@ public final class q0 extends f2 {
                 if (user == null || (T = LaunchActivity.T()) == null) {
                     return;
                 }
-                hc.a0(T).Q(R.raw.contact_check, 36, hd.a0(null, null, 2131752784, t10.p(user))).j();
+                hc.a0(T).Q(R.raw.contact_check, 36, id.a0(null, null, 2131752784, t10.p(user))).j();
                 return;
             }
             f2 T2 = LaunchActivity.T();
             if (T2 != null) {
-                hc.a0(T2).Q(R.raw.contact_check, 36, hd.a0(null, null, 2131752817, t10.p(user))).j();
+                hc.a0(T2).Q(R.raw.contact_check, 36, id.a0(null, null, 2131752817, t10.p(user))).j();
             }
         }
     }
@@ -183,11 +183,11 @@ public final class q0 extends f2 {
                     return;
                 }
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, q0Var.getParentActivity(), q0Var.resourceProvider);
-                String M0 = hd.M0(2131752809, null);
+                String M0 = id.M0(2131752809, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
-                u1Var.T = org.telegram.messenger.g0.X2(hd.M0(2131752810, null));
-                alertDialog$Builder.k(hd.M0(2131747830, null), null);
+                u1Var.T = org.telegram.messenger.g0.X2(id.M0(2131752810, null));
+                alertDialog$Builder.k(id.M0(2131747832, null), null);
                 q0Var.showDialog(u1Var);
                 return;
             }
@@ -784,12 +784,12 @@ public final class q0 extends f2 {
         final int i11 = 0;
         if (!this.K && i7 == h0 && z9) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-            String M0 = hd.M0(2131752787, null);
+            String M0 = id.M0(2131752787, null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.R = M0;
-            u1Var.T = org.telegram.messenger.g0.X2(hd.a0(null, null, 2131752788, t10.n(this.M)));
-            alertDialog$Builder.h(hd.M0(2131752589, null), null);
-            alertDialog$Builder.k(hd.M0(2131754284, null), new org.telegram.ui.ActionBar.r1(this) { // from class: kg.p0
+            u1Var.T = org.telegram.messenger.g0.X2(id.a0(null, null, 2131752788, t10.n(this.M)));
+            alertDialog$Builder.h(id.M0(2131752589, null), null);
+            alertDialog$Builder.k(id.M0(2131754284, null), new org.telegram.ui.ActionBar.r1(this) { // from class: kg.p0
                 public final /* synthetic */ q0 b;
 
                 {
@@ -819,12 +819,12 @@ public final class q0 extends f2 {
             return;
         }
         AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-        String M02 = hd.M0(2131752787, null);
+        String M02 = id.M0(2131752787, null);
         org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder2.a;
         u1Var2.R = M02;
-        u1Var2.T = org.telegram.messenger.g0.X2(hd.a0(null, null, 2131752801, t10.n(this.M)));
-        alertDialog$Builder2.h(hd.M0(2131752589, null), null);
-        alertDialog$Builder2.k(hd.M0(2131754284, null), new org.telegram.ui.ActionBar.r1(this) { // from class: kg.p0
+        u1Var2.T = org.telegram.messenger.g0.X2(id.a0(null, null, 2131752801, t10.n(this.M)));
+        alertDialog$Builder2.h(id.M0(2131752589, null), null);
+        alertDialog$Builder2.k(id.M0(2131754284, null), new org.telegram.ui.ActionBar.r1(this) { // from class: kg.p0
             public final /* synthetic */ q0 b;
 
             {
@@ -854,9 +854,9 @@ public final class q0 extends f2 {
         int i7 = 1;
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(hd.M0(2131752783, null));
+        this.simpleActionBar.setTitle(id.M0(2131752783, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 13));
-        this.a = this.simpleActionBar.n(hd.M0(2131745947, null));
+        this.a = this.simpleActionBar.n(id.M0(2131745949, null));
         d0(false);
         FrameLayout frameLayout = new FrameLayout(context);
         new LinearLayout(getParentActivity()).setOrientation(0);
@@ -873,10 +873,10 @@ public final class q0 extends f2 {
         this.f.setPadding(0, 0, 0, 0);
         this.f.setSingleLine(true);
         int i11 = 3;
-        this.f.setGravity((hd.a0 ? 5 : 3) | 48);
+        this.f.setGravity((id.a0 ? 5 : 3) | 48);
         this.f.setInputType(180224);
         this.f.setImeOptions(6);
-        this.f.setHint(hd.M0(2131752816, null));
+        this.f.setHint(id.M0(2131752816, null));
         r6.w(this.f, i10, null);
         this.f.setCursorSize(org.telegram.messenger.g0.L(19.0f));
         this.f.setCursorWidth(1.5f);
@@ -894,14 +894,14 @@ public final class q0 extends f2 {
         FrameLayout frameLayout4 = this.e;
         View view2 = this.h;
         float f10 = 1.0f / org.telegram.messenger.g0.p;
-        boolean z9 = hd.a0;
+        boolean z9 = id.a0;
         frameLayout4.addView(view2, ha.d(-1, f10, 87, z9 ? 0 : 21, 0.0f, z9 ? 21 : 0, 0.0f));
         a4 a4Var = new a4(context, i11);
         this.n = a4Var;
         r6.i(i12, a4Var, getResourceProvider());
         TextView textView = new TextView(context);
         this.r = textView;
-        textView.setText(hd.M0(2131752811, null));
+        textView.setText(id.M0(2131752811, null));
         this.r.setTextSize(1, 14.0f);
         TextView textView2 = this.r;
         int i13 = k6.z6;
@@ -1036,12 +1036,12 @@ public final class q0 extends f2 {
         if (e0()) {
             if (z9) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-                String M0 = hd.M0(2131743836, null);
+                String M0 = id.M0(2131743838, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
-                u1Var.T = hd.M0(2131752786, null);
-                alertDialog$Builder.k(hd.M0(2131754216, null), new n0(this, i7));
-                alertDialog$Builder.h(hd.M0(2131747579, null), new n0(this, 1));
+                u1Var.T = id.M0(2131752786, null);
+                alertDialog$Builder.k(id.M0(2131754216, null), new n0(this, i7));
+                alertDialog$Builder.h(id.M0(2131747581, null), new n0(this, 1));
                 showDialog(u1Var);
                 return false;
             }
@@ -1051,12 +1051,12 @@ public final class q0 extends f2 {
             }
             if (z9) {
                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(getParentActivity());
-                String M02 = hd.M0(2131752812, null);
+                String M02 = id.M0(2131752812, null);
                 org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder2.a;
                 u1Var2.R = M02;
-                u1Var2.T = hd.M0(2131752813, null);
-                alertDialog$Builder2.k(hd.M0(2131752814, null), new n0(this, 2));
-                alertDialog$Builder2.h(hd.M0(2131752589, null), null);
+                u1Var2.T = id.M0(2131752813, null);
+                alertDialog$Builder2.k(id.M0(2131752814, null), new n0(this, 2));
+                alertDialog$Builder2.h(id.M0(2131752589, null), null);
                 showDialog(u1Var2);
             }
         }

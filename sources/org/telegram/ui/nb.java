@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nb implements org.telegram.ui.Components.bj0 {
     public final /* synthetic */ int a = 1;
@@ -69,7 +69,7 @@ public final /* synthetic */ class nb implements org.telegram.ui.Components.bj0 
                             if (z9 && boost.user_id == j3) {
                                 org.telegram.ui.Components.kb kbVar = new org.telegram.ui.Components.kb(c51Var.getParentActivity(), c51Var.getResourceProvider());
                                 kbVar.c(R.raw.chats_infotip, 36, 36, new String[0]);
-                                kbVar.b.setText(org.telegram.messenger.hd.M0(2131753303, null));
+                                kbVar.b.setText(org.telegram.messenger.id.M0(2131753303, null));
                                 kbVar.b.setSingleLine(false);
                                 kbVar.b.setMaxLines(2);
                                 org.telegram.ui.Components.cc.g(c51Var, kbVar, 2750).j();

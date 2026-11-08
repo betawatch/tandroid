@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class nb implements Runnable {
     public final /* synthetic */ int a;
@@ -144,16 +144,16 @@ public final /* synthetic */ class nb implements Runnable {
                 qbVar.b.u.remove(str);
                 return;
             case 1:
-                hd hdVar = (hd) this.d;
+                id idVar = (id) this.d;
                 Vector vector = (Vector) this.e;
-                HashMap hashMap = hdVar.N;
-                ArrayList arrayList3 = hdVar.J;
-                HashMap hashMap2 = hdVar.M;
-                hdVar.I = false;
-                ArrayList arrayList4 = hdVar.L;
+                HashMap hashMap = idVar.N;
+                ArrayList arrayList3 = idVar.J;
+                HashMap hashMap2 = idVar.M;
+                idVar.I = false;
+                ArrayList arrayList4 = idVar.L;
                 int size = arrayList4.size();
                 for (int i13 = 0; i13 < size; i13++) {
-                    ((ed) arrayList4.get(i13)).k = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                    ((fd) arrayList4.get(i13)).k = ConnectionsManager.DEFAULT_DATACENTER_ID;
                 }
                 int size2 = vector.objects.size();
                 for (int i14 = 0; i14 < size2; i14++) {
@@ -161,57 +161,57 @@ public final /* synthetic */ class nb implements Runnable {
                     if (r2.a) {
                         org.telegram.ui.Cells.f1.u(tL_langPackLanguage.name, new StringBuilder("loaded lang "));
                     }
-                    ed edVar = new ed();
-                    edVar.b = tL_langPackLanguage.name;
-                    edVar.a = tL_langPackLanguage.native_name;
-                    edVar.c = tL_langPackLanguage.lang_code.replace('-', '_').toLowerCase();
+                    fd fdVar = new fd();
+                    fdVar.b = tL_langPackLanguage.name;
+                    fdVar.a = tL_langPackLanguage.native_name;
+                    fdVar.c = tL_langPackLanguage.lang_code.replace('-', '_').toLowerCase();
                     String str2 = tL_langPackLanguage.base_lang_code;
                     if (str2 != null) {
-                        edVar.e = str2.replace('-', '_').toLowerCase();
+                        fdVar.e = str2.replace('-', '_').toLowerCase();
                     } else {
-                        edVar.e = "";
+                        fdVar.e = "";
                     }
-                    edVar.f = tL_langPackLanguage.plural_code.replace('-', '_').toLowerCase();
-                    edVar.g = tL_langPackLanguage.rtl;
-                    edVar.d = "remote";
-                    edVar.k = i14;
-                    ed G0 = hdVar.G0(edVar.b());
+                    fdVar.f = tL_langPackLanguage.plural_code.replace('-', '_').toLowerCase();
+                    fdVar.g = tL_langPackLanguage.rtl;
+                    fdVar.d = "remote";
+                    fdVar.k = i14;
+                    fd G0 = idVar.G0(fdVar.b());
                     if (G0 == null) {
-                        arrayList3.add(edVar);
-                        hashMap.put(edVar.b(), edVar);
+                        arrayList3.add(fdVar);
+                        hashMap.put(fdVar.b(), fdVar);
                     } else {
-                        G0.b = edVar.b;
-                        G0.a = edVar.a;
-                        G0.e = edVar.e;
-                        G0.f = edVar.f;
-                        G0.d = edVar.d;
-                        G0.k = edVar.k;
-                        edVar = G0;
+                        G0.b = fdVar.b;
+                        G0.a = fdVar.a;
+                        G0.e = fdVar.e;
+                        G0.f = fdVar.f;
+                        G0.d = fdVar.d;
+                        G0.k = fdVar.k;
+                        fdVar = G0;
                     }
-                    if (!hashMap2.containsKey(edVar.b())) {
-                        arrayList4.add(edVar);
-                        hashMap2.put(edVar.b(), edVar);
+                    if (!hashMap2.containsKey(fdVar.b())) {
+                        arrayList4.add(fdVar);
+                        hashMap2.put(fdVar.b(), fdVar);
                     }
                 }
                 int i15 = 0;
                 while (i15 < arrayList4.size()) {
-                    ed edVar2 = (ed) arrayList4.get(i15);
-                    if (edVar2.k == Integer.MAX_VALUE && edVar2 != hdVar.B) {
+                    fd fdVar2 = (fd) arrayList4.get(i15);
+                    if (fdVar2.k == Integer.MAX_VALUE && fdVar2 != idVar.B) {
                         if (r2.a) {
-                            a8.b("remove lang " + edVar2.b());
+                            a8.b("remove lang " + fdVar2.b());
                         }
                         arrayList4.remove(i15);
-                        hashMap2.remove(edVar2.b());
-                        arrayList3.remove(edVar2);
-                        hashMap.remove(edVar2.b());
+                        hashMap2.remove(fdVar2.b());
+                        arrayList3.remove(fdVar2);
+                        hashMap.remove(fdVar2.b());
                         i15--;
                     }
                     i15++;
                 }
-                hdVar.a1();
+                idVar.a1();
                 qs.e().k(qs.y4, new Object[0]);
                 if (this.b) {
-                    hdVar.d(hdVar.B, true, false, this.c);
+                    idVar.d(idVar.B, true, false, this.c);
                     return;
                 }
                 return;

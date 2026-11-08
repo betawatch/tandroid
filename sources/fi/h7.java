@@ -25,7 +25,7 @@ import org.telegram.ui.nr0;
 import org.telegram.ui.pr0;
 import org.telegram.ui.rp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class h7 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -244,7 +244,7 @@ public final class h7 implements TextWatcher {
             case 11:
                 View[] viewArr = (View[]) this.b;
                 try {
-                    boolean z9 = ((long) Integer.parseInt(editable.toString())) >= ((zh.m) obj).d2.e();
+                    boolean z9 = ((long) Integer.parseInt(editable.toString())) >= ((zh.l) obj).d2.e();
                     viewArr[0].animate().alpha(z9 ? 1.0f : 0.6f).setDuration(180L).start();
                     viewArr[0].setEnabled(z9);
                     viewArr[0].setClickable(z9);

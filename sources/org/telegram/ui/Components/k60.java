@@ -30,7 +30,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class k60 {
     public ViewGroup A;
@@ -231,7 +231,7 @@ public final class k60 {
             int i7 = org.telegram.ui.ActionBar.k6.E8;
             z0Var.c(i7, org.telegram.ui.ActionBar.k6.F8);
             z0Var.h(0.12f, i7);
-            z0Var.j(org.telegram.messenger.hd.M0(2131744786, null), R.drawable.menu_album_add, null);
+            z0Var.j(org.telegram.messenger.id.M0(2131744788, null), R.drawable.menu_album_add, null);
             z0Var.setOnClickListener(new o6(2, runnable));
             linearLayout.addView(z0Var, c8.ha.o(-1, -2));
         }
@@ -1149,7 +1149,7 @@ public final class k60 {
         l9Var.e(f10, w8Var);
         l9Var.setScaleX(z9 ? 0.84f : 1.0f);
         l9Var.setScaleY(z9 ? 0.84f : 1.0f);
-        z0Var.addView(l9Var, c8.ha.d(34, 34.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 16, -5.0f, 0.0f, -5.0f, 0.0f));
+        z0Var.addView(l9Var, c8.ha.d(34, 34.0f, (org.telegram.messenger.id.a0 ? 5 : 3) | 16, -5.0f, 0.0f, -5.0f, 0.0f));
         org.telegram.ui.ActionBar.f6 f6Var = this.d;
         if (z9) {
             View view = new View(context);
@@ -1158,7 +1158,7 @@ public final class k60 {
             org.telegram.ui.ActionBar.v5 v5Var = new org.telegram.ui.ActionBar.v5(org.telegram.messenger.g0.L(2.0f), org.telegram.ui.ActionBar.k6.w0(i12, f6Var), L);
             view.setBackground(v5Var);
             org.telegram.ui.ActionBar.r6.y(view, v5Var, i12, f6Var, PorterDuff.Mode.SRC_IN);
-            z0Var.addView(view, c8.ha.b(36.0f, 36.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 16, -6.0f, 0.0f, -5.0f, 0.0f));
+            z0Var.addView(view, c8.ha.b(36.0f, 36.0f, (org.telegram.messenger.id.a0 ? 5 : 3) | 16, -6.0f, 0.0f, -5.0f, 0.0f));
         }
         Integer num = this.j0;
         if (num == null && this.k0 == null) {
@@ -1196,14 +1196,14 @@ public final class k60 {
         if (tLObject instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) tLObject;
             z0Var.setText(chat.title);
-            z0Var.setSubtext(org.telegram.messenger.t3.V(chat) ? org.telegram.messenger.hd.M0(2131751391, null) : org.telegram.messenger.hd.M0(2131754876, null).toLowerCase());
+            z0Var.setSubtext(org.telegram.messenger.t3.V(chat) ? org.telegram.messenger.id.M0(2131751391, null) : org.telegram.messenger.id.M0(2131754876, null).toLowerCase());
         } else if (tLObject instanceof TLRPC.User) {
             TLRPC.User user = (TLRPC.User) tLObject;
             z0Var.setText(org.telegram.messenger.t10.p(user));
             if (user.id == org.telegram.messenger.p10.i(org.telegram.messenger.p10.s0).e()) {
-                z0Var.setSubtext(org.telegram.messenger.hd.M0(2131743350, null));
+                z0Var.setSubtext(org.telegram.messenger.id.M0(2131743352, null));
             } else if (org.telegram.messenger.t10.t(user)) {
-                z0Var.setSubtext(org.telegram.messenger.hd.M0(2131753156, null));
+                z0Var.setSubtext(org.telegram.messenger.id.M0(2131753156, null));
             }
         }
         z0Var.setClipToPadding(false);
@@ -1215,7 +1215,7 @@ public final class k60 {
         l9Var.e(tLObject, w8Var);
         l9Var.setScaleX(z9 ? 0.84f : 1.0f);
         l9Var.setScaleY(z9 ? 0.84f : 1.0f);
-        z0Var.addView(l9Var, c8.ha.d(34, 34.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 16, -5.0f, 0.0f, -5.0f, 0.0f));
+        z0Var.addView(l9Var, c8.ha.d(34, 34.0f, (org.telegram.messenger.id.a0 ? 5 : 3) | 16, -5.0f, 0.0f, -5.0f, 0.0f));
         org.telegram.ui.ActionBar.f6 f6Var = this.d;
         if (z9) {
             View view = new View(context);
@@ -1224,7 +1224,7 @@ public final class k60 {
             org.telegram.ui.ActionBar.v5 v5Var = new org.telegram.ui.ActionBar.v5(org.telegram.messenger.g0.L(2.0f), org.telegram.ui.ActionBar.k6.w0(i11, f6Var), L);
             view.setBackground(v5Var);
             org.telegram.ui.ActionBar.r6.y(view, v5Var, i11, f6Var, PorterDuff.Mode.SRC_IN);
-            z0Var.addView(view, c8.ha.b(36.0f, 36.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 16, -6.0f, 0.0f, -5.0f, 0.0f));
+            z0Var.addView(view, c8.ha.b(36.0f, 36.0f, (org.telegram.messenger.id.a0 ? 5 : 3) | 16, -6.0f, 0.0f, -5.0f, 0.0f));
         }
         Integer num = this.j0;
         if (num == null && this.k0 == null) {

@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.gf;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLObject;
@@ -22,9 +22,9 @@ import org.telegram.ui.Components.w8;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.an;
 import org.telegram.ui.ks;
-import org.telegram.ui.ya1;
+import org.telegram.ui.za1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -80,7 +80,7 @@ public final /* synthetic */ class o0 implements Runnable {
                 ks.p().T = z10 ? tL_messages_stickerSet : null;
                 break;
             case 2:
-                ya1.i0((ya1) obj5, (TLRPC.TL_error) obj4, this.c, (TLObject) obj3, (byte[]) obj2, (String) obj, (TL_account.passwordInputSettings) tLObject);
+                za1.i0((za1) obj5, (TLRPC.TL_error) obj4, this.c, (TLObject) obj3, (byte[]) obj2, (String) obj, (TL_account.passwordInputSettings) tLObject);
                 break;
             default:
                 yh.m mVar2 = (yh.m) obj5;
@@ -151,7 +151,7 @@ public final /* synthetic */ class o0 implements Runnable {
                             l9Var.setRoundRadius(L);
                             l9Var.e(user, new w8(0, user));
                             String j3 = t10.j(user, true);
-                            String a02 = mVar4.a ? hd.a0("HasBeenAddedToChannel", null, 2131749363, j3) : hd.a0("HasBeenAddedToGroup", null, 2131749362, j3);
+                            String a02 = mVar4.a ? id.a0("HasBeenAddedToChannel", null, 2131749365, j3) : id.a0("HasBeenAddedToGroup", null, 2131749364, j3);
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(a02);
                             int indexOf = a02.indexOf(j3);
                             spannableStringBuilder.setSpan(new u31(org.telegram.messenger.g0.o()), indexOf, j3.length() + indexOf, 18);
@@ -183,8 +183,8 @@ public final /* synthetic */ class o0 implements Runnable {
         this.n = user;
     }
 
-    public /* synthetic */ o0(ya1 ya1Var, TLRPC.TL_error tL_error, boolean z9, TLObject tLObject, byte[] bArr, String str, TL_account.passwordInputSettings passwordinputsettings) {
-        this.d = ya1Var;
+    public /* synthetic */ o0(za1 za1Var, TLRPC.TL_error tL_error, boolean z9, TLObject tLObject, byte[] bArr, String str, TL_account.passwordInputSettings passwordinputsettings) {
+        this.d = za1Var;
         this.e = tL_error;
         this.c = z9;
         this.f = tLObject;

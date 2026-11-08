@@ -1,400 +1,159 @@
 package org.telegram.messenger;
 
+import android.content.Context;
+import android.text.TextUtils;
+import android.widget.Toast;
+import java.io.File;
+import java.util.ArrayList;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_ephemeral;
+import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.ui.Components.v80;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ey0;
+import org.telegram.ui.m40;
+import org.telegram.ui.ws0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class nx implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ gz b;
-    public final /* synthetic */ TLRPC.InputMedia c;
-    public final /* synthetic */ sy d;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
 
-    public /* synthetic */ nx(gz gzVar, TLRPC.InputMedia inputMedia, sy syVar, int i7) {
-        this.a = i7;
-        this.b = gzVar;
-        this.c = inputMedia;
-        this.d = syVar;
+    public /* synthetic */ nx(int i7, int i10, Object obj, Object obj2, Object obj3, Object obj4, TLObject tLObject) {
+        this.a = i10;
+        this.d = obj;
+        this.e = tLObject;
+        this.f = obj2;
+        this.g = obj3;
+        this.b = i7;
+        this.c = obj4;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i7 = this.a;
+        int i10 = this.b;
+        Object obj = this.c;
+        Object obj2 = this.g;
+        Object obj3 = this.f;
+        Object obj4 = this.e;
+        Object obj5 = this.d;
+        switch (i7) {
             case 0:
-                final int i7 = 0;
-                final gz gzVar = this.b;
-                final TLRPC.InputMedia inputMedia = this.c;
-                final sy syVar = this.d;
-                g0.h3(new Runnable() { // from class: org.telegram.messenger.wx
-                    /* JADX WARN: Multi-variable type inference failed */
-                    /* JADX WARN: Removed duplicated region for block: B:17:0x009b  */
-                    /* JADX WARN: Removed duplicated region for block: B:68:0x0153  */
-                    @Override // java.lang.Runnable
-                    /*
-                        Code decompiled incorrectly, please refer to instructions dump.
-                    */
-                    public final void run() {
-                        TLRPC.PhotoSize photoSize;
-                        ij ijVar;
-                        j20 j20Var;
-                        TLRPC.TL_inputMediaDocument tL_inputMediaDocument;
-                        TLRPC.InputDocument inputDocument;
-                        int i10 = i7;
-                        TLRPC.InputMedia inputMedia2 = inputMedia;
-                        TLObject tLObject2 = tLObject;
-                        switch (i10) {
-                            case 0:
-                                gz gzVar2 = gzVar;
-                                gzVar2.getClass();
-                                boolean z9 = tLObject2 instanceof TLRPC.TL_messageMediaPhoto;
-                                sy syVar2 = syVar;
-                                if (!z9) {
-                                    syVar2.c();
-                                    break;
-                                } else {
-                                    TLRPC.Photo photo = ((TLRPC.TL_messageMediaPhoto) tLObject2).photo;
-                                    TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
-                                    tL_inputPhoto.id = photo.id;
-                                    tL_inputPhoto.access_hash = photo.access_hash;
-                                    tL_inputPhoto.file_reference = photo.file_reference;
-                                    if (inputMedia2 instanceof TLRPC.TL_inputMediaUploadedDocument) {
-                                        inputMedia2.flags |= 64;
-                                        inputMedia2.video_cover = tL_inputPhoto;
-                                    } else if (inputMedia2 instanceof TLRPC.TL_inputMediaDocument) {
-                                        inputMedia2.flags |= 8;
-                                        inputMedia2.video_cover = tL_inputPhoto;
-                                    }
-                                    TLRPC.InputMedia inputMedia3 = syVar2.t;
-                                    if (inputMedia3 instanceof TLRPC.TL_inputMediaUploadedDocument) {
-                                        inputMedia3.flags |= 64;
-                                        inputMedia3.video_cover = tL_inputPhoto;
-                                    }
-                                    if (!syVar2.p || inputMedia2.thumb != null || (photoSize = syVar2.g) == null || photoSize.location == null || ((ijVar = syVar2.m) != null && (j20Var = ijVar.p0) != null && j20Var.N)) {
-                                        gzVar2.N(syVar2.c, syVar2.m, syVar2.f, syVar2, syVar2.K, null, syVar2.H);
-                                        break;
-                                    } else {
-                                        gzVar2.M(syVar2, -1);
-                                        break;
-                                    }
-                                }
-                                break;
-                            default:
-                                if (tLObject2 != null) {
-                                    TLRPC.MessageMedia messageMedia = (TLRPC.MessageMedia) tLObject2;
-                                    if ((inputMedia2 instanceof TLRPC.TL_inputMediaUploadedPhoto) && (messageMedia instanceof TLRPC.TL_messageMediaPhoto)) {
-                                        TLRPC.TL_inputMediaUploadedPhoto tL_inputMediaUploadedPhoto = (TLRPC.TL_inputMediaUploadedPhoto) inputMedia2;
-                                        TLRPC.TL_inputMediaPhoto tL_inputMediaPhoto = new TLRPC.TL_inputMediaPhoto();
-                                        TLRPC.TL_inputPhoto tL_inputPhoto2 = new TLRPC.TL_inputPhoto();
-                                        tL_inputMediaPhoto.id = tL_inputPhoto2;
-                                        TLRPC.Photo photo2 = messageMedia.photo;
-                                        tL_inputPhoto2.id = photo2.id;
-                                        tL_inputPhoto2.access_hash = photo2.access_hash;
-                                        tL_inputPhoto2.file_reference = photo2.file_reference;
-                                        tL_inputMediaPhoto.spoiler = inputMedia2.spoiler;
-                                        if (tL_inputMediaUploadedPhoto.live_photo && (inputDocument = tL_inputMediaUploadedPhoto.video) != null) {
-                                            tL_inputMediaPhoto.live_photo = true;
-                                            tL_inputMediaPhoto.video = inputDocument;
-                                        }
-                                        boolean z10 = r2.a;
-                                        a8.b("set uploaded photo");
-                                        tL_inputMediaDocument = tL_inputMediaPhoto;
-                                    } else if ((inputMedia2 instanceof TLRPC.TL_inputMediaUploadedDocument) && (messageMedia instanceof TLRPC.TL_messageMediaDocument)) {
-                                        TLRPC.TL_inputMediaDocument tL_inputMediaDocument2 = new TLRPC.TL_inputMediaDocument();
-                                        TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
-                                        tL_inputMediaDocument2.id = tL_inputDocument;
-                                        TLRPC.Document document = messageMedia.document;
-                                        tL_inputDocument.id = document.id;
-                                        tL_inputDocument.access_hash = document.access_hash;
-                                        tL_inputDocument.file_reference = document.file_reference;
-                                        tL_inputMediaDocument2.spoiler = inputMedia2.spoiler;
-                                        TLRPC.Photo photo3 = messageMedia.video_cover;
-                                        if (photo3 != null) {
-                                            TLRPC.TL_inputPhoto tL_inputPhoto3 = new TLRPC.TL_inputPhoto();
-                                            tL_inputPhoto3.id = photo3.id;
-                                            tL_inputPhoto3.access_hash = photo3.access_hash;
-                                            tL_inputPhoto3.file_reference = photo3.file_reference;
-                                            tL_inputMediaDocument2.flags |= 8;
-                                            tL_inputMediaDocument2.video_cover = tL_inputPhoto3;
-                                        }
-                                        boolean z11 = r2.a;
-                                        a8.b("set uploaded document");
-                                        tL_inputMediaDocument = tL_inputMediaDocument2;
-                                    }
-                                    sy syVar3 = syVar;
-                                    if (tL_inputMediaDocument != null) {
-                                        syVar3.c();
-                                        break;
-                                    } else {
-                                        int i11 = inputMedia2.ttl_seconds;
-                                        if (i11 != 0) {
-                                            tL_inputMediaDocument.ttl_seconds = i11;
-                                            tL_inputMediaDocument.flags = 1 | tL_inputMediaDocument.flags;
-                                        }
-                                        TLObject tLObject3 = syVar3.c;
-                                        if (tLObject3 instanceof TLRPC.TL_messages_sendMultiMedia) {
-                                            TLRPC.TL_messages_sendMultiMedia tL_messages_sendMultiMedia = (TLRPC.TL_messages_sendMultiMedia) tLObject3;
-                                            int i12 = 0;
-                                            while (true) {
-                                                if (i12 < tL_messages_sendMultiMedia.multi_media.size()) {
-                                                    if (tL_messages_sendMultiMedia.multi_media.get(i12).media == inputMedia2) {
-                                                        tL_messages_sendMultiMedia.multi_media.get(i12).media = tL_inputMediaDocument;
-                                                    } else {
-                                                        i12++;
-                                                    }
-                                                }
-                                            }
-                                        } else {
-                                            boolean z12 = tLObject3 instanceof TLRPC.TL_messages_sendMedia;
-                                            if (z12) {
-                                                TLRPC.InputMedia inputMedia4 = ((TLRPC.TL_messages_sendMedia) tLObject3).media;
-                                                if (inputMedia4 instanceof TLRPC.TL_inputMediaPaidMedia) {
-                                                    TLRPC.TL_inputMediaPaidMedia tL_inputMediaPaidMedia = (TLRPC.TL_inputMediaPaidMedia) inputMedia4;
-                                                    int i13 = 0;
-                                                    while (true) {
-                                                        if (i13 < tL_inputMediaPaidMedia.extended_media.size()) {
-                                                            if (tL_inputMediaPaidMedia.extended_media.get(i13) == inputMedia2) {
-                                                                tL_inputMediaPaidMedia.extended_media.set(i13, tL_inputMediaDocument);
-                                                            } else {
-                                                                i13++;
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                            if (z12) {
-                                                TLRPC.InputMedia inputMedia5 = ((TLRPC.TL_messages_sendMedia) tLObject3).media;
-                                                if (inputMedia5 instanceof TLRPC.TL_inputMediaPoll) {
-                                                    TLRPC.TL_inputMediaPoll tL_inputMediaPoll = (TLRPC.TL_inputMediaPoll) inputMedia5;
-                                                    sh.d.k(tL_inputMediaPoll, sh.d.a(tL_inputMediaPoll, inputMedia2), tL_inputMediaDocument);
-                                                }
-                                            }
-                                            boolean z13 = tLObject3 instanceof TL_ephemeral.TL_sendMessage;
-                                            if (z13) {
-                                                TLRPC.InputMedia inputMedia6 = ((TL_ephemeral.TL_sendMessage) tLObject3).media;
-                                                if (inputMedia6 instanceof TLRPC.TL_inputMediaPaidMedia) {
-                                                    TLRPC.TL_inputMediaPaidMedia tL_inputMediaPaidMedia2 = (TLRPC.TL_inputMediaPaidMedia) inputMedia6;
-                                                    int i14 = 0;
-                                                    while (true) {
-                                                        if (i14 < tL_inputMediaPaidMedia2.extended_media.size()) {
-                                                            if (tL_inputMediaPaidMedia2.extended_media.get(i14) == inputMedia2) {
-                                                                tL_inputMediaPaidMedia2.extended_media.set(i14, tL_inputMediaDocument);
-                                                            } else {
-                                                                i14++;
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                            if (z13) {
-                                                TLRPC.InputMedia inputMedia7 = ((TL_ephemeral.TL_sendMessage) tLObject3).media;
-                                                if (inputMedia7 instanceof TLRPC.TL_inputMediaPoll) {
-                                                    TLRPC.TL_inputMediaPoll tL_inputMediaPoll2 = (TLRPC.TL_inputMediaPoll) inputMedia7;
-                                                    sh.d.k(tL_inputMediaPoll2, sh.d.a(tL_inputMediaPoll2, inputMedia2), tL_inputMediaDocument);
-                                                }
-                                            }
-                                        }
-                                        gzVar.t0(syVar3, false);
-                                        break;
-                                    }
-                                }
-                                tL_inputMediaDocument = null;
-                                sy syVar32 = syVar;
-                                if (tL_inputMediaDocument != null) {
-                                }
-                                break;
-                        }
-                    }
-                });
+                g0.h3(new jg.c1((gz) obj5, tLObject, (TLRPC.InputFile) obj4, (TLRPC.InputMedia) obj3, (sy) obj2, this.b, (String) obj));
+                break;
+            case 1:
+                g0.h3(new jg.c1((org.telegram.ui.g4) obj5, this.b, (vf.b) obj4, tLObject, (String) obj, (org.telegram.ui.f0) obj3, (TLRPC.TL_messages_getWebPage) obj2));
+                break;
+            case 2:
+                g0.h3(new jg.c1(tLObject, (org.telegram.ui.ActionBar.u1) obj5, (Context) obj4, this.b, (TL_phone.exportGroupCallInvite) obj3, (org.telegram.ui.ActionBar.f6) obj2, (m40) obj));
+                break;
+            case 3:
+                boolean[] zArr = (boolean[]) obj5;
+                File file = (File) obj4;
+                TL_phone.setCallRating setcallrating = (TL_phone.setCallRating) obj3;
+                ArrayList arrayList = (ArrayList) obj2;
+                Context context = (Context) obj;
+                if (tLObject instanceof TLRPC.TL_updates) {
+                    qp.s1(i10).O3((TLRPC.TL_updates) tLObject, false);
+                }
+                if (zArr[0] && file.exists() && setcallrating.rating < 4) {
+                    gz.T(c.a(p10.s0), file.getAbsolutePath(), file.getAbsolutePath(), null, TextUtils.join(" ", arrayList), "text/plain", 4244000L, null, null, null, null, true, null, null);
+                    Toast.makeText(context, id.M0(2131752602, null), 1).show();
+                    break;
+                }
+                break;
+            case 4:
+                String str = (String) obj;
+                String str2 = LaunchActivity.B1;
+                g0.h3(new jg.c1((LaunchActivity) obj5, tLObject, this.b, (org.telegram.ui.ww) obj4, (org.telegram.ui.ActionBar.f2) obj3, (TLRPC.User) obj2, str));
+                break;
+            case 5:
+                g0.h3(new ee(tLObject, (org.telegram.ui.ActionBar.f2) obj5, (TLRPC.TL_inputStorePaymentPremiumSubscription) obj4, (ws0) obj3, (com.google.android.gms.internal.clearcut.z0) obj2, this.b, tL_error, (TLRPC.TL_payments_canPurchaseStore) obj));
                 break;
             default:
-                final int i10 = 1;
-                final gz gzVar2 = this.b;
-                final TLRPC.InputMedia inputMedia2 = this.c;
-                final sy syVar2 = this.d;
-                g0.h3(new Runnable() { // from class: org.telegram.messenger.wx
-                    /* JADX WARN: Multi-variable type inference failed */
-                    /* JADX WARN: Removed duplicated region for block: B:17:0x009b  */
-                    /* JADX WARN: Removed duplicated region for block: B:68:0x0153  */
-                    @Override // java.lang.Runnable
-                    /*
-                        Code decompiled incorrectly, please refer to instructions dump.
-                    */
-                    public final void run() {
-                        TLRPC.PhotoSize photoSize;
-                        ij ijVar;
-                        j20 j20Var;
-                        TLRPC.TL_inputMediaDocument tL_inputMediaDocument;
-                        TLRPC.InputDocument inputDocument;
-                        int i102 = i10;
-                        TLRPC.InputMedia inputMedia22 = inputMedia2;
-                        TLObject tLObject2 = tLObject;
-                        switch (i102) {
-                            case 0:
-                                gz gzVar22 = gzVar2;
-                                gzVar22.getClass();
-                                boolean z9 = tLObject2 instanceof TLRPC.TL_messageMediaPhoto;
-                                sy syVar22 = syVar2;
-                                if (!z9) {
-                                    syVar22.c();
-                                    break;
-                                } else {
-                                    TLRPC.Photo photo = ((TLRPC.TL_messageMediaPhoto) tLObject2).photo;
-                                    TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
-                                    tL_inputPhoto.id = photo.id;
-                                    tL_inputPhoto.access_hash = photo.access_hash;
-                                    tL_inputPhoto.file_reference = photo.file_reference;
-                                    if (inputMedia22 instanceof TLRPC.TL_inputMediaUploadedDocument) {
-                                        inputMedia22.flags |= 64;
-                                        inputMedia22.video_cover = tL_inputPhoto;
-                                    } else if (inputMedia22 instanceof TLRPC.TL_inputMediaDocument) {
-                                        inputMedia22.flags |= 8;
-                                        inputMedia22.video_cover = tL_inputPhoto;
-                                    }
-                                    TLRPC.InputMedia inputMedia3 = syVar22.t;
-                                    if (inputMedia3 instanceof TLRPC.TL_inputMediaUploadedDocument) {
-                                        inputMedia3.flags |= 64;
-                                        inputMedia3.video_cover = tL_inputPhoto;
-                                    }
-                                    if (!syVar22.p || inputMedia22.thumb != null || (photoSize = syVar22.g) == null || photoSize.location == null || ((ijVar = syVar22.m) != null && (j20Var = ijVar.p0) != null && j20Var.N)) {
-                                        gzVar22.N(syVar22.c, syVar22.m, syVar22.f, syVar22, syVar22.K, null, syVar22.H);
-                                        break;
-                                    } else {
-                                        gzVar22.M(syVar22, -1);
-                                        break;
-                                    }
-                                }
-                                break;
-                            default:
-                                if (tLObject2 != null) {
-                                    TLRPC.MessageMedia messageMedia = (TLRPC.MessageMedia) tLObject2;
-                                    if ((inputMedia22 instanceof TLRPC.TL_inputMediaUploadedPhoto) && (messageMedia instanceof TLRPC.TL_messageMediaPhoto)) {
-                                        TLRPC.TL_inputMediaUploadedPhoto tL_inputMediaUploadedPhoto = (TLRPC.TL_inputMediaUploadedPhoto) inputMedia22;
-                                        TLRPC.TL_inputMediaPhoto tL_inputMediaPhoto = new TLRPC.TL_inputMediaPhoto();
-                                        TLRPC.TL_inputPhoto tL_inputPhoto2 = new TLRPC.TL_inputPhoto();
-                                        tL_inputMediaPhoto.id = tL_inputPhoto2;
-                                        TLRPC.Photo photo2 = messageMedia.photo;
-                                        tL_inputPhoto2.id = photo2.id;
-                                        tL_inputPhoto2.access_hash = photo2.access_hash;
-                                        tL_inputPhoto2.file_reference = photo2.file_reference;
-                                        tL_inputMediaPhoto.spoiler = inputMedia22.spoiler;
-                                        if (tL_inputMediaUploadedPhoto.live_photo && (inputDocument = tL_inputMediaUploadedPhoto.video) != null) {
-                                            tL_inputMediaPhoto.live_photo = true;
-                                            tL_inputMediaPhoto.video = inputDocument;
-                                        }
-                                        boolean z10 = r2.a;
-                                        a8.b("set uploaded photo");
-                                        tL_inputMediaDocument = tL_inputMediaPhoto;
-                                    } else if ((inputMedia22 instanceof TLRPC.TL_inputMediaUploadedDocument) && (messageMedia instanceof TLRPC.TL_messageMediaDocument)) {
-                                        TLRPC.TL_inputMediaDocument tL_inputMediaDocument2 = new TLRPC.TL_inputMediaDocument();
-                                        TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
-                                        tL_inputMediaDocument2.id = tL_inputDocument;
-                                        TLRPC.Document document = messageMedia.document;
-                                        tL_inputDocument.id = document.id;
-                                        tL_inputDocument.access_hash = document.access_hash;
-                                        tL_inputDocument.file_reference = document.file_reference;
-                                        tL_inputMediaDocument2.spoiler = inputMedia22.spoiler;
-                                        TLRPC.Photo photo3 = messageMedia.video_cover;
-                                        if (photo3 != null) {
-                                            TLRPC.TL_inputPhoto tL_inputPhoto3 = new TLRPC.TL_inputPhoto();
-                                            tL_inputPhoto3.id = photo3.id;
-                                            tL_inputPhoto3.access_hash = photo3.access_hash;
-                                            tL_inputPhoto3.file_reference = photo3.file_reference;
-                                            tL_inputMediaDocument2.flags |= 8;
-                                            tL_inputMediaDocument2.video_cover = tL_inputPhoto3;
-                                        }
-                                        boolean z11 = r2.a;
-                                        a8.b("set uploaded document");
-                                        tL_inputMediaDocument = tL_inputMediaDocument2;
-                                    }
-                                    sy syVar32 = syVar2;
-                                    if (tL_inputMediaDocument != null) {
-                                        syVar32.c();
-                                        break;
-                                    } else {
-                                        int i11 = inputMedia22.ttl_seconds;
-                                        if (i11 != 0) {
-                                            tL_inputMediaDocument.ttl_seconds = i11;
-                                            tL_inputMediaDocument.flags = 1 | tL_inputMediaDocument.flags;
-                                        }
-                                        TLObject tLObject3 = syVar32.c;
-                                        if (tLObject3 instanceof TLRPC.TL_messages_sendMultiMedia) {
-                                            TLRPC.TL_messages_sendMultiMedia tL_messages_sendMultiMedia = (TLRPC.TL_messages_sendMultiMedia) tLObject3;
-                                            int i12 = 0;
-                                            while (true) {
-                                                if (i12 < tL_messages_sendMultiMedia.multi_media.size()) {
-                                                    if (tL_messages_sendMultiMedia.multi_media.get(i12).media == inputMedia22) {
-                                                        tL_messages_sendMultiMedia.multi_media.get(i12).media = tL_inputMediaDocument;
-                                                    } else {
-                                                        i12++;
-                                                    }
-                                                }
-                                            }
-                                        } else {
-                                            boolean z12 = tLObject3 instanceof TLRPC.TL_messages_sendMedia;
-                                            if (z12) {
-                                                TLRPC.InputMedia inputMedia4 = ((TLRPC.TL_messages_sendMedia) tLObject3).media;
-                                                if (inputMedia4 instanceof TLRPC.TL_inputMediaPaidMedia) {
-                                                    TLRPC.TL_inputMediaPaidMedia tL_inputMediaPaidMedia = (TLRPC.TL_inputMediaPaidMedia) inputMedia4;
-                                                    int i13 = 0;
-                                                    while (true) {
-                                                        if (i13 < tL_inputMediaPaidMedia.extended_media.size()) {
-                                                            if (tL_inputMediaPaidMedia.extended_media.get(i13) == inputMedia22) {
-                                                                tL_inputMediaPaidMedia.extended_media.set(i13, tL_inputMediaDocument);
-                                                            } else {
-                                                                i13++;
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                            if (z12) {
-                                                TLRPC.InputMedia inputMedia5 = ((TLRPC.TL_messages_sendMedia) tLObject3).media;
-                                                if (inputMedia5 instanceof TLRPC.TL_inputMediaPoll) {
-                                                    TLRPC.TL_inputMediaPoll tL_inputMediaPoll = (TLRPC.TL_inputMediaPoll) inputMedia5;
-                                                    sh.d.k(tL_inputMediaPoll, sh.d.a(tL_inputMediaPoll, inputMedia22), tL_inputMediaDocument);
-                                                }
-                                            }
-                                            boolean z13 = tLObject3 instanceof TL_ephemeral.TL_sendMessage;
-                                            if (z13) {
-                                                TLRPC.InputMedia inputMedia6 = ((TL_ephemeral.TL_sendMessage) tLObject3).media;
-                                                if (inputMedia6 instanceof TLRPC.TL_inputMediaPaidMedia) {
-                                                    TLRPC.TL_inputMediaPaidMedia tL_inputMediaPaidMedia2 = (TLRPC.TL_inputMediaPaidMedia) inputMedia6;
-                                                    int i14 = 0;
-                                                    while (true) {
-                                                        if (i14 < tL_inputMediaPaidMedia2.extended_media.size()) {
-                                                            if (tL_inputMediaPaidMedia2.extended_media.get(i14) == inputMedia22) {
-                                                                tL_inputMediaPaidMedia2.extended_media.set(i14, tL_inputMediaDocument);
-                                                            } else {
-                                                                i14++;
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                            if (z13) {
-                                                TLRPC.InputMedia inputMedia7 = ((TL_ephemeral.TL_sendMessage) tLObject3).media;
-                                                if (inputMedia7 instanceof TLRPC.TL_inputMediaPoll) {
-                                                    TLRPC.TL_inputMediaPoll tL_inputMediaPoll2 = (TLRPC.TL_inputMediaPoll) inputMedia7;
-                                                    sh.d.k(tL_inputMediaPoll2, sh.d.a(tL_inputMediaPoll2, inputMedia22), tL_inputMediaDocument);
-                                                }
-                                            }
-                                        }
-                                        gzVar2.t0(syVar32, false);
-                                        break;
-                                    }
-                                }
-                                tL_inputMediaDocument = null;
-                                sy syVar322 = syVar2;
-                                if (tL_inputMediaDocument != null) {
-                                }
-                                break;
-                        }
+                Context context2 = (Context) obj5;
+                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj4;
+                byte[] bArr = (byte[]) obj3;
+                org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) obj2;
+                v80 v80Var = (v80) obj;
+                if (tLObject == null) {
+                    if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
+                        g0.i3(new ey0(f2Var, context2, f6Var, v80Var, 1), 200L);
+                        break;
                     }
-                });
+                } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
+                    if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
+                        if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
+                            g0.i3(new org.telegram.ui.d10(f2Var, i10, v80Var, 10), 200L);
+                            break;
+                        }
+                    } else {
+                        g0.i3(new ey0(f2Var, context2, f6Var, v80Var, 0), 200L);
+                        break;
+                    }
+                } else {
+                    g0.h3(new bi.a3(tLObject, (Object) context2, (Object) f6Var, (Object) bArr, (Object) f2Var, (Object) v80Var, 17));
+                    break;
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ nx(int i7, boolean[] zArr, File file, TL_phone.setCallRating setcallrating, ArrayList arrayList, Context context) {
+        this.a = 3;
+        this.b = i7;
+        this.d = zArr;
+        this.e = file;
+        this.f = setcallrating;
+        this.g = arrayList;
+        this.c = context;
+    }
+
+    public /* synthetic */ nx(Context context, org.telegram.ui.ActionBar.f6 f6Var, byte[] bArr, org.telegram.ui.ActionBar.f2 f2Var, v80 v80Var, int i7) {
+        this.a = 6;
+        this.d = context;
+        this.e = f6Var;
+        this.f = bArr;
+        this.g = f2Var;
+        this.c = v80Var;
+        this.b = i7;
+    }
+
+    public /* synthetic */ nx(org.telegram.ui.ActionBar.u1 u1Var, Context context, int i7, TL_phone.exportGroupCallInvite exportgroupcallinvite, org.telegram.ui.ActionBar.f6 f6Var, m40 m40Var) {
+        this.a = 2;
+        this.d = u1Var;
+        this.e = context;
+        this.b = i7;
+        this.f = exportgroupcallinvite;
+        this.g = f6Var;
+        this.c = m40Var;
+    }
+
+    public /* synthetic */ nx(org.telegram.ui.g4 g4Var, int i7, vf.b bVar, String str, org.telegram.ui.f0 f0Var, TLRPC.TL_messages_getWebPage tL_messages_getWebPage) {
+        this.a = 1;
+        this.d = g4Var;
+        this.b = i7;
+        this.e = bVar;
+        this.c = str;
+        this.f = f0Var;
+        this.g = tL_messages_getWebPage;
+    }
+
+    public /* synthetic */ nx(LaunchActivity launchActivity, int i7, org.telegram.ui.ww wwVar, org.telegram.ui.ActionBar.f2 f2Var, TLRPC.User user, String str) {
+        this.a = 4;
+        this.d = launchActivity;
+        this.b = i7;
+        this.e = wwVar;
+        this.f = f2Var;
+        this.g = user;
+        this.c = str;
     }
 }

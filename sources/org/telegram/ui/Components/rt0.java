@@ -20,7 +20,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class rt0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public static boolean e0;
@@ -92,7 +92,7 @@ public class rt0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     }
 
     public static void F(rt0 rt0Var, Canvas canvas) {
-        if (rt0Var.L != null && org.telegram.ui.ActionBar.k6.G1 && org.telegram.messenger.rc.e(32)) {
+        if (rt0Var.L != null && org.telegram.ui.ActionBar.k6.G1 && org.telegram.messenger.sc.e(32)) {
             if (rt0Var.K == null) {
                 cu0 cu0Var = new cu0(1);
                 rt0Var.K = cu0Var;
@@ -141,7 +141,7 @@ public class rt0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
         if (this.w == null) {
             y61 y61Var2 = new y61(getContext());
             this.w = y61Var2;
-            y61Var2.n = new ax(this, 21);
+            y61Var2.n = new bx(this, 21);
             if (getMeasuredWidth() != 0 && getMeasuredHeight() != 0) {
                 y61 y61Var3 = this.w;
                 int measuredWidth = getMeasuredWidth();
@@ -409,7 +409,7 @@ public class rt0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     }
 
     public boolean W() {
-        return !(this instanceof zh.v3);
+        return !(this instanceof zh.u3);
     }
 
     public void addColorKeys(HashSet hashSet) {

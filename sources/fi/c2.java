@@ -3,10 +3,10 @@ package fi;
 import android.widget.FrameLayout;
 import org.telegram.ui.Components.el0;
 import org.telegram.ui.Components.op;
-import org.telegram.ui.Components.tx;
+import org.telegram.ui.Components.ux;
 import org.telegram.ui.i01;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class c2 extends op {
     public final /* synthetic */ int h;
@@ -25,7 +25,7 @@ public final class c2 extends op {
             case 1:
                 return ((org.telegram.ui.ActionBar.r0) this.i).c.b.r0;
             case 2:
-                return org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.yf, ((tx) this.i).G.Z1);
+                return org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.yf, ((ux) this.i).G.Z1);
             case 3:
                 return org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.Q5, ((el0) this.i).e);
             default:
@@ -34,10 +34,10 @@ public final class c2 extends op {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c2(tx txVar) {
+    public c2(ux uxVar) {
         super(1.25f);
         this.h = 2;
-        this.i = txVar;
+        this.i = uxVar;
         this.f = org.telegram.messenger.g0.L(7.0f);
     }
 

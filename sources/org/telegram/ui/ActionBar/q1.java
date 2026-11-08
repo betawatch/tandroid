@@ -22,10 +22,10 @@ import org.telegram.messenger.a8;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ch0;
 import org.telegram.ui.Components.h70;
-import org.telegram.ui.Components.lt;
+import org.telegram.ui.Components.mt;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class q1 extends LinearLayout implements a6 {
     public boolean a;
@@ -259,9 +259,9 @@ public final class q1 extends LinearLayout implements a6 {
                 measuredHeight = u1Var.r.getMeasuredHeight() + layoutParams5.bottomMargin;
                 i12 = layoutParams5.topMargin;
             } else {
-                lt ltVar = u1Var.n;
-                if (ltVar != null) {
-                    ltVar.measure(c10, View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_31));
+                mt mtVar = u1Var.n;
+                if (mtVar != null) {
+                    mtVar.measure(c10, View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_31));
                     if (u1Var.n.getVisibility() != 8) {
                         LinearLayout.LayoutParams layoutParams6 = (LinearLayout.LayoutParams) u1Var.n.getLayoutParams();
                         measuredHeight = u1Var.n.getMeasuredHeight() + layoutParams6.bottomMargin;
@@ -352,14 +352,14 @@ public final class q1 extends LinearLayout implements a6 {
                 u1Var.e1 = f12;
                 lVar2.setTextColor(f12);
             }
-            lt ltVar = u1Var.n;
-            if (ltVar == null || ltVar.getCurrentTextColor() != u1Var.f1) {
+            mt mtVar = u1Var.n;
+            if (mtVar == null || mtVar.getCurrentTextColor() != u1Var.f1) {
                 return;
             }
-            lt ltVar2 = u1Var.n;
+            mt mtVar2 = u1Var.n;
             int f13 = u1Var.f(u1Var.W ? k6.y6 : k6.j5);
             u1Var.f1 = f13;
-            ltVar2.setTextColor(f13);
+            mtVar2.setTextColor(f13);
         } catch (Exception e10) {
             a8.g(e10, true);
         }

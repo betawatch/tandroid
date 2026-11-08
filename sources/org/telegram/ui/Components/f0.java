@@ -12,7 +12,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class f0 extends FrameLayout {
     public final int a;
@@ -66,14 +66,14 @@ public final class f0 extends FrameLayout {
         if (aiComposeTone == null) {
             e0Var.d = false;
             e0Var.updateColors();
-            String M0 = org.telegram.messenger.hd.M0(2131754975, null);
+            String M0 = org.telegram.messenger.id.M0(2131754975, null);
             e0Var.f = false;
             l9Var.setImageResource(R.drawable.tone_create);
             textView.setText(M0);
         } else if (aiComposeTone instanceof b0) {
             e0Var.d = false;
             e0Var.updateColors();
-            String M02 = org.telegram.messenger.hd.M0(2131754973, null);
+            String M02 = org.telegram.messenger.id.M0(2131754973, null);
             e0Var.f = false;
             l9Var.setImageResource(R.drawable.iv_prompt);
             textView.setText(M02);

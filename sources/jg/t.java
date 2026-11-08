@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.g5;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -15,7 +15,7 @@ import org.telegram.ui.Components.dj0;
 import org.telegram.ui.hw;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements f0, dj0 {
     public final /* synthetic */ h0 a;
@@ -55,12 +55,12 @@ public final /* synthetic */ class t implements f0, dj0 {
             ww wwVar = hwVar.a;
             if (wwVar.getParentActivity() != null && (a22 = wwVar.getMessagesController().a2(l10)) != null) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(wwVar.getParentActivity());
-                String M0 = hd.M0(2131752234, null);
+                String M0 = id.M0(2131752234, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
-                u1Var.T = org.telegram.messenger.g0.X2(hd.a0("ChatHintsDeleteAlert", null, 2131752235, g5.m(0, a22.first_name, a22.last_name)));
-                alertDialog$Builder.k(hd.M0(2131744856, null), new di.c1(hwVar, longValue, 8));
-                alertDialog$Builder.h(hd.M0(2131752589, null), null);
+                u1Var.T = org.telegram.messenger.g0.X2(id.a0("ChatHintsDeleteAlert", null, 2131752235, g5.m(0, a22.first_name, a22.last_name)));
+                alertDialog$Builder.k(id.M0(2131744858, null), new di.c1(hwVar, longValue, 8));
+                alertDialog$Builder.h(id.M0(2131752589, null), null);
                 wwVar.showDialog(u1Var);
                 TextView textView = (TextView) u1Var.d(-1);
                 if (textView != null) {

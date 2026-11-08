@@ -5,10 +5,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class c21 extends org.telegram.ui.Components.na implements org.telegram.messenger.ls {
-    public final org.telegram.ui.Components.jy P1;
+    public final org.telegram.ui.Components.ky P1;
     public final fi.d Q1;
     public final di.q6 R1;
     public final HashMap S1;
@@ -46,20 +46,20 @@ public final class c21 extends org.telegram.ui.Components.na implements org.tele
         frameLayout.addView(view, c8.ha.a(-1.0f, 1.0f / org.telegram.messenger.g0.p, 55));
         fi.d dVar = new fi.d(getContext(), this.I0, true);
         this.Q1 = dVar;
-        dVar.i(org.telegram.messenger.hd.M0(2131744799, null), false, true);
+        dVar.i(org.telegram.messenger.id.M0(2131744801, null), false, true);
         dVar.setEnabled(false);
         dVar.setOnClickListener(new fk0(9, this, f4Var));
         frameLayout.addView(dVar, c8.ha.d(-1, 48.0f, org.telegram.messenger.qs.E1, 10.0f, (1.0f / org.telegram.messenger.g0.p) + 10.0f, 10.0f, 10.0f));
         getContext();
-        org.telegram.ui.Components.jy jyVar = new org.telegram.ui.Components.jy(i7, false);
-        this.P1 = jyVar;
-        jyVar.O = new ai.l(this, 14);
+        org.telegram.ui.Components.ky kyVar = new org.telegram.ui.Components.ky(i7, false);
+        this.P1 = kyVar;
+        kyVar.O = new ai.l(this, 14);
         org.telegram.ui.Components.pj0 pj0Var = this.k1;
         int i11 = this.t0;
         pj0Var.setPadding(i11, 0, i11, 0);
         this.k1.setSelectorType(9);
         this.k1.setSelectorDrawableColor(0);
-        this.k1.setLayoutManager(jyVar);
+        this.k1.setLayoutManager(kyVar);
         this.k1.setOnItemClickListener(new vx0(this, 4));
         this.k1.setOnItemLongClickListener(new li0(this, 16));
         this.k1.setOnScrollListener(new b21(this, 0));
@@ -76,13 +76,13 @@ public final class c21 extends org.telegram.ui.Components.na implements org.tele
 
     @Override // org.telegram.ui.Components.na
     public final CharSequence O0() {
-        return org.telegram.messenger.hd.M0(2131744799, null);
+        return org.telegram.messenger.id.M0(2131744801, null);
     }
 
     public final void d1() {
-        org.telegram.ui.Components.jy jyVar = this.P1;
-        int L0 = jyVar.L0();
-        int abs = L0 == -1 ? 0 : Math.abs(jyVar.N0() - L0) + 1;
+        org.telegram.ui.Components.ky kyVar = this.P1;
+        int L0 = kyVar.L0();
+        int abs = L0 == -1 ? 0 : Math.abs(kyVar.N0() - L0) + 1;
         di.q6 q6Var = this.R1;
         if (q6Var != null) {
             int i7 = L0 + abs;

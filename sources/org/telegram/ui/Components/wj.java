@@ -8,10 +8,10 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class wj extends vh {
-    public final gy n;
+    public final hy n;
     public final pj0 r;
     public final v4.b0 s;
     public final HorizontalScrollView w;
@@ -23,25 +23,25 @@ public final class wj extends vh {
         this.f = true;
         org.telegram.ui.ActionBar.f2 f2Var = diVar.W1;
         boolean z10 = !z9;
-        gy gyVar = new gy(f2Var, z10, z9, false, getContext(), true, null, null, false, f6Var, false, true);
-        this.n = gyVar;
-        gyVar.w0 = false;
-        gyVar.I(z10, z9, false, false);
-        gyVar.o2 = true;
-        wv wvVar = gyVar.y;
-        if (wvVar != null) {
-            wvVar.setVisibility(8);
+        hy hyVar = new hy(f2Var, z10, z9, false, getContext(), true, null, null, false, f6Var, false, true);
+        this.n = hyVar;
+        hyVar.w0 = false;
+        hyVar.I(z10, z9, false, false);
+        hyVar.o2 = true;
+        xv xvVar = hyVar.y;
+        if (xvVar != null) {
+            xvVar.setVisibility(8);
         }
-        gyVar.p2 = true;
-        ImageView imageView = gyVar.D;
+        hyVar.p2 = true;
+        ImageView imageView = hyVar.D;
         if (imageView != null) {
             imageView.setVisibility(8);
         }
-        gyVar.S2 = true;
-        addView(gyVar, c8.ha.c(-1.0f, -1));
-        HorizontalScrollView y10 = gyVar.y(z10 ? 1 : 0);
+        hyVar.S2 = true;
+        addView(hyVar, c8.ha.c(-1.0f, -1));
+        HorizontalScrollView y10 = hyVar.y(z10 ? 1 : 0);
         this.w = y10;
-        pj0 x10 = gyVar.x(z10 ? 1 : 0);
+        pj0 x10 = hyVar.x(z10 ? 1 : 0);
         this.r = x10;
         x10.j(new ui(this, 2));
         this.s = (v4.b0) x10.getLayoutManager();
@@ -95,7 +95,7 @@ public final class wj extends vh {
             diVar.R2.getTitleTextView().setBuildFullLayout(true);
         } catch (Exception unused) {
         }
-        diVar.R2.setTitle(org.telegram.messenger.hd.M0(this.x ? 2131745653 : 2131745659, null));
+        diVar.R2.setTitle(org.telegram.messenger.id.M0(this.x ? 2131745655 : 2131745661, null));
         this.s.h1(0, 0);
     }
 
@@ -143,8 +143,8 @@ public final class wj extends vh {
         this.w.setTranslationY(Math.max(0, getCurrentItemTop()));
     }
 
-    public void setDelegate(hx hxVar) {
-        this.n.setDelegate(hxVar);
+    public void setDelegate(ix ixVar) {
+        this.n.setDelegate(ixVar);
     }
 
     @Override // android.view.View

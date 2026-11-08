@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class hg0 extends FrameLayout {
     public static final /* synthetic */ int R = 0;
@@ -171,7 +171,7 @@ public final class hg0 extends FrameLayout {
         TLRPC.User user = this.M;
         fg0 fg0Var = this.J;
         float value = getValue();
-        String y10 = org.telegram.messenger.hd.y(value, 2, Boolean.valueOf(this.O));
+        String y10 = org.telegram.messenger.id.y(value, 2, Boolean.valueOf(this.O));
         int i7 = (int) value;
         org.telegram.ui.pa0 pa0Var = this.I.b;
         ArrayList arrayList = pa0Var.n0;
@@ -215,7 +215,7 @@ public final class hg0 extends FrameLayout {
             }
             z10 = false;
             if (z10 && user != null) {
-                textView.setText(org.telegram.messenger.hd.a0("LocationNotifiationCloser", null, 2131748752, y10));
+                textView.setText(org.telegram.messenger.id.a0("LocationNotifiationCloser", null, 2131748754, y10));
                 if (fg0Var.getTag() == null) {
                     fg0Var.setTag(1);
                     fg0Var.animate().setDuration(180L).alpha(0.0f).scaleX(0.5f).scaleY(0.5f).start();
@@ -225,9 +225,9 @@ public final class hg0 extends FrameLayout {
                 return;
             }
             if (user != null) {
-                fg0Var.setText(org.telegram.messenger.hd.a0("LocationNotifiationButtonGroup", null, 2131748754, y10));
+                fg0Var.setText(org.telegram.messenger.id.a0("LocationNotifiationButtonGroup", null, 2131748756, y10));
             } else {
-                fg0Var.setText(org.telegram.messenger.hd.a0("LocationNotifiationButtonUser", null, 2131748753, TextUtils.ellipsize(org.telegram.messenger.t10.j(user, true), fg0Var.getPaint(), Math.max(org.telegram.messenger.g0.L(10.0f), (int) (((this.N - org.telegram.messenger.g0.L(94.0f)) * 1.5f) - ((int) Math.ceil(fg0Var.getPaint().measureText(org.telegram.messenger.hd.M0(2131748753, null)))))), TextUtils.TruncateAt.END), y10));
+                fg0Var.setText(org.telegram.messenger.id.a0("LocationNotifiationButtonUser", null, 2131748755, TextUtils.ellipsize(org.telegram.messenger.t10.j(user, true), fg0Var.getPaint(), Math.max(org.telegram.messenger.g0.L(10.0f), (int) (((this.N - org.telegram.messenger.g0.L(94.0f)) * 1.5f) - ((int) Math.ceil(fg0Var.getPaint().measureText(org.telegram.messenger.id.M0(2131748755, null)))))), TextUtils.TruncateAt.END), y10));
             }
             if (fg0Var.getTag() == null) {
                 fg0Var.setTag(null);

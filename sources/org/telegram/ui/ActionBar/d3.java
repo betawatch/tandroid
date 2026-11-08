@@ -20,7 +20,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.WeakHashMap;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -31,7 +31,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.qj;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class d3 extends FrameLayout {
     public static final HashMap K = new HashMap();
@@ -281,9 +281,9 @@ public final class d3 extends FrameLayout {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
         u1 u1Var = alertDialog$Builder.a;
         u1Var.R = str;
-        u1Var.T = hd.M0(2131752917, null);
-        alertDialog$Builder.k(hd.M0(2131752916, null), new q7(this, zArr, c3Var, c20Var, r9));
-        alertDialog$Builder.h(hd.M0(2131752589, null), new a3.h(zArr, c20Var, r9, 17));
+        u1Var.T = id.M0(2131752917, null);
+        alertDialog$Builder.k(id.M0(2131752916, null), new q7(this, zArr, c3Var, c20Var, r9));
+        alertDialog$Builder.h(id.M0(2131752589, null), new a3.h(zArr, c20Var, r9, 17));
         u1[] u1VarArr = {u1Var};
         u1Var.setOnDismissListener(new q8(zArr, c20Var));
         u1VarArr[0].show();
@@ -492,7 +492,7 @@ public final class d3 extends FrameLayout {
                 m10 = org.telegram.messenger.i6.m(a3Var.a.b(), getTextPaint().getFontMetricsInt(), false, null, 0);
                 a3Var.v = null;
             } else {
-                m10 = org.telegram.messenger.i6.m(hd.G(tabs.size() - 1, "BotMoreTabs", a3Var.a.b()), getTextPaint().getFontMetricsInt(), false, null, 0);
+                m10 = org.telegram.messenger.i6.m(id.G(tabs.size() - 1, "BotMoreTabs", a3Var.a.b()), getTextPaint().getFontMetricsInt(), false, null, 0);
                 if (m10 == null) {
                     a3Var.v = null;
                 } else {
@@ -503,13 +503,13 @@ public final class d3 extends FrameLayout {
         }
         if (tabs.isEmpty()) {
             setImportantForAccessibility(2);
-            setContentDescription(hd.a0(null, null, 2131754749, ""));
+            setContentDescription(id.a0(null, null, 2131754749, ""));
         } else {
             setImportantForAccessibility(1);
             if (charSequence == null) {
                 charSequence = "";
             }
-            setContentDescription(hd.a0(null, null, 2131754749, charSequence));
+            setContentDescription(id.a0(null, null, 2131754749, charSequence));
         }
     }
 

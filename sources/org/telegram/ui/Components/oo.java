@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.pc1;
+import org.telegram.ui.qc1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class oo implements bi {
     public final /* synthetic */ vo a;
@@ -63,7 +63,7 @@ public final class oo implements bi {
                 Point c12 = org.telegram.messenger.g0.c1();
                 Bitmap K = org.telegram.messenger.gc.K(str, null, (float) c12.x, (float) c12.y, true);
                 K.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
-                lo loVar = new lo(new pc1(file, file, ""), K, false, 2);
+                lo loVar = new lo(new qc1(file, file, ""), K, false, 2);
                 loVar.W1 = voVar.V1;
                 loVar.G1 = false;
                 loVar.F1 = false;

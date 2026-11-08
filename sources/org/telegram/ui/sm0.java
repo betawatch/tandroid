@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class sm0 implements org.telegram.ui.ActionBar.o0, org.telegram.ui.Components.sj0 {
     public final /* synthetic */ xm0 a;
@@ -47,7 +47,7 @@ public final class sm0 implements org.telegram.ui.ActionBar.o0, org.telegram.ui.
     @Override // org.telegram.ui.ActionBar.o0
     public void n() {
         xm0 xm0Var = this.a;
-        xm0Var.Q.setText(org.telegram.messenger.hd.M0(xm0Var.Y ? 2131745347 : 2131745346, null));
+        xm0Var.Q.setText(org.telegram.messenger.id.M0(xm0Var.Y ? 2131745349 : 2131745348, null));
         xm0Var.Q.setIcon(xm0Var.Y ? R.drawable.msg_media : R.drawable.msg_list);
     }
 

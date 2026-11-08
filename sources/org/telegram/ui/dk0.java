@@ -10,7 +10,7 @@ import org.json.JSONObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dk0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -78,15 +78,15 @@ public final /* synthetic */ class dk0 implements View.OnClickListener {
                 break;
             case 8:
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(hl0Var.getParentActivity());
-                String M0 = org.telegram.messenger.hd.M0(2131743941, null);
+                String M0 = org.telegram.messenger.id.M0(2131743943, null);
                 if (hl0Var.a0.has_secure_values) {
-                    M0 = jg.g.l(2131743942, null, rf.b.j(M0, "\n\n"));
+                    M0 = jg.g.l(2131743944, null, rf.b.j(M0, "\n\n"));
                 }
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.T = M0;
-                u1Var.R = org.telegram.messenger.hd.M0(2131743940, null);
-                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751436, null), new jk0(hl0Var, 3));
-                alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+                u1Var.R = org.telegram.messenger.id.M0(2131743942, null);
+                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751436, null), new jk0(hl0Var, 3));
+                alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
                 hl0Var.showDialog(u1Var);
                 TextView textView = (TextView) u1Var.d(-1);
                 if (textView != null) {
@@ -156,7 +156,7 @@ public final /* synthetic */ class dk0 implements View.OnClickListener {
                     b9.j0 j0Var = hl0Var.e;
                     j0Var.getClass();
                     com.google.android.gms.common.api.internal.s b10 = com.google.android.gms.common.api.internal.t.b();
-                    b10.c = new org.telegram.ui.Components.uy(jVar, 29);
+                    b10.c = new org.telegram.ui.Components.vy(jVar, 29);
                     b10.d = new n6.c[]{y8.p.b};
                     b10.b = true;
                     b10.a = 23707;

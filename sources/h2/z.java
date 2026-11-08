@@ -17,7 +17,7 @@ import org.telegram.ui.Components.n40;
 import org.telegram.ui.Components.t51;
 import wi.t0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class z implements a1 {
     public final /* synthetic */ int a;
@@ -115,8 +115,8 @@ public final class z implements a1 {
                 break;
             default:
                 t0 t0Var = (t0) this.b;
-                if (t0Var.Z == 5) {
-                    t0Var.y(z9);
+                if (t0Var.a0 == 5) {
+                    t0Var.z(z9);
                     break;
                 }
                 break;
@@ -192,9 +192,9 @@ public final class z implements a1 {
             default:
                 t0 t0Var = (t0) this.b;
                 t0Var.m.b("preview playback state=" + i7);
-                if (t0Var.Z == 5 && i7 == 4 && (i0Var2 = t0Var.V) != null) {
-                    i0Var2.Z0(5, t0Var.J);
-                    t0Var.V.f();
+                if (t0Var.a0 == 5 && i7 == 4 && (i0Var2 = t0Var.W) != null) {
+                    i0Var2.Z0(5, t0Var.K);
+                    t0Var.W.f();
                     break;
                 }
                 break;
@@ -220,8 +220,8 @@ public final class z implements a1 {
                 break;
             default:
                 t0 t0Var = (t0) this.b;
-                if (t0Var.Z == 5) {
-                    n40.n((n40) t0Var.d.b);
+                if (t0Var.a0 == 5) {
+                    n40.o((n40) t0Var.d.b);
                     break;
                 }
                 break;

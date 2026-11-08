@@ -13,7 +13,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ls0 extends FrameLayout {
     public boolean a;
@@ -224,9 +224,9 @@ public final class ls0 extends FrameLayout {
         if (frameLayout != null && frameLayout.getVisibility() != 8) {
             i11 = org.telegram.messenger.g0.L(68.0f);
         }
-        org.telegram.ui.Components.ly lyVar = premiumPreviewFragment.P;
-        lyVar.M = (premiumPreviewFragment.X + i11) - org.telegram.messenger.g0.L(16.0f);
-        lyVar.p1();
+        org.telegram.ui.Components.my myVar = premiumPreviewFragment.P;
+        myVar.M = (premiumPreviewFragment.X + i11) - org.telegram.messenger.g0.L(16.0f);
+        myVar.p1();
         premiumPreviewFragment.P.S = i11;
         super.onMeasure(i7, i10);
         if (((getMeasuredWidth() + getMeasuredHeight()) << 16) != 0) {

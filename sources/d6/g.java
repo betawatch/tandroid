@@ -7,7 +7,7 @@ import com.google.android.gms.common.api.m;
 import com.google.android.gms.common.api.q;
 import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class g extends com.google.android.gms.common.api.internal.d {
     public final /* synthetic */ int q;
@@ -37,22 +37,22 @@ public final class g extends com.google.android.gms.common.api.internal.d {
                 k kVar = (k) eVar.n();
                 f fVar = new f(this, 0);
                 GoogleSignInOptions googleSignInOptions = eVar.F;
-                Parcel L0 = kVar.L0();
+                Parcel l1 = kVar.l1();
                 int i7 = l7.f.a;
-                L0.writeStrongBinder(fVar);
-                l7.f.c(L0, googleSignInOptions);
-                kVar.M0(L0, qs.n1);
+                l1.writeStrongBinder(fVar);
+                l7.f.c(l1, googleSignInOptions);
+                kVar.m1(l1, qs.n1);
                 break;
             default:
                 e eVar2 = (e) cVar;
                 k kVar2 = (k) eVar2.n();
                 f fVar2 = new f(this, 1);
                 GoogleSignInOptions googleSignInOptions2 = eVar2.F;
-                Parcel L02 = kVar2.L0();
+                Parcel l12 = kVar2.l1();
                 int i10 = l7.f.a;
-                L02.writeStrongBinder(fVar2);
-                l7.f.c(L02, googleSignInOptions2);
-                kVar2.M0(L02, qs.o1);
+                l12.writeStrongBinder(fVar2);
+                l7.f.c(l12, googleSignInOptions2);
+                kVar2.m1(l12, qs.o1);
                 break;
         }
     }

@@ -11,7 +11,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.c51;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c3 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -50,10 +50,10 @@ public final /* synthetic */ class c3 implements Runnable {
                 if (T != null) {
                     if (!(tLObject instanceof TLRPC.TL_boolTrue)) {
                         if (tL_error == null) {
-                            k7Var.k().t(org.telegram.messenger.hd.M0(2131743880, null), null).k(false);
+                            k7Var.k().t(org.telegram.messenger.id.M0(2131743882, null), null).k(false);
                             break;
                         } else {
-                            k7Var.k().t(org.telegram.messenger.hd.a0(null, null, 2131743879, tL_error.text), null).k(false);
+                            k7Var.k().t(org.telegram.messenger.id.a0(null, null, 2131743881, tL_error.text), null).k(false);
                             break;
                         }
                     } else {
@@ -86,7 +86,7 @@ public final /* synthetic */ class c3 implements Runnable {
                                 T.presentFragment(ddVar);
                                 break;
                             } else {
-                                org.telegram.ui.Components.hc.a0(T).I(R.raw.stars_topup, org.telegram.messenger.hd.M0(2131750220, null), org.telegram.messenger.hd.H(',', "Gift2Converted", (int) j11)).k(true);
+                                org.telegram.ui.Components.hc.a0(T).I(R.raw.stars_topup, org.telegram.messenger.id.M0(2131750222, null), org.telegram.messenger.id.H(',', "Gift2Converted", (int) j11)).k(true);
                                 break;
                             }
                         }
@@ -132,7 +132,7 @@ public final /* synthetic */ class c3 implements Runnable {
                     org.telegram.ui.ActionBar.f2 T2 = LaunchActivity.T();
                     if (T2 != null) {
                         if (j12 < 0 || j13 < 0) {
-                            org.telegram.ui.Components.cc I = org.telegram.ui.Components.hc.a0(T2).I(R.raw.forward, org.telegram.messenger.hd.M0(2131749896, null), org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131749897, k7Var2.z1(), org.telegram.messenger.m5.t(j12))));
+                            org.telegram.ui.Components.cc I = org.telegram.ui.Components.hc.a0(T2).I(R.raw.forward, org.telegram.messenger.id.M0(2131749898, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749899, k7Var2.z1(), org.telegram.messenger.m5.t(j12))));
                             I.t = true;
                             I.j();
                         } else {

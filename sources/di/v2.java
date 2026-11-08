@@ -5,14 +5,14 @@ import java.util.HashMap;
 import org.telegram.messenger.fz;
 import org.telegram.messenger.gf;
 import org.telegram.messenger.gz;
-import org.telegram.messenger.pw;
+import org.telegram.messenger.ow;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.bi;
 import org.telegram.ui.Components.qg;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class v2 implements bi {
     public final /* synthetic */ i4 a;
@@ -43,7 +43,7 @@ public final class v2 implements bi {
         CharSequence charSequence2 = charSequence != null ? charSequence : null;
         long j11 = i4Var.k1;
         org.telegram.messenger.p5 p5Var = gz.I;
-        new Thread(new pw(null, arrayList, j11, accountInstance, charSequence2, false, null, null, null, null, z9, i7, i10, storyItem, null, j3, z10, j10, null)).start();
+        new Thread(new ow(null, arrayList, j11, accountInstance, charSequence2, false, null, null, null, null, z9, i7, i10, storyItem, null, j3, z10, j10, null)).start();
         i4Var.i0(j10 <= 0);
     }
 

@@ -10,11 +10,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ha;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.w70;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class a4 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -228,14 +228,14 @@ public final class a4 extends FrameLayout {
         e10.setScaleType(ImageView.ScaleType.CENTER);
         int i10 = org.telegram.ui.ActionBar.k6.j5;
         org.telegram.ui.ActionBar.r6.t(e10, i10, null, PorterDuff.Mode.MULTIPLY);
-        boolean z9 = hd.a0;
+        boolean z9 = id.a0;
         addView(e10, ha.d(24, 24.0f, (z9 ? 5 : 3) | 16, z9 ? 0.0f : 22.0f, 0.0f, z9 ? 22.0f : 0.0f, 0.0f));
         TextView textView = new TextView(context);
         org.telegram.ui.ActionBar.r6.V(textView, i10, null);
         textView.setTextSize(1, 14.0f);
-        textView.setGravity(hd.a0 ? 5 : 3);
+        textView.setGravity(id.a0 ? 5 : 3);
         textView.setText(str);
-        boolean z10 = hd.a0;
+        boolean z10 = id.a0;
         addView(textView, ha.d(-1, -2.0f, 23, z10 ? 0.0f : 61.0f, 0.0f, z10 ? 61.0f : 0.0f, 0.0f));
     }
 

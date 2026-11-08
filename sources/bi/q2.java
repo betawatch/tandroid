@@ -17,7 +17,7 @@ import org.telegram.ui.Components.y21;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bi0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q2 implements v10 {
     public final /* synthetic */ int a;
@@ -84,10 +84,10 @@ public final /* synthetic */ class q2 implements v10 {
                 } else if (tL_error != null) {
                     if ("STARGIFT_CRAFT_UNAVAILABLE".equalsIgnoreCase(tL_error.text)) {
                         alertDialog$Builder = new AlertDialog$Builder(0, k7Var.getContext(), new di.b());
-                        String M0 = org.telegram.messenger.hd.M0(2131749754, null);
+                        String M0 = org.telegram.messenger.id.M0(2131749756, null);
                         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                         u1Var.R = M0;
-                        u1Var.T = org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131749756, null));
+                        u1Var.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131749758, null));
                     } else {
                         String str = tL_error.text;
                         if (str == null || !str.startsWith("STARGIFT_CRAFT_TOO_EARLY_")) {
@@ -97,13 +97,13 @@ public final /* synthetic */ class q2 implements v10 {
                         } else {
                             long parseLong = Long.parseLong(tL_error.text.substring(25)) + ConnectionsManager.getInstance(k7Var.a).getCurrentTime();
                             alertDialog$Builder = new AlertDialog$Builder(0, k7Var.getContext(), new di.b());
-                            String M02 = org.telegram.messenger.hd.M0(2131749754, null);
+                            String M02 = org.telegram.messenger.id.M0(2131749756, null);
                             org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder.a;
                             u1Var2.R = M02;
-                            u1Var2.T = org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131749755, org.telegram.messenger.hd.x(parseLong, true)));
+                            u1Var2.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749757, org.telegram.messenger.id.x(parseLong, true)));
                         }
                     }
-                    jg.g.C(null, 2131747830, alertDialog$Builder, null);
+                    jg.g.C(null, 2131747832, alertDialog$Builder, null);
                     runnable.run();
                 }
                 break;
@@ -133,7 +133,7 @@ public final /* synthetic */ class q2 implements v10 {
                         v2Var.dismiss();
                         bi0.a = null;
                     }
-                    bi0.a().I(R.raw.error, org.telegram.messenger.hd.M0(2131753128, null), TextUtils.isEmpty(str2) ? org.telegram.messenger.hd.M0(2131753129, null) : org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.uj, f6Var), org.telegram.messenger.hd.a0(null, null, 2131753130, str2))).j();
+                    bi0.a().I(R.raw.error, org.telegram.messenger.id.M0(2131753128, null), TextUtils.isEmpty(str2) ? org.telegram.messenger.id.M0(2131753129, null) : org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.uj, f6Var), org.telegram.messenger.id.a0(null, null, 2131753130, str2))).j();
                     break;
                 } else {
                     y21Var.run();

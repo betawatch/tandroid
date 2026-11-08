@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.ch0;
 import org.telegram.ui.Components.jg;
 import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class e1 extends FrameLayout implements ls {
     public static final List x = Arrays.asList(new b1(0, 1, 20, 0), new b1(0, 2, 20, 40), new b1(1, 0, 0, 20), new b1(1, 2, 60, 40), new b1(2, 0, 40, 20), new b1(2, 1, 40, 60));
@@ -398,7 +398,7 @@ public final class e1 extends FrameLayout implements ls {
                 d1Var.setTypeface(b0Var.d());
                 String str2 = b0Var.c;
                 if (str2 == null) {
-                    str2 = hd.N0(b0Var.b);
+                    str2 = id.N0(b0Var.b);
                 }
                 d1Var.setText(str2);
                 return;

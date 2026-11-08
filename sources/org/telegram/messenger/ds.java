@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.hv0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ds implements Runnable {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class ds implements Runnable {
                     hz hzVar = (hz) arrayList.get(i10);
                     if (!hzVar.c && SystemClock.elapsedRealtime() - hzVar.e >= 120000) {
                         hzVar.c = true;
-                        ConnectionsManager.getInstance(i7).checkProxy(hzVar.a, new p1(hzVar, 14));
+                        ConnectionsManager.getInstance(i7).checkProxy(hzVar.a, new j1(hzVar, 14));
                         z10 = true;
                     }
                     i10++;
@@ -176,7 +176,7 @@ public final /* synthetic */ class ds implements Runnable {
                 ((hv0) this.b).a(null);
                 return;
             case 11:
-                g0.h3((ex) this.b);
+                g0.h3((dx) this.b);
                 return;
             case 12:
                 gz gzVar = (gz) this.b;

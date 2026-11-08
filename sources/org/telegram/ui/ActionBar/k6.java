@@ -68,18 +68,18 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.d9;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
+import org.telegram.messenger.jl;
 import org.telegram.messenger.p10;
-import org.telegram.messenger.pd;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.rc;
+import org.telegram.messenger.sc;
 import org.telegram.messenger.sz;
 import org.telegram.messenger.time.SunDate;
 import org.telegram.messenger.ui;
-import org.telegram.messenger.vj;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
@@ -97,9 +97,9 @@ import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.ie0;
 import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.lc0;
-import org.telegram.ui.Components.n00;
 import org.telegram.ui.Components.o00;
 import org.telegram.ui.Components.ou0;
+import org.telegram.ui.Components.p00;
 import org.telegram.ui.Components.qa0;
 import org.telegram.ui.Components.r70;
 import org.telegram.ui.Components.v31;
@@ -109,9 +109,9 @@ import org.telegram.ui.Components.zg0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.hy0;
-import org.telegram.ui.k71;
+import org.telegram.ui.l71;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class k6 {
     public static int A;
@@ -1103,7 +1103,7 @@ public abstract class k6 {
     public static final int qj;
     public static final int qk;
     public static final int ql;
-    public static o00 qm;
+    public static p00 qm;
     public static int r;
     public static Drawable r1;
     public static TextPaint r2;
@@ -4563,7 +4563,7 @@ public abstract class k6 {
                 a8.f(e10);
             }
         }
-        Collections.sort(F, new vj(25));
+        Collections.sort(F, new jl(25));
         SharedPreferences e12 = qp.e1();
         try {
             HashMap hashMap2 = H;
@@ -4876,7 +4876,7 @@ public abstract class k6 {
                 j6Var = J;
             }
             u(j6Var, false, s12 == 2);
-            org.telegram.messenger.g0.h3(new pd(4));
+            org.telegram.messenger.g0.h3(new rc(6));
             vm = new p5();
             wm = new int[2];
             Bm = new Paint(1);
@@ -5285,18 +5285,18 @@ public abstract class k6 {
         }
     }
 
-    public static o00 G0() {
+    public static p00 G0() {
         if (qm == null) {
-            o00 o00Var = new o00();
-            o00Var.a = new n00[4];
-            o00Var.k = 1.0f;
-            o00Var.l = new ArrayList();
-            o00Var.m = new Paint(1);
-            o00Var.n = new Path();
+            p00 p00Var = new p00();
+            p00Var.a = new o00[4];
+            p00Var.k = 1.0f;
+            p00Var.l = new ArrayList();
+            p00Var.m = new Paint(1);
+            p00Var.n = new Path();
             for (int i10 = 0; i10 < 4; i10++) {
-                o00Var.a[i10] = new n00(i10);
+                p00Var.a[i10] = new o00(i10);
             }
-            qm = o00Var;
+            qm = p00Var;
         }
         return qm;
     }
@@ -5489,7 +5489,7 @@ public abstract class k6 {
             j6Var.F = tL_theme;
             j6Var.a = tL_theme.title;
             File file = new File(j6Var.b);
-            File file2 = new File(org.telegram.messenger.t0.h(), rf.b.q(str, ".attheme"));
+            File file2 = new File(org.telegram.messenger.t0.h(), rf.b.r(str, ".attheme"));
             if (!file.equals(file2)) {
                 try {
                     org.telegram.messenger.g0.E(file, file2);
@@ -5516,8 +5516,8 @@ public abstract class k6 {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:106:0x023f  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x0370  */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x0384  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x036c  */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x0380  */
     /* JADX WARN: Removed duplicated region for block: B:41:0x00fe  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -5531,7 +5531,7 @@ public abstract class k6 {
         Bitmap bitmap;
         Bitmap c10;
         boolean z16;
-        r7 r7Var = new r7(15);
+        r7 r7Var = new r7(15, (byte) 0);
         r7Var.b = z14 ? null : e0;
         boolean z17 = (!z11 || z12) && c6Var != null;
         if (c6Var != null) {
@@ -5566,7 +5566,7 @@ public abstract class k6 {
                         }
                         z15 = decodeFile != null;
                         try {
-                            qa0Var.s(decodeFile, i11);
+                            qa0Var.s(i11, decodeFile);
                             qa0Var.t(qa0Var.f());
                             r7Var.b = qa0Var;
                         } catch (Throwable th2) {
@@ -5577,7 +5577,7 @@ public abstract class k6 {
                             }
                             if (((Drawable) r7Var.b) == null) {
                             }
-                            if (!rc.e(32)) {
+                            if (!sc.e(32)) {
                             }
                             return r7Var;
                         }
@@ -5635,7 +5635,7 @@ public abstract class k6 {
                         } else {
                             bitmap = null;
                         }
-                        qa0Var2.s(bitmap, i11);
+                        qa0Var2.s(i11, bitmap);
                         qa0Var2.u(i12);
                         r7Var.b = qa0Var2;
                     }
@@ -5693,7 +5693,7 @@ public abstract class k6 {
                             if (((Boolean) r7Var.e).booleanValue()) {
                                 File file3 = new File(org.telegram.messenger.t0.h(), c6Var.a);
                                 if (file3.exists()) {
-                                    qa0Var3.s(n1(new FileInputStream(file3), 0), (int) (c6Var.k * 100.0f));
+                                    qa0Var3.s((int) (c6Var.k * 100.0f), n1(new FileInputStream(file3), 0));
                                     r7Var.f = Boolean.TRUE;
                                 }
                             }
@@ -5730,7 +5730,7 @@ public abstract class k6 {
             if (((Drawable) r7Var.b) == null) {
             }
         }
-        if (!rc.e(32)) {
+        if (!sc.e(32)) {
             Drawable drawable = (Drawable) r7Var.b;
             if (drawable instanceof qa0) {
                 qa0 qa0Var4 = (qa0) drawable;
@@ -5758,7 +5758,7 @@ public abstract class k6 {
     }
 
     public static void J1(j6 j6Var) {
-        Collections.sort(j6Var.b0, new vj(26));
+        Collections.sort(j6Var.b0, new jl(26));
     }
 
     public static void K(Context context, boolean z10) {
@@ -6141,7 +6141,7 @@ public abstract class k6 {
         if (o != 0) {
             if (f2Var != null) {
                 try {
-                    hc.a0(f2Var).J(R.raw.auto_night_off, o == 3 ? hd.M0(2131753785, "AutoNightSystemModeOff") : hd.M0(2131753790, "AutoNightModeOff"), hd.M0(2131745496, "Settings"), 5000, false, new m5(f2Var, 2)).j();
+                    hc.a0(f2Var).J(R.raw.auto_night_off, o == 3 ? id.M0(2131753785, "AutoNightSystemModeOff") : id.M0(2131753790, "AutoNightModeOff"), id.M0(2131745498, "Settings"), 5000, false, new m5(f2Var, 2)).j();
                 } catch (Exception e10) {
                     a8.g(e10, true);
                 }
@@ -6543,7 +6543,7 @@ public abstract class k6 {
             i12 = i10;
             max = i11;
         }
-        qa0Var.s(sz.c(1.0f, R.raw.default_pattern, i12, max, -16777216, 2), 34);
+        qa0Var.s(34, sz.c(1.0f, R.raw.default_pattern, i12, max, -16777216, 2));
         qa0Var.t(qa0Var.f());
         return qa0Var;
     }
@@ -6959,7 +6959,7 @@ public abstract class k6 {
                             decodeStream.recycle();
                             decodeStream = copy;
                         }
-                        qa0Var.s(decodeStream, i17);
+                        qa0Var.s(i17, decodeStream);
                         qa0Var.t(qa0Var.f());
                         try {
                             fileInputStream.close();
@@ -7359,7 +7359,7 @@ public abstract class k6 {
             int indexOfKey2 = im.indexOfKey(ad);
             valueAt2 = indexOfKey2 >= 0 ? im.valueAt(indexOfKey2) : b0;
         }
-        if (z11 || !((((z10 = drawable instanceof qa0)) || (drawable instanceof BitmapDrawable)) && iz.o() != 0 && rc.e(32))) {
+        if (z11 || !((((z10 = drawable instanceof qa0)) || (drawable instanceof BitmapDrawable)) && iz.o() != 0 && sc.e(32))) {
             Y = null;
             Z = null;
             int i11 = Fa;
@@ -8447,15 +8447,15 @@ public abstract class k6 {
         int i10 = iArr[0];
         int i11 = iArr[1];
         view2.getLocationOnScreen(iArr);
-        if (view2 instanceof k71) {
+        if (view2 instanceof l71) {
             Bitmap bitmap = Y;
             if (bitmap != null) {
                 float width = bitmap.getWidth();
-                i10 = (int) ((((view2.getMeasuredWidth() - (Math.max(view2.getMeasuredWidth() / width, view2.getMeasuredHeight() / Y.getHeight()) * width)) / 2.0f) - ((k71) view2).I) + i10);
+                i10 = (int) ((((view2.getMeasuredWidth() - (Math.max(view2.getMeasuredWidth() / width, view2.getMeasuredHeight() / Y.getHeight()) * width)) / 2.0f) - ((l71) view2).I) + i10);
             } else {
-                i10 = (int) (i10 + (-((k71) view2).I));
+                i10 = (int) (i10 + (-((l71) view2).I));
             }
-            i11 = (int) (i11 + (-((k71) view2).J));
+            i11 = (int) (i11 + (-((l71) view2).J));
         }
         if (f6Var != null) {
             f6Var.b(i10, i11 - iArr[1], view2.getMeasuredWidth(), view2.getMeasuredHeight());
@@ -8487,23 +8487,24 @@ public abstract class k6 {
         org.telegram.messenger.g0.h3(new d9(3, !O));
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x0045, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x0047, code lost:
     
-        if (r11 == false) goto L23;
+        if (r12 == false) goto L23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:41:0x0047, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x0049, code lost:
     
         r3 = org.telegram.messenger.qp.e1().edit();
-        r3.putString("theme", r10.m());
+        r3.putString("theme", r11.m());
         r3.apply();
      */
     /* JADX WARN: Removed duplicated region for block: B:22:0x01cc  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x01d1 A[Catch: Exception -> 0x0031, TryCatch #5 {Exception -> 0x0031, blocks: (B:7:0x0013, B:10:0x0019, B:15:0x0022, B:16:0x0034, B:18:0x01c0, B:20:0x01c4, B:24:0x01d1, B:26:0x01e7, B:41:0x0047, B:42:0x0059, B:44:0x005f, B:45:0x0073, B:47:0x0086, B:55:0x00c2, B:106:0x01a8, B:113:0x01ba, B:115:0x0066, B:57:0x00c4, B:59:0x00da, B:61:0x00e6, B:64:0x00ea, B:66:0x00ed, B:68:0x00f7, B:70:0x0109, B:71:0x00fd, B:73:0x0107, B:77:0x010c, B:79:0x0119, B:81:0x0125, B:83:0x013d, B:85:0x0147, B:86:0x0153, B:88:0x015b, B:90:0x0165, B:91:0x0172, B:93:0x017a, B:95:0x0184, B:98:0x0191, B:100:0x019d), top: B:6:0x0013, inners: #2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x01d1 A[Catch: Exception -> 0x0033, TryCatch #4 {Exception -> 0x0033, blocks: (B:7:0x0013, B:10:0x001b, B:15:0x0024, B:16:0x0036, B:18:0x01c0, B:20:0x01c4, B:24:0x01d1, B:26:0x01e5, B:41:0x0049, B:42:0x005b, B:44:0x0061, B:45:0x0075, B:47:0x0088, B:55:0x00c4, B:106:0x01a8, B:113:0x01ba, B:115:0x0068, B:57:0x00c6, B:59:0x00dc, B:61:0x00e8, B:64:0x00ec, B:66:0x00ef, B:68:0x00f9, B:70:0x010b, B:71:0x00ff, B:73:0x0109, B:77:0x010e, B:79:0x011b, B:81:0x0127, B:83:0x013d, B:85:0x0147, B:86:0x0153, B:88:0x015b, B:90:0x0165, B:91:0x0172, B:93:0x017a, B:95:0x0184, B:98:0x0191, B:100:0x019d), top: B:6:0x0013, inners: #2 }] */
     /* JADX WARN: Removed duplicated region for block: B:25:0x01ce  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static void u(j6 j6Var, boolean z10, boolean z11) {
+        int i10;
         String[] split;
         if (j6Var == null) {
             return;
@@ -8514,6 +8515,7 @@ public abstract class k6 {
             themeEditorView.b();
         }
         try {
+            i10 = 13;
         } catch (Exception e10) {
             a8.g(e10, true);
         }
@@ -8533,7 +8535,7 @@ public abstract class k6 {
                 if (I != J) {
                     T = 2000;
                     U = SystemClock.elapsedRealtime();
-                    org.telegram.messenger.g0.i3(new pd(11), 2100L);
+                    org.telegram.messenger.g0.i3(new rc(i10), 2100L);
                 }
             }
             I = j6Var;
@@ -8579,10 +8581,10 @@ public abstract class k6 {
                 j6Var.e = parse.getQueryParameter("slug");
                 String queryParameter = parse.getQueryParameter("mode");
                 if (queryParameter != null && (split = queryParameter.toLowerCase().split(" ")) != null && split.length > 0) {
-                    for (int i10 = 0; i10 < split.length; i10++) {
-                        if ("blur".equals(split[i10])) {
+                    for (int i11 = 0; i11 < split.length; i11++) {
+                        if ("blur".equals(split[i11])) {
                             j6Var.h = true;
-                        } else if ("motion".equals(split[i10])) {
+                        } else if ("motion".equals(split[i11])) {
                             j6Var.n = true;
                         }
                     }
@@ -8717,7 +8719,7 @@ public abstract class k6 {
                 ArrayList arrayList = F;
                 arrayList.add(j6Var2);
                 G.add(j6Var2);
-                Collections.sort(arrayList, new vj(25));
+                Collections.sort(arrayList, new jl(25));
             } else {
                 hashMap.remove(str2);
             }
@@ -8995,7 +8997,7 @@ public abstract class k6 {
                     hashMap.put(j6Var.m(), j6Var);
                     G.add(j6Var);
                     y1(true, false);
-                    Collections.sort(arrayList, new vj(25));
+                    Collections.sort(arrayList, new jl(25));
                 }
                 I = j6Var;
                 if (j6Var != J) {

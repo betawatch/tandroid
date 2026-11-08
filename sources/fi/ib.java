@@ -8,13 +8,13 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ib extends View {
     public final zg0 a;
@@ -54,13 +54,13 @@ public final class ib extends View {
         i6Var.w(org.telegram.messenger.g0.L(14.0f));
         i6Var.u(-1);
         i6Var.s(org.telegram.messenger.g0.N(1.33f), org.telegram.messenger.g0.L(1.0f), TLObject.FLAG_30);
-        i6Var.t(hd.M0(2131743946, null), true, true);
+        i6Var.t(id.M0(2131743948, null), true, true);
         i6Var.b = 17;
     }
 
     public final void a(boolean z9, boolean z10) {
         this.e.c(z9);
-        this.b.t(hd.M0((z9 || z10) ? 2131743945 : 2131743946, null), true, true);
+        this.b.t(id.M0((z9 || z10) ? 2131743947 : 2131743948, null), true, true);
         boolean z11 = z9 && !z10;
         this.f = z11;
         zg0 zg0Var = this.a;

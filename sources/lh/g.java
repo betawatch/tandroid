@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import jh.k;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -25,7 +25,7 @@ import org.telegram.ui.fe;
 import org.telegram.ui.lu0;
 import org.telegram.ui.ol;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
                     actionBarPopupWindow$ActionBarPopupWindowLayout.setMinimumWidth(g0.L(200.0f));
                     z0 z0Var = new z0(0, parentActivity, resourceProvider, true, true);
                     z0Var.setMinimumWidth(g0.L(200.0f));
-                    z0Var.j(!z9 ? hd.M0(2131746371, null) : z9 ? hd.M0(2131746373, null) : hd.M0(2131746372, null), R.drawable.msg_seen, null);
+                    z0Var.j(!z9 ? id.M0(2131746373, null) : z9 ? id.M0(2131746375, null) : id.M0(2131746374, null), R.drawable.msg_seen, null);
                     z0Var.setOnClickListener(new lu0(1, afVar));
                     actionBarPopupWindow$ActionBarPopupWindowLayout.addView(z0Var);
                     g1 g1Var = new g1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);

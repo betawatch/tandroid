@@ -10,7 +10,7 @@ import org.telegram.ui.Components.n9;
 import org.telegram.ui.Components.ve0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class t0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -80,35 +80,35 @@ public final class t0 extends AnimatorListenerAdapter {
                 }
                 break;
             case 6:
-                org.telegram.ui.Wallet.p3 p3Var = (org.telegram.ui.Wallet.p3) obj;
-                org.telegram.ui.Wallet.h6 h6Var = p3Var.r;
-                h6Var.getClass();
-                h6Var.setLayerType(0, null);
+                org.telegram.ui.Wallet.o3 o3Var = (org.telegram.ui.Wallet.o3) obj;
+                org.telegram.ui.Wallet.g6 g6Var = o3Var.r;
+                g6Var.getClass();
+                g6Var.setLayerType(0, null);
                 if (f10 != 0.0f) {
-                    if (!p3Var.R) {
-                        ValueAnimator valueAnimator = p3Var.P;
+                    if (!o3Var.R) {
+                        ValueAnimator valueAnimator = o3Var.P;
                         if (valueAnimator != null) {
                             valueAnimator.cancel();
                         }
-                        ValueAnimator ofFloat = ValueAnimator.ofFloat(p3Var.Q, 1.0f);
-                        p3Var.P = ofFloat;
+                        ValueAnimator ofFloat = ValueAnimator.ofFloat(o3Var.Q, 1.0f);
+                        o3Var.P = ofFloat;
                         ofFloat.setDuration(320L);
-                        p3Var.P.setInterpolator(xq.g);
-                        p3Var.P.addUpdateListener(new org.telegram.ui.Wallet.m3(p3Var, i10));
-                        p3Var.P.start();
+                        o3Var.P.setInterpolator(xq.g);
+                        o3Var.P.addUpdateListener(new org.telegram.ui.Wallet.l3(o3Var, i10));
+                        o3Var.P.start();
                         break;
                     }
                 } else {
-                    p3Var.b();
+                    o3Var.b();
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) obj;
-                if (y5Var.m0 == animator) {
-                    y5Var.m0 = null;
-                    y5Var.M0(f10);
-                    y5Var.p0.o(false);
+                org.telegram.ui.Wallet.x5 x5Var = (org.telegram.ui.Wallet.x5) obj;
+                if (x5Var.m0 == animator) {
+                    x5Var.m0 = null;
+                    x5Var.M0(f10);
+                    x5Var.p0.o(false);
                     break;
                 }
                 break;

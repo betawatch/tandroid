@@ -7,7 +7,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w00 implements c20 {
     public final /* synthetic */ int a;
@@ -89,13 +89,13 @@ public final /* synthetic */ class w00 implements c20 {
                     qpVar.V7.add(Long.valueOf(j3));
                     qpVar.F4(true);
                     if (T != null) {
-                        org.telegram.ui.Components.hc.a0(T).P(R.raw.chats_infotip, g0.H2(g0.x2(hd.M0(2131745575, null), new rn(i10, T)), true)).k(true);
+                        org.telegram.ui.Components.hc.a0(T).P(R.raw.chats_infotip, g0.H2(g0.x2(id.M0(2131745577, null), new rn(i10, T)), true)).k(true);
                     }
                     zArr[0] = true;
                     aeVar.run();
                     break;
                 } else if (T != null) {
-                    org.telegram.ui.Components.hc.a0(T).I(R.raw.error, hd.M0(2131754311, null), hd.M0(2131754312, null)).j();
+                    org.telegram.ui.Components.hc.a0(T).I(R.raw.error, id.M0(2131754311, null), id.M0(2131754312, null)).j();
                     break;
                 }
                 break;

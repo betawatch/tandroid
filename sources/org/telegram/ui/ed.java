@@ -4,7 +4,7 @@ import android.text.SpannableStringBuilder;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ed implements Runnable {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class ed implements Runnable {
         zd zdVar = this.b;
         switch (i7) {
             case 0:
-                vf.c.t(zdVar.getContext(), org.telegram.messenger.hd.M0(i10, null));
+                vf.c.t(zdVar.getContext(), org.telegram.messenger.id.M0(i10, null));
                 break;
             case 1:
                 ed edVar = zdVar.f1;
@@ -51,10 +51,10 @@ public final /* synthetic */ class ed implements Runnable {
                 pdVar.setEnabled(zdVar.N0 > 0 || zdVar.B0 > currentTime);
                 if (currentTime >= zdVar.B0) {
                     pdVar.g(null, true);
-                    pdVar.i(bi.dd.Y0(false, zdVar.M0 ? org.telegram.messenger.hd.M0(2131748367, null) : org.telegram.messenger.hd.H(' ', "MonetizationStarsWithdraw", (int) zdVar.N0), zdVar.H0), true, true);
+                    pdVar.i(bi.dd.Y0(false, zdVar.M0 ? org.telegram.messenger.id.M0(2131748369, null) : org.telegram.messenger.id.H(' ', "MonetizationStarsWithdraw", (int) zdVar.N0), zdVar.H0), true, true);
                     break;
                 } else {
-                    pdVar.i(org.telegram.messenger.hd.M0(2131748366, null), true, true);
+                    pdVar.i(org.telegram.messenger.id.M0(2131748368, null), true, true);
                     if (zdVar.e1 == null) {
                         zdVar.e1 = new SpannableStringBuilder("l");
                         org.telegram.ui.Components.wp wpVar = new org.telegram.ui.Components.wp(R.drawable.mini_switch_lock, 0);

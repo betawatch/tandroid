@@ -10,7 +10,7 @@ import org.telegram.messenger.c20;
 import org.telegram.ui.Cells.z5;
 import org.telegram.ui.Components.u4;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -94,11 +94,11 @@ public final /* synthetic */ class o0 implements DialogInterface.OnDismissListen
                 }
                 break;
             default:
-                zh.f2 f2Var3 = (zh.f2) this.c;
-                zh.o1 o1Var = (zh.o1) this.b;
+                zh.d2 d2Var = (zh.d2) this.c;
+                zh.n1 n1Var = (zh.n1) this.b;
                 Activity activity3 = (Activity) this.d;
-                org.telegram.messenger.g0.v1(o1Var);
-                org.telegram.messenger.g0.a3(activity3, f2Var3.a.getClassGuid());
+                org.telegram.messenger.g0.v1(n1Var);
+                org.telegram.messenger.g0.a3(activity3, d2Var.a.getClassGuid());
                 break;
         }
     }

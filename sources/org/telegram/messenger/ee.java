@@ -24,7 +24,7 @@ import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.bk0;
 import org.telegram.ui.ws0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ee implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -473,38 +473,38 @@ public final /* synthetic */ class ee implements Runnable {
                 i22.m(parentActivity, accountInstance, tL_inputStorePaymentPremiumSubscription, Collections.singletonList(qVar.a()), z0Var, false);
                 return;
             case 3:
-                org.telegram.ui.Wallet.k0 k0Var = (org.telegram.ui.Wallet.k0) r12.f;
+                org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) r12.f;
                 String str8 = (String) r12.d;
                 byte[] bArr2 = (byte[]) r12.b;
                 JSONObject jSONObject2 = (JSONObject) r12.h;
                 String str9 = (String) r12.e;
                 int i23 = r12.c;
-                org.telegram.ui.Wallet.u2 u2Var = (org.telegram.ui.Wallet.u2) r12.n;
-                org.telegram.ui.Wallet.n0 n0Var = (org.telegram.ui.Wallet.n0) r12.r;
+                org.telegram.ui.Wallet.t2 t2Var = (org.telegram.ui.Wallet.t2) r12.n;
+                org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) r12.r;
                 try {
                     try {
-                        jSONObject = WalletEngine2.signData(k0Var, org.telegram.ui.Wallet.v2.e(), str8, bArr2, jSONObject2, str9, i23);
+                        jSONObject = WalletEngine2.signData(j0Var, org.telegram.ui.Wallet.u2.e(), str8, bArr2, jSONObject2, str9, i23);
                     } catch (Exception e19) {
                         e = e19;
                         jSONObject = null;
                     }
                     try {
-                        byte[] f10 = org.telegram.ui.Wallet.v2.f(k0Var, str8, bArr2);
-                        k0Var.close();
+                        byte[] f10 = org.telegram.ui.Wallet.u2.f(j0Var, str8, bArr2);
+                        j0Var.close();
                         bArr = f10;
                     } catch (Exception e20) {
                         e = e20;
-                        String i24 = org.telegram.ui.Wallet.f2.i("widget sign data", e);
-                        k0Var.close();
+                        String i24 = org.telegram.ui.Wallet.e2.i("widget sign data", e);
+                        j0Var.close();
                         bArr = null;
                         str2 = i24;
-                        g0.h3(new bi.r7(jSONObject, str2, u2Var, n0Var, str8, bArr2, bArr));
+                        g0.h3(new bi.r7(jSONObject, str2, t2Var, m0Var, str8, bArr2, bArr));
                         return;
                     }
-                    g0.h3(new bi.r7(jSONObject, str2, u2Var, n0Var, str8, bArr2, bArr));
+                    g0.h3(new bi.r7(jSONObject, str2, t2Var, m0Var, str8, bArr2, bArr));
                     return;
                 } catch (Throwable th17) {
-                    k0Var.close();
+                    j0Var.close();
                     throw th17;
                 }
             default:
@@ -521,12 +521,12 @@ public final /* synthetic */ class ee implements Runnable {
                     runnable.run();
                 }
                 bi.v0 v0Var = new bi.v0(runnableArr, textViewArr, i25, f6Var, 9);
-                org.telegram.ui.Wallet.n0 x10 = org.telegram.ui.Wallet.n0.x(i25);
+                org.telegram.ui.Wallet.m0 x10 = org.telegram.ui.Wallet.m0.x(i25);
                 TL_wallet.nftItem nftitem = wallettransaction.nft;
                 if (nftitem != null) {
-                    org.telegram.ui.Wallet.d0 d0Var = new org.telegram.ui.Wallet.d0(x10, wallettransaction.peer.address, nftitem, strArr2[0], v0Var);
-                    x10.m0(d0Var);
-                    i13 = new org.telegram.ui.Wallet.l(d0Var, i16);
+                    org.telegram.ui.Wallet.c0 c0Var = new org.telegram.ui.Wallet.c0(x10, wallettransaction.peer.address, nftitem, strArr2[0], v0Var);
+                    x10.m0(c0Var);
+                    i13 = new org.telegram.ui.Wallet.l(c0Var, i16);
                 } else {
                     i13 = x10.i(wallettransaction.peer.address, wallettransaction.amount, strArr2[0], zArr4[0] ? bArr3 : null, v0Var);
                 }
@@ -557,15 +557,15 @@ public final /* synthetic */ class ee implements Runnable {
         this.e = str2;
     }
 
-    public /* synthetic */ ee(org.telegram.ui.Wallet.k0 k0Var, String str, byte[] bArr, JSONObject jSONObject, String str2, int i7, org.telegram.ui.Wallet.u2 u2Var, org.telegram.ui.Wallet.n0 n0Var) {
-        this.f = k0Var;
+    public /* synthetic */ ee(org.telegram.ui.Wallet.j0 j0Var, String str, byte[] bArr, JSONObject jSONObject, String str2, int i7, org.telegram.ui.Wallet.t2 t2Var, org.telegram.ui.Wallet.m0 m0Var) {
+        this.f = j0Var;
         this.d = str;
         this.b = bArr;
         this.h = jSONObject;
         this.e = str2;
         this.c = i7;
-        this.n = u2Var;
-        this.r = n0Var;
+        this.n = t2Var;
+        this.r = m0Var;
     }
 
     public /* synthetic */ ee(Runnable[] runnableArr, TextView[] textViewArr, int i7, org.telegram.ui.ActionBar.f6 f6Var, TL_wallet.walletTransaction wallettransaction, String[] strArr, boolean[] zArr, byte[] bArr) {

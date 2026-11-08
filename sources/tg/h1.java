@@ -19,9 +19,9 @@ import org.telegram.messenger.k5;
 import org.telegram.ui.Components.ch0;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.zg0;
-import org.telegram.ui.r81;
+import org.telegram.ui.s81;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class h1 extends LinearLayout {
     public final ch0[] a;
@@ -156,7 +156,7 @@ public final class h1 extends LinearLayout {
                 this.r = duration;
                 duration.setInterpolator(xq.f);
                 this.r.addUpdateListener(new v3(this, 25));
-                this.r.addListener(new r81(this, 16));
+                this.r.addListener(new s81(this, 16));
                 this.r.start();
             }
         }

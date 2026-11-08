@@ -13,7 +13,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.up0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class y implements Runnable {
     public final /* synthetic */ int a;
@@ -203,11 +203,11 @@ public final class y implements Runnable {
                 return;
             default:
                 wi.t0 t0Var = (wi.t0) obj;
-                if (t0Var.Z == 5 && (i0Var = t0Var.V) != null && t0Var.z) {
+                if (t0Var.a0 == 5 && (i0Var = t0Var.W) != null && t0Var.z) {
                     long l10 = i0Var.l();
-                    long j12 = t0Var.J;
-                    if (l10 < j12 || l10 >= t0Var.K) {
-                        t0Var.V.Z0(5, j12);
+                    long j12 = t0Var.K;
+                    if (l10 < j12 || l10 >= t0Var.L) {
+                        t0Var.W.Z0(5, j12);
                     }
                     t0Var.d.getClass();
                     t0Var.i.postDelayed(this, 33L);

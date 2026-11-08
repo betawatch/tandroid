@@ -5,11 +5,11 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import android.widget.TableLayout;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class b0 extends TableLayout {
     public final /* synthetic */ f6 a;
@@ -36,7 +36,7 @@ public final class b0 extends TableLayout {
             float f10 = height * i7;
             canvas.drawLine(0.0f, f10, getWidth(), f10, c0Var.r);
         }
-        float right = hd.a0 ? c0Var.e.getRight() : c0Var.e.getLeft();
+        float right = id.a0 ? c0Var.e.getRight() : c0Var.e.getLeft();
         canvas.drawLine(right, 0.0f, right, getHeight(), c0Var.r);
         c0Var.r.setStrokeWidth(g0.L(2.0f));
         canvas.drawPath(c0Var.s, c0Var.r);

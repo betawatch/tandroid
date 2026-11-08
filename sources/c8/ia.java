@@ -14,7 +14,7 @@ import org.telegram.ui.Components.oc0;
 import org.telegram.ui.Components.pc0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class ia {
     public static int a = 1500;
@@ -53,9 +53,9 @@ public abstract class ia {
                         int i11 = org.telegram.ui.ActionBar.k6.L5;
                         alertDialog$Builder.m(R.raw.permission_request_camera, 72, org.telegram.ui.ActionBar.k6.x0(null, i11, false), null);
                         alertDialog$Builder.n(i11, null);
-                        alertDialog$Builder.a.T = org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131747308, null));
-                        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747299, null), new nc0(activity, i10));
-                        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131751772, null), null);
+                        alertDialog$Builder.a.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131747310, null));
+                        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747301, null), new nc0(activity, i10));
+                        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131751772, null), null);
                         alertDialog$Builder.a.show();
                         c20Var.a(Boolean.FALSE);
                         return;
@@ -88,9 +88,9 @@ public abstract class ia {
                 int i12 = org.telegram.ui.ActionBar.k6.L5;
                 alertDialog$Builder.m(i7, 72, org.telegram.ui.ActionBar.k6.x0(null, i12, false), null);
                 alertDialog$Builder.n(i12, null);
-                alertDialog$Builder.a.T = org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(i10, null));
-                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747299, null), new nc0(activity, i11));
-                alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131751772, null), null);
+                alertDialog$Builder.a.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(i10, null));
+                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747301, null), new nc0(activity, i11));
+                alertDialog$Builder.h(org.telegram.messenger.id.M0(2131751772, null), null);
                 alertDialog$Builder.a.show();
                 c20Var.a(Boolean.FALSE);
                 return;

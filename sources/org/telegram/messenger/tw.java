@@ -2,40 +2,31 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class tw implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ gz b;
-    public final /* synthetic */ TLRPC.Message c;
-    public final /* synthetic */ boolean d;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f2 d;
+    public final /* synthetic */ TLRPC.TL_messages_editMessage e;
 
-    public /* synthetic */ tw(gz gzVar, TLRPC.Message message, boolean z9, int i7) {
+    public /* synthetic */ tw(gz gzVar, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.f2 f2Var, TLRPC.TL_messages_editMessage tL_messages_editMessage, int i7) {
         this.a = i7;
         this.b = gzVar;
-        this.c = message;
-        this.d = z9;
+        this.c = tL_error;
+        this.d = f2Var;
+        this.e = tL_messages_editMessage;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                gz gzVar = this.b;
-                gzVar.getClass();
-                TLRPC.Message message = this.c;
-                gzVar.d0(message.id);
-                gzVar.i0(message.id, this.d);
-                break;
-            case 1:
-                gz gzVar2 = this.b;
-                gzVar2.getClass();
-                TLRPC.Message message2 = this.c;
-                gzVar2.d0(message2.id);
-                gzVar2.i0(message2.id, this.d);
+                org.telegram.ui.Components.v4.c0(this.b.currentAccount, this.c, this.d, this.e, new Object[0]);
                 break;
             default:
-                this.b.g0(this.c, this.d);
+                org.telegram.ui.Components.v4.c0(this.b.currentAccount, this.c, this.d, this.e, new Object[0]);
                 break;
         }
     }

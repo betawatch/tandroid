@@ -7,7 +7,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ui extends v4.s0 {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final class ui extends v4.s0 {
         int top2;
         xi0 xi0Var4;
         xi0 xi0Var5;
-        org.telegram.ui.Wallet.t8 t8Var;
+        org.telegram.ui.Wallet.s8 s8Var;
         int i10 = this.a;
         ug.i1 i1Var = null;
         Object obj = this.b;
@@ -166,8 +166,8 @@ public final class ui extends v4.s0 {
                 }
                 break;
             case 21:
-                if (i7 == 1 && (t8Var = ((org.telegram.ui.Wallet.y5) obj).i0) != null) {
-                    t8Var.a();
+                if (i7 == 1 && (s8Var = ((org.telegram.ui.Wallet.x5) obj).i0) != null) {
+                    s8Var.a();
                     break;
                 }
                 break;
@@ -218,7 +218,7 @@ public final class ui extends v4.s0 {
         TLRPC.User user;
         String str2;
         ui0 ui0Var;
-        org.telegram.ui.Wallet.u5 u5Var;
+        org.telegram.ui.Wallet.t5 t5Var;
         switch (this.a) {
             case 0:
                 fj fjVar = (fj) this.b;
@@ -297,21 +297,21 @@ public final class ui extends v4.s0 {
                 }
                 break;
             case 6:
-                qu quVar = (qu) this.b;
-                iu iuVar = quVar.m1;
-                if (iuVar != null && quVar.n1.I1 && iuVar.x) {
-                    iuVar.x = false;
-                    iuVar.invalidate();
+                ru ruVar = (ru) this.b;
+                ju juVar = ruVar.m1;
+                if (juVar != null && ruVar.n1.I1 && juVar.x) {
+                    juVar.x = false;
+                    juVar.invalidate();
                     break;
                 }
                 break;
             case 7:
-                ez ezVar = (ez) this.b;
-                ezVar.F.invalidate();
-                ezVar.invalidate();
+                fz fzVar = (fz) this.b;
+                fzVar.F.invalidate();
+                fzVar.invalidate();
                 break;
             case 8:
-                fz.I0((fz) this.b);
+                gz.I0((gz) this.b);
                 break;
             case 9:
                 f90 f90Var = (f90) this.b;
@@ -337,7 +337,7 @@ public final class ui extends v4.s0 {
                 for (int i11 = 0; i11 < q1Var.getChildCount(); i11++) {
                     View childAt = q1Var.getChildAt(i11);
                     if (childAt instanceof org.telegram.ui.Cells.q1) {
-                        ((org.telegram.ui.Cells.q1) childAt).x3(v8Var.getMeasuredWidth(), v8Var.getBackgroundSizeY());
+                        ((org.telegram.ui.Cells.q1) childAt).y3(v8Var.getMeasuredWidth(), v8Var.getBackgroundSizeY());
                     }
                 }
                 w90 w90Var = ca0Var.e;
@@ -433,20 +433,20 @@ public final class ui extends v4.s0 {
                 ((u61) this.b).invalidate();
                 break;
             case 21:
-                org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) this.b;
-                if (i10 != 0 && recyclerView.getScrollState() == 1 && (u5Var = y5Var.q0) != null && u5Var.f) {
-                    u5Var.d = true;
+                org.telegram.ui.Wallet.x5 x5Var = (org.telegram.ui.Wallet.x5) this.b;
+                if (i10 != 0 && recyclerView.getScrollState() == 1 && (t5Var = x5Var.q0) != null && t5Var.f) {
+                    t5Var.d = true;
                 }
-                y5Var.T0();
+                x5Var.T0();
                 break;
             case 22:
                 int[] iArr2 = (int[]) this.b;
                 iArr2[0] = iArr2[0] + i10;
                 break;
             case 23:
-                org.telegram.ui.Wallet.x9 x9Var = (org.telegram.ui.Wallet.x9) this.b;
-                if (x9Var.a.I1) {
-                    org.telegram.messenger.g0.v1(x9Var.N);
+                org.telegram.ui.Wallet.w9 w9Var = (org.telegram.ui.Wallet.w9) this.b;
+                if (w9Var.a.I1) {
+                    org.telegram.messenger.g0.v1(w9Var.N);
                     break;
                 }
                 break;

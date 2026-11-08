@@ -45,8 +45,8 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.gf;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i6;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.j20;
@@ -73,7 +73,7 @@ import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.zj0;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class t3 extends q41 {
     public static final ArrayList z4 = new ArrayList();
@@ -2330,7 +2330,7 @@ public final class t3 extends q41 {
                                                         linearLayout.setMinimumWidth(org.telegram.messenger.g0.L(208.0f));
                                                         linearLayout.setOrientation(r12);
                                                         TextView textView = new TextView(getContext());
-                                                        textView.setText(hd.M0(2131754057, null));
+                                                        textView.setText(id.M0(2131754057, null));
                                                         textView.setTextSize(1, 12.0f);
                                                         textView.setGravity(17);
                                                         int i41 = k6.y6;
@@ -2601,9 +2601,9 @@ public final class t3 extends q41 {
                                                             }
                                                             z14 = true;
                                                             if (!z14) {
-                                                                M0 = hd.M0(2131753995, null);
+                                                                M0 = id.M0(2131753995, null);
                                                             } else if (z13 || !(size <= 1 || z18 || z17)) {
-                                                                M0 = hd.M0(2131754023, null);
+                                                                M0 = id.M0(2131754023, null);
                                                             } else {
                                                                 if (z18) {
                                                                     i25 = 2131754022;
@@ -2612,13 +2612,13 @@ public final class t3 extends q41 {
                                                                     str = null;
                                                                     i25 = z17 ? 2131754021 : 2131754024;
                                                                 }
-                                                                M0 = hd.M0(i25, str);
+                                                                M0 = id.M0(i25, str);
                                                             }
                                                             J.c(!z14 ? R.drawable.iv_table_highlight_remove : R.drawable.iv_table_highlight, M0, new u7(this, m5Var2, z14, 8), false);
                                                             if (i16 == 0) {
                                                                 str2 = null;
                                                                 final int i47 = 2;
-                                                                J.c(R.drawable.iv_table_merge, hd.M0(2131754000, null), new Runnable(this) { // from class: li.k2
+                                                                J.c(R.drawable.iv_table_merge, id.M0(2131754000, null), new Runnable(this) { // from class: li.k2
                                                                     public final /* synthetic */ t3 b;
 
                                                                     {
@@ -3010,7 +3010,7 @@ public final class t3 extends q41 {
                                                             }
                                                             if (i18 == 0) {
                                                                 i26 = 3;
-                                                                J.c(R.drawable.iv_table_unmerge, hd.M0(2131753992, str2), new Runnable(this) { // from class: li.k2
+                                                                J.c(R.drawable.iv_table_unmerge, id.M0(2131753992, str2), new Runnable(this) { // from class: li.k2
                                                                     public final /* synthetic */ t3 b;
 
                                                                     {
@@ -3402,7 +3402,7 @@ public final class t3 extends q41 {
                                                             }
                                                             if (i14 != 0) {
                                                                 final int i48 = 4;
-                                                                J.c(R.drawable.iv_table_insert_left, hd.M0(2131754010, str2), new Runnable(this) { // from class: li.k2
+                                                                J.c(R.drawable.iv_table_insert_left, id.M0(2131754010, str2), new Runnable(this) { // from class: li.k2
                                                                     public final /* synthetic */ t3 b;
 
                                                                     {
@@ -3790,7 +3790,7 @@ public final class t3 extends q41 {
                                                                     }
                                                                 }, false);
                                                                 final int i49 = 5;
-                                                                J.c(R.drawable.iv_table_insert_right, hd.M0(2131754009, str2), new Runnable(this) { // from class: li.k2
+                                                                J.c(R.drawable.iv_table_insert_right, id.M0(2131754009, str2), new Runnable(this) { // from class: li.k2
                                                                     public final /* synthetic */ t3 b;
 
                                                                     {
@@ -4180,7 +4180,7 @@ public final class t3 extends q41 {
                                                             }
                                                             if (i15 != 0) {
                                                                 final int i50 = 6;
-                                                                J.c(R.drawable.iv_table_insert_top, hd.M0(2131754012, str2), new Runnable(this) { // from class: li.k2
+                                                                J.c(R.drawable.iv_table_insert_top, id.M0(2131754012, str2), new Runnable(this) { // from class: li.k2
                                                                     public final /* synthetic */ t3 b;
 
                                                                     {
@@ -4568,7 +4568,7 @@ public final class t3 extends q41 {
                                                                     }
                                                                 }, false);
                                                                 final int i51 = 7;
-                                                                J.c(R.drawable.iv_table_insert_bottom, hd.M0(2131754011, str2), new Runnable(this) { // from class: li.k2
+                                                                J.c(R.drawable.iv_table_insert_bottom, id.M0(2131754011, str2), new Runnable(this) { // from class: li.k2
                                                                     public final /* synthetic */ t3 b;
 
                                                                     {
@@ -4957,7 +4957,7 @@ public final class t3 extends q41 {
                                                                 }, false);
                                                             }
                                                             if (i17 == 0) {
-                                                                String M02 = hd.M0(2131754039, str2);
+                                                                String M02 = id.M0(2131754039, str2);
                                                                 final int i52 = 8;
                                                                 Runnable runnable = new Runnable(this) { // from class: li.k2
                                                                     public final /* synthetic */ t3 b;
@@ -5353,7 +5353,7 @@ public final class t3 extends q41 {
                                                             }
                                                             if (i19 != 0) {
                                                                 final int i53 = 0;
-                                                                J.c(R.drawable.iv_table_remove, hd.M0(2131754035, str2), new Runnable(this) { // from class: li.k2
+                                                                J.c(R.drawable.iv_table_remove, id.M0(2131754035, str2), new Runnable(this) { // from class: li.k2
                                                                     public final /* synthetic */ t3 b;
 
                                                                     {
@@ -5742,7 +5742,7 @@ public final class t3 extends q41 {
                                                                 }, r82);
                                                             }
                                                             if (z13) {
-                                                                J.c(R.drawable.iv_table_remove, hd.M0(2131754034, str2), new Runnable(this) { // from class: li.k2
+                                                                J.c(R.drawable.iv_table_remove, id.M0(2131754034, str2), new Runnable(this) { // from class: li.k2
                                                                     public final /* synthetic */ t3 b;
 
                                                                     {
@@ -6185,7 +6185,7 @@ public final class t3 extends q41 {
                                                                                 break;
                                                                         }
                                                                     }
-                                                                }, hd.M0(2131753991, str2), pageblocktable.bordered);
+                                                                }, id.M0(2131753991, str2), pageblocktable.bordered);
                                                                 final int i55 = 1;
                                                                 m5Var2 = m5Var;
                                                                 J.i(new Runnable() { // from class: li.l2
@@ -6242,7 +6242,7 @@ public final class t3 extends q41 {
                                                                                 break;
                                                                         }
                                                                     }
-                                                                }, hd.M0(2131753990, str2), pageblocktable.compact);
+                                                                }, id.M0(2131753990, str2), pageblocktable.compact);
                                                                 final org.telegram.ui.ActionBar.z0[] z0VarArr = {J.y(), J.y()};
                                                             }
                                                             J.p = new l2.z0(this, J, m5Var2, i26);
@@ -6296,7 +6296,7 @@ public final class t3 extends q41 {
                                                 linearLayout3.setMinimumWidth(org.telegram.messenger.g0.L(208.0f));
                                                 linearLayout3.setOrientation(r12);
                                                 TextView textView2 = new TextView(getContext());
-                                                textView2.setText(hd.M0(2131754057, null));
+                                                textView2.setText(id.M0(2131754057, null));
                                                 textView2.setTextSize(1, 12.0f);
                                                 textView2.setGravity(17);
                                                 int i412 = k6.y6;
@@ -6436,7 +6436,7 @@ public final class t3 extends q41 {
                                         linearLayout32.setMinimumWidth(org.telegram.messenger.g0.L(208.0f));
                                         linearLayout32.setOrientation(r12);
                                         TextView textView22 = new TextView(getContext());
-                                        textView22.setText(hd.M0(2131754057, null));
+                                        textView22.setText(id.M0(2131754057, null));
                                         textView22.setTextSize(1, 12.0f);
                                         textView22.setGravity(17);
                                         int i4122 = k6.y6;
@@ -6578,7 +6578,7 @@ public final class t3 extends q41 {
                                     linearLayout322.setMinimumWidth(org.telegram.messenger.g0.L(208.0f));
                                     linearLayout322.setOrientation(r12);
                                     TextView textView222 = new TextView(getContext());
-                                    textView222.setText(hd.M0(2131754057, null));
+                                    textView222.setText(id.M0(2131754057, null));
                                     textView222.setTextSize(1, 12.0f);
                                     textView222.setGravity(17);
                                     int i41222 = k6.y6;
@@ -6727,7 +6727,7 @@ public final class t3 extends q41 {
                                 linearLayout3222.setMinimumWidth(org.telegram.messenger.g0.L(208.0f));
                                 linearLayout3222.setOrientation(r12);
                                 TextView textView2222 = new TextView(getContext());
-                                textView2222.setText(hd.M0(2131754057, null));
+                                textView2222.setText(id.M0(2131754057, null));
                                 textView2222.setTextSize(1, 12.0f);
                                 textView2222.setGravity(17);
                                 int i412222 = k6.y6;
@@ -6889,7 +6889,7 @@ public final class t3 extends q41 {
                 linearLayout32222.setMinimumWidth(org.telegram.messenger.g0.L(208.0f));
                 linearLayout32222.setOrientation(r12);
                 TextView textView22222 = new TextView(getContext());
-                textView22222.setText(hd.M0(2131754057, null));
+                textView22222.setText(id.M0(2131754057, null));
                 textView22222.setTextSize(1, 12.0f);
                 textView22222.setGravity(17);
                 int i4122222 = k6.y6;
@@ -7049,7 +7049,7 @@ public final class t3 extends q41 {
         linearLayout322222.setMinimumWidth(org.telegram.messenger.g0.L(208.0f));
         linearLayout322222.setOrientation(r12);
         TextView textView222222 = new TextView(getContext());
-        textView222222.setText(hd.M0(2131754057, null));
+        textView222222.setText(id.M0(2131754057, null));
         textView222222.setTextSize(1, 12.0f);
         textView222222.setGravity(17);
         int i41222222 = k6.y6;

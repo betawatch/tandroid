@@ -1,17 +1,39 @@
 package zh;
 
-import org.telegram.ui.Components.i5;
+import android.content.Context;
+import android.view.View;
+import bi.m6;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class w2 extends i5 {
-    @Override // org.telegram.ui.Components.i5, android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return org.telegram.messenger.g0.L(24.0f);
+public final class w2 extends org.telegram.ui.ActionBar.z0 {
+    public final int V;
+    public long W;
+    public u2 a0;
+
+    public w2(int i7, Context context, f6 f6Var) {
+        super(0, context, f6Var, false, false);
+        this.V = i7;
+        setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
+        c(k6.E8, k6.F8);
+        setIconColor(-1);
+        this.c.setTranslationX(org.telegram.messenger.g0.L(2.0f));
+        this.c.setScaleX(1.2f);
+        this.c.setScaleY(1.2f);
+        a(2);
+        setBackground(null);
+        this.c.addOnAttachStateChangeListener(new m6(this, 14));
     }
 
-    @Override // org.telegram.ui.Components.i5, android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return org.telegram.messenger.g0.L(24.0f);
+    @Override // org.telegram.ui.ActionBar.z0, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int size = View.MeasureSpec.getSize(i7);
+        if (View.MeasureSpec.getMode(i7) == Integer.MIN_VALUE) {
+            size = org.telegram.messenger.g0.L(250.0f);
+        }
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i10);
     }
 }

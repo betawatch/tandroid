@@ -26,7 +26,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class p90 {
     public static final Pattern k = Pattern.compile("^[a-z0-9_]{1,32}$");
@@ -595,16 +595,16 @@ public final class p90 {
                                 String r10 = r(queryParameter4);
                                 boolean booleanQueryParameter = s5.getBooleanQueryParameter("encrypted", false);
                                 try {
-                                    org.telegram.ui.Wallet.n9 n9Var = new org.telegram.ui.Wallet.n9(str8);
+                                    org.telegram.ui.Wallet.m9 m9Var = new org.telegram.ui.Wallet.m9(str8);
                                     if (l10 != null && l10.longValue() > 0) {
-                                        n9Var.s = l10.longValue();
+                                        m9Var.s = l10.longValue();
                                     }
                                     if (!TextUtils.isEmpty(r10)) {
-                                        n9Var.g0 = r10;
-                                        n9Var.h0 = booleanQueryParameter;
+                                        m9Var.g0 = r10;
+                                        m9Var.h0 = booleanQueryParameter;
                                     }
-                                    n9Var.f0 = true;
-                                    u(n9Var, false);
+                                    m9Var.f0 = true;
+                                    u(m9Var, false);
                                     return true;
                                 } catch (Throwable th2) {
                                     org.telegram.messenger.a8.g(th2, true);
@@ -720,7 +720,7 @@ public final class p90 {
         j3 = 0;
         long j10 = j3;
         if (TextUtils.isEmpty(queryParameter2)) {
-            u(new org.telegram.ui.Wallet.y5(), false);
+            u(new org.telegram.ui.Wallet.x5(), false);
             return true;
         }
         if (queryParameter2.startsWith("@") || queryParameter2.matches("[a-zA-Z0-9_]{1,32}")) {
@@ -735,12 +735,12 @@ public final class p90 {
                 return true;
             }
         } else if (WalletEngine2.isValidRecipientAddress(queryParameter2)) {
-            org.telegram.ui.Wallet.n9 n9Var = new org.telegram.ui.Wallet.n9(queryParameter2);
-            n9Var.s = j10;
-            n9Var.g0 = r10;
-            n9Var.h0 = booleanQueryParameter;
-            n9Var.f0 = true;
-            u(n9Var, false);
+            org.telegram.ui.Wallet.m9 m9Var = new org.telegram.ui.Wallet.m9(queryParameter2);
+            m9Var.s = j10;
+            m9Var.g0 = r10;
+            m9Var.h0 = booleanQueryParameter;
+            m9Var.f0 = true;
+            u(m9Var, false);
             return true;
         }
         return true;
@@ -1492,7 +1492,7 @@ public final class p90 {
                                 }
                                 if ("send-gift".equalsIgnoreCase(str3)) {
                                     if ("self".equalsIgnoreCase(str4)) {
-                                        new zh.h1(this.a, this.b, f().e(), null, null).show();
+                                        new zh.g1(this.a, this.b, f().e(), null, null).show();
                                         return true;
                                     }
                                     wg.f1.l1(0, org.telegram.messenger.v1.a(i13).b());
@@ -1503,15 +1503,15 @@ public final class p90 {
                                     return true;
                                 }
                                 if ("faq".equalsIgnoreCase(str3)) {
-                                    vf.c.t(launchActivity, org.telegram.messenger.hd.L0(2131744241));
+                                    vf.c.t(launchActivity, org.telegram.messenger.id.L0(2131744243));
                                     return true;
                                 }
                                 if ("features".equalsIgnoreCase(str3)) {
-                                    vf.c.t(launchActivity, org.telegram.messenger.hd.L0(2131744239));
+                                    vf.c.t(launchActivity, org.telegram.messenger.id.L0(2131744241));
                                     return true;
                                 }
                                 if ("privacy-policy".equalsIgnoreCase(str3)) {
-                                    vf.c.t(launchActivity, org.telegram.messenger.hd.L0(2131746780));
+                                    vf.c.t(launchActivity, org.telegram.messenger.id.L0(2131746782));
                                     return true;
                                 }
                                 t(new m31());
@@ -1636,7 +1636,7 @@ public final class p90 {
                             if (queryParameter2 == null) {
                                 String string = new JSONObject(queryParameter2).getString("manifestUrl");
                                 o();
-                                org.telegram.ui.Wallet.n0 x10 = org.telegram.ui.Wallet.n0.x(this.b);
+                                org.telegram.ui.Wallet.m0 x10 = org.telegram.ui.Wallet.m0.x(this.b);
                                 x10.m0(new bi.n8(this, x10, queryParameter, string, queryParameter2, queryParameter3, queryParameter4, str, 4));
                                 return false;
                             }

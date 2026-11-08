@@ -38,7 +38,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ng implements Runnable {
     public final /* synthetic */ int a;
@@ -115,7 +115,7 @@ public final /* synthetic */ class ng implements Runnable {
         }
         boolean z10 = true;
         boolean z11 = 0;
-        String S0 = org.telegram.messenger.hd.E0().S0(lowerCase, true, false);
+        String S0 = org.telegram.messenger.id.E0().S0(lowerCase, true, false);
         if (lowerCase.equals(S0) || S0.length() == 0) {
             S0 = null;
         }
@@ -147,7 +147,7 @@ public final /* synthetic */ class ng implements Runnable {
             TLRPC.User a22 = f2Var.getMessagesController().a2(Long.valueOf(C1));
             if (a22.id != f2Var.getUserConfig().e()) {
                 String lowerCase2 = org.telegram.messenger.t10.p(a22).toLowerCase();
-                String S02 = org.telegram.messenger.hd.E0().S0(lowerCase2, z10, z11);
+                String S02 = org.telegram.messenger.id.E0().S0(lowerCase2, z10, z11);
                 if (lowerCase2.equals(S02)) {
                     S02 = null;
                 }
@@ -207,7 +207,7 @@ public final /* synthetic */ class ng implements Runnable {
             org.telegram.messenger.g0.h3(new v80(18, ur0Var, new ArrayList()));
             return;
         }
-        String S0 = org.telegram.messenger.hd.E0().S0(lowerCase, true, false);
+        String S0 = org.telegram.messenger.id.E0().S0(lowerCase, true, false);
         if (lowerCase.equals(S0) || S0.length() == 0) {
             S0 = null;
         }
@@ -302,7 +302,7 @@ public final /* synthetic */ class ng implements Runnable {
                     org.telegram.messenger.ui.b0(yv0Var.a).A1(f2Var, true, i7, (TLRPC.TL_messages_stickerSetInstallResultArchive) tLObject);
                 }
             } else {
-                Toast.makeText(yv0Var.getContext(), org.telegram.messenger.hd.M0(2131751106, null), 0).show();
+                Toast.makeText(yv0Var.getContext(), org.telegram.messenger.id.M0(2131751106, null), 0).show();
             }
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
@@ -573,21 +573,21 @@ public final /* synthetic */ class ng implements Runnable {
                 org.telegram.messenger.g0.h3(new bi.i0(urVar, arrayList4, j3, str, trVar, 12));
                 return;
             case 5:
-                ry ryVar = (ry) this.b;
+                sy syVar = (sy) this.b;
                 Bitmap[] bitmapArr = (Bitmap[]) this.c;
                 CountDownLatch countDownLatch = (CountDownLatch) this.d;
-                vy vyVar = ryVar.J;
-                int[] iArr = vyVar.U0;
-                GLES20.glBindFramebuffer(36160, iArr != null ? iArr[!vyVar.g1 ? 1 : 0] : 0);
-                GLES20.glFramebufferTexture2D(36160, 36064, 3553, vyVar.g(!ryVar.T ? 1 : 0), 0);
+                wy wyVar = syVar.J;
+                int[] iArr = wyVar.U0;
+                GLES20.glBindFramebuffer(36160, iArr != null ? iArr[!wyVar.g1 ? 1 : 0] : 0);
+                GLES20.glFramebufferTexture2D(36160, 36064, 3553, wyVar.g(!syVar.T ? 1 : 0), 0);
                 GLES20.glClear(0);
-                int i16 = ryVar.U;
-                if (i16 == 0 || (i7 = ryVar.V) == 0) {
+                int i16 = syVar.U;
+                if (i16 == 0 || (i7 = syVar.V) == 0) {
                     bitmap = null;
                 } else {
                     ByteBuffer allocateDirect = ByteBuffer.allocateDirect(i16 * i7 * 4);
-                    GLES20.glReadPixels(0, 0, ryVar.U, ryVar.V, 6408, 5121, allocateDirect);
-                    Bitmap createBitmap = Bitmap.createBitmap(ryVar.U, ryVar.V, Bitmap.Config.ARGB_8888);
+                    GLES20.glReadPixels(0, 0, syVar.U, syVar.V, 6408, 5121, allocateDirect);
+                    Bitmap createBitmap = Bitmap.createBitmap(syVar.U, syVar.V, Bitmap.Config.ARGB_8888);
                     createBitmap.copyPixelsFromBuffer(allocateDirect);
                     bitmap = createBitmap;
                 }
@@ -597,20 +597,20 @@ public final /* synthetic */ class ng implements Runnable {
                 GLES20.glClear(0);
                 return;
             case 6:
-                vz vzVar = (vz) this.b;
+                wz wzVar = (wz) this.b;
                 org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) this.c;
                 ArrayList arrayList6 = (ArrayList) this.d;
-                vzVar.r2 = -1;
-                cc I = hc.a0(f2Var).I(R.raw.ic_delete, org.telegram.messenger.hd.a0(null, null, 2131750664, vzVar.U1), org.telegram.messenger.hd.G(arrayList6.size(), "FolderLinkDeletedSubtitle", new Object[0]));
+                wzVar.r2 = -1;
+                cc I = hc.a0(f2Var).I(R.raw.ic_delete, org.telegram.messenger.id.a0(null, null, 2131750664, wzVar.U1), org.telegram.messenger.id.G(arrayList6.size(), "FolderLinkDeletedSubtitle", new Object[0]));
                 I.j = 5000;
                 I.j();
-                vzVar.s2 = true;
-                vzVar.dismiss();
-                vzVar.o1.getMessagesController().l2(vzVar.Q1);
+                wzVar.s2 = true;
+                wzVar.dismiss();
+                wzVar.o1.getMessagesController().l2(wzVar.Q1);
                 return;
             case 7:
-                vz vzVar2 = (vz) this.b;
-                vzVar2.r2 = vzVar2.o1.getConnectionsManager().sendRequest((TLObject) this.c, new org.telegram.ui.ld(14, vzVar2, (Pair) this.d));
+                wz wzVar2 = (wz) this.b;
+                wzVar2.r2 = wzVar2.o1.getConnectionsManager().sendRequest((TLObject) this.c, new org.telegram.ui.ld(14, wzVar2, (Pair) this.d));
                 return;
             case 8:
                 m50 m50Var = (m50) this.b;
@@ -737,14 +737,14 @@ public final /* synthetic */ class ng implements Runnable {
                 TextView textView2 = na0Var.e;
                 if (tL_error3 != null) {
                     if ("USER_PRIVACY_RESTRICTED".equals(tL_error3.text)) {
-                        textView2.setText(org.telegram.messenger.hd.M0(2131747192, null));
+                        textView2.setText(org.telegram.messenger.id.M0(2131747194, null));
                         textView.setVisibility(8);
                     } else if ("YOUR_PRIVACY_RESTRICTED".equals(tL_error3.text)) {
                         na0Var.E = true;
-                        textView2.setText(org.telegram.messenger.hd.M0(2131747196, null));
-                        textView.setText(org.telegram.messenger.hd.M0(2131747194, null));
+                        textView2.setText(org.telegram.messenger.id.M0(2131747198, null));
+                        textView.setText(org.telegram.messenger.id.M0(2131747196, null));
                     } else {
-                        textView2.setText(org.telegram.messenger.hd.N0("UnknownError"));
+                        textView2.setText(org.telegram.messenger.id.N0("UnknownError"));
                         textView.setVisibility(8);
                         new hc(xa.a(na0Var.getContext()), f6Var2).f0(tL_error3, false);
                     }
@@ -757,7 +757,7 @@ public final /* synthetic */ class ng implements Runnable {
                         calendar.setTimeInMillis(j10);
                         int i20 = calendar.get(6);
                         int i21 = calendar.get(1);
-                        str2 = (i20 == i18 && i19 == i21) ? org.telegram.messenger.hd.a0(null, null, 2131747193, org.telegram.messenger.hd.E0().p0().format(new Date(j10))) : (i20 + 1 == i18 && i19 == i21) ? org.telegram.messenger.hd.a0(null, null, 2131747191, org.telegram.messenger.hd.E0().p0().format(new Date(j10))) : Math.abs(System.currentTimeMillis() - j10) < 31536000000L ? org.telegram.messenger.hd.a0(null, null, 2131747195, org.telegram.messenger.hd.E0().q0().format(new Date(j10)), org.telegram.messenger.hd.E0().p0().format(new Date(j10))) : org.telegram.messenger.hd.a0(null, null, 2131747195, org.telegram.messenger.hd.E0().C0().format(new Date(j10)), org.telegram.messenger.hd.E0().p0().format(new Date(j10)));
+                        str2 = (i20 == i18 && i19 == i21) ? org.telegram.messenger.id.a0(null, null, 2131747195, org.telegram.messenger.id.E0().p0().format(new Date(j10))) : (i20 + 1 == i18 && i19 == i21) ? org.telegram.messenger.id.a0(null, null, 2131747193, org.telegram.messenger.id.E0().p0().format(new Date(j10))) : Math.abs(System.currentTimeMillis() - j10) < 31536000000L ? org.telegram.messenger.id.a0(null, null, 2131747197, org.telegram.messenger.id.E0().q0().format(new Date(j10)), org.telegram.messenger.id.E0().p0().format(new Date(j10))) : org.telegram.messenger.id.a0(null, null, 2131747197, org.telegram.messenger.id.E0().C0().format(new Date(j10)), org.telegram.messenger.id.E0().p0().format(new Date(j10)));
                     } catch (Exception e13) {
                         org.telegram.messenger.a8.g(e13, true);
                         str2 = "LOC_ERR";
@@ -842,7 +842,7 @@ public final /* synthetic */ class ng implements Runnable {
                 if (org.telegram.messenger.p10.i(yl0Var.K0.J0).q()) {
                     wwVar.getMessagesController().o0(true);
                     yl0Var.S();
-                    hc.a0(wwVar).c(org.telegram.messenger.hd.M0(2131754488, null)).j();
+                    hc.a0(wwVar).c(org.telegram.messenger.id.M0(2131754488, null)).j();
                 } else {
                     new ug.w0((org.telegram.ui.ActionBar.f2) wwVar, 3, true).show();
                 }

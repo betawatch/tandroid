@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    android:versionCode="72919"
-    android:versionName="13.2.1"
+    android:versionCode="72979"
+    android:versionName="13.2.2"
     android:installLocation="auto"
     android:compileSdkVersion="36"
     android:compileSdkVersionCodename="16"
@@ -590,6 +590,11 @@
                 <action android:name="android.intent.action.PHONE_STATE"/>
             </intent-filter>
         </receiver>
+        <service
+            android:name="org.telegram.utils.twidget.WidgetEngineService"
+            android:exported="false"
+            android:process=":widgets"
+            android:isolatedProcess="true"/>
         <service
             android:name="org.telegram.messenger.AuthenticatorService"
             android:exported="true"

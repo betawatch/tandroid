@@ -19,7 +19,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class ExternalActionActivity extends Activity implements org.telegram.ui.ActionBar.n4 {
     public boolean a;
@@ -100,11 +100,11 @@ public class ExternalActionActivity extends Activity implements org.telegram.ui.
                         this.d.f0();
                     }
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
-                    String M0 = org.telegram.messenger.hd.M0(R.string.AppName, null);
+                    String M0 = org.telegram.messenger.id.M0(R.string.AppName, null);
                     org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                     u1Var.R = M0;
-                    u1Var.T = org.telegram.messenger.hd.M0(2131747205, null);
-                    jg.g.C(null, 2131747830, alertDialog$Builder, null);
+                    u1Var.T = org.telegram.messenger.id.M0(2131747207, null);
+                    jg.g.C(null, 2131747832, alertDialog$Builder, null);
                     return;
                 }
                 if (c10 >= 2) {

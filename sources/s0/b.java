@@ -14,7 +14,7 @@ import org.telegram.ui.Components.kt0;
 import sg.z;
 import tg.c2;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements z, t3.g, OnFailureListener, jt0, kt0, u9.e, ua.a, r1 {
     public final /* synthetic */ int a;
@@ -30,15 +30,15 @@ public final /* synthetic */ class b implements z, t3.g, OnFailureListener, jt0,
     @Override // sg.z
     public Typeface a() {
         switch (this.a) {
-            case 9:
-                return g0.o1("fonts/rmedium.ttf");
             case 10:
-                return g0.o1("fonts/rmediumitalic.ttf");
+                return g0.o1("fonts/rmedium.ttf");
             case 11:
-                return Typeface.create("serif", 1);
+                return g0.o1("fonts/rmediumitalic.ttf");
             case 12:
-                return g0.o1("fonts/rcondensedbold.ttf");
+                return Typeface.create("serif", 1);
             case 13:
+                return g0.o1("fonts/rcondensedbold.ttf");
+            case 14:
                 return g0.o1("fonts/rmono.ttf");
             default:
                 return g0.o1("fonts/mw_bold.ttf");
@@ -54,7 +54,7 @@ public final /* synthetic */ class b implements z, t3.g, OnFailureListener, jt0,
     public void f(Object obj, float f10) {
         ti.i iVar = (ti.i) obj;
         switch (this.a) {
-            case 20:
+            case 21:
                 WindowManager.LayoutParams layoutParams = iVar.e;
                 iVar.B = f10;
                 layoutParams.x = (int) f10;
@@ -72,7 +72,7 @@ public final /* synthetic */ class b implements z, t3.g, OnFailureListener, jt0,
     @Override // org.telegram.ui.ActionBar.r1
     public void g(u1 u1Var, int i7) {
         switch (this.a) {
-            case 27:
+            case 28:
                 u1Var.dismiss();
                 break;
             default:
@@ -85,7 +85,7 @@ public final /* synthetic */ class b implements z, t3.g, OnFailureListener, jt0,
     public float get(Object obj) {
         ti.i iVar = (ti.i) obj;
         switch (this.a) {
-            case 19:
+            case 20:
                 return iVar.B;
             default:
                 return iVar.C;

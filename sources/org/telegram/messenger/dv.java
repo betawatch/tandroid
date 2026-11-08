@@ -8,7 +8,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.ui.Components.s41;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class dv extends fu implements Drawable.Callback {
     public final s41 W;
@@ -26,9 +26,9 @@ public final class dv extends fu implements Drawable.Callback {
         s41 s41Var = new s41();
         this.W = s41Var;
         s41Var.setCallback(this);
-        s41Var.n = hd.M0(2131743832, null);
-        s41Var.o = hd.M0(2131743833, null);
-        s41Var.p = hd.M0(2131743827, null);
+        s41Var.n = id.M0(2131743834, null);
+        s41Var.o = id.M0(2131743835, null);
+        s41Var.p = id.M0(2131743829, null);
         s41Var.j = new ds(kvVar, 7);
         int i12 = this.c;
         this.X = i12;

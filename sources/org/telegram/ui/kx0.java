@@ -10,7 +10,7 @@ import android.widget.TextView;
 import j$.util.Objects;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class kx0 extends FrameLayout implements org.telegram.messenger.ls {
     public final ei.a a;
@@ -59,7 +59,7 @@ public abstract class kx0 extends FrameLayout implements org.telegram.messenger.
                             if (num.intValue() != -1) {
                                 break;
                             } else {
-                                org.telegram.ui.Components.v4.P(xp0Var2.a, xp0Var2.b, xp0Var2.c, new org.telegram.ui.Components.ax(xp0Var2, 20));
+                                org.telegram.ui.Components.v4.P(xp0Var2.a, xp0Var2.b, xp0Var2.c, new org.telegram.ui.Components.bx(xp0Var2, 20));
                                 break;
                             }
                         } else {
@@ -76,7 +76,7 @@ public abstract class kx0 extends FrameLayout implements org.telegram.messenger.
                                 org.telegram.ui.Components.k60 H = org.telegram.ui.Components.k60.H(f2Var, view);
                                 H.W(new org.telegram.ui.Components.wp0(xp0Var2));
                                 final int i11 = 0;
-                                H.c(R.drawable.menu_add_stories, org.telegram.messenger.hd.M0(2131744799, null), new Runnable() { // from class: org.telegram.ui.Components.vp0
+                                H.c(R.drawable.menu_add_stories, org.telegram.messenger.id.M0(2131744801, null), new Runnable() { // from class: org.telegram.ui.Components.vp0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i11) {
@@ -100,7 +100,7 @@ public abstract class kx0 extends FrameLayout implements org.telegram.messenger.
                                 }, false);
                                 xs0Var.B(new org.telegram.ui.Components.n(H), f2Var, xs0Var.l1, intValue);
                                 final int i12 = 1;
-                                H.c(R.drawable.msg_edit, org.telegram.messenger.hd.M0(2131744794, null), new Runnable() { // from class: org.telegram.ui.Components.vp0
+                                H.c(R.drawable.msg_edit, org.telegram.messenger.id.M0(2131744796, null), new Runnable() { // from class: org.telegram.ui.Components.vp0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i12) {
@@ -123,7 +123,7 @@ public abstract class kx0 extends FrameLayout implements org.telegram.messenger.
                                     }
                                 }, false);
                                 final int i13 = 2;
-                                H.c(R.drawable.tabs_reorder, org.telegram.messenger.hd.M0(2131744791, null), new Runnable() { // from class: org.telegram.ui.Components.vp0
+                                H.c(R.drawable.tabs_reorder, org.telegram.messenger.id.M0(2131744793, null), new Runnable() { // from class: org.telegram.ui.Components.vp0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i13) {
@@ -146,7 +146,7 @@ public abstract class kx0 extends FrameLayout implements org.telegram.messenger.
                                     }
                                 }, false);
                                 final int i14 = 3;
-                                H.c(R.drawable.msg_delete, org.telegram.messenger.hd.M0(2131744797, null), new Runnable() { // from class: org.telegram.ui.Components.vp0
+                                H.c(R.drawable.msg_delete, org.telegram.messenger.id.M0(2131744799, null), new Runnable() { // from class: org.telegram.ui.Components.vp0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i14) {
@@ -194,7 +194,7 @@ public abstract class kx0 extends FrameLayout implements org.telegram.messenger.
                             if (num.intValue() != -1) {
                                 break;
                             } else {
-                                org.telegram.ui.Components.v4.P(xp0Var2.a, xp0Var2.b, xp0Var2.c, new org.telegram.ui.Components.ax(xp0Var2, 20));
+                                org.telegram.ui.Components.v4.P(xp0Var2.a, xp0Var2.b, xp0Var2.c, new org.telegram.ui.Components.bx(xp0Var2, 20));
                                 break;
                             }
                         } else {
@@ -211,7 +211,7 @@ public abstract class kx0 extends FrameLayout implements org.telegram.messenger.
                                 org.telegram.ui.Components.k60 H = org.telegram.ui.Components.k60.H(f2Var, view);
                                 H.W(new org.telegram.ui.Components.wp0(xp0Var2));
                                 final int i11 = 0;
-                                H.c(R.drawable.menu_add_stories, org.telegram.messenger.hd.M0(2131744799, null), new Runnable() { // from class: org.telegram.ui.Components.vp0
+                                H.c(R.drawable.menu_add_stories, org.telegram.messenger.id.M0(2131744801, null), new Runnable() { // from class: org.telegram.ui.Components.vp0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i11) {
@@ -235,7 +235,7 @@ public abstract class kx0 extends FrameLayout implements org.telegram.messenger.
                                 }, false);
                                 xs0Var.B(new org.telegram.ui.Components.n(H), f2Var, xs0Var.l1, intValue);
                                 final int i12 = 1;
-                                H.c(R.drawable.msg_edit, org.telegram.messenger.hd.M0(2131744794, null), new Runnable() { // from class: org.telegram.ui.Components.vp0
+                                H.c(R.drawable.msg_edit, org.telegram.messenger.id.M0(2131744796, null), new Runnable() { // from class: org.telegram.ui.Components.vp0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i12) {
@@ -258,7 +258,7 @@ public abstract class kx0 extends FrameLayout implements org.telegram.messenger.
                                     }
                                 }, false);
                                 final int i13 = 2;
-                                H.c(R.drawable.tabs_reorder, org.telegram.messenger.hd.M0(2131744791, null), new Runnable() { // from class: org.telegram.ui.Components.vp0
+                                H.c(R.drawable.tabs_reorder, org.telegram.messenger.id.M0(2131744793, null), new Runnable() { // from class: org.telegram.ui.Components.vp0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i13) {
@@ -281,7 +281,7 @@ public abstract class kx0 extends FrameLayout implements org.telegram.messenger.
                                     }
                                 }, false);
                                 final int i14 = 3;
-                                H.c(R.drawable.msg_delete, org.telegram.messenger.hd.M0(2131744797, null), new Runnable() { // from class: org.telegram.ui.Components.vp0
+                                H.c(R.drawable.msg_delete, org.telegram.messenger.id.M0(2131744799, null), new Runnable() { // from class: org.telegram.ui.Components.vp0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i14) {

@@ -84,7 +84,7 @@ import q4.q;
 import sg.v0;
 import tg.r1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class i implements SuccessContinuation, h0, a0, androidx.activity.result.b, et0, ce.c, hi0, e0, c4.d, p, co0, n, og.n, v0, za, OnSuccessListener, ib.b {
     public static i c;
@@ -503,17 +503,17 @@ public final class i implements SuccessContinuation, h0, a0, androidx.activity.r
                 obtain.writeStrongBinder(dVar);
                 obtain.writeInt(1);
                 cVar.writeToParcel(obtain, 0);
-                cVar2.H0(obtain, 1);
+                cVar2.h1(obtain, 1);
                 break;
             default:
                 w wVar = (w) obj;
                 j6.f fVar = (j6.f) wVar.n();
                 d0 d0Var = ((f6.e0) this.b).l;
-                Parcel P0 = fVar.P0();
-                com.google.android.gms.internal.cast.t.d(P0, d0Var);
-                fVar.U0(P0, 18);
+                Parcel p12 = fVar.p1();
+                com.google.android.gms.internal.cast.t.d(p12, d0Var);
+                fVar.u1(p12, 18);
                 j6.f fVar2 = (j6.f) wVar.n();
-                fVar2.U0(fVar2.P0(), 17);
+                fVar2.u1(fVar2.p1(), 17);
                 ((TaskCompletionSource) obj2).setResult(null);
                 break;
         }

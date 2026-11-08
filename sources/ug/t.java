@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.messenger.e3;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
@@ -19,7 +19,7 @@ import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Components.hr;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -100,16 +100,16 @@ public final /* synthetic */ class t implements View.OnClickListener {
                                     arrayList.add((TLRPC.Chat) it.next());
                                 }
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, i0Var.getContext(), i0Var.I0);
-                                String G = hd.G(arrayList.size(), "LeaveCommunities", new Object[0]);
+                                String G = id.G(arrayList.size(), "LeaveCommunities", new Object[0]);
                                 u1 u1Var = alertDialog$Builder.a;
                                 u1Var.R = G;
                                 if (arrayList.size() == 1) {
-                                    u1Var.T = org.telegram.messenger.g0.X2(hd.a0("ChannelLeaveAlertWithName", null, 2131752389, ((TLRPC.Chat) arrayList.get(0)).title));
+                                    u1Var.T = org.telegram.messenger.g0.X2(id.a0("ChannelLeaveAlertWithName", null, 2131752389, ((TLRPC.Chat) arrayList.get(0)).title));
                                 } else {
-                                    u1Var.T = org.telegram.messenger.g0.X2(hd.a0("ChatsLeaveAlert", null, 2131752176, new Object[0]));
+                                    u1Var.T = org.telegram.messenger.g0.X2(id.a0("ChatsLeaveAlert", null, 2131752176, new Object[0]));
                                 }
-                                alertDialog$Builder.h(hd.M0(2131752589, null), null);
-                                alertDialog$Builder.k(hd.M0(2131743365, null), new hr(i0Var, arrayList, a22, 12));
+                                alertDialog$Builder.h(id.M0(2131752589, null), null);
+                                alertDialog$Builder.k(id.M0(2131743367, null), new hr(i0Var, arrayList, a22, 12));
                                 u1Var.show();
                                 TextView textView = (TextView) u1Var.d(-1);
                                 if (textView != null) {

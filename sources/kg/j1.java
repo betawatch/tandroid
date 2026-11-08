@@ -7,7 +7,7 @@ import di.s2;
 import java.util.ArrayList;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.dp;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t10;
 import org.telegram.messenger.xr;
@@ -16,10 +16,10 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.qw;
-import org.telegram.ui.v91;
+import org.telegram.ui.w91;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j1 implements org.telegram.ui.ActionBar.r1, qw {
     public final /* synthetic */ int a;
@@ -69,13 +69,13 @@ public final /* synthetic */ class j1 implements org.telegram.ui.ActionBar.r1, q
             u1Var.dismiss();
         } else {
             org.telegram.messenger.g0.F3(x0Var);
-            textView.setText(hd.M0(2131752662, null));
+            textView.setText(id.M0(2131752662, null));
             s2Var.a(Boolean.TRUE);
         }
     }
 
     @Override // org.telegram.ui.qw
-    public boolean y(ww wwVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, v91 v91Var) {
+    public boolean y(ww wwVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, w91 w91Var) {
         TLRPC.TL_chatAdminRights tL_chatAdminRights;
         final LaunchActivity launchActivity = (LaunchActivity) this.b;
         final TLRPC.User user = (TLRPC.User) this.c;
@@ -88,12 +88,12 @@ public final /* synthetic */ class j1 implements org.telegram.ui.ActionBar.r1, q
         final int i11 = this.a;
         if (M0 == null || (!M0.creator && ((tL_chatAdminRights = M0.admin_rights) == null || !tL_chatAdminRights.add_admins))) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(launchActivity);
-            String M02 = hd.M0(2131754463, null);
+            String M02 = id.M0(2131754463, null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.R = M02;
-            u1Var.T = org.telegram.messenger.g0.X2(hd.a0("AddMembersAlertNamesText", null, 2131754399, t10.p(user), M0 == null ? "" : M0.title));
-            alertDialog$Builder.h(hd.M0(2131752589, null), null);
-            alertDialog$Builder.k(hd.M0(2131754463, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.f70
+            u1Var.T = org.telegram.messenger.g0.X2(id.a0("AddMembersAlertNamesText", null, 2131754399, t10.p(user), M0 == null ? "" : M0.title));
+            alertDialog$Builder.h(id.M0(2131752589, null), null);
+            alertDialog$Builder.k(id.M0(2131754463, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.f70
                 @Override // org.telegram.ui.ActionBar.r1
                 public final void g(org.telegram.ui.ActionBar.u1 u1Var2, int i12) {
                     String str4 = LaunchActivity.B1;

@@ -10,14 +10,14 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class st0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public final int D;
     public org.telegram.ui.Components.pj0 a;
     public v4.b0 b;
     public rt0 c;
-    public org.telegram.ui.Components.iy d;
+    public org.telegram.ui.Components.jy d;
     public int e;
     public int f;
     public int h;
@@ -41,9 +41,9 @@ public final class st0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         org.telegram.ui.Components.k60 H = org.telegram.ui.Components.k60.H(this, view);
         H.W(new ColorDrawable(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false)));
         int i7 = this.D;
-        H.l(0, org.telegram.messenger.hd.M0(2131743912, null), new qn0(14, this, l10), i7 == 1);
+        H.l(0, org.telegram.messenger.id.M0(2131743914, null), new qn0(14, this, l10), i7 == 1);
         boolean z9 = i7 != 1;
-        H.m(i7 == 0 ? R.drawable.msg_user_remove : 0, new qt0(this, l10), org.telegram.messenger.hd.M0(2131746320, null), z9, true);
+        H.m(i7 == 0 ? R.drawable.msg_user_remove : 0, new qt0(this, l10), org.telegram.messenger.id.M0(2131746322, null), z9, true);
         H.S = org.telegram.messenger.qs.U2;
         H.Z();
     }
@@ -130,21 +130,21 @@ public final class st0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         int i10 = this.D;
         if (i10 == 1) {
-            this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131753681, null));
+            this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131753681, null));
         } else if (i10 == 2) {
-            this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131750730, null));
+            this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131750730, null));
         } else {
-            this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131748289, null));
+            this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131748291, null));
         }
         this.simpleActionBar.setActionBarMenuOnItemClick(new nt0(this, i7));
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        org.telegram.ui.Components.iy iyVar = new org.telegram.ui.Components.iy(context, null);
-        this.d = iyVar;
+        org.telegram.ui.Components.jy jyVar = new org.telegram.ui.Components.jy(context, null);
+        this.d = jyVar;
         if (i10 == 1) {
-            iyVar.setText(org.telegram.messenger.hd.M0(2131748238, null));
+            jyVar.setText(org.telegram.messenger.id.M0(2131748240, null));
         } else {
-            iyVar.setText(org.telegram.messenger.hd.M0(2131748222, null));
+            jyVar.setText(org.telegram.messenger.id.M0(2131748224, null));
         }
         org.telegram.ui.Components.pj0 pj0Var = new org.telegram.ui.Components.pj0(context, null);
         this.a = pj0Var;
@@ -161,7 +161,7 @@ public final class st0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         rt0 rt0Var = new rt0(this, context);
         this.c = rt0Var;
         pj0Var3.setAdapter(rt0Var);
-        this.a.setVerticalScrollbarPosition(org.telegram.messenger.hd.a0 ? 1 : 2);
+        this.a.setVerticalScrollbarPosition(org.telegram.messenger.id.a0 ? 1 : 2);
         frameLayout.addView(this.a, c8.ha.c(-1.0f, -1));
         frameLayout.addView(this.d, c8.ha.c(-1.0f, -1));
         int i11 = 27;
@@ -257,9 +257,9 @@ public final class st0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
     @Override // org.telegram.ui.ActionBar.f2
     public final void onThemeColorsChanged() {
         try {
-            org.telegram.ui.Components.iy iyVar = this.d;
-            if (iyVar != null) {
-                iyVar.setProgressBarColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.h6, false));
+            org.telegram.ui.Components.jy jyVar = this.d;
+            if (jyVar != null) {
+                jyVar.setProgressBarColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.h6, false));
             }
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);

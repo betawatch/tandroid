@@ -6,7 +6,7 @@ import android.widget.TextView;
 import bi.d3;
 import bi.ea;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
@@ -15,7 +15,7 @@ import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.yb;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g0 implements v10 {
     public final /* synthetic */ int a;
@@ -57,35 +57,35 @@ public final /* synthetic */ class g0 implements v10 {
                 }
                 break;
             default:
-                zh.m mVar = (zh.m) obj3;
+                zh.l lVar = (zh.l) obj3;
                 Boolean bool = (Boolean) obj;
                 String str2 = (String) obj2;
-                FrameLayout frameLayout = mVar.c2;
-                mVar.S1.setLoading(false);
-                mVar.r2 = false;
+                FrameLayout frameLayout = lVar.c2;
+                lVar.S1.setLoading(false);
+                lVar.r2 = false;
                 if (bool != null) {
                     boolean z9 = j3 > 0;
-                    yb ybVar = new yb(mVar.getContext(), mVar.I0);
+                    yb ybVar = new yb(lVar.getContext(), lVar.I0);
                     ybVar.a.setImageResource(R.drawable.filled_gift_sell_24);
-                    String M0 = hd.M0(z9 ? 2131750306 : 2131750305, null);
+                    String M0 = id.M0(z9 ? 2131750308 : 2131750307, null);
                     TextView textView = ybVar.b;
                     textView.setText(M0);
                     textView.setSingleLine(true);
                     textView.setTextSize(1, 15.0f);
                     textView.setMaxLines(1);
                     textView.setTypeface(org.telegram.messenger.g0.o());
-                    String a02 = hd.a0(null, null, 2131750341, Integer.valueOf(mVar.d2.d.gifts_per_round));
+                    String a02 = id.a0(null, null, 2131750343, Integer.valueOf(lVar.d2.d.gifts_per_round));
                     TextView textView2 = ybVar.c;
                     textView2.setText(a02);
                     textView2.setSingleLine(false);
                     textView2.setMaxLines(5);
-                    mVar.h1();
+                    lVar.h1();
                     cc.f(frameLayout, ybVar, 2750).j();
-                    ea.y(mVar.a, false).q(null, false, true);
+                    ea.y(lVar.a, false).q(null, false, true);
                 }
                 if (str2 != null) {
-                    mVar.h1();
-                    new hc(frameLayout, mVar.I0).Q(R.raw.error, 36, hd.a0(null, null, 2131743879, str2)).j();
+                    lVar.h1();
+                    new hc(frameLayout, lVar.I0).Q(R.raw.error, 36, id.a0(null, null, 2131743881, str2)).j();
                     break;
                 }
                 break;

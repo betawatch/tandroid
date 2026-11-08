@@ -4,7 +4,7 @@ import com.google.android.gms.internal.cast.y;
 import java.util.concurrent.atomic.AtomicReference;
 import q6.c0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class u extends g {
     public final AtomicReference b;
@@ -16,15 +16,41 @@ public final class u extends g {
     }
 
     @Override // j6.h
-    public final void C0(String str, byte[] bArr) {
-        if (((v) this.b.get()) == null) {
+    public final void K0(d dVar) {
+        v vVar = (v) this.b.get();
+        if (vVar == null) {
             return;
         }
-        v.Y.b("IGNORING: Receive (type=binary, ns=%s) <%d bytes>", str, Integer.valueOf(bArr.length));
+        v.Y.b("onDeviceStatusChanged", new Object[0]);
+        this.c.post(new m9.u(20, vVar, dVar));
     }
 
     @Override // j6.h
-    public final void M(int i7) {
+    public final void N0(c cVar) {
+        v vVar = (v) this.b.get();
+        if (vVar == null) {
+            return;
+        }
+        v.Y.b("onApplicationStatusChanged", new Object[0]);
+        this.c.post(new m9.u(21, vVar, cVar));
+    }
+
+    @Override // j6.h
+    public final void R0(f6.d dVar, String str, String str2, boolean z9) {
+        v vVar = (v) this.b.get();
+        if (vVar == null) {
+            return;
+        }
+        vVar.F = dVar;
+        vVar.U = dVar.a;
+        vVar.V = str2;
+        vVar.M = str;
+        synchronized (v.Z) {
+        }
+    }
+
+    @Override // j6.h
+    public final void W(int i7) {
         v vVar = null;
         v vVar2 = (v) this.b.getAndSet(null);
         if (vVar2 != null) {
@@ -50,7 +76,15 @@ public final class u extends g {
     }
 
     @Override // j6.h
-    public final void P(String str, String str2) {
+    public final void X0(String str, byte[] bArr) {
+        if (((v) this.b.get()) == null) {
+            return;
+        }
+        v.Y.b("IGNORING: Receive (type=binary, ns=%s) <%d bytes>", str, Integer.valueOf(bArr.length));
+    }
+
+    @Override // j6.h
+    public final void Z(String str, String str2) {
         v vVar = (v) this.b.get();
         if (vVar == null) {
             return;
@@ -60,7 +94,7 @@ public final class u extends g {
     }
 
     @Override // j6.h
-    public final void S(int i7) {
+    public final void c0(int i7) {
         if (((v) this.b.get()) == null) {
             return;
         }
@@ -69,7 +103,7 @@ public final class u extends g {
     }
 
     @Override // j6.h
-    public final void U(long j3) {
+    public final void f0(long j3) {
         v vVar = (v) this.b.get();
         if (vVar == null) {
             return;
@@ -83,40 +117,6 @@ public final class u extends g {
             return;
         }
         synchronized (v.a0) {
-        }
-    }
-
-    @Override // j6.h
-    public final void r0(d dVar) {
-        v vVar = (v) this.b.get();
-        if (vVar == null) {
-            return;
-        }
-        v.Y.b("onDeviceStatusChanged", new Object[0]);
-        this.c.post(new m9.u(20, vVar, dVar));
-    }
-
-    @Override // j6.h
-    public final void t0(c cVar) {
-        v vVar = (v) this.b.get();
-        if (vVar == null) {
-            return;
-        }
-        v.Y.b("onApplicationStatusChanged", new Object[0]);
-        this.c.post(new m9.u(21, vVar, cVar));
-    }
-
-    @Override // j6.h
-    public final void w0(f6.d dVar, String str, String str2, boolean z9) {
-        v vVar = (v) this.b.get();
-        if (vVar == null) {
-            return;
-        }
-        vVar.F = dVar;
-        vVar.U = dVar.a;
-        vVar.V = str2;
-        vVar.M = str;
-        synchronized (v.Z) {
         }
     }
 
@@ -159,10 +159,10 @@ public final class u extends g {
     }
 
     @Override // j6.h
-    public final void h(int i7) {
+    public final void O0(int i7) {
     }
 
     @Override // j6.h
-    public final void u0(int i7) {
+    public final void h(int i7) {
     }
 }

@@ -1,111 +1,104 @@
 package org.telegram.ui.Wallet;
 
 import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import org.telegram.messenger.qs;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.ViewGroup;
+import java.util.HashSet;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.pj0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
-public final class z2 extends org.telegram.ui.ActionBar.v2 {
-    public final fi.g1 i1;
-    public final ArrayList j1;
-    public boolean k1;
-    public FrameLayout l1;
-    public Integer m1;
+public class z2 extends org.telegram.ui.Components.na implements org.telegram.ui.ActionBar.a6 {
+    public l41 P1;
+    public final ViewGroup Q1;
+    public final Paint R1;
+    public float S1;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z2(Context context, org.telegram.ui.ActionBar.f6 f6Var, View... viewArr) {
-        super(1, context, f6Var, true);
-        List asList = Arrays.asList(viewArr);
-        ArrayList arrayList = new ArrayList();
-        this.j1 = arrayList;
-        if (asList != null) {
-            arrayList.addAll(asList);
-        }
-        w2 w2Var = new w2(this, context);
-        this.b = w2Var;
-        fi.g1 g1Var = new fi.g1(8, context, this);
-        this.i1 = g1Var;
+    public z2(Context context, ViewGroup viewGroup, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, null, true, false, f6Var);
+        this.R1 = new Paint();
+        this.r1 = 0.1f;
+        this.Q1 = viewGroup;
+        pj0 pj0Var = this.k1;
         int i7 = this.t0;
-        g1Var.setPadding(i7, 0, i7, org.telegram.messenger.g0.n);
-        w2Var.addView(g1Var, c8.ha.e(-1, -1, qs.E1));
+        pj0Var.setPadding(i7, 0, i7, 0);
+        updateColors();
+        this.P1.O(false);
     }
 
     @Override // org.telegram.ui.ActionBar.v2
-    public final boolean G() {
-        return this.i1.getCurrentPosition() == 0;
+    public final void E0(int i7) {
+        super.E0(i7);
+        org.telegram.messenger.g0.u3(this, 0, false, null);
+    }
+
+    @Override // org.telegram.ui.Components.na
+    public final oj0 L0(pj0 pj0Var) {
+        l41 l41Var = new l41(pj0Var, getContext(), this.a, 0, true, new d(this, 5), this.I0);
+        this.P1 = l41Var;
+        return l41Var;
+    }
+
+    @Override // org.telegram.ui.Components.na
+    public final CharSequence O0() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.na
+    public void T0(float f10) {
+        this.S1 = f10;
+        if (this.E != null) {
+            this.E.setTranslationY(Math.max((this.b.getY() + f10) + this.s0, this.E.getHeight() + (org.telegram.messenger.g0.L(56.0f) + org.telegram.messenger.g0.m)) - this.E.getBottom());
+        }
     }
 
     @Override // org.telegram.ui.ActionBar.v2
-    public final boolean I(MotionEvent motionEvent) {
-        return this.i1.getCurrentPosition() == 0;
-    }
-
-    public final void I0(y2 y2Var) {
-        this.j1.add(y2Var);
-        if (this.k1) {
-            fi.g1 g1Var = this.i1;
-            g1Var.D(false);
-            g1Var.o(false);
-        }
-    }
-
-    public final void J0(int i7) {
-        this.m1 = Integer.valueOf(i7);
-        v0(i7);
-        O(i7);
-        ((w2) this.b).invalidate();
-    }
-
-    public final void K0(LinearLayout linearLayout) {
-        FrameLayout frameLayout = this.l1;
-        if (frameLayout == null) {
-            FrameLayout frameLayout2 = new FrameLayout(getContext());
-            this.l1 = frameLayout2;
-            frameLayout2.setClipChildren(false);
-            this.l1.setClipToPadding(false);
-            this.b.addView(this.l1, c8.ha.e(-1, -2, 80));
-        } else {
-            frameLayout.removeAllViews();
-        }
-        this.l1.addView(linearLayout, c8.ha.e(-1, -2, 80));
-        fi.g1 g1Var = this.i1;
-        int i7 = this.t0;
-        g1Var.setPadding(i7, 0, i7, 0);
-        ((w2) this.b).requestLayout();
-    }
-
-    @Override // org.telegram.ui.ActionBar.v2, android.app.Dialog
-    public final void onBackPressed() {
-        fi.g1 g1Var = this.i1;
-        if (g1Var.getCurrentPosition() <= 0) {
-            super.onBackPressed();
+    public final void Z(Canvas canvas) {
+        org.telegram.ui.ActionBar.l2 l2Var = this.c;
+        float height = l2Var.getHeight();
+        float max = Math.max(height - org.telegram.messenger.g0.n, this.b.getY() + this.S1 + this.s0);
+        if (max >= height) {
             return;
         }
-        for (View view : g1Var.getViewPages()) {
-            if (view != null) {
-                org.telegram.messenger.g0.v1(view);
-            }
-        }
-        g1Var.E(g1Var.getCurrentPosition() - 1);
+        boolean z9 = this.b.getWidth() < l2Var.getWidth();
+        canvas.drawRect(z9 ? this.b.getX() + this.t0 : 0.0f, max, z9 ? (this.b.getX() + this.b.getWidth()) - this.t0 : l2Var.getWidth(), height, this.R1);
+    }
+
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.k6.a7));
+    }
+
+    public int d1() {
+        return org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.a7, this.I0);
     }
 
     @Override // org.telegram.ui.ActionBar.v2, android.app.Dialog
-    public final void show() {
-        if (!this.k1) {
-            this.k1 = true;
-            this.i1.setAdapter(new ii.x(this, 3));
+    public void show() {
+        if (getWindow() != null) {
+            org.telegram.messenger.g0.S(getWindow());
         }
         super.show();
-        Integer num = this.m1;
-        if (num != null) {
-            E0(num.intValue());
+        int d12 = d1();
+        E0(d12);
+        org.telegram.messenger.g0.n3(this, org.telegram.messenger.g0.B(d12) > 0.721f);
+        if (getWindow() != null) {
+            getWindow().getDecorView().requestApplyInsets();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void updateColors() {
+        int d12 = d1();
+        this.R1.setColor(d12);
+        v0(d12);
+        O(d12);
+        ViewGroup viewGroup = this.Q1;
+        if (viewGroup != null) {
+            viewGroup.invalidate();
         }
     }
 }

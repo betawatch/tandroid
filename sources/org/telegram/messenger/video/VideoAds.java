@@ -32,7 +32,7 @@ import li.j3;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
@@ -69,7 +69,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.oy0;
 import ug.w0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class VideoAds {
     private static final LruCache<VideoAdsLocation, VideoAdsCache> cached = new LruCache<>(3);
@@ -99,7 +99,7 @@ public class VideoAds {
     private boolean first = true;
     private final Runnable showRunnable = new d(this, 1);
 
-    /* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+    /* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
     public static class CloseDrawable extends Drawable {
         private int alpha;
         private final long max_display_duration;
@@ -230,7 +230,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+    /* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
     public static class VideoAdsCache {
         final ArrayList<TLRPC.TL_sponsoredMessage> ads = new ArrayList<>();
         int betweenDelay;
@@ -244,7 +244,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+    /* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
     public static class VideoAdsLocation {
         int currentAccount;
         long dialogId;
@@ -358,7 +358,7 @@ public class VideoAds {
             ccVar.i(true);
             this.bulletin.b();
         }
-        this.bulletinFactory.c(hd.M0(2131754488, null)).j();
+        this.bulletinFactory.c(id.M0(2131754488, null)).j();
         qp.s1(this.currentAccount).o0(true);
     }
 
@@ -394,7 +394,7 @@ public class VideoAds {
             ccVar.i(true);
             this.bulletin.b();
         }
-        this.bulletinFactory.c(hd.M0(2131754488, null)).j();
+        this.bulletinFactory.c(id.M0(2131754488, null)).j();
         qp.s1(this.currentAccount).o0(true);
     }
 
@@ -451,7 +451,7 @@ public class VideoAds {
             i0Var = i0Var2;
             if (!p10.i(this.currentAccount).q() && !qp.s1(this.currentAccount).D3() && !tL_sponsoredMessage.can_report) {
                 final int i10 = 1;
-                k60Var.c(R.drawable.msg_block2, hd.M0(2131749322, null), new Runnable(this) { // from class: org.telegram.messenger.video.c
+                k60Var.c(R.drawable.msg_block2, id.M0(2131749324, null), new Runnable(this) { // from class: org.telegram.messenger.video.c
                     public final /* synthetic */ VideoAds b;
 
                     {
@@ -472,15 +472,15 @@ public class VideoAds {
                 }, false);
             }
             if (tL_sponsoredMessage.can_report) {
-                k60Var.c(R.drawable.msg_info, hd.M0(2131754943, null), new j3(18, context2, i0Var), false);
-                String M0 = hd.M0(2131746235, null);
+                k60Var.c(R.drawable.msg_info, id.M0(2131754943, null), new j3(18, context2, i0Var), false);
+                String M0 = id.M0(2131746237, null);
                 d0 d0Var = new d0(this, context2, tL_sponsoredMessage, k60Var, 27);
                 k60Var = k60Var;
                 k60Var.c(R.drawable.msg_block2, M0, d0Var, false);
                 if (!qp.s1(this.currentAccount).D3()) {
                     k60Var.k();
                     final int i11 = 0;
-                    k60Var.c(R.drawable.msg_cancel, hd.M0(2131746319, null), new Runnable(this) { // from class: org.telegram.messenger.video.c
+                    k60Var.c(R.drawable.msg_cancel, id.M0(2131746321, null), new Runnable(this) { // from class: org.telegram.messenger.video.c
                         public final /* synthetic */ VideoAds b;
 
                         {
@@ -517,8 +517,8 @@ public class VideoAds {
         z0 z0Var = new z0(0, context, i0Var, true, false);
         context2 = context;
         z0Var.setItemHeight(44);
-        z0Var.j(hd.M0(2131753756, null), R.drawable.msg_arrow_back, null);
-        z0Var.getTextView().setPadding(hd.a0 ? 0 : g0.L(40.0f), 0, hd.a0 ? g0.L(40.0f) : 0, 0);
+        z0Var.j(id.M0(2131753756, null), R.drawable.msg_arrow_back, null);
+        z0Var.getTextView().setPadding(id.a0 ? 0 : g0.L(40.0f), 0, id.a0 ? g0.L(40.0f) : 0, 0);
         final int i12 = 2;
         z0Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.video.i
             @Override // android.view.View.OnClickListener
@@ -640,10 +640,10 @@ public class VideoAds {
             }
             J.r(view2, ha.o(i7, -2));
         }
-        k60Var.c(R.drawable.msg_channel, hd.M0(2131745249, null), new h2(k60Var, J, 3), false);
+        k60Var.c(R.drawable.msg_channel, id.M0(2131745251, null), new h2(k60Var, J, 3), false);
         if (!p10.i(this.currentAccount).q()) {
             final int i102 = 1;
-            k60Var.c(R.drawable.msg_block2, hd.M0(2131749322, null), new Runnable(this) { // from class: org.telegram.messenger.video.c
+            k60Var.c(R.drawable.msg_block2, id.M0(2131749324, null), new Runnable(this) { // from class: org.telegram.messenger.video.c
                 public final /* synthetic */ VideoAds b;
 
                 {
@@ -695,7 +695,7 @@ public class VideoAds {
             this.bulletin = null;
         }
         qp.s1(this.currentAccount).o0(true);
-        this.bulletinFactory.c(hd.M0(2131754488, null)).j();
+        this.bulletinFactory.c(id.M0(2131754488, null)).j();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1035,7 +1035,7 @@ public class VideoAds {
         setWaitingPaused(true);
     }
 
-    /* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+    /* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
     public static class AdLayout extends za {
         public final ImageView buttonView;
         public final l9 imageView;
@@ -1104,12 +1104,12 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+    /* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
     public static class AdOptionsDrawable extends Drawable {
         public final int color;
         public final Drawable icon;
         public final Paint backgroundPaint = new Paint(1);
-        public final my0 text = new my0(hd.M0(2131745259, null), 11.0f, g0.o());
+        public final my0 text = new my0(id.M0(2131745261, null), 11.0f, g0.o());
         private float alpha = 1.0f;
 
         public AdOptionsDrawable(Context context, int i7) {

@@ -4,7 +4,7 @@ import android.icu.text.Collator;
 import java.util.Comparator;
 import java.util.List;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n00 implements Comparator {
     public final /* synthetic */ int a;
@@ -23,23 +23,23 @@ public final /* synthetic */ class n00 implements Comparator {
                 compare = ((Collator) this.b).compare(((y00) obj).b, ((y00) obj2).b);
                 return compare;
             default:
-                ed edVar = (ed) this.b;
-                ed edVar2 = (ed) obj;
-                ed edVar3 = (ed) obj2;
-                if (edVar2 != edVar) {
-                    if (edVar3 != edVar) {
+                fd fdVar = (fd) this.b;
+                fd fdVar2 = (fd) obj;
+                fd fdVar3 = (fd) obj2;
+                if (fdVar2 != fdVar) {
+                    if (fdVar3 != fdVar) {
                         List list = f10.M;
-                        int indexOf = list.indexOf(edVar2.f);
-                        int indexOf2 = list.indexOf(edVar3.f);
+                        int indexOf = list.indexOf(fdVar2.f);
+                        int indexOf2 = list.indexOf(fdVar3.f);
                         if (indexOf >= 0 && indexOf2 >= 0) {
                             return indexOf - indexOf2;
                         }
                         if (indexOf < 0) {
                             if (indexOf2 < 0) {
-                                int i7 = edVar2.k;
-                                int i10 = edVar3.k;
+                                int i7 = fdVar2.k;
+                                int i10 = fdVar3.k;
                                 if (i7 == i10) {
-                                    return edVar2.a.compareTo(edVar3.a);
+                                    return fdVar2.a.compareTo(fdVar3.a);
                                 }
                                 if (i7 <= i10) {
                                     if (i7 >= i10) {

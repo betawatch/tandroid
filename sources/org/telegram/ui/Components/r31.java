@@ -30,7 +30,7 @@ import org.webrtc.EglRenderer;
 import org.webrtc.VideoFileRenderer;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r31 implements Runnable {
     public final /* synthetic */ int a;
@@ -84,8 +84,8 @@ public final /* synthetic */ class r31 implements Runnable {
         org.telegram.ui.web.a2 a2Var;
         Object obj2;
         TLRPC.User a22;
-        int i10 = 2;
-        int i11 = 3;
+        int i10 = 3;
+        int i11 = 2;
         byte[] bArr = null;
         boolean z10 = false;
         int i12 = 0;
@@ -233,7 +233,7 @@ public final /* synthetic */ class r31 implements Runnable {
                     z51Var2.e(ijVar2, f11, z51Var2.r);
                     z51Var2.h = 0.0f;
                 }
-                org.telegram.messenger.g0.h3(new w51(z51Var2, i10));
+                org.telegram.messenger.g0.h3(new w51(z51Var2, i11));
                 return;
             case 3:
                 org.telegram.ui.Components.voip.k0 k0Var = (org.telegram.ui.Components.voip.k0) this.b;
@@ -243,9 +243,9 @@ public final /* synthetic */ class r31 implements Runnable {
                 if (valueAnimator != null) {
                     valueAnimator.start();
                 }
-                yVar.animate().scaleX(0.5f).scaleY(0.5f).alpha(0.0f).setListener(new org.telegram.ui.Components.voip.i0(k0Var, yVar, i11)).setDuration(100L).start();
+                yVar.animate().scaleX(0.5f).scaleY(0.5f).alpha(0.0f).setListener(new org.telegram.ui.Components.voip.i0(k0Var, yVar, i10)).setDuration(100L).start();
                 if (yVar2 != null) {
-                    yVar2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).setListener(new org.telegram.ui.Components.voip.w(yVar2, i11)).start();
+                    yVar2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).setListener(new org.telegram.ui.Components.voip.w(yVar2, i10)).start();
                     return;
                 }
                 return;
@@ -392,7 +392,7 @@ public final /* synthetic */ class r31 implements Runnable {
                         arrayList5.add(y0Var);
                     }
                 }
-                org.telegram.messenger.g0.h3(new org.telegram.ui.web.w(i10, u2Var, arrayList5));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.web.w(i11, u2Var, arrayList5));
                 return;
             case 9:
                 org.telegram.ui.web.w1 w1Var = (org.telegram.ui.web.w1) this.b;
@@ -587,11 +587,11 @@ public final /* synthetic */ class r31 implements Runnable {
                     xVar.c(file3);
                     t0Var.g();
                     long h = xVar.h();
-                    t0Var.m.b("preview snapshot completed: durationMs=" + h + ", size=" + file3.length() + ", elapsedMs=" + wi.t0.f(t0Var.M));
+                    t0Var.m.b("preview snapshot completed: durationMs=" + h + ", size=" + file3.length() + ", elapsedMs=" + wi.t0.f(t0Var.N));
                     handler.post(new wi.f0(t0Var, h, true ? 1 : 0));
                     return;
                 } catch (Exception e15) {
-                    handler.post(new wi.e0(t0Var, e15, i11));
+                    handler.post(new wi.e0(t0Var, e15, i10));
                     return;
                 }
             case 26:
@@ -610,21 +610,21 @@ public final /* synthetic */ class r31 implements Runnable {
                 lVar.y.f(true);
                 return;
             case 28:
-                yf.d dVar = (yf.d) this.b;
+                yf.e eVar = (yf.e) this.b;
                 TLObject tLObject3 = (TLObject) this.d;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) this.c;
-                String str6 = dVar.b;
-                int i27 = dVar.a;
+                String str6 = eVar.b;
+                int i27 = eVar.a;
                 if (tLObject3 != null) {
                     org.telegram.messenger.ui.b0(i27).i1(str6, (TLRPC.Document) tLObject3, false);
                 } else {
-                    dVar.a();
+                    eVar.a();
                     org.telegram.messenger.ui.b0(i27).i1(str6, null, true);
                     if (tL_error3 != null) {
-                        org.telegram.messenger.qs.f(i27).d(new wi.q(7, dVar, tL_error3));
+                        org.telegram.messenger.qs.f(i27).d(new yf.b(i11, eVar, tL_error3));
                     }
                 }
-                dVar.a();
+                eVar.a();
                 return;
             default:
                 up0 up0Var = (up0) this.b;
@@ -653,9 +653,9 @@ public final /* synthetic */ class r31 implements Runnable {
         this.d = c20Var2;
     }
 
-    public /* synthetic */ r31(yf.d dVar, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ r31(yf.e eVar, TLObject tLObject, TLRPC.TL_error tL_error) {
         this.a = 28;
-        this.b = dVar;
+        this.b = eVar;
         this.d = tLObject;
         this.c = tL_error;
     }

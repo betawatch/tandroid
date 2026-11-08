@@ -8,11 +8,11 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import bi.eb;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.m5;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class q0 extends WebViewClient {
     public final /* synthetic */ WebView a;
@@ -43,9 +43,9 @@ public final class q0 extends WebViewClient {
             x0 x0Var = u0Var.Q;
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, x0Var == null ? null : x0Var.e);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-            u1Var.R = hd.M0(2131752104, null);
-            u1Var.T = org.telegram.messenger.g0.U2(hd.M0(2131752105, null), new m5(this, 14));
-            alertDialog$Builder.k(hd.M0(2131747830, null), null);
+            u1Var.R = id.M0(2131752104, null);
+            u1Var.T = org.telegram.messenger.g0.U2(id.M0(2131752105, null), new m5(this, 14));
+            alertDialog$Builder.k(id.M0(2131747832, null), null);
             u1Var.setOnDismissListener(new eb(this, 12));
             alertDialog$Builder.p();
             return true;

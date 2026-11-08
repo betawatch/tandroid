@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class sm extends org.telegram.ui.ActionBar.n0 {
     public float a;
@@ -71,7 +71,7 @@ public final class sm extends org.telegram.ui.ActionBar.n0 {
             anVar.B3 = false;
             anVar.j0.P("", true);
         }
-        anVar.j0.setSearchFieldHint(org.telegram.messenger.hd.M0(anVar.ca() ? 2131745869 : 2131745837, null));
+        anVar.j0.setSearchFieldHint(org.telegram.messenger.id.M0(anVar.ca() ? 2131745871 : 2131745839, null));
         anVar.g3.setVisibility(0);
         ImageView imageView2 = anVar.h3;
         if (imageView2 != null) {
@@ -109,7 +109,7 @@ public final class sm extends org.telegram.ui.ActionBar.n0 {
         anVar.C3 = null;
         anVar.D3 = null;
         anVar.I3 = null;
-        anVar.j0.setSearchFieldHint(org.telegram.messenger.hd.M0(anVar.ca() ? 2131745869 : 2131745837, null));
+        anVar.j0.setSearchFieldHint(org.telegram.messenger.id.M0(anVar.ca() ? 2131745871 : 2131745839, null));
         anVar.j0.setSearchFieldCaption(null);
         anVar.dd.a(false, true);
         anVar.ed.a(false, true);
@@ -378,7 +378,7 @@ public final class sm extends org.telegram.ui.ActionBar.n0 {
         anVar.a8();
         if (anVar.B3) {
             anVar.W1.getAdapter().U("@" + editText.getText().toString(), 0, anVar.K6, true, true);
-        } else if (anVar.C3 == null && anVar.D3 == null && anVar.h3 != null && TextUtils.equals(editText.getText(), org.telegram.messenger.hd.M0(2131745767, null))) {
+        } else if (anVar.C3 == null && anVar.D3 == null && anVar.h3 != null && TextUtils.equals(editText.getText(), org.telegram.messenger.id.M0(2131745769, null))) {
             anVar.h3.callOnClick();
         }
         if (anVar.I3 != null) {

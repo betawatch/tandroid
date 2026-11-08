@@ -35,7 +35,7 @@ import java.util.List;
 import org.telegram.messenger.beta.R;
 import q6.m;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class h {
     public static final j6.b v = new j6.b("MediaSessionManager", null);
@@ -147,7 +147,7 @@ public final class h {
             }
             a0Var.s(new g(this, i7), null);
             a0Var.r(true);
-            this.c.M0(a0Var);
+            this.c.m1(a0Var);
         }
         this.q = true;
         b();
@@ -353,7 +353,7 @@ public final class h {
         return aVar2.b;
     }
 
-    public final void e(Bitmap bitmap, int i7) {
+    public final void e(int i7, Bitmap bitmap) {
         MediaMetadata metadata;
         a0 a0Var = this.p;
         if (a0Var == null) {
@@ -724,13 +724,13 @@ public final class h {
             bitmap = null;
         } else {
             bitmap = null;
-            e(null, 0);
+            e(0, null);
         }
         Uri d2 = d(lVar);
         if (d2 != null) {
             this.i.I(d2);
         } else {
-            e(bitmap, 3);
+            e(3, bitmap);
         }
     }
 }

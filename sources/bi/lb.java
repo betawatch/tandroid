@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.DataAutoDownloadActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lb implements View.OnClickListener {
     public final /* synthetic */ int a = 2;
@@ -105,18 +105,18 @@ public final /* synthetic */ class lb implements View.OnClickListener {
                 break;
             default:
                 boolean[] zArr3 = (boolean[]) obj6;
-                org.telegram.ui.Wallet.a3[] a3VarArr = (org.telegram.ui.Wallet.a3[]) obj5;
+                org.telegram.ui.Wallet.z2[] z2VarArr = (org.telegram.ui.Wallet.z2[]) obj5;
                 org.telegram.ui.ActionBar.f6 f6Var2 = (org.telegram.ui.ActionBar.f6) obj4;
                 xh.l lVar = (xh.l) obj3;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj2;
                 String str = (String) obj;
                 if (!zArr3[0]) {
                     zArr3[0] = true;
-                    org.telegram.ui.Wallet.r rVar = new org.telegram.ui.Wallet.r(zArr3, a3VarArr, f6Var2, lVar, 9);
+                    org.telegram.ui.Wallet.r rVar = new org.telegram.ui.Wallet.r(zArr3, z2VarArr, f6Var2, lVar, 9);
                     if (!wallettransaction.comment_encrypted_preparing) {
-                        org.telegram.ui.Wallet.n0 x10 = org.telegram.ui.Wallet.n0.x(i10);
+                        org.telegram.ui.Wallet.m0 x10 = org.telegram.ui.Wallet.m0.x(i10);
                         String str2 = wallettransaction.comment;
-                        org.telegram.ui.Wallet.n0.H("decrypting transaction comment");
+                        org.telegram.ui.Wallet.m0.H("decrypting transaction comment");
                         x10.z(new org.telegram.ui.Wallet.j(x10, rVar, str, str2), true, false);
                         break;
                     } else {
@@ -148,9 +148,9 @@ public final /* synthetic */ class lb implements View.OnClickListener {
         this.n = animatorSetArr;
     }
 
-    public /* synthetic */ lb(boolean[] zArr, org.telegram.ui.Wallet.a3[] a3VarArr, org.telegram.ui.ActionBar.f6 f6Var, xh.l lVar, TL_wallet.walletTransaction wallettransaction, int i7, String str) {
+    public /* synthetic */ lb(boolean[] zArr, org.telegram.ui.Wallet.z2[] z2VarArr, org.telegram.ui.ActionBar.f6 f6Var, xh.l lVar, TL_wallet.walletTransaction wallettransaction, int i7, String str) {
         this.h = zArr;
-        this.c = a3VarArr;
+        this.c = z2VarArr;
         this.f = f6Var;
         this.d = lVar;
         this.e = wallettransaction;

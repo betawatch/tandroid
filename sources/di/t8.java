@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.h20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -44,7 +44,7 @@ import org.telegram.ui.an;
 import org.telegram.ui.hx;
 import org.telegram.ui.ix;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class t8 extends FrameLayout implements View.OnClickListener {
     public final org.telegram.ui.Components.w5 D;
@@ -516,13 +516,13 @@ public abstract class t8 extends FrameLayout implements View.OnClickListener {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
             TL_stories.MediaArea mediaArea4 = this.b.b;
             if (mediaArea4 instanceof TL_stories.TL_mediaAreaChannelPost) {
-                spannableStringBuilder.append((CharSequence) hd.M0(2131744448, null));
+                spannableStringBuilder.append((CharSequence) id.M0(2131744450, null));
             } else if (mediaArea4 instanceof TL_stories.TL_mediaAreaStarGift) {
-                spannableStringBuilder.append((CharSequence) hd.M0(2131744450, null));
+                spannableStringBuilder.append((CharSequence) id.M0(2131744452, null));
             } else {
                 if (mediaArea4 instanceof TL_stories.TL_mediaAreaUrl) {
                     m3Var2.r(true);
-                    spannableStringBuilder.append((CharSequence) hd.M0(2131744594, null));
+                    spannableStringBuilder.append((CharSequence) id.M0(2131744596, null));
                     spannableStringBuilder.append((CharSequence) "\n");
                     TL_stories.TL_mediaAreaUrl tL_mediaAreaUrl = (TL_stories.TL_mediaAreaUrl) this.b.b;
                     int length = spannableStringBuilder.length();
@@ -571,7 +571,7 @@ public abstract class t8 extends FrameLayout implements View.OnClickListener {
                     m3Var2.w();
                     b(true);
                 }
-                spannableStringBuilder.append((CharSequence) hd.M0(2131744449, null));
+                spannableStringBuilder.append((CharSequence) id.M0(2131744451, null));
             }
             z9 = false;
             SpannableString spannableString3 = new SpannableString(">");

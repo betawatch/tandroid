@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class lr0 extends oj0 {
     public final Context c;
@@ -100,11 +100,11 @@ public final class lr0 extends oj0 {
                 X.setLayoutParams(new v4.o0(-1, -1));
                 return new xi0(X);
             }
-            lz lzVar = new lz(context, f6Var);
-            lzVar.setIsSingleCell(true);
-            lzVar.x = false;
-            lzVar.setViewType(1);
-            g6Var = lzVar;
+            mz mzVar = new mz(context, f6Var);
+            mzVar.setIsSingleCell(true);
+            mzVar.x = false;
+            mzVar.setViewType(1);
+            g6Var = mzVar;
         }
         return jg.g.r(g6Var, g6Var, -1, -2);
     }

@@ -6,7 +6,7 @@ import j$.util.Collection;
 import java.nio.ByteBuffer;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class f40 implements Runnable {
     public final /* synthetic */ int a;
@@ -160,14 +160,14 @@ public final class f40 implements Runnable {
                 break;
             default:
                 long uptimeMillis = SystemClock.uptimeMillis();
-                org.telegram.ui.Wallet.i6 i6Var = (org.telegram.ui.Wallet.i6) this.b;
-                WeakHashMap weakHashMap = i6Var.e;
+                org.telegram.ui.Wallet.h6 h6Var = (org.telegram.ui.Wallet.h6) this.b;
+                WeakHashMap weakHashMap = h6Var.e;
                 Collection.-EL.removeIf(weakHashMap.entrySet(), new org.telegram.ui.o8(uptimeMillis, 3));
                 if (!weakHashMap.isEmpty()) {
-                    i6Var.d.postDelayed(this, 250L);
+                    h6Var.d.postDelayed(this, 250L);
                     break;
                 } else {
-                    i6Var.a();
+                    h6Var.a();
                     break;
                 }
         }

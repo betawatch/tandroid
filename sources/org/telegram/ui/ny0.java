@@ -6,7 +6,7 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ny0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public int a;
@@ -36,11 +36,11 @@ public final class ny0 extends FrameLayout implements org.telegram.ui.ActionBar.
         this.h = m5Var;
         m5Var.e = new ky0(this, 0);
         if (oy0Var.l1) {
-            textView.setText(org.telegram.messenger.hd.M0(2131746235, null));
+            textView.setText(org.telegram.messenger.id.M0(2131746237, null));
         } else if (oy0Var.m1) {
-            textView.setText(org.telegram.messenger.hd.M0(2131746196, null));
+            textView.setText(org.telegram.messenger.id.M0(2131746198, null));
         } else {
-            textView.setText(org.telegram.messenger.hd.M0(2131746244, null));
+            textView.setText(org.telegram.messenger.id.M0(2131746246, null));
         }
         ((org.telegram.ui.ActionBar.y1) m5Var.d).a(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, oy0Var.I0));
         org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.h5, m5Var, oy0Var.I0);

@@ -11,7 +11,7 @@ import j$.util.Objects;
 import l8.f;
 import m.q3;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class c {
     public final /* synthetic */ int a;
@@ -48,14 +48,14 @@ public final class c {
                 f fVar = (f) mVar.c;
                 try {
                     Bundle bundle = new Bundle();
-                    Parcel P0 = fVar.P0();
-                    v7.b.b(P0, bundle);
-                    fVar.T0(P0, 2);
+                    Parcel p12 = fVar.p1();
+                    v7.b.b(p12, bundle);
+                    fVar.t1(p12, 2);
                     l8.c.b(bundle, null);
-                    Parcel O0 = fVar.O0(fVar.P0(), 8);
-                    a M0 = b.M0(O0.readStrongBinder());
-                    O0.recycle();
-                    mVar.d = (View) b.N0(M0);
+                    Parcel o12 = fVar.o1(fVar.p1(), 8);
+                    a m12 = b.m1(o12.readStrongBinder());
+                    o12.recycle();
+                    mVar.d = (View) b.n1(m12);
                     viewGroup.removeAllViews();
                     viewGroup.addView((View) mVar.d);
                     return;
@@ -67,7 +67,7 @@ public final class c {
                 mVar2.getClass();
                 try {
                     f fVar2 = (f) mVar2.c;
-                    fVar2.T0(fVar2.P0(), 3);
+                    fVar2.t1(fVar2.p1(), 3);
                     return;
                 } catch (RemoteException e11) {
                     throw new j(e11);

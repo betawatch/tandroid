@@ -9,7 +9,7 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class fa {
     public wf.b a;
@@ -24,10 +24,10 @@ public final class fa {
         try {
             q6.m.h(gVar2, "MarkerOptions must not be null.");
             l8.e eVar = (l8.e) bVar.b;
-            Parcel P0 = eVar.P0();
-            v7.b.b(P0, gVar2);
-            Parcel O0 = eVar.O0(P0, 11);
-            IBinder readStrongBinder = O0.readStrongBinder();
+            Parcel p12 = eVar.p1();
+            v7.b.b(p12, gVar2);
+            Parcel o12 = eVar.o1(p12, 11);
+            IBinder readStrongBinder = o12.readStrongBinder();
             int i7 = v7.j.b;
             if (readStrongBinder == null) {
                 iVar = null;
@@ -35,7 +35,7 @@ public final class fa {
                 IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.model.internal.IMarkerDelegate");
                 iVar = queryLocalInterface instanceof v7.a ? (v7.a) queryLocalInterface : new v7.i(readStrongBinder, "com.google.android.gms.maps.model.internal.IMarkerDelegate", 11);
             }
-            O0.recycle();
+            o12.recycle();
             m8.f fVar = iVar != null ? new m8.f(iVar) : null;
             ea eaVar = new ea(fVar);
             this.b.put(fVar, eaVar);
@@ -52,9 +52,9 @@ public final class fa {
         try {
             l8.e eVar = (l8.e) bVar.b;
             a7.a aVar2 = aVar.a;
-            Parcel P0 = eVar.P0();
-            v7.b.c(P0, aVar2);
-            eVar.T0(P0, 5);
+            Parcel p12 = eVar.p1();
+            v7.b.c(p12, aVar2);
+            eVar.t1(p12, 5);
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
         }
@@ -67,11 +67,11 @@ public final class fa {
         try {
             l8.e eVar = (l8.e) bVar.b;
             a7.a aVar2 = aVar.a;
-            Parcel P0 = eVar.P0();
-            v7.b.c(P0, aVar2);
-            P0.writeInt(500);
-            v7.b.c(P0, null);
-            eVar.T0(P0, 7);
+            Parcel p12 = eVar.p1();
+            v7.b.c(p12, aVar2);
+            p12.writeInt(500);
+            v7.b.c(p12, null);
+            eVar.t1(p12, 7);
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
         }
@@ -82,11 +82,11 @@ public final class fa {
         bVar.getClass();
         try {
             l8.e eVar = (l8.e) bVar.b;
-            Parcel O0 = eVar.O0(eVar.P0(), 1);
+            Parcel o12 = eVar.o1(eVar.p1(), 1);
             Parcelable.Creator<CameraPosition> creator = CameraPosition.CREATOR;
             int i7 = v7.b.a;
-            CameraPosition createFromParcel = O0.readInt() == 0 ? null : creator.createFromParcel(O0);
-            O0.recycle();
+            CameraPosition createFromParcel = o12.readInt() == 0 ? null : creator.createFromParcel(o12);
+            o12.recycle();
             LatLng latLng = createFromParcel.a;
             return new fi.y4(new cb(latLng.a, latLng.b), createFromParcel.b, 2);
         } catch (RemoteException e10) {
@@ -99,9 +99,9 @@ public final class fa {
         bVar.getClass();
         try {
             l8.e eVar = (l8.e) bVar.b;
-            Parcel O0 = eVar.O0(eVar.P0(), 2);
-            float readFloat = O0.readFloat();
-            O0.recycle();
+            Parcel o12 = eVar.o1(eVar.p1(), 2);
+            float readFloat = o12.readFloat();
+            o12.recycle();
             return readFloat;
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
@@ -113,9 +113,9 @@ public final class fa {
         bVar.getClass();
         try {
             l8.e eVar = (l8.e) bVar.b;
-            Parcel O0 = eVar.O0(eVar.P0(), 3);
-            float readFloat = O0.readFloat();
-            O0.recycle();
+            Parcel o12 = eVar.o1(eVar.p1(), 3);
+            float readFloat = o12.readFloat();
+            o12.recycle();
             return readFloat;
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
@@ -129,15 +129,15 @@ public final class fa {
         try {
             if (((h9.f1) bVar2.c) == null) {
                 l8.e eVar = (l8.e) bVar2.b;
-                Parcel O0 = eVar.O0(eVar.P0(), 25);
-                IBinder readStrongBinder = O0.readStrongBinder();
+                Parcel o12 = eVar.o1(eVar.p1(), 25);
+                IBinder readStrongBinder = o12.readStrongBinder();
                 if (readStrongBinder == null) {
                     bVar = null;
                 } else {
                     IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.internal.IUiSettingsDelegate");
                     bVar = queryLocalInterface instanceof l8.b ? (l8.b) queryLocalInterface : new l8.b(readStrongBinder, "com.google.android.gms.maps.internal.IUiSettingsDelegate", 11);
                 }
-                O0.recycle();
+                o12.recycle();
                 bVar2.c = new h9.f1(bVar, 5);
             }
             h9.f1 f1Var = (h9.f1) bVar2.c;
@@ -156,9 +156,9 @@ public final class fa {
         try {
             l8.e eVar = (l8.e) bVar.b;
             a7.a aVar2 = aVar.a;
-            Parcel P0 = eVar.P0();
-            v7.b.c(P0, aVar2);
-            eVar.T0(P0, 4);
+            Parcel p12 = eVar.p1();
+            v7.b.c(p12, aVar2);
+            eVar.t1(p12, 4);
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
         }
@@ -170,11 +170,11 @@ public final class fa {
         bVar.getClass();
         try {
             l8.e eVar2 = (l8.e) bVar.b;
-            Parcel P0 = eVar2.P0();
-            v7.b.b(P0, eVar);
-            Parcel O0 = eVar2.O0(P0, 91);
-            O0.readInt();
-            O0.recycle();
+            Parcel p12 = eVar2.p1();
+            v7.b.b(p12, eVar);
+            Parcel o12 = eVar2.o1(p12, 91);
+            o12.readInt();
+            o12.recycle();
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
         }
@@ -199,10 +199,10 @@ public final class fa {
         bVar.getClass();
         try {
             l8.e eVar = (l8.e) bVar.b;
-            Parcel P0 = eVar.P0();
+            Parcel p12 = eVar.p1();
             int i7 = v7.b.a;
-            P0.writeInt(z9 ? 1 : 0);
-            eVar.T0(P0, 22);
+            p12.writeInt(z9 ? 1 : 0);
+            eVar.t1(p12, 22);
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
         }
@@ -210,13 +210,13 @@ public final class fa {
 
     public final void l(db dbVar) {
         wf.b bVar = this.a;
-        p1 p1Var = new p1(dbVar, 8);
+        j1 j1Var = new j1(dbVar, 8);
         l8.e eVar = (l8.e) bVar.b;
         try {
-            k8.c cVar = new k8.c(p1Var, (byte) 0);
-            Parcel P0 = eVar.P0();
-            v7.b.c(P0, cVar);
-            eVar.T0(P0, 96);
+            k8.c cVar = new k8.c(j1Var, (byte) 0);
+            Parcel p12 = eVar.p1();
+            v7.b.c(p12, cVar);
+            eVar.t1(p12, 96);
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
         }
@@ -228,9 +228,9 @@ public final class fa {
         l8.e eVar = (l8.e) bVar.b;
         try {
             k8.c cVar = new k8.c(oVar);
-            Parcel P0 = eVar.P0();
-            v7.b.c(P0, cVar);
-            eVar.T0(P0, 30);
+            Parcel p12 = eVar.p1();
+            v7.b.c(p12, cVar);
+            eVar.t1(p12, 30);
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
         }
@@ -242,9 +242,9 @@ public final class fa {
         l8.e eVar = (l8.e) bVar.b;
         try {
             k8.c cVar = new k8.c(y9Var);
-            Parcel P0 = eVar.P0();
-            v7.b.c(P0, cVar);
-            eVar.T0(P0, 36);
+            Parcel p12 = eVar.p1();
+            v7.b.c(p12, cVar);
+            eVar.t1(p12, 36);
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
         }
@@ -255,12 +255,12 @@ public final class fa {
         bVar.getClass();
         try {
             l8.e eVar = (l8.e) bVar.b;
-            Parcel P0 = eVar.P0();
-            P0.writeInt(i7);
-            P0.writeInt(i10);
-            P0.writeInt(i11);
-            P0.writeInt(i12);
-            eVar.T0(P0, 39);
+            Parcel p12 = eVar.p1();
+            p12.writeInt(i7);
+            p12.writeInt(i10);
+            p12.writeInt(i11);
+            p12.writeInt(i12);
+            eVar.t1(p12, 39);
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
         }

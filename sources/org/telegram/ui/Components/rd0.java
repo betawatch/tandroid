@@ -6,7 +6,7 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.view.View;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class rd0 extends View {
     public boolean D;
@@ -59,7 +59,7 @@ public final class rd0 extends View {
         textPaint2.setShadowLayer(org.telegram.messenger.g0.L(12.0f), 0.0f, 0.0f, 805306368);
         textPaint2.setTextSize(org.telegram.messenger.g0.L(58.0f));
         if (this.c == null) {
-            StaticLayout staticLayout = new StaticLayout(org.telegram.messenger.hd.M0(2131751127, null), textPaint, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            StaticLayout staticLayout = new StaticLayout(org.telegram.messenger.id.M0(2131751127, null), textPaint, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
             this.c = staticLayout;
             this.d = staticLayout.getLineCount() > 0 ? this.c.getLineWidth(0) : 0.0f;
             this.e = this.c.getLineCount() > 0 ? this.c.getLineLeft(0) : 0.0f;

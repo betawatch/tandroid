@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.y4;
 import org.telegram.ui.Components.b8;
 import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.n7;
 import org.telegram.ui.Components.ni;
 import org.telegram.ui.Components.pj0;
@@ -38,7 +38,7 @@ import org.telegram.ui.Components.ve;
 import org.telegram.ui.Components.xi0;
 import org.telegram.ui.pv;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class b extends v4.s0 {
     public final /* synthetic */ int a;
@@ -300,7 +300,7 @@ public final class b extends v4.s0 {
                 q41 q41Var = adVar.a;
                 if (q41Var.canScrollVertically(1)) {
                     for (int i18 = 0; i18 < q41Var.getChildCount(); i18++) {
-                        if (!(q41Var.getChildAt(i18) instanceof lz)) {
+                        if (!(q41Var.getChildAt(i18) instanceof mz)) {
                         }
                     }
                     break;
@@ -415,7 +415,7 @@ public final class b extends v4.s0 {
                 long j3 = q3Var.R;
                 while (true) {
                     if (i16 < q3Var.c.getChildCount()) {
-                        if (!(q3Var.c.getChildAt(i16) instanceof lz)) {
+                        if (!(q3Var.c.getChildAt(i16) instanceof mz)) {
                             i16++;
                         }
                     } else if (recyclerView.canScrollVertically(1)) {

@@ -85,9 +85,9 @@ import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.je0;
 import org.telegram.ui.m80;
 import org.telegram.ui.mc0;
-import org.telegram.ui.v91;
+import org.telegram.ui.w91;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class qp extends c1 implements ls {
     public static volatile long A8;
@@ -155,11 +155,11 @@ public final class qp extends c1 implements ls {
     public int G4;
     public int G5;
     public boolean G6;
-    public final vj G7;
+    public final jl G7;
     public final ArrayList H;
     public int H0;
     public final HashMap H1;
-    public final pd H2;
+    public final rc H2;
     public boolean H3;
     public int H4;
     public int H5;
@@ -168,12 +168,12 @@ public final class qp extends c1 implements ls {
     public final ArrayList I;
     public boolean I0;
     public final a0.h I1;
-    public final wj I2;
+    public final vj I2;
     public boolean I3;
     public int I4;
     public boolean I5;
     public long I6;
-    public final wj I7;
+    public final vj I7;
     public final ArrayList J;
     public final a0.h J0;
     public final a0.h J1;
@@ -182,7 +182,7 @@ public final class qp extends c1 implements ls {
     public int J4;
     public boolean J5;
     public int J6;
-    public final wj J7;
+    public final vj J7;
     public final ArrayList K;
     public final a0.h K0;
     public final a0.h K1;
@@ -302,7 +302,7 @@ public final class qp extends c1 implements ls {
     public boolean W7;
     public a0.h X;
     public final LongSparseLongArray X0;
-    public wj X1;
+    public sn X1;
     public int X2;
     public Set X3;
     public int X4;
@@ -386,7 +386,7 @@ public final class qp extends c1 implements ls {
     public int f5;
     public boolean f6;
     public final SharedPreferences f7;
-    public final wj f8;
+    public final vj f8;
     public int g0;
     public final ArrayList g1;
     public boolean g2;
@@ -468,7 +468,7 @@ public final class qp extends c1 implements ls {
     public int o4;
     public int o5;
     public boolean o6;
-    public sn o7;
+    public vj o7;
     public final HashSet o8;
     public long p0;
     public final a0.h p1;
@@ -487,7 +487,7 @@ public final class qp extends c1 implements ls {
     public int q5;
     public int q6;
     public final k00 q7;
-    public final wj q8;
+    public final vj q8;
     public final a0.h r;
     public long r0;
     public final LongSparseLongArray r1;
@@ -554,7 +554,7 @@ public final class qp extends c1 implements ls {
     public int x5;
     public int x6;
     public final p0 x7;
-    public final wj x8;
+    public final vj x8;
     public final ArrayList y;
     public final ArrayList y0;
     public final LongSparseIntArray y1;
@@ -581,14 +581,15 @@ public final class qp extends c1 implements ls {
         }
     }
 
-    /* JADX WARN: Type inference failed for: r9v2, types: [org.telegram.messenger.ol] */
-    /* JADX WARN: Type inference failed for: r9v3, types: [org.telegram.messenger.ol] */
-    /* JADX WARN: Type inference failed for: r9v4, types: [org.telegram.messenger.ol] */
+    /* JADX WARN: Type inference failed for: r12v6, types: [org.telegram.messenger.ol] */
+    /* JADX WARN: Type inference failed for: r12v7, types: [org.telegram.messenger.ol] */
+    /* JADX WARN: Type inference failed for: r12v8, types: [org.telegram.messenger.ol] */
     public qp(int i7) {
         super(i7);
         final int i10 = 2;
         this.b = new ConcurrentHashMap(100, 1.0f, 2);
         this.c = new ConcurrentHashMap(10, 1.0f, 2);
+        int i11 = 3;
         this.d = new ConcurrentHashMap(100, 1.0f, 3);
         this.e = new ConcurrentHashMap(100, 1.0f, 2);
         this.f = new ConcurrentHashMap(3, 1.0f, 2);
@@ -644,7 +645,7 @@ public final class qp extends c1 implements ls {
         this.C0 = new a0.h();
         this.D0 = new a0.h();
         this.E0 = new a0.h();
-        final int i11 = 0;
+        final int i12 = 0;
         this.F0 = false;
         this.G0 = new LongSparseIntArray();
         this.H0 = -1;
@@ -706,13 +707,13 @@ public final class qp extends c1 implements ls {
         this.a2 = new SparseBooleanArray();
         this.b2 = new SparseBooleanArray();
         this.c2 = new SparseBooleanArray();
-        final int i12 = 1;
+        final int i13 = 1;
         this.g2 = true;
         this.o2 = new SparseIntArray();
         this.p2 = new ArrayList();
-        int i13 = 4;
-        this.H2 = new pd(i13);
-        this.I2 = new wj(this, 7);
+        int i14 = 6;
+        this.H2 = new rc(i14);
+        this.I2 = new vj(this, 8);
         this.O2 = new a0.h();
         this.P2 = new HashMap();
         this.T2 = new no(this);
@@ -745,20 +746,20 @@ public final class qp extends c1 implements ls {
             public final int compare(Object obj, Object obj2) {
                 boolean z9;
                 TLRPC.Dialog dialog;
-                switch (i11) {
+                switch (i12) {
                     case 0:
                         TLRPC.Dialog dialog2 = (TLRPC.Dialog) obj;
                         TLRPC.Dialog dialog3 = (TLRPC.Dialog) obj2;
                         qp qpVar = this.b;
                         vo voVar = qpVar.C7;
-                        int i14 = voVar == null ? Integer.MIN_VALUE : voVar.j.get(dialog2.id, TLObject.FLAG_31);
+                        int i15 = voVar == null ? Integer.MIN_VALUE : voVar.j.get(dialog2.id, TLObject.FLAG_31);
                         vo voVar2 = qpVar.C7;
-                        int i15 = voVar2 == null ? Integer.MIN_VALUE : voVar2.j.get(dialog3.id, TLObject.FLAG_31);
+                        int i16 = voVar2 == null ? Integer.MIN_VALUE : voVar2.j.get(dialog3.id, TLObject.FLAG_31);
                         boolean z10 = dialog2 instanceof TLRPC.TL_dialogFolder;
                         if (!z10 || (dialog3 instanceof TLRPC.TL_dialogFolder)) {
-                            if ((z10 || !(dialog3 instanceof TLRPC.TL_dialogFolder)) && (i14 != Integer.MIN_VALUE || i15 == Integer.MIN_VALUE)) {
-                                if (i14 == Integer.MIN_VALUE || i15 != Integer.MIN_VALUE) {
-                                    if (i14 == Integer.MIN_VALUE) {
+                            if ((z10 || !(dialog3 instanceof TLRPC.TL_dialogFolder)) && (i15 != Integer.MIN_VALUE || i16 == Integer.MIN_VALUE)) {
+                                if (i15 == Integer.MIN_VALUE || i16 != Integer.MIN_VALUE) {
+                                    if (i15 == Integer.MIN_VALUE) {
                                         ui mediaDataController = qpVar.getMediaDataController();
                                         long j3 = m5.j(dialog2, mediaDataController.R(dialog2.id, 0L));
                                         long j10 = m5.j(dialog3, mediaDataController.R(dialog3.id, 0L));
@@ -766,8 +767,8 @@ public final class qp extends c1 implements ls {
                                             if (j3 > j10) {
                                             }
                                         }
-                                    } else if (i14 <= i15) {
-                                        if (i14 >= i15) {
+                                    } else if (i15 <= i16) {
+                                        if (i15 >= i16) {
                                             return 0;
                                         }
                                     }
@@ -786,10 +787,10 @@ public final class qp extends c1 implements ls {
                             if ((z11 || !(dialog5 instanceof TLRPC.TL_dialogFolder)) && ((z9 = dialog4.pinned) || !dialog5.pinned)) {
                                 if (!z9 || dialog5.pinned) {
                                     if (z9) {
-                                        int i16 = dialog4.pinnedNum;
-                                        int i17 = dialog5.pinnedNum;
-                                        if (i16 >= i17) {
-                                            if (i16 <= i17) {
+                                        int i17 = dialog4.pinnedNum;
+                                        int i18 = dialog5.pinnedNum;
+                                        if (i17 >= i18) {
+                                            if (i17 <= i18) {
                                                 return 0;
                                             }
                                         }
@@ -836,20 +837,20 @@ public final class qp extends c1 implements ls {
             public final int compare(Object obj, Object obj2) {
                 boolean z9;
                 TLRPC.Dialog dialog;
-                switch (i12) {
+                switch (i13) {
                     case 0:
                         TLRPC.Dialog dialog2 = (TLRPC.Dialog) obj;
                         TLRPC.Dialog dialog3 = (TLRPC.Dialog) obj2;
                         qp qpVar = this.b;
                         vo voVar = qpVar.C7;
-                        int i14 = voVar == null ? Integer.MIN_VALUE : voVar.j.get(dialog2.id, TLObject.FLAG_31);
+                        int i15 = voVar == null ? Integer.MIN_VALUE : voVar.j.get(dialog2.id, TLObject.FLAG_31);
                         vo voVar2 = qpVar.C7;
-                        int i15 = voVar2 == null ? Integer.MIN_VALUE : voVar2.j.get(dialog3.id, TLObject.FLAG_31);
+                        int i16 = voVar2 == null ? Integer.MIN_VALUE : voVar2.j.get(dialog3.id, TLObject.FLAG_31);
                         boolean z10 = dialog2 instanceof TLRPC.TL_dialogFolder;
                         if (!z10 || (dialog3 instanceof TLRPC.TL_dialogFolder)) {
-                            if ((z10 || !(dialog3 instanceof TLRPC.TL_dialogFolder)) && (i14 != Integer.MIN_VALUE || i15 == Integer.MIN_VALUE)) {
-                                if (i14 == Integer.MIN_VALUE || i15 != Integer.MIN_VALUE) {
-                                    if (i14 == Integer.MIN_VALUE) {
+                            if ((z10 || !(dialog3 instanceof TLRPC.TL_dialogFolder)) && (i15 != Integer.MIN_VALUE || i16 == Integer.MIN_VALUE)) {
+                                if (i15 == Integer.MIN_VALUE || i16 != Integer.MIN_VALUE) {
+                                    if (i15 == Integer.MIN_VALUE) {
                                         ui mediaDataController = qpVar.getMediaDataController();
                                         long j3 = m5.j(dialog2, mediaDataController.R(dialog2.id, 0L));
                                         long j10 = m5.j(dialog3, mediaDataController.R(dialog3.id, 0L));
@@ -857,8 +858,8 @@ public final class qp extends c1 implements ls {
                                             if (j3 > j10) {
                                             }
                                         }
-                                    } else if (i14 <= i15) {
-                                        if (i14 >= i15) {
+                                    } else if (i15 <= i16) {
+                                        if (i15 >= i16) {
                                             return 0;
                                         }
                                     }
@@ -877,10 +878,10 @@ public final class qp extends c1 implements ls {
                             if ((z11 || !(dialog5 instanceof TLRPC.TL_dialogFolder)) && ((z9 = dialog4.pinned) || !dialog5.pinned)) {
                                 if (!z9 || dialog5.pinned) {
                                     if (z9) {
-                                        int i16 = dialog4.pinnedNum;
-                                        int i17 = dialog5.pinnedNum;
-                                        if (i16 >= i17) {
-                                            if (i16 <= i17) {
+                                        int i17 = dialog4.pinnedNum;
+                                        int i18 = dialog5.pinnedNum;
+                                        if (i17 >= i18) {
+                                            if (i17 <= i18) {
                                                 return 0;
                                             }
                                         }
@@ -933,14 +934,14 @@ public final class qp extends c1 implements ls {
                         TLRPC.Dialog dialog3 = (TLRPC.Dialog) obj2;
                         qp qpVar = this.b;
                         vo voVar = qpVar.C7;
-                        int i14 = voVar == null ? Integer.MIN_VALUE : voVar.j.get(dialog2.id, TLObject.FLAG_31);
+                        int i15 = voVar == null ? Integer.MIN_VALUE : voVar.j.get(dialog2.id, TLObject.FLAG_31);
                         vo voVar2 = qpVar.C7;
-                        int i15 = voVar2 == null ? Integer.MIN_VALUE : voVar2.j.get(dialog3.id, TLObject.FLAG_31);
+                        int i16 = voVar2 == null ? Integer.MIN_VALUE : voVar2.j.get(dialog3.id, TLObject.FLAG_31);
                         boolean z10 = dialog2 instanceof TLRPC.TL_dialogFolder;
                         if (!z10 || (dialog3 instanceof TLRPC.TL_dialogFolder)) {
-                            if ((z10 || !(dialog3 instanceof TLRPC.TL_dialogFolder)) && (i14 != Integer.MIN_VALUE || i15 == Integer.MIN_VALUE)) {
-                                if (i14 == Integer.MIN_VALUE || i15 != Integer.MIN_VALUE) {
-                                    if (i14 == Integer.MIN_VALUE) {
+                            if ((z10 || !(dialog3 instanceof TLRPC.TL_dialogFolder)) && (i15 != Integer.MIN_VALUE || i16 == Integer.MIN_VALUE)) {
+                                if (i15 == Integer.MIN_VALUE || i16 != Integer.MIN_VALUE) {
+                                    if (i15 == Integer.MIN_VALUE) {
                                         ui mediaDataController = qpVar.getMediaDataController();
                                         long j3 = m5.j(dialog2, mediaDataController.R(dialog2.id, 0L));
                                         long j10 = m5.j(dialog3, mediaDataController.R(dialog3.id, 0L));
@@ -948,8 +949,8 @@ public final class qp extends c1 implements ls {
                                             if (j3 > j10) {
                                             }
                                         }
-                                    } else if (i14 <= i15) {
-                                        if (i14 >= i15) {
+                                    } else if (i15 <= i16) {
+                                        if (i15 >= i16) {
                                             return 0;
                                         }
                                     }
@@ -968,10 +969,10 @@ public final class qp extends c1 implements ls {
                             if ((z11 || !(dialog5 instanceof TLRPC.TL_dialogFolder)) && ((z9 = dialog4.pinned) || !dialog5.pinned)) {
                                 if (!z9 || dialog5.pinned) {
                                     if (z9) {
-                                        int i16 = dialog4.pinnedNum;
-                                        int i17 = dialog5.pinnedNum;
-                                        if (i16 >= i17) {
-                                            if (i16 <= i17) {
+                                        int i17 = dialog4.pinnedNum;
+                                        int i18 = dialog5.pinnedNum;
+                                        if (i17 >= i18) {
+                                            if (i17 <= i18) {
                                                 return 0;
                                             }
                                         }
@@ -1002,9 +1003,9 @@ public final class qp extends c1 implements ls {
                 }
             }
         };
-        this.G7 = new vj(this, i13);
-        this.I7 = new wj(this, 5);
-        this.J7 = new wj(this, 12);
+        this.G7 = new jl(this, i11);
+        this.I7 = new vj(this, i14);
+        this.J7 = new vj(this, 13);
         this.K7 = new a0.h();
         this.L7 = new a0.h();
         this.N7 = 1;
@@ -1018,19 +1019,19 @@ public final class qp extends c1 implements ls {
         this.V7 = new HashSet();
         this.d8 = new a0.h();
         this.e8 = new HashSet();
-        this.f8 = new wj(this, 13);
+        this.f8 = new vj(this, 14);
         this.i8 = new po(this);
         this.o8 = new HashSet();
         this.p8 = new HashSet();
-        this.q8 = new wj(this, 14);
+        this.q8 = new vj(this, 15);
         this.r8 = new LongSparseArray();
         this.s8 = new HashMap();
-        this.x8 = new wj(this, i12);
+        this.x8 = new vj(this, i13);
         this.z8 = new qo(this);
         gc.D();
         getMessagesStorage();
         getLocationController();
-        g0.h3(new wj(this, i10));
+        g0.h3(new vj(this, i10));
         k();
         if (this.currentAccount == 0) {
             this.d7 = t0.b.getSharedPreferences("Notifications", 0);
@@ -1194,7 +1195,6 @@ public final class qp extends c1 implements ls {
         this.H6 = this.e7.getString("tonBlockchainExplorerUrl", "https://tonviewer.com/");
         this.I6 = this.e7.getLong("starsPaidMessageAmountMax", 10000L);
         this.J6 = this.e7.getInt("starsPaidMessageCommissionPermille", 850);
-        int i14 = 6;
         this.K6 = this.e7.getInt("stargiftsPinnedToTopLimit", 6);
         this.L6 = this.e7.getBoolean("starsPaidMessagesAvailable", true);
         this.M6 = this.e7.getLong("freezeSinceDate", 0L);
@@ -1206,7 +1206,7 @@ public final class qp extends c1 implements ls {
         this.T6 = this.e7.getInt("todoItemLengthMax", 64);
         this.U6 = this.e7.getString("translationsManualEnabled", "enabled");
         this.V6 = this.e7.getString("translationsAutoEnabled", "enabled");
-        this.W6 = (HashSet) Collection.-EL.stream(this.e7.getStringSet("whitelistedBots", new HashSet())).map(new aa.l(3)).collect(Collectors.toCollection(new ok(0)));
+        this.W6 = (HashSet) Collection.-EL.stream(this.e7.getStringSet("whitelistedBots", new HashSet())).map(new aa.l(i11)).collect(Collectors.toCollection(new nk(0)));
         this.Y6 = this.e7.getInt("starsGroupcallMessageAmountMax", 10000);
         this.X6 = di.t.d(this.e7.getString("starsGroupcallMessageLimits", null));
         this.O6 = this.e7.getString("freezeAppealUrl", "t.me/spambot");
@@ -1276,8 +1276,8 @@ public final class qp extends c1 implements ls {
         this.k6 = this.e7.getLong("paidReactionsAnonymousTime", 0L);
         this.Z6 = this.e7.getLong("tonStakeddiceStakeAmountMin", 100000000L);
         this.a7 = this.e7.getLong("tonStakeddiceStakeAmountMax", 50000000000L);
-        this.b7 = DesugarArrays.stream(this.e7.getString("tonStakediceStakeSuggestedAmounts", "100000000,1000000000,2000000000,5000000000,10000000000,20000000000").split(",")).mapToLong(new sk(i11)).toArray();
-        this.c7 = (int[][]) DesugarArrays.stream(this.e7.getString("stargiftsCraftAttributesPermilles", "90,,80,200,,70,190,460,,60,180,450,1000").split(",,")).map(new aa.l(4)).toArray(new al(0));
+        this.b7 = DesugarArrays.stream(this.e7.getString("tonStakediceStakeSuggestedAmounts", "100000000,1000000000,2000000000,5000000000,10000000000,20000000000").split(",")).mapToLong(new sk(i12)).toArray();
+        this.c7 = (int[][]) DesugarArrays.stream(this.e7.getString("stargiftsCraftAttributesPermilles", "90,,80,200,,70,190,460,,60,180,450,1000").split(",,")).map(new aa.l(4)).toArray(new zk(0));
         p0Var.b(this.e7);
         System.currentTimeMillis();
         this.l6 = null;
@@ -1288,7 +1288,7 @@ public final class qp extends c1 implements ls {
                 this.l6 = Long.valueOf(this.e7.getBoolean("paidReactionsAnonymous", false) ? 2666000L : 0L);
             }
         }
-        g0.h3(new wj(this, 3));
+        g0.h3(new vj(this, i11));
         r2.h = this.e7.getString("googleAuthClientId", r2.h);
         if (this.e7.contains("dcDomainName2")) {
             this.M3 = this.e7.getString("dcDomainName2", "apv3.stel.com");
@@ -1449,9 +1449,9 @@ public final class qp extends c1 implements ls {
                     SerializedData serializedData3 = new SerializedData(decode3);
                     boolean z13 = true;
                     int readInt323 = serializedData3.readInt32(true);
-                    while (i11 < readInt323) {
+                    while (i12 < readInt323) {
                         this.b4.add(serializedData3.readString(z13));
-                        i11++;
+                        i12++;
                         z13 = true;
                     }
                     serializedData3.cleanup();
@@ -1460,13 +1460,13 @@ public final class qp extends c1 implements ls {
                 a8.f(e12);
             }
         }
-        g0.i3(new wj(this, 5), 2000L);
-        g0.i3(new wj(this, 1), 2000L);
-        g0.i3(new wj(this, i14), 400L);
+        g0.i3(new vj(this, 6), 2000L);
+        g0.i3(new vj(this, 1), 2000L);
+        g0.i3(new vj(this, 7), 400L);
         this.q7 = new k00(i7);
         this.r7 = new u2(i7);
         this.s7 = new f10(this);
-        Utilities.e.c(new wj(this, 8));
+        Utilities.e.c(new vj(this, 9));
     }
 
     public static boolean B2(TLRPC.User user) {
@@ -1584,7 +1584,7 @@ public final class qp extends c1 implements ls {
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, f2Var.getParentActivity(), f2Var.getResourceProvider());
-        String M0 = hd.M0(2131751455, null);
+        String M0 = id.M0(2131751455, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
         HashMap hashMap = new HashMap();
@@ -1593,7 +1593,7 @@ public final class qp extends c1 implements ls {
         hashMap.put("info2", Integer.valueOf(f2Var.getThemedColor(i7)));
         alertDialog$Builder.m(R.raw.not_available, 52, f2Var.getThemedColor(i7), hashMap);
         u1Var.W = true;
-        alertDialog$Builder.k(hd.M0(2131752041, null), null);
+        alertDialog$Builder.k(id.M0(2131752041, null), null);
         u1Var.T = str;
         f2Var.showDialog(u1Var);
     }
@@ -1799,7 +1799,7 @@ public final class qp extends c1 implements ls {
     }
 
     public static /* synthetic */ String a(int[] iArr) {
-        return (String) DesugarArrays.stream(iArr).mapToObj(new al(1)).collect(Collectors.joining(","));
+        return (String) DesugarArrays.stream(iArr).mapToObj(new zk(1)).collect(Collectors.joining(","));
     }
 
     public static String c2(TLRPC.User user) {
@@ -2168,17 +2168,17 @@ public final class qp extends c1 implements ls {
             int i11 = this.currentAccount;
             long e10 = getUserConfig().e();
             if (e10 == 0) {
-                Object obj = org.telegram.ui.Wallet.r0.f;
+                Object obj = org.telegram.ui.Wallet.q0.f;
             } else {
-                synchronized (org.telegram.ui.Wallet.r0.f) {
+                synchronized (org.telegram.ui.Wallet.q0.f) {
                     try {
-                        ArrayList n10 = org.telegram.ui.Wallet.r0.n(context, e10);
+                        ArrayList n10 = org.telegram.ui.Wallet.q0.n(context, e10);
                         int size = n10.size();
                         int i12 = 0;
                         while (i12 < size) {
                             Object obj2 = n10.get(i12);
                             i12++;
-                            new org.telegram.ui.Wallet.r0(i11, context, (String) obj2).B();
+                            new org.telegram.ui.Wallet.q0(i11, context, (String) obj2).B();
                         }
                     } catch (Throwable th2) {
                         throw th2;
@@ -2370,7 +2370,7 @@ public final class qp extends c1 implements ls {
         arrayList2.add(tL_messageService);
         arrayList.add(new ij(this.currentAccount, tL_messageService, true, false));
         getMessagesStorage().j1(arrayList2, true, true, false, 0, false, 0, 0L);
-        g0.h3(new gk(this, j3, arrayList, 3));
+        g0.h3(new fk(this, j3, arrayList, 3));
     }
 
     public final String B1(long j3, boolean z9) {
@@ -2498,7 +2498,7 @@ public final class qp extends c1 implements ls {
                     final HashMap hashMap2 = hashMap;
                     final HashSet hashSet2 = hashSet;
                     final Runnable runnable2 = runnable;
-                    p5Var.c(new Runnable() { // from class: org.telegram.messenger.gr
+                    p5Var.c(new Runnable() { // from class: org.telegram.messenger.hr
                         @Override // java.lang.Runnable
                         public final void run() {
                             yr.this.Y0(tL_messages_dialogs3, tL_messages_dialogs4, arrayList7, arrayList6, arrayList9, sparseArray2, arrayList10, hashMap2, hashSet2, runnable2);
@@ -2523,7 +2523,7 @@ public final class qp extends c1 implements ls {
             tL_messages_editChatTitle2.title = str;
             tL_messages_editChatTitle = tL_messages_editChatTitle2;
         }
-        getConnectionsManager().sendRequest(tL_messages_editChatTitle, new s4(7, this, iVar), 64);
+        getConnectionsManager().sendRequest(tL_messages_editChatTitle, new r4(7, this, iVar), 64);
     }
 
     public final String C0(long j3, long j10) {
@@ -2539,10 +2539,10 @@ public final class qp extends c1 implements ls {
                 return str;
             }
             if (channelParticipant2 instanceof TLRPC.TL_channelParticipantCreator) {
-                return hd.M0(2131752207, null);
+                return id.M0(2131752207, null);
             }
             if (channelParticipant2 instanceof TLRPC.TL_channelParticipantAdmin) {
-                return hd.M0(2131752208, null);
+                return id.M0(2131752208, null);
             }
         }
         TLRPC.ChatFull N0 = N0(j3);
@@ -2562,10 +2562,10 @@ public final class qp extends c1 implements ls {
                         return channelParticipant.rank;
                     }
                     if (chatParticipant instanceof TLRPC.TL_chatParticipantCreator) {
-                        return hd.M0(2131752207, null);
+                        return id.M0(2131752207, null);
                     }
                     if (chatParticipant instanceof TLRPC.TL_chatParticipantAdmin) {
-                        return hd.M0(2131752208, null);
+                        return id.M0(2131752208, null);
                     }
                 } else {
                     i7++;
@@ -2681,7 +2681,7 @@ public final class qp extends c1 implements ls {
                                         tL_messages_setTyping.action = tL_sendMessageEmojiInteractionSeen;
                                     }
                                     hVar2.k(Boolean.TRUE, j10);
-                                    int sendRequest = getConnectionsManager().sendRequest(tL_messages_setTyping, new pk(this, i7, j3, j10, 1), 2);
+                                    int sendRequest = getConnectionsManager().sendRequest(tL_messages_setTyping, new ok(this, i7, j3, j10, 1), 2);
                                     if (i10 != 0) {
                                         getConnectionsManager().bindRequestToGuid(sendRequest, i10);
                                         return true;
@@ -2699,7 +2699,7 @@ public final class qp extends c1 implements ls {
                                     tL_inputEncryptedChat.access_hash = a12.access_hash;
                                     tL_messages_setEncryptedTyping.typing = true;
                                     hVar2.k(Boolean.TRUE, j10);
-                                    int sendRequest2 = getConnectionsManager().sendRequest(tL_messages_setEncryptedTyping, new pk(this, i7, j3, j10, 2), 2);
+                                    int sendRequest2 = getConnectionsManager().sendRequest(tL_messages_setEncryptedTyping, new ok(this, i7, j3, j10, 2), 2);
                                     if (i10 != 0) {
                                         getConnectionsManager().bindRequestToGuid(sendRequest2, i10);
                                     }
@@ -2834,7 +2834,7 @@ public final class qp extends c1 implements ls {
         }
         final int sendRequest = getConnectionsManager().sendRequest(tL_messages_getMessages, new eo(this, u1Var, hiVar, f2Var, bundle, 1));
         if (u1Var == null) {
-            hiVar.b = new k7(this, sendRequest, f2Var, 15);
+            hiVar.b = new l7(this, sendRequest, f2Var, 15);
             hiVar.d();
             return false;
         }
@@ -2974,7 +2974,7 @@ public final class qp extends c1 implements ls {
             hVar.l(j3);
             return;
         }
-        Collections.sort(arrayList, new vj(0));
+        Collections.sort(arrayList, new jg.x(29));
         if (i7 == 2) {
             longSparseIntArray.put(j3, ((TLRPC.Updates) arrayList.get(0)).pts);
         }
@@ -3073,7 +3073,7 @@ public final class qp extends c1 implements ls {
         TLRPC.TL_channels_getParticipant tL_channels_getParticipant = new TLRPC.TL_channels_getParticipant();
         tL_channels_getParticipant.channel = h1(j3);
         tL_channels_getParticipant.participant = j1(getUserConfig().e());
-        getConnectionsManager().sendRequest(tL_channels_getParticipant, new fl(this, M0, z10, j3));
+        getConnectionsManager().sendRequest(tL_channels_getParticipant, new el(this, M0, z10, j3));
     }
 
     public final f3 G0() {
@@ -3255,7 +3255,7 @@ public final class qp extends c1 implements ls {
                     org.telegram.ui.Components.v4.c0(qpVar.currentAccount, tL_error, f2Var, tL_messages_editChatDefaultBannedRights, Boolean.valueOf(z9));
                 } else {
                     qpVar.getClass();
-                    g0.i3(new nk(qpVar, j3, 19), 1000L);
+                    g0.i3(new mk(qpVar, j3, 19), 1000L);
                 }
             }
         });
@@ -3296,7 +3296,7 @@ public final class qp extends c1 implements ls {
             this.Z7 = new HashSet();
         }
         this.Z7.add(Long.valueOf(j3));
-        getMessagesStorage().a.c(new nk(this, j3, 7));
+        getMessagesStorage().a.c(new mk(this, j3, 7));
         return null;
     }
 
@@ -3397,19 +3397,19 @@ public final class qp extends c1 implements ls {
                     longSparseIntArray.put(j3, i12);
                 }
                 if (i12 == 0 && (i7 == 2 || i7 == 3)) {
-                    g0.h3(new nk(this, j3, 1));
+                    g0.h3(new mk(this, j3, 1));
                     return;
                 }
             }
             if (i12 == 0) {
-                g0.h3(new nk(this, j3, 2));
+                g0.h3(new mk(this, j3, 2));
                 return;
             } else {
                 i10 = i12;
                 i11 = 100;
             }
         } else if (longSparseIntArray.get(j3) != 0) {
-            g0.h3(new nk(this, j3, 0));
+            g0.h3(new mk(this, j3, 0));
             return;
         } else {
             i11 = 1;
@@ -3428,7 +3428,7 @@ public final class qp extends c1 implements ls {
             if (j11 != 0) {
                 getMessagesStorage().q1(j11);
             }
-            g0.h3(new nk(this, j3, 3));
+            g0.h3(new mk(this, j3, 3));
             return;
         }
         if (j11 == 0) {
@@ -3458,7 +3458,7 @@ public final class qp extends c1 implements ls {
                 tL_updates_getChannelDifference.force = i7 != 3;
                 if (r2.a) {
                 }
-                getConnectionsManager().sendRequest(tL_updates_getChannelDifference, new pk(i7, j3, j11, this));
+                getConnectionsManager().sendRequest(tL_updates_getChannelDifference, new ok(i7, j3, j11, this));
             }
             j11 = getMessagesStorage().z(nativeByteBuffer);
         }
@@ -3472,7 +3472,7 @@ public final class qp extends c1 implements ls {
         if (r2.a) {
             a8.b("start getChannelDifference with pts = " + i10 + " channelId = " + j3);
         }
-        getConnectionsManager().sendRequest(tL_updates_getChannelDifference2, new pk(i7, j3, j11, this));
+        getConnectionsManager().sendRequest(tL_updates_getChannelDifference2, new ok(i7, j3, j11, this));
     }
 
     public final void J1() {
@@ -3493,9 +3493,9 @@ public final class qp extends c1 implements ls {
                 }
                 o1(j3);
                 this.e8.add(Long.valueOf(j3));
-                wj wjVar = this.f8;
-                g0.r(wjVar);
-                g0.i3(wjVar, 60L);
+                vj vjVar = this.f8;
+                g0.r(vjVar);
+                g0.i3(vjVar, 60L);
             }
         }
         return null;
@@ -4637,7 +4637,7 @@ public final class qp extends c1 implements ls {
                                     if (r2.a) {
                                         StringBuilder n12 = jg.g.n(i81, "start migrate with id ", " date ");
                                         qpVar3 = qpVar4;
-                                        n12.append(hd.E0().z0().format(i82 * 1000));
+                                        n12.append(id.E0().z0().format(i82 * 1000));
                                         a8.b(n12.toString());
                                     } else {
                                         qpVar3 = qpVar4;
@@ -4818,17 +4818,17 @@ public final class qp extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:221:0x05f7, code lost:
     
-        if ((((((r7[r24] & 255) << 24) + ((r7[2] & 255) << 16)) + ((r7[1] & 255) << 8)) + (r7[r18] & 255)) < 233) goto L275;
+        if ((((((r7[r24] & 255) << 24) + ((r7[2] & 255) << 16)) + ((r7[1] & 255) << 8)) + (r7[r10] & 255)) < 233) goto L275;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:148:0x04b6  */
     /* JADX WARN: Removed duplicated region for block: B:174:0x0541  */
-    /* JADX WARN: Removed duplicated region for block: B:231:0x0685  */
-    /* JADX WARN: Removed duplicated region for block: B:233:0x068b  */
-    /* JADX WARN: Removed duplicated region for block: B:240:0x06a3  */
-    /* JADX WARN: Removed duplicated region for block: B:243:0x06d2  */
+    /* JADX WARN: Removed duplicated region for block: B:231:0x0683  */
+    /* JADX WARN: Removed duplicated region for block: B:233:0x0689  */
+    /* JADX WARN: Removed duplicated region for block: B:240:0x06a1  */
+    /* JADX WARN: Removed duplicated region for block: B:243:0x06d0  */
     /* JADX WARN: Removed duplicated region for block: B:248:0x06f2  */
-    /* JADX WARN: Removed duplicated region for block: B:288:0x0687  */
+    /* JADX WARN: Removed duplicated region for block: B:288:0x0685  */
     /* JADX WARN: Removed duplicated region for block: B:296:0x0500  */
     /* JADX WARN: Removed duplicated region for block: B:297:0x02b6  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x0137  */
@@ -4862,12 +4862,10 @@ public final class qp extends c1 implements ls {
         int i25;
         boolean z16;
         int i26;
-        int i27;
-        int i28;
         boolean z17;
         boolean z18;
         char c10;
-        int i29;
+        int i27;
         boolean z19;
         a0.h hVar6;
         a0.h hVar7;
@@ -4906,17 +4904,17 @@ public final class qp extends c1 implements ls {
         }
         zz d = a00.d(a00Var, "processLoadedMessages");
         if (i19 == 0 && (arrayList = messages_messages2.messages) != null && !k5.w("dialog_bar_replied", j19, qpVar2.d7, false)) {
-            int i30 = 0;
+            int i28 = 0;
             while (true) {
-                if (i30 >= arrayList.size()) {
+                if (i28 >= arrayList.size()) {
                     break;
                 }
-                TLRPC.Message message = arrayList.get(i30);
+                TLRPC.Message message = arrayList.get(i28);
                 if (message != null && message.out && !(message instanceof TLRPC.TL_messageService) && message.peer_id != null && ij.B0(message) == j19) {
                     qpVar2.m3(j19);
                     break;
                 }
-                i30++;
+                i28++;
             }
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
@@ -4976,10 +4974,10 @@ public final class qp extends c1 implements ls {
                             if (i19 != 1) {
                                 int size2 = messages_messages2.messages.size();
                                 long j21 = 0;
-                                for (int i31 = 0; i31 < size2; i31++) {
-                                    int i32 = messages_messages2.messages.get(i31).id;
-                                    if (i32 >= 0) {
-                                        j21 = ui.p(ui.p(ui.p(j21, i32), r6.edit_date), r6.date);
+                                for (int i29 = 0; i29 < size2; i29++) {
+                                    int i30 = messages_messages2.messages.get(i29).id;
+                                    if (i30 >= 0) {
+                                        j21 = ui.p(ui.p(ui.p(j21, i30), r6.edit_date), r6.date);
                                     }
                                 }
                                 j18 = j21;
@@ -4990,44 +4988,44 @@ public final class qp extends c1 implements ls {
                                 j17 = 0;
                                 int size3 = messages_messages2.messages.size();
                                 long j22 = 0;
-                                for (int i33 = 0; i33 < size3; i33++) {
-                                    TLRPC.Message message2 = messages_messages2.messages.get(i33);
+                                for (int i31 = 0; i31 < size3; i31++) {
+                                    TLRPC.Message message2 = messages_messages2.messages.get(i31);
                                     if (message2.id >= 0) {
                                         long p11 = ui.p(ui.p(j22, Math.abs(m5.o(message2.peer_id))), message2.id);
                                         if (message2.pinned) {
                                             p11 = ui.p(p11, 1L);
                                         }
-                                        int i34 = message2.date;
+                                        int i32 = message2.date;
                                         if ((message2.flags & 32768) != 0) {
-                                            i34 = message2.edit_date;
+                                            i32 = message2.edit_date;
                                         }
-                                        j22 = ui.p(p11, i34);
+                                        j22 = ui.p(p11, i32);
                                     }
                                 }
                                 j18 = j22;
                             } else if (i19 == 5) {
                                 int size4 = messages_messages2.messages.size();
-                                int i35 = 0;
+                                int i33 = 0;
                                 long j23 = 0;
-                                while (i35 < size4) {
-                                    TLRPC.Message message3 = messages_messages2.messages.get(i35);
-                                    int i36 = message3.id;
-                                    if (i36 < 0) {
+                                while (i33 < size4) {
+                                    TLRPC.Message message3 = messages_messages2.messages.get(i33);
+                                    int i34 = message3.id;
+                                    if (i34 < 0) {
                                         hVar8 = hVar;
                                         p10 = j23;
                                     } else {
                                         hVar8 = hVar;
-                                        long p12 = ui.p(j23, i36);
+                                        long p12 = ui.p(j23, i34);
                                         if ((message3.flags & 32768) != 0) {
                                             p10 = ui.p(p12, message3.edit_date);
                                         } else {
                                             p10 = ui.p(p12, 0L);
-                                            i35++;
+                                            i33++;
                                             j23 = p10;
                                             hVar = hVar8;
                                         }
                                     }
-                                    i35++;
+                                    i33++;
                                     j23 = p10;
                                     hVar = hVar8;
                                 }
@@ -5043,15 +5041,15 @@ public final class qp extends c1 implements ls {
                             j14 = j17;
                             hVar3 = hVar7;
                             final long j24 = j13;
-                            Runnable runnable = new Runnable() { // from class: org.telegram.messenger.jl
+                            Runnable runnable = new Runnable() { // from class: org.telegram.messenger.il
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     qp qpVar3 = qp.this;
                                     qpVar3.getClass();
-                                    int i37 = i18;
+                                    int i35 = i18;
                                     boolean z23 = z11;
-                                    int i38 = i14;
-                                    qpVar3.Z2(j19, j10, false, i10, (i37 == 2 && z23) ? i38 : i11, i12, false, 0, i13, i37, i15, i19, j24, i20, i38, i16, i17, z23, i21, true, z12, z13, a00Var, j18);
+                                    int i36 = i14;
+                                    qpVar3.Z2(j19, j10, false, i10, (i35 == 2 && z23) ? i36 : i11, i12, false, 0, i13, i35, i15, i19, j24, i20, i36, i16, i17, z23, i21, true, z12, z13, a00Var, j18);
                                 }
                             };
                             qpVar = this;
@@ -5069,15 +5067,15 @@ public final class qp extends c1 implements ls {
                         j14 = j17;
                         hVar3 = hVar7;
                         final long j242 = j13;
-                        Runnable runnable2 = new Runnable() { // from class: org.telegram.messenger.jl
+                        Runnable runnable2 = new Runnable() { // from class: org.telegram.messenger.il
                             @Override // java.lang.Runnable
                             public final void run() {
                                 qp qpVar3 = qp.this;
                                 qpVar3.getClass();
-                                int i37 = i18;
+                                int i35 = i18;
                                 boolean z23 = z11;
-                                int i38 = i14;
-                                qpVar3.Z2(j19, j10, false, i10, (i37 == 2 && z23) ? i38 : i11, i12, false, 0, i13, i37, i15, i19, j242, i20, i38, i16, i17, z23, i21, true, z12, z13, a00Var, j18);
+                                int i36 = i14;
+                                qpVar3.Z2(j19, j10, false, i10, (i35 == 2 && z23) ? i36 : i11, i12, false, 0, i13, i35, i15, i19, j242, i20, i36, i16, i17, z23, i21, true, z12, z13, a00Var, j18);
                             }
                         };
                         qpVar = this;
@@ -5116,9 +5114,9 @@ public final class qp extends c1 implements ls {
                         } else {
                             z18 = true;
                         }
-                        int i37 = z17;
-                        while (i37 < size) {
-                            TLRPC.Message message4 = messages_messages2.messages.get(i37);
+                        int i35 = z17;
+                        while (i35 < size) {
+                            TLRPC.Message message4 = messages_messages2.messages.get(i35);
                             if (i19 == 0) {
                                 TLRPC.MessageAction messageAction = message4.action;
                                 if (messageAction instanceof TLRPC.TL_messageActionChatDeleteUser) {
@@ -5143,16 +5141,16 @@ public final class qp extends c1 implements ls {
                             } else {
                                 hVar6 = hVar3;
                             }
-                            i37++;
+                            i35++;
                             hVar3 = hVar6;
                         }
                         a0.h hVar14 = hVar3;
                         if (j11 == j14 || z13) {
                             c10 = '\b';
-                            i29 = 3;
+                            i27 = 3;
                         } else {
                             c10 = '\b';
-                            i29 = 3;
+                            i27 = 3;
                             if (i19 != 8) {
                                 if (i19 != 3) {
                                     if (i19 != 5 && i19 != 9) {
@@ -5189,7 +5187,7 @@ public final class qp extends c1 implements ls {
                                     long j26 = j19;
                                     z19 = z18;
                                     z16 = z17;
-                                    i25 = i29;
+                                    i25 = i27;
                                     TLRPC.messages_Messages messages_messages3 = messages_messages2;
                                     qpVar.getMessagesStorage().h1(i18, i11, i19, j26, j11, messages_messages3, z15);
                                     messages_messages2 = messages_messages3;
@@ -5203,7 +5201,7 @@ public final class qp extends c1 implements ls {
                                 long j262 = j19;
                                 z19 = z18;
                                 z16 = z17;
-                                i25 = i29;
+                                i25 = i27;
                                 TLRPC.messages_Messages messages_messages32 = messages_messages2;
                                 qpVar.getMessagesStorage().h1(i18, i11, i19, j262, j11, messages_messages32, z15);
                                 messages_messages2 = messages_messages32;
@@ -5218,7 +5216,7 @@ public final class qp extends c1 implements ls {
                         long j2622 = j19;
                         z19 = z18;
                         z16 = z17;
-                        i25 = i29;
+                        i25 = i27;
                         TLRPC.messages_Messages messages_messages322 = messages_messages2;
                         qpVar.getMessagesStorage().h1(i18, i11, i19, j2622, j11, messages_messages322, z15);
                         messages_messages2 = messages_messages322;
@@ -5244,19 +5242,18 @@ public final class qp extends c1 implements ls {
                     final ArrayList arrayList3 = new ArrayList();
                     final HashMap hashMap = new HashMap();
                     i26 = z16;
-                    i27 = i26;
                     while (i26 < size) {
                         TLRPC.Message message5 = messages_messages2.messages.get(i26);
                         message5.dialog_id = j16;
-                        ij ijVar = new ij(qpVar3.currentAccount, message5, null, null, null, hVar5, hVar4, true, false, 0L, false, false, i24 == i25 ? 1 : i27, 0);
-                        int i38 = i25;
-                        ijVar.p1 = i24 == 1 ? 1 : i27;
+                        ij ijVar = new ij(qpVar3.currentAccount, message5, null, null, null, hVar5, hVar4, true, false, 0L, false, false, i24 == i25 ? 1 : i26, 0);
+                        int i36 = i25;
+                        ijVar.p1 = i24 == 1 ? 1 : i26;
                         arrayList2.add(ijVar);
                         if (z9) {
                             if (message5.legacy && message5.layer < 233) {
                                 arrayList3.add(Integer.valueOf(message5.id));
                             } else if ((ij.o1(message5) instanceof TLRPC.TL_messageMediaUnsupported) && ij.o1(message5).bytes != null) {
-                                if (ij.o1(message5).bytes.length != 0 && (ij.o1(message5).bytes.length != 1 || ij.o1(message5).bytes[i27] >= 233)) {
+                                if (ij.o1(message5).bytes.length != 0 && (ij.o1(message5).bytes.length != 1 || ij.o1(message5).bytes[i26] >= 233)) {
                                     if (ij.o1(message5).bytes.length == 4) {
                                         byte[] bArr = ij.o1(message5).bytes;
                                         Pattern pattern = Utilities.a;
@@ -5283,66 +5280,57 @@ public final class qp extends c1 implements ls {
                         }
                         i26++;
                         messages_messages2 = messages_messages;
-                        i25 = i38;
+                        i25 = i36;
                     }
-                    int i39 = i25;
                     qpVar3.getFileLoader().l(arrayList2);
-                    if ((iz.o() != 2 ? 1 : i27) != 0) {
-                        for (int i40 = i27; i40 < arrayList2.size(); i40++) {
-                            ((ij) arrayList2.get(i40)).Q();
+                    if ((iz.o() != 2 ? 1 : i26) != 0) {
+                        for (int i37 = i26; i37 < arrayList2.size(); i37++) {
+                            ((ij) arrayList2.get(i37)).Q();
                         }
                     }
                     if (r2.a) {
                         a8.b("process time=" + (SystemClock.elapsedRealtime() - elapsedRealtime) + " count=" + arrayList2.size() + " for dialog  " + j16);
                     }
                     if (i24 != 9) {
-                        Collections.sort(arrayList2, new vj(1));
+                        Collections.sort(arrayList2, new jl(i26));
                         if (!arrayList2.isEmpty()) {
                             ((ij) jg.g.i(1, arrayList2)).k.welcomeTemplateFirst = true;
                             qpVar3.O2.k(arrayList2, j16);
                         }
-                    } else if (i24 == 1) {
-                        Collections.sort(arrayList2, new vj(2));
-                    } else if (i24 == 5) {
-                        Collections.sort(arrayList2, new vj(i39));
-                        int i41 = i27;
-                        while (i41 < arrayList2.size()) {
-                            ij ijVar2 = (ij) arrayList2.get(i41);
-                            if (ijVar2.f4()) {
-                                int i42 = ijVar2.k.reply_to.reply_to_msg_id;
-                                int i43 = i27;
-                                while (true) {
-                                    if (i43 >= arrayList2.size()) {
-                                        break;
-                                    }
-                                    if (i41 == i43 || arrayList2.get(i43) == ijVar2 || ((ij) arrayList2.get(i43)).f1() != i42) {
-                                        i43++;
-                                        i27 = i27;
-                                    } else {
-                                        ijVar2.C = (ij) arrayList2.get(i43);
-                                        ijVar2.m();
-                                        TLRPC.MessageAction messageAction3 = ijVar2.k.action;
-                                        if (messageAction3 instanceof TLRPC.TL_messageActionPinMessage) {
-                                            ijVar2.q0(null, null);
-                                        } else if (messageAction3 instanceof TLRPC.TL_messageActionGameScore) {
-                                            ijVar2.m0(null);
-                                        } else if (messageAction3 instanceof TLRPC.TL_messageActionPaymentSent) {
-                                            boolean z23 = i27;
-                                            ijVar2.p0(null, z23);
-                                            i28 = z23;
+                    } else {
+                        int i38 = 1;
+                        if (i24 == 1) {
+                            Collections.sort(arrayList2, new jl(i38));
+                        } else if (i24 == 5) {
+                            Collections.sort(arrayList2, new jl(2));
+                            for (int i39 = 0; i39 < arrayList2.size(); i39++) {
+                                ij ijVar2 = (ij) arrayList2.get(i39);
+                                if (ijVar2.f4()) {
+                                    int i40 = ijVar2.k.reply_to.reply_to_msg_id;
+                                    int i41 = 0;
+                                    while (true) {
+                                        if (i41 >= arrayList2.size()) {
+                                            break;
+                                        }
+                                        if (i39 == i41 || arrayList2.get(i41) == ijVar2 || ((ij) arrayList2.get(i41)).f1() != i40) {
+                                            i41++;
                                         } else {
-                                            i28 = i27;
-                                            i28 = i28;
-                                            if (messageAction3 instanceof TLRPC.TL_messageActionPaymentSentMe) {
+                                            ijVar2.C = (ij) arrayList2.get(i41);
+                                            ijVar2.m();
+                                            TLRPC.MessageAction messageAction3 = ijVar2.k.action;
+                                            if (messageAction3 instanceof TLRPC.TL_messageActionPinMessage) {
+                                                ijVar2.q0(null, null);
+                                            } else if (messageAction3 instanceof TLRPC.TL_messageActionGameScore) {
+                                                ijVar2.m0(null);
+                                            } else if (messageAction3 instanceof TLRPC.TL_messageActionPaymentSent) {
+                                                ijVar2.p0(null, false);
+                                            } else if (messageAction3 instanceof TLRPC.TL_messageActionPaymentSentMe) {
                                                 ijVar2.p0(null, true);
                                             }
                                         }
                                     }
                                 }
                             }
-                            i28 = i27;
-                            i41++;
-                            i27 = i28;
                         }
                     }
                     a00.a(d);
@@ -5359,10 +5347,10 @@ public final class qp extends c1 implements ls {
                         */
                         public final void run() {
                             char c11;
+                            int i42;
+                            final int i43;
                             int i44;
-                            final int i45;
-                            int i46;
-                            int i47;
+                            int i45;
                             final qp qpVar4;
                             long j29;
                             long j30;
@@ -5374,89 +5362,89 @@ public final class qp extends c1 implements ls {
                             TLRPC.messages_Messages messages_messages4 = messages_messages;
                             ArrayList<TLRPC.User> arrayList5 = messages_messages4.users;
                             qp qpVar5 = qp.this;
-                            final boolean z24 = z9;
-                            qpVar5.Y3(arrayList5, z24);
-                            qpVar5.S3(messages_messages4.chats, z24);
+                            final boolean z23 = z9;
+                            qpVar5.Y3(arrayList5, z23);
+                            qpVar5.S3(messages_messages4.chats, z23);
                             ArrayList<TLRPC.Document> arrayList6 = messages_messages4.animatedEmoji;
-                            final boolean z25 = z12;
-                            if (arrayList6 != null && z25) {
+                            final boolean z24 = z12;
+                            if (arrayList6 != null && z24) {
                                 org.telegram.ui.Components.i5.g(qpVar5.currentAccount).d(messages_messages4.animatedEmoji);
                             }
                             char c12 = 2;
-                            final int i48 = i19;
-                            final int i49 = i18;
-                            if (i48 == 1) {
+                            final int i46 = i19;
+                            final int i47 = i18;
+                            if (i46 == 1) {
                                 c11 = 2;
-                                i45 = 0;
+                                i43 = 0;
                             } else {
-                                boolean z26 = z11;
-                                int i50 = i14;
-                                if (z26 && i49 == 2) {
-                                    i44 = Integer.MAX_VALUE;
-                                    int i51 = 0;
-                                    while (i51 < messages_messages4.messages.size()) {
-                                        TLRPC.Message message6 = messages_messages4.messages.get(i51);
+                                boolean z25 = z11;
+                                int i48 = i14;
+                                if (z25 && i47 == 2) {
+                                    i42 = Integer.MAX_VALUE;
+                                    int i49 = 0;
+                                    while (i49 < messages_messages4.messages.size()) {
+                                        TLRPC.Message message6 = messages_messages4.messages.get(i49);
                                         char c13 = c12;
-                                        if ((!message6.out || message6.from_scheduled) && (i46 = message6.id) > i50 && i46 < i44) {
-                                            i44 = i46;
+                                        if ((!message6.out || message6.from_scheduled) && (i44 = message6.id) > i48 && i44 < i42) {
+                                            i42 = i44;
                                         }
-                                        i51++;
+                                        i49++;
                                         c12 = c13;
                                     }
                                     c11 = c12;
                                 } else {
                                     c11 = 2;
-                                    i44 = Integer.MAX_VALUE;
+                                    i42 = Integer.MAX_VALUE;
                                 }
-                                i45 = i44 == Integer.MAX_VALUE ? i50 : i44;
+                                i43 = i42 == Integer.MAX_VALUE ? i48 : i42;
                             }
-                            final int i52 = i10;
+                            final int i50 = i10;
                             final long j31 = j27;
                             final ArrayList arrayList7 = arrayList2;
-                            if (i48 == 1 && i52 == 1) {
+                            if (i46 == 1 && i50 == 1) {
                                 qs notificationCenter = qpVar5.getNotificationCenter();
                                 Long valueOf3 = Long.valueOf(j31);
                                 Integer valueOf4 = Integer.valueOf(arrayList7.size());
-                                i47 = 1;
+                                i45 = 1;
                                 Object[] objArr = new Object[3];
                                 objArr[0] = valueOf3;
                                 objArr[1] = valueOf4;
                                 objArr[c11] = Boolean.FALSE;
                                 notificationCenter.k(qs.r1, objArr);
                             } else {
-                                i47 = 1;
+                                i45 = 1;
                             }
                             boolean C = m5.C(j31);
-                            final int i53 = i13;
-                            final boolean z27 = z10;
-                            final int i54 = i15;
-                            final int i55 = i16;
-                            final int i56 = i17;
-                            final int i57 = i20;
-                            final int i58 = i11;
-                            final int i59 = i21;
-                            if (C || i48 == 5) {
+                            final int i51 = i13;
+                            final boolean z26 = z10;
+                            final int i52 = i15;
+                            final int i53 = i16;
+                            final int i54 = i17;
+                            final int i55 = i20;
+                            final int i56 = i11;
+                            final int i57 = i21;
+                            if (C || i46 == 5) {
                                 qpVar4 = qpVar5;
                                 j29 = j31;
                                 qs notificationCenter2 = qpVar4.getNotificationCenter();
                                 Long valueOf5 = Long.valueOf(j29);
-                                Integer valueOf6 = Integer.valueOf(i52);
-                                Boolean valueOf7 = Boolean.valueOf(z24);
-                                Integer valueOf8 = Integer.valueOf(i45);
-                                Integer valueOf9 = Integer.valueOf(i54);
-                                Integer valueOf10 = Integer.valueOf(i55);
-                                Integer valueOf11 = Integer.valueOf(i56);
-                                Integer valueOf12 = Integer.valueOf(i49);
-                                Boolean valueOf13 = Boolean.valueOf(z27);
-                                Integer valueOf14 = Integer.valueOf(i53);
-                                Integer valueOf15 = Integer.valueOf(i57);
-                                Integer valueOf16 = Integer.valueOf(i58);
-                                Integer valueOf17 = Integer.valueOf(i59);
-                                Integer valueOf18 = Integer.valueOf(i48);
-                                i47 = i47;
+                                Integer valueOf6 = Integer.valueOf(i50);
+                                Boolean valueOf7 = Boolean.valueOf(z23);
+                                Integer valueOf8 = Integer.valueOf(i43);
+                                Integer valueOf9 = Integer.valueOf(i52);
+                                Integer valueOf10 = Integer.valueOf(i53);
+                                Integer valueOf11 = Integer.valueOf(i54);
+                                Integer valueOf12 = Integer.valueOf(i47);
+                                Boolean valueOf13 = Boolean.valueOf(z26);
+                                Integer valueOf14 = Integer.valueOf(i51);
+                                Integer valueOf15 = Integer.valueOf(i55);
+                                Integer valueOf16 = Integer.valueOf(i56);
+                                Integer valueOf17 = Integer.valueOf(i57);
+                                Integer valueOf18 = Integer.valueOf(i46);
+                                i45 = i45;
                                 Object[] objArr2 = new Object[15];
                                 objArr2[0] = valueOf5;
-                                objArr2[i47] = valueOf6;
+                                objArr2[i45] = valueOf6;
                                 objArr2[c11] = arrayList7;
                                 objArr2[3] = valueOf7;
                                 objArr2[4] = valueOf8;
@@ -5474,34 +5462,34 @@ public final class qp extends c1 implements ls {
                             } else {
                                 final zz d11 = a00.d(a00Var4, "loadReplyMessagesForMessages");
                                 ui mediaDataController = qpVar5.getMediaDataController();
-                                final int i60 = i7;
+                                final int i58 = i7;
                                 qpVar4 = qpVar5;
                                 Runnable runnable3 = new Runnable() { // from class: org.telegram.messenger.pm
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         a00.a(d11);
                                         qp qpVar6 = qp.this;
-                                        boolean z28 = z25;
-                                        int i61 = i53;
-                                        boolean z29 = z24;
-                                        boolean z30 = z27;
-                                        int i62 = i54;
-                                        if (z28) {
-                                            qpVar6.getNotificationCenter().k(qs.D, Long.valueOf(j31), Integer.valueOf(i52), arrayList7, Boolean.valueOf(z29), Integer.valueOf(i45), Integer.valueOf(i62), Integer.valueOf(i55), Integer.valueOf(i56), Integer.valueOf(i49), Boolean.valueOf(z30), Integer.valueOf(i61), Integer.valueOf(i57), Integer.valueOf(i58), Integer.valueOf(i59), Integer.valueOf(i48));
+                                        boolean z27 = z24;
+                                        int i59 = i51;
+                                        boolean z28 = z23;
+                                        boolean z29 = z26;
+                                        int i60 = i52;
+                                        if (z27) {
+                                            qpVar6.getNotificationCenter().k(qs.D, Long.valueOf(j31), Integer.valueOf(i50), arrayList7, Boolean.valueOf(z28), Integer.valueOf(i43), Integer.valueOf(i60), Integer.valueOf(i53), Integer.valueOf(i54), Integer.valueOf(i47), Boolean.valueOf(z29), Integer.valueOf(i59), Integer.valueOf(i55), Integer.valueOf(i56), Integer.valueOf(i57), Integer.valueOf(i46));
                                         } else {
-                                            qpVar6.getNotificationCenter().k(qs.H, Integer.valueOf(i61), Integer.valueOf(i60), Boolean.valueOf(z29), Boolean.valueOf(z30), Integer.valueOf(i62));
+                                            qpVar6.getNotificationCenter().k(qs.H, Integer.valueOf(i59), Integer.valueOf(i58), Boolean.valueOf(z28), Boolean.valueOf(z29), Integer.valueOf(i60));
                                         }
                                     }
                                 };
                                 j29 = j31;
-                                mediaDataController.X0(arrayList7, j29, i48, j28, runnable3, i53, a00Var4);
+                                mediaDataController.X0(arrayList7, j29, i46, j28, runnable3, i51, a00Var4);
                             }
                             ArrayList arrayList8 = arrayList3;
                             if (!arrayList8.isEmpty()) {
                                 a0.h hVar15 = qpVar4.O1;
                                 if (!arrayList8.isEmpty()) {
-                                    int i61 = i47;
-                                    final boolean z28 = i48 == i61 ? i61 : 0;
+                                    int i59 = i45;
+                                    final boolean z27 = i46 == i59 ? i59 : 0;
                                     final ArrayList<Integer> arrayList9 = new ArrayList<>();
                                     TLRPC.Chat M0 = m5.z(j29) ? qpVar4.M0(Long.valueOf(-j29)) : null;
                                     if (t3.T(M0)) {
@@ -5516,8 +5504,8 @@ public final class qp extends c1 implements ls {
                                     }
                                     TLRPC.TL_messages_getMessages tL_messages_getMessages3 = tL_messages_getMessages;
                                     ArrayList arrayList10 = (ArrayList) hVar15.f(j29);
-                                    for (int i62 = 0; i62 < arrayList8.size(); i62++) {
-                                        Integer num3 = (Integer) arrayList8.get(i62);
+                                    for (int i60 = 0; i60 < arrayList8.size(); i60++) {
+                                        Integer num3 = (Integer) arrayList8.get(i60);
                                         if (arrayList10 == null || !arrayList10.contains(num3)) {
                                             arrayList9.add(num3);
                                         }
@@ -5539,13 +5527,13 @@ public final class qp extends c1 implements ls {
                                                 if (tL_error == null) {
                                                     TLRPC.messages_Messages messages_messages5 = (TLRPC.messages_Messages) tLObject;
                                                     a0.h hVar16 = new a0.h();
-                                                    for (int i63 = 0; i63 < messages_messages5.users.size(); i63++) {
-                                                        TLRPC.User user3 = messages_messages5.users.get(i63);
+                                                    for (int i61 = 0; i61 < messages_messages5.users.size(); i61++) {
+                                                        TLRPC.User user3 = messages_messages5.users.get(i61);
                                                         hVar16.k(user3, user3.id);
                                                     }
                                                     a0.h hVar17 = new a0.h();
-                                                    for (int i64 = 0; i64 < messages_messages5.chats.size(); i64++) {
-                                                        TLRPC.Chat chat2 = messages_messages5.chats.get(i64);
+                                                    for (int i62 = 0; i62 < messages_messages5.chats.size(); i62++) {
+                                                        TLRPC.Chat chat2 = messages_messages5.chats.get(i62);
                                                         hVar17.k(chat2, chat2.id);
                                                     }
                                                     long j33 = j32;
@@ -5556,38 +5544,38 @@ public final class qp extends c1 implements ls {
                                                     }
                                                     Integer num5 = num4;
                                                     Integer num6 = (Integer) concurrentHashMap3.get(Long.valueOf(j33));
-                                                    boolean z29 = true;
+                                                    boolean z28 = true;
                                                     if (num6 == null) {
                                                         num6 = Integer.valueOf(qpVar7.getMessagesStorage().U(j33, true));
                                                         concurrentHashMap3.put(Long.valueOf(j33), num6);
                                                     }
                                                     Integer num7 = num6;
                                                     ArrayList arrayList11 = new ArrayList();
-                                                    int i65 = 0;
-                                                    while (i65 < messages_messages5.messages.size()) {
-                                                        TLRPC.Message message7 = messages_messages5.messages.get(i65);
+                                                    int i63 = 0;
+                                                    while (i63 < messages_messages5.messages.size()) {
+                                                        TLRPC.Message message7 = messages_messages5.messages.get(i63);
                                                         message7.dialog_id = j33;
-                                                        if (!z28) {
-                                                            message7.unread = (message7.out ? num7 : num5).intValue() < message7.id ? z29 : false;
+                                                        if (!z27) {
+                                                            message7.unread = (message7.out ? num7 : num5).intValue() < message7.id ? z28 : false;
                                                         }
                                                         ArrayList arrayList12 = arrayList11;
                                                         arrayList12.add(new ij(qpVar7.currentAccount, message7, hVar16, hVar17, true, true));
-                                                        i65++;
+                                                        i63++;
                                                         arrayList11 = arrayList12;
-                                                        z29 = true;
+                                                        z28 = true;
                                                     }
                                                     gc.X(messages_messages5.messages);
-                                                    qpVar7.getMessagesStorage().h1(-1, 0, i48, j33, 0L, messages_messages5, false);
+                                                    qpVar7.getMessagesStorage().h1(-1, 0, i46, j33, 0L, messages_messages5, false);
                                                     g0.h3(new jm(qpVar7, j33, arrayList9, arrayList11, 7));
                                                 }
                                             }
                                         };
                                         j30 = j32;
-                                        i48 = i48;
+                                        i46 = i46;
                                         connectionsManager.sendRequest(tL_messages_getMessages3, requestDelegate);
                                         hashMap2 = hashMap;
                                         if (!hashMap2.isEmpty()) {
-                                            qpVar4.d4(j30, hashMap2, i48);
+                                            qpVar4.d4(j30, hashMap2, i46);
                                         }
                                         a00.a(d10);
                                         a00.b(a00Var4);
@@ -5643,12 +5631,10 @@ public final class qp extends c1 implements ls {
         final ArrayList arrayList32 = new ArrayList();
         final HashMap hashMap2 = new HashMap();
         i26 = z16;
-        i27 = i26;
         while (i26 < size) {
         }
-        int i392 = i25;
         qpVar32.getFileLoader().l(arrayList22);
-        if ((iz.o() != 2 ? 1 : i27) != 0) {
+        if ((iz.o() != 2 ? 1 : i26) != 0) {
         }
         if (r2.a) {
         }
@@ -5668,10 +5654,10 @@ public final class qp extends c1 implements ls {
             */
             public final void run() {
                 char c11;
+                int i42;
+                final int i43;
                 int i44;
-                final int i45;
-                int i46;
-                int i47;
+                int i45;
                 final qp qpVar4;
                 long j29;
                 long j30;
@@ -5683,89 +5669,89 @@ public final class qp extends c1 implements ls {
                 TLRPC.messages_Messages messages_messages4 = messages_messages;
                 ArrayList<TLRPC.User> arrayList5 = messages_messages4.users;
                 qp qpVar5 = qp.this;
-                final boolean z24 = z9;
-                qpVar5.Y3(arrayList5, z24);
-                qpVar5.S3(messages_messages4.chats, z24);
+                final boolean z23 = z9;
+                qpVar5.Y3(arrayList5, z23);
+                qpVar5.S3(messages_messages4.chats, z23);
                 ArrayList<TLRPC.Document> arrayList6 = messages_messages4.animatedEmoji;
-                final boolean z25 = z12;
-                if (arrayList6 != null && z25) {
+                final boolean z24 = z12;
+                if (arrayList6 != null && z24) {
                     org.telegram.ui.Components.i5.g(qpVar5.currentAccount).d(messages_messages4.animatedEmoji);
                 }
                 char c12 = 2;
-                final int i48 = i19;
-                final int i49 = i18;
-                if (i48 == 1) {
+                final int i46 = i19;
+                final int i47 = i18;
+                if (i46 == 1) {
                     c11 = 2;
-                    i45 = 0;
+                    i43 = 0;
                 } else {
-                    boolean z26 = z11;
-                    int i50 = i14;
-                    if (z26 && i49 == 2) {
-                        i44 = Integer.MAX_VALUE;
-                        int i51 = 0;
-                        while (i51 < messages_messages4.messages.size()) {
-                            TLRPC.Message message6 = messages_messages4.messages.get(i51);
+                    boolean z25 = z11;
+                    int i48 = i14;
+                    if (z25 && i47 == 2) {
+                        i42 = Integer.MAX_VALUE;
+                        int i49 = 0;
+                        while (i49 < messages_messages4.messages.size()) {
+                            TLRPC.Message message6 = messages_messages4.messages.get(i49);
                             char c13 = c12;
-                            if ((!message6.out || message6.from_scheduled) && (i46 = message6.id) > i50 && i46 < i44) {
-                                i44 = i46;
+                            if ((!message6.out || message6.from_scheduled) && (i44 = message6.id) > i48 && i44 < i42) {
+                                i42 = i44;
                             }
-                            i51++;
+                            i49++;
                             c12 = c13;
                         }
                         c11 = c12;
                     } else {
                         c11 = 2;
-                        i44 = Integer.MAX_VALUE;
+                        i42 = Integer.MAX_VALUE;
                     }
-                    i45 = i44 == Integer.MAX_VALUE ? i50 : i44;
+                    i43 = i42 == Integer.MAX_VALUE ? i48 : i42;
                 }
-                final int i52 = i10;
+                final int i50 = i10;
                 final long j31 = j272;
                 final ArrayList arrayList7 = arrayList22;
-                if (i48 == 1 && i52 == 1) {
+                if (i46 == 1 && i50 == 1) {
                     qs notificationCenter = qpVar5.getNotificationCenter();
                     Long valueOf3 = Long.valueOf(j31);
                     Integer valueOf4 = Integer.valueOf(arrayList7.size());
-                    i47 = 1;
+                    i45 = 1;
                     Object[] objArr = new Object[3];
                     objArr[0] = valueOf3;
                     objArr[1] = valueOf4;
                     objArr[c11] = Boolean.FALSE;
                     notificationCenter.k(qs.r1, objArr);
                 } else {
-                    i47 = 1;
+                    i45 = 1;
                 }
                 boolean C = m5.C(j31);
-                final int i53 = i13;
-                final boolean z27 = z10;
-                final int i54 = i15;
-                final int i55 = i16;
-                final int i56 = i17;
-                final int i57 = i20;
-                final int i58 = i11;
-                final int i59 = i21;
-                if (C || i48 == 5) {
+                final int i51 = i13;
+                final boolean z26 = z10;
+                final int i52 = i15;
+                final int i53 = i16;
+                final int i54 = i17;
+                final int i55 = i20;
+                final int i56 = i11;
+                final int i57 = i21;
+                if (C || i46 == 5) {
                     qpVar4 = qpVar5;
                     j29 = j31;
                     qs notificationCenter2 = qpVar4.getNotificationCenter();
                     Long valueOf5 = Long.valueOf(j29);
-                    Integer valueOf6 = Integer.valueOf(i52);
-                    Boolean valueOf7 = Boolean.valueOf(z24);
-                    Integer valueOf8 = Integer.valueOf(i45);
-                    Integer valueOf9 = Integer.valueOf(i54);
-                    Integer valueOf10 = Integer.valueOf(i55);
-                    Integer valueOf11 = Integer.valueOf(i56);
-                    Integer valueOf12 = Integer.valueOf(i49);
-                    Boolean valueOf13 = Boolean.valueOf(z27);
-                    Integer valueOf14 = Integer.valueOf(i53);
-                    Integer valueOf15 = Integer.valueOf(i57);
-                    Integer valueOf16 = Integer.valueOf(i58);
-                    Integer valueOf17 = Integer.valueOf(i59);
-                    Integer valueOf18 = Integer.valueOf(i48);
-                    i47 = i47;
+                    Integer valueOf6 = Integer.valueOf(i50);
+                    Boolean valueOf7 = Boolean.valueOf(z23);
+                    Integer valueOf8 = Integer.valueOf(i43);
+                    Integer valueOf9 = Integer.valueOf(i52);
+                    Integer valueOf10 = Integer.valueOf(i53);
+                    Integer valueOf11 = Integer.valueOf(i54);
+                    Integer valueOf12 = Integer.valueOf(i47);
+                    Boolean valueOf13 = Boolean.valueOf(z26);
+                    Integer valueOf14 = Integer.valueOf(i51);
+                    Integer valueOf15 = Integer.valueOf(i55);
+                    Integer valueOf16 = Integer.valueOf(i56);
+                    Integer valueOf17 = Integer.valueOf(i57);
+                    Integer valueOf18 = Integer.valueOf(i46);
+                    i45 = i45;
                     Object[] objArr2 = new Object[15];
                     objArr2[0] = valueOf5;
-                    objArr2[i47] = valueOf6;
+                    objArr2[i45] = valueOf6;
                     objArr2[c11] = arrayList7;
                     objArr2[3] = valueOf7;
                     objArr2[4] = valueOf8;
@@ -5783,34 +5769,34 @@ public final class qp extends c1 implements ls {
                 } else {
                     final zz d11 = a00.d(a00Var4, "loadReplyMessagesForMessages");
                     ui mediaDataController = qpVar5.getMediaDataController();
-                    final int i60 = i7;
+                    final int i58 = i7;
                     qpVar4 = qpVar5;
                     Runnable runnable3 = new Runnable() { // from class: org.telegram.messenger.pm
                         @Override // java.lang.Runnable
                         public final void run() {
                             a00.a(d11);
                             qp qpVar6 = qp.this;
-                            boolean z28 = z25;
-                            int i61 = i53;
-                            boolean z29 = z24;
-                            boolean z30 = z27;
-                            int i62 = i54;
-                            if (z28) {
-                                qpVar6.getNotificationCenter().k(qs.D, Long.valueOf(j31), Integer.valueOf(i52), arrayList7, Boolean.valueOf(z29), Integer.valueOf(i45), Integer.valueOf(i62), Integer.valueOf(i55), Integer.valueOf(i56), Integer.valueOf(i49), Boolean.valueOf(z30), Integer.valueOf(i61), Integer.valueOf(i57), Integer.valueOf(i58), Integer.valueOf(i59), Integer.valueOf(i48));
+                            boolean z27 = z24;
+                            int i59 = i51;
+                            boolean z28 = z23;
+                            boolean z29 = z26;
+                            int i60 = i52;
+                            if (z27) {
+                                qpVar6.getNotificationCenter().k(qs.D, Long.valueOf(j31), Integer.valueOf(i50), arrayList7, Boolean.valueOf(z28), Integer.valueOf(i43), Integer.valueOf(i60), Integer.valueOf(i53), Integer.valueOf(i54), Integer.valueOf(i47), Boolean.valueOf(z29), Integer.valueOf(i59), Integer.valueOf(i55), Integer.valueOf(i56), Integer.valueOf(i57), Integer.valueOf(i46));
                             } else {
-                                qpVar6.getNotificationCenter().k(qs.H, Integer.valueOf(i61), Integer.valueOf(i60), Boolean.valueOf(z29), Boolean.valueOf(z30), Integer.valueOf(i62));
+                                qpVar6.getNotificationCenter().k(qs.H, Integer.valueOf(i59), Integer.valueOf(i58), Boolean.valueOf(z28), Boolean.valueOf(z29), Integer.valueOf(i60));
                             }
                         }
                     };
                     j29 = j31;
-                    mediaDataController.X0(arrayList7, j29, i48, j282, runnable3, i53, a00Var4);
+                    mediaDataController.X0(arrayList7, j29, i46, j282, runnable3, i51, a00Var4);
                 }
                 ArrayList arrayList8 = arrayList32;
                 if (!arrayList8.isEmpty()) {
                     a0.h hVar15 = qpVar4.O1;
                     if (!arrayList8.isEmpty()) {
-                        int i61 = i47;
-                        final boolean z28 = i48 == i61 ? i61 : 0;
+                        int i59 = i45;
+                        final boolean z27 = i46 == i59 ? i59 : 0;
                         final ArrayList arrayList9 = new ArrayList<>();
                         TLRPC.Chat M0 = m5.z(j29) ? qpVar4.M0(Long.valueOf(-j29)) : null;
                         if (t3.T(M0)) {
@@ -5825,8 +5811,8 @@ public final class qp extends c1 implements ls {
                         }
                         TLRPC.TL_messages_getMessages tL_messages_getMessages3 = tL_messages_getMessages;
                         ArrayList arrayList10 = (ArrayList) hVar15.f(j29);
-                        for (int i62 = 0; i62 < arrayList8.size(); i62++) {
-                            Integer num3 = (Integer) arrayList8.get(i62);
+                        for (int i60 = 0; i60 < arrayList8.size(); i60++) {
+                            Integer num3 = (Integer) arrayList8.get(i60);
                             if (arrayList10 == null || !arrayList10.contains(num3)) {
                                 arrayList9.add(num3);
                             }
@@ -5848,13 +5834,13 @@ public final class qp extends c1 implements ls {
                                     if (tL_error == null) {
                                         TLRPC.messages_Messages messages_messages5 = (TLRPC.messages_Messages) tLObject;
                                         a0.h hVar16 = new a0.h();
-                                        for (int i63 = 0; i63 < messages_messages5.users.size(); i63++) {
-                                            TLRPC.User user3 = messages_messages5.users.get(i63);
+                                        for (int i61 = 0; i61 < messages_messages5.users.size(); i61++) {
+                                            TLRPC.User user3 = messages_messages5.users.get(i61);
                                             hVar16.k(user3, user3.id);
                                         }
                                         a0.h hVar17 = new a0.h();
-                                        for (int i64 = 0; i64 < messages_messages5.chats.size(); i64++) {
-                                            TLRPC.Chat chat2 = messages_messages5.chats.get(i64);
+                                        for (int i62 = 0; i62 < messages_messages5.chats.size(); i62++) {
+                                            TLRPC.Chat chat2 = messages_messages5.chats.get(i62);
                                             hVar17.k(chat2, chat2.id);
                                         }
                                         long j33 = j32;
@@ -5865,38 +5851,38 @@ public final class qp extends c1 implements ls {
                                         }
                                         Integer num5 = num4;
                                         Integer num6 = (Integer) concurrentHashMap3.get(Long.valueOf(j33));
-                                        boolean z29 = true;
+                                        boolean z28 = true;
                                         if (num6 == null) {
                                             num6 = Integer.valueOf(qpVar7.getMessagesStorage().U(j33, true));
                                             concurrentHashMap3.put(Long.valueOf(j33), num6);
                                         }
                                         Integer num7 = num6;
                                         ArrayList arrayList11 = new ArrayList();
-                                        int i65 = 0;
-                                        while (i65 < messages_messages5.messages.size()) {
-                                            TLRPC.Message message7 = messages_messages5.messages.get(i65);
+                                        int i63 = 0;
+                                        while (i63 < messages_messages5.messages.size()) {
+                                            TLRPC.Message message7 = messages_messages5.messages.get(i63);
                                             message7.dialog_id = j33;
-                                            if (!z28) {
-                                                message7.unread = (message7.out ? num7 : num5).intValue() < message7.id ? z29 : false;
+                                            if (!z27) {
+                                                message7.unread = (message7.out ? num7 : num5).intValue() < message7.id ? z28 : false;
                                             }
                                             ArrayList arrayList12 = arrayList11;
                                             arrayList12.add(new ij(qpVar7.currentAccount, message7, hVar16, hVar17, true, true));
-                                            i65++;
+                                            i63++;
                                             arrayList11 = arrayList12;
-                                            z29 = true;
+                                            z28 = true;
                                         }
                                         gc.X(messages_messages5.messages);
-                                        qpVar7.getMessagesStorage().h1(-1, 0, i48, j33, 0L, messages_messages5, false);
+                                        qpVar7.getMessagesStorage().h1(-1, 0, i46, j33, 0L, messages_messages5, false);
                                         g0.h3(new jm(qpVar7, j33, arrayList9, arrayList11, 7));
                                     }
                                 }
                             };
                             j30 = j32;
-                            i48 = i48;
+                            i46 = i46;
                             connectionsManager.sendRequest(tL_messages_getMessages3, requestDelegate);
                             hashMap22 = hashMap2;
                             if (!hashMap22.isEmpty()) {
-                                qpVar4.d4(j30, hashMap22, i48);
+                                qpVar4.d4(j30, hashMap22, i46);
                             }
                             a00.a(d10);
                             a00.b(a00Var4);
@@ -6222,7 +6208,7 @@ public final class qp extends c1 implements ls {
                     return;
                 }
                 qpVar.O3((TLRPC.Updates) tLObject, false);
-                g0.i3(new nk(qpVar, j3, 17), 1000L);
+                g0.i3(new mk(qpVar, j3, 17), 1000L);
                 Runnable runnable = pVar;
                 if (runnable != null) {
                     g0.h3(runnable);
@@ -6730,7 +6716,7 @@ public final class qp extends c1 implements ls {
                 i16++;
             }
             if (z22) {
-                qpVar.getMessagesStorage().a.c(new xk(qpVar, updates, z9, 1));
+                qpVar.getMessagesStorage().a.c(new wk(qpVar, updates, z9, 1));
                 return;
             }
         }
@@ -7538,7 +7524,7 @@ public final class qp extends c1 implements ls {
         final String str = z9 ? "reaction_mentions" : "poll_votes_mentions";
         final String str2 = z9 ? "reaction_mentions_topics" : "poll_votes_mentions_topics";
         final boolean z10 = !z9;
-        getMessagesStorage().a.c(new Runnable() { // from class: org.telegram.messenger.xj
+        getMessagesStorage().a.c(new Runnable() { // from class: org.telegram.messenger.wj
             /* JADX WARN: Multi-variable type inference failed */
             /* JADX WARN: Removed duplicated region for block: B:101:0x023d  */
             /* JADX WARN: Removed duplicated region for block: B:33:0x00db  */
@@ -7741,7 +7727,7 @@ public final class qp extends c1 implements ls {
                                         break;
                                     case 1:
                                         if (tLObject != null) {
-                                            g0.h3(new hk(qpVar2, j11, j12, arrayList));
+                                            g0.h3(new gk(qpVar2, j11, j12, arrayList));
                                             break;
                                         }
                                         break;
@@ -7797,7 +7783,7 @@ public final class qp extends c1 implements ls {
                                             break;
                                         case 1:
                                             if (tLObject != null) {
-                                                g0.h3(new hk(qpVar2, j11, j12, arrayList));
+                                                g0.h3(new gk(qpVar2, j11, j12, arrayList));
                                                 break;
                                             }
                                             break;
@@ -7850,7 +7836,7 @@ public final class qp extends c1 implements ls {
                                             break;
                                         case 1:
                                             if (tLObject != null) {
-                                                g0.h3(new hk(qpVar2, j11, j12, arrayList));
+                                                g0.h3(new gk(qpVar2, j11, j12, arrayList));
                                                 break;
                                             }
                                             break;
@@ -7920,7 +7906,7 @@ public final class qp extends c1 implements ls {
                                         break;
                                     case 1:
                                         if (tLObject != null) {
-                                            g0.h3(new hk(qpVar2, j11, j12, arrayList));
+                                            g0.h3(new gk(qpVar2, j11, j12, arrayList));
                                             break;
                                         }
                                         break;
@@ -7975,7 +7961,7 @@ public final class qp extends c1 implements ls {
                                         break;
                                     case 1:
                                         if (tLObject != null) {
-                                            g0.h3(new hk(qpVar2, j11, j12, arrayList));
+                                            g0.h3(new gk(qpVar2, j11, j12, arrayList));
                                             break;
                                         }
                                         break;
@@ -8029,7 +8015,7 @@ public final class qp extends c1 implements ls {
                                     break;
                                 case 1:
                                     if (tLObject != null) {
-                                        g0.h3(new hk(qpVar2, j11, j12, arrayList));
+                                        g0.h3(new gk(qpVar2, j11, j12, arrayList));
                                         break;
                                     }
                                     break;
@@ -8100,41 +8086,41 @@ public final class qp extends c1 implements ls {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:309:0x0737, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:309:0x0736, code lost:
     
-        if (r3 == r9) goto L299;
+        if (r3 == r9) goto L297;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:311:0x073b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:311:0x073a, code lost:
     
-        if (r5 == r6) goto L302;
+        if (r4 == r6) goto L300;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:588:0x0d68, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:588:0x0d5f, code lost:
     
-        if (r0.getCallStateForSubscription() == 0) goto L578;
+        if (r0.getCallStateForSubscription() == 0) goto L576;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:590:0x0d6b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:590:0x0d62, code lost:
     
         r0 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:635:0x0d73, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:635:0x0d6a, code lost:
     
-        if (r0.getCallState() == 0) goto L578;
+        if (r0.getCallState() == 0) goto L576;
      */
-    /* JADX WARN: Removed duplicated region for block: B:1000:0x17fb  */
-    /* JADX WARN: Removed duplicated region for block: B:1087:0x1965  */
-    /* JADX WARN: Removed duplicated region for block: B:1097:0x19e0  */
-    /* JADX WARN: Removed duplicated region for block: B:1111:0x1a41  */
-    /* JADX WARN: Removed duplicated region for block: B:1113:0x1a51  */
-    /* JADX WARN: Removed duplicated region for block: B:1115:0x1a55  */
-    /* JADX WARN: Removed duplicated region for block: B:1118:0x1a5b  */
-    /* JADX WARN: Removed duplicated region for block: B:1127:0x1a98  */
-    /* JADX WARN: Removed duplicated region for block: B:1130:0x1aab  */
+    /* JADX WARN: Removed duplicated region for block: B:1000:0x17e6  */
+    /* JADX WARN: Removed duplicated region for block: B:1087:0x1950  */
+    /* JADX WARN: Removed duplicated region for block: B:1097:0x19cb  */
+    /* JADX WARN: Removed duplicated region for block: B:1111:0x1a2c  */
+    /* JADX WARN: Removed duplicated region for block: B:1113:0x1a3c  */
+    /* JADX WARN: Removed duplicated region for block: B:1115:0x1a40  */
+    /* JADX WARN: Removed duplicated region for block: B:1118:0x1a46  */
+    /* JADX WARN: Removed duplicated region for block: B:1127:0x1a82  */
+    /* JADX WARN: Removed duplicated region for block: B:1130:0x1a95  */
     /* JADX WARN: Removed duplicated region for block: B:1133:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:1135:0x1a4e  */
-    /* JADX WARN: Removed duplicated region for block: B:314:0x0764  */
-    /* JADX WARN: Removed duplicated region for block: B:769:0x131a  */
-    /* JADX WARN: Removed duplicated region for block: B:773:0x132d  */
-    /* JADX WARN: Removed duplicated region for block: B:994:0x17df  */
+    /* JADX WARN: Removed duplicated region for block: B:1135:0x1a39  */
+    /* JADX WARN: Removed duplicated region for block: B:314:0x0763  */
+    /* JADX WARN: Removed duplicated region for block: B:769:0x130f  */
+    /* JADX WARN: Removed duplicated region for block: B:773:0x1322  */
+    /* JADX WARN: Removed duplicated region for block: B:994:0x17ca  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -8180,7 +8166,6 @@ public final class qp extends c1 implements ls {
         int i28;
         int i29;
         int i30;
-        char c12;
         int i31;
         int i32;
         int i33;
@@ -8209,45 +8194,45 @@ public final class qp extends c1 implements ls {
         TLRPC.User user;
         TLRPC.UserProfilePhoto userProfilePhoto;
         boolean z18;
-        char c13;
+        char c12;
         int i37;
+        ArrayList<TLRPC.DialogPeer> arrayList11;
         int i38;
         int i39;
-        int i40;
         long j20;
         String str;
+        int i40;
         String str2;
-        int i41;
         qp qpVar = this;
-        ArrayList arrayList11 = arrayList;
-        ArrayList arrayList12 = arrayList2;
-        int i42 = qs.r;
-        int i43 = qs.E0;
-        int i44 = qs.A;
-        int i45 = qs.z;
-        int i46 = qs.m0;
-        int i47 = qs.j0;
-        if (arrayList11 != null) {
-            ArrayList arrayList13 = new ArrayList();
+        ArrayList arrayList12 = arrayList;
+        ArrayList arrayList13 = arrayList2;
+        int i41 = qs.r;
+        int i42 = qs.E0;
+        int i43 = qs.A;
+        int i44 = qs.z;
+        int i45 = qs.m0;
+        int i46 = qs.j0;
+        if (arrayList12 != null) {
             ArrayList arrayList14 = new ArrayList();
-            int size = arrayList11.size();
+            ArrayList arrayList15 = new ArrayList();
+            int size = arrayList12.size();
             i15 = i7;
-            int i48 = 0;
+            int i47 = 0;
             SharedPreferences.Editor editor2 = null;
-            int i49 = 0;
+            int i48 = 0;
             z10 = false;
-            while (i48 < size) {
-                TLRPC.Update update = (TLRPC.Update) arrayList11.get(i48);
-                int i50 = i42;
+            while (i47 < size) {
+                TLRPC.Update update = (TLRPC.Update) arrayList12.get(i47);
+                int i49 = i41;
                 if (update instanceof TL_update.TL_updateMessageID) {
-                    i22 = i43;
-                    i23 = i44;
+                    i22 = i42;
+                    i23 = i43;
                     qpVar.getMessagesStorage().a.c(new hi(5, qpVar, (TL_update.TL_updateMessageID) update));
                     i24 = size;
                 } else {
-                    i22 = i43;
-                    i23 = i44;
-                    int i51 = 8;
+                    i22 = i42;
+                    i23 = i43;
+                    int i50 = 8;
                     if (update instanceof TL_update.TL_updatePrivacy) {
                         TL_update.TL_updatePrivacy tL_updatePrivacy = (TL_update.TL_updatePrivacy) update;
                         TLRPC.PrivacyKey privacyKey = tL_updatePrivacy.key;
@@ -8308,7 +8293,7 @@ public final class qp extends c1 implements ls {
                             TLRPC.TL_user tL_user = new TLRPC.TL_user();
                             tL_user.id = tL_updateUserStatus.user_id;
                             tL_user.status = tL_updateUserStatus.status;
-                            arrayList14.add(tL_user);
+                            arrayList15.add(tL_user);
                             if (tL_updateUserStatus.user_id == qpVar.getUserConfig().e()) {
                                 qpVar.getNotificationsController().V(tL_updateUserStatus.status.expires);
                             }
@@ -8332,7 +8317,7 @@ public final class qp extends c1 implements ls {
                                 TLRPC.TL_user tL_user2 = new TLRPC.TL_user();
                                 tL_user2.id = tL_updateUserEmojiStatus.user_id;
                                 tL_user2.emoji_status = tL_updateUserEmojiStatus.emoji_status;
-                                arrayList13.add(tL_user2);
+                                arrayList14.add(tL_user2);
                             } else if (update instanceof TL_update.TL_updateUserName) {
                                 TL_update.TL_updateUserName tL_updateUserName = (TL_update.TL_updateUserName) update;
                                 TLRPC.User a24 = qpVar.a2(Long.valueOf(tL_updateUserName.user_id));
@@ -8342,116 +8327,117 @@ public final class qp extends c1 implements ls {
                                         a24.last_name = tL_updateUserName.last_name;
                                     }
                                     if (a24.usernames != null) {
-                                        for (int i52 = 0; i52 < a24.usernames.size(); i52++) {
-                                            TLRPC.TL_username tL_username = a24.usernames.get(i52);
+                                        for (int i51 = 0; i51 < a24.usernames.size(); i51++) {
+                                            TLRPC.TL_username tL_username = a24.usernames.get(i51);
                                             if (tL_username != null && !TextUtils.isEmpty(tL_username.username)) {
                                                 qpVar.e.remove(tL_username.username);
                                             }
                                         }
                                     }
-                                    for (int i53 = 0; i53 < tL_updateUserName.usernames.size(); i53++) {
-                                        String str3 = tL_updateUserName.usernames.get(i53).username;
-                                        if (!TextUtils.isEmpty(str3) && tL_updateUserName.usernames.get(i53).active) {
+                                    for (int i52 = 0; i52 < tL_updateUserName.usernames.size(); i52++) {
+                                        String str3 = tL_updateUserName.usernames.get(i52).username;
+                                        if (!TextUtils.isEmpty(str3) && tL_updateUserName.usernames.get(i52).active) {
                                             qpVar.e.put(str3, a24);
                                         }
                                     }
-                                    ArrayList<TLRPC.TL_username> arrayList15 = tL_updateUserName.usernames;
-                                    if (arrayList15 != null) {
-                                        i41 = 1;
-                                        if (arrayList15.size() > 1) {
-                                            str = null;
+                                    ArrayList<TLRPC.TL_username> arrayList16 = tL_updateUserName.usernames;
+                                    if (arrayList16 != null) {
+                                        i40 = 1;
+                                        str2 = null;
+                                        if (arrayList16.size() > 1) {
                                             a24.username = null;
                                             a24.usernames = tL_updateUserName.usernames;
                                         }
                                     } else {
-                                        i41 = 1;
+                                        i40 = 1;
+                                        str2 = null;
                                     }
-                                    str = null;
-                                    ArrayList<TLRPC.TL_username> arrayList16 = tL_updateUserName.usernames;
-                                    a24.username = (arrayList16 == null || arrayList16.size() != i41) ? null : tL_updateUserName.usernames.get(0).username;
+                                    ArrayList<TLRPC.TL_username> arrayList17 = tL_updateUserName.usernames;
+                                    a24.username = (arrayList17 == null || arrayList17.size() != i40) ? str2 : tL_updateUserName.usernames.get(0).username;
                                     a24.usernames.clear();
-                                } else {
-                                    str = null;
                                 }
                                 TLRPC.TL_user tL_user3 = new TLRPC.TL_user();
                                 tL_user3.id = tL_updateUserName.user_id;
                                 tL_user3.first_name = tL_updateUserName.first_name;
                                 tL_user3.last_name = tL_updateUserName.last_name;
-                                ArrayList<TLRPC.TL_username> arrayList17 = tL_updateUserName.usernames;
-                                if (arrayList17 != null && arrayList17.size() == 1) {
-                                    str2 = tL_updateUserName.usernames.get(0).username;
-                                    tL_user3.username = str2;
-                                    arrayList13.add(tL_user3);
+                                ArrayList<TLRPC.TL_username> arrayList18 = tL_updateUserName.usernames;
+                                if (arrayList18 != null && arrayList18.size() == 1) {
+                                    str = tL_updateUserName.usernames.get(0).username;
+                                    tL_user3.username = str;
+                                    arrayList14.add(tL_user3);
                                 }
-                                str2 = str;
-                                tL_user3.username = str2;
-                                arrayList13.add(tL_user3);
+                                str = null;
+                                tL_user3.username = str;
+                                arrayList14.add(tL_user3);
                             } else {
                                 if (update instanceof TL_update.TL_updateDialogPinned) {
                                     TL_update.TL_updateDialogPinned tL_updateDialogPinned = (TL_update.TL_updateDialogPinned) update;
                                     TLRPC.DialogPeer dialogPeer = tL_updateDialogPinned.peer;
-                                    ArrayList arrayList18 = arrayList13;
-                                    int i54 = i45;
-                                    i25 = i46;
-                                    i26 = i47;
-                                    arrayList9 = arrayList14;
+                                    ArrayList arrayList19 = arrayList14;
+                                    int i53 = i44;
+                                    i25 = i45;
+                                    i26 = i46;
+                                    arrayList9 = arrayList15;
                                     if (!qpVar.B3(dialogPeer instanceof TLRPC.TL_dialogPeer ? m5.o(((TLRPC.TL_dialogPeer) dialogPeer).peer) : 0L, tL_updateDialogPinned.pinned, null, -1L)) {
                                         qpVar.getUserConfig().y(tL_updateDialogPinned.folder_id, false);
                                         qpVar.getUserConfig().v(false);
                                         qpVar.b3(tL_updateDialogPinned.folder_id);
                                     }
-                                    i32 = i48;
-                                    i33 = i50;
+                                    i32 = i47;
+                                    i33 = i49;
                                     i30 = i22;
                                     i23 = i23;
-                                    i45 = i54;
-                                    arrayList10 = arrayList18;
+                                    i44 = i53;
+                                    arrayList10 = arrayList19;
                                 } else {
-                                    ArrayList arrayList19 = arrayList13;
-                                    arrayList9 = arrayList14;
-                                    int i55 = i45;
-                                    i25 = i46;
-                                    i26 = i47;
+                                    ArrayList arrayList20 = arrayList14;
+                                    arrayList9 = arrayList15;
+                                    int i54 = i44;
+                                    i25 = i45;
+                                    i26 = i46;
                                     if (update instanceof TL_update.TL_updatePinnedDialogs) {
                                         TL_update.TL_updatePinnedDialogs tL_updatePinnedDialogs = (TL_update.TL_updatePinnedDialogs) update;
                                         qpVar.getUserConfig().y(tL_updatePinnedDialogs.folder_id, false);
                                         qpVar.getUserConfig().v(false);
-                                        int i56 = 1;
+                                        int i55 = 1;
                                         if ((tL_updatePinnedDialogs.flags & 1) != 0) {
-                                            ArrayList arrayList20 = new ArrayList();
-                                            ArrayList<TLRPC.DialogPeer> arrayList21 = tL_updatePinnedDialogs.order;
-                                            int i57 = 0;
-                                            for (int size2 = arrayList21.size(); i57 < size2; size2 = i38) {
-                                                TLRPC.DialogPeer dialogPeer2 = arrayList21.get(i57);
+                                            ArrayList arrayList21 = new ArrayList();
+                                            ArrayList<TLRPC.DialogPeer> arrayList22 = tL_updatePinnedDialogs.order;
+                                            int size2 = arrayList22.size();
+                                            int i56 = 0;
+                                            while (i56 < size2) {
+                                                TLRPC.DialogPeer dialogPeer2 = arrayList22.get(i56);
                                                 if (dialogPeer2 instanceof TLRPC.TL_dialogPeer) {
                                                     TLRPC.Peer peer = ((TLRPC.TL_dialogPeer) dialogPeer2).peer;
                                                     long j21 = peer.user_id;
+                                                    arrayList11 = arrayList22;
                                                     i38 = size2;
-                                                    i39 = i57;
                                                     if (j21 != 0) {
                                                         j20 = j21;
                                                     } else {
                                                         long j22 = peer.chat_id;
                                                         j20 = j22 != 0 ? -j22 : -peer.channel_id;
                                                     }
-                                                    i40 = 1;
+                                                    i39 = 1;
                                                 } else {
+                                                    arrayList11 = arrayList22;
                                                     i38 = size2;
-                                                    i39 = i57;
-                                                    i40 = i56;
+                                                    i39 = i55;
                                                     j20 = 0;
                                                 }
-                                                i57 = com.google.android.recaptcha.internal.a.g(i39, i40, j20, arrayList20);
-                                                i56 = i40;
+                                                i56 = com.google.android.recaptcha.internal.a.g(i56, i39, j20, arrayList21);
+                                                size2 = i38;
+                                                i55 = i39;
+                                                arrayList22 = arrayList11;
                                             }
                                         }
                                         qpVar.b3(tL_updatePinnedDialogs.folder_id);
-                                        i32 = i48;
-                                        i33 = i50;
+                                        i32 = i47;
+                                        i33 = i49;
                                         i30 = i22;
                                         i23 = i23;
-                                        i45 = i55;
-                                        arrayList10 = arrayList19;
+                                        i44 = i54;
+                                        arrayList10 = arrayList20;
                                     } else {
                                         if (update instanceof TL_update.TL_updateUserPhoto) {
                                             TL_update.TL_updateUserPhoto tL_updateUserPhoto = (TL_update.TL_updateUserPhoto) update;
@@ -8462,7 +8448,7 @@ public final class qp extends c1 implements ls {
                                             TLRPC.TL_user tL_user4 = new TLRPC.TL_user();
                                             tL_user4.id = tL_updateUserPhoto.user_id;
                                             tL_user4.photo = tL_updateUserPhoto.photo;
-                                            arrayList10 = arrayList19;
+                                            arrayList10 = arrayList20;
                                             arrayList10.add(tL_user4);
                                             if (t10.B(a25)) {
                                                 i37 = i26;
@@ -8472,45 +8458,45 @@ public final class qp extends c1 implements ls {
                                             }
                                             i26 = i37;
                                         } else {
-                                            arrayList10 = arrayList19;
+                                            arrayList10 = arrayList20;
                                             if (update instanceof TL_update.TL_updateNewStoryReaction) {
                                                 TL_update.TL_updateNewStoryReaction tL_updateNewStoryReaction = (TL_update.TL_updateNewStoryReaction) update;
                                                 long o4 = m5.o(tL_updateNewStoryReaction.peer);
-                                                int i58 = tL_updateNewStoryReaction.story_id;
+                                                int i57 = tL_updateNewStoryReaction.story_id;
                                                 TLRPC.Message message = new TLRPC.Message();
-                                                message.id = -i58;
+                                                message.id = -i57;
                                                 message.dialog_id = o4;
                                                 message.peer_id = qpVar.z1(o4);
                                                 message.date = qpVar.getConnectionsManager().getCurrentTime();
                                                 TLRPC.User a26 = qpVar.getMessagesController().a2(Long.valueOf(message.dialog_id));
                                                 if (a26 == null || !x1(qpVar.currentAccount).getBoolean("EnableReactionsPreview", true)) {
                                                     z18 = false;
-                                                    c13 = 2;
-                                                    message.message = hd.Z(2131746522, new Object[0]);
+                                                    c12 = 2;
+                                                    message.message = id.Z(2131746524, new Object[0]);
                                                 } else {
                                                     ch.o0 a10 = ch.o0.d(tL_updateNewStoryReaction.reaction).a();
                                                     if (a10.f != null) {
-                                                        c13 = 2;
-                                                        message.message = hd.Z(2131746523, t10.i(a26), a10.f);
+                                                        c12 = 2;
+                                                        message.message = id.Z(2131746525, t10.i(a26), a10.f);
                                                         z18 = false;
                                                     } else {
                                                         z18 = false;
-                                                        c13 = 2;
-                                                        message.message = hd.Z(2131746522, new Object[0]);
+                                                        c12 = 2;
+                                                        message.message = id.Z(2131746524, new Object[0]);
                                                     }
                                                 }
-                                                ArrayList arrayList22 = new ArrayList();
-                                                c11 = c13;
+                                                ArrayList arrayList23 = new ArrayList();
+                                                c11 = c12;
                                                 ij ijVar2 = new ij(qpVar.currentAccount, message, z18, z18);
                                                 ijVar2.J = true;
                                                 ijVar2.a = 1;
                                                 if (a26 == null || t10.x(a26)) {
-                                                    ijVar2.c = hd.L0(2131746521);
+                                                    ijVar2.c = id.L0(2131746523);
                                                 } else {
                                                     ijVar2.c = t10.i(a26);
                                                 }
-                                                arrayList22.add(ijVar2);
-                                                qpVar.getNotificationsController().K(arrayList22, true, false, null);
+                                                arrayList23.add(ijVar2);
+                                                qpVar.getNotificationsController().K(arrayList23, true, false, null);
                                             } else {
                                                 c11 = 2;
                                                 if (update instanceof TL_update.TL_updateStarsBalance) {
@@ -8521,9 +8507,9 @@ public final class qp extends c1 implements ls {
                                                 } else if (update instanceof TL_update.TL_updateUser) {
                                                     TL_update.TL_updateUser tL_updateUser = (TL_update.TL_updateUser) update;
                                                     TLRPC.User a27 = qpVar.a2(Long.valueOf(tL_updateUser.user_id));
-                                                    if (arrayList12 != null) {
-                                                        for (int i59 = 0; i59 < arrayList12.size(); i59++) {
-                                                            user = (TLRPC.User) arrayList12.get(i59);
+                                                    if (arrayList13 != null) {
+                                                        for (int i58 = 0; i58 < arrayList13.size(); i58++) {
+                                                            user = (TLRPC.User) arrayList13.get(i58);
                                                             if (user != null && user.id == tL_updateUser.user_id) {
                                                                 break;
                                                             }
@@ -8560,7 +8546,7 @@ public final class qp extends c1 implements ls {
                                                     if (update instanceof TL_update.TL_updateNotifySettings) {
                                                         TL_update.TL_updateNotifySettings tL_updateNotifySettings = (TL_update.TL_updateNotifySettings) update;
                                                         if (tL_updateNotifySettings.notify_settings instanceof TLRPC.TL_peerNotifySettings) {
-                                                            i49 |= 32;
+                                                            i48 |= 32;
                                                             if (editor2 == null) {
                                                                 editor2 = qpVar.d7.edit();
                                                             }
@@ -8606,15 +8592,12 @@ public final class qp extends c1 implements ls {
                                                                     editor3.putBoolean("EnablePreviewGroup", peerNotifySettings2.show_previews);
                                                                 }
                                                                 if ((tL_updateNotifySettings.notify_settings.flags & 4) != 0) {
-                                                                    int i60 = qpVar.d7.getInt("EnableGroup2", 0);
-                                                                    int i61 = tL_updateNotifySettings.notify_settings.mute_until;
-                                                                    if (i60 != i61) {
-                                                                        editor3.putInt("EnableGroup2", i61);
+                                                                    int i59 = qpVar.d7.getInt("EnableGroup2", 0);
+                                                                    int i60 = tL_updateNotifySettings.notify_settings.mute_until;
+                                                                    if (i59 != i60) {
+                                                                        editor3.putInt("EnableGroup2", i60);
                                                                         editor3.putBoolean("overwrite_group", true);
-                                                                        g0.h3(new wj(qpVar, 9));
-                                                                        editor = editor3;
-                                                                        qpVar.getNotificationsController().g0.a(tL_updateNotifySettings.notify_settings.android_sound, editor, 0L, 0L, 0);
-                                                                        i26 = i26;
+                                                                        g0.h3(new vj(qpVar, 10));
                                                                     }
                                                                 }
                                                                 editor = editor3;
@@ -8626,7 +8609,7 @@ public final class qp extends c1 implements ls {
                                                                     if ((peerNotifySettings3.flags & 1) != 0) {
                                                                         editor3.putBoolean("EnablePreviewAll", peerNotifySettings3.show_previews);
                                                                     }
-                                                                    int i62 = tL_updateNotifySettings.notify_settings.flags;
+                                                                    int i61 = tL_updateNotifySettings.notify_settings.flags;
                                                                     Boolean valueOf = qpVar.d7.contains("EnableAllStories") ? Boolean.valueOf(qpVar.d7.getBoolean("EnableAllStories", true)) : null;
                                                                     if (qpVar.d7.contains("EnableHideStoriesSenders")) {
                                                                         i26 = i26;
@@ -8660,12 +8643,12 @@ public final class qp extends c1 implements ls {
                                                                             }
                                                                             qpVar.getNotificationsController().g0.a(tL_updateNotifySettings.notify_settings.android_sound, editor3, 0L, 0L, 1);
                                                                             if ((tL_updateNotifySettings.notify_settings.flags & 4) != 0) {
-                                                                                int i63 = qpVar.d7.getInt("EnableAll2", 0);
-                                                                                int i64 = tL_updateNotifySettings.notify_settings.mute_until;
-                                                                                if (i63 != i64) {
-                                                                                    editor3.putInt("EnableAll2", i64);
+                                                                                int i62 = qpVar.d7.getInt("EnableAll2", 0);
+                                                                                int i63 = tL_updateNotifySettings.notify_settings.mute_until;
+                                                                                if (i62 != i63) {
+                                                                                    editor3.putInt("EnableAll2", i63);
                                                                                     editor3.putBoolean("overwrite_private", true);
-                                                                                    g0.h3(new wj(qpVar, 10));
+                                                                                    g0.h3(new vj(qpVar, 11));
                                                                                 }
                                                                             }
                                                                         }
@@ -8682,12 +8665,12 @@ public final class qp extends c1 implements ls {
                                                                             editor3.putBoolean("EnablePreviewChannel", peerNotifySettings6.show_previews);
                                                                         }
                                                                         if ((tL_updateNotifySettings.notify_settings.flags & 4) != 0) {
-                                                                            int i65 = qpVar.d7.getInt("EnableChannel2", 0);
-                                                                            int i66 = tL_updateNotifySettings.notify_settings.mute_until;
-                                                                            if (i65 != i66) {
-                                                                                editor3.putInt("EnableChannel2", i66);
+                                                                            int i64 = qpVar.d7.getInt("EnableChannel2", 0);
+                                                                            int i65 = tL_updateNotifySettings.notify_settings.mute_until;
+                                                                            if (i64 != i65) {
+                                                                                editor3.putInt("EnableChannel2", i65);
                                                                                 editor3.putBoolean("overwrite_channel", true);
-                                                                                g0.h3(new wj(qpVar, 11));
+                                                                                g0.h3(new vj(qpVar, 12));
                                                                             }
                                                                         }
                                                                         editor = editor3;
@@ -8697,7 +8680,7 @@ public final class qp extends c1 implements ls {
                                                                 editor = editor3;
                                                             }
                                                             yr messagesStorage = qpVar.getMessagesStorage();
-                                                            messagesStorage.a.c(new qq(messagesStorage, 25));
+                                                            messagesStorage.a.c(new rq(messagesStorage, 26));
                                                             editor2 = editor;
                                                         } else {
                                                             i26 = i26;
@@ -8796,21 +8779,21 @@ public final class qp extends c1 implements ls {
                                                                     qpVar.I1(0L, true);
                                                                 } else {
                                                                     if (update instanceof TL_update.TL_updateSentWalletTransaction) {
-                                                                        org.telegram.ui.Wallet.n0.x(qpVar.currentAccount).O((TL_update.TL_updateSentWalletTransaction) update);
+                                                                        org.telegram.ui.Wallet.m0.x(qpVar.currentAccount).O((TL_update.TL_updateSentWalletTransaction) update);
                                                                     } else if (update instanceof TL_update.TL_updateWalletGaslessInfo) {
-                                                                        org.telegram.ui.Wallet.n0.x(qpVar.currentAccount).P((TL_update.TL_updateWalletGaslessInfo) update);
+                                                                        org.telegram.ui.Wallet.m0.x(qpVar.currentAccount).P((TL_update.TL_updateWalletGaslessInfo) update);
                                                                     } else if (update instanceof TL_update.TL_updateWalletState) {
-                                                                        org.telegram.ui.Wallet.n0.x(qpVar.currentAccount).Q((TL_update.TL_updateWalletState) update);
+                                                                        org.telegram.ui.Wallet.m0.x(qpVar.currentAccount).Q((TL_update.TL_updateWalletState) update);
                                                                     } else if (update instanceof TL_update.TL_updateWalletTonConnectSession) {
-                                                                        org.telegram.ui.Wallet.n0.x(qpVar.currentAccount).g.p(((TL_update.TL_updateWalletTonConnectSession) update).session);
+                                                                        org.telegram.ui.Wallet.m0.x(qpVar.currentAccount).g.p(((TL_update.TL_updateWalletTonConnectSession) update).session);
                                                                     } else {
                                                                         if (update instanceof TL_update.TL_updateFavedStickers) {
                                                                             qpVar.getMediaDataController().V0(2, false, false, true);
-                                                                            i32 = i48;
-                                                                            i33 = i50;
+                                                                            i32 = i47;
+                                                                            i33 = i49;
                                                                             i30 = i22;
                                                                             i23 = i23;
-                                                                            i45 = i55;
+                                                                            i44 = i54;
                                                                         } else {
                                                                             if (update instanceof TL_update.TL_updateContactsReset) {
                                                                                 qpVar.getContactsController().l();
@@ -8834,11 +8817,11 @@ public final class qp extends c1 implements ls {
                                                                                     long j30 = j28;
                                                                                     TLRPC.Peer peer6 = tL_updateDraftMessage.saved_peer_id;
                                                                                     qpVar.getMediaDataController().R1(j30, peer6 != null ? m5.o(peer6) : tL_updateDraftMessage.top_msg_id, tL_updateDraftMessage.draft, null, true);
-                                                                                    i32 = i48;
-                                                                                    i33 = i50;
+                                                                                    i32 = i47;
+                                                                                    i33 = i49;
                                                                                     i30 = i22;
                                                                                     i23 = i23;
-                                                                                    i45 = i55;
+                                                                                    i44 = i54;
                                                                                     z10 = true;
                                                                                 } else if (update instanceof TL_stories.TL_updateStoriesStealthMode) {
                                                                                     qpVar.P1().i0(((TL_stories.TL_updateStoriesStealthMode) update).stealth_mode);
@@ -8959,11 +8942,11 @@ public final class qp extends c1 implements ls {
                                                                                                     intent.putExtra("account", qpVar.currentAccount);
                                                                                                     intent.putExtra("notifications_disabled", z16);
                                                                                                     try {
-                                                                                                        int i67 = Build.VERSION.SDK_INT;
-                                                                                                        if (i67 >= 33) {
+                                                                                                        int i66 = Build.VERSION.SDK_INT;
+                                                                                                        if (i66 >= 33) {
                                                                                                             intent.putExtra("accept", true);
                                                                                                             VoIPPreNotificationService.show(t0.b, intent, phoneCall);
-                                                                                                        } else if (z16 || i67 < 26) {
+                                                                                                        } else if (z16 || i66 < 26) {
                                                                                                             t0.b.startService(intent);
                                                                                                         } else {
                                                                                                             t0.b.startForegroundService(intent);
@@ -8985,7 +8968,7 @@ public final class qp extends c1 implements ls {
                                                                                                     tL_inputPhoneCall.id = phoneCall.id;
                                                                                                     discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonBusy();
                                                                                                     a8.d("discardCall " + discardcall.reason);
-                                                                                                    qpVar.getConnectionsManager().sendRequest(discardcall, new rj(qpVar, i51));
+                                                                                                    qpVar.getConnectionsManager().sendRequest(discardcall, new rj(qpVar, i50));
                                                                                                 }
                                                                                             } else if (r2.a) {
                                                                                                 a8.b("ignoring too old call");
@@ -9035,7 +9018,7 @@ public final class qp extends c1 implements ls {
                                                                                                     qpVar.q2(j16, 0L);
                                                                                                 }
                                                                                                 i15 |= 256;
-                                                                                                i49 |= 64;
+                                                                                                i48 |= 64;
                                                                                             }
                                                                                         }
                                                                                     } else if (update instanceof TL_update.TL_updateMessagePoll) {
@@ -9084,14 +9067,14 @@ public final class qp extends c1 implements ls {
                                                                                     } else {
                                                                                         if (update instanceof TL_update.TL_updateReadChannelDiscussionInbox) {
                                                                                             TL_update.TL_updateReadChannelDiscussionInbox tL_updateReadChannelDiscussionInbox = (TL_update.TL_updateReadChannelDiscussionInbox) update;
-                                                                                            i27 = i55;
+                                                                                            i27 = i54;
                                                                                             qpVar.getNotificationCenter().k(i27, Long.valueOf(-tL_updateReadChannelDiscussionInbox.channel_id), Integer.valueOf(tL_updateReadChannelDiscussionInbox.top_msg_id), Integer.valueOf(tL_updateReadChannelDiscussionInbox.read_max_id), 0);
                                                                                             if ((tL_updateReadChannelDiscussionInbox.flags & 1) != 0) {
                                                                                                 qpVar.getMessagesStorage().d2(tL_updateReadChannelDiscussionInbox.broadcast_id, tL_updateReadChannelDiscussionInbox.broadcast_post, tL_updateReadChannelDiscussionInbox.read_max_id, 0);
                                                                                                 qpVar.getNotificationCenter().k(qs.B, Long.valueOf(tL_updateReadChannelDiscussionInbox.broadcast_id), Integer.valueOf(tL_updateReadChannelDiscussionInbox.broadcast_post), Integer.valueOf(tL_updateReadChannelDiscussionInbox.read_max_id));
                                                                                             }
                                                                                         } else {
-                                                                                            i27 = i55;
+                                                                                            i27 = i54;
                                                                                             if (update instanceof TL_update.TL_updateReadChannelDiscussionOutbox) {
                                                                                                 TL_update.TL_updateReadChannelDiscussionOutbox tL_updateReadChannelDiscussionOutbox = (TL_update.TL_updateReadChannelDiscussionOutbox) update;
                                                                                                 qpVar.getNotificationCenter().k(i27, Long.valueOf(-tL_updateReadChannelDiscussionOutbox.channel_id), Integer.valueOf(tL_updateReadChannelDiscussionOutbox.top_msg_id), 0, Integer.valueOf(tL_updateReadChannelDiscussionOutbox.read_max_id));
@@ -9113,9 +9096,9 @@ public final class qp extends c1 implements ls {
                                                                                                             if (C12 > 0) {
                                                                                                                 TLRPC.UserFull b22 = qpVar.b2(C12);
                                                                                                                 if (b22 != null) {
-                                                                                                                    int i68 = tL_updatePeerHistoryTTL.ttl_period;
-                                                                                                                    b22.ttl_period = i68;
-                                                                                                                    if (i68 == 0) {
+                                                                                                                    int i67 = tL_updatePeerHistoryTTL.ttl_period;
+                                                                                                                    b22.ttl_period = i67;
+                                                                                                                    if (i67 == 0) {
                                                                                                                         b22.flags &= -16385;
                                                                                                                     } else {
                                                                                                                         b22.flags |= TLObject.FLAG_14;
@@ -9128,15 +9111,15 @@ public final class qp extends c1 implements ls {
                                                                                                                 i23 = i28;
                                                                                                                 N0 = qpVar.N0(-C12);
                                                                                                                 if (N0 != null) {
-                                                                                                                    int i69 = tL_updatePeerHistoryTTL.ttl_period;
-                                                                                                                    N0.ttl_period = i69;
+                                                                                                                    int i68 = tL_updatePeerHistoryTTL.ttl_period;
+                                                                                                                    N0.ttl_period = i68;
                                                                                                                     if (N0 instanceof TLRPC.TL_channelFull) {
-                                                                                                                        if (i69 == 0) {
+                                                                                                                        if (i68 == 0) {
                                                                                                                             N0.flags &= -16777217;
                                                                                                                         } else {
                                                                                                                             N0.flags |= 16777216;
                                                                                                                         }
-                                                                                                                    } else if (i69 == 0) {
+                                                                                                                    } else if (i68 == 0) {
                                                                                                                         N0.flags &= -16385;
                                                                                                                     } else {
                                                                                                                         N0.flags |= TLObject.FLAG_14;
@@ -9146,10 +9129,10 @@ public final class qp extends c1 implements ls {
                                                                                                             }
                                                                                                             if (N0 != null) {
                                                                                                                 qs notificationCenter = qpVar.getNotificationCenter();
-                                                                                                                int i70 = qs.T;
+                                                                                                                int i69 = qs.T;
                                                                                                                 j14 = C12;
                                                                                                                 Boolean bool4 = Boolean.FALSE;
-                                                                                                                notificationCenter.k(i70, N0, 0, bool4, bool4);
+                                                                                                                notificationCenter.k(i69, N0, 0, bool4, bool4);
                                                                                                                 qpVar.getMessagesStorage().N1(N0, false);
                                                                                                             } else {
                                                                                                                 j14 = C12;
@@ -9162,10 +9145,10 @@ public final class qp extends c1 implements ls {
                                                                                                                     dialog = (TLRPC.Dialog) qpVar.Q.f(j14);
                                                                                                                     if (dialog == null) {
                                                                                                                         dialog.ttl_period = tL_updatePeerHistoryTTL.ttl_period;
-                                                                                                                        i29 = i50;
+                                                                                                                        i29 = i49;
                                                                                                                         qpVar.getNotificationCenter().k(i29, 0);
                                                                                                                     } else {
-                                                                                                                        i29 = i50;
+                                                                                                                        i29 = i49;
                                                                                                                     }
                                                                                                                 }
                                                                                                             }
@@ -9177,7 +9160,7 @@ public final class qp extends c1 implements ls {
                                                                                                             }
                                                                                                         } else {
                                                                                                             i23 = i28;
-                                                                                                            i29 = i50;
+                                                                                                            i29 = i49;
                                                                                                             i30 = i22;
                                                                                                             if (update instanceof TL_update.TL_updatePendingJoinRequests) {
                                                                                                                 qpVar.getMemberRequestsController().c((TL_update.TL_updatePendingJoinRequests) update);
@@ -9198,13 +9181,13 @@ public final class qp extends c1 implements ls {
                                                                                                                     }
                                                                                                                     if (!(tL_updateTranscribedAudio.pending && TextUtils.isEmpty(tL_updateTranscribedAudio.text)) && (tL_updateTranscribedAudio.pending || !s11.f(null, tL_updateTranscribedAudio.transcription_id, tL_updateTranscribedAudio.text))) {
                                                                                                                         qpVar.getMessagesStorage().b2(tL_updateTranscribedAudio.msg_id, m5.o(tL_updateTranscribedAudio.peer), tL_updateTranscribedAudio.transcription_id, tL_updateTranscribedAudio.text, !tL_updateTranscribedAudio.pending);
-                                                                                                                        c12 = 2;
+                                                                                                                        c11 = 2;
                                                                                                                         qpVar.getNotificationCenter().k(qs.A1, null, Long.valueOf(tL_updateTranscribedAudio.transcription_id), tL_updateTranscribedAudio.text, null, Boolean.valueOf(!tL_updateTranscribedAudio.pending));
                                                                                                                     } else {
-                                                                                                                        c12 = 2;
+                                                                                                                        c11 = 2;
                                                                                                                     }
                                                                                                                 } else {
-                                                                                                                    c12 = 2;
+                                                                                                                    c11 = 2;
                                                                                                                     if (update instanceof TL_update.TL_updateSentStoryReaction) {
                                                                                                                         TL_update.TL_updateSentStoryReaction tL_updateSentStoryReaction = (TL_update.TL_updateSentStoryReaction) update;
                                                                                                                         qpVar.P1().t0(m5.o(tL_updateSentStoryReaction.peer), tL_updateSentStoryReaction.story_id, tL_updateSentStoryReaction.reaction);
@@ -9245,8 +9228,8 @@ public final class qp extends c1 implements ls {
                                                                                                                         } else {
                                                                                                                             i31 = i29;
                                                                                                                             if ((update instanceof TL_update.TL_updatePinnedSavedDialogs) || (update instanceof TL_update.TL_updateSavedDialogPinned)) {
-                                                                                                                                i45 = i27;
-                                                                                                                                i32 = i48;
+                                                                                                                                i44 = i27;
+                                                                                                                                i32 = i47;
                                                                                                                                 i33 = i31;
                                                                                                                                 qpVar.G1().i(update);
                                                                                                                             } else if (!kg.t1.f(qpVar.currentAccount).j(update, null, 0)) {
@@ -9266,13 +9249,13 @@ public final class qp extends c1 implements ls {
                                                                                                                                     }
                                                                                                                                 } else if (update instanceof TL_update.TL_updateChatParticipantRank) {
                                                                                                                                     TL_update.TL_updateChatParticipantRank tL_updateChatParticipantRank = (TL_update.TL_updateChatParticipantRank) update;
-                                                                                                                                    i45 = i27;
-                                                                                                                                    i32 = i48;
+                                                                                                                                    i44 = i27;
+                                                                                                                                    i32 = i47;
                                                                                                                                     i33 = i31;
                                                                                                                                     qpVar.p5(tL_updateChatParticipantRank.chat_id, tL_updateChatParticipantRank.rank, tL_updateChatParticipantRank.user_id);
                                                                                                                                 } else {
-                                                                                                                                    i45 = i27;
-                                                                                                                                    i32 = i48;
+                                                                                                                                    i44 = i27;
+                                                                                                                                    i32 = i47;
                                                                                                                                     i33 = i31;
                                                                                                                                     if (update instanceof TL_update.TL_updateAiComposeTones) {
                                                                                                                                         e eVar = qpVar.t7;
@@ -9289,189 +9272,189 @@ public final class qp extends c1 implements ls {
                                                                                                                                 }
                                                                                                                             }
                                                                                                                         }
-                                                                                                                        i45 = i27;
-                                                                                                                        i32 = i48;
+                                                                                                                        i44 = i27;
+                                                                                                                        i32 = i47;
                                                                                                                         i33 = i31;
                                                                                                                     }
                                                                                                                 }
-                                                                                                                i45 = i27;
-                                                                                                                i32 = i48;
+                                                                                                                i44 = i27;
+                                                                                                                i32 = i47;
                                                                                                                 i33 = i29;
                                                                                                             }
                                                                                                         }
-                                                                                                        i45 = i27;
-                                                                                                        i32 = i48;
+                                                                                                        i44 = i27;
+                                                                                                        i32 = i47;
                                                                                                         i33 = i29;
                                                                                                     }
                                                                                                 }
                                                                                                 i23 = i28;
-                                                                                                i45 = i27;
-                                                                                                i32 = i48;
-                                                                                                i33 = i50;
+                                                                                                i44 = i27;
+                                                                                                i32 = i47;
+                                                                                                i33 = i49;
                                                                                                 i30 = i22;
                                                                                             }
                                                                                         }
-                                                                                        i45 = i27;
-                                                                                        i32 = i48;
-                                                                                        i33 = i50;
+                                                                                        i44 = i27;
+                                                                                        i32 = i47;
+                                                                                        i33 = i49;
                                                                                         i30 = i22;
                                                                                         i23 = i23;
                                                                                     }
                                                                                 }
                                                                             }
-                                                                            i32 = i48;
-                                                                            i33 = i50;
+                                                                            i32 = i47;
+                                                                            i33 = i49;
                                                                             i30 = i22;
                                                                             i23 = i23;
-                                                                            i45 = i55;
+                                                                            i44 = i54;
                                                                         }
-                                                                        i48 = i32 + 1;
-                                                                        arrayList13 = arrayList10;
-                                                                        i43 = i30;
-                                                                        i42 = i33;
-                                                                        i44 = i23;
+                                                                        i47 = i32 + 1;
+                                                                        arrayList14 = arrayList10;
+                                                                        i42 = i30;
+                                                                        i41 = i33;
+                                                                        i43 = i23;
                                                                         size = i24;
-                                                                        i46 = i25;
-                                                                        i47 = i26;
-                                                                        arrayList14 = arrayList9;
-                                                                        arrayList11 = arrayList;
-                                                                        arrayList12 = arrayList2;
+                                                                        i45 = i25;
+                                                                        i46 = i26;
+                                                                        arrayList15 = arrayList9;
+                                                                        arrayList12 = arrayList;
+                                                                        arrayList13 = arrayList2;
                                                                     }
-                                                                    i32 = i48;
-                                                                    i33 = i50;
+                                                                    i32 = i47;
+                                                                    i33 = i49;
                                                                     i30 = i22;
                                                                     i23 = i23;
-                                                                    i45 = i55;
-                                                                    i48 = i32 + 1;
-                                                                    arrayList13 = arrayList10;
-                                                                    i43 = i30;
-                                                                    i42 = i33;
-                                                                    i44 = i23;
+                                                                    i44 = i54;
+                                                                    i47 = i32 + 1;
+                                                                    arrayList14 = arrayList10;
+                                                                    i42 = i30;
+                                                                    i41 = i33;
+                                                                    i43 = i23;
                                                                     size = i24;
-                                                                    i46 = i25;
-                                                                    i47 = i26;
-                                                                    arrayList14 = arrayList9;
-                                                                    arrayList11 = arrayList;
-                                                                    arrayList12 = arrayList2;
+                                                                    i45 = i25;
+                                                                    i46 = i26;
+                                                                    arrayList15 = arrayList9;
+                                                                    arrayList12 = arrayList;
+                                                                    arrayList13 = arrayList2;
                                                                 }
                                                             }
                                                             i15 = i36;
                                                         }
                                                     }
-                                                    i32 = i48;
-                                                    i33 = i50;
+                                                    i32 = i47;
+                                                    i33 = i49;
                                                     i30 = i22;
                                                     i23 = i23;
-                                                    i45 = i55;
-                                                    i48 = i32 + 1;
-                                                    arrayList13 = arrayList10;
-                                                    i43 = i30;
-                                                    i42 = i33;
-                                                    i44 = i23;
+                                                    i44 = i54;
+                                                    i47 = i32 + 1;
+                                                    arrayList14 = arrayList10;
+                                                    i42 = i30;
+                                                    i41 = i33;
+                                                    i43 = i23;
                                                     size = i24;
-                                                    i46 = i25;
-                                                    i47 = i26;
-                                                    arrayList14 = arrayList9;
-                                                    arrayList11 = arrayList;
-                                                    arrayList12 = arrayList2;
+                                                    i45 = i25;
+                                                    i46 = i26;
+                                                    arrayList15 = arrayList9;
+                                                    arrayList12 = arrayList;
+                                                    arrayList13 = arrayList2;
                                                 }
                                             }
                                             i26 = i26;
-                                            i32 = i48;
-                                            i33 = i50;
+                                            i32 = i47;
+                                            i33 = i49;
                                             i30 = i22;
                                             i23 = i23;
-                                            i45 = i55;
-                                            i48 = i32 + 1;
-                                            arrayList13 = arrayList10;
-                                            i43 = i30;
-                                            i42 = i33;
-                                            i44 = i23;
+                                            i44 = i54;
+                                            i47 = i32 + 1;
+                                            arrayList14 = arrayList10;
+                                            i42 = i30;
+                                            i41 = i33;
+                                            i43 = i23;
                                             size = i24;
-                                            i46 = i25;
-                                            i47 = i26;
-                                            arrayList14 = arrayList9;
-                                            arrayList11 = arrayList;
-                                            arrayList12 = arrayList2;
+                                            i45 = i25;
+                                            i46 = i26;
+                                            arrayList15 = arrayList9;
+                                            arrayList12 = arrayList;
+                                            arrayList13 = arrayList2;
                                         }
-                                        i32 = i48;
-                                        i33 = i50;
+                                        i32 = i47;
+                                        i33 = i49;
                                         i30 = i22;
                                         i23 = i23;
-                                        i45 = i55;
+                                        i44 = i54;
                                     }
-                                    i48 = i32 + 1;
-                                    arrayList13 = arrayList10;
-                                    i43 = i30;
-                                    i42 = i33;
-                                    i44 = i23;
+                                    i47 = i32 + 1;
+                                    arrayList14 = arrayList10;
+                                    i42 = i30;
+                                    i41 = i33;
+                                    i43 = i23;
                                     size = i24;
-                                    i46 = i25;
-                                    i47 = i26;
-                                    arrayList14 = arrayList9;
-                                    arrayList11 = arrayList;
-                                    arrayList12 = arrayList2;
+                                    i45 = i25;
+                                    i46 = i26;
+                                    arrayList15 = arrayList9;
+                                    arrayList12 = arrayList;
+                                    arrayList13 = arrayList2;
                                 }
-                                i48 = i32 + 1;
-                                arrayList13 = arrayList10;
-                                i43 = i30;
-                                i42 = i33;
-                                i44 = i23;
+                                i47 = i32 + 1;
+                                arrayList14 = arrayList10;
+                                i42 = i30;
+                                i41 = i33;
+                                i43 = i23;
                                 size = i24;
-                                i46 = i25;
-                                i47 = i26;
-                                arrayList14 = arrayList9;
-                                arrayList11 = arrayList;
-                                arrayList12 = arrayList2;
+                                i45 = i25;
+                                i46 = i26;
+                                arrayList15 = arrayList9;
+                                arrayList12 = arrayList;
+                                arrayList13 = arrayList2;
                             }
                         }
                     }
                     i24 = size;
-                    arrayList9 = arrayList14;
-                    i25 = i46;
-                    i26 = i47;
-                    i33 = i50;
+                    arrayList9 = arrayList15;
+                    i25 = i45;
+                    i26 = i46;
+                    i33 = i49;
                     i30 = i22;
-                    arrayList10 = arrayList13;
-                    i32 = i48;
-                    i48 = i32 + 1;
-                    arrayList13 = arrayList10;
-                    i43 = i30;
-                    i42 = i33;
-                    i44 = i23;
+                    arrayList10 = arrayList14;
+                    i32 = i47;
+                    i47 = i32 + 1;
+                    arrayList14 = arrayList10;
+                    i42 = i30;
+                    i41 = i33;
+                    i43 = i23;
                     size = i24;
-                    i46 = i25;
-                    i47 = i26;
-                    arrayList14 = arrayList9;
-                    arrayList11 = arrayList;
-                    arrayList12 = arrayList2;
+                    i45 = i25;
+                    i46 = i26;
+                    arrayList15 = arrayList9;
+                    arrayList12 = arrayList;
+                    arrayList13 = arrayList2;
                 }
-                arrayList9 = arrayList14;
-                i25 = i46;
-                i26 = i47;
-                i33 = i50;
+                arrayList9 = arrayList15;
+                i25 = i45;
+                i26 = i46;
+                i33 = i49;
                 i30 = i22;
-                arrayList10 = arrayList13;
-                i32 = i48;
-                i48 = i32 + 1;
-                arrayList13 = arrayList10;
-                i43 = i30;
-                i42 = i33;
-                i44 = i23;
+                arrayList10 = arrayList14;
+                i32 = i47;
+                i47 = i32 + 1;
+                arrayList14 = arrayList10;
+                i42 = i30;
+                i41 = i33;
+                i43 = i23;
                 size = i24;
-                i46 = i25;
-                i47 = i26;
-                arrayList14 = arrayList9;
-                arrayList11 = arrayList;
-                arrayList12 = arrayList2;
+                i45 = i25;
+                i46 = i26;
+                arrayList15 = arrayList9;
+                arrayList12 = arrayList;
+                arrayList13 = arrayList2;
             }
-            i11 = i42;
-            i12 = i43;
-            ArrayList arrayList23 = arrayList14;
-            i13 = i46;
+            i11 = i41;
+            i12 = i42;
+            ArrayList arrayList24 = arrayList15;
+            i13 = i45;
             i14 = 9;
             j3 = 0;
-            ArrayList arrayList24 = arrayList13;
+            ArrayList arrayList25 = arrayList14;
             if (editor2 != null) {
                 editor2.commit();
                 z15 = false;
@@ -9479,13 +9462,13 @@ public final class qp extends c1 implements ls {
             } else {
                 z15 = false;
             }
-            qpVar.getMessagesStorage().k2(arrayList23, true);
-            qpVar.getMessagesStorage().k2(arrayList24, z15);
-            i16 = i49;
+            qpVar.getMessagesStorage().k2(arrayList24, true);
+            qpVar.getMessagesStorage().k2(arrayList25, z15);
+            i16 = i48;
         } else {
-            i11 = i42;
-            i12 = i43;
-            i13 = i46;
+            i11 = i41;
+            i12 = i42;
+            i13 = i45;
             i14 = 9;
             j3 = 0;
             i15 = i7;
@@ -9494,10 +9477,10 @@ public final class qp extends c1 implements ls {
         }
         if (arrayList3 != null) {
             int size3 = arrayList3.size();
-            int i71 = 0;
-            while (i71 < size3) {
-                Object obj = arrayList3.get(i71);
-                i71++;
+            int i70 = 0;
+            while (i70 < size3) {
+                Object obj = arrayList3.get(i70);
+                i70++;
                 TLRPC.Message message2 = (TLRPC.Message) obj;
                 long C13 = ij.C1(message2.peer_id);
                 long C14 = ij.C1(message2.from_id);
@@ -9529,38 +9512,38 @@ public final class qp extends c1 implements ls {
         }
         if (arrayList4 != null) {
             int size4 = arrayList4.size();
-            for (int i72 = 0; i72 < size4; i72++) {
-                qpVar.getMediaDataController().u0(((Long) arrayList4.get(i72)).longValue());
+            for (int i71 = 0; i71 < size4; i71++) {
+                qpVar.getMediaDataController().u0(((Long) arrayList4.get(i71)).longValue());
             }
         }
         if (hVar != null) {
             int m10 = hVar.m();
-            for (int i73 = 0; i73 < m10; i73++) {
-                r3 r3Var3 = (r3) qpVar.n1.f(hVar.j(i73));
+            for (int i72 = 0; i72 < m10; i72++) {
+                r3 r3Var3 = (r3) qpVar.n1.f(hVar.j(i72));
                 if (r3Var3 != null) {
                     qpVar.getAccountInstance();
-                    r3Var3.q(i10, (ArrayList) hVar.n(i73));
+                    r3Var3.q(i10, (ArrayList) hVar.n(i72));
                 }
             }
         }
         if (longSparseIntArray != null) {
             int size5 = longSparseIntArray.size();
-            for (int i74 = 0; i74 < size5; i74++) {
-                xy B = qpVar.getSendMessagesHelper().B(longSparseIntArray.keyAt(i74));
+            for (int i73 = 0; i73 < size5; i73++) {
+                xy B = qpVar.getSendMessagesHelper().B(longSparseIntArray.keyAt(i73));
                 if (B != null) {
-                    B.c(longSparseIntArray.valueAt(i74));
+                    B.c(longSparseIntArray.valueAt(i73));
                 }
             }
         }
         if (hVar2 != null) {
-            int i75 = 1;
+            int i74 = 1;
             qpVar.getNotificationCenter().k(qs.w0, hVar2);
-            int i76 = 0;
-            while (i76 < 3) {
-                if (i76 == i75) {
+            int i75 = 0;
+            while (i75 < 3) {
+                if (i75 == i74) {
                     hVar12 = qpVar.G1;
                     i20 = 1;
-                } else if (i76 == 2) {
+                } else if (i75 == 2) {
                     hVar12 = qpVar.I1;
                     i20 = 3;
                 } else {
@@ -9568,67 +9551,67 @@ public final class qp extends c1 implements ls {
                     i20 = 0;
                 }
                 int m11 = hVar2.m();
-                int i77 = 0;
-                while (i77 < m11) {
-                    long j34 = hVar2.j(i77);
-                    ArrayList arrayList25 = (ArrayList) hVar12.f(j34);
+                int i76 = 0;
+                while (i76 < m11) {
+                    long j34 = hVar2.j(i76);
+                    ArrayList arrayList26 = (ArrayList) hVar12.f(j34);
                     hVar12.l(j34);
-                    if (arrayList25 != null) {
-                        TLRPC.WebPage webPage = (TLRPC.WebPage) hVar2.n(i77);
-                        ArrayList arrayList26 = new ArrayList();
+                    if (arrayList26 != null) {
+                        TLRPC.WebPage webPage = (TLRPC.WebPage) hVar2.n(i76);
+                        ArrayList arrayList27 = new ArrayList();
                         if ((webPage instanceof TLRPC.TL_webPage) || (webPage instanceof TLRPC.TL_webPageEmpty)) {
-                            int size6 = arrayList25.size();
+                            int size6 = arrayList26.size();
                             j12 = j3;
-                            for (int i78 = 0; i78 < size6; i78++) {
-                                ((ij) arrayList25.get(i78)).k.media.webpage = webPage;
-                                if (i78 == 0) {
-                                    j12 = ((ij) arrayList25.get(i78)).A0();
-                                    gc.W(((ij) arrayList25.get(i78)).k);
+                            for (int i77 = 0; i77 < size6; i77++) {
+                                ((ij) arrayList26.get(i77)).k.media.webpage = webPage;
+                                if (i77 == 0) {
+                                    j12 = ((ij) arrayList26.get(i77)).A0();
+                                    gc.W(((ij) arrayList26.get(i77)).k);
                                 }
-                                arrayList26.add(((ij) arrayList25.get(i78)).k);
+                                arrayList27.add(((ij) arrayList26.get(i77)).k);
                             }
                         } else {
-                            hVar12.k(arrayList25, webPage.id);
+                            hVar12.k(arrayList26, webPage.id);
                             j12 = j3;
                         }
-                        if (!arrayList26.isEmpty()) {
-                            qpVar.getMessagesStorage().i1(qpVar.getDownloadController().l(), i20, 0L, arrayList26, true);
+                        if (!arrayList27.isEmpty()) {
+                            qpVar.getMessagesStorage().i1(qpVar.getDownloadController().l(), i20, 0L, arrayList27, true);
                             i21 = i13;
-                            qpVar.getNotificationCenter().k(i21, Long.valueOf(j12), arrayList25);
-                            i77++;
+                            qpVar.getNotificationCenter().k(i21, Long.valueOf(j12), arrayList26);
+                            i76++;
                             i13 = i21;
                         }
                     }
                     i21 = i13;
-                    i77++;
+                    i76++;
                     i13 = i21;
                 }
-                i76++;
-                i75 = 1;
+                i75++;
+                i74 = 1;
             }
         }
-        int i79 = i13;
+        int i78 = i13;
         if (i16 != 0) {
-            int i80 = 0;
+            int i79 = 0;
             while (true) {
                 vo[] voVarArr = qpVar.M;
-                if (i80 >= voVarArr.length) {
+                if (i79 >= voVarArr.length) {
                     break;
                 }
-                vo voVar = voVarArr[i80];
+                vo voVar = voVarArr[i79];
                 if (voVar != null && (voVar.g & i16) != 0) {
                     z11 = true;
                     break;
                 }
-                i80++;
+                i79++;
             }
         }
         z11 = z10;
         if (hVar3 != null) {
             int m12 = hVar3.m();
             boolean z32 = false;
-            for (int i81 = 0; i81 < m12; i81++) {
-                if (qpVar.l5(0, hVar3.j(i81), (ArrayList) hVar3.n(i81))) {
+            for (int i80 = 0; i80 < m12; i80++) {
+                if (qpVar.l5(0, hVar3.j(i80), (ArrayList) hVar3.n(i80))) {
                     z32 = true;
                 }
             }
@@ -9646,23 +9629,23 @@ public final class qp extends c1 implements ls {
                 z12 = false;
                 if (hVar10 != null) {
                     int m13 = hVar10.m();
-                    for (int i82 = 0; i82 < m13; i82++) {
-                        qpVar.l5(1, hVar10.j(i82), (ArrayList) hVar10.n(i82));
+                    for (int i81 = 0; i81 < m13; i81++) {
+                        qpVar.l5(1, hVar10.j(i81), (ArrayList) hVar10.n(i81));
                     }
                 }
                 hVar11 = hVar5;
                 if (hVar11 != null) {
                     int m14 = hVar11.m();
                     boolean z33 = z12;
-                    int i83 = 0;
-                    while (i83 < m14) {
-                        long j35 = hVar11.j(i83);
-                        ArrayList arrayList27 = (ArrayList) hVar11.n(i83);
-                        int size7 = arrayList27.size();
+                    int i82 = 0;
+                    while (i82 < m14) {
+                        long j35 = hVar11.j(i82);
+                        ArrayList arrayList28 = (ArrayList) hVar11.n(i82);
+                        int size7 = arrayList28.size();
                         SparseBooleanArray sparseBooleanArray2 = sparseBooleanArray;
-                        int i84 = 0;
-                        while (i84 < size7) {
-                            ij ijVar3 = (ij) arrayList27.get(i84);
+                        int i83 = 0;
+                        while (i83 < size7) {
+                            ij ijVar3 = (ij) arrayList28.get(i83);
                             if (j35 > j3) {
                                 if (sparseBooleanArray2 == null) {
                                     sparseBooleanArray2 = new SparseBooleanArray();
@@ -9671,8 +9654,8 @@ public final class qp extends c1 implements ls {
                                 i19 = m14;
                                 TLRPC.Message message3 = ijVar3.k;
                                 if (message3 != null && (tL_messageReactions = message3.reactions) != null) {
-                                    for (int i85 = 0; i85 < tL_messageReactions.recent_reactions.size(); i85++) {
-                                        if (tL_messageReactions.recent_reactions.get(i85).unread) {
+                                    for (int i84 = 0; i84 < tL_messageReactions.recent_reactions.size(); i84++) {
+                                        if (tL_messageReactions.recent_reactions.get(i84).unread) {
                                             z13 = true;
                                             break;
                                         }
@@ -9687,10 +9670,10 @@ public final class qp extends c1 implements ls {
                             } else {
                                 i19 = m14;
                             }
-                            i84++;
+                            i83++;
                             m14 = i19;
                         }
-                        int i86 = m14;
+                        int i85 = m14;
                         if (j35 > j3) {
                             P(j35, 0L, sparseBooleanArray2, true);
                             qpVar = this;
@@ -9699,19 +9682,19 @@ public final class qp extends c1 implements ls {
                             qpVar = this;
                             j10 = j35;
                         }
-                        ArrayList arrayList28 = (ArrayList) qpVar.R.f(j10);
-                        if (arrayList28 != null) {
+                        ArrayList arrayList29 = (ArrayList) qpVar.R.f(j10);
+                        if (arrayList29 != null) {
                             boolean z34 = z33;
-                            int i87 = 0;
-                            while (i87 < arrayList28.size()) {
-                                ij ijVar4 = (ij) arrayList28.get(i87);
-                                int size8 = arrayList27.size();
-                                int i88 = 0;
-                                while (i88 < size8) {
-                                    ij ijVar5 = (ij) arrayList27.get(i88);
+                            int i86 = 0;
+                            while (i86 < arrayList29.size()) {
+                                ij ijVar4 = (ij) arrayList29.get(i86);
+                                int size8 = arrayList28.size();
+                                int i87 = 0;
+                                while (i87 < size8) {
+                                    ij ijVar5 = (ij) arrayList28.get(i87);
                                     j11 = j10;
                                     if (ijVar4.f1() == ijVar5.f1()) {
-                                        arrayList28.set(i87, ijVar5);
+                                        arrayList29.set(i86, ijVar5);
                                         TLRPC.Peer peer10 = ijVar5.k.peer_id;
                                         if (peer10 != null && peer10.channel_id == j3) {
                                             qpVar.U.put(ijVar5.f1(), ijVar5);
@@ -9720,53 +9703,53 @@ public final class qp extends c1 implements ls {
                                         ijVar4.C = ijVar5;
                                         ijVar4.q0(null, null);
                                     } else {
-                                        i88++;
+                                        i87++;
                                         j10 = j11;
                                     }
                                     z34 = true;
                                     break;
                                 }
                                 j11 = j10;
-                                i87++;
+                                i86++;
                                 j10 = j11;
                             }
                             z33 = z34;
                         }
                         long j36 = j10;
                         sparseBooleanArray = null;
-                        qpVar.getMediaDataController().X0(arrayList27, j36, 0, 0L, null, 0, null);
-                        qpVar.getNotificationCenter().k(i79, Long.valueOf(j36), arrayList27, Boolean.FALSE);
-                        i83++;
-                        m14 = i86;
+                        qpVar.getMediaDataController().X0(arrayList28, j36, 0, 0L, null, 0, null);
+                        qpVar.getNotificationCenter().k(i78, Long.valueOf(j36), arrayList28, Boolean.FALSE);
+                        i82++;
+                        m14 = i85;
                         hVar11 = hVar5;
                     }
                     z12 = z33;
                 }
                 if (vVar != null) {
                     int m15 = vVar.a.c.m();
-                    for (int i89 = 0; i89 < m15; i89++) {
-                        qpVar.getNotificationCenter().k(1, Long.valueOf(vVar.a.c.j(i89)), vVar.a.c.n(i89), Boolean.FALSE, Integer.valueOf(i14));
+                    for (int i88 = 0; i88 < m15; i88++) {
+                        qpVar.getNotificationCenter().k(1, Long.valueOf(vVar.a.c.j(i88)), vVar.a.c.n(i88), Boolean.FALSE, Integer.valueOf(i14));
                     }
                     int m16 = vVar.b.c.m();
-                    for (int i90 = 0; i90 < m16; i90++) {
-                        qpVar.getNotificationCenter().k(i79, Long.valueOf(vVar.b.c.j(i90)), vVar.b.c.n(i90), Boolean.FALSE);
+                    for (int i89 = 0; i89 < m16; i89++) {
+                        qpVar.getNotificationCenter().k(i78, Long.valueOf(vVar.b.c.j(i89)), vVar.b.c.n(i89), Boolean.FALSE);
                     }
                 }
                 if (hVar6 != null) {
                     int m17 = hVar6.m();
-                    for (int i91 = 0; i91 < m17; i91++) {
-                        long j37 = hVar6.j(i91);
-                        ArrayList arrayList29 = (ArrayList) hVar6.n(i91);
-                        if (arrayList29 != null) {
-                            ArrayList arrayList30 = new ArrayList(arrayList29.size());
-                            int size9 = arrayList29.size();
-                            int i92 = 0;
-                            while (i92 < size9) {
-                                Object obj2 = arrayList29.get(i92);
-                                i92++;
-                                arrayList30.add(Integer.valueOf((((Integer) obj2).intValue() & (-1879048193)) | 1610612736));
+                    for (int i90 = 0; i90 < m17; i90++) {
+                        long j37 = hVar6.j(i90);
+                        ArrayList arrayList30 = (ArrayList) hVar6.n(i90);
+                        if (arrayList30 != null) {
+                            ArrayList arrayList31 = new ArrayList(arrayList30.size());
+                            int size9 = arrayList30.size();
+                            int i91 = 0;
+                            while (i91 < size9) {
+                                Object obj2 = arrayList30.get(i91);
+                                i91++;
+                                arrayList31.add(Integer.valueOf((((Integer) obj2).intValue() & (-1879048193)) | 1610612736));
                             }
-                            qpVar.getNotificationCenter().k(qs.w, arrayList30, Long.valueOf(-j37), Boolean.FALSE);
+                            qpVar.getNotificationCenter().k(qs.w, arrayList31, Long.valueOf(-j37), Boolean.FALSE);
                         }
                     }
                 }
@@ -9784,8 +9767,9 @@ public final class qp extends c1 implements ls {
                 }
                 if (arrayList7 != null) {
                     int size10 = arrayList7.size();
-                    for (int i93 = i17; i93 < size10; i93++) {
-                        qpVar.getMessagesStorage().O1((TLRPC.ChatParticipants) arrayList7.get(i93));
+                    while (i17 < size10) {
+                        qpVar.getMessagesStorage().O1((TLRPC.ChatParticipants) arrayList7.get(i17));
+                        i17++;
                     }
                 }
                 if (hVar7 != null && hVar8 == null && hVar9 == null) {
@@ -9837,19 +9821,19 @@ public final class qp extends c1 implements ls {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x00a4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x00a3, code lost:
     
         if (r8.w < r7) goto L42;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x00a6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x00a5, code lost:
     
         r7 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:70:0x00ca, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:70:0x00c9, code lost:
     
         if ((r7.r + r6.pts_count) == r6.pts) goto L44;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:75:0x00ef, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:75:0x00ee, code lost:
     
         if ((r6.updates.size() + r7.s) == r6.pts) goto L44;
      */
@@ -9860,17 +9844,17 @@ public final class qp extends c1 implements ls {
         ArrayList arrayList;
         boolean z9;
         if (i7 == 0) {
-            vj vjVar = new vj(this, 8);
+            jl jlVar = new jl(this, 7);
             arrayList = this.e1;
-            Collections.sort(arrayList, vjVar);
+            Collections.sort(arrayList, jlVar);
         } else if (i7 == 1) {
-            jg.x xVar = new jg.x(28);
+            jl jlVar2 = new jl(8);
             arrayList = this.f1;
-            Collections.sort(arrayList, xVar);
+            Collections.sort(arrayList, jlVar2);
         } else if (i7 == 2) {
-            jg.x xVar2 = new jg.x(29);
+            jg.x xVar = new jg.x(28);
             arrayList = this.g1;
-            Collections.sort(arrayList, xVar2);
+            Collections.sort(arrayList, xVar);
         } else {
             arrayList = null;
         }
@@ -10060,13 +10044,14 @@ public final class qp extends c1 implements ls {
         contactsController.V = null;
         contactsController.Q = null;
         contactsController.R = null;
-        Utilities.e.c(new x4(contactsController, 5));
+        int i7 = 4;
+        Utilities.e.c(new k4(contactsController, i7));
         MediaController.B().o();
         dt notificationsController = getNotificationsController();
         notificationsController.w.clear();
         notificationsController.x.clear();
         notificationsController.Q = false;
-        dt.k0.c(new rs(notificationsController, 4));
+        dt.k0.c(new rs(notificationsController, i7));
         gz sendMessagesHelper = getSendMessagesHelper();
         sendMessagesHelper.a.clear();
         sendMessagesHelper.b.clear();
@@ -10099,28 +10084,28 @@ public final class qp extends c1 implements ls {
         locationController.G.b();
         locationController.d.b();
         sd.s();
-        Utilities.d.c(new id(locationController, 2));
+        Utilities.d.c(new jd(locationController, 2));
         ui mediaDataController = getMediaDataController();
-        int i7 = 0;
+        int i10 = 0;
         while (true) {
             ArrayList[] arrayListArr = mediaDataController.f0;
-            if (i7 >= arrayListArr.length) {
+            if (i10 >= arrayListArr.length) {
                 break;
             }
-            ArrayList arrayList = arrayListArr[i7];
+            ArrayList arrayList = arrayListArr[i10];
             if (arrayList != null) {
                 arrayList.clear();
             }
-            mediaDataController.g0[i7] = false;
-            mediaDataController.h0[i7] = false;
-            i7++;
+            mediaDataController.g0[i10] = false;
+            mediaDataController.h0[i10] = false;
+            i10++;
         }
-        for (int i10 = 0; i10 < 4; i10++) {
-            mediaDataController.X[i10] = 0;
-            mediaDataController.Y[i10] = 0;
-            mediaDataController.G[i10].clear();
-            mediaDataController.V[i10] = false;
-            mediaDataController.W[i10] = false;
+        for (int i11 = 0; i11 < 4; i11++) {
+            mediaDataController.X[i11] = 0;
+            mediaDataController.Y[i11] = 0;
+            mediaDataController.G[i11].clear();
+            mediaDataController.V[i11] = false;
+            mediaDataController.W[i11] = false;
         }
         mediaDataController.p1.b();
         int[] iArr = mediaDataController.q0;
@@ -10155,7 +10140,7 @@ public final class qp extends c1 implements ls {
         mediaDataController.k0 = false;
         mediaDataController.z1.clear();
         if (Build.VERSION.SDK_INT >= 25) {
-            Utilities.e.c(new pd(3));
+            Utilities.e.c(new rc(5));
         }
         mediaDataController.a0.clear();
         mediaDataController.n1 = false;
@@ -10174,46 +10159,46 @@ public final class qp extends c1 implements ls {
         getColorPalette().a();
         this.s7.i();
         G1().a();
-        org.telegram.ui.Wallet.n0 n0Var = org.telegram.ui.Wallet.n0.O[this.currentAccount];
-        if (n0Var != null) {
-            org.telegram.ui.Wallet.r0.z(n0Var.J);
-            n0Var.G.clear();
-            n0Var.N.clear();
-            WalletEngine2 walletEngine2 = n0Var.b;
+        org.telegram.ui.Wallet.m0 m0Var = org.telegram.ui.Wallet.m0.O[this.currentAccount];
+        if (m0Var != null) {
+            org.telegram.ui.Wallet.q0.z(m0Var.J);
+            m0Var.G.clear();
+            m0Var.N.clear();
+            WalletEngine2 walletEngine2 = m0Var.b;
             if (walletEngine2 != null) {
                 walletEngine2.close();
-                n0Var.b = null;
-                n0Var.d = null;
+                m0Var.b = null;
+                m0Var.d = null;
             }
-            org.telegram.ui.Wallet.f0 f0Var = n0Var.o;
-            if (f0Var != null) {
-                f0Var.c();
+            org.telegram.ui.Wallet.e0 e0Var = m0Var.o;
+            if (e0Var != null) {
+                e0Var.c();
             }
-            int i11 = n0Var.a;
-            if (n0Var.A >= 0) {
-                ConnectionsManager.getInstance(i11).cancelRequest(n0Var.A, true);
-                n0Var.A = -1;
+            int i12 = m0Var.a;
+            if (m0Var.A >= 0) {
+                ConnectionsManager.getInstance(i12).cancelRequest(m0Var.A, true);
+                m0Var.A = -1;
             }
-            if (n0Var.B >= 0) {
-                ConnectionsManager.getInstance(i11).cancelRequest(n0Var.B, true);
-                n0Var.B = -1;
+            if (m0Var.B >= 0) {
+                ConnectionsManager.getInstance(i12).cancelRequest(m0Var.B, true);
+                m0Var.B = -1;
             }
-            if (n0Var.C >= 0) {
-                ConnectionsManager.getInstance(i11).cancelRequest(n0Var.C, true);
-                n0Var.C = -1;
+            if (m0Var.C >= 0) {
+                ConnectionsManager.getInstance(i12).cancelRequest(m0Var.C, true);
+                m0Var.C = -1;
             }
-            n0Var.f0();
-            n0Var.E.clear();
-            org.telegram.ui.Wallet.a1 a1Var = n0Var.s;
-            if (a1Var != null) {
-                a1Var.h();
-                n0Var.s = null;
+            m0Var.f0();
+            m0Var.E.clear();
+            org.telegram.ui.Wallet.z0 z0Var = m0Var.s;
+            if (z0Var != null) {
+                z0Var.h();
+                m0Var.s = null;
             }
-            g0.r(n0Var.F);
-            synchronized (org.telegram.ui.Wallet.n0.class) {
+            g0.r(m0Var.F);
+            synchronized (org.telegram.ui.Wallet.m0.class) {
                 try {
-                    if (org.telegram.ui.Wallet.n0.O[n0Var.a] == n0Var) {
-                        org.telegram.ui.Wallet.n0.O[n0Var.a] = null;
+                    if (org.telegram.ui.Wallet.m0.O[m0Var.a] == m0Var) {
+                        org.telegram.ui.Wallet.m0.O[m0Var.a] = null;
                     }
                 } finally {
                 }
@@ -10265,14 +10250,14 @@ public final class qp extends c1 implements ls {
         }
         if (arrayList2 != null) {
             int size = arrayList2.size();
-            for (int i12 = 0; i12 < size; i12++) {
-                ChatsWidgetProvider.a(t0.b, appWidgetManager, ((Integer) arrayList2.get(i12)).intValue());
+            for (int i13 = 0; i13 < size; i13++) {
+                ChatsWidgetProvider.a(t0.b, appWidgetManager, ((Integer) arrayList2.get(i13)).intValue());
             }
         }
         if (arrayList3 != null) {
             int size2 = arrayList3.size();
-            for (int i13 = 0; i13 < size2; i13++) {
-                ContactsWidgetProvider.a(t0.b, appWidgetManager, ((Integer) arrayList3.get(i13)).intValue());
+            for (int i14 = 0; i14 < size2; i14++) {
+                ContactsWidgetProvider.a(t0.b, appWidgetManager, ((Integer) arrayList3.get(i14)).intValue());
             }
         }
         this.J1.b();
@@ -10355,17 +10340,17 @@ public final class qp extends c1 implements ls {
         this.x0.clear();
         this.y0.clear();
         this.G0.clear();
-        int i14 = 0;
+        int i15 = 0;
         while (true) {
             a0.h[] hVarArr = this.Y;
-            if (i14 >= hVarArr.length) {
+            if (i15 >= hVarArr.length) {
                 break;
             }
-            a0.h hVar = hVarArr[i14];
+            a0.h hVar = hVarArr[i15];
             if (hVar != null) {
                 hVar.b();
             }
-            i14++;
+            i15++;
         }
         this.q1.clear();
         this.r1.clear();
@@ -11441,7 +11426,7 @@ public final class qp extends c1 implements ls {
         }
     }
 
-    public final void U2(int i7, int i10, int i11, boolean z9, uk ukVar) {
+    public final void U2(int i7, int i10, int i11, boolean z9, tk tkVar) {
         long j3;
         a0.h hVar;
         int m10;
@@ -11552,7 +11537,7 @@ public final class qp extends c1 implements ls {
                 tL_messages_getDialogs.offset_peer.access_hash = g10[5];
             }
         }
-        getConnectionsManager().sendRequest(tL_messages_getDialogs, new qf(this, i7, i11, ukVar, 1));
+        getConnectionsManager().sendRequest(tL_messages_getDialogs, new qf(this, i7, i11, tkVar, 1));
     }
 
     public final void U3(TLRPC.EncryptedChat encryptedChat, boolean z9) {
@@ -11718,7 +11703,7 @@ public final class qp extends c1 implements ls {
     public final void W(long j3, long j10) {
         yr messagesStorage = getMessagesStorage();
         messagesStorage.getClass();
-        messagesStorage.I(new zq(messagesStorage, 0, j3, j10, 1));
+        messagesStorage.I(new yq(messagesStorage, 0, j3, j10, 1));
         TLRPC.TL_messages_deleteParticipantReactions tL_messages_deleteParticipantReactions = new TLRPC.TL_messages_deleteParticipantReactions();
         tL_messages_deleteParticipantReactions.peer = j1(j3);
         tL_messages_deleteParticipantReactions.participant = j1(j10);
@@ -12123,7 +12108,7 @@ public final class qp extends c1 implements ls {
         this.C1.l(j12);
         if (i7 == 1 && i11 == 0) {
             yr messagesStorage2 = getMessagesStorage();
-            messagesStorage2.a.c(new hr(messagesStorage2, j3, new dn(this, j12, i10, z9, inputPeer, j10), 2));
+            messagesStorage2.a.c(new ir(messagesStorage2, j3, new dn(this, j12, i10, z9, inputPeer, j10), 2));
             return;
         }
         if (i10 == 0 || i10 == 3) {
@@ -12305,7 +12290,7 @@ public final class qp extends c1 implements ls {
                     getNotificationCenter().k(qs.e0, Long.valueOf(j12), Boolean.FALSE, null);
                 }
             }
-            getMessagesStorage().a.c(new nk(this, j12, 15));
+            getMessagesStorage().a.c(new mk(this, j12, 15));
             i13 = i15;
             i14 = 3;
         } else {
@@ -12569,7 +12554,7 @@ public final class qp extends c1 implements ls {
             TL_ephemeral.TL_getWelcomeMessages tL_getWelcomeMessages = new TL_ephemeral.TL_getWelcomeMessages();
             tL_getWelcomeMessages.peer = j1(j3);
             tL_getWelcomeMessages.hash = j12;
-            getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequestTyped(tL_getWelcomeMessages, new v10() { // from class: org.telegram.messenger.zk
+            getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequestTyped(tL_getWelcomeMessages, new v10() { // from class: org.telegram.messenger.yk
                 @Override // org.telegram.messenger.v10
                 public final void a(Object obj, Object obj2) {
                     TL_ephemeral.WelcomeMessages welcomeMessages = (TL_ephemeral.WelcomeMessages) obj;
@@ -12596,7 +12581,7 @@ public final class qp extends c1 implements ls {
             TLRPC.TL_messages_getQuickReplyMessages tL_messages_getQuickReplyMessages = new TLRPC.TL_messages_getQuickReplyMessages();
             tL_messages_getQuickReplyMessages.shortcut_id = (int) j11;
             tL_messages_getQuickReplyMessages.hash = j12;
-            getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(tL_messages_getQuickReplyMessages, new bl(this, j3, j10, i7, i10, i11, i13, i18, i15, i19, i20, i14, i16, j11, i17, z11, i21, z13, z14)), i13);
+            getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(tL_messages_getQuickReplyMessages, new al(this, j3, j10, i7, i10, i11, i13, i18, i15, i19, i20, i14, i16, j11, i17, z11, i21, z13, z14)), i13);
             return;
         }
         if (j11 == 0) {
@@ -12607,7 +12592,7 @@ public final class qp extends c1 implements ls {
                 TLRPC.TL_messages_getScheduledHistory tL_messages_getScheduledHistory = new TLRPC.TL_messages_getScheduledHistory();
                 tL_messages_getScheduledHistory.peer = j1(j3);
                 tL_messages_getScheduledHistory.hash = j12;
-                getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(tL_messages_getScheduledHistory, new bl(this, i10, i11, j3, j10, i7, i13, i18, i15, i19, i20, i14, i16, j11, i17, z11, i21, z13, z14)), i13);
+                getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(tL_messages_getScheduledHistory, new al(this, i10, i11, j3, j10, i7, i13, i18, i15, i19, i20, i14, i16, j11, i17, z11, i21, z13, z14)), i13);
                 return;
             }
             if (!t3.p0(M0) && z12 && ((i14 == 3 || i14 == 2) && i15 == 0)) {
@@ -12616,7 +12601,7 @@ public final class qp extends c1 implements ls {
                 TLRPC.TL_inputDialogPeer tL_inputDialogPeer = new TLRPC.TL_inputDialogPeer();
                 tL_inputDialogPeer.peer = j13;
                 tL_messages_getPeerDialogs.peers.add(tL_inputDialogPeer);
-                getConnectionsManager().sendRequest(tL_messages_getPeerDialogs, new RequestDelegate() { // from class: org.telegram.messenger.dl
+                getConnectionsManager().sendRequest(tL_messages_getPeerDialogs, new RequestDelegate() { // from class: org.telegram.messenger.cl
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                         qp qpVar = qp.this;
@@ -12660,7 +12645,7 @@ public final class qp extends c1 implements ls {
             tL_messages_getHistory.limit = i7;
             tL_messages_getHistory.offset_id = i10;
             tL_messages_getHistory.offset_date = i11;
-            getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(tL_messages_getHistory, new cl(this, j3, i7, i10, i11, j10, i13, i18, i15, i19, i20, i14, i16, j11, i17, z11, i21, z13, z14, tL_messages_getHistory, 2)), i13);
+            getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(tL_messages_getHistory, new bl(this, j3, i7, i10, i11, j10, i13, i18, i15, i19, i20, i14, i16, j11, i17, z11, i21, z13, z14, tL_messages_getHistory, 2)), i13);
             return;
         }
         if (i16 == 3 || t3.p0(M0)) {
@@ -12684,7 +12669,7 @@ public final class qp extends c1 implements ls {
             tL_messages_getSavedHistory.limit = i7;
             tL_messages_getSavedHistory.offset_id = i10;
             tL_messages_getSavedHistory.offset_date = i11;
-            getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(tL_messages_getSavedHistory, new cl(this, j3, i7, i10, i11, j10, i13, i18, i15, i19, i20, i14, i16, j11, i17, z11, i21, z13, z14, tL_messages_getSavedHistory, 0)), i13);
+            getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(tL_messages_getSavedHistory, new bl(this, j3, i7, i10, i11, j10, i13, i18, i15, i19, i20, i14, i16, j11, i17, z11, i21, z13, z14, tL_messages_getSavedHistory, 0)), i13);
             return;
         }
         if (z12 && z14 && i14 == 2 && i15 == 0 && (f10 = this.q7.f(-j3, j11)) != null) {
@@ -12714,7 +12699,7 @@ public final class qp extends c1 implements ls {
         tL_messages_getReplies.offset_id = i10;
         tL_messages_getReplies.hash = j12;
         System.currentTimeMillis();
-        getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(tL_messages_getReplies, new cl(this, i7, i10, i11, i18, i14, j3, j10, i13, i15, i19, i20, i16, j11, i17, z11, i21, z13, z14, tL_messages_getReplies)), i13);
+        getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(tL_messages_getReplies, new bl(this, i7, i10, i11, i18, i14, j3, j10, i13, i15, i19, i20, i16, j11, i17, z11, i21, z13, z14, tL_messages_getReplies)), i13);
     }
 
     public final void Z3(int i7, String str) {
@@ -13101,7 +13086,7 @@ public final class qp extends c1 implements ls {
                         nativeByteBuffer5 = nativeByteBuffer4;
                         z14 = getMessagesStorage().z(nativeByteBuffer5);
                         tL_channels_deleteMessages = tL_channels_deleteMessages2;
-                        getConnectionsManager().sendRequest(tL_channels_deleteMessages, new qk(0, j11, z14, this));
+                        getConnectionsManager().sendRequest(tL_channels_deleteMessages, new pk(0, j11, z14, this));
                         return;
                     }
                 } catch (Exception e15) {
@@ -13112,7 +13097,7 @@ public final class qp extends c1 implements ls {
                 z14 = getMessagesStorage().z(nativeByteBuffer5);
                 tL_channels_deleteMessages = tL_channels_deleteMessages2;
             }
-            getConnectionsManager().sendRequest(tL_channels_deleteMessages, new qk(0, j11, z14, this));
+            getConnectionsManager().sendRequest(tL_channels_deleteMessages, new pk(0, j11, z14, this));
             return;
         }
         if (arrayList2 == null || encryptedChat == null || arrayList2.isEmpty()) {
@@ -13255,7 +13240,7 @@ public final class qp extends c1 implements ls {
     }
 
     public final void c0(long j3, long j10, ArrayList arrayList) {
-        getMessagesStorage().a.c(new hk(this, arrayList, j10, j3));
+        getMessagesStorage().a.c(new gk(this, arrayList, j10, j3));
     }
 
     public final String c1(long j3) {
@@ -13870,7 +13855,7 @@ public final class qp extends c1 implements ls {
                 qp qpVar = qp.this;
                 qpVar.O3((TLRPC.Updates) tLObject, false);
                 if (T && !z10) {
-                    g0.i3(new nk(qpVar, j3, 21), 1000L);
+                    g0.i3(new mk(qpVar, j3, 21), 1000L);
                 }
                 Runnable runnable = qaVar;
                 if (runnable != null) {
@@ -14050,11 +14035,11 @@ public final class qp extends c1 implements ls {
                 a8.g(exc, true);
                 nativeByteBuffer = nativeByteBuffer2;
                 j3 = getMessagesStorage().z(nativeByteBuffer);
-                getConnectionsManager().sendRequest(tL_messages_getPeerDialogs, new qk(1, j3, n10, this));
+                getConnectionsManager().sendRequest(tL_messages_getPeerDialogs, new pk(1, j3, n10, this));
             }
             j3 = getMessagesStorage().z(nativeByteBuffer);
         }
-        getConnectionsManager().sendRequest(tL_messages_getPeerDialogs, new qk(1, j3, n10, this));
+        getConnectionsManager().sendRequest(tL_messages_getPeerDialogs, new pk(1, j3, n10, this));
     }
 
     public final void f4(TLRPC.Dialog dialog) {
@@ -14063,7 +14048,7 @@ public final class qp extends c1 implements ls {
         }
         long j3 = dialog.id;
         if (this.E.remove(dialog) && m5.y(dialog)) {
-            Utilities.d.c(new nk(this, j3, 8));
+            Utilities.d.c(new mk(this, j3, 8));
         }
         this.y.remove(dialog);
         this.G.remove(dialog);
@@ -14217,7 +14202,7 @@ public final class qp extends c1 implements ls {
         if (t10.B(user)) {
             X(0, -j3, z10);
         }
-        getConnectionsManager().sendRequest(tL_messages_deleteChatUser, new fl(this, T, user, j3), 64);
+        getConnectionsManager().sendRequest(tL_messages_deleteChatUser, new el(this, T, user, j3), 64);
     }
 
     public final r3 g1(long j3, boolean z9, m80 m80Var) {
@@ -14336,12 +14321,12 @@ public final class qp extends c1 implements ls {
     public final void h0(long j3, int i7, long j10) {
         yr messagesStorage = getMessagesStorage();
         messagesStorage.getClass();
-        messagesStorage.I(new zq(messagesStorage, i7, j3, j10, 1));
+        messagesStorage.I(new yq(messagesStorage, i7, j3, j10, 1));
         TLRPC.TL_messages_deleteParticipantReaction tL_messages_deleteParticipantReaction = new TLRPC.TL_messages_deleteParticipantReaction();
         tL_messages_deleteParticipantReaction.peer = j1(j3);
         tL_messages_deleteParticipantReaction.participant = j1(j10);
         tL_messages_deleteParticipantReaction.msg_id = i7;
-        getConnectionsManager().sendRequestTyped(tL_messages_deleteParticipantReaction, new d3.b(1), new gl(this, 2));
+        getConnectionsManager().sendRequestTyped(tL_messages_deleteParticipantReaction, new d3.b(1), new fl(this, 2));
     }
 
     public final TLRPC.InputChannel h1(long j3) {
@@ -14353,7 +14338,7 @@ public final class qp extends c1 implements ls {
         TL_account.TL_webBrowserSettings tL_webBrowserSettings = this.y8;
         qo qoVar = this.z8;
         if (tL_webBrowserSettings == null) {
-            qoVar.e(this.currentAccount, null, new gl(this, 0));
+            qoVar.e(this.currentAccount, null, new fl(this, 0));
         }
         qoVar.d(this.currentAccount, null);
         qoVar.c(this.currentAccount, null, new go(this, 2));
@@ -14464,11 +14449,11 @@ public final class qp extends c1 implements ls {
             }
         }
         if (l10 == null) {
-            sn snVar = this.o7;
-            if (snVar != null) {
+            vj vjVar = this.o7;
+            if (vjVar != null) {
                 this.n7 = -1L;
                 this.m7 = -1L;
-                g0.r(snVar);
+                g0.r(vjVar);
                 return;
             }
             return;
@@ -14479,9 +14464,9 @@ public final class qp extends c1 implements ls {
             g0.r(this.o7);
             this.n7 = j3;
             this.m7 = longValue;
-            sn snVar2 = new sn(this, 3);
-            this.o7 = snVar2;
-            g0.i3(snVar2, longValue * 1000);
+            vj vjVar2 = new vj(this, 5);
+            this.o7 = vjVar2;
+            g0.i3(vjVar2, longValue * 1000);
         }
     }
 
@@ -14563,7 +14548,7 @@ public final class qp extends c1 implements ls {
         TLRPC.TL_help_hidePromoData tL_help_hidePromoData = new TLRPC.TL_help_hidePromoData();
         tL_help_hidePromoData.peer = j1(this.x2.id);
         getConnectionsManager().sendRequest(tL_help_hidePromoData, new di.u5(13));
-        Utilities.d.c(new wj(this, 19));
+        Utilities.d.c(new vj(this, 20));
         j4();
     }
 
@@ -14615,7 +14600,7 @@ public final class qp extends c1 implements ls {
                 this.O.put(Long.valueOf(j3), Integer.valueOf(Math.max(num.intValue(), i7)));
                 yr messagesStorage3 = getMessagesStorage();
                 messagesStorage3.a.c(new br(messagesStorage3, j3, i7, i13, messagesStorage3.G, i10, 2));
-                getMessagesStorage().a.c(new il(this, j3, i12, i7, z9, 1));
+                getMessagesStorage().a.c(new hl(this, j3, i12, i7, z9, 1));
             }
         }
         final long j11 = (j10 == 0 || !y2(j3)) ? 0L : j10;
@@ -15093,7 +15078,7 @@ public final class qp extends c1 implements ls {
                 tL_messages_updateSavedReactionTag.title = str;
             }
             getConnectionsManager().sendRequest(tL_messages_updateSavedReactionTag, null);
-            Collections.sort(tL_messages_savedReactionsTags3.tags, new vj(this, 5));
+            Collections.sort(tL_messages_savedReactionsTags3.tags, new jl(this, 4));
             long j16 = 0;
             int i15 = 0;
             while (i15 < tL_messages_savedReactionsTags3.tags.size()) {
@@ -15691,7 +15676,7 @@ public final class qp extends c1 implements ls {
                 final TLRPC.InputUser inputUser = q12;
                 long j10 = j3;
                 if (z12 && (inputUser instanceof TLRPC.TL_inputUserSelf)) {
-                    g0.h3(new nk(qpVar, j10, 11));
+                    g0.h3(new mk(qpVar, j10, 11));
                 }
                 c20 c20Var2 = c20Var;
                 Runnable runnable2 = runnable;
@@ -15785,7 +15770,7 @@ public final class qp extends c1 implements ls {
                     if (!z11 && (inputUser instanceof TLRPC.TL_inputUserSelf)) {
                         qpVar.B0(j10, true);
                     }
-                    g0.i3(new nk(qpVar, j10, 13), 1000L);
+                    g0.i3(new mk(qpVar, j10, 13), 1000L);
                 }
                 if (z12 && (inputUser instanceof TLRPC.TL_inputUserSelf)) {
                     qpVar.getMessagesStorage().R1(-j10, j10, new ArrayList(), null);
@@ -15797,7 +15782,7 @@ public final class qp extends c1 implements ls {
                     g0.h3(new rf(c20Var2, 6));
                 }
                 if (t10.B(user2) && !t3.V(M0) && z11) {
-                    g0.h3(new nk(qpVar, j10, 12));
+                    g0.h3(new mk(qpVar, j10, 12));
                 }
             }
         });
@@ -15851,7 +15836,7 @@ public final class qp extends c1 implements ls {
 
     public final void m3(long j3) {
         this.d7.edit().putBoolean("dialog_bar_replied" + j3, true).apply();
-        g0.h3(new nk(this, j3, 9));
+        g0.h3(new mk(this, j3, 9));
     }
 
     public final void m4(int i7, long j3, ArrayList arrayList) {
@@ -15963,7 +15948,7 @@ public final class qp extends c1 implements ls {
     }
 
     public final void n0(int i7, long j3, SparseArray sparseArray) {
-        Utilities.d.c(new uk(this, i7, 1));
+        Utilities.d.c(new tk(this, i7, 1));
         if (sparseArray != null) {
             g0.h3(new a4(this, j3, sparseArray, 15));
         }
@@ -15983,7 +15968,7 @@ public final class qp extends c1 implements ls {
 
     public final void n3(long j3, int i7, long j10) {
         yr messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new zq(messagesStorage, i7, -j3, j10, 0));
+        messagesStorage.a.c(new yq(messagesStorage, i7, -j3, j10, 0));
         if (j3 == 0) {
             TLRPC.TL_messages_readMessageContents tL_messages_readMessageContents = new TLRPC.TL_messages_readMessageContents();
             tL_messages_readMessageContents.id.add(Integer.valueOf(i7));
@@ -16004,9 +15989,9 @@ public final class qp extends c1 implements ls {
         }
         hashSet.add(x9Var);
         this.p8.add(new Pair(x9Var, new AtomicBoolean(z9)));
-        wj wjVar = this.q8;
-        g0.r(wjVar);
-        g0.h3(wjVar);
+        vj vjVar = this.q8;
+        g0.r(vjVar);
+        g0.h3(vjVar);
     }
 
     public final void n5() {
@@ -16051,40 +16036,40 @@ public final class qp extends c1 implements ls {
                         boolean z9 = l10.longValue() < 0 && !C;
                         TLRPC.SendMessageAction sendMessageAction = hpVar.c;
                         if (sendMessageAction instanceof TLRPC.TL_sendMessageRecordAudioAction) {
-                            str = z9 ? hd.a0("IsRecordingAudio", null, 2131749098, c2(a22)) : hd.M0(2131746350, null);
+                            str = z9 ? id.a0("IsRecordingAudio", null, 2131749100, c2(a22)) : id.M0(2131746352, null);
                             i7 = 1;
                         } else {
                             if (sendMessageAction instanceof TLRPC.TL_sendMessageRecordRoundAction) {
-                                str = z9 ? hd.a0("IsRecordingRound", null, 2131749097, c2(a22)) : hd.M0(2131746349, null);
+                                str = z9 ? id.a0("IsRecordingRound", null, 2131749099, c2(a22)) : id.M0(2131746351, null);
                             } else if (sendMessageAction instanceof TLRPC.TL_sendMessageUploadRoundAction) {
-                                str = z9 ? hd.a0("IsSendingVideo", null, 2131749089, c2(a22)) : hd.M0(2131745576, null);
+                                str = z9 ? id.a0("IsSendingVideo", null, 2131749091, c2(a22)) : id.M0(2131745578, null);
                             } else {
                                 if (sendMessageAction instanceof TLRPC.TL_sendMessageUploadAudioAction) {
-                                    a04 = z9 ? hd.a0("IsSendingAudio", null, 2131749093, c2(a22)) : hd.M0(2131745583, null);
+                                    a04 = z9 ? id.a0("IsSendingAudio", null, 2131749095, c2(a22)) : id.M0(2131745585, null);
                                 } else if (sendMessageAction instanceof TLRPC.TL_sendMessageUploadVideoAction) {
-                                    a04 = z9 ? hd.a0("IsSendingVideo", null, 2131749089, c2(a22)) : hd.M0(2131745576, null);
+                                    a04 = z9 ? id.a0("IsSendingVideo", null, 2131749091, c2(a22)) : id.M0(2131745578, null);
                                 } else if (sendMessageAction instanceof TLRPC.TL_sendMessageRecordVideoAction) {
-                                    a04 = z9 ? hd.a0("IsRecordingVideo", null, 2131749096, c2(a22)) : hd.M0(2131746346, null);
+                                    a04 = z9 ? id.a0("IsRecordingVideo", null, 2131749098, c2(a22)) : id.M0(2131746348, null);
                                 } else if (sendMessageAction instanceof TLRPC.TL_sendMessageUploadDocumentAction) {
-                                    a04 = z9 ? hd.a0("IsSendingFile", null, 2131749092, c2(a22)) : hd.M0(2131745582, null);
+                                    a04 = z9 ? id.a0("IsSendingFile", null, 2131749094, c2(a22)) : id.M0(2131745584, null);
                                 } else if (sendMessageAction instanceof TLRPC.TL_sendMessageUploadPhotoAction) {
-                                    a04 = z9 ? hd.a0("IsSendingPhoto", null, 2131749090, c2(a22)) : hd.M0(2131745579, null);
+                                    a04 = z9 ? id.a0("IsSendingPhoto", null, 2131749092, c2(a22)) : id.M0(2131745581, null);
                                 } else if (sendMessageAction instanceof TLRPC.TL_sendMessageGamePlayAction) {
                                     i7 = 3;
-                                    str = z9 ? hd.a0("IsSendingGame", null, 2131749091, c2(a22)) : hd.M0(2131745581, null);
+                                    str = z9 ? id.a0("IsSendingGame", null, 2131749093, c2(a22)) : id.M0(2131745583, null);
                                 } else {
                                     if (sendMessageAction instanceof TLRPC.TL_sendMessageGeoLocationAction) {
-                                        a02 = z9 ? hd.a0("IsSelectingLocation", null, 2131749094, c2(a22)) : hd.M0(2131745647, null);
+                                        a02 = z9 ? id.a0("IsSelectingLocation", null, 2131749096, c2(a22)) : id.M0(2131745649, null);
                                     } else if (sendMessageAction instanceof TLRPC.TL_sendMessageChooseContactAction) {
-                                        a02 = z9 ? hd.a0("IsSelectingContact", null, 2131749095, c2(a22)) : hd.M0(2131745648, null);
+                                        a02 = z9 ? id.a0("IsSelectingContact", null, 2131749097, c2(a22)) : id.M0(2131745650, null);
                                     } else {
                                         if (sendMessageAction instanceof TLRPC.TL_sendMessageEmojiInteractionSeen) {
                                             String str2 = ((TLRPC.TL_sendMessageEmojiInteractionSeen) sendMessageAction).emoticon;
-                                            a03 = z9 ? hd.a0("IsEnjoyngAnimations", null, 2131749099, c2(a22), str2) : hd.a0("EnjoyngAnimations", null, 2131751126, str2);
+                                            a03 = z9 ? id.a0("IsEnjoyngAnimations", null, 2131749101, c2(a22), str2) : id.a0("EnjoyngAnimations", null, 2131751126, str2);
                                         } else if (sendMessageAction instanceof TLRPC.TL_sendMessageChooseStickerAction) {
-                                            a03 = z9 ? hd.a0("IsChoosingSticker", null, 2131749100, c2(a22)) : hd.M0(2131752106, null);
+                                            a03 = z9 ? id.a0("IsChoosingSticker", null, 2131749102, c2(a22)) : id.M0(2131752106, null);
                                         } else {
-                                            a02 = z9 ? hd.a0("IsTypingGroup", null, 2131749087, c2(a22)) : hd.M0(2131743919, null);
+                                            a02 = z9 ? id.a0("IsTypingGroup", null, 2131749089, c2(a22)) : id.M0(2131743921, null);
                                         }
                                         str = a03;
                                         i7 = 5;
@@ -16137,15 +16122,15 @@ public final class qp extends c1 implements ls {
                     }
                     if (sb2.length() != 0) {
                         if (i11 == 1) {
-                            a05 = hd.a0("IsTypingGroup", null, 2131749087, sb2.toString());
+                            a05 = id.a0("IsTypingGroup", null, 2131749089, sb2.toString());
                         } else if (arrayList.size() > 2) {
                             try {
-                                a05 = String.format(hd.K0(arrayList.size() - 2, "AndMoreTypingGroup"), sb2.toString(), Integer.valueOf(arrayList.size() - 2));
+                                a05 = String.format(id.K0(arrayList.size() - 2, "AndMoreTypingGroup"), sb2.toString(), Integer.valueOf(arrayList.size() - 2));
                             } catch (Exception unused) {
                                 a05 = "LOC_ERR: AndMoreTypingGroup";
                             }
                         } else {
-                            a05 = hd.a0("AreTypingGroup", null, 2131754121, sb2.toString());
+                            a05 = id.a0("AreTypingGroup", null, 2131754121, sb2.toString());
                         }
                         str = a05;
                         i10 = 0;
@@ -16180,7 +16165,7 @@ public final class qp extends c1 implements ls {
         long j3 = chat2.id;
         for (int i10 = 0; i10 < size; i10++) {
             TLRPC.User user = (TLRPC.User) arrayList.get(i10);
-            m(j3, user, i7, null, f2Var, false, new hi(24, aVar, user), new o(4, aVar2, user), new kk(this, tL_messages_invitedUsers, iArr, size, chat2, mc0Var));
+            m(j3, user, i7, null, f2Var, false, new hi(24, aVar, user), new o(4, aVar2, user), new jk(this, tL_messages_invitedUsers, iArr, size, chat2, mc0Var));
             X3(user, false, false);
             chat2 = chat;
         }
@@ -16218,7 +16203,7 @@ public final class qp extends c1 implements ls {
             return;
         }
         yr messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new zq(messagesStorage, j10, j3, 0, 7));
+        messagesStorage.a.c(new yq(messagesStorage, j10, j3, 0, 7));
         TLRPC.TL_messages_readMentions tL_messages_readMentions = new TLRPC.TL_messages_readMentions();
         tL_messages_readMentions.peer = j1(j3);
         if (j10 != 0) {
@@ -16335,7 +16320,7 @@ public final class qp extends c1 implements ls {
         togglewebbrowsersettingsexception.flags |= 1;
         togglewebbrowsersettingsexception.open_external_browser = z9;
         togglewebbrowsersettingsexception.url = str;
-        getConnectionsManager().sendRequestTyped(togglewebbrowsersettingsexception, new gl(this, 4));
+        getConnectionsManager().sendRequestTyped(togglewebbrowsersettingsexception, new fl(this, 4));
     }
 
     public final void p0(long j3, int i7, long j10) {
@@ -16443,7 +16428,7 @@ public final class qp extends c1 implements ls {
         qs.f(this.currentAccount).k(qs.r, 0);
         qs.f(this.currentAccount).k(qs.W3, Long.valueOf(j3), Long.valueOf(j10), str2);
         yr a02 = yr.a0(this.currentAccount);
-        a02.a.c(new pq(a02, -j3, j10, str2, 0));
+        a02.a.c(new qq(a02, -j3, j10, str2, 0));
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -16525,16 +16510,16 @@ public final class qp extends c1 implements ls {
                 if (i7 != this.u4) {
                     this.u4 = i7;
                     edit.putInt("transcribeAudioTrialCooldownUntil", i7);
-                    g0.h3(new wj(this, 3));
+                    g0.h3(new vj(this, 3));
                 } else {
                     z19 = z9;
                 }
                 if (z19) {
                     edit.apply();
-                    g0.h3(new wj(this, 15));
+                    g0.h3(new vj(this, 16));
                 }
                 if (tL_jsonObject5 != null) {
-                    rc.l(tL_jsonObject5);
+                    sc.l(tL_jsonObject5);
                 }
                 if (z22) {
                     t0.x();
@@ -16542,7 +16527,7 @@ public final class qp extends c1 implements ls {
                     connectionsManager.setPushConnectionEnabled(connectionsManager.isPushConnectionEnabled());
                 }
                 if (z23) {
-                    g0.h3(new wj(this, 16));
+                    g0.h3(new vj(this, 17));
                     return;
                 }
                 return;
@@ -21118,7 +21103,7 @@ public final class qp extends c1 implements ls {
                             int i92 = (int) d62;
                             this.z7 = i92;
                             edit.putInt("checkResetLangpack", i92);
-                            hd.E0().j(this.currentAccount);
+                            id.E0().j(this.currentAccount);
                             z15 = true;
                             tL_jsonObject4 = tL_jsonObject6;
                             z17 = z25;
@@ -22594,7 +22579,7 @@ public final class qp extends c1 implements ls {
                     }
                     if (!hashSet8.equals(this.W6)) {
                         this.W6 = hashSet8;
-                        edit.putStringSet("whitelistedBots", (Set) Collection.-EL.stream(hashSet8).map(new aa.l(5)).collect(Collectors.toCollection(new ok(0))));
+                        edit.putStringSet("whitelistedBots", (Set) Collection.-EL.stream(hashSet8).map(new aa.l(5)).collect(Collectors.toCollection(new nk(0))));
                         z15 = true;
                         tL_jsonObject4 = tL_jsonObject6;
                         z17 = z25;
@@ -24238,7 +24223,7 @@ public final class qp extends c1 implements ls {
             hVar2.k(tL_messages_savedReactionsTags2, j3);
             tL_messages_savedReactionsTags = tL_messages_savedReactionsTags2;
         }
-        Collections.sort(tL_messages_savedReactionsTags.tags, new vj(this, 6));
+        Collections.sort(tL_messages_savedReactionsTags.tags, new jl(this, 5));
         int i7 = 0;
         long j17 = 0;
         int i10 = 0;
@@ -24410,7 +24395,7 @@ public final class qp extends c1 implements ls {
         TLRPC.TL_folder tL_folder = new TLRPC.TL_folder();
         tL_dialogFolder.folder = tL_folder;
         tL_folder.id = i7;
-        tL_folder.title = hd.M0(2131754136, null);
+        tL_folder.title = id.M0(2131754136, null);
         tL_dialogFolder.pinned = true;
         int i10 = 0;
         int i11 = 0;
@@ -24472,7 +24457,7 @@ public final class qp extends c1 implements ls {
         ArrayList arrayList = new ArrayList();
         if (ijVar.k.mentioned) {
             yr messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new zq(messagesStorage, ijVar.f1(), -ijVar.k.peer_id.channel_id, ij.B0(ijVar.k), 0));
+            messagesStorage.a.c(new yq(messagesStorage, ijVar.f1(), -ijVar.k.peer_id.channel_id, ij.B0(ijVar.k), 0));
         }
         arrayList.add(Integer.valueOf(ijVar.f1()));
         long B0 = ij.B0(ijVar.k);
@@ -24570,8 +24555,8 @@ public final class qp extends c1 implements ls {
             boolean[] zArr = new boolean[1];
             Runnable[] runnableArr = new Runnable[1];
             yr messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new rk(this, zArr, messagesStorage, j10, runnableArr, j3, i10, epVar));
-            return new tk(zArr, runnableArr, 0);
+            messagesStorage.a.c(new qk(this, zArr, messagesStorage, j10, runnableArr, j3, i10, epVar));
+            return new rk(zArr, runnableArr, 0);
         }
         int i11 = g0.Q1() ? 30 : 20;
         int i12 = i10;
@@ -24585,7 +24570,7 @@ public final class qp extends c1 implements ls {
             qpVar = this;
             qpVar.Z2(j3, 0L, true, i11, i12, 0, true, 0, generateClassGuid, 2, 0, 0, 0L, -1, 0, 0, 0, false, 0, true, false, false, null, 0L);
         }
-        return new uk(qpVar, generateClassGuid, 0);
+        return new tk(qpVar, generateClassGuid, 0);
     }
 
     public final boolean s2(long j3, long j10) {
@@ -24949,7 +24934,7 @@ public final class qp extends c1 implements ls {
         TL_account.updateWebBrowserSettings updatewebbrowsersettings = new TL_account.updateWebBrowserSettings();
         updatewebbrowsersettings.open_external_browser = z9;
         updatewebbrowsersettings.display_close_button = z10;
-        getConnectionsManager().sendRequestTyped(updatewebbrowsersettings, new d3.b(1), new gl(this, 1));
+        getConnectionsManager().sendRequestTyped(updatewebbrowsersettings, new d3.b(1), new fl(this, 1));
     }
 
     public final void v(int i7, int i10, long j3, String str, boolean z9) {
@@ -25647,12 +25632,12 @@ public final class qp extends c1 implements ls {
                             if (z12) {
                                 yr messagesStorage = qpVar.getMessagesStorage();
                                 messagesStorage.getClass();
-                                messagesStorage.I(new zq(messagesStorage, j12, j11, i10, 6));
+                                messagesStorage.I(new yq(messagesStorage, j12, j11, i10, 6));
                             }
                             if (z10) {
                                 yr messagesStorage2 = qpVar.getMessagesStorage();
                                 messagesStorage2.getClass();
-                                messagesStorage2.I(new zq(messagesStorage2, j12, j11, i10, 5));
+                                messagesStorage2.I(new yq(messagesStorage2, j12, j11, i10, 5));
                             }
                             g0.h3(new ym(aVar2, i10, 0));
                         }
@@ -25832,7 +25817,7 @@ public final class qp extends c1 implements ls {
         }
         boolean[] zArr = {false};
         if (bVar != null) {
-            bVar.b = new lk(1, zArr);
+            bVar.b = new kk(1, zArr);
             bVar.d();
         }
         TL_bots.BotInfo[] botInfoArr = {r1};
@@ -25849,7 +25834,7 @@ public final class qp extends c1 implements ls {
             }
             ui mediaDataController2 = getMediaDataController();
             long j10 = user.id;
-            mediaDataController2.G0(j10, j10, false, i7, new kk(this, zArr, botInfoArr, user, i7, wlVar));
+            mediaDataController2.G0(j10, j10, false, i7, new jk(this, zArr, botInfoArr, user, i7, wlVar));
         }
     }
 
@@ -25934,12 +25919,12 @@ public final class qp extends c1 implements ls {
                 }
                 org.telegram.ui.ActionBar.u1[] u1VarArr = {new org.telegram.ui.ActionBar.u1(3, f2Var.getParentActivity(), null)};
                 boolean[] zArr = {false};
-                getMessagesController().d2().a(str, null, new kk(this, bVar, u1VarArr, f2Var, zArr, i7));
+                getMessagesController().d2().a(str, null, new jk(this, bVar, u1VarArr, f2Var, zArr, i7));
                 if (bVar == null) {
                     g0.i3(new lg(u1VarArr, zArr, f2Var, 5), 500L);
                     return;
                 } else {
-                    bVar.b = new lk(0, zArr);
+                    bVar.b = new kk(0, zArr);
                     bVar.d();
                     return;
                 }
@@ -26272,8 +26257,8 @@ public final class qp extends c1 implements ls {
                         f2Var.presentFragment(new org.telegram.ui.an(bundle), !z11, true);
                         return;
                     } else {
-                        HashSet hashSet = v91.q1;
-                        f2Var.presentFragment(v91.I0(f2Var.getMessagesController(), f2Var.getMessagesStorage(), bundle), !z11, true);
+                        HashSet hashSet = w91.q1;
+                        f2Var.presentFragment(w91.I0(f2Var.getMessagesController(), f2Var.getMessagesStorage(), bundle), !z11, true);
                         return;
                     }
                 }
@@ -26285,8 +26270,8 @@ public final class qp extends c1 implements ls {
                     f2Var.presentFragment(anVar, z10);
                     return;
                 }
-                HashSet hashSet2 = v91.q1;
-                org.telegram.ui.ActionBar.f2 I0 = v91.I0(f2Var.getMessagesController(), f2Var.getMessagesStorage(), bundle);
+                HashSet hashSet2 = w91.q1;
+                org.telegram.ui.ActionBar.f2 I0 = w91.I0(f2Var.getMessagesController(), f2Var.getMessagesStorage(), bundle);
                 if (z9 && !z11) {
                     z10 = true;
                 }

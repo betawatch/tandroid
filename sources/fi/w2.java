@@ -5,9 +5,9 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.bm;
-import org.telegram.ui.u71;
+import org.telegram.ui.v71;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class w2 extends org.telegram.ui.ActionBar.r0 {
     public final /* synthetic */ Object A0;
@@ -37,15 +37,15 @@ public final class w2 extends org.telegram.ui.ActionBar.r0 {
                 break;
             default:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(((u71) this.A0).h.getText());
+                accessibilityNodeInfo.setText(((v71) this.A0).h.getText());
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w2(u71 u71Var, Context context, org.telegram.ui.ActionBar.y yVar) {
+    public w2(v71 v71Var, Context context, org.telegram.ui.ActionBar.y yVar) {
         super(context, yVar, 0);
         this.z0 = 3;
-        this.A0 = u71Var;
+        this.A0 = v71Var;
     }
 }

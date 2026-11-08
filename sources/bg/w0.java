@@ -9,16 +9,16 @@ import java.nio.ByteOrder;
 import java.security.MessageDigest;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.mw;
+import org.telegram.ui.Components.nw;
 import org.telegram.ui.Components.oc;
 import org.telegram.ui.Components.rt0;
 import org.telegram.ui.Components.wf;
 import org.telegram.ui.Components.xe;
-import org.telegram.ui.Components.xx;
+import org.telegram.ui.Components.yx;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
-public final class w0 implements r0.m0, mw {
+public final class w0 implements r0.m0, nw {
     public boolean a;
     public int b;
     public Object c;
@@ -49,11 +49,11 @@ public final class w0 implements r0.m0, mw {
     }
 
     public boolean d() {
-        xx xxVar;
+        yx yxVar;
         xe xeVar;
         ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
         if (chatActivityEnterView.x3) {
-            return (chatActivityEnterView.z3 || (xeVar = chatActivityEnterView.E0) == null || xeVar.length() <= 0) && (xxVar = chatActivityEnterView.U0.y0) != null && xxVar.b() > 0 && !chatActivityEnterView.k3;
+            return (chatActivityEnterView.z3 || (xeVar = chatActivityEnterView.E0) == null || xeVar.length() <= 0) && (yxVar = chatActivityEnterView.U0.y0) != null && yxVar.b() > 0 && !chatActivityEnterView.k3;
         }
         return false;
     }

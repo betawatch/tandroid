@@ -1,14 +1,14 @@
 package wg;
 
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ui;
 import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.PrivacyControlActivity;
 import org.telegram.ui.ng0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ int a;
@@ -36,11 +36,11 @@ public final /* synthetic */ class x0 implements Runnable {
                 break;
             case 3:
                 ng0 ng0Var = f1Var.R1;
-                ng0Var.b.r(hd.M0(2131745837, null), true);
+                ng0Var.b.r(id.M0(2131745839, null), true);
                 break;
             case 4:
                 ng0 ng0Var2 = f1Var.R1;
-                ng0Var2.b.r(hd.M0(2131749649, null), true);
+                ng0Var2.b.r(id.M0(2131749651, null), true);
                 break;
             case 5:
                 f1Var.e1();

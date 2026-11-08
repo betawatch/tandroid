@@ -23,7 +23,7 @@ import org.telegram.ui.Components.x70;
 import org.telegram.ui.Components.y31;
 import org.telegram.ui.Components.zj0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class s1 {
     public final q1 a;
@@ -110,8 +110,8 @@ public final class s1 {
         rectF.set(f11, L4, this.d.c + f11 + org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(17.33f) + L4);
         boolean contains = rectF.contains(motionEvent.getX(), q1Var.M1(motionEvent));
         rectF.set(f10, i10, L2 + i11, this.r + i10);
-        boolean z9 = !contains && !q1Var.zc && this.j == null && rectF.contains(motionEvent.getX(), q1Var.M1(motionEvent));
-        if (((z9 && !q1Var.zc) || this.j != null) && this.g != null) {
+        boolean z9 = !contains && !q1Var.Ac && this.j == null && rectF.contains(motionEvent.getX(), q1Var.M1(motionEvent));
+        if (((z9 && !q1Var.Ac) || this.j != null) && this.g != null) {
             if (this.i == null) {
                 n2.n0 n0Var = new n2.n0(q1Var);
                 this.i = n0Var;
@@ -121,7 +121,7 @@ public final class s1 {
             int L6 = org.telegram.messenger.g0.L(22.0f) + i10;
             if (motionEvent.getAction() == 0 || (motionEvent.getAction() == 1 && this.j != null)) {
                 if (x10 < L5 || M1 < L6 || x10 > L5 + i11 || M1 > this.g.getHeight() + L6) {
-                    q1Var.e3(1);
+                    q1Var.f3(1);
                 } else {
                     try {
                         int i12 = M1 - L6;
@@ -143,7 +143,7 @@ public final class s1 {
                                             CharacterStyle characterStyle = characterStyleArr[0];
                                             org.telegram.ui.ActionBar.f6 f6Var = q1Var.Pb;
                                             float f13 = i12;
-                                            float[] fArr = q1.hd;
+                                            float[] fArr = q1.id;
                                             x70 x70Var2 = new x70(characterStyle, f6Var, f12, f13, 0);
                                             this.j = x70Var2;
                                             zj0 zj0Var = this.t;
@@ -169,7 +169,7 @@ public final class s1 {
                                             CharacterStyle characterStyle3 = x70Var3.i;
                                             if (characterStyle2 == characterStyle3) {
                                                 q1Var.Ra.N0(q1Var, characterStyle3, false);
-                                                q1Var.e3(1);
+                                                q1Var.f3(1);
                                                 this.u = false;
                                                 this.v = false;
                                                 this.j = null;

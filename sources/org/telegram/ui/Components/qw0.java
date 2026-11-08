@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class qw0 {
     public final org.telegram.ui.ActionBar.f6 a;
@@ -30,13 +30,13 @@ public final class qw0 {
         if (sb2.length() > 0) {
             if (z9) {
                 sb2.append(' ');
-                sb2.append(org.telegram.messenger.hd.M0(2131744346, null));
+                sb2.append(org.telegram.messenger.id.M0(2131744348, null));
                 sb2.append(' ');
             } else {
                 sb2.append(", ");
             }
         }
-        sb2.append(org.telegram.messenger.hd.M0(i7, null));
+        sb2.append(org.telegram.messenger.id.M0(i7, null));
     }
 
     public final int a() {
@@ -151,10 +151,10 @@ public final class qw0 {
         ArrayList arrayList = this.c;
         arrayList.clear();
         if (aVar != null && !aVar.k()) {
-            arrayList.add(new pw0(new my0(org.telegram.messenger.hd.M0(2131744349, null), textPaint), new my0(org.telegram.messenger.hd.g(aVar.f()), textPaint)));
+            arrayList.add(new pw0(new my0(org.telegram.messenger.id.M0(2131744351, null), textPaint), new my0(org.telegram.messenger.id.g(aVar.f()), textPaint)));
         }
         if (suggestedPost3.schedule_date > 0) {
-            arrayList.add(new pw0(new my0(org.telegram.messenger.hd.M0(2131744348, null), textPaint), new my0(org.telegram.messenger.hd.g(org.telegram.messenger.hd.x(suggestedPost3.schedule_date, true)), textPaint)));
+            arrayList.add(new pw0(new my0(org.telegram.messenger.id.M0(2131744350, null), textPaint), new my0(org.telegram.messenger.id.g(org.telegram.messenger.id.x(suggestedPost3.schedule_date, true)), textPaint)));
         }
         int size = arrayList.size();
         float f11 = 0.0f;
@@ -256,38 +256,38 @@ public final class qw0 {
             int i19 = i11 & 1;
             int i20 = (i16 != 0 ? 1 : i10) + (i17 != 0 ? 1 : i10) + (i18 != 0 ? 1 : i10) + (i19 != 0 ? 1 : i10);
             if (i19 != 0) {
-                c(sb2, 2131744342, i20 == 1 ? 1 : i10);
+                c(sb2, 2131744344, i20 == 1 ? 1 : i10);
                 i12 = 1;
             } else {
                 i12 = i10;
             }
             if (i17 != 0) {
                 i12++;
-                c(sb2, 2131744340, i20 == i12 ? 1 : i10);
+                c(sb2, 2131744342, i20 == i12 ? 1 : i10);
             }
             if (i16 != 0) {
                 i12++;
-                c(sb2, 2131744341, i20 == i12 ? 1 : i10);
+                c(sb2, 2131744343, i20 == i12 ? 1 : i10);
             }
             if (i18 != 0) {
-                c(sb2, 2131744343, i20 == i12 + 1 ? 1 : i10);
+                c(sb2, 2131744345, i20 == i12 + 1 ? 1 : i10);
             }
             if (ijVar.Q3()) {
                 Object[] objArr = new Object[1];
                 objArr[i10] = sb2;
-                spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.a0(null, null, 2131744344, objArr));
+                spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.a0(null, null, 2131744346, objArr));
             } else {
                 Object[] objArr2 = new Object[2];
                 objArr2[i10] = l10;
                 objArr2[1] = sb2;
-                spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.a0(null, null, 2131744345, objArr2));
+                spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.a0(null, null, 2131744347, objArr2));
             }
         } else if (ijVar.Q3()) {
-            spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.M0(2131744339, null));
+            spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.M0(2131744341, null));
         } else {
             Object[] objArr3 = new Object[i7];
             objArr3[i10] = l10;
-            spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.a0(null, null, 2131744347, objArr3));
+            spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.a0(null, null, 2131744349, objArr3));
         }
         this.b = new StaticLayout(org.telegram.messenger.g0.V2(spannableStringBuilder), textPaint, max, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
         int i21 = i10;

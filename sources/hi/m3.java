@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i6;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.ez;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class m3 extends w31 {
     public static final /* synthetic */ int b = 0;
@@ -65,11 +65,11 @@ public final class m3 extends w31 {
                 }
                 int i10 = starrefprogram.duration_months;
                 if (i10 == 0) {
-                    spannableStringBuilder.append((CharSequence) hd.M0(2131748985, null));
+                    spannableStringBuilder.append((CharSequence) id.M0(2131748987, null));
                 } else if (i10 < 12 || i10 % 12 != 0) {
-                    spannableStringBuilder.append((CharSequence) hd.G(i10, "Months", new Object[0]));
+                    spannableStringBuilder.append((CharSequence) id.G(i10, "Months", new Object[0]));
                 } else {
-                    spannableStringBuilder.append((CharSequence) hd.G(i10 / 12, "Years", new Object[0]));
+                    spannableStringBuilder.append((CharSequence) id.G(i10 / 12, "Years", new Object[0]));
                 }
                 n3Var.n.setText(spannableStringBuilder);
                 n3Var.r.setVisibility(z10 ? 0 : 8);
@@ -112,11 +112,11 @@ public final class m3 extends w31 {
         }
         int i12 = connectedbotstarref.duration_months;
         if (i12 == 0) {
-            spannableStringBuilder2.append((CharSequence) hd.M0(2131748985, null));
+            spannableStringBuilder2.append((CharSequence) id.M0(2131748987, null));
         } else if (i12 < 12 || i12 % 12 != 0) {
-            spannableStringBuilder2.append((CharSequence) hd.G(i12, "Months", new Object[0]));
+            spannableStringBuilder2.append((CharSequence) id.G(i12, "Months", new Object[0]));
         } else {
-            spannableStringBuilder2.append((CharSequence) hd.G(i12 / 12, "Years", new Object[0]));
+            spannableStringBuilder2.append((CharSequence) id.G(i12 / 12, "Years", new Object[0]));
         }
         n3Var2.n.setText(spannableStringBuilder2);
         n3Var2.r.setVisibility(z11 ? 0 : 8);

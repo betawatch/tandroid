@@ -14,9 +14,9 @@ import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.ui.Components.ij0;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.vy;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class y extends m0 implements p0 {
     public int E;
@@ -25,7 +25,7 @@ public class y extends m0 implements p0 {
     public VelocityTracker J;
     public ArrayList K;
     public ArrayList L;
-    public uy N;
+    public vy N;
     public w O;
     public Rect Q;
     public long R;
@@ -219,7 +219,7 @@ public class y extends m0 implements p0 {
             }
             recyclerView3.P.add(this);
             this.O = new w(this);
-            this.N = new uy(this.H.getContext(), this.O);
+            this.N = new vy(this.H.getContext(), this.O);
         }
     }
 

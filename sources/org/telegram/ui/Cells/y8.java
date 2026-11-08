@@ -8,10 +8,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class y8 extends FrameLayout {
     public final TextView a;
@@ -28,24 +28,24 @@ public class y8 extends FrameLayout {
         org.telegram.messenger.camera.q.n(textView, 1, 16.0f, 1, 1);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setGravity((hd.a0 ? 5 : 3) | 16);
-        addView(textView, c8.ha.d(-2, -2.0f, (hd.a0 ? 5 : 3) | 48, 21.0f, 10.0f, 21.0f, 0.0f));
+        textView.setGravity((id.a0 ? 5 : 3) | 16);
+        addView(textView, c8.ha.d(-2, -2.0f, (id.a0 ? 5 : 3) | 48, 21.0f, 10.0f, 21.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.b = textView2;
         org.telegram.ui.ActionBar.r6.V(textView2, org.telegram.ui.ActionBar.k6.z6, null);
         textView2.setTextSize(1, 13.0f);
-        textView2.setGravity(hd.a0 ? 5 : 3);
+        textView2.setGravity(id.a0 ? 5 : 3);
         textView2.setLines(1);
         textView2.setMaxLines(1);
         textView2.setSingleLine(true);
         textView2.setPadding(0, 0, 0, 0);
-        addView(textView2, c8.ha.d(-2, -2.0f, (hd.a0 ? 5 : 3) | 48, 21.0f, 35.0f, 21.0f, 0.0f));
+        addView(textView2, c8.ha.d(-2, -2.0f, (id.a0 ? 5 : 3) | 48, 21.0f, 35.0f, 21.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         org.telegram.ui.ActionBar.r6.t(imageView, org.telegram.ui.ActionBar.k6.m6, null, PorterDuff.Mode.MULTIPLY);
         imageView.setVisibility(8);
-        addView(imageView, c8.ha.d(52, 52.0f, (hd.a0 ? 5 : 3) | 48, 8.0f, 6.0f, 8.0f, 0.0f));
+        addView(imageView, c8.ha.d(52, 52.0f, (id.a0 ? 5 : 3) | 48, 8.0f, 6.0f, 8.0f, 0.0f));
     }
 
     public final void a(String str, String str2, boolean z9) {
@@ -64,8 +64,8 @@ public class y8 extends FrameLayout {
         ImageView imageView = this.c;
         imageView.setImageResource(i7);
         imageView.setVisibility(0);
-        textView.setPadding(hd.a0 ? 0 : org.telegram.messenger.g0.L(50.0f), 0, hd.a0 ? org.telegram.messenger.g0.L(50.0f) : 0, 0);
-        textView2.setPadding(hd.a0 ? 0 : org.telegram.messenger.g0.L(50.0f), 0, hd.a0 ? org.telegram.messenger.g0.L(50.0f) : 0, this.e ? org.telegram.messenger.g0.L(12.0f) : 0);
+        textView.setPadding(id.a0 ? 0 : org.telegram.messenger.g0.L(50.0f), 0, id.a0 ? org.telegram.messenger.g0.L(50.0f) : 0, 0);
+        textView2.setPadding(id.a0 ? 0 : org.telegram.messenger.g0.L(50.0f), 0, id.a0 ? org.telegram.messenger.g0.L(50.0f) : 0, this.e ? org.telegram.messenger.g0.L(12.0f) : 0);
         this.d = z9;
         setWillNotDraw(!z9);
     }
@@ -91,7 +91,7 @@ public class y8 extends FrameLayout {
         if (!this.d || org.telegram.ui.ActionBar.k6.k0 == null) {
             return;
         }
-        boolean z9 = hd.a0;
+        boolean z9 = id.a0;
         ImageView imageView = this.c;
         if (z9) {
             L = 0.0f;
@@ -101,7 +101,7 @@ public class y8 extends FrameLayout {
         float f10 = L;
         float measuredHeight = getMeasuredHeight() - 1;
         int measuredWidth = getMeasuredWidth();
-        if (hd.a0) {
+        if (id.a0) {
             i7 = org.telegram.messenger.g0.L(imageView.getVisibility() == 0 ? 71.0f : 20.0f);
         } else {
             i7 = 0;

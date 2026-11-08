@@ -10,7 +10,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class zo extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public org.telegram.ui.Cells.i6 D;
@@ -102,13 +102,13 @@ public final class zo extends org.telegram.ui.ActionBar.f2 implements org.telegr
     public final View createView(Context context) {
         final int i7 = 1;
         setHasOwnBackground(true);
-        this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131746386, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131746388, null));
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.simpleActionBar.setActionBarMenuOnItemClick(new w9(this, 7));
         FrameLayout frameLayout = new FrameLayout(context);
         this.n.addAll(getMediaDataController().n);
         org.telegram.ui.Cells.n4 n4Var = new org.telegram.ui.Cells.n4(context);
-        n4Var.setText(org.telegram.messenger.hd.M0(2131753759, null));
+        n4Var.setText(org.telegram.messenger.id.M0(2131753759, null));
         LinearLayout linearLayout = new LinearLayout(context);
         this.r = linearLayout;
         linearLayout.setOrientation(1);
@@ -116,13 +116,13 @@ public final class zo extends org.telegram.ui.ActionBar.f2 implements org.telegr
         org.telegram.ui.Cells.i6 i6Var = new org.telegram.ui.Cells.i6(context, null);
         this.x = i6Var;
         final int i10 = 0;
-        i6Var.c(org.telegram.messenger.hd.M0(2131754291, null), false, true);
+        i6Var.c(org.telegram.messenger.id.M0(2131754291, null), false, true);
         org.telegram.ui.Cells.i6 i6Var2 = new org.telegram.ui.Cells.i6(context, null);
         this.y = i6Var2;
-        i6Var2.c(org.telegram.messenger.hd.M0(2131745293, null), false, true);
+        i6Var2.c(org.telegram.messenger.id.M0(2131745295, null), false, true);
         org.telegram.ui.Cells.i6 i6Var3 = new org.telegram.ui.Cells.i6(context, null);
         this.D = i6Var3;
-        i6Var3.c(org.telegram.messenger.hd.M0(2131748174, null), false, false);
+        i6Var3.c(org.telegram.messenger.id.M0(2131748176, null), false, false);
         this.r.addView(n4Var, c8.ha.o(-1, -2));
         this.r.addView(this.x, c8.ha.o(-1, -2));
         this.r.addView(this.y, c8.ha.o(-1, -2));

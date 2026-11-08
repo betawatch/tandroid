@@ -8,7 +8,7 @@ import org.telegram.ui.Components.b70;
 import org.telegram.ui.Components.w60;
 import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mc implements v10 {
     public final /* synthetic */ int a;
@@ -48,12 +48,12 @@ public final /* synthetic */ class mc implements v10 {
                 org.telegram.messenger.g0.h3(new org.telegram.ui.m6(b70Var, tL_error, updates, tL_messages_importChatInvite, 24));
                 break;
             default:
-                zh.l3 l3Var = (zh.l3) this.c;
+                zh.k3 k3Var = (zh.k3) this.c;
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.d;
                 h6 h6Var = (h6) obj;
                 vf.b bVar = (vf.b) obj2;
                 bVar.d();
-                ea.x(l3Var.a, h6Var.a).h(h6Var.b, tL_starGiftUnique, this.b, null, true, new t0(l3Var, bVar, tL_starGiftUnique, 8));
+                ea.x(k3Var.a, h6Var.a).h(h6Var.b, tL_starGiftUnique, this.b, null, true, new t0(k3Var, bVar, tL_starGiftUnique, 8));
                 break;
         }
     }

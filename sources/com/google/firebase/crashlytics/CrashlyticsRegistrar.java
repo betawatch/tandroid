@@ -15,16 +15,16 @@ import q9.a;
 import q9.b;
 import q9.c;
 import u5.e;
-import u9.i;
-import u9.q;
+import u9.j;
+import u9.r;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class CrashlyticsRegistrar implements ComponentRegistrar {
     public static final /* synthetic */ int d = 0;
-    public final q a = new q(a.class, ExecutorService.class);
-    public final q b = new q(b.class, ExecutorService.class);
-    public final q c = new q(c.class, ExecutorService.class);
+    public final r a = new r(a.class, ExecutorService.class);
+    public final r b = new r(b.class, ExecutorService.class);
+    public final r c = new r(c.class, ExecutorService.class);
 
     static {
         d dVar = d.a;
@@ -34,21 +34,23 @@ public class CrashlyticsRegistrar implements ComponentRegistrar {
             return;
         }
         map.put(dVar, new hb.a(new CountDownLatch(1)));
-        Log.d("FirebaseSessions", "Dependency to " + dVar + " added.");
+        StringBuilder sb2 = new StringBuilder("Dependency to ");
+        sb2.append(dVar);
+        rf.b.p(sb2, " added.", "FirebaseSessions");
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
         j0 a10 = u9.a.a(w9.b.class);
         a10.d = "fire-cls";
-        a10.a(i.a(g.class));
-        a10.a(i.a(va.d.class));
-        a10.a(new i(this.a, 1, 0));
-        a10.a(new i(this.b, 1, 0));
-        a10.a(new i(this.c, 1, 0));
-        a10.a(new i(0, 2, x9.a.class));
-        a10.a(new i(0, 2, p9.a.class));
-        a10.a(new i(0, 2, fb.a.class));
+        a10.a(j.a(g.class));
+        a10.a(j.a(va.d.class));
+        a10.a(new j(this.a, 1, 0));
+        a10.a(new j(this.b, 1, 0));
+        a10.a(new j(this.c, 1, 0));
+        a10.a(new j(0, 2, x9.a.class));
+        a10.a(new j(0, 2, p9.a.class));
+        a10.a(new j(0, 2, fb.a.class));
         a10.f = new e(this, 3);
         a10.c(2);
         return Arrays.asList(a10.b(), h8.a("fire-cls", "20.1.1"));

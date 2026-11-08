@@ -15,7 +15,7 @@ import android.widget.TextView;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.wo;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class m7 extends FrameLayout {
     public final org.telegram.ui.Components.l9 a;
@@ -103,14 +103,14 @@ public final class m7 extends FrameLayout {
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         if (this.n.E3()) {
-            accessibilityNodeInfo.setText(hd.M0(2131753962, null));
+            accessibilityNodeInfo.setText(id.M0(2131753962, null));
         } else if (ij.M4(this.n.k)) {
             StringBuilder sb2 = new StringBuilder();
             org.telegram.messenger.camera.q.q(null, 2131753933, sb2, ", ");
-            sb2.append(hd.z((int) this.n.L0()));
+            sb2.append(id.z((int) this.n.L0()));
             accessibilityNodeInfo.setText(sb2.toString());
         } else {
-            accessibilityNodeInfo.setText(hd.M0(2131753948, null));
+            accessibilityNodeInfo.setText(id.M0(2131753948, null));
         }
         if (this.e.a.q) {
             accessibilityNodeInfo.setCheckable(true);

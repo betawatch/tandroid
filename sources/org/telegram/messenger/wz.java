@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class wz {
     public static volatile wz p;
@@ -101,17 +101,17 @@ public final class wz {
         return !(iz.y == 0 || (i7 = iz.B) == 0 || i7 + iz.y > elapsedRealtime) || elapsedRealtime + 5 < iz.B;
     }
 
-    public final void c(String str, p1 p1Var) {
+    public final void c(String str, j1 j1Var) {
         long j3;
         if (!this.e) {
-            this.o.add(new tz(str, p1Var));
+            this.o.add(new tz(str, j1Var));
             if (this.f) {
                 return;
             }
             this.f = true;
             int i7 = this.c;
             yr a02 = yr.a0(i7);
-            a02.a.c(new k7(this, a02, i7, 22));
+            a02.a.c(new l7(this, a02, i7, 22));
             return;
         }
         if (str != null && str.startsWith("__CHAT_")) {
@@ -121,16 +121,16 @@ public final class wz {
                 a8.g(e10, true);
             }
             if (j3 == 0 && this.j.f(j3) == null) {
-                e(new lg((Object) this, (Object) p1Var, str, 29), j3);
+                e(new lg((Object) this, (Object) j1Var, str, 29), j3);
                 return;
             } else {
-                ((MediaBrowserService.Result) p1Var.b).sendResult(d(str));
+                ((MediaBrowserService.Result) j1Var.b).sendResult(d(str));
             }
         }
         j3 = 0;
         if (j3 == 0) {
         }
-        ((MediaBrowserService.Result) p1Var.b).sendResult(d(str));
+        ((MediaBrowserService.Result) j1Var.b).sendResult(d(str));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0062, code lost:
@@ -264,7 +264,7 @@ public final class wz {
         hVar.k(arrayList2, j3);
         int i7 = this.c;
         yr a02 = yr.a0(i7);
-        a02.a.c(new ik(i7, 11, j3, this, a02));
+        a02.a.c(new hk(i7, 11, j3, this, a02));
     }
 
     public final void f() {

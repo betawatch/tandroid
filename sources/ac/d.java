@@ -28,7 +28,7 @@ import q6.m;
 import r0.l0;
 import r0.m0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements tf {
     public long a;
@@ -92,6 +92,7 @@ public final /* synthetic */ class d implements tf {
         this.b = true;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // c8.tf
     public wa zza() {
         int i7;
@@ -101,9 +102,10 @@ public final /* synthetic */ class d implements tf {
         boolean z9 = this.b;
         ub.a aVar = (ub.a) this.e;
         gg ggVar = (gg) this.f;
-        r7 r7Var = new r7(3);
-        boolean z10 = false;
-        a0 a0Var = new a0(17, z10);
+        Object[] objArr = 0;
+        Object[] objArr2 = 0;
+        r7 r7Var = new r7(3, (byte) 0);
+        a0 a0Var = new a0(17, (boolean) (0 == true ? 1 : 0));
         a0Var.b = Long.valueOf(j3 & Long.MAX_VALUE);
         a0Var.c = ebVar;
         a0Var.d = Boolean.valueOf(z9);
@@ -126,7 +128,7 @@ public final /* synthetic */ class d implements tf {
             }
             i7 = 0;
         }
-        wf.b bVar = new wf.b(8, z10);
+        wf.b bVar = new wf.b(8, (boolean) (objArr2 == true ? 1 : 0));
         bVar.b = i10 != -1 ? i10 != 35 ? i10 != 842094169 ? i10 != 16 ? i10 != 17 ? oa.b : oa.d : oa.c : oa.e : oa.f : oa.h;
         bVar.c = Integer.valueOf(i7 & ConnectionsManager.DEFAULT_DATACENTER_ID);
         r7Var.c = new pa(bVar);
@@ -140,17 +142,17 @@ public final /* synthetic */ class d implements tf {
             r7Var.f = c8.i.m(length, array);
             List<fg> list2 = ggVar.a;
             if (!list2.isEmpty()) {
-                Object[] objArr = new Object[4];
+                Object[] objArr3 = new Object[4];
                 int i12 = 0;
                 for (fg fgVar : list2) {
-                    b0 b0Var = new b0(2, z10);
+                    b0 b0Var = new b0(2, (boolean) (objArr == true ? 1 : 0));
                     b0Var.b = Integer.valueOf(fgVar.c & ConnectionsManager.DEFAULT_DATACENTER_ID);
                     b0Var.c = Integer.valueOf(fgVar.d & ConnectionsManager.DEFAULT_DATACENTER_ID);
                     b0Var.d = Integer.valueOf(fgVar.e & ConnectionsManager.DEFAULT_DATACENTER_ID);
                     b0Var.e = Integer.valueOf(fgVar.f & ConnectionsManager.DEFAULT_DATACENTER_ID);
                     re reVar = new re(b0Var);
                     int i13 = i12 + 1;
-                    int length2 = objArr.length;
+                    int length2 = objArr3.length;
                     if (length2 < i13) {
                         int i14 = length2 + (length2 >> 1) + 1;
                         if (i14 < i13) {
@@ -160,12 +162,12 @@ public final /* synthetic */ class d implements tf {
                         if (i14 < 0) {
                             i14 = Integer.MAX_VALUE;
                         }
-                        objArr = Arrays.copyOf(objArr, i14);
+                        objArr3 = Arrays.copyOf(objArr3, i14);
                     }
-                    objArr[i12] = reVar;
+                    objArr3[i12] = reVar;
                     i12 = i13;
                 }
-                r7Var.e = c8.i.m(i12, objArr);
+                r7Var.e = c8.i.m(i12, objArr3);
             }
         }
         ga.d dVar = new ga.d(1);

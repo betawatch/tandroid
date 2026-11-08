@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class jr extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ nr a;
@@ -50,7 +50,7 @@ public final class jr extends org.telegram.ui.ActionBar.j {
             tL_contacts_addContact.flags |= 2;
             tL_contacts_addContact.note = textWithEntities;
         }
-        contactsController.getConnectionsManager().sendRequest(tL_contacts_addContact, new org.telegram.messenger.s4(1, contactsController, a22), 6);
+        contactsController.getConnectionsManager().sendRequest(tL_contacts_addContact, new org.telegram.messenger.r4(1, contactsController, a22), 6);
         i10 = ((org.telegram.ui.ActionBar.f2) nrVar).currentAccount;
         org.telegram.messenger.qp.s1(i10).d7.edit().putInt("dialog_bar_vis3" + nrVar.H, 3).commit();
         nrVar.getNotificationCenter().k(org.telegram.messenger.qs.r, 1);

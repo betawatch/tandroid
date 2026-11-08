@@ -17,7 +17,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.my0;
 import org.telegram.ui.rg0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class fj implements rg0 {
     public float D;
@@ -236,7 +236,7 @@ public final class fj implements rg0 {
         boolean z10 = i7 >= 75 && !z9;
         this.N = z10;
         if (z10) {
-            this.Q = new my0(hd.M0(2131751765, null).toUpperCase(), iz.W0 - 3, g0.o());
+            this.Q = new my0(id.M0(2131751765, null).toUpperCase(), iz.W0 - 3, g0.o());
             Drawable h = jg.g.h(t0.b, R.drawable.msg_copy);
             this.P = h;
             h.setColorFilter(new PorterDuffColorFilter(this.O, PorterDuff.Mode.SRC_IN));

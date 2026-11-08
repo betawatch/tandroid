@@ -10,7 +10,7 @@ import java.nio.FloatBuffer;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class da {
     public FloatBuffer e;
@@ -215,8 +215,8 @@ public final class da {
                 if (i13 == 1) {
                     y23 = "#extension GL_OES_EGL_image_external : require\n" + y23.replace("sampler2D tex", "samplerExternalOES tex");
                 }
-                int h = vy.h(35633, y22);
-                int h7 = vy.h(35632, y23);
+                int h = wy.h(35633, y22);
+                int h7 = wy.h(35632, y23);
                 if (h == 0 || h7 == 0) {
                     break;
                 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u70 implements Runnable {
     public final /* synthetic */ LaunchActivity a;
@@ -91,7 +91,7 @@ public final /* synthetic */ class u70 implements Runnable {
                     return;
                 }
                 boolean z12 = tL_attachMenuBot.show_in_side_menu;
-                org.telegram.messenger.g0.i3(new ha.b(4, a3Var, (z12 && tL_attachMenuBot.show_in_attach_menu) ? org.telegram.messenger.hd.a0(null, null, 2131753138, a22.first_name) : z12 ? org.telegram.messenger.hd.a0(null, null, 2131753137, a22.first_name) : org.telegram.messenger.hd.a0(null, null, 2131753139, a22.first_name)), 200L);
+                org.telegram.messenger.g0.i3(new ha.b(4, a3Var, (z12 && tL_attachMenuBot.show_in_attach_menu) ? org.telegram.messenger.id.a0(null, null, 2131753138, a22.first_name) : z12 ? org.telegram.messenger.id.a0(null, null, 2131753137, a22.first_name) : org.telegram.messenger.id.a0(null, null, 2131753139, a22.first_name)), 200L);
             }
         }
     }

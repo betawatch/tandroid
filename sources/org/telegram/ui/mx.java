@@ -13,7 +13,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class mx extends LinearLayout implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.ActionBar.f6 a;
@@ -29,7 +29,7 @@ public final class mx extends LinearLayout implements org.telegram.ui.ActionBar.
     public ValueAnimator w;
     public int x;
     public static final int[] y = {R.raw.topics_tabs, R.raw.topics_list, R.raw.topics_sidebar};
-    public static final int[] D = {2131743986, 2131743987, 2131743983};
+    public static final int[] D = {2131743988, 2131743989, 2131743985};
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r5v0 */
@@ -66,7 +66,7 @@ public final class mx extends LinearLayout implements org.telegram.ui.ActionBar.
             FrameLayout frameLayout2 = new FrameLayout(context);
             TextView b10 = c8.qa.b(context, 14.0f, org.telegram.ui.ActionBar.k6.z6, true, null);
             int[] iArr = D;
-            b10.setText(org.telegram.messenger.hd.M0(iArr[i11], null));
+            b10.setText(org.telegram.messenger.id.M0(iArr[i11], null));
             b10.setSingleLine();
             b10.setPadding(org.telegram.messenger.g0.L(10.0f), r52, org.telegram.messenger.g0.L(10.0f), r52);
             frameLayout2.addView(b10, c8.ha.e(-2, -2, 17));
@@ -80,7 +80,7 @@ public final class mx extends LinearLayout implements org.telegram.ui.ActionBar.
             org.telegram.ui.ActionBar.r6.k(frameLayout3, d02, N, null, f6Var);
             frameLayout2.addView(frameLayout3, c8.ha.e(-2, 26, 17));
             TextView b11 = c8.qa.b(context, 14.0f, org.telegram.ui.ActionBar.k6.g6, true, null);
-            b11.setText(org.telegram.messenger.hd.M0(iArr[i11], null));
+            b11.setText(org.telegram.messenger.id.M0(iArr[i11], null));
             b11.setSingleLine();
             frameLayout3.addView(b11, c8.ha.e(-2, -2, 17));
             frameLayout.addView(frameLayout2, c8.ha.e(-2, 26, 49));

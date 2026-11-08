@@ -15,7 +15,7 @@ import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.mt0;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m9 implements v10 {
     public final /* synthetic */ int a;
@@ -174,14 +174,14 @@ public final /* synthetic */ class m9 implements v10 {
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.f0 f0Var = (org.telegram.ui.Wallet.f0) obj3;
+                org.telegram.ui.Wallet.e0 e0Var = (org.telegram.ui.Wallet.e0) obj3;
                 TL_wallet.nftItems nftitems = (TL_wallet.nftItems) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                ArrayList arrayList = f0Var.b;
-                ArrayList arrayList2 = f0Var.c;
-                f0Var.l = -1;
-                f0Var.j = false;
-                f0Var.i = false;
+                ArrayList arrayList = e0Var.b;
+                ArrayList arrayList2 = e0Var.c;
+                e0Var.l = -1;
+                e0Var.j = false;
+                e0Var.i = false;
                 if (nftitems != null) {
                     if (z9) {
                         arrayList.clear();
@@ -197,7 +197,7 @@ public final /* synthetic */ class m9 implements v10 {
                         while (true) {
                             if (i13 >= arrayList.size()) {
                                 arrayList.add(nftitem2);
-                            } else if (org.telegram.ui.Wallet.n0.b(((TL_wallet.nftItem) arrayList.get(i13)).address, nftitem2.address)) {
+                            } else if (org.telegram.ui.Wallet.m0.b(((TL_wallet.nftItem) arrayList.get(i13)).address, nftitem2.address)) {
                                 arrayList.set(i13, nftitem2);
                             } else {
                                 i13++;
@@ -205,27 +205,27 @@ public final /* synthetic */ class m9 implements v10 {
                         }
                     }
                     String str = nftitems.next_offset;
-                    f0Var.f = str;
+                    e0Var.f = str;
                     boolean isEmpty = TextUtils.isEmpty(str);
-                    f0Var.g = isEmpty;
-                    f0Var.h = true;
+                    e0Var.g = isEmpty;
+                    e0Var.h = true;
                     if (isEmpty) {
                         for (int size2 = arrayList2.size() - 1; size2 >= 0; size2--) {
                             TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) arrayList2.get(size2);
-                            if (!wallettransaction.pending && !wallettransaction.failed && !f0Var.d(wallettransaction.nft.address)) {
+                            if (!wallettransaction.pending && !wallettransaction.failed && !e0Var.d(wallettransaction.nft.address)) {
                                 arrayList2.remove(size2);
                             }
                         }
                     }
-                    f0Var.h();
+                    e0Var.h();
                 } else {
                     if (z9) {
-                        f0Var.g = false;
-                        f0Var.h = false;
+                        e0Var.g = false;
+                        e0Var.h = false;
                     }
-                    f0Var.k = tL_error3 == null ? "Could not load collectibles" : tL_error3.text;
+                    e0Var.k = tL_error3 == null ? "Could not load collectibles" : tL_error3.text;
                 }
-                f0Var.g();
+                e0Var.g();
                 break;
         }
     }

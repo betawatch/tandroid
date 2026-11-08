@@ -9,11 +9,11 @@ import android.widget.ImageView;
 import java.io.File;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.cp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class t0 extends ImageView {
     public int a;
@@ -98,7 +98,7 @@ public final class t0 extends ImageView {
             this.d = false;
             File q02 = org.telegram.messenger.g0.q0("png", false);
             if (q02 == null) {
-                this.n.b(R.raw.error, 3500, hd.N0("UnknownError"));
+                this.n.b(R.raw.error, 3500, id.N0("UnknownError"));
                 this.c = false;
                 d();
                 return;

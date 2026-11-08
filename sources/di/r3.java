@@ -7,7 +7,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
@@ -21,11 +21,11 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.an;
 import org.telegram.ui.bk0;
 import org.telegram.ui.hl0;
-import org.telegram.ui.u71;
+import org.telegram.ui.v71;
 import org.telegram.ui.vs0;
 import org.telegram.ui.ws;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -94,11 +94,11 @@ public final /* synthetic */ class r3 implements View.OnClickListener {
                         break;
                     } else {
                         AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(dataSettingsActivity.getParentActivity());
-                        String M0 = hd.M0(2131751602, null);
+                        String M0 = id.M0(2131751602, null);
                         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder2.a;
                         u1Var.R = M0;
-                        u1Var.T = hd.M0(2131745840, null);
-                        alertDialog$Builder2.k(hd.M0(2131746742, null), new org.telegram.ui.a7(dataSettingsActivity, str, alertDialog$Builder, 12));
+                        u1Var.T = id.M0(2131745842, null);
+                        alertDialog$Builder2.k(id.M0(2131746744, null), new org.telegram.ui.a7(dataSettingsActivity, str, alertDialog$Builder, 12));
                         jg.g.w(null, 2131753756, alertDialog$Builder2, null);
                         break;
                     }
@@ -117,37 +117,37 @@ public final /* synthetic */ class r3 implements View.OnClickListener {
                         if (!(secureValueType instanceof TLRPC.TL_secureValueTypePersonalDetails) || (secureValueType instanceof TLRPC.TL_secureValueTypeAddress)) {
                             if (tL_secureRequiredType == null && arrayList2 != null && !arrayList2.isEmpty()) {
                                 AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(bk0Var.getParentActivity());
-                                alertDialog$Builder3.k(hd.M0(2131752589, null), null);
+                                alertDialog$Builder3.k(id.M0(2131752589, null), null);
                                 TLRPC.SecureValueType secureValueType2 = tL_secureRequiredType2.type;
                                 z9 = secureValueType2 instanceof TLRPC.TL_secureValueTypePersonalDetails;
                                 org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder3.a;
                                 if (!z9) {
-                                    u1Var2.R = hd.M0(2131747564, null);
+                                    u1Var2.R = id.M0(2131747566, null);
                                 } else if (secureValueType2 instanceof TLRPC.TL_secureValueTypeAddress) {
-                                    u1Var2.R = hd.M0(2131747601, null);
+                                    u1Var2.R = id.M0(2131747603, null);
                                 }
                                 ArrayList arrayList3 = new ArrayList();
                                 size = arrayList2.size();
                                 for (i7 = 0; i7 < size; i7++) {
                                     TLRPC.SecureValueType secureValueType3 = ((TLRPC.TL_secureRequiredType) arrayList2.get(i7)).type;
                                     if (secureValueType3 instanceof TLRPC.TL_secureValueTypeDriverLicense) {
-                                        arrayList3.add(hd.M0(2131747614, null));
+                                        arrayList3.add(id.M0(2131747616, null));
                                     } else if (secureValueType3 instanceof TLRPC.TL_secureValueTypePassport) {
-                                        arrayList3.add(hd.M0(2131747613, null));
+                                        arrayList3.add(id.M0(2131747615, null));
                                     } else if (secureValueType3 instanceof TLRPC.TL_secureValueTypeInternalPassport) {
-                                        arrayList3.add(hd.M0(2131747616, null));
+                                        arrayList3.add(id.M0(2131747618, null));
                                     } else if (secureValueType3 instanceof TLRPC.TL_secureValueTypeIdentityCard) {
-                                        arrayList3.add(hd.M0(2131747619, null));
+                                        arrayList3.add(id.M0(2131747621, null));
                                     } else if (secureValueType3 instanceof TLRPC.TL_secureValueTypeUtilityBill) {
-                                        arrayList3.add(hd.M0(2131747621, null));
+                                        arrayList3.add(id.M0(2131747623, null));
                                     } else if (secureValueType3 instanceof TLRPC.TL_secureValueTypeBankStatement) {
-                                        arrayList3.add(hd.M0(2131747623, null));
+                                        arrayList3.add(id.M0(2131747625, null));
                                     } else if (secureValueType3 instanceof TLRPC.TL_secureValueTypeRentalAgreement) {
-                                        arrayList3.add(hd.M0(2131747625, null));
+                                        arrayList3.add(id.M0(2131747627, null));
                                     } else if (secureValueType3 instanceof TLRPC.TL_secureValueTypeTemporaryRegistration) {
-                                        arrayList3.add(hd.M0(2131747609, null));
+                                        arrayList3.add(id.M0(2131747611, null));
                                     } else if (secureValueType3 instanceof TLRPC.TL_secureValueTypePassportRegistration) {
-                                        arrayList3.add(hd.M0(2131747611, null));
+                                        arrayList3.add(id.M0(2131747613, null));
                                     }
                                 }
                                 alertDialog$Builder3.f((CharSequence[]) arrayList3.toArray(new CharSequence[0]), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.wi0
@@ -166,12 +166,12 @@ public final /* synthetic */ class r3 implements View.OnClickListener {
                             boolean z12 = secureValueType instanceof TLRPC.TL_secureValueTypePhone;
                             if ((z12 || (secureValueType instanceof TLRPC.TL_secureValueTypeEmail)) && bk0Var.v1(tL_secureRequiredType2, false) != null) {
                                 AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(bk0Var.getParentActivity());
-                                alertDialog$Builder4.k(hd.M0(2131747830, null), new ab.j(bk0Var, tL_secureRequiredType2, z10, 11));
-                                alertDialog$Builder4.h(hd.M0(2131752589, null), null);
-                                String M02 = hd.M0(R.string.AppName, null);
+                                alertDialog$Builder4.k(id.M0(2131747832, null), new ab.j(bk0Var, tL_secureRequiredType2, z10, 11));
+                                alertDialog$Builder4.h(id.M0(2131752589, null), null);
+                                String M02 = id.M0(R.string.AppName, null);
                                 org.telegram.ui.ActionBar.u1 u1Var3 = alertDialog$Builder4.a;
                                 u1Var3.R = M02;
-                                u1Var3.T = hd.M0(z12 ? 2131747584 : 2131747587, null);
+                                u1Var3.T = id.M0(z12 ? 2131747586 : 2131747589, null);
                                 bk0Var.showDialog(u1Var3);
                                 break;
                             }
@@ -186,7 +186,7 @@ public final /* synthetic */ class r3 implements View.OnClickListener {
                 }
                 if (tL_secureRequiredType == null) {
                     AlertDialog$Builder alertDialog$Builder32 = new AlertDialog$Builder(bk0Var.getParentActivity());
-                    alertDialog$Builder32.k(hd.M0(2131752589, null), null);
+                    alertDialog$Builder32.k(id.M0(2131752589, null), null);
                     TLRPC.SecureValueType secureValueType22 = tL_secureRequiredType2.type;
                     z9 = secureValueType22 instanceof TLRPC.TL_secureValueTypePersonalDetails;
                     org.telegram.ui.ActionBar.u1 u1Var22 = alertDialog$Builder32.a;
@@ -261,7 +261,7 @@ public final /* synthetic */ class r3 implements View.OnClickListener {
                 }
                 if (z10 || w0Var.w1) {
                     PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(0, PremiumPreviewFragment.q0(vs0Var.a));
-                    if (f2Var instanceof u71) {
+                    if (f2Var instanceof v71) {
                         org.telegram.ui.ActionBar.d2 d2Var = new org.telegram.ui.ActionBar.d2();
                         d2Var.a = true;
                         f2Var.showAsSheet(premiumPreviewFragment, d2Var);

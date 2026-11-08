@@ -4,14 +4,14 @@ import android.text.TextUtils;
 import java.io.Serializable;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.pa0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v0 implements a20, org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
@@ -54,10 +54,10 @@ public final /* synthetic */ class v0 implements a20, org.telegram.ui.ActionBar.
         if (i7 != 1 && x31Var.c != a1Var.f) {
             if (i7 == 2) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(a1Var.getParentActivity());
-                alertDialog$Builder.a.R = hd.M0(2131752694, null);
-                alertDialog$Builder.a.T = hd.M0(2131752695, null);
-                alertDialog$Builder.k(hd.M0(2131746320, null), new v0(a1Var, i10));
-                alertDialog$Builder.h(hd.M0(2131752589, null), null);
+                alertDialog$Builder.a.R = id.M0(2131752694, null);
+                alertDialog$Builder.a.T = id.M0(2131752695, null);
+                alertDialog$Builder.k(id.M0(2131746322, null), new v0(a1Var, i10));
+                alertDialog$Builder.h(id.M0(2131752589, null), null);
                 a1Var.showDialog(alertDialog$Builder.a);
                 return;
             }

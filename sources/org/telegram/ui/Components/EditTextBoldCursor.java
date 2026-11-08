@@ -42,9 +42,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public class EditTextBoldCursor extends ct {
+public class EditTextBoldCursor extends dt {
     public static Field A1;
     public static boolean B1;
     public static Method C1;
@@ -141,15 +141,15 @@ public class EditTextBoldCursor extends ct {
         this.n = new Path();
         this.G = true;
         this.H = null;
-        this.J = new at(this, 0);
+        this.J = new bt(this, 0);
         this.K = new Rect();
-        if (ct.W == null) {
+        if (dt.W == null) {
             String str2 = Build.MANUFACTURER;
-            ct.W = Boolean.valueOf((str2 == null || !(str2.toLowerCase().contains("honor") || str2.toLowerCase().contains("huawei") || str2.toLowerCase().contains("alps") || str2.toLowerCase().contains("vivo"))) && ((str = Build.MODEL) == null || !str.toLowerCase().contains("mediapad")));
+            dt.W = Boolean.valueOf((str2 == null || !(str2.toLowerCase().contains("honor") || str2.toLowerCase().contains("huawei") || str2.toLowerCase().contains("alps") || str2.toLowerCase().contains("vivo"))) && ((str = Build.MODEL) == null || !str.toLowerCase().contains("mediapad")));
         }
-        this.P = ct.W.booleanValue();
+        this.P = dt.W.booleanValue();
         if (Looper.getMainLooper().getThread() == Thread.currentThread()) {
-            this.f = new gf.c(this, arrayList, new bt(this));
+            this.f = new gf.c(this, arrayList, new ct(this));
         }
         this.e0 = new u5(this, 1);
         this.n0 = new Rect();
@@ -424,7 +424,7 @@ public class EditTextBoldCursor extends ct {
         gradientDrawable.draw(canvas);
     }
 
-    @Override // org.telegram.ui.Components.ct, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.dt, android.widget.TextView, android.view.View
     public void onAttachedToWindow() {
         try {
             super.onAttachedToWindow();
@@ -437,7 +437,7 @@ public class EditTextBoldCursor extends ct {
         }
     }
 
-    @Override // org.telegram.ui.Components.ct, android.view.View
+    @Override // org.telegram.ui.Components.dt, android.view.View
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.b1 = null;
@@ -478,7 +478,7 @@ public class EditTextBoldCursor extends ct {
     /* JADX WARN: Removed duplicated region for block: B:95:0x0557  */
     /* JADX WARN: Removed duplicated region for block: B:98:0x056a  */
     /* JADX WARN: Removed duplicated region for block: B:99:0x0559  */
-    @Override // org.telegram.ui.Components.ct, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.dt, android.widget.TextView, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -561,7 +561,7 @@ public class EditTextBoldCursor extends ct {
                 float lineLeft = this.o0.getLineLeft(0);
                 float lineWidth = this.o0.getLineWidth(0);
                 int i13 = lineLeft != 0.0f ? (int) (0 - lineLeft) : 0;
-                if (this.F0 && org.telegram.messenger.hd.a0) {
+                if (this.F0 && org.telegram.messenger.id.a0) {
                     float scrollX = getScrollX() + i13 + (getMeasuredWidth() - lineWidth);
                     this.p0 = scrollX;
                     canvas2.translate(scrollX, (this.L0 - this.o0.getHeight()) - org.telegram.messenger.g0.L(7.0f));
@@ -572,7 +572,7 @@ public class EditTextBoldCursor extends ct {
                 }
                 if (this.S0) {
                     float f17 = 1.0f - (this.W0 * 0.3f);
-                    if (this.F0 && org.telegram.messenger.hd.a0) {
+                    if (this.F0 && org.telegram.messenger.id.a0) {
                         float f18 = lineWidth + lineLeft;
                         canvas2.translate(f18 - (f18 * f17), 0.0f);
                     } else if (lineLeft != 0.0f) {
@@ -1097,7 +1097,7 @@ public class EditTextBoldCursor extends ct {
         }
     }
 
-    @Override // org.telegram.ui.Components.ct, android.widget.TextView
+    @Override // org.telegram.ui.Components.dt, android.widget.TextView
     public void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
         super.onTextChanged(charSequence, i7, i10, i11);
         if (!this.S0 || this.T0) {
@@ -1186,7 +1186,7 @@ public class EditTextBoldCursor extends ct {
         CharSequence charSequence4 = charSequence;
         rs rsVar = this.t0;
         if (rsVar != null) {
-            rsVar.t(charSequence4, !org.telegram.messenger.hd.a0, true);
+            rsVar.t(charSequence4, !org.telegram.messenger.id.a0, true);
             return;
         }
         if (charSequence4 == null) {
@@ -1221,12 +1221,12 @@ public class EditTextBoldCursor extends ct {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence2);
                     SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(charSequence2);
                     if (indexOf != 0) {
-                        spannableStringBuilder2.setSpan(new hy(z11), 0, indexOf, 0);
+                        spannableStringBuilder2.setSpan(new iy(z11), 0, indexOf, 0);
                     }
                     if (charSequence3.length() + indexOf != charSequence2.length()) {
-                        spannableStringBuilder2.setSpan(new hy(z11), charSequence3.length() + indexOf, charSequence2.length(), 0);
+                        spannableStringBuilder2.setSpan(new iy(z11), charSequence3.length() + indexOf, charSequence2.length(), 0);
                     }
-                    spannableStringBuilder.setSpan(new hy(z11), indexOf, charSequence3.length() + indexOf, 0);
+                    spannableStringBuilder.setSpan(new iy(z11), indexOf, charSequence3.length() + indexOf, 0);
                     int L = org.telegram.messenger.g0.L(400.0f);
                     Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
                     iw0Var.b = new StaticLayout(spannableStringBuilder, textPaint, L, alignment, 1.0f, 0.0f, false);
@@ -1427,7 +1427,7 @@ public class EditTextBoldCursor extends ct {
         this.F0 = z9;
     }
 
-    @Override // org.telegram.ui.Components.ct, android.widget.EditText, android.widget.TextView
+    @Override // org.telegram.ui.Components.dt, android.widget.EditText, android.widget.TextView
     public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
         super.setText(charSequence, bufferType);
         l(this.R0);

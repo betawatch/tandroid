@@ -41,7 +41,7 @@ import org.telegram.messenger.fp;
 import org.telegram.messenger.gp;
 import org.telegram.messenger.gz;
 import org.telegram.messenger.h2;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.k5;
@@ -75,17 +75,17 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.di;
 import org.telegram.ui.Components.fq;
-import org.telegram.ui.Components.fx;
 import org.telegram.ui.Components.ge;
 import org.telegram.ui.Components.gx;
-import org.telegram.ui.Components.gy;
 import org.telegram.ui.Components.hr;
+import org.telegram.ui.Components.hx;
+import org.telegram.ui.Components.hy;
 import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.mo0;
 import org.telegram.ui.Components.n80;
 import org.telegram.ui.Components.ni;
-import org.telegram.ui.Components.nu;
 import org.telegram.ui.Components.ou;
+import org.telegram.ui.Components.pu;
 import org.telegram.ui.Components.ue;
 import org.telegram.ui.Components.v4;
 import org.telegram.ui.Components.we;
@@ -116,7 +116,7 @@ import org.telegram.ui.web.x0;
 import org.telegram.ui.web.z0;
 import org.telegram.ui.zd;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k implements c20 {
     public final /* synthetic */ int a;
@@ -408,11 +408,11 @@ public final /* synthetic */ class k implements c20 {
                                             linearLayout.setPadding(0, 0, 0, org.telegram.messenger.g0.L(4.0f));
                                             linearLayout.setOrientation(1);
                                             n4 n4Var = new n4(g4Var.L, (org.telegram.ui.ActionBar.f6) null);
-                                            n4Var.setText(hd.M0(2131750610, null));
+                                            n4Var.setText(id.M0(2131750610, null));
                                             linearLayout.addView(n4Var, ha.t(-2, -2, 51, 3, 1, 3, 0));
                                             linearLayout.addView(new c4(g4Var, g4Var.L), ha.t(-1, -2, 51, 3, 0, 3, 0));
                                             n4 n4Var2 = new n4(g4Var.L, (org.telegram.ui.ActionBar.f6) null);
-                                            n4Var2.setText(hd.M0(2131750605, null));
+                                            n4Var2.setText(id.M0(2131750605, null));
                                             linearLayout.addView(n4Var2, ha.t(-2, -2, 51, 3, 4, 3, 2));
                                             int i20 = 0;
                                             while (i20 < i12) {
@@ -427,18 +427,18 @@ public final /* synthetic */ class k implements c20 {
                                                 k0Var.b = radioButton;
                                                 radioButton.setSize(org.telegram.messenger.g0.L(20.0f));
                                                 r6.P(radioButton, k6.D5, k6.E5, null);
-                                                boolean z13 = hd.a0;
+                                                boolean z13 = id.a0;
                                                 k0Var.addView(radioButton, ha.d(22, 22.0f, (z13 ? 5 : 3) | 48, z13 ? 0 : 22, 13.0f, z13 ? 22 : 0, 0.0f));
                                                 TextView textView = new TextView(activity2);
                                                 r6.V(textView, k6.G6, null);
                                                 org.telegram.messenger.camera.q.n(textView, 1, 16.0f, 1, 1);
                                                 textView.setSingleLine(true);
-                                                textView.setGravity((hd.a0 ? 5 : 3) | 16);
-                                                boolean z14 = hd.a0;
+                                                textView.setGravity((id.a0 ? 5 : 3) | 16);
+                                                boolean z14 = id.a0;
                                                 k0Var.addView(textView, ha.d(-1, -1.0f, (z14 ? 5 : 3) | 48, z14 ? 17 : 62, 0.0f, z14 ? 62 : 17, 0.0f));
                                                 k0VarArr[i20] = k0Var;
                                                 if (i20 == 0) {
-                                                    String M0 = hd.M0(2131751601, null);
+                                                    String M0 = id.M0(2131751601, null);
                                                     Typeface typeface = Typeface.DEFAULT;
                                                     textView.setText(M0);
                                                     textView.setTypeface(typeface);
@@ -658,7 +658,7 @@ public final /* synthetic */ class k implements c20 {
                 u1VarArr[0] = null;
                 if (tL_statsPollStats != null) {
                     if (tL_statsPollStats.votes_graph instanceof TL_stats.TL_statsGraphError) {
-                        k5.o(null, 2131747156, org.telegram.ui.Components.hc.a0(anVar5), R.raw.timer_toast, 24);
+                        k5.o(null, 2131747158, org.telegram.ui.Components.hc.a0(anVar5), R.raw.timer_toast, 24);
                         break;
                     } else {
                         new vh.h(anVar5.getParentActivity(), anVar5.xa, tL_statsPollStats).show();
@@ -708,7 +708,7 @@ public final /* synthetic */ class k implements c20 {
                         if (childAt instanceof q1) {
                             q1 q1Var2 = (q1) childAt;
                             if (q1Var2.getMessageObject() != null && q1Var2.getMessageObject().q4()) {
-                                q1Var2.G3();
+                                q1Var2.H3();
                             }
                         }
                     }
@@ -717,7 +717,7 @@ public final /* synthetic */ class k implements c20 {
                     if (q1Var.getMessageObject() != null) {
                         q1Var.getMessageObject().r2 = Boolean.FALSE;
                     }
-                    q1Var.G3();
+                    q1Var.H3();
                     break;
                 }
                 break;
@@ -727,11 +727,11 @@ public final /* synthetic */ class k implements c20 {
                 an anVar10 = lmVar.a;
                 if (((Boolean) obj).booleanValue()) {
                     anVar10.getMessagesController().F4(true);
-                    org.telegram.ui.Components.hc.a0(anVar10).P(R.raw.chats_infotip, org.telegram.messenger.g0.H2(org.telegram.messenger.g0.x2(hd.M0(2131745575, null), new tl(lmVar, i13)), true)).k(true);
+                    org.telegram.ui.Components.hc.a0(anVar10).P(R.raw.chats_infotip, org.telegram.messenger.g0.H2(org.telegram.messenger.g0.x2(id.M0(2131745577, null), new tl(lmVar, i13)), true)).k(true);
                     kVar.a(Boolean.TRUE);
                     break;
                 } else {
-                    org.telegram.ui.Components.hc.a0(anVar10).I(R.raw.error, hd.M0(2131754311, null), hd.M0(2131754312, null)).j();
+                    org.telegram.ui.Components.hc.a0(anVar10).I(R.raw.error, id.M0(2131754311, null), id.M0(2131754312, null)).j();
                     break;
                 }
             case 20:
@@ -740,7 +740,7 @@ public final /* synthetic */ class k implements c20 {
                 break;
             case 21:
                 dn dnVar = (dn) obj3;
-                dnVar.f.s(((gg.a) obj).a, ((TLRPC.WallPaper) obj2).settings.intensity);
+                dnVar.f.s(((TLRPC.WallPaper) obj2).settings.intensity, ((gg.a) obj).a);
                 View view2 = dnVar.b;
                 if (view2 != null) {
                     view2.invalidate();
@@ -805,11 +805,11 @@ public final /* synthetic */ class k implements c20 {
                 }
                 break;
             case 27:
-                ou ouVar = (ou) obj3;
+                pu puVar = (pu) obj3;
                 boolean[] zArr = (boolean[]) obj2;
                 if (((TLRPC.TL_messages_stickerSet) obj) == null && !zArr[0]) {
                     zArr[0] = true;
-                    org.telegram.messenger.g0.h3(new nu(ouVar, true ? 1 : 0));
+                    org.telegram.messenger.g0.h3(new ou(puVar, true ? 1 : 0));
                     break;
                 }
                 break;
@@ -823,10 +823,10 @@ public final /* synthetic */ class k implements c20 {
                 fqVar.run();
                 break;
             default:
-                fx fxVar = (fx) obj3;
-                gx gxVar = fxVar.a;
-                gy gyVar = gxVar.F;
-                ui.b0(gyVar.c1).V(gyVar.W0, gxVar.w, false, new hr((Object) fxVar, obj2, obj, (int) (true ? 1 : 0)), iz.F || p10.i(gyVar.c1).q(), false, true, false, 25);
+                gx gxVar = (gx) obj3;
+                hx hxVar = gxVar.a;
+                hy hyVar = hxVar.F;
+                ui.b0(hyVar.c1).V(hyVar.W0, hxVar.w, false, new hr((Object) gxVar, obj2, obj, (int) (true ? 1 : 0)), iz.F || p10.i(hyVar.c1).q(), false, true, false, 25);
                 break;
         }
     }

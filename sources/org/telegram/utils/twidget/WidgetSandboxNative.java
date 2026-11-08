@@ -2,9 +2,11 @@ package org.telegram.utils.twidget;
 
 import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 final class WidgetSandboxNative {
+    private static final boolean LOADED = load();
+
     private WidgetSandboxNative() {
     }
 
@@ -28,9 +30,13 @@ final class WidgetSandboxNative {
 
     public static native void attackScan(boolean z9);
 
+    public static boolean available() {
+        return LOADED;
+    }
+
     public static native void conformance(boolean z9);
 
-    public static native long create(byte[] bArr, byte[] bArr2, byte[] bArr3, float f10, float f11, int i7, byte[] bArr4, byte[] bArr5, byte[] bArr6, byte[] bArr7, boolean z9, WidgetSandboxBackend widgetSandboxBackend);
+    public static native long create(byte[] bArr, byte[] bArr2, byte[] bArr3, float f10, float f11, int i7, byte[] bArr4, byte[] bArr5, byte[] bArr6, byte[] bArr7, boolean z9, Object obj);
 
     public static native void data(long j3, byte[] bArr);
 
@@ -41,6 +47,17 @@ final class WidgetSandboxNative {
     public static native void hover(long j3, int i7, float f10, float f11, int i10);
 
     public static native void limits(byte[] bArr);
+
+    private static boolean load() {
+        try {
+            System.loadLibrary("twidget");
+            return true;
+        } catch (Throwable unused) {
+            return false;
+        }
+    }
+
+    public static native void registerResources(byte[] bArr, byte[] bArr2, byte[] bArr3, byte[] bArr4, byte[] bArr5, byte[] bArr6);
 
     public static native void repaint(long j3);
 

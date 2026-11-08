@@ -11,12 +11,12 @@ import org.telegram.messenger.rz;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class u1 extends FrameLayout implements te.b, org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.ActionBar.f6 a;
     public final FrameLayout b;
-    public final zh.w0 c;
+    public final zh.v0 c;
     public final org.telegram.ui.Components.l9 d;
     public final TextView e;
     public final TextView f;
@@ -32,10 +32,10 @@ public final class u1 extends FrameLayout implements te.b, org.telegram.ui.Actio
         this.a = f6Var;
         FrameLayout frameLayout = new FrameLayout(context);
         this.b = frameLayout;
-        zh.w0 w0Var = new zh.w0(frameLayout, f6Var, true);
-        this.c = w0Var;
-        frameLayout.setBackground(w0Var);
-        w0Var.w = 1;
+        zh.v0 v0Var = new zh.v0(frameLayout, f6Var, true);
+        this.c = v0Var;
+        frameLayout.setBackground(v0Var);
+        v0Var.w = 1;
         addView(frameLayout, c8.ha.e(-1, -1, qs.E1));
         org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(context);
         this.d = l9Var;
@@ -89,14 +89,14 @@ public final class u1 extends FrameLayout implements te.b, org.telegram.ui.Actio
 
     public final void b() {
         int f10;
-        zh.w0 w0Var = this.c;
-        w0Var.z = null;
+        zh.v0 v0Var = this.c;
+        v0Var.z = null;
         Integer num = this.h;
         te.a aVar = this.r;
         TextView textView = this.f;
         if (num != null) {
             f10 = org.telegram.ui.ActionBar.k6.w(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false), org.telegram.ui.ActionBar.k6.r1(org.telegram.messenger.g0.T1(0.15f, 1.0f, aVar.e), this.h.intValue()));
-            w0Var.z = this.h;
+            v0Var.z = this.h;
             this.b.invalidate();
             textView.setTextColor(i0.a.f(aVar.e, this.h.intValue(), -1));
         } else if (this.s) {

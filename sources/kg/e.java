@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import c8.ha;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f6;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class e extends FrameLayout {
     public float D;
@@ -70,7 +70,7 @@ public final class e extends FrameLayout {
         j6Var2.n = false;
         j6Var2.getDrawable().r(true, false);
         j6Var2.setTextSize(org.telegram.messenger.g0.L(13.0f));
-        j6Var2.setText(hd.M0(2131753700, null));
+        j6Var2.setText(id.M0(2131753700, null));
         r6.Z(j6Var2, k6.Ue, f6Var);
         j6Var2.setEllipsizeByGradient(true);
         linearLayout.addView(j6Var2, ha.o(-1, 17));
@@ -95,7 +95,7 @@ public final class e extends FrameLayout {
         mpVar.setPadding(org.telegram.messenger.g0.L(13.0f), 0, org.telegram.messenger.g0.L(13.0f), 0);
         mpVar.setOnClickListener(new ii.g(this, 7));
         mpVar.setOnWidthUpdatedListener(new d(this, 0));
-        mpVar.setText(hd.M0(this.r ? 2131753701 : 2131753698, null));
+        mpVar.setText(id.M0(this.r ? 2131753701 : 2131753698, null));
         addView(mpVar, ha.d(64, 28.0f, 21, 0.0f, 0.0f, 46.0f, 0.0f));
         ImageView imageView = new ImageView(activity);
         this.n = imageView;

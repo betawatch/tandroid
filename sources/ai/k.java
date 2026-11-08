@@ -33,7 +33,7 @@ import kg.s1;
 import org.json.JSONObject;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.p10;
@@ -68,9 +68,9 @@ import org.telegram.ui.pv;
 import org.telegram.ui.up0;
 import org.telegram.ui.vw;
 import org.telegram.ui.ww;
-import zh.o3;
+import zh.n3;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements bj0 {
     public final /* synthetic */ int a;
@@ -114,7 +114,7 @@ public final /* synthetic */ class k implements bj0 {
                             if (!s0Var.getUserConfig().q() && ((q0Var = s0Var.h) == null || !q0Var.H.contains(Long.valueOf(j3)))) {
                                 l1 l1Var = s0Var.d;
                                 l1Var.getClass();
-                                l1Var.d1(0, hd.M0(2131746474, null), hd.M0(2131746472, null));
+                                l1Var.d1(0, id.M0(2131746476, null), id.M0(2131746474, null));
                                 l1Var.i0();
                                 break;
                             } else {
@@ -335,7 +335,7 @@ public final /* synthetic */ class k implements bj0 {
                 }
                 y10 y10Var = k2Var.v1;
                 if (y10Var != null) {
-                    y10Var.k(botInlineResult, document2, Boolean.TRUE);
+                    y10Var.i(botInlineResult, document2, Boolean.TRUE);
                 }
                 k2Var.dismiss();
                 break;
@@ -360,7 +360,7 @@ public final /* synthetic */ class k implements bj0 {
                             if (document3 != null) {
                                 y10 y10Var2 = k2Var2.v1;
                                 if (y10Var2 != null) {
-                                    y10Var2.k(y1Var.f.get(Long.valueOf(document3.id)), document3, Boolean.FALSE);
+                                    y10Var2.i(y1Var.f.get(Long.valueOf(document3.id)), document3, Boolean.FALSE);
                                 }
                                 k2Var2.dismiss();
                                 break;
@@ -592,7 +592,7 @@ public final /* synthetic */ class k implements bj0 {
                                 org.telegram.messenger.g0.G3(i25, h4Var, null);
                                 p2.D.a();
                                 String k10 = j11 >= 0 ? t10.k(qp.s1(i0Var2.a).a2(Long.valueOf(j11))) : "";
-                                (qp.s1(i0Var2.a).D3() ? new hc((FrameLayout) i0Var2.b, i0Var2.I0).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.X2(hd.a0(null, null, 2131743761, k10))) : new hc((FrameLayout) i0Var2.b, i0Var2.I0).K(R.raw.star_premium_2, org.telegram.messenger.g0.X2(hd.a0(null, null, 2131743761, k10)), hd.M0(2131743760, null), new ug.v(i0Var2, i14))).j();
+                                (qp.s1(i0Var2.a).D3() ? new hc((FrameLayout) i0Var2.b, i0Var2.I0).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131743763, k10))) : new hc((FrameLayout) i0Var2.b, i0Var2.I0).K(R.raw.star_premium_2, org.telegram.messenger.g0.X2(id.a0(null, null, 2131743763, k10)), id.M0(2131743762, null), new ug.v(i0Var2, i14))).j();
                                 break;
                             }
                         }
@@ -626,10 +626,10 @@ public final /* synthetic */ class k implements bj0 {
                 ((yh.m) obj).h(view);
                 break;
             default:
-                o3 o3Var = (o3) obj;
-                fi.d dVar = o3Var.U1;
-                HashSet hashSet2 = o3Var.R1;
-                l41 l41Var8 = o3Var.Y1;
+                n3 n3Var = (n3) obj;
+                fi.d dVar = n3Var.U1;
+                HashSet hashSet2 = n3Var.R1;
+                l41 l41Var8 = n3Var.Y1;
                 if (l41Var8 != null && (G4 = l41Var8.G(i7 - 1)) != null) {
                     Object obj2 = G4.G;
                     if (obj2 instanceof TL_stars.SavedStarGift) {
@@ -638,11 +638,11 @@ public final /* synthetic */ class k implements bj0 {
                         long j12 = i26 == 0 ? savedStarGift.saved_id : i26;
                         if (hashSet2.contains(Long.valueOf(j12))) {
                             hashSet2.remove(Long.valueOf(j12));
-                            ((zh.z0) view).c(false, true);
+                            ((zh.y0) view).c(false, true);
                             G4.e = false;
                         } else {
                             hashSet2.add(Long.valueOf(j12));
-                            ((zh.z0) view).c(true, true);
+                            ((zh.y0) view).c(true, true);
                             G4.e = true;
                         }
                         dVar.setEnabled(hashSet2.size() > 0);

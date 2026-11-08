@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tc0 implements Runnable {
     public final /* synthetic */ int a;
@@ -80,11 +80,11 @@ public final /* synthetic */ class tc0 implements Runnable {
                 } catch (Exception unused) {
                 }
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(gd0Var.getContext());
-                String M0 = org.telegram.messenger.hd.M0(2131742799, null);
+                String M0 = org.telegram.messenger.id.M0(2131742801, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
-                u1Var.T = org.telegram.messenger.hd.a0(null, null, 2131752534, org.telegram.messenger.k5.i(new StringBuilder("+"), gd0Var.d, pf.b.c()));
-                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747830, null), null);
+                u1Var.T = org.telegram.messenger.id.a0(null, null, 2131752534, org.telegram.messenger.k5.i(new StringBuilder("+"), gd0Var.d, pf.b.c()));
+                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747832, null), null);
                 u1Var.setOnDismissListener(new cd0(gd0Var, i10));
                 alertDialog$Builder.p();
                 break;

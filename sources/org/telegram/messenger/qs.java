@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class qs {
     public static final int A = 11;
@@ -505,7 +505,7 @@ public final class qs {
     /* JADX WARN: Type inference failed for: r4v0, types: [java.lang.Object, org.telegram.messenger.hs] */
     public final Runnable h(View view, final int i7, final c20 c20Var) {
         if (view == null) {
-            return new ai.m0(22);
+            return new ai.m0(24);
         }
         ?? r42 = new ls() { // from class: org.telegram.messenger.hs
             @Override // org.telegram.messenger.ls
@@ -517,7 +517,7 @@ public final class qs {
         };
         is isVar = new is(this, r42, i7);
         view.addOnAttachStateChangeListener(isVar);
-        return new ck(this, view, isVar, (Object) r42, i7, 5);
+        return new bk(this, view, isVar, (Object) r42, i7, 5);
     }
 
     public final void j(int i7) {
@@ -689,7 +689,7 @@ public final class qs {
     }
 
     public final void m(int i7, Object... objArr) {
-        g0.h3(new k7(this, i7, objArr, 19));
+        g0.h3(new l7(this, i7, objArr, 19));
     }
 
     public final void n(ls lsVar, int i7) {

@@ -16,7 +16,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class a00 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public ValueAnimator D;
@@ -58,38 +58,38 @@ public final class a00 extends FrameLayout implements org.telegram.ui.ActionBar.
         int i7 = org.telegram.ui.ActionBar.k6.Ii;
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         org.telegram.ui.ActionBar.r6.t(imageView, i7, null, mode);
-        imageView.setContentDescription(org.telegram.messenger.hd.M0(2131750708, null));
+        imageView.setContentDescription(org.telegram.messenger.id.M0(2131750708, null));
         imageView.setClickable(true);
-        addView(imageView, c8.ha.d(48, 48.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 16, 7.0f, 0.0f, 6.0f, 0.0f));
+        addView(imageView, c8.ha.d(48, 48.0f, (org.telegram.messenger.id.a0 ? 5 : 3) | 16, 7.0f, 0.0f, 6.0f, 0.0f));
         View view = new View(context);
         this.f = view;
-        addView(view, c8.ha.d(20, 20.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
+        addView(view, c8.ha.d(20, 20.0f, (org.telegram.messenger.id.a0 ? 5 : 3) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
         org.telegram.ui.ActionBar.k5 k5Var = new org.telegram.ui.ActionBar.k5(context);
         this.a = k5Var;
         k5Var.setPadding(0, org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(4.0f));
         org.telegram.ui.ActionBar.r6.Y(k5Var, org.telegram.ui.ActionBar.k6.G6, null);
         k5Var.setTextSize(16);
         k5Var.setMaxLines(1);
-        k5Var.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 16);
+        k5Var.setGravity((org.telegram.messenger.id.a0 ? 5 : 3) | 16);
         Drawable drawable = getContext().getDrawable(R.drawable.other_lockedfolders2);
         org.telegram.ui.ActionBar.r6.y(this, drawable, i7, null, mode);
         k5Var.i(drawable);
         int i10 = org.telegram.ui.ActionBar.k6.Ci;
         f6Var = ((org.telegram.ui.ActionBar.f2) filtersSetupActivity).resourceProvider;
         k5Var.setEmojiColor(org.telegram.ui.ActionBar.k6.w0(i10, f6Var));
-        boolean z9 = org.telegram.messenger.hd.a0;
+        boolean z9 = org.telegram.messenger.id.a0;
         addView(k5Var, c8.ha.d(-1, -2.0f, (z9 ? 5 : 3) | 48, z9 ? 80.0f : 64.0f, 10.0f, z9 ? 64.0f : 80.0f, 0.0f));
         TextView textView = new TextView(context);
         this.b = textView;
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.z6, null);
         textView.setTextSize(1, 13.0f);
-        textView.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
+        textView.setGravity(org.telegram.messenger.id.a0 ? 5 : 3);
         textView.setLines(1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setPadding(0, 0, 0, 0);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        boolean z10 = org.telegram.messenger.hd.a0;
+        boolean z10 = org.telegram.messenger.id.a0;
         addView(textView, c8.ha.d(-2, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 80.0f : 64.0f, 35.0f, z10 ? 64.0f : 80.0f, 0.0f));
         textView.setVisibility(8);
         org.telegram.ui.Components.a80 a80Var = new org.telegram.ui.Components.a80();
@@ -112,11 +112,11 @@ public final class a00 extends FrameLayout implements org.telegram.ui.ActionBar.
         z10Var.setBackground(h02);
         org.telegram.ui.ActionBar.r6.k(z10Var, h02, null, N, null);
         org.telegram.ui.ActionBar.r6.t(z10Var, i7, null, mode);
-        z10Var.setContentDescription(org.telegram.messenger.hd.M0(2131750707, null));
+        z10Var.setContentDescription(org.telegram.messenger.id.M0(2131750707, null));
         z10Var.setVisibility(8);
         z10Var.setImageResource(R.drawable.msg_link_folder);
         org.telegram.ui.ActionBar.r6.t(z10Var, i7, null, mode);
-        boolean z11 = org.telegram.messenger.hd.a0;
+        boolean z11 = org.telegram.messenger.id.a0;
         addView(z10Var, c8.ha.d(40, 40.0f, (z11 ? 3 : 5) | 16, z11 ? 52.0f : 6.0f, 0.0f, z11 ? 6.0f : 52.0f, 0.0f));
         z10Var.setOnClickListener(new a(this, 25));
         ImageView imageView2 = new ImageView(context);
@@ -129,8 +129,8 @@ public final class a00 extends FrameLayout implements org.telegram.ui.ActionBar.
         org.telegram.ui.ActionBar.r6.k(imageView2, h03, null, N2, null);
         org.telegram.ui.ActionBar.r6.t(imageView2, i7, null, mode);
         imageView2.setImageResource(R.drawable.msg_actions);
-        imageView2.setContentDescription(org.telegram.messenger.hd.M0(2131754839, null));
-        addView(imageView2, c8.ha.d(40, 40.0f, (org.telegram.messenger.hd.a0 ? 3 : 5) | 16, 6.0f, 0.0f, 6.0f, 0.0f));
+        imageView2.setContentDescription(org.telegram.messenger.id.M0(2131754839, null));
+        addView(imageView2, c8.ha.d(40, 40.0f, (org.telegram.messenger.id.a0 ? 3 : 5) | 16, 6.0f, 0.0f, 6.0f, 0.0f));
     }
 
     public org.telegram.messenger.vo getCurrentFilter() {
@@ -157,7 +157,7 @@ public final class a00 extends FrameLayout implements org.telegram.ui.ActionBar.
         if (this.w && d < 1.0f) {
             int alpha = org.telegram.ui.ActionBar.k6.k0.getAlpha();
             org.telegram.ui.ActionBar.k6.k0.setAlpha((int) ((1.0f - d) * alpha));
-            canvas.drawLine(org.telegram.messenger.hd.a0 ? 0.0f : org.telegram.messenger.g0.L(62.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(62.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+            canvas.drawLine(org.telegram.messenger.id.a0 ? 0.0f : org.telegram.messenger.g0.L(62.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(62.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
             org.telegram.ui.ActionBar.k6.k0.setAlpha(alpha);
         }
         org.telegram.messenger.vo voVar = this.y;

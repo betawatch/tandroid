@@ -25,7 +25,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.a01;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class em implements Runnable {
     public final /* synthetic */ int a;
@@ -722,9 +722,9 @@ public final /* synthetic */ class em implements Runnable {
                 gz gzVar = (gz) this.b;
                 TLRPC.TL_messages_forwardMessages tL_messages_forwardMessages = (TLRPC.TL_messages_forwardMessages) this.c;
                 ArrayList arrayList4 = (ArrayList) this.d;
-                tx txVar = (tx) this.e;
-                if (f2.b(gzVar.currentAccount).a(tL_messages_forwardMessages, arrayList4, txVar)) {
-                    txVar.run();
+                sx sxVar = (sx) this.e;
+                if (f2.b(gzVar.currentAccount).a(tL_messages_forwardMessages, arrayList4, sxVar)) {
+                    sxVar.run();
                     return;
                 }
                 return;
@@ -743,9 +743,9 @@ public final /* synthetic */ class em implements Runnable {
                     return;
                 }
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(launchActivity);
-                alertDialog$Builder.a.R = hd.M0(2131746607, null);
-                alertDialog$Builder.a.T = hd.M0(2131746606, null);
-                alertDialog$Builder.k(hd.M0(2131746742, null), new o(1, e12, ngVar));
+                alertDialog$Builder.a.R = id.M0(2131746609, null);
+                alertDialog$Builder.a.T = id.M0(2131746608, null);
+                alertDialog$Builder.k(id.M0(2131746744, null), new o(1, e12, ngVar));
                 jg.g.w(null, 2131752589, alertDialog$Builder, null);
                 return;
             case 6:
@@ -813,7 +813,7 @@ public final /* synthetic */ class em implements Runnable {
                 ArrayList arrayList10 = (ArrayList) this.e;
                 sdVar.getMessagesController().Y3(arrayList8, true);
                 sdVar.getMessagesController().S3(arrayList9, true);
-                Utilities.d.c(new nd(sdVar, arrayList10, 0));
+                Utilities.d.c(new od(sdVar, arrayList10, 0));
                 return;
             case 11:
                 MediaController mediaController = (MediaController) this.b;
@@ -940,7 +940,7 @@ public final /* synthetic */ class em implements Runnable {
                 for (int i29 = 0; i29 < hVar6.m(); i29++) {
                     long j11 = hVar6.j(i29);
                     ArrayList arrayList20 = (ArrayList) hVar6.n(i29);
-                    qpVar7.getMediaDataController().X0(arrayList20, j11, 0, 0L, new gk(qpVar7, j11, arrayList20, 4), 0, null);
+                    qpVar7.getMediaDataController().X0(arrayList20, j11, 0, 0L, new fk(qpVar7, j11, arrayList20, 4), 0, null);
                 }
                 return;
             case 18:
@@ -1186,10 +1186,10 @@ public final /* synthetic */ class em implements Runnable {
                 c();
                 return;
             case 23:
-                d();
+                f();
                 return;
             case 24:
-                f();
+                d();
                 return;
             case 25:
                 g();

@@ -8,7 +8,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class y2 implements Runnable {
     public final /* synthetic */ int a;
@@ -96,7 +96,7 @@ public final class y2 implements Runnable {
                                     g4Var.C0.setPadding(org.telegram.messenger.g0.L(20.0f), 0, org.telegram.messenger.g0.L(20.0f), 0);
                                     g4Var.C0.setTextSize(1, 15.0f);
                                     g4Var.C0.setTypeface(org.telegram.messenger.g0.o());
-                                    g4Var.C0.setText(org.telegram.messenger.hd.M0(2131751767, null).toUpperCase());
+                                    g4Var.C0.setText(org.telegram.messenger.id.M0(2131751767, null).toUpperCase());
                                     g4Var.C0.setOnClickListener(new r(g4Var, 5));
                                     g4Var.B0.addView(g4Var.C0, c8.ha.c(48.0f, -2));
                                     org.telegram.ui.ActionBar.g1 g1Var2 = new org.telegram.ui.ActionBar.g1(g4Var.B0, -2, -2);

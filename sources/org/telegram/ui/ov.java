@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ov {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class ov {
                 if (view instanceof di.p) {
                     this.b.O0.E0.i((di.p) view, false);
                     if (z9) {
-                        org.telegram.messenger.g0.i3(new org.telegram.ui.Components.l10(14), 500L);
+                        org.telegram.messenger.g0.i3(new org.telegram.ui.Components.vs(16), 500L);
                         break;
                     }
                 }
@@ -32,7 +32,7 @@ public final /* synthetic */ class ov {
                 if (view2 instanceof di.p) {
                     this.b.O0.E0.i((di.p) view2, false);
                     if (z9) {
-                        org.telegram.messenger.g0.i3(new org.telegram.ui.Components.l10(14), 500L);
+                        org.telegram.messenger.g0.i3(new org.telegram.ui.Components.vs(16), 500L);
                         break;
                     }
                 }

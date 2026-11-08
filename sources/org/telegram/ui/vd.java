@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class vd extends LinearLayout {
     public static final /* synthetic */ int y = 0;
@@ -440,7 +440,7 @@ public final class vd extends LinearLayout {
                 q41Var.f3.O(true);
                 if (q41Var.canScrollVertically(1)) {
                     for (int i10 = 0; i10 < q41Var.getChildCount(); i10++) {
-                        if (!(q41Var.getChildAt(i10) instanceof org.telegram.ui.Components.lz)) {
+                        if (!(q41Var.getChildAt(i10) instanceof org.telegram.ui.Components.mz)) {
                         }
                     }
                 }

@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class th extends df0 {
     public final /* synthetic */ an f;
@@ -18,12 +18,12 @@ public final class th extends df0 {
         if (!ijVar.i4()) {
             ijVar.Q4();
         }
-        org.telegram.ui.Components.lz lzVar = new org.telegram.ui.Components.lz(context, null);
-        this.c = lzVar;
-        lzVar.e(org.telegram.ui.ActionBar.k6.G8, org.telegram.ui.ActionBar.k6.i6, -1);
-        lzVar.setViewType(13);
-        lzVar.setIsSingleCell(false);
-        addView(lzVar, c8.ha.c(-1.0f, -2));
+        org.telegram.ui.Components.mz mzVar = new org.telegram.ui.Components.mz(context, null);
+        this.c = mzVar;
+        mzVar.e(org.telegram.ui.ActionBar.k6.G8, org.telegram.ui.ActionBar.k6.i6, -1);
+        mzVar.setViewType(13);
+        mzVar.setIsSingleCell(false);
+        addView(mzVar, c8.ha.c(-1.0f, -2));
         org.telegram.ui.Components.w70 w70Var = new org.telegram.ui.Components.w70(context, null);
         this.b = w70Var;
         w70Var.setTextSize(1, 14.0f);

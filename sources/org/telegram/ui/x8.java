@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class x8 extends FragmentContextView {
     public final /* synthetic */ int X0 = 0;
@@ -23,15 +23,15 @@ public final class x8 extends FragmentContextView {
                 i9Var.I.i(i9Var.J, i7 == 0, true);
                 break;
             default:
-                v91 v91Var = (v91) this.Y0;
-                v91Var.U0.i(v91Var.F0, i7 == 0, true);
+                w91 w91Var = (w91) this.Y0;
+                w91Var.U0.i(w91Var.F0, i7 == 0, true);
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x8(v91 v91Var, Context context, v91 v91Var2) {
-        super(context, v91Var2, null, false, null);
-        this.Y0 = v91Var;
+    public x8(w91 w91Var, Context context, w91 w91Var2) {
+        super(context, w91Var2, null, false, null);
+        this.Y0 = w91Var;
     }
 }

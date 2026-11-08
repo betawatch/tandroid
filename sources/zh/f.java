@@ -6,7 +6,7 @@ import android.widget.LinearLayout;
 import c8.ha;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.s9;
 import org.telegram.messenger.u9;
 import org.telegram.messenger.w9;
@@ -20,7 +20,7 @@ import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.td0;
 import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class f extends na implements u9 {
     public final x31 P1;
@@ -80,7 +80,7 @@ public final class f extends na implements u9 {
         if (arrayList == null) {
             return null;
         }
-        return hd.a0(null, null, 2131750417, Integer.valueOf(arrayList.size()));
+        return id.a0(null, null, 2131750419, Integer.valueOf(arrayList.size()));
     }
 
     @Override // org.telegram.ui.ActionBar.v2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2

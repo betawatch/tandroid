@@ -8,7 +8,7 @@ import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class wm0 extends oj0 {
     public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
@@ -55,7 +55,7 @@ public final class wm0 extends oj0 {
             TLRPC.User a22 = qpVar.a2(Long.valueOf(j10));
             if (a22 != null) {
                 an0Var.b.setText(org.telegram.messenger.t10.p(a22));
-                an0Var.c.setText(org.telegram.messenger.hd.M0(2131743350, null));
+                an0Var.c.setText(org.telegram.messenger.id.M0(2131743352, null));
                 an0Var.a.setAvatar(a22);
             }
             it0 it0Var = an0Var.a;
@@ -85,7 +85,7 @@ public final class wm0 extends oj0 {
                 an0Var.b.setEllipsize(TextUtils.TruncateAt.END);
                 an0Var.b.setText(M0.title);
             }
-            an0Var.c.setText(org.telegram.messenger.hd.G(M0.participants_count, (!org.telegram.messenger.t3.T(M0) || M0.megagroup) ? "Members" : "Subscribers", new Object[0]));
+            an0Var.c.setText(org.telegram.messenger.id.G(M0.participants_count, (!org.telegram.messenger.t3.T(M0) || M0.megagroup) ? "Members" : "Subscribers", new Object[0]));
             an0Var.a.setAvatar(M0);
         }
         it0 it0Var2 = an0Var.a;

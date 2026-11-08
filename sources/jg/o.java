@@ -2,11 +2,11 @@ package jg;
 
 import bi.ub;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.yr;
 import org.telegram.ui.hw;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -121,7 +121,7 @@ public final /* synthetic */ class o implements Runnable {
                 org.telegram.messenger.g0.h3(new ub(h0Var3, this.c, arrayList4, arrayList5, arrayList6, 4));
                 q0.B1(str4, h0Var3.y0);
                 h0Var3.z0 = false;
-                if (str4.length() >= 3 && (hd.M0(2131754150, null).toLowerCase().startsWith(str4) || "archive".startsWith(str2))) {
+                if (str4.length() >= 3 && (id.M0(2131754150, null).toLowerCase().startsWith(str4) || "archive".startsWith(str2))) {
                     h0Var3.z0 = true;
                 }
                 org.telegram.messenger.g0.h3(new w(h0Var3, 0));

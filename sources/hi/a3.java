@@ -42,8 +42,8 @@ import org.telegram.messenger.d20;
 import org.telegram.messenger.g5;
 import org.telegram.messenger.gz;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i6;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qp;
@@ -70,7 +70,7 @@ import org.telegram.ui.an;
 import org.telegram.ui.gq0;
 import org.telegram.ui.s51;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3 {
     public static final HashSet a1 = new HashSet();
@@ -342,13 +342,13 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
         if (tL_attachMenuBot == null) {
             return;
         }
-        String a02 = hd.a0(null, null, 2131753002, tL_attachMenuBot.short_name);
+        String a02 = id.a0(null, null, 2131753002, tL_attachMenuBot.short_name);
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(LaunchActivity.Q().getContext());
-        String M0 = hd.M0(2131753001, null);
+        String M0 = id.M0(2131753001, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
         u1Var.T = org.telegram.messenger.g0.X2(a02);
-        alertDialog$Builder.k(hd.M0(2131747830, null), new n1(i7, j3, tL_attachMenuBot, runnable));
+        alertDialog$Builder.k(id.M0(2131747832, null), new n1(i7, j3, tL_attachMenuBot, runnable));
         jg.g.w(null, 2131752589, alertDialog$Builder, null);
     }
 
@@ -1253,9 +1253,9 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = m10;
-        u1Var.T = hd.M0(2131752917, null);
-        alertDialog$Builder.k(hd.M0(2131752916, null), new y1(this));
-        alertDialog$Builder.h(hd.M0(2131752589, null), null);
+        u1Var.T = id.M0(2131752917, null);
+        alertDialog$Builder.k(id.M0(2131752916, null), new y1(this));
+        alertDialog$Builder.h(id.M0(2131752589, null), null);
         u1Var.show();
         ((TextView) u1Var.d(-1)).setTextColor(k6.w0(k6.q7, this.F));
         return false;
@@ -1297,7 +1297,7 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
             i7 = -1;
         } else {
             k60 J = G.J();
-            J.c(R.drawable.msg_arrow_back, hd.M0(2131753756, null), new gq0(G, 27), false);
+            J.c(R.drawable.msg_arrow_back, id.M0(2131753756, null), new gq0(G, 27), false);
             J.k();
             int size2 = arrayList3.size();
             int i13 = 0;
@@ -1353,17 +1353,17 @@ public final class a3 extends Dialog implements ls, org.telegram.ui.ActionBar.h3
             i7 = -1;
             G();
             J.S = org.telegram.messenger.g0.L(180.0f);
-            G.c(R.drawable.menu_download_round, hd.M0(2131753094, null), new h2(G, J, 0), false);
+            G.c(R.drawable.menu_download_round, id.M0(2131753094, null), new h2(G, J, 0), false);
             G.k();
         }
-        G.l(R.drawable.msg_bot, hd.M0(2131752912, null), new x1(this, 9), this.L0 == null && !q10);
+        G.l(R.drawable.msg_bot, id.M0(2131752912, null), new x1(this, 9), this.L0 == null && !q10);
         int i15 = 10;
-        G.l(R.drawable.msg_settings, hd.M0(2131752897, null), new x1(this, i15), this.L0 == null && this.c0);
-        G.c(R.drawable.msg_retry, hd.M0(2131752911, null), new bi.k1(i15, this, q10), false);
-        G.l(R.drawable.msg_home, hd.M0(2131754390, null), new x1(this, 11), this.L0 == null && a22 != null && a22.bot_has_main_app);
-        G.l(R.drawable.menu_intro, hd.M0(2131752894, null), new x1(this, 12), this.L0 == null && !q10);
-        G.l(R.drawable.msg_report, hd.M0(2131752910, null), new x1(this, 13), this.L0 == null && !q10);
-        G.l(R.drawable.msg_delete, hd.M0(2131752915, null), new x1(this, 14), this.L0 == null && tL_attachMenuBot != null && (tL_attachMenuBot.show_in_side_menu || tL_attachMenuBot.show_in_attach_menu));
+        G.l(R.drawable.msg_settings, id.M0(2131752897, null), new x1(this, i15), this.L0 == null && this.c0);
+        G.c(R.drawable.msg_retry, id.M0(2131752911, null), new bi.k1(i15, this, q10), false);
+        G.l(R.drawable.msg_home, id.M0(2131754390, null), new x1(this, 11), this.L0 == null && a22 != null && a22.bot_has_main_app);
+        G.l(R.drawable.menu_intro, id.M0(2131752894, null), new x1(this, 12), this.L0 == null && !q10);
+        G.l(R.drawable.msg_report, id.M0(2131752910, null), new x1(this, 13), this.L0 == null && !q10);
+        G.l(R.drawable.msg_delete, id.M0(2131752915, null), new x1(this, 14), this.L0 == null && tL_attachMenuBot != null && (tL_attachMenuBot.show_in_side_menu || tL_attachMenuBot.show_in_attach_menu));
         if (this.R != k6.x0(null, k6.d6, false)) {
             int i16 = org.telegram.messenger.g0.B(this.R) >= 0.721f ? i7 : -15198183;
             int i17 = org.telegram.messenger.g0.B(i16) >= 0.721f ? -16777216 : i7;

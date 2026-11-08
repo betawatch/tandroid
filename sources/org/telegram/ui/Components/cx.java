@@ -1,38 +1,28 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.View;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class cx implements View.OnClickListener {
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ h9.f1 b;
-    public final /* synthetic */ androidx.mediarouter.app.w c;
-
-    public cx(androidx.mediarouter.app.w wVar, boolean[] zArr, h9.f1 f1Var) {
-        this.c = wVar;
-        this.a = zArr;
-        this.b = f1Var;
+public final class cx extends q41 {
+    public cx(Context context, int i7, org.telegram.messenger.v10 v10Var, org.telegram.messenger.a20 a20Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, i7, -1, false, v10Var, a20Var, null, f6Var, -1, 0);
+        this.y2 = true;
+        setOverScrollMode(2);
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        gx gxVar = (gx) this.c.b;
-        boolean[] zArr = this.a;
-        if (zArr[0]) {
+    public final void L1(View view) {
+        if (view == null) {
             return;
         }
-        zArr[0] = true;
-        org.telegram.ui.ActionBar.u1[] u1VarArr = {new org.telegram.ui.ActionBar.u1(3, gxVar.F.getContext(), null)};
-        TLRPC.TL_messages_getEmojiURL tL_messages_getEmojiURL = new TLRPC.TL_messages_getEmojiURL();
-        gy gyVar = gxVar.F;
-        String str = gxVar.x;
-        if (str == null) {
-            str = gyVar.W0[0];
+        float L = org.telegram.messenger.g0.L(92.0f);
+        float width = getWidth() - L;
+        float x10 = view.getX();
+        float width2 = view.getWidth() + x10;
+        int i7 = x10 < L ? (int) (x10 - L) : width2 > width ? (int) (width2 - width) : 0;
+        if (i7 != 0) {
+            org.telegram.messenger.g0.J(this, new org.telegram.ui.d10(this, view, i7, 20));
         }
-        tL_messages_getEmojiURL.lang_code = str;
-        org.telegram.messenger.g0.i3(new org.telegram.ui.q8(this, u1VarArr, ConnectionsManager.getInstance(gyVar.c1).sendRequest(tL_messages_getEmojiURL, new bi.f2(this, u1VarArr, this.b, 13)), 7), 1000L);
     }
 }

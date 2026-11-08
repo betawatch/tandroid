@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
@@ -34,7 +34,7 @@ import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.mp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class f1 extends LinearLayout {
     public boolean D;
@@ -73,11 +73,11 @@ public abstract class f1 extends LinearLayout {
                 a4Var.setMinimumHeight(org.telegram.messenger.g0.L(60.0f));
                 TextView textView = new TextView(context);
                 this.b = textView;
-                textView.setGravity(hd.a0 ? 5 : 3);
+                textView.setGravity(id.a0 ? 5 : 3);
                 textView.setTextSize(1, 16.0f);
                 a4Var.addView(textView, ha.i(-1.0f, -2.0f, 8388659, 0.0f, 9.33f, 0.0f, 0.0f));
                 this.h[i7] = new TextView(context);
-                this.h[i7].setGravity(hd.a0 ? 5 : 3);
+                this.h[i7].setGravity(id.a0 ? 5 : 3);
                 this.h[i7].setTextSize(1, 13.0f);
                 r6.V(this.h[i7], k6.z6, f6Var);
                 a4Var.addView(this.h[i7], ha.i(-2.0f, -2.0f, 8388659, 0.0f, 33.0f, 0.0f, 10.0f));
@@ -90,14 +90,14 @@ public abstract class f1 extends LinearLayout {
                     this.n[i7][i11] = new TextView(context);
                     this.n[i7][i11].setTextSize(1, 14.0f);
                     r6.V(this.n[i7][i11], k6.z6, f6Var);
-                    this.n[i7][i11].setGravity(hd.a0 ? 3 : 5);
+                    this.n[i7][i11].setGravity(id.a0 ? 3 : 5);
                     this.s.addView(this.n[i7][i11], ha.i(-1.0f, -1.0f, qs.E1, 0.0f, 0.0f, 20.0f, 0.0f));
                 }
                 for (int i12 = 0; i12 < 2; i12++) {
                     this.c[i12] = new TextView(context);
                     this.c[i12].setTextSize(1, 14.0f);
                     r6.V(this.c[i12], k6.z6, f6Var);
-                    this.c[i12].setGravity(hd.a0 ? 3 : 5);
+                    this.c[i12].setGravity(id.a0 ? 3 : 5);
                     this.s.addView(this.c[i12], ha.i(-1.0f, -1.0f, qs.E1, 0.0f, 0.0f, 20.0f, 0.0f));
                 }
                 ImageView imageView = new ImageView(context);
@@ -108,13 +108,13 @@ public abstract class f1 extends LinearLayout {
                 imageView.setImageResource(R.drawable.arrow_more);
                 r6.t(imageView, k6.z6, f6Var, PorterDuff.Mode.SRC_IN);
                 this.s.addView(imageView, ha.h(20.0f, 20.0f, 8388629));
-                this.w.addView(this.s, new LinearLayout.LayoutParams(ha.z(-1.0f), ha.z(-1.0f), Gravity.getAbsoluteGravity(qs.E1, hd.a0 ? 1 : 0)));
+                this.w.addView(this.s, new LinearLayout.LayoutParams(ha.z(-1.0f), ha.z(-1.0f), Gravity.getAbsoluteGravity(qs.E1, id.a0 ? 1 : 0)));
                 mp mpVar = new mp(context);
                 this.r = mpVar;
                 mpVar.getDrawable().L = true;
                 mpVar.setTextSize(org.telegram.messenger.g0.L(13.0f));
                 mpVar.setPadding(org.telegram.messenger.g0.L(6.0f), 0, org.telegram.messenger.g0.L(6.0f), 0);
-                mpVar.setGravity(hd.a0 ? 3 : 5);
+                mpVar.setGravity(id.a0 ? 3 : 5);
                 int L = org.telegram.messenger.g0.L(8.0f);
                 int i13 = k6.o6;
                 int w02 = k6.w0(i13, f6Var);
@@ -141,17 +141,17 @@ public abstract class f1 extends LinearLayout {
                 this.h[i7] = new TextView(context);
                 this.h[i7].setTextSize(1, 14.0f);
                 r6.V(this.h[i7], k6.G6, f6Var);
-                this.h[i7].setGravity(hd.a0 ? 5 : 3);
+                this.h[i7].setGravity(id.a0 ? 5 : 3);
                 FrameLayout frameLayout2 = new FrameLayout(context);
                 this.n[i7] = new TextView[2];
                 for (int i14 = 0; i14 < 2; i14++) {
                     this.n[i7][i14] = new TextView(context);
                     this.n[i7][i14].setTextSize(1, 14.0f);
                     r6.V(this.n[i7][i14], k6.z6, f6Var);
-                    this.n[i7][i14].setGravity(hd.a0 ? 3 : 5);
+                    this.n[i7][i14].setGravity(id.a0 ? 3 : 5);
                     frameLayout2.addView(this.n[i7][i14], ha.e(-1, -1, qs.E1));
                 }
-                if (hd.a0) {
+                if (id.a0) {
                     f10.addView(frameLayout2, ha.r(-2, -1, 51));
                     f10.addView(this.h[i7], ha.r(-1, -1, 53));
                 } else {
@@ -330,7 +330,7 @@ public abstract class f1 extends LinearLayout {
                 }
                 z20 = true;
             }
-            mpVar.c(hd.M0(!z21 ? 2131752730 : 2131752731, null), (!hd.a0 || this.D) ? z14 : true, true);
+            mpVar.c(id.M0(!z21 ? 2131752730 : 2131752731, null), (!id.a0 || this.D) ? z14 : true, true);
             this.D = z14;
             ArrayList[] e02 = c1.e0(new ArrayList(tL_businessWorkHours.weekly_open));
             int i23 = (calendar.get(7) + 5) % 7;
@@ -434,7 +434,7 @@ public abstract class f1 extends LinearLayout {
             }
             z15 = false;
             ArrayList[] e03 = c1.e0(arrayList2);
-            String M0 = hd.M0(!z15 ? 2131752742 : 2131752743, null);
+            String M0 = id.M0(!z15 ? 2131752742 : 2131752743, null);
             TextView textView = this.b;
             textView.setText(M0);
             r6.V(textView, !z15 ? k6.l8 : k6.p7, this.a);
@@ -451,11 +451,11 @@ public abstract class f1 extends LinearLayout {
                     TextView[] textViewArr4 = this.h;
                     if (i36 == 0) {
                         arrayListArr = e03;
-                        textViewArr4[i36].setText(hd.M0(2131752746, null));
+                        textViewArr4[i36].setText(id.M0(2131752746, null));
                         z16 = z15;
                     } else {
                         arrayListArr = e03;
-                        String displayName = DayOfWeek.values()[i37].getDisplayName(TextStyle.FULL, hd.E0().y);
+                        String displayName = DayOfWeek.values()[i37].getDisplayName(TextStyle.FULL, id.E0().y);
                         StringBuilder sb2 = new StringBuilder();
                         z16 = z15;
                         sb2.append(displayName.substring(0, 1).toUpperCase());
@@ -488,23 +488,23 @@ public abstract class f1 extends LinearLayout {
                                     i15 = ((TL_account.TL_businessWeeklyOpen) arrayList2.get(0)).start_minute;
                                 }
                                 if (i15 == -1) {
-                                    textView2.setText(hd.M0(2131752745, null));
+                                    textView2.setText(id.M0(2131752745, null));
                                     arrayList3 = arrayList2;
                                     arrayListArr2 = arrayListArr5;
                                 } else {
                                     int i40 = i15 < i33 ? (10080 - i33) + i15 : i15 - i33;
                                     if (i40 < i22) {
                                         arrayList3 = arrayList2;
-                                        textView2.setText(hd.G(i40, "BusinessHoursProfileOpensInMinutes", new Object[0]));
+                                        textView2.setText(id.G(i40, "BusinessHoursProfileOpensInMinutes", new Object[0]));
                                         arrayListArr2 = arrayListArr5;
                                     } else {
                                         arrayList3 = arrayList2;
                                         if (i40 < 1440) {
                                             arrayListArr2 = arrayListArr5;
-                                            textView2.setText(hd.G((int) Math.ceil(i40 / 60.0f), "BusinessHoursProfileOpensInHours", new Object[0]));
+                                            textView2.setText(id.G((int) Math.ceil(i40 / 60.0f), "BusinessHoursProfileOpensInHours", new Object[0]));
                                         } else {
                                             arrayListArr2 = arrayListArr5;
-                                            textView2.setText(hd.G((int) Math.ceil((i40 / 60.0f) / 24.0f), "BusinessHoursProfileOpensInDays", new Object[0]));
+                                            textView2.setText(id.G((int) Math.ceil((i40 / 60.0f) / 24.0f), "BusinessHoursProfileOpensInDays", new Object[0]));
                                         }
                                     }
                                 }
@@ -513,11 +513,11 @@ public abstract class f1 extends LinearLayout {
                                 i14 = i38;
                                 arrayListArr2 = arrayListArr5;
                                 if (z26) {
-                                    textView2.setText(hd.M0(2131752744, null));
+                                    textView2.setText(id.M0(2131752744, null));
                                 } else if (arrayListArr2[i37].isEmpty()) {
-                                    textView2.setText(hd.M0(2131752745, null));
+                                    textView2.setText(id.M0(2131752745, null));
                                 } else if (c1.h0(arrayListArr2[i37])) {
-                                    textView2.setText(hd.M0(2131752741, null));
+                                    textView2.setText(id.M0(2131752741, null));
                                 } else {
                                     StringBuilder sb3 = new StringBuilder();
                                     for (int i41 = 0; i41 < arrayListArr2[i37].size(); i41++) {
@@ -556,7 +556,7 @@ public abstract class f1 extends LinearLayout {
                 f11 = 12.0f;
             }
             layoutParams.bottomMargin = org.telegram.messenger.g0.L(f11);
-            layoutParams.gravity = ((this.x <= 2 || mpVar.getVisibility() == 0) ? 16 : 80) | (!hd.a0 ? 3 : 5);
+            layoutParams.gravity = ((this.x <= 2 || mpVar.getVisibility() == 0) ? 16 : 80) | (!id.a0 ? 3 : 5);
             if (i12 == this.x || i35 != this.y) {
                 requestLayout();
             }
@@ -590,7 +590,7 @@ public abstract class f1 extends LinearLayout {
         }
         while (r42 < textViewArr.length) {
         }
-        mpVar2.c(hd.M0(!z21 ? 2131752730 : 2131752731, null), (!hd.a0 || this.D) ? z14 : true, true);
+        mpVar2.c(id.M0(!z21 ? 2131752730 : 2131752731, null), (!id.a0 || this.D) ? z14 : true, true);
         this.D = z14;
         ArrayList[] e022 = c1.e0(new ArrayList(tL_businessWorkHours.weekly_open));
         int i232 = (calendar2.get(7) + 5) % 7;
@@ -611,7 +611,7 @@ public abstract class f1 extends LinearLayout {
         }
         z15 = false;
         ArrayList[] e032 = c1.e0(arrayList2);
-        String M02 = hd.M0(!z15 ? 2131752742 : 2131752743, null);
+        String M02 = id.M0(!z15 ? 2131752742 : 2131752743, null);
         TextView textView3 = this.b;
         textView3.setText(M02);
         r6.V(textView3, !z15 ? k6.l8 : k6.p7, this.a);
@@ -629,7 +629,7 @@ public abstract class f1 extends LinearLayout {
             f11 = 12.0f;
         }
         layoutParams2.bottomMargin = org.telegram.messenger.g0.L(f11);
-        layoutParams2.gravity = ((this.x <= 2 || mpVar2.getVisibility() == 0) ? 16 : 80) | (!hd.a0 ? 3 : 5);
+        layoutParams2.gravity = ((this.x <= 2 || mpVar2.getVisibility() == 0) ? 16 : 80) | (!id.a0 ? 3 : 5);
         if (i12 == this.x) {
         }
         requestLayout();
@@ -643,7 +643,7 @@ public abstract class f1 extends LinearLayout {
             if (W0 == null) {
                 W0 = k6.k0;
             }
-            canvas.drawRect(org.telegram.messenger.g0.L(hd.a0 ? 0.0f : 21.33f), getMeasuredHeight() - 1, getWidth() - org.telegram.messenger.g0.L(hd.a0 ? 21.33f : 0.0f), getMeasuredHeight(), W0);
+            canvas.drawRect(org.telegram.messenger.g0.L(id.a0 ? 0.0f : 21.33f), getMeasuredHeight() - 1, getWidth() - org.telegram.messenger.g0.L(id.a0 ? 21.33f : 0.0f), getMeasuredHeight(), W0);
         }
     }
 

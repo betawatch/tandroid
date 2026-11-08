@@ -8,7 +8,7 @@ import java.io.EOFException;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.om0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class b1 implements f3.j0 {
     public boolean B;
@@ -37,7 +37,7 @@ public class b1 implements f3.j0 {
     public int[] m = new int[1000];
     public int[] l = new int[1000];
     public f3.i0[] o = new f3.i0[1000];
-    public final wa c = new wa(new v0.j(23));
+    public final wa c = new wa(new v0.j(24));
     public long t = Long.MIN_VALUE;
     public long v = Long.MIN_VALUE;
     public long w = Long.MIN_VALUE;

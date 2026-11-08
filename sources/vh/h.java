@@ -5,7 +5,7 @@ import hi.u1;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.voip.k;
 import org.telegram.tgnet.ConnectionsManager;
@@ -20,7 +20,7 @@ import org.telegram.ui.Components.pj0;
 import org.telegram.ui.c51;
 import org.telegram.ui.o41;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class h extends na {
     public l41 P1;
@@ -35,7 +35,7 @@ public final class h extends na {
         this.n = false;
         this.C1 = false;
         this.B1 = g0.L(12.0f);
-        this.Q1 = c51.i0(tL_statsPollStats.votes_graph, hd.M0(2131747118, null), 2, false);
+        this.Q1 = c51.i0(tL_statsPollStats.votes_graph, id.M0(2131747120, null), 2, false);
         pj0 pj0Var = this.k1;
         int i7 = this.t0;
         pj0Var.setPadding(i7, 0, i7, g0.n);
@@ -64,7 +64,7 @@ public final class h extends na {
 
     @Override // org.telegram.ui.Components.na
     public final CharSequence O0() {
-        return hd.M0(2131747119, null);
+        return id.M0(2131747121, null);
     }
 
     @Override // org.telegram.ui.ActionBar.v2

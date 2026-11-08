@@ -15,11 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.qt;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.rt;
+import org.telegram.ui.Components.vy;
 import org.telegram.ui.hy0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class n0 {
     public hy0 a;
@@ -38,10 +38,10 @@ public abstract class n0 {
     public int n;
 
     public n0() {
-        uy uyVar = new uy(this, 26);
-        qt qtVar = new qt(this, 23);
-        this.c = new sg.i0(uyVar);
-        this.d = new sg.i0(qtVar);
+        vy vyVar = new vy(this, 26);
+        rt rtVar = new rt(this, 23);
+        this.c = new sg.i0(vyVar);
+        this.d = new sg.i0(rtVar);
         this.f = false;
         this.g = true;
         this.h = true;
@@ -309,7 +309,7 @@ public abstract class n0 {
         } else if (view.getParent() == this.b) {
             hy0 hy0Var = this.a;
             ua uaVar = (ua) hy0Var.c;
-            int indexOfChild = ((RecyclerView) ((uy) hy0Var.b).b).indexOfChild(view);
+            int indexOfChild = ((RecyclerView) ((vy) hy0Var.b).b).indexOfChild(view);
             int B = (indexOfChild == -1 || uaVar.E(indexOfChild)) ? -1 : indexOfChild - uaVar.B(indexOfChild);
             if (i7 == -1) {
                 i7 = this.a.v();
@@ -451,15 +451,15 @@ public abstract class n0 {
         if (q(i7) != null) {
             hy0 hy0Var = this.a;
             int z9 = hy0Var.z(i7);
-            uy uyVar = (uy) hy0Var.b;
-            View childAt = ((RecyclerView) uyVar.b).getChildAt(z9);
+            vy vyVar = (vy) hy0Var.b;
+            View childAt = ((RecyclerView) vyVar.b).getChildAt(z9);
             if (childAt == null) {
                 return;
             }
             if (((ua) hy0Var.c).G(z9)) {
                 hy0Var.M(childAt);
             }
-            uyVar.Q(z9);
+            vyVar.Q(z9);
         }
     }
 

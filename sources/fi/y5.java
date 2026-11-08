@@ -47,16 +47,16 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.ob0;
-import org.telegram.ui.Components.oy;
+import org.telegram.ui.Components.py;
 import org.telegram.ui.Components.qa0;
 import org.telegram.ui.Components.rd0;
-import org.telegram.ui.Components.ry;
 import org.telegram.ui.Components.sd0;
+import org.telegram.ui.Components.sy;
 import org.telegram.ui.Components.t51;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.dn;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class y5 extends FrameLayout {
     public static final /* synthetic */ int B0 = 0;
@@ -327,7 +327,7 @@ public abstract class y5 extends FrameLayout {
         int i17 = g10.get(i16, org.telegram.ui.ActionBar.k6.x0(null, i16, false));
         final qa0 qa0Var = new qa0();
         qa0Var.g = false;
-        qa0Var.s(qa0Var.u, r3Var.j(z9 ? 1 : 0).settings.intensity);
+        qa0Var.s(r3Var.j(z9 ? 1 : 0).settings.intensity, qa0Var.u);
         qa0Var.o(i11, i13, i15, i17, 0, true);
         qa0Var.u(0);
         final int f10 = qa0Var.f();
@@ -346,7 +346,7 @@ public abstract class y5 extends FrameLayout {
                 }
                 int i18 = r3Var2.j(z9 ? 1 : 0).settings.intensity;
                 qa0 qa0Var2 = qa0Var;
-                qa0Var2.s(bitmap, i18);
+                qa0Var2.s(i18, bitmap);
                 qa0Var2.t(f10);
                 qa0Var2.r(1.0f);
             }
@@ -870,9 +870,9 @@ public abstract class y5 extends FrameLayout {
         if (sd0Var != null) {
             int i7 = this.U;
             int i10 = this.V;
-            ry ryVar = sd0Var.l0;
-            if (ryVar != null) {
-                ryVar.h(i7, i10);
+            sy syVar = sd0Var.l0;
+            if (syVar != null) {
+                syVar.h(i7, i10);
             } else {
                 sd0Var.J0 = i7;
                 sd0Var.K0 = i10;
@@ -1130,21 +1130,21 @@ public abstract class y5 extends FrameLayout {
             if (h51Var != null) {
                 int i12 = this.U;
                 int i13 = this.V;
-                ry ryVar = h51Var.b;
-                if (ryVar == null) {
+                sy syVar = h51Var.b;
+                if (syVar == null) {
                     h51Var.n = i12;
                     h51Var.r = i13;
                 } else {
-                    ryVar.h(i12, i13);
+                    syVar.h(i12, i13);
                 }
             }
             sd0 sd0Var = this.s;
             if (sd0Var != null) {
                 int i14 = this.U;
                 int i15 = this.V;
-                ry ryVar2 = sd0Var.l0;
-                if (ryVar2 != null) {
-                    ryVar2.h(i14, i15);
+                sy syVar2 = sd0Var.l0;
+                if (syVar2 != null) {
+                    syVar2.h(i14, i15);
                 } else {
                     sd0Var.J0 = i14;
                     sd0Var.K0 = i15;
@@ -1279,9 +1279,9 @@ public abstract class y5 extends FrameLayout {
         if (h51Var2 != null) {
             h51Var2.clearAnimation();
             h51 h51Var3 = this.n;
-            ry ryVar = h51Var3.b;
-            if (ryVar != null) {
-                ryVar.postRunnable(new oy(ryVar, i7));
+            sy syVar = h51Var3.b;
+            if (syVar != null) {
+                syVar.postRunnable(new py(syVar, i7));
             }
             h51Var3.a = null;
             removeView(this.n);
@@ -1292,8 +1292,8 @@ public abstract class y5 extends FrameLayout {
         h51 h51Var4 = this.n;
         org.telegram.ui.Components.y9 y9Var = e7Var.u ? null : this.G;
         h51Var4.s = y9Var;
-        ry ryVar2 = h51Var4.b;
-        if (ryVar2 != null && (daVar = ryVar2.I) != null) {
+        sy syVar2 = h51Var4.b;
+        if (syVar2 != null && (daVar = syVar2.I) != null) {
             org.telegram.ui.Components.y9 y9Var2 = daVar.t;
             if (y9Var2 != null && y9Var2.m != null) {
                 y9Var2.m = null;

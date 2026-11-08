@@ -9,13 +9,13 @@ import android.os.SystemClock;
 import android.text.style.ReplacementSpan;
 import android.view.View;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class o1 extends ReplacementSpan {
     public static final /* synthetic */ int d = 0;
@@ -87,7 +87,7 @@ public final class o1 extends ReplacementSpan {
     public o1(int i7) {
         this.a = 0;
         this.b = new Paint(1);
-        this.c = new my0(hd.G(i7, "BusinessRepliesMore", new Object[0]), 9.33f, org.telegram.messenger.g0.o());
+        this.c = new my0(id.G(i7, "BusinessRepliesMore", new Object[0]), 9.33f, org.telegram.messenger.g0.o());
     }
 
     public o1() {

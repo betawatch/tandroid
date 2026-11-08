@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class km0 extends org.telegram.ui.Components.rt0 {
     public int f0;
@@ -34,7 +34,7 @@ public final class km0 extends org.telegram.ui.Components.rt0 {
         int i16;
         int i17;
         int i18;
-        org.telegram.ui.Components.kt ktVar;
+        org.telegram.ui.Components.lt ltVar;
         int measuredHeight;
         int measuredHeight2;
         int i19 = this.f0;
@@ -76,8 +76,8 @@ public final class km0 extends org.telegram.ui.Components.rt0 {
                             i16 = ((i12 - emojiPadding) - i10) - measuredHeight3;
                             i17 = layoutParams.bottomMargin;
                         }
-                        ktVar = mm0Var.M;
-                        if (ktVar != null && ktVar.l(childAt)) {
+                        ltVar = mm0Var.M;
+                        if (ltVar != null && ltVar.l(childAt)) {
                             if (org.telegram.messenger.g0.Q1()) {
                                 measuredHeight = getMeasuredHeight();
                                 measuredHeight2 = childAt.getMeasuredHeight();
@@ -93,8 +93,8 @@ public final class km0 extends org.telegram.ui.Components.rt0 {
                         i17 = layoutParams.bottomMargin;
                     }
                     i18 = i16 - i17;
-                    ktVar = mm0Var.M;
-                    if (ktVar != null) {
+                    ltVar = mm0Var.M;
+                    if (ltVar != null) {
                         if (org.telegram.messenger.g0.Q1()) {
                         }
                         i18 = measuredHeight - measuredHeight2;
@@ -108,8 +108,8 @@ public final class km0 extends org.telegram.ui.Components.rt0 {
                 if (i23 == 16) {
                 }
                 i18 = i16 - i17;
-                ktVar = mm0Var.M;
-                if (ktVar != null) {
+                ltVar = mm0Var.M;
+                if (ltVar != null) {
                 }
                 childAt.layout(i15, i18, measuredWidth + i15, measuredHeight3 + i18);
             }
@@ -139,8 +139,8 @@ public final class km0 extends org.telegram.ui.Components.rt0 {
         while (i12 < childCount) {
             View childAt = getChildAt(i12);
             if (childAt != null && childAt.getVisibility() != 8) {
-                org.telegram.ui.Components.kt ktVar = mm0Var.M;
-                if (ktVar == null || !ktVar.l(childAt)) {
+                org.telegram.ui.Components.lt ltVar = mm0Var.M;
+                if (ltVar == null || !ltVar.l(childAt)) {
                     i11 = i7;
                     measureChildWithMargins(childAt, i11, 0, i13, 0);
                     i12++;

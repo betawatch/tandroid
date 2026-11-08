@@ -16,14 +16,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.rt;
 import org.telegram.ui.cn0;
 import org.telegram.ui.l00;
 import org.telegram.ui.up0;
 import y7.d6;
 import z7.qa;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class i0 implements te.d, v0, q5.b, com.google.android.gms.common.api.internal.p, b3.q {
     public final /* synthetic */ int a;
@@ -75,10 +75,10 @@ public final class i0 implements te.d, v0, q5.b, com.google.android.gms.common.a
         v6.d dVar = new v6.d((v6.f) this.b, (TaskCompletionSource) obj2, 0);
         v6.c cVar = (v6.c) ((v6.g) obj).n();
         v6.a aVar = (v6.a) this.c;
-        Parcel J0 = cVar.J0();
-        n7.a.c(J0, dVar);
-        n7.a.b(J0, aVar);
-        cVar.K0(J0, 1);
+        Parcel j12 = cVar.j1();
+        n7.a.c(j12, dVar);
+        n7.a.b(j12, aVar);
+        cVar.k1(j12, 1);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -88,9 +88,9 @@ public final class i0 implements te.d, v0, q5.b, com.google.android.gms.common.a
     public ArrayList b() {
         ?? arrayList;
         ArrayList arrayList2 = new ArrayList();
-        qt qtVar = (qt) this.c;
+        rt rtVar = (rt) this.c;
         Context context = (Context) this.b;
-        Class cls = (Class) qtVar.b;
+        Class cls = (Class) rtVar.b;
         Bundle bundle = null;
         try {
             PackageManager packageManager = context.getPackageManager();

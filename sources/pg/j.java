@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
@@ -33,9 +33,9 @@ import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.z;
+import org.telegram.ui.o61;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class j extends FrameLayout implements ls {
     public pj0 D;
@@ -66,12 +66,12 @@ public final class j extends FrameLayout implements ls {
     private List<a> getBuiltInDebugItems() {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new a("Theme"));
-        arrayList.add(new a("Draw action bar shadow", new z(11)));
+        arrayList.add(new a("Draw action bar shadow", new o61(13)));
         arrayList.add(new a("Show blur settings", new d(this, 0)));
-        arrayList.add(new a(hd.M0(2131751648, null)));
-        arrayList.add(new a(hd.M0(iz.J0 ? 2131751639 : 2131751631, null), new d(this, 1)));
-        arrayList.add(new a(k6.I.q() ? "Switch to day theme" : "Switch to dark theme", new z(12)));
-        arrayList.add(new a(hd.M0(2131751614, null), new d(this, 2)));
+        arrayList.add(new a(id.M0(2131751648, null)));
+        arrayList.add(new a(id.M0(iz.J0 ? 2131751639 : 2131751631, null), new d(this, 1)));
+        arrayList.add(new a(k6.I.q() ? "Switch to day theme" : "Switch to dark theme", new o61(14)));
+        arrayList.add(new a(id.M0(2131751614, null), new d(this, 2)));
         return arrayList;
     }
 

@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import c8.ha;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.q41;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class y extends b0 {
     public final /* synthetic */ int h;
@@ -52,7 +52,7 @@ public final class y extends b0 {
                 this.a.setBackButtonImage(R.drawable.ic_ab_back);
                 final int i14 = 1;
                 r6.m(this.a, 1, k6.y8, d0Var.I0);
-                this.a.setTitle(hd.M0(2131751886, null));
+                this.a.setTitle(id.M0(2131751886, null));
                 this.a.getTitleTextView().setTranslationX(-org.telegram.messenger.g0.L(18.0f));
                 this.a.setActionBarMenuOnItemClick(new bi.s(this, 10));
                 this.c.addView(this.a, ha.e(-1, 56, 48));
@@ -62,7 +62,7 @@ public final class y extends b0 {
                 dVar.e();
                 int i15 = k6.d6;
                 dVar.setColor(i0.a.f(0.125f, k6.w0(i15, d0Var.I0), k6.w0(i13, d0Var.I0)));
-                dVar.setText(hd.M0(2131751900, null));
+                dVar.setText(id.M0(2131751900, null));
                 dVar.f();
                 if (dVar.getBackground() != null) {
                     Drawable background = dVar.getBackground();
@@ -100,7 +100,7 @@ public final class y extends b0 {
                 });
                 f10.addView(dVar, ha.q(0, 48, 1.0f, 0, 4, 0, 4, 0));
                 fi.d dVar2 = new fi.d(context, d0Var.I0, true);
-                dVar2.setText(hd.M0(2131751902, null));
+                dVar2.setText(id.M0(2131751902, null));
                 dVar2.f();
                 dVar2.setOnClickListener(new View.OnClickListener(this) { // from class: ii.c0
                     public final /* synthetic */ y b;
@@ -147,7 +147,7 @@ public final class y extends b0 {
                 boolean z9 = d0Var.E1;
                 kVar4.setBackButtonImage(z9 ? R.drawable.ic_ab_close : R.drawable.ic_ab_back);
                 r6.m(this.a, 1, k6.y8, d0Var.I0);
-                this.a.setTitle(hd.M0(2131751988, null));
+                this.a.setTitle(id.M0(2131751988, null));
                 this.a.getTitleTextView().setTranslationX(-org.telegram.messenger.g0.L(18.0f));
                 this.a.setActionBarMenuOnItemClick(new bi.s(this, 8));
                 this.c.addView(this.a, ha.e(-1, 56, 48));
@@ -159,7 +159,7 @@ public final class y extends b0 {
                 fi.d dVar3 = new fi.d(getContext(), d0Var.I0, true);
                 d0Var.p1 = dVar3;
                 dVar3.f();
-                d0Var.p1.setText(hd.M0(2131747830, null));
+                d0Var.p1.setText(id.M0(2131747832, null));
                 d0Var.p1.setOnClickListener(new g(this, 1));
                 if (z9) {
                     d0Var.p1.setVisibility(8);

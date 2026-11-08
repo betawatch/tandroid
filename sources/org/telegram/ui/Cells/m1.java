@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.a80;
 import org.telegram.ui.Components.ic;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class m1 {
     public final boolean a;
@@ -48,7 +48,7 @@ public final class m1 {
         TLRPC.UserProfilePhoto userProfilePhoto;
         int L = i7 - org.telegram.messenger.g0.L(22.0f);
         this.j = org.telegram.messenger.g0.L(16.0f);
-        StaticLayout U2 = q1.U2(str, q1.id, L);
+        StaticLayout U2 = q1.U2(str, q1.jd, L);
         this.f = U2;
         if (U2 != null) {
             int L2 = org.telegram.messenger.g0.L(4.0f) + q1.K1(U2);
@@ -68,16 +68,16 @@ public final class m1 {
         } else {
             imageReceiver.f();
         }
-        SpannableStringBuilder K3 = q1.K3(charSequence2);
+        SpannableStringBuilder L3 = q1.L3(charSequence2);
         int i11 = i7 / 2;
-        StaticLayout U22 = q1.U2(charSequence, textPaint, L - (K3 != null ? org.telegram.messenger.g0.L(4.0f) + (K3 == null ? 0 : Math.min(i11, (int) Math.ceil(q1.jd.measureText(K3, 0, K3.length())))) : 0));
+        StaticLayout U22 = q1.U2(charSequence, textPaint, L - (L3 != null ? org.telegram.messenger.g0.L(4.0f) + (L3 == null ? 0 : Math.min(i11, (int) Math.ceil(q1.kd.measureText(L3, 0, L3.length())))) : 0));
         this.g = U22;
         if (U22 != null) {
-            int L3 = org.telegram.messenger.g0.L(4.0f) + q1.K1(U22);
-            L -= L3;
-            this.j = ((this.f != null || this.i) ? 0 : org.telegram.messenger.g0.L(6.0f)) + L3 + this.j;
+            int L4 = org.telegram.messenger.g0.L(4.0f) + q1.K1(U22);
+            L -= L4;
+            this.j = ((this.f != null || this.i) ? 0 : org.telegram.messenger.g0.L(6.0f)) + L4 + this.j;
         }
-        StaticLayout U23 = L > org.telegram.messenger.g0.L(24.0f) ? q1.U2(K3, q1.jd, Math.min(i11, L)) : null;
+        StaticLayout U23 = L > org.telegram.messenger.g0.L(24.0f) ? q1.U2(L3, q1.kd, Math.min(i11, L)) : null;
         this.h = U23;
         if (U23 == null) {
             if (this.g == null && this.f == null) {

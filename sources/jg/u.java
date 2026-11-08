@@ -2,7 +2,7 @@ package jg;
 
 import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.ui;
@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.c61;
 import org.telegram.ui.hw;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements Runnable {
     public final /* synthetic */ int a;
@@ -180,7 +180,7 @@ public final /* synthetic */ class u implements Runnable {
                             TextView textView = (TextView) c61Var.b;
                             Object[] objArr = new Object[i10];
                             objArr[0] = str3;
-                            textView.setText(hd.a0(null, null, 2131745751, objArr));
+                            textView.setText(id.a0(null, null, 2131745753, objArr));
                         }
                         h0Var2.f();
                         h0Var2.O = i7;

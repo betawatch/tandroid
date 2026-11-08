@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xk0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -60,9 +60,9 @@ public final /* synthetic */ class xk0 implements Runnable {
                     if (dl0Var.r == 0) {
                         av0Var.e(false, true);
                         w70 w70Var = av0Var.e;
-                        av0Var.d.setText(org.telegram.messenger.hd.M0(2131745801, null));
+                        av0Var.d.setText(org.telegram.messenger.id.M0(2131745803, null));
                         w70Var.setVisibility(0);
-                        w70Var.setText(org.telegram.messenger.hd.M0(2131745808, null));
+                        w70Var.setText(org.telegram.messenger.id.M0(2131745810, null));
                         break;
                     }
                 }

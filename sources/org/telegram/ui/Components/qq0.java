@@ -4,7 +4,7 @@ import android.content.Context;
 import android.text.TextUtils;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class qq0 extends ql0 {
     public final /* synthetic */ xs0 I;
@@ -83,7 +83,7 @@ public final class qq0 extends ql0 {
         }
         org.telegram.ui.ActionBar.r0 r0Var2 = xs0Var.p0;
         if (r0Var2 != null) {
-            r0Var2.setSearchFieldHint(org.telegram.messenger.hd.M0((qq0Var != null && qq0Var.a() && xs0Var.getSelectedTab() == 11) ? 2131745869 : 2131745837, null));
+            r0Var2.setSearchFieldHint(org.telegram.messenger.id.M0((qq0Var != null && qq0Var.a() && xs0Var.getSelectedTab() == 11) ? 2131745871 : 2131745839, null));
         }
     }
 }

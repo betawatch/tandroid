@@ -22,7 +22,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ef0 extends View {
     public final HashSet D;
@@ -860,12 +860,12 @@ public final class ef0 extends View {
         if (!z9) {
             cf0 cf0Var = this.G ? cf0.e : cf0.f;
             bf0Var.d(0, cf0Var.b, cf0Var.c);
-            bf0Var.c(org.telegram.messenger.hd.M0(cf0Var.a, null));
+            bf0Var.c(org.telegram.messenger.id.M0(cf0Var.a, null));
         } else if (this.G) {
-            bf0Var.c(org.telegram.messenger.hd.M0(2131746686, null));
+            bf0Var.c(org.telegram.messenger.id.M0(2131746688, null));
             bf0Var.d(R.raw.profile_unmuting, R.drawable.filled_profile_mute_24, R.drawable.outline_profile_mute_24);
         } else {
-            bf0Var.c(org.telegram.messenger.hd.M0(2131746685, null));
+            bf0Var.c(org.telegram.messenger.id.M0(2131746687, null));
             bf0Var.d(R.raw.profile_muting, R.drawable.filled_profile_unmute_24, R.drawable.outline_profile_unmute_24);
         }
     }

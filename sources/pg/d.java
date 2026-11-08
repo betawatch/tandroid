@@ -9,7 +9,7 @@ import c8.ha;
 import j2.n;
 import m4.d0;
 import org.telegram.messenger.camera.q;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.k5;
 import org.telegram.ui.ActionBar.f2;
@@ -22,7 +22,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.h5;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -53,8 +53,8 @@ public final /* synthetic */ class d implements Runnable {
                 q.n(textView, 1, 16.0f, 1, 1);
                 textView.setSingleLine(true);
                 int i11 = 5;
-                textView.setGravity((hd.a0 ? 3 : 5) | 48);
-                e10.addView(textView, ha.d(-2, -1.0f, (hd.a0 ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
+                textView.setGravity((id.a0 ? 3 : 5) | 48);
+                e10.addView(textView, ha.d(-2, -1.0f, (id.a0 ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
                 mm0 mm0Var = new mm0(parentActivity);
                 mm0Var.setDelegate(new d0(h5Var, textView, false));
                 mm0Var.setReportChanges(true);
@@ -64,8 +64,8 @@ public final /* synthetic */ class d implements Runnable {
                 r6.V(textView2, i10, null);
                 q.n(textView2, 1, 16.0f, 1, 1);
                 textView2.setSingleLine(true);
-                textView2.setGravity((hd.a0 ? 3 : 5) | 48);
-                e10.addView(textView2, ha.d(-2, -1.0f, (hd.a0 ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
+                textView2.setGravity((id.a0 ? 3 : 5) | 48);
+                e10.addView(textView2, ha.d(-2, -1.0f, (id.a0 ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
                 mm0 mm0Var2 = new mm0(parentActivity);
                 mm0Var2.setDelegate(new n(14, h5Var, textView2));
                 mm0Var2.setReportChanges(true);
@@ -75,8 +75,8 @@ public final /* synthetic */ class d implements Runnable {
                 r6.V(textView3, i10, null);
                 q.n(textView3, 1, 16.0f, 1, 1);
                 textView3.setSingleLine(true);
-                textView3.setGravity((hd.a0 ? 3 : 5) | 48);
-                e10.addView(textView3, ha.d(-2, -1.0f, (hd.a0 ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
+                textView3.setGravity((id.a0 ? 3 : 5) | 48);
+                e10.addView(textView3, ha.d(-2, -1.0f, (id.a0 ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
                 mm0 mm0Var3 = new mm0(parentActivity);
                 mm0Var3.setDelegate(new org.telegram.ui.f(h5Var, i11));
                 mm0Var3.setReportChanges(true);
@@ -91,7 +91,7 @@ public final /* synthetic */ class d implements Runnable {
             case 1:
                 jVar.getClass();
                 iz.K();
-                Toast.makeText(jVar.getContext(), hd.M0(iz.J0 ? 2131751619 : 2131751620, null), 0).show();
+                Toast.makeText(jVar.getContext(), id.M0(iz.J0 ? 2131751619 : 2131751620, null), 0).show();
                 break;
             case 2:
                 ProfileActivity.V4((Activity) jVar.getContext(), false);

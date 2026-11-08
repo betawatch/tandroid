@@ -30,11 +30,11 @@ import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.NotificationsSettingsActivity;
 import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.f81;
-import org.telegram.ui.l81;
+import org.telegram.ui.g81;
 import org.telegram.ui.m81;
+import org.telegram.ui.n81;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pp0 implements Runnable {
     public final /* synthetic */ int a;
@@ -139,7 +139,7 @@ public final /* synthetic */ class pp0 implements Runnable {
                                 sr0 sr0Var = sr0VarArr[i13];
                                 if (sr0Var.E == ur0Var.r) {
                                     if (ur0Var.s == 0 && b11 == 0) {
-                                        sr0Var.w.d.setText(org.telegram.messenger.hd.a0("NoResultFoundFor", null, 2131748165, str));
+                                        sr0Var.w.d.setText(org.telegram.messenger.id.a0("NoResultFoundFor", null, 2131748167, str));
                                         sr0VarArr[i13].w.f.setVisibility(8);
                                         sr0VarArr[i13].w.e(false, true);
                                     } else if (b10 == 0) {
@@ -235,7 +235,7 @@ public final /* synthetic */ class pp0 implements Runnable {
                 Drawable drawable = uoVar.b;
                 if (drawable instanceof qa0) {
                     qa0 qa0Var = (qa0) drawable;
-                    qa0Var.s(zz0.e(bitmap), i18);
+                    qa0Var.s(i18, zz0.e(bitmap));
                     qa0Var.t(zz0Var.L);
                     zz0Var.invalidate();
                     return;
@@ -278,15 +278,15 @@ public final /* synthetic */ class pp0 implements Runnable {
                     if (i19 != 1 || r11.m) {
                         h2Var.setScaled(true);
                     }
-                } else if (view instanceof ju) {
-                    TLRPC.Document document3 = ((ju) view).getDocument();
+                } else if (view instanceof ku) {
+                    TLRPC.Document document3 = ((ku) view).getDocument();
                     if (document3 == null) {
                         return;
                     } else {
                         r11.s(document3, null, org.telegram.messenger.ij.V(document3, null, Integer.valueOf(r11.r)), null, null, i19, false, null, f6Var, 0);
                     }
-                } else if (view instanceof px) {
-                    r5 span = ((px) view).getSpan();
+                } else if (view instanceof qx) {
+                    r5 span = ((qx) view).getSpan();
                     if (span != null) {
                         TLRPC.Document document4 = span.document;
                         if (document4 == null) {
@@ -330,7 +330,7 @@ public final /* synthetic */ class pp0 implements Runnable {
                 org.telegram.ui.ActionBar.f6 f6Var2 = (org.telegram.ui.ActionBar.f6) this.e;
                 org.telegram.messenger.g0.g(str4);
                 if (i20 == 1) {
-                    org.telegram.messenger.camera.q.r(null, 2131747294, new hc(l2Var, f6Var2));
+                    org.telegram.messenger.camera.q.r(null, 2131747296, new hc(l2Var, f6Var2));
                     return;
                 } else {
                     new hc(l2Var, f6Var2).k(false).j();
@@ -466,11 +466,11 @@ public final /* synthetic */ class pp0 implements Runnable {
                     notificationsCustomSettingsActivity3.q0(true);
                     return;
                 }
-                String M0 = org.telegram.messenger.hd.M0(iArr[Utilities.j(notificationsCustomSettingsActivity3.getNotificationsSettings().getInt(str7, 0), iArr.length - 1, 0)], null);
+                String M0 = org.telegram.messenger.id.M0(iArr[Utilities.j(notificationsCustomSettingsActivity3.getNotificationsSettings().getInt(str7, 0), iArr.length - 1, 0)], null);
                 if (i23 >= 0 && i23 < arrayList9.size()) {
                     ((org.telegram.ui.kh0) arrayList9.get(i23)).f = M0;
                 }
-                ((org.telegram.ui.Cells.w9) view2).c(org.telegram.messenger.hd.M0(2131743615, "Vibrate"), M0, true, true);
+                ((org.telegram.ui.Cells.w9) view2).c(org.telegram.messenger.id.M0(2131743617, "Vibrate"), M0, true, true);
                 return;
             case 11:
                 boolean[] zArr = (boolean[]) this.c;
@@ -504,10 +504,10 @@ public final /* synthetic */ class pp0 implements Runnable {
                 String str8 = (String) this.e;
                 int i25 = this.b;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(passkeysActivity.getParentActivity());
-                alertDialog$Builder.a.R = org.telegram.messenger.hd.M0(2131747644, null);
-                alertDialog$Builder.a.T = org.telegram.messenger.hd.M0(2131747645, null);
-                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751599, null), new bg.f0(passkeysActivity, passkey, str8, i25, 7));
-                alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+                alertDialog$Builder.a.R = org.telegram.messenger.id.M0(2131747646, null);
+                alertDialog$Builder.a.T = org.telegram.messenger.id.M0(2131747647, null);
+                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751599, null), new bg.f0(passkeysActivity, passkey, str8, i25, 7));
+                alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
                 alertDialog$Builder.d(-1);
                 alertDialog$Builder.p();
                 return;
@@ -565,11 +565,11 @@ public final /* synthetic */ class pp0 implements Runnable {
                 v4.c0(this.b, (TLRPC.TL_error) this.d, (org.telegram.ui.ActionBar.f2) this.c, (TLRPC.TL_payments_assignPlayMarketTransaction) this.e, new Object[0]);
                 return;
             case 16:
-                f81 f81Var = (f81) this.c;
+                g81 g81Var = (g81) this.c;
                 TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) this.d;
                 int i27 = this.b;
                 org.telegram.ui.an anVar = (org.telegram.ui.an) this.e;
-                f81Var.getClass();
+                g81Var.getClass();
                 int i28 = 0;
                 while (i28 < tL_messageMediaToDo.todo.list.size()) {
                     if (tL_messageMediaToDo.todo.list.get(i28).id == i27) {
@@ -589,20 +589,20 @@ public final /* synthetic */ class pp0 implements Runnable {
                     }
                     i29++;
                 }
-                f81Var.G.k.media = tL_messageMediaToDo;
-                anVar.getSendMessagesHelper().t(f81Var.G, null, null, null, null, null, null, null, false, false, null);
+                g81Var.G.k.media = tL_messageMediaToDo;
+                anVar.getSendMessagesHelper().t(g81Var.G, null, null, null, null, null, null, null, false, false, null);
                 anVar.Cd(false);
-                f81Var.c(false);
+                g81Var.c(false);
                 return;
             case 17:
-                l81 l81Var = (l81) this.c;
+                m81 m81Var = (m81) this.c;
                 int i30 = this.b;
                 ArrayList arrayList10 = (ArrayList) this.d;
                 ArrayList arrayList11 = (ArrayList) this.e;
-                m81 m81Var = l81Var.h;
-                ArrayList arrayList12 = l81Var.d;
-                ArrayList arrayList13 = l81Var.c;
-                if (i30 != l81Var.f) {
+                n81 n81Var = m81Var.h;
+                ArrayList arrayList12 = m81Var.d;
+                ArrayList arrayList13 = m81Var.c;
+                if (i30 != m81Var.f) {
                     return;
                 }
                 arrayList13.clear();
@@ -611,68 +611,68 @@ public final /* synthetic */ class pp0 implements Runnable {
                     arrayList13.addAll(arrayList10);
                     arrayList12.addAll(arrayList11);
                 }
-                l81Var.f();
+                m81Var.f();
                 if (arrayList13.isEmpty()) {
-                    m81Var.r.setVisibility(0);
+                    n81Var.r.setVisibility(0);
                     return;
                 } else {
-                    m81Var.r.setVisibility(8);
+                    n81Var.r.setVisibility(8);
                     return;
                 }
             case 18:
-                org.telegram.ui.Wallet.a1 a1Var = (org.telegram.ui.Wallet.a1) this.c;
+                org.telegram.ui.Wallet.z0 z0Var = (org.telegram.ui.Wallet.z0) this.c;
                 rc.u uVar = (rc.u) this.d;
                 int i31 = this.b;
                 String str10 = (String) this.e;
-                if (a1Var.c(uVar, i31)) {
-                    a1Var.f(str10);
+                if (z0Var.c(uVar, i31)) {
+                    z0Var.f(str10);
                     return;
                 }
-                a1Var.d("ignoring stale socket callback; attempt=" + i31 + ", " + str10);
+                z0Var.d("ignoring stale socket callback; attempt=" + i31 + ", " + str10);
                 return;
             case 19:
-                org.telegram.ui.Wallet.z0 z0Var = (org.telegram.ui.Wallet.z0) this.c;
+                org.telegram.ui.Wallet.y0 y0Var = (org.telegram.ui.Wallet.y0) this.c;
                 rc.u uVar2 = (rc.u) this.d;
                 int i32 = this.b;
                 JSONObject jSONObject2 = (JSONObject) this.e;
-                org.telegram.ui.Wallet.a1 a1Var2 = z0Var.c;
-                if (a1Var2.c(uVar2, i32)) {
-                    org.telegram.ui.Wallet.n0 n0Var = a1Var2.c;
-                    String str11 = a1Var2.b;
-                    dt dtVar = a1Var2.p;
+                org.telegram.ui.Wallet.z0 z0Var2 = y0Var.c;
+                if (z0Var2.c(uVar2, i32)) {
+                    org.telegram.ui.Wallet.m0 m0Var = z0Var2.c;
+                    String str11 = z0Var2.b;
+                    et etVar = z0Var2.p;
                     String optString = jSONObject2.optString("status");
                     if ((jSONObject2.has("error") && !jSONObject2.isNull("error")) || "error".equals(optString)) {
-                        a1Var2.d("subscription error; id=" + jSONObject2.optString("id") + ", code=" + jSONObject2.optString("code") + ", status=" + optString + ", error=" + jSONObject2.opt("error") + ", message=" + jSONObject2.optString("message"));
-                        a1Var2.f("subscription rejected");
+                        z0Var2.d("subscription error; id=" + jSONObject2.optString("id") + ", code=" + jSONObject2.optString("code") + ", status=" + optString + ", error=" + jSONObject2.opt("error") + ", message=" + jSONObject2.optString("message"));
+                        z0Var2.f("subscription rejected");
                         return;
                     }
                     if ("subscribed".equals(optString)) {
-                        a1Var2.d("subscription acknowledgement: " + jSONObject2);
-                        if (TextUtils.equals(a1Var2.f, jSONObject2.optString("id"))) {
-                            a1Var2.e = true;
-                            a1Var2.j = 0;
-                            a1Var2.l = SystemClock.elapsedRealtime();
-                            org.telegram.messenger.g0.r(a1Var2.o);
-                            org.telegram.messenger.g0.r(dtVar);
-                            org.telegram.messenger.g0.i3(dtVar, 15000L);
-                            a1Var2.d("subscription acknowledged; requested transactions and account state");
+                        z0Var2.d("subscription acknowledgement: " + jSONObject2);
+                        if (TextUtils.equals(z0Var2.f, jSONObject2.optString("id"))) {
+                            z0Var2.e = true;
+                            z0Var2.j = 0;
+                            z0Var2.l = SystemClock.elapsedRealtime();
+                            org.telegram.messenger.g0.r(z0Var2.o);
+                            org.telegram.messenger.g0.r(etVar);
+                            org.telegram.messenger.g0.i3(etVar, 15000L);
+                            z0Var2.d("subscription acknowledged; requested transactions and account state");
                             return;
                         }
                         return;
                     }
                     if ("pong".equals(optString) && "heartbeat".equals(jSONObject2.optString("id"))) {
-                        a1Var2.d("received pong");
-                        a1Var2.l = SystemClock.elapsedRealtime();
+                        z0Var2.d("received pong");
+                        z0Var2.l = SystemClock.elapsedRealtime();
                         return;
                     }
-                    if (!a1Var2.e) {
-                        a1Var2.d("ignoring message before subscription; type=" + jSONObject2.optString(TeXSymbolParser.TYPE_ATTR) + ", status=" + optString);
+                    if (!z0Var2.e) {
+                        z0Var2.d("ignoring message before subscription; type=" + jSONObject2.optString(TeXSymbolParser.TYPE_ATTR) + ", status=" + optString);
                         return;
                     }
                     String optString2 = jSONObject2.optString(TeXSymbolParser.TYPE_ATTR);
-                    if (!"account_state_change".equals(optString2) || org.telegram.ui.Wallet.n0.b(str11, jSONObject2.optString("account"))) {
+                    if (!"account_state_change".equals(optString2) || org.telegram.ui.Wallet.m0.b(str11, jSONObject2.optString("account"))) {
                         if (!"transactions".equals(optString2) && !"account_state_change".equals(optString2) && !"trace_invalidated".equals(optString2)) {
-                            a1Var2.d("ignoring message; type=" + optString2 + ", status=" + optString);
+                            z0Var2.d("ignoring message; type=" + optString2 + ", status=" + optString);
                             return;
                         }
                         JSONArray optJSONArray2 = jSONObject2.optJSONArray("transactions");
@@ -683,9 +683,9 @@ public final /* synthetic */ class pp0 implements Runnable {
                         u10.append(jSONObject2.optString("trace_external_hash_norm"));
                         u10.append(optJSONArray2 == null ? "" : ", transactions=" + optJSONArray2.length());
                         u10.append(optJSONObject != null ? ", balance=" + optJSONObject.optString("balance") : "");
-                        a1Var2.d(u10.toString());
+                        z0Var2.d(u10.toString());
                         if (!"transactions".equals(optString2)) {
-                            n0Var.M(jSONObject2);
+                            m0Var.M(jSONObject2);
                             return;
                         }
                         if (str11 == null || (optJSONArray = jSONObject2.optJSONArray("transactions")) == null) {
@@ -694,7 +694,7 @@ public final /* synthetic */ class pp0 implements Runnable {
                         JSONArray jSONArray = new JSONArray();
                         for (int i33 = 0; i33 < optJSONArray.length(); i33++) {
                             JSONObject optJSONObject2 = optJSONArray.optJSONObject(i33);
-                            if (optJSONObject2 != null && org.telegram.ui.Wallet.n0.b(str11, optJSONObject2.optString("account"))) {
+                            if (optJSONObject2 != null && org.telegram.ui.Wallet.m0.b(str11, optJSONObject2.optString("account"))) {
                                 jSONArray.put(optJSONObject2);
                             }
                         }
@@ -704,10 +704,10 @@ public final /* synthetic */ class pp0 implements Runnable {
                         try {
                             JSONObject jSONObject3 = new JSONObject(jSONObject2.toString());
                             jSONObject3.put("transactions", jSONArray);
-                            n0Var.M(jSONObject3);
+                            m0Var.M(jSONObject3);
                             return;
                         } catch (JSONException unused3) {
-                            a1Var2.d("could not filter streaming transactions");
+                            z0Var2.d("could not filter streaming transactions");
                             return;
                         }
                     }
@@ -745,11 +745,11 @@ public final /* synthetic */ class pp0 implements Runnable {
                 return;
             case 22:
                 sg.d1 d1Var = (sg.d1) this.c;
-                sg.z0 z0Var2 = (sg.z0) this.d;
+                sg.z0 z0Var3 = (sg.z0) this.d;
                 int i36 = this.b;
                 ArrayList arrayList14 = (ArrayList) this.e;
                 ArrayList arrayList15 = d1Var.c;
-                boolean z12 = z0Var2 != null;
+                boolean z12 = z0Var3 != null;
                 d1Var.d = z12;
                 if (!z12 || i36 < 0 || i36 >= arrayList15.size()) {
                     d1Var.i = arrayList14;
@@ -759,7 +759,7 @@ public final /* synthetic */ class pp0 implements Runnable {
                     d1Var.g.edit().putInt(jg.g.j(i36, "score"), ((sg.c1) arrayList15.get(i36)).c).putInt("scoreall", d1Var.a).apply();
                     d1Var.i = null;
                 }
-                d1Var.e.a(z0Var2);
+                d1Var.e.a(z0Var3);
                 return;
             case 23:
                 tg.c2 c2Var = (tg.c2) this.c;

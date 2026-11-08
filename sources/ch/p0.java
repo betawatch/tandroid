@@ -25,8 +25,8 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
-import org.telegram.messenger.rc;
 import org.telegram.messenger.rz;
+import org.telegram.messenger.sc;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.t10;
 import org.telegram.messenger.t5;
@@ -44,7 +44,7 @@ import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.y8;
 import org.telegram.ui.ol;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class p0 {
     public static int W;
@@ -663,7 +663,7 @@ public final class p0 {
 
     public final boolean m() {
         if (this.I) {
-            return !(this.p && this.t.isEmpty()) && rc.e(8200) && rc.e(131072);
+            return !(this.p && this.t.isEmpty()) && sc.e(8200) && sc.e(131072);
         }
         return false;
     }

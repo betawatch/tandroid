@@ -13,7 +13,7 @@ import c8.ha;
 import di.d4;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f6;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class c extends FrameLayout {
     public final f6 a;
@@ -60,13 +60,13 @@ public abstract class c extends FrameLayout {
         d4Var.setTextSize(16);
         int i7 = k6.j5;
         r6.Y(d4Var, i7, f6Var);
-        d4Var.setGravity(hd.a0 ? 5 : 3);
+        d4Var.setGravity(id.a0 ? 5 : 3);
         addView(d4Var);
         k5 k5Var = new k5(context);
         this.e = k5Var;
         k5Var.setTextSize(14);
         r6.Y(k5Var, i7, f6Var);
-        k5Var.setGravity(hd.a0 ? 5 : 3);
+        k5Var.setGravity(id.a0 ? 5 : 3);
         addView(k5Var);
         RadioButton radioButton = new RadioButton(context);
         this.f = radioButton;
@@ -98,34 +98,34 @@ public abstract class c extends FrameLayout {
         float f11;
         float f12;
         float f13;
-        this.c.setLayoutParams(ha.d(40, 40.0f, (hd.a0 ? 5 : 3) | 16, b() ? 53.0f : 16.0f, 0.0f, b() ? 53.0f : 16.0f, 0.0f));
-        boolean z9 = hd.a0;
+        this.c.setLayoutParams(ha.d(40, 40.0f, (id.a0 ? 5 : 3) | 16, b() ? 53.0f : 16.0f, 0.0f, b() ? 53.0f : 16.0f, 0.0f));
+        boolean z9 = id.a0;
         int i7 = (z9 ? 5 : 3) | 16;
         if (z9) {
             f10 = 20.0f;
         } else {
             f10 = b() ? 105 : 70;
         }
-        if (hd.a0) {
+        if (id.a0) {
             f11 = b() ? 105 : 70;
         } else {
             f11 = 20.0f;
         }
         this.d.setLayoutParams(ha.d(-1, -2.0f, i7, f10, 0.0f, f11, 0.0f));
-        boolean z10 = hd.a0;
+        boolean z10 = id.a0;
         int i10 = (z10 ? 5 : 3) | 16;
         if (z10) {
             f12 = 20.0f;
         } else {
             f12 = b() ? 105 : 70;
         }
-        if (hd.a0) {
+        if (id.a0) {
             f13 = b() ? 105 : 70;
         } else {
             f13 = 20.0f;
         }
         this.e.setLayoutParams(ha.d(-1, -2.0f, i10, f12, 0.0f, f13, 0.0f));
-        boolean z11 = hd.a0;
+        boolean z11 = id.a0;
         this.f.setLayoutParams(ha.d(22, 22.0f, (z11 ? 5 : 3) | 16, z11 ? 15.0f : 20.0f, 0.0f, z11 ? 20.0f : 15.0f, 0.0f));
     }
 
@@ -141,7 +141,7 @@ public abstract class c extends FrameLayout {
                 i7 -= 40;
             }
             int a10 = a() + i7;
-            if (hd.a0) {
+            if (id.a0) {
                 canvas.drawRect(0.0f, getHeight() - 1, getWidth() - g0.L(a10), getHeight(), paint);
             } else {
                 canvas.drawRect(g0.L(a10), getHeight() - 1, getWidth(), getHeight(), paint);
@@ -188,7 +188,7 @@ public abstract class c extends FrameLayout {
             k5Var.setVisibility(0);
         }
         if (this.c.getVisibility() == 8) {
-            if (hd.a0) {
+            if (id.a0) {
                 d4Var.setTranslationX(g0.L(40.0f));
                 k5Var.setTranslationX(g0.L(40.0f));
             } else {

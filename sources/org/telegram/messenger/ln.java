@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ln implements Runnable {
     public final /* synthetic */ int a;
@@ -944,7 +944,7 @@ public final /* synthetic */ class ln implements Runnable {
                 boolean z14 = this.b;
                 org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.f;
                 if (tLObject instanceof TLRPC.Updates) {
-                    Utilities.d.c(new y4(r32, x6Var, tLObject));
+                    Utilities.d.c(new x4(r32, x6Var, tLObject));
                     org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
                     if (T != null && ((isEmpty = TextUtils.isEmpty(tL_textWithEntities.text)) || !z14)) {
                         k5.o(null, isEmpty ? 2131750854 : 2131750852, org.telegram.ui.Components.hc.a0(T), isEmpty ? R.raw.ic_delete : R.raw.contact_check, 36);
@@ -1013,7 +1013,7 @@ public final /* synthetic */ class ln implements Runnable {
                 gz gzVar2 = (gz) this.c;
                 TLRPC.TL_messages_editMessage tL_messages_editMessage2 = (TLRPC.TL_messages_editMessage) this.d;
                 ij ijVar2 = (ij) this.f;
-                int sendRequest = gzVar2.getConnectionsManager().sendRequest(tL_messages_editMessage2, new q4(ijVar2, gzVar2, tL_messages_editMessage2, (org.telegram.ui.ActionBar.f2) this.e, this.b));
+                int sendRequest = gzVar2.getConnectionsManager().sendRequest(tL_messages_editMessage2, new p4(ijVar2, gzVar2, tL_messages_editMessage2, (org.telegram.ui.ActionBar.f2) this.e, this.b));
                 if (ijVar2 == null || (message = ijVar2.k) == null) {
                     return;
                 }

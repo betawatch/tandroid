@@ -15,7 +15,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.rz;
 import org.telegram.messenger.ui;
@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ag0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class v extends FrameLayout implements Checkable {
     public final boolean a;
@@ -46,7 +46,7 @@ public final class v extends FrameLayout implements Checkable {
             ag0 ag0Var = new ag0(context);
             this.f = ag0Var;
             this.n = ag0Var;
-            ag0Var.setText(hd.M0(2131754486, null));
+            ag0Var.setText(id.M0(2131754486, null));
             org.telegram.ui.ActionBar.r6.V(ag0Var, org.telegram.ui.ActionBar.k6.Gi, null);
             ag0Var.setProgressColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Bi, false));
             int i7 = org.telegram.ui.ActionBar.k6.Ci;
@@ -67,7 +67,7 @@ public final class v extends FrameLayout implements Checkable {
             ag0Var2.setTextSize(1, 14.0f);
             int i10 = org.telegram.ui.ActionBar.k6.Fi;
             org.telegram.ui.ActionBar.r6.V(ag0Var2, i10, null);
-            ag0Var2.setText(hd.M0(2131744856, null));
+            ag0Var2.setText(id.M0(2131744858, null));
             y J0 = org.telegram.ui.ActionBar.k6.J0(org.telegram.messenger.g0.L(3.0f), org.telegram.ui.ActionBar.k6.x0(null, i10, false));
             org.telegram.ui.ActionBar.n6 h = org.telegram.ui.ActionBar.r6.h(i10, 25);
             ag0Var2.setBackground(J0);
@@ -146,9 +146,9 @@ public final class v extends FrameLayout implements Checkable {
         boolean z10 = stickerSet.emojis;
         TextView textView = this.c;
         if (z10) {
-            textView.setText(hd.G(stickerSet.count, "EmojiCount", new Object[0]));
+            textView.setText(id.G(stickerSet.count, "EmojiCount", new Object[0]));
         } else {
-            textView.setText(hd.G(stickerSet.count, "Stickers", new Object[0]));
+            textView.setText(id.G(stickerSet.count, "Stickers", new Object[0]));
         }
         if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
             ArrayList<TLRPC.Document> arrayList = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;

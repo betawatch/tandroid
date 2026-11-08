@@ -13,7 +13,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.gc;
 import org.telegram.messenger.gz;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.p10;
@@ -32,7 +32,7 @@ import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class i1 extends na {
     public final int P1;
@@ -301,10 +301,10 @@ public final class i1 extends na {
         h1 h1Var = d12;
         org.telegram.ui.Cells.t0 t0Var2 = new org.telegram.ui.Cells.t0(context, f6Var, false);
         t0Var2.setDelegate(new c1());
-        t0Var2.setCustomText(hd.M0(2131752979, null));
+        t0Var2.setCustomText(id.M0(2131752979, null));
         d1 d1Var = new d1(context, i10);
         d1Var.setDelegate(new e1());
-        d1Var.v3(h1Var, null, false, false, false, false);
+        d1Var.w3(h1Var, null, false, false, false, false);
         LinearLayout f10 = k5.f(context, r11);
         f10.addView(t0Var2, ha.o(-1, -2));
         f10.addView(d1Var, ha.o(-1, -2));
@@ -314,7 +314,7 @@ public final class i1 extends na {
         f1Var.addView(f10, ha.d(-1, -1.0f, qs.E1, 4.0f, 8.0f, 4.0f, 8.0f));
         FrameLayout frameLayout = new FrameLayout(context);
         fi.d h = k5.h(24, context, f6Var, r11);
-        h.i(hd.M0(2131752978, null), false, r11);
+        h.i(id.M0(2131752978, null), false, r11);
         h.setOnClickListener(new bi.d1(this, tL_messages_preparedInlineMessage, t0Var, i10, j3, pVar));
         frameLayout.addView(h, ha.d(-1, 48.0f, qs.E1, 10.0f, 10.0f, 10.0f, 10.0f));
         ViewGroup viewGroup = this.b;
@@ -331,7 +331,7 @@ public final class i1 extends na {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r8v12, types: [org.telegram.tgnet.TLRPC$Photo] */
+    /* JADX WARN: Type inference failed for: r8v7, types: [org.telegram.tgnet.TLRPC$Photo] */
     /* JADX WARN: Type inference failed for: r9v0, types: [org.telegram.tgnet.TLRPC$TL_document] */
     /* JADX WARN: Type inference failed for: r9v1, types: [org.telegram.tgnet.TLRPC$Document] */
     /* JADX WARN: Type inference failed for: r9v2, types: [org.telegram.tgnet.TLRPC$Document] */
@@ -430,8 +430,24 @@ public final class i1 extends na {
             } else if (botInlineMessage instanceof TLRPC.TL_botInlineMessageRichMessage) {
                 tL_message.flags2 |= TLObject.FLAG_13;
                 tL_message.rich_message = ((TLRPC.TL_botInlineMessageRichMessage) botInlineMessage).rich_message;
+            } else if (botInlineMessage instanceof TLRPC.TL_botInlineMessageWidget) {
+                TLRPC.TL_botInlineMessageWidget tL_botInlineMessageWidget = (TLRPC.TL_botInlineMessageWidget) botInlineMessage;
+                TLRPC.TL_messageMediaWidget tL_messageMediaWidget = new TLRPC.TL_messageMediaWidget();
+                tL_messageMediaWidget.width = tL_botInlineMessageWidget.width;
+                tL_messageMediaWidget.height = tL_botInlineMessageWidget.height;
+                tL_messageMediaWidget.payload = tL_botInlineMessageWidget.payload;
+                tL_messageMediaWidget.public_data = tL_botInlineMessageWidget.public_data;
+                tL_messageMediaWidget.public_data_hash = tL_botInlineMessageWidget.public_data_hash;
+                tL_messageMediaWidget.chat_data = tL_botInlineMessageWidget.chat_data;
+                tL_messageMediaWidget.widget_id = tL_botInlineMessageWidget.widget_id;
+                tL_message.message = tL_botInlineMessageWidget.message;
+                tL_message.entities = tL_botInlineMessageWidget.entities;
+                tL_message.invert_media = tL_botInlineMessageWidget.invert_media;
+                tL_message.flags |= 512;
+                tL_message.media = tL_messageMediaWidget;
             }
         }
+        boolean z9 = botInlineResult.send_message instanceof TLRPC.TL_botInlineMessageWidget;
         if (tL_photo2 != null) {
             TLRPC.TL_messageMediaPhoto tL_messageMediaPhoto = new TLRPC.TL_messageMediaPhoto();
             tL_messageMediaPhoto.photo = tL_photo2;
@@ -439,7 +455,7 @@ public final class i1 extends na {
             tL_message.media = tL_messageMediaPhoto;
         } else if (tL_document != 0) {
             TLRPC.TL_messageMediaDocument tL_messageMediaDocument = new TLRPC.TL_messageMediaDocument();
-            tL_messageMediaDocument.flags |= 1;
+            tL_messageMediaDocument.flags = 1 | tL_messageMediaDocument.flags;
             tL_messageMediaDocument.voice = "voice".equalsIgnoreCase(botInlineResult.type);
             tL_messageMediaDocument.round = "round".equalsIgnoreCase(botInlineResult.type);
             tL_messageMediaDocument.document = tL_document;
@@ -451,7 +467,7 @@ public final class i1 extends na {
             tL_message.flags |= 64;
             tL_message.reply_markup = replyMarkup;
         }
-        return new h1(i7, tL_message, true, true);
+        return new h1(i7, tL_message, z9, botInlineResult);
     }
 
     public static void e1(Context context, int i7, long j3, String str, f6 f6Var, org.telegram.ui.web.p pVar, bi.t0 t0Var) {
@@ -472,7 +488,7 @@ public final class i1 extends na {
 
     @Override // org.telegram.ui.Components.na
     public final CharSequence O0() {
-        return hd.M0(2131752981, null);
+        return id.M0(2131752981, null);
     }
 
     @Override // org.telegram.ui.ActionBar.v2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2

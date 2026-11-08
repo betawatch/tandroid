@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ni extends vh implements org.telegram.messenger.ls, te.b {
     public String D;
@@ -657,7 +657,7 @@ public final class ni extends vh implements org.telegram.messenger.ls, te.b {
         this.s = zhVar;
         zhVar.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
         zhVar.r.addTextChangedListener(new ah.j(this, 15));
-        zhVar.r.setHint(org.telegram.messenger.hd.M0(2131745741, null));
+        zhVar.r.setHint(org.telegram.messenger.id.M0(2131745743, null));
         frameLayout.addView(ciVar, c8.ha.g());
         FrameLayout.LayoutParams d = c8.ha.d(-1, 48.0f, 51, 7.0f, 8.0f, 7.0f, 4.0f);
         ((ViewGroup.MarginLayoutParams) d).topMargin += org.telegram.messenger.g0.m;
@@ -944,13 +944,13 @@ public final class ni extends vh implements org.telegram.messenger.ls, te.b {
                         int size = hashSet.size();
                         int i10 = this.E;
                         if (size >= i10) {
-                            String a02 = org.telegram.messenger.hd.a0(null, null, 2131747450, org.telegram.messenger.hd.G(i10, "Files", new Object[0]));
+                            String a02 = org.telegram.messenger.id.a0(null, null, 2131747452, org.telegram.messenger.id.G(i10, "Files", new Object[0]));
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getContext(), this.a);
-                            String M0 = org.telegram.messenger.hd.M0(R.string.AppName, null);
+                            String M0 = org.telegram.messenger.id.M0(R.string.AppName, null);
                             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                             u1Var.R = M0;
                             u1Var.T = a02;
-                            jg.g.C(null, 2131747830, alertDialog$Builder, null);
+                            jg.g.C(null, 2131747832, alertDialog$Builder, null);
                             return;
                         }
                     }

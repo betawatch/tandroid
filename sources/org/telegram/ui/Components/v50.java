@@ -18,10 +18,10 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.SecretMediaViewer;
 import org.telegram.ui.UsersSelectActivity;
-import org.telegram.ui.ec1;
-import org.telegram.ui.kb1;
+import org.telegram.ui.fc1;
+import org.telegram.ui.lb1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class v50 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -122,12 +122,12 @@ public final class v50 extends AnimatorListenerAdapter {
                 }
                 break;
             case 2:
-                lz lzVar = (lz) obj;
-                lzVar.setAlpha(1.0f);
-                v4.n0.x0(lzVar);
+                mz mzVar = (mz) obj;
+                mzVar.setAlpha(1.0f);
+                v4.n0.x0(mzVar);
                 si0 si0Var = (si0) obj2;
-                si0Var.c.remove(lzVar);
-                si0Var.a.removeView(lzVar);
+                si0Var.c.remove(mzVar);
+                si0Var.a.removeView(mzVar);
                 break;
             case 3:
                 super.onAnimationEnd(animator);
@@ -262,12 +262,12 @@ public final class v50 extends AnimatorListenerAdapter {
                 }
                 break;
             case 16:
-                kb1 kb1Var = (kb1) obj2;
-                kb1Var.removeView((c20) obj);
-                kb1Var.e = null;
-                kb1Var.a = null;
-                kb1Var.b = false;
-                UsersSelectActivity usersSelectActivity = kb1Var.f;
+                lb1 lb1Var = (lb1) obj2;
+                lb1Var.removeView((c20) obj);
+                lb1Var.e = null;
+                lb1Var.a = null;
+                lb1Var.b = false;
+                UsersSelectActivity usersSelectActivity = lb1Var.f;
                 usersSelectActivity.c.setAllowDrawCursor(true);
                 if (usersSelectActivity.P.isEmpty()) {
                     usersSelectActivity.c.t(true, true);
@@ -276,13 +276,13 @@ public final class v50 extends AnimatorListenerAdapter {
                 break;
             case 17:
                 ((Runnable) obj).run();
-                ec1 ec1Var = (ec1) obj2;
-                ec1Var.e0.setScaleX(1.15f);
-                ec1Var.e0.setScaleY(1.15f);
-                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) ec1Var.e0.getLayoutParams();
+                fc1 fc1Var = (fc1) obj2;
+                fc1Var.e0.setScaleX(1.15f);
+                fc1Var.e0.setScaleY(1.15f);
+                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) fc1Var.e0.getLayoutParams();
                 marginLayoutParams.leftMargin = org.telegram.messenger.g0.L(10.0f);
                 marginLayoutParams.rightMargin = org.telegram.messenger.g0.L(10.0f);
-                ec1Var.e0.setVisibility(8);
+                fc1Var.e0.setVisibility(8);
                 break;
             case 18:
                 ((r0.m0) obj).c();
@@ -347,9 +347,9 @@ public final class v50 extends AnimatorListenerAdapter {
         this.c = view;
     }
 
-    public v50(si0 si0Var, lz lzVar, v4.n0 n0Var) {
+    public v50(si0 si0Var, mz mzVar, v4.n0 n0Var) {
         this.a = 2;
         this.c = si0Var;
-        this.b = lzVar;
+        this.b = mzVar;
     }
 }

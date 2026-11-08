@@ -1,10 +1,9 @@
 package org.telegram.messenger;
 
 import android.os.SystemClock;
-import android.util.Log;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class p3 implements Runnable {
     public final /* synthetic */ r3 a;
@@ -27,16 +26,12 @@ public final class p3 implements Runnable {
                 hVar.l(j3);
                 if (j3 > 0) {
                     TLRPC.User a22 = qp.s1(r3Var.C.a).a2(Long.valueOf(j3));
-                    StringBuilder t6 = a8.p0.t(j3, "remove from speaking ", " ");
-                    t6.append(a22 != null ? a22.first_name : null);
-                    Log.d("GroupCall", t6.toString());
+                    rf.b.p(a8.p0.t(j3, "remove from speaking ", " "), a22 != null ? a22.first_name : null, "GroupCall");
                     i7 = i10;
                 } else {
                     i7 = i10;
                     TLRPC.Chat M0 = qp.s1(r3Var.C.a).M0(Long.valueOf(-j3));
-                    StringBuilder t10 = a8.p0.t(j3, "remove from speaking ", " ");
-                    t10.append(M0 != null ? M0.title : null);
-                    Log.d("GroupCall", t10.toString());
+                    rf.b.p(a8.p0.t(j3, "remove from speaking ", " "), M0 != null ? M0.title : null, "GroupCall");
                 }
                 i10 = i7 - 1;
                 z9 = true;

@@ -11,7 +11,7 @@ import li.t3;
 import org.telegram.messenger.oa;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.x4;
-import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.up0;
@@ -25,9 +25,9 @@ import org.telegram.ui.nr;
 import org.telegram.ui.td;
 import org.telegram.ui.ww;
 import org.telegram.ui.zt;
-import zh.a2;
+import zh.z1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class o0 extends v4.s0 {
     public final /* synthetic */ int a;
@@ -142,7 +142,7 @@ public final class o0 extends v4.s0 {
                 q41 q41Var = ((td) this.c).a;
                 if (q41Var.canScrollVertically(1)) {
                     for (int i13 = 0; i13 < q41Var.getChildCount(); i13++) {
-                        if (!(q41Var.getChildAt(i13) instanceof lz)) {
+                        if (!(q41Var.getChildAt(i13) instanceof mz)) {
                         }
                     }
                     break;
@@ -181,7 +181,7 @@ public final class o0 extends v4.s0 {
                 if (!(TextUtils.isEmpty(ze0Var.x) ? ze0Var.e : ze0Var.n).isEmpty()) {
                     if (q41Var2.canScrollVertically(1)) {
                         for (int i16 = 0; i16 < q41Var2.getChildCount(); i16++) {
-                            if (!(q41Var2.getChildAt(i16) instanceof lz)) {
+                            if (!(q41Var2.getChildAt(i16) instanceof mz)) {
                             }
                         }
                     }
@@ -259,16 +259,16 @@ public final class o0 extends v4.s0 {
                 ((w80) this.c).D.b(recyclerView, i7, i10);
                 break;
             default:
-                a2 a2Var = (a2) this.c;
-                w3 w3Var = a2Var.f;
-                if (a2Var.isAttachedToWindow()) {
+                z1 z1Var = (z1) this.c;
+                w3 w3Var = z1Var.f;
+                if (z1Var.isAttachedToWindow()) {
                     if (w3Var.canScrollVertically(1)) {
                         for (int i17 = 0; i17 < w3Var.getChildCount(); i17++) {
-                            if (!(w3Var.getChildAt(i17) instanceof lz)) {
+                            if (!(w3Var.getChildAt(i17) instanceof mz)) {
                             }
                         }
                     }
-                    a2Var.e.a();
+                    z1Var.e.a();
                 }
                 ((up0) this.b).p();
                 break;

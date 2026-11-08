@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q10 implements Runnable {
     public final /* synthetic */ int a;
@@ -117,16 +117,16 @@ public final /* synthetic */ class q10 implements Runnable {
                     ArrayList arrayList = new ArrayList();
                     int size = languageSelectActivity2.h.size();
                     for (int i14 = 0; i14 < size; i14++) {
-                        org.telegram.messenger.ed edVar = (org.telegram.messenger.ed) languageSelectActivity2.h.get(i14);
-                        if (edVar.a.toLowerCase().startsWith(str3) || edVar.b.toLowerCase().startsWith(str3)) {
-                            arrayList.add(edVar);
+                        org.telegram.messenger.fd fdVar = (org.telegram.messenger.fd) languageSelectActivity2.h.get(i14);
+                        if (fdVar.a.toLowerCase().startsWith(str3) || fdVar.b.toLowerCase().startsWith(str3)) {
+                            arrayList.add(fdVar);
                         }
                     }
                     int size2 = languageSelectActivity2.f.size();
                     while (i12 < size2) {
-                        org.telegram.messenger.ed edVar2 = (org.telegram.messenger.ed) languageSelectActivity2.f.get(i12);
-                        if (edVar2.a.toLowerCase().startsWith(str3) || edVar2.b.toLowerCase().startsWith(str3)) {
-                            arrayList.add(edVar2);
+                        org.telegram.messenger.fd fdVar2 = (org.telegram.messenger.fd) languageSelectActivity2.f.get(i12);
+                        if (fdVar2.a.toLowerCase().startsWith(str3) || fdVar2.b.toLowerCase().startsWith(str3)) {
+                            arrayList.add(fdVar2);
                         }
                         i12++;
                     }
@@ -155,7 +155,7 @@ public final /* synthetic */ class q10 implements Runnable {
                     launchActivity.u0(anVar, false, true);
                     break;
                 } else {
-                    launchActivity.F0(org.telegram.ui.Components.v4.K(launchActivity, org.telegram.messenger.hd.M0(2131752716, null), org.telegram.messenger.hd.M0(2131752712, null)));
+                    launchActivity.F0(org.telegram.ui.Components.v4.K(launchActivity, org.telegram.messenger.id.M0(2131752716, null), org.telegram.messenger.id.M0(2131752712, null)));
                     break;
                 }
             case 10:
@@ -171,7 +171,7 @@ public final /* synthetic */ class q10 implements Runnable {
                 g gVar = (g) this.b;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.c;
                 String str6 = LaunchActivity.B1;
-                String M0 = org.telegram.messenger.hd.M0(2131753894, null);
+                String M0 = org.telegram.messenger.id.M0(2131753894, null);
                 StringBuilder sb2 = new StringBuilder();
                 org.telegram.messenger.camera.q.q(null, 2131751106, sb2, "\n");
                 sb2.append(tL_error.text);
@@ -220,9 +220,9 @@ public final /* synthetic */ class q10 implements Runnable {
                 break;
             case 16:
                 LaunchActivity launchActivity7 = (LaunchActivity) this.b;
-                u71 u71Var = (u71) this.c;
+                v71 v71Var = (v71) this.c;
                 String str9 = LaunchActivity.B1;
-                launchActivity7.t0(u71Var);
+                launchActivity7.t0(v71Var);
                 break;
             case 17:
                 LaunchActivity launchActivity8 = (LaunchActivity) this.b;
@@ -382,10 +382,10 @@ public final /* synthetic */ class q10 implements Runnable {
                         break;
                     }
                 } else if (tL_error3.text.equals("2FA_RECENT_CONFIRM")) {
-                    ce0Var2.D1(org.telegram.messenger.hd.M0(2131746072, null), org.telegram.messenger.hd.M0(2131746116, "ResetAccountCancelledAlert"));
+                    ce0Var2.D1(org.telegram.messenger.id.M0(2131746074, null), org.telegram.messenger.id.M0(2131746118, "ResetAccountCancelledAlert"));
                     break;
                 } else {
-                    ce0Var2.D1(org.telegram.messenger.hd.M0(2131746072, null), tL_error3.text);
+                    ce0Var2.D1(org.telegram.messenger.id.M0(2131746074, null), tL_error3.text);
                     break;
                 }
         }

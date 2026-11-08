@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class h9 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.Cells.g6 a;
@@ -15,7 +15,7 @@ public final class h9 extends FrameLayout implements org.telegram.ui.ActionBar.a
 
     public h9(Context context) {
         super(context);
-        String M0 = org.telegram.messenger.hd.M0(2131743443, null);
+        String M0 = org.telegram.messenger.id.M0(2131743445, null);
         org.telegram.ui.Components.ag0 ag0Var = new org.telegram.ui.Components.ag0(context);
         this.b = ag0Var;
         int ceil = (int) Math.ceil(ag0Var.getPaint().measureText(M0));
@@ -23,7 +23,7 @@ public final class h9 extends FrameLayout implements org.telegram.ui.ActionBar.a
         this.a = g6Var;
         g6Var.M0 = true;
         g6Var.E0 = true;
-        g6Var.setPadding(org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(44.0f) + ceil : 0, 0, org.telegram.messenger.hd.a0 ? 0 : org.telegram.messenger.g0.L(44.0f) + ceil, 0);
+        g6Var.setPadding(org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(44.0f) + ceil : 0, 0, org.telegram.messenger.id.a0 ? 0 : org.telegram.messenger.g0.L(44.0f) + ceil, 0);
         int i7 = -org.telegram.messenger.g0.L(4.0f);
         g6Var.b0 = 0;
         g6Var.c0 = i7;

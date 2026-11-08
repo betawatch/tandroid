@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ym0 implements org.telegram.ui.Components.uk0 {
     public final /* synthetic */ int a;
@@ -47,9 +47,9 @@ public final class ym0 implements org.telegram.ui.Components.uk0 {
         an0Var.o0(true);
         an0Var.w = z9;
         if (i7 == 0) {
-            an0Var.c.setSearchFieldHint(org.telegram.messenger.hd.M0(2131745762, null));
+            an0Var.c.setSearchFieldHint(org.telegram.messenger.id.M0(2131745764, null));
         } else {
-            an0Var.c.setSearchFieldHint(org.telegram.messenger.hd.M0(2131745765, null));
+            an0Var.c.setSearchFieldHint(org.telegram.messenger.id.M0(2131745767, null));
         }
     }
 

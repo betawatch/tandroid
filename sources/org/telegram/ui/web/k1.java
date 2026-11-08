@@ -26,7 +26,7 @@ import fi.v3;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
@@ -36,16 +36,16 @@ import org.telegram.ui.ActionBar.u4;
 import org.telegram.ui.Components.h70;
 import org.telegram.ui.Components.i6;
 import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Wallet.na;
-import org.telegram.ui.Wallet.x5;
+import org.telegram.ui.Wallet.ma;
+import org.telegram.ui.Wallet.w5;
 import org.telegram.ui.g4;
 import org.telegram.ui.k3;
+import org.telegram.ui.o61;
 import org.telegram.ui.t3;
 import org.telegram.ui.z40;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public abstract class k1 extends FrameLayout {
     public boolean A0;
@@ -61,7 +61,7 @@ public abstract class k1 extends FrameLayout {
     public final org.telegram.ui.ActionBar.y1 M;
     public final org.telegram.ui.Cells.y N;
     public final ImageView O;
-    public final x5 P;
+    public final w5 P;
     public final org.telegram.ui.Cells.y Q;
     public final ImageView R;
     public final org.telegram.ui.Cells.y S;
@@ -152,7 +152,7 @@ public abstract class k1 extends FrameLayout {
         addView(tVar, ha.e(-2, 56, 83));
         ImageView imageView = new ImageView(context);
         this.L = imageView;
-        imageView.setContentDescription(hd.M0(2131754878, null));
+        imageView.setContentDescription(id.M0(2131754878, null));
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         org.telegram.ui.ActionBar.y1 y1Var = new org.telegram.ui.ActionBar.y1(false);
@@ -171,10 +171,10 @@ public abstract class k1 extends FrameLayout {
         ImageView imageView2 = new ImageView(context);
         this.O = imageView2;
         imageView2.setScaleType(scaleType);
-        x5 x5Var = new x5(l0Var);
-        this.P = x5Var;
-        imageView2.setImageDrawable(x5Var);
-        x5Var.c();
+        w5 w5Var = new w5(l0Var);
+        this.P = w5Var;
+        imageView2.setImageDrawable(w5Var);
+        w5Var.c();
         org.telegram.ui.Cells.y h03 = k6.h0(1090519039, 1, -1);
         this.Q = h03;
         imageView2.setBackground(h03);
@@ -237,41 +237,40 @@ public abstract class k1 extends FrameLayout {
                             }
                             int i19 = l0Var2.g0;
                             if (i19 == 0) {
-                                F.c(R.drawable.msg_openin, hd.M0(2131747795, null), (Runnable) fcVar.a(3), false);
-                                F.c(R.drawable.msg_search, hd.M0(2131745837, null), (Runnable) fcVar.a(1), false);
-                                F.l(R.drawable.msg_share, hd.M0(2131745460, null), (Runnable) fcVar.a(2), !l0Var2.q0);
-                                F.c(R.drawable.msg_settings_old, hd.M0(2131745496, null), (Runnable) fcVar.a(4), false);
+                                F.c(R.drawable.msg_openin, id.M0(2131747797, null), (Runnable) fcVar.a(3), false);
+                                F.c(R.drawable.msg_search, id.M0(2131745839, null), (Runnable) fcVar.a(1), false);
+                                F.l(R.drawable.msg_share, id.M0(2131745462, null), (Runnable) fcVar.a(2), !l0Var2.q0);
+                                F.c(R.drawable.msg_settings_old, id.M0(2131745498, null), (Runnable) fcVar.a(4), false);
                             } else if (i19 == i18) {
                                 if (!l0Var2.p0) {
-                                    F.c(R.drawable.msg_openin, hd.M0(2131747795, null), (Runnable) fcVar.a(3), false);
+                                    F.c(R.drawable.msg_openin, id.M0(2131747797, null), (Runnable) fcVar.a(3), false);
                                     F.k();
                                 }
                                 if (l0Var2.o0) {
-                                    F.c(R.drawable.msg_arrow_forward, hd.M0(2131742922, null), (Runnable) fcVar.a(9), false);
+                                    F.c(R.drawable.msg_arrow_forward, id.M0(2131742924, null), (Runnable) fcVar.a(9), false);
                                 }
                                 u1 instantViewLoader = l0Var2.getInstantViewLoader();
-                                int i20 = 7;
                                 if (instantViewLoader != null && (((!instantViewLoader.g || !instantViewLoader.i) && instantViewLoader.h == null && instantViewLoader.j == null && !instantViewLoader.c) || instantViewLoader.b() != null)) {
-                                    F.c(R.drawable.menu_instant_view, hd.M0(2131747787, null), (Runnable) fcVar.a(10), false);
+                                    F.c(R.drawable.menu_instant_view, id.M0(2131747789, null), (Runnable) fcVar.a(10), false);
                                     org.telegram.ui.ActionBar.z0 y10 = F.y();
                                     y10.setEnabled(instantViewLoader.b() != null);
                                     y10.setAlpha(y10.isEnabled() ? 1.0f : 0.5f);
                                     w wVar = new w(3, y10, instantViewLoader);
                                     instantViewLoader.m.add(wVar);
-                                    F.p = new w(i20, instantViewLoader, wVar);
+                                    F.p = new w(7, instantViewLoader, wVar);
                                 }
-                                F.c(R.drawable.msg_reset, hd.M0(2131746339, null), (Runnable) fcVar.a(5), false);
-                                F.c(R.drawable.msg_search, hd.M0(2131745837, null), (Runnable) fcVar.a(1), false);
-                                F.c(R.drawable.msg_saved, hd.M0(2131742943, null), (Runnable) fcVar.a(6), false);
-                                F.c(R.drawable.msg_share, hd.M0(2131745460, null), (Runnable) fcVar.a(2), false);
+                                F.c(R.drawable.msg_reset, id.M0(2131746341, null), (Runnable) fcVar.a(5), false);
+                                F.c(R.drawable.msg_search, id.M0(2131745839, null), (Runnable) fcVar.a(1), false);
+                                F.c(R.drawable.msg_saved, id.M0(2131742945, null), (Runnable) fcVar.a(6), false);
+                                F.c(R.drawable.msg_share, id.M0(2131745462, null), (Runnable) fcVar.a(2), false);
                                 F.k();
                                 if (!xa.a(null).isEmpty()) {
-                                    F.c(R.drawable.menu_views_recent, hd.M0(2131742921, null), (Runnable) fcVar.a(8), false);
+                                    F.c(R.drawable.menu_views_recent, id.M0(2131742923, null), (Runnable) fcVar.a(8), false);
                                 }
-                                F.c(R.drawable.menu_browser_bookmarks, hd.M0(2131742940, null), (Runnable) fcVar.a(7), false);
-                                F.c(R.drawable.msg_settings_old, hd.M0(2131745496, null), (Runnable) fcVar.a(4), false);
+                                F.c(R.drawable.menu_browser_bookmarks, id.M0(2131742942, null), (Runnable) fcVar.a(7), false);
+                                F.c(R.drawable.msg_settings_old, id.M0(2131745498, null), (Runnable) fcVar.a(4), false);
                             }
-                            F.p = new org.telegram.ui.Wallet.z(l0Var2);
+                            F.p = new o61(l0Var2);
                             F.Z();
                             break;
                         }
@@ -285,7 +284,7 @@ public abstract class k1 extends FrameLayout {
         org.telegram.ui.Cells.y h04 = k6.h0(1090519039, 1, -1);
         this.S = h04;
         imageView3.setBackground(h04);
-        imageView3.setContentDescription(hd.M0(2131754839, "AccDescrMoreOptions"));
+        imageView3.setContentDescription(id.M0(2131754839, "AccDescrMoreOptions"));
         tVar2.addView(imageView3, ha.o(54, 56));
         bi.v vVar = new bi.v(context, 5);
         this.V = vVar;
@@ -293,7 +292,7 @@ public abstract class k1 extends FrameLayout {
         vVar.setAlpha(0.0f);
         vVar.setTextSize(1, 18.0f);
         vVar.setSingleLine(true);
-        vVar.setHint(hd.M0(2131745837, null));
+        vVar.setHint(id.M0(2131745839, null));
         vVar.setBackgroundResource(0);
         vVar.setCursorWidth(1.5f);
         vVar.setGravity(qs.x1);
@@ -330,7 +329,7 @@ public abstract class k1 extends FrameLayout {
                 return false;
             }
         });
-        vVar.addTextChangedListener(new na(l0Var, i7));
+        vVar.addTextChangedListener(new ma(l0Var, i7));
         frameLayout.addView(vVar, ha.e(-1, -1, qs.E1));
         bi.v vVar2 = new bi.v(context, 6);
         this.b0 = vVar2;
@@ -339,7 +338,7 @@ public abstract class k1 extends FrameLayout {
         vVar2.setTextSize(1, 15.66f);
         vVar2.setSingleLine(true);
         this.c0 = iz.p0;
-        vVar2.setHint(hd.a0(null, null, 2131754351, f1.a().a));
+        vVar2.setHint(id.a0(null, null, 2131754351, f1.a().a));
         vVar2.setBackgroundResource(0);
         vVar2.setCursorWidth(1.5f);
         vVar2.setGravity(qs.x1);
@@ -436,41 +435,40 @@ public abstract class k1 extends FrameLayout {
                             }
                             int i19 = l0Var2.g0;
                             if (i19 == 0) {
-                                F.c(R.drawable.msg_openin, hd.M0(2131747795, null), (Runnable) fcVar.a(3), false);
-                                F.c(R.drawable.msg_search, hd.M0(2131745837, null), (Runnable) fcVar.a(1), false);
-                                F.l(R.drawable.msg_share, hd.M0(2131745460, null), (Runnable) fcVar.a(2), !l0Var2.q0);
-                                F.c(R.drawable.msg_settings_old, hd.M0(2131745496, null), (Runnable) fcVar.a(4), false);
+                                F.c(R.drawable.msg_openin, id.M0(2131747797, null), (Runnable) fcVar.a(3), false);
+                                F.c(R.drawable.msg_search, id.M0(2131745839, null), (Runnable) fcVar.a(1), false);
+                                F.l(R.drawable.msg_share, id.M0(2131745462, null), (Runnable) fcVar.a(2), !l0Var2.q0);
+                                F.c(R.drawable.msg_settings_old, id.M0(2131745498, null), (Runnable) fcVar.a(4), false);
                             } else if (i19 == i18) {
                                 if (!l0Var2.p0) {
-                                    F.c(R.drawable.msg_openin, hd.M0(2131747795, null), (Runnable) fcVar.a(3), false);
+                                    F.c(R.drawable.msg_openin, id.M0(2131747797, null), (Runnable) fcVar.a(3), false);
                                     F.k();
                                 }
                                 if (l0Var2.o0) {
-                                    F.c(R.drawable.msg_arrow_forward, hd.M0(2131742922, null), (Runnable) fcVar.a(9), false);
+                                    F.c(R.drawable.msg_arrow_forward, id.M0(2131742924, null), (Runnable) fcVar.a(9), false);
                                 }
                                 u1 instantViewLoader = l0Var2.getInstantViewLoader();
-                                int i20 = 7;
                                 if (instantViewLoader != null && (((!instantViewLoader.g || !instantViewLoader.i) && instantViewLoader.h == null && instantViewLoader.j == null && !instantViewLoader.c) || instantViewLoader.b() != null)) {
-                                    F.c(R.drawable.menu_instant_view, hd.M0(2131747787, null), (Runnable) fcVar.a(10), false);
+                                    F.c(R.drawable.menu_instant_view, id.M0(2131747789, null), (Runnable) fcVar.a(10), false);
                                     org.telegram.ui.ActionBar.z0 y10 = F.y();
                                     y10.setEnabled(instantViewLoader.b() != null);
                                     y10.setAlpha(y10.isEnabled() ? 1.0f : 0.5f);
                                     w wVar = new w(3, y10, instantViewLoader);
                                     instantViewLoader.m.add(wVar);
-                                    F.p = new w(i20, instantViewLoader, wVar);
+                                    F.p = new w(7, instantViewLoader, wVar);
                                 }
-                                F.c(R.drawable.msg_reset, hd.M0(2131746339, null), (Runnable) fcVar.a(5), false);
-                                F.c(R.drawable.msg_search, hd.M0(2131745837, null), (Runnable) fcVar.a(1), false);
-                                F.c(R.drawable.msg_saved, hd.M0(2131742943, null), (Runnable) fcVar.a(6), false);
-                                F.c(R.drawable.msg_share, hd.M0(2131745460, null), (Runnable) fcVar.a(2), false);
+                                F.c(R.drawable.msg_reset, id.M0(2131746341, null), (Runnable) fcVar.a(5), false);
+                                F.c(R.drawable.msg_search, id.M0(2131745839, null), (Runnable) fcVar.a(1), false);
+                                F.c(R.drawable.msg_saved, id.M0(2131742945, null), (Runnable) fcVar.a(6), false);
+                                F.c(R.drawable.msg_share, id.M0(2131745462, null), (Runnable) fcVar.a(2), false);
                                 F.k();
                                 if (!xa.a(null).isEmpty()) {
-                                    F.c(R.drawable.menu_views_recent, hd.M0(2131742921, null), (Runnable) fcVar.a(8), false);
+                                    F.c(R.drawable.menu_views_recent, id.M0(2131742923, null), (Runnable) fcVar.a(8), false);
                                 }
-                                F.c(R.drawable.menu_browser_bookmarks, hd.M0(2131742940, null), (Runnable) fcVar.a(7), false);
-                                F.c(R.drawable.msg_settings_old, hd.M0(2131745496, null), (Runnable) fcVar.a(4), false);
+                                F.c(R.drawable.menu_browser_bookmarks, id.M0(2131742942, null), (Runnable) fcVar.a(7), false);
+                                F.c(R.drawable.msg_settings_old, id.M0(2131745498, null), (Runnable) fcVar.a(4), false);
                             }
-                            F.p = new org.telegram.ui.Wallet.z(l0Var2);
+                            F.p = new o61(l0Var2);
                             F.Z();
                             break;
                         }
@@ -573,7 +571,7 @@ public abstract class k1 extends FrameLayout {
         ((i6) fVarArr[i7].d).u(f11);
         fVarArr[i7].a = k6.w(i10, k6.r1(0.6f, f11));
         lg.f fVar = fVarArr[i7];
-        ((i6) fVar.e).u(i0.a.f(((w5) fVarArr[i7].f).c, fVar.a, k6.x0(null, k6.q7, false)));
+        ((i6) fVar.e).u(i0.a.f(((org.telegram.ui.Components.w5) fVarArr[i7].f).c, fVar.a, k6.x0(null, k6.q7, false)));
         invalidate();
     }
 
@@ -637,9 +635,9 @@ public abstract class k1 extends FrameLayout {
         y1Var.a(f15);
         y1Var.b(i0.a.f(this.a0, this.x, this.D));
         int i12 = this.x;
-        x5 x5Var = this.P;
-        x5Var.c.setColor(i12);
-        x5Var.invalidateSelf();
+        w5 w5Var = this.P;
+        w5Var.c.setColor(i12);
+        w5Var.invalidateSelf();
         int i13 = this.x;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         this.R.setColorFilter(new PorterDuffColorFilter(i13, mode));
@@ -758,7 +756,7 @@ public abstract class k1 extends FrameLayout {
         lg.f fVar = this.b[i7];
         if (fVar.c != z9) {
             fVar.c = z9;
-            ((w5) fVar.f).e(true, z9 ? 1.0f : 0.0f);
+            ((org.telegram.ui.Components.w5) fVar.f).e(true, z9 ? 1.0f : 0.0f);
             invalidate();
         }
     }

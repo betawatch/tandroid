@@ -20,14 +20,14 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.qa0;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.va;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class k2 extends FrameLayout {
     public float D;
@@ -502,7 +502,7 @@ public class k2 extends FrameLayout {
         frameLayout.addView(imageView2, ha.d(82, 82.0f, 17, 0.0f, 0.0f, 0.0f, 60.0f));
         TextView textView = new TextView(getContext());
         this.w = textView;
-        textView.setText(hd.M0(2131743223, null));
+        textView.setText(id.M0(2131743225, null));
         textView.setGravity(17);
         textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         textView.setTextColor(-1);

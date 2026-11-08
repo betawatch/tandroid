@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ey extends yx {
     public final /* synthetic */ fy E;
@@ -64,7 +64,7 @@ public final class ey extends yx {
         org.telegram.ui.ActionBar.r6.t(imageView, org.telegram.ui.ActionBar.k6.r5, null, PorterDuff.Mode.SRC_IN);
         imageView.setAlpha(0.0f);
         imageView.setVisibility(8);
-        imageView.setContentDescription(org.telegram.messenger.hd.M0(2131754839, null));
+        imageView.setContentDescription(org.telegram.messenger.id.M0(2131754839, null));
         imageView.setOnClickListener(new wx(this, 1));
         frameLayout.addView(imageView, c8.ha.d(40, 40.0f, 21, 4.0f, 4.0f, 4.0f, 4.0f));
         xx xxVar = new xx(activity);
@@ -87,7 +87,7 @@ public final class ey extends yx {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) "..").setSpan(new org.telegram.ui.Components.wp(0, activity.getDrawable(R.drawable.msg_copy_filled)), 0, 1, 0);
         spannableStringBuilder.setSpan(new org.telegram.ui.Cells.r2(org.telegram.messenger.g0.L(8.0f)), 1, 2, 0);
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.M0(2131748925, null));
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.M0(2131748927, null));
         spannableStringBuilder.append((CharSequence) ".").setSpan(new org.telegram.ui.Cells.r2(org.telegram.messenger.g0.L(5.0f)), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
         mdVar.setText(spannableStringBuilder);
         mdVar.setOnClickListener(new wx(this, 2));
@@ -104,7 +104,7 @@ public final class ey extends yx {
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
         spannableStringBuilder2.append((CharSequence) "..").setSpan(new org.telegram.ui.Components.wp(0, activity.getDrawable(R.drawable.msg_share_filled)), 0, 1, 0);
         spannableStringBuilder2.setSpan(new org.telegram.ui.Cells.r2(org.telegram.messenger.g0.L(8.0f)), 1, 2, 0);
-        spannableStringBuilder2.append((CharSequence) org.telegram.messenger.hd.M0(2131748924, null));
+        spannableStringBuilder2.append((CharSequence) org.telegram.messenger.id.M0(2131748926, null));
         spannableStringBuilder2.append((CharSequence) ".").setSpan(new org.telegram.ui.Cells.r2(org.telegram.messenger.g0.L(5.0f)), spannableStringBuilder2.length() - 1, spannableStringBuilder2.length(), 0);
         mdVar2.setText(spannableStringBuilder2);
         mdVar2.setOnClickListener(new wx(this, 3));

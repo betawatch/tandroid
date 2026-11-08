@@ -15,7 +15,7 @@ import org.telegram.ui.Components.vj;
 import org.telegram.ui.Components.xf;
 import org.telegram.ui.rp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class f extends BroadcastReceiver {
     public final /* synthetic */ int a;
@@ -101,10 +101,10 @@ public final class f extends BroadcastReceiver {
                 break;
             default:
                 if ("org.telegram.utils.pip.ACTION".equals(intent.getAction())) {
-                    ti.r rVar = (ti.r) this.b;
-                    ti.o oVar = rVar.f;
+                    ti.q qVar = (ti.q) this.b;
+                    ti.o oVar = qVar.f;
                     if (oVar == null) {
-                        oVar = rVar.e;
+                        oVar = qVar.e;
                     }
                     if (oVar != null) {
                         oVar.a.f0(intent.getIntExtra("action_id", -1));

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.jz;
+import org.telegram.ui.Components.kz;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
@@ -14,7 +14,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.qj;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class uc extends org.telegram.ui.Components.na implements ls {
     public final FrameLayout P1;
@@ -37,7 +37,7 @@ public final class uc extends org.telegram.ui.Components.na implements ls {
         int i11 = org.telegram.ui.ActionBar.k6.d6;
         w0(i11);
         P(i11);
-        this.l1.setTitle(org.telegram.messenger.hd.M0(2131745152, null));
+        this.l1.setTitle(org.telegram.messenger.id.M0(2131745154, null));
         FrameLayout frameLayout = new FrameLayout(context);
         this.P1 = frameLayout;
         w70 w70Var = new w70(context, f6Var);
@@ -45,12 +45,12 @@ public final class uc extends org.telegram.ui.Components.na implements ls {
         w70Var.setTextSize(1, 12.0f);
         org.telegram.ui.ActionBar.r6.V(w70Var, org.telegram.ui.ActionBar.k6.B6, f6Var);
         org.telegram.ui.ActionBar.r6.H(w70Var, org.telegram.ui.ActionBar.k6.Uc, f6Var);
-        w70Var.setText(org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131744968, null), new ab(this, i10)));
+        w70Var.setText(org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(2131744970, null), new ab(this, i10)));
         w70Var.setGravity(17);
         w70Var.setMaxWidth(fi.m3.a(w70Var.getText(), w70Var.getPaint()));
         frameLayout.addView(w70Var, c8.ha.e(-2, -1, 17));
         org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.h5, frameLayout, f6Var);
-        this.b.addView(new jz(getContext()), c8.ha.c(-1.0f, -1));
+        this.b.addView(new kz(getContext()), c8.ha.c(-1.0f, -1));
         l41 l41Var = this.Q1;
         if (l41Var != null) {
             l41Var.O(false);
@@ -74,7 +74,7 @@ public final class uc extends org.telegram.ui.Components.na implements ls {
 
     @Override // org.telegram.ui.Components.na
     public final CharSequence O0() {
-        return org.telegram.messenger.hd.M0(2131745152, null);
+        return org.telegram.messenger.id.M0(2131745154, null);
     }
 
     @Override // org.telegram.messenger.ls

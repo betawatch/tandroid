@@ -22,7 +22,7 @@ import org.telegram.ui.qv0;
 import org.telegram.ui.rv0;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -102,7 +102,7 @@ public final /* synthetic */ class o implements Runnable {
                         }
                     }
                 };
-                org.telegram.ui.Components.cc V = new org.telegram.ui.Components.hc(i4Var.M0, i4Var.k0).V(Arrays.asList(tLObject2), !z10 ? org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131744759, org.telegram.messenger.g5.m(10, str, null))) : org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131744760, org.telegram.messenger.g5.m(10, str, null))), null, d0Var);
+                org.telegram.ui.Components.cc V = new org.telegram.ui.Components.hc(i4Var.M0, i4Var.k0).V(Arrays.asList(tLObject2), !z10 ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131744761, org.telegram.messenger.g5.m(10, str, null))) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131744762, org.telegram.messenger.g5.m(10, str, null))), null, d0Var);
                 V.a = 2;
                 V.k(true);
                 return;
@@ -130,11 +130,11 @@ public final /* synthetic */ class o implements Runnable {
                     org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
                     if (z9 && Q != null) {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, Q.getContext(), f6Var);
-                        String M0 = org.telegram.messenger.hd.M0(2131748825, null);
+                        String M0 = org.telegram.messenger.id.M0(2131748827, null);
                         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                         u1Var.R = M0;
-                        u1Var.T = org.telegram.messenger.hd.M0(2131748826, null);
-                        jg.g.C(null, 2131747830, alertDialog$Builder, null);
+                        u1Var.T = org.telegram.messenger.id.M0(2131748828, null);
+                        jg.g.C(null, 2131747832, alertDialog$Builder, null);
                     }
                     c20Var.a(Boolean.FALSE);
                     return;
@@ -225,12 +225,12 @@ public final /* synthetic */ class o implements Runnable {
                 qp.s1(i12).S3(tL_contacts_resolvedPeer.chats, false);
                 TLRPC.User a22 = qp.s1(i12).a2(Long.valueOf(tL_contacts_resolvedPeer.peer.user_id));
                 if (a22 != null) {
-                    org.telegram.ui.Wallet.n9 n9Var = new org.telegram.ui.Wallet.n9(a22);
-                    n9Var.s = j3;
-                    n9Var.g0 = str3;
-                    n9Var.h0 = z9;
-                    n9Var.f0 = true;
-                    p90Var.u(n9Var, false);
+                    org.telegram.ui.Wallet.m9 m9Var = new org.telegram.ui.Wallet.m9(a22);
+                    m9Var.s = j3;
+                    m9Var.g0 = str3;
+                    m9Var.h0 = z9;
+                    m9Var.f0 = true;
+                    p90Var.u(m9Var, false);
                     return;
                 }
                 return;

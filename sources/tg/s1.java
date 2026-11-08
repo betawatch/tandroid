@@ -7,7 +7,7 @@ import android.text.SpannableStringBuilder;
 import android.view.ContextThemeWrapper;
 import android.view.View;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
@@ -15,7 +15,7 @@ import org.telegram.ui.Components.ca;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.y9;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class s1 extends fi.d {
     public final ca k0;
@@ -75,7 +75,7 @@ public abstract class s1 extends fi.d {
 
     public void setCancelState(boolean z9) {
         this.m0 = 2;
-        i(hd.M0(2131752589, null), z9, true);
+        i(id.M0(2131752589, null), z9, true);
     }
 
     public void setCutOutState(boolean z9) {
@@ -87,7 +87,7 @@ public abstract class s1 extends fi.d {
         wpVar.s = org.telegram.messenger.g0.L(2.0f);
         wpVar.G = 1.2f;
         spannableStringBuilder.setSpan(wpVar, 0, 1, 0);
-        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) hd.M0(2131745681, null));
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) id.M0(2131745683, null));
         i(spannableStringBuilder, z9, true);
     }
 
@@ -98,7 +98,7 @@ public abstract class s1 extends fi.d {
         wpVar.c(org.telegram.messenger.g0.L(20.0f));
         wpVar.r = org.telegram.messenger.g0.L(-3.0f);
         spannableStringBuilder.setSpan(wpVar, 0, 1, 0);
-        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) hd.M0(2131745679, null));
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) id.M0(2131745681, null));
         i(spannableStringBuilder, z9, true);
     }
 
@@ -109,7 +109,7 @@ public abstract class s1 extends fi.d {
         wpVar.c(org.telegram.messenger.g0.L(20.0f));
         wpVar.r = org.telegram.messenger.g0.L(-3.0f);
         spannableStringBuilder.setSpan(wpVar, 0, 1, 0);
-        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) hd.M0(2131745678, null));
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) id.M0(2131745680, null));
         i(spannableStringBuilder, z9, true);
     }
 
@@ -125,7 +125,7 @@ public abstract class s1 extends fi.d {
         wpVar.c(org.telegram.messenger.g0.L(20.0f));
         wpVar.r = org.telegram.messenger.g0.L(-3.0f);
         spannableStringBuilder.setSpan(wpVar, 0, 1, 0);
-        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) hd.M0(2131745677, null));
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) id.M0(2131745679, null));
         i(spannableStringBuilder, z9, true);
     }
 
@@ -140,7 +140,7 @@ public abstract class s1 extends fi.d {
         wpVar.c(org.telegram.messenger.g0.L(20.0f));
         wpVar.r = org.telegram.messenger.g0.L(-3.0f);
         spannableStringBuilder.setSpan(wpVar, 0, 1, 0);
-        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) hd.M0(2131745675, null));
+        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) id.M0(2131745677, null));
         i(spannableStringBuilder, z9, true);
     }
 

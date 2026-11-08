@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class f70 extends LinearLayout {
     public final org.telegram.ui.Cells.n4 a;
@@ -34,12 +34,12 @@ public abstract class f70 extends LinearLayout {
         setOrientation(1);
         org.telegram.ui.Cells.n4 n4Var = new org.telegram.ui.Cells.n4(context, 20);
         this.a = n4Var;
-        n4Var.setText(org.telegram.messenger.hd.M0(2131752300, null));
+        n4Var.setText(org.telegram.messenger.id.M0(2131752300, null));
         org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.d6, n4Var, null);
         addView(n4Var);
         org.telegram.ui.Cells.r8 r8Var = new org.telegram.ui.Cells.r8(context, 20);
         this.b = r8Var;
-        String M0 = org.telegram.messenger.hd.M0(2131752299, null);
+        String M0 = org.telegram.messenger.id.M0(2131752299, null);
         boolean z9 = this.f;
         r8Var.f(M0, z9, z9);
         r8Var.setEnabled(chat.creator || ((tL_chatAdminRights2 = chat.admin_rights) != null && tL_chatAdminRights2.ban_users));
@@ -78,7 +78,7 @@ public abstract class f70 extends LinearLayout {
         addView(r8Var);
         org.telegram.ui.Cells.r8 r8Var2 = new org.telegram.ui.Cells.r8(context, 20);
         this.c = r8Var2;
-        r8Var2.f(org.telegram.messenger.hd.M0(2131752304, null), this.h, false);
+        r8Var2.f(org.telegram.messenger.id.M0(2131752304, null), this.h, false);
         r8Var2.setPivotY(0.0f);
         r8Var2.setEnabled(chat.creator || ((tL_chatAdminRights = chat.admin_rights) != null && tL_chatAdminRights.ban_users));
         r8Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.c70
@@ -116,11 +116,11 @@ public abstract class f70 extends LinearLayout {
         addView(r8Var2);
         org.telegram.ui.Cells.z8 z8Var = new org.telegram.ui.Cells.z8(12, context, null);
         this.d = z8Var;
-        z8Var.setText(org.telegram.messenger.hd.M0(2131752298, null));
+        z8Var.setText(org.telegram.messenger.id.M0(2131752298, null));
         addView(z8Var);
         org.telegram.ui.Cells.z8 z8Var2 = new org.telegram.ui.Cells.z8(12, context, null);
         this.e = z8Var2;
-        z8Var2.setText(org.telegram.messenger.hd.M0(2131752303, null));
+        z8Var2.setText(org.telegram.messenger.id.M0(2131752303, null));
         addView(z8Var2);
         boolean z10 = this.f;
         this.s = z10 ? 1.0f : 0.0f;

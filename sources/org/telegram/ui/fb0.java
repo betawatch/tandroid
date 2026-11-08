@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fb0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -56,16 +56,16 @@ public final /* synthetic */ class fb0 implements RequestDelegate {
                                                     break;
                                                 } else {
                                                     ce0Var.M1(0, true, null, true);
-                                                    ce0Var.D1(org.telegram.messenger.hd.M0(2131746072, null), org.telegram.messenger.hd.M0(2131752021, "CodeExpired"));
+                                                    ce0Var.D1(org.telegram.messenger.id.M0(2131746074, null), org.telegram.messenger.id.M0(2131752021, "CodeExpired"));
                                                     break;
                                                 }
                                             } else {
                                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ob0Var2.getContext());
-                                                String M0 = org.telegram.messenger.hd.M0(2131748728, null);
+                                                String M0 = org.telegram.messenger.id.M0(2131748730, null);
                                                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                                                 u1Var.R = M0;
-                                                u1Var.T = org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131748729, org.telegram.messenger.hd.a(pf.b.c().b("+" + ob0Var2.L))));
-                                                jg.g.C(null, 2131747830, alertDialog$Builder, null);
+                                                u1Var.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131748731, org.telegram.messenger.id.a(pf.b.c().b("+" + ob0Var2.L))));
+                                                jg.g.C(null, 2131747832, alertDialog$Builder, null);
                                                 break;
                                             }
                                         }
@@ -85,7 +85,7 @@ public final /* synthetic */ class fb0 implements RequestDelegate {
                                             break;
                                         } else {
                                             ce0Var2.M1(0, true, null, true);
-                                            ce0Var2.D1(org.telegram.messenger.hd.M0(2131746072, null), org.telegram.messenger.hd.M0(2131752021, "CodeExpired"));
+                                            ce0Var2.D1(org.telegram.messenger.id.M0(2131746074, null), org.telegram.messenger.id.M0(2131752021, "CodeExpired"));
                                             break;
                                         }
                                     }
@@ -136,16 +136,16 @@ public final /* synthetic */ class fb0 implements RequestDelegate {
                                                     break;
                                                 } else {
                                                     ce0Var.M1(0, true, null, true);
-                                                    ce0Var.D1(org.telegram.messenger.hd.M0(2131746072, null), org.telegram.messenger.hd.M0(2131752021, "CodeExpired"));
+                                                    ce0Var.D1(org.telegram.messenger.id.M0(2131746074, null), org.telegram.messenger.id.M0(2131752021, "CodeExpired"));
                                                     break;
                                                 }
                                             } else {
                                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ob0Var22.getContext());
-                                                String M0 = org.telegram.messenger.hd.M0(2131748728, null);
+                                                String M0 = org.telegram.messenger.id.M0(2131748730, null);
                                                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                                                 u1Var.R = M0;
-                                                u1Var.T = org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131748729, org.telegram.messenger.hd.a(pf.b.c().b("+" + ob0Var22.L))));
-                                                jg.g.C(null, 2131747830, alertDialog$Builder, null);
+                                                u1Var.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131748731, org.telegram.messenger.id.a(pf.b.c().b("+" + ob0Var22.L))));
+                                                jg.g.C(null, 2131747832, alertDialog$Builder, null);
                                                 break;
                                             }
                                         }
@@ -165,7 +165,7 @@ public final /* synthetic */ class fb0 implements RequestDelegate {
                                             break;
                                         } else {
                                             ce0Var2.M1(0, true, null, true);
-                                            ce0Var2.D1(org.telegram.messenger.hd.M0(2131746072, null), org.telegram.messenger.hd.M0(2131752021, "CodeExpired"));
+                                            ce0Var2.D1(org.telegram.messenger.id.M0(2131746074, null), org.telegram.messenger.id.M0(2131752021, "CodeExpired"));
                                             break;
                                         }
                                     }

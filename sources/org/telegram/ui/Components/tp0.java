@@ -10,11 +10,11 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.d81;
-import org.telegram.ui.f81;
-import org.telegram.ui.y71;
+import org.telegram.ui.e81;
+import org.telegram.ui.g81;
+import org.telegram.ui.z71;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tp0 implements Runnable {
     public final /* synthetic */ int a;
@@ -128,20 +128,20 @@ public final /* synthetic */ class tp0 implements Runnable {
                 ((FrameLayout) obj).setVisibility(z9 ? 4 : 0);
                 break;
             case 13:
-                vf.c.t(((org.telegram.ui.jw0) obj).e.getParentActivity(), org.telegram.messenger.hd.M0(z9 ? 2131746703 : 2131746705, null));
+                vf.c.t(((org.telegram.ui.jw0) obj).e.getParentActivity(), org.telegram.messenger.id.M0(z9 ? 2131746705 : 2131746707, null));
                 break;
             case 14:
-                f81 f81Var = (f81) obj;
-                org.telegram.messenger.g0.h3(new y71(f81Var, i10));
-                org.telegram.ui.Cells.q1 q1Var = f81Var.K;
+                g81 g81Var = (g81) obj;
+                org.telegram.messenger.g0.h3(new z71(g81Var, i10));
+                org.telegram.ui.Cells.q1 q1Var = g81Var.K;
                 if (q1Var != null) {
                     q1Var.setVisibility(0);
                     if (!z9) {
-                        org.telegram.ui.Cells.q1 q1Var2 = f81Var.K;
-                        int b22 = q1Var2.b2(f81Var.O);
-                        d81 d81Var = f81Var.I;
+                        org.telegram.ui.Cells.q1 q1Var2 = g81Var.K;
+                        int b22 = q1Var2.b2(g81Var.O);
+                        e81 e81Var = g81Var.I;
                         CheckBoxBase[] checkBoxBaseArr2 = q1Var2.e7;
-                        if (checkBoxBaseArr2 != null && b22 >= 0 && b22 < checkBoxBaseArr2.length && (checkBoxBase = checkBoxBaseArr2[b22]) != null && d81Var != null && (checkBoxBaseArr = d81Var.e7) != null && b22 >= 0 && b22 < checkBoxBaseArr.length && (checkBoxBase2 = checkBoxBaseArr[b22]) != null) {
+                        if (checkBoxBaseArr2 != null && b22 >= 0 && b22 < checkBoxBaseArr2.length && (checkBoxBase = checkBoxBaseArr2[b22]) != null && e81Var != null && (checkBoxBaseArr = e81Var.e7) != null && b22 >= 0 && b22 < checkBoxBaseArr.length && (checkBoxBase2 = checkBoxBaseArr[b22]) != null) {
                             ObjectAnimator objectAnimator = checkBoxBase.p;
                             if (objectAnimator != null) {
                                 objectAnimator.cancel();
@@ -151,14 +151,14 @@ public final /* synthetic */ class tp0 implements Runnable {
                             checkBoxBase.f(-1, checkBoxBase2.q, true);
                         }
                     }
-                    org.telegram.ui.Cells.q1 q1Var3 = f81Var.K;
+                    org.telegram.ui.Cells.q1 q1Var3 = g81Var.K;
                     q1Var3.b6 = -1;
                     q1Var3.invalidate();
                 }
-                org.telegram.ui.tl tlVar = f81Var.c0;
+                org.telegram.ui.tl tlVar = g81Var.c0;
                 if (tlVar != null) {
                     org.telegram.messenger.g0.h3(tlVar);
-                    f81Var.c0 = null;
+                    g81Var.c0 = null;
                     break;
                 }
                 break;
@@ -166,13 +166,13 @@ public final /* synthetic */ class tp0 implements Runnable {
                 ((View) obj).setVisibility(z9 ? 0 : 8);
                 break;
             case 16:
-                wi.j jVar = (wi.j) obj;
-                jVar.P = z9;
-                jVar.Q = jVar.F();
-                jVar.R = 0;
-                jVar.S = 0;
-                jVar.j.b("torch requested: enabled=" + z9 + ", available=" + jVar.F() + ", cameraId=" + jVar.o + ", facing=" + jVar.G);
-                jVar.g();
+                wi.k kVar = (wi.k) obj;
+                kVar.P = z9;
+                kVar.Q = kVar.G();
+                kVar.R = 0;
+                kVar.S = 0;
+                kVar.j.b("torch requested: enabled=" + z9 + ", available=" + kVar.G() + ", cameraId=" + kVar.o + ", facing=" + kVar.G);
+                kVar.f();
                 break;
             default:
                 yh.m mVar = (yh.m) obj;

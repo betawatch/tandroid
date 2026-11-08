@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.vp;
 import org.telegram.ui.Components.w70;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class nc extends LinearLayout {
     public final /* synthetic */ int a;
@@ -158,7 +158,7 @@ public final class nc extends LinearLayout {
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.arrow_more).mutate();
         org.telegram.ui.ActionBar.r6.y(this, mutate, i10, f6Var, PorterDuff.Mode.MULTIPLY);
         view.setBackground(mutate);
-        if (org.telegram.messenger.hd.a0) {
+        if (org.telegram.messenger.id.a0) {
             addView(view, c8.ha.t(16, 16, 16, 11, 0, 3, 0));
             addView(j6Var, c8.ha.t(-2, 16, 16, 0, 0, ((ImageView) this.b) != null ? 3 : 11, 0));
             View view2 = (ImageView) this.b;
@@ -202,11 +202,11 @@ public final class nc extends LinearLayout {
                 frameLayout.setClipToPadding(false);
                 gc gcVar = new gc(context, 70, 0, 1);
                 frameLayout.addView(gcVar, c8.ha.c(-1.0f, -1));
-                org.telegram.ui.Wallet.w6 w6Var = new org.telegram.ui.Wallet.w6(qs.A2, context, false);
-                this.b = w6Var;
-                w6Var.setStarParticlesView(gcVar);
-                frameLayout.addView(w6Var, c8.ha.d(qs.A2, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
-                w6Var.setPaused(false);
+                org.telegram.ui.Wallet.v6 v6Var = new org.telegram.ui.Wallet.v6(qs.A2, context, false);
+                this.b = v6Var;
+                v6Var.setStarParticlesView(gcVar);
+                frameLayout.addView(v6Var, c8.ha.d(qs.A2, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
+                v6Var.setPaused(false);
                 addView(frameLayout, c8.ha.c(180.0f, -1));
                 TextView textView = new TextView(context);
                 this.c = textView;

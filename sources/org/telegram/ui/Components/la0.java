@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class la0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -60,9 +60,9 @@ public final /* synthetic */ class la0 implements View.OnClickListener {
                 } else {
                     sd0Var.O = r5Var.getCurrentColor();
                 }
-                ry ryVar = sd0Var.l0;
-                if (ryVar != null) {
-                    ryVar.c(false, false, false);
+                sy syVar = sd0Var.l0;
+                if (syVar != null) {
+                    syVar.c(false, false, false);
                 }
                 sd0Var.d();
                 break;
@@ -145,7 +145,7 @@ public final /* synthetic */ class la0 implements View.OnClickListener {
                     textView2.setTextSize(1, 14.0f);
                     org.telegram.ui.ActionBar.r6.V(textView2, i14, null);
                     textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
-                    textView2.setText(org.telegram.messenger.hd.a0("DownloadedFilesMessage", null, 2131751346, new Object[0]));
+                    textView2.setText(org.telegram.messenger.id.a0("DownloadedFilesMessage", null, 2131751346, new Object[0]));
                     linearLayout.addView(textView2, c8.ha.d(-1, -2.0f, 0, 28.0f, 7.0f, 28.0f, 0.0f));
                     TextView textView3 = new TextView(activity);
                     textView3.setGravity(17);
@@ -154,7 +154,7 @@ public final /* synthetic */ class la0 implements View.OnClickListener {
                     textView3.setSingleLine(true);
                     textView3.setTextSize(1, 14.0f);
                     textView3.setTypeface(org.telegram.messenger.g0.o());
-                    textView3.setText(org.telegram.messenger.hd.M0(2131748696, null));
+                    textView3.setText(org.telegram.messenger.id.M0(2131748698, null));
                     org.telegram.ui.ActionBar.r6.V(textView3, org.telegram.ui.ActionBar.k6.Gi, null);
                     int L2 = org.telegram.messenger.g0.L(8.0f);
                     int i15 = org.telegram.ui.ActionBar.k6.Ci;
@@ -172,7 +172,7 @@ public final /* synthetic */ class la0 implements View.OnClickListener {
                     textView4.setSingleLine(true);
                     textView4.setTextSize(1, 14.0f);
                     textView4.setTypeface(org.telegram.messenger.g0.o());
-                    textView4.setText(org.telegram.messenger.hd.M0(2131752093, null));
+                    textView4.setText(org.telegram.messenger.id.M0(2131752093, null));
                     org.telegram.ui.ActionBar.r6.V(textView4, i15, null);
                     int L3 = org.telegram.messenger.g0.L(8.0f);
                     int o10 = i0.a.o(org.telegram.ui.ActionBar.k6.x0(null, i15, false), 120);

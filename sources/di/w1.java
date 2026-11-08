@@ -2,13 +2,13 @@ package di;
 
 import android.app.Activity;
 import c8.ha;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w1 implements Runnable {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class w1 implements Runnable {
                         m3Var.j(i0.a.o(i0.a.f(0.13f, -16777216, -1), qs.P3));
                         fi.m3 m3Var2 = i4Var.q0;
                         m3Var2.U = false;
-                        m3Var2.u(hd.M0(2131746398, null));
+                        m3Var2.u(id.M0(2131746400, null));
                         i4Var.q0.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(1.0f));
                         i4Var.L0.addView(i4Var.q0, ha.d(-1, -2.0f, 85, 0.0f, 0.0f, 0.0f, i4Var.g2 ? 0.0f : 56.0f));
                     }

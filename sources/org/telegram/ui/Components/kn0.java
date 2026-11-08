@@ -40,7 +40,7 @@ import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kn0 implements Runnable {
     public final /* synthetic */ int a;
@@ -95,16 +95,16 @@ public final /* synthetic */ class kn0 implements Runnable {
         long v02 = hl0Var.v0();
         int i7 = z9 ? (z10 || z11) ? R.raw.stars_send : R.raw.stars_topup : R.raw.payment_success;
         if (z9) {
-            M02 = org.telegram.messenger.hd.M0(z11 ? 2131745093 : z10 ? 2131745101 : 2131745160, null);
+            M02 = org.telegram.messenger.id.M0(z11 ? 2131745095 : z10 ? 2131745103 : 2131745162, null);
         } else {
             M02 = null;
         }
         if (!z9) {
-            a02 = org.telegram.messenger.hd.a0(null, null, 2131747400, hl0Var.R0[0], hl0Var.q0);
+            a02 = org.telegram.messenger.id.a0(null, null, 2131747402, hl0Var.R0[0], hl0Var.q0);
         } else if (z11) {
-            a02 = org.telegram.messenger.hd.H(',', "StarsGiveawaySentPopupInfo", (int) v02);
+            a02 = org.telegram.messenger.id.H(',', "StarsGiveawaySentPopupInfo", (int) v02);
         } else {
-            a02 = org.telegram.messenger.hd.K(z10 ? "StarsGiftSentPopupInfo" : "StarsAcquiredInfo", (int) v02, ',', str);
+            a02 = org.telegram.messenger.id.K(z10 ? "StarsGiftSentPopupInfo" : "StarsAcquiredInfo", (int) v02, ',', str);
         }
         SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(a02);
         org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
@@ -116,7 +116,7 @@ public final /* synthetic */ class kn0 implements Runnable {
             String str2 = M02;
             I = str2 != null ? a03.I(i7, str2, X2) : a03.Q(i7, 36, X2);
         } else {
-            I = a03.L(i7, M02, X2, org.telegram.messenger.hd.M0(2131743553, null), new bi.k4(w02, 3));
+            I = a03.L(i7, M02, X2, org.telegram.messenger.id.M0(2131743555, null), new bi.k4(w02, 3));
         }
         cc ccVar = I;
         ccVar.r = false;
@@ -292,18 +292,18 @@ public final /* synthetic */ class kn0 implements Runnable {
                     org.telegram.messenger.qp.s1(ly0Var.d).A3(0);
                     break;
                 } else if (tL_error3 == null || tL_error3.code != -1000) {
-                    String M0 = org.telegram.messenger.hd.M0(2131751106, null);
+                    String M0 = org.telegram.messenger.id.M0(2131751106, null);
                     if (tL_error3 != null) {
                         StringBuilder j3 = rf.b.j(M0, "\n");
                         j3.append(tL_error3.text);
                         M0 = j3.toString();
                     }
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ly0Var.getContext());
-                    String M02 = org.telegram.messenger.hd.M0(R.string.AppName, null);
+                    String M02 = org.telegram.messenger.id.M0(R.string.AppName, null);
                     org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                     u1Var.R = M02;
                     u1Var.T = M0;
-                    jg.g.C(null, 2131747830, alertDialog$Builder, null);
+                    jg.g.C(null, 2131747832, alertDialog$Builder, null);
                     break;
                 }
                 break;
@@ -335,10 +335,10 @@ public final /* synthetic */ class kn0 implements Runnable {
                     }
                     if (k21Var.L1) {
                         k21Var.dismiss();
-                        org.telegram.messenger.qs.e().k(org.telegram.messenger.qs.P4, 1, org.telegram.messenger.hd.M0(2131743947, null));
+                        org.telegram.messenger.qs.e().k(org.telegram.messenger.qs.P4, 1, org.telegram.messenger.id.M0(2131743949, null));
                         break;
                     } else {
-                        org.telegram.messenger.k5.p(null, 2131743947, new hc((FrameLayout) k21Var.b, k21Var.I0), null);
+                        org.telegram.messenger.k5.p(null, 2131743949, new hc((FrameLayout) k21Var.b, k21Var.I0), null);
                         g21 g21Var = k21Var.t1.e;
                         String str = k21Var.s1;
                         k21Var.r1 = str;
@@ -376,9 +376,9 @@ public final /* synthetic */ class kn0 implements Runnable {
                 groupCall2.access_hash = groupCall3.access_hash;
                 groupCall2.id = groupCall3.id;
                 r3Var3.e();
-                h10 h10Var = c40Var.g4;
+                i10 i10Var = c40Var.g4;
                 org.telegram.messenger.r3 r3Var4 = c40Var.R2;
-                h10Var.c = r3Var4;
+                i10Var.c = r3Var4;
                 c40Var.R3.setGroupCall(r3Var4);
                 org.telegram.ui.f40 f40Var = c40Var.f4;
                 org.telegram.messenger.r3 r3Var5 = c40Var.R2;
@@ -538,7 +538,7 @@ public final /* synthetic */ class kn0 implements Runnable {
                 l50Var.f();
                 org.telegram.ui.m50 m50Var = l50Var.r;
                 m50Var.b.d.setVisibility(8);
-                m50Var.b.e.setText(org.telegram.messenger.hd.a0(null, null, 2131752117, (String) obj));
+                m50Var.b.e.setText(org.telegram.messenger.id.a0(null, null, 2131752117, (String) obj));
                 m50Var.b.e(false, true);
                 break;
             case 12:
@@ -562,22 +562,22 @@ public final /* synthetic */ class kn0 implements Runnable {
                         tL_langPackLanguage.base_lang_code = str5.replace('-', '_').toLowerCase();
                     }
                     AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(launchActivity);
-                    boolean equals = org.telegram.messenger.hd.E0().B.c.equals(tL_langPackLanguage.lang_code);
+                    boolean equals = org.telegram.messenger.id.E0().B.c.equals(tL_langPackLanguage.lang_code);
                     org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder2.a;
                     if (equals) {
-                        u1Var2.R = org.telegram.messenger.hd.M0(2131749053, null);
-                        a02 = org.telegram.messenger.hd.a0("LanguageSame", null, 2131749046, tL_langPackLanguage.name);
-                        alertDialog$Builder2.h(org.telegram.messenger.hd.M0(2131747830, null), null);
-                        alertDialog$Builder2.i(org.telegram.messenger.hd.M0(2131745984, null), new y0(launchActivity, null == true ? 1 : 0));
+                        u1Var2.R = org.telegram.messenger.id.M0(2131749055, null);
+                        a02 = org.telegram.messenger.id.a0("LanguageSame", null, 2131749048, tL_langPackLanguage.name);
+                        alertDialog$Builder2.h(org.telegram.messenger.id.M0(2131747832, null), null);
+                        alertDialog$Builder2.i(org.telegram.messenger.id.M0(2131745986, null), new y0(launchActivity, null == true ? 1 : 0));
                     } else if (tL_langPackLanguage.strings_count == 0) {
-                        u1Var2.R = org.telegram.messenger.hd.M0(2131749043, null);
-                        a02 = org.telegram.messenger.hd.a0("LanguageUnknownCustomAlert", null, 2131749044, tL_langPackLanguage.name);
-                        alertDialog$Builder2.h(org.telegram.messenger.hd.M0(2131747830, null), null);
+                        u1Var2.R = org.telegram.messenger.id.M0(2131749045, null);
+                        a02 = org.telegram.messenger.id.a0("LanguageUnknownCustomAlert", null, 2131749046, tL_langPackLanguage.name);
+                        alertDialog$Builder2.h(org.telegram.messenger.id.M0(2131747832, null), null);
                     } else {
-                        u1Var2.R = org.telegram.messenger.hd.M0(2131749045, null);
-                        a02 = tL_langPackLanguage.official ? org.telegram.messenger.hd.a0("LanguageAlert", null, 2131749052, tL_langPackLanguage.name, Integer.valueOf((int) Math.ceil((tL_langPackLanguage.translated_count / tL_langPackLanguage.strings_count) * 100.0f))) : org.telegram.messenger.hd.a0("LanguageCustomAlert", null, 2131749049, tL_langPackLanguage.name, Integer.valueOf((int) Math.ceil((tL_langPackLanguage.translated_count / tL_langPackLanguage.strings_count) * 100.0f)));
-                        alertDialog$Builder2.k(org.telegram.messenger.hd.M0(2131752552, null), new ni.c(24, tL_langPackLanguage, launchActivity));
-                        alertDialog$Builder2.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+                        u1Var2.R = org.telegram.messenger.id.M0(2131749047, null);
+                        a02 = tL_langPackLanguage.official ? org.telegram.messenger.id.a0("LanguageAlert", null, 2131749054, tL_langPackLanguage.name, Integer.valueOf((int) Math.ceil((tL_langPackLanguage.translated_count / tL_langPackLanguage.strings_count) * 100.0f))) : org.telegram.messenger.id.a0("LanguageCustomAlert", null, 2131749051, tL_langPackLanguage.name, Integer.valueOf((int) Math.ceil((tL_langPackLanguage.translated_count / tL_langPackLanguage.strings_count) * 100.0f)));
+                        alertDialog$Builder2.k(org.telegram.messenger.id.M0(2131752552, null), new ni.c(24, tL_langPackLanguage, launchActivity));
+                        alertDialog$Builder2.h(org.telegram.messenger.id.M0(2131752589, null), null);
                     }
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.g0.X2(a02));
                     int indexOf = TextUtils.indexOf((CharSequence) spannableStringBuilder, '[');
@@ -607,7 +607,7 @@ public final /* synthetic */ class kn0 implements Runnable {
                     break;
                 } else if (tL_error6 != null) {
                     if ("LANG_CODE_NOT_SUPPORTED".equals(tL_error6.text)) {
-                        launchActivity.F0(v4.K(launchActivity, null, org.telegram.messenger.hd.M0(2131749042, null)));
+                        launchActivity.F0(v4.K(launchActivity, null, org.telegram.messenger.id.M0(2131749044, null)));
                         break;
                     } else {
                         StringBuilder sb4 = new StringBuilder();
@@ -637,7 +637,7 @@ public final /* synthetic */ class kn0 implements Runnable {
                 org.telegram.ui.p90 p90Var = (org.telegram.ui.p90) obj4;
                 org.telegram.ui.ActionBar.f2 f2Var2 = (org.telegram.ui.ActionBar.f2) obj3;
                 TLRPC.User[] userArr = (TLRPC.User[]) obj2;
-                lq.e(f2Var2.getContext(), p90Var.b, userArr[0], (TLRPC.TL_requestPeerTypeCreateBot) obj, true, new ex(i14, p90Var, userArr), f2Var2.getResourceProvider(), org.telegram.ui.p90.d());
+                lq.e(f2Var2.getContext(), p90Var.b, userArr[0], (TLRPC.TL_requestPeerTypeCreateBot) obj, true, new fx(i14, p90Var, userArr), f2Var2.getResourceProvider(), org.telegram.ui.p90.d());
                 break;
             case 15:
                 org.telegram.ui.m90.z0((org.telegram.ui.m90) obj4, (TLObject) obj3, (HashSet) obj2, (TLRPC.TL_error) obj);
@@ -694,10 +694,10 @@ public final /* synthetic */ class kn0 implements Runnable {
                 } else if (tL_error10 != null && !tL_error10.text.startsWith("CODE_INVALID")) {
                     if (tL_error10.text.startsWith("FLOOD_WAIT")) {
                         int intValue = Utilities.z(tL_error10.text).intValue();
-                        ce0Var.D1(org.telegram.messenger.hd.M0(2131746072, null), org.telegram.messenger.hd.a0("FloodWaitTime", null, 2131750687, intValue < 60 ? org.telegram.messenger.hd.G(intValue, "Seconds", new Object[0]) : org.telegram.messenger.hd.G(intValue / 60, "Minutes", new Object[0])));
+                        ce0Var.D1(org.telegram.messenger.id.M0(2131746074, null), org.telegram.messenger.id.a0("FloodWaitTime", null, 2131750687, intValue < 60 ? org.telegram.messenger.id.G(intValue, "Seconds", new Object[0]) : org.telegram.messenger.id.G(intValue / 60, "Minutes", new Object[0])));
                         break;
                     } else {
-                        ce0Var.D1(org.telegram.messenger.hd.M0(2131746072, null), tL_error10.text);
+                        ce0Var.D1(org.telegram.messenger.id.M0(2131746074, null), tL_error10.text);
                         break;
                     }
                 } else {
@@ -739,17 +739,17 @@ public final /* synthetic */ class kn0 implements Runnable {
                     String str10 = tL_error11.text;
                     if (str10 != null) {
                         if (str10.contains("PHONE_NUMBER_INVALID")) {
-                            ce0Var2.D1(org.telegram.messenger.hd.M0(2131746072, null), org.telegram.messenger.hd.M0(2131749178, null));
+                            ce0Var2.D1(org.telegram.messenger.id.M0(2131746074, null), org.telegram.messenger.id.M0(2131749180, null));
                         } else if (tL_error11.text.contains("PHONE_CODE_EMPTY") || tL_error11.text.contains("PHONE_CODE_INVALID")) {
-                            ce0Var2.D1(org.telegram.messenger.hd.M0(2131746072, null), org.telegram.messenger.hd.M0(2131749182, null));
+                            ce0Var2.D1(org.telegram.messenger.id.M0(2131746074, null), org.telegram.messenger.id.M0(2131749184, null));
                         } else if (tL_error11.text.contains("PHONE_CODE_EXPIRED")) {
                             gd0Var.c(true);
                             ce0Var2.M1(0, true, null, true);
-                            ce0Var2.D1(org.telegram.messenger.hd.M0(2131746072, null), org.telegram.messenger.hd.M0(2131752021, null));
+                            ce0Var2.D1(org.telegram.messenger.id.M0(2131746074, null), org.telegram.messenger.id.M0(2131752021, null));
                         } else if (tL_error11.text.startsWith("FLOOD_WAIT")) {
-                            ce0Var2.D1(org.telegram.messenger.hd.M0(2131746072, null), org.telegram.messenger.hd.M0(2131750688, null));
+                            ce0Var2.D1(org.telegram.messenger.id.M0(2131746074, null), org.telegram.messenger.id.M0(2131750688, null));
                         } else if (tL_error11.code != -1000) {
-                            String M03 = org.telegram.messenger.hd.M0(2131746072, null);
+                            String M03 = org.telegram.messenger.id.M0(2131746074, null);
                             StringBuilder sb5 = new StringBuilder();
                             org.telegram.messenger.camera.q.q(null, 2131751106, sb5, "\n");
                             sb5.append(tL_error11.text);
@@ -796,11 +796,11 @@ public final /* synthetic */ class kn0 implements Runnable {
                         ce0Var4.M1(6, true, bundle3, false);
                         break;
                     } else {
-                        v4.u0(ce0Var4.getParentActivity(), org.telegram.messenger.hd.M0(2131743821, "UpdateAppAlert"), true);
+                        v4.u0(ce0Var4.getParentActivity(), org.telegram.messenger.id.M0(2131743823, "UpdateAppAlert"), true);
                         break;
                     }
                 } else {
-                    ce0Var4.D1(org.telegram.messenger.hd.M0(2131746072, null), tL_error12.text);
+                    ce0Var4.D1(org.telegram.messenger.id.M0(2131746074, null), tL_error12.text);
                     break;
                 }
             case 23:

@@ -5,12 +5,12 @@ import android.view.View;
 import di.d4;
 import java.util.ArrayList;
 import java.util.Date;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.k5;
 import org.telegram.ui.Components.pj0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l0 extends CountDownTimer {
     public final /* synthetic */ q0 a;
@@ -52,12 +52,12 @@ public final class l0 extends CountDownTimer {
                     d4 d4Var = rVar.d;
                     int i11 = rVar.J.cooldown_until_date;
                     if (i11 > 0) {
-                        rVar.setSubtitle(hd.a0(null, null, 2131753594, ah.r.f((i11 * 1000) - System.currentTimeMillis())));
+                        rVar.setSubtitle(id.a0(null, null, 2131753594, ah.r.f((i11 * 1000) - System.currentTimeMillis())));
                         d4Var.setAlpha(0.65f);
                         k5Var.setAlpha(0.65f);
                         rVar.i(false, 0.3f);
                     } else {
-                        rVar.setSubtitle(hd.a0(null, null, 2131753661, hd.E0().o0().format(new Date(rVar.J.expires * 1000))));
+                        rVar.setSubtitle(id.a0(null, null, 2131753661, id.E0().o0().format(new Date(rVar.J.expires * 1000))));
                         if (d4Var.getAlpha() < 1.0f) {
                             d4Var.animate().alpha(1.0f).start();
                             k5Var.animate().alpha(1.0f).start();

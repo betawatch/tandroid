@@ -7,7 +7,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Calendar;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t3;
 import org.telegram.messenger.video.VideoAds;
@@ -20,8 +20,9 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.hb0;
 import org.telegram.ui.Components.v4;
-import org.telegram.ui.Wallet.a3;
-import org.telegram.ui.Wallet.c5;
+import org.telegram.ui.Wallet.b5;
+import org.telegram.ui.Wallet.z2;
+import org.telegram.ui.a3;
 import org.telegram.ui.c40;
 import org.telegram.ui.m20;
 import org.telegram.ui.n20;
@@ -29,7 +30,7 @@ import org.telegram.ui.p20;
 import org.telegram.ui.r10;
 import org.telegram.ui.z9;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -41,14 +42,14 @@ public final /* synthetic */ class f implements View.OnClickListener {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ f(fi.d dVar, c5 c5Var, x10 x10Var, String[] strArr, boolean[] zArr, a3[] a3VarArr, f6 f6Var) {
+    public /* synthetic */ f(fi.d dVar, b5 b5Var, x10 x10Var, String[] strArr, boolean[] zArr, z2[] z2VarArr, f6 f6Var) {
         this.a = 2;
         this.b = dVar;
-        this.c = c5Var;
+        this.c = b5Var;
         this.d = x10Var;
         this.e = strArr;
         this.h = zArr;
-        this.n = a3VarArr;
+        this.n = z2VarArr;
         this.f = f6Var;
     }
 
@@ -78,13 +79,13 @@ public final /* synthetic */ class f implements View.OnClickListener {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 c40Var.O2 = ofFloat;
                 ofFloat.setDuration(600L);
-                c40Var.O2.addUpdateListener(new org.telegram.ui.a3(c40Var, 12));
+                c40Var.O2.addUpdateListener(new a3(c40Var, 12));
                 c40Var.O2.addListener(new p20(c40Var));
                 c40Var.O2.start();
                 if (t3.W(c40Var.Q2)) {
-                    r10Var.b(hd.M0(2131743448, null), true);
+                    r10Var.b(id.M0(2131743450, null), true);
                 } else {
-                    r10Var.b(hd.M0(2131743307, null), true);
+                    r10Var.b(id.M0(2131743309, null), true);
                 }
                 Calendar calendar = Calendar.getInstance();
                 boolean g10 = v4.g(null, null, 0L, 604800L, 3, hb0Var, m20Var, n20Var);
@@ -110,7 +111,7 @@ public final /* synthetic */ class f implements View.OnClickListener {
                 x10 x10Var = (x10) obj5;
                 String[] strArr = (String[]) obj4;
                 boolean[] zArr = (boolean[]) obj3;
-                a3[] a3VarArr = (a3[]) obj2;
+                z2[] z2VarArr = (z2[]) obj2;
                 f6 f6Var = (f6) obj;
                 if (!dVar.Q) {
                     if (editTextBoldCursor != null && editTextBoldCursor.getText().toString().getBytes(StandardCharsets.UTF_8).length > 960) {
@@ -118,7 +119,7 @@ public final /* synthetic */ class f implements View.OnClickListener {
                         break;
                     } else {
                         dVar.setLoading(true);
-                        x10Var.a(strArr[0], Boolean.valueOf(zArr[0]), new org.telegram.ui.Wallet.m(dVar, a3VarArr, f6Var, 5));
+                        x10Var.a(strArr[0], Boolean.valueOf(zArr[0]), new org.telegram.ui.Wallet.m(dVar, z2VarArr, f6Var, 5));
                         break;
                     }
                 }

@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class h30 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ Activity a;
@@ -65,15 +65,15 @@ public final class h30 extends org.telegram.ui.ActionBar.j {
             boolean W = org.telegram.messenger.t3.W(c40Var.Q2);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             if (W) {
-                u1Var.R = org.telegram.messenger.hd.M0(2131743483, null);
-                u1Var.T = org.telegram.messenger.hd.M0(2131743484, null);
+                u1Var.R = org.telegram.messenger.id.M0(2131743485, null);
+                u1Var.T = org.telegram.messenger.id.M0(2131743486, null);
             } else {
-                u1Var.R = org.telegram.messenger.hd.M0(2131743382, null);
-                u1Var.T = org.telegram.messenger.hd.M0(2131743383, null);
+                u1Var.R = org.telegram.messenger.id.M0(2131743384, null);
+                u1Var.T = org.telegram.messenger.id.M0(2131743385, null);
             }
             u1Var.I = org.telegram.ui.ActionBar.k6.dh;
-            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131743384, null), new a30(this));
-            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131743386, null), new a30(this));
+            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
             u1Var.j(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.ih, false));
             u1Var.show();
             TextView textView = (TextView) u1Var.d(-1);
@@ -105,14 +105,14 @@ public final class h30 extends org.telegram.ui.ActionBar.j {
             int i13 = org.telegram.ui.ActionBar.k6.dh;
             org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder2.a;
             u1Var2.I = i13;
-            u1Var2.R = org.telegram.messenger.hd.M0(2131743322, null);
+            u1Var2.R = org.telegram.messenger.id.M0(2131743324, null);
             if (org.telegram.messenger.t3.W(c40Var.Q2)) {
-                u1Var2.T = org.telegram.messenger.hd.M0(2131743455, null);
+                u1Var2.T = org.telegram.messenger.id.M0(2131743457, null);
             } else {
-                u1Var2.T = org.telegram.messenger.hd.M0(2131743323, null);
+                u1Var2.T = org.telegram.messenger.id.M0(2131743325, null);
             }
-            alertDialog$Builder2.k(org.telegram.messenger.hd.M0(2131744842, null), new ab.y(i12, this, z9));
-            alertDialog$Builder2.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+            alertDialog$Builder2.k(org.telegram.messenger.id.M0(2131744844, null), new ab.y(i12, this, z9));
+            alertDialog$Builder2.h(org.telegram.messenger.id.M0(2131752589, null), null);
             u1Var2.j(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.ih, false));
             u1Var2.show();
             u1Var2.p(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.bh, false));
@@ -153,12 +153,12 @@ public final class h30 extends org.telegram.ui.ActionBar.j {
             org.telegram.ui.ActionBar.u1 u1Var3 = alertDialog$Builder3.a;
             u1Var3.I = i14;
             if (org.telegram.messenger.t3.W(c40Var.Q2)) {
-                u1Var3.R = org.telegram.messenger.hd.M0(2131743454, null);
+                u1Var3.R = org.telegram.messenger.id.M0(2131743456, null);
             } else {
-                u1Var3.R = org.telegram.messenger.hd.M0(2131743321, null);
+                u1Var3.R = org.telegram.messenger.id.M0(2131743323, null);
             }
             u1Var3.y0 = false;
-            alertDialog$Builder3.h(org.telegram.messenger.hd.M0(2131752589, null), new zx(editTextBoldCursor, i10));
+            alertDialog$Builder3.h(org.telegram.messenger.id.M0(2131752589, null), new zx(editTextBoldCursor, i10));
             LinearLayout linearLayout = new LinearLayout(c40Var.getContext());
             linearLayout.setOrientation(1);
             alertDialog$Builder3.o(linearLayout);
@@ -185,7 +185,7 @@ public final class h30 extends org.telegram.ui.ActionBar.j {
                 editTextBoldCursor.setText(c40Var.R2.b.title);
                 editTextBoldCursor.setSelection(editTextBoldCursor.length());
             }
-            alertDialog$Builder3.k(org.telegram.messenger.hd.M0(2131745947, null), new a7(this, editTextBoldCursor, alertDialog$Builder3, 15));
+            alertDialog$Builder3.k(org.telegram.messenger.id.M0(2131745949, null), new a7(this, editTextBoldCursor, alertDialog$Builder3, 15));
             u1Var3.j(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Tg, false));
             u1Var3.setOnShowListener(new b30(this, u1Var3, editTextBoldCursor, i11));
             u1Var3.setOnDismissListener(new cy(editTextBoldCursor, i10));
@@ -216,17 +216,17 @@ public final class h30 extends org.telegram.ui.ActionBar.j {
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         ArrayList arrayList3 = new ArrayList();
-        org.telegram.ui.Cells.f1.t(null, 2131743500, arrayList, R.drawable.msg_voice_speaker, arrayList2);
+        org.telegram.ui.Cells.f1.t(null, 2131743502, arrayList, R.drawable.msg_voice_speaker, arrayList2);
         arrayList3.add(0);
         if (sharedInstance.hasEarpiece()) {
-            arrayList.add(org.telegram.messenger.hd.M0(sharedInstance.isHeadsetPlugged() ? 2131743502 : 2131743501, null));
+            arrayList.add(org.telegram.messenger.id.M0(sharedInstance.isHeadsetPlugged() ? 2131743504 : 2131743503, null));
             arrayList2.add(Integer.valueOf(sharedInstance.isHeadsetPlugged() ? R.drawable.msg_voice_headphones : R.drawable.msg_voice_phone));
             arrayList3.add(1);
         }
         if (sharedInstance.isBluetoothHeadsetConnected()) {
             String str = sharedInstance.currentBluetoothDeviceName;
             if (str == null) {
-                str = org.telegram.messenger.hd.M0(2131743504, null);
+                str = org.telegram.messenger.id.M0(2131743506, null);
             }
             arrayList.add(str);
             arrayList2.add(Integer.valueOf(R.drawable.msg_voice_bluetooth));
@@ -240,7 +240,7 @@ public final class h30 extends org.telegram.ui.ActionBar.j {
             iArr[i16] = ((Integer) arrayList2.get(i16)).intValue();
         }
         org.telegram.ui.ActionBar.v2 h = org.telegram.messenger.camera.q.h(this.a, false, 1, null);
-        h.O = org.telegram.messenger.hd.M0(2131743244, null);
+        h.O = org.telegram.messenger.id.M0(2131743246, null);
         h.P = true;
         og.j jVar = new og.j(i12, this, arrayList3);
         h.L = charSequenceArr;

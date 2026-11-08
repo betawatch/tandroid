@@ -14,7 +14,7 @@ import android.widget.TextView;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class v8 extends org.telegram.ui.Components.rt0 {
     public final /* synthetic */ int f0;
@@ -53,8 +53,8 @@ public final class v8 extends org.telegram.ui.Components.rt0 {
     public void addView(View view) {
         switch (this.f0) {
             case 4:
-                if (view instanceof org.telegram.ui.Components.gy) {
-                    ViewGroup.LayoutParams layoutParams = ((org.telegram.ui.Components.gy) view).getLayoutParams();
+                if (view instanceof org.telegram.ui.Components.hy) {
+                    ViewGroup.LayoutParams layoutParams = ((org.telegram.ui.Components.hy) view).getLayoutParams();
                     if (layoutParams == null) {
                         layoutParams = new FrameLayout.LayoutParams(-1, -2);
                     }
@@ -239,7 +239,7 @@ public final class v8 extends org.telegram.ui.Components.rt0 {
                                     i18 = layoutParams.bottomMargin;
                                 }
                                 i19 = i21 + paddingTop;
-                                if (childAt instanceof org.telegram.ui.Components.gy) {
+                                if (childAt instanceof org.telegram.ui.Components.hy) {
                                     WeakHashMap weakHashMap = r0.i0.a;
                                     r0.k1 a10 = r0.b0.a(this);
                                     if (a10 != null) {
@@ -259,7 +259,7 @@ public final class v8 extends org.telegram.ui.Components.rt0 {
                                 i18 = layoutParams.bottomMargin;
                             }
                             i19 = i17 - i18;
-                            if (childAt instanceof org.telegram.ui.Components.gy) {
+                            if (childAt instanceof org.telegram.ui.Components.hy) {
                             }
                             childAt.layout(i16, i19, i16 + measuredWidth, i19 + measuredHeight);
                         } else {
@@ -270,7 +270,7 @@ public final class v8 extends org.telegram.ui.Components.rt0 {
                         if (i33 == 16) {
                         }
                         i19 = i17 - i18;
-                        if (childAt instanceof org.telegram.ui.Components.gy) {
+                        if (childAt instanceof org.telegram.ui.Components.hy) {
                         }
                         childAt.layout(i16, i19, i16 + measuredWidth, i19 + measuredHeight);
                     } else {
@@ -446,22 +446,22 @@ public final class v8 extends org.telegram.ui.Components.rt0 {
                 }
                 break;
             case 10:
-                zh.m3 m3Var = (zh.m3) this.g0;
-                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) m3Var.D.getLayoutParams();
+                zh.l3 l3Var = (zh.l3) this.g0;
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) l3Var.D.getLayoutParams();
                 int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                kVar = ((org.telegram.ui.ActionBar.f2) m3Var).actionBar;
+                kVar = ((org.telegram.ui.ActionBar.f2) l3Var).actionBar;
                 layoutParams.topMargin = currentActionBarHeight + (kVar.getOccupyStatusBar() ? org.telegram.messenger.g0.m : 0);
-                FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) m3Var.h.getLayoutParams();
+                FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) l3Var.h.getLayoutParams();
                 int currentActionBarHeight2 = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                kVar2 = ((org.telegram.ui.ActionBar.f2) m3Var).actionBar;
+                kVar2 = ((org.telegram.ui.ActionBar.f2) l3Var).actionBar;
                 layoutParams2.topMargin = org.telegram.messenger.g0.L(47.0f) + currentActionBarHeight2 + (kVar2.getOccupyStatusBar() ? org.telegram.messenger.g0.m : 0);
-                FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) m3Var.n.getLayoutParams();
+                FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) l3Var.n.getLayoutParams();
                 int currentActionBarHeight3 = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                kVar3 = ((org.telegram.ui.ActionBar.f2) m3Var).actionBar;
+                kVar3 = ((org.telegram.ui.ActionBar.f2) l3Var).actionBar;
                 layoutParams3.topMargin = currentActionBarHeight3 + (kVar3.getOccupyStatusBar() ? org.telegram.messenger.g0.m : 0);
-                FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) m3Var.x.getLayoutParams();
+                FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) l3Var.x.getLayoutParams();
                 int currentActionBarHeight4 = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                kVar4 = ((org.telegram.ui.ActionBar.f2) m3Var).actionBar;
+                kVar4 = ((org.telegram.ui.ActionBar.f2) l3Var).actionBar;
                 layoutParams4.topMargin = currentActionBarHeight4 + (kVar4.getOccupyStatusBar() ? org.telegram.messenger.g0.m : 0);
                 super.onMeasure(i7, i10);
                 break;

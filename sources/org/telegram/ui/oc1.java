@@ -1,112 +1,33 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import java.io.File;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class oc1 {
-    public String a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public int f;
-    public TLRPC.TL_wallPaper g;
-    public float h;
-    public final File i;
-    public final boolean j;
-    public final boolean k;
-    public TLRPC.WallPaper l;
-    public Bitmap m;
+public final class oc1 extends View {
+    public int a;
+    public final /* synthetic */ WallpapersListActivity b;
 
-    public oc1(int i7, int i10, int i11, String str) {
-        this.a = str;
-        this.b = i7 | (-16777216);
-        int i12 = i10 == 0 ? 0 : i10 | (-16777216);
-        this.c = i12;
-        this.f = i12 == 0 ? 0 : i11;
-        this.h = 1.0f;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public oc1(WallpapersListActivity wallpapersListActivity, Context context) {
+        super(context);
+        this.b = wallpapersListActivity;
     }
 
-    public final String a() {
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(String.valueOf(this.b));
-        sb2.append(this.c);
-        sb2.append(this.d);
-        sb2.append(this.e);
-        sb2.append(this.f);
-        sb2.append(this.h);
-        String str = this.a;
-        if (str == null) {
-            str = "";
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        WallpapersListActivity wallpapersListActivity = this.b;
+        wallpapersListActivity.s.setColor(this.a);
+        canvas.drawCircle(org.telegram.messenger.g0.L(25.0f), org.telegram.messenger.g0.L(31.0f), org.telegram.messenger.g0.L(18.0f), wallpapersListActivity.s);
+        if (this.a == org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false)) {
+            canvas.drawCircle(org.telegram.messenger.g0.L(25.0f), org.telegram.messenger.g0.L(31.0f), org.telegram.messenger.g0.L(18.0f), wallpapersListActivity.w);
         }
-        sb2.append(str);
-        return Utilities.a(sb2.toString());
     }
 
-    public final String b() {
-        int i7 = this.c;
-        String lowerCase = i7 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i7 >> 16)) & 255), Integer.valueOf(((byte) (i7 >> 8)) & 255), Byte.valueOf((byte) (i7 & org.telegram.messenger.qs.e4))).toLowerCase() : null;
-        int i10 = this.b;
-        String lowerCase2 = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i10 >> 16)) & 255), Integer.valueOf(((byte) (i10 >> 8)) & 255), Byte.valueOf((byte) (i10 & org.telegram.messenger.qs.e4))).toLowerCase();
-        int i11 = this.d;
-        String lowerCase3 = i11 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i11 >> 16)) & 255), Integer.valueOf(((byte) (i11 >> 8)) & 255), Byte.valueOf((byte) (i11 & org.telegram.messenger.qs.e4))).toLowerCase() : null;
-        int i12 = this.e;
-        String lowerCase4 = i12 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i12 >> 16)) & 255), Integer.valueOf(((byte) (i12 >> 8)) & 255), Byte.valueOf((byte) (i12 & org.telegram.messenger.qs.e4))).toLowerCase() : null;
-        if (lowerCase == null || lowerCase3 == null) {
-            if (lowerCase != null) {
-                String D = a8.p0.D(lowerCase2, "-", lowerCase);
-                if (this.g != null) {
-                    StringBuilder j3 = rf.b.j(D, "&rotation=");
-                    j3.append(org.telegram.messenger.g0.s1(this.f, true));
-                    lowerCase2 = j3.toString();
-                } else {
-                    StringBuilder j10 = rf.b.j(D, "?rotation=");
-                    j10.append(org.telegram.messenger.g0.s1(this.f, true));
-                    lowerCase2 = j10.toString();
-                }
-            }
-        } else if (lowerCase4 != null) {
-            StringBuilder sb2 = new StringBuilder();
-            sb2.append(lowerCase2);
-            sb2.append("~");
-            sb2.append(lowerCase);
-            sb2.append("~");
-            sb2.append(lowerCase3);
-            lowerCase2 = a8.p0.s(sb2, "~", lowerCase4);
-        } else {
-            lowerCase2 = lowerCase2 + "~" + lowerCase + "~" + lowerCase3;
-        }
-        if (this.g == null) {
-            return org.telegram.ui.Cells.f1.n(org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).U2, "/bg/", lowerCase2, new StringBuilder("https://"));
-        }
-        String str = "https://" + org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).U2 + "/bg/" + this.g.slug + "?intensity=" + ((int) (this.h * 100.0f)) + "&bg_color=" + lowerCase2;
-        return this.j ? rf.b.q(str, "&mode=motion") : str;
-    }
-
-    public oc1(String str, int i7, int i10, int i11, int i12) {
-        this.a = str;
-        this.b = i7 | (-16777216);
-        this.c = i10 == 0 ? 0 : i10 | (-16777216);
-        this.d = i11 == 0 ? 0 : i11 | (-16777216);
-        this.e = i12 != 0 ? i12 | (-16777216) : 0;
-        this.h = 1.0f;
-        this.k = true;
-    }
-
-    public oc1(String str, int i7, int i10, int i11, int i12, int i13, float f10, boolean z9, File file) {
-        this.a = str;
-        this.b = i7 | (-16777216);
-        int i14 = i10 == 0 ? 0 : i10 | (-16777216);
-        this.c = i14;
-        this.d = i11 == 0 ? 0 : i11 | (-16777216);
-        this.e = i12 != 0 ? i12 | (-16777216) : 0;
-        this.f = i14 == 0 ? 45 : i13;
-        this.h = f10;
-        this.i = file;
-        this.j = z9;
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        setMeasuredDimension(org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(62.0f));
     }
 }

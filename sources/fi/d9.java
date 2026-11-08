@@ -22,9 +22,9 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.g51;
 import org.telegram.ui.Components.q71;
 import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.ry;
+import org.telegram.ui.Components.sy;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d9 implements CameraView.CameraViewDelegate, r0.m, org.telegram.ui.ActionBar.r1, q71, g51, y7, c7 {
     public final /* synthetic */ int a;
@@ -49,10 +49,10 @@ public final /* synthetic */ class d9 implements CameraView.CameraViewDelegate, 
     }
 
     @Override // org.telegram.ui.Components.g51
-    public void a(ry ryVar) {
+    public void a(sy syVar) {
         hf hfVar;
         va vaVar = this.b;
-        if (ryVar == null) {
+        if (syVar == null) {
             vaVar.getClass();
             return;
         }
@@ -60,7 +60,7 @@ public final /* synthetic */ class d9 implements CameraView.CameraViewDelegate, 
         if (e7Var == null || (hfVar = e7Var.a1) == null) {
             return;
         }
-        ryVar.d(new org.telegram.ui.Components.n(hfVar));
+        syVar.d(new org.telegram.ui.Components.n(hfVar));
     }
 
     @Override // org.telegram.ui.Components.q71
@@ -184,7 +184,7 @@ public final /* synthetic */ class d9 implements CameraView.CameraViewDelegate, 
     }
 
     @Override // fi.y7
-    public void l(final q8 q8Var, final boolean z9, final boolean z10, boolean z11, final boolean z12, final TLRPC.InputPeer inputPeer, final int i7, f2.h hVar, final di.s7 s7Var) {
+    public void k(final q8 q8Var, final boolean z9, final boolean z10, boolean z11, final boolean z12, final TLRPC.InputPeer inputPeer, final int i7, f2.h hVar, final di.s7 s7Var) {
         int i10 = 0;
         switch (this.a) {
             case 9:

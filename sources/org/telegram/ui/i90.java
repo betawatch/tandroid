@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i90 implements org.telegram.messenger.v10 {
     public final /* synthetic */ int a;
@@ -33,18 +33,18 @@ public final /* synthetic */ class i90 implements org.telegram.messenger.v10 {
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.a2 a2Var = (org.telegram.ui.Wallet.a2) obj;
+                org.telegram.ui.Wallet.z1 z1Var = (org.telegram.ui.Wallet.z1) obj;
                 String str2 = (String) obj2;
                 p90Var.c();
-                if (a2Var != null) {
+                if (z1Var != null) {
                     org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
                     if (T != null && T.getContext() != null) {
-                        org.telegram.ui.Wallet.f2.D(T.getContext(), p90Var.b, a2Var, null, T.getResourceProvider(), null, new l90(p90Var, str, 1));
+                        org.telegram.ui.Wallet.e2.D(T.getContext(), p90Var.b, z1Var, null, T.getResourceProvider(), null, new l90(p90Var, str, 1));
                         break;
                     }
                 } else {
                     if (str2 == null) {
-                        str2 = org.telegram.messenger.hd.M0(2131742992, null);
+                        str2 = org.telegram.messenger.id.M0(2131742994, null);
                     }
                     org.telegram.ui.Components.hc.b0(str2);
                     break;

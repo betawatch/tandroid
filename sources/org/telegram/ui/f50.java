@@ -11,12 +11,12 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class f50 extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public e50 a;
     public org.telegram.ui.Components.pj0 b;
-    public org.telegram.ui.Components.iy c;
+    public org.telegram.ui.Components.jy c;
     public long d;
     public boolean e;
     public TLRPC.TL_chatInviteExported f;
@@ -57,14 +57,14 @@ public final class f50 extends org.telegram.ui.ActionBar.f2 implements org.teleg
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131749148, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131749150, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new ux(this, 6));
         this.a = new e50(this, context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        org.telegram.ui.Components.iy iyVar = new org.telegram.ui.Components.iy(context, null);
-        this.c = iyVar;
-        iyVar.b();
+        org.telegram.ui.Components.jy jyVar = new org.telegram.ui.Components.jy(context, null);
+        this.c = jyVar;
+        jyVar.b();
         org.telegram.ui.Components.pj0 pj0Var = new org.telegram.ui.Components.pj0(context, null);
         this.b = pj0Var;
         pj0Var.r1();
@@ -152,9 +152,9 @@ public final class f50 extends org.telegram.ui.ActionBar.f2 implements org.teleg
     public final void onThemeColorsChanged() {
         super.onThemeColorsChanged();
         try {
-            org.telegram.ui.Components.iy iyVar = this.c;
-            if (iyVar != null) {
-                iyVar.setProgressBarColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.h6, false));
+            org.telegram.ui.Components.jy jyVar = this.c;
+            if (jyVar != null) {
+                jyVar.setProgressBarColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.h6, false));
             }
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);

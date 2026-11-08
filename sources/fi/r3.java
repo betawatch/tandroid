@@ -19,7 +19,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
@@ -31,7 +31,7 @@ import org.telegram.ui.i01;
 import org.telegram.ui.je0;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class r3 extends FrameLayout {
     public static final /* synthetic */ int e = 0;
@@ -49,13 +49,13 @@ public final class r3 extends FrameLayout {
         f10.addView(l9Var, c8.ha.r(qs.O1, qs.O1, 1));
         TextView textView = new TextView(context);
         textView.setTextColor(-1);
-        textView.setText(hd.M0(2131748821, null));
+        textView.setText(id.M0(2131748823, null));
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
         f10.addView(textView, c8.ha.t(-2, -2, 1, 0, 8, 0, 0));
         d dVar = new d(context, null, true);
         this.d = dVar;
-        dVar.i(hd.M0(2131748820, null), false, true);
+        dVar.i(id.M0(2131748822, null), false, true);
         f10.addView(dVar, c8.ha.t((int) ((dVar.d.e() + org.telegram.messenger.g0.L(24.0f)) / org.telegram.messenger.g0.p), 38, 1, 0, 18, 0, 0));
         dVar.setOnClickListener(new bi.l1(2));
         setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{-16777216, -11184811}));

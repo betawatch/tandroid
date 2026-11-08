@@ -19,7 +19,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.a80;
@@ -28,7 +28,7 @@ import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.z70;
 import org.telegram.ui.pd;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class d extends FrameLayout implements z70, org.telegram.ui.ActionBar.a6 {
     public int D;
@@ -128,7 +128,7 @@ public class d extends FrameLayout implements z70, org.telegram.ui.ActionBar.a6 
         }
         this.U = i7;
         this.h = (i7 != 0 || this.V) ? 1.0f : 0.0f;
-        i6Var.t(hd.E(i7, ' '), z9, true);
+        i6Var.t(id.E(i7, ' '), z9, true);
         invalidate();
     }
 

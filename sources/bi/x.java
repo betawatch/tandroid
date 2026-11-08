@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.ui.Components.m61;
 import org.telegram.ui.Components.rj0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class x extends m61 {
     public final y[] a = new y[3];
@@ -40,7 +40,7 @@ public final class x extends m61 {
 
     @Override // org.telegram.ui.Components.m61
     public final CharSequence g(int i7) {
-        return org.telegram.messenger.hd.M0(i7 == 1 ? 2131744920 : i7 == 2 ? 2131744919 : 2131744921, null);
+        return org.telegram.messenger.id.M0(i7 == 1 ? 2131744922 : i7 == 2 ? 2131744921 : 2131744923, null);
     }
 
     @Override // org.telegram.ui.Components.m61

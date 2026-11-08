@@ -16,10 +16,10 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.camera.CameraView;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
-import org.telegram.messenger.rc;
+import org.telegram.messenger.sc;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -29,7 +29,7 @@ import org.telegram.ui.Components.rt0;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class r extends m {
     public static final int[] P1 = {21600, 43200, 86400, 172800};
@@ -143,7 +143,7 @@ public abstract class r extends m {
         imageView.setBackground(org.telegram.ui.ActionBar.k6.h0(1090519039, 1, org.telegram.messenger.g0.L(18.0f)));
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
-        imageView.setContentDescription(hd.M0(2131754736, null));
+        imageView.setContentDescription(id.M0(2131754736, null));
         addView(imageView, c8.ha.d(44, 44.0f, 85, 0.0f, 0.0f, 11.0f, 6.0f));
         imageView.setOnClickListener(new ah.d(laVar, 21));
         ImageView imageView2 = new ImageView(context);
@@ -153,7 +153,7 @@ public abstract class r extends m {
         imageView2.setImageDrawable(lVar);
         imageView2.setBackground(org.telegram.ui.ActionBar.k6.h0(1090519039, 1, org.telegram.messenger.g0.L(18.0f)));
         imageView2.setScaleType(scaleType);
-        imageView2.setContentDescription(hd.M0(2131744591, null));
+        imageView2.setContentDescription(id.M0(2131744593, null));
         A(86400, false);
         addView(imageView2, c8.ha.d(44, 44.0f, 85, 0.0f, 0.0f, 51.0f, 6.0f));
         imageView2.setOnClickListener(new ah.g(laVar, frameLayout, bVar, 8));
@@ -181,12 +181,12 @@ public abstract class r extends m {
     public final void B() {
         if (this.Y0) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getContext(), this.a);
-            String M0 = hd.M0(2131744499, null);
+            String M0 = id.M0(2131744501, null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.R = M0;
-            u1Var.T = hd.M0(2131744500, null);
-            alertDialog$Builder.k(hd.M0(2131746320, null), new di.q4(this, 9));
-            alertDialog$Builder.h(hd.M0(2131752589, null), null);
+            u1Var.T = id.M0(2131744502, null);
+            alertDialog$Builder.k(id.M0(2131746322, null), new di.q4(this, 9));
+            alertDialog$Builder.h(id.M0(2131752589, null), null);
             TextView textView = (TextView) alertDialog$Builder.p().d(-1);
             if (textView != null) {
                 org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.q7, this.a);
@@ -452,7 +452,7 @@ public abstract class r extends m {
             }
             if (f12 > 0.0f) {
                 if (this.w1 == null) {
-                    this.w1 = new my0(hd.M0(2131745314, null), 15.0f, null);
+                    this.w1 = new my0(id.M0(2131745316, null), 15.0f, null);
                 }
                 if (this.x1 == null) {
                     Path path = new Path();
@@ -484,7 +484,7 @@ public abstract class r extends m {
             }
             if (d2 > 0.0f) {
                 if (this.z1 == null) {
-                    this.z1 = new my0(hd.M0(2131752570, str), f13, org.telegram.messenger.g0.o());
+                    this.z1 = new my0(id.M0(2131752570, str), f13, org.telegram.messenger.g0.o());
                 }
                 this.z1.p = (int) ((rectF.width() - org.telegram.messenger.g0.L(116.0f)) - i6Var.c());
                 float width = ((rectF.width() / 4.0f) * f14) + (rectF.centerX() - (this.z1.k() / 2.0f));
@@ -521,7 +521,7 @@ public abstract class r extends m {
         float z11 = com.google.android.recaptcha.internal.a.z(1.0f, this.b1, org.telegram.messenger.g0.L(30.0f) * e10, org.telegram.messenger.g0.L(41.0f)) * f14 * f10;
         float T1 = org.telegram.messenger.g0.T1(com.google.android.recaptcha.internal.a.v(1.0f, d2, getWidth() * 0.35f * this.b1, rectF.right - org.telegram.messenger.g0.L(20.0f)), rectF.left + org.telegram.messenger.g0.L(20.0f), d);
         float L = rectF.bottom - org.telegram.messenger.g0.L(20.0f);
-        boolean e11 = rc.e(360928);
+        boolean e11 = sc.e(360928);
         Paint paint = this.f1;
         if (e11) {
             float L2 = org.telegram.messenger.g0.L(47.0f);
@@ -713,7 +713,7 @@ public abstract class r extends m {
         int i7 = z9 ? R.drawable.input_video_story_remove : R.drawable.input_video_story;
         ImageView imageView = this.R0;
         imageView.setImageResource(i7);
-        imageView.setContentDescription(hd.M0(z9 ? 2131754788 : 2131754736, null));
+        imageView.setContentDescription(id.M0(z9 ? 2131754788 : 2131754736, null));
         this.Y0 = z9;
     }
 

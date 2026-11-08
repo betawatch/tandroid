@@ -10,7 +10,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tt0 implements r40, org.telegram.ui.Components.ku0, org.telegram.ui.ActionBar.r1, org.telegram.messenger.qr, r0.m, org.telegram.ui.Components.df0, org.telegram.ui.Components.dj0, te.b, org.telegram.messenger.j9 {
     public final /* synthetic */ int a;
@@ -60,12 +60,12 @@ public final /* synthetic */ class tt0 implements r40, org.telegram.ui.Component
             return false;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, profileActivity.getParentActivity(), profileActivity.z0);
-        String M0 = org.telegram.messenger.hd.M0(2131752056, null);
+        String M0 = org.telegram.messenger.id.M0(2131752056, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
-        u1Var.T = org.telegram.messenger.hd.M0(2131752061, null);
-        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131752099, null), new tt0(profileActivity, 10));
-        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+        u1Var.T = org.telegram.messenger.id.M0(2131752061, null);
+        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131752099, null), new tt0(profileActivity, 10));
+        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
         profileActivity.showDialog(u1Var);
         TextView textView = (TextView) u1Var.d(-1);
         if (textView == null) {

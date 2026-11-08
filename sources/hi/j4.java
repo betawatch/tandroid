@@ -13,7 +13,7 @@ import li.v5;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.d5;
 import org.telegram.messenger.g5;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.qp;
@@ -25,11 +25,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.i9;
 import org.telegram.ui.StickersActivity;
-import org.telegram.ui.Wallet.c6;
+import org.telegram.ui.Wallet.b6;
+import org.telegram.ui.Wallet.y5;
 import org.telegram.ui.Wallet.z5;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j4 implements Runnable {
     public final /* synthetic */ int a;
@@ -82,7 +83,7 @@ public final /* synthetic */ class j4 implements Runnable {
                     org.telegram.messenger.g0.h3(new ub(s1Var, i12, new ArrayList(), new ArrayList(), s1Var.H, 5));
                     break;
                 } else {
-                    String S0 = hd.E0().S0(lowerCase, true, false);
+                    String S0 = id.E0().S0(lowerCase, true, false);
                     if (lowerCase.equals(S0) || S0.length() == 0) {
                         S0 = null;
                     }
@@ -106,17 +107,17 @@ public final /* synthetic */ class j4 implements Runnable {
                             String[] strArr4 = new String[3];
                             strArr4[0] = g5.m(0, a22.first_name, a22.last_name).toLowerCase();
                             arrayList = arrayList2;
-                            String S02 = hd.E0().S0(strArr4[0], true, false);
+                            String S02 = id.E0().S0(strArr4[0], true, false);
                             strArr4[1] = S02;
                             if (strArr4[0].equals(S02)) {
                                 strArr4[1] = str2;
                             }
                             if (t10.z(a22)) {
-                                strArr4[2] = hd.M0(2131746265, str2).toLowerCase();
+                                strArr4[2] = id.M0(2131746267, str2).toLowerCase();
                             } else {
                                 String str3 = str2;
                                 if (a22.self) {
-                                    strArr4[2] = hd.M0(2131745902, str3).toLowerCase();
+                                    strArr4[2] = id.M0(2131745904, str3).toLowerCase();
                                 }
                             }
                             int i16 = 0;
@@ -327,8 +328,8 @@ public final /* synthetic */ class j4 implements Runnable {
                 ((org.telegram.ui.Cells.q1) obj).invalidate();
                 break;
             default:
-                org.telegram.ui.Wallet.a6 a6Var3 = (org.telegram.ui.Wallet.a6) obj;
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.g((c6) obj3, new z5(((Context) obj2).getApplicationContext(), i11, i10, a6Var3), a6Var3, 15));
+                z5 z5Var = (z5) obj;
+                org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.g((b6) obj3, new y5(((Context) obj2).getApplicationContext(), i11, i10, z5Var), z5Var, 15));
                 break;
         }
     }
@@ -360,12 +361,12 @@ public final /* synthetic */ class j4 implements Runnable {
         this.f = q1Var;
     }
 
-    public /* synthetic */ j4(c6 c6Var, Context context, int i7, int i10, org.telegram.ui.Wallet.a6 a6Var) {
+    public /* synthetic */ j4(b6 b6Var, Context context, int i7, int i10, z5 z5Var) {
         this.a = 10;
-        this.d = c6Var;
+        this.d = b6Var;
         this.e = context;
         this.b = i7;
         this.c = i10;
-        this.f = a6Var;
+        this.f = z5Var;
     }
 }

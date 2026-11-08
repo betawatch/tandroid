@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class eo implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -81,7 +81,7 @@ public final /* synthetic */ class eo implements RequestDelegate {
                         }
                         updatetheme.format = "android";
                         final int i12 = 1;
-                        qpVar.getConnectionsManager().sendRequest(updatetheme, new RequestDelegate() { // from class: org.telegram.messenger.hl
+                        qpVar.getConnectionsManager().sendRequest(updatetheme, new RequestDelegate() { // from class: org.telegram.messenger.gl
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(final TLObject tLObject2, TLRPC.TL_error tL_error2) {
                                 switch (i12) {
@@ -176,7 +176,7 @@ public final /* synthetic */ class eo implements RequestDelegate {
                             createtheme.settings = tL_inputThemeSettings;
                             createtheme.flags |= 8;
                         }
-                        qpVar.getConnectionsManager().sendRequest(createtheme, new RequestDelegate() { // from class: org.telegram.messenger.hl
+                        qpVar.getConnectionsManager().sendRequest(createtheme, new RequestDelegate() { // from class: org.telegram.messenger.gl
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(final TLObject tLObject2, TLRPC.TL_error tL_error2) {
                                 switch (i10) {
@@ -268,7 +268,7 @@ public final /* synthetic */ class eo implements RequestDelegate {
                 org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) obj2;
                 Bundle bundle = (Bundle) obj;
                 if (tLObject != null) {
-                    g0.h3(new zj(qpVar2, u1Var, bVar, tLObject, f2Var, bundle, 5));
+                    g0.h3(new yj(qpVar2, u1Var, bVar, tLObject, f2Var, bundle, 5));
                     break;
                 }
                 break;
@@ -283,7 +283,7 @@ public final /* synthetic */ class eo implements RequestDelegate {
                     g0.h3(new aw(dwVar, context, u1Var2, 1));
                     break;
                 } else {
-                    g0.h3(new zj(dwVar, context, u1Var2, tLObject, bArr, user, 8));
+                    g0.h3(new yj(dwVar, context, u1Var2, tLObject, bArr, user, 8));
                     break;
                 }
             case 3:
@@ -323,7 +323,7 @@ public final /* synthetic */ class eo implements RequestDelegate {
                 }
                 if (tL_error != null) {
                     dwVar2.getMessagesStorage().N0(0, message);
-                    g0.h3(new yq(17, dwVar2, message));
+                    g0.h3(new zq(17, dwVar2, message));
                     break;
                 } else {
                     String str2 = message.attachPath;
@@ -392,7 +392,7 @@ public final /* synthetic */ class eo implements RequestDelegate {
                                 tL_fileEncryptedLocation.secret = encryptedFile.access_hash;
                                 tL_fileEncryptedLocation.local_id = encryptedFile.key_fingerprint;
                                 String str5 = photoSize.location.volume_id + "_" + photoSize.location.local_id;
-                                File file2 = new File(w7.z(4), rf.b.q(str4, ".jpg"));
+                                File file2 = new File(w7.z(4), rf.b.r(str4, ".jpg"));
                                 dwVar2.getFileLoader().getClass();
                                 file2.renameTo(w7.I(photoSize));
                                 gc.D().R(str4, str5, hc.i(photoSize, message2.media.photo), true);
@@ -408,7 +408,7 @@ public final /* synthetic */ class eo implements RequestDelegate {
                 }
                 break;
             default:
-                g0.h3(new zj((gz) c1Var, tLObject, (TLRPC.InputMedia) obj4, (sy) obj3, (String) obj2, (ij) obj));
+                g0.h3(new yj((gz) c1Var, tLObject, (TLRPC.InputMedia) obj4, (sy) obj3, (String) obj2, (ij) obj));
                 break;
         }
     }

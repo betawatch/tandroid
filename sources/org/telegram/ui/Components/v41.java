@@ -14,9 +14,9 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.yb1;
+import org.telegram.ui.zb1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class v41 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -78,7 +78,7 @@ public final class v41 extends FrameLayout {
     public boolean drawChild(Canvas canvas, View view, long j3) {
         switch (this.a) {
             case 3:
-                if (!((org.telegram.ui.Wallet.c6) this.b).a || view.getTag() == org.telegram.ui.Wallet.c6.n0) {
+                if (!((org.telegram.ui.Wallet.b6) this.b).a || view.getTag() == org.telegram.ui.Wallet.b6.n0) {
                     return super.drawChild(canvas, view, j3);
                 }
                 return false;
@@ -230,7 +230,7 @@ public final class v41 extends FrameLayout {
                 x41Var.dismiss();
                 return true;
             case 3:
-                return ((org.telegram.ui.Wallet.c6) this.b).a || super.onInterceptTouchEvent(motionEvent);
+                return ((org.telegram.ui.Wallet.b6) this.b).a || super.onInterceptTouchEvent(motionEvent);
             default:
                 return super.onInterceptTouchEvent(motionEvent);
         }
@@ -244,7 +244,7 @@ public final class v41 extends FrameLayout {
         switch (this.a) {
             case 2:
                 super.onMeasure(i7, i10);
-                setMeasuredDimension(getMeasuredWidth(), (int) Math.ceil(((org.telegram.ui.Wallet.y5) this.b).S.c(org.telegram.messenger.g0.L(4.0f))));
+                setMeasuredDimension(getMeasuredWidth(), (int) Math.ceil(((org.telegram.ui.Wallet.x5) this.b).S.c(org.telegram.messenger.g0.L(4.0f))));
                 break;
             case 11:
                 ug.w0 w0Var = (ug.w0) this.b;
@@ -277,7 +277,7 @@ public final class v41 extends FrameLayout {
                 f1Var.i2.setTranslationY(f10 - (r4.getMeasuredHeight() / 2.0f));
             case 13:
                 super.onMeasure(i7, i10);
-                ((zh.z0) this.b).K.measure(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
+                ((zh.y0) this.b).K.measure(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i7, i10);
@@ -309,7 +309,7 @@ public final class v41 extends FrameLayout {
             case 0:
                 return !((x41) this.b).I && super.onTouchEvent(motionEvent);
             case 1:
-                ((yb1) this.b).T.onTouchEvent(motionEvent);
+                ((zb1) this.b).T.onTouchEvent(motionEvent);
                 return super.onTouchEvent(motionEvent);
             case 6:
                 if (motionEvent.getActionMasked() == 0) {
@@ -331,7 +331,7 @@ public final class v41 extends FrameLayout {
             case 5:
                 super.onWindowFocusChanged(z9);
                 if (z9) {
-                    ((org.telegram.ui.Wallet.x9) this.b).k0(true);
+                    ((org.telegram.ui.Wallet.w9) this.b).k0(true);
                     break;
                 }
                 break;

@@ -11,7 +11,7 @@ import c8.ha;
 import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.ui;
@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -79,10 +79,10 @@ public final /* synthetic */ class y1 implements View.OnClickListener {
                             }
                             if (storyItem.close_friends) {
                                 i4Var.o0.n(15.0f, 8.0f, 15.0f, 8.0f);
-                                X2 = org.telegram.messenger.g0.X2(hd.a0("StoryCloseFriendsHint", null, 2131744707, str));
+                                X2 = org.telegram.messenger.g0.X2(id.a0("StoryCloseFriendsHint", null, 2131744709, str));
                             } else if (storyItem.contacts) {
                                 i4Var.o0.n(11.0f, 6.0f, 11.0f, 7.0f);
-                                X2 = org.telegram.messenger.g0.X2(hd.a0("StoryContactsHint", null, 2131744703, str));
+                                X2 = org.telegram.messenger.g0.X2(id.a0("StoryContactsHint", null, 2131744705, str));
                                 z9 = false;
                                 CharSequence m10 = org.telegram.messenger.i6.m(X2, i4Var.o0.getTextPaint().getFontMetricsInt(), false, null, 0);
                                 fi.m3 m3Var2 = i4Var.o0;
@@ -99,7 +99,7 @@ public final /* synthetic */ class y1 implements View.OnClickListener {
                                 break;
                             } else if (storyItem.selected_contacts) {
                                 i4Var.o0.n(15.0f, 8.0f, 15.0f, 8.0f);
-                                X2 = org.telegram.messenger.g0.X2(hd.a0("StorySelectedContactsHint", null, 2131744480, str));
+                                X2 = org.telegram.messenger.g0.X2(id.a0("StorySelectedContactsHint", null, 2131744482, str));
                             }
                             z9 = true;
                             CharSequence m102 = org.telegram.messenger.i6.m(X2, i4Var.o0.getTextPaint().getFontMetricsInt(), false, null, 0);
@@ -192,21 +192,21 @@ public final /* synthetic */ class y1 implements View.OnClickListener {
                 textView.setTypeface(org.telegram.messenger.g0.o());
                 textView.setGravity(17);
                 org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.j5, f6Var);
-                jg.g.v(textView, 1, 20.0f, null, 2131744507);
+                jg.g.v(textView, 1, 20.0f, null, 2131744509);
                 linearLayout.addView(textView, ha.t(-1, -2, 1, 12, 0, 12, 0));
                 TextView textView2 = new TextView(i4Var.getContext());
                 textView2.setGravity(17);
                 org.telegram.ui.ActionBar.r6.V(textView2, org.telegram.ui.ActionBar.k6.r5, f6Var);
                 textView2.setTextSize(1, 14.0f);
-                textView2.setText(org.telegram.messenger.g0.X2(hd.M0(2131744506, null)));
+                textView2.setText(org.telegram.messenger.g0.X2(id.M0(2131744508, null)));
                 linearLayout.addView(textView2, ha.t(-1, -2, 1, 32, 9, 32, 19));
                 fi.d dVar = new fi.d(i4Var.getContext(), f6Var, true);
-                dVar.i(hd.M0(2131744510, null), false, true);
+                dVar.i(id.M0(2131744512, null), false, true);
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("l");
                 wp wpVar = new wp(R.drawable.mini_switch_lock, 0);
                 wpVar.n = 1;
                 spannableStringBuilder.setSpan(wpVar, 0, 1, 33);
-                dVar.g(new SpannableStringBuilder().append((CharSequence) spannableStringBuilder).append((CharSequence) hd.M0(2131747770, null)), false);
+                dVar.g(new SpannableStringBuilder().append((CharSequence) spannableStringBuilder).append((CharSequence) id.M0(2131747772, null)), false);
                 linearLayout.addView(dVar, ha.r(-1, 48, 1));
                 dVar.setOnClickListener(new bi.r(11, i4Var, v2Var));
                 v2Var.N = linearLayout;

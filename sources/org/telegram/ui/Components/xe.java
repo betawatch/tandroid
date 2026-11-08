@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class xe extends vf {
     public boolean a2;
@@ -28,7 +28,7 @@ public final class xe extends vf {
         this.a2 = true;
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ct, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.dt, android.widget.TextView, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         ChatActivityEnterView chatActivityEnterView = this.e2;
@@ -45,7 +45,7 @@ public final class xe extends vf {
         }
     }
 
-    @Override // org.telegram.ui.Components.ys, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ct, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.zs, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.dt, android.widget.TextView, android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (getLayout() == null || !this.a2) {
@@ -55,7 +55,7 @@ public final class xe extends vf {
         this.e2.E(true);
     }
 
-    @Override // org.telegram.ui.Components.vf, org.telegram.ui.Components.ys, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.vf, org.telegram.ui.Components.zs, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
     public final void onMeasure(int i7, int i10) {
         super.onMeasure(i7, i10);
         ChatActivityEnterView chatActivityEnterView = this.e2;
@@ -69,7 +69,7 @@ public final class xe extends vf {
         }
     }
 
-    @Override // org.telegram.ui.Components.vf, org.telegram.ui.Components.ys, android.widget.EditText, android.widget.TextView
+    @Override // org.telegram.ui.Components.vf, org.telegram.ui.Components.zs, android.widget.EditText, android.widget.TextView
     public final boolean onTextContextMenuItem(int i7) {
         if (i7 == 16908322) {
             ChatActivityEnterView chatActivityEnterView = this.e2;
@@ -158,7 +158,7 @@ public final class xe extends vf {
         return this.d2;
     }
 
-    @Override // org.telegram.ui.Components.vf, org.telegram.ui.Components.ct
+    @Override // org.telegram.ui.Components.vf, org.telegram.ui.Components.dt
     public final void setOffsetY(float f10) {
         super.setOffsetY(f10);
         this.e2.y1.invalidate();

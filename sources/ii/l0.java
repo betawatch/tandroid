@@ -10,7 +10,7 @@ import bi.kd;
 import bi.r3;
 import fi.ob;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.q9;
@@ -34,7 +34,7 @@ import org.telegram.ui.Components.w70;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.z8;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class l0 implements ji.e {
     public final Context a;
@@ -152,7 +152,7 @@ public final class l0 implements ji.e {
         if (this.q == null && this.r == 0) {
             int i7 = 0;
             if (z10) {
-                u1 M = v4.M(this.a, this.b, hd.M0(z9 ? 2131751983 : 2131751935, null), org.telegram.messenger.g0.X2(hd.G(this.l, z9 ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", new Object[0])), hd.M0(z9 ? 2131754486 : 2131751605, null), new k1(11, this, z9));
+                u1 M = v4.M(this.a, this.b, id.M0(z9 ? 2131751983 : 2131751935, null), org.telegram.messenger.g0.X2(id.G(this.l, z9 ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", new Object[0])), id.M0(z9 ? 2131754486 : 2131751605, null), new k1(11, this, z9));
                 M.show();
                 if (z9 || (textView = (TextView) M.d(-1)) == null) {
                     return;
@@ -190,7 +190,7 @@ public final class l0 implements ji.e {
         }
         int i10 = z9 ? 2131751880 : 2131751879;
         int i11 = this.d;
-        SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(hd.a0(null, null, i10, m5.s(i11, j3)));
+        SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(id.a0(null, null, i10, m5.s(i11, j3)));
         kd kdVar = this.i;
         if (kdVar != null) {
             kdVar.run();
@@ -219,17 +219,17 @@ public final class l0 implements ji.e {
         w70Var.setText(X2);
         if (w70Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
             int L = org.telegram.messenger.g0.L(74 - ((3 - i7) * 12));
-            if (hd.a0) {
+            if (id.a0) {
                 ((ViewGroup.MarginLayoutParams) w70Var.getLayoutParams()).rightMargin = L;
             } else {
                 ((ViewGroup.MarginLayoutParams) w70Var.getLayoutParams()).leftMargin = L;
             }
         }
-        if (hd.a0) {
+        if (id.a0) {
             z8Var.setTranslationX(org.telegram.messenger.g0.L(32 - ((i7 - 1) * 12)));
         }
         ac acVar = new ac(context, f6Var, true, true);
-        acVar.e(hd.M0(2131743886, null));
+        acVar.e(id.M0(2131743888, null));
         acVar.b = new r3(this, j3, 11);
         acVar.c = this.i;
         bcVar.setButton(acVar);

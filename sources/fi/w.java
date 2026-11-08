@@ -11,7 +11,7 @@ import org.telegram.ui.Components.xi0;
 import org.telegram.ui.ag0;
 import org.telegram.ui.bg0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class w extends v4.g0 {
     public final /* synthetic */ int c;
@@ -55,14 +55,14 @@ public final class w extends v4.g0 {
                 dj k10 = bg0Var.k(ijVar);
                 int i10 = 0;
                 q1Var.setInvalidatesParent(k10 != null);
-                q1Var.v3(ijVar, k10, false, false, false, false);
+                q1Var.w3(ijVar, k10, false, false, false, false);
                 if (!bg0Var.O.i() && arrayList.size() >= 10) {
                     i10 = arrayList.size() % 10;
                 }
                 if (i7 == i10 && !ijVar.o5()) {
                     bg0Var.P = q1Var;
                     Point point = org.telegram.messenger.g0.q;
-                    q1Var.x3(point.x, point.y);
+                    q1Var.y3(point.x, point.y);
                     bg0Var.Q = ijVar.f1();
                     break;
                 }

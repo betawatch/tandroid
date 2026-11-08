@@ -4,7 +4,7 @@ import android.text.SpannableStringBuilder;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -26,10 +26,10 @@ public final /* synthetic */ class d implements Runnable {
                 zVar.a0.setEnabled(zVar.Y > 0 || zVar.P > currentTime);
                 if (currentTime >= zVar.P) {
                     zVar.a0.g(null, true);
-                    zVar.a0.i(dd.Y0(false, zVar.X ? org.telegram.messenger.hd.M0(2131752969, null) : org.telegram.messenger.hd.H(' ', "BotStarsButtonWithdrawShort", (int) zVar.Y), zVar.c0), true, true);
+                    zVar.a0.i(dd.Y0(false, zVar.X ? org.telegram.messenger.id.M0(2131752969, null) : org.telegram.messenger.id.H(' ', "BotStarsButtonWithdrawShort", (int) zVar.Y), zVar.c0), true, true);
                     break;
                 } else {
-                    zVar.a0.i(org.telegram.messenger.hd.M0(2131752968, null), true, true);
+                    zVar.a0.i(org.telegram.messenger.id.M0(2131752968, null), true, true);
                     if (zVar.r0 == null) {
                         zVar.r0 = new SpannableStringBuilder("l");
                         wp wpVar = new wp(R.drawable.mini_switch_lock, 0);
@@ -55,16 +55,16 @@ public final /* synthetic */ class d implements Runnable {
                 z.b0(zVar);
                 break;
             case 2:
-                vf.c.t(zVar.getParentActivity(), org.telegram.messenger.hd.M0(2131752956, null));
+                vf.c.t(zVar.getParentActivity(), org.telegram.messenger.id.M0(2131752956, null));
                 break;
             case 3:
                 z.Z(zVar);
                 break;
             case 4:
-                vf.c.t(zVar.getParentActivity(), org.telegram.messenger.hd.M0(2131753029, null));
+                vf.c.t(zVar.getParentActivity(), org.telegram.messenger.id.M0(2131753029, null));
                 break;
             case 5:
-                vf.c.t(zVar.getParentActivity(), org.telegram.messenger.hd.M0(2131753049, null));
+                vf.c.t(zVar.getParentActivity(), org.telegram.messenger.id.M0(2131753049, null));
                 break;
             default:
                 zVar.b0.setLoading(false);

@@ -16,7 +16,7 @@ import android.widget.FrameLayout;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class qh extends rt0 {
     public int f0;
@@ -200,7 +200,7 @@ public final class qh extends rt0 {
         r7 r7Var = diVar.R2;
         if (!(view instanceof vh) || view.getAlpha() <= 0.0f) {
             if (view != r7Var) {
-                if (!(view instanceof gy) || gVar == null) {
+                if (!(view instanceof hy) || gVar == null) {
                     return super.drawChild(canvas, view, j3);
                 }
                 canvas.save();

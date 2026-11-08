@@ -18,7 +18,7 @@ import hi.v3;
 import java.nio.charset.Charset;
 import kotlin.jvm.internal.j;
 import org.telegram.messenger.b20;
-import org.telegram.messenger.rc;
+import org.telegram.messenger.sc;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
@@ -26,7 +26,7 @@ import org.telegram.ui.Components.jt0;
 import org.telegram.ui.Components.kt0;
 import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements k, l5.e, u9.d, gh.d, b20, jt0, kt0 {
     public final /* synthetic */ int a;
@@ -109,20 +109,20 @@ public final /* synthetic */ class c implements k, l5.e, u9.d, gh.d, b20, jt0, k
     public int k(f6 f6Var, boolean z9) {
         switch (this.a) {
             case 6:
-                return z9 ? k6.r1(0.9f, -15658735) : g0.n(rc.e(262144) ? 0.82f : 0.76f, k6.w0(k6.d6, f6Var), -14145496);
+                return z9 ? k6.r1(0.9f, -15658735) : g0.n(sc.e(262144) ? 0.82f : 0.76f, k6.w0(k6.d6, f6Var), -14145496);
             case 7:
-                if (!rc.e(256)) {
+                if (!sc.e(256)) {
                     return k6.x0(null, k6.G8, false);
                 }
                 return k6.r1(z9 ? 0.85f : 0.825f, k6.x0(null, k6.G8, false));
             case 8:
-                return g0.n(rc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.d6, f6Var), k6.w0(k6.Nl, f6Var));
+                return g0.n(sc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.d6, f6Var), k6.w0(k6.Nl, f6Var));
             case 9:
-                return k6.r1(rc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.tj, f6Var));
+                return k6.r1(sc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.tj, f6Var));
             case 10:
-                return g0.n(rc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.d6, f6Var), k6.w0(k6.Ge, f6Var));
+                return g0.n(sc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.d6, f6Var), k6.w0(k6.Ge, f6Var));
             case 11:
-                return g0.n(rc.e(262144) ? 0.85f : 0.8f, k6.w0(k6.a7, f6Var), k6.w0(k6.d6, f6Var));
+                return g0.n(sc.e(262144) ? 0.85f : 0.8f, k6.w0(k6.a7, f6Var), k6.w0(k6.d6, f6Var));
             case 12:
                 return 855638016;
             case 13:
@@ -136,18 +136,18 @@ public final /* synthetic */ class c implements k, l5.e, u9.d, gh.d, b20, jt0, k
             case 17:
                 return k6.r1(0.88f, k6.w0(k6.d6, f6Var));
             case 18:
-                return g0.n(rc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.d6, f6Var), k6.w0(k6.Ml, f6Var));
+                return g0.n(sc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.d6, f6Var), k6.w0(k6.Ml, f6Var));
             case 19:
-                return k6.r1(rc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.d6, f6Var));
+                return k6.r1(sc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.d6, f6Var));
             case 20:
                 return k6.r1(0.78f, k6.w0(k6.h5, f6Var));
             case 21:
                 return k6.r1(0.7f, k6.w0(k6.d6, f6Var));
             case 22:
-                rc.e(262144);
+                sc.e(262144);
                 return 0;
             default:
-                return k6.r1(rc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.d6, f6Var));
+                return k6.r1(sc.e(262144) ? 0.85f : 0.76f, k6.w0(k6.d6, f6Var));
         }
     }
 

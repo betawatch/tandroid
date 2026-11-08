@@ -7,12 +7,12 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import c8.ha;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.Components.v50;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.va;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class b3 extends FrameLayout {
     public final i1 a;
@@ -159,7 +159,7 @@ public final class b3 extends FrameLayout {
                 this.b.a(i7, z9, (this.c == 0 || z10) ? false : true);
             }
             int c11 = p1.g.c(i7);
-            M0 = c11 == 0 ? c11 != 1 ? c11 != 2 ? c11 != 3 ? c11 != 4 ? "" : hd.M0(2131743240, null) : hd.M0(2131743504, null) : z9 ? hd.M0(2131743239, null) : hd.M0(2131743238, null) : hd.M0(2131743407, null) : z9 ? hd.M0(2131743231, null) : hd.M0(2131743294, null);
+            M0 = c11 == 0 ? c11 != 1 ? c11 != 2 ? c11 != 3 ? c11 != 4 ? "" : id.M0(2131743242, null) : id.M0(2131743506, null) : z9 ? id.M0(2131743241, null) : id.M0(2131743240, null) : id.M0(2131743409, null) : z9 ? id.M0(2131743233, null) : id.M0(2131743296, null);
             setContentDescription(M0);
             textView = this.d;
             visibility = textView.getVisibility();

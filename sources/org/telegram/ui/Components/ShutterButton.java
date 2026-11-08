@@ -14,7 +14,7 @@ import android.widget.FrameLayout;
 import java.io.File;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class ShutterButton extends View {
     public Drawable a;
@@ -28,7 +28,7 @@ public class ShutterButton extends View {
     public long r;
     public long s;
     public boolean w;
-    public dt x;
+    public et x;
 
     private void setHighlighted(boolean z9) {
         AnimatorSet animatorSet = new AnimatorSet();
@@ -115,8 +115,8 @@ public class ShutterButton extends View {
         accessibilityNodeInfo.setClassName("android.widget.Button");
         accessibilityNodeInfo.setClickable(true);
         accessibilityNodeInfo.setLongClickable(true);
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK.getId(), org.telegram.messenger.hd.M0(2131754926, null)));
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_LONG_CLICK.getId(), org.telegram.messenger.hd.M0(2131754928, null)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK.getId(), org.telegram.messenger.id.M0(2131754926, null)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_LONG_CLICK.getId(), org.telegram.messenger.id.M0(2131754928, null)));
     }
 
     @Override // android.view.View
@@ -137,12 +137,12 @@ public class ShutterButton extends View {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        dt dtVar = this.x;
+        et etVar = this.x;
         float x10 = motionEvent.getX();
         float y10 = motionEvent.getY();
         int action = motionEvent.getAction();
         if (action == 0) {
-            org.telegram.messenger.g0.i3(dtVar, 800L);
+            org.telegram.messenger.g0.i3(etVar, 800L);
             this.h = true;
             this.w = true;
             setHighlighted(true);
@@ -150,7 +150,7 @@ public class ShutterButton extends View {
         }
         if (action == 1) {
             setHighlighted(false);
-            org.telegram.messenger.g0.r(dtVar);
+            org.telegram.messenger.g0.r(etVar);
             if (this.w) {
                 ((hl) this.e).a();
             }
@@ -185,7 +185,7 @@ public class ShutterButton extends View {
                 if (!hlVar.b) {
                     if (x10 == 0.0f) {
                     }
-                    org.telegram.messenger.g0.r(dtVar);
+                    org.telegram.messenger.g0.r(etVar);
                     if (this.f == ct0.b) {
                         this.w = false;
                         setHighlighted(false);

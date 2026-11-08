@@ -12,7 +12,7 @@ import java.util.Locale;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class sd extends c1 implements ls, pa, qa {
     public static volatile sd[] O = new sd[4];
@@ -77,8 +77,8 @@ public final class sd extends c1 implements ls, pa, qa {
         }
         locationRequest.b = 1000L;
         locationRequest.c = 1000L;
-        g0.h3(new id(this, 5));
-        getMessagesStorage().a.c(new id(this, 0));
+        g0.h3(new jd(this, 5));
+        getMessagesStorage().a.c(new jd(this, 0));
     }
 
     public static String b(String str) {
@@ -132,16 +132,16 @@ public final class sd extends c1 implements ls, pa, qa {
             return;
         }
         try {
-            locale = hd.E0().y;
+            locale = id.E0().y;
         } catch (Exception unused) {
-            locale = hd.E0().z;
+            locale = id.E0().z;
         }
         Locale locale2 = locale;
         Locale locale3 = locale2.getLanguage().contains("en") ? locale2 : Locale.US;
         p5 p5Var = Utilities.e;
-        ck ckVar = new ck(locale2, location, i7, locale3, r0Var, 1);
-        p5Var.d(ckVar, 300L);
-        Q.put(r0Var, ckVar);
+        bk bkVar = new bk(locale2, location, i7, locale3, r0Var, 1);
+        p5Var.d(bkVar, 300L);
+        Q.put(r0Var, bkVar);
     }
 
     public static int e(Location location) {
@@ -460,7 +460,7 @@ public final class sd extends c1 implements ls, pa, qa {
                         i7 = com.google.android.recaptcha.internal.a.f(((TLRPC.Message) arrayList.get(i7)).id, i7, 1, tL_messages_readMessageContents.id);
                     }
                     tL_messages_readMessageContents.channel = getMessagesController().h1(j10);
-                    getConnectionsManager().sendRequest(tL_messages_readMessageContents, new jd(this, 2));
+                    getConnectionsManager().sendRequest(tL_messages_readMessageContents, new kd(this, 2));
                 }
             }
             tL_messages_readMessageContents = new TLRPC.TL_messages_readMessageContents();
@@ -468,23 +468,23 @@ public final class sd extends c1 implements ls, pa, qa {
             while (i7 < size2) {
                 i7 = com.google.android.recaptcha.internal.a.f(((TLRPC.Message) arrayList.get(i7)).id, i7, 1, tL_messages_readMessageContents.id);
             }
-            getConnectionsManager().sendRequest(tL_messages_readMessageContents, new jd(this, 2));
+            getConnectionsManager().sendRequest(tL_messages_readMessageContents, new kd(this, 2));
         }
     }
 
     public final void k(long j3) {
-        Utilities.d.c(new od(this, j3, 0));
+        Utilities.d.c(new pd(this, j3, 0));
     }
 
     public final void l(rd rdVar, int i7) {
-        getMessagesStorage().a.c(new k7(this, i7, rdVar, 5));
+        getMessagesStorage().a.c(new l7(this, i7, rdVar, 5));
     }
 
     public final void m(Location location) {
         if (location == null || (SystemClock.elapsedRealtimeNanos() - location.getElapsedRealtimeNanos()) / 1000000000 <= 300) {
             this.s = location;
             if (location != null) {
-                g0.h3(new pd(0));
+                g0.h3(new rc(2));
             }
         }
     }
@@ -512,7 +512,7 @@ public final class sd extends c1 implements ls, pa, qa {
         }
         getMessagesStorage().a.c(new bi.ia(this, i7, j3, 2));
         if (z9) {
-            Utilities.d.c(new id(this, 3));
+            Utilities.d.c(new jd(this, 3));
         }
     }
 
@@ -598,7 +598,7 @@ public final class sd extends c1 implements ls, pa, qa {
                     arrayList.remove(i7);
                     this.a.l(rdVar.a);
                     l(rdVar, 1);
-                    g0.h3(new kd(this, rdVar, 2));
+                    g0.h3(new ld(this, rdVar, 2));
                     i7--;
                     z9 = true;
                 }

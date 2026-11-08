@@ -5,16 +5,16 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.messenger.fp;
 import org.telegram.messenger.p10;
-import org.telegram.ui.Components.e10;
-import org.telegram.ui.Components.nt;
+import org.telegram.ui.Components.f10;
+import org.telegram.ui.Components.ot;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class p7 {
     public final int a;
-    public final nt b;
-    public final e10 c;
+    public final ot b;
+    public final f10 c;
     public int d;
     public int e;
     public final org.telegram.ui.Components.z4 f;
@@ -24,20 +24,20 @@ public final class p7 {
     public int j;
 
     public p7(View view) {
-        nt ntVar = new nt(1, view);
+        ot otVar = new ot(1, view);
         this.a = p10.s0;
-        this.b = ntVar;
+        this.b = otVar;
         xq xqVar = xq.h;
-        this.f = new org.telegram.ui.Components.z4(ntVar, 350L, xqVar);
-        this.g = new org.telegram.ui.Components.z4(ntVar, 350L, xqVar);
-        e10 e10Var = new e10();
-        this.c = e10Var;
-        e10Var.a = true;
-        e10Var.b = true;
+        this.f = new org.telegram.ui.Components.z4(otVar, 350L, xqVar);
+        this.g = new org.telegram.ui.Components.z4(otVar, 350L, xqVar);
+        f10 f10Var = new f10();
+        this.c = f10Var;
+        f10Var.a = true;
+        f10Var.b = true;
         b(false);
-        e10Var.c.setStrokeWidth(org.telegram.messenger.g0.N(2.0f));
-        e10Var.c.setStyle(Paint.Style.STROKE);
-        e10Var.c.setStrokeCap(Paint.Cap.ROUND);
+        f10Var.c.setStrokeWidth(org.telegram.messenger.g0.N(2.0f));
+        f10Var.c.setStyle(Paint.Style.STROKE);
+        f10Var.c.setStrokeCap(Paint.Cap.ROUND);
     }
 
     public final Paint a(RectF rectF) {
@@ -72,10 +72,10 @@ public final class p7 {
         }
         int a10 = z4Var2.a(this.d, false);
         int a11 = z4Var.a(this.e, false);
-        e10 e10Var = this.c;
-        e10Var.d(a10, a11, 0, 0);
-        e10Var.b(rectF.left, rectF.top, rectF.right, rectF.bottom);
-        return e10Var.c;
+        f10 f10Var = this.c;
+        f10Var.d(a10, a11, 0, 0);
+        f10Var.b(rectF.left, rectF.top, rectF.right, rectF.bottom);
+        return f10Var.c;
     }
 
     public final void b(boolean z9) {
@@ -103,9 +103,9 @@ public final class p7 {
             this.f.a(i7, true);
             this.g.a(i10, true);
         }
-        nt ntVar = this.b;
-        if (ntVar != null) {
-            ntVar.run();
+        ot otVar = this.b;
+        if (otVar != null) {
+            otVar.run();
         }
     }
 }

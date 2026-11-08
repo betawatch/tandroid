@@ -8,7 +8,7 @@ import org.telegram.messenger.we;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.xy0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class s extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -225,12 +225,12 @@ public final class s extends org.telegram.ui.ActionBar.j {
                     if (i7 != 1) {
                         if (i7 == 2) {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, q1Var.getParentActivity(), q1Var.getResourceProvider());
-                            String G = org.telegram.messenger.hd.G(arrayList.size(), "BusinessRepliesDeleteTitle", new Object[0]);
+                            String G = org.telegram.messenger.id.G(arrayList.size(), "BusinessRepliesDeleteTitle", new Object[0]);
                             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                             u1Var.R = G;
-                            u1Var.T = org.telegram.messenger.hd.G(arrayList.size(), "BusinessRepliesDeleteMessage", new Object[0]);
-                            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131746320, null), new di.q4(this, 26));
-                            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+                            u1Var.T = org.telegram.messenger.id.G(arrayList.size(), "BusinessRepliesDeleteMessage", new Object[0]);
+                            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131746322, null), new di.q4(this, 26));
+                            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
                             q1Var.showDialog(u1Var);
                             break;
                         }

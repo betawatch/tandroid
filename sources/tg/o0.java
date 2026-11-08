@@ -14,7 +14,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import c8.ha;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.q5;
 import org.telegram.messenger.ye;
 import org.telegram.tgnet.TLObject;
@@ -23,10 +23,10 @@ import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.mt0;
-import org.telegram.ui.Components.qt;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.rt;
+import org.telegram.ui.Components.vy;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class o0 extends FrameLayout {
     public boolean D;
@@ -52,7 +52,7 @@ public abstract class o0 extends FrameLayout {
 
     public o0(Context context, int i7, Bitmap bitmap, Bitmap bitmap2, int i10, ye yeVar) {
         super(context);
-        uy uyVar = new uy(this, 20);
+        vy vyVar = new vy(this, 20);
         this.I = new ArrayList();
         this.J = new Rect();
         this.a = i7;
@@ -70,20 +70,20 @@ public abstract class o0 extends FrameLayout {
         sg.w0 w0Var = new sg.w0(context, j0Var, bitmap, null, null);
         this.e = w0Var;
         w0Var.setAlpha(0.0f);
-        w0Var.setDelegate(new qt(this, 17));
+        w0Var.setDelegate(new rt(this, 17));
         w0Var.setUndoStore(m1Var);
         w0Var.setQueue(q5Var);
         w0Var.setVisibility(4);
         w0Var.setBrush(new sg.f());
-        w0Var.setBrushSize(uyVar.get());
+        w0Var.setBrushSize(vyVar.get());
         w0Var.setColor(-65536);
         addView(w0Var, ha.e(-1, -1, 51));
         m1 m1Var2 = new m1(context);
         this.x = m1Var2;
         m1Var2.b(0.05f, 1.0f);
-        m1Var2.setBrushWeight(uyVar.get());
+        m1Var2.setBrushWeight(vyVar.get());
         m1Var2.setRenderView(w0Var);
-        m1Var2.setValueOverride(uyVar);
+        m1Var2.setValueOverride(vyVar);
         m1Var2.setTranslationX(-org.telegram.messenger.g0.L(18.0f));
         m1Var2.setAlpha(0.0f);
         addView(m1Var2, ha.c(-1.0f, -1));
@@ -98,7 +98,7 @@ public abstract class o0 extends FrameLayout {
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setBackground(k6.h0(k6.r1(0.15f, -1), 3, -1));
         textView.setPadding(org.telegram.messenger.g0.L(28.0f), 0, org.telegram.messenger.g0.L(28.0f), 0);
-        textView.setText(hd.M0(2131752589, null).toUpperCase());
+        textView.setText(id.M0(2131752589, null).toUpperCase());
         textView.setTextColor(-1);
         textView.setGravity(17);
         TextView i11 = org.telegram.ui.Cells.f1.i(frameLayout, textView, ha.d(-2, 44.0f, 3, -8.0f, 0.0f, 0.0f, 0.0f), context);
@@ -110,7 +110,7 @@ public abstract class o0 extends FrameLayout {
         i11.setBackground(h02);
         r6.k(i11, h02, null, L, null);
         i11.setPadding(org.telegram.messenger.g0.L(28.0f), 0, org.telegram.messenger.g0.L(28.0f), 0);
-        i11.setText(hd.M0(2131745947, null).toUpperCase());
+        i11.setText(id.M0(2131745949, null).toUpperCase());
         r6.V(i11, i12, null);
         i11.setGravity(17);
         frameLayout.addView(i11, ha.d(-2, 44.0f, 5, 0.0f, 0.0f, -8.0f, 0.0f));

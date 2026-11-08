@@ -9,7 +9,6 @@ import android.graphics.RectF;
 import android.os.Build;
 import android.os.CancellationSignal;
 import android.os.Trace;
-import android.text.SpannableString;
 import android.text.TextUtils;
 import android.view.View;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
@@ -50,7 +49,6 @@ import java.util.Map;
 import java.util.concurrent.Executor;
 import jg.i1;
 import kg.a1;
-import l2.z0;
 import li.a3;
 import li.e6;
 import li.g1;
@@ -59,7 +57,7 @@ import li.p5;
 import li.t3;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.CameraView;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -84,18 +82,18 @@ import org.telegram.ui.Components.cj0;
 import org.telegram.ui.Components.dj0;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.ws;
+import org.telegram.ui.Components.xs;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.d10;
 import org.telegram.ui.ha0;
-import org.telegram.ui.la1;
 import org.telegram.ui.ma0;
+import org.telegram.ui.ma1;
 import org.telegram.ui.pa0;
 import org.telegram.ui.r01;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g implements OnCompleteListener, Continuation, CameraView.CameraViewDelegate, la1, r1, OnFailureListener, u9.d, r01, jh.i, y7, cj0, dj0, y10, ma0, li.m0, ws, g4, h2.p, h2.o, ni.p {
+public final /* synthetic */ class g implements OnCompleteListener, Continuation, CameraView.CameraViewDelegate, ma1, r1, OnFailureListener, u9.d, r01, jh.i, y7, cj0, dj0, y10, ma0, li.m0, xs, g4, h2.p, h2.o {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -307,7 +305,7 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                         TLRPC.InputPeer inputPeer = s8Var.j1;
                         long n10 = inputPeer != null ? m5.n(inputPeer) : p10.i(s8Var.a).e();
                         k60 F = k60.F(n8Var, s8Var.I0, view);
-                        F.c(R.drawable.msg_addfolder, hd.M0(2131744786, null), new r3(n8Var, n10, i11), false);
+                        F.c(R.drawable.msg_addfolder, id.M0(2131744788, null), new r3(n8Var, n10, i11), false);
                         F.k();
                         k60.f(F, qp.s1(s8Var.a).P1().B(n10, true), s8Var.r1, false, null, new f1(12, n8Var, F));
                         F.Z();
@@ -347,12 +345,12 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                     s8Var.t1 = d;
                     r13 = s8Var.E1 == 4 ? 1 : 0;
                     if (d) {
-                        cc G = new hc(l2Var, s8Var.I0).G(R.raw.ic_save_to_gallery, 4, hd.M0(r13 != 0 ? 2131744670 : 2131744671, null));
+                        cc G = new hc(l2Var, s8Var.I0).G(R.raw.ic_save_to_gallery, 4, id.M0(r13 != 0 ? 2131744672 : 2131744673, null));
                         G.j = 5000;
                         G.k(true);
                         return;
                     } else {
-                        cc G2 = new hc(l2Var, s8Var.I0).G(R.raw.passcode_lock_close, 4, hd.M0(r13 != 0 ? 2131744684 : 2131744685, null));
+                        cc G2 = new hc(l2Var, s8Var.I0).G(R.raw.passcode_lock_close, 4, id.M0(r13 != 0 ? 2131744686 : 2131744687, null));
                         G2.j = 5000;
                         G2.k(true);
                         return;
@@ -370,11 +368,11 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                 s8Var.u1 = d2;
                 boolean z10 = s8Var.j1 instanceof TLRPC.TL_inputPeerChannel;
                 if (d2) {
-                    cc G3 = new hc(l2Var, s8Var.I0).G(R.raw.msg_story_keep, 4, hd.M0(z10 ? 2131744708 : 2131744672, null));
+                    cc G3 = new hc(l2Var, s8Var.I0).G(R.raw.msg_story_keep, 4, id.M0(z10 ? 2131744710 : 2131744674, null));
                     G3.j = 5000;
                     G3.k(true);
                 } else {
-                    cc G4 = new hc(l2Var, s8Var.I0).G(R.raw.fire_on, 4, hd.M0(z10 ? 2131744709 : 2131744686, null));
+                    cc G4 = new hc(l2Var, s8Var.I0).G(R.raw.fire_on, 4, id.M0(z10 ? 2131744711 : 2131744688, null));
                     G4.j = 5000;
                     G4.k(true);
                 }
@@ -434,11 +432,11 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                     } catch (Throwable unused) {
                     }
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, n8Var.getContext(), s8Var.I0);
-                    String M0 = hd.M0(2131749393, null);
+                    String M0 = id.M0(2131749395, null);
                     u1 u1Var2 = alertDialog$Builder.a;
                     u1Var2.R = M0;
-                    u1Var2.T = hd.M0(2131749392, null);
-                    jg.g.C(null, 2131747830, alertDialog$Builder, null);
+                    u1Var2.T = id.M0(2131749394, null);
+                    jg.g.C(null, 2131747832, alertDialog$Builder, null);
                 } else if (hashMap.containsKey(Long.valueOf(j3))) {
                     ArrayList arrayList4 = (ArrayList) hashMap.get(Long.valueOf(j3));
                     if (arrayList4 != null) {
@@ -552,7 +550,7 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                 h.d();
                 int i10 = k7Var.a;
                 e4 e4Var = new e4(k7Var, h, f1Var, 1);
-                org.telegram.ui.Wallet.n0 x10 = org.telegram.ui.Wallet.n0.x(i10);
+                org.telegram.ui.Wallet.m0 x10 = org.telegram.ui.Wallet.m0.x(i10);
                 x10.m0(new d10(i10, e4Var, x10));
                 break;
             case 13:
@@ -591,9 +589,17 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
         bVar.E((c1) this.c, new wf.b(sVar, ((m2.e) this.b).e));
     }
 
-    @Override // ni.p
-    public void i(j2.n nVar) {
-        org.telegram.messenger.g0.h3(new z0((SpannableString) this.b, nVar, (org.telegram.ui.ActionBar.p) this.c, 11));
+    @Override // org.telegram.messenger.y10
+    public void i(Object obj, TLRPC.Document document, Boolean bool) {
+        kg.m mVar = (kg.m) this.b;
+        View view = (View) this.c;
+        mVar.x = false;
+        org.telegram.messenger.g0.r(mVar.e);
+        kg.i iVar = mVar.n;
+        mVar.y = document;
+        iVar.setSticker(document);
+        ((m8) view).setValueSticker(document);
+        mVar.j0(true);
     }
 
     @Override // h2.o
@@ -608,26 +614,13 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
         }
     }
 
-    @Override // org.telegram.ui.la1
+    @Override // org.telegram.ui.ma1
     public void j(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         ((bi.z) this.b).u0(false, 0L, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.c);
     }
 
-    @Override // org.telegram.messenger.y10
-    public void k(Object obj, TLRPC.Document document, Boolean bool) {
-        kg.m mVar = (kg.m) this.b;
-        View view = (View) this.c;
-        mVar.x = false;
-        org.telegram.messenger.g0.r(mVar.e);
-        kg.i iVar = mVar.n;
-        mVar.y = document;
-        iVar.setSticker(document);
-        ((m8) view).setValueSticker(document);
-        mVar.j0(true);
-    }
-
     @Override // fi.y7
-    public void l(q8 q8Var, boolean z9, boolean z10, boolean z11, boolean z12, TLRPC.InputPeer inputPeer, int i7, f2.h hVar, s7 s7Var) {
+    public void k(q8 q8Var, boolean z9, boolean z10, boolean z11, boolean z12, TLRPC.InputPeer inputPeer, int i7, f2.h hVar, s7 s7Var) {
         switch (this.a) {
             case 11:
                 i4 i4Var = (i4) this.b;
@@ -665,7 +658,7 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
         }
     }
 
-    @Override // org.telegram.ui.Components.ws
+    @Override // org.telegram.ui.Components.xs
     public void m() {
         switch (this.a) {
             case 23:

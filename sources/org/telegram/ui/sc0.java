@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class sc0 extends org.telegram.ui.Components.wt0 {
     public GoogleSignInAccount D;
@@ -65,7 +65,7 @@ public final class sc0 extends org.telegram.ui.Components.wt0 {
                 this.c = textView;
                 com.google.android.recaptcha.internal.a.q(textView, 1, 18.0f);
                 int i10 = 3;
-                textView.setText(org.telegram.messenger.hd.M0(ce0Var.F != 3 ? 2131751121 : 2131754441, null));
+                textView.setText(org.telegram.messenger.id.M0(ce0Var.F != 3 ? 2131751121 : 2131754441, null));
                 textView.setGravity(17);
                 textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
                 addView(textView, c8.ha.d(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
@@ -74,11 +74,11 @@ public final class sc0 extends org.telegram.ui.Components.wt0 {
                 w70Var.setTextSize(1, 14.0f);
                 w70Var.setGravity(17);
                 w70Var.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
-                w70Var.setText(org.telegram.messenger.hd.M0(2131754442, null));
+                w70Var.setText(org.telegram.messenger.id.M0(2131754442, null));
                 addView(w70Var, c8.ha.t(-2, -2, 1, 32, 8, 32, 0));
                 org.telegram.ui.Components.lb0 lb0Var = new org.telegram.ui.Components.lb0(context, null);
                 this.a = lb0Var;
-                lb0Var.setText(org.telegram.messenger.hd.M0(ce0Var.F != 3 ? 2131742808 : 2131742824, null));
+                lb0Var.setText(org.telegram.messenger.id.M0(ce0Var.F != 3 ? 2131742810 : 2131742826, null));
                 EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
                 this.b = editTextBoldCursor;
                 editTextBoldCursor.setCursorSize(org.telegram.messenger.g0.L(20.0f));
@@ -106,8 +106,8 @@ public final class sc0 extends org.telegram.ui.Components.wt0 {
                 Drawable drawable = context.getDrawable(R.drawable.googleg_standard_color_18);
                 drawable.setBounds(0, org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(27.0f));
                 spannableStringBuilder.setSpan(new ImageSpan(drawable, 0), 0, 1, 33);
-                spannableStringBuilder.setSpan(new org.telegram.ui.Components.hy(i10), 1, 2, 33);
-                spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.M0(2131745322, null));
+                spannableStringBuilder.setSpan(new org.telegram.ui.Components.iy(i10), 1, 2, 33);
+                spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.M0(2131745324, null));
                 textView2.setText(spannableStringBuilder);
                 org.telegram.ui.Components.d80 d80Var = new org.telegram.ui.Components.d80(context);
                 this.f = d80Var;
@@ -128,7 +128,7 @@ public final class sc0 extends org.telegram.ui.Components.wt0 {
         this.c = textView3;
         com.google.android.recaptcha.internal.a.q(textView3, 1, 18.0f);
         int i102 = 3;
-        textView3.setText(org.telegram.messenger.hd.M0(ce0Var.F != 3 ? 2131751121 : 2131754441, null));
+        textView3.setText(org.telegram.messenger.id.M0(ce0Var.F != 3 ? 2131751121 : 2131754441, null));
         textView3.setGravity(17);
         textView3.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         addView(textView3, c8.ha.d(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
@@ -137,11 +137,11 @@ public final class sc0 extends org.telegram.ui.Components.wt0 {
         w70Var2.setTextSize(1, 14.0f);
         w70Var2.setGravity(17);
         w70Var2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
-        w70Var2.setText(org.telegram.messenger.hd.M0(2131754442, null));
+        w70Var2.setText(org.telegram.messenger.id.M0(2131754442, null));
         addView(w70Var2, c8.ha.t(-2, -2, 1, 32, 8, 32, 0));
         org.telegram.ui.Components.lb0 lb0Var2 = new org.telegram.ui.Components.lb0(context, null);
         this.a = lb0Var2;
-        lb0Var2.setText(org.telegram.messenger.hd.M0(ce0Var.F != 3 ? 2131742808 : 2131742824, null));
+        lb0Var2.setText(org.telegram.messenger.id.M0(ce0Var.F != 3 ? 2131742810 : 2131742826, null));
         EditTextBoldCursor editTextBoldCursor2 = new EditTextBoldCursor(context);
         this.b = editTextBoldCursor2;
         editTextBoldCursor2.setCursorSize(org.telegram.messenger.g0.L(20.0f));
@@ -169,8 +169,8 @@ public final class sc0 extends org.telegram.ui.Components.wt0 {
         Drawable drawable2 = context.getDrawable(R.drawable.googleg_standard_color_18);
         drawable2.setBounds(0, org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(27.0f));
         spannableStringBuilder2.setSpan(new ImageSpan(drawable2, 0), 0, 1, 33);
-        spannableStringBuilder2.setSpan(new org.telegram.ui.Components.hy(i102), 1, 2, 33);
-        spannableStringBuilder2.append((CharSequence) org.telegram.messenger.hd.M0(2131745322, null));
+        spannableStringBuilder2.setSpan(new org.telegram.ui.Components.iy(i102), 1, 2, 33);
+        spannableStringBuilder2.append((CharSequence) org.telegram.messenger.id.M0(2131745324, null));
         textView22.setText(spannableStringBuilder2);
         org.telegram.ui.Components.d80 d80Var2 = new org.telegram.ui.Components.d80(context);
         this.f = d80Var2;
@@ -191,7 +191,7 @@ public final class sc0 extends org.telegram.ui.Components.wt0 {
 
     @Override // org.telegram.ui.Components.wt0
     public String getHeaderName() {
-        return org.telegram.messenger.hd.M0(2131754441, "AddEmailTitle");
+        return org.telegram.messenger.id.M0(2131754441, "AddEmailTitle");
     }
 
     @Override // org.telegram.ui.Components.wt0

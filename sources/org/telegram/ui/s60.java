@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s60 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class s60 implements Runnable {
                 String str = LaunchActivity.B1;
                 org.telegram.ui.Components.kb kbVar = new org.telegram.ui.Components.kb(launchActivity, null);
                 kbVar.d(R.raw.email_check_inbox, new String[0]);
-                kbVar.b.setText(org.telegram.messenger.hd.M0(2131742812, null));
+                kbVar.b.setText(org.telegram.messenger.id.M0(2131742814, null));
                 org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
                 if (Q != null) {
                     org.telegram.ui.Components.cc.g(Q, kbVar, 1500).j();
@@ -108,7 +108,7 @@ public final /* synthetic */ class s60 implements Runnable {
                     TLRPC.TL_theme tL_theme = launchActivity.S0;
                     org.telegram.ui.ActionBar.j6 v = org.telegram.ui.ActionBar.k6.v(file, tL_theme.title, tL_theme, true);
                     if (v != null) {
-                        launchActivity.t0(new u71(v, true, 0, false, false));
+                        launchActivity.t0(new v71(v, true, 0, false, false));
                     }
                     launchActivity.i0();
                     break;

@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class v21 extends na {
     public ImageView P1;
@@ -83,7 +83,7 @@ public final class v21 extends na {
             this.R1.setLoading(true);
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.M0(2131748778, null));
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.M0(2131748780, null));
         spannableStringBuilder.setSpan(new b80(null, org.telegram.messenger.g0.L(120.0f), 0, null), 0, spannableStringBuilder.length(), 33);
         this.U1 = spannableStringBuilder;
         this.T1 = true;

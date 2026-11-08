@@ -55,7 +55,7 @@ import org.telegram.ui.qe;
 import org.telegram.ui.qj0;
 import org.telegram.ui.ss;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r7 implements Runnable {
     public final /* synthetic */ int a;
@@ -78,8 +78,8 @@ public final /* synthetic */ class r7 implements Runnable {
         this.h = tL_error;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0147  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0149  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0145  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x0147  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -96,9 +96,8 @@ public final /* synthetic */ class r7 implements Runnable {
         int i13 = this.a;
         int i14 = 11;
         int i15 = 8;
-        int i16 = 21;
-        int i17 = 1;
-        int i18 = 0;
+        int i16 = 1;
+        int i17 = 0;
         Object obj = this.h;
         Object obj2 = this.f;
         Object obj3 = this.e;
@@ -120,13 +119,13 @@ public final /* synthetic */ class r7 implements Runnable {
                 f5.f fVar = (f5.f) obj;
                 Activity activity = (Activity) obj6;
                 if (list.isEmpty()) {
-                    org.telegram.messenger.g0.h3(new i8(mcVar, i18));
+                    org.telegram.messenger.g0.h3(new i8(mcVar, i17));
                     break;
                 } else {
                     f5.l lVar = (f5.l) list.get(0);
                     f5.h a10 = lVar.a();
                     if (a10 == null) {
-                        org.telegram.messenger.g0.h3(new i8(mcVar, i17));
+                        org.telegram.messenger.g0.h3(new i8(mcVar, i16));
                         break;
                     } else {
                         tL_inputStorePaymentStarsGift.currency = a10.c;
@@ -150,7 +149,7 @@ public final /* synthetic */ class r7 implements Runnable {
                     break;
                 } else {
                     c20Var.a(Boolean.FALSE);
-                    hcVar.Q(R.raw.error, 36, org.telegram.messenger.hd.a0(null, null, 2131743879, tL_error != null ? tL_error.text : "FAILED_GETTING_FORM")).j();
+                    hcVar.Q(R.raw.error, 36, org.telegram.messenger.id.a0(null, null, 2131743881, tL_error != null ? tL_error.text : "FAILED_GETTING_FORM")).j();
                     break;
                 }
             case 3:
@@ -249,7 +248,6 @@ public final /* synthetic */ class r7 implements Runnable {
                     bVar.d();
                     break;
                 }
-                break;
             case 6:
                 TLObject tLObject4 = (TLObject) obj4;
                 HashSet hashSet = (HashSet) obj3;
@@ -345,18 +343,18 @@ public final /* synthetic */ class r7 implements Runnable {
                         } else if (tL_error5.text.contains("PHONE_NUMBER_INVALID")) {
                             ce0.E1(ce0Var2, str7, mVar, false);
                         } else if (tL_error5.text.contains("PHONE_PASSWORD_FLOOD")) {
-                            ce0Var2.D1(org.telegram.messenger.hd.M0(2131746072, null), org.telegram.messenger.hd.M0(2131750688, "FloodWait"));
+                            ce0Var2.D1(org.telegram.messenger.id.M0(2131746074, null), org.telegram.messenger.id.M0(2131750688, "FloodWait"));
                         } else if (tL_error5.text.contains("PHONE_NUMBER_FLOOD")) {
-                            ce0Var2.D1(org.telegram.messenger.hd.M0(2131746072, null), org.telegram.messenger.hd.M0(2131747285, "PhoneNumberFlood"));
+                            ce0Var2.D1(org.telegram.messenger.id.M0(2131746074, null), org.telegram.messenger.id.M0(2131747287, "PhoneNumberFlood"));
                         } else if (tL_error5.text.contains("PHONE_NUMBER_BANNED")) {
                             ce0.E1(ce0Var2, str7, mVar, true);
                         } else if (tL_error5.text.contains("PHONE_CODE_EMPTY") || tL_error5.text.contains("PHONE_CODE_INVALID")) {
-                            ce0Var2.D1(org.telegram.messenger.hd.M0(2131746072, null), org.telegram.messenger.hd.M0(2131749182, null));
+                            ce0Var2.D1(org.telegram.messenger.id.M0(2131746074, null), org.telegram.messenger.id.M0(2131749184, null));
                         } else if (tL_error5.text.contains("PHONE_CODE_EXPIRED")) {
                             ce0Var2.M1(0, true, null, true);
-                            ce0Var2.D1(org.telegram.messenger.hd.M0(2131746072, null), org.telegram.messenger.hd.M0(2131752021, "CodeExpired"));
+                            ce0Var2.D1(org.telegram.messenger.id.M0(2131746074, null), org.telegram.messenger.id.M0(2131752021, "CodeExpired"));
                         } else if (tL_error5.text.startsWith("FLOOD_WAIT")) {
-                            ce0Var2.D1(org.telegram.messenger.hd.M0(2131746072, null), org.telegram.messenger.hd.M0(2131750688, "FloodWait"));
+                            ce0Var2.D1(org.telegram.messenger.id.M0(2131746074, null), org.telegram.messenger.id.M0(2131750688, "FloodWait"));
                         } else if (tL_error5.code != -1000) {
                             i10 = ((org.telegram.ui.ActionBar.f2) ce0Var2).currentAccount;
                             org.telegram.ui.Components.v4.c0(i10, tL_error5, ce0Var2, tLObject7, (String) mVar.d);
@@ -404,7 +402,7 @@ public final /* synthetic */ class r7 implements Runnable {
                     bk0Var.presentFragment(bk0Var2, true);
                     break;
                 } else {
-                    bk0Var.Q1(org.telegram.messenger.hd.M0(2131747574, null), tL_error6.text);
+                    bk0Var.Q1(org.telegram.messenger.id.M0(2131747576, null), tL_error6.text);
                     if (qj0Var != null) {
                         qj0Var.a(tL_error6.text, str9);
                         break;
@@ -412,51 +410,51 @@ public final /* synthetic */ class r7 implements Runnable {
                 }
                 break;
             case 11:
-                org.telegram.ui.Wallet.f2 f2Var = (org.telegram.ui.Wallet.f2) obj7;
-                org.telegram.ui.Wallet.k0 k0Var = (org.telegram.ui.Wallet.k0) obj5;
+                org.telegram.ui.Wallet.e2 e2Var = (org.telegram.ui.Wallet.e2) obj7;
+                org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) obj5;
                 TL_wallet.tonConnectSession tonconnectsession = (TL_wallet.tonConnectSession) obj4;
                 String str10 = (String) obj3;
                 byte[] bArr = (byte[]) obj2;
-                org.telegram.ui.Wallet.a2 a2Var = (org.telegram.ui.Wallet.a2) obj;
+                org.telegram.ui.Wallet.z1 z1Var = (org.telegram.ui.Wallet.z1) obj;
                 org.telegram.ui.Wallet.t tVar = (org.telegram.ui.Wallet.t) obj6;
-                f2Var.getClass();
+                e2Var.getClass();
                 try {
-                    org.telegram.messenger.g0.h3(new n8(f2Var, a2Var, tonconnectsession, str10, bArr, org.telegram.ui.Wallet.f2.r(k0Var, tonconnectsession, str10, bArr, a2Var.a, a2Var.b, a2Var.d, null, f2Var.f.getCurrentTime()), tVar, k0Var, 6));
+                    org.telegram.messenger.g0.h3(new n8(e2Var, z1Var, tonconnectsession, str10, bArr, org.telegram.ui.Wallet.e2.r(j0Var, tonconnectsession, str10, bArr, z1Var.a, z1Var.b, z1Var.d, null, e2Var.f.getCurrentTime()), tVar, j0Var, 6));
                     break;
                 } catch (Exception e10) {
-                    org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.d1(tVar, org.telegram.ui.Wallet.f2.i("prepare connect", e10), i18));
+                    org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.c1(tVar, org.telegram.ui.Wallet.e2.i("prepare connect", e10), i17));
                     return;
                 }
             case 12:
-                org.telegram.ui.Wallet.f2 f2Var2 = (org.telegram.ui.Wallet.f2) obj7;
-                org.telegram.ui.Wallet.k0 k0Var2 = (org.telegram.ui.Wallet.k0) obj5;
+                org.telegram.ui.Wallet.e2 e2Var2 = (org.telegram.ui.Wallet.e2) obj7;
+                org.telegram.ui.Wallet.j0 j0Var2 = (org.telegram.ui.Wallet.j0) obj5;
                 TL_wallet.tonConnectSession tonconnectsession2 = (TL_wallet.tonConnectSession) obj4;
                 String str11 = (String) obj3;
                 byte[] bArr2 = (byte[]) obj2;
                 TL_wallet.tonConnectNextEventId tonconnectnexteventid = (TL_wallet.tonConnectNextEventId) obj;
                 org.telegram.ui.Wallet.t tVar2 = (org.telegram.ui.Wallet.t) obj6;
-                f2Var2.getClass();
+                e2Var2.getClass();
                 try {
-                    org.telegram.messenger.g0.h3(new a3(f2Var2, str11, bArr2, tVar2, tonconnectsession2, org.telegram.ui.Wallet.f2.t(k0Var2, tonconnectsession2, str11, bArr2, tonconnectnexteventid.event_id), 20));
+                    org.telegram.messenger.g0.h3(new a3(e2Var2, str11, bArr2, tVar2, tonconnectsession2, org.telegram.ui.Wallet.e2.t(j0Var2, tonconnectsession2, str11, bArr2, tonconnectnexteventid.event_id), 20));
                     break;
                 } catch (Exception e11) {
-                    tVar2.a(org.telegram.ui.Wallet.f2.i("prepare disconnect", e11));
+                    tVar2.a(org.telegram.ui.Wallet.e2.i("prepare disconnect", e11));
                     return;
                 }
             case 13:
-                org.telegram.ui.Wallet.f2 f2Var3 = (org.telegram.ui.Wallet.f2) obj7;
-                org.telegram.ui.Wallet.a2 a2Var2 = (org.telegram.ui.Wallet.a2) obj5;
+                org.telegram.ui.Wallet.e2 e2Var3 = (org.telegram.ui.Wallet.e2) obj7;
+                org.telegram.ui.Wallet.z1 z1Var2 = (org.telegram.ui.Wallet.z1) obj5;
                 TL_wallet.tonConnectSession tonconnectsession3 = (TL_wallet.tonConnectSession) obj4;
-                org.telegram.ui.Wallet.c2 c2Var = (org.telegram.ui.Wallet.c2) obj;
-                byte[] bArr3 = c2Var.b;
+                org.telegram.ui.Wallet.b2 b2Var = (org.telegram.ui.Wallet.b2) obj;
+                byte[] bArr3 = b2Var.b;
                 org.telegram.ui.Wallet.t tVar3 = (org.telegram.ui.Wallet.t) obj6;
-                if (f2Var3.d(a2Var2, tonconnectsession3, (String) obj3, (byte[]) obj2)) {
+                if (e2Var3.d(z1Var2, tonconnectsession3, (String) obj3, (byte[]) obj2)) {
                     TL_wallet.tonConnectSubmitConnectResult tonconnectsubmitconnectresult = new TL_wallet.tonConnectSubmitConnectResult();
                     tonconnectsubmitconnectresult.session_id = tonconnectsession3.id;
                     tonconnectsubmitconnectresult.challenge_answer = bArr3;
-                    tonconnectsubmitconnectresult.body = c2Var.c;
-                    tonconnectsubmitconnectresult.trace_id = a2Var2.c;
-                    f2Var3.f.sendRequestTyped(tonconnectsubmitconnectresult, new d3.b(i17), new org.telegram.ui.Wallet.j(f2Var3, c2Var, tVar3, i15));
+                    tonconnectsubmitconnectresult.body = b2Var.c;
+                    tonconnectsubmitconnectresult.trace_id = z1Var2.c;
+                    e2Var3.f.sendRequestTyped(tonconnectsubmitconnectresult, new d3.b(i16), new org.telegram.ui.Wallet.j(e2Var3, b2Var, tVar3, i15));
                     break;
                 } else {
                     Arrays.fill(bArr3, (byte) 0);
@@ -466,29 +464,29 @@ public final /* synthetic */ class r7 implements Runnable {
             case 14:
                 JSONObject jSONObject = (JSONObject) obj7;
                 String str12 = (String) obj3;
-                org.telegram.ui.Wallet.u2 u2Var = (org.telegram.ui.Wallet.u2) obj5;
-                org.telegram.ui.Wallet.z2 z2Var = u2Var.a;
-                org.telegram.ui.Wallet.s2 s2Var = u2Var.b;
-                org.telegram.ui.Wallet.n0 n0Var2 = (org.telegram.ui.Wallet.n0) obj4;
+                org.telegram.ui.Wallet.t2 t2Var = (org.telegram.ui.Wallet.t2) obj5;
+                org.telegram.ui.Wallet.y2 y2Var = t2Var.a;
+                org.telegram.ui.Wallet.r2 r2Var = t2Var.b;
+                org.telegram.ui.Wallet.m0 m0Var2 = (org.telegram.ui.Wallet.m0) obj4;
                 String str13 = (String) obj2;
                 byte[] bArr4 = (byte[]) obj;
                 byte[] bArr5 = (byte[]) obj6;
                 if (jSONObject == null) {
                     org.telegram.ui.Components.hc.b0(str12);
-                    u2Var.d = false;
-                    if (!u2Var.f) {
-                        u2Var.f = true;
-                        s2Var.a();
+                    t2Var.d = false;
+                    if (!t2Var.f) {
+                        t2Var.f = true;
+                        r2Var.a();
                     }
-                    if (!u2Var.e) {
-                        z2Var.dismiss();
+                    if (!t2Var.e) {
+                        y2Var.dismiss();
                         break;
                     }
                 } else {
                     TLRPC.TL_widgetQueryTypeSignData tL_widgetQueryTypeSignData = new TLRPC.TL_widgetQueryTypeSignData();
                     TLRPC.TL_userWallet tL_userWallet = new TLRPC.TL_userWallet();
                     tL_userWallet.address = str13;
-                    tL_userWallet.balance = n0Var2.v();
+                    tL_userWallet.balance = m0Var2.v();
                     if (bArr5 != null) {
                         tL_userWallet.public_key = bArr4;
                         tL_userWallet.state_init = bArr5;
@@ -497,13 +495,13 @@ public final /* synthetic */ class r7 implements Runnable {
                     TLRPC.TL_dataJSON tL_dataJSON2 = new TLRPC.TL_dataJSON();
                     tL_widgetQueryTypeSignData.sign_data = tL_dataJSON2;
                     tL_dataJSON2.data = jSONObject.toString();
-                    u2Var.d = false;
-                    if (!u2Var.f) {
-                        u2Var.f = true;
-                        s2Var.d(tL_widgetQueryTypeSignData);
+                    t2Var.d = false;
+                    if (!t2Var.f) {
+                        t2Var.f = true;
+                        r2Var.d(tL_widgetQueryTypeSignData);
                     }
-                    if (!u2Var.e) {
-                        z2Var.dismiss();
+                    if (!t2Var.e) {
+                        y2Var.dismiss();
                         break;
                     }
                 }
@@ -517,10 +515,10 @@ public final /* synthetic */ class r7 implements Runnable {
                 String str15 = (String) obj;
                 String str16 = (String) obj6;
                 if (iArr2[4] > 0) {
-                    int i19 = iArr2[1];
-                    int i20 = iArr2[2];
-                    int Z0 = i19 > org.telegram.messenger.g0.Z0(false) ? org.telegram.messenger.g0.Z0(false) : i19;
-                    int Z02 = i20 > org.telegram.messenger.g0.Z0(false) ? org.telegram.messenger.g0.Z0(false) : i20;
+                    int i18 = iArr2[1];
+                    int i19 = iArr2[2];
+                    int Z0 = i18 > org.telegram.messenger.g0.Z0(false) ? org.telegram.messenger.g0.Z0(false) : i18;
+                    int Z02 = i19 > org.telegram.messenger.g0.Z0(false) ? org.telegram.messenger.g0.Z0(false) : i19;
                     File w10 = fi.e7.w(p10.s0, "jpg");
                     org.telegram.ui.Components.v5 v5Var = new org.telegram.ui.Components.v5(file, true, 0L, 0, null, null, null, 0L, p10.s0, true, Z0, Z02, null, 0, true);
                     Bitmap p10 = v5Var.p();
@@ -537,8 +535,8 @@ public final /* synthetic */ class r7 implements Runnable {
                             org.telegram.messenger.a8.g(e, true);
                             w10 = null;
                             m10 = fi.e7.o(file, w10 != null ? null : w10.getAbsolutePath(), iArr2[4]);
-                            m10.k0 = i19;
-                            m10.l0 = i20;
+                            m10.k0 = i18;
+                            m10.l0 = i19;
                             m10.A();
                             if (m10.k0 <= 0) {
                             }
@@ -547,8 +545,8 @@ public final /* synthetic */ class r7 implements Runnable {
                         }
                     }
                     m10 = fi.e7.o(file, w10 != null ? null : w10.getAbsolutePath(), iArr2[4]);
-                    m10.k0 = i19;
-                    m10.l0 = i20;
+                    m10.k0 = i18;
+                    m10.l0 = i19;
                     m10.A();
                 } else {
                     m10 = fi.e7.m(file, ((Integer) org.telegram.messenger.g0.L0(file).first).intValue());
@@ -587,7 +585,7 @@ public final /* synthetic */ class r7 implements Runnable {
                 TLObject tLObject9 = (TLObject) obj4;
                 qp qpVar = (qp) obj3;
                 TLRPC.TL_inputInvoicePremiumGiftCode tL_inputInvoicePremiumGiftCode = (TLRPC.TL_inputInvoicePremiumGiftCode) obj2;
-                org.telegram.ui.ActionBar.f2 f2Var4 = (org.telegram.ui.ActionBar.f2) obj;
+                org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) obj;
                 wg.v vVar2 = (wg.v) obj6;
                 if (tL_error7 != null) {
                     vVar.a(tL_error7);
@@ -597,12 +595,12 @@ public final /* synthetic */ class r7 implements Runnable {
                         TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject9;
                         paymentForm.invoice.recurring = true;
                         qpVar.Y3(paymentForm.users, false);
-                        hl0Var = new hl0(paymentForm, tL_inputInvoicePremiumGiftCode, f2Var4);
+                        hl0Var = new hl0(paymentForm, tL_inputInvoicePremiumGiftCode, f2Var);
                     } else {
                         hl0Var = tLObject9 instanceof TLRPC.PaymentReceipt ? new hl0((TLRPC.PaymentReceipt) tLObject9) : null;
                     }
                     if (hl0Var != null) {
-                        hl0Var.Z0 = new org.telegram.ui.web.a0(20, vVar2, vVar);
+                        hl0Var.Z0 = new org.telegram.ui.web.a0(19, vVar2, vVar);
                         LaunchActivity.Q().showAsSheet(hl0Var, new org.telegram.ui.ActionBar.d2());
                         break;
                     } else {
@@ -616,7 +614,7 @@ public final /* synthetic */ class r7 implements Runnable {
                 TLObject tLObject10 = (TLObject) obj5;
                 qp qpVar2 = (qp) obj4;
                 TLRPC.TL_inputInvoicePremiumGiftCode tL_inputInvoicePremiumGiftCode2 = (TLRPC.TL_inputInvoicePremiumGiftCode) obj3;
-                org.telegram.ui.ActionBar.f2 f2Var5 = (org.telegram.ui.ActionBar.f2) obj2;
+                org.telegram.ui.ActionBar.f2 f2Var2 = (org.telegram.ui.ActionBar.f2) obj2;
                 c20 c20Var3 = (c20) obj;
                 if (tL_error8 != null) {
                     c20Var2.a(tL_error8);
@@ -626,12 +624,12 @@ public final /* synthetic */ class r7 implements Runnable {
                         TLRPC.PaymentForm paymentForm2 = (TLRPC.PaymentForm) tLObject10;
                         paymentForm2.invoice.recurring = true;
                         qpVar2.Y3(paymentForm2.users, false);
-                        hl0Var2 = new hl0(paymentForm2, tL_inputInvoicePremiumGiftCode2, f2Var5);
+                        hl0Var2 = new hl0(paymentForm2, tL_inputInvoicePremiumGiftCode2, f2Var2);
                     } else {
                         hl0Var2 = tLObject10 instanceof TLRPC.PaymentReceipt ? new hl0((TLRPC.PaymentReceipt) tLObject10) : null;
                     }
                     if (hl0Var2 != null) {
-                        hl0Var2.Z0 = new org.telegram.ui.web.a0(i16, c20Var3, c20Var2);
+                        hl0Var2.Z0 = new org.telegram.ui.web.a0(20, c20Var3, c20Var2);
                         LaunchActivity.Q().showAsSheet(hl0Var2, new org.telegram.ui.ActionBar.d2());
                         break;
                     } else {
@@ -664,12 +662,12 @@ public final /* synthetic */ class r7 implements Runnable {
         this.n = obj7;
     }
 
-    public /* synthetic */ r7(JSONObject jSONObject, String str, org.telegram.ui.Wallet.u2 u2Var, org.telegram.ui.Wallet.n0 n0Var, String str2, byte[] bArr, byte[] bArr2) {
+    public /* synthetic */ r7(JSONObject jSONObject, String str, org.telegram.ui.Wallet.t2 t2Var, org.telegram.ui.Wallet.m0 m0Var, String str2, byte[] bArr, byte[] bArr2) {
         this.a = 14;
         this.b = jSONObject;
         this.e = str;
-        this.c = u2Var;
-        this.d = n0Var;
+        this.c = t2Var;
+        this.d = m0Var;
         this.f = str2;
         this.h = bArr;
         this.n = bArr2;

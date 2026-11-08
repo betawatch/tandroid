@@ -1,44 +1,6 @@
 package u9;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
-public final class q {
-    public final Class a;
-    public final Class b;
-
-    public q(Class cls, Class cls2) {
-        this.a = cls;
-        this.b = cls2;
-    }
-
-    public static q a(Class cls) {
-        return new q(p.class, cls);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || q.class != obj.getClass()) {
-            return false;
-        }
-        q qVar = (q) obj;
-        if (this.b.equals(qVar.b)) {
-            return this.a.equals(qVar.a);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode() + (this.b.hashCode() * 31);
-    }
-
-    public final String toString() {
-        Class cls = this.b;
-        Class cls2 = this.a;
-        if (cls2 == p.class) {
-            return cls.getName();
-        }
-        return "@" + cls2.getName() + " " + cls.getName();
-    }
+public @interface q {
 }

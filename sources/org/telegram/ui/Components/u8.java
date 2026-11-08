@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class u8 implements Runnable {
     public final /* synthetic */ sl a;
@@ -38,9 +38,9 @@ public final class u8 implements Runnable {
             int i11 = iArr[1];
             int i12 = iArr[2];
             int i13 = iArr[3];
-            e10 e10Var = new e10();
-            slVar.f = e10Var;
-            e10Var.d(i10, i11, i12, i13);
+            f10 f10Var = new f10();
+            slVar.f = f10Var;
+            f10Var.d(i10, i11, i12, i13);
             slVar.x = 0.0f;
             slVar.b();
             slVar.invalidate();

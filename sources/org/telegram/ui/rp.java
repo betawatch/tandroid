@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rp implements Runnable {
     public final /* synthetic */ int a;
@@ -296,7 +296,7 @@ public final /* synthetic */ class rp implements Runnable {
                 try {
                     u1Var.dismiss();
                     if ("APP_VERSION_OUTDATED".equals(tL_error.text)) {
-                        org.telegram.ui.ActionBar.u1 u02 = org.telegram.ui.Components.v4.u0(externalActionActivity, org.telegram.messenger.hd.M0(2131743821, null), true);
+                        org.telegram.ui.ActionBar.u1 u02 = org.telegram.ui.Components.v4.u0(externalActionActivity, org.telegram.messenger.id.M0(2131743823, null), true);
                         if (u02 != null) {
                             u02.setOnDismissListener(new bi.u3(10, externalActionActivity, tL_error));
                         } else {
@@ -353,7 +353,7 @@ public final /* synthetic */ class rp implements Runnable {
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) this.c;
                 zy zyVar = (zy) this.d;
                 if (tL_error4 != null) {
-                    org.telegram.ui.Components.hc.a0(azVar.a).t(org.telegram.messenger.hd.M0(2131743880, null), null).j();
+                    org.telegram.ui.Components.hc.a0(azVar.a).t(org.telegram.messenger.id.M0(2131743882, null), null).j();
                     org.telegram.messenger.g0.r(zyVar);
                     break;
                 }
@@ -372,7 +372,7 @@ public final /* synthetic */ class rp implements Runnable {
                 }
                 filtersSetupActivity.getMessagesController().h4(voVar2);
                 org.telegram.messenger.yr messagesStorage = filtersSetupActivity.getMessagesStorage();
-                messagesStorage.a.c(new org.telegram.messenger.yq(i17, messagesStorage, voVar2));
+                messagesStorage.a.c(new org.telegram.messenger.zq(i17, messagesStorage, voVar2));
                 break;
             case 10:
                 u40 u40Var = (u40) this.b;
@@ -422,7 +422,7 @@ public final /* synthetic */ class rp implements Runnable {
                 String str2 = LaunchActivity.B1;
                 if (tL_error5 == null) {
                     if (user != null && !org.telegram.messenger.t10.B(user)) {
-                        org.telegram.messenger.camera.q.s(org.telegram.messenger.hd.a0(null, null, 2131748183, org.telegram.messenger.t10.j(user, true)), org.telegram.ui.Components.hc.a0(anVar), R.raw.contact_check, 36);
+                        org.telegram.messenger.camera.q.s(org.telegram.messenger.id.a0(null, null, 2131748185, org.telegram.messenger.t10.j(user, true)), org.telegram.ui.Components.hc.a0(anVar), R.raw.contact_check, 36);
                         break;
                     }
                 } else {
@@ -454,9 +454,9 @@ public final /* synthetic */ class rp implements Runnable {
                 try {
                     q10Var2.run();
                     if ("APP_VERSION_OUTDATED".equals(tL_error6.text)) {
-                        org.telegram.ui.Components.v4.u0(launchActivity2, org.telegram.messenger.hd.M0(2131743821, null), true);
+                        org.telegram.ui.Components.v4.u0(launchActivity2, org.telegram.messenger.id.M0(2131743823, null), true);
                     } else {
-                        launchActivity2.F0(org.telegram.ui.Components.v4.K(launchActivity2, null, org.telegram.messenger.hd.M0(2131751106, null) + "\n" + tL_error6.text));
+                        launchActivity2.F0(org.telegram.ui.Components.v4.K(launchActivity2, null, org.telegram.messenger.id.M0(2131751106, null) + "\n" + tL_error6.text));
                     }
                     break;
                 } catch (Exception e16) {
@@ -587,13 +587,13 @@ public final /* synthetic */ class rp implements Runnable {
                 if (tLObject7 != null) {
                     TL_account.Password password = (TL_account.Password) tLObject7;
                     if (!TwoStepVerificationActivity.n0(password, false)) {
-                        org.telegram.ui.Components.v4.u0(p90Var.a, org.telegram.messenger.hd.M0(2131743821, null), true);
+                        org.telegram.ui.Components.v4.u0(p90Var.a, org.telegram.messenger.id.M0(2131743823, null), true);
                     }
                     l90 l90Var = new l90(p90Var, str14, 2);
                     if (!password.has_password) {
-                        ya1 ya1Var = new ya1(TextUtils.isEmpty(password.email_unconfirmed_pattern) ? 6 : 5, password);
-                        ya1Var.j0 = l90Var;
-                        p90Var.u(ya1Var, false);
+                        za1 za1Var = new za1(TextUtils.isEmpty(password.email_unconfirmed_pattern) ? 6 : 5, password);
+                        za1Var.j0 = l90Var;
+                        p90Var.u(za1Var, false);
                         break;
                     } else {
                         TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();

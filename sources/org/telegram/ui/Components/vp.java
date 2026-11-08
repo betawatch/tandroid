@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class vp extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public static final /* synthetic */ int f0 = 0;
@@ -514,7 +514,7 @@ public class vp extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
                 }
             }
         });
-        imageView.setContentDescription(org.telegram.messenger.hd.M0(2131754486, null));
+        imageView.setContentDescription(org.telegram.messenger.id.M0(2131754486, null));
         addView(imageView, c8.ha.d(30, 30.0f, 49, 36.0f, 1.0f, 0.0f, 0.0f));
         org.telegram.ui.ActionBar.f0 f0Var = new org.telegram.ui.ActionBar.f0(1, getContext(), this);
         this.F = f0Var;
@@ -700,7 +700,7 @@ public class vp extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
                 }
             }
         });
-        f0Var.setContentDescription(org.telegram.messenger.hd.M0(2131752099, null));
+        f0Var.setContentDescription(org.telegram.messenger.id.M0(2131752099, null));
         addView(f0Var, c8.ha.d(30, 30.0f, 51, 97.0f, 1.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.H = textView;
@@ -716,10 +716,10 @@ public class vp extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
             this.I = r0Var;
             r0Var.setLongClickEnabled(false);
             r0Var.setIcon(R.drawable.ic_ab_other);
-            r0Var.setContentDescription(org.telegram.messenger.hd.M0(2131754839, null));
-            r0Var.e(1, R.drawable.msg_edit, org.telegram.messenger.hd.M0(2131747796, null));
-            r0Var.e(2, R.drawable.msg_share, org.telegram.messenger.hd.M0(2131745427, null));
-            r0Var.e(3, R.drawable.msg_delete, org.telegram.messenger.hd.M0(2131751487, null));
+            r0Var.setContentDescription(org.telegram.messenger.id.M0(2131754839, null));
+            r0Var.e(1, R.drawable.msg_edit, org.telegram.messenger.id.M0(2131747798, null));
+            r0Var.e(2, R.drawable.msg_share, org.telegram.messenger.id.M0(2131745429, null));
+            r0Var.e(3, R.drawable.msg_delete, org.telegram.messenger.id.M0(2131751487, null));
             r0Var.setMenuYOffset(-org.telegram.messenger.g0.L(80.0f));
             r0Var.setSubMenuOpenSide(2);
             r0Var.setDelegate(new u(this, 26));

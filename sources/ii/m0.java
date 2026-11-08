@@ -6,7 +6,7 @@ import c8.zc;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.ml;
@@ -23,7 +23,7 @@ import org.telegram.ui.Components.hc;
 import org.telegram.ui.an;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public abstract class m0 {
     public static SpannableStringBuilder a(ij ijVar, String str, String str2, boolean z9, boolean z10) {
@@ -33,20 +33,20 @@ public abstract class m0 {
         boolean z12 = tL_messageActionChangeCommunity.community_id == 0;
         if (z11) {
             if (z12) {
-                return org.telegram.messenger.g0.X2(hd.M0(z10 ? 2131751868 : z9 ? 2131751862 : 2131751856, null));
+                return org.telegram.messenger.g0.X2(id.M0(z10 ? 2131751868 : z9 ? 2131751862 : 2131751856, null));
             }
-            return org.telegram.messenger.g0.X2(hd.a0(null, null, z10 ? 2131751870 : z9 ? 2131751864 : 2131751858, str));
+            return org.telegram.messenger.g0.X2(id.a0(null, null, z10 ? 2131751870 : z9 ? 2131751864 : 2131751858, str));
         }
         if (ijVar.O3()) {
             if (z12) {
-                return org.telegram.messenger.g0.X2(hd.M0(z10 ? 2131751866 : z9 ? 2131751860 : 2131751854, null));
+                return org.telegram.messenger.g0.X2(id.M0(z10 ? 2131751866 : z9 ? 2131751860 : 2131751854, null));
             }
-            return org.telegram.messenger.g0.X2(hd.a0(null, null, z10 ? 2131751867 : z9 ? 2131751861 : 2131751855, str));
+            return org.telegram.messenger.g0.X2(id.a0(null, null, z10 ? 2131751867 : z9 ? 2131751861 : 2131751855, str));
         }
         if (z12) {
-            return org.telegram.messenger.g0.X2(hd.a0(null, null, z10 ? 2131751869 : z9 ? 2131751863 : 2131751857, str2));
+            return org.telegram.messenger.g0.X2(id.a0(null, null, z10 ? 2131751869 : z9 ? 2131751863 : 2131751857, str2));
         }
-        return org.telegram.messenger.g0.X2(hd.a0(null, null, z10 ? 2131751871 : z9 ? 2131751865 : 2131751859, str2, str));
+        return org.telegram.messenger.g0.X2(id.a0(null, null, z10 ? 2131751871 : z9 ? 2131751865 : 2131751859, str2, str));
     }
 
     public static int b(int i7, long j3) {
@@ -183,11 +183,11 @@ public abstract class m0 {
         int i10 = i7 == 2 ? R.raw.timer_toast : R.raw.contact_check;
         int i11 = i7 == 2 ? 24 : 36;
         if (i7 == 0) {
-            M0 = hd.M0(2131751943, null);
+            M0 = id.M0(2131751943, null);
         } else if (i7 == 1) {
-            M0 = hd.M0(z9 ? 2131751942 : 2131751941, null);
+            M0 = id.M0(z9 ? 2131751942 : 2131751941, null);
         } else {
-            M0 = hd.M0(2131751940, null);
+            M0 = id.M0(2131751940, null);
         }
         hcVar.G(i10, i11, M0).j();
     }

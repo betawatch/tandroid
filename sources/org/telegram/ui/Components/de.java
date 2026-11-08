@@ -13,7 +13,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class de extends FrameLayout {
     public final Paint a;
@@ -105,10 +105,10 @@ public final class de extends FrameLayout {
                             Activity activity = chatActivityEnterView.O2;
                             long a10 = anVar.a();
                             k2 k2Var = new k2(11);
-                            org.telegram.messenger.pd pdVar = new org.telegram.messenger.pd(22);
+                            org.telegram.messenger.rc rcVar = new org.telegram.messenger.rc(24);
                             Pattern pattern = v4.a;
                             org.telegram.ui.ActionBar.f6 f6Var = this.c;
-                            v4.H(activity, a10, -1L, 0, false, k2Var, pdVar, new s4(f6Var), f6Var);
+                            v4.H(activity, a10, -1L, 0, false, k2Var, rcVar, new s4(f6Var), f6Var);
                         }
                         if (v4.a0(chatActivityEnterView.Q, chatActivityEnterView.Q2)) {
                             if (chatActivityEnterView.c1) {
@@ -297,7 +297,7 @@ public final class de extends FrameLayout {
                                     agVar.a = m3Var;
                                     m3Var.o(1.0f, 0.0f);
                                     agVar.a.r(true);
-                                    agVar.a.u(org.telegram.messenger.hd.M0(2131743513, null));
+                                    agVar.a.u(org.telegram.messenger.id.M0(2131743515, null));
                                     agVar.b0.setHintGlass(agVar.a);
                                     org.telegram.messenger.qp.e1().edit().putInt("voicepausehint", org.telegram.messenger.qp.e1().getInt("voicepausehint", 0) + 1).apply();
                                     agVar.addView(agVar.a, c8.ha.d(-1, -1.0f, org.telegram.messenger.qs.E1, 0.0f, 0.0f, 54.0f, 58.0f));
@@ -416,9 +416,9 @@ public final class de extends FrameLayout {
                                 Activity activity2 = chatActivityEnterView.O2;
                                 long a11 = anVar.a();
                                 k2 k2Var2 = new k2(12);
-                                org.telegram.messenger.pd pdVar2 = new org.telegram.messenger.pd(23);
+                                org.telegram.messenger.rc rcVar2 = new org.telegram.messenger.rc(25);
                                 org.telegram.ui.ActionBar.f6 f6Var2 = this.c;
-                                v4.H(activity2, a11, -1L, 0, false, k2Var2, pdVar2, new s4(f6Var2), f6Var2);
+                                v4.H(activity2, a11, -1L, 0, false, k2Var2, rcVar2, new s4(f6Var2), f6Var2);
                             }
                             chatActivityEnterView.Z2.R0(0);
                             MediaController.B().B0(chatActivityEnterView.c() ? 3 : 1, 0, true, chatActivityEnterView.O);

@@ -4,7 +4,7 @@ import android.content.Context;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ye0 extends org.telegram.ui.Components.mo0 {
     public final /* synthetic */ ze0 R2;
@@ -21,10 +21,10 @@ public final class ye0 extends org.telegram.ui.Components.mo0 {
         cf0 cf0Var = this.R2.K;
         if (z9) {
             if (hVar == null || hVar.m() != 1) {
-                a02 = org.telegram.messenger.hd.a0(null, null, 2131749186, org.telegram.messenger.hd.G(i7, "Chats", new Object[0]));
+                a02 = org.telegram.messenger.id.a0(null, null, 2131749188, org.telegram.messenger.id.G(i7, "Chats", new Object[0]));
             } else {
                 long j3 = ((TLRPC.Dialog) hVar.n(0)).id;
-                a02 = (j3 == 0 || j3 == cf0Var.getUserConfig().e()) ? org.telegram.messenger.hd.M0(2131749184, null) : org.telegram.messenger.hd.a0(null, null, 2131749183, cf0Var.getMessagesController().B1(j3, true));
+                a02 = (j3 == 0 || j3 == cf0Var.getUserConfig().e()) ? org.telegram.messenger.id.M0(2131749186, null) : org.telegram.messenger.id.a0(null, null, 2131749185, cf0Var.getMessagesController().B1(j3, true));
             }
             org.telegram.ui.Components.cc Q = org.telegram.ui.Components.hc.a0(cf0Var).Q(R.raw.forward, 36, org.telegram.messenger.g0.X2(a02));
             Q.r = false;

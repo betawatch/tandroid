@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class zm0 extends org.telegram.ui.Components.rt0 {
     public int f0;
@@ -143,7 +143,7 @@ public final class zm0 extends org.telegram.ui.Components.rt0 {
         int i16;
         int i17;
         int i18;
-        org.telegram.ui.Components.kt ktVar;
+        org.telegram.ui.Components.lt ltVar;
         int measuredHeight;
         int measuredHeight2;
         int childCount = getChildCount();
@@ -177,8 +177,8 @@ public final class zm0 extends org.telegram.ui.Components.rt0 {
                             i16 = ((i12 - emojiPadding) - i10) - measuredHeight3;
                             i17 = layoutParams.bottomMargin;
                         }
-                        ktVar = an0Var.d;
-                        if (ktVar != null && ktVar.l(childAt)) {
+                        ltVar = an0Var.d;
+                        if (ltVar != null && ltVar.l(childAt)) {
                             if (org.telegram.messenger.g0.Q1()) {
                                 measuredHeight = getMeasuredHeight();
                                 measuredHeight2 = childAt.getMeasuredHeight();
@@ -194,8 +194,8 @@ public final class zm0 extends org.telegram.ui.Components.rt0 {
                         i17 = layoutParams.bottomMargin;
                     }
                     i18 = i16 - i17;
-                    ktVar = an0Var.d;
-                    if (ktVar != null) {
+                    ltVar = an0Var.d;
+                    if (ltVar != null) {
                         if (org.telegram.messenger.g0.Q1()) {
                         }
                         i18 = measuredHeight - measuredHeight2;
@@ -209,8 +209,8 @@ public final class zm0 extends org.telegram.ui.Components.rt0 {
                 if (i21 == 16) {
                 }
                 i18 = i16 - i17;
-                ktVar = an0Var.d;
-                if (ktVar != null) {
+                ltVar = an0Var.d;
+                if (ltVar != null) {
                 }
                 childAt.layout(i15, i18, measuredWidth + i15, measuredHeight3 + i18);
             }
@@ -270,8 +270,8 @@ public final class zm0 extends org.telegram.ui.Components.rt0 {
                 if (childAt != null && childAt.getVisibility() != 8) {
                     kVar3 = ((org.telegram.ui.ActionBar.f2) an0Var).actionBar;
                     if (childAt != kVar3) {
-                        org.telegram.ui.Components.kt ktVar = an0Var.d;
-                        if (ktVar == null || !ktVar.l(childAt)) {
+                        org.telegram.ui.Components.lt ltVar = an0Var.d;
+                        if (ltVar == null || !ltVar.l(childAt)) {
                             measureChildWithMargins(childAt, i7, 0, i11, 0);
                         } else if (!org.telegram.messenger.g0.E && !org.telegram.messenger.g0.Q1()) {
                             childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt.getLayoutParams().height, TLObject.FLAG_30));

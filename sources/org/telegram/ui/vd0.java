@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vd0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -139,11 +139,11 @@ public final /* synthetic */ class vd0 implements RequestDelegate {
                                         ce0Var2.M1(6, true, bundle, false);
                                         break;
                                     } else {
-                                        org.telegram.ui.Components.v4.u0(ce0Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131743821, "UpdateAppAlert"), true);
+                                        org.telegram.ui.Components.v4.u0(ce0Var2.getParentActivity(), org.telegram.messenger.id.M0(2131743823, "UpdateAppAlert"), true);
                                         break;
                                     }
                                 } else {
-                                    ce0Var2.D1(org.telegram.messenger.hd.M0(2131746072, null), tL_error2.text);
+                                    ce0Var2.D1(org.telegram.messenger.id.M0(2131746074, null), tL_error2.text);
                                     break;
                                 }
                         }
@@ -262,11 +262,11 @@ public final /* synthetic */ class vd0 implements RequestDelegate {
                                         ce0Var2.M1(6, true, bundle, false);
                                         break;
                                     } else {
-                                        org.telegram.ui.Components.v4.u0(ce0Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131743821, "UpdateAppAlert"), true);
+                                        org.telegram.ui.Components.v4.u0(ce0Var2.getParentActivity(), org.telegram.messenger.id.M0(2131743823, "UpdateAppAlert"), true);
                                         break;
                                     }
                                 } else {
-                                    ce0Var2.D1(org.telegram.messenger.hd.M0(2131746072, null), tL_error2.text);
+                                    ce0Var2.D1(org.telegram.messenger.id.M0(2131746074, null), tL_error2.text);
                                     break;
                                 }
                         }

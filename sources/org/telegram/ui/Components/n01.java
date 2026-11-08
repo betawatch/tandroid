@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class n01 extends oj0 {
     public final ArrayList c = new ArrayList();
@@ -124,7 +124,7 @@ public final class n01 extends oj0 {
             r01Var = r01Var2;
             z9 = z12;
             if (tL_forumTopic == null) {
-                String M02 = org.telegram.messenger.hd.M0(2131743985, null);
+                String M02 = org.telegram.messenger.id.M0(2131743987, null);
                 if (z9) {
                     w8 w8Var2 = new w8((org.telegram.ui.ActionBar.f6) null);
                     w8Var2.g(1);
@@ -201,7 +201,7 @@ public final class n01 extends oj0 {
         textPaint4.setColor(org.telegram.ui.ActionBar.k6.r1(0.6f, org.telegram.ui.ActionBar.k6.w0(i17, f6Var)));
         int L = s01Var.I - org.telegram.messenger.g0.L(40.0f);
         CharSequence charSequence3 = "";
-        String e12 = message != null ? org.telegram.messenger.hd.e1(message.date) : "";
+        String e12 = message != null ? org.telegram.messenger.id.e1(message.date) : "";
         int ceil = (int) Math.ceil(textPaint.measureText(e12));
         Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
         r01Var.f = new StaticLayout(e12, textPaint, ceil, alignment, 1.0f, 0.0f, false);

@@ -32,7 +32,7 @@ import org.telegram.ui.ActionBar.m3;
 import org.telegram.ui.Components.r31;
 import org.telegram.ui.vn;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class d0 {
     public static final m1 B = new m1(1);
@@ -95,7 +95,7 @@ public class d0 {
         this.j = new n1(Process.myUid(), context.getPackageName(), c1Var2, bundle, ((q4.l) m0Var.n.b).c.b);
         g1 g1Var = new g1(c1Var);
         this.t = g1Var;
-        h2.m0.W(handler, new org.telegram.ui.web.w(14, this, g1Var));
+        h2.m0.W(handler, new org.telegram.ui.web.w(9, this, g1Var));
         this.w = 3000L;
         this.n = new y(this, 2);
         h2.m0.W(handler, new y(this, 3));
@@ -241,7 +241,7 @@ public class d0 {
         try {
             re reVar = this.h.j;
             e2.o oVar = this.s.s;
-            reVar.m();
+            reVar.n();
         } catch (RemoteException e10) {
             h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
         }

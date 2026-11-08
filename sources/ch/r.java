@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.cj;
 import org.telegram.messenger.dj;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.q1;
@@ -20,7 +20,7 @@ import org.telegram.ui.aj;
 import org.telegram.ui.an;
 import org.telegram.ui.lj;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class r extends FrameLayout {
     public final int[] D;
@@ -130,13 +130,13 @@ public final class r extends FrameLayout {
                         qVar.setMirrorX(Q3);
                         q qVar2 = this.b;
                         int L = org.telegram.messenger.g0.L(4.0f);
-                        boolean z14 = hd.a0;
+                        boolean z14 = id.a0;
                         int i10 = this.h;
                         int i11 = L + ((z14 || Q3) ? 0 : i10);
                         float f15 = this.f;
                         int L2 = org.telegram.messenger.g0.L(f15);
                         int L3 = org.telegram.messenger.g0.L(4.0f);
-                        if (!hd.a0 && !Q3) {
+                        if (!id.a0 && !Q3) {
                             i10 = 0;
                         }
                         qVar2.setPadding(i11, L2, L3 + i10, org.telegram.messenger.g0.L(f15));

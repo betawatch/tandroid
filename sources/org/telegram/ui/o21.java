@@ -6,7 +6,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o21 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class o21 implements RequestDelegate {
                                     if (tL_error2 == null && (tLObject2 instanceof TLRPC.TL_boolTrue)) {
                                         org.telegram.messenger.k5.o(null, 2131754285, org.telegram.ui.Components.hc.a0(sessionsActivity2), R.raw.contact_check, 36);
                                     } else {
-                                        org.telegram.messenger.k5.o(null, 2131743880, org.telegram.ui.Components.hc.a0(sessionsActivity2), R.raw.error, 36);
+                                        org.telegram.messenger.k5.o(null, 2131743882, org.telegram.ui.Components.hc.a0(sessionsActivity2), R.raw.error, 36);
                                     }
                                     sessionsActivity2.p0(false);
                                     break;
@@ -88,7 +88,7 @@ public final /* synthetic */ class o21 implements RequestDelegate {
                                     if (tL_error2 == null && (tLObject2 instanceof TLRPC.TL_boolTrue)) {
                                         org.telegram.messenger.k5.o(null, 2131754285, org.telegram.ui.Components.hc.a0(sessionsActivity22), R.raw.contact_check, 36);
                                     } else {
-                                        org.telegram.messenger.k5.o(null, 2131743880, org.telegram.ui.Components.hc.a0(sessionsActivity22), R.raw.error, 36);
+                                        org.telegram.messenger.k5.o(null, 2131743882, org.telegram.ui.Components.hc.a0(sessionsActivity22), R.raw.error, 36);
                                     }
                                     sessionsActivity22.p0(false);
                                     break;
@@ -137,7 +137,7 @@ public final /* synthetic */ class o21 implements RequestDelegate {
                                     if (tL_error2 == null && (tLObject2 instanceof TLRPC.TL_boolTrue)) {
                                         org.telegram.messenger.k5.o(null, 2131754285, org.telegram.ui.Components.hc.a0(sessionsActivity22), R.raw.contact_check, 36);
                                     } else {
-                                        org.telegram.messenger.k5.o(null, 2131743880, org.telegram.ui.Components.hc.a0(sessionsActivity22), R.raw.error, 36);
+                                        org.telegram.messenger.k5.o(null, 2131743882, org.telegram.ui.Components.hc.a0(sessionsActivity22), R.raw.error, 36);
                                     }
                                     sessionsActivity22.p0(false);
                                     break;

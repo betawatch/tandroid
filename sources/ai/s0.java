@@ -34,7 +34,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g5;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -53,7 +53,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ci0;
 import org.telegram.ui.s9;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class s0 extends f2 {
     public boolean D;
@@ -154,29 +154,29 @@ public class s0 extends f2 {
         if (s0Var.getParentActivity() == null) {
             return;
         }
-        zh.h1 h1Var = new zh.h1(s0Var.getParentActivity(), s0Var.currentAccount, s0Var.getUserConfig().e(), null, null);
-        if (!h1Var.l2) {
-            h1Var.l2 = true;
-            gc gcVar = h1Var.n2;
+        zh.g1 g1Var = new zh.g1(s0Var.getParentActivity(), s0Var.currentAccount, s0Var.getUserConfig().e(), null, null);
+        if (!g1Var.l2) {
+            g1Var.l2 = true;
+            gc gcVar = g1Var.n2;
             if (gcVar != null && (gcVar.getParent() instanceof ViewGroup)) {
-                ViewGroup viewGroup = (ViewGroup) h1Var.n2.getParent();
-                int indexOfChild = viewGroup.indexOfChild(h1Var.n2);
-                viewGroup.removeView(h1Var.n2);
-                gc gcVar2 = new gc(h1Var.getContext(), qs.Z3, 2, 0);
-                h1Var.n2 = gcVar2;
+                ViewGroup viewGroup = (ViewGroup) g1Var.n2.getParent();
+                int indexOfChild = viewGroup.indexOfChild(g1Var.n2);
+                viewGroup.removeView(g1Var.n2);
+                gc gcVar2 = new gc(g1Var.getContext(), qs.Z3, 2, 0);
+                g1Var.n2 = gcVar2;
                 viewGroup.addView(gcVar2, indexOfChild, ha.c(-1.0f, -1));
             }
-            w70 w70Var = h1Var.o2;
+            w70 w70Var = g1Var.o2;
             if (w70Var != null) {
-                String M0 = hd.M0(2131750287, null);
-                jb jbVar = h1Var.c2;
+                String M0 = id.M0(2131750289, null);
+                jb jbVar = g1Var.c2;
                 jbVar.setText(M0);
                 jbVar.setBreakStrategy(2);
                 w70Var.setVisibility(8);
             }
-            h1Var.Q1.O(false);
+            g1Var.Q1.O(false);
         }
-        h1Var.show();
+        g1Var.show();
     }
 
     public static void c0(View view) {
@@ -330,7 +330,7 @@ public class s0 extends f2 {
             String n10 = a22 != null ? t10.n(a22) : null;
             if (n10 != null) {
                 j3 = 0;
-                w0Var = new w0(rf.b.q(s5, n10), n10, true, false, z9, j10, z9);
+                w0Var = new w0(rf.b.r(s5, n10), n10, true, false, z9, j10, z9);
             } else if (z9) {
                 if (a22 != null && a22.phone != null && (v = g5.r(i10).v(6)) != null) {
                     int size = v.size();
@@ -377,7 +377,7 @@ public class s0 extends f2 {
                         }
                         String str3 = str2;
                         j3 = 0;
-                        w0Var = new w0(rf.b.q(s5, str3), str3, false, false, true, j10, true);
+                        w0Var = new w0(rf.b.r(s5, str3), str3, false, false, true, j10, true);
                     }
                     if (c10 != 0) {
                     }
@@ -385,7 +385,7 @@ public class s0 extends f2 {
                     }
                     String str32 = str2;
                     j3 = 0;
-                    w0Var = new w0(rf.b.q(s5, str32), str32, false, false, true, j10, true);
+                    w0Var = new w0(rf.b.r(s5, str32), str32, false, false, true, j10, true);
                 }
                 TLRPC.TL_exportedContactToken tL_exportedContactToken = s12.X7;
                 TLRPC.TL_exportedContactToken tL_exportedContactToken2 = (tL_exportedContactToken == null || ((long) tL_exportedContactToken.expires) <= System.currentTimeMillis() / 1000) ? null : s12.X7;
@@ -401,7 +401,7 @@ public class s0 extends f2 {
             TLRPC.Chat M0 = s12.M0(Long.valueOf(j11));
             String K = t3.K(M0, false);
             if (K != null) {
-                w0Var2 = new w0(rf.b.q(s5, K), K, true, false, false, -j11, t3.w(1, M0));
+                w0Var2 = new w0(rf.b.r(s5, K), K, true, false, false, -j11, t3.w(1, M0));
                 j3 = 0;
             } else {
                 String str5 = M0 != null ? M0.title : "";
@@ -534,7 +534,7 @@ public class s0 extends f2 {
         this.d.setScanHidden(true);
         i0 i0Var = new i0(getParentActivity(), rectF, rectF2, new d6.i(this, 4));
         this.F = i0Var;
-        i0Var.setButtonLabel(hd.M0(2131746469, null));
+        i0Var.setButtonLabel(id.M0(2131746471, null));
         i0 i0Var2 = this.F;
         i0Var2.setOnGallery(new a1.e(15, this, i0Var2));
         this.f.addView(this.F, ha.c(-1.0f, -1));
@@ -669,7 +669,7 @@ public class s0 extends f2 {
             intent.putExtra("android.intent.extra.TEXT", str);
         }
         try {
-            getParentActivity().startActivity(Intent.createChooser(intent, hd.M0(2131749169, null)));
+            getParentActivity().startActivity(Intent.createChooser(intent, id.M0(2131749171, null)));
         } catch (ActivityNotFoundException e10) {
             a8.g(e10, true);
         }
@@ -906,9 +906,9 @@ public class s0 extends f2 {
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-        alertDialog$Builder.a.T = org.telegram.messenger.g0.X2(hd.M0(2131746502, null));
-        alertDialog$Builder.k(hd.M0(2131747299, null), new j0(this));
-        alertDialog$Builder.h(hd.M0(2131751772, null), null);
+        alertDialog$Builder.a.T = org.telegram.messenger.g0.X2(id.M0(2131746504, null));
+        alertDialog$Builder.k(id.M0(2131747301, null), new j0(this));
+        alertDialog$Builder.h(id.M0(2131751772, null), null);
         int i10 = k6.L5;
         alertDialog$Builder.m(R.raw.permission_request_camera, 72, k6.x0(null, i10, false), null);
         alertDialog$Builder.n(i10, null);

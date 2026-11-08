@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class jo0 extends oj0 {
     public int G;
@@ -200,7 +200,7 @@ public final class jo0 extends oj0 {
                     str2 = str;
                 } else {
                     ?? spannableStringBuilder = new SpannableStringBuilder(str);
-                    spannableStringBuilder.setSpan(new xz(org.telegram.ui.ActionBar.k6.q6, mo0Var.I0), A1, str3.length() + A1, 33);
+                    spannableStringBuilder.setSpan(new yz(org.telegram.ui.ActionBar.k6.q6, mo0Var.I0), A1, str3.length() + A1, 33);
                     str2 = spannableStringBuilder;
                 }
                 j10 = j3;
@@ -253,7 +253,7 @@ public final class jo0 extends oj0 {
                 charSequence = m10;
             } else {
                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(m10);
-                spannableStringBuilder2.setSpan(new xz(org.telegram.ui.ActionBar.k6.q6, mo0Var.I0), A12, str5.length() + A12, 33);
+                spannableStringBuilder2.setSpan(new yz(org.telegram.ui.ActionBar.k6.q6, mo0Var.I0), A12, str5.length() + A12, 33);
                 tLObject = tLObject4;
                 charSequence = spannableStringBuilder2;
             }
@@ -297,7 +297,7 @@ public final class jo0 extends oj0 {
             org.telegram.ui.Cells.x3 x3Var = new org.telegram.ui.Cells.x3(context, mo0Var.I0);
             x3Var.setTextColor(org.telegram.ui.ActionBar.k6.f7);
             org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.e7, x3Var, mo0Var.I0);
-            x3Var.setText(org.telegram.messenger.hd.M0(2131746369, null));
+            x3Var.setText(org.telegram.messenger.id.M0(2131746371, null));
             view = x3Var;
         } else if (i7 == 4) {
             view = new bi.ec(23, context, this);

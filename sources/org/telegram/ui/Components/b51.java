@@ -16,7 +16,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class b51 extends org.telegram.ui.ActionBar.v2 {
     public int A1;
@@ -27,7 +27,7 @@ public abstract class b51 extends org.telegram.ui.ActionBar.v2 {
     public int F1;
     public int G1;
     public int H1;
-    public final ly I1;
+    public final my I1;
     public final boolean J1;
     public TextView i1;
     public final FrameLayout j1;
@@ -38,7 +38,7 @@ public abstract class b51 extends org.telegram.ui.ActionBar.v2 {
     public final View o1;
     public AnimatorSet p1;
     public final av0 q1;
-    public final lz r1;
+    public final mz r1;
     public final a51 s1;
     public final RectF t1;
     public int u1;
@@ -91,18 +91,18 @@ public abstract class b51 extends org.telegram.ui.ActionBar.v2 {
         a51Var.updateColors();
         a51Var.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
         frameLayout.addView(a51Var, c8.ha.d(-1, 48.0f, 51, 7.0f, 7.0f, 7.0f, 7.0f));
-        lz lzVar = new lz(context, null);
-        this.r1 = lzVar;
-        lzVar.setViewType(6);
-        lzVar.x = false;
-        lzVar.setUseHeaderOffset(true);
-        av0 av0Var = new av0(context, lzVar, 1, null);
+        mz mzVar = new mz(context, null);
+        this.r1 = mzVar;
+        mzVar.setViewType(6);
+        mzVar.x = false;
+        mzVar.setUseHeaderOffset(true);
+        av0 av0Var = new av0(context, mzVar, 1, null);
         this.q1 = av0Var;
-        av0Var.addView(lzVar, 0, c8.ha.d(-1, -1.0f, 0, 0.0f, 2.0f, 0.0f, 0.0f));
-        String M0 = org.telegram.messenger.hd.M0(2131748166, null);
+        av0Var.addView(mzVar, 0, c8.ha.d(-1, -1.0f, 0, 0.0f, 2.0f, 0.0f, 0.0f));
+        String M0 = org.telegram.messenger.id.M0(2131748168, null);
         xh.l lVar = av0Var.d;
         lVar.setText(M0);
-        String M02 = org.telegram.messenger.hd.M0(2131745808, null);
+        String M02 = org.telegram.messenger.id.M0(2131745810, null);
         w70 w70Var = av0Var.e;
         w70Var.setText(M02);
         av0Var.setVisibility(8);
@@ -127,10 +127,10 @@ public abstract class b51 extends org.telegram.ui.ActionBar.v2 {
         q1Var.setHideIfEmpty(false);
         org.telegram.ui.ActionBar.r6.m(q1Var, 20, this.A1, f6Var);
         getContext();
-        ly lyVar = new ly(org.telegram.messenger.g0.L(8.0f), 0, q1Var);
-        this.I1 = lyVar;
-        lyVar.P = false;
-        q1Var.setLayoutManager(lyVar);
+        my myVar = new my(org.telegram.messenger.g0.L(8.0f), 0, q1Var);
+        this.I1 = myVar;
+        myVar.P = false;
+        q1Var.setLayoutManager(myVar);
         q1Var.setHorizontalScrollBarEnabled(false);
         q1Var.setVerticalScrollBarEnabled(false);
         this.b.addView(q1Var, c8.ha.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
@@ -259,7 +259,7 @@ public abstract class b51 extends org.telegram.ui.ActionBar.v2 {
             this.i1.setLines(1);
             this.i1.setMaxLines(1);
             this.i1.setSingleLine(true);
-            this.i1.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 16);
+            this.i1.setGravity((org.telegram.messenger.id.a0 ? 5 : 3) | 16);
             this.i1.setEllipsize(TextUtils.TruncateAt.END);
             TextView textView2 = this.i1;
             FrameLayout.LayoutParams d = c8.ha.d(-1, 36.0f, 51, 16.0f, 0.0f, 0.0f, 0.0f);

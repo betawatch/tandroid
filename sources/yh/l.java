@@ -19,7 +19,7 @@ import android.widget.TextView;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -34,11 +34,11 @@ import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.sf0;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.h9;
+import org.telegram.ui.Wallet.g9;
 import org.telegram.ui.an;
 import wg.p;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l extends Dialog {
     public final k D;
@@ -107,7 +107,7 @@ public final class l extends Dialog {
         z0Var.c(i11, i12);
         int i13 = k6.I5;
         z0Var.h(1.0f, i13);
-        z0Var.j(hd.M0(z9 ? 2131754378 : 2131754373, null), R.drawable.msg_requests, null);
+        z0Var.j(id.M0(z9 ? 2131754378 : 2131754373, null), R.drawable.msg_requests, null);
         final int i14 = 0;
         z0Var.setOnClickListener(new View.OnClickListener(this) { // from class: yh.i
             public final /* synthetic */ l b;
@@ -149,7 +149,7 @@ public final class l extends Dialog {
         z0 z0Var2 = new z0(0, activity, f6Var, false, false);
         z0Var2.c(i11, i12);
         z0Var2.h(1.0f, i13);
-        z0Var2.j(hd.M0(2131745602, null), R.drawable.msg_msgbubble3, null);
+        z0Var2.j(id.M0(2131745604, null), R.drawable.msg_msgbubble3, null);
         z0Var2.setOnClickListener(new View.OnClickListener(this) { // from class: yh.i
             public final /* synthetic */ l b;
 
@@ -190,7 +190,7 @@ public final class l extends Dialog {
         z0 z0Var3 = new z0(0, activity, f6Var, false, true);
         z0Var3.c(k6.q7, k6.p7);
         z0Var3.h(1.0f, i13);
-        z0Var3.j(hd.M0(2131751369, null), R.drawable.msg_remove, null);
+        z0Var3.j(id.M0(2131751369, null), R.drawable.msg_remove, null);
         final int i15 = 2;
         z0Var3.setOnClickListener(new View.OnClickListener(this) { // from class: yh.i
             public final /* synthetic */ l b;
@@ -275,7 +275,7 @@ public final class l extends Dialog {
         int i10 = (-this.f.getTop()) / 2;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(z9 ? 0.0f : 1.0f, z9 ? 1.0f : 0.0f);
         this.s = ofFloat;
-        ofFloat.addUpdateListener(new h9(this, width, left, top, width2, i10, 1));
+        ofFloat.addUpdateListener(new g9(this, width, left, top, width2, i10, 1));
         this.s.addListener(new ok0(this, z9, width, i7));
         this.s.setDuration(220L);
         this.s.setInterpolator(xq.f);

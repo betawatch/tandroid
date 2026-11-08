@@ -17,7 +17,7 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -31,7 +31,7 @@ import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.la0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.ActionBar.f6 D;
@@ -77,12 +77,12 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.a
         k5Var.setTextSize(16);
         org.telegram.ui.ActionBar.r6.Y(k5Var, org.telegram.ui.ActionBar.k6.G6, f6Var);
         k5Var.setTypeface(org.telegram.messenger.g0.o());
-        k5Var.setGravity(hd.a0 ? 5 : 3);
+        k5Var.setGravity(id.a0 ? 5 : 3);
         k5Var.setScrollNonFitText(true);
         if (z9) {
-            boolean z10 = hd.a0;
+            boolean z10 = id.a0;
             addView(l9Var, c8.ha.d(42, 42.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 15.0f, 12.0f, z10 ? 15.0f : 0.0f, 0.0f));
-            boolean z11 = hd.a0;
+            boolean z11 = id.a0;
             addView(k5Var, c8.ha.d(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? i7 : 73.0f, 12.0f, z11 ? 73.0f : 16.0f, 0.0f));
             TextView textView = new TextView(context);
             this.f = textView;
@@ -90,13 +90,13 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.a
             this.h = true;
             textView.setTextSize(1, 14.0f);
             org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.A6, f6Var);
-            textView.setGravity(hd.a0 ? 5 : 3);
-            boolean z12 = hd.a0;
+            textView.setGravity(id.a0 ? 5 : 3);
+            boolean z12 = id.a0;
             addView(textView, c8.ha.d(-1, -2.0f, (z12 ? 5 : 3) | 48, z12 ? i7 : 73.0f, 33.0f, z12 ? 73.0f : i7, 0.0f));
         } else {
-            boolean z13 = hd.a0;
+            boolean z13 = id.a0;
             addView(l9Var, c8.ha.d(42, 42.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : 15.0f, 6.0f, z13 ? 15.0f : 0.0f, 0.0f));
-            boolean z14 = hd.a0;
+            boolean z14 = id.a0;
             addView(k5Var, c8.ha.d(-2, -2.0f, (z14 ? 5 : 3) | 48, z14 ? i7 : 74.0f, 17.0f, z14 ? 74.0f : i7, 0.0f));
         }
         setWillNotDraw(false);
@@ -234,16 +234,16 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.a
                 textView.setText("");
                 return;
             } else {
-                textView.setText(hd.M0(2131748778, null));
+                textView.setText(id.M0(2131748780, null));
                 return;
             }
         }
         float distanceTo = location2.distanceTo(location);
         if (str2 == null) {
-            textView.setText(hd.y(distanceTo, 0, null));
+            textView.setText(id.y(distanceTo, 0, null));
             return;
         }
-        textView.setText(str2 + " - " + hd.y(distanceTo, 0, null));
+        textView.setText(str2 + " - " + id.y(distanceTo, 0, null));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -280,7 +280,7 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.a
         int currentTime = ConnectionsManager.getInstance(this.E).getCurrentTime();
         if (i12 >= currentTime || z9) {
             float abs = z9 ? 1.0f : Math.abs(i12 - currentTime) / i7;
-            boolean z10 = hd.a0;
+            boolean z10 = id.a0;
             TextView textView = this.f;
             RectF rectF = this.s;
             if (z10) {
@@ -299,7 +299,7 @@ public final class r7 extends FrameLayout implements org.telegram.ui.ActionBar.a
             canvas.drawArc(rectF, -90.0f, abs * (-360.0f), false, org.telegram.ui.ActionBar.k6.l2);
             org.telegram.ui.ActionBar.k6.l2.setAlpha(alpha);
             if (!z9) {
-                String C = hd.C(i12 - currentTime);
+                String C = id.C(i12 - currentTime);
                 canvas.drawText(C, rectF.centerX() - (org.telegram.ui.ActionBar.k6.F2.measureText(C) / 2.0f), org.telegram.messenger.g0.L(textView != null ? 37.0f : 31.0f), org.telegram.ui.ActionBar.k6.F2);
                 return;
             }

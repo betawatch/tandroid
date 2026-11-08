@@ -9,7 +9,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import q6.m;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class a extends Binder implements j, IInterface {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final class a extends Binder implements j, IInterface {
     }
 
     @Override // h8.j
-    public void G(int i7, boolean z9) {
+    public void P(int i7, boolean z9) {
         switch (this.a) {
             case 1:
                 k8.a(new Status(i7, null, null, null), Boolean.valueOf(z9), this.b);
@@ -31,7 +31,7 @@ public final class a extends Binder implements j, IInterface {
     }
 
     @Override // h8.j
-    public void T(Status status, y8.i iVar) {
+    public void d0(Status status, y8.i iVar) {
         switch (this.a) {
             case 0:
                 int i7 = y8.a.c;
@@ -44,15 +44,6 @@ public final class a extends Binder implements j, IInterface {
                     taskCompletionSource.setResult(iVar);
                     break;
                 }
-        }
-    }
-
-    @Override // h8.j
-    public void g0(Status status, boolean z9) {
-        switch (this.a) {
-            case 1:
-                k8.a(status, Boolean.valueOf(z9), this.b);
-                break;
         }
     }
 
@@ -75,7 +66,7 @@ public final class a extends Binder implements j, IInterface {
                 int readInt = parcel.readInt();
                 int i11 = c.a;
                 z9 = parcel.readInt() != 0;
-                G(readInt, z9);
+                P(readInt, z9);
                 return true;
             case 4:
                 parcel.readInt();
@@ -95,7 +86,7 @@ public final class a extends Binder implements j, IInterface {
             case 9:
                 Status status = (Status) c.a(parcel, Status.CREATOR);
                 z9 = parcel.readInt() != 0;
-                g0(status, z9);
+                x0(status, z9);
                 return true;
             case 10:
                 return true;
@@ -108,7 +99,7 @@ public final class a extends Binder implements j, IInterface {
             case 14:
                 Status status2 = (Status) c.a(parcel, Status.CREATOR);
                 y8.i iVar = (y8.i) c.a(parcel, y8.i.CREATOR);
-                T(status2, iVar);
+                d0(status2, iVar);
                 return true;
             case 15:
                 return true;
@@ -124,17 +115,26 @@ public final class a extends Binder implements j, IInterface {
         }
     }
 
+    @Override // h8.j
+    public void x0(Status status, boolean z9) {
+        switch (this.a) {
+            case 1:
+                k8.a(status, Boolean.valueOf(z9), this.b);
+                break;
+        }
+    }
+
     @Override // android.os.IInterface
     public final IBinder asBinder() {
         return this;
     }
 
-    public final void H0(Status status, boolean z9) {
+    public final void h1(Status status, boolean z9) {
     }
 
-    public final void I0(Status status, y8.i iVar) {
+    public final void i1(Status status, y8.i iVar) {
     }
 
-    public final void J0(int i7, boolean z9) {
+    public final void j1(int i7, boolean z9) {
     }
 }

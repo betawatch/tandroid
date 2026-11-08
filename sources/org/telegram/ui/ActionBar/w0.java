@@ -28,16 +28,16 @@ import android.widget.FrameLayout;
 import c8.j9;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
-import org.telegram.messenger.rc;
+import org.telegram.messenger.sc;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.du0;
 import org.telegram.ui.Components.qa0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class w0 extends FrameLayout implements a6 {
     public final Paint D;
@@ -116,7 +116,7 @@ public abstract class w0 extends FrameLayout implements a6 {
         TextPaint textPaint = s0Var.a;
         textPaint.setStyle(style);
         textPaint.setStrokeWidth(org.telegram.messenger.g0.N(0.3f));
-        s0Var.b = hd.a0 ? 5 : 3;
+        s0Var.b = id.a0 ? 5 : 3;
         s0 s0Var2 = new s0(this, 1);
         this.d = s0Var2;
         s0Var2.setCallback(this);
@@ -126,7 +126,7 @@ public abstract class w0 extends FrameLayout implements a6 {
         TextPaint textPaint2 = s0Var2.a;
         textPaint2.setStyle(style);
         textPaint2.setStrokeWidth(org.telegram.messenger.g0.N(0.3f));
-        s0Var2.b = hd.a0 ? 3 : 5;
+        s0Var2.b = id.a0 ? 3 : 5;
         paint.setColor(0);
         paint.setShadowLayer(org.telegram.messenger.g0.N(1.33f), 0.0f, org.telegram.messenger.g0.N(0.33f), 1056964608);
         ColorMatrix colorMatrix = new ColorMatrix();
@@ -380,7 +380,7 @@ public abstract class w0 extends FrameLayout implements a6 {
             i7 = View.MeasureSpec.makeMeasureSpec(getPaddingLeft() + getPaddingRight() + View.MeasureSpec.getSize(i7), TLObject.FLAG_30);
         }
         super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + getPaddingTop() + org.telegram.messenger.g0.L(44.0f), TLObject.FLAG_30));
-        boolean z9 = iz.o() >= 2 && rc.e(256);
+        boolean z9 = iz.o() >= 2 && sc.e(256);
         if (this.x && this.f == null && !this.W && z9) {
             this.a0.run();
         }

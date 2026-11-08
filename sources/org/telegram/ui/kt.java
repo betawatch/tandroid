@@ -7,13 +7,13 @@ import android.widget.FrameLayout;
 import java.util.Iterator;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class kt extends org.telegram.ui.ActionBar.f2 {
     public static final int[][] r = {new int[]{-14899731, -15431455}, new int[]{-11154873, -14175180}, new int[]{-11565578, -13276952}, new int[]{-1007845, -1996271}, new int[]{-765355, -2148011}, new int[]{-3903756, -6335009}, new int[]{-13451058, -14836538}};
     public static final int[] s = {org.telegram.ui.ActionBar.k6.Vj, org.telegram.ui.ActionBar.k6.Wj, org.telegram.ui.ActionBar.k6.Zj, org.telegram.ui.ActionBar.k6.Yj, org.telegram.ui.ActionBar.k6.Xj, org.telegram.ui.ActionBar.k6.dk, org.telegram.ui.ActionBar.k6.ek};
     public static final int[] w = {R.drawable.msg_filled_data_videos, R.drawable.msg_filled_data_files, R.drawable.msg_filled_data_photos, R.drawable.msg_filled_data_messages, R.drawable.msg_filled_data_music, R.drawable.msg_filled_data_voice, R.drawable.msg_filled_data_calls};
-    public static final int[] x = {2131748758, 2131748767, 2131748762, 2131748448, 2131748764, 2131748774, 2131752595};
+    public static final int[] x = {2131748760, 2131748769, 2131748764, 2131748450, 2131748766, 2131748776, 2131752595};
     public static final int[] y = {2, 5, 4, 1, 7, 3, 0};
     public org.telegram.ui.Components.v61 a;
     public org.telegram.ui.Components.u61 b;
@@ -32,7 +32,7 @@ public final class kt extends org.telegram.ui.ActionBar.f2 {
     @Override // org.telegram.ui.ActionBar.f2
     public final View createView(Context context) {
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131748297, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131748299, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new w9(this, 25));
         di.a4 a4Var = new di.a4(context, 25);
         org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.a7, a4Var, null);

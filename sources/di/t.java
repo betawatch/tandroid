@@ -3,12 +3,12 @@ package di;
 import j$.util.DesugarArrays;
 import j$.util.stream.Collectors;
 import java.util.ArrayList;
-import org.telegram.messenger.al;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
+import org.telegram.messenger.zk;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class t {
     public static int[] a() {
@@ -180,6 +180,6 @@ public abstract class t {
     }
 
     public static String f(int[] iArr) {
-        return (String) DesugarArrays.stream(iArr).mapToObj(new al(1)).collect(Collectors.joining(","));
+        return (String) DesugarArrays.stream(iArr).mapToObj(new zk(1)).collect(Collectors.joining(","));
     }
 }

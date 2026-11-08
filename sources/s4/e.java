@@ -32,13 +32,13 @@ import li.z3;
 import org.telegram.messenger.qs;
 import org.telegram.ui.ActionBar.m5;
 import org.telegram.ui.Cells.f1;
-import org.telegram.ui.Components.dt;
-import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.et;
 import org.telegram.ui.Components.ri0;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.rt;
+import org.telegram.ui.Components.vy;
 import org.telegram.ui.hy0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class e {
     public static final /* synthetic */ int F = 0;
@@ -46,7 +46,7 @@ public final class e {
     public int B;
     public hy0 C;
     public android.support.v4.media.session.a0 D;
-    public final uy E;
+    public final vy E;
     public final qe.h c;
     public v d;
     public q e;
@@ -95,7 +95,7 @@ public final class e {
         sVar.d = 3;
         this.n = sVar;
         this.o = new org.telegram.ui.Components.n(this);
-        this.E = new uy(this, 14);
+        this.E = new vy(this, 14);
         this.h = context;
         this.p = ((ActivityManager) context.getSystemService("activity")).isLowRamDevice();
         int i7 = Build.VERSION.SDK_INT;
@@ -110,7 +110,7 @@ public final class e {
                 Intent intent2 = new Intent(context, (Class<?>) s0.class);
                 intent2.setPackage(context.getPackageName());
                 context.getPackageManager().queryBroadcastReceivers(intent2, 0).size();
-                this.r = (i7 >= 30 || !z9) ? null : new k(context, new qt(this, 13));
+                this.r = (i7 >= 30 || !z9) ? null : new k(context, new rt(this, 13));
                 j0 f0Var = i7 < 24 ? new f0(context, this) : new j0(context, this);
                 this.s = f0Var;
                 m5 m5Var = new m5(this, 25);
@@ -136,7 +136,7 @@ public final class e {
                     intentFilter.addAction("android.intent.action.PACKAGE_RESTARTED");
                     intentFilter.addDataScheme("package");
                     ((Context) hVar.b).registerReceiver((androidx.mediarouter.app.f) hVar.g, intentFilter, null, handler);
-                    handler.post((dt) hVar.h);
+                    handler.post((et) hVar.h);
                     return;
                 }
                 return;
@@ -148,7 +148,7 @@ public final class e {
         Intent intent22 = new Intent(context, (Class<?>) s0.class);
         intent22.setPackage(context.getPackageName());
         context.getPackageManager().queryBroadcastReceivers(intent22, 0).size();
-        this.r = (i7 >= 30 || !z9) ? null : new k(context, new qt(this, 13));
+        this.r = (i7 >= 30 || !z9) ? null : new k(context, new rt(this, 13));
         if (i7 < 24) {
         }
         this.s = f0Var;
@@ -384,24 +384,24 @@ public final class e {
             p c10 = vVar.c().c(vVar.b);
             if (c10 != null) {
                 Executor e10 = f0.d.e(this.h);
-                uy uyVar = this.E;
+                vy vyVar = this.E;
                 synchronized (c10.a) {
                     try {
                         if (e10 == null) {
                             throw new NullPointerException("Executor shouldn't be null");
                         }
-                        if (uyVar == null) {
+                        if (vyVar == null) {
                             throw new NullPointerException("Listener shouldn't be null");
                         }
                         c10.b = e10;
-                        c10.c = uyVar;
+                        c10.c = vyVar;
                         ArrayList arrayList = c10.e;
                         if (arrayList != null && !arrayList.isEmpty()) {
                             m mVar = c10.d;
                             ArrayList arrayList2 = c10.e;
                             c10.d = null;
                             c10.e = null;
-                            c10.b.execute(new pa(c10, uyVar, mVar, arrayList2, false, 5));
+                            c10.b.execute(new pa(c10, vyVar, mVar, arrayList2, false, 5));
                         }
                     } catch (Throwable th2) {
                         throw th2;

@@ -4,13 +4,13 @@ import java.util.HashMap;
 import org.telegram.messenger.c20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import zh.b4;
-import zh.e1;
-import zh.h3;
-import zh.k3;
-import zh.m3;
+import zh.a4;
+import zh.d1;
+import zh.f3;
+import zh.j3;
+import zh.l3;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements c20 {
     public final /* synthetic */ int a;
@@ -38,22 +38,22 @@ public final /* synthetic */ class a implements c20 {
                 hashMap2.putAll((HashMap) obj);
                 break;
             case 3:
-                ((e1) this.b).a();
+                ((d1) this.b).a();
                 break;
             case 4:
-                ((m3) this.b).j0(((Boolean) obj).booleanValue());
+                ((l3) this.b).j0(((Boolean) obj).booleanValue());
                 break;
             case 5:
-                k3 k3Var = (k3) this.b;
+                j3 j3Var = (j3) this.b;
                 ((Boolean) obj).getClass();
-                h3 h3Var = k3Var.d;
-                if (h3Var != null) {
-                    h3Var.run();
+                f3 f3Var = j3Var.d;
+                if (f3Var != null) {
+                    f3Var.run();
                     break;
                 }
                 break;
             default:
-                wg.h.j(((b4) this.b).getContext(), (TLRPC.TL_error) obj);
+                wg.h.j(((a4) this.b).getContext(), (TLRPC.TL_error) obj);
                 break;
         }
     }

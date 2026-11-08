@@ -10,7 +10,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'e' uses ext
 	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
  */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class gc {
     public static final gc D;
@@ -36,28 +36,28 @@ public final class gc {
 
     static {
         fc fcVar = fc.e;
-        gc gcVar = new gc("PHOTO", 0, "PhotoSavedHint", 2131747263, fcVar);
+        gc gcVar = new gc("PHOTO", 0, "PhotoSavedHint", 2131747265, fcVar);
         e = gcVar;
         gc gcVar2 = new gc("PHOTOS", 1, "PhotosSavedHint", fcVar);
         f = gcVar2;
-        gc gcVar3 = new gc("VIDEO", 2, "VideoSavedHint", 2131743586, fcVar);
+        gc gcVar3 = new gc("VIDEO", 2, "VideoSavedHint", 2131743588, fcVar);
         h = gcVar3;
         gc gcVar4 = new gc("VIDEOS", 3, "VideosSavedHint", fcVar);
         n = gcVar4;
-        gc gcVar5 = new gc("LIVEPHOTO", 4, "LivePhotoSavedHint", 2131748833, fcVar);
+        gc gcVar5 = new gc("LIVEPHOTO", 4, "LivePhotoSavedHint", 2131748835, fcVar);
         r = gcVar5;
         gc gcVar6 = new gc("LIVEPHOTOS", 5, "LivePhotosSavedHint", fcVar);
         s = gcVar6;
         gc gcVar7 = new gc("MEDIA", 6, "MediaSavedHint", fcVar);
         w = gcVar7;
         fc fcVar2 = fc.d;
-        gc gcVar8 = new gc("PHOTO_TO_DOWNLOADS", 7, "PhotoSavedToDownloadsHintLinked", 2131747262, fcVar2);
+        gc gcVar8 = new gc("PHOTO_TO_DOWNLOADS", 7, "PhotoSavedToDownloadsHintLinked", 2131747264, fcVar2);
         x = gcVar8;
-        gc gcVar9 = new gc("VIDEO_TO_DOWNLOADS", 8, "VideoSavedToDownloadsHintLinked", 2131743585, fcVar2);
+        gc gcVar9 = new gc("VIDEO_TO_DOWNLOADS", 8, "VideoSavedToDownloadsHintLinked", 2131743587, fcVar2);
         y = gcVar9;
-        gc gcVar10 = new gc("GIF", 9, "GifSavedHint", 2131750469, fc.h);
+        gc gcVar10 = new gc("GIF", 9, "GifSavedHint", 2131750471, fc.h);
         D = gcVar10;
-        gc gcVar11 = new gc("GIF_TO_DOWNLOADS", 10, "GifSavedToDownloadsHintLinked", 2131750468, fcVar2);
+        gc gcVar11 = new gc("GIF_TO_DOWNLOADS", 10, "GifSavedToDownloadsHintLinked", 2131750470, fcVar2);
         E = gcVar11;
         fc fcVar3 = fc.f;
         gc gcVar12 = new gc("AUDIO", 11, "AudioSavedHint", 2131753908, fcVar3);

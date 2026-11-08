@@ -20,7 +20,7 @@ import m.x0;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class j0 {
     public int a;
@@ -244,7 +244,7 @@ public class j0 {
                 int i13 = i7 - 1;
                 int i14 = 0;
                 while (i13 >= 0) {
-                    if (uVar.k(i12 + i13)) {
+                    if (uVar.n(i12 + i13)) {
                         i14 += i10;
                     }
                     i13--;
@@ -334,7 +334,7 @@ public class j0 {
     public j0(int i7, int i10) {
         switch (i10) {
             case 5:
-                this.c = new z3.r[i7];
+                this.c = new z3.s[i7];
                 this.b = 0;
                 return;
             default:

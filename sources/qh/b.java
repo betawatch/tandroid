@@ -21,7 +21,7 @@ import java.util.regex.Pattern;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.t5;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLObject;
@@ -37,7 +37,7 @@ import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.ke0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class b extends FrameLayout implements ke0, te.b, a6 {
     public static final RectF V = new RectF();
@@ -108,7 +108,7 @@ public final class b extends FrameLayout implements ke0, te.b, a6 {
         b bVar = new b(context);
         bVar.d = f6Var;
         bVar.D = aVar;
-        bVar.a.setText(hd.M0(i7, null));
+        bVar.a.setText(id.M0(i7, null));
         bVar.b(false);
         bVar.b.setLayoutParams(ha.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
         bVar.x = k6.w0(k6.Ql, f6Var);

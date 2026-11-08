@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class uy extends rg.b {
     public final /* synthetic */ vy d;
@@ -95,7 +95,7 @@ public final class uy extends rg.b {
         }
         if (i11 != 0 && i11 == 8) {
             ry ryVar = (ry) view;
-            ryVar.a.setText(org.telegram.messenger.hd.M0(2131751715, null));
+            ryVar.a.setText(org.telegram.messenger.id.M0(2131751715, null));
             if (ryVar.c != z9) {
                 ryVar.c = z9;
                 ryVar.setWillNotDraw(!z9);

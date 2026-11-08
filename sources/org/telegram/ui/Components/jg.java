@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class jg extends ch0 {
     public final w5 D;
@@ -97,13 +97,13 @@ public class jg extends ch0 {
                 org.telegram.messenger.g0.h3(new org.telegram.ui.Cells.o0(zg0Var, 1));
                 ordinal = hgVar.ordinal();
                 if (ordinal != 0) {
-                    setContentDescription(org.telegram.messenger.hd.M0(2131754734, null));
+                    setContentDescription(org.telegram.messenger.id.M0(2131754734, null));
                     return;
                 } else {
                     if (ordinal != 1) {
                         return;
                     }
-                    setContentDescription(org.telegram.messenger.hd.M0(2131754736, null));
+                    setContentDescription(org.telegram.messenger.id.M0(2131754736, null));
                     return;
                 }
             }

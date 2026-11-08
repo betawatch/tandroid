@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class gs0 extends oj0 {
     public final Context c;
@@ -44,7 +44,7 @@ public final class gs0 extends oj0 {
                 int i11 = ijVar.k.date;
                 TLRPC.TL_message tL_message = new TLRPC.TL_message();
                 long j3 = i11;
-                tL_message.message = org.telegram.messenger.hd.u(j3, false);
+                tL_message.message = org.telegram.messenger.id.u(j3, false);
                 tL_message.id = 0;
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTimeInMillis(j3 * 1000);
@@ -98,7 +98,7 @@ public final class gs0 extends oj0 {
             int i10 = d1Var.f;
             View view = d1Var.a;
             if (i10 == 0) {
-                ((org.telegram.ui.Cells.q1) view).v3(ijVar, null, false, false, false, false);
+                ((org.telegram.ui.Cells.q1) view).w3(ijVar, null, false, false, false, false);
             } else {
                 ((org.telegram.ui.Cells.t0) view).setMessageObject(ijVar);
             }

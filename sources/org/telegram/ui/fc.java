@@ -8,7 +8,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class fc extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public org.telegram.ui.ActionBar.k5 a;
@@ -52,7 +52,7 @@ public final class fc extends FrameLayout implements org.telegram.ui.ActionBar.a
         if (j3 == 0) {
             g5Var.g(null, z10);
             if (this.b == null) {
-                this.b = new org.telegram.ui.Components.my0(org.telegram.messenger.hd.M0(2131752311, null), 16.0f, null);
+                this.b = new org.telegram.ui.Components.my0(org.telegram.messenger.id.M0(2131752311, null), 16.0f, null);
             }
         } else {
             g5Var.j(j3, z10);
@@ -66,7 +66,7 @@ public final class fc extends FrameLayout implements org.telegram.ui.ActionBar.a
         if (document == null) {
             g5Var.g(null, false);
             if (this.b == null) {
-                this.b = new org.telegram.ui.Components.my0(org.telegram.messenger.hd.M0(2131752311, null), 16.0f, null);
+                this.b = new org.telegram.ui.Components.my0(org.telegram.messenger.id.M0(2131752311, null), 16.0f, null);
             }
         } else {
             g5Var.i(document, false);
@@ -94,7 +94,7 @@ public final class fc extends FrameLayout implements org.telegram.ui.ActionBar.a
         if (this.e) {
             Paint d = f6Var != null ? f6Var.d("paintDivider") : org.telegram.ui.ActionBar.k6.k0;
             if (d != null) {
-                canvas2.drawLine(org.telegram.messenger.hd.a0 ? 0.0f : org.telegram.messenger.g0.L(23.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(23.0f) : 0), getMeasuredHeight() - 1, d);
+                canvas2.drawLine(org.telegram.messenger.id.a0 ? 0.0f : org.telegram.messenger.g0.L(23.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(23.0f) : 0), getMeasuredHeight() - 1, d);
             }
         }
     }

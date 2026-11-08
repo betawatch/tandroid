@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class so0 implements Runnable {
     public final /* synthetic */ int a;
@@ -115,7 +115,7 @@ public final /* synthetic */ class so0 implements Runnable {
             case 11:
                 up0 up0Var = xs0Var.a0;
                 up0Var.getClass();
-                up0Var.h(null, new zh.k1(up0Var, 1));
+                up0Var.h(null, new zh.j1(up0Var, 1));
                 break;
             case 12:
                 xs0Var.a0.setReordering(true);

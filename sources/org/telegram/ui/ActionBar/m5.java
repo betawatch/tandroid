@@ -17,19 +17,19 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.qs;
-import org.telegram.messenger.yk;
+import org.telegram.messenger.xk;
 import org.telegram.ui.Components.c8;
-import org.telegram.ui.Components.hz;
-import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.iz;
 import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.ri0;
-import org.telegram.ui.Components.uy;
-import org.telegram.ui.Components.ys;
+import org.telegram.ui.Components.rt;
+import org.telegram.ui.Components.vy;
+import org.telegram.ui.Components.zs;
 import org.telegram.ui.an;
-import org.telegram.ui.v91;
+import org.telegram.ui.w91;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m5 implements Runnable {
     public final /* synthetic */ int a;
@@ -169,7 +169,7 @@ public final /* synthetic */ class m5 implements Runnable {
                 }
                 break;
             case 13:
-                ((ys) this.b).requestFocus();
+                ((zs) this.b).requestFocus();
                 break;
             case 14:
                 vf.c.t(((org.telegram.ui.web.q0) this.b).b.e.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
@@ -182,7 +182,7 @@ public final /* synthetic */ class m5 implements Runnable {
                 ((HttpGetFileTask) this.b).lambda$doInBackground$1();
                 break;
             case 17:
-                ((org.telegram.ui.Wallet.x5) this.b).invalidateSelf();
+                ((org.telegram.ui.Wallet.w5) this.b).invalidateSelf();
                 break;
             case 18:
                 org.telegram.ui.web.o1 o1Var = (org.telegram.ui.web.o1) this.b;
@@ -201,7 +201,7 @@ public final /* synthetic */ class m5 implements Runnable {
                     length += org.telegram.ui.web.o1.e0(file2, null);
                 }
                 File file3 = new File(org.telegram.messenger.t0.b.getApplicationInfo().dataDir, "app_webview");
-                org.telegram.messenger.g0.h3(new yk(o1Var, length, file3.exists() ? org.telegram.ui.web.o1.e0(file3, Boolean.TRUE) : 0L, 2));
+                org.telegram.messenger.g0.h3(new xk(o1Var, length, file3.exists() ? org.telegram.ui.web.o1.e0(file3, Boolean.TRUE) : 0L, 2));
                 break;
             case 19:
                 ((boolean[]) this.b)[0] = true;
@@ -222,28 +222,28 @@ public final /* synthetic */ class m5 implements Runnable {
                 ((q2.b) this.b).c(null);
                 break;
             case 22:
-                v91 v91Var = (v91) this.b;
-                if (v91Var.getParentLayout() != null) {
-                    v91Var.H = true;
+                w91 w91Var = (w91) this.b;
+                if (w91Var.getParentLayout() != null) {
+                    w91Var.H = true;
                     Bundle bundle = new Bundle();
-                    bundle.putLong("chat_id", v91Var.a);
+                    bundle.putLong("chat_id", w91Var.a);
                     an anVar = new an(bundle);
                     anVar.Ca = true;
-                    v91Var.presentFragment(anVar);
+                    w91Var.presentFragment(anVar);
                     break;
                 }
                 break;
             case 23:
-                ((qt) this.b).m0();
+                ((rt) this.b).m0();
                 break;
             case 24:
-                hz hzVar = (hz) this.b;
-                rh.b bVar = (rh.b) hzVar.c;
+                iz izVar = (iz) this.b;
+                rh.b bVar = (rh.b) izVar.c;
                 if (bVar == rh.b.b) {
-                    hzVar.a(rh.b.a, true);
+                    izVar.a(rh.b.a, true);
                     break;
                 } else if (bVar == rh.b.c) {
-                    hzVar.a(rh.b.d, true);
+                    izVar.a(rh.b.d, true);
                     break;
                 }
                 break;
@@ -257,9 +257,9 @@ public final /* synthetic */ class m5 implements Runnable {
                 ((ri0) this.b).b();
                 break;
             case 28:
-                uy uyVar = ((sg.h0) this.b).b.a;
-                if (uyVar != null) {
-                    uyVar.b();
+                vy vyVar = ((sg.h0) this.b).b.a;
+                if (vyVar != null) {
+                    vyVar.b();
                     break;
                 }
                 break;

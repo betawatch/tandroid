@@ -12,7 +12,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class q21 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.ActionBar.f6 a;
@@ -74,7 +74,7 @@ public final class q21 extends FrameLayout implements org.telegram.ui.ActionBar.
         linearLayout2.addView(woVar, c8.ha.t(22, 22, 16, 0, 0, 0, 0));
         TextView textView4 = new TextView(context);
         org.telegram.messenger.k5.n(textView4, org.telegram.ui.ActionBar.k6.j5, f6Var, 1, 14.0f);
-        textView4.setText(org.telegram.messenger.hd.M0(2131754995, null));
+        textView4.setText(org.telegram.messenger.id.M0(2131754995, null));
         linearLayout2.addView(textView4, c8.ha.t(-2, -2, 16, 3, -1, 2, 0));
         addView(linearLayout2, c8.ha.d(-2, -2.0f, 21, 0.0f, -3.0f, -6.0f, -3.0f));
         c8.ka.b(linearLayout2, 0.025f, 1.5f);
@@ -93,7 +93,7 @@ public final class q21 extends FrameLayout implements org.telegram.ui.ActionBar.
         this.w = textView5;
         textView5.setTextSize(1, 14.0f);
         textView5.setTypeface(org.telegram.messenger.g0.o());
-        textView5.setText(org.telegram.messenger.hd.M0(2131755003, null));
+        textView5.setText(org.telegram.messenger.id.M0(2131755003, null));
         linearLayout3.addView(textView5, c8.ha.r(-2, -2, 16));
         updateColors();
     }

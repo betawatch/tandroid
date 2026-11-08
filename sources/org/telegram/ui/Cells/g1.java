@@ -6,7 +6,7 @@ import org.telegram.ui.Components.ii0;
 import org.telegram.ui.Components.xz0;
 import org.telegram.ui.cr0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class g1 extends Property {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final class g1 extends Property {
     public final Object get(Object obj) {
         switch (this.a) {
             case 0:
-                return Float.valueOf(((q1) obj).Vc);
+                return Float.valueOf(((q1) obj).Wc);
             case 1:
                 return Integer.valueOf(Math.round(((View) obj).getTranslationY()));
             case 2:

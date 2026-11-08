@@ -21,7 +21,7 @@ import org.telegram.ui.po0;
 import org.telegram.ui.sj0;
 import org.telegram.ui.so;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -148,7 +148,7 @@ public final /* synthetic */ class g2 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new a3(x0Var, tLObject, (TLRPC.TL_messages_requestUrlAuth) obj3, (String) obj2, tL_error, (String) obj));
                 break;
             default:
-                org.telegram.messenger.g0.h3(new a3((zh.h1) obj4, (org.telegram.ui.ActionBar.u1) obj3, tLObject, (ub) obj2, (c20) obj, tL_error));
+                org.telegram.messenger.g0.h3(new a3((zh.g1) obj4, (org.telegram.ui.ActionBar.u1) obj3, tLObject, (ub) obj2, (c20) obj, tL_error));
                 break;
         }
     }

@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.ax;
+import org.telegram.ui.Components.bx;
 import org.telegram.ui.Components.fr;
 import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.x50;
@@ -25,7 +25,7 @@ import org.telegram.ui.hl0;
 import org.telegram.ui.pn;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -56,9 +56,9 @@ public final /* synthetic */ class p3 implements View.OnClickListener {
                 if (Q != null) {
                     org.telegram.ui.ActionBar.d2 d2Var = new org.telegram.ui.ActionBar.d2();
                     d2Var.a = true;
-                    zh.m3 m3Var = new zh.m3(k7Var.P1, str, this.b, k7Var.I0);
-                    m3Var.e = new y3(k7Var, i10);
-                    Q.showAsSheet(m3Var, d2Var);
+                    zh.l3 l3Var = new zh.l3(k7Var.P1, str, this.b, k7Var.I0);
+                    l3Var.e = new y3(k7Var, i10);
+                    Q.showAsSheet(l3Var, d2Var);
                     break;
                 }
                 break;
@@ -144,7 +144,7 @@ public final /* synthetic */ class p3 implements View.OnClickListener {
                         break;
                     } else {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(W);
-                        String G = org.telegram.messenger.hd.G(hVar.m(), "AddManyMembersAlertTitle", new Object[0]);
+                        String G = org.telegram.messenger.id.G(hVar.m(), "AddManyMembersAlertTitle", new Object[0]);
                         org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder.a;
                         u1Var2.R = G;
                         StringBuilder sb2 = new StringBuilder();
@@ -161,7 +161,7 @@ public final /* synthetic */ class p3 implements View.OnClickListener {
                         }
                         TLRPC.Chat M0 = qp.s1(x50Var.a).M0(Long.valueOf(j3));
                         if (hVar.m() > 5) {
-                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.G(hVar.m(), "AddManyMembersAlertNamesText", M0.title)));
+                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(hVar.m(), "AddManyMembersAlertNamesText", M0.title)));
                             String format = String.format("%d", Integer.valueOf(hVar.m()));
                             int indexOf = TextUtils.indexOf(spannableStringBuilder, format);
                             if (indexOf >= 0) {
@@ -169,10 +169,10 @@ public final /* synthetic */ class p3 implements View.OnClickListener {
                             }
                             u1Var2.T = spannableStringBuilder;
                         } else {
-                            u1Var2.T = org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0("AddMembersAlertNamesText", null, 2131754399, sb2, M0.title));
+                            u1Var2.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("AddMembersAlertNamesText", null, 2131754399, sb2, M0.title));
                         }
-                        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131754486, null), new ax(x50Var, 6));
-                        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+                        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131754486, null), new bx(x50Var, 6));
+                        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
                         alertDialog$Builder.p();
                         break;
                     }
@@ -195,7 +195,7 @@ public final /* synthetic */ class p3 implements View.OnClickListener {
                 long longValue = ((Long) ((TextView) obj).getTag()).longValue();
                 Long l10 = hl0Var.H0;
                 if (l10 == null || longValue != l10.longValue()) {
-                    hl0Var.f[0].setText(org.telegram.messenger.hd.E0().q(this.b, false, true, true, hl0Var.C0.invoice.currency));
+                    hl0Var.f[0].setText(org.telegram.messenger.id.E0().q(this.b, false, true, true, hl0Var.C0.invoice.currency));
                 } else {
                     hl0Var.m0 = true;
                     hl0Var.f[0].setText("");

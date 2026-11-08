@@ -2,14 +2,14 @@ package ii;
 
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements v10 {
     public final /* synthetic */ int a;
@@ -29,13 +29,13 @@ public final /* synthetic */ class a implements v10 {
             case 0:
                 ArrayList arrayList = (ArrayList) obj;
                 arrayList.add(x31.l(0, fVar.h));
-                x31 c10 = x31.c(1, R.drawable.msg_groups_create, hd.M0(2131751939, null));
+                x31 c10 = x31.c(1, R.drawable.msg_groups_create, id.M0(2131751939, null));
                 c10.q = true;
                 arrayList.add(c10);
                 arrayList.add(x31.E(2, org.telegram.messenger.g0.L(14.0f)));
                 ArrayList arrayList2 = fVar.n;
                 if (arrayList2 != null && !arrayList2.isEmpty()) {
-                    arrayList.add(x31.t(3, hd.M0(2131751969, null)));
+                    arrayList.add(x31.t(3, id.M0(2131751969, null)));
                     ArrayList arrayList3 = fVar.n;
                     int size = arrayList3.size();
                     int i10 = 0;
@@ -49,9 +49,9 @@ public final /* synthetic */ class a implements v10 {
                         w10.d = (int) (j3 ^ (j3 >>> 32));
                         if (N0 != null) {
                             ArrayList<TL_communities.CommunityPeer> arrayList4 = N0.linked_peers;
-                            M0 = hd.G(arrayList4 != null ? arrayList4.size() : 0, "Chats", new Object[0]);
+                            M0 = id.G(arrayList4 != null ? arrayList4.size() : 0, "Chats", new Object[0]);
                         } else {
-                            M0 = hd.M0(2131748778, null);
+                            M0 = id.M0(2131748780, null);
                         }
                         w10.m = M0;
                         arrayList.add(w10);

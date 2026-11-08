@@ -17,7 +17,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class ProxyListActivity extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public int D;
@@ -97,12 +97,12 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.f2 implements o
             }
             if (i7 == proxyListActivity.D) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(proxyListActivity.getParentActivity());
-                String M0 = org.telegram.messenger.hd.M0(2131751580, null);
+                String M0 = org.telegram.messenger.id.M0(2131751580, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.T = M0;
-                alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
-                u1Var.R = org.telegram.messenger.hd.M0(2131751510, null);
-                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751599, null), new lx0(proxyListActivity));
+                alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
+                u1Var.R = org.telegram.messenger.id.M0(2131751510, null);
+                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751599, null), new lx0(proxyListActivity));
                 proxyListActivity.showDialog(u1Var);
                 TextView textView = (TextView) u1Var.d(-1);
                 if (textView != null) {
@@ -186,7 +186,7 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.f2 implements o
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonDrawable(new org.telegram.ui.ActionBar.y1(false));
-        this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131746600, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131746602, null));
         org.telegram.ui.ActionBar.q4 q4Var = this.parentLayout;
         if (q4Var != null && ((ActionBarLayout) q4Var).S0) {
             this.simpleActionBar.setOccupyStatusBar(false);
@@ -208,8 +208,8 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.f2 implements o
         this.b.setOnItemClickListener(new h(this, 29));
         this.b.setOnItemLongClickListener(new lx0(this));
         org.telegram.ui.ActionBar.e5 l10 = this.simpleActionBar.l();
-        l10.c(1, R.drawable.msg_share, null, null, org.telegram.messenger.g0.L(54.0f), null).setContentDescription(org.telegram.messenger.hd.M0(2131744847, null));
-        l10.c(0, R.drawable.msg_delete, null, null, org.telegram.messenger.g0.L(54.0f), null).setContentDescription(org.telegram.messenger.hd.M0(2131751599, null));
+        l10.c(1, R.drawable.msg_share, null, null, org.telegram.messenger.g0.L(54.0f), null).setContentDescription(org.telegram.messenger.id.M0(2131744849, null));
+        l10.c(0, R.drawable.msg_delete, null, null, org.telegram.messenger.g0.L(54.0f), null).setContentDescription(org.telegram.messenger.id.M0(2131751599, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new hi0(this, context, 1));
         return this.fragmentView;
     }

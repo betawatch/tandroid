@@ -5,18 +5,18 @@ import bi.i;
 import da.p1;
 import java.util.concurrent.atomic.AtomicReference;
 import u5.e;
-import u9.o;
+import u9.p;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class a {
     public static final b c = new b();
-    public final o a;
+    public final p a;
     public final AtomicReference b = new AtomicReference(null);
 
-    public a(o oVar) {
-        this.a = oVar;
-        oVar.a(new e(this, 11));
+    public a(p pVar) {
+        this.a = pVar;
+        pVar.a(new e(this, 11));
     }
 
     public final b a(String str) {

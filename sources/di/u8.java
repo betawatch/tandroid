@@ -15,7 +15,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class u8 extends View {
     public int a;
@@ -125,13 +125,13 @@ public final class u8 extends View {
 
     public final void c(float f10, int i7) {
         if (i7 == R.drawable.msg_stories_closefriends) {
-            setContentDescription(hd.M0(2131744533, null));
+            setContentDescription(id.M0(2131744535, null));
         } else if (i7 == R.drawable.msg_folders_private) {
-            setContentDescription(hd.M0(2131744531, null));
+            setContentDescription(id.M0(2131744533, null));
         } else if (i7 == R.drawable.msg_folders_groups) {
-            setContentDescription(hd.M0(2131744521, null));
+            setContentDescription(id.M0(2131744523, null));
         } else if (i7 == R.drawable.msg_folders_channels) {
-            setContentDescription(hd.M0(2131744529, null));
+            setContentDescription(id.M0(2131744531, null));
         }
         Drawable[] drawableArr = this.n;
         Drawable drawable = drawableArr[0];

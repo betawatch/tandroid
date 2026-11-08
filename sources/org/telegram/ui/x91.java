@@ -1,27 +1,24 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class x91 implements fx0 {
-    public final /* synthetic */ TLRPC.TL_forumTopic a;
-    public final /* synthetic */ y91 b;
+public final /* synthetic */ class x91 implements org.telegram.ui.ActionBar.r1 {
+    public final /* synthetic */ z91 a;
 
-    public x91(y91 y91Var, TLRPC.TL_forumTopic tL_forumTopic) {
-        this.b = y91Var;
-        this.a = tL_forumTopic;
+    public /* synthetic */ x91(z91 z91Var) {
+        this.a = z91Var;
     }
 
-    @Override // org.telegram.ui.fx0
-    public final void c0() {
-        ba1 ba1Var = this.b.a;
-        TLRPC.TL_forumTopic tL_forumTopic = this.a;
-        ba1.Z(ba1Var, tL_forumTopic.id);
-        org.telegram.messenger.g0.i3(new by0(21, this, tL_forumTopic), 300L);
-    }
-
-    @Override // org.telegram.ui.fx0
-    public final void t(oh0 oh0Var) {
+    @Override // org.telegram.ui.ActionBar.r1
+    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        ca1 ca1Var = this.a.a;
+        Iterator it = ca1Var.e.iterator();
+        while (it.hasNext()) {
+            ca1.Z(ca1Var, ((Integer) it.next()).intValue());
+        }
+        ca1Var.e.clear();
+        ca1Var.a0();
     }
 }

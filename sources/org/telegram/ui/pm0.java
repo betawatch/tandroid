@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class pm0 extends org.telegram.ui.ActionBar.f2 {
     public Bitmap a;
@@ -28,9 +28,9 @@ public final class pm0 extends org.telegram.ui.ActionBar.f2 {
         this.actionBar.D(-1, false);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(org.telegram.messenger.hd.M0(2131751699, null));
+        this.actionBar.setTitle(org.telegram.messenger.id.M0(2131751699, null));
         this.actionBar.setActionBarMenuOnItemClick(new ux(this, 23));
-        this.actionBar.q().h(1, R.drawable.ic_ab_done, org.telegram.messenger.g0.L(56.0f), org.telegram.messenger.hd.M0(2131751355, null));
+        this.actionBar.q().h(1, R.drawable.ic_ab_done, org.telegram.messenger.g0.L(56.0f), org.telegram.messenger.id.M0(2131751355, null));
         nm0 nm0Var = new nm0(this, context);
         this.d = nm0Var;
         this.fragmentView = nm0Var;

@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import c8.ha;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.t10;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k6;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class m extends FrameLayout {
     public final k2 a;
@@ -118,12 +118,12 @@ public final class m extends FrameLayout {
         int callState = sharedInstance.getCallState();
         TextView textView2 = this.d;
         if (callState == 5) {
-            textView2.setText(hd.M0(2131743254, null));
+            textView2.setText(id.M0(2131743256, null));
             textView2.setVisibility(0);
         } else if (callState == 3) {
             textView2.setVisibility(8);
         } else {
-            textView2.setText(hd.M0(2131743420, null));
+            textView2.setText(id.M0(2131743422, null));
             textView2.setVisibility(0);
         }
     }

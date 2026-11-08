@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class us0 extends LinearLayout {
     public final TextView a;
@@ -233,11 +233,11 @@ public final class us0 extends LinearLayout {
         TextView textView = this.a;
         TextView textView2 = this.b;
         if (i7 == 0) {
-            textView.setText(org.telegram.messenger.hd.M0(premiumPreviewFragment.p0 ? 2131744229 : 2131744232, null));
-            textView2.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0((premiumPreviewFragment.getUserConfig().q() || premiumPreviewFragment.p0) ? 2131744230 : 2131744228, null)));
+            textView.setText(org.telegram.messenger.id.M0(premiumPreviewFragment.p0 ? 2131744231 : 2131744234, null));
+            textView2.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0((premiumPreviewFragment.getUserConfig().q() || premiumPreviewFragment.p0) ? 2131744232 : 2131744230, null)));
         } else if (i7 == 1) {
-            textView.setText(org.telegram.messenger.hd.M0(premiumPreviewFragment.p0 ? 2131744229 : 2131744253, null));
-            textView2.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0((premiumPreviewFragment.getUserConfig().q() || premiumPreviewFragment.p0) ? 2131744251 : 2131744248, null)));
+            textView.setText(org.telegram.messenger.id.M0(premiumPreviewFragment.p0 ? 2131744231 : 2131744255, null));
+            textView2.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0((premiumPreviewFragment.getUserConfig().q() || premiumPreviewFragment.p0) ? 2131744253 : 2131744250, null)));
         }
         textView2.getLayoutParams().width = Math.min(org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(42.0f), fi.m3.a(textView2.getText(), textView2.getPaint()));
         if (!premiumPreviewFragment.p0) {

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l50 extends org.telegram.ui.Components.oj0 {
     public final Context c;
@@ -116,7 +116,7 @@ public final class l50 extends org.telegram.ui.Components.oj0 {
         int indexOf = str2.toLowerCase(locale).indexOf(lowerCase);
         if (indexOf != -1) {
             SpannableString spannableString = new SpannableString(stickerSet.title);
-            spannableString.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.q6, resourceProvider), indexOf, lowerCase.length() + indexOf, 0);
+            spannableString.setSpan(new org.telegram.ui.Components.yz(org.telegram.ui.ActionBar.k6.q6, resourceProvider), indexOf, lowerCase.length() + indexOf, 0);
             g8Var.b.setText(spannableString);
         }
         int indexOf2 = stickerSet.short_name.toLowerCase(locale).indexOf(lowerCase);
@@ -126,7 +126,7 @@ public final class l50 extends org.telegram.ui.Components.oj0 {
             StringBuilder m10 = com.google.android.recaptcha.internal.a.m(str3);
             m10.append(stickerSet.short_name);
             SpannableString spannableString2 = new SpannableString(m10.toString());
-            spannableString2.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.q6, resourceProvider), length, lowerCase.length() + length, 0);
+            spannableString2.setSpan(new org.telegram.ui.Components.yz(org.telegram.ui.ActionBar.k6.q6, resourceProvider), length, lowerCase.length() + length, 0);
             g8Var.c.setText(spannableString2);
         }
         TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = m50Var.r;
@@ -141,7 +141,7 @@ public final class l50 extends org.telegram.ui.Components.oj0 {
             int i10 = org.telegram.ui.ActionBar.k6.B6;
             m50 m50Var = this.r;
             org.telegram.ui.Cells.n4 n4Var = new org.telegram.ui.Cells.n4(this.c, i10, 21, 0, 0, false, false, m50Var.getResourceProvider());
-            n4Var.setText(org.telegram.messenger.hd.M0(m50Var.N ? 2131752119 : 2131752118, null));
+            n4Var.setText(org.telegram.messenger.id.M0(m50Var.N ? 2131752119 : 2131752118, null));
             g8Var = n4Var;
         } else {
             org.telegram.ui.Cells.g8 g8Var2 = new org.telegram.ui.Cells.g8(this.c, 3);

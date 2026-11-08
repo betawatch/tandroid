@@ -14,7 +14,7 @@ import java.util.Collections;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.dj;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -44,7 +44,7 @@ import org.telegram.ui.gx0;
 import org.telegram.ui.ld0;
 import org.telegram.ui.sy0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -131,7 +131,7 @@ public final /* synthetic */ class u3 implements View.OnClickListener {
                 break;
             case 5:
                 k60 F = k60.F(((org.telegram.ui.ActionBar.v2) obj4).c, (org.telegram.ui.ActionBar.f6) obj3, (ImageView) obj2);
-                F.c(R.drawable.menu_link_revoke, hd.M0(2131749476, null), (jg.c1) obj, false);
+                F.c(R.drawable.menu_link_revoke, id.M0(2131749478, null), (jg.c1) obj, false);
                 F.Y = true;
                 F.a0(0.0f, -org.telegram.messenger.g0.L(6.0f));
                 F.s = 0;
@@ -151,7 +151,7 @@ public final /* synthetic */ class u3 implements View.OnClickListener {
                 ((org.telegram.ui.ActionBar.v2) ((h9.f1) obj).b).x0.run();
                 break;
             case 9:
-                ((re) obj4).l();
+                ((re) obj4).m();
                 org.telegram.ui.Components.v4.k((Context) obj3, (org.telegram.ui.ActionBar.f6) obj2, new org.telegram.ui.Components.u((org.telegram.ui.Components.f8) obj, i11));
                 break;
             case 10:
@@ -215,17 +215,17 @@ public final /* synthetic */ class u3 implements View.OnClickListener {
                     ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(context2, null);
                     if (!q70Var.y && q70Var.G) {
                         org.telegram.ui.ActionBar.z0 z0Var2 = new org.telegram.ui.ActionBar.z0(context2, true, false);
-                        z0Var2.j(hd.M0(2131751336, null), R.drawable.msg_edit, null);
+                        z0Var2.j(id.M0(2131751336, null), R.drawable.msg_edit, null);
                         actionBarPopupWindow$ActionBarPopupWindowLayout.a(z0Var2, ha.o(-1, 48));
                         z0Var2.setOnClickListener(new j70(q70Var, c10 == true ? 1 : 0));
                     }
                     org.telegram.ui.ActionBar.z0 z0Var3 = new org.telegram.ui.ActionBar.z0(context2, true, false);
-                    z0Var3.j(hd.M0(2131750471, null), R.drawable.msg_qrcode, null);
+                    z0Var3.j(id.M0(2131750473, null), R.drawable.msg_qrcode, null);
                     actionBarPopupWindow$ActionBarPopupWindowLayout.a(z0Var3, ha.o(-1, 48));
                     z0Var3.setOnClickListener(new j70(q70Var, 2));
                     if (!q70Var.F) {
                         org.telegram.ui.ActionBar.z0 z0Var4 = new org.telegram.ui.ActionBar.z0(context2, false, true);
-                        z0Var4.j(hd.M0(2131746024, null), R.drawable.msg_delete, null);
+                        z0Var4.j(id.M0(2131746026, null), R.drawable.msg_delete, null);
                         int i16 = org.telegram.ui.ActionBar.k6.p7;
                         z0Var4.d(org.telegram.ui.ActionBar.k6.x0(null, i16, false), org.telegram.ui.ActionBar.k6.x0(null, i16, false));
                         z0Var4.setOnClickListener(new j70(q70Var, 3));
@@ -264,7 +264,7 @@ public final /* synthetic */ class u3 implements View.OnClickListener {
             case 14:
                 ld0 ld0Var = (ld0) obj4;
                 k60 H = k60.H(ld0Var.w, ld0Var.a);
-                H.c(R.drawable.msg_help, hd.M0(2131745480, null), new kn0(ld0Var, (String) obj3, (String) obj2, (String) obj, 20), false);
+                H.c(R.drawable.msg_help, id.M0(2131745482, null), new kn0(ld0Var, (String) obj3, (String) obj2, (String) obj, 20), false);
                 H.V(5);
                 H.Z();
                 break;
@@ -276,7 +276,7 @@ public final /* synthetic */ class u3 implements View.OnClickListener {
                 ((c20) obj3).a(G);
                 break;
             default:
-                zh.e2 e2Var = (zh.e2) obj4;
+                zh.c2 c2Var = (zh.c2) obj4;
                 bi.v9 v9Var = (bi.v9) obj3;
                 TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj2;
                 u10 u10Var = (u10) obj;
@@ -286,7 +286,7 @@ public final /* synthetic */ class u3 implements View.OnClickListener {
                     if (i18 >= i17.size()) {
                         savedStarGift = null;
                         i7 = -1;
-                    } else if (((TL_stars.SavedStarGift) i17.get(i18)).gift.id == e2Var.i1) {
+                    } else if (((TL_stars.SavedStarGift) i17.get(i18)).gift.id == c2Var.i1) {
                         savedStarGift = (TL_stars.SavedStarGift) i17.get(i18);
                         i7 = i18;
                     } else {
@@ -305,8 +305,8 @@ public final /* synthetic */ class u3 implements View.OnClickListener {
                     arrayList4.addAll(0, i17);
                     qs.f(v9Var.a).k(qs.G3, Long.valueOf(v9Var.b), v9Var);
                     v9Var.n();
-                    e2Var.dismiss();
-                    ((hc) u10Var.run()).I(R.raw.ic_pin, hd.a0(null, null, 2131750030, bi.k7.A1(savedStarGift2.gift)), hd.a0(null, null, 2131750031, bi.k7.A1(savedStarGift.gift))).j();
+                    c2Var.dismiss();
+                    ((hc) u10Var.run()).I(R.raw.ic_pin, id.a0(null, null, 2131750032, bi.k7.A1(savedStarGift2.gift)), id.a0(null, null, 2131750033, bi.k7.A1(savedStarGift.gift))).j();
                     break;
                 }
                 break;

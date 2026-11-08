@@ -10,7 +10,7 @@ import android.widget.TextView;
 import c8.ha;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.xq;
 import org.telegram.ui.i2;
 import org.telegram.ui.sq0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class p0 extends LinearLayout {
     public final ArrayList a;
@@ -59,7 +59,7 @@ public final class p0 extends LinearLayout {
         addView(frameLayout, ha.k(0.0f, 15.0f, 0.0f, 0.0f, -1, 70));
         TextView textView = new TextView(context);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(hd.M0(2131753321, null));
+        textView.setText(id.M0(2131753321, null));
         textView.setTextSize(1, 20.0f);
         r6.V(textView, k6.G6, null);
         addView(textView, ha.t(-2, -2, 1, 0, 15, 0, 7));

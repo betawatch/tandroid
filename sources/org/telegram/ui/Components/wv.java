@@ -1,39 +1,63 @@
 package org.telegram.ui.Components;
 
+import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.util.Property;
 import android.view.MotionEvent;
-import android.widget.ImageView;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class wv extends ImageView {
-    public final /* synthetic */ gy a;
+public final class wv extends c5.k {
+    public final /* synthetic */ hy w0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wv(gy gyVar, Context context) {
+    public wv(hy hyVar, Context context) {
         super(context);
-        this.a = gyVar;
+        this.w0 = hyVar;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        hx hxVar;
-        int action = motionEvent.getAction();
-        gy gyVar = this.a;
-        if (action == 0) {
-            gyVar.P1 = true;
-            gyVar.Q1 = false;
-            org.telegram.messenger.g0.i3(new r2(gyVar, 350, 6), 350);
-        } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
-            gyVar.P1 = false;
-            if (!gyVar.Q1 && (hxVar = gyVar.t1) != null && hxVar.k()) {
-                try {
-                    gyVar.y.performHapticFeedback(3);
-                } catch (Exception unused) {
-                }
+    @Override // c5.k, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (this.w0.f) {
+            return false;
+        }
+        if (getParent() != null) {
+            getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
+        }
+        try {
+            return super.onInterceptTouchEvent(motionEvent);
+        } catch (IllegalArgumentException unused) {
+            return false;
+        }
+    }
+
+    @Override // c5.k
+    public final void x(int i7, boolean z9) {
+        hy hyVar = this.w0;
+        lw lwVar = hyVar.I;
+        hy.a(hyVar, i7 == 1);
+        if (i7 != getCurrentItem()) {
+            super.x(i7, z9);
+            return;
+        }
+        if (i7 != 0) {
+            if (i7 == 1) {
+                hyVar.h0.y0(0);
+                return;
+            } else {
+                hyVar.D0.y0(1);
+                return;
             }
         }
-        super.onTouchEvent(motionEvent);
-        return true;
+        hyVar.Q0[1] = 0;
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(lwVar, (Property<lw, Float>) ViewGroup.TRANSLATION_Y, 0.0f);
+        ofFloat.setDuration(150L);
+        ofFloat.setInterpolator(xq.h);
+        ofFloat.start();
+        hyVar.G(1, 0);
+        if (lwVar != null) {
+            lwVar.j(0, true);
+        }
     }
 }

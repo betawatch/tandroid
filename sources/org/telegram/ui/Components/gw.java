@@ -1,26 +1,38 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class gw extends v4.s {
-    public final /* synthetic */ gy Q;
+public final class gw extends FrameLayout {
+    public final /* synthetic */ hy a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gw(gy gyVar) {
-        super(8);
-        this.Q = gyVar;
+    public gw(hy hyVar, Context context) {
+        super(context);
+        this.a = hyVar;
     }
 
-    @Override // v4.b0, v4.n0
-    public final void v0(RecyclerView recyclerView, v4.a1 a1Var, int i7) {
-        try {
-            fi.j1 j1Var = new fi.j1(2, recyclerView.getContext(), this);
-            j1Var.a = i7;
-            w0(j1Var);
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        hy hyVar = this.a;
+        lw lwVar = hyVar.I;
+        iv ivVar = hyVar.V;
+        tw twVar = hyVar.P;
+        if (view != twVar && view != ivVar) {
+            return super.drawChild(canvas, view, j3);
         }
+        canvas.save();
+        float y10 = lwVar.getY() + lwVar.getMeasuredHeight() + 1.0f;
+        if (view == twVar && ivVar != null) {
+            y10 = Math.max(y10, ivVar.getY() + ivVar.getMeasuredHeight() + 1.0f);
+        }
+        canvas.clipRect(0.0f, y10 - (org.telegram.messenger.g0.L(16.0f) * hyVar.b.e), getMeasuredWidth(), getMeasuredHeight());
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        canvas.restore();
+        return drawChild;
     }
 }

@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class z50 extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls, View.OnClickListener, te.b, rh.c {
     public final HashMap D;
@@ -26,7 +26,7 @@ public final class z50 extends org.telegram.ui.ActionBar.f2 implements org.teleg
     public int H;
     public int I;
     public final te.c a;
-    public org.telegram.ui.Components.p00 b;
+    public org.telegram.ui.Components.q00 b;
     public org.telegram.ui.ActionBar.f5 c;
     public x50 d;
     public ScrollView e;
@@ -137,7 +137,7 @@ public final class z50 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         z50Var.h.setVerticalScrollBarEnabled(false);
         z50Var.r.e(false, true);
         z50Var.r.setStickerType(0);
-        z50Var.r.d.setText(org.telegram.messenger.hd.M0(2131748222, null));
+        z50Var.r.d.setText(org.telegram.messenger.id.M0(2131748224, null));
         z50Var.r.e.setText("");
     }
 
@@ -186,15 +186,15 @@ public final class z50 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         this.D.clear();
         this.F = null;
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131749150, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131749152, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new ux(this, 9));
         org.telegram.ui.ActionBar.f5 b10 = this.simpleActionBar.o().b(1, R.drawable.outline_header_search);
         this.c = b10;
-        b10.setContentDescription(org.telegram.messenger.hd.M0(2131745837, null));
+        b10.setContentDescription(org.telegram.messenger.id.M0(2131745839, null));
         org.telegram.ui.ActionBar.f5 f5Var = this.c;
         f5Var.N();
         f5Var.B0 = new kg.v1(this, 13);
-        this.c.setSearchFieldHint(org.telegram.messenger.hd.M0(2131745837, null));
+        this.c.setSearchFieldHint(org.telegram.messenger.id.M0(2131745839, null));
         k0 k0Var = new k0(11, context, this);
         this.fragmentView = k0Var;
         ScrollView scrollView = new ScrollView(context);
@@ -205,14 +205,14 @@ public final class z50 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         this.f = y50Var;
         this.e.addView(y50Var, c8.ha.c(-2.0f, -1));
         this.d = new x50(this, context);
-        org.telegram.ui.Components.lz lzVar = new org.telegram.ui.Components.lz(context, null);
-        lzVar.setViewType(6);
-        lzVar.x = false;
-        org.telegram.ui.Components.av0 av0Var = new org.telegram.ui.Components.av0(context, lzVar, 0, null);
+        org.telegram.ui.Components.mz mzVar = new org.telegram.ui.Components.mz(context, null);
+        mzVar.setViewType(6);
+        mzVar.x = false;
+        org.telegram.ui.Components.av0 av0Var = new org.telegram.ui.Components.av0(context, mzVar, 0, null);
         this.r = av0Var;
-        av0Var.addView(lzVar, 0);
+        av0Var.addView(mzVar, 0);
         this.r.setAnimateLayoutChange(true);
-        this.r.d.setText(org.telegram.messenger.hd.M0(2131748222, null));
+        this.r.d.setText(org.telegram.messenger.id.M0(2131748224, null));
         this.r.e.setText("");
         this.r.e(org.telegram.messenger.g5.r(this.currentAccount).y(), true);
         this.n = new v4.b0(1, false);
@@ -225,7 +225,7 @@ public final class z50 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         this.h.setAdapter(this.s);
         this.h.setLayoutManager(this.n);
         this.h.setVerticalScrollBarEnabled(false);
-        this.h.setVerticalScrollbarPosition(org.telegram.messenger.hd.a0 ? 1 : 2);
+        this.h.setVerticalScrollbarPosition(org.telegram.messenger.id.a0 ? 1 : 2);
         k0Var.addView(this.h, c8.ha.c(-1.0f, -1));
         k0Var.addView(this.r);
         this.h.setOnItemClickListener(new h(this, 15));
@@ -233,18 +233,18 @@ public final class z50 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         org.telegram.ui.ActionBar.y1 y1Var = new org.telegram.ui.ActionBar.y1(false);
         y1Var.l = org.telegram.messenger.qs.K2;
         y1Var.invalidateSelf();
-        org.telegram.ui.Components.p00 p00Var = new org.telegram.ui.Components.p00(context, this.resourceProvider, false);
-        this.b = p00Var;
-        p00Var.c.setImageDrawable(y1Var);
+        org.telegram.ui.Components.q00 q00Var = new org.telegram.ui.Components.q00(context, this.resourceProvider, false);
+        this.b = q00Var;
+        q00Var.c.setImageDrawable(y1Var);
         this.b.e(false, false);
-        this.b.setContentDescription(org.telegram.messenger.hd.M0(2131748249, null));
+        this.b.setContentDescription(org.telegram.messenger.id.M0(2131748251, null));
         this.b.setOnClickListener(new g40(this, 3));
         w50 w50Var = this.s;
         if (w50Var != null && !this.y) {
             this.r.setVisibility(w50Var.b() != 2 ? 4 : 0);
         }
         k0Var.addView(this.d, c8.ha.d(-1, -2.0f, 48, 6.0f, 0.0f, 6.0f, 0.0f));
-        k0Var.addView(this.b, org.telegram.ui.Components.p00.b());
+        k0Var.addView(this.b, org.telegram.ui.Components.q00.b());
         LaunchActivity launchActivity = LaunchActivity.G1;
         if (launchActivity != null) {
             launchActivity.f1.d.add(this);
@@ -323,9 +323,9 @@ public final class z50 extends org.telegram.ui.ActionBar.f2 implements org.teleg
     @Override // rh.c
     public final void m(r0.k1 k1Var) {
         this.I = k1Var.a.f(8).d;
-        org.telegram.ui.Components.p00 p00Var = this.b;
-        if (p00Var != null) {
-            p00Var.setTranslationY(-Math.max(this.H, r3));
+        org.telegram.ui.Components.q00 q00Var = this.b;
+        if (q00Var != null) {
+            q00Var.setTranslationY(-Math.max(this.H, r3));
         }
     }
 
@@ -388,9 +388,9 @@ public final class z50 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         if (x50Var != null) {
             x50Var.setTranslationY(org.telegram.messenger.g0.L(4.0f) + org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + this.G);
         }
-        org.telegram.ui.Components.p00 p00Var = this.b;
-        if (p00Var != null) {
-            p00Var.setTranslationY(-Math.max(this.H, this.I));
+        org.telegram.ui.Components.q00 q00Var = this.b;
+        if (q00Var != null) {
+            q00Var.setTranslationY(-Math.max(this.H, this.I));
         }
     }
 

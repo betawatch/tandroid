@@ -2,68 +2,74 @@ package zh;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import android.text.Editable;
+import org.telegram.messenger.ij;
+import org.telegram.messenger.ui;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Components.rt0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class v3 extends rt0 {
-    public int f0;
-    public final /* synthetic */ b4 g0;
+public final class v3 extends org.telegram.ui.Cells.h3 {
+    public final /* synthetic */ fh.g E;
+    public final /* synthetic */ int F;
+    public final /* synthetic */ a4 G;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v3(b4 b4Var, Context context) {
-        super(context, null);
-        this.g0 = b4Var;
-        this.f0 = -1;
+    public v3(a4 a4Var, Context context, rt0 rt0Var, String str, int i7, f6 f6Var, fh.g gVar, int i10) {
+        super(context, rt0Var, str, true, i7, f6Var);
+        this.G = a4Var;
+        this.E = gVar;
+        this.F = i10;
     }
 
-    @Override // org.telegram.ui.Components.rt0
-    public final boolean O() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.rt0
-    public final boolean P() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.rt0
-    public final void S() {
-        this.g0.k1.invalidate();
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        if (view == this.L) {
-            return true;
-        }
-        return super.drawChild(canvas, view, j3);
-    }
-
-    @Override // org.telegram.ui.Components.rt0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        super.onLayout(z9, i7, i10, i11, i12);
-        b4 b4Var = this.g0;
-        b4Var.a2.setTranslationY(((i12 - i10) - r4.getMeasuredHeight()) / 2.0f);
-        b4Var.c2.i0(b4Var.c2.getY() + b4Var.a2.getY(), getBackgroundSizeY());
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        if (this.f0 != -1) {
-            super.onMeasure(i7, i10);
-            int measuredHeight = getMeasuredHeight();
-            int i11 = this.f0;
-            if (measuredHeight < i11) {
-                i10 = View.MeasureSpec.makeMeasureSpec(Math.max(i11, getMeasuredHeight()), TLObject.FLAG_31);
+    @Override // org.telegram.ui.Cells.h3
+    public final void b(Editable editable) {
+        TLRPC.TL_textWithEntities tL_textWithEntities;
+        a4 a4Var = this.G;
+        ij ijVar = a4Var.e2;
+        TLRPC.MessageAction messageAction = a4Var.d2;
+        if (messageAction instanceof TLRPC.TL_messageActionStarGift) {
+            tL_textWithEntities = new TLRPC.TL_textWithEntities();
+            ((TLRPC.TL_messageActionStarGift) messageAction).message = tL_textWithEntities;
+        } else if (messageAction instanceof TLRPC.TL_messageActionGiftCode) {
+            TLRPC.TL_messageActionGiftCode tL_messageActionGiftCode = (TLRPC.TL_messageActionGiftCode) messageAction;
+            tL_messageActionGiftCode.flags |= 16;
+            tL_textWithEntities = new TLRPC.TL_textWithEntities();
+            tL_messageActionGiftCode.message = tL_textWithEntities;
+        } else {
+            if (!(messageAction instanceof TLRPC.TL_messageActionGiftPremium)) {
+                return;
             }
+            TLRPC.TL_messageActionGiftPremium tL_messageActionGiftPremium = (TLRPC.TL_messageActionGiftPremium) messageAction;
+            tL_messageActionGiftPremium.flags |= 16;
+            tL_textWithEntities = new TLRPC.TL_textWithEntities();
+            tL_messageActionGiftPremium.message = tL_textWithEntities;
         }
+        CharSequence[] charSequenceArr = {a4Var.l2.getText()};
+        tL_textWithEntities.entities = ui.b0(this.F).W(charSequenceArr, true, true);
+        tL_textWithEntities.text = charSequenceArr[0].toString();
+        ijVar.M5();
+        a4Var.c2.g0(ijVar, true);
+        a4Var.m2.O(true);
+        a4Var.g1(true);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int L = org.telegram.messenger.g0.L(10.0f);
+        int measuredWidth = getMeasuredWidth() - org.telegram.messenger.g0.L(10.0f);
+        int measuredHeight = getMeasuredHeight();
+        fh.g gVar = this.E;
+        gVar.setBounds(L, 0, measuredWidth, measuredHeight);
+        gVar.draw(canvas);
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // org.telegram.ui.Cells.h3, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
         super.onMeasure(i7, i10);
-        int i12 = this.f0;
-        if (i12 == -1) {
-            this.f0 = Math.max(i12, getMeasuredHeight());
-        }
     }
 }

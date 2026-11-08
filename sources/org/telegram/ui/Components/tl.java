@@ -15,7 +15,7 @@ import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class tl extends vi0 {
     public final Context c;
@@ -75,7 +75,7 @@ public final class tl extends vi0 {
         if (Build.VERSION.SDK_INT <= 28) {
             j3 /= 1000;
         }
-        return org.telegram.messenger.hd.e0(j3, true);
+        return org.telegram.messenger.id.e0(j3, true);
     }
 
     @Override // org.telegram.ui.Components.vi0
@@ -247,7 +247,7 @@ public final class tl extends vi0 {
                 if (i10 != 7) {
                     return;
                 }
-                ((w00) view).setUseAnEmojiVisible(chatAttachAlertPhotoLayout.g1);
+                ((x00) view).setUseAnEmojiVisible(chatAttachAlertPhotoLayout.g1);
                 return;
             } else {
                 org.telegram.ui.Cells.l5 l5Var = (org.telegram.ui.Cells.l5) view;
@@ -334,14 +334,14 @@ public final class tl extends vi0 {
         }
         int i12 = 17;
         if (i7 == 7) {
-            w00 w00Var = new w00(context, diVar.D3);
-            w00Var.setLayoutParams(new v4.o0(-1, org.telegram.messenger.g0.L(400.0f)));
-            w00Var.setGravity(17);
-            w00Var.isClickable();
-            w00Var.b.setOnClickListener(new h0(new cl(chatAttachAlertPhotoLayout, i11), i12));
-            w00Var.a.setOnClickListener(new h0(new cl(chatAttachAlertPhotoLayout, 6), 18));
-            w00Var.c.setOnClickListener(new lk(13, w00Var, new s2(this, i10)));
-            return new xi0(w00Var);
+            x00 x00Var = new x00(context, diVar.D3);
+            x00Var.setLayoutParams(new v4.o0(-1, org.telegram.messenger.g0.L(400.0f)));
+            x00Var.setGravity(17);
+            x00Var.isClickable();
+            x00Var.b.setOnClickListener(new h0(new cl(chatAttachAlertPhotoLayout, i11), i12));
+            x00Var.a.setOnClickListener(new h0(new cl(chatAttachAlertPhotoLayout, 6), 18));
+            x00Var.c.setOnClickListener(new lk(13, x00Var, new s2(this, i10)));
+            return new xi0(x00Var);
         }
         if (i7 == 8) {
             FrameLayout frameLayout = new FrameLayout(context);
@@ -352,7 +352,7 @@ public final class tl extends vi0 {
             dVar.setPadding(org.telegram.messenger.g0.L(28.0f), 0, org.telegram.messenger.g0.L(28.0f), 0);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("c");
             spannableStringBuilder.setSpan(new wp(R.drawable.camera, 0), 0, 1, 33);
-            spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) org.telegram.messenger.hd.M0(2131750480, null));
+            spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) org.telegram.messenger.id.M0(2131750482, null));
             dVar.i(spannableStringBuilder, false, true);
             frameLayout.addView(dVar, c8.ha.d(-2, 44.0f, 81, 10.0f, 0.0f, 10.0f, 12.0f));
             return new xi0(frameLayout);

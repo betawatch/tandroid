@@ -16,7 +16,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.me;
 import org.telegram.ui.Components.i6;
 import org.telegram.ui.Components.ic;
@@ -24,7 +24,7 @@ import org.telegram.ui.Components.rg0;
 import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class g {
     public int a;
@@ -48,10 +48,10 @@ public final class g {
         i6Var.setCallback(view);
         i6Var.M = (int) (org.telegram.messenger.g0.q.x * 0.3f);
         this.b = false;
-        i6Var.t(hd.M0(2131746438, null), false, true);
-        String M0 = hd.M0(2131746437, null);
+        i6Var.t(id.M0(2131746440, null), false, true);
+        String M0 = id.M0(2131746439, null);
         TextPaint textPaint = i6Var.a;
-        this.a = (int) Math.ceil(Math.max(textPaint.measureText(M0), textPaint.measureText(hd.M0(2131746438, null))));
+        this.a = (int) Math.ceil(Math.max(textPaint.measureText(M0), textPaint.measureText(id.M0(2131746440, null))));
     }
 
     public void a(l0 l0Var) {
@@ -123,7 +123,7 @@ public final class g {
         i6 i6Var = (i6) this.e;
         if (z9 != this.b) {
             this.b = z9;
-            i6Var.t(hd.M0(z9 ? 2131746437 : 2131746438, null), true, true);
+            i6Var.t(id.M0(z9 ? 2131746439 : 2131746440, null), true, true);
         }
         int c10 = (int) (i6Var.c() + org.telegram.messenger.g0.L(23.66f));
         float L = org.telegram.messenger.g0.L(17.66f);

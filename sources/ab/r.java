@@ -6,15 +6,15 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.FirebaseMessagingRegistrar;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r implements u9.d {
     public final /* synthetic */ int a;
-    public final /* synthetic */ u9.q b;
+    public final /* synthetic */ u9.r b;
 
-    public /* synthetic */ r(u9.q qVar, int i7) {
+    public /* synthetic */ r(u9.r rVar, int i7) {
         this.a = i7;
-        this.b = qVar;
+        this.b = rVar;
     }
 
     @Override // u9.d

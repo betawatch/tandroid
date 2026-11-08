@@ -33,13 +33,13 @@ import org.telegram.ui.Components.vh;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
-import org.telegram.ui.h91;
 import org.telegram.ui.hw;
+import org.telegram.ui.i91;
 import org.telegram.ui.ma0;
 import org.telegram.ui.r40;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c1 implements RequestDelegateTimestamp, wr, lc, org.telegram.ui.Components.t4, ma0, qr, j2.g, org.telegram.ui.ActionBar.r1, r40, p4.a1, v5.e {
     public final /* synthetic */ int a;
@@ -120,8 +120,8 @@ public final /* synthetic */ class c1 implements RequestDelegateTimestamp, wr, l
 
     @Override // org.telegram.ui.r40
     public void f(int i7, ArrayList arrayList) {
-        h91 h91Var = (h91) this.c;
-        org.telegram.ui.ActionBar.f2 f2Var = h91Var.b;
+        i91 i91Var = (i91) this.c;
+        org.telegram.ui.ActionBar.f2 f2Var = i91Var.b;
         int size = arrayList.size();
         int[] iArr = new int[1];
         TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = new TLRPC.TL_messages_invitedUsers();
@@ -130,9 +130,9 @@ public final /* synthetic */ class c1 implements RequestDelegateTimestamp, wr, l
         while (i10 < size) {
             TLRPC.User user = (TLRPC.User) arrayList.get(i10);
             qp messagesController = f2Var.getMessagesController();
-            ai.m0 m0Var = new ai.m0(22);
+            ai.m0 m0Var = new ai.m0(24);
             long j3 = this.b;
-            messagesController.m(j3, user, i7, null, f2Var, false, m0Var, null, new hi.f3(h91Var, tL_messages_invitedUsers, iArr, size, arrayList, j3));
+            messagesController.m(j3, user, i7, null, f2Var, false, m0Var, null, new hi.f3(i91Var, tL_messages_invitedUsers, iArr, size, arrayList, j3));
             i10++;
             size = size;
             iArr = iArr;
@@ -181,17 +181,17 @@ public final /* synthetic */ class c1 implements RequestDelegateTimestamp, wr, l
         }
     }
 
-    @Override // p4.a1
-    public Object i(p4.d0 d0Var, p4.v vVar, int i7) {
-        return d0Var.q(vVar, h9.i0.u((e2.l0) this.c), 0, this.b);
-    }
-
     @Override // org.telegram.messenger.qr
     public void k(boolean z9) {
         an anVar = ((m11) this.c).s;
         if (com.google.android.recaptcha.internal.a.u(anVar)) {
             anVar.Qa(this.b, false);
         }
+    }
+
+    @Override // p4.a1
+    public Object l(p4.d0 d0Var, p4.v vVar, int i7) {
+        return d0Var.q(vVar, h9.i0.u((e2.l0) this.c), 0, this.b);
     }
 
     @Override // org.telegram.tgnet.RequestDelegateTimestamp

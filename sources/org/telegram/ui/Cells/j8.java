@@ -11,12 +11,12 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.xz;
+import org.telegram.ui.Components.yz;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class j8 extends FrameLayout {
     public final TextView a;
@@ -157,9 +157,9 @@ public final class j8 extends FrameLayout {
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.f);
         try {
-            xz xzVar = new xz(org.telegram.ui.ActionBar.k6.Jf, this.w);
+            yz yzVar = new yz(org.telegram.ui.ActionBar.k6.Jf, this.w);
             int i7 = this.h;
-            spannableStringBuilder.setSpan(xzVar, i7, this.n + i7, 33);
+            spannableStringBuilder.setSpan(yzVar, i7, this.n + i7, 33);
         } catch (Exception unused) {
         }
         TextView textView = this.a;
@@ -209,7 +209,7 @@ public final class j8 extends FrameLayout {
     public void setEdit(View.OnClickListener onClickListener) {
         TextView textView = this.c;
         textView.setVisibility(0);
-        textView.setText(hd.M0(2131751258, null));
+        textView.setText(id.M0(2131751258, null));
         textView.setOnClickListener(onClickListener);
     }
 

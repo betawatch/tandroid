@@ -11,7 +11,7 @@ import c8.zb;
 import f5.q;
 import g7.f;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class FlagProviderImpl extends f {
     public boolean a;
@@ -86,7 +86,7 @@ public class FlagProviderImpl extends f {
 
     @Override // g7.g
     public void init(a aVar) {
-        Context context = (Context) b.N0(aVar);
+        Context context = (Context) b.n1(aVar);
         if (this.a) {
             return;
         }

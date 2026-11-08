@@ -10,7 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.text.StaticLayout;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.m20;
 import org.telegram.tgnet.ConnectionsManager;
@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class u1 {
     public final q1 a;
@@ -119,7 +119,7 @@ public final class u1 {
                         z9 = true;
                     } else {
                         f12 = 2.0f;
-                        C = hd.C(Math.abs(ij.o1(q1Var2.P5.k).period - (ConnectionsManager.getInstance(i7).getCurrentTime() - q1Var2.P5.k.date)));
+                        C = id.C(Math.abs(ij.o1(q1Var2.P5.k).period - (ConnectionsManager.getInstance(i7).getCurrentTime() - q1Var2.P5.k.date)));
                         abs = 1.0f - (Math.abs(ConnectionsManager.getInstance(i7).getCurrentTime() - q1Var2.P5.k.date) / ij.o1(q1Var2.P5.k).period);
                         f13 = 1.0f;
                     }

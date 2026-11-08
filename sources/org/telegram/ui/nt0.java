@@ -11,7 +11,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class nt0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -206,26 +206,26 @@ public final class nt0 extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 14:
-                x71 x71Var = (x71) obj;
+                y71 y71Var = (y71) obj;
                 if (i7 != -1) {
                     if (i7 == 1) {
-                        x71.d0(x71Var);
+                        y71.d0(y71Var);
                         break;
                     }
                 } else {
-                    x71Var.finishFragment();
+                    y71Var.finishFragment();
                     break;
                 }
                 break;
             case 15:
                 if (i7 == -1) {
-                    ((m81) obj).finishFragment();
+                    ((n81) obj).finishFragment();
                     break;
                 }
                 break;
             case 16:
                 if (i7 == -1) {
-                    ((ba1) obj).finishFragment();
+                    ((ca1) obj).finishFragment();
                     break;
                 }
                 break;
@@ -266,21 +266,21 @@ public final class nt0 extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 20:
-                org.telegram.ui.Wallet.n9 n9Var = (org.telegram.ui.Wallet.n9) obj;
+                org.telegram.ui.Wallet.m9 m9Var = (org.telegram.ui.Wallet.m9) obj;
                 if (i7 != -1) {
                     if (i7 != 2) {
                         if (i7 == 3) {
-                            n9Var.u0();
+                            m9Var.u0();
                             break;
                         }
                     } else {
-                        Activity parentActivity = n9Var.getParentActivity();
-                        i10 = ((org.telegram.ui.ActionBar.f2) n9Var).currentAccount;
-                        org.telegram.ui.Wallet.y5.J0(i10, parentActivity, n9Var.getResourceProvider());
+                        Activity parentActivity = m9Var.getParentActivity();
+                        i10 = ((org.telegram.ui.ActionBar.f2) m9Var).currentAccount;
+                        org.telegram.ui.Wallet.x5.J0(i10, parentActivity, m9Var.getResourceProvider());
                         break;
                     }
                 } else {
-                    n9Var.finishFragment();
+                    m9Var.finishFragment();
                     break;
                 }
                 break;
@@ -337,12 +337,12 @@ public final class nt0 extends org.telegram.ui.ActionBar.j {
                             }
                         }
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, lVar.getParentActivity(), lVar.getResourceProvider());
-                        String G = org.telegram.messenger.hd.G(hashSet3.size(), "DeleteOptionsTitle", new Object[0]);
+                        String G = org.telegram.messenger.id.G(hashSet3.size(), "DeleteOptionsTitle", new Object[0]);
                         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                         u1Var.R = G;
-                        u1Var.T = org.telegram.messenger.hd.N0(hashSet3.size() == 1 ? "AreYouSureUnsaveSingleMessage" : "AreYouSureUnsaveFewMessages");
-                        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751599, null), new lk0(29, lVar, hashSet3));
-                        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+                        u1Var.T = org.telegram.messenger.id.N0(hashSet3.size() == 1 ? "AreYouSureUnsaveSingleMessage" : "AreYouSureUnsaveFewMessages");
+                        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751599, null), new lk0(29, lVar, hashSet3));
+                        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
                         alertDialog$Builder.d(-1);
                         alertDialog$Builder.p();
                         break;
@@ -385,7 +385,7 @@ public final class nt0 extends org.telegram.ui.ActionBar.j {
                 break;
             default:
                 if (i7 == -1) {
-                    ((zh.m3) obj).finishFragment();
+                    ((zh.l3) obj).finishFragment();
                     break;
                 }
                 break;

@@ -11,7 +11,7 @@ import c8.ha;
 import fi.m3;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.r2;
@@ -26,11 +26,11 @@ import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.w6;
+import org.telegram.ui.Wallet.v6;
 import org.telegram.ui.an;
 import org.telegram.ui.qj;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class e extends na implements ls {
     public final cg.a P1;
@@ -68,9 +68,9 @@ public final class e extends na implements ls {
         nc ncVar = new nc(2, context, f6Var);
         this.Q1 = ncVar;
         final int i11 = 1;
-        ((TextView) ncVar.c).setText(hd.a0(null, null, 2131744046, cg.a.i(aVar.b - ea.y(this.a, true).s().b, cg.b.b).d()));
+        ((TextView) ncVar.c).setText(id.a0(null, null, 2131744048, cg.a.i(aVar.b - ea.y(this.a, true).s().b, cg.b.b).d()));
         TextView textView = (TextView) ncVar.d;
-        textView.setText(g0.X2(hd.M0(2131750519, null)));
+        textView.setText(g0.X2(id.M0(2131750521, null)));
         textView.setMaxWidth(m3.a(textView.getText(), textView.getPaint()));
         this.l1.setTitle(O0());
         FrameLayout frameLayout = new FrameLayout(context);
@@ -81,7 +81,7 @@ public final class e extends na implements ls {
             t0.u();
             if (!r2.a()) {
                 t0.r();
-                dVar.i(hd.M0(2131752041, null), false, true);
+                dVar.i(id.M0(2131752041, null), false, true);
                 dVar.setOnClickListener(new View.OnClickListener(this) { // from class: gi.d
                     public final /* synthetic */ e b;
 
@@ -95,7 +95,7 @@ public final class e extends na implements ls {
                         e eVar = this.b;
                         switch (i12) {
                             case 0:
-                                vf.c.v(eVar.getContext(), hd.M0(2131744029, null), false);
+                                vf.c.v(eVar.getContext(), id.M0(2131744031, null), false);
                                 break;
                             default:
                                 eVar.dismiss();
@@ -111,7 +111,7 @@ public final class e extends na implements ls {
                 return;
             }
         }
-        dVar.i(hd.M0(2131744031, null), false, true);
+        dVar.i(id.M0(2131744033, null), false, true);
         dVar.setOnClickListener(new View.OnClickListener(this) { // from class: gi.d
             public final /* synthetic */ e b;
 
@@ -125,7 +125,7 @@ public final class e extends na implements ls {
                 e eVar = this.b;
                 switch (i12) {
                     case 0:
-                        vf.c.v(eVar.getContext(), hd.M0(2131744029, null), false);
+                        vf.c.v(eVar.getContext(), id.M0(2131744031, null), false);
                         break;
                     default:
                         eVar.dismiss();
@@ -172,7 +172,7 @@ public final class e extends na implements ls {
             cg.a s5 = ea.y(this.a, true).s();
             TextView textView = (TextView) this.Q1.c;
             cg.a aVar = this.P1;
-            textView.setText(hd.a0(null, null, 2131744046, cg.a.i(aVar.b - s5.b, cg.b.b).d()));
+            textView.setText(id.a0(null, null, 2131744048, cg.a.i(aVar.b - s5.b, cg.b.b).d()));
             ja jaVar = this.l1;
             if (jaVar != null) {
                 jaVar.setTitle(O0());
@@ -191,7 +191,7 @@ public final class e extends na implements ls {
         super.dismiss();
         nc ncVar = this.Q1;
         if (ncVar != null) {
-            ((w6) ncVar.b).setPaused(true);
+            ((v6) ncVar.b).setPaused(true);
         }
     }
 

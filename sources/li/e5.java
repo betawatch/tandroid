@@ -6,7 +6,7 @@ import android.text.Layout;
 import c8.ha;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.f6;
@@ -15,7 +15,7 @@ import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
 import org.telegram.ui.Cells.t9;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class e5 extends y implements org.telegram.ui.ActionBar.a6, h9 {
     public final f6 n;
@@ -39,7 +39,7 @@ public final class e5 extends y implements org.telegram.ui.ActionBar.a6, h9 {
         g1Var.setTypeface(org.telegram.messenger.g0.o1("fonts/rmedium.ttf"));
         g1Var.setTextColorKey(k6.Ci);
         g1Var.setAccentHint(true);
-        g1Var.setHint(hd.M0(2131754020, null));
+        g1Var.setHint(id.M0(2131754020, null));
         g1Var.setListener(new h9.f1(this, 11));
         g1Var.setDelegate(new l2.y(this, 10));
         addView(g1Var, ha.e(-1, -2, 51));

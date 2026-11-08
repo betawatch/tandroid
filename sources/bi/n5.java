@@ -6,7 +6,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n5 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -75,7 +75,7 @@ public final /* synthetic */ class n5 implements View.OnClickListener {
                                 d6Var2.T = null;
                             }
                             textView.setText("");
-                            d6Var2.L.setText(org.telegram.messenger.hd.a0(null, null, 2131749775, hi.j.J0(d6Var2.getGiftsSuccessChance())));
+                            d6Var2.L.setText(org.telegram.messenger.id.a0(null, null, 2131749777, hi.j.J0(d6Var2.getGiftsSuccessChance())));
                             for (int i10 = 0; i10 < b6VarArr.length; i10++) {
                                 b6 b6Var3 = b6VarArr[i10];
                                 if (b6Var3 != null) {
@@ -100,7 +100,7 @@ public final /* synthetic */ class n5 implements View.OnClickListener {
                                             if (starGift3 == null) {
                                                 starGift3 = null;
                                             }
-                                            textView.setText(starGift3.title + " #" + org.telegram.messenger.hd.E(starGift3.num, ','));
+                                            textView.setText(starGift3.title + " #" + org.telegram.messenger.id.E(starGift3.num, ','));
                                         }
                                     }
                                     i11++;

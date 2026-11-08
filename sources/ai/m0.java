@@ -1,6 +1,8 @@
 package ai;
 
 import a8.wa;
+import android.app.ActivityManager;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.BatteryManager;
@@ -23,25 +25,26 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g5;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
+import org.telegram.messenger.k4;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.p2;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.r2;
 import org.telegram.messenger.rc;
+import org.telegram.messenger.sc;
 import org.telegram.messenger.support.JobIntentService;
 import org.telegram.messenger.tt;
-import org.telegram.messenger.x4;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.nb1;
+import org.telegram.ui.ob1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m0 implements Runnable {
     public final /* synthetic */ int a;
@@ -53,28 +56,28 @@ public final /* synthetic */ class m0 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         f2 c02;
-        int i7 = 4;
-        int i10 = 0;
+        ActivityManager activityManager;
+        int i7 = 0;
         switch (this.a) {
             case 0:
-                hc.X().N(hd.M0(2131745862, null), hd.M0(2131751106, null)).j();
+                hc.X().N(id.M0(2131745864, null), id.M0(2131751106, null)).j();
                 return;
             case 1:
                 wa waVar = bg.i.B;
                 if (waVar != null) {
                     ArrayList arrayList = null;
-                    for (int i11 = 0; i11 < bg.i.y; i11++) {
-                        if (((Bitmap[]) waVar.d)[i11] != null) {
+                    for (int i10 = 0; i10 < bg.i.y; i10++) {
+                        if (((Bitmap[]) waVar.d)[i10] != null) {
                             if (arrayList == null) {
                                 arrayList = new ArrayList();
                             }
-                            arrayList.add(((Bitmap[]) waVar.d)[i11]);
+                            arrayList.add(((Bitmap[]) waVar.d)[i10]);
                         }
-                        ((Bitmap[]) waVar.d)[i11] = null;
-                        ((bg.d0[]) waVar.c)[i11] = null;
+                        ((Bitmap[]) waVar.d)[i10] = null;
+                        ((bg.d0[]) waVar.c)[i10] = null;
                     }
                     if (!arrayList.isEmpty()) {
-                        Utilities.e.c(new bg.e(i10, arrayList));
+                        Utilities.e.c(new bg.e(i7, arrayList));
                     }
                     bg.i.B = null;
                     return;
@@ -82,10 +85,10 @@ public final /* synthetic */ class m0 implements Runnable {
                 return;
             case 2:
                 f2 T = LaunchActivity.T();
-                if ((T instanceof nb1) && (c02 = ((nb1) T).c0()) != null) {
+                if ((T instanceof ob1) && (c02 = ((ob1) T).c0()) != null) {
                     T = c02;
                 }
-                cc Q = (T != null ? hc.a0(T) : hc.X()).Q(R.raw.ic_delete, 36, hd.M0(2131750215, null));
+                cc Q = (T != null ? hc.a0(T) : hc.X()).Q(R.raw.ic_delete, 36, id.M0(2131750217, null));
                 Q.t = true;
                 Q.j();
                 return;
@@ -108,13 +111,13 @@ public final /* synthetic */ class m0 implements Runnable {
             case 7:
                 return;
             case 8:
-                int i12 = w5.n1;
+                int i11 = w5.n1;
                 return;
             case 9:
                 Comparator comparator = y6.X;
                 return;
             case 10:
-                int i13 = fi.e0.x0;
+                int i12 = fi.e0.x0;
                 return;
             case 11:
                 Looper myLooper = Looper.myLooper();
@@ -134,13 +137,13 @@ public final /* synthetic */ class m0 implements Runnable {
             case 15:
                 return;
             case 16:
-                int i14 = ji.h.H;
+                int i13 = ji.h.H;
                 return;
             case 17:
                 t1[] t1VarArr = t1.g;
                 return;
             case 18:
-                int i15 = AppStartReceiver.a;
+                int i14 = AppStartReceiver.a;
                 iz.t();
                 if (iz.s.length() > 0) {
                     iz.x = true;
@@ -149,6 +152,9 @@ public final /* synthetic */ class m0 implements Runnable {
                 org.telegram.messenger.t0.x();
                 return;
             case 19:
+                Utilities.e.c(new m0(22));
+                return;
+            case 20:
                 boolean z9 = a8.j;
                 StringBuilder sb2 = new StringBuilder();
                 for (Map.Entry<Thread, StackTraceElement[]> entry : Thread.getAllStackTraces().entrySet()) {
@@ -168,10 +174,22 @@ public final /* synthetic */ class m0 implements Runnable {
                 a8.j();
                 a8.c(false);
                 return;
-            case 20:
+            case 21:
                 org.telegram.messenger.t0.x();
                 return;
-            case 21:
+            case 22:
+                Context context = org.telegram.messenger.t0.b;
+                if (org.telegram.utils.twidget.h1.a() || (activityManager = (ActivityManager) context.getSystemService("activity")) == null || activityManager.isLowRamDevice()) {
+                    return;
+                }
+                try {
+                    org.telegram.utils.twidget.r0.i.h(context);
+                    return;
+                } catch (Exception e10) {
+                    a8.g(e10, true);
+                    return;
+                }
+            case 23:
                 if (((tt) org.telegram.messenger.t0.l()).hasServices()) {
                     ((tt) org.telegram.messenger.t0.l()).onRequestPushToken();
                     return;
@@ -184,17 +202,17 @@ public final /* synthetic */ class m0 implements Runnable {
                 ((tt) org.telegram.messenger.t0.l()).getClass();
                 PushListenerController.sendRegistrationToServer(2, null);
                 return;
-            case 22:
-                return;
-            case 23:
-                break;
             case 24:
-                qs.e().k(qs.i4, new Object[0]);
                 return;
             case 25:
+                break;
+            case 26:
+                qs.e().k(qs.i4, new Object[0]);
+                return;
+            case 27:
                 KeepAliveJob.a();
                 return;
-            case 26:
+            case 28:
                 if (KeepAliveJob.b || KeepAliveJob.a != null) {
                     return;
                 }
@@ -210,41 +228,35 @@ public final /* synthetic */ class m0 implements Runnable {
                 } catch (Exception unused) {
                     return;
                 }
-            case 27:
-                rc.d(false);
-                return;
-            case 28:
-                int i16 = -1;
+            default:
+                int i15 = -1;
                 try {
                     BatteryManager batteryManager = (BatteryManager) org.telegram.messenger.t0.b.getSystemService("batterymanager");
                     if (batteryManager != null) {
-                        i16 = batteryManager.getIntProperty(4);
+                        i15 = batteryManager.getIntProperty(4);
                     }
                 } catch (Throwable th2) {
                     a8.g(th2, true);
                 }
-                rc.l = SystemClock.elapsedRealtime();
-                rc.m = false;
-                if (i16 < 0 || i16 > 100) {
+                sc.l = SystemClock.elapsedRealtime();
+                sc.m = false;
+                if (i15 < 0 || i15 > 100) {
                     return;
                 }
-                rc.l = SystemClock.elapsedRealtime();
-                if (rc.k == i16) {
+                sc.l = SystemClock.elapsedRealtime();
+                if (sc.k == i15) {
                     return;
                 }
-                rc.k = i16;
-                org.telegram.messenger.g0.h3(new m0(27));
-                return;
-            default:
-                qs.e().k(qs.x4, new Object[0]);
+                sc.k = i15;
+                org.telegram.messenger.g0.h3(new rc(i7));
                 return;
         }
-        while (i10 < 4) {
-            if (p10.i(i10).p()) {
-                ConnectionsManager.getInstance(i10).resumeNetworkMaybe();
-                Utilities.e.c(new x4(g5.r(i10), i7));
+        while (i7 < 4) {
+            if (p10.i(i7).p()) {
+                ConnectionsManager.getInstance(i7).resumeNetworkMaybe();
+                Utilities.e.c(new k4(g5.r(i7), 3));
             }
-            i10++;
+            i7++;
         }
     }
 

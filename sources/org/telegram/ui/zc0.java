@@ -21,7 +21,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zc0 implements Runnable {
     public final /* synthetic */ int a;
@@ -69,9 +69,9 @@ public final /* synthetic */ class zc0 implements Runnable {
             case 0:
                 gd0 gd0Var = (gd0) this.b;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder((Activity) this.c);
-                alertDialog$Builder.a.R = org.telegram.messenger.hd.M0(2131752579, null);
-                alertDialog$Builder.a.T = org.telegram.messenger.hd.a0("CancelLinkSuccess", null, 2131752580, org.telegram.messenger.k5.i(new StringBuilder("+"), gd0Var.b, pf.b.c()));
-                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131752041, null), null);
+                alertDialog$Builder.a.R = org.telegram.messenger.id.M0(2131752579, null);
+                alertDialog$Builder.a.T = org.telegram.messenger.id.a0("CancelLinkSuccess", null, 2131752580, org.telegram.messenger.k5.i(new StringBuilder("+"), gd0Var.b, pf.b.c()));
+                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131752041, null), null);
                 alertDialog$Builder.a.setOnDismissListener(new cd0(gd0Var, 0));
                 alertDialog$Builder.p();
                 break;
@@ -117,8 +117,8 @@ public final /* synthetic */ class zc0 implements Runnable {
                     int i14 = org.telegram.ui.ActionBar.k6.L5;
                     alertDialog$Builder2.m(R.raw.incoming_calls, 46, org.telegram.ui.ActionBar.k6.x0(null, i14, false), null);
                     alertDialog$Builder2.n(i14, null);
-                    alertDialog$Builder2.k(org.telegram.messenger.hd.M0(2131751771, "Continue"), null);
-                    String M0 = org.telegram.messenger.hd.M0(2131754278, "AllowFillNumber");
+                    alertDialog$Builder2.k(org.telegram.messenger.id.M0(2131751771, "Continue"), null);
+                    String M0 = org.telegram.messenger.id.M0(2131754278, "AllowFillNumber");
                     org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder2.a;
                     u1Var.T = M0;
                     ce0Var.n = ce0Var.showDialog(u1Var, true, null);
@@ -178,7 +178,7 @@ public final /* synthetic */ class zc0 implements Runnable {
                 ah0Var.getClass();
                 Intent intent = new Intent("android.intent.action.VIEW");
                 intent.setData(Uri.parse("sms:+" + str2));
-                intent.putExtra("sms_body", org.telegram.messenger.hd.a0(null, null, 2131749115, "https://telegram.org/dl"));
+                intent.putExtra("sms_body", org.telegram.messenger.id.a0(null, null, 2131749117, "https://telegram.org/dl"));
                 ah0Var.getContext().startActivity(intent);
                 break;
             case 12:
@@ -192,7 +192,7 @@ public final /* synthetic */ class zc0 implements Runnable {
                 }
                 break;
             case 13:
-                ((org.telegram.ui.Components.ex) this.b).a((TLRPC.User) this.c);
+                ((org.telegram.ui.Components.fx) this.b).a((TLRPC.User) this.c);
                 break;
             case 14:
                 NotificationsCustomSettingsActivity.b0((NotificationsCustomSettingsActivity) this.b, (ArrayList) this.c);
@@ -216,7 +216,7 @@ public final /* synthetic */ class zc0 implements Runnable {
                 hi0 hi0Var = (hi0) this.b;
                 org.telegram.ui.ActionBar.z0 z0Var = (org.telegram.ui.ActionBar.z0) this.c;
                 PasscodeActivity passcodeActivity2 = (PasscodeActivity) hi0Var.c;
-                z0Var.setText(org.telegram.messenger.hd.M0(passcodeActivity2.D == 0 ? 2131747652 : 2131747653, null));
+                z0Var.setText(org.telegram.messenger.id.M0(passcodeActivity2.D == 0 ? 2131747654 : 2131747655, null));
                 z0Var.setIcon(passcodeActivity2.D == 0 ? R.drawable.msg_permissions : R.drawable.msg_pin_code);
                 passcodeActivity2.y0();
                 if (passcodeActivity2.s0()) {
@@ -312,10 +312,10 @@ public final /* synthetic */ class zc0 implements Runnable {
                 if (i20 != 0) {
                     if (i20 == 1) {
                         bk0Var.x = "male";
-                        bk0Var.Y[4].setText(org.telegram.messenger.hd.M0(2131747507, null));
+                        bk0Var.Y[4].setText(org.telegram.messenger.id.M0(2131747509, null));
                     } else if (i20 == 2) {
                         bk0Var.x = "female";
-                        bk0Var.Y[4].setText(org.telegram.messenger.hd.M0(2131747568, null));
+                        bk0Var.Y[4].setText(org.telegram.messenger.id.M0(2131747570, null));
                     }
                 }
                 if (!TextUtils.isEmpty(zrVar.m)) {
@@ -343,7 +343,7 @@ public final /* synthetic */ class zc0 implements Runnable {
                     iArr[2] = 0;
                     iArr[1] = 0;
                     iArr[0] = 0;
-                    bk0Var.Y[8].setText(org.telegram.messenger.hd.M0(2131747493, null));
+                    bk0Var.Y[8].setText(org.telegram.messenger.id.M0(2131747495, null));
                     break;
                 } else {
                     iArr[0] = i10;
@@ -371,7 +371,7 @@ public final /* synthetic */ class zc0 implements Runnable {
                             break;
                         }
                     } else {
-                        org.telegram.ui.Components.v4.u0(bk0Var2.getParentActivity(), org.telegram.messenger.hd.M0(2131743821, null), true);
+                        org.telegram.ui.Components.v4.u0(bk0Var2.getParentActivity(), org.telegram.messenger.id.M0(2131743823, null), true);
                         break;
                     }
                 }
@@ -387,10 +387,10 @@ public final /* synthetic */ class zc0 implements Runnable {
                 } else {
                     bk0Var3.R1(false, false);
                     if ("APP_VERSION_OUTDATED".equals(tL_error3.text)) {
-                        org.telegram.ui.Components.v4.u0(bk0Var3.getParentActivity(), org.telegram.messenger.hd.M0(2131743821, null), true);
+                        org.telegram.ui.Components.v4.u0(bk0Var3.getParentActivity(), org.telegram.messenger.id.M0(2131743823, null), true);
                         break;
                     } else {
-                        bk0Var3.Q1(org.telegram.messenger.hd.M0(R.string.AppName, null), tL_error3.text);
+                        bk0Var3.Q1(org.telegram.messenger.id.M0(R.string.AppName, null), tL_error3.text);
                         break;
                     }
                 }
@@ -423,18 +423,18 @@ public final /* synthetic */ class zc0 implements Runnable {
                         int intValue = Utilities.z(tL_error4.text).intValue();
                         if (intValue < 60) {
                             c10 = 0;
-                            G = org.telegram.messenger.hd.G(intValue, "Seconds", new Object[0]);
+                            G = org.telegram.messenger.id.G(intValue, "Seconds", new Object[0]);
                         } else {
                             c10 = 0;
-                            G = org.telegram.messenger.hd.G(intValue / 60, "Minutes", new Object[0]);
+                            G = org.telegram.messenger.id.G(intValue / 60, "Minutes", new Object[0]);
                         }
-                        String M02 = org.telegram.messenger.hd.M0(R.string.AppName, null);
+                        String M02 = org.telegram.messenger.id.M0(R.string.AppName, null);
                         Object[] objArr = new Object[1];
                         objArr[c10] = G;
-                        hl0Var2.L0(M02, org.telegram.messenger.hd.a0("FloodWaitTime", null, 2131750687, objArr));
+                        hl0Var2.L0(M02, org.telegram.messenger.id.a0("FloodWaitTime", null, 2131750687, objArr));
                         break;
                     } else {
-                        hl0Var2.L0(org.telegram.messenger.hd.M0(R.string.AppName, null), tL_error4.text);
+                        hl0Var2.L0(org.telegram.messenger.id.M0(R.string.AppName, null), tL_error4.text);
                         break;
                     }
                 } else if (hl0Var2.getParentActivity() != null) {
@@ -488,21 +488,21 @@ public final /* synthetic */ class zc0 implements Runnable {
                         }
                         long v02 = hl0Var3.v0();
                         int i23 = !z9 ? (z10 || z11) ? R.raw.stars_send : R.raw.stars_topup : R.raw.payment_success;
-                        String M04 = z9 ? null : org.telegram.messenger.hd.M0(z11 ? 2131745093 : z10 ? 2131745101 : 2131745160, null);
+                        String M04 = z9 ? null : org.telegram.messenger.id.M0(z11 ? 2131745095 : z10 ? 2131745103 : 2131745162, null);
                         if (z9) {
                             String str7 = hl0Var3.R0[r15];
                             String str8 = hl0Var3.q0;
                             Object[] objArr2 = new Object[2];
                             objArr2[r15] = str7;
                             objArr2[1] = str8;
-                            a02 = org.telegram.messenger.hd.a0(null, null, 2131747400, objArr2);
+                            a02 = org.telegram.messenger.id.a0(null, null, 2131747402, objArr2);
                         } else if (z11) {
-                            a02 = org.telegram.messenger.hd.H(',', "StarsGiveawaySentPopupInfo", (int) v02);
+                            a02 = org.telegram.messenger.id.H(',', "StarsGiveawaySentPopupInfo", (int) v02);
                         } else {
                             String str9 = z10 ? "StarsGiftSentPopupInfo" : "StarsAcquiredInfo";
                             Object[] objArr3 = new Object[1];
                             objArr3[r15] = str;
-                            a02 = org.telegram.messenger.hd.K(str9, (int) v02, ',', objArr3);
+                            a02 = org.telegram.messenger.id.K(str9, (int) v02, ',', objArr3);
                         }
                         SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(a02);
                         T = LaunchActivity.T();
@@ -512,7 +512,7 @@ public final /* synthetic */ class zc0 implements Runnable {
                                 String str10 = M04;
                                 I = str10 != null ? a03.I(i23, str10, X2) : a03.Q(i23, 36, X2);
                             } else {
-                                I = a03.L(i23, M04, X2, org.telegram.messenger.hd.M0(2131743553, null), new bi.k4(w02, i12));
+                                I = a03.L(i23, M04, X2, org.telegram.messenger.id.M0(2131743555, null), new bi.k4(w02, i12));
                             }
                             boolean z12 = r15;
                             org.telegram.ui.Components.cc ccVar = I;

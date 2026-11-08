@@ -1,43 +1,78 @@
 package org.telegram.ui.Components;
 
-import android.graphics.SurfaceTexture;
-import android.os.Looper;
-import android.view.Surface;
+import android.graphics.Point;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oy implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ry b;
+    public final /* synthetic */ sy b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ oy(ry ryVar, int i7) {
-        this.a = i7;
-        this.b = ryVar;
+    public /* synthetic */ oy(sy syVar, int i7, int i10, int i11) {
+        this.a = i11;
+        this.b = syVar;
+        this.c = i7;
+        this.d = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        int i7;
         switch (this.a) {
             case 0:
-                this.b.finish();
-                Looper myLooper = Looper.myLooper();
-                if (myLooper != null) {
-                    myLooper.quit();
+                sy syVar = this.b;
+                int i10 = this.c;
+                int i11 = this.d;
+                if (syVar.W != i10 || syVar.X != i11) {
+                    syVar.W = i10;
+                    syVar.X = i11;
+                    int o4 = org.telegram.messenger.iz.o();
+                    int i12 = 1920;
+                    if (o4 != 1) {
+                        if (o4 != 2) {
+                            i12 = 720;
+                        } else {
+                            Point point = org.telegram.messenger.g0.q;
+                            i12 = Math.min(1920, Math.max(point.x, point.y));
+                        }
+                    }
+                    if (org.telegram.messenger.iz.o() == 0 && ((i7 = syVar.W) > 1280 || syVar.X > 1280)) {
+                        syVar.W = i7 / 2;
+                        syVar.X /= 2;
+                    }
+                    int i13 = syVar.W;
+                    if (i13 > i12 || syVar.X > i12) {
+                        int i14 = syVar.X;
+                        if (i13 > i14) {
+                            syVar.X = (int) (i14 / (i12 / i13));
+                            syVar.W = i12;
+                        } else {
+                            syVar.W = (int) (i13 / (i12 / i14));
+                            syVar.X = i12;
+                        }
+                    }
+                    syVar.Z = false;
+                    syVar.f();
+                    syVar.d0.run();
                     break;
                 }
                 break;
             case 1:
-                ry.a(this.b);
+                sy syVar2 = this.b;
+                int i15 = this.c;
+                int i16 = this.d;
+                syVar2.n = i15;
+                syVar2.r = i16;
                 break;
             default:
-                ry ryVar = this.b;
-                ax axVar = ryVar.b0;
-                SurfaceTexture surfaceTexture = ryVar.x;
-                h51 h51Var = (h51) axVar.b;
-                if (h51Var.a != null) {
-                    h51Var.a.y0(new Surface(surfaceTexture));
-                    break;
-                }
+                sy syVar3 = this.b;
+                int i17 = this.c;
+                int i18 = this.d;
+                da daVar = syVar3.I;
+                daVar.l = i17;
+                daVar.m = i18;
                 break;
         }
     }

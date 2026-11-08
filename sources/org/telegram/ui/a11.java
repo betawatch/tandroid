@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class a11 extends View {
     public boolean D;
@@ -103,7 +103,7 @@ public final class a11 extends View {
         a(t01Var);
         org.telegram.messenger.rz f10 = org.telegram.messenger.t5.f(document, org.telegram.ui.ActionBar.k6.m6, 0.2f, null);
         if (this.V.W == 6) {
-            this.h.r0(org.telegram.messenger.hc.b(document), !org.telegram.messenger.rc.e(16388) ? "34_34_firstframe" : "34_34", null, null, f10, document.size, null, document, 0);
+            this.h.r0(org.telegram.messenger.hc.b(document), !org.telegram.messenger.sc.e(16388) ? "34_34_firstframe" : "34_34", null, null, f10, document.size, null, document, 0);
         } else {
             this.h.r0(org.telegram.messenger.hc.b(document), "100_100_firstframe", null, null, f10, 0L, "tgs", document, 0);
         }
@@ -225,7 +225,7 @@ public final class a11 extends View {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         String str2 = null;
         if (this.a) {
-            str2 = org.telegram.messenger.hd.M0(2131746287, null);
+            str2 = org.telegram.messenger.id.M0(2131746289, null);
         } else {
             ch.o0 o0Var = this.y;
             if (o0Var == null || (str = o0Var.f) == null) {

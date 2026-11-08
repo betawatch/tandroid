@@ -12,7 +12,7 @@ import org.telegram.messenger.qs;
 import org.telegram.ui.Components.w70;
 import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class c extends LinearLayout implements ls {
     public final int a;
@@ -36,15 +36,15 @@ public final class c extends LinearLayout implements ls {
         org.telegram.ui.ActionBar.f6 f6Var = this.b;
         w70 w70Var = this.d;
         if (bVar2 == bVar3) {
-            textView.setText(dd.a1(false, org.telegram.messenger.hd.a0(null, null, 2131750115, org.telegram.messenger.hd.E(s5.a(), ',')), 0.6f, null));
+            textView.setText(dd.a1(false, org.telegram.messenger.id.a0(null, null, 2131750117, org.telegram.messenger.id.E(s5.a(), ',')), 0.6f, null));
             int i10 = org.telegram.ui.ActionBar.k6.uj;
             org.telegram.ui.ActionBar.r6.V(w70Var, i10, f6Var);
             org.telegram.ui.ActionBar.r6.H(w70Var, i10, f6Var);
-            w70Var.setText(org.telegram.messenger.g0.I2(org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131750114, null), new a3.f(this, 14)), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(1.0f)));
+            w70Var.setText(org.telegram.messenger.g0.I2(org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(2131750116, null), new a3.f(this, 14)), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(1.0f)));
             return;
         }
         if (bVar2 == cg.b.b) {
-            SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131750113, s5.b()));
+            SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131750115, s5.b()));
             wp[] wpVarArr = this.f;
             textView.setText(dd.a1(true, X2, 0.6f, wpVarArr));
             wpVarArr[0].a(org.telegram.ui.ActionBar.k6.uj);
@@ -114,7 +114,7 @@ public final class c extends LinearLayout implements ls {
         w70 w70Var = new w70(context, f6Var);
         this.d = w70Var;
         w70Var.setTextSize(1, 12.0f);
-        w70Var.setText(org.telegram.messenger.g0.I2(org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131750114, null), new b(0, context, f6Var)), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(1.0f)));
+        w70Var.setText(org.telegram.messenger.g0.I2(org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(2131750116, null), new b(0, context, f6Var)), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(1.0f)));
         w70Var.setGravity(17);
         addView(w70Var, c8.ha.q(-2, -2, 0.0f, 17, 0, 1, 0, 0));
         a();

@@ -24,7 +24,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gf;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
@@ -40,7 +40,7 @@ import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class f3 extends FrameLayout implements ls {
     public static final we j0 = new we(-1, null, null);
@@ -295,7 +295,7 @@ public abstract class f3 extends FrameLayout implements ls {
         lVar.setTextSize(1, 16.0f);
         org.telegram.ui.ActionBar.r6.V(lVar, org.telegram.ui.ActionBar.k6.y6, f6Var);
         lVar.setTypeface(null);
-        lVar.setText(hd.M0(2131745761, null));
+        lVar.setText(id.M0(2131745763, null));
         this.w = new q3(this, false, new ai.i(this, 20));
         frameLayout.addView(av0Var, c8.ha.e(-1, -1, qs.E1));
         pj0Var.setEmptyView(av0Var);
@@ -304,7 +304,7 @@ public abstract class f3 extends FrameLayout implements ls {
         a10.H = new u2(this);
         this.G = a10;
         a10.setVisibility(8);
-        a10.setSearchFieldHint(hd.M0(2131745762, null));
+        a10.setSearchFieldHint(id.M0(2131745764, null));
         final int i12 = 1;
         pj0Var.setOnItemClickListener(new bj0(this) { // from class: fi.q2
             public final /* synthetic */ f3 b;
@@ -411,7 +411,7 @@ public abstract class f3 extends FrameLayout implements ls {
             final int i14 = 1;
             d h = org.telegram.messenger.k5.h(24, context, f6Var, true);
             this.J = h;
-            h.i(hd.H(',', "StoriesCreate", 1), false, true);
+            h.i(id.H(',', "StoriesCreate", 1), false, true);
             if (!z11) {
                 linearLayout.addView(h, c8.ha.k(0.0f, 0.0f, 0.0f, 8.0f, -1, 48));
                 h.setOnClickListener(new View.OnClickListener(this) { // from class: fi.r2
@@ -456,7 +456,7 @@ public abstract class f3 extends FrameLayout implements ls {
             wpVar.r = f12;
             wpVar.s = L;
             spannableStringBuilder.setSpan(wpVar, 0, 1, 33);
-            spannableStringBuilder.append((CharSequence) " ").append((CharSequence) hd.M0(2131744780, null));
+            spannableStringBuilder.append((CharSequence) " ").append((CharSequence) id.M0(2131744782, null));
             h7.i(spannableStringBuilder, false, true);
             linearLayout.addView(h7, c8.ha.k(0.0f, 0.0f, 0.0f, 0.0f, -1, 48));
             final int i15 = 2;
@@ -562,9 +562,9 @@ public abstract class f3 extends FrameLayout implements ls {
         i();
         we weVar3 = this.e0;
         if (weVar3 == MediaController.Z1) {
-            this.D.setText(hd.M0(2131752238, null));
+            this.D.setText(id.M0(2131752238, null));
         } else if (weVar3 == weVar2) {
-            this.D.setText(hd.M0(2131744680, null));
+            this.D.setText(id.M0(2131744682, null));
         } else {
             this.D.setText(weVar3.c);
         }
@@ -696,9 +696,9 @@ public abstract class f3 extends FrameLayout implements ls {
         we weVar3 = MediaController.Z1;
         TextView textView = this.D;
         if (weVar2 == weVar3) {
-            textView.setText(hd.M0(2131752238, null));
+            textView.setText(id.M0(2131752238, null));
         } else if (weVar2 == j0) {
-            textView.setText(hd.M0(2131744680, null));
+            textView.setText(id.M0(2131744682, null));
         } else {
             textView.setText(weVar2.c);
         }
@@ -794,7 +794,7 @@ public abstract class f3 extends FrameLayout implements ls {
     }
 
     public String getTitle() {
-        return hd.M0(this.L ? 2131754428 : 2131752121, null);
+        return id.M0(this.L ? 2131754428 : 2131752121, null);
     }
 
     public final void h() {
@@ -826,7 +826,7 @@ public abstract class f3 extends FrameLayout implements ls {
         for (int i7 = 0; i7 < size; i7++) {
             we weVar2 = (we) this.g0.get(i7);
             if (weVar2 == weVar) {
-                aVar = new a(getContext(), weVar2.d, hd.N0("StoryDraftsAlbum"), arrayList3.size(), this.b);
+                aVar = new a(getContext(), weVar2.d, id.N0("StoryDraftsAlbum"), arrayList3.size(), this.b);
             } else {
                 ArrayList b10 = b(weVar2);
                 if (!b10.isEmpty()) {
@@ -862,7 +862,7 @@ public abstract class f3 extends FrameLayout implements ls {
         if (linearLayout != null) {
             d dVar = this.J;
             if (dVar != null) {
-                dVar.i(hd.H(',', "StoriesCreate", Math.max(1, arrayList.size())), true, true);
+                dVar.i(id.H(',', "StoriesCreate", Math.max(1, arrayList.size())), true, true);
             }
             linearLayout.setPadding(org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(org.telegram.messenger.g0.n > 0 ? 0.0f : 10.0f) + org.telegram.messenger.g0.n);
             if (this.T != z9) {

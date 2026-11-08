@@ -18,12 +18,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ck0 extends org.telegram.messenger.fu implements o71 {
     public static final AtomicInteger s0 = new AtomicInteger();
     public final TL_iv.pageBlockEmbed W;
-    public org.telegram.utils.twidget.u X;
+    public org.telegram.utils.twidget.v0 X;
     public final boolean Y;
     public int Z;
     public final Path a0;
@@ -37,7 +37,7 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
     public int i0;
     public int j0;
     public String k0;
-    public org.telegram.utils.twidget.m0 l0;
+    public org.telegram.utils.twidget.m1 l0;
     public org.telegram.ui.Cells.t9[] m0;
     public boolean n0;
     public long o0;
@@ -61,23 +61,23 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
         this.h0 = new ob0(this, 15);
         this.W = pageblockembed;
         this.Y = z9;
-        this.X = org.telegram.utils.twidget.p.i(pageblockembed.url);
+        this.X = org.telegram.utils.twidget.n0.i(pageblockembed.url);
         this.i0 = k0();
-        String k10 = org.telegram.utils.twidget.p.k(pageblockembed.url, this.X, u0());
+        String k10 = org.telegram.utils.twidget.n0.k(pageblockembed.url, this.X, u0());
         this.k0 = k10;
         if (k10.equals("placeholder") || this.k0.startsWith("cache of width")) {
             org.telegram.messenger.g0.h3(new org.telegram.messenger.ob(pageblockembed.url, u0(), kvVar.E()));
         }
         String str = pageblockembed.url;
-        ConcurrentHashMap concurrentHashMap = org.telegram.utils.twidget.p.a;
-        org.telegram.utils.twidget.m mVar = (org.telegram.utils.twidget.m) concurrentHashMap.get(str);
-        ck0 ck0Var = mVar == null ? null : mVar.u;
+        ConcurrentHashMap concurrentHashMap = org.telegram.utils.twidget.n0.a;
+        org.telegram.utils.twidget.k0 k0Var = (org.telegram.utils.twidget.k0) concurrentHashMap.get(str);
+        ck0 ck0Var = k0Var == null ? null : k0Var.u;
         if (ck0Var != null && ck0Var != this && ck0Var.i0 != this.i0) {
             o0(ck0Var.i0, "new layout, width " + Math.round(ck0Var.u0() / org.telegram.messenger.g0.p) + " -> " + Math.round(u0() / org.telegram.messenger.g0.p), ck0Var.k0, false);
         }
-        org.telegram.utils.twidget.m mVar2 = (org.telegram.utils.twidget.m) concurrentHashMap.get(pageblockembed.url);
-        if (mVar2 != null) {
-            mVar2.u = this;
+        org.telegram.utils.twidget.k0 k0Var2 = (org.telegram.utils.twidget.k0) concurrentHashMap.get(pageblockembed.url);
+        if (k0Var2 != null) {
+            k0Var2.u = this;
         }
         org.telegram.messenger.ij ijVar = this.a.b;
         if (this.X == null || ijVar == null || ijVar.k == null) {
@@ -91,16 +91,16 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
             TLRPC.Message message2 = ijVar.k;
             if (!message2.edit_hide && ((message2.flags & 32768) != 0 || ijVar.Z2())) {
                 z10 = true;
-                String J3 = org.telegram.ui.Cells.q1.J3(ijVar, ijVar, z10, ijVar.k.edit_date);
+                String K3 = org.telegram.ui.Cells.q1.K3(ijVar, ijVar, z10, ijVar.k.edit_date);
                 paint = org.telegram.ui.ActionBar.k6.T2;
                 if (paint == null) {
                     paint = new Paint(1);
                     paint.setTextSize(org.telegram.messenger.g0.L(12.0f));
                 }
-                ceil = (int) Math.ceil(paint.measureText(J3));
+                ceil = (int) Math.ceil(paint.measureText(K3));
                 message = ijVar.k;
                 if ((message.flags & 1024) != 0 && org.telegram.ui.ActionBar.k6.M3 != null) {
-                    String S = org.telegram.messenger.hd.S(null, Math.max(1, message.views));
+                    String S = org.telegram.messenger.id.S(null, Math.max(1, message.views));
                     Drawable drawable = org.telegram.ui.ActionBar.k6.M3;
                     ceil = (int) ((((paint.getTextSize() - org.telegram.messenger.g0.L(2.0f)) * drawable.getIntrinsicWidth()) / drawable.getIntrinsicHeight()) + ((int) Math.ceil(paint.measureText(S))) + org.telegram.messenger.g0.L(10.0f) + ceil);
                 }
@@ -108,14 +108,14 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
             }
         }
         z10 = false;
-        String J32 = org.telegram.ui.Cells.q1.J3(ijVar, ijVar, z10, ijVar.k.edit_date);
+        String K32 = org.telegram.ui.Cells.q1.K3(ijVar, ijVar, z10, ijVar.k.edit_date);
         paint = org.telegram.ui.ActionBar.k6.T2;
         if (paint == null) {
         }
-        ceil = (int) Math.ceil(paint.measureText(J32));
+        ceil = (int) Math.ceil(paint.measureText(K32));
         message = ijVar.k;
         if ((message.flags & 1024) != 0) {
-            String S2 = org.telegram.messenger.hd.S(null, Math.max(1, message.views));
+            String S2 = org.telegram.messenger.id.S(null, Math.max(1, message.views));
             Drawable drawable2 = org.telegram.ui.ActionBar.k6.M3;
             ceil = (int) ((((paint.getTextSize() - org.telegram.messenger.g0.L(2.0f)) * drawable2.getIntrinsicWidth()) / drawable2.getIntrinsicHeight()) + ((int) Math.ceil(paint.measureText(S2))) + org.telegram.messenger.g0.L(10.0f) + ceil);
         }
@@ -157,10 +157,10 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
 
     @Override // org.telegram.messenger.fu
     public final void T() {
-        org.telegram.utils.twidget.u uVar = this.X;
+        org.telegram.utils.twidget.v0 v0Var = this.X;
         TL_iv.pageBlockEmbed pageblockembed = this.W;
-        if (uVar == null) {
-            this.X = org.telegram.utils.twidget.p.i(pageblockembed.url);
+        if (v0Var == null) {
+            this.X = org.telegram.utils.twidget.n0.i(pageblockembed.url);
         }
         if (this.X == null) {
             return;
@@ -168,29 +168,29 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
         if (this.d0 == null) {
             this.d0 = new p71(this, org.telegram.messenger.g0.p);
         }
-        org.telegram.utils.twidget.m mVar = (org.telegram.utils.twidget.m) org.telegram.utils.twidget.p.a.get(pageblockembed.url);
-        if (mVar != null) {
-            ArrayList arrayList = mVar.v;
+        org.telegram.utils.twidget.k0 k0Var = (org.telegram.utils.twidget.k0) org.telegram.utils.twidget.n0.a.get(pageblockembed.url);
+        if (k0Var != null) {
+            ArrayList arrayList = k0Var.v;
             if (!arrayList.contains(this)) {
                 arrayList.add(this);
             }
-            if (org.telegram.utils.twidget.p.p(arrayList) != this) {
+            if (org.telegram.utils.twidget.n0.q(arrayList) != this) {
                 p71 p71Var = this.d0;
-                org.telegram.utils.twidget.u uVar2 = this.X;
+                org.telegram.utils.twidget.v0 v0Var2 = this.X;
                 p71Var.q();
-                p71Var.p = uVar2;
-                p71Var.r = uVar2 != null;
+                p71Var.p = v0Var2;
+                p71Var.r = v0Var2 != null;
                 return;
             }
-            ck0 ck0Var = mVar.w;
-            mVar.w = this;
+            ck0 ck0Var = k0Var.w;
+            k0Var.w = this;
             if (ck0Var != null && ck0Var != this && ck0Var.e0 && ck0Var.d0 != null) {
                 ck0Var.s0();
                 p71 p71Var2 = ck0Var.d0;
-                org.telegram.utils.twidget.u uVar3 = ck0Var.X;
+                org.telegram.utils.twidget.v0 v0Var3 = ck0Var.X;
                 p71Var2.q();
-                p71Var2.p = uVar3;
-                p71Var2.r = uVar3 != null;
+                p71Var2.p = v0Var3;
+                p71Var2.r = v0Var3 != null;
                 View view = ck0Var.V;
                 if (view != null) {
                     view.invalidate();
@@ -208,23 +208,23 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
         }
         s0();
         this.d0.q();
-        org.telegram.utils.twidget.m mVar = (org.telegram.utils.twidget.m) org.telegram.utils.twidget.p.a.get(this.W.url);
-        if (mVar == null) {
+        org.telegram.utils.twidget.k0 k0Var = (org.telegram.utils.twidget.k0) org.telegram.utils.twidget.n0.a.get(this.W.url);
+        if (k0Var == null) {
             return;
         }
-        ArrayList arrayList = mVar.v;
+        ArrayList arrayList = k0Var.v;
         arrayList.remove(this);
-        if (mVar.w != this) {
+        if (k0Var.w != this) {
             return;
         }
-        ck0 p10 = org.telegram.utils.twidget.p.p(arrayList);
-        mVar.w = p10;
-        if (p10 == null || p10.e0 || p10.V == null || (p71Var = p10.d0) == null || p10.X == null) {
+        ck0 q10 = org.telegram.utils.twidget.n0.q(arrayList);
+        k0Var.w = q10;
+        if (q10 == null || q10.e0 || q10.V == null || (p71Var = q10.d0) == null || q10.X == null) {
             return;
         }
         p71Var.q();
-        p10.r0();
-        p10.V.invalidate();
+        q10.r0();
+        q10.V.invalidate();
     }
 
     @Override // org.telegram.messenger.fu
@@ -240,11 +240,11 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
         org.telegram.messenger.kv kvVar = this.a;
         org.telegram.ui.Cells.q1 q1Var2 = kvVar.E;
         org.telegram.ui.Cells.x1 x1Var = null;
-        if (i7 != org.telegram.utils.twidget.i0.d(q1Var2 != null ? q1Var2.getResourcesProvider() : null, kvVar.E())) {
+        if (i7 != org.telegram.utils.twidget.i1.d(q1Var2 != null ? q1Var2.getResourcesProvider() : null, kvVar.E())) {
             org.telegram.ui.Cells.q1 q1Var3 = kvVar.E;
             org.telegram.ui.ActionBar.f6 resourcesProvider = q1Var3 != null ? q1Var3.getResourcesProvider() : null;
-            this.Z = org.telegram.utils.twidget.i0.d(resourcesProvider, kvVar.E());
-            this.X.l(org.telegram.utils.twidget.i0.a(resourcesProvider, kvVar.E()));
+            this.Z = org.telegram.utils.twidget.i1.d(resourcesProvider, kvVar.E());
+            this.X.l(org.telegram.utils.twidget.i1.a(resourcesProvider, kvVar.E()));
         }
         this.j0 = R() ? 0 : Math.max(0, Math.min(j0(), kvVar.S - org.telegram.messenger.g0.L(2.0f)));
         int u02 = u0();
@@ -310,8 +310,8 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
             return false;
         }
         String str = this.W.url;
-        org.telegram.utils.twidget.m mVar = org.telegram.utils.twidget.p.n(str) ? (org.telegram.utils.twidget.m) org.telegram.utils.twidget.p.a.get(str) : null;
-        if (mVar != null && mVar.k) {
+        org.telegram.utils.twidget.k0 k0Var = org.telegram.utils.twidget.n0.n(str) ? (org.telegram.utils.twidget.k0) org.telegram.utils.twidget.n0.a.get(str) : null;
+        if (k0Var != null && k0Var.k) {
             return false;
         }
         motionEvent.offsetLocation(this.j0, 0.0f);
@@ -346,13 +346,13 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
 
     @Override // org.telegram.ui.Components.o71
     public final void h() {
-        org.telegram.utils.twidget.u uVar = this.X;
-        org.telegram.utils.twidget.f0 c10 = uVar == null ? null : uVar.c();
-        org.telegram.utils.twidget.m0 m0Var = c10 == null ? null : c10.f;
-        if (m0Var != this.l0) {
-            this.l0 = m0Var;
-            if (m0Var != null) {
-                ArrayList arrayList = m0Var.a;
+        org.telegram.utils.twidget.v0 v0Var = this.X;
+        org.telegram.utils.twidget.f1 d = v0Var == null ? null : v0Var.d();
+        org.telegram.utils.twidget.m1 m1Var = d == null ? null : d.f;
+        if (m1Var != this.l0) {
+            this.l0 = m1Var;
+            if (m1Var != null) {
+                ArrayList arrayList = m1Var.a;
                 this.m0 = new org.telegram.ui.Cells.t9[arrayList.size()];
                 int i7 = 0;
                 while (true) {
@@ -360,7 +360,7 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
                     if (i7 >= t9VarArr.length) {
                         break;
                     }
-                    t9VarArr[i7] = new li.a0(this, (org.telegram.utils.twidget.k0) arrayList.get(i7));
+                    t9VarArr[i7] = new li.a0(this, (org.telegram.utils.twidget.k1) arrayList.get(i7));
                     i7++;
                 }
             } else {
@@ -377,19 +377,19 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
     public final boolean i0() {
         boolean z9;
         String str = this.W.url;
-        org.telegram.utils.twidget.u uVar = this.X;
-        if (uVar != null) {
-            ConcurrentHashMap concurrentHashMap = org.telegram.utils.twidget.p.a;
-            if (uVar.i > 0) {
-                return uVar.l;
+        org.telegram.utils.twidget.v0 v0Var = this.X;
+        if (v0Var != null) {
+            ConcurrentHashMap concurrentHashMap = org.telegram.utils.twidget.n0.a;
+            if (v0Var.i > 0) {
+                return v0Var.l;
             }
         }
-        org.telegram.utils.twidget.m mVar = org.telegram.utils.twidget.p.n(str) ? (org.telegram.utils.twidget.m) org.telegram.utils.twidget.p.a.get(str) : null;
-        org.telegram.utils.twidget.n nVar = mVar != null ? (org.telegram.utils.twidget.n) org.telegram.utils.twidget.p.b.get(mVar.a()) : null;
-        if (nVar != null) {
-            synchronized (nVar) {
-                if (!nVar.a.isEmpty() && ((int[]) nVar.a.get(0)).length > 2) {
-                    if (((int[]) nVar.a.get(0))[2] != 0) {
+        org.telegram.utils.twidget.k0 k0Var = org.telegram.utils.twidget.n0.n(str) ? (org.telegram.utils.twidget.k0) org.telegram.utils.twidget.n0.a.get(str) : null;
+        org.telegram.utils.twidget.l0 l0Var = k0Var != null ? (org.telegram.utils.twidget.l0) org.telegram.utils.twidget.n0.b.get(k0Var.a()) : null;
+        if (l0Var != null) {
+            synchronized (l0Var) {
+                if (!l0Var.a.isEmpty() && ((int[]) l0Var.a.get(0)).length > 2) {
+                    if (((int[]) l0Var.a.get(0))[2] != 0) {
                         z9 = true;
                     }
                 }
@@ -404,7 +404,7 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
 
     @Override // org.telegram.ui.Components.o71
     public final void j() {
-        org.telegram.utils.twidget.f0 f0Var;
+        org.telegram.utils.twidget.f1 f1Var;
         ob0 ob0Var = this.h0;
         org.telegram.messenger.g0.r(ob0Var);
         if (this.g0) {
@@ -419,8 +419,8 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
                 return;
             }
         }
-        org.telegram.utils.twidget.h0 h0Var = this.X.f;
-        if (h0Var == null || (f0Var = h0Var.F) == null || !(f0Var.g || h0Var.x)) {
+        org.telegram.utils.twidget.h1 h1Var = this.X.f;
+        if (h1Var == null || (f1Var = h1Var.H) == null || !(f1Var.g || h1Var.z)) {
             org.telegram.messenger.g0.i3(ob0Var, 1500L);
             return;
         }
@@ -432,7 +432,7 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
     }
 
     public final int k0() {
-        return org.telegram.utils.twidget.p.d(this.W.url, this.X, u0());
+        return org.telegram.utils.twidget.n0.d(this.W.url, this.X, u0());
     }
 
     public final float m0() {
@@ -474,8 +474,8 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
                 StringBuilder sb3 = new StringBuilder(", session ");
                 sb3.append(this.X.q);
                 sb3.append(this.X.g != null ? " (snapshot)" : "");
-                org.telegram.utils.twidget.h0 h0Var = this.X.f;
-                sb3.append((h0Var == null || !h0Var.A) ? ", scripts held" : "");
+                org.telegram.utils.twidget.h1 h1Var = this.X.f;
+                sb3.append((h1Var == null || !h1Var.C) ? ", scripts held" : "");
                 str3 = sb3.toString();
             } else {
                 str3 = ", no widget yet";
@@ -490,8 +490,8 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
 
     public final void p0(String str) {
         if (this.V != null) {
-            org.telegram.utils.twidget.u uVar = this.X;
-            if ((uVar == null || uVar.i <= 0) && k0() != this.i0) {
+            org.telegram.utils.twidget.v0 v0Var = this.X;
+            if ((v0Var == null || v0Var.i <= 0) && k0() != this.i0) {
                 q0("on screen: ".concat(str), false);
                 return;
             }
@@ -504,7 +504,7 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
         }
         String str2 = this.k0;
         this.i0 = k02;
-        this.k0 = org.telegram.utils.twidget.p.k(this.W.url, this.X, u0());
+        this.k0 = org.telegram.utils.twidget.n0.k(this.W.url, this.X, u0());
         o0(i7, "away: ".concat(str), str2, false);
         org.telegram.messenger.kv kvVar = this.a;
         kvVar.Q();
@@ -522,7 +522,7 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
         boolean z11 = k02 != i7;
         String str2 = this.k0;
         this.i0 = k02;
-        this.k0 = org.telegram.utils.twidget.p.k(this.W.url, this.X, u0());
+        this.k0 = org.telegram.utils.twidget.n0.k(this.W.url, this.X, u0());
         if (z11) {
             o0(i7, str, str2, z9);
         }
@@ -563,33 +563,33 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
 
     public final void r0() {
         org.telegram.messenger.ij ijVar;
-        org.telegram.utils.twidget.f0 f0Var;
+        org.telegram.utils.twidget.f1 f1Var;
         this.e0 = true;
         this.f0 = SystemClock.uptimeMillis();
-        org.telegram.utils.twidget.h0 h0Var = this.X.f;
-        this.g0 = (h0Var == null || (f0Var = h0Var.F) == null || (!f0Var.g && !h0Var.x)) ? false : true;
+        org.telegram.utils.twidget.h1 h1Var = this.X.f;
+        this.g0 = (h1Var == null || (f1Var = h1Var.H) == null || (!f1Var.g && !h1Var.z)) ? false : true;
         this.X.n(u0());
         org.telegram.messenger.kv kvVar = this.a;
         org.telegram.ui.Cells.q1 q1Var = kvVar.E;
         org.telegram.ui.ActionBar.f6 resourcesProvider = q1Var != null ? q1Var.getResourcesProvider() : null;
-        this.Z = org.telegram.utils.twidget.i0.d(resourcesProvider, kvVar.E());
-        this.X.l(org.telegram.utils.twidget.i0.a(resourcesProvider, kvVar.E()));
+        this.Z = org.telegram.utils.twidget.i1.d(resourcesProvider, kvVar.E());
+        this.X.l(org.telegram.utils.twidget.i1.a(resourcesProvider, kvVar.E()));
         p71 p71Var = this.d0;
-        org.telegram.utils.twidget.u uVar = this.X;
-        if (p71Var.p != uVar) {
+        org.telegram.utils.twidget.v0 v0Var = this.X;
+        if (p71Var.p != v0Var) {
             p71Var.q();
-            p71Var.p = uVar;
-            if (uVar != null) {
-                uVar.h = p71Var;
-                uVar.m(p71Var.q);
+            p71Var.p = v0Var;
+            if (v0Var != null) {
+                v0Var.h = p71Var;
+                v0Var.m(p71Var.q);
             }
         }
         this.d0.p(true);
-        org.telegram.utils.twidget.m mVar = (org.telegram.utils.twidget.m) org.telegram.utils.twidget.p.a.get(this.W.url);
-        if (mVar != null) {
-            mVar.u = this;
+        org.telegram.utils.twidget.k0 k0Var = (org.telegram.utils.twidget.k0) org.telegram.utils.twidget.n0.a.get(this.W.url);
+        if (k0Var != null) {
+            k0Var.u = this;
         }
-        org.telegram.utils.twidget.p.s(this.X);
+        org.telegram.utils.twidget.n0.t(this.X);
         boolean z9 = this.n0 && (ijVar = this.a.b) != null && ijVar.K1;
         this.n0 = false;
         if (z9 || k0() != this.i0) {
@@ -603,9 +603,9 @@ public final class ck0 extends org.telegram.messenger.fu implements o71 {
             org.telegram.messenger.g0.r(this.h0);
             this.d0.p(false);
             this.d0.q();
-            org.telegram.utils.twidget.u uVar = this.X;
-            if (uVar != null) {
-                org.telegram.utils.twidget.p.r(uVar);
+            org.telegram.utils.twidget.v0 v0Var = this.X;
+            if (v0Var != null) {
+                org.telegram.utils.twidget.n0.s(v0Var);
             }
         }
     }

@@ -24,16 +24,16 @@ import java.util.Set;
 import java.util.UUID;
 import m4.d0;
 import org.telegram.ui.ActionBar.m5;
-import org.telegram.ui.Components.qt;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.rt;
+import org.telegram.ui.Components.vy;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class b implements g {
     public final List a;
     public final q b;
     public final d0 c;
-    public final uy d;
+    public final vy d;
     public final boolean e;
     public final boolean f;
     public final HashMap g;
@@ -54,13 +54,13 @@ public final class b implements g {
     public byte[] v;
     public byte[] w;
     public o x;
-    public qt y;
+    public rt y;
     public p z;
 
-    public b(UUID uuid, q qVar, d0 d0Var, uy uyVar, List list, boolean z9, boolean z10, byte[] bArr, HashMap hashMap, ab.q qVar2, Looper looper, pb.b bVar, m2.j jVar) {
+    public b(UUID uuid, q qVar, d0 d0Var, vy vyVar, List list, boolean z9, boolean z10, byte[] bArr, HashMap hashMap, ab.q qVar2, Looper looper, pb.b bVar, m2.j jVar) {
         this.l = uuid;
         this.c = d0Var;
-        this.d = uyVar;
+        this.d = vyVar;
         this.b = qVar;
         this.e = z9;
         this.f = z10;
@@ -174,9 +174,9 @@ public final class b implements g {
                 jVar.e();
             }
         }
-        uy uyVar = this.d;
+        vy vyVar = this.d;
         int i11 = this.q;
-        e eVar = (e) uyVar.b;
+        e eVar = (e) vyVar.b;
         if (i11 == 1 && eVar.E > 0 && eVar.w != -9223372036854775807L) {
             eVar.D.add(this);
             Handler handler = eVar.J;
@@ -461,7 +461,7 @@ public final class b implements g {
         try {
             synchronized (this.o) {
                 try {
-                    this.y = new qt(9);
+                    this.y = new rt(9);
                     List list = this.a;
                     if (list != null) {
                         i0.q(list);

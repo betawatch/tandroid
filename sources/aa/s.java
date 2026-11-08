@@ -58,7 +58,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.d3;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -87,9 +87,9 @@ import org.telegram.ui.Components.v4;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import wg.f1;
-import zh.q1;
+import zh.p1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
@@ -369,11 +369,11 @@ public final /* synthetic */ class s implements Runnable {
                 tL_starGiftUnique.resale_ton_only = false;
                 tL_starGiftUnique.resell_amount = null;
                 k7Var2.X1.setResellPrice(cg.a.i(0L, cg.b.a));
-                q1 q1Var = k7Var2.c3;
-                if (q1Var != null) {
-                    q1Var.run();
+                p1 p1Var = k7Var2.c3;
+                if (p1Var != null) {
+                    p1Var.run();
                 }
-                k7Var2.k().Q(R.raw.contact_check, 36, hd.a0(null, null, 2131750028, k7Var2.z1())).j();
+                k7Var2.k().Q(R.raw.contact_check, 36, id.a0(null, null, 2131750030, k7Var2.z1())).j();
                 return;
             case 10:
                 k7 k7Var3 = (k7) this.b;
@@ -416,7 +416,7 @@ public final /* synthetic */ class s implements Runnable {
                 CharSequence charSequence = (CharSequence) this.d;
                 f2 T = LaunchActivity.T();
                 hc a02 = T != null ? hc.a0(T) : hc.X();
-                cc q10 = runnable2 == null ? document3 != null ? a02.q(document3, charSequence) : a02.Q(R.raw.contact_check, 36, charSequence) : document3 != null ? a02.r(document3, charSequence, hd.M0(2131749887, null), runnable2) : a02.K(R.raw.contact_check, charSequence, hd.M0(2131749887, null), runnable2);
+                cc q10 = runnable2 == null ? document3 != null ? a02.q(document3, charSequence) : a02.Q(R.raw.contact_check, 36, charSequence) : document3 != null ? a02.r(document3, charSequence, id.M0(2131749889, null), runnable2) : a02.K(R.raw.contact_check, charSequence, id.M0(2131749889, null), runnable2);
                 q10.t = true;
                 q10.j();
                 return;
@@ -518,14 +518,14 @@ public final /* synthetic */ class s implements Runnable {
                                 boolean z17 = uniqueStarGiftValueInfo.value_is_average;
                                 String str15 = str11;
                                 if (z17) {
-                                    org.telegram.messenger.k5.r(null, null, 2131749588, new Object[]{str15}, textView2);
+                                    org.telegram.messenger.k5.r(null, null, 2131749590, new Object[]{str15}, textView2);
                                 } else {
                                     boolean z18 = uniqueStarGiftValueInfo.last_sale_on_fragment;
                                     String str16 = str12;
                                     if (z18) {
-                                        org.telegram.messenger.k5.r(null, null, 2131749583, new Object[]{str16}, textView2);
+                                        org.telegram.messenger.k5.r(null, null, 2131749585, new Object[]{str16}, textView2);
                                     } else {
-                                        org.telegram.messenger.k5.r(null, null, 2131749580, new Object[]{str16}, textView2);
+                                        org.telegram.messenger.k5.r(null, null, 2131749582, new Object[]{str16}, textView2);
                                     }
                                 }
                                 FrameLayout frameLayout = new FrameLayout(k7Var8.getContext());
@@ -534,18 +534,18 @@ public final /* synthetic */ class s implements Runnable {
                                 t0 t0Var2 = new t0(k7Var8, new fi.m3[1], frameLayout, i15);
                                 tx0 tx0Var3 = new tx0(k7Var8.getContext(), k7Var8.I0);
                                 frameLayout.addView(tx0Var3, c8.ha.e(-1, -1, qs.E1));
-                                tx0Var3.c(org.telegram.messenger.hd.M0(2131749584, null), org.telegram.messenger.hd.f0(uniqueStarGiftValueInfo.initial_sale_date), null, null);
-                                String M0 = org.telegram.messenger.hd.M0(2131749585, null);
+                                tx0Var3.c(org.telegram.messenger.id.M0(2131749586, null), org.telegram.messenger.id.f0(uniqueStarGiftValueInfo.initial_sale_date), null, null);
+                                String M0 = org.telegram.messenger.id.M0(2131749587, null);
                                 StringBuilder sb2 = new StringBuilder("⭐️");
                                 sb2.append(uniqueStarGiftValueInfo.initial_sale_stars);
                                 sb2.append(" (~");
                                 tx0Var3.c(M0, dd.a1(false, a8.p0.s(sb2, org.telegram.messenger.r1.i().f(uniqueStarGiftValueInfo.initial_sale_price, uniqueStarGiftValueInfo.currency), ")"), 0.8f, null), null, null);
                                 if (TLObject.hasFlag(uniqueStarGiftValueInfo.flags, 1)) {
-                                    tx0Var3.c(org.telegram.messenger.hd.M0(2131749581, null), org.telegram.messenger.hd.f0(uniqueStarGiftValueInfo.last_sale_date), null, null);
+                                    tx0Var3.c(org.telegram.messenger.id.M0(2131749583, null), org.telegram.messenger.id.f0(uniqueStarGiftValueInfo.last_sale_date), null, null);
                                     int round = ((int) (Math.round((uniqueStarGiftValueInfo.last_sale_price / uniqueStarGiftValueInfo.initial_sale_price) * 1000.0d) / 10)) - 100;
                                     if (round <= 0) {
                                         tx0Var = tx0Var3;
-                                        tx0Var.c(org.telegram.messenger.hd.M0(2131749582, null), org.telegram.messenger.r1.i().f(uniqueStarGiftValueInfo.last_sale_price, uniqueStarGiftValueInfo.currency), null, null);
+                                        tx0Var.c(org.telegram.messenger.id.M0(2131749584, null), org.telegram.messenger.r1.i().f(uniqueStarGiftValueInfo.last_sale_price, uniqueStarGiftValueInfo.currency), null, null);
                                         if (TLObject.hasFlag(uniqueStarGiftValueInfo.flags, 4)) {
                                             document6 = document7;
                                             str13 = null;
@@ -557,14 +557,14 @@ public final /* synthetic */ class s implements Runnable {
                                             t0Var = t0Var2;
                                             o3 o3Var = new o3(t0Var, new org.telegram.ui.Components.jc[]{(org.telegram.ui.Components.jc) ((qx0) r3.getChildAt(1)).getChildAt(0)}, uniqueStarGiftValueInfo, str15, 0);
                                             tx0 tx0Var4 = tx0Var;
-                                            TableRow e14 = tx0Var4.e(org.telegram.messenger.hd.M0(2131749579, null), org.telegram.messenger.r1.i().f(uniqueStarGiftValueInfo.floor_price, uniqueStarGiftValueInfo.currency), "?", o3Var, null);
+                                            TableRow e14 = tx0Var4.e(org.telegram.messenger.id.M0(2131749581, null), org.telegram.messenger.r1.i().f(uniqueStarGiftValueInfo.floor_price, uniqueStarGiftValueInfo.currency), "?", o3Var, null);
                                             tx0Var2 = tx0Var4;
                                             e14.setOnClickListener(new ah.d(o3Var, 7));
                                         }
                                         int i17 = 8;
                                         if (TLObject.hasFlag(uniqueStarGiftValueInfo.flags, 8)) {
                                             o3 o3Var2 = new o3(t0Var, new org.telegram.ui.Components.jc[]{(org.telegram.ui.Components.jc) ((qx0) r3.getChildAt(1)).getChildAt(0)}, uniqueStarGiftValueInfo, str15, 1);
-                                            TableRow e15 = tx0Var2.e(org.telegram.messenger.hd.M0(2131749587, str13), org.telegram.messenger.r1.i().f(uniqueStarGiftValueInfo.average_price, uniqueStarGiftValueInfo.currency), "?", o3Var2, null);
+                                            TableRow e15 = tx0Var2.e(org.telegram.messenger.id.M0(2131749589, str13), org.telegram.messenger.r1.i().f(uniqueStarGiftValueInfo.average_price, uniqueStarGiftValueInfo.currency), "?", o3Var2, null);
                                             e15.setOnClickListener(new ah.d(o3Var2, i17));
                                         }
                                         linearLayout.addView(frameLayout, c8.ha.t(-1, -2, 7, 0, 0, 0, 12));
@@ -573,12 +573,12 @@ public final /* synthetic */ class s implements Runnable {
                                             f11 = 2.0f;
                                             fi.d dVar2 = new fi.d(k7Var8.getContext(), k7Var8.I0, false);
                                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                                            spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.E(uniqueStarGiftValueInfo.listed_count, ' '));
+                                            spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.E(uniqueStarGiftValueInfo.listed_count, ' '));
                                             spannableStringBuilder.append((CharSequence) " ");
                                             spannableStringBuilder.append((CharSequence) "e");
                                             spannableStringBuilder.setSpan(new org.telegram.ui.Components.r5(document6, 1.5f, dVar2.getTextPaint().getFontMetricsInt()), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
                                             spannableStringBuilder.append((CharSequence) " ");
-                                            spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.M0(2131749576, null));
+                                            spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.M0(2131749578, null));
                                             dVar2.i(org.telegram.messenger.g0.I2(spannableStringBuilder, false, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(1.0f)), false, true);
                                             z15 = true;
                                             charSequence2 = "e";
@@ -599,11 +599,11 @@ public final /* synthetic */ class s implements Runnable {
                                         if (uniqueStarGiftValueInfo.fragment_listed_count > 0) {
                                             fi.d dVar3 = new fi.d(k7Var7.getContext(), k7Var7.I0, false);
                                             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-                                            spannableStringBuilder2.append((CharSequence) org.telegram.messenger.hd.E(uniqueStarGiftValueInfo.fragment_listed_count, ' '));
+                                            spannableStringBuilder2.append((CharSequence) org.telegram.messenger.id.E(uniqueStarGiftValueInfo.fragment_listed_count, ' '));
                                             spannableStringBuilder2.append(charSequence2);
                                             spannableStringBuilder2.setSpan(new org.telegram.ui.Components.r5(document6, 1.5f, dVar3.getTextPaint().getFontMetricsInt()), spannableStringBuilder2.length() - 1, spannableStringBuilder2.length(), 33);
                                             spannableStringBuilder2.append(charSequence3);
-                                            spannableStringBuilder2.append((CharSequence) org.telegram.messenger.hd.M0(2131749577, str14));
+                                            spannableStringBuilder2.append((CharSequence) org.telegram.messenger.id.M0(2131749579, str14));
                                             dVar3.i(org.telegram.messenger.g0.I2(spannableStringBuilder2, false, org.telegram.messenger.g0.L(f11), org.telegram.messenger.g0.L(f10)), false, z15);
                                             dVar3.setOnClickListener(new r(6, k7Var7, uniqueStarGiftValueInfo));
                                             linearLayout.addView(dVar3, c8.ha.t(-1, 42, 7, 0, 0, 0, 0));
@@ -611,7 +611,7 @@ public final /* synthetic */ class s implements Runnable {
                                         l11.N = linearLayout;
                                         l11.show();
                                     }
-                                    tx0Var3.e(org.telegram.messenger.hd.M0(2131749582, null), org.telegram.messenger.r1.i().f(uniqueStarGiftValueInfo.last_sale_price, uniqueStarGiftValueInfo.currency), "+" + org.telegram.messenger.hd.E(round, ' ') + "%", null, null);
+                                    tx0Var3.e(org.telegram.messenger.id.M0(2131749584, null), org.telegram.messenger.r1.i().f(uniqueStarGiftValueInfo.last_sale_price, uniqueStarGiftValueInfo.currency), "+" + org.telegram.messenger.id.E(round, ' ') + "%", null, null);
                                 }
                                 tx0Var = tx0Var3;
                                 if (TLObject.hasFlag(uniqueStarGiftValueInfo.flags, 4)) {

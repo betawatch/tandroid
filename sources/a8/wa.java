@@ -51,7 +51,7 @@ import org.telegram.ui.hy0;
 import org.telegram.ui.yl;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class wa implements f3.i, m9.t {
     public final /* synthetic */ int a;
@@ -571,12 +571,12 @@ public class wa implements f3.i, m9.t {
         Iterator it = ((CopyOnWriteArrayList) this.d).iterator();
         while (it.hasNext()) {
             x2.j0 j0Var = (x2.j0) it.next();
-            h2.m0.W(j0Var.a, new wi.q(2, jVar, j0Var.b));
+            h2.m0.W(j0Var.a, new u9.f(27, jVar, j0Var.b));
         }
     }
 
     public void j(int i7, e2.u uVar, int i10, Object obj, long j3) {
-        i(new org.telegram.ui.web.a0(25, this, new x2.c0(1, i7, uVar, i10, obj, h2.m0.h0(j3), -9223372036854775807L)));
+        i(new org.telegram.ui.web.a0(24, this, new x2.c0(1, i7, uVar, i10, obj, h2.m0.h0(j3), -9223372036854775807L)));
     }
 
     public long k(f3.p pVar) {

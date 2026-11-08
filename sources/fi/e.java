@@ -10,11 +10,11 @@ import android.graphics.Shader;
 import android.widget.FrameLayout;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.iz;
-import org.telegram.messenger.rc;
+import org.telegram.messenger.sc;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.ys;
+import org.telegram.ui.Components.zs;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final /* synthetic */ class e implements Runnable {
                         mVar.p0.setDuration(420L);
                     }
                     mVar.p0.start();
-                    ys editText = gVar.getEditText();
+                    zs editText = gVar.getEditText();
                     if (editText != null && editText.getLayout() != null) {
                         ObjectAnimator objectAnimator = mVar.f0;
                         if (objectAnimator != null) {
@@ -93,7 +93,7 @@ public final /* synthetic */ class e implements Runnable {
                     if (!z9) {
                         gVar.getEditText().j(false, true);
                     }
-                    if (z9 && iz.o() >= 1 && !rc.f()) {
+                    if (z9 && iz.o() >= 1 && !sc.f()) {
                         if (mVar.q0 == null) {
                             mVar.q0 = Bitmap.createBitmap((int) (frameLayout.getWidth() / 12.0f), (int) (frameLayout.getHeight() / 12.0f), Bitmap.Config.ARGB_8888);
                         }

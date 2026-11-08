@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class gi0 extends org.telegram.ui.Components.rt0 {
     public final /* synthetic */ int f0;
@@ -59,9 +59,9 @@ public final class gi0 extends org.telegram.ui.Components.rt0 {
                 break;
             default:
                 k0 k0Var = (k0) this.g0;
-                ya1 ya1Var = (ya1) this.h0;
-                if (ya1Var.e0.getVisibility() == 8 || Q() < org.telegram.messenger.g0.L(20.0f)) {
-                    if (ya1Var.e0.getVisibility() != 8) {
+                za1 za1Var = (za1) this.h0;
+                if (za1Var.e0.getVisibility() == 8 || Q() < org.telegram.messenger.g0.L(20.0f)) {
+                    if (za1Var.e0.getVisibility() != 8) {
                         int measuredWidth5 = getMeasuredWidth();
                         measuredHeight2 = getMeasuredHeight() - org.telegram.messenger.g0.L(230.0f);
                         k0Var.layout(0, 0, measuredWidth5, measuredHeight2);
@@ -70,7 +70,7 @@ public final class gi0 extends org.telegram.ui.Components.rt0 {
                         measuredHeight2 = getMeasuredHeight();
                         k0Var.layout(0, 0, measuredWidth6, measuredHeight2);
                     }
-                } else if (ya1Var.A0()) {
+                } else if (za1Var.A0()) {
                     int measuredWidth7 = getMeasuredWidth();
                     measuredHeight2 = Q() + (getMeasuredHeight() - org.telegram.messenger.g0.L(230.0f));
                     k0Var.layout(0, 0, measuredWidth7, measuredHeight2);
@@ -79,7 +79,7 @@ public final class gi0 extends org.telegram.ui.Components.rt0 {
                     measuredHeight2 = getMeasuredHeight();
                     k0Var.layout(0, 0, measuredWidth8, measuredHeight2);
                 }
-                ya1Var.e0.layout(0, measuredHeight2, getMeasuredWidth(), org.telegram.messenger.g0.L(230.0f) + measuredHeight2);
+                za1Var.e0.layout(0, measuredHeight2, getMeasuredWidth(), org.telegram.messenger.g0.L(230.0f) + measuredHeight2);
                 break;
         }
     }
@@ -106,12 +106,12 @@ public final class gi0 extends org.telegram.ui.Components.rt0 {
                 int size3 = View.MeasureSpec.getSize(i7);
                 int size4 = View.MeasureSpec.getSize(i10);
                 setMeasuredDimension(size3, size4);
-                ya1 ya1Var = (ya1) this.h0;
-                if (ya1Var.e0.getVisibility() != 8 && Q() < org.telegram.messenger.g0.L(20.0f)) {
+                za1 za1Var = (za1) this.h0;
+                if (za1Var.e0.getVisibility() != 8 && Q() < org.telegram.messenger.g0.L(20.0f)) {
                     size4 -= org.telegram.messenger.g0.L(230.0f);
                 }
                 ((k0) this.g0).measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size4, TLObject.FLAG_30));
-                ya1Var.e0.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(230.0f), TLObject.FLAG_30));
+                za1Var.e0.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(230.0f), TLObject.FLAG_30));
                 break;
         }
     }

@@ -5,7 +5,7 @@ import java.nio.ByteBuffer;
 import java.util.Date;
 import y7.i6;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class y extends com.googlecode.mp4parser.c {
     public static final /* synthetic */ i6 E;

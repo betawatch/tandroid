@@ -16,7 +16,7 @@ import android.widget.TextView;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class n00 extends org.telegram.ui.Components.za0 {
     public boolean l0;
@@ -292,11 +292,11 @@ public final class n00 extends org.telegram.ui.Components.za0 {
                 }
                 layoutParams.height = i12;
                 b0Var = o00Var.F;
-                if (b0Var instanceof org.telegram.ui.Components.ly) {
-                    org.telegram.ui.Components.ly lyVar = (org.telegram.ui.Components.ly) b0Var;
-                    lyVar.M = o00Var.p0().getMeasuredHeight();
-                    lyVar.p1();
-                    ((org.telegram.ui.Components.ly) o00Var.F).S = 0;
+                if (b0Var instanceof org.telegram.ui.Components.my) {
+                    org.telegram.ui.Components.my myVar = (org.telegram.ui.Components.my) b0Var;
+                    myVar.M = o00Var.p0().getMeasuredHeight();
+                    myVar.p1();
+                    ((org.telegram.ui.Components.my) o00Var.F).S = 0;
                 }
                 super.onMeasure(i7, i10);
                 if (((getMeasuredWidth() + getMeasuredHeight()) << 16) == 0) {
@@ -315,7 +315,7 @@ public final class n00 extends org.telegram.ui.Components.za0 {
         }
         layoutParams2.height = i12;
         b0Var = o00Var.F;
-        if (b0Var instanceof org.telegram.ui.Components.ly) {
+        if (b0Var instanceof org.telegram.ui.Components.my) {
         }
         super.onMeasure(i7, i10);
         if (((getMeasuredWidth() + getMeasuredHeight()) << 16) == 0) {

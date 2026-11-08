@@ -8,14 +8,14 @@ import e0.i0;
 import e0.q;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.dt;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.r2;
 import org.telegram.messenger.t0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class StoryUploadingService extends Service implements ls {
     public q a;
@@ -111,9 +111,9 @@ public class StoryUploadingService extends Service implements ls {
             qVar.F.when = System.currentTimeMillis();
             q qVar2 = this.a;
             qVar2.y = dt.j0;
-            qVar2.g(hd.M0(org.telegram.messenger.beta.R.string.AppName, null));
-            this.a.p(hd.M0(2131744452, null));
-            this.a.f(hd.M0(2131744452, null));
+            qVar2.g(id.M0(org.telegram.messenger.beta.R.string.AppName, null));
+            this.a.p(id.M0(2131744454, null));
+            this.a.f(id.M0(2131744454, null));
         }
         this.c = 0.0f;
         q qVar3 = this.a;

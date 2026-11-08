@@ -16,11 +16,11 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gf;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class a extends View implements org.telegram.ui.ActionBar.a6 {
     public final ImageReceiver a;
@@ -88,7 +88,7 @@ public final class a extends View implements org.telegram.ui.ActionBar.a6 {
         StringBuilder sb2 = new StringBuilder();
         sb2.append((Object) str4);
         if (i7 > 0) {
-            str3 = " " + hd.H(',', "Media", i7);
+            str3 = " " + id.H(',', "Media", i7);
         }
         sb2.append(str3);
         setContentDescription(sb2.toString());

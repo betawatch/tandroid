@@ -43,9 +43,9 @@ import org.telegram.messenger.c20;
 import org.telegram.messenger.camera.CameraSessionWrapper;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.d20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
-import org.telegram.messenger.rc;
+import org.telegram.messenger.sc;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.f2;
@@ -55,7 +55,7 @@ import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.hy0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class i0 extends FrameLayout {
     public final Paint D;
@@ -195,7 +195,7 @@ public final class i0 extends FrameLayout {
     }
 
     public static boolean c() {
-        return a0.f() && rc.e(256);
+        return a0.f() && sc.e(256);
     }
 
     public static boolean d(Activity activity) {
@@ -921,7 +921,7 @@ public final class i0 extends FrameLayout {
         this.h.set(f10 - f17, L3, f10 + f17, f18);
         float L4 = (f11 - org.telegram.messenger.g0.L(35.0f)) - f17;
         this.n.set(L4 - f17, L3, L4 + f17, f18);
-        this.Q = new StaticLayout(hd.M0(2131745862, null), this.K, jg.g.e(72.0f, i13, 1), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+        this.Q = new StaticLayout(id.M0(2131745864, null), this.K, jg.g.e(72.0f, i13, 1), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
         RectF rectF2 = this.f;
         if (!rectF2.isEmpty()) {
             return;

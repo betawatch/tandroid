@@ -11,7 +11,7 @@ import fi.w3;
 import java.util.ArrayList;
 import java.util.Timer;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.y00;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.f5;
@@ -47,17 +47,17 @@ import org.telegram.ui.pv;
 import org.telegram.ui.qq;
 import org.telegram.ui.qs;
 import org.telegram.ui.qy0;
-import org.telegram.ui.r91;
-import org.telegram.ui.rc1;
 import org.telegram.ui.ro;
+import org.telegram.ui.s91;
+import org.telegram.ui.sc1;
 import org.telegram.ui.so;
-import org.telegram.ui.v91;
 import org.telegram.ui.vw;
 import org.telegram.ui.w50;
+import org.telegram.ui.w91;
 import org.telegram.ui.ww;
 import org.telegram.ui.z50;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class v1 extends org.telegram.ui.ActionBar.n0 {
     public final /* synthetic */ int a;
@@ -129,10 +129,10 @@ public final class v1 extends org.telegram.ui.ActionBar.n0 {
         switch (this.a) {
             case 23:
                 WallpapersListActivity wallpapersListActivity = (WallpapersListActivity) this.b;
-                rc1 rc1Var = wallpapersListActivity.H;
-                rc1Var.n = null;
-                rc1Var.E(null, true);
-                wallpapersListActivity.J.setSearchFieldHint(hd.M0(2131745817, null));
+                sc1 sc1Var = wallpapersListActivity.H;
+                sc1Var.n = null;
+                sc1Var.E(null, true);
+                wallpapersListActivity.J.setSearchFieldHint(id.M0(2131745819, null));
                 break;
         }
     }
@@ -336,7 +336,7 @@ public final class v1 extends org.telegram.ui.ActionBar.n0 {
                 notificationsCustomSettingsActivity.d.F(null);
                 notificationsCustomSettingsActivity.f = false;
                 notificationsCustomSettingsActivity.getClass();
-                notificationsCustomSettingsActivity.c.setText(hd.M0(2131748210, "NoExceptions"));
+                notificationsCustomSettingsActivity.c.setText(id.M0(2131748212, "NoExceptions"));
                 notificationsCustomSettingsActivity.a.setAdapter(notificationsCustomSettingsActivity.b);
                 notificationsCustomSettingsActivity.b.f();
                 notificationsCustomSettingsActivity.a.setFastScrollVisible(true);
@@ -359,7 +359,7 @@ public final class v1 extends org.telegram.ui.ActionBar.n0 {
                 m31Var.c.f3.O(false);
                 break;
             case 22:
-                v91.f0((v91) obj, false);
+                w91.f0((w91) obj, false);
                 break;
             case 23:
                 WallpapersListActivity wallpapersListActivity = (WallpapersListActivity) obj;
@@ -489,7 +489,7 @@ public final class v1 extends org.telegram.ui.ActionBar.n0 {
                 }
                 wwVar.m5(false, false);
                 kVar = ((f2) wwVar).actionBar;
-                kVar.setBackButtonContentDescription(hd.M0(2131754878, null));
+                kVar.setBackButtonContentDescription(id.M0(2131754878, null));
                 org.telegram.messenger.qs.e().k(org.telegram.messenger.qs.r4, new Object[0]);
                 qVar = ((f2) wwVar).glassEngine;
                 qVar.g();
@@ -541,14 +541,14 @@ public final class v1 extends org.telegram.ui.ActionBar.n0 {
                 m31Var.c.f3.O(false);
                 break;
             case 22:
-                v91 v91Var = (v91) obj;
-                v91.f0(v91Var, true);
-                r91 r91Var = v91Var.r0;
-                if (!r91Var.d0.equals("")) {
-                    r91Var.M(r91Var.e[0], r91Var.getCurrentPosition(), "", false);
+                w91 w91Var = (w91) obj;
+                w91.f0(w91Var, true);
+                s91 s91Var = w91Var.r0;
+                if (!s91Var.d0.equals("")) {
+                    s91Var.M(s91Var.e[0], s91Var.getCurrentPosition(), "", false);
                 }
-                v91Var.r0.setAlpha(0.0f);
-                v91Var.r0.p0.e(true, false);
+                w91Var.r0.setAlpha(0.0f);
+                w91Var.r0.p0.e(true, false);
                 break;
             case 23:
                 WallpapersListActivity wallpapersListActivity = (WallpapersListActivity) obj;
@@ -817,8 +817,8 @@ public final class v1 extends org.telegram.ui.ActionBar.n0 {
                     z50Var.h.setVerticalScrollBarEnabled(true);
                     z50Var.r.e(true, true);
                     z50Var.r.setStickerType(1);
-                    z50Var.r.d.setText(hd.M0(2131748166, null));
-                    z50Var.r.e.setText(hd.M0(2131745808, null));
+                    z50Var.r.d.setText(id.M0(2131748168, null));
+                    z50Var.r.e.setText(id.M0(2131745810, null));
                     break;
                 } else {
                     z50.d0(z50Var);
@@ -891,7 +891,7 @@ public final class v1 extends org.telegram.ui.ActionBar.n0 {
                     if (obj11.length() != 0) {
                         notificationsCustomSettingsActivity.getClass();
                         if (notificationsCustomSettingsActivity.a != null) {
-                            notificationsCustomSettingsActivity.c.setText(hd.M0(2131748166, "NoResult"));
+                            notificationsCustomSettingsActivity.c.setText(id.M0(2131748168, "NoResult"));
                             notificationsCustomSettingsActivity.c.b();
                             notificationsCustomSettingsActivity.a.setAdapter(notificationsCustomSettingsActivity.d);
                             notificationsCustomSettingsActivity.d.f();
@@ -951,9 +951,9 @@ public final class v1 extends org.telegram.ui.ActionBar.n0 {
                 break;
             case 22:
                 String obj13 = editText.getText().toString();
-                r91 r91Var = ((v91) obj).r0;
-                if (!r91Var.d0.equals(obj13)) {
-                    r91Var.M(r91Var.e[0], r91Var.getCurrentPosition(), obj13, false);
+                s91 s91Var = ((w91) obj).r0;
+                if (!s91Var.d0.equals(obj13)) {
+                    s91Var.M(s91Var.e[0], s91Var.getCurrentPosition(), obj13, false);
                     break;
                 }
                 break;

@@ -18,7 +18,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class sh0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final Paint a;
@@ -67,7 +67,7 @@ public final class sh0 extends FrameLayout implements org.telegram.ui.ActionBar.
     public final void a(int i7, TLRPC.ReactionCount reactionCount) {
         int i10 = reactionCount.count;
         this.s = i10;
-        this.f.setText(org.telegram.messenger.hd.S(null, i10));
+        this.f.setText(org.telegram.messenger.id.S(null, i10));
         ch.o0 d = ch.o0.d(reactionCount.reaction);
         this.w = d;
         String str = d.f;
@@ -121,15 +121,15 @@ public final class sh0 extends FrameLayout implements org.telegram.ui.ActionBar.
         }
         ch.o0 o0Var = this.w;
         if (o0Var != null) {
-            accessibilityNodeInfo.setText(org.telegram.messenger.hd.G(this.s, "AccDescrNumberOfPeopleReactions", o0Var));
+            accessibilityNodeInfo.setText(org.telegram.messenger.id.G(this.s, "AccDescrNumberOfPeopleReactions", o0Var));
         } else {
-            accessibilityNodeInfo.setText(org.telegram.messenger.hd.G(this.s, "ReactionsCount", new Object[0]));
+            accessibilityNodeInfo.setText(org.telegram.messenger.id.G(this.s, "ReactionsCount", new Object[0]));
         }
     }
 
     public void setCounter(int i7) {
         this.s = i7;
-        this.f.setText(org.telegram.messenger.hd.S(null, i7));
+        this.f.setText(org.telegram.messenger.id.S(null, i7));
         this.e.setVisibility(0);
         this.d.setVisibility(8);
     }

@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ti implements View.OnTouchListener {
     public View a;
@@ -15,7 +15,7 @@ public final class ti implements View.OnTouchListener {
     public final Rect c = new Rect();
     public boolean d;
     public boolean e;
-    public final org.telegram.ui.Components.z00 f;
+    public final org.telegram.ui.Components.a10 f;
     public final int[] h;
     public View n;
     public float r;
@@ -26,10 +26,10 @@ public final class ti implements View.OnTouchListener {
     public ti(an anVar, ImageView imageView) {
         this.x = anVar;
         this.w = imageView;
-        org.telegram.ui.Components.z00 z00Var = new org.telegram.ui.Components.z00((Context) null, new f(this, 22));
-        this.f = z00Var;
+        org.telegram.ui.Components.a10 a10Var = new org.telegram.ui.Components.a10((Context) null, new f(this, 22));
+        this.f = a10Var;
         this.h = new int[2];
-        z00Var.v = true;
+        a10Var.v = true;
     }
 
     @Override // android.view.View.OnTouchListener

@@ -5,7 +5,7 @@ import android.os.Handler;
 import org.telegram.messenger.camera.CameraSession;
 import org.telegram.messenger.camera.Size;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r30 implements Runnable {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class r30 implements Runnable {
             case 0:
                 o40 o40Var = this.b;
                 if (o40Var.t0) {
-                    o40Var.u();
+                    o40Var.v();
                     break;
                 }
                 break;
@@ -49,7 +49,7 @@ public final /* synthetic */ class r30 implements Runnable {
                 o40 o40Var2 = this.b;
                 Size[] sizeArr = o40Var2.m0;
                 if (o40Var2.s0 != null) {
-                    o40Var2.v();
+                    o40Var2.w();
                     boolean z9 = true;
                     try {
                         currentPreviewSize = o40Var2.s0.getCurrentPreviewSize();

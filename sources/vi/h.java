@@ -23,15 +23,14 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.me;
 import org.telegram.messenger.qs;
-import org.telegram.messenger.yk;
+import org.telegram.messenger.xk;
 import org.telegram.ui.Components.r31;
-import ti.p;
-import vi.f;
+import u9.f;
 import vi.g;
 import vi.h;
 import w7.s;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class h {
     public static final s H = new s(26, false);
@@ -62,8 +61,8 @@ public final class h {
     public boolean y;
     public volatile g z;
     public final Handler i = new Handler(Looper.getMainLooper());
-    public final ExecutorService j = Executors.newSingleThreadExecutor(new l0(7));
-    public final ExecutorService k = Executors.newSingleThreadExecutor(new l0(8));
+    public final ExecutorService j = Executors.newSingleThreadExecutor(new l0(8));
+    public final ExecutorService k = Executors.newSingleThreadExecutor(new l0(9));
     public final Object l = new Object();
     public final ArrayList m = new ArrayList();
     public int G = 1;
@@ -205,7 +204,7 @@ public final class h {
         if (i7 == 10 || i7 == 8) {
             return;
         }
-        this.h.b("cancel requested: state=".concat(rf.b.r(i7)));
+        this.h.b("cancel requested: state=".concat(rf.b.s(i7)));
         d dVar = this.D;
         Handler handler = this.i;
         handler.removeCallbacks(dVar);
@@ -228,11 +227,11 @@ public final class h {
         }
         this.x = true;
         ac.e eVar = this.C;
-        p pVar = new p(19, this, eVar == null ? null : (File) eVar.b);
+        u9.f fVar = new u9.f(14, this, eVar == null ? null : (File) eVar.b);
         try {
-            this.j.execute(pVar);
+            this.j.execute(fVar);
         } catch (RejectedExecutionException unused) {
-            pVar.run();
+            fVar.run();
         }
     }
 
@@ -269,7 +268,7 @@ public final class h {
         if (i7 == 9 || i7 == 10 || i7 == 8) {
             return;
         }
-        this.h.a("fatal error in state=".concat(rf.b.r(i7)), exc);
+        this.h.a("fatal error in state=".concat(rf.b.s(i7)), exc);
         Handler handler = this.i;
         handler.removeCallbacks(this.D);
         handler.removeCallbacks(this.E);
@@ -299,7 +298,7 @@ public final class h {
         q();
         int i7 = this.G;
         if (i7 == 3 || i7 == 5) {
-            this.h.b("finish requested: state=" + rf.b.r(this.G) + ", durationMs=" + j() + ", trim=" + this.r + ".." + this.s);
+            this.h.b("finish requested: state=" + rf.b.s(this.G) + ", durationMs=" + j() + ", trim=" + this.r + ".." + this.s);
             if (this.G == 3) {
                 this.v = true;
                 this.i.removeCallbacks(this.D);
@@ -345,11 +344,11 @@ public final class h {
                             }
                             hVar2.h.b("final trim completed: source=" + gVar2.b.getName() + ", output=" + file.getName() + ", trim=" + j11 + ".." + j12 + ", bytes=" + file.length() + ", elapsedMs=" + (SystemClock.elapsedRealtime() - elapsedRealtime));
                             hVar2.a(gVar3, file.length());
-                            handler.post(new yk(hVar2, j12, j11, 3));
+                            handler.post(new xk(hVar2, j12, j11, 3));
                         } catch (Throwable th2) {
                             th = th2;
                             hVar = absolutePath2;
-                            handler.post(new p(18, hVar, th));
+                            handler.post(new f(13, hVar, th));
                         }
                     } catch (Throwable th3) {
                         th = th3;
@@ -492,7 +491,7 @@ public final class h {
             return;
         }
         this.G = i7;
-        this.h.b("state: " + rf.b.r(i10) + " -> " + rf.b.r(i7) + ", durationMs=" + r(this.p + this.q));
+        this.h.b("state: " + rf.b.s(i10) + " -> " + rf.b.s(i7) + ", durationMs=" + r(this.p + this.q));
         m();
     }
 
@@ -526,7 +525,7 @@ public final class h {
                     if (a10 == null) {
                         throw new IllegalStateException("Unable to initialize native Opus recorder");
                     }
-                    if (dVar2.e == f.b) {
+                    if (dVar2.e == vi.f.b) {
                         AudioNoiseSuppressor a11 = AudioNoiseSuppressor.a();
                         dVar2.u = a11;
                         if (a11 == null) {

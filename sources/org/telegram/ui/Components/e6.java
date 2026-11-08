@@ -7,7 +7,7 @@ import android.widget.TextView;
 import org.telegram.messenger.camera.Camera2Session;
 import org.telegram.messenger.camera.CameraSession;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e6 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -134,65 +134,65 @@ public final /* synthetic */ class e6 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 16:
-                qu quVar = (qu) this.b;
+                ru ruVar = (ru) this.b;
                 float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                quVar.A1 = floatValue4;
-                quVar.n1.setAlpha(floatValue4);
-                quVar.r1.setAlpha(quVar.A1);
-                quVar.s1.setAlpha(quVar.A1);
-                quVar.b.invalidate();
+                ruVar.A1 = floatValue4;
+                ruVar.n1.setAlpha(floatValue4);
+                ruVar.r1.setAlpha(ruVar.A1);
+                ruVar.s1.setAlpha(ruVar.A1);
+                ruVar.b.invalidate();
                 break;
             case 17:
-                ju juVar = (ju) this.b;
-                juVar.getClass();
-                juVar.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                if (juVar.getParent() instanceof View) {
-                    ((View) juVar.getParent()).invalidate();
+                ku kuVar = (ku) this.b;
+                kuVar.getClass();
+                kuVar.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (kuVar.getParent() instanceof View) {
+                    ((View) kuVar.getParent()).invalidate();
                     break;
                 }
                 break;
             case 18:
-                mu muVar = (mu) this.b;
-                muVar.getClass();
+                nu nuVar = (nu) this.b;
+                nuVar.getClass();
                 float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                muVar.w = floatValue5;
-                TextView textView = muVar.c;
+                nuVar.w = floatValue5;
+                TextView textView = nuVar.c;
                 textView.setScaleX(1.0f - floatValue5);
-                textView.setScaleY(1.0f - muVar.w);
-                textView.setAlpha(1.0f - muVar.w);
-                TextView textView2 = muVar.d;
-                textView2.setScaleX(muVar.w);
-                textView2.setScaleY(muVar.w);
-                textView2.setAlpha(muVar.w);
+                textView.setScaleY(1.0f - nuVar.w);
+                textView.setAlpha(1.0f - nuVar.w);
+                TextView textView2 = nuVar.d;
+                textView2.setScaleX(nuVar.w);
+                textView2.setScaleY(nuVar.w);
+                textView2.setAlpha(nuVar.w);
                 break;
             case 19:
-                wu wuVar = (wu) this.b;
-                wuVar.getClass();
-                wuVar.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wuVar.d();
+                xu xuVar = (xu) this.b;
+                xuVar.getClass();
+                xuVar.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                xuVar.d();
                 break;
             case 20:
-                yu yuVar = (yu) this.b;
-                yuVar.getClass();
-                yuVar.r = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                yuVar.invalidate();
-                yuVar.requestLayout();
-                yuVar.c();
-                yuVar.s.b.invalidate();
+                zu zuVar = (zu) this.b;
+                zuVar.getClass();
+                zuVar.r = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                zuVar.invalidate();
+                zuVar.requestLayout();
+                zuVar.c();
+                zuVar.s.b.invalidate();
                 break;
             case 21:
-                px pxVar = (px) this.b;
-                pxVar.getClass();
-                pxVar.h = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                pxVar.invalidate();
+                qx qxVar = (qx) this.b;
+                qxVar.getClass();
+                qxVar.h = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                qxVar.invalidate();
                 break;
             case 22:
-                tx txVar = (tx) this.b;
+                ux uxVar = (ux) this.b;
                 float floatValue6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                txVar.x = floatValue6;
-                View view2 = txVar.w;
+                uxVar.x = floatValue6;
+                View view2 = uxVar.w;
                 if (view2 == null) {
-                    bi.x5 x5Var = txVar.s;
+                    bi.x5 x5Var = uxVar.s;
                     if (x5Var != null) {
                         x5Var.invalidate();
                         break;
@@ -203,15 +203,15 @@ public final /* synthetic */ class e6 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 23:
-                ez ezVar = ((yy) this.b).F;
-                ezVar.F.invalidate();
-                ezVar.invalidate();
+                fz fzVar = ((zy) this.b).F;
+                fzVar.F.invalidate();
+                fzVar.invalidate();
                 break;
             case 24:
-                kz kzVar = (kz) this.b;
-                kzVar.getClass();
-                kzVar.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kzVar.invalidate();
+                lz lzVar = (lz) this.b;
+                lzVar.getClass();
+                lzVar.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                lzVar.invalidate();
                 break;
             case 25:
                 p10 p10Var = (p10) this.b;

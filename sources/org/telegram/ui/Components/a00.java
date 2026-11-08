@@ -1,78 +1,91 @@
 package org.telegram.ui.Components;
 
-import java.util.Iterator;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.Utilities;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.style.URLSpan;
+import android.view.View;
+import java.util.Locale;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a00 implements org.telegram.ui.ActionBar.m0, te.i, org.telegram.ui.ActionBar.r1, zs0 {
-    public final /* synthetic */ FragmentContextView a;
+public final class a00 extends URLSpan {
+    public static final /* synthetic */ int e = 0;
+    public final String a;
+    public final TLRPC.TL_messageEntityFormattedDate b;
+    public final uy0 c;
+    public final boolean d;
 
-    public /* synthetic */ a00(FragmentContextView fragmentContextView) {
-        this.a = fragmentContextView;
+    public a00(String str, uy0 uy0Var, TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate) {
+        super(str);
+        this.a = str;
+        this.b = tL_messageEntityFormattedDate;
+        this.c = uy0Var;
+        this.d = false;
     }
 
-    @Override // org.telegram.ui.Components.zs0
-    public void d(org.telegram.messenger.rd rdVar) {
-        float[] fArr = FragmentContextView.W0;
-        this.a.k(rdVar);
-    }
-
-    @Override // te.i
-    public void f(te.j jVar) {
-        FragmentContextView fragmentContextView = this.a;
-        te.j jVar2 = fragmentContextView.U0;
-        float f10 = 1.0f - jVar2.a.d.c.a;
-        fragmentContextView.d.setAlpha(f10);
-        fragmentContextView.d.setScaleX(org.telegram.messenger.g0.T1(0.7f, 1.0f, f10));
-        fragmentContextView.d.setScaleY(org.telegram.messenger.g0.T1(0.7f, 1.0f, f10));
-        Iterator it = jVar2.iterator();
-        while (it.hasNext()) {
-            te.e eVar = (te.e) it.next();
-            float c10 = eVar.c();
-            Object obj = eVar.a;
-            float T1 = org.telegram.messenger.g0.T1(0.7f, 1.0f, c10);
-            nh.c cVar = ((l00) obj).b;
-            cVar.setAlpha(eVar.c());
-            cVar.setScaleX(T1);
-            cVar.setScaleY(T1);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        FragmentContextView fragmentContextView = this.a;
-        org.telegram.ui.ActionBar.f2 f2Var = fragmentContextView.h;
-        if (!(f2Var instanceof org.telegram.ui.ww)) {
-            org.telegram.messenger.sd.f(f2Var.getCurrentAccount()).k(fragmentContextView.n.a());
-            return;
-        }
-        for (int i10 = 0; i10 < 4; i10++) {
-            Utilities.d.c(new org.telegram.messenger.id(org.telegram.messenger.sd.f(i10), 6));
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.m0
-    public void i(int i7) {
-        float[] fArr = FragmentContextView.W0;
-        if (i7 >= 0) {
-            float[] fArr2 = FragmentContextView.W0;
-            if (i7 >= 6) {
-                return;
-            }
-            MediaController B = MediaController.B();
-            FragmentContextView fragmentContextView = this.a;
-            float C = B.C(fragmentContextView.W);
-            float f10 = fArr2[i7];
-            MediaController.B().m0(fragmentContextView.W, f10);
-            if (C != f10) {
-                fragmentContextView.l(C, f10, false);
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r4v0 */
+    /* JADX WARN: Type inference failed for: r4v1 */
+    /* JADX WARN: Type inference failed for: r4v2 */
+    /* JADX WARN: Type inference failed for: r4v3, types: [android.text.SpannableStringBuilder] */
+    /* JADX WARN: Type inference failed for: r4v4 */
+    /* JADX WARN: Type inference failed for: r4v5 */
+    public static CharSequence a(CharSequence charSequence, boolean z9) {
+        if (charSequence instanceof Spanned) {
+            Spanned spanned = (Spanned) charSequence;
+            a00[] a00VarArr = (a00[]) spanned.getSpans(0, spanned.length(), a00.class);
+            int length = a00VarArr.length;
+            ?? r42 = 0;
+            int i7 = 0;
+            while (i7 < length) {
+                a00 a00Var = a00VarArr[i7];
+                TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate = a00Var.b;
+                if (tL_messageEntityFormattedDate.flags != 0 && (a00Var.d != z9 || (z9 && tL_messageEntityFormattedDate.relative))) {
+                    if (r42 == 0) {
+                        charSequence = new SpannableStringBuilder(spanned);
+                        r42 = charSequence;
+                    }
+                    int spanStart = r42.getSpanStart(a00Var);
+                    int spanEnd = r42.getSpanEnd(a00Var);
+                    String A = z9 ? org.telegram.messenger.id.A(a00Var.b, System.currentTimeMillis(), Locale.getDefault(), false) : a00Var.a;
+                    r42.removeSpan(a00Var);
+                    r42.replace(spanStart, spanEnd, A);
+                    r42.setSpan(new a00(a00Var, z9), spanStart, A.length() + spanStart, 33);
+                }
+                i7++;
+                r42 = r42;
             }
         }
+        return charSequence;
     }
 
-    @Override // te.i
-    public /* synthetic */ void a() {
+    public static CharSequence b(SpannableStringBuilder spannableStringBuilder) {
+        return a(spannableStringBuilder, false);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int i7 = textPaint.linkColor;
+        int color = textPaint.getColor();
+        super.updateDrawState(textPaint);
+        uy0 uy0Var = this.c;
+        if (uy0Var != null) {
+            uy0Var.a(textPaint);
+        }
+        textPaint.setUnderlineText(i7 == color);
+    }
+
+    public a00(a00 a00Var, boolean z9) {
+        super(a00Var.a);
+        this.a = a00Var.a;
+        this.b = a00Var.b;
+        this.c = a00Var.c;
+        this.d = z9;
+    }
+
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
     }
 }

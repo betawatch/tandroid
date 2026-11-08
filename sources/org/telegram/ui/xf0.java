@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class xf0 extends org.telegram.ui.Components.pj0 {
     public final ArrayList e3;
@@ -78,7 +78,7 @@ public final class xf0 extends org.telegram.ui.Components.pj0 {
                 if (measuredHeight2 > measuredHeight) {
                     measuredHeight2 = i14 + measuredHeight;
                 }
-                q1Var2.z3(i14, measuredHeight2 - i14, measuredHeight, f11, f11, wf0Var.getMeasuredWidth(), wf0Var.getMeasuredHeight(), 0, 0, 0);
+                q1Var2.A3(i14, measuredHeight2 - i14, measuredHeight, f11, f11, wf0Var.getMeasuredWidth(), wf0Var.getMeasuredHeight(), 0, 0, 0);
             }
         }
         boolean z10 = true;
@@ -423,9 +423,9 @@ public final class xf0 extends org.telegram.ui.Components.pj0 {
             View childAt = getChildAt(i13);
             if (childAt.getTop() != 0 && (childAt instanceof ag0)) {
                 ag0 ag0Var = (ag0) childAt;
-                ag0Var.kd = childAt.getTop();
-                ag0Var.ld = childAt.getBottom();
-                ag0Var.md = ag0Var.getMessageObject().f1();
+                ag0Var.ld = childAt.getTop();
+                ag0Var.md = childAt.getBottom();
+                ag0Var.nd = ag0Var.getMessageObject().f1();
             }
         }
         super.onLayout(z9, i7, i10, i11, i12);

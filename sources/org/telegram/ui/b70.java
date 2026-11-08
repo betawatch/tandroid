@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b70 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -70,7 +70,7 @@ public final /* synthetic */ class b70 implements Runnable {
                             } else {
                                 Bundle bundle = new Bundle();
                                 bundle.putLong("chat_id", -j3);
-                                launchActivity.t0(v91.J0(launchActivity, bundle));
+                                launchActivity.t0(w91.J0(launchActivity, bundle));
                                 if (runnable != null) {
                                     runnable.run();
                                     break;
@@ -158,7 +158,7 @@ public final /* synthetic */ class b70 implements Runnable {
                                                 return;
                                             }
                                         }
-                                        launchActivity5.F0(org.telegram.ui.Components.v4.E(launchActivity5, org.telegram.messenger.hd.M0(2131751455, null), org.telegram.messenger.hd.M0(2131748894, null)));
+                                        launchActivity5.F0(org.telegram.ui.Components.v4.E(launchActivity5, org.telegram.messenger.id.M0(2131751455, null), org.telegram.messenger.id.M0(2131748896, null)));
                                     }
                                 });
                             }

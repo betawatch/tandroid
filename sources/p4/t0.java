@@ -2,7 +2,7 @@ package p4;
 
 import jg.a2;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t0 implements a1 {
     public final /* synthetic */ int a;
@@ -14,16 +14,16 @@ public final /* synthetic */ class t0 implements a1 {
     }
 
     @Override // p4.a1
-    public final Object i(d0 d0Var, v vVar, int i7) {
+    public final Object l(d0 d0Var, v vVar, int i7) {
         switch (this.a) {
             case 0:
                 if (d0Var != null) {
                     throw new ClassCastException();
                 }
-                c1.K0(null, vVar, i7, this.b, new l2.q(vVar, i7, 18));
+                c1.k1(null, vVar, i7, this.b, new l2.q(vVar, i7, 18));
                 throw null;
             default:
-                return c1.K0(d0Var, vVar, i7, this.b, new a2(d0Var, vVar, i7, 17));
+                return c1.k1(d0Var, vVar, i7, this.b, new a2(d0Var, vVar, i7, 17));
         }
     }
 }

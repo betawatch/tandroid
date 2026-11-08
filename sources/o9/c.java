@@ -8,7 +8,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements ua.b {
     public final /* synthetic */ int a;
@@ -53,9 +53,9 @@ public final /* synthetic */ class c implements ua.b {
             case 1:
                 return new sa.h((Context) this.b, (String) this.c);
             default:
-                u9.f fVar = (u9.f) this.c;
+                u9.g gVar2 = (u9.g) this.c;
                 u9.a aVar2 = (u9.a) this.b;
-                return aVar2.f.e(new r7(aVar2, fVar));
+                return aVar2.f.e(new r7(aVar2, gVar2));
         }
     }
 

@@ -22,7 +22,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hr implements org.telegram.messenger.f20, org.telegram.messenger.ri, t4, org.telegram.ui.ActionBar.r1, org.telegram.messenger.lc, org.telegram.messenger.qr, p4.l0, m9.q, w5.b, v5.e, h2.j {
     public final /* synthetic */ int a;
@@ -62,13 +62,13 @@ public final /* synthetic */ class hr implements org.telegram.messenger.f20, org
             if (d40Var == null) {
                 i11 = 0;
                 b40Var.u(gfVar, j20Var, z10, i11, i10 == 0 ? i10 : 0, false, d40Var == null ? d40Var.e : 0L);
-                o40Var.r(false, false);
+                o40Var.s(false, false);
             }
             i7 = d40Var.b;
         }
         i11 = i7;
         b40Var.u(gfVar, j20Var, z10, i11, i10 == 0 ? i10 : 0, false, d40Var == null ? d40Var.e : 0L);
-        o40Var.r(false, false);
+        o40Var.s(false, false);
     }
 
     @Override // org.telegram.messenger.f20
@@ -339,30 +339,30 @@ public final /* synthetic */ class hr implements org.telegram.messenger.f20, org
     public void e(String str, ArrayList arrayList) {
         switch (this.a) {
             case 1:
-                fx fxVar = (fx) this.b;
+                gx gxVar = (gx) this.b;
                 String str2 = (String) this.c;
                 Runnable runnable = (Runnable) this.d;
-                gx gxVar = fxVar.a;
-                if (str2.equals(gxVar.w)) {
-                    gxVar.x = str;
-                    gxVar.n.addAll(arrayList);
+                hx hxVar = gxVar.a;
+                if (str2.equals(hxVar.w)) {
+                    hxVar.x = str;
+                    hxVar.n.addAll(arrayList);
                     runnable.run();
                     break;
                 }
                 break;
             default:
-                zx zxVar = (zx) this.b;
+                ay ayVar = (ay) this.b;
                 HashMap hashMap = (HashMap) this.c;
                 Runnable runnable2 = (Runnable) this.d;
-                HashMap hashMap2 = zxVar.f;
-                if (zxVar.x.M == zxVar.b) {
+                HashMap hashMap2 = ayVar.f;
+                if (ayVar.x.M == ayVar.b) {
                     int size = arrayList.size();
                     for (int i7 = 0; i7 < size; i7++) {
                         String str3 = ((org.telegram.messenger.qi) arrayList.get(i7)).a;
                         ArrayList arrayList2 = (ArrayList) hashMap.get(str3);
                         if (arrayList2 != null && !arrayList2.isEmpty() && !hashMap2.containsKey(arrayList2)) {
                             hashMap2.put(arrayList2, str3);
-                            zxVar.h.add(arrayList2);
+                            ayVar.h.add(arrayList2);
                         }
                     }
                     runnable2.run();
@@ -383,7 +383,7 @@ public final /* synthetic */ class hr implements org.telegram.messenger.f20, org
         }
         m9.w n10 = d0Var.n(vVar);
         if (resultReceiver != null) {
-            n10.b(new org.telegram.ui.web.w(16, n10, resultReceiver), m9.r.a);
+            n10.b(new org.telegram.ui.web.w(11, n10, resultReceiver), m9.r.a);
         }
     }
 
@@ -401,7 +401,7 @@ public final /* synthetic */ class hr implements org.telegram.messenger.f20, org
         if (drawable instanceof qa0) {
             qa0 qa0Var = (qa0) drawable;
             TLRPC.WallPaperSettings wallPaperSettings = wallPaper.settings;
-            qa0Var.s(zz0.e(bitmap), (wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100);
+            qa0Var.s((wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100, zz0.e(bitmap));
             qa0Var.t(zz0Var.L);
             zz0Var.invalidate();
         }
@@ -418,16 +418,16 @@ public final /* synthetic */ class hr implements org.telegram.messenger.f20, org
                 xs0 xs0Var = (xs0) obj3;
                 ArrayList arrayList = (ArrayList) obj2;
                 ((di.j6) obj).F(arrayList);
-                hc.a0(xs0Var.x1).Q(R.raw.ic_delete, 36, org.telegram.messenger.hd.G(arrayList.size(), "BotPreviewsDeleted", new Object[0])).j();
+                hc.a0(xs0Var.x1).Q(R.raw.ic_delete, 36, org.telegram.messenger.id.G(arrayList.size(), "BotPreviewsDeleted", new Object[0])).j();
                 xs0Var.V(false);
                 break;
             case 7:
                 boolean[] zArr = (boolean[]) obj3;
                 JsPromptResult jsPromptResult = (JsPromptResult) obj2;
-                ys ysVar = (ys) obj;
+                zs zsVar = (zs) obj;
                 if (!zArr[0]) {
                     zArr[0] = true;
-                    jsPromptResult.confirm(ysVar.getText().toString());
+                    jsPromptResult.confirm(zsVar.getText().toString());
                     break;
                 }
                 break;
@@ -457,7 +457,12 @@ public final /* synthetic */ class hr implements org.telegram.messenger.f20, org
         String str2 = iVar.a;
         String c10 = c8.cc.c("SQLiteEventStore");
         if (Log.isLoggable(c10, 3)) {
-            Log.d(c10, "Storing event with priority=" + dVar + ", name=" + str + " for destination " + str2);
+            StringBuilder sb2 = new StringBuilder("Storing event with priority=");
+            sb2.append(dVar);
+            sb2.append(", name=");
+            sb2.append(str);
+            sb2.append(" for destination ");
+            rf.b.p(sb2, str2, c10);
         }
         ((Long) gVar.c(new hr(gVar, hVar, iVar, 13))).getClass();
         aVar.a.J(iVar, 1, false);

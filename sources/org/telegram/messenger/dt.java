@@ -65,7 +65,7 @@ import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class dt extends c1 implements ls {
     public static String j0;
@@ -388,7 +388,7 @@ public final class dt extends c1 implements ls {
                     if (!g0.p2(false) && !iz.C && dtVar.getAccountInstance().c().getBoolean("EnablePreviewAll", true)) {
                         z9 = false;
                         if (!TextUtils.isEmpty(str) && !z9) {
-                            M0 = hd.a0(null, null, 2131747924, str);
+                            M0 = id.a0(null, null, 2131747926, str);
                             Intent intent = new Intent(t0.b, (Class<?>) LaunchActivity.class);
                             intent.setAction("android.intent.action.VIEW");
                             intent.setData(Uri.parse("tg://resolve?domain=sendgrams"));
@@ -397,7 +397,7 @@ public final class dt extends c1 implements ls {
                             PendingIntent activity = PendingIntent.getActivity(t0.b, dtVar.currentAccount, intent, 201326592);
                             e0.q qVar = new e0.q(t0.b, str2);
                             qVar.F.icon = R.drawable.notification;
-                            qVar.e = e0.q.d(hd.M0(R.string.AppName, null));
+                            qVar.e = e0.q.d(id.M0(R.string.AppName, null));
                             qVar.f = e0.q.d(M0);
                             e0.l lVar = new e0.l(z10);
                             lVar.f = e0.q.d(M0);
@@ -409,7 +409,7 @@ public final class dt extends c1 implements ls {
                             qVar.g = activity;
                             l0.e("wallet_tonconnect", dtVar.currentAccount, qVar.b());
                         }
-                        M0 = hd.M0(2131747925, null);
+                        M0 = id.M0(2131747927, null);
                         Intent intent2 = new Intent(t0.b, (Class<?>) LaunchActivity.class);
                         intent2.setAction("android.intent.action.VIEW");
                         intent2.setData(Uri.parse("tg://resolve?domain=sendgrams"));
@@ -418,7 +418,7 @@ public final class dt extends c1 implements ls {
                         PendingIntent activity2 = PendingIntent.getActivity(t0.b, dtVar.currentAccount, intent2, 201326592);
                         e0.q qVar2 = new e0.q(t0.b, str2);
                         qVar2.F.icon = R.drawable.notification;
-                        qVar2.e = e0.q.d(hd.M0(R.string.AppName, null));
+                        qVar2.e = e0.q.d(id.M0(R.string.AppName, null));
                         qVar2.f = e0.q.d(M0);
                         e0.l lVar2 = new e0.l(z10);
                         lVar2.f = e0.q.d(M0);
@@ -432,7 +432,7 @@ public final class dt extends c1 implements ls {
                     }
                     z9 = true;
                     if (!TextUtils.isEmpty(str)) {
-                        M0 = hd.a0(null, null, 2131747924, str);
+                        M0 = id.a0(null, null, 2131747926, str);
                         Intent intent22 = new Intent(t0.b, (Class<?>) LaunchActivity.class);
                         intent22.setAction("android.intent.action.VIEW");
                         intent22.setData(Uri.parse("tg://resolve?domain=sendgrams"));
@@ -441,7 +441,7 @@ public final class dt extends c1 implements ls {
                         PendingIntent activity22 = PendingIntent.getActivity(t0.b, dtVar.currentAccount, intent22, 201326592);
                         e0.q qVar22 = new e0.q(t0.b, str2);
                         qVar22.F.icon = R.drawable.notification;
-                        qVar22.e = e0.q.d(hd.M0(R.string.AppName, null));
+                        qVar22.e = e0.q.d(id.M0(R.string.AppName, null));
                         qVar22.f = e0.q.d(M0);
                         e0.l lVar22 = new e0.l(z10);
                         lVar22.f = e0.q.d(M0);
@@ -453,7 +453,7 @@ public final class dt extends c1 implements ls {
                         qVar22.g = activity22;
                         l0.e("wallet_tonconnect", dtVar.currentAccount, qVar22.b());
                     }
-                    M0 = hd.M0(2131747925, null);
+                    M0 = id.M0(2131747927, null);
                     Intent intent222 = new Intent(t0.b, (Class<?>) LaunchActivity.class);
                     intent222.setAction("android.intent.action.VIEW");
                     intent222.setData(Uri.parse("tg://resolve?domain=sendgrams"));
@@ -462,7 +462,7 @@ public final class dt extends c1 implements ls {
                     PendingIntent activity222 = PendingIntent.getActivity(t0.b, dtVar.currentAccount, intent222, 201326592);
                     e0.q qVar222 = new e0.q(t0.b, str2);
                     qVar222.F.icon = R.drawable.notification;
-                    qVar222.e = e0.q.d(hd.M0(R.string.AppName, null));
+                    qVar222.e = e0.q.d(id.M0(R.string.AppName, null));
                     qVar222.f = e0.q.d(M0);
                     e0.l lVar222 = new e0.l(z10);
                     lVar222.f = e0.q.d(M0);
@@ -660,7 +660,7 @@ public final class dt extends c1 implements ls {
                         }
                         ctVar.e = ctVar.a();
                         yr messagesStorage = dtVar3.getMessagesStorage();
-                        messagesStorage.a.c(new yq(5, messagesStorage, ctVar));
+                        messagesStorage.a.c(new zq(5, messagesStorage, ctVar));
                         z18 = z15;
                     } else {
                         ct ctVar2 = new ct(ijVar3.b, B0, f12, currentTimeMillis, currentTimeMillis + 86400000);
@@ -668,7 +668,7 @@ public final class dt extends c1 implements ls {
                         dtVar3.D.add(ctVar2);
                         dtVar3.E.k(ctVar2, B0);
                         yr messagesStorage2 = dtVar3.getMessagesStorage();
-                        messagesStorage2.a.c(new yq(5, messagesStorage2, ctVar2));
+                        messagesStorage2.a.c(new zq(5, messagesStorage2, ctVar2));
                         z17 = z15;
                         z20 = z17;
                     }
@@ -923,7 +923,7 @@ public final class dt extends c1 implements ls {
             dtVar4.K = z10;
         }
         if (!arrayList2.isEmpty() && !g0.p2(false) && !iz.C) {
-            g0.h3(new k7(dtVar4, arrayList2, i12, 20));
+            g0.h3(new l7(dtVar4, arrayList2, i12, 20));
         }
         if (z9 || z19) {
             if (z18) {
@@ -1290,7 +1290,7 @@ public final class dt extends c1 implements ls {
             j0 = "Other" + Utilities.b.nextLong();
             sharedPreferences.edit().putString("OtherKey", j0).commit();
         }
-        String M0 = hd.M0(2131749188, null);
+        String M0 = id.M0(2131749190, null);
         if (notificationChannel != null && !TextUtils.equals(notificationChannel.getName(), M0)) {
             notificationChannel.setName(M0);
             try {
@@ -1335,7 +1335,7 @@ public final class dt extends c1 implements ls {
         TLRPC.TL_messageActionGramTransfer tL_messageActionGramTransfer = (TLRPC.TL_messageActionGramTransfer) message.action;
         boolean A = t10.A(ij.B0(message));
         boolean z9 = (tL_messageActionGramTransfer.comment_encrypted || TextUtils.isEmpty(tL_messageActionGramTransfer.comment)) ? false : true;
-        return hd.a0(null, null, A ? z9 ? 2131748034 : 2131748035 : z9 ? 2131748036 : 2131748037, str, org.telegram.ui.Wallet.n0.s(tL_messageActionGramTransfer.amount, false), tL_messageActionGramTransfer.comment);
+        return id.a0(null, null, A ? z9 ? 2131748036 : 2131748037 : z9 ? 2131748038 : 2131748039, str, org.telegram.ui.Wallet.m0.s(tL_messageActionGramTransfer.amount, false), tL_messageActionGramTransfer.comment);
     }
 
     public static TLRPC.NotificationSound s(SharedPreferences sharedPreferences, String str, String str2, String str3) {
@@ -1700,7 +1700,7 @@ public final class dt extends c1 implements ls {
         }
         SharedPreferences.Editor edit = getAccountInstance().c().edit();
         String uri3 = uri2.toString();
-        String M0 = hd.M0(2131751600, null);
+        String M0 = id.M0(2131751600, null);
         if (z9) {
             if (i11 == 2) {
                 edit.putString("ChannelSound", M0);
@@ -1834,7 +1834,7 @@ public final class dt extends c1 implements ls {
         getAccountInstance().c().edit().putInt(q(i7), i10).commit();
         b0(i7);
         yr messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new qq(messagesStorage, 25));
+        messagesStorage.a.c(new rq(messagesStorage, 26));
         m(i7);
     }
 
@@ -2248,7 +2248,7 @@ public final class dt extends c1 implements ls {
                             num2 = num;
                         } else {
                             num2 = num;
-                            G2 = hd.G(dtVar.D.size(), "Stories", new Object[0]);
+                            G2 = id.G(dtVar.D.size(), "Stories", new Object[0]);
                         }
                         if (a22 == null || (userProfilePhoto4 = a22.photo) == null || (fileLocation13 = userProfilePhoto4.photo_small) == null) {
                             i17 = i38;
@@ -2314,7 +2314,7 @@ public final class dt extends c1 implements ls {
                                 user = null;
                             }
                             user2 = user;
-                            L0 = hd.L0(2131745694);
+                            L0 = id.L0(2131745696);
                             fileLocation = null;
                             chat = null;
                             z18 = false;
@@ -2356,13 +2356,13 @@ public final class dt extends c1 implements ls {
                                 }
                                 fileLocation7 = null;
                                 if (j13 == 489001) {
-                                    L02 = hd.L0(2131753121);
+                                    L02 = id.L0(2131753121);
                                 } else if (j13 == 489000) {
-                                    L02 = hd.L0(2131743617);
+                                    L02 = id.L0(2131743619);
                                 } else if (t10.y(j13)) {
-                                    L02 = hd.L0(2131746265);
+                                    L02 = id.L0(2131746267);
                                 } else if (j13 == j28) {
-                                    L02 = hd.L0(2131748526);
+                                    L02 = id.L0(2131748528);
                                 } else {
                                     fileLocation2 = fileLocation7;
                                     i18 = f12;
@@ -2531,17 +2531,17 @@ public final class dt extends c1 implements ls {
                         hVar = hVar6;
                     }
                     if (ijVar == null || !ijVar.J) {
-                        i21 = 2131748020;
+                        i21 = 2131748022;
                     } else {
-                        i21 = 2131748020;
+                        i21 = 2131748022;
                         if (!c12.getBoolean("EnableReactionsPreview", true)) {
-                            L0 = hd.L0(2131748020);
+                            L0 = id.L0(2131748022);
                             fileLocation = null;
                             z18 = false;
                         }
                     }
                     if (z16) {
-                        str7 = m5.z(j13) ? hd.L0(i21) : hd.L0(2131748017);
+                        str7 = m5.z(j13) ? id.L0(i21) : id.L0(2131748019);
                         fileLocation8 = null;
                         z18 = false;
                     } else {
@@ -2551,7 +2551,7 @@ public final class dt extends c1 implements ls {
                     }
                     if (fileLocation8 != null) {
                         dtVar.getFileLoader().getClass();
-                        i22 = 2131748017;
+                        i22 = 2131748019;
                         file = w7.K(fileLocation8, true);
                         if (Build.VERSION.SDK_INT < 28) {
                             BitmapDrawable C = gc.D().C(fileLocation8);
@@ -2574,7 +2574,7 @@ public final class dt extends c1 implements ls {
                         }
                         bitmap = null;
                     } else {
-                        i22 = 2131748017;
+                        i22 = 2131748019;
                         bitmap = null;
                         file = null;
                     }
@@ -2647,13 +2647,13 @@ public final class dt extends c1 implements ls {
                             }
                         }
                         PendingIntent broadcast = PendingIntent.getBroadcast(t0.b, num2.intValue(), intent2, 167772160);
-                        e0.l0 l0Var = new e0.l0(hd.L0(2131746262), new Bundle(), new HashSet());
+                        e0.l0 l0Var = new e0.l0(id.L0(2131746264), new Bundle(), new HashSet());
                         if (m5.z(j13)) {
                             z21 = false;
-                            Z = hd.Z(2131746252, str8);
+                            Z = id.Z(2131746254, str8);
                         } else {
                             z21 = false;
-                            Z = hd.Z(2131746245, str8);
+                            Z = id.Z(2131746247, str8);
                         }
                         e0.g gVar = new e0.g(R.drawable.ic_reply_icon, broadcast, Z);
                         gVar.f();
@@ -2698,7 +2698,7 @@ public final class dt extends c1 implements ls {
                                 j15 = j12;
                                 try {
                                     if (fileLocation12.volume_id != 0 && fileLocation12.local_id != 0) {
-                                        String L03 = hd.L0(2131750502);
+                                        String L03 = id.L0(2131750504);
                                         w7 fileLoader = dtVar.getFileLoader();
                                         TLRPC.FileLocation fileLocation15 = a24.photo.photo_small;
                                         fileLoader.getClass();
@@ -2776,7 +2776,7 @@ public final class dt extends c1 implements ls {
                                             intent4.putExtra(str16, dtVar.currentAccount);
                                             ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList19 = arrayList6;
                                             bitmap4 = bitmap3;
-                                            e0.g gVar2 = new e0.g(R.drawable.msg_markread, PendingIntent.getBroadcast(t0.b, num2.intValue(), intent4, 167772160), hd.L0(2131748680));
+                                            e0.g gVar2 = new e0.g(R.drawable.msg_markread, PendingIntent.getBroadcast(t0.b, num2.intValue(), intent4, 167772160), id.L0(2131748682));
                                             gVar2.a = 2;
                                             gVar2.c = false;
                                             e0.h b12 = gVar2.b();
@@ -2888,7 +2888,7 @@ public final class dt extends c1 implements ls {
                                         arrayList11 = arrayList22;
                                         j14 = j28;
                                         z22 = booleanValue;
-                                        sb52.append(hd.G(intValue, "StoryNotificationHidden", new Object[0]));
+                                        sb52.append(id.G(intValue, "StoryNotificationHidden", new Object[0]));
                                     } else {
                                         j14 = j28;
                                         arrayList11 = arrayList22;
@@ -2912,16 +2912,16 @@ public final class dt extends c1 implements ls {
                                             hVar = hVar6;
                                         } else if (arrayList21.size() == 1) {
                                             if (intValue == 1) {
-                                                sb52.append(hd.N0("StoryNotificationSingle"));
+                                                sb52.append(id.N0("StoryNotificationSingle"));
                                             } else {
-                                                sb52.append(hd.G(intValue, "StoryNotification1", arrayList21.get(0)));
+                                                sb52.append(id.G(intValue, "StoryNotification1", arrayList21.get(0)));
                                             }
                                         } else if (arrayList21.size() == 2) {
-                                            sb52.append(hd.Z(2131744603, arrayList21.get(0), arrayList21.get(1)));
+                                            sb52.append(id.Z(2131744605, arrayList21.get(0), arrayList21.get(1)));
                                         } else if (arrayList21.size() == 3 && dtVar.D.size() == 3) {
-                                            sb52.append(hd.Z(2131744602, k((String) arrayList21.get(0)), k((String) arrayList21.get(1)), k((String) arrayList21.get(2))));
+                                            sb52.append(id.Z(2131744604, k((String) arrayList21.get(0)), k((String) arrayList21.get(1)), k((String) arrayList21.get(2))));
                                         } else {
-                                            sb52.append(hd.G(dtVar.D.size() - 2, "StoryNotification4", k((String) arrayList21.get(0)), k((String) arrayList21.get(1))));
+                                            sb52.append(id.G(dtVar.D.size() - 2, "StoryNotification4", k((String) arrayList21.get(0)), k((String) arrayList21.get(1))));
                                         }
                                     }
                                     String str17 = "currentAccount";
@@ -2936,7 +2936,7 @@ public final class dt extends c1 implements ls {
                                     xVar.i = Boolean.FALSE;
                                     if (arrayList21.size() != 1 || z22) {
                                         r52 = 0;
-                                        G = hd.G(intValue, str5, new Object[0]);
+                                        G = id.G(intValue, str5, new Object[0]);
                                     } else {
                                         r52 = 0;
                                         G = (String) arrayList21.get(0);
@@ -3003,21 +3003,21 @@ public final class dt extends c1 implements ls {
                                             String w10 = dtVar.w(ijVar6, strArr22, zArr22);
                                             int i49 = (j13 > 489001L ? 1 : (j13 == 489001L ? 0 : -1));
                                             if (i49 == 0) {
-                                                strArr22[0] = hd.L0(2131753121);
+                                                strArr22[0] = id.L0(2131753121);
                                                 strArr = strArr22;
                                                 xVar3 = xVar5;
-                                                i26 = 2131747961;
+                                                i26 = 2131747963;
                                             } else if (j13 != 489000 || ijVar6.W0() == null) {
                                                 strArr = strArr22;
                                                 xVar3 = xVar5;
-                                                i26 = 2131747961;
+                                                i26 = 2131747963;
                                                 if (j13 == j14) {
                                                     strArr[0] = str8;
                                                 } else if (m5.z(j13) && ijVar6.k.from_scheduled) {
-                                                    strArr[0] = hd.L0(2131747961);
+                                                    strArr[0] = id.L0(2131747963);
                                                 }
                                             } else {
-                                                i26 = 2131747961;
+                                                i26 = 2131747963;
                                                 strArr = strArr22;
                                                 xVar3 = xVar5;
                                                 strArr[0] = dtVar.getMessagesController().A1(ijVar6.W0().longValue());
@@ -3038,7 +3038,7 @@ public final class dt extends c1 implements ls {
                                                     sb52.append("\n\n");
                                                 }
                                                 if (j13 != j14 && ijVar6.k.from_scheduled && m5.E(j13)) {
-                                                    String L04 = hd.L0(i26);
+                                                    String L04 = id.L0(i26);
                                                     i27 = i49;
                                                     w10 = String.format("%1$s: %2$s", L04, w10);
                                                     sb52.append(w10);
@@ -3076,16 +3076,16 @@ public final class dt extends c1 implements ls {
                                                     } else if (!m5.z(j13)) {
                                                         sb3 = sb52;
                                                         if (Build.VERSION.SDK_INT > 27) {
-                                                            str22 = hd.L0(i22);
+                                                            str22 = id.L0(i22);
                                                         }
                                                     } else if (z20) {
                                                         sb3 = sb52;
                                                         if (Build.VERSION.SDK_INT > 27) {
-                                                            str22 = hd.L0(i21);
+                                                            str22 = id.L0(i21);
                                                         }
                                                     } else {
                                                         sb3 = sb52;
-                                                        str22 = hd.L0(2131748019);
+                                                        str22 = id.L0(2131748021);
                                                     }
                                                     str22 = "";
                                                 } else {
@@ -3295,7 +3295,7 @@ public final class dt extends c1 implements ls {
                                                                 arrayList28.remove(0);
                                                             }
                                                             t0.b.grantUriPermission("com.android.systemui", d, 1);
-                                                            g0.i3(new yq(12, d, file3), 20000L);
+                                                            g0.i3(new zq(12, d, file3), 20000L);
                                                             if (!TextUtils.isEmpty(ijVar6.z)) {
                                                                 e0.w wVar5 = new e0.w(ijVar6.z, ijVar6.k.date * 1000, j0Var6);
                                                                 ArrayList arrayList29 = xVar4.e;
@@ -3481,7 +3481,7 @@ public final class dt extends c1 implements ls {
                                     intent42.putExtra(str162, dtVar.currentAccount);
                                     ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList192 = arrayList6;
                                     bitmap4 = bitmap3;
-                                    e0.g gVar22 = new e0.g(R.drawable.msg_markread, PendingIntent.getBroadcast(t0.b, num2.intValue(), intent42, 167772160), hd.L0(2131748680));
+                                    e0.g gVar22 = new e0.g(R.drawable.msg_markread, PendingIntent.getBroadcast(t0.b, num2.intValue(), intent42, 167772160), id.L0(2131748682));
                                     gVar22.a = 2;
                                     gVar22.c = false;
                                     e0.h b122 = gVar22.b();
@@ -3762,7 +3762,7 @@ public final class dt extends c1 implements ls {
                                 intent422.putExtra(str1622, dtVar.currentAccount);
                                 ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList1922 = arrayList6;
                                 bitmap4 = bitmap3;
-                                e0.g gVar222 = new e0.g(R.drawable.msg_markread, PendingIntent.getBroadcast(t0.b, num2.intValue(), intent422, 167772160), hd.L0(2131748680));
+                                e0.g gVar222 = new e0.g(R.drawable.msg_markread, PendingIntent.getBroadcast(t0.b, num2.intValue(), intent422, 167772160), id.L0(2131748682));
                                 gVar222.a = 2;
                                 gVar222.c = false;
                                 e0.h b1222 = gVar222.b();
@@ -3905,7 +3905,7 @@ public final class dt extends c1 implements ls {
                     intent4222.putExtra(str16222, dtVar.currentAccount);
                     ArrayList<TL_keyboard.KeyboardInlineButtonRow> arrayList19222 = arrayList6;
                     bitmap4 = bitmap3;
-                    e0.g gVar2222 = new e0.g(R.drawable.msg_markread, PendingIntent.getBroadcast(t0.b, num2.intValue(), intent4222, 167772160), hd.L0(2131748680));
+                    e0.g gVar2222 = new e0.g(R.drawable.msg_markread, PendingIntent.getBroadcast(t0.b, num2.intValue(), intent4222, 167772160), id.L0(2131748682));
                     gVar2222.a = 2;
                     gVar2222.c = false;
                     e0.h b12222 = gVar2222.b();
@@ -4372,28 +4372,28 @@ public final class dt extends c1 implements ls {
                     G = (String) arrayList.get(0);
                     String str17 = G;
                     if (!z41) {
-                        tL_message.message = hd.G(i35, "StoryNotificationHidden", new Object[0]);
+                        tL_message.message = id.G(i35, "StoryNotificationHidden", new Object[0]);
                     } else if (arrayList.isEmpty()) {
                         tL_message.message = "";
                     } else if (arrayList.size() == 1) {
                         if (i35 == 1) {
-                            tL_message.message = hd.N0("StoryNotificationSingle");
+                            tL_message.message = id.N0("StoryNotificationSingle");
                         } else {
-                            tL_message.message = hd.G(i35, "StoryNotification1", arrayList.get(0));
+                            tL_message.message = id.G(i35, "StoryNotification1", arrayList.get(0));
                         }
                     } else if (arrayList.size() == 2) {
-                        tL_message.message = hd.Z(2131744603, arrayList.get(0), arrayList.get(1));
+                        tL_message.message = id.Z(2131744605, arrayList.get(0), arrayList.get(1));
                     } else if (arrayList.size() == 3 && this.D.size() == 3) {
-                        tL_message.message = hd.Z(2131744602, k((String) arrayList.get(0)), k((String) arrayList.get(1)), k((String) arrayList.get(2)));
+                        tL_message.message = id.Z(2131744604, k((String) arrayList.get(0)), k((String) arrayList.get(1)), k((String) arrayList.get(2)));
                     } else {
-                        tL_message.message = hd.G(this.D.size() - 2, "StoryNotification4", k((String) arrayList.get(0)), k((String) arrayList.get(1)));
+                        tL_message.message = id.G(this.D.size() - 2, "StoryNotification4", k((String) arrayList.get(0)), k((String) arrayList.get(1)));
                     }
                     ij ijVar2 = new ij(this.currentAccount, tL_message, tL_message.message, str17, str17, false, false, false, false);
                     ijVar2.K = true;
                     ijVar = ijVar2;
                     bitmap = F;
                 }
-                G = hd.G(i35, "Stories", new Object[0]);
+                G = id.G(i35, "Stories", new Object[0]);
                 String str172 = G;
                 if (!z41) {
                 }
@@ -4515,11 +4515,11 @@ public final class dt extends c1 implements ls {
                                         StringBuilder sb2 = new StringBuilder();
                                         sb2.append(str5);
                                         bitmap2 = bitmap;
-                                        sb2.append(hd.G(this.I, "NewMessages", new Object[0]));
+                                        sb2.append(id.G(this.I, "NewMessages", new Object[0]));
                                         str5 = sb2.toString();
                                     } else {
                                         bitmap2 = bitmap;
-                                        str5 = str5 + hd.Z(2131747944, hd.G(this.I, "NewMessages", new Object[0]), hd.G(this.f.m(), "FromChats", new Object[0]));
+                                        str5 = str5 + id.Z(2131747946, id.G(this.I, "NewMessages", new Object[0]), id.G(this.f.m(), "FromChats", new Object[0]));
                                     }
                                 }
                             } else {
@@ -5158,7 +5158,7 @@ public final class dt extends c1 implements ls {
                                                                             if (!z36 && Build.VERSION.SDK_INT < 24 && iz.s.length() == 0 && A()) {
                                                                                 Intent intent4 = new Intent(t0.b, (Class<?>) PopupReplyReceiver.class);
                                                                                 intent4.putExtra(str23, this.currentAccount);
-                                                                                qVar.a(R.drawable.ic_ab_reply, PendingIntent.getBroadcast(t0.b, 2, intent4, 167772160), hd.L0(2131746262));
+                                                                                qVar.a(R.drawable.ic_ab_reply, PendingIntent.getBroadcast(t0.b, 2, intent4, 167772160), id.L0(2131746264));
                                                                             }
                                                                             X(qVar, str22, j22, j20, str18, jArr, i25, uri2, i24, z34, z45, z26, i11);
                                                                             R();
@@ -5172,7 +5172,7 @@ public final class dt extends c1 implements ls {
                                                                     if (!z36) {
                                                                         Intent intent42 = new Intent(t0.b, (Class<?>) PopupReplyReceiver.class);
                                                                         intent42.putExtra(str23, this.currentAccount);
-                                                                        qVar.a(R.drawable.ic_ab_reply, PendingIntent.getBroadcast(t0.b, 2, intent42, 167772160), hd.L0(2131746262));
+                                                                        qVar.a(R.drawable.ic_ab_reply, PendingIntent.getBroadcast(t0.b, 2, intent42, 167772160), id.L0(2131746264));
                                                                     }
                                                                     X(qVar, str22, j22, j20, str18, jArr, i25, uri2, i24, z34, z45, z26, i11);
                                                                     R();
@@ -5672,7 +5672,7 @@ public final class dt extends c1 implements ls {
                         }
                         str4 = L0;
                         if (!c10.getBoolean("EnableReactionsPreview", true)) {
-                            L02 = hd.L0(2131748017);
+                            L02 = id.L0(2131748019);
                             if (z13) {
                             }
                             e0.q qVar2 = new e0.q(t0.b);
@@ -5714,7 +5714,7 @@ public final class dt extends c1 implements ls {
                 } else {
                     z13 = equalsIgnoreCase;
                 }
-                L0 = !z12 ? j28 != j10 ? hd.L0(2131748020) : hd.L0(2131748017) : hd.L0(R.string.AppName);
+                L0 = !z12 ? j28 != j10 ? id.L0(2131748022) : id.L0(2131748019) : id.L0(R.string.AppName);
                 z14 = false;
                 if (!ijVar.I) {
                     str4 = L0;
@@ -5793,7 +5793,7 @@ public final class dt extends c1 implements ls {
     }
 
     public final void a0(long j3, String str) {
-        k0.c(new hr(this, str, j3, 3));
+        k0.c(new ir(this, str, j3, 3));
     }
 
     public final void b0(int i7) {
@@ -5958,7 +5958,7 @@ public final class dt extends c1 implements ls {
     @Override // org.telegram.messenger.ls
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         if (i7 == qs.Y1) {
-            k0.c(new yq(11, this, (String) objArr[0]));
+            k0.c(new zq(11, this, (String) objArr[0]));
         }
     }
 
@@ -6391,26 +6391,26 @@ public final class dt extends c1 implements ls {
                 if (str54 != null) {
                     StringBuilder sb10 = new StringBuilder();
                     str10 = "private";
-                    sb10.append(hd.M0(2131747920, null));
+                    sb10.append(id.M0(2131747922, null));
                     sb10.append(str40);
                     arrayList.add(new NotificationChannelGroup(str54, sb10.toString()));
                 } else {
                     str10 = "private";
                 }
                 if (str53 != null) {
-                    arrayList.add(new NotificationChannelGroup(str53, hd.M0(2131747906, null) + str40));
+                    arrayList.add(new NotificationChannelGroup(str53, id.M0(2131747908, null) + str40));
                 }
                 if (str51 != null) {
-                    arrayList.add(new NotificationChannelGroup(str51, hd.M0(2131747864, null) + str40));
+                    arrayList.add(new NotificationChannelGroup(str51, id.M0(2131747866, null) + str40));
                 }
                 if (str52 != null) {
-                    arrayList.add(new NotificationChannelGroup(str52, hd.M0(2131747876, null) + str40));
+                    arrayList.add(new NotificationChannelGroup(str52, id.M0(2131747878, null) + str40));
                 }
                 if (str50 != null) {
-                    arrayList.add(new NotificationChannelGroup(str50, hd.M0(2131747877, null) + str40));
+                    arrayList.add(new NotificationChannelGroup(str50, id.M0(2131747879, null) + str40));
                 }
                 if (str55 != null) {
-                    arrayList.add(new NotificationChannelGroup(str55, hd.M0(2131747890, null) + str40));
+                    arrayList.add(new NotificationChannelGroup(str55, id.M0(2131747892, null) + str40));
                 }
                 m0.createNotificationChannelGroups(arrayList);
             }
@@ -6459,10 +6459,10 @@ public final class dt extends c1 implements ls {
         if (z11) {
             str16 = "silent";
             j11 = j3;
-            str21 = hd.M0(2131747871, null);
+            str21 = id.M0(2131747873, null);
         } else {
             if (z9) {
-                a02 = hd.M0(z10 ? 2131747904 : 2131747915, null);
+                a02 = id.M0(z10 ? 2131747906 : 2131747917, null);
                 if (i14 == 2) {
                     j11 = j3;
                     str21 = a02;
@@ -6487,7 +6487,7 @@ public final class dt extends c1 implements ls {
                     j11 = j3;
                 }
             } else {
-                a02 = z10 ? hd.a0(null, null, 2131747918, str) : str;
+                a02 = z10 ? id.a0(null, null, 2131747920, str) : str;
                 StringBuilder sb11 = new StringBuilder();
                 sb11.append(z10 ? "org.telegram.keyia" : "org.telegram.key");
                 j11 = j3;
@@ -6856,7 +6856,7 @@ public final class dt extends c1 implements ls {
                                 str33 = z9 ? this.currentAccount + "channel_" + D22 + str27 + Utilities.b.nextLong() : this.currentAccount + "channel_" + j11 + str27 + Utilities.b.nextLong();
                                 if (z14) {
                                     uri2 = null;
-                                    str34 = hd.M0(2131745694, null);
+                                    str34 = id.M0(2131745696, null);
                                 } else {
                                     uri2 = null;
                                     str34 = str24;
@@ -7248,7 +7248,7 @@ public final class dt extends c1 implements ls {
                 }
             }
             hVar.b();
-            g0.h3(new pd(5));
+            g0.h3(new rc(7));
         } catch (Exception e10) {
             a8.g(e10, true);
         }
@@ -7294,7 +7294,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:133:0x024f, code lost:
     
-        return org.telegram.messenger.hd.L0(2131742952);
+        return org.telegram.messenger.id.L0(2131742954);
      */
     /* JADX WARN: Code restructure failed: missing block: B:135:0x0252, code lost:
     
@@ -7302,7 +7302,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:137:0x025b, code lost:
     
-        return org.telegram.messenger.hd.L0(2131742954);
+        return org.telegram.messenger.id.L0(2131742956);
      */
     /* JADX WARN: Code restructure failed: missing block: B:139:0x025e, code lost:
     
@@ -7326,7 +7326,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:149:0x0282, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748044, r3);
+        return org.telegram.messenger.id.Z(2131748046, r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:151:0x0286, code lost:
     
@@ -7334,13 +7334,13 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:152:0x0288, code lost:
     
-        r2 = org.telegram.messenger.hd.Z(2131742784, org.telegram.messenger.hd.E0().C0().format(r31.k.date * 1000), org.telegram.messenger.hd.E0().p0().format(r31.k.date * 1000));
+        r2 = org.telegram.messenger.id.Z(2131742786, org.telegram.messenger.id.E0().C0().format(r31.k.date * 1000), org.telegram.messenger.id.E0().p0().format(r31.k.date * 1000));
         r3 = getUserConfig().f().first_name;
         r1 = r31.k.action;
      */
     /* JADX WARN: Code restructure failed: missing block: B:153:0x02e5, code lost:
     
-        return org.telegram.messenger.hd.Z(2131747926, r3, r2, r1.title, r1.address);
+        return org.telegram.messenger.id.Z(2131747928, r3, r2, r1.title, r1.address);
      */
     /* JADX WARN: Code restructure failed: missing block: B:155:0x031b, code lost:
     
@@ -7365,11 +7365,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:163:0x0337, code lost:
     
-        return org.telegram.messenger.hd.L0(2131752610);
+        return org.telegram.messenger.id.L0(2131752610);
      */
     /* JADX WARN: Code restructure failed: missing block: B:165:0x033f, code lost:
     
-        return org.telegram.messenger.hd.L0(2131752617);
+        return org.telegram.messenger.id.L0(2131752617);
      */
     /* JADX WARN: Code restructure failed: missing block: B:167:0x0342, code lost:
     
@@ -7381,11 +7381,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:171:0x034f, code lost:
     
-        return org.telegram.messenger.hd.L0(2131752612);
+        return org.telegram.messenger.id.L0(2131752612);
      */
     /* JADX WARN: Code restructure failed: missing block: B:173:0x0357, code lost:
     
-        return org.telegram.messenger.hd.L0(2131752619);
+        return org.telegram.messenger.id.L0(2131752619);
      */
     /* JADX WARN: Code restructure failed: missing block: B:175:0x035c, code lost:
     
@@ -7421,7 +7421,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:188:0x03aa, code lost:
     
-        return org.telegram.messenger.hd.Z(2131752521, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131752521, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:190:0x03b2, code lost:
     
@@ -7429,7 +7429,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:192:0x03c5, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748016, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748018, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:193:0x03c6, code lost:
     
@@ -7449,15 +7449,15 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:200:0x03f6, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748031, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748033, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:202:0x040d, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748032, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748034, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:204:0x0427, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748033, r3, y(r5), org.telegram.messenger.t10.p(r1));
+        return org.telegram.messenger.id.Z(2131748035, r3, y(r5), org.telegram.messenger.t10.p(r1));
      */
     /* JADX WARN: Code restructure failed: missing block: B:205:0x0428, code lost:
     
@@ -7498,7 +7498,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:219:0x047c, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748033, r3, y(r5), r2.toString());
+        return org.telegram.messenger.id.Z(2131748035, r3, y(r5), r2.toString());
      */
     /* JADX WARN: Code restructure failed: missing block: B:221:0x0482, code lost:
     
@@ -7510,11 +7510,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:225:0x0499, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748028, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748030, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:227:0x04ab, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748029, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748031, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:229:0x04ae, code lost:
     
@@ -7554,7 +7554,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:244:0x04fc, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748024, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748026, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:245:0x04fd, code lost:
     
@@ -7566,7 +7566,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:248:0x0528, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748025, r3, y(r5), org.telegram.messenger.t10.p(r1));
+        return org.telegram.messenger.id.Z(2131748027, r3, y(r5), org.telegram.messenger.t10.p(r1));
      */
     /* JADX WARN: Code restructure failed: missing block: B:249:0x0529, code lost:
     
@@ -7607,7 +7607,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:263:0x057e, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748025, r3, y(r5), r2.toString());
+        return org.telegram.messenger.id.Z(2131748027, r3, y(r5), r2.toString());
      */
     /* JADX WARN: Code restructure failed: missing block: B:265:0x0582, code lost:
     
@@ -7615,7 +7615,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:267:0x058b, code lost:
     
-        return org.telegram.messenger.hd.L0(2131753310);
+        return org.telegram.messenger.id.L0(2131753310);
      */
     /* JADX WARN: Code restructure failed: missing block: B:269:0x058e, code lost:
     
@@ -7623,7 +7623,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:271:0x05a5, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748015, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748017, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:273:0x05ac, code lost:
     
@@ -7631,7 +7631,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:275:0x05bd, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748042, r3, r4.title);
+        return org.telegram.messenger.id.Z(2131748044, r3, r4.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:277:0x05c0, code lost:
     
@@ -7655,7 +7655,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:285:0x05e8, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748022, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748024, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:287:0x05f0, code lost:
     
@@ -7663,7 +7663,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:289:0x0603, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748021, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748023, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:290:0x0604, code lost:
     
@@ -7675,7 +7675,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:293:0x0638, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748023, r3, y(r5), org.telegram.messenger.t10.p(r1));
+        return org.telegram.messenger.id.Z(2131748025, r3, y(r5), org.telegram.messenger.t10.p(r1));
      */
     /* JADX WARN: Code restructure failed: missing block: B:295:0x063b, code lost:
     
@@ -7699,7 +7699,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:305:0x0665, code lost:
     
-        return org.telegram.messenger.hd.Z(2131754602, y(r5));
+        return org.telegram.messenger.id.Z(2131754602, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:307:0x066b, code lost:
     
@@ -7707,7 +7707,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:309:0x0677, code lost:
     
-        return org.telegram.messenger.hd.Z(2131754602, r4.title);
+        return org.telegram.messenger.id.Z(2131754602, r4.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:311:0x067a, code lost:
     
@@ -7767,7 +7767,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:337:0x06d6, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748087, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748089, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:339:0x06e0, code lost:
     
@@ -7775,7 +7775,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:341:0x06f3, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748090, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748092, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:343:0x06fb, code lost:
     
@@ -7787,11 +7787,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:347:0x072d, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748066, r3, "📹 " + r1.k.message, y(r5));
+        return org.telegram.messenger.id.Z(2131748068, r3, "📹 " + r1.k.message, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:349:0x0744, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748060, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748062, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:351:0x0749, code lost:
     
@@ -7803,11 +7803,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:355:0x077b, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748066, r3, "🎬 " + r1.k.message, y(r5));
+        return org.telegram.messenger.id.Z(2131748068, r3, "🎬 " + r1.k.message, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:357:0x0792, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748096, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748098, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:359:0x079c, code lost:
     
@@ -7815,7 +7815,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:361:0x07af, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748057, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748059, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:363:0x07b4, code lost:
     
@@ -7823,7 +7823,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:365:0x07c7, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748075, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748077, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:367:0x07cc, code lost:
     
@@ -7848,11 +7848,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:375:0x080e, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748066, r3, "📎 " + r1.k.message, y(r5));
+        return org.telegram.messenger.id.Z(2131748068, r3, "📎 " + r1.k.message, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:377:0x0825, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748111, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748113, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:379:0x0828, code lost:
     
@@ -7868,7 +7868,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:385:0x084d, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748100, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748102, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:387:0x0850, code lost:
     
@@ -7880,7 +7880,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:389:0x0876, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748114, r3, y(r5), org.telegram.messenger.g5.n(r10.first_name, r10.last_name));
+        return org.telegram.messenger.id.Z(2131748116, r3, y(r5), org.telegram.messenger.g5.n(r10.first_name, r10.last_name));
      */
     /* JADX WARN: Code restructure failed: missing block: B:391:0x0879, code lost:
     
@@ -7896,11 +7896,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:395:0x08a3, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748078, r3, y(r5), r10.poll.question.text);
+        return org.telegram.messenger.id.Z(2131748080, r3, y(r5), r10.poll.question.text);
      */
     /* JADX WARN: Code restructure failed: missing block: B:397:0x08c4, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748081, r3, y(r5), r10.poll.question.text);
+        return org.telegram.messenger.id.Z(2131748083, r3, y(r5), r10.poll.question.text);
      */
     /* JADX WARN: Code restructure failed: missing block: B:399:0x08c7, code lost:
     
@@ -7908,7 +7908,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:401:0x08eb, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748063, r3, y(r5), ((org.telegram.tgnet.TLRPC.TL_messageMediaToDo) r10).todo.title.text);
+        return org.telegram.messenger.id.Z(2131748065, r3, y(r5), ((org.telegram.tgnet.TLRPC.TL_messageMediaToDo) r10).todo.title.text);
      */
     /* JADX WARN: Code restructure failed: missing block: B:403:0x08ee, code lost:
     
@@ -7920,11 +7920,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:407:0x091e, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748066, r3, "🖼 " + r1.k.message, y(r5));
+        return org.telegram.messenger.id.Z(2131748068, r3, "🖼 " + r1.k.message, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:409:0x0935, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748084, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748086, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:411:0x093d, code lost:
     
@@ -7932,7 +7932,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:413:0x0950, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748108, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748110, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:414:0x0951, code lost:
     
@@ -7972,7 +7972,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:422:0x098c, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748066, r4);
+        return org.telegram.messenger.id.Z(2131748068, r4);
      */
     /* JADX WARN: Code restructure failed: missing block: B:423:0x0978, code lost:
     
@@ -7980,11 +7980,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:425:0x099e, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748087, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748089, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:428:0x09b0, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748102, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748104, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:430:0x09b1, code lost:
     
@@ -7996,11 +7996,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:433:0x09cc, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748070, r3, y(r5), r1);
+        return org.telegram.messenger.id.Z(2131748072, r3, y(r5), r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:435:0x09df, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748072, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748074, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:437:0x09e0, code lost:
     
@@ -8016,7 +8016,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:441:0x09f7, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748086, y(r5));
+        return org.telegram.messenger.id.Z(2131748088, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:443:0x09fe, code lost:
     
@@ -8024,7 +8024,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:445:0x0a0f, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748089, y(r5));
+        return org.telegram.messenger.id.Z(2131748091, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:447:0x0a17, code lost:
     
@@ -8036,11 +8036,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:451:0x0a45, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748065, y(r5), "📹 " + r1.k.message);
+        return org.telegram.messenger.id.Z(2131748067, y(r5), "📹 " + r1.k.message);
      */
     /* JADX WARN: Code restructure failed: missing block: B:453:0x0a58, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748059, y(r5));
+        return org.telegram.messenger.id.Z(2131748061, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:455:0x0a5d, code lost:
     
@@ -8052,11 +8052,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:459:0x0a8b, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748065, y(r5), "🎬 " + r1.k.message);
+        return org.telegram.messenger.id.Z(2131748067, y(r5), "🎬 " + r1.k.message);
      */
     /* JADX WARN: Code restructure failed: missing block: B:461:0x0a9e, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748095, y(r5));
+        return org.telegram.messenger.id.Z(2131748097, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:463:0x0aa6, code lost:
     
@@ -8064,7 +8064,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:465:0x0ab7, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748056, y(r5));
+        return org.telegram.messenger.id.Z(2131748058, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:467:0x0abc, code lost:
     
@@ -8072,7 +8072,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:469:0x0acd, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748074, y(r5));
+        return org.telegram.messenger.id.Z(2131748076, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:471:0x0ad2, code lost:
     
@@ -8097,11 +8097,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:479:0x0b10, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748065, y(r5), "📎 " + r1.k.message);
+        return org.telegram.messenger.id.Z(2131748067, y(r5), "📎 " + r1.k.message);
      */
     /* JADX WARN: Code restructure failed: missing block: B:481:0x0b23, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748110, y(r5));
+        return org.telegram.messenger.id.Z(2131748112, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:483:0x0b26, code lost:
     
@@ -8117,7 +8117,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:489:0x0b46, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748099, y(r5));
+        return org.telegram.messenger.id.Z(2131748101, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:491:0x0b49, code lost:
     
@@ -8129,7 +8129,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:493:0x0b6b, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748113, y(r5), org.telegram.messenger.g5.n(r10.first_name, r10.last_name));
+        return org.telegram.messenger.id.Z(2131748115, y(r5), org.telegram.messenger.g5.n(r10.first_name, r10.last_name));
      */
     /* JADX WARN: Code restructure failed: missing block: B:495:0x0b6e, code lost:
     
@@ -8145,11 +8145,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:499:0x0b94, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748077, y(r5), r10.poll.question.text);
+        return org.telegram.messenger.id.Z(2131748079, y(r5), r10.poll.question.text);
      */
     /* JADX WARN: Code restructure failed: missing block: B:501:0x0bb1, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748080, y(r5), r10.poll.question.text);
+        return org.telegram.messenger.id.Z(2131748082, y(r5), r10.poll.question.text);
      */
     /* JADX WARN: Code restructure failed: missing block: B:503:0x0bb4, code lost:
     
@@ -8157,7 +8157,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:505:0x0bd4, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748062, y(r5), ((org.telegram.tgnet.TLRPC.TL_messageMediaToDo) r10).todo.title.text);
+        return org.telegram.messenger.id.Z(2131748064, y(r5), ((org.telegram.tgnet.TLRPC.TL_messageMediaToDo) r10).todo.title.text);
      */
     /* JADX WARN: Code restructure failed: missing block: B:507:0x0bd7, code lost:
     
@@ -8169,11 +8169,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:511:0x0c03, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748065, y(r5), "🖼 " + r1.k.message);
+        return org.telegram.messenger.id.Z(2131748067, y(r5), "🖼 " + r1.k.message);
      */
     /* JADX WARN: Code restructure failed: missing block: B:513:0x0c16, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748083, y(r5));
+        return org.telegram.messenger.id.Z(2131748085, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:515:0x0c1c, code lost:
     
@@ -8181,7 +8181,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:517:0x0c2d, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748107, y(r5));
+        return org.telegram.messenger.id.Z(2131748109, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:518:0x0c2e, code lost:
     
@@ -8219,7 +8219,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:526:0x0c66, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748065, r3);
+        return org.telegram.messenger.id.Z(2131748067, r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:527:0x0c55, code lost:
     
@@ -8227,11 +8227,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:529:0x0c75, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748086, y(r5));
+        return org.telegram.messenger.id.Z(2131748088, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:532:0x0c85, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748101, y(r5));
+        return org.telegram.messenger.id.Z(2131748103, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:534:0x0c86, code lost:
     
@@ -8243,11 +8243,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:537:0x0c9e, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748069, y(r5), r1);
+        return org.telegram.messenger.id.Z(2131748071, y(r5), r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:539:0x0cae, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748071, y(r5));
+        return org.telegram.messenger.id.Z(2131748073, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:540:0x0caf, code lost:
     
@@ -8259,7 +8259,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:543:0x0cbf, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748085, r3);
+        return org.telegram.messenger.id.Z(2131748087, r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:545:0x0cc4, code lost:
     
@@ -8267,7 +8267,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:547:0x0cd1, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748088, r3);
+        return org.telegram.messenger.id.Z(2131748090, r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:549:0x0cd9, code lost:
     
@@ -8279,11 +8279,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:553:0x0d03, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748064, r3, "📹 " + r1.k.message);
+        return org.telegram.messenger.id.Z(2131748066, r3, "📹 " + r1.k.message);
      */
     /* JADX WARN: Code restructure failed: missing block: B:555:0x0d12, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748058, r3);
+        return org.telegram.messenger.id.Z(2131748060, r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:557:0x0d17, code lost:
     
@@ -8295,11 +8295,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:561:0x0d41, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748064, r3, "🎬 " + r1.k.message);
+        return org.telegram.messenger.id.Z(2131748066, r3, "🎬 " + r1.k.message);
      */
     /* JADX WARN: Code restructure failed: missing block: B:563:0x0d50, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748094, r3);
+        return org.telegram.messenger.id.Z(2131748096, r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:565:0x0d58, code lost:
     
@@ -8307,7 +8307,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:567:0x0d65, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748055, r3);
+        return org.telegram.messenger.id.Z(2131748057, r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:569:0x0d6a, code lost:
     
@@ -8315,7 +8315,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:571:0x0d77, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748073, r3);
+        return org.telegram.messenger.id.Z(2131748075, r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:573:0x0d7c, code lost:
     
@@ -8340,11 +8340,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:581:0x0db6, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748064, r3, "📎 " + r1.k.message);
+        return org.telegram.messenger.id.Z(2131748066, r3, "📎 " + r1.k.message);
      */
     /* JADX WARN: Code restructure failed: missing block: B:583:0x0dc5, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748109, r3);
+        return org.telegram.messenger.id.Z(2131748111, r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:585:0x0dc8, code lost:
     
@@ -8360,7 +8360,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:591:0x0de4, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748098, r3);
+        return org.telegram.messenger.id.Z(2131748100, r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:593:0x0de9, code lost:
     
@@ -8372,7 +8372,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:595:0x0e05, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748112, r3, org.telegram.messenger.g5.n(r10.first_name, r10.last_name));
+        return org.telegram.messenger.id.Z(2131748114, r3, org.telegram.messenger.g5.n(r10.first_name, r10.last_name));
      */
     /* JADX WARN: Code restructure failed: missing block: B:597:0x0e08, code lost:
     
@@ -8388,11 +8388,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:601:0x0e28, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748076, r3, r1.question.text);
+        return org.telegram.messenger.id.Z(2131748078, r3, r1.question.text);
      */
     /* JADX WARN: Code restructure failed: missing block: B:603:0x0e3f, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748079, r3, r1.question.text);
+        return org.telegram.messenger.id.Z(2131748081, r3, r1.question.text);
      */
     /* JADX WARN: Code restructure failed: missing block: B:605:0x0e42, code lost:
     
@@ -8400,7 +8400,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:607:0x0e5e, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748061, r3, ((org.telegram.tgnet.TLRPC.TL_messageMediaToDo) r10).todo.title.text);
+        return org.telegram.messenger.id.Z(2131748063, r3, ((org.telegram.tgnet.TLRPC.TL_messageMediaToDo) r10).todo.title.text);
      */
     /* JADX WARN: Code restructure failed: missing block: B:609:0x0e61, code lost:
     
@@ -8412,11 +8412,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:613:0x0e89, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748064, r3, "🖼 " + r1.k.message);
+        return org.telegram.messenger.id.Z(2131748066, r3, "🖼 " + r1.k.message);
      */
     /* JADX WARN: Code restructure failed: missing block: B:615:0x0e98, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748082, r3);
+        return org.telegram.messenger.id.Z(2131748084, r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:617:0x0e9e, code lost:
     
@@ -8424,7 +8424,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:619:0x0eab, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748103, r3);
+        return org.telegram.messenger.id.Z(2131748105, r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:620:0x0eac, code lost:
     
@@ -8462,7 +8462,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:629:0x0ee1, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748064, r2);
+        return org.telegram.messenger.id.Z(2131748066, r2);
      */
     /* JADX WARN: Code restructure failed: missing block: B:630:0x0ed4, code lost:
     
@@ -8470,11 +8470,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:632:0x0eec, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748085, r3);
+        return org.telegram.messenger.id.Z(2131748087, r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:635:0x0ef8, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748097, r3);
+        return org.telegram.messenger.id.Z(2131748099, r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:637:0x0ef9, code lost:
     
@@ -8486,11 +8486,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:640:0x0f0d, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748068, r3, r1);
+        return org.telegram.messenger.id.Z(2131748070, r3, r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:642:0x0f19, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748067, r3);
+        return org.telegram.messenger.id.Z(2131748069, r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:644:0x0f1c, code lost:
     
@@ -8510,11 +8510,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:650:0x0f3a, code lost:
     
-        return org.telegram.messenger.hd.Z(2131752201, new java.lang.Object[0]);
+        return org.telegram.messenger.id.Z(2131752201, new java.lang.Object[0]);
      */
     /* JADX WARN: Code restructure failed: missing block: B:652:0x0f4b, code lost:
     
-        return org.telegram.messenger.hd.Z(2131752202, r3, r1);
+        return org.telegram.messenger.id.Z(2131752202, r3, r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:654:0x0f50, code lost:
     
@@ -8522,11 +8522,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:656:0x0f5d, code lost:
     
-        return org.telegram.messenger.hd.Z(2131752204, r1);
+        return org.telegram.messenger.id.Z(2131752204, r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:658:0x0f6c, code lost:
     
-        return org.telegram.messenger.hd.Z(2131752205, r3, r1);
+        return org.telegram.messenger.id.Z(2131752205, r3, r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:660:0x0f6f, code lost:
     
@@ -8555,7 +8555,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:669:0x0fbe, code lost:
     
-        return org.telegram.messenger.hd.J((int) r4.stars, "BoostingReceivedStars", r1);
+        return org.telegram.messenger.id.J((int) r4.stars, "BoostingReceivedStars", r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:670:0x0f99, code lost:
     
@@ -8611,11 +8611,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:693:0x1005, code lost:
     
-        return org.telegram.messenger.hd.Z(2131752265, y(r5));
+        return org.telegram.messenger.id.Z(2131752265, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:695:0x1018, code lost:
     
-        return org.telegram.messenger.hd.Z(2131752331, y(r5));
+        return org.telegram.messenger.id.Z(2131752331, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:697:0x101f, code lost:
     
@@ -8623,15 +8623,15 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:699:0x1034, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748040, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748042, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:701:0x1048, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748041, r3, y(r5));
+        return org.telegram.messenger.id.Z(2131748043, r3, y(r5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:704:0x1054, code lost:
     
-        return org.telegram.messenger.hd.Z(2131748045, r3);
+        return org.telegram.messenger.id.Z(2131748047, r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:706:0x1059, code lost:
     
@@ -8647,7 +8647,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:712:0x106e, code lost:
     
-        return org.telegram.messenger.hd.L0(2131748602);
+        return org.telegram.messenger.id.L0(2131748604);
      */
     /* JADX WARN: Code restructure failed: missing block: B:713:0x106f, code lost:
     
@@ -8718,7 +8718,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:733:0x10cb, code lost:
     
-        r1 = org.telegram.messenger.hd.L0(r4);
+        r1 = org.telegram.messenger.id.L0(r4);
         r4 = 0;
      */
     /* JADX WARN: Code restructure failed: missing block: B:735:0x10e2, code lost:
@@ -8728,7 +8728,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:736:0x10ed, code lost:
     
-        return org.telegram.messenger.hd.Z(2131753949, r2);
+        return org.telegram.messenger.id.Z(2131753949, r2);
      */
     /* JADX WARN: Code restructure failed: missing block: B:737:0x10d2, code lost:
     
@@ -8744,7 +8744,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:740:0x10db, code lost:
     
-        r1 = org.telegram.messenger.hd.G(r2, r1, new java.lang.Object[0]);
+        r1 = org.telegram.messenger.id.G(r2, r1, new java.lang.Object[0]);
      */
     /* JADX WARN: Code restructure failed: missing block: B:741:0x10d8, code lost:
     
@@ -8768,7 +8768,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:751:0x10fb, code lost:
     
-        return org.telegram.messenger.hd.L0(2131753951);
+        return org.telegram.messenger.id.L0(2131753951);
      */
     /* JADX WARN: Code restructure failed: missing block: B:753:0x1100, code lost:
     
@@ -8776,7 +8776,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:755:0x1109, code lost:
     
-        return org.telegram.messenger.hd.L0(2131753950);
+        return org.telegram.messenger.id.L0(2131753950);
      */
     /* JADX WARN: Code restructure failed: missing block: B:756:0x110a, code lost:
     
@@ -8800,11 +8800,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:765:0x113a, code lost:
     
-        return org.telegram.messenger.hd.L0(2131753977);
+        return org.telegram.messenger.id.L0(2131753977);
      */
     /* JADX WARN: Code restructure failed: missing block: B:767:0x113f, code lost:
     
-        return org.telegram.messenger.hd.L0(2131753948);
+        return org.telegram.messenger.id.L0(2131753948);
      */
     /* JADX WARN: Code restructure failed: missing block: B:769:0x1144, code lost:
     
@@ -8824,11 +8824,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:777:0x1170, code lost:
     
-        return org.telegram.messenger.hd.L0(2131753976);
+        return org.telegram.messenger.id.L0(2131753976);
      */
     /* JADX WARN: Code restructure failed: missing block: B:779:0x1175, code lost:
     
-        return org.telegram.messenger.hd.L0(2131753933);
+        return org.telegram.messenger.id.L0(2131753933);
      */
     /* JADX WARN: Code restructure failed: missing block: B:781:0x117e, code lost:
     
@@ -8836,7 +8836,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:783:0x1187, code lost:
     
-        return org.telegram.messenger.hd.L0(2131753972);
+        return org.telegram.messenger.id.L0(2131753972);
      */
     /* JADX WARN: Code restructure failed: missing block: B:785:0x118c, code lost:
     
@@ -8844,7 +8844,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:787:0x1195, code lost:
     
-        return org.telegram.messenger.hd.L0(2131753982);
+        return org.telegram.messenger.id.L0(2131753982);
      */
     /* JADX WARN: Code restructure failed: missing block: B:789:0x119a, code lost:
     
@@ -8852,7 +8852,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:791:0x11a3, code lost:
     
-        return org.telegram.messenger.hd.L0(2131753941);
+        return org.telegram.messenger.id.L0(2131753941);
      */
     /* JADX WARN: Code restructure failed: missing block: B:793:0x11a8, code lost:
     
@@ -8860,7 +8860,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:795:0x11b1, code lost:
     
-        return org.telegram.messenger.hd.L0(2131753952);
+        return org.telegram.messenger.id.L0(2131753952);
      */
     /* JADX WARN: Code restructure failed: missing block: B:796:0x11b2, code lost:
     
@@ -8873,7 +8873,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:799:0x11c1, code lost:
     
-        return org.telegram.messenger.hd.L0(2131753979);
+        return org.telegram.messenger.id.L0(2131753979);
      */
     /* JADX WARN: Code restructure failed: missing block: B:801:0x11c4, code lost:
     
@@ -8885,11 +8885,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:805:0x11d5, code lost:
     
-        return org.telegram.messenger.hd.L0(2131746444);
+        return org.telegram.messenger.id.L0(2131746446);
      */
     /* JADX WARN: Code restructure failed: missing block: B:807:0x11dd, code lost:
     
-        return org.telegram.messenger.hd.L0(2131747184);
+        return org.telegram.messenger.id.L0(2131747186);
      */
     /* JADX WARN: Code restructure failed: missing block: B:809:0x11e0, code lost:
     
@@ -8897,7 +8897,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:811:0x11e9, code lost:
     
-        return org.telegram.messenger.hd.L0(2131744110);
+        return org.telegram.messenger.id.L0(2131744112);
      */
     /* JADX WARN: Code restructure failed: missing block: B:813:0x11ec, code lost:
     
@@ -8909,7 +8909,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:817:0x11fd, code lost:
     
-        return org.telegram.messenger.hd.L0(2131753926);
+        return org.telegram.messenger.id.L0(2131753926);
      */
     /* JADX WARN: Code restructure failed: missing block: B:819:0x1202, code lost:
     
@@ -8921,7 +8921,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:823:0x120e, code lost:
     
-        return org.telegram.messenger.hd.L0(2131753492);
+        return org.telegram.messenger.id.L0(2131753492);
      */
     /* JADX WARN: Code restructure failed: missing block: B:825:0x1211, code lost:
     
@@ -8929,7 +8929,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:827:0x121a, code lost:
     
-        return org.telegram.messenger.hd.L0(2131753392);
+        return org.telegram.messenger.id.L0(2131753392);
      */
     /* JADX WARN: Code restructure failed: missing block: B:829:0x121d, code lost:
     
@@ -8945,7 +8945,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:835:0x1230, code lost:
     
-        return org.telegram.messenger.hd.L0(2131753966);
+        return org.telegram.messenger.id.L0(2131753966);
      */
     /* JADX WARN: Code restructure failed: missing block: B:837:0x1233, code lost:
     
@@ -8973,7 +8973,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:849:0x126a, code lost:
     
-        return org.telegram.messenger.hd.L0(2131753971);
+        return org.telegram.messenger.id.L0(2131753971);
      */
     /* JADX WARN: Code restructure failed: missing block: B:851:0x1273, code lost:
     
@@ -8985,7 +8985,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:855:0x128d, code lost:
     
-        return org.telegram.messenger.hd.L0(2131753975);
+        return org.telegram.messenger.id.L0(2131753975);
      */
     /* JADX WARN: Code restructure failed: missing block: B:856:0x128e, code lost:
     
@@ -8998,7 +8998,7 @@ public final class dt extends c1 implements ls {
     /* JADX WARN: Code restructure failed: missing block: B:858:0x1297, code lost:
     
         r1 = rf.b.j(r1, " ");
-        r1.append(org.telegram.messenger.hd.L0(2131753936));
+        r1.append(org.telegram.messenger.id.L0(2131753936));
      */
     /* JADX WARN: Code restructure failed: missing block: B:859:0x12a8, code lost:
     
@@ -9006,7 +9006,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:861:0x12ad, code lost:
     
-        return org.telegram.messenger.hd.L0(2131753936);
+        return org.telegram.messenger.id.L0(2131753936);
      */
     /* JADX WARN: Code restructure failed: missing block: B:863:0x12b0, code lost:
     
@@ -9026,7 +9026,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:870:0x12cd, code lost:
     
-        return org.telegram.messenger.hd.Z(2131744596, r7);
+        return org.telegram.messenger.id.Z(2131744598, r7);
      */
     /* JADX WARN: Code restructure failed: missing block: B:871:0x12c0, code lost:
     
@@ -9034,7 +9034,7 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:873:0x12d5, code lost:
     
-        return org.telegram.messenger.hd.L0(2131744736);
+        return org.telegram.messenger.id.L0(2131744738);
      */
     /* JADX WARN: Code restructure failed: missing block: B:875:0x12dc, code lost:
     
@@ -9046,11 +9046,11 @@ public final class dt extends c1 implements ls {
      */
     /* JADX WARN: Code restructure failed: missing block: B:879:0x12e7, code lost:
     
-        return org.telegram.messenger.hd.L0(2131748602);
+        return org.telegram.messenger.id.L0(2131748604);
      */
     /* JADX WARN: Code restructure failed: missing block: B:881:0x12ef, code lost:
     
-        return org.telegram.messenger.hd.L0(2131753961);
+        return org.telegram.messenger.id.L0(2131753961);
      */
     /* JADX WARN: Code restructure failed: missing block: B:885:0x021c, code lost:
     
@@ -9075,7 +9075,7 @@ public final class dt extends c1 implements ls {
         TLRPC.MessageFwdHeader messageFwdHeader2;
         TLRPC.Peer peer2;
         if (g0.o2() || iz.C) {
-            return hd.L0(2131748018);
+            return id.L0(2131748020);
         }
         TLRPC.Message message = ijVar.k;
         boolean z10 = ijVar.f;
@@ -9097,7 +9097,7 @@ public final class dt extends c1 implements ls {
                 }
                 if (!w10 || !c10.getBoolean("EnablePreviewAll", true)) {
                     zArr[0] = false;
-                    return hd.L0(2131748602);
+                    return id.L0(2131748604);
                 }
             } else if (j12 != 0) {
                 if (ijVar.k.peer_id.channel_id == 0 || ijVar.B4()) {
@@ -9107,7 +9107,7 @@ public final class dt extends c1 implements ls {
                 }
                 if (!w10 || ((!z10 && !c10.getBoolean("EnablePreviewGroup", true)) || (z10 && !c10.getBoolean("EnablePreviewChannel", true)))) {
                     zArr[0] = false;
-                    return (ijVar.k.peer_id.channel_id == 0 || ijVar.B4()) ? hd.Z(2131747989, ijVar.c, str) : hd.Z(2131752366, str);
+                    return (ijVar.k.peer_id.channel_id == 0 || ijVar.B4()) ? id.Z(2131747991, ijVar.c, str) : id.Z(2131752366, str);
                 }
             }
             return O(ijVar);
@@ -9182,7 +9182,7 @@ public final class dt extends c1 implements ls {
                     }
                     if (m5.C(j10)) {
                         strArr[0] = null;
-                        return hd.L0(2131748018);
+                        return id.L0(2131748020);
                     }
                     boolean z11 = t3.T(chat) && !chat.megagroup;
                     TLRPC.Message message2 = ijVar.k;
@@ -9199,7 +9199,7 @@ public final class dt extends c1 implements ls {
                         }
                     }
                     zArr[0] = false;
-                    return hd.L0(2131748602);
+                    return id.L0(2131748604);
                 }
                 return null;
             }

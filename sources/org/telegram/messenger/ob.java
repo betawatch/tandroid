@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ob implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -27,19 +27,19 @@ public final /* synthetic */ class ob implements Runnable {
                 qs.f(i10).k(qs.V1, str, Boolean.valueOf(z9));
                 break;
             default:
-                org.telegram.utils.twidget.m mVar = (org.telegram.utils.twidget.m) org.telegram.utils.twidget.p.a.get(str);
-                if (mVar != null && mVar.t != null) {
-                    if (!org.telegram.utils.twidget.p.g.contains(mVar)) {
-                        mVar.E = i10;
-                        mVar.F = z9;
-                        ArrayList arrayList = org.telegram.utils.twidget.p.f;
-                        arrayList.remove(mVar);
-                        arrayList.add(mVar);
-                        org.telegram.utils.twidget.p.o();
+                org.telegram.utils.twidget.k0 k0Var = (org.telegram.utils.twidget.k0) org.telegram.utils.twidget.n0.a.get(str);
+                if (k0Var != null && k0Var.t != null) {
+                    if (!org.telegram.utils.twidget.n0.g.contains(k0Var)) {
+                        k0Var.E = i10;
+                        k0Var.F = z9;
+                        ArrayList arrayList = org.telegram.utils.twidget.n0.f;
+                        arrayList.remove(k0Var);
+                        arrayList.add(k0Var);
+                        org.telegram.utils.twidget.n0.p();
                         break;
                     } else {
-                        mVar.E = i10;
-                        mVar.t.n(i10);
+                        k0Var.E = i10;
+                        k0Var.t.n(i10);
                         break;
                     }
                 }

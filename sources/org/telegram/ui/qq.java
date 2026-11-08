@@ -8,25 +8,25 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class qq extends org.telegram.ui.Components.n41 {
-    public final db1 e;
+    public final eb1 e;
     public final long f;
-    public final bb1 h;
+    public final cb1 h;
     public String n;
     public org.telegram.ui.ActionBar.f5 r;
     public boolean s = false;
 
-    public qq(db1 db1Var, long j3, bb1 bb1Var) {
-        this.e = db1Var;
+    public qq(eb1 eb1Var, long j3, cb1 cb1Var) {
+        this.e = eb1Var;
         this.f = j3;
-        this.h = bb1Var;
+        this.h = cb1Var;
         pq pqVar = new pq(this, 0);
-        if (db1Var.c) {
+        if (eb1Var.c) {
             pqVar.run();
         } else {
-            db1Var.f.add(pqVar);
+            eb1Var.f.add(pqVar);
         }
     }
 
@@ -35,13 +35,13 @@ public final class qq extends org.telegram.ui.Components.n41 {
         boolean isEmpty = TextUtils.isEmpty(this.n);
         long j3 = this.f;
         if (isEmpty && j3 != 0) {
-            org.telegram.ui.Components.x31 c10 = org.telegram.ui.Components.x31.c(1, R.drawable.msg_archive_hide, org.telegram.messenger.hd.M0(2131751236, null));
+            org.telegram.ui.Components.x31 c10 = org.telegram.ui.Components.x31.c(1, R.drawable.msg_archive_hide, org.telegram.messenger.id.M0(2131751236, null));
             c10.r = true;
             arrayList.add(c10);
             arrayList.add(org.telegram.ui.Components.x31.C(null));
         }
         if (TextUtils.isEmpty(this.n)) {
-            arrayList.add(org.telegram.ui.Components.x31.u(org.telegram.messenger.hd.M0(2131751235, null)));
+            arrayList.add(org.telegram.ui.Components.x31.u(org.telegram.messenger.id.M0(2131751235, null)));
         }
         ArrayList arrayList2 = this.e.e;
         int size = arrayList2.size();
@@ -70,7 +70,7 @@ public final class qq extends org.telegram.ui.Components.n41 {
             }
         }
         if (TextUtils.isEmpty(this.n) && i7 == 0) {
-            org.telegram.ui.Components.x31 c11 = org.telegram.ui.Components.x31.c(2, R.drawable.msg_channel_create, org.telegram.messenger.hd.M0(2131751233, null));
+            org.telegram.ui.Components.x31 c11 = org.telegram.ui.Components.x31.c(2, R.drawable.msg_channel_create, org.telegram.messenger.id.M0(2131751233, null));
             c11.q = true;
             arrayList.add(c11);
         }
@@ -83,22 +83,22 @@ public final class qq extends org.telegram.ui.Components.n41 {
 
     @Override // org.telegram.ui.Components.n41
     public final CharSequence a0() {
-        return org.telegram.messenger.hd.M0(2131751232, null);
+        return org.telegram.messenger.id.M0(2131751232, null);
     }
 
     @Override // org.telegram.ui.Components.n41
     public final void b0(org.telegram.ui.Components.x31 x31Var, View view) {
         int i7 = x31Var.d;
-        bb1 bb1Var = this.h;
+        cb1 cb1Var = this.h;
         if (i7 == 1) {
-            bb1Var.a(null);
+            cb1Var.a(null);
             finishFragment();
             return;
         }
         if (i7 != 2) {
             if (x31Var.a == 12) {
                 finishFragment();
-                bb1Var.a(getMessagesController().M0(Long.valueOf(-x31Var.x)));
+                cb1Var.a(getMessagesController().M0(Long.valueOf(-x31Var.x)));
                 return;
             }
             return;
@@ -123,8 +123,8 @@ public final class qq extends org.telegram.ui.Components.n41 {
         b10.N();
         b10.B0 = new kg.v1(this, 4);
         this.r = b10;
-        b10.setSearchFieldHint(org.telegram.messenger.hd.M0(2131745837, null));
-        this.r.setContentDescription(org.telegram.messenger.hd.M0(2131745837, null));
+        b10.setSearchFieldHint(org.telegram.messenger.id.M0(2131745839, null));
+        this.r.setContentDescription(org.telegram.messenger.id.M0(2131745839, null));
         this.r.setVisibility(8);
         setHasOwnBackground(true);
         super.createView(context);
@@ -147,9 +147,9 @@ public final class qq extends org.telegram.ui.Components.n41 {
     public final void onResume() {
         super.onResume();
         if (this.s) {
-            db1 db1Var = this.e;
-            db1Var.c = false;
-            db1Var.f.add(new pq(this, 1));
+            eb1 eb1Var = this.e;
+            eb1Var.c = false;
+            eb1Var.f.add(new pq(this, 1));
             this.s = false;
         }
     }

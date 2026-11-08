@@ -25,12 +25,12 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.d41;
 import org.telegram.ui.Components.r70;
 import org.telegram.ui.Components.vy0;
-import org.telegram.ui.Components.ws;
-import org.telegram.ui.Components.ys;
+import org.telegram.ui.Components.xs;
+import org.telegram.ui.Components.zs;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
-public final class g1 extends ys implements org.telegram.ui.ActionBar.a6 {
+public final class g1 extends zs implements org.telegram.ui.ActionBar.a6 {
     public final d1 A2;
     public float B2;
     public float C2;
@@ -113,7 +113,7 @@ public final class g1 extends ys implements org.telegram.ui.ActionBar.a6 {
         updateColors();
     }
 
-    @Override // org.telegram.ui.Components.ys
+    @Override // org.telegram.ui.Components.zs
     public final d41 A(String str) {
         return c6.k(str);
     }
@@ -213,7 +213,7 @@ public final class g1 extends ys implements org.telegram.ui.ActionBar.a6 {
         post(new z0(this, 1));
     }
 
-    @Override // org.telegram.ui.Components.ys, org.telegram.ui.ActionBar.j4
+    @Override // org.telegram.ui.Components.zs, org.telegram.ui.ActionBar.j4
     public final void a(int i7, int i10, int i11) {
         int min;
         Editable text = getText();
@@ -224,15 +224,15 @@ public final class g1 extends ys implements org.telegram.ui.ActionBar.a6 {
         if ((i7 & 256) != 0) {
             h();
         }
-        ws wsVar = this.N1;
-        if (wsVar != null) {
-            wsVar.m();
+        xs xsVar = this.N1;
+        if (xsVar != null) {
+            xsVar.m();
         }
         this.p2 = true;
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.ys, org.telegram.ui.ActionBar.j4
+    @Override // org.telegram.ui.Components.zs, org.telegram.ui.ActionBar.j4
     public final void b(int i7, int i10, int i11) {
         int min;
         Editable text = getText();
@@ -246,15 +246,15 @@ public final class g1 extends ys implements org.telegram.ui.ActionBar.a6 {
         if ((i7 & 256) != 0) {
             h();
         }
-        ws wsVar = this.N1;
-        if (wsVar != null) {
-            wsVar.m();
+        xs xsVar = this.N1;
+        if (xsVar != null) {
+            xsVar.m();
         }
         this.p2 = true;
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.ys, org.telegram.ui.ActionBar.j4
+    @Override // org.telegram.ui.Components.zs, org.telegram.ui.ActionBar.j4
     public final int c(int i7, int i10) {
         int max;
         int min;
@@ -293,13 +293,13 @@ public final class g1 extends ys implements org.telegram.ui.ActionBar.a6 {
         return this.a2;
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ct, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.dt, android.widget.TextView, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         I();
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ct, android.view.View
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.dt, android.view.View
     public final void onDetachedFromWindow() {
         org.telegram.messenger.g0.r(this.H2);
         this.F2 = null;
@@ -318,7 +318,7 @@ public final class g1 extends ys implements org.telegram.ui.ActionBar.a6 {
         super.onDetachedFromWindow();
     }
 
-    @Override // org.telegram.ui.Components.ys, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ct, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.zs, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.dt, android.widget.TextView, android.view.View
     public final void onDraw(Canvas canvas) {
         int i7;
         Layout layout = getLayout();
@@ -403,7 +403,7 @@ public final class g1 extends ys implements org.telegram.ui.ActionBar.a6 {
         return super.onKeyDown(i7, keyEvent);
     }
 
-    @Override // org.telegram.ui.Components.ct, android.widget.TextView
+    @Override // org.telegram.ui.Components.dt, android.widget.TextView
     public final void onSelectionChanged(int i7, int i10) {
         super.onSelectionChanged(i7, i10);
         f1 f1Var = this.Y1;
@@ -412,13 +412,13 @@ public final class g1 extends ys implements org.telegram.ui.ActionBar.a6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ct, android.view.View
+    @Override // org.telegram.ui.Components.dt, android.view.View
     public final void onSizeChanged(int i7, int i10, int i11, int i12) {
         super.onSizeChanged(i7, i10, i11, i12);
         M();
     }
 
-    @Override // org.telegram.ui.Components.ys, android.widget.EditText, android.widget.TextView
+    @Override // org.telegram.ui.Components.zs, android.widget.EditText, android.widget.TextView
     public final boolean onTextContextMenuItem(int i7) {
         f1 f1Var;
         f1 f1Var2;
@@ -638,7 +638,7 @@ public final class g1 extends ys implements org.telegram.ui.ActionBar.a6 {
         this.e2 = z9;
     }
 
-    @Override // org.telegram.ui.Components.ct, android.widget.TextView
+    @Override // org.telegram.ui.Components.dt, android.widget.TextView
     public void setTextColor(int i7) {
         super.setTextColor(i7);
         if (this.y2) {

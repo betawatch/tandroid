@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class rb extends rg.b {
     public int d = -1;
@@ -63,29 +63,29 @@ public final class rb extends rg.b {
         }
         if (i12 == 0) {
             w41 w41Var = (w41) view;
-            w41Var.a(Integer.toString(tbVar.d.level), 0, null, org.telegram.messenger.hd.M0(2131753159, null));
+            w41Var.a(Integer.toString(tbVar.d.level), 0, null, org.telegram.messenger.id.M0(2131753159, null));
             TL_stats.TL_statsPercentValue tL_statsPercentValue = tbVar.d.premium_audience;
             if (tL_statsPercentValue != null) {
                 double d = tL_statsPercentValue.total;
                 if (d != 0.0d) {
-                    w41Var.a("≈" + ((int) tbVar.d.premium_audience.part), 1, String.format(Locale.US, "%.1f", Float.valueOf((((float) tL_statsPercentValue.part) / ((float) d)) * 100.0f)).concat("%"), org.telegram.messenger.hd.M0(org.telegram.messenger.t3.V(chat) ? 2131746928 : 2131747038, null));
-                    w41Var.a(String.valueOf(tbVar.d.boosts), 2, null, org.telegram.messenger.hd.M0(2131753162, null));
+                    w41Var.a("≈" + ((int) tbVar.d.premium_audience.part), 1, String.format(Locale.US, "%.1f", Float.valueOf((((float) tL_statsPercentValue.part) / ((float) d)) * 100.0f)).concat("%"), org.telegram.messenger.id.M0(org.telegram.messenger.t3.V(chat) ? 2131746930 : 2131747040, null));
+                    w41Var.a(String.valueOf(tbVar.d.boosts), 2, null, org.telegram.messenger.id.M0(2131753162, null));
                     TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = tbVar.d;
-                    w41Var.a(String.valueOf(Math.max(0, tL_premium_boostsStatus.next_level_boosts - tL_premium_boostsStatus.boosts)), 3, null, org.telegram.messenger.hd.M0(2131753157, null));
+                    w41Var.a(String.valueOf(Math.max(0, tL_premium_boostsStatus.next_level_boosts - tL_premium_boostsStatus.boosts)), 3, null, org.telegram.messenger.id.M0(2131753157, null));
                     return;
                 }
             }
-            w41Var.a("≈0", 1, "0%", org.telegram.messenger.hd.M0(org.telegram.messenger.t3.V(chat) ? 2131746928 : 2131747038, null));
-            w41Var.a(String.valueOf(tbVar.d.boosts), 2, null, org.telegram.messenger.hd.M0(2131753162, null));
+            w41Var.a("≈0", 1, "0%", org.telegram.messenger.id.M0(org.telegram.messenger.t3.V(chat) ? 2131746930 : 2131747040, null));
+            w41Var.a(String.valueOf(tbVar.d.boosts), 2, null, org.telegram.messenger.id.M0(2131753162, null));
             TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus2 = tbVar.d;
-            w41Var.a(String.valueOf(Math.max(0, tL_premium_boostsStatus2.next_level_boosts - tL_premium_boostsStatus2.boosts)), 3, null, org.telegram.messenger.hd.M0(2131753157, null));
+            w41Var.a(String.valueOf(Math.max(0, tL_premium_boostsStatus2.next_level_boosts - tL_premium_boostsStatus2.boosts)), 3, null, org.telegram.messenger.id.M0(2131753157, null));
             return;
         }
         if (i12 == 5) {
             TL_stories.Boost boost = ((sb) arrayList.get(i7)).d;
             TLRPC.User a22 = org.telegram.messenger.qp.s1(i11).a2(Long.valueOf(boost.user_id));
             bh.b bVar = (bh.b) view;
-            bVar.d(a22, org.telegram.messenger.g5.p(a22), boost.multiplier > 1 ? org.telegram.messenger.hd.a0("BoostsExpireOn", null, 2131753161, org.telegram.messenger.hd.r(boost.expires, false)) : org.telegram.messenger.hd.a0("BoostExpireOn", null, 2131753661, org.telegram.messenger.hd.r(boost.expires, false)), !((sb) arrayList.get(i7)).f);
+            bVar.d(a22, org.telegram.messenger.g5.p(a22), boost.multiplier > 1 ? org.telegram.messenger.id.a0("BoostsExpireOn", null, 2131753161, org.telegram.messenger.id.r(boost.expires, false)) : org.telegram.messenger.id.a0("BoostExpireOn", null, 2131753661, org.telegram.messenger.id.r(boost.expires, false)), !((sb) arrayList.get(i7)).f);
             bVar.setStatus(boost);
             bVar.setAvatarPadding(5);
             return;
@@ -97,10 +97,10 @@ public final class rb extends rg.b {
         if (i12 == 9) {
             org.telegram.ui.Cells.x4 x4Var = (org.telegram.ui.Cells.x4) view;
             if (tbVar.D == 0) {
-                x4Var.b(R.drawable.arrow_more, 5, org.telegram.messenger.hd.G(tbVar.s, "BoostingShowMoreBoosts", new Object[0]), false);
+                x4Var.b(R.drawable.arrow_more, 5, org.telegram.messenger.id.G(tbVar.s, "BoostingShowMoreBoosts", new Object[0]), false);
                 return;
             } else {
-                x4Var.b(R.drawable.arrow_more, 5, org.telegram.messenger.hd.G(tbVar.x, "BoostingShowMoreGifts", new Object[0]), false);
+                x4Var.b(R.drawable.arrow_more, 5, org.telegram.messenger.id.G(tbVar.x, "BoostingShowMoreGifts", new Object[0]), false);
                 return;
             }
         }
@@ -114,10 +114,10 @@ public final class rb extends rg.b {
             boolean z9 = sbVar.f;
             bh.c cVar2 = (bh.c) view;
             if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
-                cVar2.d(prepaidGiveaway, org.telegram.messenger.hd.G(prepaidGiveaway.quantity, "BoostingTelegramPremiumCountPlural", new Object[0]), org.telegram.messenger.hd.G(prepaidGiveaway.quantity, "BoostingSubscriptionsCountPlural", org.telegram.messenger.hd.G(((TL_stories.TL_prepaidGiveaway) prepaidGiveaway).months, "PrepaidGiveawayMonths", new Object[0])), !z9);
+                cVar2.d(prepaidGiveaway, org.telegram.messenger.id.G(prepaidGiveaway.quantity, "BoostingTelegramPremiumCountPlural", new Object[0]), org.telegram.messenger.id.G(prepaidGiveaway.quantity, "BoostingSubscriptionsCountPlural", org.telegram.messenger.id.G(((TL_stories.TL_prepaidGiveaway) prepaidGiveaway).months, "PrepaidGiveawayMonths", new Object[0])), !z9);
             } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway) {
                 TL_stories.TL_prepaidStarsGiveaway tL_prepaidStarsGiveaway = (TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway;
-                cVar2.d(prepaidGiveaway, org.telegram.messenger.hd.H(',', "BoostingStarsCountPlural", (int) tL_prepaidStarsGiveaway.stars), org.telegram.messenger.hd.G(tL_prepaidStarsGiveaway.quantity, "AmongWinners", new Object[0]), !z9);
+                cVar2.d(prepaidGiveaway, org.telegram.messenger.id.H(',', "BoostingStarsCountPlural", (int) tL_prepaidStarsGiveaway.stars), org.telegram.messenger.id.G(tL_prepaidStarsGiveaway.quantity, "AmongWinners", new Object[0]), !z9);
             }
             cVar2.setImage(prepaidGiveaway);
             cVar2.setAvatarPadding(5);
@@ -132,9 +132,9 @@ public final class rb extends rg.b {
             this.d = i14;
             this.e = tbVar.N;
             tbVar.f.f();
-            tbVar.f.a(0, org.telegram.messenger.hd.G(tbVar.O, "BoostingBoostsCount", new Object[0]), null);
+            tbVar.f.a(0, org.telegram.messenger.id.G(tbVar.O, "BoostingBoostsCount", new Object[0]), null);
             if (org.telegram.messenger.qp.s1(i11).p4 && (i10 = tbVar.N) > 0 && i10 != tbVar.O) {
-                tbVar.f.a(1, org.telegram.messenger.hd.G(i10, "BoostingGiftsCount", new Object[0]), null);
+                tbVar.f.a(1, org.telegram.messenger.id.G(i10, "BoostingGiftsCount", new Object[0]), null);
             }
             tbVar.f.setInitialTabId(tbVar.D);
             tbVar.f.c();
@@ -193,7 +193,7 @@ public final class rb extends rg.b {
             case 8:
                 di.a4 a4Var = new di.a4(tbVar.getContext(), 8);
                 TextView textView = new TextView(tbVar.getContext());
-                textView.setText(org.telegram.messenger.hd.M0(org.telegram.messenger.t3.V(tbVar.I) ? 2131748233 : 2131748234, null));
+                textView.setText(org.telegram.messenger.id.M0(org.telegram.messenger.t3.V(tbVar.I) ? 2131748235 : 2131748236, null));
                 textView.setTextSize(1, 14.0f);
                 org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.y6, null);
                 textView.setGravity(17);
@@ -207,7 +207,7 @@ public final class rb extends rg.b {
                 break;
             case 10:
                 org.telegram.ui.Cells.m8 m8Var = new org.telegram.ui.Cells.m8(tbVar.getContext());
-                m8Var.o(R.drawable.msg_gift_premium, org.telegram.messenger.hd.a0("BoostingGetBoostsViaGifts", null, 2131753512, new Object[0]), false);
+                m8Var.o(R.drawable.msg_gift_premium, org.telegram.messenger.id.a0("BoostingGetBoostsViaGifts", null, 2131753512, new Object[0]), false);
                 m8Var.s = 64;
                 int i12 = org.telegram.ui.ActionBar.k6.q6;
                 m8Var.g(i12, i12);

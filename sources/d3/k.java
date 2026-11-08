@@ -7,7 +7,7 @@ import android.view.Surface;
 import e2.x1;
 import h2.m0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class k implements Handler.Callback {
     public final Handler a;
@@ -17,7 +17,7 @@ public final class k implements Handler.Callback {
         this.b = lVar;
         Handler q10 = m0.q(this);
         this.a = q10;
-        lVar2.h(this, q10);
+        lVar2.i(this, q10);
     }
 
     public final void a(long j3) {

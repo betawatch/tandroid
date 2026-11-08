@@ -15,7 +15,7 @@ import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.up0;
 import org.telegram.ui.l60;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t implements c20 {
     public final /* synthetic */ int a;
@@ -32,109 +32,109 @@ public final /* synthetic */ class t implements c20 {
     public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                ((k0) this.b).close();
-                ((g8) this.c).a((String) obj);
+                ((j0) this.b).close();
+                ((f8) this.c).a((String) obj);
                 break;
             case 1:
-                n0 n0Var = (n0) this.b;
-                n0Var.q.put((TL_wallet.walletTransaction) obj, (bi.f4) this.c);
+                m0 m0Var = (m0) this.b;
+                m0Var.q.put((TL_wallet.walletTransaction) obj, (bi.f4) this.c);
                 break;
             case 2:
-                i0 i0Var = (i0) this.b;
-                h8 h8Var = (h8) this.c;
+                h0 h0Var = (h0) this.b;
+                g8 g8Var = (g8) this.c;
                 String str = (String) obj;
                 if (str != null) {
-                    i0Var.close();
-                    n0.j("prepare disable backup, failed to save secret phrase to local storage: ".concat(str));
-                    h8Var.a(null, str);
+                    h0Var.close();
+                    m0.j("prepare disable backup, failed to save secret phrase to local storage: ".concat(str));
+                    g8Var.a(null, str);
                     break;
                 } else {
-                    n0.H("prepare disable backup: done!");
-                    h8Var.a(i0Var, null);
+                    m0.H("prepare disable backup: done!");
+                    g8Var.a(h0Var, null);
                     break;
                 }
             case 3:
-                ((k0) this.b).close();
+                ((j0) this.b).close();
                 ((t) this.c).a((String) obj);
                 break;
             case 4:
-                org.telegram.messenger.g0.h3(new g((a2) this.b, (k) this.c, (String) obj, 2));
+                org.telegram.messenger.g0.h3(new g((z1) this.b, (k) this.c, (String) obj, 2));
                 break;
             case 5:
-                ((f2) this.b).h = false;
+                ((e2) this.b).h = false;
                 ((l60) this.c).a(null, (String) obj);
                 break;
             case 6:
-                ((k0) this.b).close();
+                ((j0) this.b).close();
                 ((m) this.c).a((String) obj);
                 break;
             case 7:
-                ((k0) this.b).close();
+                ((j0) this.b).close();
                 ((m) this.c).a((String) obj);
                 break;
             case 8:
-                y5 y5Var = (y5) this.b;
-                n0 n0Var2 = (n0) this.c;
+                x5 x5Var = (x5) this.b;
+                m0 m0Var2 = (m0) this.c;
                 String str2 = (String) obj;
-                y5Var.C0.setLoading(false);
+                x5Var.C0.setLoading(false);
                 if ("NO_LOCAL_BACKUP".equalsIgnoreCase(str2)) {
-                    f8 f8Var = new f8();
-                    f8Var.s = n0Var2.y();
-                    y5Var.presentFragment(f8Var);
+                    e8 e8Var = new e8();
+                    e8Var.s = m0Var2.y();
+                    x5Var.presentFragment(e8Var);
                     break;
                 } else if (str2 != null) {
-                    hc.a0(y5Var).e0(str2, false);
+                    hc.a0(x5Var).e0(str2, false);
                     break;
                 } else {
-                    y5Var.presentFragment(new x9());
+                    x5Var.presentFragment(new w9());
                     break;
                 }
             case 9:
-                f8 f8Var2 = (f8) this.b;
-                n0 n0Var3 = (n0) this.c;
+                e8 e8Var2 = (e8) this.b;
+                m0 m0Var3 = (m0) this.c;
                 String str3 = (String) obj;
-                f8Var2.d.setLoading(false);
+                e8Var2.d.setLoading(false);
                 if (str3 != null) {
-                    hc.a0(f8Var2).e0(str3, false);
+                    hc.a0(e8Var2).e0(str3, false);
                     break;
                 } else {
-                    f8Var2.finishFragment();
-                    n0Var3.L();
+                    e8Var2.finishFragment();
+                    m0Var3.L();
                     break;
                 }
             case 10:
-                o8 o8Var = (o8) this.b;
+                n8 n8Var = (n8) this.b;
                 org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) this.c;
                 String str4 = (String) obj;
                 if (str4 != null) {
-                    hc.a0(o8Var).e0(str4, false);
+                    hc.a0(n8Var).e0(str4, false);
                     break;
                 } else {
-                    o8Var.finishFragment();
-                    if (f2Var instanceof y5) {
-                        org.telegram.messenger.g0.i3(new k3(2, f2Var), 300L);
+                    n8Var.finishFragment();
+                    if (f2Var instanceof x5) {
+                        org.telegram.messenger.g0.i3(new j3(2, f2Var), 300L);
                         break;
                     }
                 }
                 break;
             case 11:
-                x9 x9Var = (x9) this.b;
+                w9 w9Var = (w9) this.b;
                 String str5 = (String) obj;
                 ((c20) this.c).a(str5);
-                if (str5 == null && !x9Var.r) {
-                    if (x9Var.getParentLayout() != null) {
-                        for (org.telegram.ui.ActionBar.f2 f2Var2 : x9Var.getParentLayout().getFragmentStack()) {
-                            if (f2Var2 instanceof y5) {
-                                ((y5) f2Var2).O0();
+                if (str5 == null && !w9Var.r) {
+                    if (w9Var.getParentLayout() != null) {
+                        for (org.telegram.ui.ActionBar.f2 f2Var2 : w9Var.getParentLayout().getFragmentStack()) {
+                            if (f2Var2 instanceof x5) {
+                                ((x5) f2Var2).O0();
                             }
                         }
                     }
-                    x9Var.finishFragment();
+                    w9Var.finishFragment();
                     break;
                 }
                 break;
             case 12:
-                ia.d0((ia) this.b, (TL_wallet.tonConnectSession) this.c, (c20) obj);
+                ha.d0((ha) this.b, (TL_wallet.tonConnectSession) this.c, (c20) obj);
                 break;
             case 13:
                 org.telegram.ui.web.o1 o1Var = (org.telegram.ui.web.o1) this.b;
@@ -157,23 +157,23 @@ public final /* synthetic */ class t implements c20 {
                 org.telegram.messenger.g0.h3(new r31(w1Var, (org.telegram.ui.web.v1) this.c, (Bitmap) obj, 9));
                 break;
             case 15:
-                zh.h1 h1Var = (zh.h1) this.b;
+                zh.g1 g1Var = (zh.g1) this.b;
                 c20 c20Var2 = (c20) this.c;
                 Boolean bool = (Boolean) obj;
-                h1Var.getClass();
+                g1Var.getClass();
                 if (c20Var2 != null) {
                     c20Var2.a(bool);
                 }
                 if (bool.booleanValue()) {
-                    h1Var.N0 = true;
+                    g1Var.N0 = true;
                 }
-                h1Var.dismiss();
+                g1Var.dismiss();
                 break;
             case 16:
                 bi.v9 v9Var = (bi.v9) this.b;
-                bi.i0 i0Var2 = (bi.i0) this.c;
+                bi.i0 i0Var = (bi.i0) this.c;
                 if (((Object[]) obj)[1] == v9Var) {
-                    i0Var2.run();
+                    i0Var.run();
                     break;
                 }
                 break;
@@ -195,24 +195,24 @@ public final /* synthetic */ class t implements c20 {
                 up0Var.f(true);
                 break;
             default:
-                zh.b4 b4Var = (zh.b4) this.b;
+                zh.a4 a4Var = (zh.a4) this.b;
                 TLRPC.User user = (TLRPC.User) this.c;
-                long j3 = b4Var.R1;
-                Runnable runnable = b4Var.Y1;
+                long j3 = a4Var.R1;
+                Runnable runnable = a4Var.Y1;
                 if (runnable != null) {
                     runnable.run();
                 }
-                b4Var.dismiss();
+                a4Var.dismiss();
                 qs.f(p10.s0).k(qs.S2, new Object[0]);
-                org.telegram.messenger.g0.i3(new zh.s3(0, user), 250L);
-                qp.s1(b4Var.Q1).e7.edit().putBoolean("show_gift_for_" + j3, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j3, true).apply();
+                org.telegram.messenger.g0.i3(new zh.r3(0, user), 250L);
+                qp.s1(a4Var.Q1).e7.edit().putBoolean("show_gift_for_" + j3, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j3, true).apply();
                 break;
         }
     }
 
-    public /* synthetic */ t(n0 n0Var, i0 i0Var, h8 h8Var) {
+    public /* synthetic */ t(m0 m0Var, h0 h0Var, g8 g8Var) {
         this.a = 2;
-        this.b = i0Var;
-        this.c = h8Var;
+        this.b = h0Var;
+        this.c = g8Var;
     }
 }

@@ -22,7 +22,7 @@ import org.telegram.messenger.w7;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class r3 {
     public static final int[] h = {k6.ra, k6.ob, k6.Ci, k6.Be, k6.Ce, k6.De, k6.Ee, k6.Fe};
@@ -133,11 +133,11 @@ public final class r3 {
             }
             return;
         }
-        org.telegram.messenger.p1 p1Var = new org.telegram.messenger.p1(p3Var, 2);
+        org.telegram.messenger.j1 j1Var = new org.telegram.messenger.j1(p3Var, 2);
         if (f10.c == 0) {
-            p1Var.onComplete(null);
+            j1Var.onComplete(null);
         } else {
-            org.telegram.messenger.d4.s.c(new org.telegram.messenger.b4(25, f10.g(j3), p1Var));
+            org.telegram.messenger.d4.s.c(new org.telegram.messenger.b4(25, f10.g(j3), j1Var));
         }
     }
 

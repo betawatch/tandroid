@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class cv0 extends yb {
     /* JADX WARN: Removed duplicated region for block: B:109:? A[RETURN, SYNTHETIC] */
@@ -74,21 +74,21 @@ public final class cv0 extends yb {
                     case 0:
                         if (stickerSet2 != null) {
                             if (stickerSet2.masks) {
-                                this.b.setText(org.telegram.messenger.hd.M0(2131748671, null));
-                                this.c.setText(org.telegram.messenger.hd.a0("MasksRemovedInfo", null, 2131748670, stickerSet2.title));
+                                this.b.setText(org.telegram.messenger.id.M0(2131748673, null));
+                                this.c.setText(org.telegram.messenger.id.a0("MasksRemovedInfo", null, 2131748672, stickerSet2.title));
                                 return;
                             } else {
                                 if (!stickerSet2.emojis) {
-                                    this.b.setText(org.telegram.messenger.hd.M0(2131744854, null));
-                                    this.c.setText(org.telegram.messenger.hd.a0("StickersRemovedInfo", null, 2131744853, stickerSet2.title));
+                                    this.b.setText(org.telegram.messenger.id.M0(2131744856, null));
+                                    this.c.setText(org.telegram.messenger.id.a0("StickersRemovedInfo", null, 2131744855, stickerSet2.title));
                                     return;
                                 }
-                                this.b.setText(org.telegram.messenger.hd.M0(2131751172, null));
+                                this.b.setText(org.telegram.messenger.id.M0(2131751172, null));
                                 if (i7 > 1) {
-                                    this.c.setText(org.telegram.messenger.hd.G(i7, "EmojiRemovedMultipleInfo", new Object[0]));
+                                    this.c.setText(org.telegram.messenger.id.G(i7, "EmojiRemovedMultipleInfo", new Object[0]));
                                     return;
                                 } else {
-                                    this.c.setText(org.telegram.messenger.hd.a0("EmojiRemovedInfo", null, 2131751171, stickerSet2.title));
+                                    this.c.setText(org.telegram.messenger.id.a0("EmojiRemovedInfo", null, 2131751171, stickerSet2.title));
                                     return;
                                 }
                             }
@@ -97,16 +97,16 @@ public final class cv0 extends yb {
                     case 1:
                         if (stickerSet2 != null) {
                             if (stickerSet2.masks) {
-                                this.b.setText(org.telegram.messenger.hd.M0(2131748677, null));
-                                this.c.setText(org.telegram.messenger.hd.a0("MasksArchivedInfo", null, 2131748676, stickerSet2.title));
+                                this.b.setText(org.telegram.messenger.id.M0(2131748679, null));
+                                this.c.setText(org.telegram.messenger.id.a0("MasksArchivedInfo", null, 2131748678, stickerSet2.title));
                                 return;
                             } else if (stickerSet2.emojis) {
-                                this.b.setText(org.telegram.messenger.hd.M0(2131751188, null));
-                                this.c.setText(org.telegram.messenger.hd.a0("EmojiArchivedInfo", null, 2131751187, stickerSet2.title));
+                                this.b.setText(org.telegram.messenger.id.M0(2131751188, null));
+                                this.c.setText(org.telegram.messenger.id.a0("EmojiArchivedInfo", null, 2131751187, stickerSet2.title));
                                 return;
                             } else {
-                                this.b.setText(org.telegram.messenger.hd.M0(2131744869, null));
-                                this.c.setText(org.telegram.messenger.hd.a0("StickersArchivedInfo", null, 2131744868, stickerSet2.title));
+                                this.b.setText(org.telegram.messenger.id.M0(2131744871, null));
+                                this.c.setText(org.telegram.messenger.id.a0("StickersArchivedInfo", null, 2131744870, stickerSet2.title));
                                 return;
                             }
                         }
@@ -114,57 +114,57 @@ public final class cv0 extends yb {
                     case 2:
                         if (stickerSet2 != null) {
                             if (stickerSet2.masks) {
-                                this.b.setText(org.telegram.messenger.hd.M0(2131754403, null));
-                                this.c.setText(org.telegram.messenger.hd.a0("AddMasksInstalledInfo", null, 2131754402, stickerSet2.title));
+                                this.b.setText(org.telegram.messenger.id.M0(2131754403, null));
+                                this.c.setText(org.telegram.messenger.id.a0("AddMasksInstalledInfo", null, 2131754402, stickerSet2.title));
                                 return;
                             } else {
                                 if (!stickerSet2.emojis) {
-                                    this.b.setText(org.telegram.messenger.hd.M0(2131754387, null));
-                                    this.c.setText(org.telegram.messenger.hd.a0("AddStickersInstalledInfo", null, 2131754386, stickerSet2.title));
+                                    this.b.setText(org.telegram.messenger.id.M0(2131754387, null));
+                                    this.c.setText(org.telegram.messenger.id.a0("AddStickersInstalledInfo", null, 2131754386, stickerSet2.title));
                                     return;
                                 }
-                                this.b.setText(org.telegram.messenger.hd.M0(2131754440, null));
+                                this.b.setText(org.telegram.messenger.id.M0(2131754440, null));
                                 if (i7 > 1) {
-                                    this.c.setText(org.telegram.messenger.hd.G(i7, "AddEmojiMultipleInstalledInfo", new Object[0]));
+                                    this.c.setText(org.telegram.messenger.id.G(i7, "AddEmojiMultipleInstalledInfo", new Object[0]));
                                     return;
                                 } else {
-                                    this.c.setText(org.telegram.messenger.hd.a0("AddEmojiInstalledInfo", null, 2131754439, stickerSet2.title));
+                                    this.c.setText(org.telegram.messenger.id.a0("AddEmojiInstalledInfo", null, 2131754439, stickerSet2.title));
                                     return;
                                 }
                             }
                         }
                         return;
                     case 3:
-                        this.b.setText(org.telegram.messenger.hd.M0(2131746281, null));
+                        this.b.setText(org.telegram.messenger.id.M0(2131746283, null));
                         this.c.setVisibility(8);
                         return;
                     case 4:
-                        this.b.setText(org.telegram.messenger.hd.M0(2131746282, null));
+                        this.b.setText(org.telegram.messenger.id.M0(2131746284, null));
                         this.c.setVisibility(8);
                         return;
                     case 5:
-                        this.b.setText(org.telegram.messenger.hd.M0(2131754354, null));
+                        this.b.setText(org.telegram.messenger.id.M0(2131754354, null));
                         this.c.setVisibility(8);
                         return;
                     case 6:
                         if (org.telegram.messenger.p10.i(org.telegram.messenger.p10.s0).q() || org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).D3()) {
-                            this.b.setText(org.telegram.messenger.hd.a0("LimitReachedFavoriteStickers", null, 2131748965, Integer.valueOf(org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).I4)));
-                            this.c.setText(org.telegram.messenger.hd.a0("LimitReachedFavoriteStickersSubtitlePremium", null, 2131748963, new Object[0]));
+                            this.b.setText(org.telegram.messenger.id.a0("LimitReachedFavoriteStickers", null, 2131748967, Integer.valueOf(org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).I4)));
+                            this.c.setText(org.telegram.messenger.id.a0("LimitReachedFavoriteStickersSubtitlePremium", null, 2131748965, new Object[0]));
                             return;
                         } else {
-                            this.b.setText(org.telegram.messenger.hd.a0("LimitReachedFavoriteStickers", null, 2131748965, Integer.valueOf(org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).H4)));
-                            this.c.setText(org.telegram.messenger.g0.x2(org.telegram.messenger.hd.a0("LimitReachedFavoriteStickersSubtitle", null, 2131748964, Integer.valueOf(org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).I4)), new r10(context, 2)));
+                            this.b.setText(org.telegram.messenger.id.a0("LimitReachedFavoriteStickers", null, 2131748967, Integer.valueOf(org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).H4)));
+                            this.c.setText(org.telegram.messenger.g0.x2(org.telegram.messenger.id.a0("LimitReachedFavoriteStickersSubtitle", null, 2131748966, Integer.valueOf(org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).I4)), new r10(context, 2)));
                             return;
                         }
                     case 7:
                         boolean q10 = org.telegram.messenger.p10.i(org.telegram.messenger.p10.s0).q();
                         if (org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).D3() || q10) {
-                            this.b.setText(org.telegram.messenger.hd.a0(null, null, 2131748968, Integer.valueOf(q10 ? org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).G4 : org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).F4)));
-                            this.c.setText(org.telegram.messenger.hd.M0(2131748966, null));
+                            this.b.setText(org.telegram.messenger.id.a0(null, null, 2131748970, Integer.valueOf(q10 ? org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).G4 : org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).F4)));
+                            this.c.setText(org.telegram.messenger.id.M0(2131748968, null));
                             return;
                         } else {
-                            this.b.setText(org.telegram.messenger.hd.a0(null, null, 2131748968, Integer.valueOf(org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).F4)));
-                            this.c.setText(org.telegram.messenger.g0.x2(org.telegram.messenger.hd.a0(null, null, 2131748967, Integer.valueOf(org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).G4)), new r10(context, 3)));
+                            this.b.setText(org.telegram.messenger.id.a0(null, null, 2131748970, Integer.valueOf(org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).F4)));
+                            this.c.setText(org.telegram.messenger.g0.x2(org.telegram.messenger.id.a0(null, null, 2131748969, Integer.valueOf(org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).G4)), new r10(context, 3)));
                             return;
                         }
                     default:

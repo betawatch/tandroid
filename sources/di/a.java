@@ -14,11 +14,11 @@ import android.widget.ImageView;
 import c8.ha;
 import c8.ka;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class a extends FrameLayout {
     public final ImageView a;
@@ -105,7 +105,7 @@ public final class a extends FrameLayout {
     }
 
     public void setCount(int i7) {
-        this.b.t(i7 <= 0 ? "" : hd.E(i7, ','), true, true);
+        this.b.t(i7 <= 0 ? "" : id.E(i7, ','), true, true);
         if (this.f != i7) {
             ValueAnimator valueAnimator = this.n;
             if (valueAnimator != null) {

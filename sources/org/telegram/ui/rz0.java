@@ -25,7 +25,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class rz0 extends Dialog {
     public TextView D;
@@ -279,12 +279,12 @@ public final class rz0 extends Dialog {
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getContext(), this.L);
-        String M0 = org.telegram.messenger.hd.M0(this.S ? 2131743593 : 2131743518, null);
+        String M0 = org.telegram.messenger.id.M0(this.S ? 2131743595 : 2131743520, null);
         org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder.a;
         u1Var2.R = M0;
-        u1Var2.T = org.telegram.messenger.hd.M0(this.S ? 2131743594 : 2131743519, null);
-        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751771, null), new oz0(this, 1));
-        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131751599, null), new oz0(this, 2));
+        u1Var2.T = org.telegram.messenger.id.M0(this.S ? 2131743596 : 2131743521, null);
+        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751771, null), new oz0(this, 1));
+        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131751599, null), new oz0(this, 2));
         this.c0 = u1Var2;
         u1Var2.show();
         TextView textView = (TextView) this.c0.d(-2);
@@ -326,7 +326,7 @@ public final class rz0 extends Dialog {
             if (q1Var != null) {
                 q1Var.setVisibility(4);
             }
-            org.telegram.messenger.g0.l2(new org.telegram.ui.Components.ex(24, this, q1Var), 14.0f);
+            org.telegram.messenger.g0.l2(new org.telegram.ui.Components.fx(24, this, q1Var), 14.0f);
             this.W = true;
             c(true, null);
             ie ieVar = this.X;

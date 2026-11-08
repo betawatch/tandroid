@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.rt;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class j0 {
     public static final q0 a = new q0();
@@ -126,6 +126,6 @@ public abstract class j0 {
         kotlin.jvm.internal.j.c(a10, "null cannot be cast to non-null type java.lang.Class<T of kotlin.jvm.JvmClassMappingKt.<get-java>>");
         arrayList.add(new y1.c(a10));
         y1.c[] cVarArr = (y1.c[]) arrayList.toArray(new y1.c[0]);
-        return (m0) new android.support.v4.media.session.a0(u0Var.f(), new qt((y1.c[]) Arrays.copyOf(cVarArr, cVarArr.length)), u0Var instanceof i ? ((i) u0Var).d() : y1.a.b).j(m0.class, "androidx.lifecycle.internal.SavedStateHandlesVM");
+        return (m0) new android.support.v4.media.session.a0(u0Var.f(), new rt((y1.c[]) Arrays.copyOf(cVarArr, cVarArr.length)), u0Var instanceof i ? ((i) u0Var).d() : y1.a.b).j(m0.class, "androidx.lifecycle.internal.SavedStateHandlesVM");
     }
 }

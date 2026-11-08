@@ -47,7 +47,7 @@ import org.telegram.ui.hy0;
 import org.telegram.ui.pa0;
 import org.telegram.ui.tg;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a2 implements ri, org.telegram.ui.ActionBar.r1, h2.o, NativeInstance.PayloadCallback, y10, p4.l0, h2.j, w5.b {
     public final /* synthetic */ int a;
@@ -87,7 +87,7 @@ public final /* synthetic */ class a2 implements ri, org.telegram.ui.ActionBar.r
             h2.a.m("MediaSessionStub", "Session operation failed", e);
             m1Var = new p4.m1(!(e.getCause() instanceof UnsupportedOperationException) ? -6 : -1);
         }
-        p4.c1.R0(d0Var, vVar, this.b, m1Var);
+        p4.c1.r1(d0Var, vVar, this.b, m1Var);
     }
 
     @Override // org.telegram.messenger.ri
@@ -334,18 +334,8 @@ public final /* synthetic */ class a2 implements ri, org.telegram.ui.ActionBar.r
         return null;
     }
 
-    @Override // h2.o
-    public void invoke(Object obj) {
-        e2.b1 b1Var = (e2.b1) this.c;
-        e2.b1 b1Var2 = (e2.b1) this.d;
-        e2.a1 a1Var = (e2.a1) obj;
-        int i7 = this.b;
-        a1Var.i(i7);
-        a1Var.s(b1Var, b1Var2, i7);
-    }
-
     @Override // org.telegram.messenger.y10
-    public void k(Object obj, TLRPC.Document document, Boolean bool) {
+    public void i(Object obj, TLRPC.Document document, Boolean bool) {
         Context context = (Context) this.c;
         TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.d;
         int i7 = this.b;
@@ -360,6 +350,16 @@ public final /* synthetic */ class a2 implements ri, org.telegram.ui.ActionBar.r
             u1Var.r(350L);
         } catch (Exception unused) {
         }
+    }
+
+    @Override // h2.o
+    public void invoke(Object obj) {
+        e2.b1 b1Var = (e2.b1) this.c;
+        e2.b1 b1Var2 = (e2.b1) this.d;
+        e2.a1 a1Var = (e2.a1) obj;
+        int i7 = this.b;
+        a1Var.i(i7);
+        a1Var.s(b1Var, b1Var2, i7);
     }
 
     @Override // org.telegram.messenger.voip.NativeInstance.PayloadCallback

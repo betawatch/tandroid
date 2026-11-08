@@ -4,7 +4,7 @@ import android.util.SparseArray;
 import java.util.HashMap;
 import org.telegram.SQLite.SQLiteCursor;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class dr implements Runnable {
     public final /* synthetic */ int a;
@@ -179,7 +179,7 @@ public final /* synthetic */ class dr implements Runnable {
                                     queryFinalized3.dispose();
                                     g5 contactsController = yrVar.getContactsController();
                                     contactsController.getClass();
-                                    Utilities.e.c(new y4(0, contactsController, sparseArray));
+                                    Utilities.e.c(new x4(0, contactsController, sparseArray));
                                     return;
                                 }
                                 i13 = 6;
@@ -234,7 +234,7 @@ public final /* synthetic */ class dr implements Runnable {
                 queryFinalized3.dispose();
                 g5 contactsController2 = yrVar.getContactsController();
                 contactsController2.getClass();
-                Utilities.e.c(new y4(0, contactsController2, sparseArray));
+                Utilities.e.c(new x4(0, contactsController2, sparseArray));
                 return;
             default:
                 yr yrVar2 = this.b;
@@ -242,7 +242,7 @@ public final /* synthetic */ class dr implements Runnable {
                 yrVar2.p(true);
                 yrVar2.V0(1);
                 if (z10) {
-                    Utilities.d.c(new qq(yrVar2, 28));
+                    Utilities.d.c(new rq(yrVar2, 29));
                     return;
                 }
                 return;

@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.ui;
 import org.telegram.messenger.yr;
@@ -16,7 +16,7 @@ import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class r1 extends oj0 {
     public String e;
@@ -212,7 +212,7 @@ public final class r1 extends oj0 {
             k2 k2Var = t1Var.r;
             int i10 = k2.y1;
             ?? j8Var = new org.telegram.ui.Cells.j8(context, false, false, k2Var.I0, false);
-            j8Var.a(0, hd.M0(2131750835, null));
+            j8Var.a(0, id.M0(2131750835, null));
             v4.o0 o0Var = new v4.o0(-1, -2);
             ((ViewGroup.MarginLayoutParams) o0Var).topMargin = org.telegram.messenger.g0.L(2.5f);
             ((ViewGroup.MarginLayoutParams) o0Var).bottomMargin = org.telegram.messenger.g0.L(5.5f);

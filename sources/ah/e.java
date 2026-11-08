@@ -11,7 +11,7 @@ import c8.ha;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.a6;
 import org.telegram.ui.ActionBar.f6;
@@ -19,7 +19,7 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.ActionBar.y1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout implements a6 {
     public int a;
@@ -37,10 +37,10 @@ public class e extends FrameLayout implements a6 {
         TextView textView = new TextView(context);
         this.d = textView;
         org.telegram.messenger.camera.q.m(textView, 1, 20.0f);
-        textView.setGravity(hd.a0 ? 5 : 3);
+        textView.setGravity(id.a0 ? 5 : 3);
         int i7 = k6.j5;
         r6.V(textView, i7, f6Var);
-        boolean z9 = hd.a0;
+        boolean z9 = id.a0;
         addView(textView, ha.d(-1, -2.0f, 23, z9 ? 16.0f : 53.0f, 0.0f, z9 ? 53.0f : 16.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
@@ -52,7 +52,7 @@ public class e extends FrameLayout implements a6 {
         y1Var.a(w02);
         y1Var.b(k6.w0(i7, f6Var));
         y1Var.k = 220.0f;
-        addView(imageView, ha.d(24, 24.0f, (hd.a0 ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
+        addView(imageView, ha.d(24, 24.0f, (id.a0 ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
         imageView.setOnClickListener(new d(this, 0));
     }
 
@@ -80,7 +80,7 @@ public class e extends FrameLayout implements a6 {
 
     public void setCloseImageVisible(boolean z9) {
         this.c.setVisibility(z9 ? 0 : 8);
-        boolean z10 = hd.a0;
+        boolean z10 = id.a0;
         this.d.setLayoutParams(ha.d(-1, -2.0f, 23, (z10 || !z9) ? 22.0f : 53.0f, 0.0f, (z10 && z9) ? 53.0f : 22.0f, 0.0f));
     }
 

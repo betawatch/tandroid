@@ -17,7 +17,7 @@ import java.io.File;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class wz0 extends BitmapDrawable {
     /* JADX WARN: Illegal instructions before constructor call */
@@ -137,7 +137,7 @@ public final class wz0 extends BitmapDrawable {
             bitmap2 = decodeFile;
             if (bitmap2 != null) {
                 if (qa0Var != null) {
-                    qa0Var.s(bitmap2, (int) (s5Var.d.p * 100.0f));
+                    qa0Var.s((int) (s5Var.d.p * 100.0f), bitmap2);
                     qa0Var.setBounds(0, 120, bitmap.getWidth(), bitmap.getHeight() - 120);
                     qa0Var.draw(canvas);
                 } else {
@@ -176,13 +176,13 @@ public final class wz0 extends BitmapDrawable {
             mutate2.draw(canvas);
         }
         t4VarArr3[1].setBounds(org.telegram.messenger.qs.r2, org.telegram.messenger.qs.t3, bitmap.getWidth() - 20, org.telegram.messenger.qs.f5);
-        t4VarArr3[1].p(0, 560, 522);
+        t4VarArr3[1].o(0, 560, 522);
         t4VarArr3[1].draw(canvas);
         t4VarArr3[1].setBounds(org.telegram.messenger.qs.r2, 430, bitmap.getWidth() - 20, 522);
-        t4VarArr3[1].p(430, 560, 522);
+        t4VarArr3[1].o(430, 560, 522);
         t4VarArr3[1].draw(canvas);
         t4VarArr3[0].setBounds(20, org.telegram.messenger.qs.u5, 399, 415);
-        t4VarArr3[0].p(org.telegram.messenger.qs.u5, 560, 522);
+        t4VarArr3[0].o(org.telegram.messenger.qs.u5, 560, 522);
         t4VarArr3[0].draw(canvas);
         paint.setColor(I03);
         canvas.drawRect(0.0f, bitmap.getHeight() - 120, bitmap.getWidth(), bitmap.getHeight(), paint);

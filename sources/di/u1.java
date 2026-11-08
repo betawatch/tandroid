@@ -15,7 +15,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -71,8 +71,8 @@ public final /* synthetic */ class u1 implements View.OnClickListener {
                 }
                 break;
             case 4:
-                zh.m mVar = (zh.m) this.c;
-                mVar.getClass();
+                zh.l lVar = (zh.l) this.c;
+                lVar.getClass();
                 org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
                 if (T != null) {
                     long j11 = this.b;
@@ -80,7 +80,7 @@ public final /* synthetic */ class u1 implements View.OnClickListener {
                         Bundle bundle2 = new Bundle();
                         if (j11 > 0) {
                             bundle2.putLong("user_id", j11);
-                            if (j11 == p10.i(mVar.a).e()) {
+                            if (j11 == p10.i(lVar.a).e()) {
                                 bundle2.putBoolean("my_profile", true);
                             }
                         } else {
@@ -90,18 +90,18 @@ public final /* synthetic */ class u1 implements View.OnClickListener {
                         T.presentFragment(new ProfileActivity(bundle2, null));
                     }
                 }
-                Runnable runnable = mVar.f2;
+                Runnable runnable = lVar.f2;
                 if (runnable != null) {
                     runnable.run();
                 }
-                mVar.dismiss();
+                lVar.dismiss();
                 break;
             default:
-                zh.h1 h1Var = (zh.h1) this.c;
-                h1Var.getClass();
+                zh.g1 g1Var = (zh.g1) this.c;
+                g1Var.getClass();
                 org.telegram.ui.ActionBar.f2 T2 = LaunchActivity.T();
                 if (T2 != null) {
-                    h1Var.dismiss();
+                    g1Var.dismiss();
                     T2.presentFragment(ProfileActivity.A4(this.b));
                     break;
                 }

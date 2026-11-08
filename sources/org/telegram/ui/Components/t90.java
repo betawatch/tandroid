@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t90 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class t90 implements View.OnClickListener {
                 ia0 ia0Var = ca0Var.c0;
                 org.telegram.messenger.mj mjVar = ia0Var.d;
                 if (!z9) {
-                    new hc(ia0Var, ia0Var.F).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131750584, null), new r90(ca0Var, context, i10))).j();
+                    new hc(ia0Var, ia0Var.F).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(2131750584, null), new r90(ca0Var, context, i10))).j();
                     break;
                 } else {
                     boolean z10 = mjVar.k;
@@ -65,10 +65,10 @@ public final /* synthetic */ class t90 implements View.OnClickListener {
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj3;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj2;
                 k60 k60Var = (k60) obj;
-                up0 up0Var = ((zh.a2) frameLayout).a;
+                up0 up0Var = ((zh.z1) frameLayout).a;
                 if (z9) {
                     up0Var.e.k(tL_starGiftCollection.collection_id, savedStarGift);
-                    hc.a0(up0Var.a).R(savedStarGift.gift.getDocument(), org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131750036, bi.k7.A1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                    hc.a0(up0Var.a).R(savedStarGift.gift.getDocument(), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131750038, bi.k7.A1(savedStarGift.gift), tL_starGiftCollection.title))).j();
                 } else {
                     bi.t9 t9Var = up0Var.e;
                     int i11 = tL_starGiftCollection.collection_id;
@@ -76,7 +76,7 @@ public final /* synthetic */ class t90 implements View.OnClickListener {
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(savedStarGift);
                     t9Var.a(i11, arrayList);
-                    hc.a0(up0Var.a).R(savedStarGift.gift.getDocument(), org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131750392, bi.k7.A1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                    hc.a0(up0Var.a).R(savedStarGift.gift.getDocument(), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131750394, bi.k7.A1(savedStarGift.gift), tL_starGiftCollection.title))).j();
                 }
                 k60Var.u();
                 up0Var.o();

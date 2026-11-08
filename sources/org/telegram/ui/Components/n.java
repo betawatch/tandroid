@@ -32,9 +32,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public class n implements t4, sj0, ty, org.telegram.ui.lm0, org.telegram.messenger.lc, jg.y1, wr0, t61, org.telegram.ui.r9, te.b, tg.c, tg.l1, u2.m, com.google.android.gms.common.api.internal.n, q5.b {
+public class n implements t4, sj0, uy, org.telegram.ui.lm0, org.telegram.messenger.lc, jg.y1, wr0, t61, org.telegram.ui.r9, te.b, tg.c, tg.l1, u2.m, com.google.android.gms.common.api.internal.n, q5.b {
     public final Object a;
 
     public /* synthetic */ n(Object obj) {
@@ -318,62 +318,62 @@ public class n implements t4, sj0, ty, org.telegram.ui.lm0, org.telegram.messeng
         throw new NullPointerException("Cannot return null from a non-@Nullable @Provides method");
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getBlurAngle() {
         return ((org.telegram.messenger.hf) this.a).t;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getBlurExcludeBlurSize() {
         return ((org.telegram.messenger.hf) this.a).s;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public PointF getBlurExcludePoint() {
         return ((org.telegram.messenger.hf) this.a).r;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getBlurExcludeSize() {
         return ((org.telegram.messenger.hf) this.a).q;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public int getBlurType() {
         return ((org.telegram.messenger.hf) this.a).n;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getContrastValue() {
         return com.google.android.recaptcha.internal.a.c(((org.telegram.messenger.hf) this.a).d, 100.0f, 0.3f, 1.0f);
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getEnhanceValue() {
         return ((org.telegram.messenger.hf) this.a).a / 100.0f;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getExposureValue() {
         return ((org.telegram.messenger.hf) this.a).c / 100.0f;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getFadeValue() {
         return ((org.telegram.messenger.hf) this.a).g / 100.0f;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getGrainValue() {
         return (((org.telegram.messenger.hf) this.a).m / 100.0f) * 0.04f;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getHighlightsValue() {
         return com.google.android.recaptcha.internal.a.y(((org.telegram.messenger.hf) this.a).j, 0.75f, 100.0f, 100.0f);
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getSaturationValue() {
         float f10 = ((org.telegram.messenger.hf) this.a).f / 100.0f;
         if (f10 > 0.0f) {
@@ -382,52 +382,52 @@ public class n implements t4, sj0, ty, org.telegram.ui.lm0, org.telegram.messeng
         return f10 + 1.0f;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getShadowsValue() {
         return com.google.android.recaptcha.internal.a.y(((org.telegram.messenger.hf) this.a).k, 0.55f, 100.0f, 100.0f);
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getSharpenValue() {
         return com.google.android.recaptcha.internal.a.c(((org.telegram.messenger.hf) this.a).o, 100.0f, 0.6f, 0.11f);
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getSoftenSkinValue() {
         return ((org.telegram.messenger.hf) this.a).b / 100.0f;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public int getTintHighlightsColor() {
         return ((org.telegram.messenger.hf) this.a).i;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getTintHighlightsIntensityValue() {
         return ((org.telegram.messenger.hf) this.a).i == 0 ? 0.0f : 0.5f;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public int getTintShadowsColor() {
         return ((org.telegram.messenger.hf) this.a).h;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getTintShadowsIntensityValue() {
         return ((org.telegram.messenger.hf) this.a).h == 0 ? 0.0f : 0.5f;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getVignetteValue() {
         return ((org.telegram.messenger.hf) this.a).l / 100.0f;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public float getWarmthValue() {
         return ((org.telegram.messenger.hf) this.a).e / 100.0f;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public ByteBuffer h() {
         org.telegram.messenger.hf hfVar = (org.telegram.messenger.hf) this.a;
         hfVar.p.q();
@@ -474,12 +474,12 @@ public class n implements t4, sj0, ty, org.telegram.ui.lm0, org.telegram.messeng
         }
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public boolean n() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ty
+    @Override // org.telegram.ui.Components.uy
     public boolean o() {
         return !((org.telegram.messenger.hf) this.a).p.F();
     }
@@ -825,23 +825,23 @@ public class n implements t4, sj0, ty, org.telegram.ui.lm0, org.telegram.messeng
             org.telegram.ui.ActionBar.r6.V(textView, i11, f6Var);
             textView.setTextSize(1, 16.0f);
             textView.setSingleLine(false);
-            textView.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 48);
+            textView.setGravity((org.telegram.messenger.id.a0 ? 5 : 3) | 48);
             textView.setEllipsize(TextUtils.TruncateAt.END);
-            boolean z12 = org.telegram.messenger.hd.a0;
+            boolean z12 = org.telegram.messenger.id.a0;
             yc0Var2.addView(textView, c8.ha.d(-1, -1.0f, (z12 ? 5 : 3) | 48, z12 ? z11 ? 17 : 64 : 72.0f, 10.0f, z12 ? 72.0f : z11 ? 17 : 64, 0.0f));
             TextView textView2 = new TextView(context);
             yc0Var2.b = textView2;
             org.telegram.ui.ActionBar.r6.V(textView2, org.telegram.ui.ActionBar.k6.z6, ad0Var.I0);
             org.telegram.messenger.camera.q.n(textView2, 1, 13.0f, 1, 1);
             textView2.setSingleLine(true);
-            textView2.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
-            boolean z13 = org.telegram.messenger.hd.a0;
+            textView2.setGravity(org.telegram.messenger.id.a0 ? 5 : 3);
+            boolean z13 = org.telegram.messenger.id.a0;
             yc0Var2.addView(textView2, c8.ha.d(-2, -2.0f, z13 ? 5 : 3, z13 ? z11 ? 17 : 64 : 72.0f, 35.0f, z13 ? 72.0f : z11 ? 17 : 64, 0.0f));
             ImageView imageView = new ImageView(context);
             yc0Var2.c = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
             org.telegram.ui.ActionBar.r6.t(imageView, org.telegram.ui.ActionBar.k6.m6, ad0Var.I0, PorterDuff.Mode.MULTIPLY);
-            boolean z14 = org.telegram.messenger.hd.a0;
+            boolean z14 = org.telegram.messenger.id.a0;
             yc0Var2.addView(imageView, c8.ha.d(-2, -2.0f, (z14 ? 5 : 3) | 48, z14 ? 0.0f : 20.0f, 20.0f, z14 ? 20.0f : 0.0f, 0.0f));
             yc0Var = yc0Var2;
             if (!z11) {
@@ -851,7 +851,7 @@ public class n implements t4, sj0, ty, org.telegram.ui.lm0, org.telegram.messeng
                 int i14 = org.telegram.ui.ActionBar.k6.N6;
                 int i15 = org.telegram.ui.ActionBar.k6.d6;
                 r92.d(i13, i14, i15, i15);
-                yc0Var2.addView(r92, c8.ha.d(37, 40.0f, (org.telegram.messenger.hd.a0 ? 3 : 5) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
+                yc0Var2.addView(r92, c8.ha.d(37, 40.0f, (org.telegram.messenger.id.a0 ? 3 : 5) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
                 yc0Var = yc0Var2;
             }
         } else {
@@ -867,7 +867,7 @@ public class n implements t4, sj0, ty, org.telegram.ui.lm0, org.telegram.messeng
                     z9 = true;
                     str = null;
                 } else {
-                    str = org.telegram.messenger.hd.d0(ad0Var.a, tL_userContact_old2, null, null);
+                    str = org.telegram.messenger.id.d0(ad0Var.a, tL_userContact_old2, null, null);
                     z9 = true;
                 }
             }
@@ -930,13 +930,13 @@ public class n implements t4, sj0, ty, org.telegram.ui.lm0, org.telegram.messeng
             TextView textView4 = yc0Var3.b;
             int i18 = f0Var.c;
             if (i18 == 4) {
-                str2 = org.telegram.messenger.hd.M0(2131751787, null);
+                str2 = org.telegram.messenger.id.M0(2131751787, null);
             } else if (i18 == 3) {
-                str2 = org.telegram.messenger.hd.M0(2131751781, null);
+                str2 = org.telegram.messenger.id.M0(2131751781, null);
             } else if (i18 == 5) {
-                str2 = org.telegram.messenger.hd.M0(2131751803, null);
+                str2 = org.telegram.messenger.id.M0(2131751803, null);
             } else if (i18 == 6) {
-                str2 = "ORG".equalsIgnoreCase(f0Var.a(true)) ? org.telegram.messenger.hd.M0(2131751792, null) : org.telegram.messenger.hd.M0(2131751791, null);
+                str2 = "ORG".equalsIgnoreCase(f0Var.a(true)) ? org.telegram.messenger.id.M0(2131751792, null) : org.telegram.messenger.id.M0(2131751791, null);
             } else {
                 int indexOf = f0Var.b.indexOf(58);
                 if (indexOf < 0) {
@@ -997,19 +997,19 @@ public class n implements t4, sj0, ty, org.telegram.ui.lm0, org.telegram.messeng
                         switch (c10) {
                             case 0:
                             case 1:
-                                M0 = org.telegram.messenger.hd.M0(2131747290, null);
+                                M0 = org.telegram.messenger.id.M0(2131747292, null);
                                 break;
                             case 2:
-                                M0 = org.telegram.messenger.hd.M0(2131747292, null);
+                                M0 = org.telegram.messenger.id.M0(2131747294, null);
                                 break;
                             case 3:
-                                M0 = org.telegram.messenger.hd.M0(2131747291, null);
+                                M0 = org.telegram.messenger.id.M0(2131747293, null);
                                 break;
                             case 4:
-                                M0 = org.telegram.messenger.hd.M0(2131747280, null);
+                                M0 = org.telegram.messenger.id.M0(2131747282, null);
                                 break;
                             case 5:
-                                M0 = org.telegram.messenger.hd.M0(2131747281, null);
+                                M0 = org.telegram.messenger.id.M0(2131747283, null);
                                 break;
                             default:
                                 M0 = substring2;

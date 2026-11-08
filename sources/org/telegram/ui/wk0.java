@@ -5,7 +5,7 @@ import android.text.TextWatcher;
 import java.util.HashMap;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class wk0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final class wk0 implements TextWatcher {
                     org.telegram.ui.Components.v20 v20Var = (org.telegram.ui.Components.v20) hl0Var.f[9];
                     if (d.length() == 0) {
                         v20Var.setHintText((String) null);
-                        v20Var.setHint(org.telegram.messenger.hd.M0(2131747371, null));
+                        v20Var.setHint(org.telegram.messenger.id.M0(2131747373, null));
                     } else {
                         int i10 = 4;
                         if (d.length() > 4) {
@@ -73,7 +73,7 @@ public final class wk0 implements TextWatcher {
                         String str4 = (String) hashMap.get(d);
                         if (str4 == null || hl0Var.a.indexOf(str4) == -1 || (str2 = (String) hl0Var.d.get(d)) == null) {
                             v20Var.setHintText((String) null);
-                            v20Var.setHint(org.telegram.messenger.hd.M0(2131747371, null));
+                            v20Var.setHint(org.telegram.messenger.id.M0(2131747373, null));
                         } else {
                             v20Var.setHintText(str2.replace('X', (char) 8211));
                             v20Var.setHint((CharSequence) null);

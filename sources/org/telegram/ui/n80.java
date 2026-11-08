@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.os.Bundle;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class n80 implements org.telegram.messenger.ep {
     public final /* synthetic */ q10 a;
@@ -28,7 +28,7 @@ public final class n80 implements org.telegram.messenger.ep {
     public final void a() {
         LaunchActivity launchActivity = this.h;
         if (!launchActivity.isFinishing()) {
-            org.telegram.ui.Components.v4.r0((org.telegram.ui.ActionBar.f2) jg.g.i(1, launchActivity.d0), null, org.telegram.messenger.hd.M0(2131749074, null), null);
+            org.telegram.ui.Components.v4.r0((org.telegram.ui.ActionBar.f2) jg.g.i(1, launchActivity.d0), null, org.telegram.messenger.id.M0(2131749076, null), null);
         }
         try {
             this.a.run();

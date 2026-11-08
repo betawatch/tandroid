@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import c8.ha;
 import java.util.List;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.s9;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Components.g7;
@@ -13,7 +13,7 @@ import org.telegram.ui.Components.na;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class d extends na {
     public static final /* synthetic */ int S1 = 0;
@@ -35,7 +35,7 @@ public final class d extends na {
         this.k1.setOverScrollMode(2);
         fi.d dVar = new fi.d(context, f6Var, true);
         dVar.setOnClickListener(new a(this, 0));
-        dVar.i(hd.M0(2131747830, null), false, true);
+        dVar.i(id.M0(2131747832, null), false, true);
         FrameLayout.LayoutParams d = ha.d(-1, 48.0f, 80, 16.0f, 16.0f, 16.0f, 16.0f);
         int i7 = d.leftMargin;
         int i10 = this.t0;
@@ -59,6 +59,6 @@ public final class d extends na {
         if (list == null) {
             return null;
         }
-        return hd.G(list.size(), "Gift2AuctionsAcquiredGifts", new Object[0]);
+        return id.G(list.size(), "Gift2AuctionsAcquiredGifts", new Object[0]);
     }
 }

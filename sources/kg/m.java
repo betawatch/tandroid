@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import m.s2;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
@@ -48,7 +48,7 @@ import org.telegram.ui.Components.pn;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.ks;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class m extends n41 implements ls {
     public String D;
@@ -148,13 +148,13 @@ public final class m extends n41 implements ls {
     @Override // org.telegram.ui.Components.n41
     public final void Z(ArrayList arrayList, l41 l41Var) {
         arrayList.add(x31.k(this.h));
-        arrayList.add(x31.u(hd.M0(2131752724, null)));
+        arrayList.add(x31.u(id.M0(2131752724, null)));
         arrayList.add(x31.k(this.s));
         arrayList.add(x31.k(this.w));
         if (this.x) {
-            arrayList.add(x31.f(hd.M0(2131752720, null), hd.M0(2131752719, null), 1));
+            arrayList.add(x31.f(id.M0(2131752720, null), id.M0(2131752719, null), 1));
         } else if (this.D != null) {
-            String M0 = hd.M0(2131752720, null);
+            String M0 = id.M0(2131752720, null);
             String str = this.D;
             x31 x31Var = new x31(3);
             x31Var.d = 1;
@@ -162,7 +162,7 @@ public final class m extends n41 implements ls {
             x31Var.G = str;
             arrayList.add(x31Var);
         } else {
-            String M02 = hd.M0(2131752720, null);
+            String M02 = id.M0(2131752720, null);
             TLRPC.Document document = this.y;
             x31 x31Var2 = new x31(3);
             x31Var2.d = 1;
@@ -170,12 +170,12 @@ public final class m extends n41 implements ls {
             x31Var2.G = document;
             arrayList.add(x31Var2);
         }
-        arrayList.add(x31.C(hd.M0(2131752723, null)));
+        arrayList.add(x31.C(id.M0(2131752723, null)));
         boolean l02 = l0();
         this.K = !l02;
         if (!l02) {
             arrayList.add(x31.C(null));
-            x31 e10 = x31.e(2, hd.M0(2131752721, null));
+            x31 e10 = x31.e(2, id.M0(2131752721, null));
             e10.r = true;
             arrayList.add(e10);
         }
@@ -186,7 +186,7 @@ public final class m extends n41 implements ls {
 
     @Override // org.telegram.ui.Components.n41
     public final CharSequence a0() {
-        return hd.M0(2131752725, null);
+        return id.M0(2131752725, null);
     }
 
     @Override // org.telegram.ui.Components.n41
@@ -257,7 +257,7 @@ public final class m extends n41 implements ls {
         kVar.setImageDrawable(y5.e(null, this.currentAccount, getUserConfig().e(), k6.I.q()));
         this.h.addView(kVar, ha.e(-1, -1, qs.E1));
         this.h.addView(this.n, ha.d(-2, -2.0f, 17, 42.0f, 18.0f, 42.0f, 18.0f));
-        l lVar = new l(this, context, hd.M0(2131752718, null), getMessagesController().F5, this.resourceProvider, 0);
+        l lVar = new l(this, context, id.M0(2131752718, null), getMessagesController().F5, this.resourceProvider, 0);
         this.s = lVar;
         lVar.r = true;
         lVar.setShowLimitOnFocus(true);
@@ -273,7 +273,7 @@ public final class m extends n41 implements ls {
         i3Var.setImeOptions(6);
         int i12 = 2;
         i3Var.setOnEditorActionListener(new s2(fVar, i12));
-        l lVar4 = new l(this, context, hd.M0(2131752722, null), getMessagesController().G5, this.resourceProvider, 1);
+        l lVar4 = new l(this, context, id.M0(2131752722, null), getMessagesController().G5, this.resourceProvider, 1);
         this.w = lVar4;
         lVar4.setShowLimitOnFocus(true);
         r6.i(i10, this.w, getResourceProvider());
@@ -291,7 +291,7 @@ public final class m extends n41 implements ls {
         this.a.setSectionsDrawBackground(true);
         this.a.f3.r = false;
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 12));
-        this.f = this.simpleActionBar.n(hd.M0(2131745947, null));
+        this.f = this.simpleActionBar.n(id.M0(2131745949, null));
         j0(false);
         this.a.addOnLayoutChangeListener(new l2(this, 1));
         this.a.j(new ai.b(this, 20));
@@ -521,11 +521,11 @@ public final class m extends n41 implements ls {
         final int i7 = 0;
         if (z9) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-            String M0 = hd.M0(2131743836, null);
+            String M0 = id.M0(2131743838, null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.R = M0;
-            u1Var.T = hd.M0(2131752717, null);
-            alertDialog$Builder.k(hd.M0(2131754216, null), new org.telegram.ui.ActionBar.r1(this) { // from class: kg.h
+            u1Var.T = id.M0(2131752717, null);
+            alertDialog$Builder.k(id.M0(2131754216, null), new org.telegram.ui.ActionBar.r1(this) { // from class: kg.h
                 public final /* synthetic */ m b;
 
                 {
@@ -545,7 +545,7 @@ public final class m extends n41 implements ls {
                 }
             });
             final int i10 = 1;
-            alertDialog$Builder.h(hd.M0(2131747579, null), new org.telegram.ui.ActionBar.r1(this) { // from class: kg.h
+            alertDialog$Builder.h(id.M0(2131747581, null), new org.telegram.ui.ActionBar.r1(this) { // from class: kg.h
                 public final /* synthetic */ m b;
 
                 {

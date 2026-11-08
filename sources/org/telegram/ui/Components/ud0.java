@@ -5,7 +5,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ud0 extends FrameLayout {
     public final fi.fb a;
@@ -24,7 +24,7 @@ public final class ud0 extends FrameLayout {
         this.f = 1.39f;
         org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, f6Var);
         kVar.setBackButtonImage(R.drawable.ic_ab_back);
-        kVar.setTitle(org.telegram.messenger.hd.M0(2131751206, null));
+        kVar.setTitle(org.telegram.messenger.id.M0(2131751206, null));
         kVar.D(-1, false);
         kVar.C(587202559, false);
         kVar.setActionBarMenuOnItemClick(new org.telegram.ui.w9(this, 15));
@@ -35,10 +35,10 @@ public final class ud0 extends FrameLayout {
         addView(fbVar, c8.ha.d(-1, 388, 87, 0.0f, 0.0f, 0.0f, 74.0f));
         fi.d dVar = new fi.d(context, f6Var, true);
         this.b = dVar;
-        dVar.i(org.telegram.messenger.hd.M0(2131751207, null), false, true);
+        dVar.i(org.telegram.messenger.id.M0(2131751207, null), false, true);
         dVar.f();
         addView(dVar, c8.ha.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 16.0f));
-        ps psVar = new ps(context, org.telegram.messenger.hd.M0(2131751208, null));
+        ps psVar = new ps(context, org.telegram.messenger.id.M0(2131751208, null));
         this.c = psVar;
         psVar.setOnClickListener(new td0(this, context, f6Var, 0));
         addView(psVar, c8.ha.d(-1, 32.0f, 87, 60.0f, 0.0f, 60.0f, 134.0f));

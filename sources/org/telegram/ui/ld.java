@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ld implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -92,10 +92,10 @@ public final /* synthetic */ class ld implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new org.telegram.ui.Components.ng((org.telegram.ui.Components.to) this.b, tLObject, (org.telegram.ui.ActionBar.j6) this.c, 2));
                 break;
             case 14:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.fq(18, (org.telegram.ui.Components.vz) this.b, (Pair) this.c));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.fq(18, (org.telegram.ui.Components.wz) this.b, (Pair) this.c));
                 break;
             case 15:
-                org.telegram.messenger.g0.h3(new m6((org.telegram.ui.Components.vz) this.b, tL_error, tLObject, (org.telegram.messenger.c20) this.c, 21));
+                org.telegram.messenger.g0.h3(new m6((org.telegram.ui.Components.wz) this.b, tL_error, tLObject, (org.telegram.messenger.c20) this.c, 21));
                 break;
             case 16:
                 org.telegram.messenger.g0.h3(new m6((org.telegram.ui.Components.h20) this.b, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) this.c, 23));

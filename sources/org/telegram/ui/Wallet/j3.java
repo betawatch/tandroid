@@ -1,52 +1,36 @@
 package org.telegram.ui.Wallet;
 
-import android.app.Activity;
-import android.view.View;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.id;
+import org.telegram.ui.Components.hc;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class j3 implements View.OnClickListener {
+public final /* synthetic */ class j3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f2 b;
 
-    public /* synthetic */ j3(Object obj, int i7) {
+    public /* synthetic */ j3(int i7, org.telegram.ui.ActionBar.f2 f2Var) {
         this.a = i7;
-        this.b = obj;
+        this.b = f2Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        org.telegram.ui.ActionBar.f2 f2Var = this.b;
+        switch (i7) {
             case 0:
-                ((p3) this.b).dismiss();
+                x5.I0(f2Var.getContext(), f2Var.getResourceProvider());
                 break;
             case 1:
-                vf.c.v((Activity) this.b, "https://fragment.com/", false);
-                break;
-            case 2:
-                ((w4) this.b).dismiss();
-                break;
-            case 3:
-                ((Runnable) this.b).run();
-                break;
-            case 4:
-                w6 w6Var = (w6) this.b;
-                if (!w6Var.y && w6Var.r && !w6Var.h.b()) {
-                    w6Var.h.setProgress(0.0f);
-                    w6Var.h.d();
-                    break;
-                }
-                break;
-            case 5:
-                ((t8) this.b).b(!r3.y);
-                break;
-            case 6:
-                ((org.telegram.ui.Cells.c2) this.b).c(!r3.b(), true);
+                f2Var.presentFragment(new x5());
                 break;
             default:
-                i9 i9Var = ((m9) this.b).c;
-                i9Var.requestFocus();
-                org.telegram.messenger.g0.K3(i9Var);
+                if (hc.a(f2Var)) {
+                    hc.a0(f2Var).I(R.raw.contact_check, id.M0(2131743153, null), id.M0(2131743152, null)).j();
+                    break;
+                }
                 break;
         }
     }

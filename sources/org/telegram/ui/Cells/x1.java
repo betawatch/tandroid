@@ -11,14 +11,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.messenger.fj;
+import org.telegram.messenger.fu;
 import org.telegram.messenger.gj;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.kv;
-import org.telegram.ui.Components.hy;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.iy;
 import org.telegram.ui.tg0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class x1 {
     public boolean A;
@@ -247,37 +249,41 @@ public final class x1 {
         this.a = q1Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:422:0x0375, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:439:0x03bc, code lost:
     
-        if (r10 == (r11 == null ? 0 : r11.c)) goto L198;
+        if (r10 == (r11 == null ? 0 : r11.c)) goto L217;
      */
-    /* JADX WARN: Removed duplicated region for block: B:243:0x059b  */
-    /* JADX WARN: Removed duplicated region for block: B:246:0x05a3  */
-    /* JADX WARN: Removed duplicated region for block: B:249:0x05ab  */
-    /* JADX WARN: Removed duplicated region for block: B:252:0x05b7  */
-    /* JADX WARN: Removed duplicated region for block: B:255:0x05c2  */
-    /* JADX WARN: Removed duplicated region for block: B:258:0x05cd  */
-    /* JADX WARN: Removed duplicated region for block: B:261:0x05d8  */
-    /* JADX WARN: Removed duplicated region for block: B:263:0x05de  */
-    /* JADX WARN: Removed duplicated region for block: B:270:0x05f8  */
-    /* JADX WARN: Removed duplicated region for block: B:273:0x0603  */
-    /* JADX WARN: Removed duplicated region for block: B:276:0x060c  */
-    /* JADX WARN: Removed duplicated region for block: B:279:0x0615  */
-    /* JADX WARN: Removed duplicated region for block: B:284:0x063c  */
-    /* JADX WARN: Removed duplicated region for block: B:287:0x0649  */
-    /* JADX WARN: Removed duplicated region for block: B:291:0x0652  */
-    /* JADX WARN: Removed duplicated region for block: B:293:0x0659  */
-    /* JADX WARN: Removed duplicated region for block: B:299:0x0691  */
-    /* JADX WARN: Removed duplicated region for block: B:302:0x069a  */
-    /* JADX WARN: Removed duplicated region for block: B:314:0x06c3  */
-    /* JADX WARN: Removed duplicated region for block: B:321:0x06d8  */
-    /* JADX WARN: Removed duplicated region for block: B:326:0x06e3  */
-    /* JADX WARN: Removed duplicated region for block: B:336:0x0683  */
-    /* JADX WARN: Removed duplicated region for block: B:339:0x061f  */
-    /* JADX WARN: Removed duplicated region for block: B:341:0x0627  */
-    /* JADX WARN: Removed duplicated region for block: B:347:0x0629  */
-    /* JADX WARN: Removed duplicated region for block: B:348:0x0621  */
-    /* JADX WARN: Removed duplicated region for block: B:350:0x05db  */
+    /* JADX WARN: Code restructure failed: missing block: B:99:0x0191, code lost:
+    
+        if (r1 == false) goto L97;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:260:0x05e2  */
+    /* JADX WARN: Removed duplicated region for block: B:263:0x05ea  */
+    /* JADX WARN: Removed duplicated region for block: B:266:0x05f2  */
+    /* JADX WARN: Removed duplicated region for block: B:269:0x05fe  */
+    /* JADX WARN: Removed duplicated region for block: B:272:0x0609  */
+    /* JADX WARN: Removed duplicated region for block: B:275:0x0614  */
+    /* JADX WARN: Removed duplicated region for block: B:278:0x061f  */
+    /* JADX WARN: Removed duplicated region for block: B:280:0x0625  */
+    /* JADX WARN: Removed duplicated region for block: B:287:0x063f  */
+    /* JADX WARN: Removed duplicated region for block: B:290:0x064a  */
+    /* JADX WARN: Removed duplicated region for block: B:293:0x0653  */
+    /* JADX WARN: Removed duplicated region for block: B:296:0x065c  */
+    /* JADX WARN: Removed duplicated region for block: B:301:0x0683  */
+    /* JADX WARN: Removed duplicated region for block: B:304:0x0690  */
+    /* JADX WARN: Removed duplicated region for block: B:308:0x0699  */
+    /* JADX WARN: Removed duplicated region for block: B:310:0x06a0  */
+    /* JADX WARN: Removed duplicated region for block: B:316:0x06d8  */
+    /* JADX WARN: Removed duplicated region for block: B:319:0x06e1  */
+    /* JADX WARN: Removed duplicated region for block: B:331:0x070a  */
+    /* JADX WARN: Removed duplicated region for block: B:338:0x071f  */
+    /* JADX WARN: Removed duplicated region for block: B:343:0x072a  */
+    /* JADX WARN: Removed duplicated region for block: B:353:0x06ca  */
+    /* JADX WARN: Removed duplicated region for block: B:356:0x0666  */
+    /* JADX WARN: Removed duplicated region for block: B:358:0x066e  */
+    /* JADX WARN: Removed duplicated region for block: B:364:0x0670  */
+    /* JADX WARN: Removed duplicated region for block: B:365:0x0668  */
+    /* JADX WARN: Removed duplicated region for block: B:367:0x0622  */
     /* JADX WARN: Removed duplicated region for block: B:57:0x00e6  */
     /* JADX WARN: Removed duplicated region for block: B:58:0x0106  */
     /*
@@ -369,7 +375,7 @@ public final class x1 {
         }
         this.L0 = false;
         if (kvVar2 != this.N0) {
-            tg0 tg0Var = q1Var.yc;
+            tg0 tg0Var = q1Var.zc;
             boolean z17 = tg0Var != null && tg0Var.h;
             kv kvVar3 = this.M0;
             if (kvVar3 != null) {
@@ -382,11 +388,24 @@ public final class x1 {
                     kvVar4.J(kvVar);
                 }
             } else {
-                this.L0 = true;
-                kv kvVar5 = this.N0;
-                this.M0 = kvVar5;
+                kv kvVar5 = q1Var.P5.w2;
                 if (kvVar5 != null) {
-                    kvVar5.b(q1Var);
+                    kv kvVar6 = this.N0;
+                    ArrayList arrayList6 = kvVar5.g;
+                    if (kvVar6 != null) {
+                        ArrayList arrayList7 = kvVar6.g;
+                        if (arrayList6.size() == 1 && arrayList7.size() == 1) {
+                            fu fuVar = (fu) arrayList6.get(0);
+                            fu fuVar2 = (fu) arrayList7.get(0);
+                            boolean z18 = (fuVar instanceof ck0) && (fuVar2 instanceof ck0) && TextUtils.equals(((ck0) fuVar).W.url, ((ck0) fuVar2).W.url);
+                        }
+                    }
+                }
+                this.L0 = true;
+                kv kvVar7 = this.N0;
+                this.M0 = kvVar7;
+                if (kvVar7 != null) {
+                    kvVar7.b(q1Var);
                 }
             }
         }
@@ -413,9 +432,9 @@ public final class x1 {
                 z9 = true;
             }
         }
-        boolean z18 = q1Var.ib;
-        if (z18 && !this.a1 && q1Var.y9 != null) {
-            String M0 = hd.M0(2131751211, "EditedMessage");
+        boolean z19 = q1Var.ib;
+        if (z19 && !this.a1 && q1Var.y9 != null) {
+            String M0 = id.M0(2131751211, "EditedMessage");
             CharSequence text2 = q1Var.y9.getText();
             int indexOf = text2.toString().indexOf(M0);
             if (indexOf >= 0) {
@@ -427,7 +446,7 @@ public final class x1 {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                     spannableStringBuilder.append((CharSequence) M0);
                     spannableStringBuilder.append(text2.subSequence(M0.length(), text2.length()));
-                    spannableStringBuilder.setSpan(new hy(z13), 0, M0.length(), 0);
+                    spannableStringBuilder.setSpan(new iy(z13), 0, M0.length(), 0);
                     this.W0 = new StaticLayout(spannableStringBuilder, org.telegram.ui.ActionBar.k6.T2, org.telegram.messenger.g0.L(100.0f) + q1Var.A9, alignment, 1.0f, 0.0f, false);
                     this.Z0 = q1Var.z9 - this.Y0;
                 } else {
@@ -442,7 +461,7 @@ public final class x1 {
                 z9 = true;
             }
             q1Var.O2 = null;
-        } else if (!z18 && this.a1 && q1Var.y9 != null) {
+        } else if (!z19 && this.a1 && q1Var.y9 != null) {
             this.W0 = this.j2;
             int i15 = q1Var.z9;
             int i16 = this.Y0;
@@ -535,20 +554,20 @@ public final class x1 {
             z9 = true;
         }
         ij ijVar4 = q1Var.P5;
-        boolean z19 = ijVar4 != null ? ijVar4.K2 : false;
+        boolean z20 = ijVar4 != null ? ijVar4.K2 : false;
         gj gjVar = q1Var.l3;
         gj gjVar2 = this.d1;
         if (gjVar != gjVar2) {
             String charSequence3 = gjVar2 == null ? null : gjVar2.a.toString();
             gj gjVar3 = q1Var.l3;
             String charSequence4 = gjVar3 == null ? null : gjVar3.a.toString();
-            if (this.F0 != q1Var.X6 || this.e1 != z19) {
+            if (this.F0 != q1Var.X6 || this.e1 != z20) {
                 gj gjVar4 = q1Var.l3;
                 int i25 = gjVar4 == null ? 0 : gjVar4.c;
                 gj gjVar5 = this.d1;
             }
             if ((charSequence4 == null) == (charSequence3 == null) && (charSequence3 == null || charSequence3.equals(charSequence4))) {
-                q1Var.O3();
+                q1Var.P3();
                 float f13 = this.f;
                 if (f13 != q1Var.r3 || this.g != q1Var.s3) {
                     this.t0 = true;
@@ -564,14 +583,14 @@ public final class x1 {
             org.telegram.ui.Components.n5 n5Var2 = q1Var.za;
             gj gjVar7 = q1Var.l3;
             q1Var.za = org.telegram.ui.Components.r5.update(0, q1Var, n5Var2, (ArrayList<fj>) (gjVar7 == null ? null : gjVar7.e));
-            if (this.F0 != q1Var.X6 || this.e1 != z19) {
+            if (this.F0 != q1Var.X6 || this.e1 != z20) {
                 this.t0 = true;
                 this.r0 = this.f;
                 this.s0 = this.g;
             }
             z9 = true;
         } else if (gjVar != null && gjVar2 != null) {
-            q1Var.O3();
+            q1Var.P3();
             float f14 = this.f;
             if (f14 != q1Var.r3 || this.g != q1Var.s3) {
                 this.t0 = true;
@@ -580,15 +599,15 @@ public final class x1 {
                 z9 = true;
             }
         }
-        ArrayList arrayList6 = this.M1;
-        if (!arrayList6.isEmpty() || !arrayList.isEmpty()) {
-            if (arrayList6.size() != arrayList.size()) {
+        ArrayList arrayList8 = this.M1;
+        if (!arrayList8.isEmpty() || !arrayList.isEmpty()) {
+            if (arrayList8.size() != arrayList.size()) {
                 this.E2 = true;
             }
             if (!this.E2) {
                 for (int i26 = 0; i26 < arrayList.size(); i26++) {
                     c0 c0Var = (c0) arrayList.get(i26);
-                    c0 c0Var2 = (c0) arrayList6.get(i26);
+                    c0 c0Var2 = (c0) arrayList8.get(i26);
                     if (!c0Var.b && !c0Var2.b && (Math.abs(c0Var.c - c0Var2.c) > 0.01f || Math.abs(c0Var.e - c0Var2.e) > 0.01f || !TextUtils.equals(c0Var.h.j(), c0Var2.h.j()))) {
                         this.E2 = true;
                         break;
@@ -596,7 +615,7 @@ public final class x1 {
                 }
             }
             if (this.E2) {
-                this.N1.addAll(arrayList6);
+                this.N1.addAll(arrayList8);
             }
         }
         int i27 = this.Q1;
@@ -668,7 +687,7 @@ public final class x1 {
             this.K1 = true;
             this.e2 = null;
         } else {
-            if (this.f2 == q1Var.E3()) {
+            if (this.f2 == q1Var.F3()) {
                 if (z10 || (Math.abs(q1Var.B9 - this.g1) > 1 && this.F0 == q1Var.X6)) {
                     this.i1 = true;
                     this.X0 = this.Y0;
@@ -677,7 +696,7 @@ public final class x1 {
                     this.J = this.K;
                     this.E = this.D;
                 }
-                if (this.h2 != q1Var.D3()) {
+                if (this.h2 != q1Var.E3()) {
                     this.i2 = true;
                 }
                 if (this.k != q1Var.g3) {
@@ -748,7 +767,7 @@ public final class x1 {
                                 this.G2 = true;
                                 this.H2 = i12;
                             }
-                            q1Var.T3();
+                            q1Var.U3();
                             if (p0Var.a()) {
                                 z9 = true;
                             }
@@ -790,7 +809,7 @@ public final class x1 {
                         this.v2 = this.w2;
                         this.C2 = this.D2;
                         z9 = true;
-                        q1Var.T3();
+                        q1Var.U3();
                         if (p0Var.a()) {
                         }
                         if (q1Var.P5.i4()) {
@@ -815,7 +834,7 @@ public final class x1 {
                 i12 = this.I2;
                 if (i12 != q1Var.Ta) {
                 }
-                q1Var.T3();
+                q1Var.U3();
                 if (p0Var.a()) {
                 }
                 if (q1Var.P5.i4()) {
@@ -834,7 +853,7 @@ public final class x1 {
             this.X0 = this.Y0;
         }
         z9 = true;
-        if (this.h2 != q1Var.D3()) {
+        if (this.h2 != q1Var.E3()) {
         }
         if (this.k != q1Var.g3) {
         }
@@ -879,7 +898,7 @@ public final class x1 {
         i12 = this.I2;
         if (i12 != q1Var.Ta) {
         }
-        q1Var.T3();
+        q1Var.U3();
         if (p0Var.a()) {
         }
         if (q1Var.P5.i4()) {
@@ -1001,9 +1020,9 @@ public final class x1 {
         this.g1 = q1Var.B9;
         this.j2 = q1Var.y9;
         this.Y0 = q1Var.z9;
-        this.f2 = q1Var.E3();
+        this.f2 = q1Var.F3();
         this.t2 = q1Var.getTopMediaOffset();
-        this.h2 = q1Var.D3();
+        this.h2 = q1Var.E3();
         this.k = q1Var.g3;
         this.k2 = q1Var.yb;
         this.n2 = q1Var.t0;

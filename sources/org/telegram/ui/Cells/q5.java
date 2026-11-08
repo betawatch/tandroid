@@ -26,7 +26,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gf;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.kf;
 import org.telegram.messenger.qs;
@@ -36,7 +36,7 @@ import org.telegram.ui.Components.wo;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class q5 extends FrameLayout {
     public static final Rect b0 = new Rect();
@@ -223,7 +223,7 @@ public final class q5 extends FrameLayout {
             n5Var.setVisibility(0);
             imageView.setVisibility(8);
             ((FrameLayout.LayoutParams) textView.getLayoutParams()).leftMargin = org.telegram.messenger.g0.L(0.0f);
-            textView.setText(hd.M0(2131745366, null));
+            textView.setText(id.M0(2131745368, null));
         } else {
             imageView.setVisibility(8);
             n5Var.setVisibility(4);
@@ -479,27 +479,27 @@ public final class q5 extends FrameLayout {
         StringBuilder sb2 = new StringBuilder();
         gf gfVar = this.H;
         if (gfVar != null && gfVar.i() && this.H.d()) {
-            sb2.append(hd.M0(2131753962, null));
+            sb2.append(id.M0(2131753962, null));
         } else {
             gf gfVar2 = this.H;
             if (gfVar2 == null || !gfVar2.b) {
-                sb2.append(hd.M0(2131753948, null));
+                sb2.append(id.M0(2131753948, null));
             } else {
                 StringBuilder sb3 = new StringBuilder();
                 org.telegram.messenger.camera.q.q(null, 2131753933, sb3, ", ");
-                sb3.append(hd.z(this.H.E));
+                sb3.append(id.z(this.H.E));
                 sb2.append(sb3.toString());
             }
         }
         if (this.H != null) {
             sb2.append(". ");
-            sb2.append(hd.E0().z0().format(this.H.D * 1000));
+            sb2.append(id.E0().z0().format(this.H.D * 1000));
         }
         accessibilityNodeInfo.setText(sb2);
         if (this.d.a.q) {
             accessibilityNodeInfo.setSelected(true);
         }
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_open_photo, hd.M0(2131747816, null)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_open_photo, id.M0(2131747818, null)));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -600,7 +600,7 @@ public final class q5 extends FrameLayout {
                     n5Var.setVisibility(0);
                     imageView.setVisibility(8);
                     ((FrameLayout.LayoutParams) textView.getLayoutParams()).leftMargin = org.telegram.messenger.g0.L(0.0f);
-                    textView.setText(hd.M0(2131745366, null));
+                    textView.setText(id.M0(2131745368, null));
                 }
             }
         }

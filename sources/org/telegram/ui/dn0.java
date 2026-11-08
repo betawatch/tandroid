@@ -17,7 +17,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.CheckBox;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dn0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -58,10 +58,10 @@ public final /* synthetic */ class dn0 implements View.OnClickListener {
                     Activity activity = photoViewer2.D;
                     if (activity != null) {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, activity, photoViewer2.v2);
-                        alertDialog$Builder.a.T = org.telegram.messenger.hd.M0(2131751406, "DiscardChanges");
-                        alertDialog$Builder.a.R = org.telegram.messenger.hd.M0(R.string.AppName, "AppName");
-                        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747830, "OK"), new ln0(photoViewer2));
-                        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, "Cancel"), null);
+                        alertDialog$Builder.a.T = org.telegram.messenger.id.M0(2131751406, "DiscardChanges");
+                        alertDialog$Builder.a.R = org.telegram.messenger.id.M0(R.string.AppName, "AppName");
+                        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747832, "OK"), new ln0(photoViewer2));
+                        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, "Cancel"), null);
                         photoViewer2.P2(alertDialog$Builder);
                         break;
                     }
@@ -140,7 +140,7 @@ public final /* synthetic */ class dn0 implements View.OnClickListener {
                     if (photoViewer11.r) {
                         final fi.m3 m3Var = new fi.m3(photoViewer11.D, 3);
                         m3Var.r(true);
-                        m3Var.u(org.telegram.messenger.hd.M0(2131751210, null));
+                        m3Var.u(org.telegram.messenger.id.M0(2131751210, null));
                         m3Var.h = fi.m3.a(m3Var.getText(), m3Var.getTextPaint());
                         m3Var.setPadding(org.telegram.messenger.g0.L(6.0f), 0, org.telegram.messenger.g0.L(6.0f), 0);
                         m3Var.o(0.0f, 22.0f);
@@ -234,7 +234,7 @@ public final /* synthetic */ class dn0 implements View.OnClickListener {
                     ((fi.m3) obj5).f(true);
                 }
                 final fi.m3 m3Var2 = new fi.m3(photoViewer12.D, 3);
-                m3Var2.u(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(photoViewer12.O1() ? 2131748835 : 2131748834, null)));
+                m3Var2.u(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(photoViewer12.O1() ? 2131748837 : 2131748836, null)));
                 m3Var2.setPadding(org.telegram.messenger.g0.L(6.0f), 0, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f));
                 m3Var2.o(0.0f, 28.0f);
                 final char c11 = c10 == true ? 1 : 0;
@@ -327,7 +327,7 @@ public final /* synthetic */ class dn0 implements View.OnClickListener {
                             c2Var2.getClass();
                             c2Var2.setOnClickListener(new fk0(27, c2Var2, nbVar));
                             TextView textView = c2Var2.M;
-                            textView.setText(org.telegram.messenger.hd.M0(2131745676, null));
+                            textView.setText(org.telegram.messenger.id.M0(2131745678, null));
                             textView.animate().cancel();
                             textView.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(240L).setInterpolator(org.telegram.ui.Components.xq.h).start();
                             ValueAnimator valueAnimator = c2Var2.N;

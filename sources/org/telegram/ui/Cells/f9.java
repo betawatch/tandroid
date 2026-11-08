@@ -6,27 +6,27 @@ import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.ui.Components.k21;
-import org.telegram.ui.Components.ys;
+import org.telegram.ui.Components.zs;
 import org.telegram.ui.qy0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class f9 implements ActionMode.Callback {
     public final /* synthetic */ int a;
     public Object b;
     public final /* synthetic */ Object c;
 
-    public f9(ys ysVar, ActionMode.Callback callback) {
+    public f9(zs zsVar, ActionMode.Callback callback) {
         this.a = 1;
-        this.c = ysVar;
+        this.c = zsVar;
         this.b = callback;
     }
 
     public void b(Menu menu) {
-        hd.E0().y.getLanguage();
+        id.E0().y.getLanguage();
         MenuItem findItem = menu.findItem(3);
         if (findItem == null) {
             return;
@@ -71,7 +71,7 @@ public final class f9 implements ActionMode.Callback {
                         }
                     } else if (itemId == 3) {
                         if (v9Var.k0 != null) {
-                            String language = hd.E0().y.getLanguage();
+                            String language = id.E0().y.getLanguage();
                             org.telegram.ui.s sVar = v9Var.k0;
                             CharSequence r11 = v9Var.r();
                             String str = (String) this.b;
@@ -102,7 +102,7 @@ public final class f9 implements ActionMode.Callback {
                 }
                 return true;
             default:
-                if (((ys) obj).G(menuItem.getItemId())) {
+                if (((zs) obj).G(menuItem.getItemId())) {
                     actionMode.finish();
                     return true;
                 }
@@ -119,14 +119,14 @@ public final class f9 implements ActionMode.Callback {
         switch (this.a) {
             case 0:
                 menu.add(0, android.R.id.copy, 0, android.R.string.copy);
-                menu.add(0, R.id.menu_quote, 1, hd.M0(2131746439, null));
-                menu.add(0, 3, 2, hd.M0(2131743957, null));
+                menu.add(0, R.id.menu_quote, 1, id.M0(2131746441, null));
+                menu.add(0, 3, 2, id.M0(2131743959, null));
                 menu.add(0, android.R.id.cut, 3, android.R.string.cut);
                 menu.add(0, android.R.id.paste, 4, android.R.string.paste);
                 menu.add(0, android.R.id.selectAll, 5, android.R.string.selectAll);
                 return true;
             default:
-                ((ys) this.c).E();
+                ((zs) this.c).E();
                 return ((ActionMode.Callback) this.b).onCreateActionMode(actionMode, menu);
         }
     }
@@ -137,7 +137,7 @@ public final class f9 implements ActionMode.Callback {
             case 0:
                 break;
             default:
-                ((ys) this.c).D();
+                ((zs) this.c).D();
                 ((ActionMode.Callback) this.b).onDestroyActionMode(actionMode);
                 break;
         }

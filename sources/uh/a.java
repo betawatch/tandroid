@@ -13,12 +13,12 @@ import android.text.TextPaint;
 import bg.s;
 import jg.g;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class a extends c implements te.b {
     public final te.a d;
@@ -103,7 +103,7 @@ public final class a extends c implements te.b {
         int width = rect.width() - g0.L(56.0f);
         if (this.n == null || this.r != width) {
             this.r = width;
-            this.n = new StaticLayout(hd.M0(2131747183, null), this.h, width, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            this.n = new StaticLayout(id.M0(2131747185, null), this.h, width, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         }
     }
 

@@ -25,7 +25,7 @@ import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.t10;
@@ -34,7 +34,7 @@ import org.telegram.messenger.yr;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class p {
     public static final WeakHashMap k = new WeakHashMap();
@@ -253,7 +253,7 @@ public final class p {
             TLRPC.User a22 = qp.s1(this.b).a2(Long.valueOf(this.c));
             m6.n nVar = new m6.n(1);
             nVar.b = t10.p(a22);
-            nVar.d = hd.M0(2131753756, null);
+            nVar.d = id.M0(2131753756, null);
             nVar.a = 15;
             if (!TextUtils.isEmpty(str)) {
                 nVar.c = str;

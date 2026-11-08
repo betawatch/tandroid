@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.lt0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b4 implements Runnable {
     public final /* synthetic */ int a;
@@ -278,7 +278,7 @@ public final /* synthetic */ class b4 implements Runnable {
                 if (messageAction instanceof TLRPC.TL_messageActionWalletTonConnectRequest) {
                     TLRPC.TL_messageActionWalletTonConnectRequest tL_messageActionWalletTonConnectRequest = (TLRPC.TL_messageActionWalletTonConnectRequest) messageAction;
                     if (tL_messageActionWalletTonConnectRequest.accepted || tL_messageActionWalletTonConnectRequest.declined) {
-                        org.telegram.ui.Wallet.n0.x(qpVar.currentAccount).g.o(message.id, tL_messageActionWalletTonConnectRequest.session_id);
+                        org.telegram.ui.Wallet.m0.x(qpVar.currentAccount).g.o(message.id, tL_messageActionWalletTonConnectRequest.session_id);
                         return;
                     }
                     return;
@@ -287,7 +287,7 @@ public final /* synthetic */ class b4 implements Runnable {
             case 6:
                 qp qpVar2 = (qp) obj2;
                 qpVar2.getClass();
-                hd E0 = hd.E0();
+                id E0 = id.E0();
                 TLRPC.TL_langPackDifference tL_langPackDifference = ((TL_update.TL_updateLangPack) obj).difference;
                 int i13 = qpVar2.currentAccount;
                 if (E0.B == null) {
@@ -300,7 +300,7 @@ public final /* synthetic */ class b4 implements Runnable {
                 }
                 return;
             case 7:
-                hd.E0().Z0(((qp) obj2).currentAccount, ((TL_update.TL_updateLangPackTooLong) obj).lang_code, false, null);
+                id.E0().Z0(((qp) obj2).currentAccount, ((TL_update.TL_updateLangPackTooLong) obj).lang_code, false, null);
                 return;
             case 8:
                 qp qpVar3 = (qp) obj2;
@@ -352,7 +352,7 @@ public final /* synthetic */ class b4 implements Runnable {
                     boolean z10 = str5 == null || !str5.equals(str4);
                     qpVar3.O3 = tL_config.suggested_lang_code;
                     if (z10) {
-                        hd.E0().V0(qpVar3.currentAccount, true);
+                        id.E0().V0(qpVar3.currentAccount, true);
                     }
                 }
                 org.telegram.ui.ActionBar.k6.m1(qpVar3.currentAccount, false);
@@ -438,18 +438,18 @@ public final /* synthetic */ class b4 implements Runnable {
                 edit3.putString("autologinToken", str7);
                 edit3.commit();
                 qpVar3.getConnectionsManager().setForceTryIpV6(z9);
-                hd E02 = hd.E0();
+                id E02 = id.E0();
                 int i15 = qpVar3.currentAccount;
                 int i16 = tL_config.lang_pack_version;
                 int i17 = tL_config.base_lang_pack_version;
-                ed edVar = E02.B;
-                if (edVar != null && (edVar.i() || E02.B.j())) {
+                fd fdVar = E02.B;
+                if (fdVar != null && (fdVar.i() || E02.B.j())) {
                     if (E02.B.g()) {
                         if (E02.B.i < i17) {
                             a8.b("LocaleController checkUpdateForCurrentRemoteLocale base version is out of date, applying (local is " + E02.B.i + ", remote is " + i17 + ")");
                             E02.P = true;
-                            ed edVar2 = E02.B;
-                            E02.f(edVar2, edVar2.e, false, i15, new vc(E02, i15, 0));
+                            fd fdVar2 = E02.B;
+                            E02.f(fdVar2, fdVar2.e, false, i15, new wc(E02, i15, 0));
                         } else {
                             a8.b("LocaleController checkUpdateForCurrentRemoteLocale base version is up to date (local is " + E02.B.i + ", remote is " + i17 + ")");
                         }
@@ -457,8 +457,8 @@ public final /* synthetic */ class b4 implements Runnable {
                     if (E02.B.h < i16) {
                         a8.b("LocaleController checkUpdateForCurrentRemoteLocale version is out of date, applying (local is " + E02.B.h + ", remote is " + i16 + ")");
                         E02.P = true;
-                        ed edVar3 = E02.B;
-                        E02.f(edVar3, edVar3.c, false, i15, new vc(E02, i15, 1));
+                        fd fdVar3 = E02.B;
+                        E02.f(fdVar3, fdVar3.c, false, i15, new wc(E02, i15, 1));
                     } else {
                         a8.b("LocaleController checkUpdateForCurrentRemoteLocale version is up to date (local is " + E02.B.h + ", remote is " + i16 + ")");
                     }
@@ -626,11 +626,11 @@ public final /* synthetic */ class b4 implements Runnable {
                 org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) obj;
                 k00Var3.getClass();
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(f2Var.getContext());
-                String M0 = hd.M0(2131748977, null);
+                String M0 = id.M0(2131748979, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
-                u1Var.T = hd.a0(null, null, 2131748947, Integer.valueOf(qp.s1(k00Var3.currentAccount).d5));
-                alertDialog$Builder.k(hd.M0(2131747830, null), null);
+                u1Var.T = id.a0(null, null, 2131748949, Integer.valueOf(qp.s1(k00Var3.currentAccount).d5));
+                alertDialog$Builder.k(id.M0(2131747832, null), null);
                 f2Var.showDialog(u1Var);
                 return;
             case 15:
@@ -789,7 +789,7 @@ public final /* synthetic */ class b4 implements Runnable {
                 ((ResultCallback) obj2).onError((TLRPC.TL_error) obj);
                 return;
             case 20:
-                ((p1) obj2).onComplete((Bitmap) obj);
+                ((j1) obj2).onComplete((Bitmap) obj);
                 return;
             case 21:
                 ((org.telegram.ui.ActionBar.p3) obj2).a((gg.a) obj);
@@ -816,7 +816,7 @@ public final /* synthetic */ class b4 implements Runnable {
                 }
             case 25:
                 File file2 = (File) obj2;
-                p1 p1Var = (p1) obj;
+                j1 j1Var = (j1) obj;
                 try {
                     if (file2.exists()) {
                         r8 = BitmapFactory.decodeFile(file2.getAbsolutePath());
@@ -824,7 +824,7 @@ public final /* synthetic */ class b4 implements Runnable {
                 } catch (Exception e17) {
                     a8.g(e17, true);
                 }
-                g0.h3(new b4(20, p1Var, r8));
+                g0.h3(new b4(20, j1Var, r8));
                 return;
             case 26:
                 g5 g5Var2 = (g5) obj2;

@@ -13,7 +13,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class sq0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -179,7 +179,7 @@ public final class sq0 extends FrameLayout {
     public sq0(org.telegram.ui.Components.m20 m20Var, Context context, int i7, String str, CharSequence charSequence) {
         super(context);
         this.a = 4;
-        boolean z9 = org.telegram.messenger.hd.a0;
+        boolean z9 = org.telegram.messenger.id.a0;
         ImageView imageView = new ImageView(getContext());
         Drawable mutate = getContext().getResources().getDrawable(i7).mutate();
         int i10 = org.telegram.ui.ActionBar.k6.G6;
@@ -204,7 +204,7 @@ public final class sq0 extends FrameLayout {
     public sq0(sy0 sy0Var, Context context, int i7, String str, CharSequence charSequence) {
         super(context);
         this.a = 3;
-        boolean z9 = org.telegram.messenger.hd.a0;
+        boolean z9 = org.telegram.messenger.id.a0;
         ImageView imageView = new ImageView(getContext());
         Drawable mutate = getContext().getResources().getDrawable(i7).mutate();
         int i10 = org.telegram.ui.ActionBar.k6.G6;
@@ -225,7 +225,7 @@ public final class sq0 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sq0(Context context, zh.n2 n2Var, org.telegram.ui.ActionBar.f6 f6Var) {
+    public sq0(Context context, zh.l2 l2Var, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.a = 22;
         LinearLayout f10 = org.telegram.messenger.k5.f(context, 1);
@@ -238,13 +238,13 @@ public final class sq0 extends FrameLayout {
         textView.setTextSize(1, 17.0f);
         textView.setGravity(17);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(org.telegram.messenger.hd.M0(2131750010, null));
+        textView.setText(org.telegram.messenger.id.M0(2131750012, null));
         f10.addView(textView, c8.ha.t(-2, -2, 17, 32, 12, 32, 9));
         org.telegram.ui.Components.w70 w70Var = new org.telegram.ui.Components.w70(context, null);
         org.telegram.ui.ActionBar.r6.V(w70Var, org.telegram.ui.ActionBar.k6.A6, f6Var);
         w70Var.setTextSize(1, 14.0f);
         w70Var.setGravity(17);
-        w70Var.setText(org.telegram.messenger.hd.M0(2131750011, null));
+        w70Var.setText(org.telegram.messenger.id.M0(2131750013, null));
         w70Var.setMaxWidth(org.telegram.messenger.g0.L(200.0f));
         f10.addView(w70Var, c8.ha.t(-2, -2, 17, 32, 0, 32, 12));
         TextView textView2 = new TextView(context);
@@ -255,11 +255,11 @@ public final class sq0 extends FrameLayout {
         textView2.setBackground(a02);
         org.telegram.ui.ActionBar.r6.k(textView2, a02, null, L, f6Var);
         textView2.setGravity(17);
-        textView2.setText(org.telegram.messenger.hd.M0(2131750012, null));
+        textView2.setText(org.telegram.messenger.id.M0(2131750014, null));
         textView2.setPadding(org.telegram.messenger.g0.L(13.0f), 0, org.telegram.messenger.g0.L(13.0f), 0);
         c8.ka.a(textView2);
         f10.addView(textView2, c8.ha.t(-2, 27, 17, 32, 0, 32, 12));
-        textView2.setOnClickListener(n2Var);
+        textView2.setOnClickListener(l2Var);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

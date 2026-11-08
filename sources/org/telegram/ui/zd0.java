@@ -6,7 +6,7 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class zd0 extends AnimatedPhoneNumberEditText {
     public final /* synthetic */ int V1;
@@ -54,7 +54,7 @@ public final class zd0 extends AnimatedPhoneNumberEditText {
                     ce0Var.c.setEditText(this);
                     ce0Var.c.setDispatchBackWhenEmpty(true);
                     if (be0Var.E == 2) {
-                        be0Var.setCountryButtonText(org.telegram.messenger.hd.M0(2131742860, null));
+                        be0Var.setCountryButtonText(org.telegram.messenger.id.M0(2131742862, null));
                         break;
                     }
                 }

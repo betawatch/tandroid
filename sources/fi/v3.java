@@ -8,9 +8,9 @@ import org.telegram.messenger.c20;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.an;
 import org.telegram.ui.tp0;
-import org.telegram.ui.yb1;
+import org.telegram.ui.zb1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v3 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -163,11 +163,11 @@ public final /* synthetic */ class v3 implements ValueAnimator.AnimatorUpdateLis
                 o0Var.i = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
             case 18:
-                yb1 yb1Var = (yb1) this.b;
-                yb1Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                zb1 zb1Var = (zb1) this.b;
+                zb1Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 int L = (org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(36.0f)) - org.telegram.messenger.g0.L(52.0f);
-                org.telegram.ui.Components.voip.x0 x0Var = yb1Var.c;
-                x0Var.getLayoutParams().width = org.telegram.messenger.g0.L(52.0f) + ((int) (L * yb1Var.E));
+                org.telegram.ui.Components.voip.x0 x0Var = zb1Var.c;
+                x0Var.getLayoutParams().width = org.telegram.messenger.g0.L(52.0f) + ((int) (L * zb1Var.E));
                 x0Var.requestLayout();
                 break;
             case 19:

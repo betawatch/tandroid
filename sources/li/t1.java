@@ -10,11 +10,11 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.gy;
 import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.hy;
 import org.telegram.ui.Components.rt0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class t1 extends rt0 {
     public boolean f0;
@@ -83,7 +83,7 @@ public final class t1 extends rt0 {
         b2 b2Var = this.i0;
         if (action == 0 && keyEvent.getKeyCode() == 47 && keyEvent.isCtrlPressed()) {
             if (b2Var.v0()) {
-                org.telegram.messenger.k5.o(null, 2131746004, new hc(b2Var.X, b2Var.getResourceProvider()), R.raw.contact_check, 36);
+                org.telegram.messenger.k5.o(null, 2131746006, new hc(b2Var.X, b2Var.getResourceProvider()), R.raw.contact_check, 36);
                 return true;
             }
         } else if (!b2Var.P.k3(keyEvent)) {
@@ -102,10 +102,10 @@ public final class t1 extends rt0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        gy gyVar;
+        hy hyVar;
         b2 b2Var = this.i0;
         if (!b2Var.P.u3.x() || !b2Var.P.v3.onTouchEvent(motionEvent)) {
-            int height = (!b2Var.C0 || (gyVar = b2Var.A0) == null) ? (getHeight() - org.telegram.messenger.g0.L(60.0f)) - Math.max(Math.max(b2Var.D0, b2Var.T0), b2Var.U0) : (int) gyVar.getY();
+            int height = (!b2Var.C0 || (hyVar = b2Var.A0) == null) ? (getHeight() - org.telegram.messenger.g0.L(60.0f)) - Math.max(Math.max(b2Var.D0, b2Var.T0), b2Var.U0) : (int) hyVar.getY();
             if (motionEvent.getAction() == 0 && b2Var.B0 && motionEvent.getY() < height) {
                 b2Var.p0(true);
             }

@@ -14,7 +14,7 @@ import android.text.TextUtils;
 import android.view.Surface;
 import java.nio.ByteBuffer;
 import java.util.Locale;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.tl.TL_account;
@@ -23,7 +23,7 @@ import org.telegram.ui.Components.ht0;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h9 implements Runnable {
     public final /* synthetic */ int a;
@@ -119,7 +119,7 @@ public final /* synthetic */ class h9 implements Runnable {
                 if (vaVar2.Q1 || vaVar2.P1 || vaVar2.B0 == null || vaVar2.f0 != 0 || vaVar2.m1 == null) {
                     return;
                 }
-                String M0 = hd.M0(y9Var.isFrontface() ? 2131744711 : 2131744710, null);
+                String M0 = id.M0(y9Var.isFrontface() ? 2131744713 : 2131744712, null);
                 m3 m3Var = vaVar2.m1;
                 m3Var.h = m3.a(M0, m3Var.getTextPaint());
                 vaVar2.m1.u(M0);

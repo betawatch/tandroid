@@ -7,14 +7,14 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import bi.m5;
 import c8.ha;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k5;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class e0 extends FrameLayout {
     public final ImageView a;
@@ -33,13 +33,13 @@ public final class e0 extends FrameLayout {
         this.a = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
         r6.t(imageView, k6.zk, f6Var, PorterDuff.Mode.SRC_IN);
-        addView(imageView, ha.d(24, 24.0f, (hd.a0 ? 5 : 3) | 16, 24.0f, 0.0f, 24.0f, 0.0f));
+        addView(imageView, ha.d(24, 24.0f, (id.a0 ? 5 : 3) | 16, 24.0f, 0.0f, 24.0f, 0.0f));
         k5 k5Var = new k5(context);
         this.b = k5Var;
         k5Var.setWidthWrapContent(true);
         r6.Y(k5Var, k6.j5, f6Var);
         k5Var.setTextSize(14);
-        boolean z9 = hd.a0;
+        boolean z9 = id.a0;
         addView(k5Var, ha.d(-2, -2.0f, (z9 ? 5 : 3) | 16, z9 ? 30.0f : 60.0f, 0.0f, z9 ? 60.0f : 30.0f, 0.0f));
         k5 k5Var2 = new k5(context);
         this.d = k5Var2;

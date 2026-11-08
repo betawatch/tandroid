@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q60 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -45,11 +45,11 @@ public final /* synthetic */ class q60 implements Runnable {
                         if ("STARGIFT_ALREADY_BURNED".equalsIgnoreCase(tL_error.text)) {
                             a02 = org.telegram.ui.Components.hc.a0(T);
                             i7 = R.raw.fire_on;
-                            i10 = 2131743881;
+                            i10 = 2131743883;
                         } else {
                             a02 = org.telegram.ui.Components.hc.a0(T);
                             i7 = R.raw.error;
-                            i10 = 2131743882;
+                            i10 = 2131743884;
                         }
                         org.telegram.messenger.k5.o(null, i10, a02, i7, 36);
                     }
@@ -94,7 +94,7 @@ public final /* synthetic */ class q60 implements Runnable {
                     StringBuilder u10 = a8.p0.u("cant import contact token. token=", str, " err=");
                     u10.append(tL_error == null ? null : tL_error.text);
                     org.telegram.messenger.a8.d(u10.toString());
-                    org.telegram.messenger.k5.p(null, 2131748133, org.telegram.ui.Components.hc.a0((org.telegram.ui.ActionBar.f2) jg.g.i(1, launchActivity2.d0)), null);
+                    org.telegram.messenger.k5.p(null, 2131748135, org.telegram.ui.Components.hc.a0((org.telegram.ui.ActionBar.f2) jg.g.i(1, launchActivity2.d0)), null);
                 }
                 try {
                     q10Var.run();

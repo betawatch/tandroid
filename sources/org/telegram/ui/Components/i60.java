@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class i60 extends View {
     public final Bitmap a;
@@ -74,7 +74,7 @@ public final class i60 extends View {
                 jk0.d(dVar);
             } else {
                 int i10 = jk0.O;
-                org.telegram.messenger.g0.l2(new ex(i7, viewGroup, dVar), 15.0f);
+                org.telegram.messenger.g0.l2(new fx(i7, viewGroup, dVar), 15.0f);
             }
         }
     }
@@ -216,7 +216,7 @@ public final class i60 extends View {
                     canvas2.clipPath(path);
                 }
                 if (!(view instanceof org.telegram.ui.Cells.o7)) {
-                    if (!(view instanceof zh.z0) || k60Var.N == 0 || k60Var.O == 0) {
+                    if (!(view instanceof zh.y0) || k60Var.N == 0 || k60Var.O == 0) {
                         if (k60Var.L) {
                             canvas.saveLayerAlpha(0.0f, 0.0f, view.getWidth(), view.getHeight(), (int) (this.x * f10), 31);
                             canvas2 = canvas;
@@ -232,13 +232,13 @@ public final class i60 extends View {
                         }
                         canvas2.restore();
                     } else if (view.getAlpha() >= 1.0f) {
-                        ((zh.z0) view).b(this, canvas2, width, f18, this.x);
+                        ((zh.y0) view).b(this, canvas2, width, f18, this.x);
                         canvas2 = canvas;
                     } else {
                         canvas.saveLayerAlpha(0.0f, 0.0f, width, f18, (int) (this.x * f10), 31);
                         float T1 = org.telegram.messenger.g0.T1(1.0f, 0.9f, this.x);
                         canvas.scale(T1, T1, width / 2.0f, f18 / 2.0f);
-                        ((zh.z0) view).b(this, canvas, width, f18, this.x);
+                        ((zh.y0) view).b(this, canvas, width, f18, this.x);
                         canvas.restore();
                         canvas2 = canvas;
                     }

@@ -4,13 +4,13 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 import bi.ud;
-import org.telegram.messenger.rc;
+import org.telegram.messenger.sc;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.m8;
 import org.telegram.ui.Components.ch0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l1 extends m8 {
     public final ud W;
@@ -26,7 +26,7 @@ public final class l1 extends m8 {
 
     @Override // org.telegram.ui.Cells.m8, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        boolean e10 = rc.e(131072);
+        boolean e10 = sc.e(131072);
         sg.t0 t0Var = this.b0;
         if (e10) {
             ud udVar = this.W;

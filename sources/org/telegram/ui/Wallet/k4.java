@@ -1,49 +1,32 @@
 package org.telegram.ui.Wallet;
 
-import android.text.TextUtils;
-import org.telegram.messenger.c20;
-import org.telegram.ui.Components.hc;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k4 implements c20 {
+public final /* synthetic */ class k4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ fi.d b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.v2 c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 d;
+    public final /* synthetic */ x5 b;
 
-    public /* synthetic */ k4(fi.d dVar, org.telegram.ui.ActionBar.v2 v2Var, org.telegram.ui.ActionBar.f6 f6Var, int i7) {
+    public /* synthetic */ k4(x5 x5Var, int i7) {
         this.a = i7;
-        this.b = dVar;
-        this.c = v2Var;
-        this.d = f6Var;
+        this.b = x5Var;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        String str = (String) obj;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                this.b.setLoading(false);
-                boolean isEmpty = TextUtils.isEmpty(str);
-                org.telegram.ui.ActionBar.v2 v2Var = this.c;
-                if (!isEmpty) {
-                    new hc(v2Var.E, this.d).e0(str, false);
-                    break;
-                } else {
-                    v2Var.dismiss();
-                    break;
-                }
+                x5 x5Var = this.b;
+                x5Var.getClass();
+                x5Var.M0(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
             default:
-                this.b.setLoading(false);
-                org.telegram.ui.ActionBar.v2 v2Var2 = this.c;
-                if (str == null) {
-                    v2Var2.dismiss();
-                    break;
-                } else {
-                    new hc(v2Var2.E, this.d).e0(str, false);
-                    break;
-                }
+                x5 x5Var2 = this.b;
+                x5Var2.getClass();
+                x5Var2.H0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                x5Var2.T0();
+                break;
         }
     }
 }

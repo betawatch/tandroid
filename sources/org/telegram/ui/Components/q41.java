@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class q41 extends pj0 {
     public v4.b0 e3;
@@ -127,8 +127,8 @@ public class q41 extends pj0 {
 
     public int getSpanCount() {
         v4.b0 b0Var = this.e3;
-        if (b0Var instanceof jy) {
-            return ((jy) b0Var).J;
+        if (b0Var instanceof ky) {
+            return ((ky) b0Var).J;
         }
         return -1;
     }
@@ -144,8 +144,8 @@ public class q41 extends pj0 {
 
     public void setSpanCount(int i7) {
         v4.b0 b0Var = this.e3;
-        if (b0Var instanceof jy) {
-            ((jy) b0Var).y1(i7);
+        if (b0Var instanceof ky) {
+            ((ky) b0Var).y1(i7);
             return;
         }
         if (b0Var == null || i7 == -1) {

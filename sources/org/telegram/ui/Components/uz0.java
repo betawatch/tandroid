@@ -5,7 +5,7 @@ import android.text.TextWatcher;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class uz0 implements TextWatcher {
     public final /* synthetic */ vz0 a;
@@ -22,16 +22,16 @@ public final class uz0 implements TextWatcher {
         }
         String obj = this.a.b.getText().toString();
         if (obj.length() != 0) {
-            iy iyVar = this.a.c.l1;
-            if (iyVar != null) {
-                iyVar.setText(org.telegram.messenger.hd.M0(2131748166, null));
+            jy jyVar = this.a.c.l1;
+            if (jyVar != null) {
+                jyVar.setText(org.telegram.messenger.id.M0(2131748168, null));
             }
         } else {
             v4.g0 adapter = this.a.c.j1.getAdapter();
             ThemeEditorView.EditorAlert editorAlert = this.a.c;
             if (adapter != editorAlert.o1) {
                 int J0 = ThemeEditorView.EditorAlert.J0(editorAlert);
-                this.a.c.l1.setText(org.telegram.messenger.hd.M0(2131748229, null));
+                this.a.c.l1.setText(org.telegram.messenger.id.M0(2131748231, null));
                 this.a.c.l1.c();
                 ThemeEditorView.EditorAlert editorAlert2 = this.a.c;
                 editorAlert2.j1.setAdapter(editorAlert2.o1);

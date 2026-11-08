@@ -10,12 +10,12 @@ import android.graphics.RectF;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.qa0;
-import org.telegram.ui.yb1;
+import org.telegram.ui.zb1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class x0 extends TextView {
     public final /* synthetic */ int a = 1;
@@ -42,29 +42,29 @@ public final class x0 extends TextView {
         switch (i10) {
             case 0:
                 Paint paint = (Paint) obj2;
-                yb1 yb1Var = (yb1) frameLayout;
-                x0 x0Var = yb1Var.c;
-                yb1Var.P.k(-getX(), -getY(), yb1Var.getWidth() - getX(), yb1Var.getHeight() - getY());
-                yb1Var.Q.k(-getX(), -getY(), yb1Var.getWidth() - getX(), yb1Var.getHeight() - getY());
+                zb1 zb1Var = (zb1) frameLayout;
+                x0 x0Var = zb1Var.c;
+                zb1Var.P.k(-getX(), -getY(), zb1Var.getWidth() - getX(), zb1Var.getHeight() - getY());
+                zb1Var.Q.k(-getX(), -getY(), zb1Var.getWidth() - getX(), zb1Var.getHeight() - getY());
                 RectF rectF = org.telegram.messenger.g0.P;
                 rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
                 Paint[] paintArr = (Paint[]) obj;
-                paintArr[yb1Var.w].setAlpha(qs.e4);
-                float L = org.telegram.messenger.g0.L(8.0f) + ((int) ((1.0f - yb1Var.D) * (org.telegram.messenger.g0.L(26.0f) - org.telegram.messenger.g0.L(8.0f))));
-                canvas.drawRoundRect(rectF, L, L, paintArr[yb1Var.w]);
-                float f10 = yb1Var.s;
-                if (f10 > 0.0f && (i7 = yb1Var.w + 1) < paintArr.length) {
+                paintArr[zb1Var.w].setAlpha(qs.e4);
+                float L = org.telegram.messenger.g0.L(8.0f) + ((int) ((1.0f - zb1Var.D) * (org.telegram.messenger.g0.L(26.0f) - org.telegram.messenger.g0.L(8.0f))));
+                canvas.drawRoundRect(rectF, L, L, paintArr[zb1Var.w]);
+                float f10 = zb1Var.s;
+                if (f10 > 0.0f && (i7 = zb1Var.w + 1) < paintArr.length) {
                     paintArr[i7].setAlpha((int) (f10 * 255.0f));
-                    canvas.drawRoundRect(rectF, L, L, paintArr[yb1Var.w + 1]);
+                    canvas.drawRoundRect(rectF, L, L, paintArr[zb1Var.w + 1]);
                 }
-                float f11 = yb1Var.D;
+                float f11 = zb1Var.D;
                 if (f11 < 1.0f) {
                     paint.setAlpha((int) ((1.0f - f11) * 255.0f));
                     canvas.drawRoundRect(rectF, L, L, paint);
                 }
                 super.onDraw(canvas);
-                if (yb1Var.O) {
-                    canvas.drawText(hd.M0(2131743241, null), getWidth() / 2, (int) ((getHeight() / 2) - ((x0Var.getPaint().ascent() + x0Var.getPaint().descent()) / 2.0f)), x0Var.getPaint());
+                if (zb1Var.O) {
+                    canvas.drawText(id.M0(2131743243, null), getWidth() / 2, (int) ((getHeight() / 2) - ((x0Var.getPaint().ascent() + x0Var.getPaint().descent()) / 2.0f)), x0Var.getPaint());
                     break;
                 }
                 break;
@@ -84,8 +84,8 @@ public final class x0 extends TextView {
     public void onSizeChanged(int i7, int i10, int i11, int i12) {
         switch (this.a) {
             case 0:
-                yb1 yb1Var = (yb1) this.d;
-                b8 b8Var = yb1Var.P;
+                zb1 zb1Var = (zb1) this.d;
+                b8 b8Var = zb1Var.P;
                 super.onSizeChanged(i7, i10, i11, i12);
                 int i13 = 0;
                 while (true) {
@@ -96,7 +96,7 @@ public final class x0 extends TextView {
                         if (i13 == 0) {
                             paintArr[i13] = (Paint) b8Var.a;
                         } else if (i13 == 1) {
-                            paintArr[i13] = (Paint) yb1Var.Q.a;
+                            paintArr[i13] = (Paint) zb1Var.Q.a;
                         } else {
                             paintArr[i13] = (Paint) b8Var.a;
                         }
@@ -110,19 +110,19 @@ public final class x0 extends TextView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x0(yb1 yb1Var, Context context) {
+    public x0(zb1 zb1Var, Context context) {
         super(context);
-        this.d = yb1Var;
+        this.d = zb1Var;
         Paint paint = new Paint();
         this.b = paint;
-        this.c = new Paint[yb1Var.e.length];
-        qa0 qa0Var = yb1Var.R;
+        this.c = new Paint[zb1Var.e.length];
+        qa0 qa0Var = zb1Var.R;
         qa0Var.setBounds(0, 0, 80, 80);
-        qa0 qa0Var2 = yb1Var.S;
+        qa0 qa0Var2 = zb1Var.S;
         qa0Var2.setBounds(0, 0, 80, 80);
-        b8 b8Var = yb1Var.P;
+        b8 b8Var = zb1Var.P;
         b8Var.k(0.0f, 0.0f, 80.0f, 80.0f);
-        b8 b8Var2 = yb1Var.Q;
+        b8 b8Var2 = zb1Var.Q;
         b8Var2.k(0.0f, 0.0f, 80.0f, 80.0f);
         qa0Var.setAlpha(qs.e4);
         qa0Var2.setAlpha(qs.e4);

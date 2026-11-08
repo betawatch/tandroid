@@ -22,7 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements p {
     public Object a;
@@ -96,11 +96,11 @@ public final /* synthetic */ class e implements p {
         d dVar = new d((f) this.a, (TaskCompletionSource) obj2, 1);
         c cVar = (c) ((g) obj).n();
         a aVar = (a) this.b;
-        Parcel J0 = cVar.J0();
-        n7.a.c(J0, dVar);
-        n7.a.b(J0, aVar);
-        J0.writeStrongBinder(null);
-        cVar.K0(J0, 2);
+        Parcel j12 = cVar.j1();
+        n7.a.c(j12, dVar);
+        n7.a.b(j12, aVar);
+        j12.writeStrongBinder(null);
+        cVar.k1(j12, 2);
     }
 
     public File b() {

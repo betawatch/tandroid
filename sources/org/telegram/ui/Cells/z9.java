@@ -10,7 +10,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.p10;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.qa0;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.dn;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class z9 extends LinearLayout {
     public final f D;
@@ -277,7 +277,7 @@ public class z9 extends LinearLayout {
         if (i12 == 3) {
             boolean z9 = j3 < 0;
             TLRPC.TL_message tL_message = new TLRPC.TL_message();
-            tL_message.message = hd.M0(z9 ? 2131752433 : 2131743752, null);
+            tL_message.message = id.M0(z9 ? 2131752433 : 2131743754, null);
             TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
             tL_message.reply_to = tL_messageReplyHeader;
             tL_messageReplyHeader.flags |= 1;
@@ -304,20 +304,20 @@ public class z9 extends LinearLayout {
                 message2.peer_id = new TLRPC.TL_peerChannel();
                 tL_message.replyMessage.peer_id.channel_id = j10;
             }
-            tL_message.replyMessage.message = hd.M0(z9 ? 2131752430 : 2131743749, null);
+            tL_message.replyMessage.message = id.M0(z9 ? 2131752430 : 2131743751, null);
             TLRPC.TL_messageMediaWebPage tL_messageMediaWebPage = new TLRPC.TL_messageMediaWebPage();
             tL_message.media = tL_messageMediaWebPage;
             tL_messageMediaWebPage.webpage = new TLRPC.TL_webPage();
             TLRPC.WebPage webPage = tL_message.media.webpage;
             webPage.embed_url = "https://telegram.org/";
             webPage.flags |= 2;
-            webPage.site_name = hd.M0(R.string.AppName, null);
+            webPage.site_name = id.M0(R.string.AppName, null);
             TLRPC.WebPage webPage2 = tL_message.media.webpage;
             webPage2.flags |= 4;
-            webPage2.title = hd.M0(z9 ? 2131752431 : 2131743750, null);
+            webPage2.title = id.M0(z9 ? 2131752431 : 2131743752, null);
             TLRPC.WebPage webPage3 = tL_message.media.webpage;
             webPage3.flags |= 8;
-            webPage3.description = hd.M0(z9 ? 2131752432 : 2131743751, null);
+            webPage3.description = id.M0(z9 ? 2131752432 : 2131743753, null);
             tL_message.date = currentTimeMillis - 3540;
             tL_message.dialog_id = 1L;
             tL_message.flags = qs.i4;
@@ -349,7 +349,7 @@ public class z9 extends LinearLayout {
             ijVar2 = ijVar3;
         } else if (i12 == 2) {
             TLRPC.TL_message tL_message2 = new TLRPC.TL_message();
-            tL_message2.message = hd.M0(2131751354, null);
+            tL_message2.message = id.M0(2131751354, null);
             tL_message2.date = currentTimeMillis - 3540;
             tL_message2.dialog_id = 1L;
             tL_message2.flags = qs.i4;
@@ -365,16 +365,16 @@ public class z9 extends LinearLayout {
             ijVar2 = new ij(p10.s0, tL_message2, true, false);
             ijVar2.Q1 = false;
             ijVar2.T = 1L;
-            ijVar2.G = hd.M0(2131751352, null);
+            ijVar2.G = id.M0(2131751352, null);
             ijVar2.k2 = context2.getDrawable(R.drawable.dino_pic);
             ijVar2.c1 = 5;
             ijVar2.d1 = 0L;
         } else {
             TLRPC.TL_message tL_message3 = new TLRPC.TL_message();
             if (i12 == 0) {
-                tL_message3.message = hd.M0(2131750606, null);
+                tL_message3.message = id.M0(2131750606, null);
             } else {
-                tL_message3.message = hd.M0(2131748253, null);
+                tL_message3.message = id.M0(2131748255, null);
             }
             int indexOf = tL_message3.message.indexOf("👋");
             if (indexOf >= 0) {
@@ -400,9 +400,9 @@ public class z9 extends LinearLayout {
             ij ijVar4 = new ij(p10.s0, tL_message3, true, false);
             TLRPC.TL_message tL_message4 = new TLRPC.TL_message();
             if (i12 == 0) {
-                tL_message4.message = hd.M0(2131750608, null);
+                tL_message4.message = id.M0(2131750608, null);
             } else {
-                String M0 = hd.M0(2131748255, null);
+                String M0 = id.M0(2131748257, null);
                 StringBuilder sb2 = new StringBuilder(M0);
                 int indexOf2 = M0.indexOf(42);
                 int lastIndexOf = M0.lastIndexOf(42);
@@ -444,9 +444,9 @@ public class z9 extends LinearLayout {
             ijVar5.T = 1L;
             TLRPC.TL_message tL_message5 = new TLRPC.TL_message();
             if (i12 == 0) {
-                tL_message5.message = hd.M0(2131750609, null);
+                tL_message5.message = id.M0(2131750609, null);
             } else {
-                tL_message5.message = hd.M0(2131748256, null);
+                tL_message5.message = id.M0(2131748258, null);
             }
             tL_message5.date = i14;
             tL_message5.dialog_id = 1L;
@@ -468,14 +468,14 @@ public class z9 extends LinearLayout {
                 str = null;
             } else {
                 str = null;
-                ijVar6.B0 = hd.M0(2131748254, null);
+                ijVar6.B0 = id.M0(2131748256, null);
             }
             ijVar6.T = 1L;
             ijVar6.Q1 = false;
             ijVar6.C = ijVar4;
             if (i12 == 4) {
                 TLRPC.TL_user tL_user = new TLRPC.TL_user();
-                String M02 = hd.M0(2131749394, str);
+                String M02 = id.M0(2131749396, str);
                 tL_user.first_name = M02;
                 ijVar6.G = M02;
                 ijVar6.k2 = new org.telegram.ui.Components.w8(0, tL_user);
@@ -496,7 +496,7 @@ public class z9 extends LinearLayout {
                 q1Var.setFullyDraw(true);
                 ij ijVar7 = i11 == 0 ? ijVar : ijVar2;
                 if (ijVar7 != null) {
-                    this.n[i11].v3(ijVar7, null, false, false, false, false);
+                    this.n[i11].w3(ijVar7, null, false, false, false, false);
                     addView(this.n[i11], c8.ha.o(-1, -2));
                 }
                 i11++;

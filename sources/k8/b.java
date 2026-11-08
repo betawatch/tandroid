@@ -13,7 +13,7 @@ import n6.f;
 import q6.m;
 import v7.e;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static boolean a = false;
@@ -30,27 +30,27 @@ public abstract class b {
                 try {
                     d a10 = d1.a(context);
                     try {
-                        l8.a X0 = a10.X0();
-                        m.g(X0);
-                        z0.a = X0;
-                        e Z0 = a10.Z0();
+                        l8.a x12 = a10.x1();
+                        m.g(x12);
+                        z0.a = x12;
+                        e z12 = a10.z1();
                         if (q9.a == null) {
-                            m.h(Z0, "delegate must not be null");
-                            q9.a = Z0;
+                            m.h(z12, "delegate must not be null");
+                            q9.a = z12;
                         }
                         a = true;
                         try {
-                            Parcel O0 = a10.O0(a10.P0(), 9);
-                            int readInt = O0.readInt();
-                            O0.recycle();
+                            Parcel o12 = a10.o1(a10.p1(), 9);
+                            int readInt = o12.readInt();
+                            o12.recycle();
                             if (readInt == 2) {
                                 b = 2;
                             }
                             a7.b bVar = new a7.b(context);
-                            Parcel P0 = a10.P0();
-                            v7.b.c(P0, bVar);
-                            P0.writeInt(0);
-                            a10.T0(P0, 10);
+                            Parcel p12 = a10.p1();
+                            v7.b.c(p12, bVar);
+                            p12.writeInt(0);
+                            a10.t1(p12, 10);
                         } catch (RemoteException e10) {
                             Log.e("b", "Failed to retrieve renderer type or log initialization.", e10);
                         }

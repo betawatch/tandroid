@@ -12,7 +12,7 @@ import java.util.Iterator;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.t10;
@@ -28,14 +28,14 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.an;
 import wg.b0;
 import wg.p;
-import zh.g3;
+import zh.e3;
+import zh.j3;
 import zh.k3;
 import zh.l3;
 import zh.m3;
 import zh.n3;
-import zh.o3;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -80,7 +80,7 @@ public final /* synthetic */ class z0 implements View.OnClickListener {
                 final f1 f1Var2 = (f1) obj2;
                 final TLRPC.User user = (TLRPC.User) obj;
                 k60 F = k60.F(f1Var2.c, f1Var2.I0, (View) view.getParent());
-                F.c(R.drawable.profile_discuss, hd.M0(2131745602, null), new Runnable() { // from class: wg.b1
+                F.c(R.drawable.profile_discuss, id.M0(2131745604, null), new Runnable() { // from class: wg.b1
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i11) {
@@ -131,7 +131,7 @@ public final /* synthetic */ class z0 implements View.OnClickListener {
                         }
                     }
                 }, false);
-                F.c(R.drawable.msg_openprofile, hd.M0(2131747785, null), new Runnable() { // from class: wg.b1
+                F.c(R.drawable.msg_openprofile, id.M0(2131747787, null), new Runnable() { // from class: wg.b1
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i12) {
@@ -274,35 +274,35 @@ public final /* synthetic */ class z0 implements View.OnClickListener {
                 }
                 break;
             case 7:
-                m3 m3Var = (m3) obj2;
-                m3Var.getClass();
+                l3 l3Var = (l3) obj2;
+                l3Var.getClass();
                 if (((sc) obj).f > 0) {
-                    m3Var.presentFragment(new dd());
+                    l3Var.presentFragment(new dd());
                     break;
                 }
                 break;
             case 8:
-                l3 l3Var = (l3) obj2;
-                k3 k3Var = (k3) obj;
-                k60 F2 = k60.F(l3Var.c, l3Var.I0, l3Var.S1);
-                F2.c(R.drawable.menu_sort_value, hd.M0(2131746140, null), new g3(k3Var, 3), false);
-                F2.c(R.drawable.menu_sort_date, hd.M0(2131746144, null), new g3(k3Var, 4), false);
-                F2.c(R.drawable.menu_sort_number, hd.M0(2131746142, null), new g3(k3Var, 5), false);
+                k3 k3Var = (k3) obj2;
+                j3 j3Var = (j3) obj;
+                k60 F2 = k60.F(k3Var.c, k3Var.I0, k3Var.S1);
+                F2.c(R.drawable.menu_sort_value, id.M0(2131746142, null), new e3(j3Var, 3), false);
+                F2.c(R.drawable.menu_sort_date, id.M0(2131746146, null), new e3(j3Var, 4), false);
+                F2.c(R.drawable.menu_sort_number, id.M0(2131746144, null), new e3(j3Var, 5), false);
                 F2.t = false;
                 F2.Y = true;
                 F2.a0(0.0f, org.telegram.messenger.g0.L(-8.0f));
                 F2.Z();
                 break;
             case 9:
-                o3 o3Var = (o3) obj2;
+                n3 n3Var = (n3) obj2;
                 d4 d4Var = (d4) obj;
-                HashSet hashSet2 = o3Var.R1;
+                HashSet hashSet2 = n3Var.R1;
                 if (!hashSet2.isEmpty()) {
                     ArrayList arrayList2 = new ArrayList();
                     Iterator it = hashSet2.iterator();
                     while (it.hasNext()) {
                         long longValue = ((Long) it.next()).longValue();
-                        ArrayList arrayList3 = o3Var.Q1.l;
+                        ArrayList arrayList3 = n3Var.Q1.l;
                         int size2 = arrayList3.size();
                         int i13 = 0;
                         while (true) {
@@ -322,12 +322,12 @@ public final /* synthetic */ class z0 implements View.OnClickListener {
                         }
                     }
                     d4Var.a(arrayList2);
-                    o3Var.dismiss();
+                    n3Var.dismiss();
                     break;
                 }
                 break;
             default:
-                v9 v9Var = ((n3) obj2).c.Q1;
+                v9 v9Var = ((m3) obj2).c.Q1;
                 v9Var.e = !v9Var.e;
                 ((gp0) obj).run();
                 v9Var.j(true);

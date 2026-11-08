@@ -31,7 +31,7 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class PopupNotificationActivity extends Activity implements org.telegram.messenger.ls {
     public static final /* synthetic */ int b0 = 0;
@@ -1462,12 +1462,12 @@ public class PopupNotificationActivity extends Activity implements org.telegram.
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
-        String M0 = org.telegram.messenger.hd.M0(R.string.AppName, null);
+        String M0 = org.telegram.messenger.id.M0(R.string.AppName, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
-        u1Var.T = org.telegram.messenger.hd.M0(2131747310, null);
-        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131747299, null), new li0(this, 6));
-        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747830, null), null);
+        u1Var.T = org.telegram.messenger.id.M0(2131747312, null);
+        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131747301, null), new li0(this, 6));
+        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747832, null), null);
         alertDialog$Builder.p();
     }
 
@@ -1575,11 +1575,11 @@ public class PopupNotificationActivity extends Activity implements org.telegram.
         }
         TLRPC.User user2 = this.M;
         if (user2 != null && user2.id == 489000) {
-            this.e.setText(org.telegram.messenger.hd.M0(2131743617, null));
+            this.e.setText(org.telegram.messenger.id.M0(2131743619, null));
             return;
         }
         if (user2 != null && user2.id == 777000) {
-            this.e.setText(org.telegram.messenger.hd.M0(2131745562, null));
+            this.e.setText(org.telegram.messenger.id.M0(2131745564, null));
             return;
         }
         CharSequence D1 = org.telegram.messenger.qp.s1(this.Q.I1).D1(org.telegram.messenger.ij.B0(this.Q.k), 0L, false);
@@ -1594,7 +1594,7 @@ public class PopupNotificationActivity extends Activity implements org.telegram.
             if (a22 != null) {
                 this.M = a22;
             }
-            this.e.setText(org.telegram.messenger.hd.d0(this.Q.I1, this.M, null, null));
+            this.e.setText(org.telegram.messenger.id.d0(this.Q.I1, this.M, null, null));
         }
     }
 }

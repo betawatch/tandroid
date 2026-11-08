@@ -33,7 +33,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class wk extends vh implements org.telegram.ui.ActionBar.a6, org.telegram.messenger.ls {
     public static final /* synthetic */ int F0 = 0;
@@ -151,8 +151,8 @@ public final class wk extends vh implements org.telegram.ui.ActionBar.a6, org.te
         this.x = a10;
         this.b.getClass();
         a10.setVisibility(0);
-        a10.setSearchFieldHint(org.telegram.messenger.hd.M0(2131745837, null));
-        a10.setContentDescription(org.telegram.messenger.hd.M0(2131745837, null));
+        a10.setSearchFieldHint(org.telegram.messenger.id.M0(2131745839, null));
+        a10.setContentDescription(org.telegram.messenger.id.M0(2131745839, null));
         EditTextBoldCursor searchField = a10.getSearchField();
         int i11 = org.telegram.ui.ActionBar.k6.j5;
         org.telegram.ui.ActionBar.r6.V(searchField, i11, f6Var);
@@ -171,10 +171,10 @@ public final class wk extends vh implements org.telegram.ui.ActionBar.a6, org.te
         r0Var2.setSubMenuOpenSide(2);
         r0Var2.setAdditionalXOffset(org.telegram.messenger.g0.L(10.0f));
         r0Var2.setAdditionalYOffset(-org.telegram.messenger.g0.L(10.0f));
-        r0Var2.d(2, R.drawable.msg_map, null, org.telegram.messenger.hd.M0(2131748689, null), true, false, f6Var);
-        r0Var2.d(3, R.drawable.msg_satellite, null, org.telegram.messenger.hd.M0(2131745949, null), true, false, f6Var);
-        r0Var2.d(4, R.drawable.msg_hybrid, null, org.telegram.messenger.hd.M0(2131749274, null), true, false, f6Var);
-        r0Var2.setContentDescription(org.telegram.messenger.hd.M0(2131754839, null));
+        r0Var2.d(2, R.drawable.msg_map, null, org.telegram.messenger.id.M0(2131748691, null), true, false, f6Var);
+        r0Var2.d(3, R.drawable.msg_satellite, null, org.telegram.messenger.id.M0(2131745951, null), true, false, f6Var);
+        r0Var2.d(4, R.drawable.msg_hybrid, null, org.telegram.messenger.id.M0(2131749276, null), true, false, f6Var);
+        r0Var2.setContentDescription(org.telegram.messenger.id.M0(2131754839, null));
         int L = org.telegram.messenger.g0.L(40.0f);
         int i12 = org.telegram.ui.ActionBar.k6.kj;
         int w02 = org.telegram.ui.ActionBar.k6.w0(i12, this.a);
@@ -208,7 +208,7 @@ public final class wk extends vh implements org.telegram.ui.ActionBar.a6, org.te
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         org.telegram.ui.ActionBar.r6.t(imageView, i14, f6Var, mode);
         imageView.setTag(Integer.valueOf(i14));
-        imageView.setContentDescription(org.telegram.messenger.hd.M0(2131754831, null));
+        imageView.setContentDescription(org.telegram.messenger.id.M0(2131754831, null));
         e5Var.addView(imageView, c8.ha.d(40, 40.0f, 85, 0.0f, 0.0f, 12.0f, 12.0f));
         imageView.setOnClickListener(new lk(i7, this, f6Var));
         LinearLayout linearLayout = new LinearLayout(context);
@@ -228,7 +228,7 @@ public final class wk extends vh implements org.telegram.ui.ActionBar.a6, org.te
         org.telegram.ui.ActionBar.r6.V(textView, i15, f6Var);
         textView.setGravity(17);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        jg.g.v(textView, 1, 17.0f, null, 2131748178);
+        jg.g.v(textView, 1, 17.0f, null, 2131748180);
         TextView f10 = org.telegram.messenger.camera.q.f(linearLayout, textView, c8.ha.t(-2, -2, 17, 0, 11, 0, 0), context);
         this.w = f10;
         org.telegram.ui.ActionBar.r6.V(f10, i15, f6Var);
@@ -566,13 +566,13 @@ public final class wk extends vh implements org.telegram.ui.ActionBar.a6, org.te
         jk jkVar = new jk(wkVar, 3);
         wf.b bVar = faVar.a;
         int i7 = 5;
-        org.telegram.messenger.p1 p1Var = new org.telegram.messenger.p1(jkVar, i7);
+        org.telegram.messenger.j1 j1Var = new org.telegram.messenger.j1(jkVar, i7);
         l8.e eVar = (l8.e) bVar.b;
         try {
-            k8.c cVar = new k8.c(p1Var);
-            Parcel P0 = eVar.P0();
-            v7.b.c(P0, cVar);
-            eVar.T0(P0, 42);
+            k8.c cVar = new k8.c(j1Var);
+            Parcel p12 = eVar.p1();
+            v7.b.c(p12, cVar);
+            eVar.t1(p12, 42);
             int i10 = 1;
             if (org.telegram.ui.ActionBar.k6.I.q() || org.telegram.messenger.g0.B(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.d6, wkVar.a)) < 0.721f) {
                 wkVar.Q = true;
@@ -597,13 +597,13 @@ public final class wk extends vh implements org.telegram.ui.ActionBar.a6, org.te
             org.telegram.messenger.fa faVar2 = wkVar.D;
             jk jkVar2 = new jk(wkVar, 4);
             wf.b bVar2 = faVar2.a;
-            org.telegram.messenger.p1 p1Var2 = new org.telegram.messenger.p1(jkVar2, 7);
+            org.telegram.messenger.j1 j1Var2 = new org.telegram.messenger.j1(jkVar2, 7);
             l8.e eVar2 = (l8.e) bVar2.b;
             try {
-                k8.c cVar2 = new k8.c(p1Var2, 0);
-                Parcel P02 = eVar2.P0();
-                v7.b.c(P02, cVar2);
-                eVar2.T0(P02, 99);
+                k8.c cVar2 = new k8.c(j1Var2, 0);
+                Parcel p13 = eVar2.p1();
+                v7.b.c(p13, cVar2);
+                eVar2.t1(p13, 99);
                 wkVar.D.n(new pk(wkVar, i10));
                 wkVar.D.m(new k2(15));
                 wkVar.f0();
@@ -620,9 +620,9 @@ public final class wk extends vh implements org.telegram.ui.ActionBar.a6, org.te
                             int i11 = org.telegram.ui.ActionBar.k6.L5;
                             alertDialog$Builder.m(R.raw.permission_request_location, 72, org.telegram.ui.ActionBar.k6.w0(i11, wkVar.a), null);
                             alertDialog$Builder.n(i11, wkVar.a);
-                            alertDialog$Builder.a.T = org.telegram.messenger.hd.M0(2131749529, null);
-                            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751806, null), new kk(wkVar));
-                            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+                            alertDialog$Builder.a.T = org.telegram.messenger.id.M0(2131749531, null);
+                            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751806, null), new kk(wkVar));
+                            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
                             alertDialog$Builder.p();
                         }
                     } catch (Exception e11) {
@@ -826,7 +826,7 @@ public final class wk extends vh implements org.telegram.ui.ActionBar.a6, org.te
     @Override // org.telegram.ui.Components.vh
     public final void H(vh vhVar) {
         di diVar = this.b;
-        diVar.R2.setTitle(org.telegram.messenger.hd.M0(2131745457, null));
+        diVar.R2.setTitle(org.telegram.messenger.id.M0(2131745459, null));
         int i7 = 1;
         if (((bi.x5) ((a8.r7) this.E).b).getParent() == null) {
             bi.x5 x5Var = (bi.x5) ((a8.r7) this.E).b;

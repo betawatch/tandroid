@@ -8,7 +8,7 @@ import java.util.HashMap;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class s10 {
     public final int a;
@@ -20,7 +20,7 @@ public final class s10 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final k7 a(String str, String str2, c20 c20Var) {
+    public final l7 a(String str, String str2, c20 c20Var) {
         TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername;
         if (TextUtils.isEmpty(str2)) {
             LruCache lruCache = this.b;
@@ -59,7 +59,7 @@ public final class s10 {
             }
             tL_contacts_resolveUsername = tL_contacts_resolveUsername2;
         }
-        return new k7(this, str, ConnectionsManager.getInstance(this.a).sendRequest(tL_contacts_resolveUsername, new s4(10, this, str)), 23);
+        return new l7(this, str, ConnectionsManager.getInstance(this.a).sendRequest(tL_contacts_resolveUsername, new r4(10, this, str)), 23);
     }
 
     public final void b(TLRPC.User user, TLRPC.User user2) {

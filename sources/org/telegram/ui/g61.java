@@ -9,7 +9,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class g61 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.Cells.z9 a;
@@ -44,7 +44,7 @@ public final class g61 extends FrameLayout implements org.telegram.ui.ActionBar.
         org.telegram.ui.Cells.r8 r8Var = new org.telegram.ui.Cells.r8(context);
         this.c = r8Var;
         r8Var.setBackground(org.telegram.ui.ActionBar.k6.N0(false));
-        r8Var.f(org.telegram.messenger.hd.M0(2131751832, null), org.telegram.messenger.iz.H0, false);
+        r8Var.f(org.telegram.messenger.id.M0(2131751832, null), org.telegram.messenger.iz.H0, false);
         r8Var.setOnClickListener(new my0(this, 7));
         q4Var = ((org.telegram.ui.ActionBar.f2) themeActivity).parentLayout;
         org.telegram.ui.Cells.z9 z9Var = new org.telegram.ui.Cells.z9(context, q4Var, 0);

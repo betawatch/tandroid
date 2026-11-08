@@ -11,7 +11,7 @@ import org.telegram.messenger.ij;
 import org.telegram.ui.wz;
 import org.telegram.ui.yz;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class wz extends org.telegram.ui.Components.oj0 {
     public final Context c;
@@ -54,7 +54,7 @@ public final class wz extends org.telegram.ui.Components.oj0 {
                 if (i10 == 1) {
                     int ceil = (int) Math.ceil(arrayList.size() / yzVar.s);
                     int i11 = yzVar.s;
-                    ((org.telegram.ui.Components.lz) view).w = i11 - ((ceil * i11) - arrayList.size());
+                    ((org.telegram.ui.Components.mz) view).w = i11 - ((ceil * i11) - arrayList.size());
                     return;
                 }
                 return;
@@ -105,7 +105,7 @@ public final class wz extends org.telegram.ui.Components.oj0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r6v10, types: [org.telegram.ui.Components.lz, org.telegram.ui.mz] */
+    /* JADX WARN: Type inference failed for: r6v10, types: [org.telegram.ui.Components.mz, org.telegram.ui.mz] */
     /* JADX WARN: Type inference failed for: r6v5 */
     /* JADX WARN: Type inference failed for: r6v6, types: [android.view.View] */
     @Override // v4.g0

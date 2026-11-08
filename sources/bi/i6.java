@@ -31,7 +31,7 @@ import org.telegram.ui.jn0;
 import org.telegram.ui.ld0;
 import org.telegram.ui.zj0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i6 implements org.telegram.ui.ActionBar.r1, fb0, ri, org.telegram.messenger.q1, OnFailureListener, w10 {
     public final /* synthetic */ int a;
@@ -91,11 +91,11 @@ public final /* synthetic */ class i6 implements org.telegram.ui.ActionBar.r1, f
         }
         k60 H = k60.H(f2Var, view);
         H.W(new wp0(up0Var));
-        H.l(R.drawable.menu_gift_add, org.telegram.messenger.hd.M0(2131750237, null), new zh.i1(up0Var, 2), h);
-        H.l(R.drawable.msg_share, org.telegram.messenger.hd.M0(2131750233, null), new jg.c1(up0Var, i11, r10, tL_starGiftCollection, context, f6Var, f2Var, 18), !TextUtils.isEmpty(r10));
-        H.l(R.drawable.msg_edit, org.telegram.messenger.hd.M0(2131750235, null), new wi.q(13, up0Var, tL_starGiftCollection), h);
-        H.l(R.drawable.tabs_reorder, org.telegram.messenger.hd.M0(2131750234, null), new zh.i1(up0Var, 1), h);
-        H.m(R.drawable.msg_delete, new d10(up0Var, i7, tL_starGiftCollection, 26), org.telegram.messenger.hd.M0(2131750236, null), h, true);
+        H.l(R.drawable.menu_gift_add, org.telegram.messenger.id.M0(2131750239, null), new zh.h1(up0Var, 2), h);
+        H.l(R.drawable.msg_share, org.telegram.messenger.id.M0(2131750235, null), new jg.c1(up0Var, i11, r10, tL_starGiftCollection, context, f6Var, f2Var, 18), !TextUtils.isEmpty(r10));
+        H.l(R.drawable.msg_edit, org.telegram.messenger.id.M0(2131750237, null), new yf.b(8, up0Var, tL_starGiftCollection), h);
+        H.l(R.drawable.tabs_reorder, org.telegram.messenger.id.M0(2131750236, null), new zh.h1(up0Var, 1), h);
+        H.m(R.drawable.msg_delete, new d10(up0Var, i7, tL_starGiftCollection, 25), org.telegram.messenger.id.M0(2131750238, null), h, true);
         up0Var.I = H;
         H.Z();
         return Boolean.TRUE;

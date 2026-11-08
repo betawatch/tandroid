@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class l41 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final Window a;
@@ -290,12 +290,12 @@ public abstract class l41 extends FrameLayout implements org.telegram.ui.ActionB
                 int x02 = (((mg.a) this.r.d.d.get(i7)).g < 0 || !org.telegram.ui.ActionBar.k6.f1(((mg.a) this.r.d.d.get(i7)).g)) ? i0.a.h(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false)) < 0.5d ? ((mg.a) this.r.d.d.get(i7)).i : ((mg.a) this.r.d.d.get(i7)).h : org.telegram.ui.ActionBar.k6.x0(null, ((mg.a) this.r.d.d.get(i7)).g, false);
                 ArrayList arrayList2 = this.n;
                 if (i7 < arrayList2.size()) {
-                    org.telegram.ui.Components.kz kzVar = ((k41) arrayList2.get(i7)).a;
-                    kzVar.getClass();
-                    kzVar.r = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false);
-                    kzVar.w = -1;
-                    kzVar.s = x02;
-                    kzVar.invalidate();
+                    org.telegram.ui.Components.lz lzVar = ((k41) arrayList2.get(i7)).a;
+                    lzVar.getClass();
+                    lzVar.r = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false);
+                    lzVar.w = -1;
+                    lzVar.s = x02;
+                    lzVar.invalidate();
                 }
             }
         }
@@ -377,12 +377,12 @@ public abstract class l41 extends FrameLayout implements org.telegram.ui.ActionB
                 k41 k41Var = new k41(this, i10);
                 k41Var.b = fVar;
                 String str3 = fVar.a.d;
-                org.telegram.ui.Components.kz kzVar = k41Var.a;
-                kzVar.setText(str3);
-                kzVar.a(fVar.n, false);
-                kzVar.setOnTouchListener(new org.telegram.ui.Components.wi0());
-                kzVar.setOnClickListener(new fk0(13, k41Var, fVar));
-                kzVar.setOnLongClickListener(new di.f2(7, k41Var, fVar));
+                org.telegram.ui.Components.lz lzVar = k41Var.a;
+                lzVar.setText(str3);
+                lzVar.a(fVar.n, false);
+                lzVar.setOnTouchListener(new org.telegram.ui.Components.wi0());
+                lzVar.setOnClickListener(new fk0(13, k41Var, fVar));
+                lzVar.setOnLongClickListener(new di.f2(7, k41Var, fVar));
             }
         }
         long j3 = this.r.c;

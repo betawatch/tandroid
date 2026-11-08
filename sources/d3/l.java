@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.f1;
 import x2.c1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class l extends u2.r {
     public static final int[] S1 = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
@@ -1627,7 +1627,7 @@ public final class l extends u2.r {
     public final void M0(u2.l lVar, int i7, long j3) {
         Surface surface;
         Trace.beginSection("releaseOutputBuffer");
-        lVar.e(i7, j3);
+        lVar.f(i7, j3);
         Trace.endSection();
         this.O0.e++;
         this.z1 = 0;
@@ -1690,7 +1690,7 @@ public final class l extends u2.r {
                 Surface H0 = H0(oVar);
                 if (H0 != null) {
                     try {
-                        lVar.j(H0);
+                        lVar.k(H0);
                     } catch (Throwable th2) {
                         th2.printStackTrace();
                         throw new v(th2);
@@ -1699,7 +1699,7 @@ public final class l extends u2.r {
                     if (Build.VERSION.SDK_INT < 35) {
                         throw new IllegalStateException();
                     }
-                    lVar.d();
+                    lVar.e();
                 }
             }
         }
@@ -1833,7 +1833,7 @@ public final class l extends u2.r {
         List F0 = F0(context, iVar, uVar, z9, z10);
         HashMap hashMap = u2.w.a;
         ArrayList arrayList = new ArrayList(F0);
-        Collections.sort(arrayList, new s5(new org.telegram.ui.web.a0(11, context, uVar), 6));
+        Collections.sort(arrayList, new s5(new org.telegram.ui.web.a0(10, context, uVar), 6));
         return arrayList;
     }
 
@@ -2188,7 +2188,7 @@ public final class l extends u2.r {
             this.v1 = intValue2;
             u2.l lVar = this.d0;
             if (lVar != null) {
-                lVar.i(intValue2);
+                lVar.j(intValue2);
                 return;
             }
             return;
@@ -2338,7 +2338,7 @@ public final class l extends u2.r {
         int i7;
         u2.l lVar = this.d0;
         if (lVar != null) {
-            lVar.i(this.v1);
+            lVar.j(this.v1);
         }
         if (this.K1) {
             i7 = uVar.z;
@@ -3034,7 +3034,7 @@ public final class l extends u2.r {
             if (!F02.isEmpty()) {
                 HashMap hashMap = u2.w.a;
                 ArrayList arrayList = new ArrayList(F02);
-                Collections.sort(arrayList, new s5(new org.telegram.ui.web.a0(11, context, uVar), 6));
+                Collections.sort(arrayList, new s5(new org.telegram.ui.web.a0(10, context, uVar), 6));
                 u2.o oVar3 = (u2.o) arrayList.get(0);
                 if (oVar3.e(context, uVar) && oVar3.f(uVar)) {
                     i7 = 32;

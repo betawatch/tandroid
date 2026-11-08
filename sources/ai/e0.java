@@ -35,7 +35,7 @@ import li.u5;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.CameraView;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k2;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qp;
@@ -61,7 +61,7 @@ import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 import org.telegram.ui.e4;
 import org.telegram.ui.g4;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -131,7 +131,7 @@ public final /* synthetic */ class e0 implements Runnable {
                     break;
                 }
             case 2:
-                ((x10) this.d).a(hd.a0(null, null, 2131750045, hi.j.J0(this.b)), (w6) this.c, Boolean.FALSE);
+                ((x10) this.d).a(id.a0(null, null, 2131750047, hi.j.J0(this.b)), (w6) this.c, Boolean.FALSE);
                 break;
             case 3:
                 ea eaVar = (ea) this.c;

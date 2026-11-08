@@ -24,16 +24,16 @@ import android.view.MotionEvent;
 import android.view.View;
 import java.util.regex.Pattern;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.mu0;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.vy;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class g8 extends View implements org.telegram.ui.Cells.r9 {
     public final boolean D;
@@ -94,7 +94,7 @@ public final class g8 extends View implements org.telegram.ui.Cells.r9 {
             return new StaticLayout(charSequence, textPaint, i7, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         }
         StaticLayout.Builder hyphenationFrequency = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i7).setBreakStrategy(0).setHyphenationFrequency(0);
-        if (hd.a0) {
+        if (id.a0) {
             alignment = mu0.a();
         } else {
             Layout.Alignment[] alignmentArr = mu0.a;
@@ -318,7 +318,7 @@ public final class g8 extends View implements org.telegram.ui.Cells.r9 {
                 }
                 if (s9Var.x() && z9 && this.D) {
                     z12 = false;
-                    if (((GestureDetector) ((uy) f8VarArr[0].k.d).b).onTouchEvent(motionEvent)) {
+                    if (((GestureDetector) ((vy) f8VarArr[0].k.d).b).onTouchEvent(motionEvent)) {
                         getParent().requestDisallowInterceptTouchEvent(true);
                         s9Var.f(false);
                         return true;

@@ -10,10 +10,10 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import c8.ha;
 import java.util.HashSet;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class n8 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final Paint a;
@@ -35,7 +35,7 @@ public final class n8 extends FrameLayout implements org.telegram.ui.ActionBar.a
         setWillNotDraw(false);
         TextView textView = new TextView(context);
         this.c = textView;
-        jg.g.v(textView, 1, 14.0f, null, 2131744669);
+        jg.g.v(textView, 1, 14.0f, null, 2131744671);
         textView.setTextColor(-1);
         addView(textView, ha.d(-2, -2.0f, 19, 44.0f, 0.0f, 0.0f, 0.0f));
         TextView textView2 = new TextView(context);
@@ -51,7 +51,7 @@ public final class n8 extends FrameLayout implements org.telegram.ui.ActionBar.a
         int L = org.telegram.messenger.g0.L(16.0f);
         textView3.setBackground(org.telegram.ui.ActionBar.k6.k0(L, L, L, L, 536870911, 956301311, 956301311));
         textView3.setTypeface(org.telegram.messenger.g0.o());
-        textView3.setText(hd.M0(2131743944, null));
+        textView3.setText(id.M0(2131743946, null));
         textView3.setTextSize(1, 14.0f);
         textView3.setTextColor(-1);
         textView3.setGravity(17);

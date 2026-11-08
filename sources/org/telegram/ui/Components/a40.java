@@ -21,7 +21,7 @@ import javax.microedition.khronos.egl.EGLSurface;
 import org.telegram.messenger.camera.Camera2Session;
 import org.telegram.messenger.camera.CameraSession;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class a40 extends org.telegram.messenger.q5 {
     public boolean D;
@@ -144,8 +144,9 @@ public final class a40 extends org.telegram.messenger.q5 {
         boolean z10;
         g40 g40Var;
         int i7 = message.what;
-        final int i10 = 1;
-        final int i11 = 0;
+        int i10 = 3;
+        final int i11 = 1;
+        final int i12 = 0;
         if (i7 != 0) {
             if (i7 == 1) {
                 finish();
@@ -170,7 +171,7 @@ public final class a40 extends org.telegram.messenger.q5 {
                         this.h = obj2;
                         return;
                     }
-                    int worldAngle = obj3 instanceof CameraSession ? ((CameraSession) obj3).getWorldAngle() : obj3 instanceof Camera2Session ? ((Camera2Session) obj3).getWorldAngle() : 0;
+                    int worldAngle = obj3 instanceof CameraSession ? ((CameraSession) obj3).getWorldAngle() : obj3 instanceof Camera2Session ? ((Camera2Session) obj3).getRoundVideoRotationAngle() : 0;
                     Matrix.setIdentityM(this.H.E0, 0);
                     if (worldAngle != 0) {
                         Matrix.rotateM(this.H.E0, 0, worldAngle, 0.0f, 0.0f, 1.0f);
@@ -184,7 +185,7 @@ public final class a40 extends org.telegram.messenger.q5 {
                 o40 o40Var = this.H;
                 o40Var.j1 = 1 - o40Var.j1;
                 if (this.H.A0) {
-                    this.H.p("GL surface flip applied: surface=" + this.H.j1);
+                    this.H.q("GL surface flip applied: surface=" + this.H.j1);
                 }
                 b();
                 o40 o40Var2 = this.H;
@@ -232,11 +233,11 @@ public final class a40 extends org.telegram.messenger.q5 {
             GLES20.glTexParameteri(36197, 10242, 33071);
             GLES20.glTexParameteri(36197, 10243, 33071);
             this.n[0] = new SurfaceTexture(this.H.a0[0]);
-            this.n[0].setOnFrameAvailableListener(new qy(this, 1));
+            this.n[0].setOnFrameAvailableListener(new ry(this, 1));
             if (this.H.A0) {
-                this.H.p("GL input recreated: surface=0");
+                this.H.q("GL input recreated: surface=0");
             }
-            org.telegram.messenger.g0.h3(new org.telegram.ui.q8(this.H, i11, this.n[0], 11));
+            org.telegram.messenger.g0.h3(new org.telegram.ui.q8(this.H, i12, this.n[0], 11));
             b();
             o40 o40Var5 = this.H;
             float f16 = (1.0f / o40Var5.K0) / 2.0f;
@@ -249,10 +250,10 @@ public final class a40 extends org.telegram.messenger.q5 {
             this.H.I0.put(new float[]{f18, f19, f20, f19, f18, f21, f20, f21}).position(0);
             return;
         }
-        int i12 = message.arg1;
-        int i13 = message.arg2;
-        boolean z11 = (i13 & 1) != 0;
-        boolean z12 = (i13 & 2) != 0;
+        int i13 = message.arg1;
+        int i14 = message.arg2;
+        boolean z11 = (i14 & 1) != 0;
+        boolean z12 = (i14 & 2) != 0;
         if (this.f) {
             if (!this.d.equals(this.b.eglGetCurrentContext()) || !this.e.equals(this.b.eglGetCurrentSurface(12377))) {
                 EGL10 egl102 = this.b;
@@ -293,7 +294,7 @@ public final class a40 extends org.telegram.messenger.q5 {
 
                             @Override // java.lang.Runnable
                             public final void run() {
-                                switch (i11) {
+                                switch (i12) {
                                     case 0:
                                         this.b.H.q0.animate().setDuration(120L).alpha(0.0f).setInterpolator(new DecelerateInterpolator()).start();
                                         break;
@@ -326,13 +327,13 @@ public final class a40 extends org.telegram.messenger.q5 {
                     g40Var2.T.sendMessage(g40Var2.T.obtainMessage(0, 1, 0));
                 }
                 g40Var2.F0 = true;
-                int i14 = org.telegram.messenger.qp.s1(g40Var2.H0.e).v3;
-                int i15 = org.telegram.messenger.qp.s1(g40Var2.H0.e).w3 * 1024;
-                org.telegram.messenger.g0.h3(new l10(i10));
+                int i15 = org.telegram.messenger.qp.s1(g40Var2.H0.e).v3;
+                int i16 = org.telegram.messenger.qp.s1(g40Var2.H0.e).w3 * 1024;
+                org.telegram.messenger.g0.h3(new vs(i10));
                 g40Var2.a = peVar;
-                g40Var2.d = i14;
-                g40Var2.e = i14;
-                g40Var2.f = i15;
+                g40Var2.d = i15;
+                g40Var2.e = i15;
+                g40Var2.f = i16;
                 g40Var2.x = eglGetCurrentContext;
                 synchronized (g40Var2.U) {
                     try {
@@ -369,7 +370,7 @@ public final class a40 extends org.telegram.messenger.q5 {
                     o40Var9.L0 = f22;
                 }
                 this.D = true;
-                this.H.v();
+                this.H.w();
             }
             o40 o40Var10 = this.H;
             if (o40Var10.h1 != null && ((o40Var10.j1 == 0 && z11) || (this.H.j1 == 1 && z12))) {
@@ -378,9 +379,9 @@ public final class a40 extends org.telegram.messenger.q5 {
                 SurfaceTexture surfaceTexture2 = this.n[o40Var11.j1];
                 o40 o40Var12 = this.H;
                 if (o40Var12.t0) {
-                    i12 = o40Var12.j1;
+                    i13 = o40Var12.j1;
                 }
-                g40Var3.f(surfaceTexture2, Integer.valueOf(i12), System.nanoTime());
+                g40Var3.f(surfaceTexture2, Integer.valueOf(i13), System.nanoTime());
             }
             this.n[this.H.j1].getTransformMatrix(this.H.F0);
             GLES20.glUseProgram(this.r);
@@ -401,7 +402,7 @@ public final class a40 extends org.telegram.messenger.q5 {
             this.b.eglSwapBuffers(this.c, this.e);
             if (z13 && this.H.A0) {
                 this.H.A0 = false;
-                this.H.p("first target frame presented: surface=" + this.H.j1);
+                this.H.q("first target frame presented: surface=" + this.H.j1);
             }
             if (z9) {
                 org.telegram.messenger.g0.h3(new Runnable(this) { // from class: org.telegram.ui.Components.z30
@@ -413,7 +414,7 @@ public final class a40 extends org.telegram.messenger.q5 {
 
                     @Override // java.lang.Runnable
                     public final void run() {
-                        switch (i10) {
+                        switch (i11) {
                             case 0:
                                 this.b.H.q0.animate().setDuration(120L).alpha(0.0f).setInterpolator(new DecelerateInterpolator()).start();
                                 break;
@@ -516,9 +517,9 @@ public final class a40 extends org.telegram.messenger.q5 {
                             o40Var.I0 = g11;
                             g11.put(fArr2).position(0);
                             Matrix.setIdentityM(o40Var.F0, 0);
-                            int k10 = o40.k(o40Var, 35633, "uniform mat4 uMVPMatrix;\nuniform mat4 uSTMatrix;\nattribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n   gl_Position = uMVPMatrix * aPosition;\n   vTextureCoord = (uSTMatrix * aTextureCoord).xy;\n}\n");
-                            int k11 = o40.k(o40Var, 35632, "#extension GL_OES_EGL_image_external : require\nprecision lowp float;\nvarying vec2 vTextureCoord;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   gl_FragColor = texture2D(sTexture, vTextureCoord);\n}\n");
-                            if (k10 == 0 || k11 == 0) {
+                            int l10 = o40.l(o40Var, 35633, "uniform mat4 uMVPMatrix;\nuniform mat4 uSTMatrix;\nattribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n   gl_Position = uMVPMatrix * aPosition;\n   vTextureCoord = (uSTMatrix * aTextureCoord).xy;\n}\n");
+                            int l11 = o40.l(o40Var, 35632, "#extension GL_OES_EGL_image_external : require\nprecision lowp float;\nvarying vec2 vTextureCoord;\nuniform samplerExternalOES sTexture;\nvoid main() {\n   gl_FragColor = texture2D(sTexture, vTextureCoord);\n}\n");
+                            if (l10 == 0 || l11 == 0) {
                                 if (org.telegram.messenger.r2.a) {
                                     org.telegram.messenger.a8.d("InstantCamera failed creating shader");
                                 }
@@ -526,8 +527,8 @@ public final class a40 extends org.telegram.messenger.q5 {
                             } else {
                                 int glCreateProgram = GLES20.glCreateProgram();
                                 this.r = glCreateProgram;
-                                GLES20.glAttachShader(glCreateProgram, k10);
-                                GLES20.glAttachShader(this.r, k11);
+                                GLES20.glAttachShader(glCreateProgram, l10);
+                                GLES20.glAttachShader(this.r, l11);
                                 GLES20.glLinkProgram(this.r);
                                 int[] iArr3 = new int[1];
                                 GLES20.glGetProgramiv(this.r, 35714, iArr3, 0);

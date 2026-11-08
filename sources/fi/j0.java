@@ -5,13 +5,13 @@ import android.graphics.Canvas;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.ye;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class j0 extends FrameLayout {
     public boolean D;
@@ -62,7 +62,7 @@ public abstract class j0 extends FrameLayout {
         com.google.android.recaptcha.internal.a.q(textView, 1, 14.0f);
         textView.setBackground(org.telegram.ui.ActionBar.k6.h0(-12763843, 0, -1));
         textView.setTextColor(-1);
-        textView.setText(hd.M0(2131752589, null));
+        textView.setText(id.M0(2131752589, null));
         textView.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
         frameLayout2.addView(textView, c8.ha.e(-2, -1, qs.A1));
         textView.setOnClickListener(new View.OnClickListener(this) { // from class: fi.f0
@@ -106,7 +106,7 @@ public abstract class j0 extends FrameLayout {
         textView2.setTypeface(org.telegram.messenger.g0.o());
         textView2.setBackground(org.telegram.ui.ActionBar.k6.h0(-12763843, 0, -1));
         textView2.setTextColor(-1);
-        textView2.setText(hd.M0(2131751697, null));
+        textView2.setText(id.M0(2131751697, null));
         textView2.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
         frameLayout2.addView(textView2, c8.ha.e(-2, -1, qs.y1));
         textView2.setOnClickListener(new View.OnClickListener(this) { // from class: fi.f0
@@ -150,7 +150,7 @@ public abstract class j0 extends FrameLayout {
         textView3.setTypeface(org.telegram.messenger.g0.o());
         textView3.setBackground(org.telegram.ui.ActionBar.k6.h0(-12763843, 0, -1));
         textView3.setTextColor(-15098625);
-        textView3.setText(hd.M0(2131744689, null));
+        textView3.setText(id.M0(2131744691, null));
         textView3.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
         frameLayout2.addView(textView3, c8.ha.e(-2, -1, qs.C1));
         textView3.setOnClickListener(new View.OnClickListener(this) { // from class: fi.f0

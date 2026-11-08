@@ -7,11 +7,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.n01;
 import org.telegram.ui.Components.p01;
-import org.telegram.ui.Components.pw;
+import org.telegram.ui.Components.qw;
 import org.telegram.ui.f40;
 import org.telegram.ui.q11;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class h extends v4.o {
     public final /* synthetic */ int b;
@@ -51,7 +51,7 @@ public final class h extends v4.o {
                 TLRPC.Dialog dialog2 = lVar2.c;
                 return i11 == i12 && (i11 != 0 ? i11 != 14 ? i11 != 4 ? i11 != 6 ? i11 != 5 ? i11 != 10 : lVar.j == lVar2.j : !((tL_contact = lVar.e) == null || (tL_contact2 = lVar2.e) == null || tL_contact.user_id != tL_contact2.user_id) : !((recentMeUrl = lVar.d) == null || lVar2.d == null || (str = recentMeUrl.url) == null || !str.equals(str)) : dialog != null && dialog2 != null && dialog.id == dialog2.id && dialog.isFolder == dialog2.isFolder : dialog != null && dialog2 != null && dialog.id == dialog2.id && lVar.h == lVar2.h && lVar.f == lVar2.f && lVar.g == lVar2.g);
             case 1:
-                return ((Integer) this.c.get(i7)).equals(((pw) this.d).n.get(i10));
+                return ((Integer) this.c.get(i7)).equals(((qw) this.d).n.get(i10));
             case 2:
                 return Objects.equals(this.c.get(i7), ((kj0) this.d).n.get(i10));
             case 3:
@@ -74,7 +74,7 @@ public final class h extends v4.o {
             case 0:
                 return this.c.size();
             case 1:
-                return ((pw) this.d).n.size();
+                return ((qw) this.d).n.size();
             case 2:
                 return ((kj0) this.d).n.size();
             case 3:

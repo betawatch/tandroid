@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Locale;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
@@ -37,7 +37,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.l00;
 import org.telegram.ui.o00;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class j extends o00 implements ls {
     public final long R;
@@ -66,19 +66,19 @@ public final class j extends o00 implements ls {
             FrameLayout frameLayout = new FrameLayout(context);
             tx0 tx0Var = new tx0(context, jVar.resourceProvider);
             d dVar = new d(jVar, 1);
-            tx0Var.c(hd.M0(2131754344, null), J0(jVar.a0.commission_permille), null, null);
-            String M0 = hd.M0(2131754342, null);
+            tx0Var.c(id.M0(2131754344, null), J0(jVar.a0.commission_permille), null, null);
+            String M0 = id.M0(2131754342, null);
             int i7 = jVar.a0.duration_months;
-            tx0Var.c(M0, i7 <= 0 ? hd.M0(2131749197, null) : (i7 < 12 || i7 % 12 != 0) ? hd.G(i7, "Months", new Object[0]) : hd.G(i7 / 12, "Years", new Object[0]), null, null);
+            tx0Var.c(M0, i7 <= 0 ? id.M0(2131749199, null) : (i7 < 12 || i7 % 12 != 0) ? id.G(i7, "Months", new Object[0]) : id.G(i7 / 12, "Years", new Object[0]), null, null);
             frameLayout.addView(tx0Var, ha.d(-1, -2.0f, qs.E1, 24.0f, 0.0f, 24.0f, 0.0f));
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, jVar.resourceProvider);
-            String M02 = hd.M0(2131754347, null);
+            String M02 = id.M0(2131754347, null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.R = M02;
-            u1Var.T = hd.M0(jVar.Y ? 2131754330 : 2131754316, null);
+            u1Var.T = id.M0(jVar.Y ? 2131754330 : 2131754316, null);
             alertDialog$Builder.o(frameLayout);
-            alertDialog$Builder.k(hd.M0(jVar.Y ? 2131754331 : 2131754317, null), new di.q4(dVar, 19));
-            alertDialog$Builder.h(hd.M0(2131752589, null), null);
+            alertDialog$Builder.k(id.M0(jVar.Y ? 2131754331 : 2131754317, null), new di.q4(dVar, 19));
+            alertDialog$Builder.h(id.M0(2131752589, null), null);
             alertDialog$Builder.p();
         }
     }
@@ -147,31 +147,31 @@ public final class j extends o00 implements ls {
         textView.setTextSize(1, 16.0f);
         int i12 = k6.G6;
         r6.V(textView, i12, jVar.resourceProvider);
-        textView.setText(org.telegram.messenger.g0.X2(hd.M0(2131754322, null)));
+        textView.setText(org.telegram.messenger.g0.X2(id.M0(2131754322, null)));
         linearLayout.addView(textView, ha.k(0.0f, 0.0f, 0.0f, 17.0f, -1, -2));
         md mdVar = new md(jVar.getParentActivity(), i11);
         mdVar.setPadding(org.telegram.messenger.g0.L(15.0f), 0, 0, 0);
         mdVar.setTextSize(1, 16.0f);
         r6.V(mdVar, i12, jVar.resourceProvider);
-        mdVar.setText(org.telegram.messenger.g0.X2(hd.M0(2131754321, null)));
+        mdVar.setText(org.telegram.messenger.g0.X2(id.M0(2131754321, null)));
         linearLayout.addView(mdVar, ha.k(0.0f, 0.0f, 0.0f, 17.0f, -1, -2));
         md mdVar2 = new md(jVar.getParentActivity(), i11);
         mdVar2.setPadding(org.telegram.messenger.g0.L(15.0f), 0, 0, 0);
         mdVar2.setTextSize(1, 16.0f);
         r6.V(mdVar2, i12, jVar.resourceProvider);
-        mdVar2.setText(org.telegram.messenger.g0.X2(hd.M0(2131754320, null)));
+        mdVar2.setText(org.telegram.messenger.g0.X2(id.M0(2131754320, null)));
         linearLayout.addView(mdVar2, ha.k(0.0f, 0.0f, 0.0f, 17.0f, -1, -2));
         md mdVar3 = new md(jVar.getParentActivity(), i11);
         mdVar3.setPadding(org.telegram.messenger.g0.L(15.0f), 0, 0, 0);
         mdVar3.setTextSize(1, 16.0f);
         r6.V(mdVar3, i12, jVar.resourceProvider);
-        mdVar3.setText(org.telegram.messenger.g0.X2(hd.M0(2131754319, null)));
+        mdVar3.setText(org.telegram.messenger.g0.X2(id.M0(2131754319, null)));
         linearLayout.addView(mdVar3, ha.k(0.0f, 0.0f, 0.0f, 10.0f, -1, -2));
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, jVar.getParentActivity(), jVar.resourceProvider);
-        alertDialog$Builder.a.R = hd.M0(2131754347, null);
+        alertDialog$Builder.a.R = id.M0(2131754347, null);
         alertDialog$Builder.o(linearLayout);
-        alertDialog$Builder.k(hd.M0(2131754323, null), new di.q4(jVar, 20));
-        alertDialog$Builder.h(hd.M0(2131752589, null), null);
+        alertDialog$Builder.k(id.M0(2131754323, null), new di.q4(jVar, 20));
+        alertDialog$Builder.h(id.M0(2131752589, null), null);
         alertDialog$Builder.d(-1);
         alertDialog$Builder.p();
     }
@@ -220,9 +220,9 @@ public final class j extends o00 implements ls {
         }
         if (f2Var != null) {
             if (z9) {
-                org.telegram.ui.Components.hc.a0(f2Var).I(R.raw.linkbroken, hd.M0(2131754339, null), org.telegram.messenger.g0.X2(hd.M0(2131754340, null))).j();
+                org.telegram.ui.Components.hc.a0(f2Var).I(R.raw.linkbroken, id.M0(2131754339, null), org.telegram.messenger.g0.X2(id.M0(2131754340, null))).j();
             } else {
-                org.telegram.ui.Components.hc.a0(f2Var).I(R.raw.contact_check, hd.M0(2131754325, null), hd.M0(2131754326, null)).j();
+                org.telegram.ui.Components.hc.a0(f2Var).I(R.raw.contact_check, id.M0(2131754325, null), id.M0(2131754326, null)).j();
             }
         }
     }
@@ -235,11 +235,11 @@ public final class j extends o00 implements ls {
         x31 x31Var = new x31(-2);
         x31Var.c = l00Var;
         arrayList.add(x31Var);
-        arrayList.add(h.i(R.drawable.menu_feature_premium, hd.M0(2131753151, null), hd.M0(2131753152, null)));
-        arrayList.add(h.i(R.drawable.msg_channel, hd.M0(2131753149, null), hd.M0(2131753150, null)));
-        arrayList.add(h.i(R.drawable.menu_feature_links2, hd.M0(2131753147, null), hd.M0(2131753148, null)));
+        arrayList.add(h.i(R.drawable.menu_feature_premium, id.M0(2131753151, null), id.M0(2131753152, null)));
+        arrayList.add(h.i(R.drawable.msg_channel, id.M0(2131753149, null), id.M0(2131753150, null)));
+        arrayList.add(h.i(R.drawable.menu_feature_links2, id.M0(2131753147, null), id.M0(2131753148, null)));
         arrayList.add(x31.B(1, null));
-        arrayList.add(x31.u(hd.M0(2131754344, null)));
+        arrayList.add(x31.u(id.M0(2131754344, null)));
         int i7 = getMessagesController().h6;
         int i10 = this.a0.commission_permille;
         int i11 = getMessagesController().i6;
@@ -257,8 +257,8 @@ public final class j extends o00 implements ls {
         x31Var2.B = -1L;
         x31Var2.B = this.Z == null ? -1 : r4.commission_permille;
         arrayList.add(x31Var2);
-        arrayList.add(x31.C(hd.M0(2131754343, null)));
-        arrayList.add(x31.u(hd.M0(2131754342, null)));
+        arrayList.add(x31.C(id.M0(2131754343, null)));
+        arrayList.add(x31.u(id.M0(2131754342, null)));
         String[] strArr = this.b0;
         List list = this.c0;
         if (strArr == null) {
@@ -266,11 +266,11 @@ public final class j extends o00 implements ls {
             for (int i13 = 0; i13 < list.size(); i13++) {
                 int intValue = ((Integer) list.get(i13)).intValue();
                 if (intValue == 0) {
-                    this.b0[i13] = hd.M0(2131749197, null);
+                    this.b0[i13] = id.M0(2131749199, null);
                 } else if (intValue < 12 || intValue % 12 != 0) {
-                    this.b0[i13] = hd.G(intValue, "MonthsShort", new Object[0]);
+                    this.b0[i13] = id.G(intValue, "MonthsShort", new Object[0]);
                 } else {
-                    this.b0[i13] = hd.G(intValue / 12, "YearsShort", new Object[0]);
+                    this.b0[i13] = id.G(intValue / 12, "YearsShort", new Object[0]);
                 }
             }
         }
@@ -301,11 +301,11 @@ public final class j extends o00 implements ls {
             }
         }
         arrayList.add(x31Var3);
-        arrayList.add(x31.C(hd.M0(2131754341, null)));
-        arrayList.add(f.i(2, getThemedColor(k6.ik), hd.M0(2131754337, null), hd.M0(2131754338, null)));
+        arrayList.add(x31.C(id.M0(2131754341, null)));
+        arrayList.add(f.i(2, getThemedColor(k6.ik), id.M0(2131754337, null), id.M0(2131754338, null)));
         arrayList.add(x31.B(3, null));
         if (!this.Y && this.a0.end_date == 0) {
-            x31 e10 = x31.e(4, hd.M0(2131754324, null));
+            x31 e10 = x31.e(4, id.M0(2131754324, null));
             e10.r = true;
             arrayList.add(e10);
             arrayList.add(x31.B(5, null));
@@ -322,11 +322,11 @@ public final class j extends o00 implements ls {
     }
 
     public final void K0(boolean z9) {
-        this.V.i(hd.M0((this.Y || this.a0.end_date != 0) ? 2131754332 : 2131754318, null), z9, true);
+        this.V.i(id.M0((this.Y || this.a0.end_date != 0) ? 2131754332 : 2131754318, null), z9, true);
         d dVar = this.X;
         org.telegram.messenger.g0.r(dVar);
         dVar.run();
-        this.W.setText(org.telegram.messenger.g0.U2(hd.M0((this.Y || this.a0.end_date != 0) ? 2131754328 : 2131754315, null), new d(this, 2)));
+        this.W.setText(org.telegram.messenger.g0.U2(id.M0((this.Y || this.a0.end_date != 0) ? 2131754328 : 2131754315, null), new d(this, 2)));
         L0();
         hc hcVar = this.e0;
         if (hcVar != null) {
@@ -358,7 +358,7 @@ public final class j extends o00 implements ls {
         fVar.b();
         this.T.setStarParticlesView(this.e);
         this.S.addView(this.T, ha.d(qs.U2, 190.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
-        j0(hd.M0(2131753143, null), hd.M0(2131753144, null), this.S, null);
+        j0(id.M0(2131753143, null), id.M0(2131753144, null), this.S, null);
         LinearLayout linearLayout = new LinearLayout(context);
         this.U = linearLayout;
         linearLayout.setOrientation(1);
@@ -370,7 +370,7 @@ public final class j extends o00 implements ls {
         bi.w wVar = new bi.w(i7, context, this.resourceProvider, true);
         wVar.setRoundRadius(24);
         this.V = wVar;
-        wVar.i(hd.M0(2131754332, null), false, true);
+        wVar.i(id.M0(2131754332, null), false, true);
         this.V.setOnClickListener(new bi.r(16, this, context));
         this.U.addView(this.V, ha.k(10.0f, 10.0f, 10.0f, 7.0f, -1, 48));
         w70 w70Var = new w70(context, this.resourceProvider);

@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class s01 extends FrameLayout implements org.telegram.messenger.ls {
     public static final /* synthetic */ int m0 = 0;
@@ -142,9 +142,9 @@ public final class s01 extends FrameLayout implements org.telegram.messenger.ls 
             w8Var.g(1);
             w8Var.p = 0.75f;
             l9Var.setImageDrawable(w8Var);
-            String M03 = org.telegram.messenger.hd.M0(2131745902, null);
+            String M03 = org.telegram.messenger.id.M0(2131745904, null);
             i10 = i11;
-            M0 = org.telegram.messenger.hd.G(s12.G1().j.size(), "Chats", new Object[0]);
+            M0 = org.telegram.messenger.id.G(s12.G1().j.size(), "Chats", new Object[0]);
             z9 = p02;
             z10 = z11;
             str = M03;
@@ -162,7 +162,7 @@ public final class s01 extends FrameLayout implements org.telegram.messenger.ls 
                 } else {
                     str = "";
                 }
-                M0 = org.telegram.messenger.hd.M0(2131743984, null);
+                M0 = org.telegram.messenger.id.M0(2131743986, null);
             } else {
                 z9 = p02;
                 z10 = z11;
@@ -172,7 +172,7 @@ public final class s01 extends FrameLayout implements org.telegram.messenger.ls 
                     str = M02.title;
                     TLRPC.ChatFull N0 = s12.N0(M02.id);
                     int i12 = (N0 == null || (i12 = N0.participants_count) <= 0) ? M02.participants_count : i12;
-                    M0 = i12 > 0 ? org.telegram.messenger.hd.H(',', "Members", i12) : org.telegram.messenger.hd.M0(2131743995, null);
+                    M0 = i12 > 0 ? org.telegram.messenger.id.H(',', "Members", i12) : org.telegram.messenger.id.M0(2131743997, null);
                 } else {
                     TLRPC.User a22 = s12.a2(Long.valueOf(j3));
                     if (a22 != null) {
@@ -182,7 +182,7 @@ public final class s01 extends FrameLayout implements org.telegram.messenger.ls 
                     } else {
                         str = "";
                     }
-                    M0 = org.telegram.messenger.hd.M0(2131743995, null);
+                    M0 = org.telegram.messenger.id.M0(2131743997, null);
                 }
             }
         }
@@ -298,7 +298,7 @@ public final class s01 extends FrameLayout implements org.telegram.messenger.ls 
         imageView.setColorFilter(new PorterDuffColorFilter(w02, mode));
         final int i15 = 1;
         imageView.setBackground(org.telegram.ui.ActionBar.k6.h0(org.telegram.ui.ActionBar.k6.r1(0.06f, org.telegram.ui.ActionBar.k6.w0(i13, f6Var)), 1, -1));
-        imageView.setContentDescription(org.telegram.messenger.hd.M0(2131754839, null));
+        imageView.setContentDescription(org.telegram.messenger.id.M0(2131754839, null));
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.i01
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -432,7 +432,7 @@ public final class s01 extends FrameLayout implements org.telegram.messenger.ls 
         editText.setTextSize(1, 15.0f);
         editText.setSingleLine();
         editText.setImeOptions(268435459);
-        editText.setHint(org.telegram.messenger.hd.M0(2131745837, null));
+        editText.setHint(org.telegram.messenger.id.M0(2131745839, null));
         editText.setHintTextColor(org.telegram.ui.ActionBar.k6.w0(i16, f6Var));
         editText.setTextColor(org.telegram.ui.ActionBar.k6.w0(i13, f6Var));
         editText.addTextChangedListener(new ah.j(this, 25));
@@ -506,7 +506,7 @@ public final class s01 extends FrameLayout implements org.telegram.messenger.ls 
             textView3.setTypeface(org.telegram.messenger.g0.o());
             int i19 = org.telegram.ui.ActionBar.k6.Gi;
             textView3.setTextColor(org.telegram.ui.ActionBar.k6.w0(i19, f6Var));
-            textView3.setText(org.telegram.messenger.hd.M0(2131748250, null));
+            textView3.setText(org.telegram.messenger.id.M0(2131748252, null));
             textView3.setGravity(17);
             textView3.setPadding(org.telegram.messenger.g0.L(20.0f), 0, org.telegram.messenger.g0.L(22.0f), 0);
             textView3.setCompoundDrawablePadding(org.telegram.messenger.g0.L(8.0f));
@@ -665,10 +665,10 @@ public final class s01 extends FrameLayout implements org.telegram.messenger.ls 
         int i7 = this.a;
         org.telegram.messenger.qp s12 = org.telegram.messenger.qp.s1(i7);
         if (j3 == org.telegram.messenger.p10.i(i7).e()) {
-            return org.telegram.messenger.hd.M0(2131748302, null);
+            return org.telegram.messenger.id.M0(2131748304, null);
         }
         if (j3 == 2666000) {
-            return org.telegram.messenger.hd.M0(2131754252, null);
+            return org.telegram.messenger.id.M0(2131754252, null);
         }
         if (j3 >= 0) {
             return org.telegram.messenger.t10.p(s12.a2(Long.valueOf(j3)));

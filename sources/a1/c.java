@@ -64,7 +64,7 @@ import org.telegram.messenger.c20;
 import org.telegram.messenger.d1;
 import org.telegram.messenger.dt;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.p2;
 import org.telegram.messenger.qp;
@@ -82,7 +82,6 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Cells.t0;
 import org.telegram.ui.Components.cj0;
 import org.telegram.ui.Components.dj0;
@@ -91,13 +90,13 @@ import org.telegram.ui.Components.t4;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
-import org.telegram.ui.Wallet.v1;
+import org.telegram.ui.Wallet.u1;
 import org.telegram.ui.gl0;
 import org.telegram.ui.pv;
 import org.telegram.ui.ww;
 import v4.l0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements OnSuccessListener, p, Continuation, OnCompleteListener, a20, t4, r1, bg.p, te.b, gl0, j, i, com.google.android.gms.common.api.internal.p, dj0, w10, cj0 {
     public final /* synthetic */ int a;
@@ -183,14 +182,14 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                 }
                 break;
             case 17:
-                v1 v1Var = (v1) this.b;
+                u1 u1Var = (u1) this.b;
                 if (i7 != 1) {
                     if (i7 != 3) {
-                        v1Var.a(Boolean.FALSE, null);
+                        u1Var.a(Boolean.FALSE, null);
                         break;
                     }
                 } else {
-                    v1Var.a(Boolean.TRUE, null);
+                    u1Var.a(Boolean.TRUE, null);
                     break;
                 }
                 break;
@@ -292,7 +291,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                     }
                     if (j3 < 0 && wwVar.j4().j(j3)) {
                         final int i22 = 4;
-                        wwVar.L0.b(R.drawable.msg_stories_add, null, hd.M0(2131754384, null), k6.F8, k6.E8, new Runnable() { // from class: org.telegram.ui.lv
+                        wwVar.L0.b(R.drawable.msg_stories_add, null, id.M0(2131754384, null), k6.F8, k6.E8, new Runnable() { // from class: org.telegram.ui.lv
                             @Override // java.lang.Runnable
                             public final void run() {
                                 int i23;
@@ -333,7 +332,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                             z9 = true;
                             k60 k60Var2 = wwVar.L0;
                             final int i23 = 5;
-                            k60Var2.l(R.drawable.msg_discussion, hd.M0(2131745602, null), new Runnable() { // from class: org.telegram.ui.lv
+                            k60Var2.l(R.drawable.msg_discussion, id.M0(2131745604, null), new Runnable() { // from class: org.telegram.ui.lv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i232;
@@ -368,7 +367,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                                 }
                             }, j3 <= 0);
                             final int i24 = 6;
-                            k60Var2.l(R.drawable.msg_openprofile, hd.M0(2131747785, null), new Runnable() { // from class: org.telegram.ui.lv
+                            k60Var2.l(R.drawable.msg_openprofile, id.M0(2131747787, null), new Runnable() { // from class: org.telegram.ui.lv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i232;
@@ -403,7 +402,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                                 }
                             }, j3 <= 0);
                             final int i25 = 0;
-                            k60Var2.l(R.drawable.msg_channel, hd.M0(!t3.V(chat) ? 2131747810 : 2131747798, null), new Runnable() { // from class: org.telegram.ui.lv
+                            k60Var2.l(R.drawable.msg_channel, id.M0(!t3.V(chat) ? 2131747812 : 2131747800, null), new Runnable() { // from class: org.telegram.ui.lv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i232;
@@ -439,7 +438,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                             }, j3 >= 0);
                             final int i26 = 0;
                             final String str2 = str;
-                            k60Var2.l(R.drawable.msg_mute, hd.M0(2131747862, null), new Runnable() { // from class: org.telegram.ui.mv
+                            k60Var2.l(R.drawable.msg_mute, id.M0(2131747864, null), new Runnable() { // from class: org.telegram.ui.mv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i27;
@@ -460,7 +459,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                                             if (indexOf > 0) {
                                                 trim = trim.substring(0, indexOf);
                                             }
-                                            org.telegram.ui.Components.hc.a0(wwVar2).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0("NotificationsStoryMutedHint", null, 2131747861, trim)), null, null).j();
+                                            org.telegram.ui.Components.hc.a0(wwVar2).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryMutedHint", null, 2131747863, trim)), null, null).j();
                                             break;
                                         default:
                                             ww wwVar3 = pvVar2.O0;
@@ -472,14 +471,14 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                                             if (indexOf2 > 0) {
                                                 trim = trim.substring(0, indexOf2);
                                             }
-                                            org.telegram.ui.Components.hc.a0(wwVar3).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0("NotificationsStoryUnmutedHint", null, 2131747858, trim)), null, null).j();
+                                            org.telegram.ui.Components.hc.a0(wwVar3).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryUnmutedHint", null, 2131747860, trim)), null, null).j();
                                             break;
                                     }
                                 }
                             }, !h02 && j3 > 0);
                             k60Var2.E();
                             final int i27 = 1;
-                            k60Var2.l(R.drawable.msg_unmute, hd.M0(2131747859, null), new Runnable() { // from class: org.telegram.ui.mv
+                            k60Var2.l(R.drawable.msg_unmute, id.M0(2131747861, null), new Runnable() { // from class: org.telegram.ui.mv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i272;
@@ -500,7 +499,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                                             if (indexOf > 0) {
                                                 trim = trim.substring(0, indexOf);
                                             }
-                                            org.telegram.ui.Components.hc.a0(wwVar2).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0("NotificationsStoryMutedHint", null, 2131747861, trim)), null, null).j();
+                                            org.telegram.ui.Components.hc.a0(wwVar2).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryMutedHint", null, 2131747863, trim)), null, null).j();
                                             break;
                                         default:
                                             ww wwVar3 = pvVar2.O0;
@@ -512,14 +511,14 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                                             if (indexOf2 > 0) {
                                                 trim = trim.substring(0, indexOf2);
                                             }
-                                            org.telegram.ui.Components.hc.a0(wwVar3).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0("NotificationsStoryUnmutedHint", null, 2131747858, trim)), null, null).j();
+                                            org.telegram.ui.Components.hc.a0(wwVar3).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryUnmutedHint", null, 2131747860, trim)), null, null).j();
                                             break;
                                     }
                                 }
                             }, h02 && j3 > 0);
                             k60Var2.E();
                             final int i28 = 0;
-                            k60Var2.l(R.drawable.msg_stories_stealth2, hd.M0(2131743563, null), new Runnable() { // from class: org.telegram.ui.nv
+                            k60Var2.l(R.drawable.msg_stories_stealth2, id.M0(2131743565, null), new Runnable() { // from class: org.telegram.ui.nv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     org.telegram.ui.ActionBar.f6 f6Var;
@@ -560,7 +559,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                             }, D3 && j3 > 0 && q10 && L && !H2);
                             k60Var2.E();
                             z10 = D3 && j3 > 0 && !q10 && L && !H2;
-                            String M02 = hd.M0(2131743563, null);
+                            String M02 = id.M0(2131743565, null);
                             final int i29 = 1;
                             Runnable runnable = new Runnable() { // from class: org.telegram.ui.nv
                                 @Override // java.lang.Runnable
@@ -609,7 +608,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                             }
                             k60Var.E();
                             final int i30 = 1;
-                            k60Var.l(R.drawable.msg_archive, hd.M0(2131754153, null), new Runnable() { // from class: org.telegram.ui.lv
+                            k60Var.l(R.drawable.msg_archive, id.M0(2131754153, null), new Runnable() { // from class: org.telegram.ui.lv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i232;
@@ -645,7 +644,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                             }, z9 && !wwVar.q4());
                             k60Var.E();
                             final int i31 = 2;
-                            k60Var.l(R.drawable.msg_unarchive, hd.M0(2131743915, null), new Runnable() { // from class: org.telegram.ui.lv
+                            k60Var.l(R.drawable.msg_unarchive, id.M0(2131743917, null), new Runnable() { // from class: org.telegram.ui.lv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i232;
@@ -681,7 +680,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                             }, z9 && wwVar.q4());
                             k60Var.E();
                             i17 = 3;
-                            k60Var.l(R.drawable.msg_delete, hd.M0(2131744749, null), new Runnable() { // from class: org.telegram.ui.lv
+                            k60Var.l(R.drawable.msg_delete, id.M0(2131744751, null), new Runnable() { // from class: org.telegram.ui.lv
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i232;
@@ -720,7 +719,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                     z9 = false;
                     k60 k60Var22 = wwVar.L0;
                     final int i232 = 5;
-                    k60Var22.l(R.drawable.msg_discussion, hd.M0(2131745602, null), new Runnable() { // from class: org.telegram.ui.lv
+                    k60Var22.l(R.drawable.msg_discussion, id.M0(2131745604, null), new Runnable() { // from class: org.telegram.ui.lv
                         @Override // java.lang.Runnable
                         public final void run() {
                             int i2322;
@@ -755,7 +754,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                         }
                     }, j3 <= 0);
                     final int i242 = 6;
-                    k60Var22.l(R.drawable.msg_openprofile, hd.M0(2131747785, null), new Runnable() { // from class: org.telegram.ui.lv
+                    k60Var22.l(R.drawable.msg_openprofile, id.M0(2131747787, null), new Runnable() { // from class: org.telegram.ui.lv
                         @Override // java.lang.Runnable
                         public final void run() {
                             int i2322;
@@ -790,7 +789,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                         }
                     }, j3 <= 0);
                     final int i252 = 0;
-                    k60Var22.l(R.drawable.msg_channel, hd.M0(!t3.V(chat) ? 2131747810 : 2131747798, null), new Runnable() { // from class: org.telegram.ui.lv
+                    k60Var22.l(R.drawable.msg_channel, id.M0(!t3.V(chat) ? 2131747812 : 2131747800, null), new Runnable() { // from class: org.telegram.ui.lv
                         @Override // java.lang.Runnable
                         public final void run() {
                             int i2322;
@@ -826,7 +825,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                     }, j3 >= 0);
                     final int i262 = 0;
                     final String str22 = str;
-                    k60Var22.l(R.drawable.msg_mute, hd.M0(2131747862, null), new Runnable() { // from class: org.telegram.ui.mv
+                    k60Var22.l(R.drawable.msg_mute, id.M0(2131747864, null), new Runnable() { // from class: org.telegram.ui.mv
                         @Override // java.lang.Runnable
                         public final void run() {
                             int i272;
@@ -847,7 +846,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                                     if (indexOf > 0) {
                                         trim = trim.substring(0, indexOf);
                                     }
-                                    org.telegram.ui.Components.hc.a0(wwVar2).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0("NotificationsStoryMutedHint", null, 2131747861, trim)), null, null).j();
+                                    org.telegram.ui.Components.hc.a0(wwVar2).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryMutedHint", null, 2131747863, trim)), null, null).j();
                                     break;
                                 default:
                                     ww wwVar3 = pvVar2.O0;
@@ -859,14 +858,14 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                                     if (indexOf2 > 0) {
                                         trim = trim.substring(0, indexOf2);
                                     }
-                                    org.telegram.ui.Components.hc.a0(wwVar3).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0("NotificationsStoryUnmutedHint", null, 2131747858, trim)), null, null).j();
+                                    org.telegram.ui.Components.hc.a0(wwVar3).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryUnmutedHint", null, 2131747860, trim)), null, null).j();
                                     break;
                             }
                         }
                     }, !h02 && j3 > 0);
                     k60Var22.E();
                     final int i272 = 1;
-                    k60Var22.l(R.drawable.msg_unmute, hd.M0(2131747859, null), new Runnable() { // from class: org.telegram.ui.mv
+                    k60Var22.l(R.drawable.msg_unmute, id.M0(2131747861, null), new Runnable() { // from class: org.telegram.ui.mv
                         @Override // java.lang.Runnable
                         public final void run() {
                             int i2722;
@@ -887,7 +886,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                                     if (indexOf > 0) {
                                         trim = trim.substring(0, indexOf);
                                     }
-                                    org.telegram.ui.Components.hc.a0(wwVar2).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0("NotificationsStoryMutedHint", null, 2131747861, trim)), null, null).j();
+                                    org.telegram.ui.Components.hc.a0(wwVar2).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryMutedHint", null, 2131747863, trim)), null, null).j();
                                     break;
                                 default:
                                     ww wwVar3 = pvVar2.O0;
@@ -899,14 +898,14 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                                     if (indexOf2 > 0) {
                                         trim = trim.substring(0, indexOf2);
                                     }
-                                    org.telegram.ui.Components.hc.a0(wwVar3).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0("NotificationsStoryUnmutedHint", null, 2131747858, trim)), null, null).j();
+                                    org.telegram.ui.Components.hc.a0(wwVar3).V(Arrays.asList(user), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("NotificationsStoryUnmutedHint", null, 2131747860, trim)), null, null).j();
                                     break;
                             }
                         }
                     }, h02 && j3 > 0);
                     k60Var22.E();
                     final int i282 = 0;
-                    k60Var22.l(R.drawable.msg_stories_stealth2, hd.M0(2131743563, null), new Runnable() { // from class: org.telegram.ui.nv
+                    k60Var22.l(R.drawable.msg_stories_stealth2, id.M0(2131743565, null), new Runnable() { // from class: org.telegram.ui.nv
                         @Override // java.lang.Runnable
                         public final void run() {
                             org.telegram.ui.ActionBar.f6 f6Var;
@@ -948,7 +947,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                     k60Var22.E();
                     if (D3) {
                     }
-                    String M022 = hd.M0(2131743563, null);
+                    String M022 = id.M0(2131743565, null);
                     final int i292 = 1;
                     Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.nv
                         @Override // java.lang.Runnable
@@ -993,7 +992,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                     }
                     k60Var.E();
                     final int i302 = 1;
-                    k60Var.l(R.drawable.msg_archive, hd.M0(2131754153, null), new Runnable() { // from class: org.telegram.ui.lv
+                    k60Var.l(R.drawable.msg_archive, id.M0(2131754153, null), new Runnable() { // from class: org.telegram.ui.lv
                         @Override // java.lang.Runnable
                         public final void run() {
                             int i2322;
@@ -1029,7 +1028,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                     }, z9 && !wwVar.q4());
                     k60Var.E();
                     final int i312 = 2;
-                    k60Var.l(R.drawable.msg_unarchive, hd.M0(2131743915, null), new Runnable() { // from class: org.telegram.ui.lv
+                    k60Var.l(R.drawable.msg_unarchive, id.M0(2131743917, null), new Runnable() { // from class: org.telegram.ui.lv
                         @Override // java.lang.Runnable
                         public final void run() {
                             int i2322;
@@ -1065,7 +1064,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                     }, z9 && wwVar.q4());
                     k60Var.E();
                     i17 = 3;
-                    k60Var.l(R.drawable.msg_delete, hd.M0(2131744749, null), new Runnable() { // from class: org.telegram.ui.lv
+                    k60Var.l(R.drawable.msg_delete, id.M0(2131744751, null), new Runnable() { // from class: org.telegram.ui.lv
                         @Override // java.lang.Runnable
                         public final void run() {
                             int i2322;
@@ -1101,7 +1100,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                     }, z9);
                 } else if (wwVar.N3) {
                     k60 k60Var3 = wwVar.L0;
-                    String M03 = hd.M0(2131754384, null);
+                    String M03 = id.M0(2131754384, null);
                     int i32 = k6.F8;
                     int i33 = k6.E8;
                     k60Var3.b(R.drawable.msg_stories_add, null, M03, i32, i33, new Runnable() { // from class: org.telegram.ui.kv
@@ -1133,7 +1132,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                             }
                         }
                     });
-                    wwVar.L0.b(R.drawable.msg_stories_archive, null, hd.M0(2131754123, null), i32, i33, new Runnable() { // from class: org.telegram.ui.kv
+                    wwVar.L0.b(R.drawable.msg_stories_archive, null, id.M0(2131754123, null), i32, i33, new Runnable() { // from class: org.telegram.ui.kv
                         @Override // java.lang.Runnable
                         public final void run() {
                             int i34;
@@ -1162,7 +1161,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                             }
                         }
                     });
-                    wwVar.L0.b(R.drawable.msg_stories_saved, null, hd.M0(2131745886, null), i32, i33, new Runnable() { // from class: org.telegram.ui.kv
+                    wwVar.L0.b(R.drawable.msg_stories_saved, null, id.M0(2131745888, null), i32, i33, new Runnable() { // from class: org.telegram.ui.kv
                         @Override // java.lang.Runnable
                         public final void run() {
                             int i34;
@@ -1306,7 +1305,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
     }
 
     @Override // org.telegram.ui.ActionBar.r1
-    public void g(u1 u1Var, int i7) {
+    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
         ((c20) this.b).a(u1Var.h(i7, true, true));
     }
 
@@ -1445,7 +1444,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                     kotlin.jvm.internal.j.d(forResult, "{\n      logger.d(\"Succes…ccess(task.result))\n    }");
                     return forResult;
                 }
-                Log.e(d1Var.a, d1Var.b("Failed to fetch the Verification Support Info: " + task.getException(), new Object[0]));
+                Log.e(d1Var.b, d1Var.b("Failed to fetch the Verification Support Info: " + task.getException(), new Object[0]));
                 Exception exception2 = task.getException();
                 if (exception2 == null || (message = exception2.getMessage()) == null || !xd.d.e(message, "test_number_token is invalid")) {
                     forException = Tasks.forException(new db.b(exception2 instanceof com.google.android.gms.common.api.f ? ((com.google.android.gms.common.api.f) exception2).getStatus().a : 55501, "Failed to fetch the Verification Support Info"));

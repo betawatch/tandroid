@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class k6 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public float[] D;
@@ -50,7 +50,7 @@ public final class k6 extends FrameLayout implements org.telegram.ui.ActionBar.a
         j6Var.b(0.35f, 350L, xqVar);
         j6Var.setTypeface(org.telegram.messenger.g0.o());
         j6Var.setTextSize(org.telegram.messenger.g0.L(20.0f));
-        j6Var.setText(org.telegram.messenger.hd.M0(2131744817, null));
+        j6Var.setText(org.telegram.messenger.id.M0(2131744819, null));
         j6Var.setGravity(17);
         org.telegram.ui.ActionBar.r6.Z(j6Var, org.telegram.ui.ActionBar.k6.G6, null);
         addView(j6Var, c8.ha.e(-2, 26, 49));
@@ -61,13 +61,13 @@ public final class k6 extends FrameLayout implements org.telegram.ui.ActionBar.a
             this.b[i7].setGravity(17);
             this.b[i7].setPadding(org.telegram.messenger.g0.L(24.0f), 0, org.telegram.messenger.g0.L(24.0f), 0);
             if (i7 == 0) {
-                this.b[i7].setText(org.telegram.messenger.hd.M0(2131744816, null));
+                this.b[i7].setText(org.telegram.messenger.id.M0(2131744818, null));
             } else if (i7 == 1) {
                 this.b[i7].setAlpha(0.0f);
-                this.b[i7].setText(org.telegram.messenger.hd.M0(2131744814, null));
+                this.b[i7].setText(org.telegram.messenger.id.M0(2131744816, null));
                 this.b[i7].setVisibility(4);
             } else if (i7 == 2) {
-                this.b[i7].setText(org.telegram.messenger.hd.M0(2131744822, null));
+                this.b[i7].setText(org.telegram.messenger.id.M0(2131744824, null));
                 this.b[i7].setAlpha(0.0f);
                 this.b[i7].setVisibility(4);
             }
@@ -109,14 +109,14 @@ public final class k6 extends FrameLayout implements org.telegram.ui.ActionBar.a
     }
 
     public final void b(float f10, float f11, boolean z9) {
-        this.a.setText(z9 ? org.telegram.messenger.hd.M0(2131744817, null) : org.telegram.messenger.hd.M0(2131744823, null));
+        this.a.setText(z9 ? org.telegram.messenger.id.M0(2131744819, null) : org.telegram.messenger.id.M0(2131744825, null));
         if (z9) {
             y6 y6Var = this.E;
             TextView[] textViewArr = this.b;
             if (f10 < 0.01f) {
-                textViewArr[1].setText(org.telegram.messenger.hd.a0(null, null, 2131744813, y6.j0(y6Var, f10)));
+                textViewArr[1].setText(org.telegram.messenger.id.a0(null, null, 2131744815, y6.j0(y6Var, f10)));
             } else {
-                textViewArr[1].setText(org.telegram.messenger.hd.a0(null, null, 2131744814, y6.j0(y6Var, f10)));
+                textViewArr[1].setText(org.telegram.messenger.id.a0(null, null, 2131744816, y6.j0(y6Var, f10)));
             }
             c(1);
         } else {

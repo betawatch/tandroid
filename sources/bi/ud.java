@@ -12,7 +12,7 @@ import android.os.Build;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ud {
     public final int a;
@@ -81,7 +81,7 @@ public final class ud {
     }
 
     public final void b(Canvas canvas, int i7, float f10) {
-        if (org.telegram.messenger.rc.e(131072)) {
+        if (org.telegram.messenger.sc.e(131072)) {
             int i10 = this.j;
             ArrayList arrayList = this.b;
             int min = Math.min(i10, arrayList.size());
@@ -156,7 +156,7 @@ public final class ud {
     }
 
     public final boolean d() {
-        if (org.telegram.messenger.rc.e(131072)) {
+        if (org.telegram.messenger.sc.e(131072)) {
             long currentTimeMillis = System.currentTimeMillis();
             float min = (Math.min(this.o - currentTimeMillis, 16L) / 1000.0f) * this.h;
             int i7 = 0;

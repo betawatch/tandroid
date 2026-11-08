@@ -4,7 +4,7 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class tn0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -25,19 +25,19 @@ public final class tn0 implements TextWatcher {
                 mo0 mo0Var = this.b;
                 fo0 fo0Var = mo0Var.C1;
                 av0 av0Var = mo0Var.I1;
-                r00 r00Var = mo0Var.q2;
-                if (!TextUtils.isEmpty(r00Var.r.getText())) {
+                s00 s00Var = mo0Var.q2;
+                if (!TextUtils.isEmpty(s00Var.r.getText())) {
                     mo0Var.K0(false);
                 }
                 if (mo0Var.s2) {
-                    String obj = r00Var.r.getText().toString();
+                    String obj = s00Var.r.getText().toString();
                     if (obj.length() != 0) {
                         if (av0Var != null) {
-                            av0Var.d.setText(org.telegram.messenger.hd.M0(2131748166, null));
+                            av0Var.d.setText(org.telegram.messenger.id.M0(2131748168, null));
                         }
                     } else if (mo0Var.x1.getAdapter() != fo0Var) {
                         int J0 = mo0.J0(mo0Var);
-                        av0Var.d.setText(org.telegram.messenger.hd.M0(2131748166, null));
+                        av0Var.d.setText(org.telegram.messenger.id.M0(2131748168, null));
                         av0Var.e(false, true);
                         mo0Var.K0(false);
                         fo0Var.f();

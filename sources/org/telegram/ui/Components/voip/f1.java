@@ -8,17 +8,17 @@ import c8.ha;
 import org.telegram.messenger.r3;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.Components.dt;
+import org.telegram.ui.Components.et;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class f1 extends FrameLayout {
     public final k2 a;
     public boolean b;
     public boolean c;
     public final long d;
-    public final dt e;
+    public final et e;
     public final /* synthetic */ g1 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -27,7 +27,7 @@ public final class f1 extends FrameLayout {
         this.f = g1Var;
         this.c = true;
         this.d = SystemClock.elapsedRealtime();
-        this.e = new dt(this, 21);
+        this.e = new et(this, 21);
         setBackgroundColor(-16777216);
         h hVar = new h(context);
         addView(hVar, ha.c(-1.0f, -1));

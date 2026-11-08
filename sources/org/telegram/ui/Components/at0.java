@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class at0 extends org.telegram.ui.ActionBar.v2 implements org.telegram.messenger.ls {
     public final bi.q1 i1;
@@ -72,7 +72,7 @@ public final class at0 extends org.telegram.ui.ActionBar.v2 implements org.teleg
         textView.setBackground(h02);
         org.telegram.ui.ActionBar.r6.k(textView, h02, null, h, null);
         textView.setPadding(org.telegram.messenger.g0.L(33.0f), 0, org.telegram.messenger.g0.L(33.0f), 0);
-        textView.setText(org.telegram.messenger.hd.M0(2131752589, null).toUpperCase());
+        textView.setText(org.telegram.messenger.id.M0(2131752589, null).toUpperCase());
         textView.setTypeface(org.telegram.messenger.g0.o());
         a4Var.addView(textView, c8.ha.e(-2, -1, 51));
         LinearLayout f10 = org.telegram.messenger.k5.f(context, 0);
@@ -99,14 +99,14 @@ public final class at0 extends org.telegram.ui.ActionBar.v2 implements org.teleg
         org.telegram.ui.ActionBar.r6.V(f11, i13, null);
         f11.setGravity(17);
         f11.setCompoundDrawablePadding(org.telegram.messenger.g0.L(8.0f));
-        f11.setText(org.telegram.messenger.hd.M0(2131745641, null).toUpperCase());
+        f11.setText(org.telegram.messenger.id.M0(2131745643, null).toUpperCase());
         f11.setTypeface(org.telegram.messenger.g0.o());
         f10.addView(f11, c8.ha.r(-2, -2, 16));
         org.telegram.ui.ActionBar.r6.i(i11, a4Var, f6Var);
         this.b.addView(a4Var, c8.ha.e(-1, 48, 83));
         textView.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.q7, f6Var);
-        textView.setText(org.telegram.messenger.hd.M0(2131744841, null));
+        textView.setText(org.telegram.messenger.id.M0(2131744843, null));
         textView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.ys0
             public final /* synthetic */ at0 b;
 
@@ -120,7 +120,7 @@ public final class at0 extends org.telegram.ui.ActionBar.v2 implements org.teleg
                     case 0:
                         at0 at0Var = this.b;
                         for (int i15 = 0; i15 < 4; i15++) {
-                            Utilities.d.c(new org.telegram.messenger.id(org.telegram.messenger.sd.f(i15), 6));
+                            Utilities.d.c(new org.telegram.messenger.jd(org.telegram.messenger.sd.f(i15), 6));
                         }
                         at0Var.dismiss();
                         break;
@@ -131,7 +131,7 @@ public final class at0 extends org.telegram.ui.ActionBar.v2 implements org.teleg
             }
         });
         org.telegram.ui.ActionBar.r6.V(f11, org.telegram.ui.ActionBar.k6.n5, f6Var);
-        f11.setText(org.telegram.messenger.hd.M0(2131752041, null).toUpperCase());
+        f11.setText(org.telegram.messenger.id.M0(2131752041, null).toUpperCase());
         f10.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
         f10.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.ys0
             public final /* synthetic */ at0 b;
@@ -146,7 +146,7 @@ public final class at0 extends org.telegram.ui.ActionBar.v2 implements org.teleg
                     case 0:
                         at0 at0Var = this.b;
                         for (int i15 = 0; i15 < 4; i15++) {
-                            Utilities.d.c(new org.telegram.messenger.id(org.telegram.messenger.sd.f(i15), 6));
+                            Utilities.d.c(new org.telegram.messenger.jd(org.telegram.messenger.sd.f(i15), 6));
                         }
                         at0Var.dismiss();
                         break;

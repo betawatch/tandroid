@@ -17,7 +17,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.kp;
@@ -25,7 +25,7 @@ import org.telegram.messenger.ls;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
-import org.telegram.messenger.rc;
+import org.telegram.messenger.sc;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -33,11 +33,11 @@ import org.telegram.ui.Components.ci;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r00;
+import org.telegram.ui.Components.s00;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class w6 extends org.telegram.ui.Components.na implements ls, org.telegram.messenger.x5, te.b {
     public int A2;
@@ -351,7 +351,7 @@ public final class w6 extends org.telegram.ui.Components.na implements ls, org.t
             dh.c cVar = new dh.c(fVar, fVar, fVar);
             this.f2 = cVar;
             cVar.k = true;
-            int L = rc.e(262144) ? org.telegram.messenger.g0.L(8.0f) : org.telegram.messenger.g0.L(48.0f);
+            int L = sc.e(262144) ? org.telegram.messenger.g0.L(8.0f) : org.telegram.messenger.g0.L(48.0f);
             cVar.d = L;
             cVar.e = L;
             cVar.j = this.X0;
@@ -375,17 +375,17 @@ public final class w6 extends org.telegram.ui.Components.na implements ls, org.t
         ciVar.setVisibility(4);
         FrameLayout frameLayout = new FrameLayout(context);
         this.b2 = frameLayout;
-        r00 r00Var = new r00(context, f6Var);
-        r00Var.r.setOnFocusChangeListener(new v6(this, i11));
-        r00Var.x = true;
-        r00Var.setPadding(org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f));
-        r00Var.updateColors();
-        r00Var.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
-        r00Var.r.addTextChangedListener(new ah.j(this, 5));
-        r00Var.r.setHint(hd.M0(2131745837, null));
+        s00 s00Var = new s00(context, f6Var);
+        s00Var.r.setOnFocusChangeListener(new v6(this, i11));
+        s00Var.x = true;
+        s00Var.setPadding(org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f));
+        s00Var.updateColors();
+        s00Var.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
+        s00Var.r.addTextChangedListener(new ah.j(this, 5));
+        s00Var.r.setHint(id.M0(2131745839, null));
         frameLayout.addView(ciVar, c8.ha.g());
-        frameLayout.addView(r00Var, c8.ha.d(-1, 48.0f, 51, 0.0f, 8.0f, 0.0f, 4.0f));
-        r00Var.setupBlurredBackground(this.f2.c(r00Var, c8.g0.o(f6Var), false));
+        frameLayout.addView(s00Var, c8.ha.d(-1, 48.0f, 51, 0.0f, 8.0f, 0.0f, 4.0f));
+        s00Var.setupBlurredBackground(this.f2.c(s00Var, c8.g0.o(f6Var), false));
         frameLayout.setPadding(org.telegram.messenger.g0.L(8.0f) + this.t0, 0, org.telegram.messenger.g0.L(8.0f) + this.t0, 0);
         this.b.addView(frameLayout, c8.ha.e(-1, -2, 55));
         w0(i12);
@@ -571,7 +571,7 @@ public final class w6 extends org.telegram.ui.Components.na implements ls, org.t
 
     @Override // org.telegram.ui.Components.na
     public final CharSequence O0() {
-        return hd.M0(2131744609, null);
+        return id.M0(2131744611, null);
     }
 
     @Override // org.telegram.ui.Components.na
@@ -651,7 +651,7 @@ public final class w6 extends org.telegram.ui.Components.na implements ls, org.t
                     i11 += org.telegram.messenger.g0.L(56.0f) * 3;
                 }
                 if (z11 && !z10) {
-                    x31 c10 = x31.c(i7, R.drawable.arrow_more, hd.M0(2131745340, null));
+                    x31 c10 = x31.c(i7, R.drawable.arrow_more, id.M0(2131745342, null));
                     c10.q = true;
                     arrayList.add(c10);
                     i11 += org.telegram.messenger.g0.L(50.0f);

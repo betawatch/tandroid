@@ -9,7 +9,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class nq extends oj0 {
     public final /* synthetic */ oq c;
@@ -53,7 +53,7 @@ public final class nq extends oj0 {
         if (i10 != 3) {
             if (i10 != 2) {
                 if (i10 == 1) {
-                    ((org.telegram.ui.Cells.z8) view).setText(org.telegram.messenger.g0.I2(org.telegram.messenger.g0.S2(org.telegram.messenger.hd.M0(2131743431, null), org.telegram.ui.ActionBar.k6.L6, 0, new gp(this, 3), null), true, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
+                    ((org.telegram.ui.Cells.z8) view).setText(org.telegram.messenger.g0.I2(org.telegram.messenger.g0.S2(org.telegram.messenger.id.M0(2131743433, null), org.telegram.ui.ActionBar.k6.L6, 0, new gp(this, 3), null), true, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
                     return;
                 }
                 return;
@@ -61,7 +61,7 @@ public final class nq extends oj0 {
                 org.telegram.ui.Cells.n4 n4Var = (org.telegram.ui.Cells.n4) view;
                 n4Var.setTextSize(15.0f);
                 n4Var.setPadding(0, 0, 0, org.telegram.messenger.g0.L(2.0f));
-                n4Var.setText(org.telegram.messenger.hd.M0(2131743444, null).replace(":", ""));
+                n4Var.setText(org.telegram.messenger.id.M0(2131743446, null).replace(":", ""));
                 return;
             }
         }
@@ -70,7 +70,7 @@ public final class nq extends oj0 {
         long C1 = org.telegram.messenger.ij.C1(peer);
         if (C1 > 0) {
             M0 = org.telegram.messenger.qp.s1(oqVar.a).a2(Long.valueOf(C1));
-            str = org.telegram.messenger.hd.M0(2131743350, null);
+            str = org.telegram.messenger.id.M0(2131743352, null);
         } else {
             M0 = org.telegram.messenger.qp.s1(oqVar.a).M0(Long.valueOf(-C1));
             str = null;
@@ -106,7 +106,7 @@ public final class nq extends oj0 {
             tVar.addView(ch0Var, c8.ha.t(org.telegram.messenger.qs.x1, org.telegram.messenger.qs.x1, 49, 0, 24, 0, 0));
             TextView textView = new TextView(context);
             textView.setTypeface(org.telegram.messenger.g0.o());
-            textView.setText(z9 ? org.telegram.messenger.hd.a0(null, null, 2131744904, new Object[0]) : org.telegram.messenger.hd.a0(null, null, 2131744901, new Object[0]));
+            textView.setText(z9 ? org.telegram.messenger.id.a0(null, null, 2131744906, new Object[0]) : org.telegram.messenger.id.a0(null, null, 2131744903, new Object[0]));
             textView.setTextSize(1, 20.0f);
             org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.G6, null);
             tVar.addView(textView, c8.ha.t(-2, -2, 1, 0, 14, 0, 7));
@@ -114,7 +114,7 @@ public final class nq extends oj0 {
             textView2.setTextSize(1, 14.0f);
             textView2.setGravity(1);
             org.telegram.ui.ActionBar.r6.V(textView2, org.telegram.ui.ActionBar.k6.j5, null);
-            textView2.setText(z9 ? org.telegram.messenger.hd.a0(null, null, 2131743459, new Object[0]) : org.telegram.messenger.hd.a0(null, null, 2131743334, new Object[0]));
+            textView2.setText(z9 ? org.telegram.messenger.id.a0(null, null, 2131743461, new Object[0]) : org.telegram.messenger.id.a0(null, null, 2131743336, new Object[0]));
             textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
             tVar.addView(textView2, c8.ha.t(-2, -2, 1, 28, 0, 28, 17));
             frameLayout = tVar;

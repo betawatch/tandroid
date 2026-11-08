@@ -19,9 +19,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public abstract class vf extends ys {
+public abstract class vf extends zs {
     public pc Y1;
     public final /* synthetic */ ChatActivityEnterView Z1;
 
@@ -31,7 +31,7 @@ public abstract class vf extends ys {
         this.Z1 = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.Components.ys
+    @Override // org.telegram.ui.Components.zs
     public final void D() {
         wf wfVar = this.Z1.Z2;
         if (wfVar != null) {
@@ -39,7 +39,7 @@ public abstract class vf extends ys {
         }
     }
 
-    @Override // org.telegram.ui.Components.ys
+    @Override // org.telegram.ui.Components.zs
     public final void E() {
         wf wfVar = this.Z1.Z2;
         if (wfVar != null) {
@@ -68,7 +68,7 @@ public abstract class vf extends ys {
         }
     }
 
-    public final void K(qt qtVar, boolean z9, int i7, int i10) {
+    public final void K(rt rtVar, boolean z9, int i7, int i10) {
         org.telegram.messenger.ij threadMessage;
         org.telegram.messenger.ij threadMessage2;
         ChatActivityEnterView chatActivityEnterView = this.Z1;
@@ -83,21 +83,21 @@ public abstract class vf extends ys {
             anVar.uc();
             return;
         }
-        t0.h hVar = (t0.h) qtVar.b;
+        t0.h hVar = (t0.h) rtVar.b;
         if (hVar.getDescription().hasMimeType("image/gif")) {
             org.telegram.messenger.c cVar = chatActivityEnterView.R;
             Uri c10 = hVar.c();
             long j3 = chatActivityEnterView.Q2;
             org.telegram.messenger.ij ijVar = chatActivityEnterView.T2;
             threadMessage2 = chatActivityEnterView.getThreadMessage();
-            org.telegram.messenger.gz.T(cVar, null, null, c10, null, "image/gif", j3, ijVar, threadMessage2, null, chatActivityEnterView.V2, z9, qtVar, anVar != null ? anVar.W8() : null);
+            org.telegram.messenger.gz.T(cVar, null, null, c10, null, "image/gif", j3, ijVar, threadMessage2, null, chatActivityEnterView.V2, z9, rtVar, anVar != null ? anVar.W8() : null);
         } else {
             org.telegram.messenger.c cVar2 = chatActivityEnterView.R;
             Uri c11 = hVar.c();
             long j10 = chatActivityEnterView.Q2;
             org.telegram.messenger.ij ijVar2 = chatActivityEnterView.T2;
             threadMessage = chatActivityEnterView.getThreadMessage();
-            org.telegram.messenger.gz.Y(cVar2, c11, j10, ijVar2, threadMessage, qtVar, null, z9, 0, anVar != null ? anVar.W8() : null);
+            org.telegram.messenger.gz.Y(cVar2, c11, j10, ijVar2, threadMessage, rtVar, null, z9, 0, anVar != null ? anVar.W8() : null);
         }
         wf wfVar = chatActivityEnterView.Z2;
         if (wfVar != null) {
@@ -235,7 +235,7 @@ public abstract class vf extends ys {
         }
     }
 
-    @Override // org.telegram.ui.Components.ys, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.zs, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
     public void onMeasure(int i7, int i10) {
         boolean z9 = getMeasuredWidth() == 0 && getMeasuredHeight() == 0;
         ChatActivityEnterView chatActivityEnterView = this.Z1;
@@ -258,7 +258,7 @@ public abstract class vf extends ys {
         }
     }
 
-    @Override // org.telegram.ui.Components.ct, android.widget.TextView
+    @Override // org.telegram.ui.Components.dt, android.widget.TextView
     public final void onSelectionChanged(int i7, int i10) {
         k60 k60Var;
         xe xeVar;
@@ -284,7 +284,7 @@ public abstract class vf extends ys {
         chatActivityEnterView.Y4 = null;
     }
 
-    @Override // org.telegram.ui.Components.ys, android.widget.EditText, android.widget.TextView
+    @Override // org.telegram.ui.Components.zs, android.widget.EditText, android.widget.TextView
     public boolean onTextContextMenuItem(int i7) {
         if (i7 == 16908322) {
             ChatActivityEnterView chatActivityEnterView = this.Z1;
@@ -410,7 +410,7 @@ public abstract class vf extends ys {
         return super.requestRectangleOnScreen(rect);
     }
 
-    @Override // org.telegram.ui.Components.ct
+    @Override // org.telegram.ui.Components.dt
     public void setOffsetY(float f10) {
         super.setOffsetY(f10);
         ChatActivityEnterView chatActivityEnterView = this.Z1;

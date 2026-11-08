@@ -38,7 +38,7 @@ import org.telegram.messenger.camera.q;
 import org.telegram.messenger.fp;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.gp;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.p10;
@@ -51,14 +51,14 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.dh0;
-import org.telegram.ui.Components.e10;
+import org.telegram.ui.Components.f10;
 import org.telegram.ui.Components.i6;
 import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.cv0;
 import org.telegram.ui.wv0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class ProfileStoriesView extends View implements ls {
     public static final /* synthetic */ int s0 = 0;
@@ -537,11 +537,11 @@ public class ProfileStoriesView extends View implements ls {
                 rectF8.set(rectF7);
                 rectF8.inset(-g0.N(3.775f), -g0.N(3.775f));
                 if (r7.d == null) {
-                    e10 e10Var = new e10();
-                    r7.d = e10Var;
-                    e10Var.a = true;
-                    e10Var.b = true;
-                    e10Var.c.setStrokeWidth(g0.N(2.0f));
+                    f10 f10Var = new f10();
+                    r7.d = f10Var;
+                    f10Var.a = true;
+                    f10Var.b = true;
+                    f10Var.c.setStrokeWidth(g0.N(2.0f));
                     r7.d.c.setStyle(Paint.Style.STROKE);
                     r7.d.c.setStrokeCap(Paint.Cap.ROUND);
                 }
@@ -1184,12 +1184,12 @@ public class ProfileStoriesView extends View implements ls {
         this.s = i36;
         if (i36 > 0) {
             z11 = false;
-            str = hd.G(i36, "Stories", new Object[0]);
+            str = id.G(i36, "Stories", new Object[0]);
         } else {
             z11 = false;
             str = "";
         }
-        if (z9 && !hd.a0) {
+        if (z9 && !id.a0) {
             z11 = true;
         }
         this.n.t(str, z11, true);

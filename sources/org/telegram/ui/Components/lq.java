@@ -17,7 +17,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class lq {
     public static boolean a(String str, String str2) {
@@ -38,7 +38,7 @@ public abstract class lq {
         int i7 = 0;
         while (i7 < arrayList.size()) {
             String s5 = a8.p0.s(new StringBuilder("'"), (String) arrayList.get(i7), "'");
-            str2 = i7 == 0 ? s5 : i7 == arrayList.size() - 1 ? org.telegram.messenger.hd.a0(null, null, 2131751720, str2, s5) : org.telegram.messenger.hd.a0(null, null, 2131751722, str2, s5);
+            str2 = i7 == 0 ? s5 : i7 == arrayList.size() - 1 ? org.telegram.messenger.id.a0(null, null, 2131751720, str2, s5) : org.telegram.messenger.id.a0(null, null, 2131751722, str2, s5);
             i7++;
         }
         return str2;
@@ -65,19 +65,19 @@ public abstract class lq {
             upperCase.getClass();
             switch (upperCase) {
                 case "OWNER_USERNAMES_LIMIT_EXCEEDED":
-                    return org.telegram.messenger.hd.a0(null, null, 2131751726, Integer.valueOf(((org.telegram.messenger.j0) org.telegram.messenger.qp.s1(i7).x7.N.b).c), b(treeSet));
+                    return org.telegram.messenger.id.a0(null, null, 2131751726, Integer.valueOf(((org.telegram.messenger.j0) org.telegram.messenger.qp.s1(i7).x7.N.b).c), b(treeSet));
                 case "PREMIUM_ACCOUNT_REQUIRED":
                     String c10 = c(str, treeSet);
-                    return org.telegram.messenger.g0.Q2(c10 == null ? org.telegram.messenger.hd.M0(2131751724, null) : org.telegram.messenger.hd.a0(null, null, 2131751725, c10), org.telegram.ui.ActionBar.k6.Uc, f6Var, r2Var, false);
+                    return org.telegram.messenger.g0.Q2(c10 == null ? org.telegram.messenger.id.M0(2131751724, null) : org.telegram.messenger.id.a0(null, null, 2131751725, c10), org.telegram.ui.ActionBar.k6.Uc, f6Var, r2Var, false);
                 case "ADDITIONAL_USERNAME_SUFFIX_MISSING":
-                    return org.telegram.messenger.hd.a0(null, null, 2131751723, b(treeSet));
+                    return org.telegram.messenger.id.a0(null, null, 2131751723, b(treeSet));
                 case "USERNAME_INVALID":
-                    return org.telegram.messenger.hd.M0(2131743657, null);
+                    return org.telegram.messenger.id.M0(2131743659, null);
                 case "USERNAME_PURCHASE_AVAILABLE":
                 case "USERNAME_OCCUPIED":
-                    return org.telegram.messenger.hd.M0(2131743659, null);
+                    return org.telegram.messenger.id.M0(2131743661, null);
                 case "BOT_USERNAMES_LIMIT_EXCEEDED":
-                    return org.telegram.messenger.hd.M0(2131751729, null);
+                    return org.telegram.messenger.id.M0(2131751729, null);
             }
         }
         return null;
@@ -100,7 +100,7 @@ public abstract class lq {
             } else {
                 hcVar2 = hcVar;
             }
-            hcVar2.Q(R.raw.error, 36, org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.uj, f6Var), org.telegram.messenger.hd.a0(null, null, 2131751731, TextUtils.isEmpty(org.telegram.messenger.t10.n(user)) ? org.telegram.messenger.t10.p(user) : "@" + org.telegram.messenger.t10.n(user)))).j();
+            hcVar2.Q(R.raw.error, 36, org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.uj, f6Var), org.telegram.messenger.id.a0(null, null, 2131751731, TextUtils.isEmpty(org.telegram.messenger.t10.n(user)) ? org.telegram.messenger.t10.p(user) : "@" + org.telegram.messenger.t10.n(user)))).j();
             c20Var.a(null);
             return;
         }
@@ -136,12 +136,12 @@ public abstract class lq {
         TextView textView2 = new TextView(context);
         org.telegram.ui.ActionBar.r6.V(textView2, i10, f6Var);
         textView2.setTextSize(1, 14.0f);
-        String a02 = org.telegram.messenger.hd.a0(null, null, 2131751733, org.telegram.messenger.t10.p(user));
+        String a02 = org.telegram.messenger.id.a0(null, null, 2131751733, org.telegram.messenger.t10.p(user));
         int i11 = org.telegram.ui.ActionBar.k6.Uc;
         textView2.setText(org.telegram.messenger.g0.Q2(a02, i11, f6Var, null, true));
         textView2.setGravity(17);
         kqVar.addView(textView2, c8.ha.t(-1, -2, 55, 16, 0, 16, 22));
-        org.telegram.ui.Cells.k3 k3Var = new org.telegram.ui.Cells.k3(context, org.telegram.messenger.hd.M0(2131751735, null), false, false, -1, f6Var);
+        org.telegram.ui.Cells.k3 k3Var = new org.telegram.ui.Cells.k3(context, org.telegram.messenger.id.M0(2131751735, null), false, false, -1, f6Var);
         org.telegram.ui.Cells.i3 i3Var2 = k3Var.d;
         i3Var2.setImeOptions(5);
         int L = org.telegram.messenger.g0.L(16.0f);
@@ -153,9 +153,9 @@ public abstract class lq {
         k3Var.setText(tL_requestPeerTypeCreateBot.suggested_name);
         kqVar.addView(k3Var, c8.ha.t(-1, -2, 55, 12, 0, 12, 0));
         org.telegram.ui.Cells.z8 z8Var = new org.telegram.ui.Cells.z8(context, f6Var);
-        z8Var.setText(org.telegram.messenger.hd.M0(2131751734, null));
+        z8Var.setText(org.telegram.messenger.id.M0(2131751734, null));
         kqVar.addView(z8Var, c8.ha.t(-1, -2, 55, 9, 0, 9, 0));
-        org.telegram.ui.Cells.k3 k3Var2 = new org.telegram.ui.Cells.k3(context, org.telegram.messenger.hd.M0(2131751730, null), false, false, 32, f6Var);
+        org.telegram.ui.Cells.k3 k3Var2 = new org.telegram.ui.Cells.k3(context, org.telegram.messenger.id.M0(2131751730, null), false, false, 32, f6Var);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         org.telegram.ui.Cells.i3 i3Var3 = k3Var2.d;
@@ -205,10 +205,10 @@ public abstract class lq {
         } else {
             str = null;
         }
-        dVar2.setText(org.telegram.messenger.hd.M0(2131752589, str));
+        dVar2.setText(org.telegram.messenger.id.M0(2131752589, str));
         linearLayout2.addView(dVar2, c8.ha.q(0, 48, 119.0f, 1, 0, 0, 5, 0));
         fi.d h = org.telegram.messenger.k5.h(24, context, f6Var, true);
-        h.setText(org.telegram.messenger.hd.M0(2131751742, null));
+        h.setText(org.telegram.messenger.id.M0(2131751742, null));
         linearLayout2.addView(h, c8.ha.q(0, 48, 119.0f, 1, 5, 0, 0, 0));
         l10.T0 = false;
         l10.P0 = true;
@@ -228,13 +228,13 @@ public abstract class lq {
         r2 r2Var = new r2(l10, i7, 5);
         String b10 = b(treeSet);
         if (TextUtils.isEmpty(b10)) {
-            Q2 = org.telegram.messenger.hd.M0(2131751727, null);
+            Q2 = org.telegram.messenger.id.M0(2131751727, null);
             i3Var = i3Var3;
             dVar = dVar2;
         } else {
             i3Var = i3Var3;
             dVar = dVar2;
-            Q2 = org.telegram.messenger.g0.Q2(org.telegram.messenger.hd.a0(null, null, 2131751721, b10), i11, f6Var, r2Var, false);
+            Q2 = org.telegram.messenger.g0.Q2(org.telegram.messenger.id.a0(null, null, 2131751721, b10), i11, f6Var, r2Var, false);
         }
         ng ngVar = new ng(z8Var2, Q2, f6Var, 3);
         ai.a1 a1Var = new ai.a1(iArr3, runnableArr, iArr2, i7, 22);

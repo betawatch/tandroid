@@ -10,7 +10,7 @@ import android.text.TextUtils;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class g extends Binder implements b {
     public final WeakReference a;
@@ -21,35 +21,12 @@ public final class g extends Binder implements b {
     }
 
     @Override // android.support.v4.media.session.b
-    public final void C(List list) {
+    public final void E(Bundle bundle) {
         throw new AssertionError();
     }
 
     @Override // android.support.v4.media.session.b
-    public final void F0(PlaybackStateCompat playbackStateCompat) {
-        androidx.mediarouter.app.q qVar = (androidx.mediarouter.app.q) this.a.get();
-        if (qVar != null) {
-            qVar.e(2, playbackStateCompat, null);
-        }
-    }
-
-    @Override // android.support.v4.media.session.b
-    public final void G0(ParcelableVolumeInfo parcelableVolumeInfo) {
-        throw new AssertionError();
-    }
-
-    @Override // android.support.v4.media.session.b
-    public final void X(CharSequence charSequence) {
-        throw new AssertionError();
-    }
-
-    @Override // android.support.v4.media.session.b
-    public final void Z() {
-        throw new AssertionError();
-    }
-
-    @Override // android.support.v4.media.session.b
-    public final void b0(MediaMetadataCompat mediaMetadataCompat) {
+    public final void L(List list) {
         throw new AssertionError();
     }
 
@@ -62,11 +39,39 @@ public final class g extends Binder implements b {
     }
 
     @Override // android.support.v4.media.session.b
+    public final void e1(PlaybackStateCompat playbackStateCompat) {
+        androidx.mediarouter.app.q qVar = (androidx.mediarouter.app.q) this.a.get();
+        if (qVar != null) {
+            qVar.e(2, playbackStateCompat, null);
+        }
+    }
+
+    @Override // android.support.v4.media.session.b
+    public final void g1(ParcelableVolumeInfo parcelableVolumeInfo) {
+        throw new AssertionError();
+    }
+
+    @Override // android.support.v4.media.session.b
     public final void j(int i7) {
         androidx.mediarouter.app.q qVar = (androidx.mediarouter.app.q) this.a.get();
         if (qVar != null) {
             qVar.e(12, Integer.valueOf(i7), null);
         }
+    }
+
+    @Override // android.support.v4.media.session.b
+    public final void k0(CharSequence charSequence) {
+        throw new AssertionError();
+    }
+
+    @Override // android.support.v4.media.session.b
+    public final void m0() {
+        throw new AssertionError();
+    }
+
+    @Override // android.support.v4.media.session.b
+    public final void o0(MediaMetadataCompat mediaMetadataCompat) {
+        throw new AssertionError();
     }
 
     @Override // android.os.Binder
@@ -89,25 +94,25 @@ public final class g extends Binder implements b {
                 }
                 return true;
             case 2:
-                Z();
+                m0();
                 return true;
             case 3:
-                F0((PlaybackStateCompat) i1.a(parcel, PlaybackStateCompat.CREATOR));
+                e1((PlaybackStateCompat) i1.a(parcel, PlaybackStateCompat.CREATOR));
                 return true;
             case 4:
-                b0((MediaMetadataCompat) i1.a(parcel, MediaMetadataCompat.CREATOR));
+                o0((MediaMetadataCompat) i1.a(parcel, MediaMetadataCompat.CREATOR));
                 return true;
             case 5:
-                C(parcel.createTypedArrayList(MediaSessionCompat$QueueItem.CREATOR));
+                L(parcel.createTypedArrayList(MediaSessionCompat$QueueItem.CREATOR));
                 return true;
             case 6:
-                X((CharSequence) i1.a(parcel, TextUtils.CHAR_SEQUENCE_CREATOR));
+                k0((CharSequence) i1.a(parcel, TextUtils.CHAR_SEQUENCE_CREATOR));
                 return true;
             case 7:
-                y((Bundle) i1.a(parcel, Bundle.CREATOR));
+                E((Bundle) i1.a(parcel, Bundle.CREATOR));
                 return true;
             case 8:
-                G0((ParcelableVolumeInfo) i1.a(parcel, ParcelableVolumeInfo.CREATOR));
+                g1((ParcelableVolumeInfo) i1.a(parcel, ParcelableVolumeInfo.CREATOR));
                 return true;
             case 9:
                 e(parcel.readInt());
@@ -136,11 +141,6 @@ public final class g extends Binder implements b {
             default:
                 return super.onTransact(i7, parcel, parcel2, i10);
         }
-    }
-
-    @Override // android.support.v4.media.session.b
-    public final void y(Bundle bundle) {
-        throw new AssertionError();
     }
 
     @Override // android.os.IInterface

@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class t9 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -41,10 +41,10 @@ public final class t9 extends AnimatorListenerAdapter {
                 this.b = true;
                 break;
             case 8:
-                fz fzVar = (fz) this.c;
-                AnimatorSet animatorSet2 = fzVar.m1;
+                gz gzVar = (gz) this.c;
+                AnimatorSet animatorSet2 = gzVar.m1;
                 if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    fzVar.m1 = null;
+                    gzVar.m1 = null;
                     break;
                 }
                 break;
@@ -183,33 +183,33 @@ public final class t9 extends AnimatorListenerAdapter {
                 }
                 break;
             case 7:
-                wu wuVar = (wu) obj;
-                av avVar = wuVar.N;
-                if (avVar.U && !wuVar.h) {
-                    if (!this.b && !wuVar.n) {
-                        wuVar.setBackground(null);
+                xu xuVar = (xu) obj;
+                bv bvVar = xuVar.N;
+                if (bvVar.U && !xuVar.h) {
+                    if (!this.b && !xuVar.n) {
+                        xuVar.setBackground(null);
                         break;
-                    } else if (wuVar.getBackground() == null) {
-                        wuVar.setBackground(org.telegram.ui.ActionBar.k6.a0(avVar.k(), 8, 8));
+                    } else if (xuVar.getBackground() == null) {
+                        xuVar.setBackground(org.telegram.ui.ActionBar.k6.a0(bvVar.k(), 8, 8));
                         break;
                     }
                 }
                 break;
             case 8:
-                fz fzVar = (fz) obj;
-                AnimatorSet animatorSet2 = fzVar.m1;
+                gz gzVar = (gz) obj;
+                AnimatorSet animatorSet2 = gzVar.m1;
                 if (animatorSet2 != null && animatorSet2.equals(animator)) {
                     if (!this.b) {
-                        fzVar.n1.setVisibility(4);
+                        gzVar.n1.setVisibility(4);
                     }
-                    fzVar.m1 = null;
+                    gzVar.m1 = null;
                     break;
                 }
                 break;
             case 9:
-                rz rzVar = (rz) obj;
-                rzVar.n = this.b ? 1.0f : 0.0f;
-                rzVar.invalidate();
+                sz szVar = (sz) obj;
+                szVar.n = this.b ? 1.0f : 0.0f;
+                szVar.invalidate();
                 break;
             case 10:
                 p10 p10Var = (p10) obj;

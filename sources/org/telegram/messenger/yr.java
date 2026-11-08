@@ -37,7 +37,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class yr extends c1 {
     public static volatile yr[] e0 = new yr[4];
@@ -124,7 +124,7 @@ public final class yr extends c1 {
         p5 p5Var = new p5(jg.g.j(i7, "storageQueue_"));
         this.a = p5Var;
         p5Var.setPriority(8);
-        p5Var.c(new qq(this, 10));
+        p5Var.c(new rq(this, 8));
     }
 
     public static void A(SQLiteDatabase sQLiteDatabase) {
@@ -909,7 +909,7 @@ public final class yr extends c1 {
                                         ui mediaDataController = yrVar.getMediaDataController();
                                         mediaDataController.getClass();
                                         g0.h3(new yg(mediaDataController, j10, 0));
-                                        g0.h3(new qq(yrVar, 9));
+                                        g0.h3(new rq(yrVar, 10));
                                         yrVar.t1(false);
                                         ArrayList arrayList5 = new ArrayList();
                                         arrayList5.add(Long.valueOf(j10));
@@ -1025,7 +1025,7 @@ public final class yr extends c1 {
                         ui mediaDataController2 = yrVar.getMediaDataController();
                         mediaDataController2.getClass();
                         g0.h3(new yg(mediaDataController2, j10, 0));
-                        g0.h3(new qq(yrVar, 9));
+                        g0.h3(new rq(yrVar, 10));
                         yrVar.t1(false);
                         ArrayList arrayList52 = new ArrayList();
                         arrayList52.add(Long.valueOf(j10));
@@ -1451,7 +1451,7 @@ public final class yr extends c1 {
             ui mediaDataController22 = yrVar.getMediaDataController();
             mediaDataController22.getClass();
             g0.h3(new yg(mediaDataController22, j10, 0));
-            g0.h3(new qq(yrVar, 9));
+            g0.h3(new rq(yrVar, 10));
             yrVar.t1(false);
             ArrayList arrayList522 = new ArrayList();
             arrayList522.add(Long.valueOf(j10));
@@ -2792,7 +2792,7 @@ public final class yr extends c1 {
             }
             gz sendMessagesHelper = getSendMessagesHelper();
             sendMessagesHelper.getClass();
-            g0.h3(new zj(sendMessagesHelper, arrayList, arrayList2, arrayList9, arrayList5, arrayList6, 1));
+            g0.h3(new yj(sendMessagesHelper, arrayList, arrayList2, arrayList9, arrayList5, arrayList6, 1));
         } catch (Exception e13) {
             e = e13;
             sQLiteCursor = null;
@@ -6330,10 +6330,10 @@ public final class yr extends c1 {
             if (TextUtils.isEmpty(lowerCase)) {
                 return;
             }
-            String lowerCase2 = hd.L0(2131745902).toLowerCase();
-            String lowerCase3 = hd.L0(2131746265).toLowerCase();
+            String lowerCase2 = id.L0(2131745904).toLowerCase();
+            String lowerCase3 = id.L0(2131746267).toLowerCase();
             String str11 = "replies";
-            String R0 = hd.E0().R0(lowerCase);
+            String R0 = id.E0().R0(lowerCase);
             if (!lowerCase.equals(R0)) {
                 try {
                 } catch (Exception e11) {
@@ -6433,7 +6433,7 @@ public final class yr extends c1 {
                     if (a22 != null) {
                         jg.d0 d0Var2 = new jg.d0();
                         d0Var2.b = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                        d0Var2.c = hd.L0(2131746265);
+                        d0Var2.c = id.L0(2131746267);
                         d0Var2.a = a22;
                         hVar6.k(d0Var2, a22.id);
                         i12++;
@@ -6452,7 +6452,7 @@ public final class yr extends c1 {
                     SQLiteCursor queryFinalized2 = R.queryFinalized("SELECT data, status, name FROM users WHERE uid IN(" + TextUtils.join(",", arrayList8) + ")", new Object[0]);
                     while (queryFinalized2.next()) {
                         String stringValue = queryFinalized2.stringValue(2);
-                        String R02 = hd.E0().R0(stringValue);
+                        String R02 = id.E0().R0(stringValue);
                         if (stringValue.equals(R02)) {
                             R02 = null;
                         }
@@ -6563,7 +6563,7 @@ public final class yr extends c1 {
                     while (queryFinalized3.next()) {
                         try {
                             String stringValue2 = queryFinalized3.stringValue(1);
-                            String R03 = hd.E0().R0(stringValue2);
+                            String R03 = id.E0().R0(stringValue2);
                             if (stringValue2.equals(R03)) {
                                 R03 = null;
                             }
@@ -6613,7 +6613,7 @@ public final class yr extends c1 {
                                             i29 = "";
                                         }
                                         String lowerCase4 = i29.toLowerCase();
-                                        String R04 = hd.E0().R0(lowerCase4);
+                                        String R04 = id.E0().R0(lowerCase4);
                                         if (lowerCase4.equals(R04)) {
                                             R04 = null;
                                         }
@@ -6680,7 +6680,7 @@ public final class yr extends c1 {
                     SQLiteCursor queryFinalized4 = R3.queryFinalized("SELECT q.data, u.name, q.user, q.g, q.authkey, q.ttl, u.data, u.status, q.layer, q.seq_in, q.seq_out, q.use_count, q.exchange_id, q.key_date, q.fprint, q.fauthkey, q.khash, q.in_seq_no, q.admin_id, q.mtproto_seq FROM enc_chats as q INNER JOIN users as u ON q.user = u.uid WHERE q.uid IN(" + TextUtils.join(",", arrayList5) + ")", new Object[0]);
                     while (queryFinalized4.next()) {
                         String stringValue3 = queryFinalized4.stringValue(1);
-                        String R05 = hd.E0().R0(stringValue3);
+                        String R05 = id.E0().R0(stringValue3);
                         if (stringValue3.equals(R05)) {
                             R05 = null;
                         }
@@ -6784,7 +6784,7 @@ public final class yr extends c1 {
                         arrayList6.add(d0Var5);
                     }
                 }
-                Collections.sort(arrayList6, new vj(12));
+                Collections.sort(arrayList6, new jl(12));
                 for (i16 = 0; i16 < arrayList6.size(); i16++) {
                     jg.d0 d0Var6 = (jg.d0) arrayList6.get(i16);
                     arrayList.add(d0Var6.a);
@@ -6797,7 +6797,7 @@ public final class yr extends c1 {
                 while (queryFinalized.next()) {
                     if (hVar2.h(queryFinalized.longValue(3)) < 0) {
                         String stringValue4 = queryFinalized.stringValue(2);
-                        String R06 = hd.E0().R0(stringValue4);
+                        String R06 = id.E0().R0(stringValue4);
                         if (stringValue4.equals(R06)) {
                             R06 = null;
                         }
@@ -6893,7 +6893,7 @@ public final class yr extends c1 {
                 arrayList6 = new ArrayList(i12);
                 while (i15 < hVar2.m()) {
                 }
-                Collections.sort(arrayList6, new vj(12));
+                Collections.sort(arrayList6, new jl(12));
                 while (i16 < arrayList6.size()) {
                 }
                 if (i7 == 2) {
@@ -6920,7 +6920,7 @@ public final class yr extends c1 {
             arrayList6 = new ArrayList(i12);
             while (i15 < hVar2.m()) {
             }
-            Collections.sort(arrayList6, new vj(12));
+            Collections.sort(arrayList6, new jl(12));
             while (i16 < arrayList6.size()) {
             }
             if (i7 == 2) {
@@ -6938,7 +6938,7 @@ public final class yr extends c1 {
         if (tL_chatBannedRights == null || j3 == 0) {
             return;
         }
-        this.a.c(new ik(this, j3, i7, tL_chatBannedRights, 7));
+        this.a.c(new hk(this, j3, i7, tL_chatBannedRights, 7));
     }
 
     public final int N(long j3) {
@@ -6954,7 +6954,7 @@ public final class yr extends c1 {
     }
 
     public final void N0(int i7, TLRPC.Message message) {
-        this.a.c(new k7(this, i7, message, 1));
+        this.a.c(new l7(this, i7, message, 1));
     }
 
     public final void N1(TLRPC.ChatFull chatFull, boolean z9) {
@@ -7237,10 +7237,10 @@ public final class yr extends c1 {
     }
 
     public final void P1(int i7) {
-        g0.h3(new qq(this, 4));
+        g0.h3(new rq(this, 4));
         a8.b("MessagesStorage start db migration from " + i7 + " to 181");
         a8.b("MessagesStorage db migration finished to varsion " + l5.c(this, this.b, i7));
-        g0.h3(new qq(this, 5));
+        g0.h3(new rq(this, 5));
     }
 
     public final void Q(String str, ArrayList arrayList) {
@@ -8035,7 +8035,7 @@ public final class yr extends c1 {
     public final int U(final long j3, final boolean z9) {
         final CountDownLatch countDownLatch = new CountDownLatch(1);
         final Integer[] numArr = {0};
-        this.a.c(new Runnable() { // from class: org.telegram.messenger.ir
+        this.a.c(new Runnable() { // from class: org.telegram.messenger.gr
             /* JADX WARN: Code restructure failed: missing block: B:22:0x0075, code lost:
             
                 if (r9 == null) goto L21;
@@ -8545,15 +8545,15 @@ public final class yr extends c1 {
                 return;
             }
         }
-        g0.h3(new qq(this, i11));
-        this.a.c(new qq(this, 26));
-        this.a.c(new qq(this, 22));
-        this.a.c(new qq(this, 27));
+        g0.h3(new rq(this, i11));
+        this.a.c(new rq(this, 27));
+        this.a.c(new rq(this, 22));
+        this.a.c(new rq(this, 28));
         try {
             this.P.countDown();
         } catch (Throwable unused) {
         }
-        g0.h3(new qq(this, r5));
+        g0.h3(new rq(this, r5));
     }
 
     public final void V1(TLRPC.EncryptedChat encryptedChat) {
@@ -8625,11 +8625,11 @@ public final class yr extends c1 {
         }
     }
 
-    public final void W0(ArrayList arrayList, dk dkVar) {
+    public final void W0(ArrayList arrayList, ck ckVar) {
         if (arrayList == null || arrayList.isEmpty()) {
             return;
         }
-        I(new lg(this, arrayList, dkVar, 16));
+        I(new lg(this, arrayList, ckVar, 16));
     }
 
     /*  JADX ERROR: JadxRuntimeException in pass: IfRegionVisitor
@@ -8789,15 +8789,15 @@ public final class yr extends c1 {
         }
     }
 
-    public final void X0(ArrayList arrayList, ck ckVar) {
+    public final void X0(ArrayList arrayList, bk bkVar) {
         if (arrayList == null || arrayList.isEmpty()) {
             return;
         }
-        I(new lg(this, arrayList, ckVar, 23));
+        I(new lg(this, arrayList, bkVar, 23));
     }
 
     public final void X1(long j3, TLRPC.Message message) {
-        this.a.c(new a4(this, message, j3, 28));
+        this.a.c(new a4(this, message, j3, 27));
     }
 
     public final ArrayList Y(ArrayList arrayList, long j3) {
@@ -8883,7 +8883,7 @@ public final class yr extends c1 {
             }
         }
         if (z10) {
-            Collections.sort(this.H, new vj(11));
+            Collections.sort(this.H, new jl(11));
             z1();
         }
         int i12 = z9 ? 1 : 2;
@@ -8929,7 +8929,7 @@ public final class yr extends c1 {
     }
 
     public final void Z1(long j3, int i7, TLRPC.TL_messageReactions tL_messageReactions) {
-        this.a.c(new ik(this, i7, j3, tL_messageReactions, 8));
+        this.a.c(new hk(this, i7, j3, tL_messageReactions, 9));
     }
 
     public final void a1(a0.h hVar, a0.h hVar2, a0.h hVar3, boolean z9) {
@@ -9217,7 +9217,7 @@ public final class yr extends c1 {
             }
             TLRPC.TL_updates tL_updates = new TLRPC.TL_updates();
             tL_updates.updates.add(tL_updateDeleteScheduledMessages);
-            Utilities.d.c(new yq(1, this, tL_updates));
+            Utilities.d.c(new zq(1, this, tL_updates));
             try {
                 SQLiteDatabase sQLiteDatabase2 = this.b;
                 Locale locale2 = Locale.US;
@@ -10644,7 +10644,7 @@ public final class yr extends c1 {
         if (messages_dialogs.dialogs.isEmpty()) {
             return;
         }
-        this.a.c(new k7(this, messages_dialogs, i7, 18));
+        this.a.c(new l7(this, messages_dialogs, i7, 18));
     }
 
     public final void d2(long j3, long j10, int i7, int i10) {
@@ -10966,7 +10966,7 @@ public final class yr extends c1 {
         if (tL_messageReactions == null || !tL_messageReactions.reactions_as_tags || (arrayList = tL_messageReactions.results) == null || arrayList.isEmpty()) {
             return;
         }
-        hd E0 = hd.E0();
+        id E0 = id.E0();
         String str = message.message;
         if (str == null) {
             str = "";
@@ -10998,7 +10998,7 @@ public final class yr extends c1 {
         }
         CountDownLatch countDownLatch = new CountDownLatch(1);
         Object[] objArr = new Object[2];
-        this.a.c(new ck(this, str, i7, objArr, countDownLatch, 3));
+        this.a.c(new bk(this, str, i7, objArr, countDownLatch, 3));
         try {
             countDownLatch.await();
         } catch (Exception e10) {
@@ -11104,7 +11104,7 @@ public final class yr extends c1 {
     }
 
     public final void h() {
-        g0.h3(new qq(this, 14));
+        g0.h3(new rq(this, 13));
     }
 
     public final HashMap h0() {
@@ -11167,7 +11167,7 @@ public final class yr extends c1 {
         try {
             int intValue = queryFinalized.next() ? queryFinalized.intValue(0) : 0;
             queryFinalized.dispose();
-            g0.h3(new k7(this, l10, intValue, 17));
+            g0.h3(new l7(this, l10, intValue, 17));
         } catch (Exception e11) {
             e = e11;
             sQLiteCursor = queryFinalized;
@@ -11332,7 +11332,7 @@ public final class yr extends c1 {
         if (!z10) {
             k1(arrayList, z9, z11, i7, z12, i10, j3);
         } else {
-            this.a.c(new Runnable() { // from class: org.telegram.messenger.rq
+            this.a.c(new Runnable() { // from class: org.telegram.messenger.pq
                 @Override // java.lang.Runnable
                 public final void run() {
                     yr.this.k1(arrayList, z9, z11, i7, z12, i10, j3);
@@ -11445,7 +11445,7 @@ public final class yr extends c1 {
         if (str == null || tLObject == null || str2 == null) {
             return;
         }
-        this.a.c(new ck(this, str, tLObject, i7, str2, 4));
+        this.a.c(new bk(this, str, tLObject, i7, str2, 4));
     }
 
     public final void l2(ArrayList arrayList) {
@@ -11744,7 +11744,7 @@ public final class yr extends c1 {
             }
             yrVar2.S = false;
             yrVar2.s();
-            g0.h3(new qq(yrVar2, 23));
+            g0.h3(new rq(yrVar2, 24));
             a8.g(new Exception("database restored!!"), true);
             return;
         }
@@ -12091,7 +12091,7 @@ public final class yr extends c1 {
     }
 
     public final void p0() {
-        this.a.c(new qq(this, 21));
+        this.a.c(new rq(this, 21));
     }
 
     public final void p1(int i7, ArrayList arrayList) {
@@ -12276,7 +12276,7 @@ public final class yr extends c1 {
 
     public final void s1() {
         q();
-        g0.h3(new qq(this, 8));
+        g0.h3(new rq(this, 9));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -12717,7 +12717,7 @@ public final class yr extends c1 {
             }
         }
         j(false);
-        g0.h3(new qq(this, 24));
+        g0.h3(new rq(this, 25));
     }
 
     public final void u(int i7, int i10, long j3, long j10, String str) {
@@ -13284,7 +13284,7 @@ public final class yr extends c1 {
     }
 
     public final void y1() {
-        this.a.c(new sp(this, new ArrayList(getMessagesController().P0), 8));
+        this.a.c(new sp(this, new ArrayList(getMessagesController().P0), 7));
     }
 
     public final long z(NativeByteBuffer nativeByteBuffer) {
@@ -13329,7 +13329,7 @@ public final class yr extends c1 {
             this.b.executeFast("DELETE FROM ephemeral_messages").stepThis().dispose();
             this.b.executeFast("DELETE FROM widget_state").stepThis().dispose();
             this.b.executeFast("DELETE FROM widget_heights").stepThis().dispose();
-            org.telegram.utils.twidget.p.t(this.currentAccount);
+            org.telegram.utils.twidget.n0.u(this.currentAccount);
             this.b.executeFast("DELETE FROM poll_votes_mentions").stepThis().dispose();
             this.b.executeFast("DELETE FROM poll_votes_mentions_topics").stepThis().dispose();
             this.b.executeFast("DELETE FROM reaction_mentions").stepThis().dispose();
@@ -13592,7 +13592,7 @@ public final class yr extends c1 {
                     this.b.executeFast("VACUUM").stepThis().dispose();
                     this.b.executeFast("PRAGMA journal_size_limit = -1").stepThis().dispose();
                     getMessagesController().S1().b();
-                    g0.h3(new qq(this, 20));
+                    g0.h3(new rq(this, 20));
                     SQLiteDatabase sQLiteDatabase4 = this.b;
                     if (sQLiteDatabase4 != null) {
                         sQLiteDatabase4.commitTransaction();

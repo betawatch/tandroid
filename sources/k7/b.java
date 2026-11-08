@@ -4,7 +4,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class b implements d, IInterface {
     public final IBinder a;
@@ -13,7 +13,12 @@ public final class b implements d, IInterface {
         this.a = iBinder;
     }
 
-    public final void H0(Parcel parcel, int i7) {
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this.a;
+    }
+
+    public final void h1(Parcel parcel, int i7) {
         Parcel obtain = Parcel.obtain();
         try {
             this.a.transact(i7, parcel, obtain, 0);
@@ -22,10 +27,5 @@ public final class b implements d, IInterface {
             parcel.recycle();
             obtain.recycle();
         }
-    }
-
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
     }
 }

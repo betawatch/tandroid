@@ -43,7 +43,7 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.n;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class f implements o {
     public static final byte[] k0 = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
@@ -177,7 +177,7 @@ public final class f implements o {
 
     @Override // f3.o
     public final boolean b(p pVar) {
-        u uVar = new u(17, (short) 0);
+        u uVar = new u(18, (short) 0);
         x xVar = (x) uVar.c;
         l lVar = (l) pVar;
         long j3 = lVar.c;
@@ -199,20 +199,20 @@ public final class f implements o {
                 lVar.k(xVar.a, 0, 1, false);
                 C = ((C << 8) & (-256)) | (xVar.a[0] & 255);
             } else {
-                long p10 = uVar.p(lVar);
+                long u10 = uVar.u(lVar);
                 long j11 = uVar.b;
-                if (p10 != Long.MIN_VALUE && (j3 == -1 || j11 + p10 < j3)) {
+                if (u10 != Long.MIN_VALUE && (j3 == -1 || j11 + u10 < j3)) {
                     while (true) {
                         long j12 = uVar.b;
-                        long j13 = j11 + p10;
+                        long j13 = j11 + u10;
                         if (j12 < j13) {
-                            if (uVar.p(lVar) != Long.MIN_VALUE) {
-                                long p11 = uVar.p(lVar);
-                                if (p11 < 0 || p11 > 2147483647L) {
+                            if (uVar.u(lVar) != Long.MIN_VALUE) {
+                                long u11 = uVar.u(lVar);
+                                if (u11 < 0 || u11 > 2147483647L) {
                                     break;
                                 }
-                                if (p11 != 0) {
-                                    int i11 = (int) p11;
+                                if (u11 != 0) {
+                                    int i11 = (int) u11;
                                     lVar.v(i11, false);
                                     uVar.b += i11;
                                 }

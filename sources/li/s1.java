@@ -7,50 +7,50 @@ import java.util.ArrayList;
 import org.telegram.messenger.ej;
 import org.telegram.messenger.i6;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.hx;
+import org.telegram.ui.Components.ix;
 import org.telegram.ui.Components.t31;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
-public final class s1 implements hx {
+public final class s1 implements ix {
     public final /* synthetic */ b2 a;
 
     public s1(b2 b2Var) {
         this.a = b2Var;
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final /* synthetic */ boolean A() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final /* synthetic */ long a() {
         return 0L;
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final /* synthetic */ boolean b() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final /* synthetic */ boolean c() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final /* synthetic */ int f() {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final /* synthetic */ boolean g() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final void i(int i7) {
         g1 focusedEditTextOrNull;
         b2 b2Var = this.a;
@@ -63,12 +63,12 @@ public final class s1 implements hx {
         b2Var.j0(z9);
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final /* synthetic */ boolean j() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final boolean k() {
         g1 f02 = b2.f0(this.a);
         if (f02 == null || f02.length() == 0) {
@@ -78,7 +78,7 @@ public final class s1 implements hx {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final void l(String str) {
         b2 b2Var = this.a;
         g1 f02 = b2.f0(b2Var);
@@ -98,22 +98,22 @@ public final class s1 implements hx {
         }
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final /* synthetic */ float p() {
         return 0.0f;
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final void t(ArrayList arrayList) {
         this.a.presentFragment(new StickersActivity(5, arrayList));
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final void w() {
         this.a.presentFragment(new StickersActivity(0, null));
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final void x(long j3, TLRPC.Document document, String str, boolean z9) {
         b2 b2Var = this.a;
         g1 f02 = b2.f0(b2Var);
@@ -139,56 +139,56 @@ public final class s1 implements hx {
         }
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final boolean z() {
         return this.a.C0;
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final /* synthetic */ void n() {
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final /* synthetic */ void q() {
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final /* synthetic */ void u() {
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final /* synthetic */ void h(TLRPC.StickerSetCovered stickerSetCovered) {
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final /* synthetic */ void o(t31 t31Var) {
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final /* synthetic */ void r(TLRPC.StickerSetCovered stickerSetCovered) {
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final /* synthetic */ void s(int i7) {
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final /* synthetic */ void y(long j3) {
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final /* synthetic */ void e(Object obj, Object obj2) {
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final /* synthetic */ void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z9) {
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, ej ejVar, boolean z9, int i7) {
     }
 
-    @Override // org.telegram.ui.Components.hx
+    @Override // org.telegram.ui.Components.ix
     public final /* synthetic */ void v(View view, Object obj, String str, Object obj2, boolean z9, int i7, int i10) {
     }
 }

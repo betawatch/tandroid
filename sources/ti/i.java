@@ -22,15 +22,15 @@ import org.telegram.messenger.t0;
 import org.telegram.ui.Components.j51;
 import org.telegram.ui.Components.lt0;
 import org.telegram.ui.Components.qm0;
-import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.rt;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.r81;
+import org.telegram.ui.s81;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class i {
-    public static final lt0 Q = new lt0(new s0.b(19), new s0.b(20));
-    public static final lt0 R = new lt0(new s0.b(21), new s0.b(22));
+    public static final lt0 Q = new lt0(new s0.b(20), new s0.b(21));
+    public static final lt0 R = new lt0(new s0.b(22), new s0.b(23));
     public float B;
     public float C;
     public r1.g D;
@@ -49,14 +49,14 @@ public final class i {
     public boolean g;
     public org.telegram.ui.e h;
     public e i;
-    public q j;
+    public p j;
     public View k;
     public ImageView l;
     public e m;
     public ImageView n;
     public b3 o;
     public ScaleGestureDetector p;
-    public qt q;
+    public rt q;
     public boolean r;
     public boolean s;
     public View t;
@@ -177,10 +177,10 @@ public final class i {
 
     public final void f(sg.t0 t0Var) {
         l();
-        q qVar = this.j;
+        p pVar = this.j;
         this.j = null;
-        if (qVar != null) {
-            g0.E2(qVar);
+        if (pVar != null) {
+            g0.E2(pVar);
         }
         View view = this.k;
         if (view != null) {
@@ -188,9 +188,9 @@ public final class i {
             this.k = null;
         }
         t0Var.run();
-        if (qVar != null) {
-            SurfaceTexture surfaceTexture = qVar.a;
-            qVar.a = null;
+        if (pVar != null) {
+            SurfaceTexture surfaceTexture = pVar.a;
+            pVar.a = null;
             if (surfaceTexture != null) {
                 surfaceTexture.release();
             }
@@ -244,7 +244,7 @@ public final class i {
         this.v = duration;
         duration.setInterpolator(xq.f);
         this.v.addUpdateListener(new d(this, 0));
-        this.v.addListener(new r81(this, 17));
+        this.v.addListener(new s81(this, 17));
         this.v.start();
     }
 

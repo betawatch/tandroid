@@ -26,7 +26,7 @@ import java.util.Collections;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
@@ -35,7 +35,7 @@ import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.wk0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class fb extends View {
     public final Paint A0;
@@ -237,7 +237,7 @@ public final class fb extends View {
         paint3.setColor(-16777216);
         paint5.setColor(-1);
         paint4.setColor(637534208);
-        this.q0 = new my0(hd.M0(2131744457, null), 12.0f, org.telegram.messenger.g0.o());
+        this.q0 = new my0(id.M0(2131744459, null), 12.0f, org.telegram.messenger.g0.o());
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.timeline).mutate();
         this.r0 = mutate;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
@@ -315,7 +315,7 @@ public final class fb extends View {
                 k60 F = k60.F(viewGroup, f6Var, fbVar);
                 F.q(y6Var);
                 F.o();
-                F.c(R.drawable.msg_delete, hd.M0(2131744721, null), new wa(fbVar, 1), false);
+                F.c(R.drawable.msg_delete, id.M0(2131744723, null), new wa(fbVar, 1), false);
                 F.V(5);
                 F.U = true;
                 F.a0((-(fbVar.v1 - min2)) + org.telegram.messenger.g0.L(18.0f), fbVar.F0.top);
@@ -380,7 +380,7 @@ public final class fb extends View {
                     k60 F2 = k60.F(viewGroup, f6Var, fbVar);
                     F2.q(y6Var2);
                     F2.o();
-                    F2.c(R.drawable.msg_delete, hd.M0(2131744488, null), new wa(fbVar, 2), false);
+                    F2.c(R.drawable.msg_delete, id.M0(2131744490, null), new wa(fbVar, 2), false);
                     F2.V(5);
                     F2.U = true;
                     F2.a0((-(fbVar.v1 - min4)) + org.telegram.messenger.g0.L(18.0f), fbVar.x0.top);

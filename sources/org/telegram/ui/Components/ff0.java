@@ -11,7 +11,7 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ff0 extends zf0 {
     public final Drawable Q;
@@ -32,7 +32,7 @@ public final class ff0 extends zf0 {
         this.a0 = new DecimalFormat("#,##0.#########", new DecimalFormatSymbols(Locale.US));
         this.Q = jg.g.h(context, R.drawable.profile_balance_gram);
         this.R = jg.g.h(context, R.drawable.profile_balance_gram_color);
-        this.S = new my0(org.telegram.messenger.hd.M0(2131745156, null) + ":", 11.0f, null);
+        this.S = new my0(org.telegram.messenger.id.M0(2131745158, null) + ":", 11.0f, null);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
@@ -77,9 +77,9 @@ public final class ff0 extends zf0 {
     }
 
     public void setBalance(long j3) {
-        String format = this.a0.format(new BigDecimal(org.telegram.ui.Wallet.n0.p(j3, false)));
+        String format = this.a0.format(new BigDecimal(org.telegram.ui.Wallet.m0.p(j3, false)));
         this.T = new my0(format, 11.0f, org.telegram.messenger.g0.o());
-        setContentDescription(org.telegram.messenger.hd.M0(2131745156, null) + ": " + format);
+        setContentDescription(org.telegram.messenger.id.M0(2131745158, null) + ": " + format);
         invalidate();
     }
 

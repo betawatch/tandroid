@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class jx0 extends org.telegram.ui.Components.m61 {
     public boolean a;
@@ -104,13 +104,13 @@ public final class jx0 extends org.telegram.ui.Components.m61 {
     @Override // org.telegram.ui.Components.m61
     public final CharSequence g(int i7) {
         if (i7 == 0) {
-            return org.telegram.messenger.hd.M0(2131744787, null);
+            return org.telegram.messenger.id.M0(2131744789, null);
         }
         if (!this.a || i7 != e() - 1) {
             return ((di.r6) this.b.c.h.get(i7 - 1)).b;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("+ ");
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.M0(2131744808, null));
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.M0(2131744810, null));
         org.telegram.ui.Components.wp wpVar = new org.telegram.ui.Components.wp(R.drawable.poll_add_plus, 0);
         wpVar.G = 0.8f;
         spannableStringBuilder.setSpan(wpVar, 0, 1, 33);

@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class b6 {
     public static double a;
@@ -109,7 +109,7 @@ public abstract class b6 {
                 return;
             }
         }
-        c8.ac.a().g(str).addOnSuccessListener(new p1(pcVar, 9)).addOnFailureListener(new p1(ocVar, 10));
+        c8.ac.a().g(str).addOnSuccessListener(new j1(pcVar, 9)).addOnFailureListener(new j1(ocVar, 10));
     }
 
     public static synchronized long e() {

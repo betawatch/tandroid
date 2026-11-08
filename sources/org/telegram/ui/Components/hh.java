@@ -6,7 +6,7 @@ import android.text.TextWatcher;
 import android.text.style.ImageSpan;
 import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class hh implements TextWatcher {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final class hh implements TextWatcher {
                         i7 = -9999;
                     }
                     long j3 = i7;
-                    j6Var2.c(org.telegram.messenger.hd.E(j3, ','), j6Var2.getVisibility() == 0, true);
+                    j6Var2.c(org.telegram.messenger.id.E(j3, ','), j6Var2.getVisibility() == 0, true);
                     if (j6Var2.getVisibility() != 0) {
                         j6Var2.setVisibility(0);
                         j6Var2.setAlpha(0.0f);
@@ -73,7 +73,7 @@ public final class hh implements TextWatcher {
                         org.telegram.ui.ActionBar.r6.Z(j6Var2, org.telegram.ui.ActionBar.k6.y6, diVar.I0);
                         z9 = true;
                     }
-                    j6Var.c(org.telegram.messenger.hd.E(j3, ','), false, true);
+                    j6Var.c(org.telegram.messenger.id.E(j3, ','), false, true);
                     j6Var.setAlpha(1.0f);
                 }
                 if (diVar.O2 != z9) {
@@ -89,9 +89,9 @@ public final class hh implements TextWatcher {
                 diVar.Q0(true);
                 return;
             default:
-                org.telegram.ui.Wallet.m9 m9Var = (org.telegram.ui.Wallet.m9) this.d;
+                org.telegram.ui.Wallet.l9 l9Var = (org.telegram.ui.Wallet.l9) this.d;
                 if (!this.b) {
-                    m9Var.f(editable);
+                    l9Var.f(editable);
                     return;
                 }
                 this.b = false;
@@ -99,7 +99,7 @@ public final class hh implements TextWatcher {
                 try {
                     editable.append('.');
                     this.c = false;
-                    m9Var.c.setSelection(editable.length());
+                    l9Var.c.setSelection(editable.length());
                     return;
                 } catch (Throwable th2) {
                     this.c = false;
@@ -114,10 +114,10 @@ public final class hh implements TextWatcher {
             case 0:
                 break;
             default:
-                org.telegram.ui.Wallet.m9 m9Var = (org.telegram.ui.Wallet.m9) this.d;
-                org.telegram.ui.Wallet.i9 i9Var = m9Var.c;
-                if (charSequence.length() > 0 && i10 == charSequence.length() && i11 == 0 && i9Var.getLayout() != null) {
-                    m9Var.N = i9Var.getLayout().getLineLeft(0) - i9Var.getScrollX();
+                org.telegram.ui.Wallet.l9 l9Var = (org.telegram.ui.Wallet.l9) this.d;
+                org.telegram.ui.Wallet.h9 h9Var = l9Var.c;
+                if (charSequence.length() > 0 && i10 == charSequence.length() && i11 == 0 && h9Var.getLayout() != null) {
+                    l9Var.N = h9Var.getLayout().getLineLeft(0) - h9Var.getScrollX();
                     break;
                 }
                 break;
@@ -145,21 +145,21 @@ public final class hh implements TextWatcher {
             default:
                 boolean z9 = false;
                 this.b = i11 > 0 && TextUtils.equals(charSequence, "0");
-                org.telegram.ui.Wallet.m9 m9Var = (org.telegram.ui.Wallet.m9) this.d;
-                if (!m9Var.R && !this.c) {
+                org.telegram.ui.Wallet.l9 l9Var = (org.telegram.ui.Wallet.l9) this.d;
+                if (!l9Var.R && !this.c) {
                     if (i10 != 0 || i11 != 0) {
-                        org.telegram.ui.Wallet.w6 w6Var = m9Var.d;
+                        org.telegram.ui.Wallet.v6 v6Var = l9Var.d;
                         if (i11 > 0 && i11 >= i10) {
                             z9 = true;
                         }
-                        if (w6Var.y && w6Var.r && w6Var.D == -1) {
-                            ch0 ch0Var = w6Var.h;
+                        if (v6Var.y && v6Var.r && v6Var.D == -1) {
+                            ch0 ch0Var = v6Var.h;
                             if (ch0Var == null) {
-                                w6Var.d0 = org.telegram.messenger.camera.q.z(w6Var.d0, z9 ? -160.0f : 160.0f, 360.0f, -360.0f);
+                                v6Var.d0 = org.telegram.messenger.camera.q.z(v6Var.d0, z9 ? -160.0f : 160.0f, 360.0f, -360.0f);
                                 break;
                             } else if (!ch0Var.b()) {
-                                w6Var.h.setProgress(0.0f);
-                                w6Var.h.d();
+                                v6Var.h.setProgress(0.0f);
+                                v6Var.h.d();
                                 break;
                             }
                         }

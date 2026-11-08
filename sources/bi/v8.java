@@ -10,7 +10,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v8 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -23,7 +23,7 @@ public final /* synthetic */ class v8 implements Runnable {
     public final /* synthetic */ TLObject n;
     public final /* synthetic */ Object r;
 
-    public /* synthetic */ v8(ea eaVar, boolean[] zArr, TL_stars.StarGift starGift, boolean z9, boolean z10, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, zh.p3 p3Var) {
+    public /* synthetic */ v8(ea eaVar, boolean[] zArr, TL_stars.StarGift starGift, boolean z9, boolean z10, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, zh.o3 o3Var) {
         this.e = eaVar;
         this.f = zArr;
         this.h = starGift;
@@ -31,7 +31,7 @@ public final /* synthetic */ class v8 implements Runnable {
         this.d = z10;
         this.c = j3;
         this.n = tL_textWithEntities;
-        this.r = p3Var;
+        this.r = o3Var;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:27:0x0082  */
@@ -55,7 +55,7 @@ public final /* synthetic */ class v8 implements Runnable {
         switch (i11) {
             case 0:
                 ((boolean[]) obj2)[0] = true;
-                ((ea) obj3).i((TL_stars.StarGift) tLObject2, this.b, this.d, this.c, (TLRPC.TL_textWithEntities) tLObject, (zh.p3) obj);
+                ((ea) obj3).i((TL_stars.StarGift) tLObject2, this.b, this.d, this.c, (TLRPC.TL_textWithEntities) tLObject, (zh.o3) obj);
                 break;
             default:
                 fi.va vaVar = (fi.va) obj3;
@@ -76,11 +76,11 @@ public final /* synthetic */ class v8 implements Runnable {
                             }
                         } else {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, vaVar.b, bVar);
-                            String M0 = org.telegram.messenger.hd.M0(2131748825, null);
+                            String M0 = org.telegram.messenger.id.M0(2131748827, null);
                             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                             u1Var.R = M0;
-                            u1Var.T = org.telegram.messenger.hd.M0(2131748826, null);
-                            jg.g.C(null, 2131747830, alertDialog$Builder, null);
+                            u1Var.T = org.telegram.messenger.id.M0(2131748828, null);
+                            jg.g.C(null, 2131747832, alertDialog$Builder, null);
                             break;
                         }
                     }

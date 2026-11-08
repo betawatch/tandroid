@@ -24,8 +24,8 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.gz;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.hw;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.p10;
@@ -45,8 +45,8 @@ import org.telegram.ui.Cells.u9;
 import org.telegram.ui.Components.dg;
 import org.telegram.ui.Components.dh;
 import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.gy;
 import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.hy;
 import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.vh;
 import org.telegram.ui.Components.wf;
@@ -57,7 +57,7 @@ import org.telegram.ui.bg0;
 import org.telegram.ui.qj;
 import org.telegram.ui.qm;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class p extends vh implements ls {
     public static final int[] Q = {1, 2, 16, 8, 256, 4, TLObject.FLAG_14, 32768};
@@ -78,7 +78,7 @@ public final class p extends vh implements ls {
     public final t3 r;
     public final y3 s;
     public ga.d w;
-    public gy x;
+    public hy x;
     public boolean y;
 
     public p(int i7, Context context, f6 f6Var, di diVar) {
@@ -146,12 +146,12 @@ public final class p extends vh implements ls {
         }
         di diVar = pVar.b;
         if (pVar.x == null) {
-            gy gyVar = new gy(diVar.W1, true, false, false, pVar.getContext(), true, null, diVar.l3, true, pVar.a, false, false);
-            pVar.x = gyVar;
-            gyVar.setVisibility(8);
-            gy gyVar2 = pVar.x;
-            gyVar2.x2 = false;
-            gyVar2.setBottomInset(org.telegram.messenger.g0.n);
+            hy hyVar = new hy(diVar.W1, true, false, false, pVar.getContext(), true, null, diVar.l3, true, pVar.a, false, false);
+            pVar.x = hyVar;
+            hyVar.setVisibility(8);
+            hy hyVar2 = pVar.x;
+            hyVar2.x2 = false;
+            hyVar2.setBottomInset(org.telegram.messenger.g0.n);
             View view = pVar.x.w;
             if (view != null) {
                 view.setVisibility(8);
@@ -241,7 +241,7 @@ public final class p extends vh implements ls {
         final boolean[] zArr = {false};
         final boolean[] zArr2 = {false};
         n8 n8Var = new n8(strArr, horizontalScrollView, h, zArr2, new hi.u1(strArr, 16), imageView, f6Var, new int[]{6}, 2);
-        final org.telegram.ui.Cells.k3 k3Var = new org.telegram.ui.Cells.k3(context, hd.M0(2131754008, null), true, false, -1, f6Var);
+        final org.telegram.ui.Cells.k3 k3Var = new org.telegram.ui.Cells.k3(context, id.M0(2131754008, null), true, false, -1, f6Var);
         org.telegram.ui.Cells.i3 i3Var = k3Var.d;
         i3Var.setImeOptions(6);
         i3Var.setMaxLines(5);
@@ -254,7 +254,7 @@ public final class p extends vh implements ls {
         k3Var.setText(strArr[0]);
         i3Var.addTextChangedListener(new h7(strArr, n8Var, false, 2));
         f10.addView(k3Var, ha.t(-1, -2, 55, 12, 8, 12, 0));
-        h.setText(hd.M0(2131751355, null));
+        h.setText(id.M0(2131751355, null));
         f10.addView(h, ha.t(-1, 48, 55, 12, 12, 12, 12));
         n8Var.run();
         l10.N = f10;
@@ -451,11 +451,11 @@ public final class p extends vh implements ls {
         }
         final int i10 = 0;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getContext(), this.a);
-        String M0 = hd.M0(2131753993, null);
+        String M0 = id.M0(2131753993, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
-        u1Var.T = hd.M0(2131753994, null);
-        alertDialog$Builder.h(hd.M0(2131751599, null), new org.telegram.ui.ActionBar.r1(this) { // from class: li.j
+        u1Var.T = id.M0(2131753994, null);
+        alertDialog$Builder.h(id.M0(2131751599, null), new org.telegram.ui.ActionBar.r1(this) { // from class: li.j
             public final /* synthetic */ p b;
 
             {
@@ -476,7 +476,7 @@ public final class p extends vh implements ls {
                 }
             }
         });
-        alertDialog$Builder.k(hd.M0(2131745947, null), new org.telegram.ui.ActionBar.r1(this) { // from class: li.j
+        alertDialog$Builder.k(id.M0(2131745949, null), new org.telegram.ui.ActionBar.r1(this) { // from class: li.j
             public final /* synthetic */ p b;
 
             {
@@ -505,18 +505,18 @@ public final class p extends vh implements ls {
     public final void V(boolean z9) {
         if (this.D) {
             this.D = false;
-            gy gyVar = this.x;
-            if (gyVar != null) {
-                gyVar.t(false);
+            hy hyVar = this.x;
+            if (hyVar != null) {
+                hyVar.t(false);
                 if (!z9) {
                     this.x.A();
                 }
             }
         }
         this.F = null;
-        gy gyVar2 = this.x;
-        if (gyVar2 != null) {
-            gyVar2.setTranslationY(0.0f);
+        hy hyVar2 = this.x;
+        if (hyVar2 != null) {
+            hyVar2.setTranslationY(0.0f);
             this.x.setVisibility(8);
         }
         this.y = false;
@@ -533,15 +533,15 @@ public final class p extends vh implements ls {
         float f10;
         float f11;
         int L = this.D ? org.telegram.messenger.g0.L(245.0f) : this.E;
-        gy gyVar = this.x;
+        hy hyVar = this.x;
         di diVar = this.b;
-        if (gyVar != null) {
+        if (hyVar != null) {
             if (this.y) {
                 f11 = (this.E - L) + (this.D ? -diVar.f4 : 0.0f);
             } else {
                 f11 = 0.0f;
             }
-            gyVar.setTranslationY(f11);
+            hyVar.setTranslationY(f11);
         }
         y3 y3Var = this.s;
         if (y3Var != null) {
@@ -780,7 +780,7 @@ public final class p extends vh implements ls {
         t3 t3Var = this.r;
         if (action == 0 && keyEvent.getKeyCode() == 47 && keyEvent.isCtrlPressed()) {
             if ((this.b.W1 instanceof an) && t3Var.u2() && X()) {
-                org.telegram.messenger.k5.o(null, 2131746004, new hc(this.s, this.a), R.raw.contact_check, 36);
+                org.telegram.messenger.k5.o(null, 2131746006, new hc(this.s, this.a), R.raw.contact_check, 36);
                 return true;
             }
         } else if (!t3Var.k3(keyEvent)) {
@@ -791,14 +791,14 @@ public final class p extends vh implements ls {
 
     @Override // android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        gy gyVar;
+        hy hyVar;
         t3 t3Var = this.r;
         g3 g3Var = t3Var.u3;
         u9 u9Var = t3Var.v3;
         if (g3Var.x() && u9Var.onTouchEvent(motionEvent)) {
             return true;
         }
-        int height = (((!this.D || (gyVar = this.x) == null) ? getHeight() - this.E : (int) gyVar.getY()) - org.telegram.messenger.g0.L(60.0f)) - this.K;
+        int height = (((!this.D || (hyVar = this.x) == null) ? getHeight() - this.E : (int) hyVar.getY()) - org.telegram.messenger.g0.L(60.0f)) - this.K;
         if (motionEvent.getAction() == 0 && this.y && motionEvent.getY() < height) {
             V(false);
         }
@@ -983,9 +983,9 @@ public final class p extends vh implements ls {
         if (z9) {
             if (z9) {
                 this.D = false;
-                gy gyVar = this.x;
-                if (gyVar != null) {
-                    gyVar.t(false);
+                hy hyVar = this.x;
+                if (hyVar != null) {
+                    hyVar.t(false);
                     this.x.A();
                 }
                 W();
@@ -1036,9 +1036,9 @@ public final class p extends vh implements ls {
         if (t3Var != null) {
             t3Var.y2();
         }
-        gy gyVar = this.x;
-        if (gyVar != null) {
-            gyVar.B();
+        hy hyVar = this.x;
+        if (hyVar != null) {
+            hyVar.B();
         }
     }
 

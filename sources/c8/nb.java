@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.iz;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.vy;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class nb {
     public static pg.j a;
@@ -32,9 +32,9 @@ public abstract class nb {
             pg.g gVar = new pg.g(jVar2);
             jVar2.e = launchActivity.getSharedPreferences("floating_debug", 0);
             jVar2.F = ViewConfiguration.get(launchActivity).getScaledTouchSlop();
-            uy uyVar = new uy(launchActivity, gVar);
-            ((GestureDetector) uyVar.b).setIsLongpressEnabled(false);
-            pg.h hVar = new pg.h(jVar2, launchActivity, uyVar, i7);
+            vy vyVar = new vy(launchActivity, gVar);
+            ((GestureDetector) vyVar.b).setIsLongpressEnabled(false);
+            pg.h hVar = new pg.h(jVar2, launchActivity, vyVar, i7);
             jVar2.a = hVar;
             ImageView imageView = new ImageView(launchActivity);
             imageView.setImageResource(R.drawable.device_phone_android);
@@ -49,7 +49,7 @@ public abstract class nb {
             TextView textView = new TextView(launchActivity);
             jVar2.y = textView;
             textView.setTextSize(1, 20.0f);
-            textView.setText(org.telegram.messenger.hd.M0(2131751647, null));
+            textView.setText(org.telegram.messenger.id.M0(2131751647, null));
             textView.setTypeface(org.telegram.messenger.g0.o());
             textView.setPadding(org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(19.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(19.0f));
             linearLayout.addView(textView, ha.o(-1, -2));

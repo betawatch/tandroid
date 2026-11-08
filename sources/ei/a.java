@@ -18,7 +18,7 @@ import org.telegram.ui.Components.xs0;
 import org.telegram.ui.Components.yp0;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class a extends v61 {
     public final /* synthetic */ int V;
@@ -69,7 +69,7 @@ public final class a extends v61 {
                 u61 u61Var = up0Var.n;
                 if (up0Var.b() && u61Var != null) {
                     if (up0Var.J == null) {
-                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(jg.g.l(2131750097, null, new StringBuilder("+ ")));
+                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(jg.g.l(2131750099, null, new StringBuilder("+ ")));
                         wp wpVar = new wp(R.drawable.poll_add_plus, 0);
                         wpVar.G = 0.8f;
                         spannableStringBuilder.setSpan(wpVar, 0, 1, 33);

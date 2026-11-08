@@ -46,7 +46,7 @@ import org.telegram.ui.Components.zj0;
 import org.telegram.ui.rg0;
 import org.telegram.ui.tg0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class kv {
     public int A;
@@ -942,7 +942,7 @@ public final class kv {
                     arrayList.add(buVar);
                 }
             }
-            Collections.sort(arrayList, new vj(14));
+            Collections.sort(arrayList, new jl(14));
         }
         return arrayList;
     }
@@ -1249,10 +1249,10 @@ public final class kv {
             canvas.saveLayerAlpha(-i7, 0.0f, this.C + i10, min, qs.e4, 31);
         }
         org.telegram.ui.Cells.q1 q1Var = this.E;
-        boolean z10 = q1Var != null && q1Var.qc > 0;
+        boolean z10 = q1Var != null && q1Var.rc > 0;
         if (z10) {
-            float f12 = q1Var.oc - q1Var.t0;
-            f11 = q1Var.qc + f12;
+            float f12 = q1Var.pc - q1Var.t0;
+            f11 = q1Var.rc + f12;
             f10 = f12;
         } else {
             f10 = 0.0f;
@@ -1266,7 +1266,7 @@ public final class kv {
             canvas.restore();
             int w02 = org.telegram.ui.ActionBar.k6.w0(E() ? org.telegram.ui.ActionBar.k6.Lb : org.telegram.ui.ActionBar.k6.yd, this.D);
             if (this.I == null) {
-                this.I = new my0(hd.M0(2131745340, null), 16.0f, g0.o());
+                this.I = new my0(id.M0(2131745342, null), 16.0f, g0.o());
             }
             org.telegram.ui.Components.ic icVar = this.G;
             if (icVar == null) {
@@ -2086,12 +2086,12 @@ public final class kv {
         if (pageBlock instanceof TL_iv.pageBlockEmbed) {
             TL_iv.pageBlockEmbed pageblockembed = (TL_iv.pageBlockEmbed) pageBlock;
             AtomicInteger atomicInteger = ck0.s0;
-            if (pageblockembed.html != null && org.telegram.utils.twidget.p.n(pageblockembed.url)) {
-                if (org.telegram.utils.twidget.p.n(pageblockembed.url)) {
+            if (pageblockembed.html != null && org.telegram.utils.twidget.n0.n(pageblockembed.url)) {
+                if (org.telegram.utils.twidget.n0.n(pageblockembed.url)) {
                     String str3 = pageblockembed.url;
                     int j02 = (ck0.j0() * 2) + i17;
-                    org.telegram.utils.twidget.m mVar = org.telegram.utils.twidget.p.n(str3) ? (org.telegram.utils.twidget.m) org.telegram.utils.twidget.p.a.get(str3) : null;
-                    if (mVar != null && (i11 = mVar.e) != 0) {
+                    org.telegram.utils.twidget.k0 k0Var = org.telegram.utils.twidget.n0.n(str3) ? (org.telegram.utils.twidget.k0) org.telegram.utils.twidget.n0.a.get(str3) : null;
+                    if (k0Var != null && (i11 = k0Var.e) != 0) {
                         j02 = Math.min(j02, g0.L(Math.max(qs.e3, i11)));
                     }
                     i17 = j02 - (ck0.j0() * 2);
@@ -2326,12 +2326,12 @@ public final class kv {
                     int i20 = i7 | 512;
                     TL_iv.RichText richText3 = richText.text;
                     gv gvVar = new gv(this, i20, false);
-                    org.telegram.ui.Components.zz zzVar = new org.telegram.ui.Components.zz(x(richText), null, tL_messageEntityFormattedDate);
+                    org.telegram.ui.Components.a00 a00Var = new org.telegram.ui.Components.a00(x(richText), null, tL_messageEntityFormattedDate);
                     int length6 = spannableStringBuilder.length();
                     m(richText3, spannableStringBuilder, i20);
                     if (spannableStringBuilder.length() > length6) {
                         U(gvVar, spannableStringBuilder, length6, spannableStringBuilder.length());
-                        U(zzVar, spannableStringBuilder, length6, spannableStringBuilder.length());
+                        U(a00Var, spannableStringBuilder, length6, spannableStringBuilder.length());
                     }
                 } else if (richText instanceof TL_iv.textButton) {
                     int length7 = spannableStringBuilder.length();

@@ -8,7 +8,7 @@ import android.widget.TextView;
 import bi.u7;
 import c8.ha;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -19,7 +19,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.k60;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public abstract class h4 {
     public static EditTextBoldCursor a(Context context, f6 f6Var, String str, String str2) {
@@ -53,7 +53,7 @@ public abstract class h4 {
         final int i7 = 1;
         if (inlineButtonType == null) {
             final int i10 = 0;
-            k60Var.c(R.drawable.media_link_24, hd.M0(2131752226, null), new Runnable() { // from class: li.d4
+            k60Var.c(R.drawable.media_link_24, id.M0(2131752226, null), new Runnable() { // from class: li.d4
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i10) {
@@ -66,7 +66,7 @@ public abstract class h4 {
                     }
                 }
             }, false);
-            k60Var.c(R.drawable.msg_copy, hd.M0(2131751767, null), new Runnable() { // from class: li.d4
+            k60Var.c(R.drawable.msg_copy, id.M0(2131751767, null), new Runnable() { // from class: li.d4
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i7) {
@@ -79,7 +79,7 @@ public abstract class h4 {
                     }
                 }
             }, false);
-            k60Var.c(R.drawable.left_status_profile, hd.M0(2131746000, null), new u7(f2Var, s3Var, z9, 9), false);
+            k60Var.c(R.drawable.left_status_profile, id.M0(2131746002, null), new u7(f2Var, s3Var, z9, 9), false);
             k60Var.Z();
             return k60Var;
         }
@@ -105,7 +105,7 @@ public abstract class h4 {
         TL_keyboard.InlineButtonType inlineButtonType = pageButton == null ? null : pageButton.type;
         if (inlineButtonType == null) {
             final int i10 = 0;
-            k60Var.c(R.drawable.media_link_24, hd.M0(2131752226, null), new Runnable() { // from class: li.f4
+            k60Var.c(R.drawable.media_link_24, id.M0(2131752226, null), new Runnable() { // from class: li.f4
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i10) {
@@ -119,7 +119,7 @@ public abstract class h4 {
                 }
             }, false);
             final int i11 = 1;
-            k60Var.c(R.drawable.msg_copy, hd.M0(2131751767, null), new Runnable() { // from class: li.f4
+            k60Var.c(R.drawable.msg_copy, id.M0(2131751767, null), new Runnable() { // from class: li.f4
                 @Override // java.lang.Runnable
                 public final void run() {
                     switch (i11) {
@@ -132,7 +132,7 @@ public abstract class h4 {
                     }
                 }
             }, false);
-            k60Var.c(R.drawable.left_status_profile, hd.M0(2131746000, null), new fi.q1(f2Var, context, f6Var, q3Var, z9, 3), false);
+            k60Var.c(R.drawable.left_status_profile, id.M0(2131746002, null), new fi.q1(f2Var, context, f6Var, q3Var, z9, 3), false);
             k60Var.Z();
             return k60Var;
         }
@@ -156,7 +156,7 @@ public abstract class h4 {
         TL_iv.pageBlockButtonRow d = q3Var.d();
         TL_keyboard.PageButton pageButton = (d == null || i7 < 0 || i7 >= d.buttons.size()) ? null : d.buttons.get(i7);
         TL_keyboard.InlineButtonType inlineButtonType = pageButton == null ? null : pageButton.type;
-        g(context, f6Var, q3Var, z9, hd.M0(c10 ? 2131746003 : 2131746007, null), hd.M0(2131746011, null), inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeCopy ? ((TL_keyboard.TL_inlineButtonTypeCopy) inlineButtonType).copy_text : "", new c4(q3Var, 3));
+        g(context, f6Var, q3Var, z9, id.M0(c10 ? 2131746005 : 2131746009, null), id.M0(2131746013, null), inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeCopy ? ((TL_keyboard.TL_inlineButtonTypeCopy) inlineButtonType).copy_text : "", new c4(q3Var, 3));
     }
 
     public static void e(Context context, f6 f6Var, q3 q3Var, boolean z9) {
@@ -165,7 +165,7 @@ public abstract class h4 {
         TL_iv.pageBlockButtonRow d = q3Var.d();
         TL_keyboard.PageButton pageButton = (d == null || i7 < 0 || i7 >= d.buttons.size()) ? null : d.buttons.get(i7);
         TL_keyboard.InlineButtonType inlineButtonType = pageButton == null ? null : pageButton.type;
-        g(context, f6Var, q3Var, z9, hd.M0(c10 ? 2131746002 : 2131746006, null), hd.M0(2131746009, null), inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUrl ? ((TL_keyboard.TL_inlineButtonTypeUrl) inlineButtonType).url : "http://", new c4(q3Var, 1));
+        g(context, f6Var, q3Var, z9, id.M0(c10 ? 2131746004 : 2131746008, null), id.M0(2131746011, null), inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUrl ? ((TL_keyboard.TL_inlineButtonTypeUrl) inlineButtonType).url : "http://", new c4(q3Var, 1));
     }
 
     public static void f(org.telegram.ui.ActionBar.f2 f2Var, Context context, f6 f6Var, q3 q3Var, boolean z9) {
@@ -173,7 +173,7 @@ public abstract class h4 {
         LinearLayout f10 = org.telegram.messenger.k5.f(context, 1);
         int i7 = 0;
         f10.setPadding(org.telegram.messenger.g0.L(24.0f), 0, org.telegram.messenger.g0.L(24.0f), 0);
-        String M0 = hd.M0(2131746010, null);
+        String M0 = id.M0(2131746012, null);
         int i10 = q3Var.b;
         TL_iv.pageBlockButtonRow d = q3Var.d();
         TL_keyboard.PageButton pageButton = (d == null || i10 < 0 || i10 >= d.buttons.size()) ? null : d.buttons.get(i10);
@@ -181,22 +181,22 @@ public abstract class h4 {
         f10.addView(a10, ha.o(-1, 64));
         aa.d0 d0Var = new aa.d0(a10, f2Var, z9, q3Var, 7);
         AlertDialog$Builder alertDialog$Builder = z9 ? new AlertDialog$Builder(0, context, f6Var) : new org.telegram.ui.ActionBar.w1(0, context, f6Var);
-        String M02 = hd.M0(c10 ? 2131746001 : 2131746005, null);
+        String M02 = id.M0(c10 ? 2131746003 : 2131746007, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M02;
         alertDialog$Builder.o(f10);
-        alertDialog$Builder.k(hd.M0(2131747830, null), new a3.g(c10, d0Var, a10, q3Var, 3));
+        alertDialog$Builder.k(id.M0(2131747832, null), new a3.g(c10, d0Var, a10, q3Var, 3));
         if (c10) {
-            alertDialog$Builder.i(hd.M0(2131746008, null), new l2.y(d0Var, 8));
-            String M03 = hd.M0(2131751599, null);
+            alertDialog$Builder.i(id.M0(2131746010, null), new l2.y(d0Var, 8));
+            String M03 = id.M0(2131751599, null);
             c4 c4Var = new c4(q3Var, 2);
             u1Var.p0 = M03;
             u1Var.q0 = c4Var;
-            alertDialog$Builder.h(hd.M0(2131752589, null), null);
+            alertDialog$Builder.h(id.M0(2131752589, null), null);
             u1Var.J0 = true;
             i7 = -4;
         } else {
-            alertDialog$Builder.h(hd.M0(2131752589, null), null);
+            alertDialog$Builder.h(id.M0(2131752589, null), null);
         }
         j(alertDialog$Builder, a10, i7, f6Var);
     }
@@ -204,7 +204,7 @@ public abstract class h4 {
     public static void g(Context context, f6 f6Var, q3 q3Var, boolean z9, String str, String str2, String str3, c4 c4Var) {
         LinearLayout f10 = org.telegram.messenger.k5.f(context, 1);
         f10.setPadding(org.telegram.messenger.g0.L(24.0f), 0, org.telegram.messenger.g0.L(24.0f), 0);
-        String M0 = hd.M0(2131746010, null);
+        String M0 = id.M0(2131746012, null);
         int i7 = q3Var.b;
         TL_iv.pageBlockButtonRow d = q3Var.d();
         TL_keyboard.PageButton pageButton = (d == null || i7 < 0 || i7 >= d.buttons.size()) ? null : d.buttons.get(i7);
@@ -215,12 +215,12 @@ public abstract class h4 {
         AlertDialog$Builder alertDialog$Builder = z9 ? new AlertDialog$Builder(0, context, f6Var) : new org.telegram.ui.ActionBar.w1(0, context, f6Var);
         alertDialog$Builder.a.R = str;
         alertDialog$Builder.o(f10);
-        alertDialog$Builder.k(hd.M0(2131747830, null), new a3.h(a10, a11, c4Var, 16));
+        alertDialog$Builder.k(id.M0(2131747832, null), new a3.h(a10, a11, c4Var, 16));
         if (q3Var.c()) {
-            alertDialog$Builder.i(hd.M0(2131751599, null), new c4(q3Var, 0));
-            alertDialog$Builder.h(hd.M0(2131752589, null), null);
+            alertDialog$Builder.i(id.M0(2131751599, null), new c4(q3Var, 0));
+            alertDialog$Builder.h(id.M0(2131752589, null), null);
         } else {
-            alertDialog$Builder.h(hd.M0(2131752589, null), null);
+            alertDialog$Builder.h(id.M0(2131752589, null), null);
         }
         if (!TextUtils.isEmpty(a10.getText())) {
             a10 = a11;
@@ -235,7 +235,7 @@ public abstract class h4 {
         boolean z10 = inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeCopy;
         String l10 = z10 ? ((TL_keyboard.TL_inlineButtonTypeCopy) inlineButtonType).copy_text : c6.l(s3Var.e);
         s3Var.f.r3(false);
-        s3Var.a.H(hd.M0(z10 ? 2131746003 : 2131746007, null), hd.M0(2131746011, null), l10, false, !z9, new e4(s3Var, 1));
+        s3Var.a.H(id.M0(z10 ? 2131746005 : 2131746009, null), id.M0(2131746013, null), l10, false, !z9, new e4(s3Var, 1));
     }
 
     public static void i(s3 s3Var, boolean z9) {
@@ -245,7 +245,7 @@ public abstract class h4 {
         boolean z10 = inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUrl;
         String str = z10 ? ((TL_keyboard.TL_inlineButtonTypeUrl) inlineButtonType).url : "http://";
         s3Var.f.r3(false);
-        s3Var.a.H(hd.M0(z10 ? 2131746002 : 2131746006, null), hd.M0(2131746009, null), str, true, !z9, new e4(s3Var, 0));
+        s3Var.a.H(id.M0(z10 ? 2131746004 : 2131746008, null), id.M0(2131746011, null), str, true, !z9, new e4(s3Var, 0));
     }
 
     public static void j(AlertDialog$Builder alertDialog$Builder, EditTextBoldCursor editTextBoldCursor, int i7, f6 f6Var) {

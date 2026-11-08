@@ -4,19 +4,19 @@ import android.content.Context;
 import android.widget.TextView;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.av0;
-import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.vj;
-import org.telegram.ui.v91;
+import org.telegram.ui.w91;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class f5 extends av0 {
     public final /* synthetic */ int K = 0;
     public final /* synthetic */ Object L;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f5(vj vjVar, Context context, lz lzVar, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, lzVar, 1, f6Var);
+    public f5(vj vjVar, Context context, mz mzVar, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, mzVar, 1, f6Var);
         this.L = vjVar;
     }
 
@@ -24,14 +24,14 @@ public final class f5 extends av0 {
     public void e(boolean z9, boolean z10) {
         switch (this.K) {
             case 2:
-                v91 v91Var = (v91) this.L;
+                w91 w91Var = (w91) this.L;
                 super.e(z9, z10);
                 if (!z10) {
-                    ((TextView) v91Var.n.d).animate().cancel();
-                    ((TextView) v91Var.n.d).setAlpha(z9 ? 0.0f : 1.0f);
+                    ((TextView) w91Var.n.d).animate().cancel();
+                    ((TextView) w91Var.n.d).setAlpha(z9 ? 0.0f : 1.0f);
                     break;
                 } else {
-                    ((TextView) v91Var.n.d).animate().alpha(z9 ? 0.0f : 1.0f).start();
+                    ((TextView) w91Var.n.d).animate().alpha(z9 ? 0.0f : 1.0f).start();
                     break;
                 }
             default:
@@ -82,8 +82,8 @@ public final class f5 extends av0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f5(v91 v91Var, Context context, lz lzVar) {
-        super(context, lzVar, 0, null);
-        this.L = v91Var;
+    public f5(w91 w91Var, Context context, mz mzVar) {
+        super(context, mzVar, 0, null);
+        this.L = w91Var;
     }
 }

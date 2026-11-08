@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import fi.s2;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
@@ -19,7 +19,7 @@ import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.xi0;
 import v4.d1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class h extends oj0 {
     public final /* synthetic */ m c;
@@ -105,19 +105,19 @@ public final class h extends oj0 {
         w8Var.r(user);
         e5Var.b.e(user, w8Var);
         e5Var.c.l(t10.p(user), false);
-        String s5 = hd.s(tL_chatInviteImporter.date, false);
+        String s5 = id.s(tL_chatInviteImporter.date, false);
         if (tL_chatInviteImporter.via_chatlist) {
-            k5Var.l(hd.M0(2131749068, null), false);
+            k5Var.l(id.M0(2131749070, null), false);
             return;
         }
         long j3 = tL_chatInviteImporter.approved_by;
         if (j3 == 0) {
-            k5Var.l(hd.a0("RequestedToJoinAt", null, 2131746161, s5), false);
+            k5Var.l(id.a0("RequestedToJoinAt", null, 2131746163, s5), false);
             return;
         }
         TLRPC.User user2 = (TLRPC.User) longSparseArray.get(j3);
         if (user2 != null) {
-            k5Var.l(hd.a0("AddedBy", null, 2131754361, t10.j(user2, true), s5), false);
+            k5Var.l(id.a0("AddedBy", null, 2131754361, t10.j(user2, true), s5), false);
         } else {
             k5Var.l("", false);
         }

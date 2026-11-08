@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class FiltersSetupActivity extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public zs a;
@@ -107,7 +107,7 @@ public class FiltersSetupActivity extends org.telegram.ui.ActionBar.f2 implement
         int i7 = 1;
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131750697, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131750697, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new ux(this, 2));
         org.telegram.ui.ActionBar.q4 q4Var = this.parentLayout;
         if (q4Var != null && ((ActionBarLayout) q4Var).T0) {
@@ -130,7 +130,7 @@ public class FiltersSetupActivity extends org.telegram.ui.ActionBar.f2 implement
         ((v4.k) this.a.getItemAnimator()).C = false;
         this.a.setLayoutManager(new v4.b0(1, false));
         this.a.setVerticalScrollBarEnabled(false);
-        v4.y yVar = new v4.y(new org.telegram.ui.Components.dz(this));
+        v4.y yVar = new v4.y(new org.telegram.ui.Components.ez(this));
         this.c = yVar;
         yVar.h(this.a);
         frameLayout.addView(this.a, c8.ha.c(-1.0f, -1));
@@ -224,7 +224,7 @@ public class FiltersSetupActivity extends org.telegram.ui.ActionBar.f2 implement
         arrayList3.add(new c00(1, false));
         if (!arrayList4.isEmpty() && T0.size() < 10) {
             int size = arrayList3.size();
-            String M0 = org.telegram.messenger.hd.M0(2131750719, null);
+            String M0 = org.telegram.messenger.id.M0(2131750719, null);
             c00 c00Var = new c00(0, false);
             c00Var.c = M0;
             arrayList3.add(c00Var);
@@ -247,7 +247,7 @@ public class FiltersSetupActivity extends org.telegram.ui.ActionBar.f2 implement
             this.s = -1;
         } else {
             this.s = arrayList3.size();
-            String M02 = org.telegram.messenger.hd.M0(2131750697, null);
+            String M02 = org.telegram.messenger.id.M0(2131750697, null);
             c00 c00Var4 = new c00(0, false);
             c00Var4.c = M02;
             arrayList3.add(c00Var4);
@@ -269,7 +269,7 @@ public class FiltersSetupActivity extends org.telegram.ui.ActionBar.f2 implement
             }
         }
         if (T0.size() < getMessagesController().M4) {
-            String M03 = org.telegram.messenger.hd.M0(2131751717, null);
+            String M03 = org.telegram.messenger.id.M0(2131751717, null);
             c00 c00Var6 = new c00(4, false);
             c00Var6.c = M03;
             arrayList3.add(c00Var6);
@@ -279,11 +279,11 @@ public class FiltersSetupActivity extends org.telegram.ui.ActionBar.f2 implement
         arrayList3.add(c00Var7);
         this.x = arrayList3.size();
         this.showTagsRow = arrayList3.size();
-        String M04 = org.telegram.messenger.hd.M0(2131750626, null);
+        String M04 = org.telegram.messenger.id.M0(2131750626, null);
         c00 c00Var8 = new c00(6, false);
         c00Var8.c = M04;
         arrayList3.add(c00Var8);
-        CharSequence S2 = !getUserConfig().q() ? org.telegram.messenger.g0.S2(org.telegram.messenger.hd.M0(2131750624, null), org.telegram.ui.ActionBar.k6.L6, 2, new zz(this, i7), null) : org.telegram.messenger.hd.M0(2131750625, null);
+        CharSequence S2 = !getUserConfig().q() ? org.telegram.messenger.g0.S2(org.telegram.messenger.id.M0(2131750624, null), org.telegram.ui.ActionBar.k6.L6, 2, new zz(this, i7), null) : org.telegram.messenger.id.M0(2131750625, null);
         c00 c00Var9 = new c00(3, false);
         c00Var9.c = S2;
         arrayList3.add(c00Var9);

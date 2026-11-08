@@ -22,12 +22,12 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.hb0;
 import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.qu;
+import org.telegram.ui.Components.ru;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class r implements View.OnClickListener {
                 while (true) {
                     int[] iArr = a1.p2;
                     if (i12 >= 6) {
-                        String M0 = org.telegram.messenger.hd.M0(2131749729, null);
+                        String M0 = org.telegram.messenger.id.M0(2131749731, null);
                         ai.i iVar = new ai.i(a1Var, 4);
                         Pattern pattern = org.telegram.ui.Components.v4.a;
                         kg.x1 b10 = kg.x1.b(p10.s0);
@@ -109,7 +109,7 @@ public final /* synthetic */ class r implements View.OnClickListener {
                             f4Var.addView(frameLayout, c8.ha.t(-1, -2, 51, 22, 0, 0, 4));
                             f4Var.addView(linearLayout, c8.ha.q(-1, -2, 1.0f, 0, 0, 12, 0, 12));
                             fi.d dVar = new fi.d(context, null, true);
-                            dVar.i(org.telegram.messenger.hd.M0(2131745673, null), false, true);
+                            dVar.i(org.telegram.messenger.id.M0(2131745675, null), false, true);
                             dVar.setOnClickListener(new org.telegram.ui.Components.i2(r3, 1));
                             f4Var.addView(dVar, c8.ha.t(-1, 48, 0, 16, 12, 16, 12));
                             l10.N = f4Var;
@@ -121,7 +121,7 @@ public final /* synthetic */ class r implements View.OnClickListener {
                             break;
                         }
                     } else {
-                        strArr[i12] = org.telegram.messenger.hd.G(iArr[i12] / 3600, "GiftOfferHours", new Object[0]);
+                        strArr[i12] = org.telegram.messenger.id.G(iArr[i12] / 3600, "GiftOfferHours", new Object[0]);
                         if (iArr[i12] == a1Var.g2) {
                             i13 = i12;
                         }
@@ -214,7 +214,7 @@ public final /* synthetic */ class r implements View.OnClickListener {
                 di.c8 c8Var = (di.c8) obj;
                 di.p9 p9Var = i4Var.s0;
                 if (c8Var.b == null) {
-                    org.telegram.ui.Components.cc Q = new org.telegram.ui.Components.hc(i4Var.L0, i4Var.k0).Q(R.raw.error, 36, org.telegram.messenger.hd.M0(2131744665, null));
+                    org.telegram.ui.Components.cc Q = new org.telegram.ui.Components.hc(i4Var.L0, i4Var.k0).Q(R.raw.error, 36, org.telegram.messenger.id.M0(2131744667, null));
                     Q.a = 3;
                     Q.k(true);
                     break;
@@ -242,7 +242,7 @@ public final /* synthetic */ class r implements View.OnClickListener {
                 break;
             case 12:
                 di.i4 i4Var3 = ((di.z3) obj2).x;
-                qu alert = ((di.k8) obj).getAlert();
+                ru alert = ((di.k8) obj).getAlert();
                 if (alert != null && (b4Var = i4Var3.z1) != null) {
                     ((di.g9) b4Var).h(alert);
                     i4Var3.c1.a();

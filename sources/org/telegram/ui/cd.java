@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import java.io.Serializable;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cd implements org.telegram.ui.Components.dt0, org.telegram.ui.ActionBar.r1, org.telegram.messenger.a20 {
     public final /* synthetic */ zd a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class cd implements org.telegram.ui.Components.dt0,
 
     @Override // org.telegram.ui.ActionBar.r1
     public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        this.a.m0.presentFragment(new ya1(6, null));
+        this.a.m0.presentFragment(new za1(6, null));
     }
 
     @Override // org.telegram.messenger.a20

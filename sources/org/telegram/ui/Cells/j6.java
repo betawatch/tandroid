@@ -5,11 +5,11 @@ import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class j6 extends FrameLayout {
     public final TextView a;
@@ -24,23 +24,23 @@ public final class j6 extends FrameLayout {
         this.c = radioButton;
         radioButton.setSize(org.telegram.messenger.g0.L(20.0f));
         org.telegram.ui.ActionBar.r6.P(radioButton, org.telegram.ui.ActionBar.k6.D5, org.telegram.ui.ActionBar.k6.E5, f6Var);
-        boolean z9 = hd.a0;
+        boolean z9 = id.a0;
         addView(radioButton, c8.ha.d(22, 22.0f, (z9 ? 5 : 3) | 48, z9 ? 0 : 18, 14.0f, z9 ? 18 : 0, 0.0f));
         TextView textView = new TextView(context);
         this.a = textView;
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.j5, f6Var);
         org.telegram.messenger.camera.q.n(textView, 1, 16.0f, 1, 1);
         textView.setSingleLine(true);
-        textView.setGravity((hd.a0 ? 5 : 3) | 16);
-        boolean z10 = hd.a0;
+        textView.setGravity((id.a0 ? 5 : 3) | 16);
+        boolean z10 = id.a0;
         addView(textView, c8.ha.d(-2, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 21 : 51, 13.0f, z10 ? 51 : 21, 0.0f));
         TextView textView2 = new TextView(context);
         this.b = textView2;
         org.telegram.ui.ActionBar.r6.V(textView2, org.telegram.ui.ActionBar.k6.y6, f6Var);
         textView2.setTextSize(1, 14.0f);
-        textView2.setGravity((hd.a0 ? 5 : 3) | 16);
+        textView2.setGravity((id.a0 ? 5 : 3) | 16);
         textView2.setVisibility(8);
-        boolean z11 = hd.a0;
+        boolean z11 = id.a0;
         addView(textView2, c8.ha.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 21 : 51, 37.0f, z11 ? 51 : 21, 0.0f));
     }
 

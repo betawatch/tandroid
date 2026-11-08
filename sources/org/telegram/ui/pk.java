@@ -8,7 +8,7 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class pk extends org.telegram.ui.Components.l9 {
     public final /* synthetic */ int G = 0;
@@ -111,7 +111,7 @@ public final class pk extends org.telegram.ui.Components.l9 {
             case 3:
                 org.telegram.ui.Components.voip.n nVar2 = (org.telegram.ui.Components.voip.n) this.I;
                 super.onDraw(canvas);
-                if (((org.telegram.ui.Components.n40) this.J).l0) {
+                if (((org.telegram.ui.Components.n40) this.J).m0) {
                     float min = Math.min(getWidth(), getHeight()) * 0.5f;
                     RectF rectF3 = org.telegram.messenger.g0.P;
                     rectF3.set(0.0f, 0.0f, getWidth(), getHeight());

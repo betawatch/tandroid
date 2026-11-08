@@ -1,12 +1,12 @@
 package fi;
 
 import android.content.Context;
-import org.telegram.ui.Components.gw;
-import org.telegram.ui.Components.gy;
+import org.telegram.ui.Components.hw;
+import org.telegram.ui.Components.hy;
 import org.telegram.ui.f01;
 import org.telegram.ui.q11;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class j1 extends mi.m {
     public final /* synthetic */ int q;
@@ -26,7 +26,7 @@ public final class j1 extends mi.m {
                 ((m1) this.r).i3 = true;
                 break;
             case 1:
-                ((gy) this.r).f0 = true;
+                ((hy) this.r).f0 = true;
                 break;
             case 4:
                 ((q11) this.r).x1 = true;
@@ -41,10 +41,10 @@ public final class j1 extends mi.m {
                 ((m1) this.r).i3 = false;
                 break;
             case 1:
-                ((gy) this.r).f0 = false;
+                ((hy) this.r).f0 = false;
                 break;
             case 2:
-                ((gw) this.r).Q.f0 = false;
+                ((hw) this.r).Q.f0 = false;
                 break;
             case 3:
                 ((f01) this.r).R.x1 = false;

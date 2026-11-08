@@ -52,7 +52,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.dt;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.me;
 import org.telegram.messenger.pi;
 import org.telegram.messenger.qp;
@@ -75,7 +75,7 @@ import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.lm0;
 import org.telegram.ui.Components.ob0;
 import org.telegram.ui.Components.q51;
-import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.rt;
 import org.telegram.ui.Components.t51;
 import org.telegram.ui.Components.ud0;
 import org.telegram.ui.Components.xn;
@@ -98,7 +98,7 @@ import org.telegram.ui.wt;
 import org.telegram.ui.zw;
 import org.xml.sax.Attributes;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class n implements g, j6.n, ja.a, c4.m, f1, f3.i, com.google.android.gms.common.api.internal.p, lm0, qr, xn, za, i7, ej0, q51, h2.d, q5.b, s2.t {
     public final /* synthetic */ int a;
@@ -486,7 +486,7 @@ public final class n implements g, j6.n, ja.a, c4.m, f1, f3.i, com.google.androi
             ((ImageView) view.getTag(R.id.object_tag)).getHitRect(rect);
             if (!rect.contains((int) f10, (int) f11)) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(exVar.getParentActivity());
-                alertDialog$Builder.f(new CharSequence[]{hd.M0(2131751599, null)}, new zw(this, i7, i10));
+                alertDialog$Builder.f(new CharSequence[]{id.M0(2131751599, null)}, new zw(this, i7, i10));
                 exVar.showDialog(alertDialog$Builder.a);
                 return true;
             }
@@ -625,7 +625,7 @@ public final class n implements g, j6.n, ja.a, c4.m, f1, f3.i, com.google.androi
 
     @Override // fd.a
     public Object get() {
-        return new p5.d((Context) ((e.a) this.b).a, (hy0) ((qt) this.c).get());
+        return new p5.d((Context) ((e.a) this.b).a, (hy0) ((rt) this.c).get());
     }
 
     @Override // org.telegram.ui.Components.lm0

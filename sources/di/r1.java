@@ -12,11 +12,11 @@ import android.view.View;
 import bi.ud;
 import c8.ka;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class r1 extends View {
     public long D;
@@ -150,7 +150,7 @@ public final class r1 extends View {
         if (i7 > 50000) {
             i6Var.t(org.telegram.messenger.g0.o0(i7, 0), true, true);
         } else {
-            i6Var.t(hd.E(i7, ','), true, true);
+            i6Var.t(id.E(i7, ','), true, true);
         }
         invalidate();
         requestLayout();

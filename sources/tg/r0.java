@@ -17,36 +17,36 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.ca;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class r0 extends org.telegram.ui.Cells.q1 {
-    public final ca kd;
-    public final float[] ld;
-    public final Path md;
-    public final Paint nd;
-    public final Rect od;
-    public final RectF pd;
-    public final /* synthetic */ s0 qd;
+    public final ca ld;
+    public final float[] md;
+    public final Path nd;
+    public final Paint od;
+    public final Rect pd;
+    public final RectF qd;
+    public final /* synthetic */ s0 rd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public r0(s0 s0Var, Context context, int i7, t0 t0Var) {
         super(context, i7, false, null, t0Var);
-        this.qd = s0Var;
-        this.kd = new ca(s0Var.d, this, 10, false);
-        this.ld = new float[8];
-        this.md = new Path();
+        this.rd = s0Var;
+        this.ld = new ca(s0Var.d, this, 10, false);
+        this.md = new float[8];
+        this.nd = new Path();
         Paint paint = new Paint();
-        this.nd = paint;
+        this.od = paint;
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        this.od = new Rect();
-        this.pd = new RectF();
+        this.pd = new Rect();
+        this.qd = new RectF();
     }
 
     @Override // org.telegram.ui.Cells.q1
     public final Paint Z1(String str) {
         if ("paintChatActionBackground".equals(str)) {
-            this.qd.h.v0 = true;
-            Paint c10 = this.kd.c(1.0f);
+            this.rd.h.v0 = true;
+            Paint c10 = this.ld.c(1.0f);
             if (c10 != null) {
                 return c10;
             }
@@ -59,7 +59,7 @@ public final class r0 extends org.telegram.ui.Cells.q1 {
         x5 x5Var;
         float[] fArr;
         ImageReceiver photoImage = getPhotoImage();
-        s0 s0Var = this.qd;
+        s0 s0Var = this.rd;
         e5 e5Var = s0Var.h;
         if (!s0Var.f || photoImage == null || (((x5Var = s0Var.e) == null || !x5Var.g || !x5Var.d || !e5Var.x0) && !e5Var.u0 && (e5Var.w0 == null || !e5Var.M0.r0))) {
             return super.l1(canvas);
@@ -68,7 +68,7 @@ public final class r0 extends org.telegram.ui.Cells.q1 {
         while (true) {
             int[] iArr = photoImage.W0;
             int length = iArr.length;
-            fArr = this.ld;
+            fArr = this.md;
             if (i7 >= length) {
                 break;
             }
@@ -80,12 +80,12 @@ public final class r0 extends org.telegram.ui.Cells.q1 {
         }
         RectF rectF = org.telegram.messenger.g0.P;
         rectF.set(photoImage.K0, photoImage.L0, photoImage.y(), photoImage.A());
-        Path path = this.md;
+        Path path = this.nd;
         path.rewind();
         path.addRoundRect(rectF, fArr, Path.Direction.CW);
         TextureView textureView = e5Var.w0;
         if (textureView == null || !e5Var.M0.r0) {
-            canvas.drawPath(path, this.nd);
+            canvas.drawPath(path, this.od);
             return true;
         }
         Bitmap bitmap = textureView.getBitmap();
@@ -100,11 +100,11 @@ public final class r0 extends org.telegram.ui.Cells.q1 {
         canvas.scale((e5Var.y0 / e5Var.w0.getWidth()) * max, (e5Var.z0 / e5Var.w0.getHeight()) * max);
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
-        Rect rect = this.od;
+        Rect rect = this.pd;
         rect.set(0, 0, width, height);
         float width2 = e5Var.w0.getWidth();
         float height2 = e5Var.w0.getHeight();
-        RectF rectF2 = this.pd;
+        RectF rectF2 = this.qd;
         rectF2.set(0.0f, 0.0f, width2, height2);
         canvas.drawBitmap(bitmap, rect, rectF2, (Paint) null);
         canvas.restore();
@@ -114,7 +114,7 @@ public final class r0 extends org.telegram.ui.Cells.q1 {
     @Override // org.telegram.ui.Cells.q1, android.view.View
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
-        s0 s0Var = this.qd;
+        s0 s0Var = this.rd;
         x5 x5Var = s0Var.e;
         if ((x5Var != null && x5Var.g && x5Var.d) || s0Var.h.u0) {
             canvas2 = canvas;

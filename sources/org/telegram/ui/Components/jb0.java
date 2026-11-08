@@ -12,7 +12,7 @@ import android.view.animation.DecelerateInterpolator;
 import java.io.File;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class jb0 extends li0 implements org.telegram.messenger.x5 {
     public static final Paint H;
@@ -177,11 +177,11 @@ public final class jb0 extends li0 implements org.telegram.messenger.x5 {
         canvas.drawText(this.E, (width - ((int) Math.ceil(r4.measureText(r3)))) / 2, org.telegram.messenger.g0.L(96.0f) + y10, K);
         canvas.drawText(this.F, (width - ((int) Math.ceil(r4.measureText(r3)))) / 2, org.telegram.messenger.g0.L(125.0f) + y10, L);
         if (this.x) {
-            upperCase = org.telegram.messenger.hd.M0(2131747805, null);
+            upperCase = org.telegram.messenger.id.M0(2131747807, null);
             textPaint = O;
             L2 = 0;
         } else {
-            upperCase = this.w ? org.telegram.messenger.hd.M0(2131752589, null).toUpperCase() : org.telegram.messenger.hd.M0(2131744259, null);
+            upperCase = this.w ? org.telegram.messenger.id.M0(2131752589, null).toUpperCase() : org.telegram.messenger.id.M0(2131744261, null);
             L2 = org.telegram.messenger.g0.L(28.0f);
             textPaint = M;
         }

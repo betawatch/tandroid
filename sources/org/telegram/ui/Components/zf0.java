@@ -19,7 +19,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class zf0 extends View {
     public final ic D;
@@ -159,7 +159,7 @@ public class zf0 extends View {
     public final void e(String str, String str2) {
         this.c = new my0(str, 11.0f, org.telegram.messenger.g0.o());
         this.d = new my0(str2, 11.0f, null);
-        setContentDescription(org.telegram.messenger.hd.M0(2131754799, null) + " " + ((Object) str) + " — " + ((Object) str2));
+        setContentDescription(org.telegram.messenger.id.M0(2131754799, null) + " " + ((Object) str) + " — " + ((Object) str2));
     }
 
     public final void f(float f10, float f11) {
@@ -343,7 +343,7 @@ public class zf0 extends View {
             if (TextUtils.isEmpty(str)) {
                 B = TextUtils.isEmpty(B) ? "" : " - " + ((Object) B);
             } else if (TextUtils.isEmpty(B)) {
-                str = org.telegram.messenger.hd.M0(2131753900, null);
+                str = org.telegram.messenger.id.M0(2131753900, null);
                 B = jg.g.l(2131753899, null, new StringBuilder(" - "));
             } else {
                 str = "";

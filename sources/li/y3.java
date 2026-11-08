@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
@@ -34,7 +34,7 @@ import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.c61;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class y3 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final LinearLayout D;
@@ -139,7 +139,7 @@ public final class y3 extends FrameLayout implements org.telegram.ui.ActionBar.a
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         r6.t(imageView, i12, f6Var, mode);
         ka.a(imageView);
-        imageView.setContentDescription(hd.M0(2131754878, null));
+        imageView.setContentDescription(id.M0(2131754878, null));
         imageView.setOnClickListener(new bi.l1(lVar, 6));
         frameLayout.addView(imageView, ha.d(44, 44.0f, 51, 8.0f, 8.0f, 8.0f, 8.0f));
         LinearLayout linearLayout = new LinearLayout(context);
@@ -651,7 +651,7 @@ public final class y3 extends FrameLayout implements org.telegram.ui.ActionBar.a
         x1 x1Var = new x1(R.drawable.iv_quote, context, f6Var);
         this.S = x1Var;
         x1Var.c(i10);
-        x1Var.setContentDescription(hd.M0(2131746439, null));
+        x1Var.setContentDescription(id.M0(2131746441, null));
         final int i18 = 0;
         x1Var.setOnClickListener(new View.OnClickListener() { // from class: li.u3
             @Override // android.view.View.OnClickListener
@@ -726,7 +726,7 @@ public final class y3 extends FrameLayout implements org.telegram.ui.ActionBar.a
         x1 x1Var2 = new x1(R.drawable.iv_button, context, f6Var);
         this.P = x1Var2;
         x1Var2.c(i10);
-        x1Var2.setContentDescription(hd.M0(2131746012, null));
+        x1Var2.setContentDescription(id.M0(2131746014, null));
         final int i19 = 1;
         x1Var2.setOnClickListener(new View.OnClickListener() { // from class: li.u3
             @Override // android.view.View.OnClickListener
@@ -809,7 +809,7 @@ public final class y3 extends FrameLayout implements org.telegram.ui.ActionBar.a
         x1 x1Var3 = new x1(R.drawable.media_link_24, context, f6Var);
         this.O = x1Var3;
         x1Var3.c(i10);
-        x1Var3.setContentDescription(hd.M0(2131751745, null));
+        x1Var3.setContentDescription(id.M0(2131751745, null));
         final int i20 = 2;
         x1Var3.setOnClickListener(new View.OnClickListener() { // from class: li.u3
             @Override // android.view.View.OnClickListener
@@ -884,7 +884,7 @@ public final class y3 extends FrameLayout implements org.telegram.ui.ActionBar.a
         x1 x1Var4 = new x1(R.drawable.msg_calendar2, context, f6Var);
         this.Q = x1Var4;
         x1Var4.c(i10);
-        x1Var4.setContentDescription(hd.M0(2131754862, null));
+        x1Var4.setContentDescription(id.M0(2131754862, null));
         final int i21 = 3;
         x1Var4.setOnClickListener(new View.OnClickListener() { // from class: li.u3
             @Override // android.view.View.OnClickListener
@@ -969,7 +969,7 @@ public final class y3 extends FrameLayout implements org.telegram.ui.ActionBar.a
         x1Var5.c(i10);
         x1Var5.d();
         arrayList.add(x1Var5);
-        x1Var5.setContentDescription(hd.M0(2131754864, null));
+        x1Var5.setContentDescription(id.M0(2131754864, null));
         final int i22 = 4;
         x1Var5.setOnClickListener(new View.OnClickListener() { // from class: li.u3
             @Override // android.view.View.OnClickListener
@@ -1052,7 +1052,7 @@ public final class y3 extends FrameLayout implements org.telegram.ui.ActionBar.a
         x1 x1Var6 = new x1(R.drawable.input_ai, context, f6Var);
         x1Var6.setImageDrawable(new org.telegram.ui.ActionBar.u2(context));
         x1Var6.c(i10);
-        x1Var6.setContentDescription(hd.M0(2131755006, null));
+        x1Var6.setContentDescription(id.M0(2131755006, null));
         final int i23 = 5;
         x1Var6.setOnClickListener(new View.OnClickListener() { // from class: li.u3
             @Override // android.view.View.OnClickListener

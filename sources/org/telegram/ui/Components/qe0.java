@@ -27,7 +27,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class qe0 extends org.telegram.ui.ActionBar.v2 {
     public static final org.telegram.ui.Cells.o8 I1 = new org.telegram.ui.Cells.o8("placeholderAlpha", 9);
@@ -192,11 +192,11 @@ public final class qe0 extends org.telegram.ui.ActionBar.v2 {
         org.telegram.ui.ActionBar.r6.m(r7Var, 6, org.telegram.ui.ActionBar.k6.Dj, null);
         r7Var.setOccupyStatusBar(false);
         r7Var.setAlpha(0.0f);
-        r7Var.setTitle(org.telegram.messenger.hd.M0(2131747160, null));
+        r7Var.setTitle(org.telegram.messenger.id.M0(2131747162, null));
         if (this.p1.quiz) {
-            r7Var.setSubtitle(org.telegram.messenger.hd.G(tL_messageMediaPoll.results.total_voters, "Answer", new Object[0]));
+            r7Var.setSubtitle(org.telegram.messenger.id.G(tL_messageMediaPoll.results.total_voters, "Answer", new Object[0]));
         } else {
-            r7Var.setSubtitle(org.telegram.messenger.hd.G(tL_messageMediaPoll.results.total_voters, "Vote", new Object[0]));
+            r7Var.setSubtitle(org.telegram.messenger.id.G(tL_messageMediaPoll.results.total_voters, "Vote", new Object[0]));
         }
         this.b.addView(r7Var, c8.ha.c(-2.0f, -1));
         r7Var.setActionBarMenuOnItemClick(new org.telegram.ui.w9(this, 16));

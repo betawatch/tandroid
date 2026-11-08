@@ -20,13 +20,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.qs;
-import org.telegram.messenger.rc;
+import org.telegram.messenger.sc;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.la0;
 import org.telegram.ui.Components.po0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class i1 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -213,7 +213,7 @@ public final class i1 extends FrameLayout {
                         }
                     } else if (!f6Var.a()) {
                     }
-                    if (k2Var.t1 != null && iz.o() > 0 && !rc.f()) {
+                    if (k2Var.t1 != null && iz.o() > 0 && !sc.f()) {
                         Point point = org.telegram.messenger.g0.q;
                         Bitmap createBitmap = Bitmap.createBitmap(point.x / 16, point.y / 16, Bitmap.Config.ARGB_8888);
                         k2Var.t1.a(createBitmap, Float.valueOf(16.0f));

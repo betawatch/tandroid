@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.gc;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.voip.ConferenceCall;
@@ -28,7 +28,7 @@ import org.telegram.ui.Components.m50;
 import org.telegram.ui.an;
 import org.telegram.ui.oy0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -125,7 +125,7 @@ public final /* synthetic */ class h0 implements Runnable {
                     b22.profile_photo = tL_photos_photo.photo;
                     anVar.getMessagesStorage().j2(b22, false);
                     an anVar3 = anVar;
-                    org.telegram.ui.Components.hc.a0(anVar3).V(Collections.singletonList(a22), org.telegram.messenger.g0.X2(hd.M0(2131754219, null)), org.telegram.messenger.g0.U2(hd.M0(2131754220, null), new j0(j3, anVar3)), null).j();
+                    org.telegram.ui.Components.hc.a0(anVar3).V(Collections.singletonList(a22), org.telegram.messenger.g0.X2(id.M0(2131754219, null)), org.telegram.messenger.g0.U2(id.M0(2131754220, null), new j0(j3, anVar3)), null).j();
                     break;
                 }
                 break;
@@ -146,7 +146,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 final TLRPC.Chat chat = (TLRPC.Chat) obj;
                 final boolean z10 = (channelParticipant instanceof TLRPC.TL_channelParticipantBanned) && (tL_chatBannedRights = channelParticipant.banned_rights) != null && tL_chatBannedRights.view_messages;
                 z0Var.setVisibility(0);
-                z0Var.setText(hd.M0(z10 ? 2131743913 : 2131753726, null));
+                z0Var.setText(id.M0(z10 ? 2131743915 : 2131753726, null));
                 final long j10 = this.b;
                 z0Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.x01
                     @Override // android.view.View.OnClickListener

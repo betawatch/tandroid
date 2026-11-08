@@ -51,7 +51,7 @@ import m9.e0;
 import m9.y;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t0;
@@ -66,7 +66,7 @@ import org.telegram.ui.Cells.i3;
 import org.telegram.ui.Components.xq;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -152,7 +152,7 @@ public final /* synthetic */ class h implements Runnable {
                 TLRPC.MessageMedia messageMedia = (TLRPC.MessageMedia) this.b;
                 TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint = (TL_stories.TL_mediaAreaGeoPoint) this.c;
                 try {
-                    List<Address> fromLocationName = new Geocoder(t0.b, hd.E0().y).getFromLocationName(messageMedia.title, 1);
+                    List<Address> fromLocationName = new Geocoder(t0.b, id.E0().y).getFromLocationName(messageMedia.title, 1);
                     if (fromLocationName.size() <= 0) {
                         return;
                     }

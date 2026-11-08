@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z7 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -34,7 +34,7 @@ public final /* synthetic */ class z7 implements Runnable {
                     org.telegram.messenger.g0.h3(new z7(a8Var, new ArrayList(), str3));
                     break;
                 } else {
-                    String S0 = org.telegram.messenger.hd.E0().S0(lowerCase, true, false);
+                    String S0 = org.telegram.messenger.id.E0().S0(lowerCase, true, false);
                     if (!lowerCase.equals(S0) && S0.length() != 0) {
                         str2 = S0;
                     }
@@ -95,7 +95,7 @@ public final /* synthetic */ class z7 implements Runnable {
                     a8Var.e = str3;
                     a8Var.f();
                     b8Var.p1.n0(0);
-                    org.telegram.messenger.k5.r(null, null, 2131748239, new Object[]{str3}, b8Var.t1);
+                    org.telegram.messenger.k5.r(null, null, 2131748241, new Object[]{str3}, b8Var.t1);
                     break;
                 }
                 break;

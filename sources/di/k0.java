@@ -4,10 +4,10 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.text.style.ReplacementSpan;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.Components.my0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class k0 extends ReplacementSpan {
     public final /* synthetic */ int a;
@@ -18,7 +18,7 @@ public final class k0 extends ReplacementSpan {
     public k0(org.telegram.ui.ActionBar.f6 f6Var) {
         this.a = 2;
         this.b = f6Var;
-        this.d = new my0(hd.M0(2131745238, null), 12.0f, org.telegram.messenger.g0.o());
+        this.d = new my0(id.M0(2131745240, null), 12.0f, org.telegram.messenger.g0.o());
         this.c = new Paint(1);
     }
 
@@ -86,12 +86,12 @@ public final class k0 extends ReplacementSpan {
             case 1:
                 this.b = new RectF();
                 this.c = new Paint(1);
-                this.d = new my0(hd.M0(2131748824, null), 9.0f, org.telegram.messenger.g0.o());
+                this.d = new my0(id.M0(2131748826, null), 9.0f, org.telegram.messenger.g0.o());
                 break;
             default:
                 this.b = new RectF();
                 this.c = new Paint(1);
-                this.d = new my0(hd.M0(2131748824, null), 8.0f, org.telegram.messenger.g0.o());
+                this.d = new my0(id.M0(2131748826, null), 8.0f, org.telegram.messenger.g0.o());
                 break;
         }
     }

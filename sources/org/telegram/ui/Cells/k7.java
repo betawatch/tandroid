@@ -29,7 +29,7 @@ import java.util.Stack;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.kv;
 import org.telegram.messenger.ui;
@@ -44,7 +44,7 @@ import org.telegram.ui.Components.wo;
 import org.telegram.ui.Components.x70;
 import org.telegram.ui.yz;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class k7 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public boolean D;
@@ -138,7 +138,7 @@ public final class k7 extends FrameLayout implements org.telegram.ui.ActionBar.a
         woVar.b(-1, org.telegram.ui.ActionBar.k6.d6, org.telegram.ui.ActionBar.k6.k7);
         woVar.setDrawUnchecked(false);
         woVar.setDrawBackgroundAsArc(2);
-        boolean z9 = hd.a0;
+        boolean z9 = id.a0;
         addView(woVar, c8.ha.d(24, 24.0f, (z9 ? 5 : 3) | 48, z9 ? 0.0f : 44.0f, 44.0f, z9 ? 44.0f : 0.0f, 0.0f));
         if (i7 == 1) {
             TextPaint textPaint3 = new TextPaint(1);
@@ -238,7 +238,7 @@ public final class k7 extends FrameLayout implements org.telegram.ui.ActionBar.a
     }
 
     public final void g(int i7, int i10, int i11) {
-        int L = org.telegram.messenger.g0.L(hd.a0 ? 8.0f : org.telegram.messenger.g0.C);
+        int L = org.telegram.messenger.g0.L(id.a0 ? 8.0f : org.telegram.messenger.g0.C);
         e();
         this.M.q = new i7(this, 0);
         int i12 = i7 - L;
@@ -347,14 +347,14 @@ public final class k7 extends FrameLayout implements org.telegram.ui.ActionBar.a
         int i7 = this.O;
         if (staticLayout != null) {
             canvas2.save();
-            canvas2.translate(org.telegram.messenger.g0.L(hd.a0 ? 8.0f : org.telegram.messenger.g0.C) + (hd.a0 ? 0 : this.g0), i7);
+            canvas2.translate(org.telegram.messenger.g0.L(id.a0 ? 8.0f : org.telegram.messenger.g0.C) + (id.a0 ? 0 : this.g0), i7);
             this.h0.draw(canvas2);
             canvas2.restore();
         }
         if (this.P != null) {
             canvas2.save();
-            float L = org.telegram.messenger.g0.L(hd.a0 ? 8.0f : org.telegram.messenger.g0.C);
-            if (hd.a0) {
+            float L = org.telegram.messenger.g0.L(id.a0 ? 8.0f : org.telegram.messenger.g0.C);
+            if (id.a0) {
                 L += this.h0 == null ? 0.0f : org.telegram.messenger.g0.L(4.0f) + r3.getWidth();
             }
             canvas2.translate(L, i7);
@@ -364,7 +364,7 @@ public final class k7 extends FrameLayout implements org.telegram.ui.ActionBar.a
         if (this.a0 != null) {
             this.f0.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, f6Var));
             canvas2.save();
-            canvas2.translate(org.telegram.messenger.g0.L(hd.a0 ? 8.0f : org.telegram.messenger.g0.C), this.W);
+            canvas2.translate(org.telegram.messenger.g0.L(id.a0 ? 8.0f : org.telegram.messenger.g0.C), this.W);
             this.a0.draw(canvas2);
             canvas2.restore();
         }
@@ -373,14 +373,14 @@ public final class k7 extends FrameLayout implements org.telegram.ui.ActionBar.a
         if (staticLayout2 != null) {
             textPaint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, f6Var));
             canvas2.save();
-            canvas2.translate(org.telegram.messenger.g0.L(hd.a0 ? 8.0f : org.telegram.messenger.g0.C), this.Q);
+            canvas2.translate(org.telegram.messenger.g0.L(id.a0 ? 8.0f : org.telegram.messenger.g0.C), this.Q);
             xh.f.g(this, false, textPaint.getColor(), -org.telegram.messenger.g0.L(2.0f), this.S, 0, this.R, this.I, canvas2, false);
             canvas2.restore();
         }
         if (this.U != null) {
             textPaint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.G6, f6Var));
             canvas2.save();
-            canvas2.translate(org.telegram.messenger.g0.L(hd.a0 ? 8.0f : org.telegram.messenger.g0.C), this.T);
+            canvas2.translate(org.telegram.messenger.g0.L(id.a0 ? 8.0f : org.telegram.messenger.g0.C), this.T);
             xh.f.g(this, false, textPaint.getColor(), -org.telegram.messenger.g0.L(2.0f), this.V, 0, this.U, this.J, canvas2, false);
             k7Var = this;
             canvas2.restore();
@@ -396,7 +396,7 @@ public final class k7 extends FrameLayout implements org.telegram.ui.ActionBar.a
                 List list = (List) k7Var.H.get(i11);
                 if (staticLayout3.getLineCount() > 0) {
                     canvas2.save();
-                    canvas2.translate(org.telegram.messenger.g0.L(hd.a0 ? 8.0f : org.telegram.messenger.g0.C), k7Var.F + i10);
+                    canvas2.translate(org.telegram.messenger.g0.L(id.a0 ? 8.0f : org.telegram.messenger.g0.C), k7Var.F + i10);
                     Path path = k7Var.L;
                     path.rewind();
                     if (list != null) {
@@ -435,7 +435,7 @@ public final class k7 extends FrameLayout implements org.telegram.ui.ActionBar.a
         }
         if (k7Var.j0 != null) {
             canvas2.save();
-            canvas2.translate(org.telegram.messenger.g0.L(hd.a0 ? 8.0f : org.telegram.messenger.g0.C), k7Var.i0);
+            canvas2.translate(org.telegram.messenger.g0.L(id.a0 ? 8.0f : org.telegram.messenger.g0.C), k7Var.i0);
             k7Var.j0.draw(canvas2);
             org.telegram.ui.Components.r5.drawAnimatedEmojis(canvas, k7Var.j0, k7Var.k0, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f);
             canvas2 = canvas;
@@ -446,7 +446,7 @@ public final class k7 extends FrameLayout implements org.telegram.ui.ActionBar.a
             k7Var.r.h(canvas2, null);
         }
         if (k7Var.D) {
-            if (hd.a0) {
+            if (id.a0) {
                 canvas2.drawLine(0.0f, k7Var.getMeasuredHeight() - 1, k7Var.getMeasuredWidth() - org.telegram.messenger.g0.L(org.telegram.messenger.g0.C), k7Var.getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
             } else {
                 canvas.drawLine(org.telegram.messenger.g0.L(org.telegram.messenger.g0.C), k7Var.getMeasuredHeight() - 1, k7Var.getMeasuredWidth(), k7Var.getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
@@ -858,7 +858,7 @@ public final class k7 extends FrameLayout implements org.telegram.ui.ActionBar.a
                 TextPaint textPaint3 = this.e0;
                 if (i11 != 1) {
                     spannableStringBuilder2 = spannableStringBuilder;
-                    String e18 = hd.e1(this.b0.k.date);
+                    String e18 = id.e1(this.b0.k.date);
                     int ceil = (int) Math.ceil(textPaint3.measureText(e18));
                     textPaint = textPaint3;
                     this.h0 = q1.H1(e18, textPaint3, ceil, ceil, 0, 1);
@@ -943,7 +943,7 @@ public final class k7 extends FrameLayout implements org.telegram.ui.ActionBar.a
                         g70 g70Var4 = g70Var3;
                         int i37 = size;
                         int L2 = org.telegram.messenger.g0.L(52.0f);
-                        if (hd.a0) {
+                        if (id.a0) {
                         }
                         g70Var4.setBounds(L, org.telegram.messenger.g0.L(11.0f), L + L2, org.telegram.messenger.g0.L(63.0f));
                         if (z9) {
@@ -1185,7 +1185,7 @@ public final class k7 extends FrameLayout implements org.telegram.ui.ActionBar.a
                 g70 g70Var42 = g70Var3;
                 int i372 = size;
                 int L22 = org.telegram.messenger.g0.L(52.0f);
-                if (hd.a0) {
+                if (id.a0) {
                     f11 = 10.0f;
                     L = org.telegram.messenger.k5.z(10.0f, View.MeasureSpec.getSize(i7), L22);
                 } else {
@@ -1319,7 +1319,7 @@ public final class k7 extends FrameLayout implements org.telegram.ui.ActionBar.a
         g70 g70Var422 = g70Var32;
         int i3722 = size;
         int L222 = org.telegram.messenger.g0.L(52.0f);
-        if (hd.a0) {
+        if (id.a0) {
         }
         g70Var422.setBounds(L, org.telegram.messenger.g0.L(11.0f), L + L222, org.telegram.messenger.g0.L(63.0f));
         if (z9) {
@@ -1395,7 +1395,7 @@ public final class k7 extends FrameLayout implements org.telegram.ui.ActionBar.a
                     StaticLayout staticLayout = (StaticLayout) arrayList.get(i12);
                     if (staticLayout.getLineCount() > 0) {
                         int lineBottom = staticLayout.getLineBottom(staticLayout.getLineCount() - 1);
-                        int L = org.telegram.messenger.g0.L(hd.a0 ? 8.0f : org.telegram.messenger.g0.C);
+                        int L = org.telegram.messenger.g0.L(id.a0 ? 8.0f : org.telegram.messenger.g0.C);
                         float f10 = x10;
                         float f11 = L;
                         if (f10 < staticLayout.getLineLeft(0) + f11 || f10 > staticLayout.getLineWidth(0) + f11 || y10 < (i11 = this.F + i13) || y10 > i11 + lineBottom) {
@@ -1469,7 +1469,7 @@ public final class k7 extends FrameLayout implements org.telegram.ui.ActionBar.a
                 }
                 z10 = z9;
                 if (motionEvent.getAction() == 0) {
-                    int L2 = org.telegram.messenger.g0.L(hd.a0 ? 8.0f : org.telegram.messenger.g0.C);
+                    int L2 = org.telegram.messenger.g0.L(id.a0 ? 8.0f : org.telegram.messenger.g0.C);
                     StaticLayout staticLayout2 = this.R;
                     if (staticLayout2 != null && x10 >= L2 && x10 <= staticLayout2.getWidth() + L2 && y10 >= (i10 = this.Q) && y10 <= this.R.getHeight() + i10) {
                         ArrayList arrayList2 = this.I;

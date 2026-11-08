@@ -13,7 +13,7 @@ import org.telegram.ui.an;
 import org.telegram.ui.pv;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ab implements Runnable {
     public final /* synthetic */ int a;
@@ -62,10 +62,10 @@ public final /* synthetic */ class ab implements Runnable {
                 ((h1[]) this.b)[0].dismiss();
                 return;
             case 3:
-                vf.c.t(((tc) this.b).getContext(), org.telegram.messenger.hd.M0(2131744967, null));
+                vf.c.t(((tc) this.b).getContext(), org.telegram.messenger.id.M0(2131744969, null));
                 return;
             case 4:
-                vf.c.t(((uc) this.b).getContext(), org.telegram.messenger.hd.M0(2131744967, null));
+                vf.c.t(((uc) this.b).getContext(), org.telegram.messenger.id.M0(2131744969, null));
                 return;
             case 5:
                 ((c1.e) this.b).f().a(new w0.h(2, "Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context."));

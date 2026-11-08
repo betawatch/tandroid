@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class tb0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final class tb0 implements TextWatcher {
                 if (isEmpty != this.b) {
                     TextView textView = (TextView) view;
                     this.b = isEmpty;
-                    textView.setText(org.telegram.messenger.hd.M0(isEmpty ? 2131746320 : 2131754486, null));
+                    textView.setText(org.telegram.messenger.id.M0(isEmpty ? 2131746322 : 2131754486, null));
                     break;
                 }
                 break;
@@ -66,13 +66,13 @@ public final class tb0 implements TextWatcher {
                 k2Var.s();
                 break;
             default:
-                zh.o1 o1Var = (zh.o1) view;
+                zh.n1 n1Var = (zh.n1) view;
                 if (!this.b && editable.length() > 12) {
                     this.b = true;
                     editable.delete(12, editable.length());
-                    org.telegram.messenger.g0.F3(o1Var);
+                    org.telegram.messenger.g0.F3(n1Var);
                     try {
-                        o1Var.performHapticFeedback(3, 2);
+                        n1Var.performHapticFeedback(3, 2);
                     } catch (Exception unused) {
                     }
                     this.b = false;

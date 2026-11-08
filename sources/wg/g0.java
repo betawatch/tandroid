@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import c8.ha;
 import fi.r7;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.f6;
@@ -16,7 +16,7 @@ import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class g0 extends ug.f1 {
     public static g0 K2;
@@ -38,7 +38,7 @@ public final class g0 extends ug.f1 {
             aVar2.e = true;
             fi.d dVar = aVar2.a;
             dVar.setEnabled(true);
-            dVar.i(hd.M0(2131749674, null), false, true);
+            dVar.i(id.M0(2131749676, null), false, true);
             r6.i(k6.h5, aVar2.b, aVar2.c);
             this.b.addView(this.I2, ha.d(-1, 68.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         }
@@ -48,7 +48,7 @@ public final class g0 extends ug.f1 {
     public static void l1(g0 g0Var) {
         String str = "https://t.me/giftcode/" + g0Var.J2;
         ww wwVar = new ww(org.telegram.ui.Cells.f1.h(3, "onlySelect", "dialogsType", true));
-        wwVar.C2 = new org.telegram.ui.web.a0(22, g0Var, str);
+        wwVar.C2 = new org.telegram.ui.web.a0(21, g0Var, str);
         g0Var.o1.presentFragment(wwVar);
         g0Var.dismiss();
     }
@@ -85,7 +85,7 @@ public final class g0 extends ug.f1 {
         this.H2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
         ((ViewGroup.MarginLayoutParams) this.H2.getLayoutParams()).bottomMargin = org.telegram.messenger.g0.L(14.0f);
         ((ViewGroup.MarginLayoutParams) this.H2.getLayoutParams()).topMargin = org.telegram.messenger.g0.L(12.0f);
-        this.H2.setText(org.telegram.messenger.g0.K2(org.telegram.messenger.g0.S2(hd.M0(2131749678, "GiftPremiumAboutThisLink"), k6.Uc, 0, new e0(this, 0), null), org.telegram.messenger.g0.X2(hd.M0(2131749677, "GiftPremiumAboutThisLinkEnd")), "%1$s"));
+        this.H2.setText(org.telegram.messenger.g0.K2(org.telegram.messenger.g0.S2(id.M0(2131749680, "GiftPremiumAboutThisLink"), k6.Uc, 0, new e0(this, 0), null), org.telegram.messenger.g0.X2(id.M0(2131749679, "GiftPremiumAboutThisLinkEnd")), "%1$s"));
     }
 
     @Override // ug.f1

@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class jb extends v4.g0 {
     public final Context c;
@@ -230,18 +230,18 @@ public final class jb extends v4.g0 {
                 z10 = false;
             }
             org.telegram.ui.Cells.q1 q1Var3 = q1Var;
-            q1Var3.v3(ijVar, null, z9, z10, false, false);
+            q1Var3.w3(ijVar, null, z9, z10, false, false);
             q1Var3.setHighlighted(false);
-            q1Var3.r3(mbVar.v0);
+            q1Var3.s3(mbVar.v0);
         }
         q1Var = q1Var2;
         z9 = false;
         if (d2 != d1Var.f) {
         }
         org.telegram.ui.Cells.q1 q1Var32 = q1Var;
-        q1Var32.v3(ijVar, null, z9, z10, false, false);
+        q1Var32.w3(ijVar, null, z9, z10, false, false);
         q1Var32.setHighlighted(false);
-        q1Var32.r3(mbVar.v0);
+        q1Var32.s3(mbVar.v0);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -297,7 +297,7 @@ public final class jb extends v4.g0 {
             org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) view;
             q1Var.getMessageObject();
             q1Var.setBackgroundDrawable(null);
-            q1Var.j3(true, false);
+            q1Var.k3(true, false);
             q1Var.setHighlighted(false);
         }
     }

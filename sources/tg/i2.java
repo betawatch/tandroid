@@ -20,7 +20,7 @@ import android.widget.TextView;
 import c8.ha;
 import fi.v3;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.ha0;
@@ -28,7 +28,7 @@ import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.v41;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class i2 extends Dialog {
     public float D;
@@ -72,11 +72,11 @@ public final class i2 extends Dialog {
         frameLayout.setBackgroundColor(-14737633);
         s1Var.addView(frameLayout, ha.e(-1, 56, 55));
         TextView textView = new TextView(context);
-        textView.setText(hd.M0(2131744634, null));
+        textView.setText(id.M0(2131744636, null));
         textView.setTextColor(-1);
         com.google.android.recaptcha.internal.a.q(textView, 1, 18.0f);
         TextView i12 = org.telegram.ui.Cells.f1.i(frameLayout, textView, ha.d(-1, -2.0f, 55, 18.0f, 8.33f, 18.0f, 0.0f), context);
-        i12.setText(hd.M0(2131744635, null));
+        i12.setText(id.M0(2131744637, null));
         i12.setTextColor(-8421505);
         i12.setTextSize(1, 14.0f);
         frameLayout.addView(i12, ha.d(-1, -2.0f, 55, 18.0f, 31.0f, 18.0f, 0.0f));
@@ -91,7 +91,7 @@ public final class i2 extends Dialog {
         this.f = g2Var;
         s1Var2.addView(g2Var, ha.e(-2, -2, 17));
         k60 F = k60.F(v41Var, bVar, v41Var);
-        ha0 ha0Var = new ha0(getContext(), R.raw.position_below, hd.M0(2131744645, null), R.raw.position_above, hd.M0(2131744644, null), bVar);
+        ha0 ha0Var = new ha0(getContext(), R.raw.position_below, id.M0(2131744647, null), R.raw.position_above, id.M0(2131744646, null), bVar);
         this.x = ha0Var;
         ha0Var.setOnClickListener(new View.OnClickListener(this) { // from class: tg.f2
             public final /* synthetic */ i2 b;
@@ -123,7 +123,7 @@ public final class i2 extends Dialog {
             }
         });
         F.q(ha0Var);
-        ha0 ha0Var2 = new ha0(context, R.raw.media_shrink, hd.M0(2131748898, null), R.raw.media_enlarge, hd.M0(2131748897, null), bVar);
+        ha0 ha0Var2 = new ha0(context, R.raw.media_shrink, id.M0(2131748900, null), R.raw.media_enlarge, id.M0(2131748899, null), bVar);
         this.y = ha0Var2;
         ha0Var2.setOnClickListener(new View.OnClickListener(this) { // from class: tg.f2
             public final /* synthetic */ i2 b;
@@ -156,8 +156,8 @@ public final class i2 extends Dialog {
         });
         F.q(ha0Var2);
         F.k();
-        F.c(R.drawable.msg_select, hd.M0(2131754218, null), new e2(this, 2), false);
-        F.c(R.drawable.msg_delete, hd.M0(2131751362, null), new e2(this, 3), true);
+        F.c(R.drawable.msg_select, id.M0(2131754218, null), new e2(this, 2), false);
+        F.c(R.drawable.msg_delete, id.M0(2131751362, null), new e2(this, 3), true);
         tVar.addView(F.A, ha.p(-2, -2, 0.0f, 85));
         v41Var.setFitsSystemWindows(true);
         v41Var.setOnApplyWindowInsetsListener(new h2(this));

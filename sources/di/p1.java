@@ -7,7 +7,7 @@ import android.view.animation.LinearInterpolator;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.my0;
@@ -15,7 +15,7 @@ import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class p1 {
     public final long a;
@@ -63,7 +63,7 @@ public final class p1 {
         wpVar.G = 0.875f;
         spannableStringBuilder.setSpan(wpVar, 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.append((CharSequence) " ");
-        spannableStringBuilder.append((CharSequence) hd.E(i10, ','));
+        spannableStringBuilder.append((CharSequence) id.E(i10, ','));
         this.g = new my0(spannableStringBuilder, 10.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
         org.telegram.ui.Components.w5 w5Var = new org.telegram.ui.Components.w5(view, 2000L, new LinearInterpolator());
         this.i = w5Var;

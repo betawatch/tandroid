@@ -18,7 +18,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class v10 extends FrameLayout implements org.telegram.messenger.ls, VoIPService.StateListener {
     public float D;
@@ -527,7 +527,7 @@ public final class v10 extends FrameLayout implements org.telegram.messenger.ls,
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         p10 p10Var = p10.e0;
         if (p10Var != null) {
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, org.telegram.messenger.hd.M0(p10Var.y ? 2131754901 : 2131754816, null)));
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, org.telegram.messenger.id.M0(p10Var.y ? 2131754901 : 2131754816, null)));
         }
     }
 
@@ -586,13 +586,13 @@ public final class v10 extends FrameLayout implements org.telegram.messenger.ls,
                 this.D = f10;
             }
             VoIPService sharedInstance = VoIPService.getSharedInstance();
-            String M0 = (sharedInstance == null || !org.telegram.messenger.t3.W(sharedInstance.getChat())) ? org.telegram.messenger.hd.M0(2131743307, null) : org.telegram.messenger.hd.M0(2131743448, null);
+            String M0 = (sharedInstance == null || !org.telegram.messenger.t3.W(sharedInstance.getChat())) ? org.telegram.messenger.id.M0(2131743309, null) : org.telegram.messenger.id.M0(2131743450, null);
             if (i7 == 0) {
-                M0 = jg.g.l(2131743234, null, rf.b.j(M0, ", "));
+                M0 = jg.g.l(2131743236, null, rf.b.j(M0, ", "));
             } else if (i7 == 2) {
                 M0 = jg.g.l(2131751809, null, rf.b.j(M0, ", "));
             } else if (i7 == 3) {
-                M0 = jg.g.l(2131743293, null, rf.b.j(M0, ", "));
+                M0 = jg.g.l(2131743295, null, rf.b.j(M0, ", "));
             }
             setContentDescription(M0);
             invalidate();

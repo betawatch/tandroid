@@ -5,8 +5,8 @@ import android.text.SpannableStringBuilder;
 import android.view.View;
 import j$.util.Objects;
 import java.util.LinkedHashSet;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i6;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
@@ -16,7 +16,7 @@ import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.w31;
 import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class k5 extends w31 {
     public static final /* synthetic */ int b = 0;
@@ -35,7 +35,7 @@ public final class k5 extends w31 {
         boolean z11 = m5Var.a != aVar;
         m5Var.a = aVar;
         m5Var.E = a3Var;
-        m5Var.D = hd.a0;
+        m5Var.D = id.a0;
         m5Var.c(aVar);
         TL_iv.PageBlock pageBlock = aVar.b;
         if (pageBlock instanceof TL_iv.pageBlockTable) {

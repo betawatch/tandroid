@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class x50 extends b51 implements org.telegram.messenger.ls {
     public final a0.h K1;
@@ -43,7 +43,7 @@ public class x50 extends b51 implements org.telegram.messenger.ls {
     public final org.telegram.ui.ActionBar.f2 h2;
     public final androidx.mediarouter.app.w i2;
     public int j2;
-    public final p00 k2;
+    public final q00 k2;
     public int l2;
     public final long m2;
     public boolean n2;
@@ -62,7 +62,7 @@ public class x50 extends b51 implements org.telegram.messenger.ls {
         this.h2 = f2Var;
         this.m2 = j3;
         N();
-        this.s1.J.setHint(org.telegram.messenger.hd.M0(2131745771, null));
+        this.s1.J.setHint(org.telegram.messenger.id.M0(2131745773, null));
         this.g2 = ViewConfiguration.get(context).getScaledTouchSlop();
         s50 s50Var = new s50(this);
         this.N1 = s50Var;
@@ -98,13 +98,13 @@ public class x50 extends b51 implements org.telegram.messenger.ls {
         m1Var.setClipChildren(false);
         m1Var.addView(w50Var);
         this.b.addView(m1Var);
-        p00 p00Var = new p00(context, f6Var, false);
-        this.k2 = p00Var;
-        p00Var.setImageResource(R.drawable.floating_check);
-        p00Var.setOnClickListener(new bi.p3(this, context, j3, 4));
-        p00Var.e(false, false);
-        p00Var.setContentDescription(org.telegram.messenger.hd.M0(2131748249, null));
-        this.b.addView(p00Var, p00.b());
+        q00 q00Var = new q00(context, f6Var, false);
+        this.k2 = q00Var;
+        q00Var.setImageResource(R.drawable.floating_check);
+        q00Var.setOnClickListener(new bi.p3(this, context, j3, 4));
+        q00Var.e(false, false);
+        q00Var.setContentDescription(org.telegram.messenger.id.M0(2131748251, null));
+        this.b.addView(q00Var, q00.b());
         ((ViewGroup.MarginLayoutParams) this.q1.getLayoutParams()).topMargin = org.telegram.messenger.g0.L(20.0f);
         ((ViewGroup.MarginLayoutParams) this.q1.getLayoutParams()).leftMargin = org.telegram.messenger.g0.L(4.0f);
         ((ViewGroup.MarginLayoutParams) this.q1.getLayoutParams()).rightMargin = org.telegram.messenger.g0.L(4.0f);
@@ -140,7 +140,7 @@ public class x50 extends b51 implements org.telegram.messenger.ls {
             this.n2 = true;
             A0(true);
             iVar.requestFocus();
-            org.telegram.messenger.g0.h3(new at(iVar, 3));
+            org.telegram.messenger.g0.h3(new bt(iVar, 3));
         }
     }
 

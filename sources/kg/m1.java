@@ -5,9 +5,9 @@ import android.view.View;
 import android.widget.TextView;
 import di.s2;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class m1 implements TextView.OnEditorActionListener {
     public final /* synthetic */ x0 a;
@@ -47,7 +47,7 @@ public final class m1 implements TextView.OnEditorActionListener {
         s1 d = f10.d(obj);
         if (d != null && d.a != i10) {
             org.telegram.messenger.g0.F3(x0Var);
-            this.d.setText(hd.M0(2131752662, null));
+            this.d.setText(id.M0(2131752662, null));
             this.e.a(Boolean.TRUE);
             return true;
         }

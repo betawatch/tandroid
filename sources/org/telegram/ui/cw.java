@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class cw extends nq0 {
     public final /* synthetic */ boolean[] a;
@@ -109,7 +109,7 @@ public final class cw extends nq0 {
         }
         int size = wwVar.D2.size();
         if (size == 1) {
-            return org.telegram.messenger.hd.M0(((org.telegram.messenger.gf) wwVar.D2.get(0)).b ? 2131753933 : 2131753948, null);
+            return org.telegram.messenger.id.M0(((org.telegram.messenger.gf) wwVar.D2.get(0)).b ? 2131753933 : 2131753948, null);
         }
         ArrayList arrayList2 = wwVar.D2;
         int size2 = arrayList2.size();
@@ -125,7 +125,7 @@ public final class cw extends nq0 {
                 i11++;
             }
         }
-        return i10 == 0 ? org.telegram.messenger.hd.G(size, "ShareSendPhotos", new Object[0]) : i11 == 0 ? org.telegram.messenger.hd.G(size, "ShareSendVideos", new Object[0]) : org.telegram.messenger.hd.G(size, "ShareSendItems", new Object[0]);
+        return i10 == 0 ? org.telegram.messenger.id.G(size, "ShareSendPhotos", new Object[0]) : i11 == 0 ? org.telegram.messenger.id.G(size, "ShareSendVideos", new Object[0]) : org.telegram.messenger.id.G(size, "ShareSendItems", new Object[0]);
     }
 
     @Override // org.telegram.ui.nq0, org.telegram.ui.uq0

@@ -8,7 +8,7 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class kc extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final ol0 a;
@@ -48,7 +48,7 @@ public final class kc extends FrameLayout implements org.telegram.ui.ActionBar.a
             int i10 = org.telegram.ui.ActionBar.k6.A8;
             k5Var.setTextColor(rcVar.getThemedColor(i10));
             k5Var.setTypeface(org.telegram.messenger.g0.o());
-            k5Var.l(org.telegram.messenger.hd.M0(2131752551, null), false);
+            k5Var.l(org.telegram.messenger.id.M0(2131752551, null), false);
             k5Var.setAlpha(0.0f);
             a();
             addView(k5Var, c8.ha.d(-1, -2.0f, 80, 72.0f, 0.0f, 0.0f, 16.0f));
@@ -67,8 +67,8 @@ public final class kc extends FrameLayout implements org.telegram.ui.ActionBar.a
             textView2.setTextSize(1, 12.0f);
             textView2.setTextColor((rcVar.d && rcVar.s == -1) ? rcVar.getThemedColor(i10) : -1);
             TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = rcVar.c;
-            textView.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.G(tL_premium_boostsStatus != null ? tL_premium_boostsStatus.boosts : 0, "BoostingGroupBoostCount", new Object[0])));
-            textView2.setText(org.telegram.messenger.hd.M0(2131753353, null));
+            textView.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(tL_premium_boostsStatus != null ? tL_premium_boostsStatus.boosts : 0, "BoostingGroupBoostCount", new Object[0])));
+            textView2.setText(org.telegram.messenger.id.M0(2131753353, null));
             linearLayout.addView(textView);
             linearLayout.addView(textView2, c8.ha.k(3.0f, 0.0f, 0.0f, 0.0f, -2, -2));
             addView(linearLayout, c8.ha.e(-1, -2, 80));

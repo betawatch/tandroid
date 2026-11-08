@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.regex.Pattern;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l7 extends g7 {
     public final ArrayList n;
@@ -48,8 +48,8 @@ public final class l7 extends g7 {
         view.setTag(bVar);
         File file = bVar.a;
         long lastModified = file.lastModified();
-        String M0 = bVar.h == 5 ? org.telegram.messenger.hd.M0(2131753941, null) : file.getName();
-        String s5 = org.telegram.messenger.hd.s(lastModified / 1000, true);
+        String M0 = bVar.h == 5 ? org.telegram.messenger.id.M0(2131753941, null) : file.getName();
+        String s5 = org.telegram.messenger.id.s(lastModified / 1000, true);
         String name = file.getName();
         Pattern pattern = Utilities.a;
         int lastIndexOf = name.lastIndexOf(46);

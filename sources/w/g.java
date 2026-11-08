@@ -26,7 +26,7 @@ import java.util.Map;
 import java.util.Set;
 import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final ArrayMap a;
@@ -380,14 +380,14 @@ public abstract class g {
                 i7++;
                 Field field = (Field) obj2;
                 field.setAccessible(true);
-                String q10 = rf.b.q(field.getDeclaringClass().getName(), field.getName());
+                String r10 = rf.b.r(field.getDeclaringClass().getName(), field.getName());
                 try {
                     Object obj3 = field.get(obj);
                     if (obj3 != null) {
-                        bundle.putParcelable(q10, o(obj3, field.getName(), eVar));
+                        bundle.putParcelable(r10, o(obj3, field.getName(), eVar));
                     }
                 } catch (IllegalAccessException e10) {
-                    throw new f(rf.b.i("Field is not accessible: ", q10), eVar, e10);
+                    throw new f(rf.b.i("Field is not accessible: ", r10), eVar, e10);
                 }
             }
             return bundle;

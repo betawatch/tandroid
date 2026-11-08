@@ -9,12 +9,12 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l extends FrameLayout {
     public final org.telegram.ui.Components.i6 a;
@@ -54,7 +54,7 @@ public final class l extends FrameLayout {
     public final void b(long j3) {
         org.telegram.ui.Components.i6 i6Var = this.a;
         if (j3 == 0) {
-            i6Var.t(hd.M0(2131750335, null), true, true);
+            i6Var.t(id.M0(2131750337, null), true, true);
         } else {
             i6Var.t(j3 > 3600 ? org.telegram.messenger.g0.g0((int) j3, false, false) : org.telegram.messenger.g0.h0((int) j3, false), isAttachedToWindow(), true);
         }

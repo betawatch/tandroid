@@ -1,84 +1,48 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.ui.oa0;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class u7 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c8 b;
+public final class u7 extends View {
+    public final /* synthetic */ b8 a;
 
-    public /* synthetic */ u7(c8 c8Var, int i7) {
-        this.a = i7;
-        this.b = c8Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u7(b8 b8Var, Context context) {
+        super(context);
+        this.a = b8Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        p7 j3;
-        switch (this.a) {
-            case 0:
-                c8 c8Var = this.b;
-                c8Var.s0 = false;
-                c8Var.g0 = null;
-                c8Var.f0();
-                break;
-            case 1:
-                this.b.Q();
-                break;
-            case 2:
-                c8 c8Var2 = this.b;
-                b8 b8Var = c8Var2.g0;
-                if (b8Var != null && !c8Var2.m0) {
-                    if (!c8Var2.u0) {
-                        if (c8Var2.p0 && (j3 = c8Var2.j(b8Var)) != null) {
-                            c8Var2.S(j3);
-                            break;
-                        }
-                    } else {
-                        c8Var2.n0 = true;
-                        c8Var2.h0 = b8Var;
-                        c8Var2.B0 = Float.NaN;
-                        c8Var2.E0 = Float.NaN;
-                        c8Var2.C0 = 0.0f;
-                        c8Var2.L0 = false;
-                        c8Var2.D0 = b8Var.i.b;
-                        b8Var.q.a(0.0f);
-                        b8 b8Var2 = c8Var2.g0;
-                        a8 a8Var = b8Var2.l;
-                        a8Var.d = 260.0f;
-                        a8Var.e = 0.58f;
-                        a8Var.b = 1.0f;
-                        long j10 = c8Var2.N0 + 1;
-                        c8Var2.N0 = j10;
-                        b8Var2.I = j10;
-                        di.z2 z2Var = b8Var2.c;
-                        z2Var.u0 = true;
-                        z2Var.P0(false);
-                        c8Var2.performHapticFeedback(0);
-                        c8Var2.f0();
-                        break;
-                    }
-                }
-                break;
-            default:
-                c8 c8Var3 = this.b;
-                if (c8Var3.q0 && c8Var3.g0 != null) {
-                    c8Var3.q0 = false;
-                    c8Var3.p0 = true;
-                    c8Var3.removeCallbacks(c8Var3.B1);
-                    ((oa0) c8Var3.d.a).X();
-                    c8Var3.getParent().requestDisallowInterceptTouchEvent(true);
-                    c8Var3.performHapticFeedback(4);
-                    p7 j11 = c8Var3.j(c8Var3.g0);
-                    if (j11 != null) {
-                        j11.o();
-                        j11.animate().scaleX(0.94f).scaleY(0.94f).setDuration(100L).start();
-                    }
-                    c8Var3.f0();
-                    break;
-                }
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float pow;
+        Canvas canvas2;
+        b8 b8Var = this.a;
+        if (b8Var.Y0 <= 0.0f) {
+            return;
+        }
+        if (b8Var.X0) {
+            float f10 = b8Var.U0;
+            pow = com.google.android.recaptcha.internal.a.C(f10, 2.0f, 3.0f, f10 * f10);
+        } else {
+            pow = 1.0f - ((float) Math.pow(1.0f - b8Var.U0, 4.0d));
+        }
+        float f11 = pow;
+        boolean z9 = b8Var.X0;
+        float f12 = (z9 || f11 >= 1.0f) ? -1.0f : b8Var.Y0 * 1.2f * f11;
+        a8 a8Var = b8Var.S0;
+        if (a8Var == null || f11 >= 1.0f) {
+            canvas2 = canvas;
+        } else {
+            float f13 = z9 ? 1.0f - f11 : 1.0f;
+            canvas2 = canvas;
+            b8Var.s(canvas2, a8Var, f13, f12, true);
+        }
+        a8 a8Var2 = b8Var.T0;
+        if (a8Var2 != null) {
+            b8Var.s(canvas2, a8Var2, b8Var.X0 ? f11 : 1.0f, f12, false);
         }
     }
 }

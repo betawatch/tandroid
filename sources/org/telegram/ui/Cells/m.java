@@ -8,13 +8,13 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class m extends FrameLayout implements org.telegram.messenger.u9, org.telegram.ui.ActionBar.a6 {
     public final int a;
@@ -75,7 +75,7 @@ public final class m extends FrameLayout implements org.telegram.messenger.u9, o
         } else {
             lVar.f = 0;
             lVar.c.b();
-            lVar.a.t(hd.M0(2131750335, null), true, true);
+            lVar.a.t(id.M0(2131750337, null), true, true);
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         int size2 = this.e.size();
@@ -110,59 +110,59 @@ public final class m extends FrameLayout implements org.telegram.messenger.u9, o
         if (z9) {
             if (i11 == 1) {
                 str = null;
-                a03 = hd.M0(2131750400, null);
+                a03 = id.M0(2131750402, null);
             } else {
                 str = null;
-                a03 = hd.a0(null, null, 2131750399, Integer.valueOf(i11));
+                a03 = id.a0(null, null, 2131750401, Integer.valueOf(i11));
             }
             spannableStringBuilder.append((CharSequence) a03);
         } else {
             str = null;
-            spannableStringBuilder.append((CharSequence) (i11 == 1 ? hd.M0(2131750418, null) : hd.a0(null, null, 2131750417, Integer.valueOf(i11))));
+            spannableStringBuilder.append((CharSequence) (i11 == 1 ? id.M0(2131750420, null) : id.a0(null, null, 2131750419, Integer.valueOf(i11))));
         }
         j6Var.c(spannableStringBuilder, true, true);
         this.f = false;
         org.telegram.ui.Components.j6 j6Var2 = this.c;
         if (z9) {
-            j6Var2.setText(hd.M0(2131750412, str));
+            j6Var2.setText(id.M0(2131750414, str));
         } else if (z10) {
-            j6Var2.setText(hd.M0(2131750411, str));
+            j6Var2.setText(id.M0(2131750413, str));
             this.f = true;
         } else if (i11 > 1) {
-            j6Var2.setText(hd.M0(2131750407, str));
+            j6Var2.setText(id.M0(2131750409, str));
         } else {
             int i12 = ((org.telegram.messenger.s9) this.e.get(0)).i;
             if (i12 == 1) {
-                a02 = hd.M0(2131750410, str);
+                a02 = id.M0(2131750412, str);
             } else if (i12 == 2) {
-                a02 = hd.M0(2131750409, str);
+                a02 = id.M0(2131750411, str);
             } else if (i12 == 3) {
-                a02 = hd.M0(2131750408, str);
+                a02 = id.M0(2131750410, str);
             } else {
                 int i13 = i12 % 100;
                 if (i13 < 11 || i13 > 13) {
                     int i14 = i12 % 10;
                     if (i14 == 1) {
                         str2 = null;
-                        a02 = hd.a0(null, null, 2131750402, Integer.valueOf(i12));
+                        a02 = id.a0(null, null, 2131750404, Integer.valueOf(i12));
                     } else if (i14 == 2) {
                         str2 = null;
-                        a02 = hd.a0(null, null, 2131750405, Integer.valueOf(i12));
+                        a02 = id.a0(null, null, 2131750407, Integer.valueOf(i12));
                     } else if (i14 != 3) {
                         str2 = null;
-                        a02 = hd.a0(null, null, 2131750401, Integer.valueOf(i12));
+                        a02 = id.a0(null, null, 2131750403, Integer.valueOf(i12));
                     } else {
                         str2 = null;
-                        a02 = hd.a0(null, null, 2131750403, Integer.valueOf(i12));
+                        a02 = id.a0(null, null, 2131750405, Integer.valueOf(i12));
                     }
                 } else {
                     str2 = null;
-                    a02 = hd.a0(null, null, 2131750401, Integer.valueOf(i12));
+                    a02 = id.a0(null, null, 2131750403, Integer.valueOf(i12));
                 }
-                j6Var2.setText(hd.a0(str2, str2, 2131750406, a02));
+                j6Var2.setText(id.a0(str2, str2, 2131750408, a02));
             }
             str2 = str;
-            j6Var2.setText(hd.a0(str2, str2, 2131750406, a02));
+            j6Var2.setText(id.a0(str2, str2, 2131750408, a02));
         }
         updateColors();
     }

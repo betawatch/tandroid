@@ -13,7 +13,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class s50 extends oj0 {
     public ArrayList c = new ArrayList();
@@ -27,7 +27,7 @@ public final class s50 extends oj0 {
         this.n = x50Var;
         jg.z1 z1Var = new jg.z1(false);
         this.e = z1Var;
-        z1Var.a = new ax(this, 7);
+        z1Var.a = new bx(this, 7);
     }
 
     @Override // org.telegram.ui.Components.oj0
@@ -82,7 +82,7 @@ public final class s50 extends oj0 {
         View view = d1Var.a;
         CharSequence charSequence2 = null;
         if (i10 == 0) {
-            ((org.telegram.ui.Cells.g4) view).setText(org.telegram.messenger.hd.M0(2131749534, null));
+            ((org.telegram.ui.Cells.g4) view).setText(org.telegram.messenger.id.M0(2131749536, null));
             return;
         }
         if (i10 != 1) {
@@ -126,7 +126,7 @@ public final class s50 extends oj0 {
                         } else {
                             A1++;
                         }
-                        spannableStringBuilder.setSpan(new xz(org.telegram.ui.ActionBar.k6.q6, null), A1, length + A1, 33);
+                        spannableStringBuilder.setSpan(new yz(org.telegram.ui.ActionBar.k6.q6, null), A1, length + A1, 33);
                     }
                     charSequence = spannableStringBuilder;
                 } catch (Exception unused) {
@@ -181,8 +181,8 @@ public final class s50 extends oj0 {
             g4Var.b = textView;
             com.google.android.recaptcha.internal.a.q(textView, 1, 14.0f);
             org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.Oi, null);
-            textView.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 16);
-            g4Var.addView(textView, c8.ha.d(-1, -1.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
+            textView.setGravity((org.telegram.messenger.id.a0 ? 5 : 3) | 16);
+            g4Var.addView(textView, c8.ha.d(-1, -1.0f, (org.telegram.messenger.id.a0 ? 5 : 3) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
             view = g4Var;
         } else {
             view = new View(context);

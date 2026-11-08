@@ -19,7 +19,7 @@ import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class be extends View implements org.telegram.ui.ActionBar.a6 {
     public PorterDuffColorFilter a;
@@ -290,7 +290,7 @@ public final class be extends View implements org.telegram.ui.ActionBar.a6 {
                     r92.p = z13;
                     if (z13) {
                         r22 = null;
-                        t6 = org.telegram.messenger.hd.M0(2131745049, null);
+                        t6 = org.telegram.messenger.id.M0(2131745051, null);
                     } else {
                         r22 = null;
                         t6 = org.telegram.messenger.m5.t(r92.j);

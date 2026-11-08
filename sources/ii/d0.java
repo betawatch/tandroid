@@ -22,7 +22,7 @@ import jg.o0;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.m5;
@@ -42,13 +42,13 @@ import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.q41;
-import org.telegram.ui.Components.r00;
+import org.telegram.ui.Components.s00;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.an;
 import org.telegram.ui.yz;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class d0 extends v2 implements ls, te.b, p2 {
     public static final /* synthetic */ int M1 = 0;
@@ -76,8 +76,8 @@ public final class d0 extends v2 implements ls, te.b, p2 {
     public final z r1;
     public final y s1;
     public final y t1;
-    public final r00 u1;
-    public final r00 v1;
+    public final s00 u1;
+    public final s00 v1;
     public final yz w1;
     public final q41 x1;
     public final ec y1;
@@ -191,11 +191,11 @@ public final class d0 extends v2 implements ls, te.b, p2 {
             zVar.a.setScaleY(T1);
             zVar.a.setVisibility(a10 > 0.0f ? 0 : 8);
             float T12 = org.telegram.messenger.g0.T1(0.9f, 1.0f, f10);
-            r00 r00Var = this.u1;
-            r00Var.setAlpha(f10);
-            r00Var.setScaleX(T12);
-            r00Var.setScaleY(T12);
-            r00Var.setVisibility(f10 > 0.0f ? 0 : 8);
+            s00 s00Var = this.u1;
+            s00Var.setAlpha(f10);
+            s00Var.setScaleX(T12);
+            s00Var.setScaleY(T12);
+            s00Var.setVisibility(f10 > 0.0f ? 0 : 8);
             zVar.d.setAlpha(a10);
             zVar.d.setVisibility(a10 > 0.0f ? 0 : 8);
             this.o1.setAlpha(a10);
@@ -217,11 +217,11 @@ public final class d0 extends v2 implements ls, te.b, p2 {
             yVar.a.setScaleY(T13);
             yVar.a.setVisibility(a11 > 0.0f ? 0 : 8);
             float T14 = org.telegram.messenger.g0.T1(0.9f, 1.0f, f10);
-            r00 r00Var2 = this.v1;
-            r00Var2.setAlpha(f10);
-            r00Var2.setScaleX(T14);
-            r00Var2.setScaleY(T14);
-            r00Var2.setVisibility(f10 > 0.0f ? 0 : 8);
+            s00 s00Var2 = this.v1;
+            s00Var2.setAlpha(f10);
+            s00Var2.setScaleX(T14);
+            s00Var2.setScaleY(T14);
+            s00Var2.setVisibility(f10 > 0.0f ? 0 : 8);
             yVar.d.setAlpha(a11);
             yVar.d.setVisibility(a11 > 0.0f ? 0 : 8);
             if (!this.E1) {
@@ -278,9 +278,9 @@ public final class d0 extends v2 implements ls, te.b, p2 {
                 this.t1.d.e3.h1(1, this.L1.b);
                 aVar.a(false, true);
                 this.q0 = true;
-                r00 r00Var = this.v1;
-                org.telegram.messenger.g0.v1(r00Var.r);
-                r00Var.r.clearFocus();
+                s00 s00Var = this.v1;
+                org.telegram.messenger.g0.v1(s00Var.r);
+                s00Var.r.clearFocus();
                 return;
             }
         }
@@ -366,26 +366,26 @@ public final class d0 extends v2 implements ls, te.b, p2 {
         int i14 = 5;
         this.y1 = new ec(i14, context, this);
         this.z1 = new ec(i14, context, this);
-        r00 r00Var = new r00(context, this.I0);
-        this.u1 = r00Var;
-        r00Var.setCloseButtonVisible(true);
-        r00Var.y = true;
-        r00Var.updateColors();
-        String M0 = hd.M0(2131745837, null);
-        ah.i iVar = r00Var.r;
+        s00 s00Var = new s00(context, this.I0);
+        this.u1 = s00Var;
+        s00Var.setCloseButtonVisible(true);
+        s00Var.y = true;
+        s00Var.updateColors();
+        String M0 = id.M0(2131745839, null);
+        ah.i iVar = s00Var.r;
         iVar.setHint(M0);
         iVar.addTextChangedListener(new w(this, i11));
-        r00Var.setVisibility(8);
-        r00 r00Var2 = new r00(context, this.I0);
-        this.v1 = r00Var2;
-        r00Var2.setCloseButtonVisible(true);
-        r00Var2.y = true;
-        r00Var2.updateColors();
-        String M02 = hd.M0(2131745837, null);
-        ah.i iVar2 = r00Var2.r;
+        s00Var.setVisibility(8);
+        s00 s00Var2 = new s00(context, this.I0);
+        this.v1 = s00Var2;
+        s00Var2.setCloseButtonVisible(true);
+        s00Var2.y = true;
+        s00Var2.updateColors();
+        String M02 = id.M0(2131745839, null);
+        ah.i iVar2 = s00Var2.r;
         iVar2.setHint(M02);
         iVar2.addTextChangedListener(new w(this, i7));
-        r00Var2.setVisibility(8);
+        s00Var2.setVisibility(8);
         q41 q41Var = new q41(context, this.a, 0, false, new t(this, objArr5 == true ? 1 : 0), new u(this, objArr4 == true ? 1 : 0), null, this.I0);
         this.x1 = q41Var;
         q41Var.j(new ai.b(this, 17));
@@ -415,17 +415,17 @@ public final class d0 extends v2 implements ls, te.b, p2 {
         o0 o0Var = new o0(R.drawable.search_users_filled, 4, m5.u(chat));
         o0Var.f = this.m1;
         o0Var.h = false;
-        ArrayList arrayList2 = r00Var.F;
+        ArrayList arrayList2 = s00Var.F;
         arrayList2.add(o0Var);
-        r00Var.I = arrayList2.size() - 1;
-        r00Var.e();
+        s00Var.I = arrayList2.size() - 1;
+        s00Var.e();
         v0(k6.w0(i12, this.I0));
         this.s1 = new y(this, context, 1);
         this.r1 = new z(this, context);
         this.t1 = new y(this, context, 0);
         this.k1.setAdapter(new x(this, objArr2 == true ? 1 : 0));
-        r00Var.setCloseButtonOnClickListener(new v(this, objArr == true ? 1 : 0));
-        r00Var2.setCloseButtonOnClickListener(new v(this, i7));
+        s00Var.setCloseButtonOnClickListener(new v(this, objArr == true ? 1 : 0));
+        s00Var2.setCloseButtonOnClickListener(new v(this, i7));
         l0Var.d();
         qp.s1(this.a).V2(0, j3, true);
         cc.a((FrameLayout) this.b, new r7(i14));

@@ -22,10 +22,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import p4.r0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class t implements q {
-    public static final r0 d = new r0(16);
+    public static final r0 d = new r0(17);
     public final UUID a;
     public final MediaDrm b;
     public int c;
@@ -169,7 +169,7 @@ public final class t implements q {
                         e2.q qVar4 = (e2.q) list.get(i12);
                         byte[] bArr4 = qVar4.e;
                         bArr4.getClass();
-                        if (Objects.equals(qVar4.d, qVar3.d) && Objects.equals(qVar4.c, qVar3.c) && z3.p.i(bArr4) != null) {
+                        if (Objects.equals(qVar4.d, qVar3.d) && Objects.equals(qVar4.c, qVar3.c) && z3.q.i(bArr4) != null) {
                             i11 += bArr4.length;
                         }
                     }
@@ -193,7 +193,7 @@ public final class t implements q {
                     e2.q qVar5 = (e2.q) list.get(i15);
                     byte[] bArr7 = qVar5.e;
                     bArr7.getClass();
-                    m6.n i16 = z3.p.i(bArr7);
+                    m6.n i16 = z3.q.i(bArr7);
                     if ((i16 == null ? -1 : i16.a) == 1) {
                         qVar = qVar5;
                         break;
@@ -207,7 +207,7 @@ public final class t implements q {
             bArr8.getClass();
             UUID uuid2 = e2.l.f;
             if (uuid2.equals(uuid)) {
-                byte[] j3 = z3.p.j(uuid, bArr8);
+                byte[] j3 = z3.q.j(uuid, bArr8);
                 if (j3 != null) {
                     bArr8 = j3;
                 }
@@ -238,14 +238,14 @@ public final class t implements q {
                 } else {
                     h2.a.g("FrameworkMediaDrm", "Unexpected record count or type. Skipping LA_URL workaround.");
                 }
-                bArr8 = z3.p.a(uuid2, null, bArr8);
+                bArr8 = z3.q.a(uuid2, null, bArr8);
             }
             int i18 = Build.VERSION.SDK_INT;
             if (i18 < 27 && Objects.equals(uuid, e2.l.d)) {
                 z9 = true;
             }
-            if (z9 && (i10 = z3.p.i(bArr8)) != null) {
-                bArr8 = z3.p.a(e2.l.c, (UUID[]) i10.d, (byte[]) i10.c);
+            if (z9 && (i10 = z3.q.i(bArr8)) != null) {
+                bArr8 = z3.q.a(e2.l.c, (UUID[]) i10.d, (byte[]) i10.c);
             }
             if (uuid2.equals(uuid) && "Amazon".equals(Build.MANUFACTURER)) {
                 String str4 = Build.MODEL;
@@ -255,7 +255,7 @@ public final class t implements q {
                         }
                     }
                 }
-                bArr3 = z3.p.j(uuid, bArr8);
+                bArr3 = z3.q.j(uuid, bArr8);
             }
             bArr3 = bArr8;
             String str5 = qVar.d;

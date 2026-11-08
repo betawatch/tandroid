@@ -4,7 +4,7 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.kp;
 import org.telegram.messenger.p10;
@@ -15,7 +15,7 @@ import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.li;
 import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r6 implements v10 {
     public final /* synthetic */ int a;
@@ -39,34 +39,34 @@ public final /* synthetic */ class r6 implements v10 {
                 int L = org.telegram.messenger.g0.L(64.0f);
                 arrayList.add(x31.D(org.telegram.messenger.g0.L(64.0f)));
                 if (w6Var.R1 || w6Var.Z1) {
-                    L += w6Var.d1(true, arrayList, hd.M0(2131753905, null), w6Var.T1, false, false, -1);
+                    L += w6Var.d1(true, arrayList, id.M0(2131753905, null), w6Var.T1, false, false, -1);
                 }
                 if (!w6Var.R1) {
                     if (TextUtils.isEmpty(w6Var.j2) && !w6Var.Z1) {
                         l41Var.V();
-                        x31 c10 = x31.c(1, R.drawable.msg2_folder, hd.M0(2131744610, null));
+                        x31 c10 = x31.c(1, R.drawable.msg2_folder, id.M0(2131744612, null));
                         c10.q = true;
                         arrayList.add(c10);
                         l41Var.U();
                         L += org.telegram.messenger.g0.L(50.0f);
                     }
                     if (!w6Var.Z1 && kpVar != null) {
-                        L += w6Var.d1(true, arrayList, hd.M0(2131753904, null), kpVar.c, kpVar.f, !kpVar.e, 2);
+                        L += w6Var.d1(true, arrayList, id.M0(2131753904, null), kpVar.c, kpVar.f, !kpVar.e, 2);
                     }
-                    L = L + w6Var.d1(false, arrayList, hd.M0(2131753907, null), w6Var.U1, w6Var.n2 || w6Var.m2, w6Var.l2, 3) + w6Var.d1(false, arrayList, hd.M0(2131753906, null), w6Var.V1, w6Var.u2 || w6Var.t2, w6Var.s2, 4);
+                    L = L + w6Var.d1(false, arrayList, id.M0(2131753907, null), w6Var.U1, w6Var.n2 || w6Var.m2, w6Var.l2, 3) + w6Var.d1(false, arrayList, id.M0(2131753906, null), w6Var.V1, w6Var.u2 || w6Var.t2, w6Var.s2, 4);
                 }
                 if (arrayList.size() <= ((w6Var.R1 || !TextUtils.isEmpty(w6Var.j2) || w6Var.Z1) ? 1 : 2)) {
                     if (TextUtils.isEmpty(w6Var.j2)) {
-                        String M0 = hd.M0(2131748242, null);
-                        String M02 = hd.M0(2131748243, null);
+                        String M0 = id.M0(2131748244, null);
+                        String M02 = id.M0(2131748245, null);
                         int i7 = li.b;
                         x31 K = x31.K(li.class);
                         K.l = M0;
                         K.m = M02;
                         arrayList.add(K);
                     } else {
-                        String M03 = hd.M0(2131748242, null);
-                        SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(hd.a0(null, null, w6Var.j2.length() >= 3 ? 2131748240 : 2131748241, w6Var.j2));
+                        String M03 = id.M0(2131748244, null);
+                        SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(id.a0(null, null, w6Var.j2.length() >= 3 ? 2131748242 : 2131748243, w6Var.j2));
                         int i10 = li.b;
                         x31 K2 = x31.K(li.class);
                         K2.l = M03;

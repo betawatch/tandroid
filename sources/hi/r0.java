@@ -19,7 +19,7 @@ import org.json.JSONObject;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t10;
@@ -29,7 +29,7 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.qn0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class r0 {
     public static final HashMap g = new HashMap();
@@ -174,7 +174,7 @@ public final class r0 {
         TLRPC.User a22 = qp.s1(i10).a2(Long.valueOf(this.c));
         final int i11 = 0;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, f11, null);
-        SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(hd.a0(null, null, 2131753057, t10.p(a22), t10.p(a22)));
+        SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(id.a0(null, null, 2131753057, t10.p(a22), t10.p(a22)));
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.T = X2;
         q0 q0Var = new q0(this.a, p10.i(i10).f(), a22);
@@ -185,7 +185,7 @@ public final class r0 {
         u1Var.d0 = -1;
         alertDialog$Builder.n(i12, null);
         if (a() || (f10 = f()) == null || (f10.shouldShowRequestPermissionRationale("android.permission.ACCESS_COARSE_LOCATION") && f10.shouldShowRequestPermissionRationale("android.permission.ACCESS_FINE_LOCATION"))) {
-            alertDialog$Builder.k(hd.M0(2131753059, null), new org.telegram.ui.ActionBar.r1(this) { // from class: hi.n0
+            alertDialog$Builder.k(id.M0(2131753059, null), new org.telegram.ui.ActionBar.r1(this) { // from class: hi.n0
                 public final /* synthetic */ r0 b;
 
                 {
@@ -237,9 +237,9 @@ public final class r0 {
                 }
             });
         } else {
-            alertDialog$Builder.k(hd.M0(2131753053, null), new a3.h(f11, zArr, nVar, 11));
+            alertDialog$Builder.k(id.M0(2131753053, null), new a3.h(f11, zArr, nVar, 11));
         }
-        alertDialog$Builder.h(hd.M0(2131753058, null), new org.telegram.ui.ActionBar.r1(this) { // from class: hi.n0
+        alertDialog$Builder.h(id.M0(2131753058, null), new org.telegram.ui.ActionBar.r1(this) { // from class: hi.n0
             public final /* synthetic */ r0 b;
 
             {
@@ -340,9 +340,9 @@ public final class r0 {
                 int i10 = k6.L5;
                 alertDialog$Builder.m(R.raw.permission_request_location, 72, k6.x0(null, i10, false), null);
                 alertDialog$Builder.n(i10, null);
-                alertDialog$Builder.a.T = hd.M0(2131749529, null);
-                alertDialog$Builder.k(hd.M0(2131751161, null), new qb(context, i7));
-                alertDialog$Builder.h(hd.M0(2131752589, null), null);
+                alertDialog$Builder.a.T = id.M0(2131749531, null);
+                alertDialog$Builder.k(id.M0(2131751161, null), new qb(context, i7));
+                alertDialog$Builder.h(id.M0(2131752589, null), null);
                 alertDialog$Builder.p();
             } catch (Exception e12) {
                 a8.g(e12, true);
@@ -381,7 +381,7 @@ public final class r0 {
             TLRPC.User a22 = qp.s1(i10).a2(Long.valueOf(this.c));
             final int i11 = 0;
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, f(), null);
-            SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(hd.a0(null, null, 2131753057, t10.p(a22), t10.p(a22)));
+            SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(id.a0(null, null, 2131753057, t10.p(a22), t10.p(a22)));
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.T = X2;
             q0 q0Var = new q0(this.a, p10.i(i10).f(), a22);
@@ -393,7 +393,7 @@ public final class r0 {
             alertDialog$Builder.n(i12, null);
             Activity f11 = f();
             if (f11 == null || (f11.shouldShowRequestPermissionRationale("android.permission.ACCESS_COARSE_LOCATION") && f11.shouldShowRequestPermissionRationale("android.permission.ACCESS_FINE_LOCATION"))) {
-                alertDialog$Builder.k(hd.M0(2131753059, null), new org.telegram.ui.ActionBar.r1(this) { // from class: hi.m0
+                alertDialog$Builder.k(id.M0(2131753059, null), new org.telegram.ui.ActionBar.r1(this) { // from class: hi.m0
                     public final /* synthetic */ r0 b;
 
                     {
@@ -437,9 +437,9 @@ public final class r0 {
                     }
                 });
             } else {
-                alertDialog$Builder.k(hd.M0(2131753053, null), new l0(f10, i11));
+                alertDialog$Builder.k(id.M0(2131753053, null), new l0(f10, i11));
             }
-            alertDialog$Builder.h(hd.M0(2131753058, null), new org.telegram.ui.ActionBar.r1(this) { // from class: hi.m0
+            alertDialog$Builder.h(id.M0(2131753058, null), new org.telegram.ui.ActionBar.r1(this) { // from class: hi.m0
                 public final /* synthetic */ r0 b;
 
                 {

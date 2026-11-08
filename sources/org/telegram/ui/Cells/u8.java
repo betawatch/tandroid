@@ -6,10 +6,10 @@ import android.graphics.Paint;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class u8 extends FrameLayout {
     public static Paint d;
@@ -30,9 +30,9 @@ public final class u8 extends FrameLayout {
         textView.setLines(1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
-        textView.setGravity((hd.a0 ? 5 : 3) | 16);
+        textView.setGravity((id.a0 ? 5 : 3) | 16);
         textView.setPadding(0, 0, 0, org.telegram.messenger.g0.L(3.0f));
-        boolean z9 = hd.a0;
+        boolean z9 = id.a0;
         addView(textView, c8.ha.d(-1, -1.0f, (z9 ? 5 : 3) | 48, z9 ? 21 : 57, 0.0f, z9 ? 57 : 21, 0.0f));
     }
 
@@ -47,7 +47,7 @@ public final class u8 extends FrameLayout {
         if (i7 != 0) {
             d.setColor(i7);
             d.setAlpha((int) (this.c * 255.0f));
-            canvas.drawCircle(!hd.a0 ? org.telegram.messenger.g0.L(28.0f) : getMeasuredWidth() - org.telegram.messenger.g0.L(28.0f), getMeasuredHeight() / 2, org.telegram.messenger.g0.L(10.0f), d);
+            canvas.drawCircle(!id.a0 ? org.telegram.messenger.g0.L(28.0f) : getMeasuredWidth() - org.telegram.messenger.g0.L(28.0f), getMeasuredHeight() / 2, org.telegram.messenger.g0.L(10.0f), d);
         }
     }
 

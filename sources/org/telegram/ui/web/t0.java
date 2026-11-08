@@ -6,7 +6,7 @@ import android.webkit.URLUtil;
 import android.widget.TextView;
 import java.util.List;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.z5;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -14,7 +14,7 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.m3;
 import org.telegram.ui.ActionBar.r6;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class t0 implements DownloadListener {
     public final /* synthetic */ u0 a;
@@ -60,10 +60,10 @@ public final class t0 implements DownloadListener {
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(u0Var.getContext());
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-            u1Var.R = hd.M0(2131742931, null);
-            u1Var.T = org.telegram.messenger.g0.X2(j3 > 0 ? hd.a0(null, null, 2131742932, U, org.telegram.messenger.g0.i0(j3, false, false)) : hd.a0(null, null, 2131742933, U));
-            alertDialog$Builder.k(hd.M0(2131742930, null), new m3(xVar, 5));
-            alertDialog$Builder.h(hd.M0(2131752589, null), null);
+            u1Var.R = id.M0(2131742933, null);
+            u1Var.T = org.telegram.messenger.g0.X2(j3 > 0 ? id.a0(null, null, 2131742934, U, org.telegram.messenger.g0.i0(j3, false, false)) : id.a0(null, null, 2131742935, U));
+            alertDialog$Builder.k(id.M0(2131742932, null), new m3(xVar, 5));
+            alertDialog$Builder.h(id.M0(2131752589, null), null);
             TextView textView = (TextView) alertDialog$Builder.p().d(-2);
             if (textView != null) {
                 r6.V(textView, k6.q7, null);

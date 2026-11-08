@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.DialogInterface;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k4 implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -80,12 +80,12 @@ public final /* synthetic */ class k4 implements DialogInterface.OnClickListener
                         break;
                     } else {
                         bk0Var.x = "female";
-                        bk0Var.Y[4].setText(org.telegram.messenger.hd.M0(2131747568, null));
+                        bk0Var.Y[4].setText(org.telegram.messenger.id.M0(2131747570, null));
                         break;
                     }
                 } else {
                     bk0Var.x = "male";
-                    bk0Var.Y[4].setText(org.telegram.messenger.hd.M0(2131747507, null));
+                    bk0Var.Y[4].setText(org.telegram.messenger.id.M0(2131747509, null));
                     break;
                 }
         }

@@ -8,12 +8,12 @@ import c8.ka;
 import h6.m;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Components.cq;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout implements te.b {
     public static final int[] s = {R.drawable.msg_input_attach2, R.drawable.pagedown, R.drawable.mentionbutton, R.drawable.reactionbutton, R.drawable.menu_poll_notify, R.drawable.pagedown, R.drawable.pagedown};
@@ -29,7 +29,7 @@ public final class h extends FrameLayout implements te.b {
 
     public h(Context context, f6 f6Var, gh.b bVar, dh.c cVar) {
         super(context);
-        this.a = new String[]{hd.M0(2131753953, null), hd.M0(2131754815, null), hd.M0(2131754842, null), hd.M0(2131754790, null), hd.M0(2131754804, null), hd.M0(2131754778, null), hd.M0(2131754779, null)};
+        this.a = new String[]{id.M0(2131753953, null), id.M0(2131754815, null), id.M0(2131754842, null), id.M0(2131754790, null), id.M0(2131754804, null), id.M0(2131754778, null), id.M0(2131754779, null)};
         this.e = new m[7];
         this.f = new bg.f[7];
         this.r = 83;

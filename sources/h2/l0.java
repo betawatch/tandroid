@@ -3,8 +3,9 @@ package h2;
 import java.util.concurrent.ThreadFactory;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.Wallet.WalletEngine2;
+import org.telegram.utils.twidget.WidgetEngineService;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements ThreadFactory {
     public final /* synthetic */ int a;
@@ -33,14 +34,19 @@ public final /* synthetic */ class l0 implements ThreadFactory {
                 lambda$new$0 = WalletEngine2.lambda$new$0(runnable);
                 return lambda$new$0;
             case 6:
-                Thread thread2 = new Thread(new org.telegram.utils.twidget.l(runnable, 3), "widget-sandbox-io");
+                String str = WidgetEngineService.b;
+                Thread thread2 = new Thread(runnable, "widget-engine-destroy");
                 thread2.setDaemon(true);
                 return thread2;
             case 7:
-                return new Thread(runnable, "AudioRecorderFiles");
+                Thread thread3 = new Thread(new org.telegram.utils.twidget.j0(runnable, 4), "widget-sandbox-io");
+                thread3.setDaemon(true);
+                return thread3;
             case 8:
-                return new Thread(runnable, "AudioRecorderOutput");
+                return new Thread(runnable, "AudioRecorderFiles");
             case 9:
+                return new Thread(runnable, "AudioRecorderOutput");
+            case 10:
                 return new Thread(runnable, "RoundVideoFiles");
             default:
                 return new Thread(runnable, "RoundVideoOutput");

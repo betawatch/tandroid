@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class el implements org.telegram.ui.Cells.q0 {
     public final /* synthetic */ jl a;
@@ -277,30 +277,30 @@ public final class el implements org.telegram.ui.Cells.q0 {
                 if (wallPaper2.pattern || wallPaper2.document == null) {
                     String str2 = wallPaper2.slug;
                     TLRPC.WallPaperSettings wallPaperSettings = wallPaper2.settings;
-                    oc1 oc1Var = new oc1(str2, wallPaperSettings.background_color, wallPaperSettings.second_background_color, wallPaperSettings.third_background_color, wallPaperSettings.fourth_background_color, org.telegram.messenger.g0.s1(wallPaperSettings.rotation, false), r3.intensity / 100.0f, wallPaper2.settings.motion, null);
-                    wallPaper = oc1Var;
+                    pc1 pc1Var = new pc1(str2, wallPaperSettings.background_color, wallPaperSettings.second_background_color, wallPaperSettings.third_background_color, wallPaperSettings.fourth_background_color, org.telegram.messenger.g0.s1(wallPaperSettings.rotation, false), r3.intensity / 100.0f, wallPaper2.settings.motion, null);
+                    wallPaper = pc1Var;
                     if (wallPaper2 instanceof TLRPC.TL_wallPaper) {
-                        oc1Var.g = (TLRPC.TL_wallPaper) wallPaper2;
-                        wallPaper = oc1Var;
+                        pc1Var.g = (TLRPC.TL_wallPaper) wallPaper2;
+                        wallPaper = pc1Var;
                     }
                 } else {
                     wallPaper = wallPaper2;
                 }
                 boolean q10 = org.telegram.ui.ActionBar.k6.I.q();
-                e71 e71Var = new e71(wallPaper, anVar, q10);
+                f71 f71Var = new f71(wallPaper, anVar, q10);
                 TLRPC.WallPaperSettings wallPaperSettings2 = wallPaper2.settings;
                 if (wallPaperSettings2 != null) {
                     boolean z9 = wallPaperSettings2.blur;
                     boolean z10 = wallPaperSettings2.motion;
-                    e71Var.G1 = z9;
-                    e71Var.F1 = z10;
-                    e71Var.o1 = wallPaperSettings2.intensity / 100.0f;
+                    f71Var.G1 = z9;
+                    f71Var.F1 = z10;
+                    f71Var.o1 = wallPaperSettings2.intensity / 100.0f;
                 }
-                e71Var.r0 = messageObject;
-                e71Var.h1(org.telegram.messenger.ij.B0(messageObject.k));
-                e71Var.a.a = anVar.xa;
-                e71Var.q1 = new f71(anVar, q10);
-                anVar.presentFragment(e71Var);
+                f71Var.r0 = messageObject;
+                f71Var.h1(org.telegram.messenger.ij.B0(messageObject.k));
+                f71Var.a.a = anVar.xa;
+                f71Var.q1 = new g71(anVar, q10);
+                anVar.presentFragment(f71Var);
                 return;
             }
             return;
@@ -324,7 +324,7 @@ public final class el implements org.telegram.ui.Cells.q0 {
             if (videoSize != null) {
                 PhotoViewer.p1().b2(videoSize.location, org.telegram.messenger.hc.j(videoSize, messageObject.k.action.photo), anVar.Za);
                 if (t0Var.getMessageObject().D == 21) {
-                    PhotoViewer.p1().L2(org.telegram.messenger.hd.M0(2131744373, null));
+                    PhotoViewer.p1().L2(org.telegram.messenger.id.M0(2131744375, null));
                     return;
                 }
                 return;
@@ -335,7 +335,7 @@ public final class el implements org.telegram.ui.Cells.q0 {
             }
             PhotoViewer.p1().b2(w10.location, org.telegram.messenger.hc.i(w10, messageObject.k.action.photo), anVar.Za);
             if (t0Var.getMessageObject().D == 21) {
-                PhotoViewer.p1().L2(org.telegram.messenger.hd.M0(2131744376, null));
+                PhotoViewer.p1().L2(org.telegram.messenger.id.M0(2131744378, null));
                 return;
             }
             return;
@@ -376,9 +376,9 @@ public final class el implements org.telegram.ui.Cells.q0 {
         arrayList3.add(gfVar);
         PhotoViewer.p1().e2(arrayList3, 0, 1, false, new dl(this, messageObject, gfVar), null);
         if (gfVar.b) {
-            PhotoViewer.p1().L2(org.telegram.messenger.hd.M0(2131744373, null));
+            PhotoViewer.p1().L2(org.telegram.messenger.id.M0(2131744375, null));
         } else {
-            PhotoViewer.p1().L2(org.telegram.messenger.hd.M0(2131744376, null));
+            PhotoViewer.p1().L2(org.telegram.messenger.id.M0(2131744378, null));
         }
         org.telegram.ui.Components.h30 h30Var = new org.telegram.ui.Components.h30(1, anVar.getUserConfig().f());
         h30Var.e = videoSize != null;
@@ -403,12 +403,12 @@ public final class el implements org.telegram.ui.Cells.q0 {
         org.telegram.messenger.ij messageObject = t0Var.getMessageObject();
         if (messageObject != null && messageObject.D == 22 && !t0Var.getMessageObject().Q3() && t0Var.getMessageObject().Z4() && t0Var.getMessageObject().T2()) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, anVar.getParentActivity(), anVar.getResourceProvider());
-            String M0 = org.telegram.messenger.hd.M0(2131746283, null);
+            String M0 = org.telegram.messenger.id.M0(2131746285, null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.R = M0;
-            u1Var.T = org.telegram.messenger.hd.M0(2131746284, null);
-            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131746320, null), new w0(this, 23));
-            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+            u1Var.T = org.telegram.messenger.id.M0(2131746286, null);
+            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131746322, null), new w0(this, 23));
+            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
             anVar.showDialog(u1Var);
             TextView textView = (TextView) u1Var.d(-1);
             if (textView != null) {

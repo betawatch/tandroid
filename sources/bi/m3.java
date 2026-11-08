@@ -27,7 +27,7 @@ import org.telegram.ui.an;
 import org.telegram.ui.ge;
 import org.telegram.ui.vy;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m3 implements Runnable {
     public final /* synthetic */ int a;
@@ -220,7 +220,7 @@ public final /* synthetic */ class m3 implements Runnable {
                         f2Var.getMessagesController().Y3(tL_chatlists_exportedInvites.users, false);
                         new vy(f2Var, voVar, tL_chatlists_exportedInvites.invites).show();
                     } else if (tL_error2 == null || !"FILTER_ID_INVALID".equals(tL_error2.text) || voVar.e()) {
-                        org.telegram.messenger.k5.p(null, 2131743880, org.telegram.ui.Components.hc.a0(f2Var), null);
+                        org.telegram.messenger.k5.p(null, 2131743882, org.telegram.ui.Components.hc.a0(f2Var), null);
                     } else {
                         new vy(f2Var, voVar, null).show();
                     }

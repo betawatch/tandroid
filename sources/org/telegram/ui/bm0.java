@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class bm0 extends FrameLayout {
     public static final /* synthetic */ int q0 = 0;
@@ -24,7 +24,7 @@ public final class bm0 extends FrameLayout {
     public boolean G;
     public boolean H;
     public TL_stars.TL_starGiftUnique I;
-    public zh.d3 J;
+    public zh.b3 J;
     public TL_stars.StarGift K;
     public final ArrayList L;
     public final HashMap M;
@@ -130,10 +130,10 @@ public final class bm0 extends FrameLayout {
         addView(sl0Var, c8.ha.c(-1.0f, -1));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("l");
         spannableStringBuilder.setSpan(new org.telegram.ui.Components.wp(R.drawable.msg_mini_lock2, 0), 0, 1, 33);
-        String M0 = org.telegram.messenger.hd.M0(hm0Var.a ? 2131752435 : 2131743756, null);
+        String M0 = org.telegram.messenger.id.M0(hm0Var.a ? 2131752435 : 2131743758, null);
         this.O = M0;
         this.N = new SpannableStringBuilder(spannableStringBuilder).append((CharSequence) " ").append((CharSequence) M0);
-        this.P = org.telegram.messenger.hd.M0(2131743755, null);
+        this.P = org.telegram.messenger.id.M0(2131743757, null);
         f(false);
         v4.k kVar = new v4.k();
         kVar.n(350L);
@@ -306,7 +306,7 @@ public final class bm0 extends FrameLayout {
         sl0 sl0Var = this.b;
         if (sl0Var != null) {
             for (int i7 = 0; i7 < sl0Var.getChildCount(); i7++) {
-                if (sl0Var.getChildAt(i7) instanceof org.telegram.ui.Components.lz) {
+                if (sl0Var.getChildAt(i7) instanceof org.telegram.ui.Components.mz) {
                     return true;
                 }
             }
@@ -374,10 +374,10 @@ public final class bm0 extends FrameLayout {
         if (tL_starGiftUnique != null) {
             cg.a resellAmount = tL_starGiftUnique.getResellAmount(cg.b.a);
             if (tL_starGiftUnique.resale_ton_only) {
-                nVar.b = bi.dd.s1(bi.dd.V0(org.telegram.messenger.hd.a0(null, null, 2131746147, tL_starGiftUnique.getResellAmount(cg.b.b).d()), true), true);
-                nVar.c = bi.dd.T0(org.telegram.messenger.hd.H(',', "ResellGiftBuyEq", (int) resellAmount.a()));
+                nVar.b = bi.dd.s1(bi.dd.V0(org.telegram.messenger.id.a0(null, null, 2131746149, tL_starGiftUnique.getResellAmount(cg.b.b).d()), true), true);
+                nVar.c = bi.dd.T0(org.telegram.messenger.id.H(',', "ResellGiftBuyEq", (int) resellAmount.a()));
             } else {
-                nVar.b = bi.dd.T0(org.telegram.messenger.hd.H(',', "ResellGiftBuy", (int) resellAmount.a()));
+                nVar.b = bi.dd.T0(org.telegram.messenger.id.H(',', "ResellGiftBuy", (int) resellAmount.a()));
                 nVar.c = null;
             }
         } else {
@@ -546,10 +546,10 @@ public final class bm0 extends FrameLayout {
                 ql0 ql0Var = (ql0) childAt;
                 TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible3 = this.r;
                 ql0Var.b((tL_emojiStatusCollectible3 != null && tL_emojiStatusCollectible3.collectible_id == ql0Var.getGiftId()) || ((tL_peerColorCollectible2 = this.s) != null && tL_peerColorCollectible2.collectible_id == ql0Var.getGiftId()), true);
-            } else if (childAt instanceof zh.z0) {
-                zh.z0 z0Var = (zh.z0) childAt;
+            } else if (childAt instanceof zh.y0) {
+                zh.y0 y0Var = (zh.y0) childAt;
                 TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible4 = this.r;
-                z0Var.f((tL_emojiStatusCollectible4 != null && tL_emojiStatusCollectible4.collectible_id == z0Var.getGiftId()) || ((tL_peerColorCollectible = this.s) != null && tL_peerColorCollectible.collectible_id == z0Var.getGiftId()), true);
+                y0Var.f((tL_emojiStatusCollectible4 != null && tL_emojiStatusCollectible4.collectible_id == y0Var.getGiftId()) || ((tL_peerColorCollectible = this.s) != null && tL_peerColorCollectible.collectible_id == y0Var.getGiftId()), true);
             }
             i13++;
         }
@@ -641,8 +641,8 @@ public final class bm0 extends FrameLayout {
                 this.f0 = size2;
                 int i21 = this.k0;
                 this.c0 = i21;
-                zh.d3 d3Var = this.J;
-                if (d3Var.t || !d3Var.u) {
+                zh.b3 b3Var = this.J;
+                if (b3Var.t || !b3Var.u) {
                     this.d0 = i21;
                     int i22 = 3 - (size2 % 3);
                     if (size2 <= 0) {

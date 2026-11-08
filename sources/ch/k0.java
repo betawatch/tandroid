@@ -15,7 +15,7 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.qp;
-import org.telegram.messenger.rc;
+import org.telegram.messenger.sc;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
@@ -31,7 +31,7 @@ import org.telegram.ui.Components.w8;
 import org.telegram.ui.a11;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class k0 {
     public static k0 B;
@@ -373,7 +373,7 @@ public final class k0 {
             if (tL_availableReaction == null) {
                 int i27 = 2;
                 if (i10 != 2) {
-                    if ((i10 == r15 && rc.e(4112)) || i10 == 0) {
+                    if ((i10 == r15 && sc.e(4112)) || i10 == 0) {
                         TLRPC.Document document = i10 == r15 ? tL_availableReaction.around_animation : tL_availableReaction.effect_animation;
                         String a10 = i10 == r15 ? a() : com.google.android.recaptcha.internal.a.j(i25, "_", i25);
                         ImageReceiver imageReceiver3 = i0Var.getImageReceiver();

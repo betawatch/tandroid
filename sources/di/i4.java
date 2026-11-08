@@ -63,7 +63,7 @@ import org.telegram.messenger.dt;
 import org.telegram.messenger.gc;
 import org.telegram.messenger.gz;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.ls;
@@ -96,7 +96,7 @@ import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.y20;
-import org.telegram.ui.Components.ys;
+import org.telegram.ui.Components.zs;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.an;
@@ -106,7 +106,7 @@ import org.telegram.ui.ix;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class i4 extends rt0 implements ls {
     public org.telegram.ui.Components.i6 A0;
@@ -417,7 +417,7 @@ public abstract class i4 extends rt0 implements ls {
         int L = org.telegram.messenger.g0.L(8.0f);
         imageView.setPadding(L, L, L, L);
         imageView.setOnClickListener(new y1(this, 11));
-        imageView.setContentDescription(hd.M0(2131745460, null));
+        imageView.setContentDescription(id.M0(2131745462, null));
         ka.a(imageView);
         ImageView imageView2 = new ImageView(context);
         imageView2.setImageDrawable(f4Var.n);
@@ -494,7 +494,7 @@ public abstract class i4 extends rt0 implements ls {
                             if (!p9.C1) {
                                 qp.e1().edit().putInt("taptostorysoundhint", 3).apply();
                             }
-                            i4Var.h0.setContentDescription(hd.M0(!p9.C1 ? 2131748313 : 2131743850, null));
+                            i4Var.h0.setContentDescription(id.M0(!p9.C1 ? 2131748315 : 2131743852, null));
                             break;
                         }
                 }
@@ -520,14 +520,14 @@ public abstract class i4 extends rt0 implements ls {
         imageView3.setImageDrawable(f4Var.q);
         imageView3.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f));
         imageView3.setBackground(org.telegram.ui.ActionBar.k6.h0(-1, 1, -1));
-        imageView3.setContentDescription(hd.M0(2131754839, null));
+        imageView3.setContentDescription(id.M0(2131754839, null));
         j3Var.addView(imageView3, ha.d(40, 40.0f, 53, 2.0f, 15.0f, 2.0f, 0.0f));
         ImageView imageView4 = new ImageView(context);
         this.g0 = imageView4;
         imageView4.setImageDrawable(f4Var.r);
         imageView4.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f));
         imageView4.setBackground(org.telegram.ui.ActionBar.k6.h0(-1, 1, -1));
-        imageView4.setContentDescription(hd.M0(2131754808, null));
+        imageView4.setContentDescription(id.M0(2131754808, null));
         j3Var.addView(imageView4, ha.d(40, 40.0f, 53, 2.0f, 15.0f, 42.0f, 0.0f));
         imageView4.setOnClickListener(new ah.d(p9Var, 15));
         imageView3.setOnClickListener(new d0(this, f6Var, p9Var, context, f4Var, 1));
@@ -588,7 +588,7 @@ public abstract class i4 extends rt0 implements ls {
                             if (!p9.C1) {
                                 qp.e1().edit().putInt("taptostorysoundhint", 3).apply();
                             }
-                            i4Var.h0.setContentDescription(hd.M0(!p9.C1 ? 2131748313 : 2131743850, null));
+                            i4Var.h0.setContentDescription(id.M0(!p9.C1 ? 2131748315 : 2131743852, null));
                             break;
                         }
                 }
@@ -695,17 +695,17 @@ public abstract class i4 extends rt0 implements ls {
         }
         if (z9) {
             if (Math.abs(p9.A1 - 0.2f) < 0.05f) {
-                i4Var.m3.setSubtext(hd.M0(2131743575, null));
+                i4Var.m3.setSubtext(id.M0(2131743577, null));
             } else if (Math.abs(p9.A1 - 0.5f) < 0.05f) {
-                i4Var.m3.setSubtext(hd.M0(2131743577, null));
+                i4Var.m3.setSubtext(id.M0(2131743579, null));
             } else if (Math.abs(p9.A1 - 1.0f) < 0.05f) {
-                i4Var.m3.setSubtext(hd.M0(2131743578, null));
+                i4Var.m3.setSubtext(id.M0(2131743580, null));
             } else if (Math.abs(p9.A1 - 1.5f) < 0.05f) {
-                i4Var.m3.setSubtext(hd.M0(2131743579, null));
+                i4Var.m3.setSubtext(id.M0(2131743581, null));
             } else if (Math.abs(p9.A1 - 2.0f) < 0.05f) {
-                i4Var.m3.setSubtext(hd.M0(2131743576, null));
+                i4Var.m3.setSubtext(id.M0(2131743578, null));
             } else {
-                i4Var.m3.setSubtext(hd.a0(null, null, 2131743580, du0.a(p9.A1) + "x"));
+                i4Var.m3.setSubtext(id.a0(null, null, 2131743582, du0.a(p9.A1) + "x"));
             }
         }
         i4Var.l3.H(z9, p9.A1);
@@ -716,13 +716,13 @@ public abstract class i4 extends rt0 implements ls {
             return;
         }
         if (p10.i(i4Var.l2).q()) {
-            org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_stories_stealth2, hd.M0(2131744888, null), false, i4Var.k0).setOnClickListener(new y1(i4Var, 8));
+            org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_stories_stealth2, id.M0(2131744890, null), false, i4Var.k0).setOnClickListener(new y1(i4Var, 8));
             return;
         }
         Drawable drawable = i4Var.getContext().getDrawable(R.drawable.msg_gallery_locked2);
         drawable.setColorFilter(new PorterDuffColorFilter(i0.a.f(0.5f, -1, -16777216), PorterDuff.Mode.MULTIPLY));
         i2 i2Var = new i2(i4Var.getContext().getDrawable(R.drawable.msg_stealth_locked), drawable, 0);
-        org.telegram.ui.ActionBar.z0 c10 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_stories_stealth2, hd.M0(2131744888, null), false, i4Var.k0);
+        org.telegram.ui.ActionBar.z0 c10 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_stories_stealth2, id.M0(2131744890, null), false, i4Var.k0);
         c10.setOnClickListener(new y1(i4Var, 9));
         c10.setIcon(i2Var);
     }
@@ -763,13 +763,13 @@ public abstract class i4 extends rt0 implements ls {
 
     public static void d0(i4 i4Var) {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, i4Var.getContext(), i4Var.k0);
-        String M0 = hd.M0(i4Var.G0() ? 2131751565 : 2131751488, null);
+        String M0 = id.M0(i4Var.G0() ? 2131751565 : 2131751488, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
-        u1Var.T = hd.M0(i4Var.G0() ? 2131751566 : 2131751489, null);
+        u1Var.T = id.M0(i4Var.G0() ? 2131751566 : 2131751489, null);
         int i7 = 2;
-        alertDialog$Builder.k(hd.M0(2131751599, null), new s1(i4Var, i7));
-        alertDialog$Builder.h(hd.M0(2131752589, null), new a1(i7));
+        alertDialog$Builder.k(id.M0(2131751599, null), new s1(i4Var, i7));
+        alertDialog$Builder.h(id.M0(2131752589, null), new a1(i7));
         ((g9) i4Var.z1).h(u1Var);
         u1Var.i();
     }
@@ -789,7 +789,7 @@ public abstract class i4 extends rt0 implements ls {
             org.telegram.messenger.g0.G3(i11, o2Var, null);
             org.telegram.messenger.p2.D.a();
             String p10 = i4Var.k1 >= 0 ? t10.p(qp.s1(i4Var.l2).a2(Long.valueOf(i4Var.k1))) : "";
-            (qp.s1(i4Var.l2).D3() ? new org.telegram.ui.Components.hc(j3Var, f6Var).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.X2(hd.a0(null, null, 2131743759, p10))) : new org.telegram.ui.Components.hc(j3Var, f6Var).K(R.raw.star_premium_2, org.telegram.messenger.g0.X2(hd.a0(null, null, 2131743759, p10)), hd.M0(2131743760, null), new w1(i4Var, 5))).j();
+            (qp.s1(i4Var.l2).D3() ? new org.telegram.ui.Components.hc(j3Var, f6Var).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131743761, p10))) : new org.telegram.ui.Components.hc(j3Var, f6Var).K(R.raw.star_premium_2, org.telegram.messenger.g0.X2(id.a0(null, null, 2131743761, p10)), id.M0(2131743762, null), new w1(i4Var, 5))).j();
             return;
         }
         if (i4Var.s3 != null && i4Var.t3 != null) {
@@ -847,13 +847,13 @@ public abstract class i4 extends rt0 implements ls {
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setGravity(1);
         textView.setTextSize(1, 16.0f);
-        textView.setText(hd.M0(2131744454, null));
+        textView.setText(id.M0(2131744456, null));
         int i7 = org.telegram.ui.ActionBar.k6.G6;
         org.telegram.ui.ActionBar.f6 f6Var = this.k0;
         org.telegram.ui.ActionBar.r6.V(textView, i7, f6Var);
         TextView textView2 = new TextView(getContext());
         ka.a(textView2);
-        textView2.setText(hd.M0(2131754230, null));
+        textView2.setText(id.M0(2131754230, null));
         int i10 = org.telegram.ui.ActionBar.k6.Gi;
         org.telegram.ui.ActionBar.r6.V(textView2, i10, f6Var);
         textView2.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(12.0f));
@@ -1097,12 +1097,12 @@ public abstract class i4 extends rt0 implements ls {
         a3 a3Var = this.m0;
         if (storyItem2 == null || (reaction = storyItem2.sent_reaction) == null) {
             this.n0.setReaction(null);
-            a3Var.setContentDescription(hd.M0(2131754851, null));
+            a3Var.setContentDescription(id.M0(2131754851, null));
             z9 = false;
         } else {
             z10 = !z10;
             this.n0.setReaction(ch.o0.d(reaction));
-            a3Var.setContentDescription(hd.M0(2131754850, null));
+            a3Var.setContentDescription(id.M0(2131754850, null));
             try {
                 performHapticFeedback(3);
             } catch (Exception unused) {
@@ -1225,11 +1225,11 @@ public abstract class i4 extends rt0 implements ls {
         s0Var.g = jArr[0];
         n0 n0Var = new n0(i11, context, true);
         LinearLayout f11 = org.telegram.messenger.k5.f(context, 0);
-        bi.e5 e5Var = new bi.e5(context, hd.M0(2131748813, null), bVar);
+        bi.e5 e5Var = new bi.e5(context, id.M0(2131748815, null), bVar);
         f11.addView(e5Var, ha.q(-1, -1, 1.0f, qs.x1, 0, 0, 5, 0));
-        bi.e5 e5Var2 = new bi.e5(context, hd.M0(2131748814, null), bVar);
+        bi.e5 e5Var2 = new bi.e5(context, id.M0(2131748816, null), bVar);
         f11.addView(e5Var2, ha.q(-1, -1, 1.0f, qs.x1, 5, 0, 5, 0));
-        bi.e5 e5Var3 = new bi.e5(context, hd.M0(2131748815, null), bVar);
+        bi.e5 e5Var3 = new bi.e5(context, id.M0(2131748817, null), bVar);
         f11.addView(e5Var3, ha.q(-1, -1, 1.0f, qs.x1, 5, 0, 0, 0));
         s sVar = new s(context, bVar, r1);
         z1 z1Var3 = z1Var;
@@ -1279,11 +1279,11 @@ public abstract class i4 extends rt0 implements ls {
         f10.addView(f11, ha.k(16.0f, 0.0f, 16.0f, 0.0f, -1, 56));
         int i20 = org.telegram.ui.ActionBar.k6.j5;
         TextView b10 = qa.b(context, 20.0f, i20, true, bVar);
-        org.telegram.messenger.k5.m(b10, 17, null, 2131748810);
+        org.telegram.messenger.k5.m(b10, 17, null, 2131748812);
         f10.addView(b10, ha.k(42.0f, 18.0f, 42.0f, 9.0f, -1, -2));
         TextView b11 = qa.b(context, 14.0f, i20, false, bVar);
         b11.setGravity(17);
-        org.telegram.messenger.k5.r(null, null, 2131748811, new Object[]{s5}, b11);
+        org.telegram.messenger.k5.r(null, null, 2131748813, new Object[]{s5}, b11);
         f10.addView(b11, ha.k(42.0f, 0.0f, 42.0f, 0.0f, -1, -2));
         f10.addView(n0Var, ha.t(-2, -2, 17, 42, 22, 42, 20));
         f10.addView(dVar, ha.k(16.0f, 0.0f, 16.0f, 12.0f, -1, 48));
@@ -1732,7 +1732,7 @@ public abstract class i4 extends rt0 implements ls {
             return;
         }
         if (this.l1 && !z10) {
-            e4Var.b.l(hd.M0(2131745642, null), false);
+            e4Var.b.l(id.M0(2131745644, null), false);
             e4Var.b.i(null);
             return;
         }
@@ -1786,7 +1786,7 @@ public abstract class i4 extends rt0 implements ls {
                     Intent intent = new Intent("android.intent.action.SEND");
                     intent.setType("text/plain");
                     intent.putExtra("android.intent.extra.TEXT", e10);
-                    LaunchActivity.G1.startActivityForResult(Intent.createChooser(intent, hd.M0(2131744847, null)), 500);
+                    LaunchActivity.G1.startActivityForResult(Intent.createChooser(intent, id.M0(2131744849, null)), 500);
                     return;
                 }
                 x2 x2Var = new x2(this, p9Var.f.getContext(), e10, e10, qp.s1(this.l2).W4() && (!(this.m1 || t10.A(this.k1)) || org.telegram.messenger.t3.t0(this.m1 ? qp.s1(this.l2).M0(Long.valueOf(-this.k1)) : null)), new m2(2, this.k0));
@@ -1804,16 +1804,16 @@ public abstract class i4 extends rt0 implements ls {
     public final void X0() {
         j3 j3Var = this.L0;
         org.telegram.ui.ActionBar.f6 f6Var = this.k0;
-        org.telegram.messenger.k5.p(null, 2131743834, new org.telegram.ui.Components.hc(j3Var, f6Var), f6Var);
+        org.telegram.messenger.k5.p(null, 2131743836, new org.telegram.ui.Components.hc(j3Var, f6Var), f6Var);
     }
 
     public final void Y0() {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getContext(), this.k0);
-        String M0 = hd.M0(R.string.AppName, null);
+        String M0 = id.M0(R.string.AppName, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
-        alertDialog$Builder.k(hd.M0(2131747830, null), null);
-        u1Var.T = hd.M0(2131747217, null);
+        alertDialog$Builder.k(id.M0(2131747832, null), null);
+        u1Var.T = id.M0(2131747219, null);
         ((g9) this.z1).h(u1Var);
     }
 
@@ -1857,7 +1857,7 @@ public abstract class i4 extends rt0 implements ls {
             m3Var.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
             this.L0.addView(this.p0, ha.d(-1, -2.0f, 55, 0.0f, 52.0f, 0.0f, 0.0f));
         }
-        this.p0.u(hd.M0(z9 ? 2131744608 : 2131744458, null));
+        this.p0.u(id.M0(z9 ? 2131744610 : 2131744460, null));
         this.p0.w();
     }
 
@@ -2294,7 +2294,7 @@ public abstract class i4 extends rt0 implements ls {
                                 }
                             }
                             z14 = z11;
-                            imageReceiver.u0(null, null, hc.g(storyItem.attachPath), rf.b.q(s5, "_pframe"), null, null, m10, 0L, null, null, 0);
+                            imageReceiver.u0(null, null, hc.g(storyItem.attachPath), rf.b.r(s5, "_pframe"), null, null, m10, 0L, null, null, 0);
                         } else {
                             z14 = z11;
                             TLRPC.MessageMedia messageMedia7 = storyItem.media;
@@ -2317,11 +2317,11 @@ public abstract class i4 extends rt0 implements ls {
                                 t10 = gc.m(storyItem.media.getDocument().thumbs);
                             }
                             hc b10 = hc.b(y6.C(this.l2, storyItem));
-                            String q10 = rf.b.q(s5, "_pframe");
+                            String r10 = rf.b.r(s5, "_pframe");
                             hc c10 = hc.c(u10, storyItem.media.getDocument());
                             TL_stories.StoryItem storyItem19 = storyItem;
                             z13 = z11;
-                            imageReceiver.u0(null, null, b10, q10, c10, s5, t10, 0L, null, storyItem19, 0);
+                            imageReceiver.u0(null, null, b10, r10, c10, s5, t10, 0L, null, storyItem19, 0);
                             storyItem3 = storyItem19;
                         } else {
                             storyItem3 = storyItem;
@@ -2457,16 +2457,16 @@ public abstract class i4 extends rt0 implements ls {
                             U0(j3, false, z20);
                             x6Var6 = g4Var.b;
                             if (x6Var6 != null) {
-                                charSequence3 = x6Var6.I ? hd.L0(2131750845) : r7.u(textViewArr[0], this.D1);
+                                charSequence3 = x6Var6.I ? id.L0(2131750845) : r7.u(textViewArr[0], this.D1);
                             } else {
                                 if (G0()) {
                                     TL_stories.StoryItem storyItem22 = g4Var.a;
                                     if (storyItem22 != null && (messageMedia2 = storyItem22.media) != null) {
                                         if (messageMedia2.document != null) {
-                                            charSequence3 = hd.X(r13.date);
+                                            charSequence3 = id.X(r13.date);
                                         } else {
                                             if (messageMedia2.photo != null) {
-                                                charSequence3 = hd.X(r1.date);
+                                                charSequence3 = id.X(r1.date);
                                             }
                                         }
                                     }
@@ -2488,7 +2488,7 @@ public abstract class i4 extends rt0 implements ls {
                                         z22 = z62;
                                         charSequence = null;
                                     } else if (storyItem23.media instanceof TLRPC.TL_messageMediaVideoStream) {
-                                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(hd.L0(2131748824));
+                                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(id.L0(2131748826));
                                         spannableStringBuilder.setSpan(new k0(1), 0, spannableStringBuilder.length(), 33);
                                         spannableStringBuilder.append((CharSequence) "  ");
                                         g1 g1Var4 = p9Var.A0;
@@ -2499,10 +2499,10 @@ public abstract class i4 extends rt0 implements ls {
                                         } else {
                                             i13 = 1;
                                         }
-                                        spannableStringBuilder.append((CharSequence) hd.I(Math.max(i13, this.z3), "LiveStoryWatching"));
+                                        spannableStringBuilder.append((CharSequence) id.I(Math.max(i13, this.z3), "LiveStoryWatching"));
                                         charSequence3 = spannableStringBuilder;
                                     } else if (storyItem23.date == -1) {
-                                        charSequence3 = hd.L0(2131752644);
+                                        charSequence3 = id.L0(2131752644);
                                     } else {
                                         if (g4Var.i() != null) {
                                             c8 i34 = g4Var.i();
@@ -2542,7 +2542,7 @@ public abstract class i4 extends rt0 implements ls {
                                             fsVar.b = org.telegram.messenger.g0.L(1.5f);
                                             fsVar.c = 5.0f;
                                             spannableString3.setSpan(fsVar, 0, spannableString3.length(), 33);
-                                            spannableStringBuilder2.append((CharSequence) " ").append((CharSequence) spannableString3).append((CharSequence) " ").append((CharSequence) hd.P(g4Var.a.date));
+                                            spannableStringBuilder2.append((CharSequence) " ").append((CharSequence) spannableString3).append((CharSequence) " ").append((CharSequence) id.P(g4Var.a.date));
                                             e4Var2 = e4Var;
                                             charSequence = spannableStringBuilder2;
                                         } else {
@@ -2552,7 +2552,7 @@ public abstract class i4 extends rt0 implements ls {
                                             n3Var2 = n3Var;
                                             if (!this.n1 || (storyItem8 = g4Var.a) == null || storyItem8.from_id == null) {
                                                 e4Var2 = e4Var;
-                                                String X = hd.X(g4Var.a.date);
+                                                String X = id.X(g4Var.a.date);
                                                 charSequence2 = X;
                                                 if (g4Var.a.edited) {
                                                     SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(X);
@@ -2560,7 +2560,7 @@ public abstract class i4 extends rt0 implements ls {
                                                     fsVar2.b = org.telegram.messenger.g0.L(1.5f);
                                                     fsVar2.c = 5.0f;
                                                     valueOf.append((CharSequence) " . ").setSpan(fsVar2, valueOf.length() - 2, valueOf.length() - 1, 0);
-                                                    valueOf.append((CharSequence) hd.L0(2131751211));
+                                                    valueOf.append((CharSequence) id.L0(2131751211));
                                                     charSequence2 = valueOf;
                                                 }
                                                 charSequence = charSequence2;
@@ -2591,7 +2591,7 @@ public abstract class i4 extends rt0 implements ls {
                                                 fsVar3.b = org.telegram.messenger.g0.L(1.5f);
                                                 fsVar3.c = 5.0f;
                                                 spannableString5.setSpan(fsVar3, 0, spannableString5.length(), 33);
-                                                spannableStringBuilder3.append((CharSequence) " ").append((CharSequence) spannableString5).append((CharSequence) " ").append((CharSequence) hd.P(g4Var.a.date));
+                                                spannableStringBuilder3.append((CharSequence) " ").append((CharSequence) spannableString5).append((CharSequence) " ").append((CharSequence) id.P(g4Var.a.date));
                                                 charSequence = spannableStringBuilder3;
                                             }
                                         }
@@ -3064,11 +3064,11 @@ public abstract class i4 extends rt0 implements ls {
                                     if (j10) {
                                         ch0Var.setVisibility(0);
                                         imageView4.setVisibility(8);
-                                        a4Var.setContentDescription(hd.L0(!p9.C1 ? 2131748313 : 2131743850));
+                                        a4Var.setContentDescription(id.L0(!p9.C1 ? 2131748315 : 2131743852));
                                     } else {
                                         ch0Var.setVisibility(8);
                                         imageView4.setVisibility(0);
-                                        a4Var.setContentDescription(hd.L0(2131748150));
+                                        a4Var.setContentDescription(id.L0(2131748152));
                                     }
                                     a4Var.setAlpha((1.0f - this.N3) * this.N2);
                                 }
@@ -4039,7 +4039,7 @@ public abstract class i4 extends rt0 implements ls {
                                 arrayList4 = arrayList12;
                                 arrayList5 = arrayList;
                                 i11 = i17;
-                                imageReceiver.u0(hc.g(storyItem2.attachPath), rf.b.q(j3, "_pframe"), hc.g(storyItem2.firstFramePath), j3, null, null, null, 0L, null, null, 0);
+                                imageReceiver.u0(hc.g(storyItem2.attachPath), rf.b.r(j3, "_pframe"), hc.g(storyItem2.firstFramePath), j3, null, null, null, 0L, null, null, 0);
                                 storyItem = storyItem2;
                             } else {
                                 arrayList3 = arrayList11;
@@ -4064,12 +4064,12 @@ public abstract class i4 extends rt0 implements ls {
                             if (i19 != 0) {
                                 TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(storyItem2.media.getDocument().thumbs, 1000, false, null, false);
                                 hc b10 = hc.b(y6.C(this.l2, storyItem2));
-                                String q10 = rf.b.q(j3, "_pframe");
+                                String r10 = rf.b.r(j3, "_pframe");
                                 hc c10 = hc.c(w10, storyItem2.media.getDocument());
                                 storyItem = storyItem2;
                                 str = null;
                                 i12 = 1;
-                                imageReceiver2.u0(b10, q10, c10, j3, null, null, null, 0L, null, storyItem, 0);
+                                imageReceiver2.u0(b10, r10, c10, j3, null, null, null, 0L, null, storyItem, 0);
                             } else {
                                 storyItem = storyItem2;
                                 str = null;
@@ -4286,7 +4286,7 @@ public abstract class i4 extends rt0 implements ls {
         if (this.p1) {
             TextView textView = this.Q1;
             if (textView != null) {
-                textView.setText(hd.M0(2131748822, null));
+                textView.setText(id.M0(2131748824, null));
             }
             TextView textView2 = this.R1;
             if (textView2 != null) {
@@ -4297,12 +4297,12 @@ public abstract class i4 extends rt0 implements ls {
         }
         TextView textView3 = this.Q1;
         if (textView3 != null) {
-            textView3.setText(hd.M0(this.n1 ? 2131744666 : 2131744494, null));
+            textView3.setText(id.M0(this.n1 ? 2131744668 : 2131744496, null));
         }
         TextView textView4 = this.R1;
         if (textView4 != null) {
             textView4.setVisibility(0);
-            this.R1.setText(hd.M0(2131744493, null));
+            this.R1.setText(id.M0(2131744495, null));
         }
     }
 
@@ -4481,7 +4481,7 @@ public abstract class i4 extends rt0 implements ls {
             currentPeerView.q0();
         }
         if (z9) {
-            cc J = new org.telegram.ui.Components.hc(this.L0, this.k0).J(R.raw.forward, hd.M0(2131748482, null), hd.M0(2131743553, null), 5000, false, new w1(this, 2));
+            cc J = new org.telegram.ui.Components.hc(this.L0, this.k0).J(R.raw.forward, id.M0(2131748484, null), id.M0(2131743555, null), 5000, false, new w1(this, 2));
             J.r = false;
             J.k(false);
         }
@@ -4510,7 +4510,7 @@ public abstract class i4 extends rt0 implements ls {
                 int i11 = 3;
                 TL_stories.StoryViews storyViews = storyItem.views;
                 if (storyViews == null || storyViews.views_count <= 0) {
-                    this.j2.setText(p9Var.N0 == null ? hd.M0(2131748122, null) : hd.M0(2131748121, null));
+                    this.j2.setText(p9Var.N0 == null ? id.M0(2131748124, null) : id.M0(2131748123, null));
                     this.j2.setTranslationX(org.telegram.messenger.g0.L(16.0f));
                     this.k2.setVisibility(8);
                     this.o2.setVisibility(8);
@@ -4538,7 +4538,7 @@ public abstract class i4 extends rt0 implements ls {
                         this.k2.b(i14, this.l2, null);
                     }
                     this.k2.a(false);
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(hd.H(',', "Views", storyItem.views.views_count));
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(id.H(',', "Views", storyItem.views.views_count));
                     if (storyItem.views.reactions_count > 0) {
                         spannableStringBuilder.append((CharSequence) "  d ");
                         wp wpVar = new wp(R.drawable.mini_views_likes, 0);
@@ -4599,7 +4599,7 @@ public abstract class i4 extends rt0 implements ls {
             }
             TLRPC.Chat M0 = qp.s1(this.l2).M0(Long.valueOf(-this.k1));
             if (!(this.n1 && (org.telegram.messenger.t3.q(M0) || org.telegram.messenger.t3.s0(M0))) && storyItem.views.views_count > 0) {
-                this.j2.setText(p9Var.N0 == null ? hd.M0(2131748122, null) : hd.M0(2131748121, null));
+                this.j2.setText(p9Var.N0 == null ? id.M0(2131748124, null) : id.M0(2131748123, null));
                 this.j2.setTranslationX(org.telegram.messenger.g0.L(16.0f));
                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
                 spannableStringBuilder2.append((CharSequence) "d  ");
@@ -4691,13 +4691,13 @@ public abstract class i4 extends rt0 implements ls {
         iz.e0 = i10;
         iz.T(i10);
         org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(0, getContext(), this.k0);
-        u1Var.setTitle(hd.M0(2131744886, null));
-        u1Var.n(hd.M0(2131744887, null));
-        String M0 = hd.M0(2131746742, null);
+        u1Var.setTitle(id.M0(2131744888, null));
+        u1Var.n(id.M0(2131744889, null));
+        String M0 = id.M0(2131746744, null);
         ba.b bVar = new ba.b(runnable);
         u1Var.l0 = M0;
         u1Var.m0 = bVar;
-        String M02 = hd.M0(2131752589, null);
+        String M02 = id.M0(2131752589, null);
         a1 a1Var = new a1(1);
         u1Var.n0 = M02;
         u1Var.o0 = a1Var;
@@ -4784,7 +4784,7 @@ public abstract class i4 extends rt0 implements ls {
                 B0(true);
                 o2Var2.h1(z11);
                 this.K1.o1(g4Var.f && !B0(true) && (this.e2 || this.K1.W0), true);
-                ys editField = this.K1.getEditField();
+                zs editField = this.K1.getEditField();
                 long j11 = this.k1;
                 TL_stories.StoryItem storyItem = g4Var.a;
                 p9Var.getClass();
@@ -4900,7 +4900,7 @@ public abstract class i4 extends rt0 implements ls {
                 B0(true);
                 o2Var6.h1(z13);
                 this.K1.o1(g4Var.f && !B0(true) && (this.e2 || this.K1.W0), true);
-                ys editField2 = this.K1.getEditField();
+                zs editField2 = this.K1.getEditField();
                 long j12 = this.k1;
                 TL_stories.StoryItem storyItem2 = g4Var.a;
                 p9Var.getClass();
@@ -5100,7 +5100,7 @@ public abstract class i4 extends rt0 implements ls {
                 if (this.O1 == null) {
                     ii0 ii0Var3 = new ii0(1, this.l2, getContext(), LaunchActivity.Q(), new m2(i15, this.k0));
                     this.O1 = ii0Var3;
-                    ii0Var3.setHint(hd.M0(this.n1 ? 2131744667 : 2131744504, null));
+                    ii0Var3.setHint(id.M0(this.n1 ? 2131744669 : 2131744506, null));
                     ii0 ii0Var4 = this.O1;
                     ii0Var4.N0 = true;
                     addView(ii0Var4, this.r0, ha.d(-2, 72.0f, 49, 0.0f, 0.0f, 0.0f, 64.0f));
@@ -5108,7 +5108,7 @@ public abstract class i4 extends rt0 implements ls {
                     this.O1.p(null, null, true);
                 }
                 this.O1.setFragment(LaunchActivity.Q());
-                this.O1.setHint(hd.M0(this.n1 ? 2131744667 : 2131744504, null));
+                this.O1.setHint(id.M0(this.n1 ? 2131744669 : 2131744506, null));
                 ch.k0 k0Var = ch.k0.B;
                 if (k0Var != null) {
                     k0Var.l = true;
@@ -5181,7 +5181,7 @@ public abstract class i4 extends rt0 implements ls {
                             qp.e1().edit().putInt("taptostoryhighlighthint", qp.e1().getInt("taptostoryhighlighthint", 0) + 1).apply();
                             fi.m3 m3Var2 = new fi.m3(getContext(), 3);
                             this.M1 = m3Var2;
-                            m3Var2.u(hd.M0(2131748812, null));
+                            m3Var2.u(id.M0(2131748814, null));
                             this.M1.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
                             fi.m3 m3Var3 = this.M1;
                             m3Var3.K = Layout.Alignment.ALIGN_OPPOSITE;
@@ -5344,7 +5344,7 @@ public abstract class i4 extends rt0 implements ls {
             if (this.q1 > 0) {
                 this.T2 = false;
                 this.K1.setEnabled(true);
-                this.K1.i1(dd.T0(hd.a0(null, null, 2131743927, hd.E(this.q1, ','))), z9);
+                this.K1.i1(dd.T0(id.a0(null, null, 2131743929, id.E(this.q1, ','))), z9);
                 return;
             }
             if (!g4Var.f && tL_storiesStealthMode != null) {
@@ -5356,17 +5356,17 @@ public abstract class i4 extends rt0 implements ls {
                     int i10 = currentTime2 / 60;
                     int i11 = currentTime2 % 60;
                     Locale locale = Locale.US;
-                    int measureText = (int) this.K1.getEditField().getPaint().measureText(hd.a0(null, null, 2131744889, String.format(locale, "%02d:%02d", 99, 99)));
+                    int measureText = (int) this.K1.getEditField().getPaint().measureText(id.a0(null, null, 2131744891, String.format(locale, "%02d:%02d", 99, 99)));
                     this.K1.setEnabled(true);
                     if (measureText * 1.2f >= this.K1.getEditField().getMeasuredWidth()) {
                         o2 o2Var = this.K1;
-                        String a02 = hd.a0(null, null, 2131744889, "");
+                        String a02 = id.a0(null, null, 2131744891, "");
                         String format = String.format(locale, "%02d:%02d", Integer.valueOf(i10), Integer.valueOf(i11));
                         o2Var.e = a02;
                         o2Var.f = format;
                         o2Var.I1(z9);
                     } else {
-                        this.K1.i1(hd.a0(null, null, 2131744890, String.format(locale, "%02d:%02d", Integer.valueOf(i10), Integer.valueOf(i11))), z9);
+                        this.K1.i1(id.a0(null, null, 2131744892, String.format(locale, "%02d:%02d", Integer.valueOf(i10), Integer.valueOf(i11))), z9);
                     }
                     org.telegram.messenger.g0.i3(w1Var, 1000L);
                     return;
@@ -5375,14 +5375,14 @@ public abstract class i4 extends rt0 implements ls {
             this.T2 = false;
             this.K1.setEnabled(true);
             if (!g4Var.f) {
-                this.K1.i1(hd.M0(this.n1 ? 2131746251 : 2131746256, null), z9);
+                this.K1.i1(id.M0(this.n1 ? 2131746253 : 2131746258, null), z9);
                 return;
             }
             if (this.K1.getStarsPrice() <= 0) {
-                this.K1.i1(hd.M0(2131752005, null), z9);
+                this.K1.i1(id.M0(2131752005, null), z9);
                 return;
             }
-            this.K1.i1(dd.Y0(false, hd.a0(null, null, 2131752004, hd.E((int) r0, ',')), this.K1.O4), z9);
+            this.K1.i1(dd.Y0(false, id.a0(null, null, 2131752004, id.E((int) r0, ',')), this.K1.O4), z9);
             wp wpVar = this.K1.O4[0];
             if (wpVar != null) {
                 wpVar.G = 0.9f;
@@ -5443,14 +5443,14 @@ public abstract class i4 extends rt0 implements ls {
             boolean z9 = this.K1.c1;
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             if (z9) {
-                u1Var.R = hd.M0(2131751396, null);
-                u1Var.T = hd.M0(2131751397, null);
+                u1Var.R = id.M0(2131751396, null);
+                u1Var.T = id.M0(2131751397, null);
             } else {
-                u1Var.R = hd.M0(2131751393, null);
-                u1Var.T = hd.M0(2131751394, null);
+                u1Var.R = id.M0(2131751393, null);
+                u1Var.T = id.M0(2131751394, null);
             }
-            alertDialog$Builder.k(hd.M0(2131751395, null), new s1(this, i7));
-            alertDialog$Builder.h(hd.M0(2131751771, null), null);
+            alertDialog$Builder.k(id.M0(2131751395, null), new s1(this, i7));
+            alertDialog$Builder.h(id.M0(2131751771, null), null);
             ((g9) this.z1).h(u1Var);
             return true;
         }
@@ -5595,7 +5595,7 @@ public abstract class i4 extends rt0 implements ls {
         org.telegram.ui.ActionBar.f6 f6Var = this.k0;
         o2 o2Var = new o2(this, org.telegram.messenger.g0.W(getContext()), this, new m2(1, f6Var));
         this.K1 = o2Var;
-        ys editField = o2Var.getEditField();
+        zs editField = o2Var.getEditField();
         editField.getClass();
         rs rsVar = new rs(editField, 0);
         editField.t0 = rsVar;
@@ -5712,7 +5712,7 @@ public abstract class i4 extends rt0 implements ls {
         this.Q1 = textView;
         textView.setTextColor(-8026747);
         this.Q1.setTextSize(1, 16.0f);
-        this.Q1.setText(hd.M0(this.n1 ? 2131744666 : 2131744494, null));
+        this.Q1.setText(id.M0(this.n1 ? 2131744668 : 2131744496, null));
         TextView textView2 = new TextView(getContext());
         this.R1 = textView2;
         textView2.setTextColor(-1);
@@ -5722,7 +5722,7 @@ public abstract class i4 extends rt0 implements ls {
         textView3.setBackground(org.telegram.ui.ActionBar.k6.k0(L, L, L, L, 452984831, 855638015, 855638015));
         this.R1.setGravity(17);
         ka.a(this.R1);
-        this.R1.setText(hd.M0(2131744493, null));
+        this.R1.setText(id.M0(2131744495, null));
         this.R1.setPadding(org.telegram.messenger.g0.L(7.0f), 0, org.telegram.messenger.g0.L(7.0f), 0);
         this.P1.addView(imageView, ha.t(22, 22, 16, 12, 1, 4, 0));
         this.P1.addView(this.Q1, ha.s(-2, -2, 16, 0.0f, -0.33f, 0.0f, 0.0f));
@@ -5739,7 +5739,7 @@ public abstract class i4 extends rt0 implements ls {
         mdVar.setTextSize(1, 14.0f);
         this.K2.setTextColor(i0.a.f(0.5f, -16777216, -1));
         this.K2.setGravity(19);
-        this.K2.setText(hd.M0(2131744492, null));
+        this.K2.setText(id.M0(2131744494, null));
         addView(this.K2, ha.d(-2, 40.0f, 3, 16.0f, 0.0f, 16.0f, 0.0f));
     }
 

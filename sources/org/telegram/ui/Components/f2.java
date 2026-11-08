@@ -28,7 +28,7 @@ import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.DataSettingsActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f2 implements org.telegram.ui.ActionBar.r1, t4, org.telegram.messenger.bb, org.telegram.ui.Cells.p5, org.telegram.messenger.lc, ki, org.telegram.ui.ActionBar.f1, dj0, org.telegram.messenger.qr, cj0, ej0 {
     public final /* synthetic */ int a;
@@ -64,7 +64,7 @@ public final /* synthetic */ class f2 implements org.telegram.ui.ActionBar.r1, t
                 geVar.setEffect(0L);
                 break;
             case 5:
-                ((vf) this.b).K((qt) this.c, z9, i7, i10);
+                ((vf) this.b).K((rt) this.c, z9, i7, i10);
                 break;
             default:
                 bn bnVar = (bn) this.b;
@@ -152,32 +152,32 @@ public final /* synthetic */ class f2 implements org.telegram.ui.ActionBar.r1, t
         Object obj2 = this.b;
         switch (i10) {
             case 14:
-                qu quVar = (qu) obj2;
+                ru ruVar = (ru) obj2;
                 Context context = (Context) obj;
-                if ((view instanceof ju) && (r5Var = ((ju) view).c) != null) {
-                    org.telegram.ui.ActionBar.z0 z0Var = new org.telegram.ui.ActionBar.z0(quVar.getContext(), true, true);
+                if ((view instanceof ku) && (r5Var = ((ku) view).c) != null) {
+                    org.telegram.ui.ActionBar.z0 z0Var = new org.telegram.ui.ActionBar.z0(ruVar.getContext(), true, true);
                     z0Var.setItemHeight(48);
                     z0Var.setPadding(org.telegram.messenger.g0.L(26.0f), 0, org.telegram.messenger.g0.L(26.0f), 0);
-                    z0Var.setText(org.telegram.messenger.hd.M0(2131751767, null));
+                    z0Var.setText(org.telegram.messenger.id.M0(2131751767, null));
                     z0Var.getTextView().setTextSize(1, 14.4f);
                     z0Var.getTextView().setTypeface(org.telegram.messenger.g0.o());
-                    z0Var.setOnClickListener(new lk(9, quVar, r5Var));
+                    z0Var.setOnClickListener(new lk(9, ruVar, r5Var));
                     LinearLayout linearLayout = new LinearLayout(context);
-                    Drawable mutate = quVar.getContext().getDrawable(R.drawable.popup_fixed_alert).mutate();
-                    org.telegram.ui.ActionBar.r6.y(linearLayout, mutate, org.telegram.ui.ActionBar.k6.G8, quVar.I0, PorterDuff.Mode.MULTIPLY);
+                    Drawable mutate = ruVar.getContext().getDrawable(R.drawable.popup_fixed_alert).mutate();
+                    org.telegram.ui.ActionBar.r6.y(linearLayout, mutate, org.telegram.ui.ActionBar.k6.G8, ruVar.I0, PorterDuff.Mode.MULTIPLY);
                     linearLayout.setBackground(mutate);
                     linearLayout.addView(z0Var);
                     org.telegram.ui.ActionBar.g1 g1Var = new org.telegram.ui.ActionBar.g1(linearLayout, -2, -2);
-                    quVar.x1 = g1Var;
+                    ruVar.x1 = g1Var;
                     g1Var.setClippingEnabled(true);
-                    quVar.x1.g();
-                    quVar.x1.setInputMethodMode(2);
-                    quVar.x1.setSoftInputMode(0);
-                    quVar.x1.setOutsideTouchable(true);
-                    quVar.x1.setAnimationStyle(R.style.PopupAnimation);
+                    ruVar.x1.g();
+                    ruVar.x1.setInputMethodMode(2);
+                    ruVar.x1.setSoftInputMode(0);
+                    ruVar.x1.setOutsideTouchable(true);
+                    ruVar.x1.setAnimationStyle(R.style.PopupAnimation);
                     int[] iArr = new int[2];
                     view.getLocationInWindow(iArr);
-                    quVar.x1.showAtLocation(view, 51, (view.getMeasuredWidth() / 2) + (iArr[0] - org.telegram.messenger.g0.L(49.0f)), iArr[1] - org.telegram.messenger.g0.L(52.0f));
+                    ruVar.x1.showAtLocation(view, 51, (view.getMeasuredWidth() / 2) + (iArr[0] - org.telegram.messenger.g0.L(49.0f)), iArr[1] - org.telegram.messenger.g0.L(52.0f));
                     try {
                         view.performHapticFeedback(0, 1);
                     } catch (Exception unused) {
@@ -217,7 +217,7 @@ public final /* synthetic */ class f2 implements org.telegram.ui.ActionBar.r1, t
             }
             HashMap hashMap = ChatAttachAlertPhotoLayout.s1;
             if (hashMap.size() + 1 > ChatAttachAlertPhotoLayout.Q(chatAttachAlertPhotoLayout)) {
-                new hc(diVar.l3, chatAttachAlertPhotoLayout.a).t(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.G(((org.telegram.messenger.j0) f2Var.getMessagesController().x7.d0.b).c, "BusinessRepliesToastLimit", new Object[0])), null).j();
+                new hc(diVar.l3, chatAttachAlertPhotoLayout.a).t(org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(((org.telegram.messenger.j0) f2Var.getMessagesController().x7.d0.b).c, "BusinessRepliesToastLimit", new Object[0])), null).j();
                 return;
             }
             boolean containsKey = hashMap.containsKey(Integer.valueOf(photoEntry.C));
@@ -226,7 +226,7 @@ public final /* synthetic */ class f2 implements org.telegram.ui.ActionBar.r1, t
                 if (!diVar.N3 || !(f2Var instanceof org.telegram.ui.an) || (chat = ((org.telegram.ui.an) f2Var).e) == null || org.telegram.messenger.t3.N(chat) || !chat.slowmode_enabled || chatAttachAlertPhotoLayout.L == 2) {
                     return;
                 }
-                v4.L(chatAttachAlertPhotoLayout.getContext(), org.telegram.messenger.hd.M0(2131745311, null), org.telegram.messenger.hd.M0(2131745304, null), null, null, chatAttachAlertPhotoLayout.a).p();
+                v4.L(chatAttachAlertPhotoLayout.getContext(), org.telegram.messenger.id.M0(2131745313, null), org.telegram.messenger.id.M0(2131745306, null), null, null, chatAttachAlertPhotoLayout.a).p();
                 if (chatAttachAlertPhotoLayout.L == 1) {
                     chatAttachAlertPhotoLayout.L = 2;
                     return;
@@ -363,7 +363,7 @@ public final /* synthetic */ class f2 implements org.telegram.ui.ActionBar.r1, t
                 ((org.telegram.messenger.qr) this.b).k(((boolean[]) this.c)[0]);
                 break;
             case 13:
-                ((xs) this.b).a(((bi.v) this.c).getText().toString().trim());
+                ((ys) this.b).a(((bi.v) this.c).getText().toString().trim());
                 break;
             case 15:
                 t20 t20Var = (t20) this.b;

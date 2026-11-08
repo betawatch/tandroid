@@ -2,11 +2,11 @@ package fi;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.mz;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class s2 extends lz {
+public final class s2 extends mz {
     public final /* synthetic */ int U;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,7 +15,7 @@ public final class s2 extends lz {
         this.U = i7;
     }
 
-    @Override // org.telegram.ui.Components.lz
+    @Override // org.telegram.ui.Components.mz
     public int getColumnsCount() {
         switch (this.U) {
             case 0:
@@ -27,7 +27,7 @@ public final class s2 extends lz {
         }
     }
 
-    @Override // org.telegram.ui.Components.lz
+    @Override // org.telegram.ui.Components.mz
     public int getViewType() {
         switch (this.U) {
             case 1:
@@ -37,7 +37,7 @@ public final class s2 extends lz {
         }
     }
 
-    @Override // org.telegram.ui.Components.lz, android.view.View
+    @Override // org.telegram.ui.Components.mz, android.view.View
     public void onMeasure(int i7, int i10) {
         switch (this.U) {
             case 2:

@@ -10,13 +10,13 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
 import org.telegram.ui.Components.ew0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.Wallet.k0;
+import org.telegram.ui.Wallet.j0;
+import org.telegram.ui.Wallet.p0;
 import org.telegram.ui.Wallet.q0;
-import org.telegram.ui.Wallet.r0;
 import org.telegram.ui.o6;
 import org.telegram.ui.y6;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -57,66 +57,66 @@ public final /* synthetic */ class n implements Runnable {
                 profileActivity.getMessagesController().P1().r0(j3, arrayList, z9, null);
                 return;
             default:
-                r0 r0Var = (r0) this.d;
+                q0 q0Var = (q0) this.d;
                 long j10 = this.c;
                 boolean z10 = this.b;
                 org.telegram.ui.Wallet.k kVar = (org.telegram.ui.Wallet.k) this.e;
-                r0Var.getClass();
+                q0Var.getClass();
                 ArrayList arrayList2 = new ArrayList();
                 LinkedHashMap linkedHashMap = new LinkedHashMap();
                 try {
                     try {
                     } catch (Exception e10) {
                         a8.g(e10, true);
-                        message = e10 instanceof q0 ? e10.getMessage() : "STORAGE_BROKEN";
+                        message = e10 instanceof p0 ? e10.getMessage() : "STORAGE_BROKEN";
                         Iterator it2 = linkedHashMap.values().iterator();
                         while (it2.hasNext()) {
-                            ((k0) it2.next()).close();
+                            ((j0) it2.next()).close();
                         }
                     }
                     try {
-                        synchronized (r0.f) {
+                        synchronized (q0.f) {
                             try {
-                                r0Var.c(j10);
-                                ew0 r10 = r0Var.r();
+                                q0Var.c(j10);
+                                ew0 r10 = q0Var.r();
                                 if (r10.c == z10) {
                                     if (((LinkedHashMap) r10.e).isEmpty()) {
                                     }
                                     it = linkedHashMap.values().iterator();
                                     while (it.hasNext()) {
-                                        ((k0) it.next()).close();
+                                        ((j0) it.next()).close();
                                     }
                                     message = null;
-                                    r0Var.e(arrayList2);
-                                    g0.h3(new w2(r0Var, kVar, j10, message));
+                                    q0Var.e(arrayList2);
+                                    g0.h3(new w2(q0Var, kVar, j10, message));
                                     return;
                                 }
-                                if (z10 && !r0.i(r0Var.a)) {
-                                    throw new q0("AUTH_UNAVAILABLE");
+                                if (z10 && !q0.i(q0Var.a)) {
+                                    throw new p0("AUTH_UNAVAILABLE");
                                 }
                                 if (!((LinkedHashMap) r10.e).isEmpty()) {
-                                    r0Var.b(j10, false);
+                                    q0Var.b(j10, false);
                                     for (String str : ((LinkedHashMap) r10.e).keySet()) {
-                                        linkedHashMap.put(str, r0Var.h(r10, str, j10));
+                                        linkedHashMap.put(str, q0Var.h(r10, str, j10));
                                     }
                                 }
                                 r10.c = z10;
                                 ((LinkedHashMap) r10.e).clear();
                                 for (Map.Entry entry : linkedHashMap.entrySet()) {
-                                    ((LinkedHashMap) r10.e).put((String) entry.getKey(), r0Var.j(r10, (String) entry.getKey(), (k0) entry.getValue(), arrayList2, j10));
+                                    ((LinkedHashMap) r10.e).put((String) entry.getKey(), q0Var.j(r10, (String) entry.getKey(), (j0) entry.getValue(), arrayList2, j10));
                                 }
                                 r10.d = false;
-                                synchronized (r0.f) {
-                                    r0Var.c(j10);
-                                    r0Var.v(r10, linkedHashMap);
-                                    r0Var.d(r10);
+                                synchronized (q0.f) {
+                                    q0Var.c(j10);
+                                    q0Var.v(r10, linkedHashMap);
+                                    q0Var.d(r10);
                                 }
                                 it = linkedHashMap.values().iterator();
                                 while (it.hasNext()) {
                                 }
                                 message = null;
-                                r0Var.e(arrayList2);
-                                g0.h3(new w2(r0Var, kVar, j10, message));
+                                q0Var.e(arrayList2);
+                                g0.h3(new w2(q0Var, kVar, j10, message));
                                 return;
                             } catch (Throwable th2) {
                                 th = th2;
@@ -129,9 +129,9 @@ public final /* synthetic */ class n implements Runnable {
                 } catch (Throwable th4) {
                     Iterator it3 = linkedHashMap.values().iterator();
                     while (it3.hasNext()) {
-                        ((k0) it3.next()).close();
+                        ((j0) it3.next()).close();
                     }
-                    r0Var.e(arrayList2);
+                    q0Var.e(arrayList2);
                     throw th4;
                 }
                 break;

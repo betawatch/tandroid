@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.h20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.r2;
 import org.telegram.messenger.w7;
@@ -37,7 +37,7 @@ import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.h51;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class o extends FrameLayout implements a {
     public float D;
@@ -756,8 +756,8 @@ public class o extends FrameLayout implements a {
         String[] strArr = new String[8];
         int i10 = 0;
         Integer[][] numArr = {new Integer[]{3, 2}, new Integer[]{5, 3}, new Integer[]{4, 3}, new Integer[]{5, 4}, new Integer[]{7, 5}, new Integer[]{16, 9}};
-        strArr[0] = hd.M0(2131751698, null);
-        strArr[1] = hd.M0(2131751696, null);
+        strArr[0] = id.M0(2131751698, null);
+        strArr[1] = id.M0(2131751696, null);
         int i11 = 2;
         for (int i12 = 0; i12 < 6; i12++) {
             Integer[] numArr2 = numArr[i12];

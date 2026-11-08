@@ -2,44 +2,21 @@ package org.telegram.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class c71 extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ u71 e;
+    public final /* synthetic */ v71 a;
 
-    public c71(u71 u71Var, boolean z9, int i7, int i10, boolean z10) {
-        this.e = u71Var;
-        this.a = z9;
-        this.b = i7;
-        this.c = i10;
-        this.d = z10;
+    public c71(v71 v71Var) {
+        this.a = v71Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        u71 u71Var = this.e;
-        FrameLayout[] frameLayoutArr = u71Var.M0;
-        u71Var.s1 = null;
-        int i7 = this.c;
-        int i10 = this.b;
-        boolean z9 = this.a;
-        if (z9 && frameLayoutArr[i10].getVisibility() == 0) {
-            frameLayoutArr[i10].setAlpha(1.0f);
-            frameLayoutArr[i10].setVisibility(4);
-        } else if (!z9) {
-            frameLayoutArr[i7].setVisibility(4);
-        }
-        int i11 = u71Var.b;
-        if (i11 == 1 || i11 == 2) {
-            u71Var.K0[this.d ? (char) 0 : (char) 2].setVisibility(4);
-        } else if (i7 == 1) {
-            frameLayoutArr[i10].setAlpha(0.0f);
+        v71 v71Var = this.a;
+        if (v71Var.X0 == null) {
+            v71Var.K0[0].setVisibility(4);
         }
     }
 }

@@ -10,7 +10,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x3 implements v10 {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class x3 implements v10 {
                         yr messagesStorage = d4Var.getMessagesStorage();
                         ArrayList<TLRPC.ChatTheme> arrayList2 = tl_chatThemes.themes;
                         messagesStorage.getClass();
-                        messagesStorage.I(new yq(3, messagesStorage, arrayList2));
+                        messagesStorage.I(new zq(3, messagesStorage, arrayList2));
                         d4Var.getMessagesStorage().m1(tl_chatThemes.users, tl_chatThemes.chats, true, true);
                         d4Var.getMessagesController().Y3(tl_chatThemes.users, false);
                         d4Var.getMessagesController().S3(tl_chatThemes.chats, false);

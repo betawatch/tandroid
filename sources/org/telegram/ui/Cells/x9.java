@@ -6,9 +6,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.PathInterpolator;
 import org.telegram.messenger.ui;
-import org.telegram.ui.r81;
+import org.telegram.ui.s81;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class x9 extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ int a;
@@ -26,14 +26,14 @@ public final class x9 extends GestureDetector.SimpleOnGestureListener {
                 y9 y9Var = (y9) this.b;
                 int i7 = y9Var.Z5;
                 boolean z9 = false;
-                if (y9Var.nd == 2 && ui.b0(i7).Q() != null) {
+                if (y9Var.od == 2 && ui.b0(i7).Q() != null) {
                     boolean I5 = y9Var.getMessageObject().I5(ch.o0.b(ui.b0(i7).Q()), false);
-                    y9Var.v3(y9Var.getMessageObject(), null, false, false, false, false);
+                    y9Var.w3(y9Var.getMessageObject(), null, false, false, false, false);
                     y9Var.requestLayout();
                     ch.k0.b(false);
                     z9 = true;
                     if (I5) {
-                        z9 z9Var = y9Var.od;
+                        z9 z9Var = y9Var.pd;
                         ch.k0.d(z9Var.x, null, z9Var.n[1], null, motionEvent.getX(), motionEvent.getY(), ch.o0.b(ui.b0(i7).Q()), y9Var.Z5, 0);
                         ch.k0.f();
                     }
@@ -93,7 +93,7 @@ public final class x9 extends GestureDetector.SimpleOnGestureListener {
                     ofFloat.setDuration(220L);
                     eVar.d.setInterpolator(new PathInterpolator(0.23f, 1.0f, 0.32f, 1.0f));
                     eVar.d.addUpdateListener(new fi.j6(this, f10, x10, f11, y10, 2));
-                    eVar.d.addListener(new r81(this, 20));
+                    eVar.d.addListener(new s81(this, 20));
                     eVar.d.start();
                     break;
                 }

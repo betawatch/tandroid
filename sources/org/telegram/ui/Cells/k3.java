@@ -6,14 +6,14 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.widget.FrameLayout;
 import java.util.HashSet;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class k3 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public boolean D;
@@ -57,7 +57,7 @@ public class k3 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
             i3Var.setSingleLine(true);
         }
         i3Var.setPadding(org.telegram.messenger.g0.L(21.0f), org.telegram.messenger.g0.L(15.0f), org.telegram.messenger.g0.L((i7 > 0 ? 42 : 0) + 21), org.telegram.messenger.g0.L(15.0f));
-        i3Var.setGravity((hd.a0 ? 5 : 3) | 48);
+        i3Var.setGravity((id.a0 ? 5 : 3) | 48);
         i3Var.setInputType((z9 ? 131072 : 0) | 573441);
         i3Var.setRawInputType((z9 ? 131072 : 0) | 573441);
         i3Var.setHint(str);
@@ -102,7 +102,7 @@ public class k3 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.D) {
-            canvas.drawLine(hd.a0 ? 0.0f : org.telegram.messenger.g0.L(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (hd.a0 ? org.telegram.messenger.g0.L(22.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+            canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? org.telegram.messenger.g0.L(22.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
         }
     }
 

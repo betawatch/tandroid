@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class lr extends na {
     public static final /* synthetic */ int z2 = 0;
@@ -166,7 +166,7 @@ public final class lr extends na {
         this.k1.r1();
         fi.d dVar = new fi.d(getContext(), this.I0, true);
         dVar.f();
-        dVar.setText(org.telegram.messenger.hd.M0(2131751514, null));
+        dVar.setText(org.telegram.messenger.id.M0(2131751514, null));
         dVar.setOnClickListener(new h0(this, 10));
         this.b.addView(dVar, c8.ha.f(48.0f, -1, 87, org.telegram.messenger.g0.L(10.0f) + this.t0, 0, org.telegram.messenger.g0.L(10.0f) + this.t0, org.telegram.messenger.g0.L(10.0f)));
         this.Q1 = chat;
@@ -336,7 +336,7 @@ public final class lr extends na {
                     i14++;
                 }
             }
-            this.p2 = (ArrayList) DesugarArrays.stream(channelParticipantArr).map(new aa.l(11)).collect(Collectors.toCollection(new org.telegram.messenger.ok(1)));
+            this.p2 = (ArrayList) DesugarArrays.stream(channelParticipantArr).map(new aa.l(11)).collect(Collectors.toCollection(new org.telegram.messenger.nk(1)));
             kr krVar = new kr(this, 2, arrayList2);
             this.d2 = krVar;
             boolean[] zArr = this.e2;
@@ -382,7 +382,7 @@ public final class lr extends na {
     public final CharSequence O0() {
         boolean[] zArr;
         if (this.s2) {
-            return this.u2 ? org.telegram.messenger.hd.M0(2131751524, null) : this.v2 ? org.telegram.messenger.hd.M0(2131751506, null) : org.telegram.messenger.hd.G(1, "DeleteReactionOptionsTitle", new Object[0]);
+            return this.u2 ? org.telegram.messenger.id.M0(2131751524, null) : this.v2 ? org.telegram.messenger.id.M0(2131751506, null) : org.telegram.messenger.id.G(1, "DeleteReactionOptionsTitle", new Object[0]);
         }
         int[] iArr = new int[1];
         ArrayList arrayList = this.T1;
@@ -407,7 +407,7 @@ public final class lr extends na {
                 }
             }
         }
-        return org.telegram.messenger.hd.G(iArr[0], "DeleteOptionsTitle", new Object[0]);
+        return org.telegram.messenger.id.G(iArr[0], "DeleteOptionsTitle", new Object[0]);
     }
 
     @Override // org.telegram.ui.ActionBar.v2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
@@ -548,12 +548,12 @@ public final class lr extends na {
             org.telegram.ui.ActionBar.u1[] u1VarArr = new org.telegram.ui.ActionBar.u1[1];
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, f6Var);
             int i13 = 0;
-            String M0 = org.telegram.messenger.hd.M0(2131751955, null);
+            String M0 = org.telegram.messenger.id.M0(2131751955, null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.R = M0;
-            u1Var.T = org.telegram.messenger.g0.X2(org.telegram.messenger.hd.G(arrayList.size(), "CommunityBanWarningMessage", org.telegram.messenger.m5.s(i12, j3)));
-            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131753729, null), new u(erVar, 6));
-            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+            u1Var.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(arrayList.size(), "CommunityBanWarningMessage", org.telegram.messenger.m5.s(i12, j3)));
+            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131753729, null), new u(erVar, 6));
+            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
             alertDialog$Builder.o(f10);
             int size = arrayList.size();
             int i14 = 0;
@@ -579,7 +579,7 @@ public final class lr extends na {
                         int i17 = i13;
                         i10 = i14;
                         r19 = i17;
-                        str = org.telegram.messenger.hd.G(i16, "Members", new Object[i17]);
+                        str = org.telegram.messenger.id.G(i16, "Members", new Object[i17]);
                     } else {
                         r19 = i13;
                         i10 = i14;
@@ -617,20 +617,20 @@ public final class lr extends na {
         kr krVar = this.a2;
         String str2 = "";
         if (krVar.i > 0) {
-            str2 = "" + org.telegram.messenger.hd.G(krVar.i, "UsersReported", new Object[0]);
+            str2 = "" + org.telegram.messenger.id.G(krVar.i, "UsersReported", new Object[0]);
         }
         kr krVar2 = this.d2;
         if (krVar2.i > 0) {
             if (!TextUtils.isEmpty(str2)) {
-                str2 = rf.b.q(str2, "\n");
+                str2 = rf.b.r(str2, "\n");
             }
             if (this.Y1) {
                 StringBuilder m10 = com.google.android.recaptcha.internal.a.m(str2);
-                m10.append(org.telegram.messenger.hd.G(krVar2.i, "UsersRestricted", new Object[0]));
+                m10.append(org.telegram.messenger.id.G(krVar2.i, "UsersRestricted", new Object[0]));
                 str2 = m10.toString();
             } else {
                 StringBuilder m11 = com.google.android.recaptcha.internal.a.m(str2);
-                m11.append(org.telegram.messenger.hd.G(krVar2.i, "UsersBanned", new Object[0]));
+                m11.append(org.telegram.messenger.id.G(krVar2.i, "UsersBanned", new Object[0]));
                 str2 = m11.toString();
             }
         }
@@ -640,9 +640,9 @@ public final class lr extends na {
         boolean isEmpty = TextUtils.isEmpty(str2);
         org.telegram.ui.ActionBar.f2 f2Var = this.o1;
         if (isEmpty) {
-            org.telegram.messenger.k5.o(null, z12 ? 2131746380 : 2131748459, hc.a0(f2Var), i18, 36);
+            org.telegram.messenger.k5.o(null, z12 ? 2131746382 : 2131748461, hc.a0(f2Var), i18, 36);
         } else {
-            hc.a0(f2Var).I(i18, org.telegram.messenger.hd.M0(z12 ? 2131746380 : 2131748459, null), str2).j();
+            hc.a0(f2Var).I(i18, org.telegram.messenger.id.M0(z12 ? 2131746382 : 2131748461, null), str2).j();
         }
         int i19 = 4;
         if (j3 != 0 && this.h2) {
@@ -713,7 +713,7 @@ public final class lr extends na {
                 }
                 return false;
             }
-        }).map(new aa.l(i21)).collect(Collectors.toCollection(new org.telegram.messenger.ok(1)));
+        }).map(new aa.l(i21)).collect(Collectors.toCollection(new org.telegram.messenger.nk(1)));
         ArrayList arrayList4 = (ArrayList) Collection.-EL.stream(arrayList2).filter(new Predicate(this) { // from class: org.telegram.ui.Components.gr
             public final /* synthetic */ lr b;
 
@@ -768,7 +768,7 @@ public final class lr extends na {
                 }
                 return false;
             }
-        }).map(new aa.l(i21)).collect(Collectors.toCollection(new org.telegram.messenger.ok(1)));
+        }).map(new aa.l(i21)).collect(Collectors.toCollection(new org.telegram.messenger.nk(1)));
         TLRPC.Chat chat = this.Q1;
         kr krVar3 = this.b2;
         if (!z11) {
@@ -844,7 +844,7 @@ public final class lr extends na {
                         }
                         return false;
                     }
-                }).filter(new ir(1, tLObject)).map(new aa.l(i21)).collect(Collectors.toCollection(new org.telegram.messenger.ok(1)));
+                }).filter(new ir(1, tLObject)).map(new aa.l(i21)).collect(Collectors.toCollection(new org.telegram.messenger.nk(1)));
                 if (z11 && (tLObject instanceof TLRPC.User) && arrayList5.size() == 1) {
                     TLRPC.TL_messages_reportReaction tL_messages_reportReaction = new TLRPC.TL_messages_reportReaction();
                     tL_messages_reportReaction.peer = org.telegram.messenger.qp.l1(chat);

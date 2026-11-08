@@ -42,11 +42,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.ys;
+import org.telegram.ui.Components.zs;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class p9 implements ls, org.telegram.ui.ActionBar.b2 {
     public static boolean C1;
@@ -238,7 +238,7 @@ public final class p9 implements ls, org.telegram.ui.ActionBar.b2 {
 
     public static void g(p9 p9Var) {
         md mdVar;
-        ys editField;
+        zs editField;
         i4 currentPeerView = p9Var.n0.getCurrentPeerView();
         if (currentPeerView == null || currentPeerView.K1 == null || (((mdVar = currentPeerView.K2) != null && mdVar.getVisibility() == 0) || (editField = currentPeerView.K1.getEditField()) == null)) {
             p9Var.m();
@@ -813,7 +813,7 @@ public final class p9 implements ls, org.telegram.ui.ActionBar.b2 {
         if (oVar3 == null || !oVar3.d()) {
             i1Var.a = l2.i.d().k(i1Var);
         }
-        ti.q g10 = i1Var.a.g(W, bitmap, true);
+        ti.p g10 = i1Var.a.g(W, bitmap, true);
         if (g10 == null) {
             return;
         }

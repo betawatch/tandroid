@@ -12,7 +12,7 @@ import com.google.android.gms.internal.cast.l4;
 import com.google.android.gms.tasks.Task;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class c extends f {
     public static final j6.b m = new j6.b("CastSession", null);
@@ -40,7 +40,7 @@ public final class c extends f {
         q qVar = null;
         if (f10 != null) {
             try {
-                qVar = com.google.android.gms.internal.cast.d.b(context).X0(bVar, f10, jVar);
+                qVar = com.google.android.gms.internal.cast.d.b(context).x1(bVar, f10, jVar);
             } catch (RemoteException | d e10) {
                 com.google.android.gms.internal.cast.d.a.a(e10, "Unable to call %s on %s.", "newCastSessionImpl", com.google.android.gms.internal.cast.f.class.getSimpleName());
             }
@@ -60,7 +60,7 @@ public final class c extends f {
                     hVar2.i.remove(c0Var);
                 }
             }
-            hVar.c.M0(null);
+            hVar.c.m1(null);
             r7 r7Var = hVar.h;
             if (r7Var != null) {
                 r7Var.J();
@@ -122,16 +122,16 @@ public final class c extends f {
                 Exception exception = task.getException();
                 if (!(exception instanceof com.google.android.gms.common.api.f)) {
                     o oVar = (o) qVar;
-                    Parcel P0 = oVar.P0();
-                    P0.writeInt(2476);
-                    oVar.T0(P0, 5);
+                    Parcel p12 = oVar.p1();
+                    p12.writeInt(2476);
+                    oVar.t1(p12, 5);
                     return;
                 }
                 int statusCode = ((com.google.android.gms.common.api.f) exception).getStatusCode();
                 o oVar2 = (o) qVar;
-                Parcel P02 = oVar2.P0();
-                P02.writeInt(statusCode);
-                oVar2.T0(P02, 5);
+                Parcel p13 = oVar2.p1();
+                p13.writeInt(statusCode);
+                oVar2.t1(p13, 5);
                 return;
             }
             j6.t tVar = (j6.t) task.getResult();
@@ -140,9 +140,9 @@ public final class c extends f {
                 bVar.b("%s() -> failure result", str);
                 int i10 = status.a;
                 o oVar3 = (o) qVar;
-                Parcel P03 = oVar3.P0();
-                P03.writeInt(i10);
-                oVar3.T0(P03, 5);
+                Parcel p14 = oVar3.p1();
+                p14.writeInt(i10);
+                oVar3.t1(p14, 5);
                 return;
             }
             bVar.b("%s() -> success result", str);
@@ -162,12 +162,12 @@ public final class c extends f {
             q6.m.g(str3);
             boolean z9 = tVar.e;
             o oVar4 = (o) qVar;
-            Parcel P04 = oVar4.P0();
-            com.google.android.gms.internal.cast.t.c(P04, dVar);
-            P04.writeString(str2);
-            P04.writeString(str3);
-            P04.writeInt(z9 ? 1 : 0);
-            oVar4.T0(P04, 4);
+            Parcel p15 = oVar4.p1();
+            com.google.android.gms.internal.cast.t.c(p15, dVar);
+            p15.writeString(str2);
+            p15.writeString(str3);
+            p15.writeInt(z9 ? 1 : 0);
+            oVar4.t1(p15, 4);
         } catch (RemoteException e10) {
             bVar.a(e10, "Unable to call %s on %s.", "methods", q.class.getSimpleName());
         }
@@ -233,10 +233,10 @@ public final class c extends f {
         if (xVar != null) {
             try {
                 v vVar = (v) xVar;
-                Parcel R0 = vVar.R0(vVar.P0(), 9);
+                Parcel r12 = vVar.r1(vVar.p1(), 9);
                 int i10 = com.google.android.gms.internal.cast.t.a;
-                z9 = R0.readInt() != 0;
-                R0.recycle();
+                z9 = r12.readInt() != 0;
+                r12.recycle();
             } catch (RemoteException e10) {
                 bVar.a(e10, "Unable to call %s on %s.", "isResuming", x.class.getSimpleName());
             }
@@ -246,9 +246,9 @@ public final class c extends f {
                 }
                 try {
                     v vVar2 = (v) xVar;
-                    Parcel P0 = vVar2.P0();
-                    P0.writeInt(2151);
-                    vVar2.T0(P0, 12);
+                    Parcel p12 = vVar2.p1();
+                    p12.writeInt(2151);
+                    vVar2.t1(p12, 12);
                     return;
                 } catch (RemoteException e11) {
                     bVar.a(e11, "Unable to call %s on %s.", "notifyFailedToStartSession", x.class.getSimpleName());
@@ -260,9 +260,9 @@ public final class c extends f {
             }
             try {
                 v vVar3 = (v) xVar;
-                Parcel P02 = vVar3.P0();
-                P02.writeInt(2153);
-                vVar3.T0(P02, 15);
+                Parcel p13 = vVar3.p1();
+                p13.writeInt(2153);
+                vVar3.t1(p13, 15);
                 return;
             } catch (RemoteException e12) {
                 bVar.a(e12, "Unable to call %s on %s.", "notifyFailedToResumeSession", x.class.getSimpleName());

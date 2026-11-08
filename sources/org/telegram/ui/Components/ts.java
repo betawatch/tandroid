@@ -2,15 +2,15 @@ package org.telegram.ui.Components;
 
 import android.text.Editable;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ts implements org.telegram.messenger.c20 {
-    public final /* synthetic */ ys a;
+    public final /* synthetic */ zs a;
     public final /* synthetic */ int b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ ts(ys ysVar, int i7, int i10) {
-        this.a = ysVar;
+    public /* synthetic */ ts(zs zsVar, int i7, int i10) {
+        this.a = zsVar;
         this.b = i7;
         this.c = i10;
     }
@@ -18,10 +18,10 @@ public final /* synthetic */ class ts implements org.telegram.messenger.c20 {
     @Override // org.telegram.messenger.c20
     public final void a(Object obj) {
         CharSequence charSequence = (CharSequence) obj;
-        ys ysVar = this.a;
-        Editable text = ysVar.getText();
+        zs zsVar = this.a;
+        Editable text = zsVar.getText();
         int i7 = this.b;
         text.replace(i7, this.c, charSequence);
-        ysVar.setSelection(i7, charSequence.length() + i7);
+        zsVar.setSelection(i7, charSequence.length() + i7);
     }
 }

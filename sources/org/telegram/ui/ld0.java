@@ -27,7 +27,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ld0 extends org.telegram.ui.Components.wt0 {
     public final ImageView a;
@@ -89,21 +89,21 @@ public final class ld0 extends org.telegram.ui.Components.wt0 {
         fVar.b();
         frameLayout.addView(qdVar, c8.ha.e(org.telegram.messenger.qs.q2, org.telegram.messenger.qs.q2, 1));
         TextView textView = new TextView(context);
-        textView.setText(org.telegram.messenger.hd.M0(2131745967, null));
+        textView.setText(org.telegram.messenger.id.M0(2131745969, null));
         org.telegram.messenger.k5.n(textView, i7, null, 1, 20.0f);
         textView.setGravity(17);
         frameLayout.addView(textView, c8.ha.d(-1, -2.0f, 49, 16.0f, 152.0f, 16.0f, 0.0f));
         f6Var2 = ((org.telegram.ui.ActionBar.f2) ce0Var).resourceProvider;
         bi.q0 q0Var = new bi.q0(1, context, f6Var2);
-        q0Var.a(R.drawable.menu_high_price, org.telegram.messenger.hd.M0(2131745981, null), org.telegram.messenger.hd.M0(2131745983, null));
+        q0Var.a(R.drawable.menu_high_price, org.telegram.messenger.id.M0(2131745983, null), org.telegram.messenger.id.M0(2131745985, null));
         addView(q0VarArr[0], c8.ha.t(-1, -2, 55, 0, 0, 0, 6));
         f6Var3 = ((org.telegram.ui.ActionBar.f2) ce0Var).resourceProvider;
         bi.q0 q0Var2 = new bi.q0(1, context, f6Var3);
-        q0Var2.a(R.drawable.menu_feature_code, org.telegram.messenger.hd.M0(2131745979, null), org.telegram.messenger.hd.M0(2131745980, null));
+        q0Var2.a(R.drawable.menu_feature_code, org.telegram.messenger.id.M0(2131745981, null), org.telegram.messenger.id.M0(2131745982, null));
         addView(q0VarArr[1], c8.ha.t(-1, -2, 55, 0, 0, 0, 6));
         f6Var4 = ((org.telegram.ui.ActionBar.f2) ce0Var).resourceProvider;
         bi.q0 q0Var3 = new bi.q0(1, context, f6Var4);
-        q0Var3.a(R.drawable.menu_feature_hands, org.telegram.messenger.g0.I2(org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131745974, null), new hd0(this, 1)), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(1.0f)), org.telegram.messenger.hd.M0(2131745978, null));
+        q0Var3.a(R.drawable.menu_feature_hands, org.telegram.messenger.g0.I2(org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(2131745976, null), new hd0(this, 1)), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(1.0f)), org.telegram.messenger.id.M0(2131745980, null));
         addView(q0VarArr[2], c8.ha.t(-1, -2, 55, 0, 0, 0, 6));
         addView(new Space(context), c8.ha.p(0, 0, 1.0f, org.telegram.messenger.qs.E1));
         fi.d h = org.telegram.messenger.k5.h(24, context, null, true);
@@ -298,7 +298,7 @@ public final class ld0 extends org.telegram.ui.Components.wt0 {
             intent.putExtra("android.intent.extra.TEXT", sb2.toString());
             ld0Var.getContext().startActivity(Intent.createChooser(intent, "Send email..."));
         } catch (Exception unused2) {
-            ld0Var.w.D1(org.telegram.messenger.hd.M0(R.string.AppName, null), org.telegram.messenger.hd.M0(2131748198, "NoMailInstalled"));
+            ld0Var.w.D1(org.telegram.messenger.id.M0(R.string.AppName, null), org.telegram.messenger.id.M0(2131748200, "NoMailInstalled"));
         }
     }
 
@@ -318,7 +318,7 @@ public final class ld0 extends org.telegram.ui.Components.wt0 {
     public final void m(Bundle bundle, boolean z9) {
         int i7;
         this.d = bundle;
-        String i02 = org.telegram.messenger.hd.i0(2131750520, bundle == null ? null : bundle.getString("country"));
+        String i02 = org.telegram.messenger.id.i0(2131750522, bundle == null ? null : bundle.getString("country"));
         String string = bundle == null ? null : bundle.getString("product");
         String string2 = bundle == null ? null : bundle.getString("phoneFormated");
         String string3 = bundle == null ? null : bundle.getString("phoneHash");
@@ -330,13 +330,13 @@ public final class ld0 extends org.telegram.ui.Components.wt0 {
         boolean isEmpty = TextUtils.isEmpty(i02);
         bi.q0[] q0VarArr = this.c;
         if (isEmpty) {
-            q0VarArr[0].c.setText(org.telegram.messenger.hd.M0(2131745983, null));
+            q0VarArr[0].c.setText(org.telegram.messenger.id.M0(2131745985, null));
             i7 = 0;
         } else {
             i7 = 0;
-            q0VarArr[0].c.setText(org.telegram.messenger.hd.a0(null, null, 2131745982, i02));
+            q0VarArr[0].c.setText(org.telegram.messenger.id.a0(null, null, 2131745984, i02));
         }
-        q0VarArr[2].setSubtitle(i10 == 7 ? org.telegram.messenger.hd.M0(2131745978, null) : org.telegram.messenger.hd.H(',', "SMSFee3TextDays", i10));
+        q0VarArr[2].setSubtitle(i10 == 7 ? org.telegram.messenger.id.M0(2131745980, null) : org.telegram.messenger.id.H(',', "SMSFee3TextDays", i10));
         this.a.setOnClickListener(new di.u3(this, string4, string5, string2, 14));
         fi.d dVar = this.b;
         dVar.setEnabled(true);
@@ -365,7 +365,7 @@ public final class ld0 extends org.telegram.ui.Components.wt0 {
             dVar.setVisibility(z10 ? 1 : 0);
             dVar.setLoading(z10);
             dVar.setEnabled(z10);
-            dVar.i(org.telegram.messenger.hd.M0(2131743914, null), z10, true);
+            dVar.i(org.telegram.messenger.id.M0(2131743916, null), z10, true);
             return;
         }
         boolean z11 = i7;
@@ -373,8 +373,8 @@ public final class ld0 extends org.telegram.ui.Components.wt0 {
         dVar.setLoading(z11);
         Object[] objArr = new Object[1];
         objArr[z11 ? 1 : 0] = org.telegram.messenger.r1.i().f(j3, string6);
-        dVar.i(org.telegram.messenger.hd.a0(null, null, 2131745968, objArr), z11, true);
-        dVar.g(i10 == 7 ? org.telegram.messenger.hd.M0(2131745972, null) : org.telegram.messenger.hd.H(',', "SMSFeePurchaseTextDays", i10), z11);
+        dVar.i(org.telegram.messenger.id.a0(null, null, 2131745970, objArr), z11, true);
+        dVar.g(i10 == 7 ? org.telegram.messenger.id.M0(2131745974, null) : org.telegram.messenger.id.H(',', "SMSFeePurchaseTextDays", i10), z11);
         dVar.setOnClickListener(new bi.d1(this, string6, j3, string3, string2, i10));
     }
 

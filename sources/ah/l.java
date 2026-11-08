@@ -37,7 +37,7 @@ import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.ad;
 import org.telegram.ui.Components.c20;
 import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.gy;
+import org.telegram.ui.Components.hy;
 import org.telegram.ui.Components.ke;
 import org.telegram.ui.Components.ng;
 import org.telegram.ui.Components.pa;
@@ -45,8 +45,8 @@ import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.q40;
 import org.telegram.ui.Components.r2;
 import org.telegram.ui.Components.ra;
-import org.telegram.ui.Components.st;
-import org.telegram.ui.Components.u00;
+import org.telegram.ui.Components.tt;
+import org.telegram.ui.Components.v00;
 import org.telegram.ui.Components.xf;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.an;
@@ -58,7 +58,7 @@ import org.telegram.ui.va;
 import org.telegram.ui.vo;
 import tg.r1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -119,9 +119,9 @@ public final class l extends AnimatorListenerAdapter {
                 }
                 break;
             case 27:
-                gy gyVar = (gy) this.c;
-                if (animator.equals(gyVar.M0)) {
-                    gyVar.M0 = null;
+                hy hyVar = (hy) this.c;
+                if (animator.equals(hyVar.M0)) {
+                    hyVar.M0 = null;
                     break;
                 }
                 break;
@@ -400,45 +400,45 @@ public final class l extends AnimatorListenerAdapter {
                 }
                 break;
             case 26:
-                st stVar = (st) obj2;
-                if (stVar.a.l1.getVisibility() == 0) {
-                    stVar.a.l1.setAlpha(1.0f);
-                    stVar.a.l1.setVisibility(4);
+                tt ttVar = (tt) obj2;
+                if (ttVar.a.l1.getVisibility() == 0) {
+                    ttVar.a.l1.setAlpha(1.0f);
+                    ttVar.a.l1.setVisibility(4);
                 }
                 ((Runnable) obj).run();
                 break;
             case 27:
                 pj0 pj0Var = (pj0) obj;
-                gy gyVar = (gy) obj2;
-                if (animator.equals(gyVar.M0)) {
+                hy hyVar = (hy) obj2;
+                if (animator.equals(hyVar.M0)) {
                     pj0Var.setTranslationY(0.0f);
-                    if (pj0Var == gyVar.D0) {
-                        pj0Var.setPadding(0, 0, 0, gyVar.q2);
-                    } else if (pj0Var == gyVar.P) {
-                        pj0Var.setPadding(g0.L(5.0f), 0, g0.L(5.0f), gyVar.q2);
-                    } else if (pj0Var == gyVar.h0) {
-                        pj0Var.setPadding(0, gyVar.b1, 0, gyVar.q2);
+                    if (pj0Var == hyVar.D0) {
+                        pj0Var.setPadding(0, 0, 0, hyVar.q2);
+                    } else if (pj0Var == hyVar.P) {
+                        pj0Var.setPadding(g0.L(5.0f), 0, g0.L(5.0f), hyVar.q2);
+                    } else if (pj0Var == hyVar.h0) {
+                        pj0Var.setPadding(0, hyVar.b1, 0, hyVar.q2);
                     }
-                    gyVar.M0 = null;
+                    hyVar.M0 = null;
                     break;
                 }
                 break;
             case 28:
-                u00 u00Var = (u00) obj2;
-                u00Var.removeView((c20) obj);
-                u00Var.e.clear();
-                u00Var.a = null;
-                u00Var.b = false;
+                v00 v00Var = (v00) obj2;
+                v00Var.removeView((c20) obj);
+                v00Var.e.clear();
+                v00Var.a = null;
+                v00Var.b = false;
                 break;
             default:
                 ArrayList arrayList = (ArrayList) obj;
-                u00 u00Var2 = (u00) obj2;
+                v00 v00Var2 = (v00) obj2;
                 for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                    u00Var2.removeView((View) arrayList.get(i12));
+                    v00Var2.removeView((View) arrayList.get(i12));
                 }
-                u00Var2.e.clear();
-                u00Var2.a = null;
-                u00Var2.b = false;
+                v00Var2.e.clear();
+                v00Var2.a = null;
+                v00Var2.b = false;
                 break;
         }
     }

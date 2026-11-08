@@ -9,7 +9,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class uk0 extends WebViewClient {
     public final /* synthetic */ int a;
@@ -54,9 +54,9 @@ public final class uk0 extends WebViewClient {
                     } else {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, hl0Var.getParentActivity(), hl0Var.Y0);
                         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                        u1Var.R = org.telegram.messenger.hd.M0(2131752104, null);
-                        u1Var.T = org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131752105, null), new ef0(this, 10));
-                        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747830, null), null);
+                        u1Var.R = org.telegram.messenger.id.M0(2131752104, null);
+                        u1Var.T = org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(2131752105, null), new ef0(this, 10));
+                        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747832, null), null);
                         alertDialog$Builder.p();
                         break;
                     }
@@ -71,9 +71,9 @@ public final class uk0 extends WebViewClient {
                     } else {
                         AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, hl0Var.getParentActivity(), hl0Var.Y0);
                         org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder2.a;
-                        u1Var2.R = org.telegram.messenger.hd.M0(2131752104, null);
-                        u1Var2.T = org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131752105, null), new ef0(this, 12));
-                        alertDialog$Builder2.k(org.telegram.messenger.hd.M0(2131747830, null), null);
+                        u1Var2.R = org.telegram.messenger.id.M0(2131752104, null);
+                        u1Var2.T = org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(2131752105, null), new ef0(this, 12));
+                        alertDialog$Builder2.k(org.telegram.messenger.id.M0(2131747832, null), null);
                         alertDialog$Builder2.p();
                         break;
                     }
@@ -117,8 +117,8 @@ public final class uk0 extends WebViewClient {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
                             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                             u1Var.R = hl0Var.p0;
-                            u1Var.T = org.telegram.messenger.hd.M0(2131747428, null);
-                            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747830, null), null);
+                            u1Var.T = org.telegram.messenger.id.M0(2131747430, null);
+                            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747832, null), null);
                             alertDialog$Builder.p();
                         }
                     }
@@ -145,8 +145,8 @@ public final class uk0 extends WebViewClient {
                             AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(context);
                             org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder2.a;
                             u1Var2.R = hl0Var.p0;
-                            u1Var2.T = org.telegram.messenger.hd.M0(2131747428, null);
-                            alertDialog$Builder2.k(org.telegram.messenger.hd.M0(2131747830, null), null);
+                            u1Var2.T = org.telegram.messenger.id.M0(2131747430, null);
+                            alertDialog$Builder2.k(org.telegram.messenger.id.M0(2131747832, null), null);
                             alertDialog$Builder2.p();
                         }
                     }

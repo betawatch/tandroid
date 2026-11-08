@@ -6,7 +6,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bj0;
 import org.telegram.ui.Components.pj0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class w7 extends org.telegram.ui.ActionBar.v2 implements ls {
     public final int i1;
@@ -72,7 +72,7 @@ public final class w7 extends org.telegram.ui.ActionBar.v2 implements ls {
         textView.setPadding(org.telegram.messenger.g0.L(22.0f) + this.t0, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(22.0f) + this.t0, org.telegram.messenger.g0.L(14.0f));
         org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.h5, textView, f6Var);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(hd.M0(z9 ? 2131744518 : 2131744519, null));
+        textView.setText(id.M0(z9 ? 2131744520 : 2131744521, null));
         this.b.addView(textView, c8.ha.c(-2.0f, -1));
     }
 

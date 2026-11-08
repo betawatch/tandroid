@@ -63,7 +63,7 @@ import org.telegram.messenger.da;
 import org.telegram.messenger.ez;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.gz;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.j0;
 import org.telegram.messenger.n0;
@@ -90,7 +90,7 @@ import org.telegram.ui.bg0;
 import org.telegram.ui.va;
 import org.telegram.ui.vs;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i6.a, k0, com.google.android.gms.common.api.internal.p, bi, t4, i0, r3, f1, y0, n2.v, xa, ra, cz, gh.a, lm0 {
     public final /* synthetic */ int a;
@@ -894,10 +894,10 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
                 j6.q qVar = new j6.q(0, (TaskCompletionSource) obj2);
                 j6.i iVar = (j6.i) ((j6.s) obj).n();
                 String[] strArr = (String[]) this.b;
-                Parcel P0 = iVar.P0();
-                com.google.android.gms.internal.cast.t.d(P0, qVar);
-                P0.writeStringArray(strArr);
-                iVar.U0(P0, 5);
+                Parcel p12 = iVar.p1();
+                com.google.android.gms.internal.cast.t.d(p12, qVar);
+                p12.writeStringArray(strArr);
+                iVar.u1(p12, 5);
                 break;
             default:
                 GetCredentialRequest getCredentialRequest = (GetCredentialRequest) this.b;
@@ -911,7 +911,7 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
                 obtain.writeStrongBinder(fVar);
                 t7.a.b(obtain, getCredentialRequest);
                 t7.a.b(obtain, gVar);
-                ((k7.b) dVar).H0(obtain, 1);
+                ((k7.b) dVar).h1(obtain, 1);
                 break;
         }
     }
@@ -1184,14 +1184,14 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
         }
         int i10 = (int) c10;
         long j3 = i10;
-        vsVar.b.setText(hd.a0("AutodownloadSizeLimitUpTo", null, 2131753772, g0.i0(j3, false, false)));
+        vsVar.b.setText(id.a0("AutodownloadSizeLimitUpTo", null, 2131753772, g0.i0(j3, false, false)));
         vsVar.d = j3;
         r8[] r8VarArr = vsVar.h;
         AnimatorSet[] animatorSetArr = vsVar.n;
         int i11 = vsVar.e;
         i7 = vsVar.r.videosRow;
         if (i11 == i7) {
-            vsVar.f.setText(hd.a0("AutoDownloadPreloadVideoInfo", null, 2131753810, g0.i0(j3, false, false)));
+            vsVar.f.setText(id.a0("AutoDownloadPreloadVideoInfo", null, 2131753810, g0.i0(j3, false, false)));
             boolean z10 = i10 > 2097152;
             if (z10 != r8VarArr[0].isEnabled()) {
                 ArrayList arrayList = new ArrayList();
@@ -1319,7 +1319,7 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
             new Canvas(createBitmap).drawBitmap(bitmap, (Rect) null, rectF, (Paint) null);
             bitmap2 = createBitmap;
         }
-        ((i6.h) this.b).e(bitmap2, 0);
+        ((i6.h) this.b).e(0, bitmap2);
     }
 
     @Override // li.r3

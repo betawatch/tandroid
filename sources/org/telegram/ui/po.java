@@ -9,7 +9,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class po extends org.telegram.ui.Components.oj0 {
     public final Context c;
@@ -76,15 +76,15 @@ public final class po extends org.telegram.ui.Components.oj0 {
         if (i10 == 1) {
             org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) view;
             if (i7 == soVar.L) {
-                z8Var.setText(org.telegram.messenger.hd.M0(2131752303, null));
+                z8Var.setText(org.telegram.messenger.id.M0(2131752303, null));
                 return;
             } else {
                 if (i7 == soVar.J) {
                     if (z9) {
-                        z8Var.setText(org.telegram.messenger.hd.M0(2131751388, null));
+                        z8Var.setText(org.telegram.messenger.id.M0(2131751388, null));
                         return;
                     } else {
-                        z8Var.setText(org.telegram.messenger.hd.M0(2131751384, null));
+                        z8Var.setText(org.telegram.messenger.id.M0(2131751384, null));
                         return;
                     }
                 }
@@ -98,14 +98,14 @@ public final class po extends org.telegram.ui.Components.oj0 {
         if (!z9) {
             int i11 = org.telegram.ui.ActionBar.k6.p7;
             x4Var.a(i11, i11);
-            x4Var.b(R.drawable.msg_remove, 5, org.telegram.messenger.hd.M0(2131751374, null), false);
+            x4Var.b(R.drawable.msg_remove, 5, org.telegram.messenger.id.M0(2131751374, null), false);
         } else if (soVar.h.linked_chat_id == 0) {
             x4Var.a(org.telegram.ui.ActionBar.k6.v6, org.telegram.ui.ActionBar.k6.u6);
-            x4Var.b(R.drawable.msg_groups, 5, org.telegram.messenger.hd.M0(2131751386, null), true);
+            x4Var.b(R.drawable.msg_groups, 5, org.telegram.messenger.id.M0(2131751386, null), true);
         } else {
             int i12 = org.telegram.ui.ActionBar.k6.p7;
             x4Var.a(i12, i12);
-            x4Var.b(R.drawable.msg_remove, 5, org.telegram.messenger.hd.M0(2131751372, null), false);
+            x4Var.b(R.drawable.msg_remove, 5, org.telegram.messenger.id.M0(2131751372, null), false);
         }
     }
 
@@ -141,7 +141,7 @@ public final class po extends org.telegram.ui.Components.oj0 {
                 if (z9) {
                     TLRPC.ChatFull chatFull = soVar.h;
                     if (chatFull == null || chatFull.linked_chat_id == 0) {
-                        textView.setText(org.telegram.messenger.hd.M0(2131751387, null));
+                        textView.setText(org.telegram.messenger.id.M0(2131751387, null));
                     } else {
                         TLRPC.Chat M0 = soVar.getMessagesController().M0(Long.valueOf(soVar.h.linked_chat_id));
                         if (M0 != null) {

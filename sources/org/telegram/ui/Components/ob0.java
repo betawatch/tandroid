@@ -6,7 +6,7 @@ import android.util.StateSet;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ob0 implements Runnable {
     public final /* synthetic */ int a;
@@ -36,9 +36,9 @@ public final /* synthetic */ class ob0 implements Runnable {
                 ((mc0) this.b).k1.start();
                 break;
             case 3:
-                ry ryVar = ((pd0) this.b).c.l0;
-                if (ryVar != null) {
-                    ryVar.c(false, true, false);
+                sy syVar = ((pd0) this.b).c.l0;
+                if (syVar != null) {
+                    syVar.c(false, true, false);
                     break;
                 }
                 break;

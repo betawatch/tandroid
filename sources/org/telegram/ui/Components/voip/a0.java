@@ -16,7 +16,7 @@ import java.util.Arrays;
 import java.util.LinkedHashMap;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.qp;
@@ -27,11 +27,11 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.dt;
+import org.telegram.ui.Components.et;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.va;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class a0 extends ViewGroup {
     public final z D;
@@ -39,7 +39,7 @@ public final class a0 extends ViewGroup {
     public long F;
     public long G;
     public int[] H;
-    public final dt I;
+    public final et I;
     public final /* synthetic */ e0 J;
     public final ArrayList a;
     public final ArrayList b;
@@ -65,7 +65,7 @@ public final class a0 extends ViewGroup {
         this.h = org.telegram.messenger.g0.L(2.0f);
         this.r = 1.0f;
         this.D = new z(this, 1);
-        this.I = new dt(this, 18);
+        this.I = new et(this, 18);
         setBackgroundColor(-16777216);
         setChildrenDrawingOrderEnabled(true);
         this.n = e0Var.c;
@@ -519,10 +519,10 @@ public final class a0 extends ViewGroup {
             }
             int callState = sharedInstance.getCallState();
             if (callState == 5) {
-                textView.setText(hd.M0(2131743254, null));
+                textView.setText(id.M0(2131743256, null));
                 textView.setVisibility(0);
             } else if (callState != 3) {
-                textView.setText(hd.M0(2131743420, null));
+                textView.setText(id.M0(2131743422, null));
                 textView.setVisibility(0);
             } else {
                 textView.setVisibility(8);

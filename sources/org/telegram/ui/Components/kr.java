@@ -5,7 +5,7 @@ import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class kr {
     public final int a;
@@ -141,20 +141,20 @@ public final class kr {
         String k10 = tLObject instanceof TLRPC.User ? org.telegram.messenger.t10.k((TLRPC.User) tLObject) : org.telegram.messenger.g5.o(tLObject);
         int i11 = this.a;
         if (i11 == 0) {
-            this.b = org.telegram.messenger.hd.M0(2131751503, null);
+            this.b = org.telegram.messenger.id.M0(2131751503, null);
             return;
         }
         if (i11 == 1) {
-            this.b = d() ? org.telegram.messenger.hd.M0(2131751583, null) : org.telegram.messenger.hd.a0(null, null, 2131751588, k10);
+            this.b = d() ? org.telegram.messenger.id.M0(2131751583, null) : org.telegram.messenger.id.a0(null, null, 2131751588, k10);
             return;
         }
         if (i11 == 3) {
-            this.b = d() ? org.telegram.messenger.hd.M0(2131751578, null) : org.telegram.messenger.hd.a0(null, null, 2131751579, k10);
+            this.b = d() ? org.telegram.messenger.id.M0(2131751578, null) : org.telegram.messenger.id.a0(null, null, 2131751579, k10);
         } else if (i11 == 2) {
             if (this.j.Y1) {
-                this.b = d() ? org.telegram.messenger.hd.M0(2131751501, null) : org.telegram.messenger.hd.a0(null, null, 2131751502, k10);
+                this.b = d() ? org.telegram.messenger.id.M0(2131751501, null) : org.telegram.messenger.id.a0(null, null, 2131751502, k10);
             } else {
-                this.b = d() ? org.telegram.messenger.hd.M0(2131751568, null) : org.telegram.messenger.hd.a0(null, null, 2131751569, k10);
+                this.b = d() ? org.telegram.messenger.id.M0(2131751568, null) : org.telegram.messenger.id.a0(null, null, 2131751569, k10);
             }
         }
     }

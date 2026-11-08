@@ -18,12 +18,12 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.hb0;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ec1;
+import org.telegram.ui.fc1;
 import org.telegram.ui.g01;
 import org.telegram.ui.il0;
 import org.telegram.ui.p31;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u3 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class u3 implements DialogInterface.OnDismissListen
     @Override // android.content.DialogInterface.OnDismissListener
     public final void onDismiss(DialogInterface dialogInterface) {
         Runnable runnable;
-        org.telegram.ui.Wallet.n9 n9Var;
+        org.telegram.ui.Wallet.m9 m9Var;
         int i7 = this.a;
         Object obj = this.c;
         Object obj2 = this.b;
@@ -53,9 +53,9 @@ public final /* synthetic */ class u3 implements DialogInterface.OnDismissListen
                 }
                 break;
             case 1:
-                zh.p3 p3Var = (zh.p3) obj;
+                zh.o3 o3Var = (zh.o3) obj;
                 if (!((boolean[]) obj2)[0]) {
-                    p3Var.a(Boolean.FALSE, null);
+                    o3Var.a(Boolean.FALSE, null);
                     break;
                 }
                 break;
@@ -136,7 +136,7 @@ public final /* synthetic */ class u3 implements DialogInterface.OnDismissListen
                     ActionBarLayout actionBarLayout = launchActivity.o0;
                     org.telegram.ui.ActionBar.f2 lastFragment = actionBarLayout == null ? null : actionBarLayout.getLastFragment();
                     try {
-                        String str = org.telegram.messenger.hd.E0().B.c;
+                        String str = org.telegram.messenger.id.E0().B.c;
                         if (lastFragment != null) {
                             org.telegram.ui.Components.cc Q = org.telegram.ui.Components.hc.a0(lastFragment).Q(R.raw.msg_translate, 36, LaunchActivity.U(2131752545, "ChangeLanguageLater", str.equals("en") ? launchActivity.I0 : launchActivity.H0));
                             Q.j = 5000;
@@ -176,9 +176,9 @@ public final /* synthetic */ class u3 implements DialogInterface.OnDismissListen
                 g01Var.x = null;
                 break;
             case 14:
-                ec1 ec1Var = (ec1) obj;
+                fc1 fc1Var = (fc1) obj;
                 if (!((boolean[]) obj2)[0]) {
-                    ec1Var.t0.b();
+                    fc1Var.t0.b();
                     break;
                 }
                 break;
@@ -188,12 +188,12 @@ public final /* synthetic */ class u3 implements DialogInterface.OnDismissListen
                 org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
                 if (T != null) {
                     if (user != null) {
-                        n9Var = new org.telegram.ui.Wallet.n9(user);
+                        m9Var = new org.telegram.ui.Wallet.m9(user);
                     } else {
-                        n9Var = new org.telegram.ui.Wallet.n9(wallettransactionpeeruser.address);
-                        n9Var.A0(wallettransactionpeeruser.domain);
+                        m9Var = new org.telegram.ui.Wallet.m9(wallettransactionpeeruser.address);
+                        m9Var.A0(wallettransactionpeeruser.domain);
                     }
-                    T.presentFragment(n9Var);
+                    T.presentFragment(m9Var);
                     break;
                 }
                 break;

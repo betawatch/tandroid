@@ -18,14 +18,14 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.accessibility.AccessibilityNodeProvider;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.zg0;
-import org.telegram.ui.cc1;
+import org.telegram.ui.dc1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class e extends View {
     public boolean D;
@@ -98,9 +98,9 @@ public final class e extends View {
         TextPaint textPaint = new TextPaint(1);
         textPaint.setTextSize(org.telegram.messenger.g0.L(11.0f));
         textPaint.setColor(-1);
-        String M0 = hd.M0(2131754716, null);
-        String M02 = hd.M0(2131751604, null);
-        String M03 = hd.M0(2131746052, null);
+        String M0 = id.M0(2131754716, null);
+        String M02 = id.M0(2131751604, null);
+        String M03 = id.M0(2131746054, null);
         int measureText = (int) textPaint.measureText(M0);
         Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
         this.e = new StaticLayout(M0, textPaint, measureText, alignment, 1.0f, 0.0f, false);
@@ -360,7 +360,7 @@ public final class e extends View {
                         ofFloat.start();
                         this.O = ofFloat;
                         if (this.Q != null && (Math.abs(y10) < f10 || this.J > this.L * 0.8f)) {
-                            ((cc1) this.Q).b();
+                            ((dc1) this.Q).b();
                         }
                     } else {
                         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.K, 0.0f);
@@ -368,7 +368,7 @@ public final class e extends View {
                         ofFloat2.start();
                         this.P = ofFloat2;
                         if (this.Q != null && (Math.abs(y10) < f10 || (-this.K) > this.L * 0.8f)) {
-                            ((cc1) this.Q).a();
+                            ((dc1) this.Q).a();
                         }
                     }
                 }

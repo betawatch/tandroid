@@ -38,8 +38,8 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.ez;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.gz;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i6;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.m5;
@@ -63,7 +63,6 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.o4;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Components.b8;
 import org.telegram.ui.Components.bn;
 import org.telegram.ui.Components.di;
@@ -80,7 +79,7 @@ import org.telegram.ui.Components.v4;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.Wallet.v1;
+import org.telegram.ui.Wallet.u1;
 import org.telegram.ui.a21;
 import org.telegram.ui.ah0;
 import org.telegram.ui.an;
@@ -93,11 +92,11 @@ import org.telegram.ui.n20;
 import org.telegram.ui.q11;
 import org.telegram.ui.qw;
 import org.telegram.ui.t21;
-import org.telegram.ui.v91;
-import org.telegram.ui.w81;
+import org.telegram.ui.w91;
 import org.telegram.ui.ww;
+import org.telegram.ui.x81;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements OnFailureListener, p, q1, qw, r1, t4, fb0, ri, tr, w10 {
     public final /* synthetic */ int a;
@@ -165,7 +164,7 @@ public final /* synthetic */ class d implements OnFailureListener, p, q1, qw, r1
                 g0.h3(new u0(list, (v10) this.b, (TLRPC.TL_inputStorePaymentStarsTopup) this.c, (TL_stars.TL_starsTopupOption) this.d, (Activity) this.e, 5));
                 break;
             default:
-                g0.h3(new a3((ea) this.b, list, (v1) this.c, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.d, fVar, (Activity) this.e, 2));
+                g0.h3(new a3((ea) this.b, list, (u1) this.c, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.d, fVar, (Activity) this.e, 2));
                 break;
         }
     }
@@ -259,7 +258,7 @@ public final /* synthetic */ class d implements OnFailureListener, p, q1, qw, r1
     }
 
     @Override // org.telegram.ui.ActionBar.r1
-    public void g(u1 u1Var, int i7) {
+    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
         int i10 = this.a;
         Object obj = this.e;
         Object obj2 = this.d;
@@ -309,14 +308,14 @@ public final /* synthetic */ class d implements OnFailureListener, p, q1, qw, r1
                 notificationsCustomSettingsActivity.getNotificationsController().b0(notificationsCustomSettingsActivity.s);
                 break;
             default:
-                v91 v91Var = (v91) obj4;
+                w91 w91Var = (w91) obj4;
                 HashSet hashSet = (HashSet) obj3;
                 HashSet hashSet2 = new HashSet();
-                v91Var.A0 = hashSet2;
+                w91Var.A0 = hashSet2;
                 hashSet2.addAll(hashSet);
-                v91Var.Z0(true, false);
-                hc.a0(v91Var).U(hd.K0(hashSet.size(), "TopicsDeleted"), false, new w81(v91Var, 4), new t21(v91Var, (ArrayList) obj2, (Runnable) obj, 7)).j();
-                v91Var.G0();
+                w91Var.Z0(true, false);
+                hc.a0(w91Var).U(id.K0(hashSet.size(), "TopicsDeleted"), false, new x81(w91Var, 4), new t21(w91Var, (ArrayList) obj2, (Runnable) obj, 7)).j();
+                w91Var.G0();
                 u1Var.dismiss();
                 break;
         }
@@ -446,7 +445,7 @@ public final /* synthetic */ class d implements OnFailureListener, p, q1, qw, r1
     }
 
     @Override // org.telegram.ui.qw
-    public boolean y(ww wwVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, v91 v91Var) {
+    public boolean y(ww wwVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, w91 w91Var) {
         long j3;
         TLRPC.TL_document tL_document;
         int i11 = this.a;
@@ -545,7 +544,7 @@ public final /* synthetic */ class d implements OnFailureListener, p, q1, qw, r1
                     wwVar.finishFragment();
                     f2 Q = LaunchActivity.Q();
                     if (Q != null) {
-                        hc.a0(Q).Q(R.raw.forward, 36, (arrayList.size() == 1 && ((xr) arrayList.get(0)).a == p10.i(b8Var.a).e()) ? hd.M0(2131750497, null) : (arrayList.size() != 1 || ((xr) arrayList.get(0)).a <= 0) ? (arrayList.size() != 1 || ((xr) arrayList.get(0)).a >= 0) ? hd.H(',', "FwdMessageToManyChats", arrayList.size()) : hd.a0(null, null, 2131750501, m5.t(((xr) arrayList.get(0)).a)) : hd.a0(null, null, 2131750496, m5.t(((xr) arrayList.get(0)).a))).j();
+                        hc.a0(Q).Q(R.raw.forward, 36, (arrayList.size() == 1 && ((xr) arrayList.get(0)).a == p10.i(b8Var.a).e()) ? id.M0(2131750499, null) : (arrayList.size() != 1 || ((xr) arrayList.get(0)).a <= 0) ? (arrayList.size() != 1 || ((xr) arrayList.get(0)).a >= 0) ? id.H(',', "FwdMessageToManyChats", arrayList.size()) : id.a0(null, null, 2131750503, m5.t(((xr) arrayList.get(0)).a)) : id.a0(null, null, 2131750498, m5.t(((xr) arrayList.get(0)).a))).j();
                         break;
                     }
                 }

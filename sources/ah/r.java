@@ -12,7 +12,7 @@ import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -30,7 +30,7 @@ import org.telegram.ui.Components.nu0;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.wo;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class r extends yg.c implements a6 {
     public final ImageView D;
@@ -60,7 +60,7 @@ public final class r extends yg.c implements a6 {
             woVar.b(k6.B5, k6.h5, k6.k7);
             woVar.setDrawUnchecked(false);
             woVar.setDrawBackgroundAsArc(3);
-            boolean z12 = hd.a0;
+            boolean z12 = id.a0;
             addView(woVar, ha.d(24, 24.0f, (z12 ? 5 : 3) | 48, z12 ? 0.0f : 40.0f, 33.0f, z12 ? 39.0f : 0.0f, 0.0f));
             d();
         } else if (z9) {
@@ -75,7 +75,7 @@ public final class r extends yg.c implements a6 {
             woVar2.setDrawBackgroundAsArc(10);
             addView(woVar2);
             woVar2.a(false, false);
-            woVar2.setLayoutParams(ha.d(24, 24.0f, (hd.a0 ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
+            woVar2.setLayoutParams(ha.d(24, 24.0f, (id.a0 ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
             d();
         } else {
             this.w = null;
@@ -88,14 +88,14 @@ public final class r extends yg.c implements a6 {
         int i7 = k6.od;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         r6.t(imageView, i7, f6Var, mode);
-        addView(imageView, ha.d(32, 32.0f, (hd.a0 ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
+        addView(imageView, ha.d(32, 32.0f, (id.a0 ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.D = imageView2;
         imageView2.setScaleType(scaleType);
         imageView2.setImageResource(R.drawable.menu_phone);
         int i10 = k6.Ci;
         r6.t(imageView2, i10, f6Var, mode);
-        boolean z13 = hd.a0;
+        boolean z13 = id.a0;
         addView(imageView2, ha.d(32, 32.0f, (z13 ? 3 : 5) | 16, z13 ? 52.0f : 12.0f, 0.0f, z13 ? 12.0f : 52.0f, 0.0f));
         imageView2.setVisibility(8);
         ImageView imageView3 = new ImageView(context);
@@ -103,7 +103,7 @@ public final class r extends yg.c implements a6 {
         imageView3.setScaleType(scaleType);
         imageView3.setImageResource(R.drawable.menu_videocall);
         r6.t(imageView3, i10, f6Var, mode);
-        addView(imageView3, ha.d(32, 32.0f, (hd.a0 ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
+        addView(imageView3, ha.d(32, 32.0f, (id.a0 ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
         imageView3.setVisibility(8);
     }
 
@@ -254,9 +254,9 @@ public final class r extends yg.c implements a6 {
         }
         boolean V = t3.V(chat);
         if (i7 >= 1) {
-            M0 = hd.G(i7, V ? "Subscribers" : "Members", new Object[0]);
+            M0 = id.G(i7, V ? "Subscribers" : "Members", new Object[0]);
         } else {
-            M0 = hd.M0(V ? 2131751391 : 2131754876, null);
+            M0 = id.M0(V ? 2131751391 : 2131754876, null);
         }
         setSubtitle(M0);
         r6.Y(this.e, k6.r5, this.a);
@@ -307,14 +307,14 @@ public final class r extends yg.c implements a6 {
         f6 f6Var = this.a;
         k5 k5Var = this.e;
         r6.Y(k5Var, i7, f6Var);
-        setSubtitle(hd.a0(null, null, 2131753661, hd.E0().o0().format(new Date(tL_myBoost.expires * 1000))));
+        setSubtitle(id.a0(null, null, 2131753661, id.E0().o0().format(new Date(tL_myBoost.expires * 1000))));
         int i10 = tL_myBoost.cooldown_until_date;
         if (i10 <= 0) {
             d4Var.setAlpha(1.0f);
             k5Var.setAlpha(1.0f);
             i(false, 1.0f);
         } else {
-            setSubtitle(hd.a0(null, null, 2131753594, f((i10 * 1000) - System.currentTimeMillis())));
+            setSubtitle(id.a0(null, null, 2131753594, f((i10 * 1000) - System.currentTimeMillis())));
             d4Var.setAlpha(0.65f);
             k5Var.setAlpha(0.65f);
             i(false, 0.3f);
@@ -349,12 +349,12 @@ public final class r extends yg.c implements a6 {
         if (t10.t(user)) {
             int i7 = user.bot_active_users;
             if (i7 > 0) {
-                setSubtitle(hd.H(',', "BotUsers", i7));
+                setSubtitle(id.H(',', "BotUsers", i7));
             } else {
-                setSubtitle(hd.M0(2131753156, null));
+                setSubtitle(id.M0(2131753156, null));
             }
         } else {
-            setSubtitle(hd.d0(p10.s0, user, zArr, null));
+            setSubtitle(id.d0(p10.s0, user, zArr, null));
         }
         r6.Y(this.e, zArr[0] ? k6.n5 : k6.r5, this.a);
         wo woVar = this.w;

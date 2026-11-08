@@ -15,7 +15,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class bn0 extends org.telegram.ui.ActionBar.g1 {
     public boolean A;
@@ -82,9 +82,9 @@ public abstract class bn0 extends org.telegram.ui.ActionBar.g1 {
                 int themedColor = rm0Var.getThemedColor(org.telegram.ui.ActionBar.k6.vj);
                 rm0Var.c = themedColor;
                 l9Var.setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.SRC_IN));
-                rm0Var.b.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131745656, null)));
+                rm0Var.b.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131745658, null)));
                 ac acVar = new ac(context, ymVar, true);
-                acVar.e(org.telegram.messenger.hd.M0(2131745655, null));
+                acVar.e(org.telegram.messenger.id.M0(2131745657, null));
                 acVar.b = v80Var2;
                 rm0Var.setButton(acVar);
                 cc f10 = cc.f(ym0Var, rm0Var, 1500);

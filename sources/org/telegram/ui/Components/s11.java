@@ -16,7 +16,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class s11 {
     public static final int[] N = {R.attr.state_enabled, R.attr.state_pressed};
@@ -314,7 +314,7 @@ public abstract class s11 {
         message.voiceTranscriptionForce = true;
         org.telegram.messenger.yr a02 = org.telegram.messenger.yr.a0(ijVar.I1);
         long B0 = org.telegram.messenger.ij.B0(ijVar.k);
-        a02.a.c(new org.telegram.messenger.ik(a02, ijVar.f1(), B0, ijVar.k, 6));
+        a02.a.c(new org.telegram.messenger.hk(a02, ijVar.f1(), B0, ijVar.k, 6));
         if (z9) {
             org.telegram.messenger.g0.h3(new ir0(ijVar, 19));
         }
@@ -352,7 +352,7 @@ public abstract class s11 {
             }
             ijVar.k.voiceTranscriptionOpen = false;
             org.telegram.messenger.yr a02 = org.telegram.messenger.yr.a0(i7);
-            a02.a.c(new org.telegram.messenger.ik(a02, i10, n10, ijVar.k, 6));
+            a02.a.c(new org.telegram.messenger.hk(a02, i10, n10, ijVar.k, 6));
             final int i11 = 1;
             org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.Components.n11
                 @Override // java.lang.Runnable
@@ -378,7 +378,7 @@ public abstract class s11 {
             m(ijVar);
             ijVar.k.voiceTranscriptionOpen = true;
             org.telegram.messenger.yr a03 = org.telegram.messenger.yr.a0(i7);
-            a03.a.c(new org.telegram.messenger.ik(a03, i10, n10, ijVar.k, 6));
+            a03.a.c(new org.telegram.messenger.hk(a03, i10, n10, ijVar.k, 6));
             final int i12 = 0;
             org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.Components.n11
                 @Override // java.lang.Runnable
@@ -444,7 +444,7 @@ public abstract class s11 {
                         if (i15 != s13.u4) {
                             s13.u4 = i15;
                             s13.e7.edit().putInt("transcribeAudioTrialCooldownUntil", s13.u4).apply();
-                            org.telegram.messenger.g0.h3(new org.telegram.messenger.wj(s13, 3));
+                            org.telegram.messenger.g0.h3(new org.telegram.messenger.vj(s13, 3));
                         }
                         org.telegram.messenger.g0.h3(new v80(24, l1Var2, tL_messages_transcribedAudio));
                     }
@@ -466,7 +466,7 @@ public abstract class s11 {
                         if (intValue != s15.u4) {
                             s15.u4 = intValue;
                             s15.e7.edit().putInt("transcribeAudioTrialCooldownUntil", s15.u4).apply();
-                            org.telegram.messenger.g0.h3(new org.telegram.messenger.wj(s15, 3));
+                            org.telegram.messenger.g0.h3(new org.telegram.messenger.vj(s15, 3));
                         }
                         org.telegram.messenger.g0.h3(new org.telegram.ui.q8(ijVar2, l1Var2, i13, 27));
                         return;

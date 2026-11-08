@@ -5,13 +5,13 @@ import android.text.SpannableStringBuilder;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.u31;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class n3 {
     public boolean a;
@@ -36,14 +36,14 @@ public final class n3 {
                 TLRPC.User a22 = qp.s1(q1Var.Z5).a2(Long.valueOf(((TLRPC.TL_messageMediaStory) messageMedia).user_id));
                 String str2 = a22 == null ? "DELETED" : a22.first_name;
                 int Q0 = (int) ((org.telegram.messenger.g0.Q1() ? org.telegram.messenger.g0.Q0() : q1Var.getParentWidth()) * 0.4f);
-                String M0 = hd.M0(2131750507, null);
+                String M0 = id.M0(2131750509, null);
                 TextPaint textPaint = org.telegram.ui.ActionBar.k6.X2;
                 int ceil = (int) Math.ceil(textPaint.measureText(M0 + " "));
                 if (str2 == null) {
                     str2 = "";
                 }
                 String str3 = (String) TextUtils.ellipsize(str2.replace('\n', ' '), org.telegram.ui.ActionBar.k6.Y2, Q0 - ceil, TextUtils.TruncateAt.END);
-                String M02 = hd.M0(2131750503, null);
+                String M02 = id.M0(2131750505, null);
                 int indexOf = M02.indexOf("%1$s");
                 String format = String.format(M02, str3);
                 if (indexOf >= 0) {

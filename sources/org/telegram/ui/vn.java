@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vn implements Runnable {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class vn implements Runnable {
     /* JADX WARN: Type inference failed for: r11v10, types: [java.lang.Runnable, wi.g0] */
     /* JADX WARN: Type inference failed for: r12v5 */
     /* JADX WARN: Type inference failed for: r12v6, types: [wi.t0] */
-    /* JADX WARN: Type inference failed for: r12v7, types: [wi.n] */
+    /* JADX WARN: Type inference failed for: r12v7, types: [wi.o] */
     @Override // java.lang.Runnable
     public final void run() {
         byte[] bArr;
@@ -72,9 +72,9 @@ public final /* synthetic */ class vn implements Runnable {
                             return;
                         }
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(goVar.getParentActivity());
-                        alertDialog$Builder.a.T = org.telegram.messenger.hd.M0(2131746026, null);
-                        alertDialog$Builder.a.R = org.telegram.messenger.hd.M0(2131746024, null);
-                        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131747830, null), null);
+                        alertDialog$Builder.a.T = org.telegram.messenger.id.M0(2131746028, null);
+                        alertDialog$Builder.a.R = org.telegram.messenger.id.M0(2131746026, null);
+                        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131747832, null), null);
                         goVar.showDialog(alertDialog$Builder.a);
                     }
                 }
@@ -120,17 +120,17 @@ public final /* synthetic */ class vn implements Runnable {
                     if (d instanceof TextView) {
                         TextView textView = (TextView) d;
                         if (zArr[0]) {
-                            textView.setText(org.telegram.messenger.hd.M0(org.telegram.messenger.t3.V(chat3) ? 2131752422 : 2131751531, null));
+                            textView.setText(org.telegram.messenger.id.M0(org.telegram.messenger.t3.V(chat3) ? 2131752422 : 2131751531, null));
                             return;
                         }
                         if (chat3.monoforum) {
-                            textView.setText(org.telegram.messenger.hd.M0(2131748994, null));
+                            textView.setText(org.telegram.messenger.id.M0(2131748996, null));
                             return;
                         } else if (chat3.megagroup) {
-                            textView.setText(org.telegram.messenger.hd.M0(2131748990, null));
+                            textView.setText(org.telegram.messenger.id.M0(2131748992, null));
                             return;
                         } else {
-                            textView.setText(org.telegram.messenger.hd.M0(2131749003, null));
+                            textView.setText(org.telegram.messenger.id.M0(2131749005, null));
                             return;
                         }
                     }
@@ -149,7 +149,7 @@ public final /* synthetic */ class vn implements Runnable {
                     org.telegram.messenger.g0.h3(new org.telegram.ui.Components.f(i13, ujVar, new ArrayList()));
                     return;
                 }
-                String S0 = org.telegram.messenger.hd.E0().S0(lowerCase, true, false);
+                String S0 = org.telegram.messenger.id.E0().S0(lowerCase, true, false);
                 if (!lowerCase.equals(S0) && S0.length() != 0) {
                     str = S0;
                 }
@@ -271,9 +271,9 @@ public final /* synthetic */ class vn implements Runnable {
                             return;
                         }
                         AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(f50Var.getParentActivity());
-                        alertDialog$Builder3.a.T = org.telegram.messenger.hd.M0(2131746026, null);
-                        alertDialog$Builder3.a.R = org.telegram.messenger.hd.M0(2131746024, null);
-                        alertDialog$Builder3.h(org.telegram.messenger.hd.M0(2131747830, null), null);
+                        alertDialog$Builder3.a.T = org.telegram.messenger.id.M0(2131746028, null);
+                        alertDialog$Builder3.a.R = org.telegram.messenger.id.M0(2131746026, null);
+                        alertDialog$Builder3.h(org.telegram.messenger.id.M0(2131747832, null), null);
                         f50Var.showDialog(alertDialog$Builder3.a);
                     }
                 }
@@ -406,7 +406,7 @@ public final /* synthetic */ class vn implements Runnable {
                 }
                 return;
             case 14:
-                ya1.h0((ya1) this.c, (TLRPC.TL_error) this.d, (TLObject) this.e, this.b);
+                za1.h0((za1) this.c, (TLRPC.TL_error) this.d, (TLObject) this.e, this.b);
                 return;
             case 15:
                 p4.d0 d0Var = (p4.d0) this.c;
@@ -456,7 +456,7 @@ public final /* synthetic */ class vn implements Runnable {
                 boolean z26 = this.b;
                 TLRPC.Chat chat4 = (TLRPC.Chat) this.d;
                 org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.e;
-                org.telegram.ui.Components.cc I = hcVar.I(R.raw.star_premium_2, z26 ? org.telegram.messenger.hd.M0(2131753481, "BoostingGiveawayCreated") : org.telegram.messenger.hd.M0(2131753592, "BoostingAwardsCreated"), org.telegram.messenger.g0.S2(z26 ? org.telegram.messenger.hd.M0(org.telegram.messenger.t3.V(chat4) ? 2131753555 : 2131753554, null) : org.telegram.messenger.hd.M0(org.telegram.messenger.t3.V(chat4) ? 2131753557 : 2131753556, null), org.telegram.ui.ActionBar.k6.uj, 0, new bi.j3(chat4), f6Var));
+                org.telegram.ui.Components.cc I = hcVar.I(R.raw.star_premium_2, z26 ? org.telegram.messenger.id.M0(2131753481, "BoostingGiveawayCreated") : org.telegram.messenger.id.M0(2131753592, "BoostingAwardsCreated"), org.telegram.messenger.g0.S2(z26 ? org.telegram.messenger.id.M0(org.telegram.messenger.t3.V(chat4) ? 2131753555 : 2131753554, null) : org.telegram.messenger.id.M0(org.telegram.messenger.t3.V(chat4) ? 2131753557 : 2131753556, null), org.telegram.ui.ActionBar.k6.uj, 0, new bi.j3(chat4), f6Var));
                 I.j = 5000;
                 I.j();
                 return;
@@ -502,7 +502,7 @@ public final /* synthetic */ class vn implements Runnable {
                                     }
                                 }
                             }
-                            t0Var.t(file2, i12, 0L, Math.min(j10, h), z27, z9 ? 1 : 2);
+                            t0Var.u(file2, i12, 0L, Math.min(j10, h), z27, z9 ? 1 : 2);
                             c8.jd.c(file2);
                             t0Var = t0Var;
                         } catch (Throwable th4) {

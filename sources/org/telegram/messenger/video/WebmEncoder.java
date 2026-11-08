@@ -23,8 +23,8 @@ import org.telegram.messenger.f6;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.g20;
 import org.telegram.messenger.h20;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i6;
+import org.telegram.messenger.id;
 import org.telegram.messenger.j20;
 import org.telegram.messenger.mf;
 import org.telegram.messenger.p10;
@@ -38,11 +38,11 @@ import org.telegram.ui.Components.s5;
 import org.telegram.ui.Components.v5;
 import sg.b0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class WebmEncoder {
 
-    /* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+    /* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
     public static class FrameDrawer {
         private final int H;
         private final int W;
@@ -342,7 +342,7 @@ public class WebmEncoder {
             int i12 = h20Var.p;
             bVar.setGravity(i12 != 1 ? i12 != 2 ? 19 : 21 : 17);
             int i13 = h20Var.p;
-            bVar.setTextAlignment(i13 != 1 ? (i13 == 2 ? !hd.a0 : hd.a0) ? 3 : 2 : 4);
+            bVar.setTextAlignment(i13 != 1 ? (i13 == 2 ? !id.a0 : id.a0) ? 3 : 2 : 4);
             bVar.setHorizontallyScrolling(false);
             bVar.setImeOptions(TLObject.FLAG_28);
             bVar.setFocusableInTouchMode(true);
@@ -477,7 +477,7 @@ public class WebmEncoder {
                         i11 = i13;
                         try {
                             try {
-                                ((re) mfVar3).k(Math.min(261120L, convertVideoParams.cacheFile.length()), i14 / ceil);
+                                ((re) mfVar3).l(Math.min(261120L, convertVideoParams.cacheFile.length()), i14 / ceil);
                             } catch (Exception e11) {
                                 e = e11;
                                 z10 = true;
@@ -537,7 +537,7 @@ public class WebmEncoder {
         if (i7 > 0 || length <= 261120) {
             mfVar = convertVideoParams.callback;
             if (mfVar != null) {
-                ((re) mfVar).k(length, 1.0f);
+                ((re) mfVar).l(length, 1.0f);
             }
             a8.b("webm encoded to " + convertVideoParams.cacheFile + " with size=" + length + " triesLeft=" + i7);
             return z9;

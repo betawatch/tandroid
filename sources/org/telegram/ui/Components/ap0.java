@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ap0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -40,13 +40,13 @@ public final /* synthetic */ class ap0 implements Runnable {
                 u1Var.P0 = false;
                 org.telegram.messenger.ij ijVar = this.d;
                 if (ijVar.d4()) {
-                    u1Var.R = org.telegram.messenger.hd.M0(2131744825, null);
-                    u1Var.T = org.telegram.messenger.hd.M0(2131744826, null);
+                    u1Var.R = org.telegram.messenger.id.M0(2131744827, null);
+                    u1Var.T = org.telegram.messenger.id.M0(2131744828, null);
                 } else {
-                    u1Var.R = org.telegram.messenger.hd.M0(2131744830, null);
-                    u1Var.T = org.telegram.messenger.hd.M0(2131744831, null);
+                    u1Var.R = org.telegram.messenger.id.M0(2131744832, null);
+                    u1Var.T = org.telegram.messenger.id.M0(2131744833, null);
                 }
-                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131744842, null), new bg.f0(xs0Var, f6Var, ijVar, this.e, 5));
+                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131744844, null), new bg.f0(xs0Var, f6Var, ijVar, this.e, 5));
                 jg.g.w(null, 2131752589, alertDialog$Builder, null);
                 break;
         }

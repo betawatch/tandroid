@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class mc0 extends org.telegram.ui.ActionBar.v2 {
     public final TextView i1;
@@ -65,22 +65,22 @@ public final class mc0 extends org.telegram.ui.ActionBar.v2 {
         ch0Var.setAnimation(zg0Var);
         q70Var.d(0, null, false);
         q70Var.b(true);
-        q70Var.setDelegate(new ax(this, 10));
+        q70Var.setDelegate(new bx(this, 10));
         TextView textView = new TextView(context);
-        textView.setText(org.telegram.messenger.hd.M0(2131749148, null));
+        textView.setText(org.telegram.messenger.id.M0(2131749150, null));
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setTextSize(1, 20.0f);
         textView.setGravity(1);
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.G6, null);
         TextView textView2 = new TextView(context);
-        textView2.setText(org.telegram.messenger.hd.M0(z9 ? 2131748909 : 2131748910, null));
+        textView2.setText(org.telegram.messenger.id.M0(z9 ? 2131748911 : 2131748912, null));
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity(1);
         org.telegram.ui.ActionBar.r6.V(textView2, org.telegram.ui.ActionBar.k6.j5, null);
         textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
         TextView textView3 = new TextView(context);
         this.i1 = textView3;
-        textView3.setText(org.telegram.messenger.hd.M0(2131748694, null));
+        textView3.setText(org.telegram.messenger.id.M0(2131748696, null));
         textView3.setGravity(17);
         textView3.setEllipsize(TextUtils.TruncateAt.END);
         textView3.setSingleLine(true);

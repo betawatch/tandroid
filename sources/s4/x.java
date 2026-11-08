@@ -9,11 +9,11 @@ import android.support.v4.media.session.MediaSessionCompat$Token;
 import android.util.Log;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import org.telegram.ui.Components.dt;
-import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.et;
+import org.telegram.ui.Components.rt;
 import org.telegram.ui.hy0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class x {
     public static e c;
@@ -110,12 +110,12 @@ public final class x {
         c10.u = zVar;
         if (c10.f()) {
             if (c10.r == null) {
-                k kVar = new k(c10.h, new qt(c10, 13));
+                k kVar = new k(c10.h, new rt(c10, 13));
                 c10.r = kVar;
                 c10.a(kVar, true);
                 c10.k();
                 qe.h hVar = c10.c;
-                ((Handler) hVar.d).post((dt) hVar.h);
+                ((Handler) hVar.d).post((et) hVar.h);
             }
             if ((zVar2 != null && zVar2.d) != zVar.d) {
                 k kVar2 = c10.r;
@@ -139,7 +139,7 @@ public final class x {
                 }
                 c10.r = null;
                 qe.h hVar2 = c10.c;
-                ((Handler) hVar2.d).post((dt) hVar2.h);
+                ((Handler) hVar2.d).post((et) hVar2.h);
             }
         }
         bVar.b(769, zVar);

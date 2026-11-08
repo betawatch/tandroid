@@ -5,7 +5,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class ha {
     public static FrameLayout.LayoutParams a(float f10, float f11, int i7) {
@@ -43,14 +43,14 @@ public abstract class ha {
     }
 
     public static FrameLayout.LayoutParams h(float f10, float f11, int i7) {
-        return new FrameLayout.LayoutParams(z(f10), z(f11), Gravity.getAbsoluteGravity(i7, org.telegram.messenger.hd.a0 ? 1 : 0));
+        return new FrameLayout.LayoutParams(z(f10), z(f11), Gravity.getAbsoluteGravity(i7, org.telegram.messenger.id.a0 ? 1 : 0));
     }
 
     public static FrameLayout.LayoutParams i(float f10, float f11, int i7, float f12, float f13, float f14, float f15) {
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(z(f10), z(f11), Gravity.getAbsoluteGravity(i7, org.telegram.messenger.hd.a0 ? 1 : 0));
-        layoutParams.leftMargin = org.telegram.messenger.g0.L(org.telegram.messenger.hd.a0 ? f14 : f12);
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(z(f10), z(f11), Gravity.getAbsoluteGravity(i7, org.telegram.messenger.id.a0 ? 1 : 0));
+        layoutParams.leftMargin = org.telegram.messenger.g0.L(org.telegram.messenger.id.a0 ? f14 : f12);
         layoutParams.topMargin = org.telegram.messenger.g0.L(f13);
-        if (!org.telegram.messenger.hd.a0) {
+        if (!org.telegram.messenger.id.a0) {
             f12 = f14;
         }
         layoutParams.rightMargin = org.telegram.messenger.g0.L(f12);
@@ -126,10 +126,10 @@ public abstract class ha {
     }
 
     public static LinearLayout.LayoutParams u(float f10, float f11, int i7, float f12, float f13, float f14, float f15) {
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(z(f10), z(f11), Gravity.getAbsoluteGravity(i7, org.telegram.messenger.hd.a0 ? 1 : 0));
-        layoutParams.leftMargin = org.telegram.messenger.g0.L(org.telegram.messenger.hd.a0 ? f14 : f12);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(z(f10), z(f11), Gravity.getAbsoluteGravity(i7, org.telegram.messenger.id.a0 ? 1 : 0));
+        layoutParams.leftMargin = org.telegram.messenger.g0.L(org.telegram.messenger.id.a0 ? f14 : f12);
         layoutParams.topMargin = org.telegram.messenger.g0.L(f13);
-        if (!org.telegram.messenger.hd.a0) {
+        if (!org.telegram.messenger.id.a0) {
             f12 = f14;
         }
         layoutParams.rightMargin = org.telegram.messenger.g0.L(f12);
@@ -159,7 +159,7 @@ public abstract class ha {
     }
 
     public static int y() {
-        return org.telegram.messenger.hd.a0 ? 5 : 3;
+        return org.telegram.messenger.id.a0 ? 5 : 3;
     }
 
     public static int z(float f10) {

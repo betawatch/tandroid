@@ -2,7 +2,6 @@ package com.google.firebase;
 
 import a3.l;
 import a8.h8;
-import ab.r;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.os.Build;
@@ -18,10 +17,10 @@ import sa.d;
 import sa.e;
 import sa.f;
 import u9.a;
-import u9.i;
-import u9.q;
+import u9.j;
+import u9.r;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class FirebaseCommonRegistrar implements ComponentRegistrar {
     public static /* synthetic */ String a(Context context) {
@@ -38,17 +37,17 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
         String str;
         ArrayList arrayList = new ArrayList();
         j0 a10 = a.a(b.class);
-        a10.a(new i(2, 0, cb.a.class));
+        a10.a(new j(2, 0, cb.a.class));
         a10.f = new l(29);
         arrayList.add(a10.b());
-        q qVar = new q(q9.a.class, Executor.class);
+        r rVar = new r(q9.a.class, Executor.class);
         j0 j0Var = new j0(c.class, new Class[]{e.class, f.class});
-        j0Var.a(i.a(Context.class));
-        j0Var.a(i.a(g.class));
-        j0Var.a(new i(2, 0, d.class));
-        j0Var.a(new i(1, 1, b.class));
-        j0Var.a(new i(qVar, 1, 0));
-        j0Var.f = new r(qVar, 1);
+        j0Var.a(j.a(Context.class));
+        j0Var.a(j.a(g.class));
+        j0Var.a(new j(2, 0, d.class));
+        j0Var.a(new j(1, 1, b.class));
+        j0Var.a(new j(rVar, 1, 0));
+        j0Var.f = new ab.r(rVar, 1);
         arrayList.add(j0Var.b());
         arrayList.add(h8.a("fire-android", String.valueOf(Build.VERSION.SDK_INT)));
         arrayList.add(h8.a("fire-core", "22.2.1"));

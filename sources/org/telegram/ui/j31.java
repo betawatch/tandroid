@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class j31 extends LinearLayout implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.ActionBar.f6 a;
@@ -47,7 +47,7 @@ public final class j31 extends LinearLayout implements org.telegram.ui.ActionBar
         TextView f12 = org.telegram.messenger.camera.q.f(f10, f11, c8.ha.k(0.0f, 4.0f, 0.0f, 0.0f, -1, -2), context);
         this.h = f12;
         f12.setTextSize(1, 16.0f);
-        if (org.telegram.messenger.hd.a0) {
+        if (org.telegram.messenger.id.a0) {
             addView(f12, c8.ha.t(-2, -2, 16, 20, 0, 0, 0));
             addView(f10, c8.ha.q(0, -2, 1.0f, 23, 20, 0, 18, 0));
             addView(frameLayout, c8.ha.t(28, 28, 21, 0, 0, 18, 0));

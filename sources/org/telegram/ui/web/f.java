@@ -10,8 +10,8 @@ import android.widget.TextView;
 import java.net.URLDecoder;
 import java.text.BreakIterator;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i6;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
@@ -26,7 +26,7 @@ import org.telegram.ui.Components.w31;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class f extends w31 {
     public static final /* synthetic */ int b = 0;
@@ -160,7 +160,7 @@ public final class f extends w31 {
                                 }
                                 textView2.setText(i6.m(textView2.getText(), textView2.getPaint().getFontMetricsInt(), false, null, 0));
                                 textView.setText(i6.m(textView.getText(), textView.getPaint().getFontMetricsInt(), false, null, 0));
-                                gVar.h.setText(hd.E0().p0().format(y0Var.b));
+                                gVar.h.setText(id.E0().p0().format(y0Var.b));
                                 gVar.r.a(false, false);
                                 FrameLayout.LayoutParams layoutParams3 = layoutParams;
                                 layoutParams3.rightMargin = org.telegram.messenger.g0.L(70.0f);
@@ -196,7 +196,7 @@ public final class f extends w31 {
                         }
                         textView2.setText(i6.m(textView2.getText(), textView2.getPaint().getFontMetricsInt(), false, null, 0));
                         textView.setText(i6.m(textView.getText(), textView.getPaint().getFontMetricsInt(), false, null, 0));
-                        gVar.h.setText(hd.E0().p0().format(y0Var.b));
+                        gVar.h.setText(id.E0().p0().format(y0Var.b));
                         gVar.r.a(false, false);
                         FrameLayout.LayoutParams layoutParams32 = layoutParams;
                         layoutParams32.rightMargin = org.telegram.messenger.g0.L(70.0f);
@@ -229,7 +229,7 @@ public final class f extends w31 {
                 }
                 textView2.setText(i6.m(textView2.getText(), textView2.getPaint().getFontMetricsInt(), false, null, 0));
                 textView.setText(i6.m(textView.getText(), textView.getPaint().getFontMetricsInt(), false, null, 0));
-                gVar.h.setText(hd.E0().p0().format(y0Var.b));
+                gVar.h.setText(id.E0().p0().format(y0Var.b));
                 gVar.r.a(false, false);
                 FrameLayout.LayoutParams layoutParams322 = layoutParams;
                 layoutParams322.rightMargin = org.telegram.messenger.g0.L(70.0f);

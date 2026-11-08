@@ -8,10 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.aj;
 import org.telegram.messenger.dj;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class k extends v4.m0 {
     public final /* synthetic */ int a;
@@ -307,7 +307,7 @@ public final class k extends v4.m0 {
                     View childAt2 = i10 < childCount + (-2) ? recyclerView.getChildAt(i10 + 1) : null;
                     if (RecyclerView.R(childAt) >= 0 && !(childAt instanceof org.telegram.ui.Cells.x3) && !(childAt2 instanceof org.telegram.ui.Cells.x3)) {
                         float bottom = childAt.getBottom();
-                        canvas.drawLine(hd.a0 ? 0.0f : org.telegram.messenger.g0.L(72.0f), bottom, width - (hd.a0 ? org.telegram.messenger.g0.L(72.0f) : 0), bottom, org.telegram.ui.ActionBar.k6.k0);
+                        canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(72.0f), bottom, width - (id.a0 ? org.telegram.messenger.g0.L(72.0f) : 0), bottom, org.telegram.ui.ActionBar.k6.k0);
                     }
                     i10++;
                 }

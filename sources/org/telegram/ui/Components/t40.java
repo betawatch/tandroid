@@ -6,7 +6,7 @@ import android.view.TextureView;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class t40 extends FrameLayout {
     public p40 a;
@@ -14,7 +14,7 @@ public abstract class t40 extends FrameLayout {
     public r40 c;
     public boolean d;
 
-    public static boolean d(int i7) {
+    public static boolean e(int i7) {
         xi.a aVar = xi.e.d;
         aVar.a();
         if (!aVar.c) {
@@ -30,11 +30,11 @@ public abstract class t40 extends FrameLayout {
 
     public abstract void c(boolean z9);
 
-    public abstract boolean e();
+    public abstract void d(boolean z9);
 
-    public abstract void f(float f10);
+    public abstract boolean f();
 
-    public abstract void g(int i7, int i10, int i11, long j3, long j10, boolean z9);
+    public abstract void g(float f10);
 
     public abstract View getButtonsLayout();
 
@@ -48,11 +48,13 @@ public abstract class t40 extends FrameLayout {
 
     public abstract TextureView getTextureView();
 
-    public abstract void h(dh.c cVar, org.telegram.ui.oi oiVar);
+    public abstract void h(int i7, int i10, int i11, long j3, long j10, boolean z9);
 
-    public abstract void i(boolean z9);
+    public abstract void i(dh.c cVar, org.telegram.ui.oi oiVar);
 
-    public abstract void j();
+    public abstract void j(boolean z9);
+
+    public abstract void k();
 
     public final void setAnimationCallback(p40 p40Var) {
         this.a = p40Var;

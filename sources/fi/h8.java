@@ -10,7 +10,7 @@ import org.telegram.ui.Components.jl;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class h8 extends v4.s0 {
     public final /* synthetic */ int a;
@@ -71,7 +71,7 @@ public final class h8 extends v4.s0 {
             default:
                 if (i7 == 0 && this.b) {
                     this.b = false;
-                    ((org.telegram.ui.Wallet.u5) obj).f();
+                    ((org.telegram.ui.Wallet.t5) obj).f();
                     break;
                 }
                 break;
@@ -130,9 +130,9 @@ public final class h8 extends v4.s0 {
         }
     }
 
-    public h8(org.telegram.ui.Wallet.u5 u5Var) {
+    public h8(org.telegram.ui.Wallet.t5 t5Var) {
         this.a = 2;
-        this.c = u5Var;
+        this.c = t5Var;
         this.b = false;
     }
 }

@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ic0 implements org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
@@ -30,12 +30,12 @@ public final /* synthetic */ class ic0 implements org.telegram.ui.ActionBar.r1 {
             case 2:
                 ce0 ce0Var = pc0Var.P;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ce0Var.getParentActivity());
-                String M0 = org.telegram.messenger.hd.M0(2131744199, "TermsOfService");
+                String M0 = org.telegram.messenger.id.M0(2131744201, "TermsOfService");
                 org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder.a;
                 u1Var2.R = M0;
-                u1Var2.T = org.telegram.messenger.hd.M0(2131743978, "TosDecline");
-                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131745321, "SignUp"), new ic0(pc0Var, 3));
-                alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131751605, "Decline"), new ic0(pc0Var, 4));
+                u1Var2.T = org.telegram.messenger.id.M0(2131743980, "TosDecline");
+                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131745323, "SignUp"), new ic0(pc0Var, 3));
+                alertDialog$Builder.h(org.telegram.messenger.id.M0(2131751605, "Decline"), new ic0(pc0Var, 4));
                 ce0Var.showDialog(u1Var2);
                 break;
             case 3:

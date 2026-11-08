@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import java.io.File;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ib implements Runnable {
     public final /* synthetic */ int a;
@@ -64,7 +64,7 @@ public final /* synthetic */ class ib implements Runnable {
                     }
                     ubVar3.e = str3;
                     gcVar2.g.put(str3, ubVar3);
-                    ubVar3.q = new File(w7.z(4), rf.b.q(Utilities.a(g10.g), "_temp.jpg"));
+                    ubVar3.q = new File(w7.z(4), rf.b.r(Utilities.a(g10.g), "_temp.jpg"));
                     ubVar3.p = file;
                     tb tbVar3 = new tb(gcVar2, ubVar3);
                     ubVar3.s = tbVar3;

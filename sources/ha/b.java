@@ -55,7 +55,7 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.g5;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.p10;
@@ -78,7 +78,7 @@ import org.telegram.ui.Components.t51;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -544,7 +544,7 @@ public final /* synthetic */ class b implements Runnable {
                 v10 v10Var = (v10) this.c;
                 q a10 = q.a(strArr[0], g0.L(26.0f), false);
                 if (a10 == null) {
-                    a10 = q.a(hd.M0(2131754007, null), g0.L(26.0f), false);
+                    a10 = q.a(id.M0(2131754007, null), g0.L(26.0f), false);
                     z10 = true;
                 }
                 g0.h3(new u7(v10Var, a10 != null ? a10.a : null, z10, 7));
@@ -567,7 +567,7 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 vVar.a2 = richMessage;
                 vVar.U1.set(richMessage);
-                dVar.i(hd.M0(2131754061, null), true, true);
+                dVar.i(id.M0(2131754061, null), true, true);
                 vVar.d1();
                 l41 l41Var = vVar.R1;
                 if (l41Var != null) {

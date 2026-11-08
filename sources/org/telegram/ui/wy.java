@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.ViewPropertyAnimator;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class wy extends org.telegram.ui.Cells.n4 {
     public final /* synthetic */ gz D;
@@ -28,9 +28,9 @@ public final class wy extends org.telegram.ui.Cells.n4 {
         this.r = textView;
         textView.setTextSize(1, 14.0f);
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.z6, gzVar.getResourceProvider());
-        textView.setText(org.telegram.messenger.hd.M0(gzVar.getUserConfig().q() ? 2131750621 : 2131750620, null));
+        textView.setText(org.telegram.messenger.id.M0(gzVar.getUserConfig().q() ? 2131750621 : 2131750620, null));
         textView.setGravity(5);
-        int i10 = (org.telegram.messenger.hd.a0 ? 3 : 5) | 48;
+        int i10 = (org.telegram.messenger.id.a0 ? 3 : 5) | 48;
         float f10 = this.b;
         addView(textView, c8.ha.d(-1, -1.0f, i10, f10, 16.66f, f10, this.c));
         textView.setAlpha(0.0f);
@@ -41,14 +41,14 @@ public final class wy extends org.telegram.ui.Cells.n4 {
         rcVar.setTypeface(org.telegram.messenger.g0.o());
         rcVar.setGravity(5);
         rcVar.setPadding(org.telegram.messenger.g0.L(4.66f), 0, org.telegram.messenger.g0.L(4.66f), 0);
-        int i11 = (org.telegram.messenger.hd.a0 ? 3 : 5) | 48;
+        int i11 = (org.telegram.messenger.id.a0 ? 3 : 5) | 48;
         float f11 = this.b;
         addView(rcVar, c8.ha.d(-1, -1.0f, i11, f11, 16.66f, f11, this.c));
     }
 
     public final void d(int i7, boolean z9) {
         gz gzVar = this.D;
-        String M0 = org.telegram.messenger.hd.M0(gzVar.getUserConfig().q() ? 2131750621 : 2131750620, null);
+        String M0 = org.telegram.messenger.id.M0(gzVar.getUserConfig().q() ? 2131750621 : 2131750620, null);
         TextView textView = this.r;
         textView.setText(M0);
         int i10 = 0;
@@ -84,7 +84,7 @@ public final class wy extends org.telegram.ui.Cells.n4 {
         }
         bi.rc rcVar = this.s;
         CharSequence m10 = org.telegram.messenger.i6.m(charSequence, rcVar.getPaint().getFontMetricsInt(), false, null, 0);
-        if (z9 && !org.telegram.messenger.hd.a0) {
+        if (z9 && !org.telegram.messenger.id.a0) {
             z10 = true;
         }
         rcVar.c(m10, z10, true);

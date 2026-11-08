@@ -4,7 +4,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class xk0 implements fl0 {
     public final /* synthetic */ Runnable a;
@@ -35,7 +35,7 @@ public final class xk0 implements fl0 {
             } else {
                 str3 = hl0Var.x0.substring(0, 1).toUpperCase() + hl0Var.x0.substring(1);
             }
-            y8Var2.b(R.drawable.msg_payment_card, str3, org.telegram.messenger.hd.M0(2131747413, null), true);
+            y8Var2.b(R.drawable.msg_payment_card, str3, org.telegram.messenger.id.M0(2131747415, null), true);
             org.telegram.ui.Cells.y8 y8Var3 = y8VarArr[1];
             if (y8Var3 != null) {
                 y8Var3.setVisibility(0);

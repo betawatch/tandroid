@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class p0 implements yb.a {
     public final /* synthetic */ int a = 1;
@@ -46,7 +46,7 @@ public final class p0 implements yb.a {
         q6.m.g(cbVar);
         if (!this.b) {
             try {
-                cbVar.T0(cbVar.P0(), 1);
+                cbVar.t1(cbVar.p1(), 1);
                 this.b = true;
             } catch (RemoteException e10) {
                 throw new lb.a("Failed to init thin image labeler.", e10);
@@ -73,25 +73,25 @@ public final class p0 implements yb.a {
         q6.m.g(bitmap);
         bVar = new a7.b(bitmap);
         try {
-            Parcel P0 = cbVar.P0();
+            Parcel p12 = cbVar.p1();
             int i13 = a8.g0.a;
-            P0.writeStrongBinder(bVar);
-            P0.writeInt(1);
-            int r10 = xb.r(P0, 20293);
-            xb.q(P0, 1, 4);
-            P0.writeInt(i7);
-            xb.q(P0, 2, 4);
-            P0.writeInt(i10);
-            xb.q(P0, 3, 4);
-            P0.writeInt(i11);
-            xb.q(P0, 4, 4);
-            P0.writeInt(a10);
-            xb.q(P0, 5, 8);
-            P0.writeLong(elapsedRealtime);
-            xb.s(P0, r10);
-            Parcel R0 = cbVar.R0(P0, 3);
-            ArrayList createTypedArrayList = R0.createTypedArrayList(gb.CREATOR);
-            R0.recycle();
+            p12.writeStrongBinder(bVar);
+            p12.writeInt(1);
+            int r10 = xb.r(p12, 20293);
+            xb.q(p12, 1, 4);
+            p12.writeInt(i7);
+            xb.q(p12, 2, 4);
+            p12.writeInt(i10);
+            xb.q(p12, 3, 4);
+            p12.writeInt(i11);
+            xb.q(p12, 4, 4);
+            p12.writeInt(a10);
+            xb.q(p12, 5, 8);
+            p12.writeLong(elapsedRealtime);
+            xb.s(p12, r10);
+            Parcel r12 = cbVar.r1(p12, 3);
+            ArrayList createTypedArrayList = r12.createTypedArrayList(gb.CREATOR);
+            r12.recycle();
             ArrayList arrayList = new ArrayList();
             int size = createTypedArrayList.size();
             int i14 = 0;
@@ -154,7 +154,7 @@ public final class p0 implements yb.a {
                 IInterface queryLocalInterface = b10.queryLocalInterface("com.google.mlkit.vision.label.aidls.IImageLabelerCreator");
                 dbVar = queryLocalInterface instanceof fb ? (fb) queryLocalInterface : new db(b10, "com.google.mlkit.vision.label.aidls.IImageLabelerCreator", 0);
             }
-            this.f = ((db) dbVar).X0(new a7.b(context), new hb(((xb.a) this.e).a, -1));
+            this.f = ((db) dbVar).x1(new a7.b(context), new hb(((xb.a) this.e).a, -1));
         } catch (RemoteException e10) {
             throw new lb.a("Failed to create thin image labeler.", e10);
         } catch (b7.b unused) {
@@ -171,7 +171,7 @@ public final class p0 implements yb.a {
         cb cbVar = (cb) this.f;
         if (cbVar != null) {
             try {
-                cbVar.T0(cbVar.P0(), 2);
+                cbVar.t1(cbVar.p1(), 2);
             } catch (RemoteException unused) {
                 Log.e("DecoupledImageLabeler", "Failed to release thin image labeler.");
             }

@@ -4,7 +4,7 @@ import android.content.Context;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.f6;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l extends d0 {
     public final /* synthetic */ o c2;
@@ -15,14 +15,14 @@ public final class l extends d0 {
         this.c2 = oVar;
     }
 
-    @Override // org.telegram.ui.Components.ys
+    @Override // org.telegram.ui.Components.zs
     public final void F(int i7, int i10) {
         if (i10 > i7) {
             this.c2.E.w0(0, org.telegram.messenger.g0.L(30.0f), null);
         }
     }
 
-    @Override // org.telegram.ui.Components.ys, android.widget.EditText, android.widget.TextView
+    @Override // org.telegram.ui.Components.zs, android.widget.EditText, android.widget.TextView
     public final boolean onTextContextMenuItem(int i7) {
         if (i7 == R.id.menu_delete || i7 == 16908320) {
             return this.c2.g0();

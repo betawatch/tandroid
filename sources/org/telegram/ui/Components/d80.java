@@ -9,7 +9,7 @@ import android.view.View;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class d80 extends View implements org.telegram.ui.ActionBar.a6 {
     public final TextPaint a;
@@ -24,7 +24,7 @@ public final class d80 extends View implements org.telegram.ui.ActionBar.a6 {
         this.a = textPaint;
         this.b = new Paint(1);
         this.d = new Rect();
-        this.c = org.telegram.messenger.hd.M0(2131748726, null);
+        this.c = org.telegram.messenger.id.M0(2131748728, null);
         textPaint.setTextSize(org.telegram.messenger.g0.L(14.0f));
         updateColors();
     }

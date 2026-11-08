@@ -4,7 +4,7 @@ import j$.util.concurrent.ConcurrentHashMap;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fm implements Runnable {
     public final /* synthetic */ int a = 3;
@@ -187,7 +187,7 @@ public final /* synthetic */ class fm implements Runnable {
                     }
                     yr messagesStorage2 = qpVar.getMessagesStorage();
                     j10 = j14;
-                    messagesStorage2.a.c(new z1(messagesStorage2, j14, this.d, (TLRPC.TL_updates_channelDifferenceTooLong) updates_channeldifference, new nk(qpVar, j14, 14)));
+                    messagesStorage2.a.c(new z1(messagesStorage2, j14, this.d, (TLRPC.TL_updates_channelDifferenceTooLong) updates_channeldifference, new mk(qpVar, j14, 14)));
                     qpVar.Z0.e(j10);
                     qpVar.Y0.put(j10, updates_channeldifference.pts);
                     if ((updates_channeldifference.flags & 2) != 0) {
@@ -205,7 +205,7 @@ public final /* synthetic */ class fm implements Runnable {
                         qpVar.getMessagesStorage().q1(j13);
                     }
                     if (!z12) {
-                        g0.h3(new nk(qpVar, j10, 4));
+                        g0.h3(new mk(qpVar, j10, 4));
                         break;
                     }
                 } else {

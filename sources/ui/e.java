@@ -47,7 +47,7 @@ import m1.x0;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.camera.q;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.r0;
@@ -68,7 +68,7 @@ import org.telegram.ui.an;
 import org.telegram.ui.by0;
 import org.telegram.ui.c01;
 import org.telegram.ui.ey0;
-import org.telegram.ui.f81;
+import org.telegram.ui.g81;
 import org.telegram.ui.hy0;
 import org.telegram.ui.jy0;
 import org.telegram.ui.web.w;
@@ -82,7 +82,7 @@ import ug.w0;
 import y7.i6;
 import zd.t;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class e implements m, hi0, jy0 {
     public static volatile e f;
@@ -641,7 +641,7 @@ public final class e implements m, hi0, jy0 {
                         f15 = 0.0f;
                         f13 = f15;
                         anVar2.Ab(H82, (ij) this.c, (ii0) this.d, view, f17, f13, o0Var, false, (o0Var == null && o0Var.a) ? true : z9, z10, false);
-                        ((f81) this.e).c(false);
+                        ((g81) this.e).c(false);
                         break;
                     } else {
                         f17 = p0Var4.b + k13.w + (k13.z / 2.0f);
@@ -651,7 +651,7 @@ public final class e implements m, hi0, jy0 {
                 } else if (!(H82 instanceof org.telegram.ui.Cells.t0) || (k11 = (p0Var2 = ((org.telegram.ui.Cells.t0) H82).E0).k(o0Var)) == null) {
                     f13 = 0.0f;
                     anVar2.Ab(H82, (ij) this.c, (ii0) this.d, view, f17, f13, o0Var, false, (o0Var == null && o0Var.a) ? true : z9, z10, false);
-                    ((f81) this.e).c(false);
+                    ((g81) this.e).c(false);
                 } else {
                     f17 = p0Var2.b + k11.w + (k11.z / 2.0f);
                     f14 = p0Var2.c + k11.x;
@@ -660,7 +660,7 @@ public final class e implements m, hi0, jy0 {
                 f15 = f14 + (i10 / 2.0f);
                 f13 = f15;
                 anVar2.Ab(H82, (ij) this.c, (ii0) this.d, view, f17, f13, o0Var, false, (o0Var == null && o0Var.a) ? true : z9, z10, false);
-                ((f81) this.e).c(false);
+                ((g81) this.e).c(false);
                 break;
         }
     }
@@ -672,7 +672,7 @@ public final class e implements m, hi0, jy0 {
         float f10 = i7;
         rectF.set(0.0f, 0.0f, f10, g0.L(14.66f));
         canvas.saveLayerAlpha(rectF, qs.e4, 31);
-        if (hd.a0) {
+        if (id.a0) {
             canvas.translate(f10, 0.0f);
         }
         int L = i7 - g0.L(25.0f);
@@ -683,7 +683,7 @@ public final class e implements m, hi0, jy0 {
             if (L < 0) {
                 break;
             }
-            if (hd.a0) {
+            if (id.a0) {
                 canvas.translate(-mrVar.g, 0.0f);
                 mrVar.a(canvas);
                 canvas.translate(-g0.L(4.0f), 0.0f);
@@ -713,7 +713,7 @@ public final class e implements m, hi0, jy0 {
                 mrVar3.d = k6.x0(null, i11, false);
                 this.e = mrVar3;
             }
-            if (hd.a0) {
+            if (id.a0) {
                 canvas.translate(-((mr) this.e).g, 0.0f);
                 ((mr) this.e).a(canvas);
                 canvas.translate(-g0.L(4.0f), 0.0f);

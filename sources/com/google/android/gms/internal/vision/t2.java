@@ -11,7 +11,7 @@ import com.google.android.gms.vision.face.internal.client.FaceParcel;
 import com.google.android.gms.vision.face.internal.client.LandmarkParcel;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class t2 extends g3 {
     public final /* synthetic */ int r = 0;
@@ -47,17 +47,17 @@ public final class t2 extends g3 {
                     a7.b bVar = new a7.b(context);
                     x1 x1Var = (x1) aVar;
                     q6.m.g(x1Var);
-                    Parcel H0 = e3Var.H0();
+                    Parcel h12 = e3Var.h1();
                     int i10 = a.a;
-                    H0.writeStrongBinder(bVar);
-                    a.a(H0, x1Var);
-                    Parcel Q0 = e3Var.Q0(H0, 1);
-                    IBinder readStrongBinder = Q0.readStrongBinder();
+                    h12.writeStrongBinder(bVar);
+                    a.a(h12, x1Var);
+                    Parcel q12 = e3Var.q1(h12, 1);
+                    IBinder readStrongBinder = q12.readStrongBinder();
                     if (readStrongBinder != null) {
                         IInterface queryLocalInterface2 = readStrongBinder.queryLocalInterface("com.google.android.gms.vision.barcode.internal.client.INativeBarcodeDetector");
                         obj = queryLocalInterface2 instanceof d3 ? (d3) queryLocalInterface2 : new d3(readStrongBinder, "com.google.android.gms.vision.barcode.internal.client.INativeBarcodeDetector", 4);
                     }
-                    Q0.recycle();
+                    q12.recycle();
                     break;
                 }
                 break;
@@ -73,17 +73,17 @@ public final class t2 extends g3 {
                             x8.b bVar3 = (x8.b) aVar;
                             q6.m.g(bVar3);
                             x8.e eVar2 = (x8.e) eVar;
-                            Parcel H02 = eVar2.H0();
+                            Parcel h13 = eVar2.h1();
                             int i12 = a.a;
-                            H02.writeStrongBinder(bVar2);
-                            a.a(H02, bVar3);
-                            Parcel Q02 = eVar2.Q0(H02, 1);
-                            IBinder readStrongBinder2 = Q02.readStrongBinder();
+                            h13.writeStrongBinder(bVar2);
+                            a.a(h13, bVar3);
+                            Parcel q13 = eVar2.q1(h13, 1);
+                            IBinder readStrongBinder2 = q13.readStrongBinder();
                             if (readStrongBinder2 != null) {
                                 IInterface queryLocalInterface4 = readStrongBinder2.queryLocalInterface("com.google.android.gms.vision.face.internal.client.INativeFaceDetector");
                                 obj = queryLocalInterface4 instanceof x8.d ? (x8.d) queryLocalInterface4 : new x8.d(readStrongBinder2, "com.google.android.gms.vision.face.internal.client.INativeFaceDetector", 4);
                             }
-                            Q02.recycle();
+                            q13.recycle();
                             break;
                         }
                     }
@@ -115,14 +115,14 @@ public final class t2 extends g3 {
                 if (k()) {
                     d3 d3Var = (d3) m();
                     q6.m.g(d3Var);
-                    d3Var.S0(d3Var.H0());
+                    d3Var.s1(d3Var.h1());
                     break;
                 }
                 break;
             default:
                 x8.d dVar = (x8.d) m();
                 q6.m.g(dVar);
-                dVar.S0(dVar.H0());
+                dVar.s1(dVar.h1());
                 break;
         }
     }
@@ -137,13 +137,13 @@ public final class t2 extends g3 {
             a7.b bVar = new a7.b(byteBuffer);
             x8.d dVar = (x8.d) m();
             q6.m.g(dVar);
-            Parcel H0 = dVar.H0();
+            Parcel h12 = dVar.h1();
             int i7 = a.a;
-            H0.writeStrongBinder(bVar);
-            a.a(H0, f3Var);
-            Parcel Q0 = dVar.Q0(H0, 1);
-            FaceParcel[] faceParcelArr = (FaceParcel[]) Q0.createTypedArray(FaceParcel.CREATOR);
-            Q0.recycle();
+            h12.writeStrongBinder(bVar);
+            a.a(h12, f3Var);
+            Parcel q12 = dVar.q1(h12, 1);
+            FaceParcel[] faceParcelArr = (FaceParcel[]) q12.createTypedArray(FaceParcel.CREATOR);
+            q12.recycle();
             w8.a[] aVarArr = new w8.a[faceParcelArr.length];
             for (int i10 = 0; i10 < faceParcelArr.length; i10++) {
                 FaceParcel faceParcel = faceParcelArr[i10];

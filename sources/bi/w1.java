@@ -19,13 +19,13 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.jy;
+import org.telegram.ui.Components.ky;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.n40;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class w1 extends org.telegram.ui.Components.na {
     public static final /* synthetic */ int s2 = 0;
@@ -39,7 +39,7 @@ public final class w1 extends org.telegram.ui.Components.na {
     public final a W1;
     public final a X1;
     public final a Y1;
-    public final jy Z1;
+    public final ky Z1;
     public final n1 a2;
     public final v1 b2;
     public p1 c2;
@@ -124,17 +124,17 @@ public final class w1 extends org.telegram.ui.Components.na {
             dh.c cVar = new dh.c(fVar, fVar, fVar);
             this.k2 = cVar;
             cVar.k = true;
-            int L = org.telegram.messenger.rc.e(262144) ? org.telegram.messenger.g0.L(8.0f) : org.telegram.messenger.g0.L(48.0f);
+            int L = org.telegram.messenger.sc.e(262144) ? org.telegram.messenger.g0.L(8.0f) : org.telegram.messenger.g0.L(48.0f);
             cVar.d = L;
             cVar.e = L;
         }
         this.k2.j = this.X0;
-        jy jyVar = new jy(3, false);
-        this.Z1 = jyVar;
-        jyVar.O = new ai.l(this, 1);
+        ky kyVar = new ky(3, false);
+        this.Z1 = kyVar;
+        kyVar.O = new ai.l(this, 1);
         this.k1.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(74.0f));
         this.k1.setClipToPadding(false);
-        this.k1.setLayoutManager(jyVar);
+        this.k1.setLayoutManager(kyVar);
         this.k1.setSelectorType(9);
         this.k1.setSelectorDrawableColor(0);
         this.k1.j(new ai.b(this, 3));
@@ -184,7 +184,7 @@ public final class w1 extends org.telegram.ui.Components.na {
         textView.setTextColor(-1);
         TextView i13 = org.telegram.ui.Cells.f1.i(frameLayout, textView, c8.ha.d(-1, -2.0f, 87, 16.0f, 0.0f, 16.0f, 102.0f), context);
         this.h2 = i13;
-        jg.g.v(i13, 1, 13.0f, null, 2131750060);
+        jg.g.v(i13, 1, 13.0f, null, 2131750062);
         i13.setGravity(17);
         int i14 = -1879048193;
         i13.setTextColor(-1879048193);
@@ -257,11 +257,11 @@ public final class w1 extends org.telegram.ui.Components.na {
             s1Var.addView(j6Var2, c8.ha.d(-1, 16.0f, 53, 0.0f, -9.0f, -4.0f, 0.0f));
             s1VarArr[i16] = s1Var;
             if (i16 == 0) {
-                ((TextView) this.R1[i16].b).setText(org.telegram.messenger.hd.M0(2131749625, null));
+                ((TextView) this.R1[i16].b).setText(org.telegram.messenger.id.M0(2131749627, null));
             } else if (i16 == 1) {
-                ((TextView) this.R1[i16].b).setText(org.telegram.messenger.hd.M0(2131749642, null));
+                ((TextView) this.R1[i16].b).setText(org.telegram.messenger.id.M0(2131749644, null));
             } else if (i16 == 2) {
-                ((TextView) this.R1[i16].b).setText(org.telegram.messenger.hd.M0(2131749623, null));
+                ((TextView) this.R1[i16].b).setText(org.telegram.messenger.id.M0(2131749625, null));
             }
             c8.ka.a(this.R1[i16]);
             this.R1[i16].setOnClickListener(new ai.v(this, i16, 1));
@@ -350,7 +350,7 @@ public final class w1 extends org.telegram.ui.Components.na {
         }
         this.r2 = i7;
         this.f2.setImageResource(i7 == 2 ? R.drawable.filled_gift_play_24 : R.drawable.filled_gift_pause_24);
-        this.h2.setText(org.telegram.messenger.hd.M0(i7 == 2 ? 2131750059 : 2131750060, null));
+        this.h2.setText(org.telegram.messenger.id.M0(i7 == 2 ? 2131750061 : 2131750062, null));
         i1();
     }
 

@@ -1,18 +1,18 @@
 package org.telegram.ui.ActionBar;
 
 import android.view.ViewGroup;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.ui.Components.du0;
 import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.lm0;
 import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.mz;
+import org.telegram.ui.Components.nz;
 import org.telegram.ui.Components.pm0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class u0 extends mz {
+public final class u0 extends nz {
     public final /* synthetic */ int e;
     public final /* synthetic */ ViewGroup f;
 
@@ -29,7 +29,7 @@ public final class u0 extends mz {
         ViewGroup viewGroup = this.f;
         switch (i7) {
             case 0:
-                return du0.a(((v0) viewGroup).getSpeed()) + "x  " + hd.M0(2131754759, null);
+                return du0.a(((v0) viewGroup).getSpeed()) + "x  " + id.M0(2131754759, null);
             case 1:
             default:
                 return super.d();
@@ -42,7 +42,7 @@ public final class u0 extends mz {
         }
     }
 
-    @Override // org.telegram.ui.Components.mz
+    @Override // org.telegram.ui.Components.nz
     public float h() {
         switch (this.e) {
             case 0:
@@ -59,7 +59,7 @@ public final class u0 extends mz {
         }
     }
 
-    @Override // org.telegram.ui.Components.mz
+    @Override // org.telegram.ui.Components.nz
     public float i() {
         switch (this.e) {
             case 0:
@@ -69,7 +69,7 @@ public final class u0 extends mz {
         }
     }
 
-    @Override // org.telegram.ui.Components.mz
+    @Override // org.telegram.ui.Components.nz
     public float j() {
         switch (this.e) {
             case 0:
@@ -79,7 +79,7 @@ public final class u0 extends mz {
         }
     }
 
-    @Override // org.telegram.ui.Components.mz
+    @Override // org.telegram.ui.Components.nz
     public final float k() {
         float f10;
         int i7;
@@ -115,7 +115,7 @@ public final class u0 extends mz {
         }
     }
 
-    @Override // org.telegram.ui.Components.mz
+    @Override // org.telegram.ui.Components.nz
     public final void l(float f10) {
         switch (this.e) {
             case 0:

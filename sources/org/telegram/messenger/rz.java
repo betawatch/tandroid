@@ -23,13 +23,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class rz extends Drawable {
     public static float v;
     public static float w;
     public static long x;
-    public static pd y;
+    public static rc y;
     public static WeakReference z;
     public Paint c;
     public Paint d;
@@ -41,7 +41,7 @@ public final class rz extends Drawable {
     public org.telegram.ui.ActionBar.f6 o;
     public float p;
     public static final int[] u = new int[2];
-    public static boolean A = rc.e(32);
+    public static boolean A = sc.e(32);
     public final ArrayList a = new ArrayList();
     public final HashMap b = new HashMap();
     public final Bitmap[] g = new Bitmap[3];
@@ -130,13 +130,13 @@ public final class rz extends Drawable {
                         }
                     }
                     z = new WeakReference(this);
-                    pd pdVar = y;
-                    if (pdVar != null) {
-                        g0.r(pdVar);
+                    rc rcVar = y;
+                    if (rcVar != null) {
+                        g0.r(rcVar);
                     }
-                    pd pdVar2 = new pd(10);
-                    y = pdVar2;
-                    g0.i3(pdVar2, ((int) (1000.0f / g0.r)) - 1);
+                    rc rcVar2 = new rc(12);
+                    y = rcVar2;
+                    g0.i3(rcVar2, ((int) (1000.0f / g0.r)) - 1);
                 }
                 ImageReceiver imageReceiver = this.k;
                 if (imageReceiver == null || z9) {

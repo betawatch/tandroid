@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ks0 extends vi0 {
     public final Context c;
@@ -168,23 +168,23 @@ public final class ks0 extends vi0 {
         View view;
         View view2;
         xs0 xs0Var = this.f;
-        lz lzVar = xs0Var.D;
+        mz mzVar = xs0Var.D;
         ArrayList arrayList = xs0Var.I0;
         org.telegram.ui.ActionBar.f6 f6Var = xs0Var.H1;
         Context context = this.c;
         if (i7 != 7) {
             int i10 = this.d;
             if (i7 == 8) {
-                lz lzVar2 = new lz(context, f6Var);
+                mz mzVar2 = new mz(context, f6Var);
                 if (i10 == 2) {
-                    lzVar2.setViewType(4);
+                    mzVar2.setViewType(4);
                 } else {
-                    lzVar2.setViewType(3);
+                    mzVar2.setViewType(3);
                 }
-                lzVar2.x = false;
-                lzVar2.setIsSingleCell(true);
-                lzVar2.setGlobalGradientView(lzVar);
-                view = lzVar2;
+                mzVar2.x = false;
+                mzVar2.setIsSingleCell(true);
+                mzVar2.setGlobalGradientView(mzVar);
+                view = mzVar2;
             } else {
                 if (i7 == 9) {
                     r3 X = xs0.X(i10, xs0Var.l1, context, f6Var);
@@ -204,7 +204,7 @@ public final class ks0 extends vi0 {
                     }
                 }
                 org.telegram.ui.Cells.g7 g7Var = (org.telegram.ui.Cells.g7) view2;
-                g7Var.setGlobalGradientView(lzVar);
+                g7Var.setGlobalGradientView(mzVar);
                 view = view2;
                 if (i10 == 4) {
                     xs0Var.J0.add(g7Var);
@@ -213,7 +213,7 @@ public final class ks0 extends vi0 {
             }
         } else {
             org.telegram.ui.Cells.h7 h7Var = new org.telegram.ui.Cells.h7(0, context, f6Var);
-            h7Var.setGlobalGradientView(lzVar);
+            h7Var.setGlobalGradientView(mzVar);
             view = h7Var;
         }
         return jg.g.r(view, view, -1, -2);

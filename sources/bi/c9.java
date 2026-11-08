@@ -13,7 +13,7 @@ import org.telegram.ui.Components.uq0;
 import org.telegram.ui.Components.xs0;
 import org.telegram.ui.Components.zd0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c9 implements Runnable {
     public final /* synthetic */ int a;
@@ -123,7 +123,7 @@ public final /* synthetic */ class c9 implements Runnable {
                 }
                 break;
             default:
-                org.telegram.ui.Components.cc I = org.telegram.ui.Components.hc.a0((org.telegram.ui.gz) obj).I(z9 ? R.raw.folder_in : R.raw.folder_out, z9 ? org.telegram.messenger.hd.G(i10, "FolderLinkAddedChats", new Object[0]) : org.telegram.messenger.hd.G(i10, "FolderLinkRemovedChats", new Object[0]), org.telegram.messenger.hd.M0(2131750669, null));
+                org.telegram.ui.Components.cc I = org.telegram.ui.Components.hc.a0((org.telegram.ui.gz) obj).I(z9 ? R.raw.folder_in : R.raw.folder_out, z9 ? org.telegram.messenger.id.G(i10, "FolderLinkAddedChats", new Object[0]) : org.telegram.messenger.id.G(i10, "FolderLinkRemovedChats", new Object[0]), org.telegram.messenger.id.M0(2131750669, null));
                 I.j = 5000;
                 I.j();
                 break;

@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class s60 extends oj0 {
     public final Context c;
@@ -41,7 +41,7 @@ public final class s60 extends oj0 {
         long C1 = org.telegram.messenger.ij.C1((TLRPC.Peer) t60Var.p1.get(i7));
         if (C1 > 0) {
             M0 = org.telegram.messenger.qp.s1(t60Var.a).a2(Long.valueOf(C1));
-            str = org.telegram.messenger.hd.M0(2131743350, null);
+            str = org.telegram.messenger.id.M0(2131743352, null);
         } else {
             M0 = org.telegram.messenger.qp.s1(t60Var.a).M0(Long.valueOf(-C1));
             str = null;

@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
@@ -19,9 +19,8 @@ import org.telegram.ui.Cells.n4;
 import org.telegram.ui.Cells.y6;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.w70;
-import org.telegram.ui.Wallet.h2;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class m0 extends oj0 {
     public final /* synthetic */ q0 c;
@@ -72,7 +71,7 @@ public final class m0 extends oj0 {
             n4 n4Var = (n4) view;
             n4Var.setTextSize(15.0f);
             n4Var.setPadding(0, 0, 0, org.telegram.messenger.g0.L(2.0f));
-            n4Var.setText(hd.M0(2131753295, null));
+            n4Var.setText(id.M0(2131753295, null));
             return;
         }
         if (i10 == 0) {
@@ -81,12 +80,12 @@ public final class m0 extends oj0 {
             TLRPC.Chat chat = q0Var.R1;
             w70 w70Var = p0Var.e;
             try {
-                SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(hd.G((int) qp.s1(p10.s0).r0, "BoostingReassignBoostTextPluralWithLink", chat == null ? "" : chat.title, "%3$s"));
-                SpannableStringBuilder S2 = org.telegram.messenger.g0.S2(hd.M0(2131753320, "BoostingReassignBoostTextLink"), k6.Uc, 2, new g2(q0Var, i11), null);
+                SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(id.G((int) qp.s1(p10.s0).r0, "BoostingReassignBoostTextPluralWithLink", chat == null ? "" : chat.title, "%3$s"));
+                SpannableStringBuilder S2 = org.telegram.messenger.g0.S2(id.M0(2131753320, "BoostingReassignBoostTextLink"), k6.Uc, 2, new g2(q0Var, i11), null);
                 int indexOf = TextUtils.indexOf(X2, "%3$s");
                 X2.replace(indexOf, indexOf + 4, (CharSequence) S2);
                 w70Var.setText(X2, TextView.BufferType.EDITABLE);
-                w70Var.post(new h2(p0Var, indexOf, 11));
+                w70Var.post(new org.telegram.ui.Wallet.g2(p0Var, indexOf, 10));
             } catch (Exception e10) {
                 a8.g(e10, true);
             }

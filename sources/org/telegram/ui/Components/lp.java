@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class lp extends org.telegram.ui.ActionBar.v2 {
     public final Drawable i1;
@@ -86,14 +86,14 @@ public final class lp extends org.telegram.ui.ActionBar.v2 {
         org.telegram.ui.ActionBar.r6.V(textView2, org.telegram.ui.ActionBar.k6.r5, null);
         textView2.setGravity(1);
         if (!org.telegram.messenger.t3.T(chat) || chat.megagroup) {
-            textView2.setText(org.telegram.messenger.hd.M0(2131753870, null));
+            textView2.setText(org.telegram.messenger.id.M0(2131753870, null));
         } else {
-            textView2.setText(org.telegram.messenger.hd.M0(2131753871, null));
+            textView2.setText(org.telegram.messenger.id.M0(2131753871, null));
         }
         ipVar.addView(textView2, c8.ha.t(-2, -2, 49, 30, 22, 30, 20));
         vt0 vt0Var = new vt0(activity, null);
         vt0Var.setCallback(new jp(this, hpVar));
-        vt0Var.b(this.p1, null, org.telegram.messenger.hd.M0(2131753849, null), org.telegram.messenger.hd.M0(2131753879, null), org.telegram.messenger.hd.M0(2131753878, null), org.telegram.messenger.hd.M0(2131753880, null));
+        vt0Var.b(this.p1, null, org.telegram.messenger.id.M0(2131753849, null), org.telegram.messenger.id.M0(2131753879, null), org.telegram.messenger.id.M0(2131753878, null), org.telegram.messenger.id.M0(2131753880, null));
         ipVar.addView(vt0Var, c8.ha.k(0.0f, 8.0f, 0.0f, 0.0f, -1, -2));
         FrameLayout frameLayout = new FrameLayout(activity);
         xp xpVar = new xp(new ColorDrawable(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.a7, this.I0)), org.telegram.ui.ActionBar.k6.Y0(activity, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.k6.b7));
@@ -102,12 +102,12 @@ public final class lp extends org.telegram.ui.ActionBar.v2 {
         arrayList.add(xpVar);
         ipVar.addView(frameLayout, c8.ha.o(-1, -2));
         org.telegram.ui.Cells.z8 z8Var = new org.telegram.ui.Cells.z8(activity, null);
-        z8Var.setText(org.telegram.messenger.hd.M0(2131753852, null));
+        z8Var.setText(org.telegram.messenger.id.M0(2131753852, null));
         frameLayout.addView(z8Var);
         kp kpVar = new kp(activity);
         this.l1 = kpVar;
         org.telegram.ui.ActionBar.r6.i(i10, kpVar, null);
-        kpVar.setText(org.telegram.messenger.hd.M0(2131753845, null));
+        kpVar.setText(org.telegram.messenger.id.M0(2131753845, null));
         kpVar.a.setOnClickListener(new h0(this, 8));
         frameLayout.addView(kpVar);
         J0(false);

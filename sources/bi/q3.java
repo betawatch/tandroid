@@ -22,7 +22,7 @@ import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.af;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q3 implements c20 {
     public final /* synthetic */ int a;
@@ -66,13 +66,13 @@ public final /* synthetic */ class q3 implements c20 {
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.f;
                 TL_wallet.nftItem nftitem = (TL_wallet.nftItem) this.g;
                 TL_stars.starGiftDepositPayload stargiftdepositpayload = (TL_stars.starGiftDepositPayload) obj;
-                if (org.telegram.ui.Wallet.n0.x(k7Var.a).v() < stargiftdepositpayload.amount) {
+                if (org.telegram.ui.Wallet.m0.x(k7Var.a).v() < stargiftdepositpayload.amount) {
                     bVar.b();
                     AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, k7Var.getContext(), k7Var.I0);
-                    alertDialog$Builder2.a.R = org.telegram.messenger.hd.M0(2131743067, null);
-                    alertDialog$Builder2.a.T = org.telegram.messenger.hd.V(null, null, 2131743066, org.telegram.ui.Wallet.n0.n(stargiftdepositpayload.amount, false));
-                    alertDialog$Builder2.h(org.telegram.messenger.hd.M0(2131743065, null), null);
-                    alertDialog$Builder2.k(org.telegram.messenger.hd.M0(2131742991, null), new ab.g(5, k7Var, f1Var));
+                    alertDialog$Builder2.a.R = org.telegram.messenger.id.M0(2131743069, null);
+                    alertDialog$Builder2.a.T = org.telegram.messenger.id.V(null, null, 2131743068, org.telegram.ui.Wallet.m0.n(stargiftdepositpayload.amount, false));
+                    alertDialog$Builder2.h(org.telegram.messenger.id.M0(2131743067, null), null);
+                    alertDialog$Builder2.k(org.telegram.messenger.id.M0(2131742993, null), new ab.g(5, k7Var, f1Var));
                     alertDialog$Builder2.p();
                     break;
                 } else {
@@ -80,14 +80,14 @@ public final /* synthetic */ class q3 implements c20 {
                     long e10 = p10.i(k7Var.a).e();
                     TLRPC.Document document = tL_starGiftUnique.getDocument();
                     int i10 = k7Var.a;
-                    org.telegram.ui.Wallet.n0 x10 = org.telegram.ui.Wallet.n0.x(i10);
+                    org.telegram.ui.Wallet.m0 x10 = org.telegram.ui.Wallet.m0.x(i10);
                     e4 e4Var = new e4(k7Var, bVar, f1Var, 0);
                     f4 f4Var = j3 != e10 ? null : new f4(i10, e10, document);
                     try {
-                        x10.d0(a22, stargiftdepositpayload.nft_address.indexOf(58) >= 0 ? org.telegram.ui.Wallet.n0.V(stargiftdepositpayload.nft_address, true) : stargiftdepositpayload.nft_address, 0L, null, null, nftitem, null, e4Var, f4Var == null ? null : new org.telegram.ui.Wallet.t(1, x10, f4Var), org.telegram.ui.Wallet.n0.h(stargiftdepositpayload));
+                        x10.d0(a22, stargiftdepositpayload.nft_address.indexOf(58) >= 0 ? org.telegram.ui.Wallet.m0.V(stargiftdepositpayload.nft_address, true) : stargiftdepositpayload.nft_address, 0L, null, null, nftitem, null, e4Var, f4Var == null ? null : new org.telegram.ui.Wallet.t(1, x10, f4Var), org.telegram.ui.Wallet.m0.h(stargiftdepositpayload));
                         break;
                     } catch (Exception e11) {
-                        org.telegram.ui.Wallet.n0.k("depositNFT: invalid payload", e11);
+                        org.telegram.ui.Wallet.m0.k("depositNFT: invalid payload", e11);
                         e4Var.a(e11.getMessage() == null ? "NULL_ERROR" : e11.getMessage());
                         return;
                     }
@@ -123,19 +123,19 @@ public final /* synthetic */ class q3 implements c20 {
                     if (contentsettings != null && contentsettings.sensitive_can_change) {
                         org.telegram.ui.Cells.c2 c2Var = new org.telegram.ui.Cells.c2(1, parentActivity, resourceProvider);
                         c2Var.setBackground(org.telegram.ui.ActionBar.k6.N0(false));
-                        c2Var.e(org.telegram.messenger.hd.M0(2131748481, null), "", zArr[0], false, false);
+                        c2Var.e(org.telegram.messenger.id.M0(2131748483, null), "", zArr[0], false, false);
                         z9 = z10;
-                        c2Var.setPadding(org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(16.0f) : org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(8.0f) : org.telegram.messenger.g0.L(16.0f), 0);
+                        c2Var.setPadding(org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(16.0f) : org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(8.0f) : org.telegram.messenger.g0.L(16.0f), 0);
                         frameLayout.addView(c2Var, c8.ha.d(-1, 48.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
                         i7 = 1;
                         c2Var.setOnClickListener(new org.telegram.messenger.b9(zArr, 1));
                         final boolean[] zArr2 = new boolean[i7];
                         AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(0, parentActivity, resourceProvider);
-                        alertDialog$Builder3.a.R = org.telegram.messenger.hd.M0(2131748476, null);
-                        alertDialog$Builder3.a.T = org.telegram.messenger.hd.M0(!z11 ? 2131748478 : 2131748479, null);
+                        alertDialog$Builder3.a.R = org.telegram.messenger.id.M0(2131748478, null);
+                        alertDialog$Builder3.a.T = org.telegram.messenger.id.M0(!z11 ? 2131748480 : 2131748481, null);
                         alertDialog$Builder3.o(frameLayout);
                         alertDialog$Builder3.a.G = 9;
-                        alertDialog$Builder3.h(org.telegram.messenger.hd.M0(!z11 ? 2131748477 : 2131752589, null), null);
+                        alertDialog$Builder3.h(org.telegram.messenger.id.M0(!z11 ? 2131748479 : 2131752589, null), null);
                         alertDialog$Builder3.a.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.messenger.tm
                             @Override // android.content.DialogInterface.OnDismissListener
                             public final void onDismiss(DialogInterface dialogInterface) {
@@ -149,7 +149,7 @@ public final /* synthetic */ class q3 implements c20 {
                             final Context context = parentActivity;
                             alertDialog$Builder = alertDialog$Builder3;
                             final boolean z12 = z9;
-                            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131748480, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.messenger.um
+                            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131748482, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.messenger.um
                                 @Override // org.telegram.ui.ActionBar.r1
                                 public final void g(org.telegram.ui.ActionBar.u1 u1Var2, int i11) {
                                     TL_account.contentSettings contentsettings2;
@@ -180,11 +180,11 @@ public final /* synthetic */ class q3 implements c20 {
                 z9 = z10;
                 final boolean[] zArr22 = new boolean[i7];
                 AlertDialog$Builder alertDialog$Builder32 = new AlertDialog$Builder(0, parentActivity, resourceProvider);
-                alertDialog$Builder32.a.R = org.telegram.messenger.hd.M0(2131748476, null);
-                alertDialog$Builder32.a.T = org.telegram.messenger.hd.M0(!z11 ? 2131748478 : 2131748479, null);
+                alertDialog$Builder32.a.R = org.telegram.messenger.id.M0(2131748478, null);
+                alertDialog$Builder32.a.T = org.telegram.messenger.id.M0(!z11 ? 2131748480 : 2131748481, null);
                 alertDialog$Builder32.o(frameLayout);
                 alertDialog$Builder32.a.G = 9;
-                alertDialog$Builder32.h(org.telegram.messenger.hd.M0(!z11 ? 2131748477 : 2131752589, null), null);
+                alertDialog$Builder32.h(org.telegram.messenger.id.M0(!z11 ? 2131748479 : 2131752589, null), null);
                 alertDialog$Builder32.a.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.messenger.tm
                     @Override // android.content.DialogInterface.OnDismissListener
                     public final void onDismiss(DialogInterface dialogInterface) {

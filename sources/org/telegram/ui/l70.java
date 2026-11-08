@@ -1,14 +1,14 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l70 implements org.telegram.messenger.c20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Runnable b;
 
-    public /* synthetic */ l70(zh.r3 r3Var, int i7) {
+    public /* synthetic */ l70(zh.q3 q3Var, int i7) {
         this.a = i7;
-        this.b = r3Var;
+        this.b = q3Var;
     }
 
     @Override // org.telegram.messenger.c20

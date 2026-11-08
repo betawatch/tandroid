@@ -4,7 +4,7 @@ import android.view.View;
 import c8.ha;
 import java.util.ArrayList;
 import org.telegram.messenger.camera.CameraView;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.ConnectionsManager;
@@ -17,7 +17,7 @@ import org.telegram.ui.Components.wf;
 import org.telegram.ui.Components.y20;
 import org.telegram.ui.qm;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class p2 implements wf {
     public final /* synthetic */ i4 a;
@@ -123,7 +123,7 @@ public final class p2 implements wf {
             TLRPC.Chat M0 = qp.s1(i4Var.l2).M0(Long.valueOf(-i4Var.k1));
             str = M0 != null ? M0.title : "";
         }
-        i4Var.F2.setText(org.telegram.messenger.g0.X2(hd.a0(null, null, i4Var.K1.c1 ? 2131743595 : 2131743521, str)));
+        i4Var.F2.setText(org.telegram.messenger.g0.X2(id.a0(null, null, i4Var.K1.c1 ? 2131743597 : 2131743523, str)));
         i4Var.F2.c(i4Var.K1.getAudioVideoButtonContainer());
     }
 
@@ -137,11 +137,11 @@ public final class p2 implements wf {
         o40 o40Var = i4Var.s2;
         if (o40Var != null) {
             if (i7 == 0) {
-                o40Var.i(false);
+                o40Var.j(false);
                 return;
             }
             if (i7 == 1 || i7 == 3 || i7 == 4) {
-                o40Var.g(i7, i10, i11, j3, j10, z9);
+                o40Var.h(i7, i10, i11, j3, j10, z9);
             } else if (i7 == 2 || i7 == 5) {
                 o40Var.a(i7 == 2);
             }
@@ -217,7 +217,7 @@ public final class p2 implements wf {
     public final void c1() {
         o40 o40Var = this.a.s2;
         if (o40Var != null) {
-            o40Var.j();
+            o40Var.k();
         }
     }
 

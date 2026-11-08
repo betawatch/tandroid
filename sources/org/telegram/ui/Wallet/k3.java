@@ -1,35 +1,44 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.ui.Components.hc;
-
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f2 b;
+    public final /* synthetic */ o3 b;
 
-    public /* synthetic */ k3(int i7, org.telegram.ui.ActionBar.f2 f2Var) {
+    public /* synthetic */ k3(o3 o3Var, int i7) {
         this.a = i7;
-        this.b = f2Var;
+        this.b = o3Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i7 = this.a;
-        org.telegram.ui.ActionBar.f2 f2Var = this.b;
-        switch (i7) {
+        switch (this.a) {
             case 0:
-                y5.I0(f2Var.getContext(), f2Var.getResourceProvider());
-                break;
-            case 1:
-                f2Var.presentFragment(new y5());
+                o3 o3Var = this.b;
+                if (!o3Var.S && !o3Var.R) {
+                    o3Var.a(1.0f);
+                    break;
+                }
                 break;
             default:
-                if (hc.a(f2Var)) {
-                    hc.a0(f2Var).I(R.raw.contact_check, hd.M0(2131743151, null), hd.M0(2131743150, null)).j();
-                    break;
+                o3 o3Var2 = this.b;
+                if (!o3Var2.S && !o3Var2.R) {
+                    ih.d.c(o3Var2.E, o3Var2.h);
+                    o3Var2.F.d();
+                    g6 g6Var = o3Var2.r;
+                    k3 k3Var = new k3(o3Var2, 0);
+                    b6 b6Var = g6Var.D;
+                    if (b6Var == null) {
+                        k3Var.run();
+                        break;
+                    } else if (b6Var.b == null) {
+                        b6Var.d = k3Var;
+                        break;
+                    } else {
+                        k3Var.run();
+                        break;
+                    }
                 }
                 break;
         }

@@ -6,10 +6,10 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class a9 extends FrameLayout {
     public final TextView a;
@@ -24,8 +24,8 @@ public final class a9 extends FrameLayout {
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        textView.setGravity((hd.a0 ? 5 : 3) | 16);
-        addView(textView, c8.ha.d(-2, -1.0f, (hd.a0 ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
+        textView.setGravity((id.a0 ? 5 : 3) | 16);
+        addView(textView, c8.ha.d(-2, -1.0f, (id.a0 ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.b = textView2;
         textView2.setTextSize(1, 16.0f);
@@ -34,8 +34,8 @@ public final class a9 extends FrameLayout {
         textView2.setMaxLines(1);
         textView2.setSingleLine(true);
         textView2.setEllipsize(truncateAt);
-        textView2.setGravity((hd.a0 ? 3 : 5) | 16);
-        addView(textView2, c8.ha.d(-2, -1.0f, (hd.a0 ? 3 : 5) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
+        textView2.setGravity((id.a0 ? 3 : 5) | 16);
+        addView(textView2, c8.ha.d(-2, -1.0f, (id.a0 ? 3 : 5) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
     }
 
     public final void a(String str, String str2, boolean z9) {

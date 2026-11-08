@@ -25,8 +25,8 @@ import org.telegram.messenger.r2;
 import org.telegram.messenger.video.MP4Builder;
 import org.telegram.ui.ActionBar.m3;
 import org.telegram.ui.Components.d40;
-import org.telegram.ui.Components.dt;
 import org.telegram.ui.Components.e40;
+import org.telegram.ui.Components.et;
 import org.telegram.ui.Components.g40;
 import org.telegram.ui.Components.n30;
 import org.telegram.ui.Components.o30;
@@ -39,7 +39,7 @@ import s4.o0;
 import s4.p0;
 import s4.r0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class c extends Handler {
     public final /* synthetic */ int a;
@@ -387,7 +387,7 @@ public final class c extends Handler {
                                             EGLExt.eglPresentationTimeANDROID(g40Var.s, g40Var.D, g40Var.R);
                                             EGL14.eglSwapBuffers(g40Var.s, g40Var.D);
                                             if (g40Var.B0 != null && iz.o() == 2 && g40Var.C0 % 33 == 0) {
-                                                g40Var.B0.postRunnable(new dt(g40Var, i17));
+                                                g40Var.B0.postRunnable(new et(g40Var, i17));
                                             }
                                             g40Var.C0++;
                                             o40 o40Var8 = g40Var.H0;

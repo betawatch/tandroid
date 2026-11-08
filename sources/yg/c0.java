@@ -11,14 +11,14 @@ import android.widget.TextView;
 import bg.q0;
 import c8.ha;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.w70;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class c0 extends FrameLayout {
     public final TableRow D;
@@ -45,11 +45,11 @@ public final class c0 extends FrameLayout {
         this.w = new RectF();
         paint.setStyle(Paint.Style.STROKE);
         this.n = f6Var;
-        TextView a10 = a(hd.M0(2131753523, null), false);
-        TextView a11 = a(hd.M0(2131753179, null), false);
-        TextView a12 = a(hd.M0(2131753501, null), false);
-        TextView a13 = a(hd.M0(2131753322, null), false);
-        TextView a14 = a(hd.M0(2131753540, null), false);
+        TextView a10 = a(id.M0(2131753523, null), false);
+        TextView a11 = a(id.M0(2131753179, null), false);
+        TextView a12 = a(id.M0(2131753501, null), false);
+        TextView a13 = a(id.M0(2131753322, null), false);
+        TextView a14 = a(id.M0(2131753540, null), false);
         TextView a15 = a(null, true);
         this.a = a15;
         TextView a16 = a(null, true);
@@ -69,13 +69,13 @@ public final class c0 extends FrameLayout {
         TableRow tableRow = new TableRow(context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.x = frameLayout;
-        boolean z10 = hd.a0;
+        boolean z10 = id.a0;
         frameLayout.addView(l9Var, ha.d(24, 24.0f, z10 ? 5 : 3, z10 ? 0.0f : 12.0f, 0.0f, z10 ? 12.0f : 0.0f, 0.0f));
-        boolean z11 = hd.a0;
+        boolean z11 = id.a0;
         frameLayout.addView(a15, ha.d(-2, -2.0f, (z11 ? 5 : 3) | 16, z11 ? 0.0f : 29.0f, 0.0f, z11 ? 29.0f : 0.0f, 0.0f));
-        TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(-2, -2, hd.a0 ? 1.0f : 0.0f);
+        TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(-2, -2, id.a0 ? 1.0f : 0.0f);
         layoutParams.gravity = 16;
-        if (hd.a0) {
+        if (id.a0) {
             tableRow.addView(frameLayout, layoutParams);
             tableRow.addView(a10, new TableRow.LayoutParams(-2, -2));
         } else {
@@ -86,13 +86,13 @@ public final class c0 extends FrameLayout {
         TableRow tableRow2 = new TableRow(context);
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.y = frameLayout2;
-        boolean z12 = hd.a0;
+        boolean z12 = id.a0;
         frameLayout2.addView(l9Var2, ha.d(24, 24.0f, z12 ? 5 : 3, z12 ? 0.0f : 12.0f, 0.0f, z12 ? 12.0f : 0.0f, 0.0f));
-        boolean z13 = hd.a0;
+        boolean z13 = id.a0;
         frameLayout2.addView(a16, ha.d(-2, -2.0f, (z13 ? 5 : 3) | 16, z13 ? 0.0f : 29.0f, 0.0f, z13 ? 29.0f : 0.0f, 0.0f));
-        TableRow.LayoutParams layoutParams2 = new TableRow.LayoutParams(-2, -2, hd.a0 ? 1.0f : 0.0f);
+        TableRow.LayoutParams layoutParams2 = new TableRow.LayoutParams(-2, -2, id.a0 ? 1.0f : 0.0f);
         layoutParams2.gravity = 16;
-        if (hd.a0) {
+        if (id.a0) {
             tableRow2.addView(frameLayout2, layoutParams2);
             tableRow2.addView(a11, new TableRow.LayoutParams(-2, -2));
         } else {
@@ -101,7 +101,7 @@ public final class c0 extends FrameLayout {
         }
         frameLayout2.setPadding(0, g0.L(6.0f), 0, g0.L(6.0f));
         TableRow tableRow3 = new TableRow(context);
-        if (hd.a0) {
+        if (id.a0) {
             tableRow3.addView(a17, new TableRow.LayoutParams(-2, -2, 1.0f));
             tableRow3.addView(a12, new TableRow.LayoutParams(-2, -2));
         } else {
@@ -110,7 +110,7 @@ public final class c0 extends FrameLayout {
         }
         TableRow tableRow4 = new TableRow(context);
         this.D = tableRow4;
-        if (hd.a0) {
+        if (id.a0) {
             tableRow4.addView(a18, new TableRow.LayoutParams(-2, -2, 1.0f));
             tableRow4.addView(a13, new TableRow.LayoutParams(-2, -2));
         } else {
@@ -118,7 +118,7 @@ public final class c0 extends FrameLayout {
             tableRow4.addView(a18, new TableRow.LayoutParams(-2, -2));
         }
         TableRow tableRow5 = new TableRow(context);
-        if (hd.a0) {
+        if (id.a0) {
             tableRow5.addView(a19, new TableRow.LayoutParams(-2, -2, 1.0f));
             tableRow5.addView(a14, new TableRow.LayoutParams(-2, -2));
         } else {
@@ -131,7 +131,7 @@ public final class c0 extends FrameLayout {
         b0Var.addView(tableRow3);
         b0Var.addView(tableRow4);
         b0Var.addView(tableRow5);
-        if (hd.a0) {
+        if (id.a0) {
             z9 = true;
             b0Var.setColumnShrinkable(0, true);
         } else {
@@ -156,7 +156,7 @@ public final class c0 extends FrameLayout {
         r6.V(textView, z9 ? k6.m5 : k6.j5, f6Var);
         textView.setTextSize(1, 14.0f);
         if (!z9) {
-            textView.setGravity(hd.a0 ? 5 : 3);
+            textView.setGravity(id.a0 ? 5 : 3);
         }
         if (str == null) {
             textView.setSingleLine(true);
@@ -167,7 +167,7 @@ public final class c0 extends FrameLayout {
         textView.setTypeface(g0.o());
         textView.setText(str);
         r6.i(k6.e7, textView, f6Var);
-        textView.setPadding(g0.L(hd.a0 ? 32.0f : 12.0f), g0.L(11.0f), g0.L(hd.a0 ? 12.0f : 32.0f), g0.L(11.0f));
+        textView.setPadding(g0.L(id.a0 ? 32.0f : 12.0f), g0.L(11.0f), g0.L(id.a0 ? 12.0f : 32.0f), g0.L(11.0f));
         return textView;
     }
 }

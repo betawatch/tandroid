@@ -29,7 +29,7 @@ import java.util.zip.CRC32;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
 import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class g {
     public static final String[] E;
@@ -1190,11 +1190,11 @@ public final class g {
         v(fVar, i7);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0171  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0178  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0260  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x027b  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x02b4  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x016a  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0171  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0259  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0274  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x02a6  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1262,7 +1262,10 @@ public final class g {
                             z9 = z11;
                             if (((i12 != 4 && i13 != 4) || readUnsignedShort3 != i10) && (((i12 != 9 && i13 != 9) || readUnsignedShort3 != 8) && ((i12 != 12 && i13 != 12) || readUnsignedShort3 != 11))) {
                                 if (z9) {
-                                    Log.d("ExifInterface", "Skip the tag entry since data format (" + E[readUnsignedShort3] + ") is unexpected for tag: " + dVar.b);
+                                    StringBuilder sb2 = new StringBuilder("Skip the tag entry since data format (");
+                                    sb2.append(E[readUnsignedShort3]);
+                                    sb2.append(") is unexpected for tag: ");
+                                    rf.b.p(sb2, dVar.b, "ExifInterface");
                                 }
                             }
                         }
@@ -1343,7 +1346,11 @@ public final class g {
                                             fVar.b(j12);
                                             v(fVar, num.intValue());
                                         } else if (z9) {
-                                            Log.d("ExifInterface", "Skip jump into the IFD since it has already been read: IfdType " + num + " (at " + j12 + ")");
+                                            StringBuilder sb3 = new StringBuilder("Skip jump into the IFD since it has already been read: IfdType ");
+                                            sb3.append(num);
+                                            sb3.append(" (at ");
+                                            sb3.append(j12);
+                                            rf.b.p(sb3, ")", "ExifInterface");
                                         }
                                     } else if (z9) {
                                         Log.d("ExifInterface", "Skip jump into the IFD since its offset is invalid: " + j12);

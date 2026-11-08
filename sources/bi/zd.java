@@ -24,7 +24,7 @@ import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class zd extends View {
     public LinearGradient D;
@@ -96,7 +96,7 @@ public abstract class zd extends View {
         this.J = new wp[1];
         Paint paint = new Paint(1);
         this.K = paint;
-        this.L = new my0(org.telegram.messenger.hd.M0(2131745038, null), 14.0f, org.telegram.messenger.g0.o1("fonts/rcondensedbold.ttf"));
+        this.L = new my0(org.telegram.messenger.id.M0(2131745040, null), 14.0f, org.telegram.messenger.g0.o1("fonts/rcondensedbold.ttf"));
         xq xqVar = xq.h;
         this.M = new org.telegram.ui.Components.w5(this, 0L, 320L, xqVar);
         this.N = new org.telegram.ui.Components.w5(this, 0L, 320L, xqVar);
@@ -151,7 +151,7 @@ public abstract class zd extends View {
         }
         org.telegram.ui.Components.i6 i6Var = this.H;
         i6Var.a();
-        i6Var.t(dd.Y0(false, org.telegram.messenger.hd.E(c(f10), ','), this.J), true, true);
+        i6Var.t(dd.Y0(false, org.telegram.messenger.id.E(c(f10), ','), this.J), true, true);
     }
 
     public final float b(int i7) {
@@ -442,7 +442,7 @@ public abstract class zd extends View {
                     e(getValue());
                     org.telegram.ui.Components.i6 i6Var = this.H;
                     i6Var.a();
-                    i6Var.t(dd.Y0(false, org.telegram.messenger.hd.E(getValue(), ','), this.J), true, true);
+                    i6Var.t(dd.Y0(false, org.telegram.messenger.id.E(getValue(), ','), this.J), true, true);
                 }
                 this.g0 = motionEvent.getX();
                 return true;
@@ -541,7 +541,7 @@ public abstract class zd extends View {
         this.d0 = b10;
         org.telegram.ui.Components.i6 i6Var = this.H;
         i6Var.a();
-        i6Var.t(dd.Y0(false, org.telegram.messenger.hd.E(getValue(), ','), this.J), true, true);
+        i6Var.t(dd.Y0(false, org.telegram.messenger.id.E(getValue(), ','), this.J), true, true);
     }
 
     public void setValueAnimated(int i7) {

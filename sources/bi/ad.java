@@ -4,10 +4,10 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.q41;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ad extends FrameLayout implements ls {
     public final q41 a;
@@ -46,7 +46,7 @@ public final class ad extends FrameLayout implements ls {
         q41Var.f3.O(true);
         if (q41Var.canScrollVertically(1)) {
             for (int i12 = 0; i12 < q41Var.getChildCount(); i12++) {
-                if (!(q41Var.getChildAt(i12) instanceof lz)) {
+                if (!(q41Var.getChildAt(i12) instanceof mz)) {
                 }
             }
             return;

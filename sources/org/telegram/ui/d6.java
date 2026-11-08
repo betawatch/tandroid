@@ -6,7 +6,7 @@ import android.util.SparseArray;
 import java.util.ArrayList;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d6 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class d6 implements Runnable {
                     }
                     i7++;
                 }
-                Collections.sort(arrayList3, new org.telegram.messenger.vj(27));
+                Collections.sort(arrayList3, new org.telegram.messenger.jl(27));
                 org.telegram.messenger.g0.h3(new d6(y6Var, arrayList4, arrayList5, arrayList3, cVar, 1));
                 break;
             default:
@@ -115,7 +115,7 @@ public final /* synthetic */ class d6 implements Runnable {
                             z10 = false;
                         }
                         if (z10) {
-                            Collections.sort(arrayList8, new org.telegram.messenger.vj(27));
+                            Collections.sort(arrayList8, new org.telegram.messenger.jl(27));
                         }
                     } else {
                         z9 = z11;

@@ -14,7 +14,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.gz;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qi;
@@ -28,8 +28,8 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.bn;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.gx;
 import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.hx;
 import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.lf;
 import org.telegram.ui.Components.wk;
@@ -43,7 +43,7 @@ import org.telegram.ui.rc;
 import org.telegram.ui.rp;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s2 implements c20 {
     public final /* synthetic */ int a;
@@ -60,11 +60,11 @@ public final /* synthetic */ class s2 implements c20 {
         this.e = obj4;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:74:0x01ff, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x01fe, code lost:
     
         if (r11.charAt(r13) <= 57343) goto L78;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:84:0x0219, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:84:0x0218, code lost:
     
         if (r11.charAt(r13) != 9794) goto L80;
      */
@@ -99,7 +99,7 @@ public final /* synthetic */ class s2 implements c20 {
                 org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj2;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
                 if (storyItem == null) {
-                    cc Q = new hc(n3Var.z0.L0, f6Var).Q(R.raw.story_bomb2, 36, hd.M0(2131744607, null));
+                    cc Q = new hc(n3Var.z0.L0, f6Var).Q(R.raw.story_bomb2, 36, id.M0(2131744609, null));
                     Q.a = 3;
                     Q.k(true);
                     break;
@@ -122,7 +122,7 @@ public final /* synthetic */ class s2 implements c20 {
                 i4 i4Var2 = ((z3) obj5).x;
                 if (((HashSet) obj4).contains(Integer.valueOf(r6Var.a))) {
                     i4Var2.B1.c(r6Var.a, i4Var2.k1, storyItem2);
-                    a02 = hd.a0(null, null, 2131744732, r6Var.b);
+                    a02 = id.a0(null, null, 2131744734, r6Var.b);
                 } else {
                     y6 y6Var = i4Var2.B1;
                     long j3 = i4Var2.k1;
@@ -131,7 +131,7 @@ public final /* synthetic */ class s2 implements c20 {
                     ArrayList arrayList = new ArrayList(1);
                     arrayList.add(storyItem2);
                     y6Var.f0(i13, j3, arrayList);
-                    a02 = hd.a0(null, null, 2131744495, r6Var.b);
+                    a02 = id.a0(null, null, 2131744497, r6Var.b);
                 }
                 org.telegram.messenger.camera.q.s(a02, new hc(i4Var2.L0, f6Var2), R.raw.contact_check, 36);
                 z3 z3Var = i4Var2.c1;
@@ -212,12 +212,12 @@ public final /* synthetic */ class s2 implements c20 {
                     break;
                 }
             case 9:
-                gx gxVar = (gx) obj5;
+                hx hxVar = (hx) obj5;
                 ArrayList arrayList3 = (ArrayList) obj4;
                 Runnable runnable = (Runnable) obj2;
                 ArrayList arrayList4 = (ArrayList) obj;
-                if (((String) obj3).equals(gxVar.w)) {
-                    org.telegram.ui.Components.i5.g(gxVar.F.c1).f(arrayList4);
+                if (((String) obj3).equals(hxVar.w)) {
+                    org.telegram.ui.Components.i5.g(hxVar.F.c1).f(arrayList4);
                     int size = arrayList4.size();
                     while (i11 < size) {
                         Object obj6 = arrayList4.get(i11);
@@ -386,7 +386,7 @@ public final /* synthetic */ class s2 implements c20 {
                 qs.f(p10.s0).k(qs.U2, (TL_stories.TL_premium_myBoosts) obj4, Integer.valueOf(((ArrayList) obj3).size()), Integer.valueOf(((HashSet) obj2).size()), (TL_stories.TL_premium_boostsStatus) obj);
                 break;
             default:
-                zh.h1 h1Var = (zh.h1) obj5;
+                zh.g1 g1Var = (zh.g1) obj5;
                 c20 c20Var = (c20) obj3;
                 bi.i5 i5Var = (bi.i5) obj2;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
@@ -394,12 +394,12 @@ public final /* synthetic */ class s2 implements c20 {
                 if (c20Var != null) {
                     c20Var.a(Boolean.FALSE);
                 }
-                h1Var.dismiss();
+                g1Var.dismiss();
                 if (tL_error != null) {
-                    org.telegram.messenger.g0.h3(new wi.q(11, i5Var, tL_error));
+                    org.telegram.messenger.g0.h3(new yf.b(6, i5Var, tL_error));
                     break;
                 } else {
-                    h1Var.dismiss();
+                    g1Var.dismiss();
                     break;
                 }
         }

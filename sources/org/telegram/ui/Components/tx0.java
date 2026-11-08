@@ -22,7 +22,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class tx0 extends TableLayout implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.ActionBar.f6 a;
@@ -136,10 +136,10 @@ public final class tx0 extends TableLayout implements org.telegram.ui.ActionBar.
 
     public final void g(int i7, String str) {
         long j3 = i7 * 1000;
-        c(str, org.telegram.messenger.hd.a0(null, null, 2131742784, org.telegram.messenger.hd.E0().s0().format(new Date(j3)), org.telegram.messenger.hd.E0().p0().format(new Date(j3))), null, null);
+        c(str, org.telegram.messenger.id.a0(null, null, 2131742786, org.telegram.messenger.id.E0().s0().format(new Date(j3)), org.telegram.messenger.id.E0().p0().format(new Date(j3))), null, null);
     }
 
-    public final TableRow h(CharSequence charSequence, CharSequence charSequence2, Runnable runnable, String str, org.telegram.ui.Wallet.s4 s4Var) {
+    public final TableRow h(CharSequence charSequence, CharSequence charSequence2, Runnable runnable, String str, org.telegram.ui.Wallet.r4 r4Var) {
         Context context = getContext();
         org.telegram.ui.ActionBar.f6 f6Var = this.a;
         jc jcVar = new jc(context, f6Var);
@@ -155,7 +155,7 @@ public final class tx0 extends TableLayout implements org.telegram.ui.ActionBar.
         spannableStringBuilder.setSpan(new org.telegram.messenger.w(5, runnable), 0, spannableStringBuilder.length(), 33);
         jcVar.setText(spannableStringBuilder);
         if (str != null) {
-            jcVar.O = new kc(str, s4Var, f6Var);
+            jcVar.O = new kc(str, r4Var, f6Var);
         }
         return l(jcVar, charSequence);
     }
@@ -164,7 +164,7 @@ public final class tx0 extends TableLayout implements org.telegram.ui.ActionBar.
         h(str, charSequence, runnable, null, null);
     }
 
-    public final TableRow j(CharSequence charSequence, CharSequence charSequence2, int i7, bi.a4 a4Var, String str, org.telegram.ui.Wallet.r4 r4Var) {
+    public final TableRow j(CharSequence charSequence, CharSequence charSequence2, int i7, bi.a4 a4Var, String str, org.telegram.ui.Wallet.q4 q4Var) {
         FrameLayout frameLayout = new FrameLayout(getContext());
         final w70 w70Var = new w70(getContext(), null);
         w70Var.setTypeface(org.telegram.messenger.g0.o1("fonts/rmono.ttf"));
@@ -180,7 +180,7 @@ public final class tx0 extends TableLayout implements org.telegram.ui.ActionBar.
         w70Var.setPadding(org.telegram.messenger.g0.L(12.66f), org.telegram.messenger.g0.L(9.33f), org.telegram.messenger.g0.L(10.66f), org.telegram.messenger.g0.L(9.33f));
         frameLayout.addView(w70Var, c8.ha.d(-1, -1.0f, org.telegram.messenger.qs.E1, 0.0f, 0.0f, 34.0f, 0.0f));
         if (str != null) {
-            kc kcVar = new kc(str, r4Var, f6Var);
+            kc kcVar = new kc(str, q4Var, f6Var);
             final jc jcVar = new jc(getContext(), f6Var);
             jcVar.setTextSize(1, f10);
             jcVar.setPadding(0, org.telegram.messenger.g0.L(9.33f), 0, org.telegram.messenger.g0.L(9.33f));
@@ -250,7 +250,7 @@ public final class tx0 extends TableLayout implements org.telegram.ui.ActionBar.
         org.telegram.ui.f5 f5Var = new org.telegram.ui.f5(24.0f, i7, jcVar);
         ImageReceiver imageReceiver = f5Var.b;
         if (j3 == 2666000) {
-            str3 = org.telegram.messenger.hd.M0(2131744950, null);
+            str3 = org.telegram.messenger.id.M0(2131744952, null);
             xp a10 = bi.yc.a(44, "anonymous");
             int L = org.telegram.messenger.g0.L(16.0f);
             int L2 = org.telegram.messenger.g0.L(16.0f);
@@ -260,7 +260,7 @@ public final class tx0 extends TableLayout implements org.telegram.ui.ActionBar.
             z9 = false;
             z10 = false;
         } else if (org.telegram.messenger.t10.A(j3)) {
-            str3 = org.telegram.messenger.hd.M0(2131744926, null);
+            str3 = org.telegram.messenger.id.M0(2131744928, null);
             xp a11 = bi.yc.a(44, "fragment");
             int L3 = org.telegram.messenger.g0.L(16.0f);
             int L4 = org.telegram.messenger.g0.L(16.0f);
@@ -317,7 +317,7 @@ public final class tx0 extends TableLayout implements org.telegram.ui.ActionBar.
         org.telegram.ui.f5 f5Var = new org.telegram.ui.f5(24.0f, i7, u70Var);
         ImageReceiver imageReceiver = f5Var.b;
         if (j3 == 2666000) {
-            str2 = org.telegram.messenger.hd.M0(2131744950, null);
+            str2 = org.telegram.messenger.id.M0(2131744952, null);
             xp a10 = bi.yc.a(44, "anonymous");
             int L = org.telegram.messenger.g0.L(16.0f);
             int L2 = org.telegram.messenger.g0.L(16.0f);
@@ -327,7 +327,7 @@ public final class tx0 extends TableLayout implements org.telegram.ui.ActionBar.
             z9 = false;
         } else {
             if (org.telegram.messenger.t10.A(j3)) {
-                str2 = org.telegram.messenger.hd.M0(2131744926, null);
+                str2 = org.telegram.messenger.id.M0(2131744928, null);
                 xp a11 = bi.yc.a(44, "fragment");
                 int L3 = org.telegram.messenger.g0.L(16.0f);
                 int L4 = org.telegram.messenger.g0.L(16.0f);

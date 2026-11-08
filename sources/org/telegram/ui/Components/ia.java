@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ia extends rt0 {
     public final /* synthetic */ boolean f0;
@@ -104,7 +104,7 @@ public final class ia extends rt0 {
                             i16 = ((i12 - paddingBottom) - i10) - measuredHeight3;
                             i17 = layoutParams.bottomMargin;
                         }
-                        if (childAt instanceof gy) {
+                        if (childAt instanceof hy) {
                             if (org.telegram.messenger.g0.Q1()) {
                                 measuredHeight = getMeasuredHeight();
                                 measuredHeight2 = childAt.getMeasuredHeight();
@@ -120,7 +120,7 @@ public final class ia extends rt0 {
                         i17 = layoutParams.bottomMargin;
                     }
                     i18 = i16 - i17;
-                    if (childAt instanceof gy) {
+                    if (childAt instanceof hy) {
                     }
                     childAt.layout(i15, i18, measuredWidth + i15, measuredHeight3 + i18);
                 } else {
@@ -131,7 +131,7 @@ public final class ia extends rt0 {
                 if (i21 == 16) {
                 }
                 i18 = i16 - i17;
-                if (childAt instanceof gy) {
+                if (childAt instanceof hy) {
                 }
                 childAt.layout(i15, i18, measuredWidth + i15, measuredHeight3 + i18);
             }
@@ -142,7 +142,7 @@ public final class ia extends rt0 {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
         int i11;
-        kt ktVar;
+        lt ltVar;
         int size = View.MeasureSpec.getSize(i10);
         na naVar = this.h0;
         naVar.n1 = size;
@@ -157,16 +157,16 @@ public final class ia extends rt0 {
         int size2 = View.MeasureSpec.getSize(i7);
         int size3 = View.MeasureSpec.getSize(i10);
         setMeasuredDimension(size2, size3);
-        kt ktVar2 = naVar.H1;
-        if (ktVar2 != null && !ktVar2.N && org.telegram.messenger.g0.L(20.0f) >= 0) {
-            kt ktVar3 = naVar.H1;
-            if (!ktVar3.e && !ktVar3.O) {
-                ktVar3.j();
+        lt ltVar2 = naVar.H1;
+        if (ltVar2 != null && !ltVar2.N && org.telegram.messenger.g0.L(20.0f) >= 0) {
+            lt ltVar3 = naVar.H1;
+            if (!ltVar3.e && !ltVar3.O) {
+                ltVar3.j();
             }
         }
         int i12 = 0;
         if (org.telegram.messenger.g0.L(20.0f) >= 0) {
-            int emojiPadding = (naVar.d || (ktVar = naVar.H1) == null) ? 0 : ktVar.getEmojiPadding();
+            int emojiPadding = (naVar.d || (ltVar = naVar.H1) == null) ? 0 : ltVar.getEmojiPadding();
             if (!org.telegram.messenger.g0.E) {
                 size3 -= emojiPadding;
                 i10 = View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30);
@@ -177,8 +177,8 @@ public final class ia extends rt0 {
         while (i12 < childCount) {
             View childAt = getChildAt(i12);
             if (childAt != null && childAt.getVisibility() != 8) {
-                kt ktVar4 = naVar.H1;
-                if (ktVar4 == null || !ktVar4.l(childAt)) {
+                lt ltVar4 = naVar.H1;
+                if (ltVar4 == null || !ltVar4.l(childAt)) {
                     i11 = i7;
                     measureChildWithMargins(childAt, i11, 0, i13, 0);
                     i12++;

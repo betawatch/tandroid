@@ -4,7 +4,7 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class hj implements org.telegram.ui.ActionBar.f6 {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final class hj implements org.telegram.ui.ActionBar.f6 {
             case 1:
                 return ((hm0) this.b).S;
             default:
-                return ((q71) this.b).f.a.a();
+                return ((r71) this.b).f.a.a();
         }
     }
 
@@ -37,12 +37,12 @@ public final class hj implements org.telegram.ui.ActionBar.f6 {
                 org.telegram.ui.ActionBar.k6.r(f10, f11, i7, i10);
                 break;
             default:
-                v61 v61Var = ((q71) this.b).f.a;
-                if (v61Var == null) {
+                w61 w61Var = ((r71) this.b).f.a;
+                if (w61Var == null) {
                     org.telegram.ui.ActionBar.k6.r(f10, f11, i7, i10);
                     break;
                 } else {
-                    v61Var.b(f10, f11, i7, i10);
+                    w61Var.b(f10, f11, i7, i10);
                     break;
                 }
         }
@@ -63,7 +63,7 @@ public final class hj implements org.telegram.ui.ActionBar.f6 {
             case 1:
                 return org.telegram.ui.ActionBar.k6.V0(str);
             default:
-                return ((q71) this.b).f.a.d(str);
+                return ((r71) this.b).f.a.d(str);
         }
     }
 
@@ -82,7 +82,7 @@ public final class hj implements org.telegram.ui.ActionBar.f6 {
             case 1:
                 return h(i7);
             default:
-                return ((q71) this.b).f.a.h(i7);
+                return ((r71) this.b).f.a.h(i7);
         }
     }
 
@@ -94,7 +94,7 @@ public final class hj implements org.telegram.ui.ActionBar.f6 {
             case 1:
                 return false;
             default:
-                return ((q71) this.b).f.a.g();
+                return ((r71) this.b).f.a.g();
         }
     }
 
@@ -120,13 +120,13 @@ public final class hj implements org.telegram.ui.ActionBar.f6 {
                     break;
                 }
             default:
-                u71 u71Var = ((q71) this.b).f;
+                v71 v71Var = ((r71) this.b).f;
                 if (!str.equals("drawableMsgOut")) {
                     if (!str.equals("drawableMsgOutSelected")) {
                         if (!str.equals("drawableMsgOutMedia")) {
                             if (!str.equals("drawableMsgOutMediaSelected")) {
-                                v61 v61Var = u71Var.a;
-                                if (v61Var == null) {
+                                w61 w61Var = v71Var.a;
+                                if (w61Var == null) {
                                     break;
                                 } else {
                                     break;
@@ -161,7 +161,7 @@ public final class hj implements org.telegram.ui.ActionBar.f6 {
                 org.telegram.ui.ActionBar.f6 f6Var = hm0Var.s;
                 return f6Var != null ? f6Var.h(i7) : org.telegram.ui.ActionBar.k6.v0(i7);
             default:
-                return ((q71) this.b).f.a.h(i7);
+                return ((r71) this.b).f.a.h(i7);
         }
     }
 
@@ -178,7 +178,7 @@ public final class hj implements org.telegram.ui.ActionBar.f6 {
             case 1:
                 return h(i7);
             default:
-                return ((q71) this.b).f.a.j(i7);
+                return ((r71) this.b).f.a.j(i7);
         }
     }
 

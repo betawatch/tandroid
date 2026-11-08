@@ -6,7 +6,7 @@ import android.view.View;
 import j$.util.Objects;
 import java.util.Locale;
 import org.telegram.messenger.d20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
@@ -16,11 +16,11 @@ import org.telegram.ui.Cells.y6;
 import org.telegram.ui.Cells.z8;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Wallet.x9;
-import org.telegram.ui.Wallet.y5;
+import org.telegram.ui.Wallet.w9;
+import org.telegram.ui.Wallet.x5;
 import org.telegram.ui.b00;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c0 implements d20 {
     public final /* synthetic */ int a;
@@ -54,9 +54,9 @@ public final /* synthetic */ class c0 implements d20 {
                 ij ijVar2 = (ij) obj;
                 return Boolean.valueOf((ijVar2 == null || ijVar2.M0() == null) ? false : true);
             case 5:
-                return hd.G(((Integer) obj).intValue(), "Hours", new Object[0]);
+                return id.G(((Integer) obj).intValue(), "Hours", new Object[0]);
             case 6:
-                return hd.G(((Integer) obj).intValue(), "Minutes", new Object[0]);
+                return id.G(((Integer) obj).intValue(), "Minutes", new Object[0]);
             case 7:
                 View view = (View) obj;
                 return Boolean.valueOf(((view instanceof z8) || (view instanceof y6) || (view instanceof b00) || (view instanceof x3) || (view instanceof d2) || Objects.equals(view.getTag(), -33024)) ? false : true);
@@ -76,9 +76,9 @@ public final /* synthetic */ class c0 implements d20 {
                 disablebackup.password = (TLRPC.InputCheckPasswordSRP) obj;
                 return disablebackup;
             case 12:
-                return Boolean.valueOf(y5.C0(y5.b1((String) obj)));
+                return Boolean.valueOf(x5.C0(x5.b1((String) obj)));
             default:
-                return Boolean.valueOf(x9.l0((String) obj) != null);
+                return Boolean.valueOf(w9.l0((String) obj) != null);
         }
     }
 }

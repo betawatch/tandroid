@@ -4,12 +4,12 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import java.util.HashSet;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.ag0;
 import org.telegram.ui.Components.wo;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class q4 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.Components.l9 a;
@@ -27,10 +27,10 @@ public final class q4 extends FrameLayout implements org.telegram.ui.ActionBar.a
         org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(context);
         this.a = l9Var;
         l9Var.setRoundRadius(org.telegram.messenger.g0.L(23.0f));
-        addView(l9Var, c8.ha.d(46, 46.0f, (hd.a0 ? 5 : 3) | 48, 13.0f, 6.0f, 13.0f, 6.0f));
+        addView(l9Var, c8.ha.d(46, 46.0f, (id.a0 ? 5 : 3) | 48, 13.0f, 6.0f, 13.0f, 6.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
-        boolean z10 = hd.a0;
+        boolean z10 = id.a0;
         addView(linearLayout, c8.ha.d(-1, -1.0f, qs.E1, z10 ? 0 : 72, 0.0f, z10 ? 72 : 0, 0.0f));
         FrameLayout frameLayout = new FrameLayout(context);
         linearLayout.addView(frameLayout, c8.ha.l(1.0f, 0, 58));
@@ -39,26 +39,26 @@ public final class q4 extends FrameLayout implements org.telegram.ui.ActionBar.a
         org.telegram.ui.ActionBar.r6.Y(k5Var, org.telegram.ui.ActionBar.k6.G6, null);
         k5Var.setTypeface(org.telegram.messenger.g0.o());
         k5Var.setTextSize(15);
-        k5Var.setGravity((hd.a0 ? 5 : 3) | 48);
-        frameLayout.addView(k5Var, c8.ha.d(-1, 20.0f, (hd.a0 ? 5 : 3) | 48, 0.0f, 9.0f, 0.0f, 0.0f));
+        k5Var.setGravity((id.a0 ? 5 : 3) | 48);
+        frameLayout.addView(k5Var, c8.ha.d(-1, 20.0f, (id.a0 ? 5 : 3) | 48, 0.0f, 9.0f, 0.0f, 0.0f));
         org.telegram.ui.ActionBar.k5 k5Var2 = new org.telegram.ui.ActionBar.k5(context);
         this.c = k5Var2;
         k5Var2.setTextSize(13);
-        k5Var2.setGravity((hd.a0 ? 5 : 3) | 48);
-        frameLayout.addView(k5Var2, c8.ha.d(-1, 20.0f, (hd.a0 ? 5 : 3) | 48, 0.0f, 33.0f, 0.0f, 0.0f));
+        k5Var2.setGravity((id.a0 ? 5 : 3) | 48);
+        frameLayout.addView(k5Var2, c8.ha.d(-1, 20.0f, (id.a0 ? 5 : 3) | 48, 0.0f, 33.0f, 0.0f, 0.0f));
         if (z9) {
             wo woVar = new wo(21, context, null);
             this.e = woVar;
             woVar.b(-1, org.telegram.ui.ActionBar.k6.d6, org.telegram.ui.ActionBar.k6.k7);
             woVar.setDrawUnchecked(false);
             woVar.setDrawBackgroundAsArc(3);
-            boolean z11 = hd.a0;
+            boolean z11 = id.a0;
             addView(woVar, c8.ha.d(24, 24.0f, (z11 ? 5 : 3) | 48, z11 ? 0.0f : 40.0f, 32.0f, z11 ? 39.0f : 0.0f, 0.0f));
             return;
         }
         this.e = null;
         ag0 ag0Var = new ag0(context);
-        ag0Var.setText(hd.M0(2131749173, null));
+        ag0Var.setText(id.M0(2131749175, null));
         ag0Var.setTextSize(1, 14.0f);
         org.telegram.ui.ActionBar.r6.V(ag0Var, org.telegram.ui.ActionBar.k6.Gi, null);
         ag0Var.setProgressColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Bi, false));
@@ -100,7 +100,7 @@ public final class q4 extends FrameLayout implements org.telegram.ui.ActionBar.a
         org.telegram.messenger.d5 d5Var3 = this.f;
         int i10 = d5Var3.l;
         if (i10 > 0) {
-            k5Var2.l(hd.G(i10, "TelegramContacts", new Object[0]), false);
+            k5Var2.l(id.G(i10, "TelegramContacts", new Object[0]), false);
         } else {
             k5Var2.l((CharSequence) d5Var3.e.get(0), false);
         }

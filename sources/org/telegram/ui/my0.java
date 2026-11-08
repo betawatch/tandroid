@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class my0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -102,17 +102,17 @@ public final /* synthetic */ class my0 implements View.OnClickListener {
                 org.telegram.messenger.qs.e().k(org.telegram.messenger.qs.z4, new Object[0]);
                 break;
             case 8:
-                ((f81) this.b).c(true);
+                ((g81) this.b).c(true);
                 break;
             case 9:
-                ((f81) ((bi.g5) this.b).c).c(true);
+                ((g81) ((bi.g5) this.b).c).c(true);
                 break;
             case 10:
-                m81 m81Var = (m81) this.b;
-                ArrayList arrayList = m81Var.f;
-                HashSet hashSet = m81Var.x;
+                n81 n81Var = (n81) this.b;
+                ArrayList arrayList = n81Var.f;
+                HashSet hashSet = n81Var.x;
                 if (!hashSet.isEmpty()) {
-                    TLRPC.User a22 = m81Var.getMessagesController().a2(Long.valueOf(m81Var.getUserConfig().e()));
+                    TLRPC.User a22 = n81Var.getMessagesController().a2(Long.valueOf(n81Var.getUserConfig().e()));
                     ArrayList arrayList2 = new ArrayList();
                     for (int i7 = 0; i7 < arrayList.size(); i7++) {
                         if (hashSet.contains(Long.valueOf(((TLRPC.Chat) arrayList.get(i7)).id))) {
@@ -121,18 +121,18 @@ public final /* synthetic */ class my0 implements View.OnClickListener {
                     }
                     for (int i10 = 0; i10 < arrayList2.size(); i10++) {
                         TLRPC.Chat chat = (TLRPC.Chat) arrayList2.get(i10);
-                        m81Var.getMessagesController().Q3(chat, false);
-                        m81Var.getMessagesController().f0(chat.id, a22);
+                        n81Var.getMessagesController().Q3(chat, false);
+                        n81Var.getMessagesController().f0(chat.id, a22);
                     }
-                    m81Var.finishFragment();
+                    n81Var.finishFragment();
                     break;
                 }
                 break;
             default:
-                vc1 vc1Var = (vc1) this.b;
-                vc1Var.a.c(!r0.b(), true);
-                vc1Var.c.setEnabled(vc1Var.a.b());
-                vc1Var.c.animate().alpha(vc1Var.a.b() ? 1.0f : 0.5f).start();
+                wc1 wc1Var = (wc1) this.b;
+                wc1Var.a.c(!r0.b(), true);
+                wc1Var.c.setEnabled(wc1Var.a.b());
+                wc1Var.c.animate().alpha(wc1Var.a.b() ? 1.0f : 0.5f).start();
                 break;
         }
     }

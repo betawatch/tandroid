@@ -51,7 +51,7 @@ import org.telegram.ui.Components.pn;
 import org.telegram.ui.Components.ue;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.an;
-import org.telegram.ui.hc1;
+import org.telegram.ui.ic1;
 import org.telegram.ui.l51;
 import org.telegram.ui.pe;
 import org.telegram.ui.qj;
@@ -59,7 +59,7 @@ import r0.i0;
 import v4.a1;
 import v4.d1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public abstract class l extends v4.k {
     public static final xq V = new xq(0.19919472913616398d, 0.010644531250000006d, 0.27920937042459737d, 0.91025390625d);
@@ -211,9 +211,9 @@ public abstract class l extends v4.k {
                 if (view instanceof q1) {
                     final q1 q1Var3 = (q1) view;
                     final x1 transitionParams = q1Var3.getTransitionParams();
-                    animatorSet.playTogether(ObjectAnimator.ofFloat(q1Var3, q1Var3.Wc, 0.0f));
+                    animatorSet.playTogether(ObjectAnimator.ofFloat(q1Var3, q1Var3.Xc, 0.0f));
                     if (kVar2.n) {
-                        q1Var3.t3(kVar2.o, kVar2.p, kVar2.q, kVar2.r);
+                        q1Var3.u3(kVar2.o, kVar2.p, kVar2.q, kVar2.r);
                         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
                         final float f11 = q1Var3.getCurrentMessagesGroup() == null ? transitionParams.v0 : q1Var3.getCurrentMessagesGroup().m.n;
                         final float c22 = q1Var3.getCurrentMessagesGroup() == null ? q1Var3.c2() : q1Var3.getCurrentMessagesGroup().c;
@@ -266,7 +266,7 @@ public abstract class l extends v4.k {
                                     int[] iArr4 = x1Var4.B0;
                                     photoImage.K0((int) ((iArr4[0] * floatValue) + (iArr3[0] * f12)), (int) ((iArr4[1] * floatValue) + (iArr3[1] * f12)), (int) ((iArr4[2] * floatValue) + (iArr3[2] * f12)), (int) ((iArr4[3] * floatValue) + (iArr3[3] * f12)));
                                 }
-                                q1Var4.t3(f14, f15, f16, f17);
+                                q1Var4.u3(f14, f15, f16, f17);
                                 d1Var.a.invalidate();
                             }
                         };
@@ -932,7 +932,7 @@ public abstract class l extends v4.k {
                                         if (z18) {
                                             if (ij.S4(q1Var2.getMessageObject().k)) {
                                                 if (Math.abs(view2.getTranslationY()) < view2.getMeasuredHeight() * 3.0f) {
-                                                    new hc1(q1Var2, anVar2.Z, lVar.G, anVar2.fa, lVar.R).f.start();
+                                                    new ic1(q1Var2, anVar2.Z, lVar.G, anVar2.fa, lVar.R).f.start();
                                                 }
                                             } else if (iz.o() != 0 && Math.abs(view2.getTranslationY()) < pj0Var4.getMeasuredHeight()) {
                                                 anVar = anVar2;
@@ -1180,7 +1180,7 @@ public abstract class l extends v4.k {
                                 if (view9 instanceof q1) {
                                     q1 q1Var3 = (q1) view9;
                                     if (q1Var3.getAnimationOffsetX() != 0.0f) {
-                                        g1 g1Var = q1Var3.Wc;
+                                        g1 g1Var = q1Var3.Xc;
                                         float[] fArr = new float[2];
                                         fArr[0] = q1Var3.getAnimationOffsetX();
                                         fArr[i21] = 0.0f;
@@ -1541,7 +1541,7 @@ public abstract class l extends v4.k {
                             }
                             photoImage.L0(iArr2);
                         }
-                        q1Var.t3(kVar.o, kVar.p, kVar.q, kVar.r);
+                        q1Var.u3(kVar.o, kVar.p, kVar.q, kVar.r);
                     }
                 }
                 if (currentMessagesGroup == null && transitionParams.w0 && (((Q3 = q1Var.getMessageObject().Q3()) && rect.left != q1Var.getBackgroundDrawableLeft()) || ((!Q3 && rect.right != q1Var.getBackgroundDrawableRight()) || rect.top != q1Var.getBackgroundDrawableTop() || rect.bottom != q1Var.getBackgroundDrawableBottom()))) {
@@ -1751,7 +1751,7 @@ public abstract class l extends v4.k {
             }
             if (r0Var instanceof j) {
                 j jVar = (j) r0Var;
-                q1Var.t3(jVar.c, jVar.d, jVar.e, jVar.f);
+                q1Var.u3(jVar.c, jVar.d, jVar.e, jVar.f);
             }
         }
     }

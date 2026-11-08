@@ -39,7 +39,7 @@ import q6.k;
 import q6.m;
 import q6.p;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class f extends pb.e {
     public static final n6.c[] k = {j.c};
@@ -89,14 +89,14 @@ public final class f extends pb.e {
                     a7.b bVar = new a7.b(this.d);
                     this.e.getClass();
                     zb.d dVar = this.e;
-                    this.j = ((cg) cgVar).X0(bVar, new hg(false, dVar.a, dVar.b, false, dVar.c));
+                    this.j = ((cg) cgVar).x1(bVar, new hg(false, dVar.a, dVar.b, false, dVar.c));
                 }
                 try {
                     bg bgVar = this.j;
                     bgVar.getClass();
                     Parcel obtain = Parcel.obtain();
                     obtain.writeInterfaceToken(bgVar.c);
-                    bgVar.T0(obtain, 1);
+                    bgVar.t1(obtain, 1);
                     f(eb.b, elapsedRealtime);
                 } catch (RemoteException e10) {
                     f(eb.d, elapsedRealtime);
@@ -119,7 +119,7 @@ public final class f extends pb.e {
                 if (bgVar != null) {
                     Parcel obtain = Parcel.obtain();
                     obtain.writeInterfaceToken(bgVar.c);
-                    bgVar.T0(obtain, 2);
+                    bgVar.t1(obtain, 2);
                 }
                 this.j = null;
             } catch (RemoteException unused) {
@@ -171,10 +171,10 @@ public final class f extends pb.e {
                         m.g(bitmap);
                         bVar = new a7.b(bitmap);
                         try {
-                            gg X0 = bgVar.X0(bVar, yfVar);
+                            gg x12 = bgVar.x1(bVar, yfVar);
                             ArrayList arrayList = new ArrayList();
                             if (this.e.b) {
-                                for (fg fgVar : X0.a) {
+                                for (fg fgVar : x12.a) {
                                     float[] fArr = fgVar.a;
                                     if (fArr != null) {
                                         FloatBuffer allocate = FloatBuffer.allocate(fArr.length);
@@ -187,9 +187,9 @@ public final class f extends pb.e {
                             fVar = this;
                             aVar2 = aVar;
                             try {
-                                fVar.g(eb.b, elapsedRealtime, this.h, aVar2, X0);
+                                fVar.g(eb.b, elapsedRealtime, this.h, aVar2, x12);
                                 fVar.h = false;
-                                float[] fArr2 = X0.b;
+                                float[] fArr2 = x12.b;
                                 if (fArr2 != null) {
                                     try {
                                         try {

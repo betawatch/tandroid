@@ -10,7 +10,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gm implements bj0 {
     public final /* synthetic */ int a = 0;
@@ -66,7 +66,7 @@ public final /* synthetic */ class gm implements bj0 {
                         while (true) {
                             int[] iArr = bnVar.T0;
                             if (i14 >= iArr.length) {
-                                F.c(R.drawable.msg_customize, org.telegram.messenger.hd.M0(2131747130, null), new org.telegram.ui.m6(bnVar, context, view, f6Var, 18), false);
+                                F.c(R.drawable.msg_customize, org.telegram.messenger.id.M0(2131747132, null), new org.telegram.ui.m6(bnVar, context, view, f6Var, 18), false);
                                 F.t = false;
                                 F.s = 0;
                                 F.Z();
@@ -76,7 +76,7 @@ public final /* synthetic */ class gm implements bj0 {
                                 a01 a10 = a01.a(i15);
                                 int i16 = org.telegram.ui.ActionBar.k6.F8;
                                 org.telegram.ui.ActionBar.r6.y(bnVar, a10, i16, f6Var, PorterDuff.Mode.SRC_IN);
-                                F.b(0, a10, org.telegram.messenger.hd.G(i15 / 3600, "Hours", new Object[0]), i16, org.telegram.ui.ActionBar.k6.E8, new org.telegram.ui.q8(bnVar, i15, view, i13));
+                                F.b(0, a10, org.telegram.messenger.id.G(i15 / 3600, "Hours", new Object[0]), i16, org.telegram.ui.ActionBar.k6.E8, new org.telegram.ui.q8(bnVar, i15, view, i13));
                                 i14++;
                             }
                         }
@@ -286,7 +286,7 @@ public final /* synthetic */ class gm implements bj0 {
                                         a6Var.m(bnVar.c0, z9);
                                         a6Var.r.a(zArr[i30 - bnVar.t0], z13);
                                         if (a6Var.getTop() > org.telegram.messenger.g0.L(40.0f) && i7 == bnVar.G0 && !bnVar.d0) {
-                                            y20Var.setText(org.telegram.messenger.hd.M0(2131747154, null));
+                                            y20Var.setText(org.telegram.messenger.id.M0(2131747156, null));
                                             y20Var.c(a6Var.getCheckBox());
                                             bnVar.d0 = z9;
                                         }
@@ -305,28 +305,28 @@ public final /* synthetic */ class gm implements bj0 {
                 }
                 break;
             default:
-                qu quVar = (qu) obj3;
+                ru ruVar = (ru) obj3;
                 ArrayList arrayList2 = (ArrayList) obj2;
                 org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) obj;
-                cu cuVar = quVar.l1;
+                du duVar = ruVar.l1;
                 if (arrayList2 == null || arrayList2.size() <= 1) {
-                    org.telegram.ui.ActionBar.g1 g1Var = quVar.x1;
+                    org.telegram.ui.ActionBar.g1 g1Var = ruVar.x1;
                     if (g1Var != null) {
                         g1Var.d(true);
-                        quVar.x1 = null;
+                        ruVar.x1 = null;
                         break;
-                    } else if ((f2Var instanceof org.telegram.ui.an) && ((org.telegram.ui.an) f2Var).Z.getVisibility() == 0 && (view instanceof ju)) {
-                        r5 r5Var = ((ju) view).c;
+                    } else if ((f2Var instanceof org.telegram.ui.an) && ((org.telegram.ui.an) f2Var).Z.getVisibility() == 0 && (view instanceof ku)) {
+                        r5 r5Var = ((ku) view).c;
                         try {
                             TLRPC.Document document = r5Var.document;
                             if (document == null) {
-                                document = i5.e(quVar.a, r5Var.getDocumentId());
+                                document = i5.e(ruVar.a, r5Var.getDocumentId());
                             }
                             SpannableString spannableString = new SpannableString(org.telegram.messenger.ij.U(document));
                             spannableString.setSpan(r5Var, 0, spannableString.length(), 33);
                             ((org.telegram.ui.an) f2Var).Z.E0.getText().append((CharSequence) spannableString);
-                            quVar.L0();
-                            quVar.dismiss();
+                            ruVar.L0();
+                            ruVar.dismiss();
                         } catch (Exception unused) {
                         }
                         try {
@@ -336,14 +336,14 @@ public final /* synthetic */ class gm implements bj0 {
                             return;
                         }
                     }
-                } else if (SystemClock.elapsedRealtime() - quVar.H1 >= 250) {
+                } else if (SystemClock.elapsedRealtime() - ruVar.H1 >= 250) {
                     int i31 = 0;
                     while (true) {
-                        ArrayList[] arrayListArr = cuVar.c;
+                        ArrayList[] arrayListArr = duVar.c;
                         if (i11 < arrayListArr.length) {
                             int size = arrayListArr[i11].size();
-                            if (cuVar.c.length > 1) {
-                                size = Math.min(quVar.u1.J * 2, size);
+                            if (duVar.c.length > 1) {
+                                size = Math.min(ruVar.u1.J * 2, size);
                             }
                             i31 += size + 2;
                             if (i7 >= i31) {
@@ -351,9 +351,9 @@ public final /* synthetic */ class gm implements bj0 {
                             }
                         }
                     }
-                    ArrayList arrayList3 = cuVar.b;
+                    ArrayList arrayList3 = duVar.b;
                     if (arrayList3 != null && i11 < arrayList3.size()) {
-                        tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) cuVar.b.get(i11);
+                        tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) duVar.b.get(i11);
                     }
                     if (tL_messages_stickerSet != null && tL_messages_stickerSet.set != null) {
                         ArrayList arrayList4 = new ArrayList();
@@ -362,7 +362,7 @@ public final /* synthetic */ class gm implements bj0 {
                         tL_inputStickerSetID.id = stickerSet.id;
                         tL_inputStickerSetID.access_hash = stickerSet.access_hash;
                         arrayList4.add(tL_inputStickerSetID);
-                        new du(quVar, f2Var, quVar.getContext(), this.b, arrayList4).show();
+                        new eu(ruVar, f2Var, ruVar.getContext(), this.b, arrayList4).show();
                         break;
                     }
                 }
@@ -370,8 +370,8 @@ public final /* synthetic */ class gm implements bj0 {
         }
     }
 
-    public /* synthetic */ gm(qu quVar, ArrayList arrayList, org.telegram.ui.ActionBar.f2 f2Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        this.c = quVar;
+    public /* synthetic */ gm(ru ruVar, ArrayList arrayList, org.telegram.ui.ActionBar.f2 f2Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        this.c = ruVar;
         this.d = arrayList;
         this.e = f2Var;
         this.b = f6Var;

@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class yq0 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ pj0 a;
@@ -18,11 +18,11 @@ public final class yq0 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int d;
     public final /* synthetic */ xs0 e;
 
-    public yq0(xs0 xs0Var, pj0 pj0Var, SparseBooleanArray sparseBooleanArray, lz lzVar, int i7) {
+    public yq0(xs0 xs0Var, pj0 pj0Var, SparseBooleanArray sparseBooleanArray, mz mzVar, int i7) {
         this.e = xs0Var;
         this.a = pj0Var;
         this.b = sparseBooleanArray;
-        this.c = lzVar;
+        this.c = mzVar;
         this.d = i7;
     }
 

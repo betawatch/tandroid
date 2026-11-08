@@ -44,7 +44,7 @@ import java.util.function.Predicate;
 import m.q3;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class f0 {
     public final v a;
@@ -105,10 +105,10 @@ public final class f0 {
     }
 
     public static q2 b(t0 t0Var, q3 q3Var) {
-        List l10 = ((f5.u) q3Var.f).l();
+        List o4 = ((f5.u) q3Var.f).o();
         ArrayList arrayList = new ArrayList();
-        for (int i7 = 0; i7 < l10.size(); i7++) {
-            ca.p pVar = (ca.p) l10.get(i7);
+        for (int i7 = 0; i7 < o4.size(); i7++) {
+            ca.p pVar = (ca.p) o4.get(i7);
             pVar.getClass();
             i1 i1Var = new i1();
             ca.b bVar = (ca.b) pVar;

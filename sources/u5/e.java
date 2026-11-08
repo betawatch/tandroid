@@ -51,7 +51,7 @@ import m.q3;
 import o5.i;
 import o9.g;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.q1;
 import org.telegram.messenger.qp;
@@ -65,7 +65,7 @@ import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Cells.m8;
 import org.telegram.ui.Components.cj0;
 import org.telegram.ui.Components.sn;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.vy;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.hy0;
 import org.telegram.ui.p31;
@@ -73,7 +73,7 @@ import org.telegram.ui.web.a0;
 import q4.q;
 import r0.k1;
 import r0.m;
-import u9.o;
+import sg.i0;
 import ug.j;
 import w7.s;
 import wg.c0;
@@ -81,10 +81,10 @@ import wg.r0;
 import wg.v0;
 import wg.w0;
 import wh.h;
-import zh.h1;
-import zh.i0;
+import zh.g1;
+import zh.h0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a, ua.a, p, m, q1 {
     public final /* synthetic */ int a;
@@ -97,15 +97,15 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a,
 
     @Override // r0.m
     public k1 S0(View view, k1 k1Var) {
-        ((i0) this.b).n1.j(k1Var);
+        ((h0) this.b).n1.j(k1Var);
         return k1.b;
     }
 
     @Override // org.telegram.messenger.q1
     public void a(f fVar, List list) {
         int i7;
-        h1 h1Var = (h1) this.b;
-        ArrayList arrayList = h1Var.e2;
+        g1 g1Var = (g1) this.b;
+        ArrayList arrayList = g1Var.e2;
         Iterator it = list.iterator();
         long j3 = 0;
         while (true) {
@@ -135,7 +135,7 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a,
             i7++;
             ((j) obj2).g = j3;
         }
-        g0.h3(new wg.p(h1Var, 7));
+        g0.h3(new wg.p(g1Var, 7));
     }
 
     @Override // ua.a
@@ -171,9 +171,9 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a,
                 long currentTimeMillis = System.currentTimeMillis();
                 g gVar = (g) r7Var.a(g.class);
                 va.d dVar = (va.d) r7Var.a(va.d.class);
-                o o4 = r7Var.o(x9.a.class);
-                o o10 = r7Var.o(p9.a.class);
-                o o11 = r7Var.o(fb.a.class);
+                u9.p o4 = r7Var.o(x9.a.class);
+                u9.p o10 = r7Var.o(p9.a.class);
+                u9.p o11 = r7Var.o(fb.a.class);
                 ExecutorService executorService = (ExecutorService) r7Var.e(crashlyticsRegistrar.a);
                 ExecutorService executorService2 = (ExecutorService) r7Var.e(crashlyticsRegistrar.b);
                 ExecutorService executorService3 = (ExecutorService) r7Var.e(crashlyticsRegistrar.c);
@@ -199,7 +199,7 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a,
                     Log.d("FirebaseSessions", "Subscriber " + dVar3 + " registered.");
                     a11.a.countDown();
                 }
-                u uVar2 = new u(gVar, b0Var, aVar, xVar, new w9.a(fVar), new w9.a(fVar), dVar2, jVar, new uy(o11, 28), eVar2);
+                u uVar2 = new u(gVar, b0Var, aVar, xVar, new w9.a(fVar), new w9.a(fVar), dVar2, jVar, new vy(o11, 28), eVar2);
                 ba.e eVar3 = uVar2.n;
                 gVar.a();
                 String str2 = gVar.c.b;
@@ -277,7 +277,7 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a,
                 }
                 int i18 = i7;
                 try {
-                    aa.a a12 = aa.a.a(context, b0Var, str2, string, arrayList, new sg.i0(context));
+                    aa.a a12 = aa.a.a(context, b0Var, str2, string, arrayList, new i0(context));
                     String str6 = "Installer package name is: " + a12.d;
                     if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                         Log.v("FirebaseCrashlytics", str6, null);
@@ -355,7 +355,8 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a,
                         ((TaskCompletionSource) atomicReference2.get()).trySetResult(a10);
                         onSuccessTask = Tasks.forResult(null);
                     }
-                    onSuccessTask.addOnFailureListener(executorService3, new v0.j(11));
+                    int i21 = 12;
+                    onSuccessTask.addOnFailureListener(executorService3, new v0.j(i21));
                     u uVar3 = uVar;
                     ga.d dVar5 = uVar3.h;
                     Context context2 = uVar3.a;
@@ -393,14 +394,14 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a,
                     }
                     String str13 = new aa.e().a;
                     try {
-                        int i21 = 2;
-                        uVar3.e = new wf.b(i21, "crash_marker", dVar5);
-                        uVar3.d = new wf.b(i21, "initialization_marker", dVar5);
+                        int i22 = 2;
+                        uVar3.e = new wf.b(i22, "crash_marker", dVar5);
+                        uVar3.d = new wf.b(i22, "initialization_marker", dVar5);
                         ba.e eVar5 = eVar;
                         q3 q3Var = new q3(str13, dVar5, eVar5);
                         ca.f fVar2 = new ca.f(dVar5);
-                        n nVar = new n(new ja.a[]{new nb.a(12)});
-                        ((o) uVar3.m.b).a(new v0.j(25));
+                        n nVar = new n(new ja.a[]{new nb.a(i21)});
+                        ((u9.p) uVar3.m.b).a(new v0.j(26));
                         uVar3.f = new aa.q(uVar3.a, uVar3.g, uVar3.b, uVar3.h, uVar3.e, a12, q3Var, fVar2, f0.d(uVar3.a, uVar3.g, uVar3.h, a12, fVar2, q3Var, nVar, cVar3, uVar3.c, uVar3.k, uVar3.n), uVar3.l, uVar3.j, uVar3.k, uVar3.n);
                         wf.b bVar3 = uVar3.d;
                         ga.d dVar6 = (ga.d) bVar3.c;
@@ -453,7 +454,7 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a,
     }
 
     /* JADX WARN: Removed duplicated region for block: B:24:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0121  */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x0122  */
     @Override // org.telegram.ui.Components.cj0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -464,7 +465,6 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a,
         LinkedHashMap linkedHashMap = w0Var.d2;
         v0 v0Var = w0Var.Q1;
         HashSet hashSet = w0Var.W1;
-        int i10 = 3;
         if (view instanceof m8) {
             linkedHashMap.clear();
             w0Var.i1(true);
@@ -473,7 +473,6 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a,
             TLRPC.User user = rVar.getUser();
             TLRPC.Chat chat = rVar.getChat();
             long j10 = user != null ? user.id : -chat.id;
-            j3 = 1;
             if (hashSet.contains(Long.valueOf(j10))) {
                 hashSet.remove(Long.valueOf(j10));
             } else {
@@ -484,56 +483,58 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a,
                 }
                 linkedHashMap.put(valueOf, user);
             }
-            if ((hashSet.size() == 11 && w0Var.j2 == 1) || (hashSet.size() == wg.s.f() + 1 && w0Var.j2 == 2)) {
-                hashSet.remove(Long.valueOf(j10));
-                w0Var.k1();
-                return;
+            if (hashSet.size() != 11 || w0Var.j2 != 1) {
+                j3 = 1;
+                if (hashSet.size() != wg.s.f() + 1 || w0Var.j2 != 2) {
+                    v0Var.b(true, hashSet, new r0(w0Var, 1), null);
+                    w0Var.n1(true, false);
+                    if (chat != null && !t3.t0(chat) && hashSet.contains(Long.valueOf(j10))) {
+                        Context context = w0Var.o1.getContext();
+                        f6 f6Var = w0Var.I0;
+                        p31 p31Var = new p31(w0Var, j10, 4);
+                        r0 r0Var = new r0(w0Var, 2);
+                        AtomicBoolean atomicBoolean = new AtomicBoolean(false);
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, f6Var);
+                        boolean V = t3.V(chat);
+                        String M0 = id.M0(V ? 2131753397 : 2131753395, null);
+                        u1 u1Var = alertDialog$Builder.a;
+                        u1Var.R = M0;
+                        u1Var.T = id.M0(V ? 2131753396 : 2131753394, null);
+                        alertDialog$Builder.k(id.M0(2131754486, "Add"), new a0(17, atomicBoolean, r0Var));
+                        alertDialog$Builder.h(id.M0(2131752589, "Cancel"), new v0.j(15));
+                        alertDialog$Builder.j(new u3(18, atomicBoolean, p31Var));
+                        alertDialog$Builder.p();
+                    } else if (chat != null) {
+                        w0Var.e1();
+                    }
+                    if (view instanceof ah.c) {
+                        return;
+                    }
+                    long hashCode = ((ah.c) view).getCountry().default_name.hashCode();
+                    if (hashSet.contains(Long.valueOf(hashCode))) {
+                        hashSet.remove(Long.valueOf(hashCode));
+                    } else {
+                        hashSet.add(Long.valueOf(hashCode));
+                    }
+                    if (hashSet.size() == qp.s1(p10.s0).p0 + j3 && w0Var.j2 == 3) {
+                        hashSet.remove(Long.valueOf(hashCode));
+                        w0Var.k1();
+                        return;
+                    }
+                    v0Var.b(true, hashSet, new r0(w0Var, 3), w0Var.c2);
+                    if (TextUtils.isEmpty(w0Var.f2)) {
+                        w0Var.n1(true, false);
+                        return;
+                    }
+                    w0Var.f2 = null;
+                    v0Var.setText("");
+                    w0Var.n1(false, false);
+                    w0Var.n1(true, true);
+                    return;
+                }
             }
-            v0Var.b(true, hashSet, new r0(w0Var, 1), null);
-            w0Var.n1(true, false);
-            if (chat != null && !t3.t0(chat) && hashSet.contains(Long.valueOf(j10))) {
-                Context context = w0Var.o1.getContext();
-                f6 f6Var = w0Var.I0;
-                p31 p31Var = new p31(w0Var, j10, i10);
-                r0 r0Var = new r0(w0Var, 2);
-                AtomicBoolean atomicBoolean = new AtomicBoolean(false);
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, f6Var);
-                boolean V = t3.V(chat);
-                String M0 = hd.M0(V ? 2131753397 : 2131753395, null);
-                u1 u1Var = alertDialog$Builder.a;
-                u1Var.R = M0;
-                u1Var.T = hd.M0(V ? 2131753396 : 2131753394, null);
-                int i11 = 18;
-                alertDialog$Builder.k(hd.M0(2131754486, "Add"), new a0(i11, atomicBoolean, r0Var));
-                alertDialog$Builder.h(hd.M0(2131752589, "Cancel"), new v0.j(14));
-                alertDialog$Builder.j(new u3(i11, atomicBoolean, p31Var));
-                alertDialog$Builder.p();
-            } else if (chat != null) {
-                w0Var.e1();
-            }
-            if (view instanceof ah.c) {
-                return;
-            }
-            long hashCode = ((ah.c) view).getCountry().default_name.hashCode();
-            if (hashSet.contains(Long.valueOf(hashCode))) {
-                hashSet.remove(Long.valueOf(hashCode));
-            } else {
-                hashSet.add(Long.valueOf(hashCode));
-            }
-            if (hashSet.size() == qp.s1(p10.s0).p0 + j3 && w0Var.j2 == 3) {
-                hashSet.remove(Long.valueOf(hashCode));
-                w0Var.k1();
-                return;
-            }
-            v0Var.b(true, hashSet, new r0(w0Var, 3), w0Var.c2);
-            if (TextUtils.isEmpty(w0Var.f2)) {
-                w0Var.n1(true, false);
-                return;
-            }
-            w0Var.f2 = null;
-            v0Var.setText("");
-            w0Var.n1(false, false);
-            w0Var.n1(true, true);
+            hashSet.remove(Long.valueOf(j10));
+            w0Var.k1();
             return;
         }
         j3 = 1;
@@ -575,20 +576,15 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a,
     @Override // w5.b
     public Object h() {
         ui.e eVar = (ui.e) this.b;
-        Iterator it = ((Iterable) ((v5.g) ((v5.d) eVar.c)).c(new v0.j(4))).iterator();
+        Iterator it = ((Iterable) ((v5.g) ((v5.d) eVar.c)).c(new v0.j(5))).iterator();
         while (it.hasNext()) {
             ((hy0) eVar.d).J((i) it.next(), 1, false);
         }
         return null;
     }
 
-    @Override // bg.p
-    public void j(long j3) {
-        ((zh.e) this.b).a(j3, true);
-    }
-
     @Override // d5.a
-    public void l(WebView webView, wa waVar, Uri uri, boolean z9, e5.f fVar) {
+    public void i(WebView webView, wa waVar, Uri uri, boolean z9, e5.f fVar) {
         e5.f fVar2;
         ui.i iVar = (ui.i) this.b;
         if (webView == iVar.o && z9 && uri != null && iVar.f.equals(uri.toString()) && iVar.j(webView)) {
@@ -600,7 +596,7 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a,
                             waVar.f(1);
                             byte[] bArr = (byte[]) waVar.d;
                             Objects.requireNonNull(bArr);
-                            iVar.k.execute(new ti.p(13, iVar, bArr));
+                            iVar.k.execute(new u9.f(8, iVar, bArr));
                             return;
                         }
                         return;
@@ -619,11 +615,16 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a,
                     if (str.length() - 14 > 1398112) {
                         iVar.h();
                     } else {
-                        iVar.k.execute(new ti.p(12, iVar, str));
+                        iVar.k.execute(new u9.f(7, iVar, str));
                     }
                 }
             }
         }
+    }
+
+    @Override // bg.p
+    public void j(long j3) {
+        ((zh.e) this.b).a(j3, true);
     }
 
     @Override // wh.a

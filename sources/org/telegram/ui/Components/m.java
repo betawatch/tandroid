@@ -5,7 +5,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class m extends mo0 {
     public final /* synthetic */ g0 R2;
@@ -24,20 +24,20 @@ public final class m extends mo0 {
             if (hVar.m() == 1) {
                 long j3 = hVar.j(0);
                 if (j3 == org.telegram.messenger.p10.i(this.a).n) {
-                    cc G = hcVar.G(R.raw.saved_messages, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131754967, new Object[0])));
+                    cc G = hcVar.G(R.raw.saved_messages, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131754967, new Object[0])));
                     G.r = false;
                     G.j();
                 } else if (j3 < 0) {
-                    cc G2 = hcVar.G(R.raw.forward, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131754971, tL_forumTopic != null ? tL_forumTopic.title : org.telegram.messenger.qp.s1(this.a).M0(Long.valueOf(-j3)).title)));
+                    cc G2 = hcVar.G(R.raw.forward, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131754971, tL_forumTopic != null ? tL_forumTopic.title : org.telegram.messenger.qp.s1(this.a).M0(Long.valueOf(-j3)).title)));
                     G2.r = false;
                     G2.j();
                 } else {
-                    cc G3 = hcVar.G(R.raw.forward, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131754971, org.telegram.messenger.qp.s1(this.a).a2(Long.valueOf(j3)).first_name)));
+                    cc G3 = hcVar.G(R.raw.forward, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131754971, org.telegram.messenger.qp.s1(this.a).a2(Long.valueOf(j3)).first_name)));
                     G3.r = false;
                     G3.j();
                 }
             } else {
-                cc Q = hcVar.Q(R.raw.forward, 36, org.telegram.messenger.g0.X2(org.telegram.messenger.hd.G(hVar.m(), "AIEditorStyleSharedToManyChats", Integer.valueOf(hVar.m()))));
+                cc Q = hcVar.Q(R.raw.forward, 36, org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(hVar.m(), "AIEditorStyleSharedToManyChats", Integer.valueOf(hVar.m()))));
                 Q.r = false;
                 Q.j();
             }

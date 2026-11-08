@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class la extends org.telegram.ui.ActionBar.f2 {
     public static final Paint H = new Paint(1);
@@ -172,9 +172,9 @@ public final class la extends org.telegram.ui.ActionBar.f2 {
         int i7 = 1;
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131743675, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131743677, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new w9(this, i7));
-        this.a = this.simpleActionBar.n(org.telegram.messenger.hd.M0(2131745947, null));
+        this.a = this.simpleActionBar.n(org.telegram.messenger.id.M0(2131745949, null));
         TLRPC.User a22 = org.telegram.messenger.qp.s1(this.currentAccount).a2(Long.valueOf(l0()));
         if (a22 == null) {
             a22 = k0();
@@ -269,7 +269,7 @@ public final class la extends org.telegram.ui.ActionBar.f2 {
             if (str.startsWith("_") || str.endsWith("_")) {
                 org.telegram.ui.Cells.b2 b2Var2 = this.G;
                 if (b2Var2 != null) {
-                    b2Var2.setText(org.telegram.messenger.hd.M0(2131743657, null));
+                    b2Var2.setText(org.telegram.messenger.id.M0(2131743659, null));
                     org.telegram.ui.Cells.b2 b2Var3 = this.G;
                     int i7 = org.telegram.ui.ActionBar.k6.p7;
                     b2Var3.setTag(Integer.valueOf(i7));
@@ -286,7 +286,7 @@ public final class la extends org.telegram.ui.ActionBar.f2 {
                     if (i10 == 0 && charAt >= '0' && charAt <= '9') {
                         org.telegram.ui.Cells.b2 b2Var4 = this.G;
                         if (b2Var4 != null) {
-                            b2Var4.setText(org.telegram.messenger.hd.M0(2131743653, null));
+                            b2Var4.setText(org.telegram.messenger.id.M0(2131743655, null));
                             org.telegram.ui.Cells.b2 b2Var5 = this.G;
                             int i11 = org.telegram.ui.ActionBar.k6.p7;
                             b2Var5.setTag(Integer.valueOf(i11));
@@ -300,7 +300,7 @@ public final class la extends org.telegram.ui.ActionBar.f2 {
                     } else if ((charAt < '0' || charAt > '9') && ((charAt < 'a' || charAt > 'z') && ((charAt < 'A' || charAt > 'Z') && charAt != '_'))) {
                         org.telegram.ui.Cells.b2 b2Var6 = this.G;
                         if (b2Var6 != null) {
-                            b2Var6.setText(org.telegram.messenger.hd.M0(2131743657, null));
+                            b2Var6.setText(org.telegram.messenger.id.M0(2131743659, null));
                             org.telegram.ui.Cells.b2 b2Var7 = this.G;
                             int i12 = org.telegram.ui.ActionBar.k6.p7;
                             b2Var7.setTag(Integer.valueOf(i12));
@@ -319,7 +319,7 @@ public final class la extends org.telegram.ui.ActionBar.f2 {
         if (str == null || str.length() < 4) {
             org.telegram.ui.Cells.b2 b2Var8 = this.G;
             if (b2Var8 != null) {
-                b2Var8.setText(org.telegram.messenger.hd.M0(2131743655, null));
+                b2Var8.setText(org.telegram.messenger.id.M0(2131743657, null));
                 org.telegram.ui.Cells.b2 b2Var9 = this.G;
                 int i13 = org.telegram.ui.ActionBar.k6.p7;
                 b2Var9.setTag(Integer.valueOf(i13));
@@ -338,7 +338,7 @@ public final class la extends org.telegram.ui.ActionBar.f2 {
                 if (str.equals(str2)) {
                     org.telegram.ui.Cells.b2 b2Var10 = this.G;
                     if (b2Var10 != null) {
-                        b2Var10.setText(org.telegram.messenger.hd.a0("UsernameAvailable", null, 2131743668, str));
+                        b2Var10.setText(org.telegram.messenger.id.a0("UsernameAvailable", null, 2131743670, str));
                         org.telegram.ui.Cells.b2 b2Var11 = this.G;
                         int i14 = org.telegram.ui.ActionBar.k6.w6;
                         b2Var11.setTag(Integer.valueOf(i14));
@@ -352,7 +352,7 @@ public final class la extends org.telegram.ui.ActionBar.f2 {
                 }
                 org.telegram.ui.Cells.b2 b2Var12 = this.G;
                 if (b2Var12 != null) {
-                    b2Var12.setText(org.telegram.messenger.hd.M0(2131743667, null));
+                    b2Var12.setText(org.telegram.messenger.id.M0(2131743669, null));
                     org.telegram.ui.Cells.b2 b2Var13 = this.G;
                     int i15 = org.telegram.ui.ActionBar.k6.F6;
                     b2Var13.setTag(Integer.valueOf(i15));
@@ -370,7 +370,7 @@ public final class la extends org.telegram.ui.ActionBar.f2 {
             }
             org.telegram.ui.Cells.b2 b2Var14 = this.G;
             if (b2Var14 != null) {
-                b2Var14.setText(org.telegram.messenger.hd.M0(2131743656, null));
+                b2Var14.setText(org.telegram.messenger.id.M0(2131743658, null));
                 org.telegram.ui.Cells.b2 b2Var15 = this.G;
                 int i16 = org.telegram.ui.ActionBar.k6.p7;
                 b2Var15.setTag(Integer.valueOf(i16));

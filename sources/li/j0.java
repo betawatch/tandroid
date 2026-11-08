@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.text.Layout;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
@@ -15,7 +15,7 @@ import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Cells.i9;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class j0 {
     public final g1 a;
@@ -33,7 +33,7 @@ public final class j0 {
         g1Var.setInputType(147457);
         g1Var.setGravity(8388659);
         g1Var.setTextSize(1, Math.max(8, iz.W0 - 2));
-        g1Var.setHint(hd.M0(2131754454, null));
+        g1Var.setHint(id.M0(2131754454, null));
         g1Var.setListener(new j2.n(5, this, i0Var));
         g1Var.setDelegate(new ab.g(23, this, i0Var));
         a();

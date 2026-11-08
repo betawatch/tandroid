@@ -8,10 +8,10 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class av0 extends FrameLayout implements org.telegram.messenger.ls {
-    public final dt D;
+    public final et D;
     public boolean E;
     public int F;
     public int G;
@@ -94,8 +94,8 @@ public class av0 extends FrameLayout implements org.telegram.messenger.ls {
                     document = document2;
                     str = "130_130";
                 }
-                if (!org.telegram.messenger.rc.e(3)) {
-                    str = rf.b.q(str, "_firstframe");
+                if (!org.telegram.messenger.sc.e(3)) {
+                    str = rf.b.r(str, "_firstframe");
                 }
                 if (document == null) {
                     org.telegram.messenger.ui.b0(i11).c1("tg_placeholders_android", false, obj == null);
@@ -350,7 +350,7 @@ public class av0 extends FrameLayout implements org.telegram.messenger.ls {
         super(context);
         this.x = org.telegram.messenger.p10.s0;
         int i10 = 15;
-        this.D = new dt(this, i10);
+        this.D = new et(this, i10);
         this.G = org.telegram.ui.ActionBar.k6.c7;
         this.n = f6Var;
         this.s = view;

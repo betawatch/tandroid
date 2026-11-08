@@ -15,7 +15,7 @@ import org.telegram.ui.Components.js0;
 import org.telegram.ui.pv;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b2 implements z10 {
     public final /* synthetic */ int a;
@@ -146,26 +146,26 @@ public final /* synthetic */ class b2 implements z10 {
                 org.telegram.messenger.g0.i3(q8Var, 540L);
                 break;
             default:
-                org.telegram.ui.Wallet.n0 n0Var = (org.telegram.ui.Wallet.n0) this.b;
-                org.telegram.ui.Wallet.h8 h8Var = (org.telegram.ui.Wallet.h8) this.c;
+                org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) this.b;
+                org.telegram.ui.Wallet.g8 g8Var = (org.telegram.ui.Wallet.g8) this.c;
                 TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj;
-                org.telegram.ui.Wallet.k0 k0Var = (org.telegram.ui.Wallet.k0) obj2;
+                org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) obj2;
                 byte[] bArr = (byte[]) obj3;
                 String str = (String) obj4;
-                if (sendtransfer != null && k0Var != null && bArr != null) {
-                    org.telegram.ui.Wallet.n0.H("prepare disable backup: transfer ready, initing storage with new secret phrase!");
-                    org.telegram.ui.Wallet.i0 i0Var = new org.telegram.ui.Wallet.i0();
-                    i0Var.c = bArr;
-                    i0Var.b = k0Var.b();
-                    i0Var.a = sendtransfer;
-                    n0Var.c.p(p10.i(n0Var.a).e(), bArr, k0Var, new org.telegram.ui.Wallet.t(n0Var, i0Var, h8Var));
+                if (sendtransfer != null && j0Var != null && bArr != null) {
+                    org.telegram.ui.Wallet.m0.H("prepare disable backup: transfer ready, initing storage with new secret phrase!");
+                    org.telegram.ui.Wallet.h0 h0Var = new org.telegram.ui.Wallet.h0();
+                    h0Var.c = bArr;
+                    h0Var.b = j0Var.b();
+                    h0Var.a = sendtransfer;
+                    m0Var.c.p(p10.i(m0Var.a).e(), bArr, j0Var, new org.telegram.ui.Wallet.t(m0Var, h0Var, g8Var));
                     break;
                 } else {
-                    org.telegram.ui.Wallet.n0.j("prepare disable backup, failed to prepare transfer: ".concat(str == null ? "NULL_ERROR" : str));
+                    org.telegram.ui.Wallet.m0.j("prepare disable backup, failed to prepare transfer: ".concat(str == null ? "NULL_ERROR" : str));
                     if (str == null) {
                         str = "NULL_ERROR";
                     }
-                    h8Var.a(null, str);
+                    g8Var.a(null, str);
                     break;
                 }
         }

@@ -5,7 +5,7 @@ import android.graphics.Typeface;
 import android.text.TextUtils;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class bc extends za {
     public final z8 a;
@@ -53,7 +53,7 @@ public final class bc extends za {
             jbVar2.setTextSize(1, 15.0f);
             jbVar2.setEllipsize(TextUtils.TruncateAt.END);
             jbVar2.setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
-            jbVar2.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
+            jbVar2.setGravity(org.telegram.messenger.id.a0 ? 5 : 3);
             addView(jbVar2, c8.ha.i(-2.0f, -2.0f, 8388627, 70.0f, 0.0f, 12.0f, 0.0f));
         }
         org.telegram.ui.ActionBar.r6.H(this.b, org.telegram.ui.ActionBar.k6.uj, f6Var);

@@ -27,7 +27,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class p10 implements org.telegram.messenger.ls {
     public static p10 e0 = null;
@@ -43,8 +43,8 @@ public final class p10 implements org.telegram.messenger.ls {
     public float Q;
     public float R;
     public float S;
-    public final k10 T;
-    public final k10 U;
+    public final l10 T;
+    public final l10 U;
     public final v10 V;
     public final ch0 W;
     public boolean X;
@@ -76,9 +76,9 @@ public final class p10 implements org.telegram.messenger.ls {
     public p10(final Context context, int i7) {
         final int i10 = 2;
         final int i11 = 0;
-        this.T = new k10(this, i11);
+        this.T = new l10(this, i11);
         final int i12 = 1;
-        this.U = new k10(this, i12);
+        this.U = new l10(this, i12);
         this.h = i7;
         n10 n10Var = new n10(this, context, ViewConfiguration.get(context).getScaledTouchSlop());
         this.a = n10Var;
@@ -245,7 +245,7 @@ public final class p10 implements org.telegram.messenger.ls {
         });
         org.telegram.ui.Components.voip.n2 n2Var3 = new org.telegram.ui.Components.voip.n2(context, 44.0f);
         n2Var3.setTextSize(12);
-        n2Var3.c(R.drawable.calls_decline, -1, -3257782, 0.3f, false, org.telegram.messenger.hd.M0(2131743365, null), false, false);
+        n2Var3.c(R.drawable.calls_decline, -1, -3257782, 0.3f, false, org.telegram.messenger.id.M0(2131743367, null), false, false);
         n2Var3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.q10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -325,7 +325,7 @@ public final class p10 implements org.telegram.messenger.ls {
             p10 p10Var2 = e0;
             WindowManager windowManager = p10Var2.n;
             n10 n10Var = p10Var2.a;
-            n10Var.animate().scaleX(0.5f).scaleY(0.5f).alpha(0.0f).setListener(new i10(n10Var, p10Var2.b, p10Var2.d, windowManager, p10Var2.e)).start();
+            n10Var.animate().scaleX(0.5f).scaleY(0.5f).alpha(0.0f).setListener(new j10(n10Var, p10Var2.b, p10Var2.d, windowManager, p10Var2.e)).start();
             e0.e();
             e0 = null;
             org.telegram.ui.Components.voip.e0.k();
@@ -475,7 +475,7 @@ public final class p10 implements org.telegram.messenger.ls {
                 t10Var.animate().scaleX(1.0f).scaleY(1.0f).setDuration(150L).start();
             } else {
                 t10Var.animate().scaleX(0.7f).scaleY(0.7f).setDuration(150L).start();
-                w7Var.animate().alpha(0.0f).setDuration(150L).setListener(new j10(this, 1)).start();
+                w7Var.animate().alpha(0.0f).setDuration(150L).setListener(new k10(this, 1)).start();
             }
         }
         a();
@@ -495,7 +495,7 @@ public final class p10 implements org.telegram.messenger.ls {
                 AnimatorSet animatorSet2 = new AnimatorSet();
                 this.a0 = animatorSet2;
                 animatorSet2.playTogether(ObjectAnimator.ofFloat(p5Var, (Property<fi.p5, Float>) View.ALPHA, p5Var.getAlpha(), 0.0f), ObjectAnimator.ofFloat(p5Var, (Property<fi.p5, Float>) View.SCALE_X, p5Var.getScaleX(), 0.5f), ObjectAnimator.ofFloat(p5Var, (Property<fi.p5, Float>) View.SCALE_Y, p5Var.getScaleY(), 0.5f));
-                this.a0.addListener(new j10(this, i7));
+                this.a0.addListener(new k10(this, i7));
                 this.a0.setDuration(150L);
                 this.a0.start();
                 return;

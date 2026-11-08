@@ -8,7 +8,7 @@ import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z4 implements c20 {
     public final /* synthetic */ int a;
@@ -62,7 +62,7 @@ public final /* synthetic */ class z4 implements c20 {
                     if (a22 == null) {
                         org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
                         if (Q != null) {
-                            org.telegram.messenger.k5.p(null, 2131748133, org.telegram.ui.Components.hc.a0(Q), null);
+                            org.telegram.messenger.k5.p(null, 2131748135, org.telegram.ui.Components.hc.a0(Q), null);
                             break;
                         }
                     } else {

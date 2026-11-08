@@ -13,7 +13,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class d9 extends org.telegram.ui.Components.w31 {
     public static final /* synthetic */ int b = 0;
@@ -47,17 +47,17 @@ public final class d9 extends org.telegram.ui.Components.w31 {
         ArrayList arrayList2 = f9Var.b;
         imageView.setImageResource(z12 ? R.drawable.menu_videocall : R.drawable.menu_call_create_2_24);
         TLRPC.Message message = (TLRPC.Message) arrayList.get(0);
-        String str = org.telegram.messenger.hd.a0 ? "\u202b" : "";
+        String str = org.telegram.messenger.id.a0 ? "\u202b" : "";
         if (arrayList.size() == 1) {
             StringBuilder j3 = rf.b.j(str, "  ");
             i7 = 1;
-            j3.append(org.telegram.messenger.hd.t(message.date));
+            j3.append(org.telegram.messenger.id.t(message.date));
             spannableString = new SpannableString(j3.toString());
             z10 = false;
         } else {
             i7 = 1;
             z10 = false;
-            spannableString = new SpannableString(String.format(str.concat("  (%d) %s"), Integer.valueOf(arrayList.size()), org.telegram.messenger.hd.t(message.date)));
+            spannableString = new SpannableString(String.format(str.concat("  (%d) %s"), Integer.valueOf(arrayList.size()), org.telegram.messenger.id.t(message.date)));
         }
         int i13 = f9Var.d;
         Object obj = null;
@@ -111,7 +111,7 @@ public final class d9 extends org.telegram.ui.Components.w31 {
             if (arrayList2.size() > 3) {
                 sb2.append(" ");
                 r12 = 0;
-                sb2.append(org.telegram.messenger.hd.G(arrayList2.size() - 3, "AndOther", new Object[0]));
+                sb2.append(org.telegram.messenger.id.G(arrayList2.size() - 3, "AndOther", new Object[0]));
             } else {
                 r12 = 0;
             }

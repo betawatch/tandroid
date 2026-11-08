@@ -11,7 +11,7 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import jg.g;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class d extends Binder implements b, IInterface {
     public final /* synthetic */ int a;
@@ -24,23 +24,23 @@ public final class d extends Binder implements b, IInterface {
     }
 
     @Override // d8.b
-    public final void n(Status status, o8.b bVar) {
-        switch (this.a) {
-            case 0:
-                j.e(status, "status");
-                k8.a(status, bVar, this.b);
-                break;
-        }
-    }
-
-    @Override // d8.b
-    public final void n0(Status status, o8.d dVar) {
+    public final void E0(Status status, o8.d dVar) {
         switch (this.a) {
             case 0:
                 break;
             default:
                 j.e(status, "status");
                 k8.a(status, dVar, this.b);
+                break;
+        }
+    }
+
+    @Override // d8.b
+    public final void n(Status status, o8.b bVar) {
+        switch (this.a) {
+            case 0:
+                j.e(status, "status");
+                k8.a(status, bVar, this.b);
                 break;
         }
     }
@@ -59,7 +59,7 @@ public final class d extends Binder implements b, IInterface {
             if (dataAvail > 0) {
                 throw new BadParcelableException(g.j(dataAvail, "Parcel data not fully consumed, unread size: "));
             }
-            n0(status, dVar);
+            E0(status, dVar);
             return true;
         }
         if (i7 != 2) {
@@ -80,9 +80,9 @@ public final class d extends Binder implements b, IInterface {
         return this;
     }
 
-    private final void H0(Status status, o8.b bVar) {
+    private final void h1(Status status, o8.b bVar) {
     }
 
-    private final void I0(Status status, o8.d dVar) {
+    private final void i1(Status status, o8.d dVar) {
     }
 }

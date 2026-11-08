@@ -6,12 +6,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.v61;
 import org.telegram.ui.an;
 import org.telegram.ui.bm0;
-import org.telegram.ui.f81;
+import org.telegram.ui.g81;
 import org.telegram.ui.hm0;
 import org.telegram.ui.ly0;
 import org.telegram.ui.nj;
@@ -19,7 +19,7 @@ import org.telegram.ui.ny0;
 import org.telegram.ui.oy0;
 import org.telegram.ui.zr0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class g1 extends v61 {
     public final /* synthetic */ int V;
@@ -87,7 +87,7 @@ public final class g1 extends v61 {
                 if (n8Var.a == 0 && motionEvent != null && (E = pj0Var.E(motionEvent.getX(), motionEvent.getY() - n8Var.e.getPaddingTop())) != null && (R = RecyclerView.R(E)) >= 0 && R < arrayList.size()) {
                     b8 b8Var = (b8) arrayList.get(R);
                     if (b8Var.a == 3 && !b8Var.n) {
-                        boolean z9 = hd.a0;
+                        boolean z9 = id.a0;
                         float x10 = motionEvent.getX();
                         if (!z9 ? x10 > org.telegram.messenger.g0.L(100.0f) : x10 < n8Var.getWidth() - org.telegram.messenger.g0.L(100.0f)) {
                             i7 = b8Var.i;
@@ -249,17 +249,17 @@ public final class g1 extends v61 {
                 ((oy0) this.W).b.invalidate();
                 break;
             case 7:
-                ((f81) this.W).e();
+                ((g81) this.W).e();
                 break;
             case 8:
-                ((org.telegram.ui.Wallet.z2) this.W).b.invalidate();
+                ((org.telegram.ui.Wallet.y2) this.W).b.invalidate();
                 break;
             default:
-                org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) this.W;
-                y5Var.Z0();
-                org.telegram.ui.Wallet.c8 c8Var = y5Var.j0;
-                if (c8Var != null && c8Var.h1) {
-                    c8Var.f0();
+                org.telegram.ui.Wallet.x5 x5Var = (org.telegram.ui.Wallet.x5) this.W;
+                x5Var.Z0();
+                org.telegram.ui.Wallet.b8 b8Var = x5Var.j0;
+                if (b8Var != null && b8Var.h1) {
+                    b8Var.f0();
                     break;
                 }
                 break;
@@ -268,16 +268,16 @@ public final class g1 extends v61 {
 
     @Override // org.telegram.ui.Components.v61
     public void y(int i7) {
-        org.telegram.ui.Wallet.t8 t8Var;
+        org.telegram.ui.Wallet.s8 s8Var;
         switch (this.V) {
             case 9:
-                org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) this.W;
-                y5Var.e0 = i7;
-                if (i7 != 1 && (t8Var = y5Var.i0) != null) {
-                    t8Var.b(false);
+                org.telegram.ui.Wallet.x5 x5Var = (org.telegram.ui.Wallet.x5) this.W;
+                x5Var.e0 = i7;
+                if (i7 != 1 && (s8Var = x5Var.i0) != null) {
+                    s8Var.b(false);
                 }
                 if (i7 == 1) {
-                    y5Var.p0.post(new org.telegram.ui.Wallet.f4(y5Var, 13));
+                    x5Var.p0.post(new org.telegram.ui.Wallet.e4(x5Var, 13));
                     break;
                 }
                 break;

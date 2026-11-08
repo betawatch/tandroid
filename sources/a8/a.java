@@ -4,7 +4,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class a implements IInterface {
     public final /* synthetic */ int a;
@@ -17,13 +17,20 @@ public abstract class a implements IInterface {
         this.c = str;
     }
 
-    public Parcel H0() {
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        switch (this.a) {
+        }
+        return this.b;
+    }
+
+    public Parcel h1() {
         Parcel obtain = Parcel.obtain();
         obtain.writeInterfaceToken(this.c);
         return obtain;
     }
 
-    public void I0(Parcel parcel, int i7) {
+    public void i1(Parcel parcel, int i7) {
         try {
             this.b.transact(i7, parcel, null, 1);
         } finally {
@@ -31,13 +38,13 @@ public abstract class a implements IInterface {
         }
     }
 
-    public Parcel J0() {
+    public Parcel j1() {
         Parcel obtain = Parcel.obtain();
         obtain.writeInterfaceToken(this.c);
         return obtain;
     }
 
-    public void K0(Parcel parcel, int i7) {
+    public void k1(Parcel parcel, int i7) {
         Parcel obtain = Parcel.obtain();
         try {
             this.b.transact(i7, parcel, obtain, 0);
@@ -48,13 +55,13 @@ public abstract class a implements IInterface {
         }
     }
 
-    public Parcel L0() {
+    public Parcel l1() {
         Parcel obtain = Parcel.obtain();
         obtain.writeInterfaceToken(this.c);
         return obtain;
     }
 
-    public void M0(Parcel parcel, int i7) {
+    public void m1(Parcel parcel, int i7) {
         Parcel obtain = Parcel.obtain();
         try {
             this.b.transact(i7, parcel, obtain, 0);
@@ -65,7 +72,7 @@ public abstract class a implements IInterface {
         }
     }
 
-    public Parcel N0(Parcel parcel, int i7) {
+    public Parcel n1(Parcel parcel, int i7) {
         Parcel obtain = Parcel.obtain();
         try {
             try {
@@ -81,7 +88,7 @@ public abstract class a implements IInterface {
         }
     }
 
-    public Parcel O0(Parcel parcel, int i7) {
+    public Parcel o1(Parcel parcel, int i7) {
         Parcel obtain = Parcel.obtain();
         try {
             try {
@@ -97,7 +104,7 @@ public abstract class a implements IInterface {
         }
     }
 
-    public Parcel P0() {
+    public Parcel p1() {
         switch (this.a) {
             case 0:
                 Parcel obtain = Parcel.obtain();
@@ -122,7 +129,7 @@ public abstract class a implements IInterface {
         }
     }
 
-    public Parcel Q0(Parcel parcel, int i7) {
+    public Parcel q1(Parcel parcel, int i7) {
         Parcel obtain = Parcel.obtain();
         try {
             try {
@@ -138,7 +145,7 @@ public abstract class a implements IInterface {
         }
     }
 
-    public Parcel R0(Parcel parcel, int i7) {
+    public Parcel r1(Parcel parcel, int i7) {
         switch (this.a) {
             case 0:
                 Parcel obtain = Parcel.obtain();
@@ -182,7 +189,7 @@ public abstract class a implements IInterface {
         }
     }
 
-    public void S0(Parcel parcel) {
+    public void s1(Parcel parcel) {
         Parcel obtain = Parcel.obtain();
         try {
             this.b.transact(3, parcel, obtain, 0);
@@ -193,7 +200,7 @@ public abstract class a implements IInterface {
         }
     }
 
-    public void T0(Parcel parcel, int i7) {
+    public void t1(Parcel parcel, int i7) {
         Parcel obtain;
         switch (this.a) {
             case 0:
@@ -239,7 +246,7 @@ public abstract class a implements IInterface {
         }
     }
 
-    public void U0(Parcel parcel, int i7) {
+    public void u1(Parcel parcel, int i7) {
         try {
             this.b.transact(i7, parcel, null, 1);
         } finally {
@@ -247,13 +254,13 @@ public abstract class a implements IInterface {
         }
     }
 
-    public Parcel V0() {
+    public Parcel v1() {
         Parcel obtain = Parcel.obtain();
         obtain.writeInterfaceToken(this.c);
         return obtain;
     }
 
-    public Parcel W0(Parcel parcel, int i7) {
+    public Parcel w1(Parcel parcel, int i7) {
         Parcel obtain = Parcel.obtain();
         try {
             try {
@@ -267,12 +274,5 @@ public abstract class a implements IInterface {
         } finally {
             parcel.recycle();
         }
-    }
-
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        switch (this.a) {
-        }
-        return this.b;
     }
 }

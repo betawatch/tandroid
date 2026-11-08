@@ -12,7 +12,7 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t8 implements Runnable {
     public final /* synthetic */ int a;
@@ -404,7 +404,7 @@ public final /* synthetic */ class t8 implements Runnable {
                         dwVar = dwVar2;
                         encryptedChat = encryptedChat4;
                     }
-                    Collections.sort(arrayList, new vj(19));
+                    Collections.sort(arrayList, new jl(19));
                     ArrayList arrayList2 = new ArrayList();
                     arrayList2.add(encryptedChat);
                     g0.h3(new bw(dwVar, arrayList, 0));
@@ -412,7 +412,7 @@ public final /* synthetic */ class t8 implements Runnable {
                     ArrayList arrayList3 = new ArrayList();
                     ArrayList arrayList4 = new ArrayList();
                     sendMessagesHelper.getClass();
-                    g0.h3(new zj(sendMessagesHelper, arrayList3, arrayList4, arrayList2, arrayList, (Object) null, 1));
+                    g0.h3(new yj(sendMessagesHelper, arrayList3, arrayList4, arrayList2, arrayList, (Object) null, 1));
                     SQLiteDatabase sQLiteDatabase5 = dwVar.getMessagesStorage().b;
                     Locale locale5 = Locale.US;
                     sQLiteDatabase5.executeFast("REPLACE INTO requested_holes VALUES(" + encryptedChat.id + ", " + i18 + ", " + i17 + ")").stepThis().dispose();

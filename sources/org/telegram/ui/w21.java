@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w21 implements Runnable {
     public final /* synthetic */ int a;
@@ -25,12 +25,12 @@ public final /* synthetic */ class w21 implements Runnable {
                     sb3.append(x21Var.b.text);
                     sb2 = sb3.toString();
                 } else {
-                    sb2 = org.telegram.messenger.hd.M0(2131754709, null);
+                    sb2 = org.telegram.messenger.id.M0(2131754709, null);
                 }
-                org.telegram.ui.Components.v4.r0(x21Var.c, org.telegram.messenger.hd.M0(2131753894, null), sb2, null);
+                org.telegram.ui.Components.v4.r0(x21Var.c, org.telegram.messenger.id.M0(2131753894, null), sb2, null);
                 break;
             default:
-                org.telegram.ui.Components.v4.r0(x21Var.c, org.telegram.messenger.hd.M0(2131753894, null), org.telegram.messenger.hd.M0(2131751106, null), null);
+                org.telegram.ui.Components.v4.r0(x21Var.c, org.telegram.messenger.id.M0(2131753894, null), org.telegram.messenger.id.M0(2131751106, null), null);
                 break;
         }
     }

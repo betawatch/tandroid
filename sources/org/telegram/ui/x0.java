@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class x0 extends View implements org.telegram.messenger.x5, org.telegram.ui.Cells.h9 {
     public int D;
@@ -315,7 +315,7 @@ public final class x0 extends View implements org.telegram.messenger.x5, org.tel
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setEnabled(true);
-        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.hd.M0(2131754874, null));
+        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.id.M0(2131754874, null));
         if (this.x != null) {
             sb2.append(", ");
             sb2.append(this.x.d.getText());

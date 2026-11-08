@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vm implements View.OnKeyListener {
     public final /* synthetic */ int a;
@@ -30,12 +30,12 @@ public final /* synthetic */ class vm implements View.OnKeyListener {
                 }
                 return true;
             default:
-                xt xtVar = (xt) this.b;
-                xtVar.getClass();
-                if (i7 != 82 || keyEvent.getRepeatCount() != 0 || keyEvent.getAction() != 1 || !xtVar.isShowing()) {
+                yt ytVar = (yt) this.b;
+                ytVar.getClass();
+                if (i7 != 82 || keyEvent.getRepeatCount() != 0 || keyEvent.getAction() != 1 || !ytVar.isShowing()) {
                     return false;
                 }
-                xtVar.dismiss();
+                ytVar.dismiss();
                 return true;
         }
     }

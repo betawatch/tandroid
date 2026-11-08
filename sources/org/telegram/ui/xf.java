@@ -9,7 +9,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xf implements Runnable {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class xf implements Runnable {
                         anVar.u2 = D6;
                         D6.u0 = 0.0f;
                         D6.v0 = org.telegram.messenger.g0.L(56.0f) / 2.0f;
-                        anVar.u2.u(org.telegram.messenger.hd.M0(2131745848, null));
+                        anVar.u2.u(org.telegram.messenger.id.M0(2131745850, null));
                     }
                     anVar.u2.y(sendButton, true);
                     anVar.v2 = true;
@@ -84,7 +84,7 @@ public final /* synthetic */ class xf implements Runnable {
                         fi.m3 D62 = anVar.D6(280.0f, 3, -1, true);
                         anVar.w2 = D62;
                         D62.u0 = 0.0f;
-                        D62.u(org.telegram.messenger.hd.M0(2131745850, null));
+                        D62.u(org.telegram.messenger.id.M0(2131745852, null));
                     }
                     anVar.w2.y(sendButton2, true);
                     anVar.x2 = true;
@@ -182,7 +182,7 @@ public final /* synthetic */ class xf implements Runnable {
                 break;
             case 15:
                 anVar.O7(true);
-                org.telegram.messenger.k5.o(null, 2131743971, org.telegram.ui.Components.hc.a0(anVar), R.raw.chats_infotip, 36);
+                org.telegram.messenger.k5.o(null, 2131743973, org.telegram.ui.Components.hc.a0(anVar), R.raw.chats_infotip, 36);
                 break;
             case 16:
                 anVar.b7();

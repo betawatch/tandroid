@@ -11,13 +11,13 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ec0;
 import org.telegram.ui.Components.qe;
 import org.telegram.ui.Components.zb0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class a8 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -202,7 +202,7 @@ public final class a8 extends FrameLayout {
     public void d(boolean z9) {
         ((ImageView) this.c).setVisibility(z9 ? 0 : 8);
         TextView textView = (TextView) this.d;
-        boolean z10 = hd.a0;
+        boolean z10 = id.a0;
         textView.setLayoutParams(c8.ha.d(-1, -2.0f, 23, (z10 || !z9) ? 22.0f : 53.0f, 0.0f, (z10 && z9) ? 53.0f : 22.0f, 0.0f));
     }
 
@@ -287,9 +287,9 @@ public final class a8 extends FrameLayout {
         TextView textView = new TextView(context);
         this.d = textView;
         org.telegram.messenger.camera.q.m(textView, 1, 20.0f);
-        textView.setGravity(hd.a0 ? 5 : 3);
+        textView.setGravity(id.a0 ? 5 : 3);
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.j5, f6Var);
-        boolean z9 = hd.a0;
+        boolean z9 = id.a0;
         addView(textView, c8.ha.d(-1, -2.0f, 23, z9 ? 16.0f : 53.0f, 0.0f, z9 ? 53.0f : 16.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
@@ -299,7 +299,7 @@ public final class a8 extends FrameLayout {
         y1Var.a(-1);
         y1Var.b(-1);
         y1Var.k = 220.0f;
-        addView(imageView, c8.ha.d(24, 24.0f, (hd.a0 ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
+        addView(imageView, c8.ha.d(24, 24.0f, (id.a0 ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
         imageView.setOnClickListener(new ah.d(this, 25));
     }
 }

@@ -17,7 +17,7 @@ import jg.g;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final int[] a = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 36, -1, -1, -1, 37, 38, -1, -1, -1, -1, 39, 40, -1, 41, 42, 43, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 44, -1, -1, -1, -1, -1, -1, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, -1, -1, -1, -1, -1};
@@ -119,24 +119,24 @@ public abstract class b {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:241:0x0606, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:241:0x0604, code lost:
     
         if ((r9 >= 0 && r9 < 8) != false) goto L264;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:311:0x06e4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:312:0x06df, code lost:
     
-        if (r9 == false) goto L337;
+        if (r9 == false) goto L334;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:141:0x044c  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x005a  */
     /* JADX WARN: Removed duplicated region for block: B:173:0x052d A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:300:0x06be  */
-    /* JADX WARN: Removed duplicated region for block: B:340:0x0745  */
-    /* JADX WARN: Removed duplicated region for block: B:352:0x0762 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:370:0x06e7  */
-    /* JADX WARN: Removed duplicated region for block: B:411:0x07ed  */
-    /* JADX WARN: Removed duplicated region for block: B:415:0x0163  */
+    /* JADX WARN: Removed duplicated region for block: B:300:0x06bd  */
+    /* JADX WARN: Removed duplicated region for block: B:344:0x0738  */
+    /* JADX WARN: Removed duplicated region for block: B:358:0x0763 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:362:0x075c  */
+    /* JADX WARN: Removed duplicated region for block: B:405:0x07f3  */
+    /* JADX WARN: Removed duplicated region for block: B:409:0x0163  */
     /* JADX WARN: Removed duplicated region for block: B:50:0x02b2 A[LOOP:2: B:49:0x02b0->B:50:0x02b2, LOOP_END] */
     /* JADX WARN: Removed duplicated region for block: B:54:0x02c3  */
     /*
@@ -158,32 +158,33 @@ public abstract class b {
         int i14;
         int i15;
         int i16;
-        int i17;
+        byte[][] bArr;
         boolean z9;
         boolean z10;
         boolean z11;
         boolean z12;
         char c10;
         gc.d dVar3;
-        int i18;
+        int i17;
+        gc.b bVar2 = bVar;
         HashMap hashMap2 = hashMap;
-        bc.b bVar2 = bc.b.h;
-        int i19 = 0;
-        int i20 = 1;
-        boolean z13 = hashMap2.containsKey(bVar2) && Boolean.parseBoolean(hashMap2.get(bVar2).toString());
-        bc.b bVar3 = bc.b.f;
-        boolean z14 = hashMap2.containsKey(bVar3) && Boolean.parseBoolean(hashMap2.get(bVar3).toString());
-        bc.b bVar4 = bc.b.b;
-        boolean containsKey = hashMap2.containsKey(bVar4);
+        bc.b bVar3 = bc.b.h;
+        int i18 = 0;
+        int i19 = 1;
+        boolean z13 = hashMap2.containsKey(bVar3) && Boolean.parseBoolean(hashMap2.get(bVar3).toString());
+        bc.b bVar4 = bc.b.f;
+        boolean z14 = hashMap2.containsKey(bVar4) && Boolean.parseBoolean(hashMap2.get(bVar4).toString());
+        bc.b bVar5 = bc.b.b;
+        boolean containsKey = hashMap2.containsKey(bVar5);
         Charset charset = b;
         if (containsKey) {
             try {
-                forName = Charset.forName(hashMap2.get(bVar4).toString());
+                forName = Charset.forName(hashMap2.get(bVar5).toString());
             } catch (UnsupportedCharsetException unused) {
             }
             gc.d dVar4 = gc.d.h;
-            int i21 = 8;
-            int i22 = 4;
+            int i20 = 8;
+            int i21 = 4;
             if (z14) {
                 i7 = 0;
                 i10 = 1;
@@ -194,10 +195,10 @@ public abstract class b {
                 } else {
                     boolean z15 = false;
                     boolean z16 = false;
-                    int i23 = 0;
+                    int i22 = 0;
                     while (true) {
-                        if (i23 < str.length()) {
-                            char charAt = str.charAt(i23);
+                        if (i22 < str.length()) {
+                            char charAt = str.charAt(i22);
                             if (charAt < '0' || charAt > '9') {
                                 if ((charAt < '`' ? a[charAt] : -1) == -1) {
                                     break;
@@ -206,7 +207,7 @@ public abstract class b {
                             } else {
                                 z16 = true;
                             }
-                            i23++;
+                            i22++;
                         } else if (z15) {
                             dVar = gc.d.e;
                         } else if (z16) {
@@ -229,60 +230,62 @@ public abstract class b {
                 aVar2.b(dVar.b, i12);
                 cc.a aVar3 = new cc.a();
                 a(str, dVar, aVar3, forName);
-                bc.b bVar5 = bc.b.d;
-                if (!hashMap2.containsKey(bVar5)) {
+                bc.b bVar6 = bc.b.d;
+                if (!hashMap2.containsKey(bVar6)) {
                     int a10 = dVar.a(gc.e.c(1)) + aVar2.b + aVar3.b;
-                    int i24 = 1;
-                    while (i24 <= 40) {
-                        gc.e c11 = gc.e.c(i24);
-                        if (d(a10, c11, bVar)) {
+                    int i23 = 1;
+                    while (i23 <= 40) {
+                        gc.e c11 = gc.e.c(i23);
+                        if (d(a10, c11, bVar2)) {
                             int a11 = dVar.a(c11) + aVar2.b + aVar3.b;
-                            int i25 = 1;
-                            while (i25 <= 40) {
-                                gc.e c12 = gc.e.c(i25);
-                                if (d(a11, c12, bVar)) {
+                            int i24 = 1;
+                            while (i24 <= 40) {
+                                gc.e c12 = gc.e.c(i24);
+                                if (d(a11, c12, bVar2)) {
                                     eVar = c12;
                                 } else {
-                                    i25++;
+                                    i24++;
+                                    bVar2 = bVar2;
                                     hashMap2 = hashMap2;
-                                    i21 = 8;
+                                    i20 = 8;
                                     i7 = 0;
                                 }
                             }
                             throw new a0("Data too big");
                         }
-                        i24++;
+                        i23++;
+                        bVar2 = bVar2;
                         hashMap2 = hashMap2;
-                        i21 = 8;
+                        i20 = 8;
                         i7 = 0;
                     }
                     throw new a0("Data too big");
                 }
-                eVar = gc.e.c(Integer.parseInt(hashMap2.get(bVar5).toString()));
-                if (!d(dVar.a(eVar) + aVar2.b + aVar3.b, eVar, bVar)) {
+                eVar = gc.e.c(Integer.parseInt(hashMap2.get(bVar6).toString()));
+                if (!d(dVar.a(eVar) + aVar2.b + aVar3.b, eVar, bVar2)) {
                     throw new a0("Data too big for requested version");
                 }
                 cc.a aVar4 = new cc.a();
-                int i26 = aVar2.b;
-                aVar4.c(i26);
-                for (int i27 = i7; i27 < i26; i27++) {
-                    aVar4.a(aVar2.d(i27));
+                int i25 = aVar2.b;
+                aVar4.c(i25);
+                for (int i26 = i7; i26 < i25; i26++) {
+                    aVar4.a(aVar2.d(i26));
                 }
                 int e10 = dVar == dVar4 ? aVar3.e() : str.length();
                 int a12 = dVar.a(eVar);
-                int i28 = 1 << a12;
-                if (e10 >= i28) {
+                int i27 = 1 << a12;
+                if (e10 >= i27) {
                     StringBuilder sb2 = new StringBuilder();
                     sb2.append(e10);
                     sb2.append(" is bigger than ");
-                    sb2.append(i28 - 1);
+                    sb2.append(i27 - 1);
                     throw new a0(sb2.toString());
                 }
                 aVar4.b(e10, a12);
-                int i29 = aVar3.b;
-                aVar4.c(aVar4.b + i29);
-                for (int i30 = i7; i30 < i29; i30++) {
-                    aVar4.a(aVar3.d(i30));
+                int i28 = aVar3.b;
+                aVar4.c(aVar4.b + i28);
+                for (int i29 = i7; i29 < i28; i29++) {
+                    aVar4.a(aVar3.d(i29));
                 }
                 dVar4 = dVar;
                 eVar2 = eVar;
@@ -295,307 +298,308 @@ public abstract class b {
                 qVar.b = str;
                 qVar.a = z13;
                 qVar.c = new f(str, forName);
-                qVar.d = bVar;
-                gc.b bVar6 = (gc.b) qVar.d;
+                qVar.d = bVar2;
+                gc.b bVar7 = (gc.b) qVar.d;
                 i11 = 2;
                 gc.e[] eVarArr = {q.q(1), q.q(2), q.q(3)};
                 m[] mVarArr = {qVar.l(eVarArr[0]), qVar.l(eVarArr[1]), qVar.l(eVarArr[2])};
-                int i31 = 0;
-                int i32 = -1;
-                int i33 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                for (int i34 = 3; i31 < i34; i34 = 3) {
-                    m mVar = mVarArr[i31];
-                    int i35 = i20;
+                int i30 = 0;
+                int i31 = -1;
+                int i32 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                for (int i33 = 3; i30 < i33; i33 = 3) {
+                    m mVar = mVarArr[i30];
+                    int i34 = i19;
                     int w10 = mVar.w((gc.e) mVar.c);
-                    if (d(w10, eVarArr[i31], bVar6) && w10 < i33) {
-                        i32 = i31;
-                        i33 = w10;
+                    if (d(w10, eVarArr[i30], bVar7) && w10 < i32) {
+                        i31 = i30;
+                        i32 = w10;
                     }
-                    i31++;
-                    i20 = i35;
+                    i30++;
+                    i19 = i34;
                 }
-                i10 = i20;
-                if (i32 < 0) {
+                i10 = i19;
+                if (i31 < 0) {
                     throw new a0("Data too big for any version");
                 }
-                m mVar2 = mVarArr[i32];
+                m mVar2 = mVarArr[i31];
                 cc.a aVar5 = new cc.a();
                 ArrayList arrayList = (ArrayList) mVar2.b;
                 int size = arrayList.size();
-                int i36 = 0;
-                while (i36 < size) {
-                    Object obj = arrayList.get(i36);
-                    i36++;
+                int i35 = 0;
+                while (i35 < size) {
+                    Object obj = arrayList.get(i35);
+                    i35++;
                     e eVar3 = (e) obj;
-                    int i37 = eVar3.c;
+                    int i36 = eVar3.c;
                     m mVar3 = eVar3.e;
-                    int i38 = i19;
+                    int i37 = i18;
                     q qVar2 = (q) mVar3.d;
                     gc.d dVar5 = eVar3.a;
-                    aVar5.b(dVar5.b, i22);
-                    int i39 = eVar3.d;
-                    if (i39 > 0) {
+                    aVar5.b(dVar5.b, i21);
+                    int i38 = eVar3.d;
+                    if (i38 > 0) {
                         aVar5.b(eVar3.a(), dVar5.a((gc.e) mVar3.c));
                     }
                     if (dVar5 == gc.d.n) {
-                        aVar5.b(((cc.d) cc.d.d.get(((f) qVar2.c).a[i37].charset().name())).a[i38], 8);
-                    } else if (i39 > 0) {
+                        aVar5.b(((cc.d) cc.d.d.get(((f) qVar2.c).a[i36].charset().name())).a[i37], 8);
+                    } else if (i38 > 0) {
                         String str2 = (String) qVar2.b;
-                        int i40 = eVar3.b;
-                        a(str2.substring(i40, i39 + i40), dVar5, aVar5, ((f) qVar2.c).a[i37].charset());
+                        int i39 = eVar3.b;
+                        a(str2.substring(i39, i38 + i39), dVar5, aVar5, ((f) qVar2.c).a[i36].charset());
                     }
-                    i19 = i38;
-                    i22 = 4;
+                    i18 = i37;
+                    i21 = 4;
                 }
-                i7 = i19;
+                i7 = i18;
                 eVar2 = (gc.e) mVar2.c;
                 aVar = aVar5;
             }
-            u uVar = eVar2.c[bVar.ordinal()];
-            int i41 = eVar2.d;
-            int i42 = uVar.b;
+            u uVar = eVar2.c[bVar2.ordinal()];
+            int i40 = eVar2.d;
+            int i41 = uVar.b;
             r0[] r0VarArr = (r0[]) uVar.c;
             length = r0VarArr.length;
             i13 = i7;
-            int i43 = i13;
+            int i42 = i13;
             while (i13 < length) {
-                i43 += r0VarArr[i13].a;
+                i42 += r0VarArr[i13].a;
                 i13++;
             }
-            int i44 = i41 - (i43 * i42);
-            i14 = i44 * 8;
+            int i43 = i40 - (i42 * i41);
+            i14 = i43 * 8;
             if (aVar.b <= i14) {
                 throw new a0("data bits cannot fit in the QR Code" + aVar.b + " > " + i14);
             }
-            for (int i45 = i7; i45 < 4 && aVar.b < i14; i45++) {
+            for (int i44 = i7; i44 < 4 && aVar.b < i14; i44++) {
                 aVar.a(i7);
             }
             boolean z17 = i7;
-            int i46 = aVar.b & 7;
-            if (i46 > 0) {
-                while (i46 < i21) {
+            int i45 = aVar.b & 7;
+            if (i45 > 0) {
+                while (i45 < i20) {
                     aVar.a(z17);
-                    i46++;
+                    i45++;
                     z17 = 0;
                 }
             }
-            int e11 = i44 - aVar.e();
-            for (int i47 = 0; i47 < e11; i47++) {
-                aVar.b((i47 & 1) == 0 ? qs.L3 : 17, i21);
+            int e11 = i43 - aVar.e();
+            for (int i46 = 0; i46 < e11; i46++) {
+                aVar.b((i46 & 1) == 0 ? qs.L3 : 17, i20);
             }
             if (aVar.b != i14) {
                 throw new a0("Bits size does not equal capacity");
             }
-            int i48 = 0;
+            int i47 = 0;
             for (r0 r0Var : r0VarArr) {
-                i48 += r0Var.a;
+                i47 += r0Var.a;
             }
-            if (aVar.e() != i44) {
+            if (aVar.e() != i43) {
                 throw new a0("Number of bits and data bytes does not match");
             }
-            ArrayList arrayList2 = new ArrayList(i48);
+            ArrayList arrayList2 = new ArrayList(i47);
+            int i48 = 0;
             int i49 = 0;
             int i50 = 0;
             int i51 = 0;
-            int i52 = 0;
             cc.a aVar6 = aVar;
-            while (i49 < i48) {
-                int i53 = i10;
-                int[] iArr = new int[i53];
-                int[] iArr2 = new int[i53];
-                if (i49 >= i48) {
+            while (i48 < i47) {
+                int i52 = i10;
+                int[] iArr = new int[i52];
+                int[] iArr2 = new int[i52];
+                if (i48 >= i47) {
                     throw new a0("Block ID too large");
                 }
-                int i54 = i41 % i48;
-                int i55 = i48 - i54;
-                int i56 = i41 / i48;
-                int i57 = i44 / i48;
-                int i58 = i57 + 1;
-                int i59 = i56 - i57;
-                int i60 = (i56 + 1) - i58;
-                if (i59 != i60) {
+                int i53 = i40 % i47;
+                int i54 = i47 - i53;
+                int i55 = i40 / i47;
+                int i56 = i43 / i47;
+                int i57 = i56 + 1;
+                int i58 = i55 - i56;
+                int i59 = (i55 + 1) - i57;
+                if (i58 != i59) {
                     throw new a0("EC bytes mismatch");
                 }
-                if (i48 != i55 + i54) {
+                if (i47 != i54 + i53) {
                     throw new a0("RS blocks mismatch");
                 }
-                if (i41 != ((i58 + i60) * i54) + ((i57 + i59) * i55)) {
+                if (i40 != ((i57 + i59) * i53) + ((i56 + i58) * i54)) {
                     throw new a0("Total bytes mismatch");
                 }
-                if (i49 < i55) {
+                if (i48 < i54) {
+                    c10 = 0;
+                    iArr[0] = i56;
+                    iArr2[0] = i58;
+                } else {
                     c10 = 0;
                     iArr[0] = i57;
                     iArr2[0] = i59;
-                } else {
-                    c10 = 0;
-                    iArr[0] = i58;
-                    iArr2[0] = i60;
                 }
-                int i61 = iArr[c10];
-                byte[] bArr = new byte[i61];
-                int i62 = i50 * 8;
-                int i63 = i49;
-                int i64 = 0;
-                while (i64 < i61) {
-                    int i65 = i64;
-                    int i66 = i48;
-                    int i67 = 0;
-                    for (int i68 = 0; i68 < 8; i68++) {
-                        if (aVar6.d(i62)) {
-                            i67 = (1 << (7 - i68)) | i67;
+                int i60 = iArr[c10];
+                byte[] bArr2 = new byte[i60];
+                int i61 = i49 * 8;
+                int i62 = i48;
+                int i63 = 0;
+                while (i63 < i60) {
+                    int i64 = i63;
+                    int i65 = i47;
+                    int i66 = 0;
+                    for (int i67 = 0; i67 < 8; i67++) {
+                        if (aVar6.d(i61)) {
+                            i66 = (1 << (7 - i67)) | i66;
                         }
-                        i62++;
+                        i61++;
                     }
-                    bArr[i65] = (byte) i67;
-                    i64 = i65 + 1;
-                    i48 = i66;
+                    bArr2[i64] = (byte) i66;
+                    i63 = i64 + 1;
+                    i47 = i65;
                 }
-                int i69 = i48;
-                int i70 = iArr2[0];
-                int i71 = i61 + i70;
-                int[] iArr3 = new int[i71];
-                int i72 = 0;
-                while (i72 < i61) {
-                    iArr3[i72] = bArr[i72] & 255;
-                    i72++;
-                    i71 = i71;
+                int i68 = i47;
+                int i69 = iArr2[0];
+                int i70 = i60 + i69;
+                int[] iArr3 = new int[i70];
+                int i71 = 0;
+                while (i71 < i60) {
+                    iArr3[i71] = bArr2[i71] & 255;
+                    i71++;
+                    i70 = i70;
                 }
-                int i73 = i71;
+                int i72 = i70;
                 ec.a aVar7 = ec.a.h;
                 ArrayList arrayList3 = new ArrayList();
                 cc.a aVar8 = aVar6;
                 gc.e eVar4 = eVar2;
                 arrayList3.add(new ec.b(aVar7, new int[]{1}));
-                if (i70 == 0) {
+                if (i69 == 0) {
                     throw new IllegalArgumentException("No error correction bytes");
                 }
-                int i74 = i73 - i70;
-                if (i74 <= 0) {
+                int i73 = i72 - i69;
+                if (i73 <= 0) {
                     throw new IllegalArgumentException("No data bytes provided");
                 }
-                if (i70 >= arrayList3.size()) {
-                    ec.b bVar7 = (ec.b) g.i(1, arrayList3);
+                if (i69 >= arrayList3.size()) {
+                    ec.b bVar8 = (ec.b) g.i(1, arrayList3);
                     int size2 = arrayList3.size();
                     dVar3 = dVar4;
-                    ec.b bVar8 = bVar7;
-                    while (size2 <= i70) {
-                        int i75 = size2;
-                        bVar8 = bVar8.g(new ec.b(aVar7, new int[]{1, aVar7.a[(i75 - 1) + aVar7.g]}));
-                        arrayList3.add(bVar8);
-                        size2 = i75 + 1;
-                        i41 = i41;
+                    ec.b bVar9 = bVar8;
+                    while (size2 <= i69) {
+                        int i74 = size2;
+                        bVar9 = bVar9.g(new ec.b(aVar7, new int[]{1, aVar7.a[(i74 - 1) + aVar7.g]}));
+                        arrayList3.add(bVar9);
+                        size2 = i74 + 1;
+                        i40 = i40;
                     }
                 } else {
                     dVar3 = dVar4;
                 }
-                int i76 = i41;
-                ec.b bVar9 = (ec.b) arrayList3.get(i70);
-                int[] iArr4 = new int[i74];
-                System.arraycopy(iArr3, 0, iArr4, 0, i74);
-                if (i74 == 0) {
+                int i75 = i40;
+                ec.b bVar10 = (ec.b) arrayList3.get(i69);
+                int[] iArr4 = new int[i73];
+                System.arraycopy(iArr3, 0, iArr4, 0, i73);
+                if (i73 == 0) {
                     throw new IllegalArgumentException();
                 }
-                if (i74 > 1 && iArr4[0] == 0) {
-                    int i77 = 1;
-                    while (i77 < i74 && iArr4[i77] == 0) {
-                        i77++;
+                if (i73 > 1 && iArr4[0] == 0) {
+                    int i76 = 1;
+                    while (i76 < i73 && iArr4[i76] == 0) {
+                        i76++;
                     }
-                    if (i77 == i74) {
+                    if (i76 == i73) {
                         iArr4 = new int[]{0};
                     } else {
-                        int i78 = i74 - i77;
-                        i18 = i74;
-                        int[] iArr5 = new int[i78];
-                        System.arraycopy(iArr4, i77, iArr5, 0, i78);
+                        int i77 = i73 - i76;
+                        i17 = i73;
+                        int[] iArr5 = new int[i77];
+                        System.arraycopy(iArr4, i76, iArr5, 0, i77);
                         iArr4 = iArr5;
-                        if (i70 >= 0) {
+                        if (i69 >= 0) {
                             throw new IllegalArgumentException();
                         }
                         int length2 = iArr4.length;
-                        int[] iArr6 = new int[length2 + i70];
-                        int i79 = 0;
-                        while (i79 < length2) {
-                            iArr6[i79] = aVar7.c(iArr4[i79], 1);
-                            i79++;
+                        int[] iArr6 = new int[length2 + i69];
+                        int i78 = 0;
+                        while (i78 < length2) {
+                            iArr6[i78] = aVar7.c(iArr4[i78], 1);
+                            i78++;
                             length2 = length2;
                         }
-                        ec.b bVar10 = new ec.b(aVar7, iArr6);
-                        if (!aVar7.equals(bVar9.a)) {
+                        ec.b bVar11 = new ec.b(aVar7, iArr6);
+                        if (!aVar7.equals(bVar10.a)) {
                             throw new IllegalArgumentException("GenericGFPolys do not have same GenericGF field");
                         }
-                        if (bVar9.e()) {
+                        if (bVar10.e()) {
                             throw new IllegalArgumentException("Divide by 0");
                         }
-                        ec.b bVar11 = aVar7.c;
-                        int b10 = aVar7.b(bVar9.c(bVar9.d()));
-                        while (bVar10.d() >= bVar9.d() && !bVar10.e()) {
-                            int d = bVar10.d() - bVar9.d();
-                            int c13 = aVar7.c(bVar10.c(bVar10.d()), b10);
-                            int i80 = b10;
-                            ec.b h = bVar9.h(d, c13);
-                            bVar11 = bVar11.a(aVar7.a(d, c13));
-                            bVar10 = bVar10.a(h);
-                            b10 = i80;
+                        ec.b bVar12 = aVar7.c;
+                        int b10 = aVar7.b(bVar10.c(bVar10.d()));
+                        while (bVar11.d() >= bVar10.d() && !bVar11.e()) {
+                            int d = bVar11.d() - bVar10.d();
+                            int c13 = aVar7.c(bVar11.c(bVar11.d()), b10);
+                            int i79 = b10;
+                            ec.b h = bVar10.h(d, c13);
+                            bVar12 = bVar12.a(aVar7.a(d, c13));
+                            bVar11 = bVar11.a(h);
+                            b10 = i79;
                         }
-                        ec.b[] bVarArr = new ec.b[i11];
-                        bVarArr[0] = bVar11;
-                        bVarArr[1] = bVar10;
+                        int i80 = i11;
+                        ec.b[] bVarArr = new ec.b[i80];
+                        bVarArr[0] = bVar12;
+                        bVarArr[1] = bVar11;
                         int[] iArr7 = bVarArr[1].b;
-                        int length3 = i70 - iArr7.length;
+                        int length3 = i69 - iArr7.length;
                         for (int i81 = 0; i81 < length3; i81++) {
-                            iArr3[i18 + i81] = 0;
+                            iArr3[i17 + i81] = 0;
                         }
-                        System.arraycopy(iArr7, 0, iArr3, i18 + length3, iArr7.length);
-                        byte[] bArr2 = new byte[i70];
-                        for (int i82 = 0; i82 < i70; i82++) {
-                            bArr2[i82] = (byte) iArr3[i61 + i82];
+                        System.arraycopy(iArr7, 0, iArr3, i17 + length3, iArr7.length);
+                        byte[] bArr3 = new byte[i69];
+                        for (int i82 = 0; i82 < i69; i82++) {
+                            bArr3[i82] = (byte) iArr3[i60 + i82];
                         }
-                        arrayList2.add(new a(bArr, bArr2));
-                        i51 = Math.max(i51, i61);
-                        i52 = Math.max(i52, i70);
-                        i50 += iArr[0];
-                        i49 = i63 + 1;
+                        arrayList2.add(new a(bArr2, bArr3));
+                        i50 = Math.max(i50, i60);
+                        i51 = Math.max(i51, i69);
+                        i49 += iArr[0];
+                        i48 = i62 + 1;
+                        i11 = i80;
                         dVar4 = dVar3;
-                        i48 = i69;
+                        i47 = i68;
                         aVar6 = aVar8;
                         eVar2 = eVar4;
-                        i41 = i76;
-                        i11 = 2;
+                        i40 = i75;
                         i10 = 1;
                     }
                 }
-                i18 = i74;
-                if (i70 >= 0) {
+                i17 = i73;
+                if (i69 >= 0) {
                 }
             }
             gc.e eVar5 = eVar2;
-            int i83 = i41;
+            int i83 = i40;
             gc.d dVar6 = dVar4;
-            if (i44 != i50) {
+            if (i43 != i49) {
                 throw new a0("Data bytes does not match offset");
             }
             cc.a aVar9 = new cc.a();
-            for (int i84 = 0; i84 < i51; i84++) {
+            for (int i84 = 0; i84 < i50; i84++) {
                 int size3 = arrayList2.size();
                 int i85 = 0;
                 while (i85 < size3) {
                     Object obj2 = arrayList2.get(i85);
                     i85++;
-                    byte[] bArr3 = ((a) obj2).a;
-                    if (i84 < bArr3.length) {
-                        aVar9.b(bArr3[i84], 8);
+                    byte[] bArr4 = ((a) obj2).a;
+                    if (i84 < bArr4.length) {
+                        aVar9.b(bArr4[i84], 8);
                     }
                 }
             }
-            for (int i86 = 0; i86 < i52; i86++) {
+            for (int i86 = 0; i86 < i51; i86++) {
                 int size4 = arrayList2.size();
                 int i87 = 0;
                 while (i87 < size4) {
                     Object obj3 = arrayList2.get(i87);
                     i87++;
-                    byte[] bArr4 = ((a) obj3).b;
-                    if (i86 < bArr4.length) {
-                        aVar9.b(bArr4[i86], 8);
+                    byte[] bArr5 = ((a) obj3).b;
+                    if (i86 < bArr5.length) {
+                        aVar9.b(bArr5[i86], 8);
                     }
                 }
             }
@@ -605,42 +609,42 @@ public abstract class b {
                 n10.append(" differ.");
                 throw new a0(n10.toString());
             }
-            k kVar = new k(2, (byte) 0);
+            k kVar = new k();
             kVar.b = -1;
             kVar.d = bVar;
             kVar.c = dVar6;
             kVar.e = eVar5;
             int i88 = (eVar5.a * 4) + 17;
             cc.c cVar = new cc.c(i88, i88);
-            bc.b bVar12 = bc.b.e;
-            if (hashMap.containsKey(bVar12)) {
-                i15 = Integer.parseInt(hashMap.get(bVar12).toString());
+            bc.b bVar13 = bc.b.e;
+            if (hashMap.containsKey(bVar13)) {
+                i15 = Integer.parseInt(hashMap.get(bVar13).toString());
             }
             i15 = -1;
-            int i89 = -1;
             if (i15 == -1) {
+                int i89 = -1;
                 int i90 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                 int i91 = 0;
                 while (i91 < 8) {
                     c.b(aVar9, bVar, eVar5, i91, cVar);
                     int i92 = 0;
                     int a13 = c.a(cVar, false) + c.a(cVar, true);
-                    byte[][] bArr5 = (byte[][]) cVar.d;
+                    byte[][] bArr6 = (byte[][]) cVar.d;
                     int i93 = cVar.b;
                     int i94 = cVar.c;
                     int i95 = 0;
                     int i96 = 0;
                     while (i95 < i94 - 1) {
-                        byte[] bArr6 = bArr5[i95];
+                        byte[] bArr7 = bArr6[i95];
                         int i97 = i96;
                         int i98 = i92;
                         while (i98 < i93 - 1) {
-                            byte b11 = bArr6[i98];
+                            byte b11 = bArr7[i98];
                             int i99 = i98 + 1;
                             int i100 = a13;
-                            if (b11 == bArr6[i99]) {
-                                byte[] bArr7 = bArr5[i95 + 1];
-                                if (b11 == bArr7[i98] && b11 == bArr7[i99]) {
+                            if (b11 == bArr7[i99]) {
+                                byte[] bArr8 = bArr6[i95 + 1];
+                                if (b11 == bArr8[i98] && b11 == bArr8[i99]) {
                                     i97++;
                                 }
                             }
@@ -658,124 +662,137 @@ public abstract class b {
                         int i104 = i103;
                         int i105 = 0;
                         while (i105 < i93) {
-                            byte[] bArr8 = bArr5[i102];
+                            byte[] bArr9 = bArr6[i102];
                             int i106 = i91;
                             int i107 = i105 + 6;
                             if (i107 < i93) {
-                                i17 = i101;
-                                if (bArr8[i105] == 1 && bArr8[i105 + 1] == 0 && bArr8[i105 + 2] == 1 && bArr8[i105 + 3] == 1 && bArr8[i105 + 4] == 1 && bArr8[i105 + 5] == 0 && bArr8[i107] == 1) {
+                                i16 = i89;
+                                if (bArr9[i105] == 1 && bArr9[i105 + 1] == 0 && bArr9[i105 + 2] == 1 && bArr9[i105 + 3] == 1 && bArr9[i105 + 4] == 1 && bArr9[i105 + 5] == 0 && bArr9[i107] == 1) {
                                     int i108 = i105 - 4;
-                                    if (i108 >= 0 && bArr8.length >= i105) {
+                                    if (i108 >= 0 && bArr9.length >= i105) {
                                         while (i108 < i105) {
                                             int i109 = i108;
-                                            if (bArr8[i108] != 1) {
+                                            if (bArr9[i108] != 1) {
                                                 i108 = i109 + 1;
                                             }
                                         }
                                         z11 = true;
-                                        if (z11) {
+                                        if (!z11) {
                                             int i110 = i105 + 7;
                                             int i111 = i105 + 11;
-                                            if (i110 < 0 || bArr8.length < i111) {
-                                                i16 = i105;
-                                            } else {
+                                            if (i110 >= 0 && bArr9.length >= i111) {
                                                 int i112 = i110;
                                                 while (i112 < i111) {
                                                     int i113 = i112;
-                                                    i16 = i105;
-                                                    if (bArr8[i113] != 1) {
+                                                    int i114 = i111;
+                                                    if (bArr9[i113] != 1) {
                                                         i112 = i113 + 1;
-                                                        i105 = i16;
+                                                        i111 = i114;
                                                     }
                                                 }
-                                                i16 = i105;
                                                 z12 = true;
                                             }
                                             z12 = false;
                                             break;
-                                        } else {
-                                            i16 = i105;
                                         }
                                         i104++;
                                     }
                                     z11 = false;
-                                    if (z11) {
+                                    if (!z11) {
                                     }
                                     i104++;
-                                } else {
-                                    i16 = i105;
                                 }
                             } else {
-                                i16 = i105;
-                                i17 = i101;
+                                i16 = i89;
                             }
-                            int i114 = i102 + 6;
-                            if (i114 < i94) {
+                            int i115 = i102 + 6;
+                            if (i115 < i94) {
                                 byte b12 = 1;
-                                if (bArr5[i102][i16] == 1 && bArr5[i102 + 1][i16] == 0 && bArr5[i102 + 2][i16] == 1 && bArr5[i102 + 3][i16] == 1 && bArr5[i102 + 4][i16] == 1 && bArr5[i102 + 5][i16] == 0 && bArr5[i114][i16] == 1) {
-                                    int i115 = i102 - 4;
-                                    if (i115 >= 0 && bArr5.length >= i102) {
-                                        while (i115 < i102) {
-                                            if (bArr5[i115][i16] != b12) {
-                                                i115++;
+                                if (bArr6[i102][i105] == 1 && bArr6[i102 + 1][i105] == 0 && bArr6[i102 + 2][i105] == 1 && bArr6[i102 + 3][i105] == 1 && bArr6[i102 + 4][i105] == 1 && bArr6[i102 + 5][i105] == 0 && bArr6[i115][i105] == 1) {
+                                    int i116 = i102 - 4;
+                                    if (i116 >= 0 && bArr6.length >= i102) {
+                                        while (i116 < i102) {
+                                            if (bArr6[i116][i105] != b12) {
+                                                i116++;
                                                 b12 = 1;
                                             }
                                         }
                                         z9 = true;
-                                        if (!z9) {
-                                            int i116 = i102 + 7;
-                                            int i117 = i102 + 11;
-                                            if (i116 >= 0 && bArr5.length >= i117) {
-                                                while (i116 < i117) {
-                                                    if (bArr5[i116][i16] != 1) {
-                                                        i116++;
+                                        if (z9) {
+                                            int i117 = i102 + 7;
+                                            int i118 = i102 + 11;
+                                            if (i117 < 0 || bArr6.length < i118) {
+                                                bArr = bArr6;
+                                            } else {
+                                                while (i117 < i118) {
+                                                    bArr = bArr6;
+                                                    if (bArr6[i117][i105] != 1) {
+                                                        i117++;
+                                                        bArr6 = bArr;
                                                     }
                                                 }
+                                                bArr = bArr6;
                                                 z10 = true;
                                                 if (!z10) {
+                                                    i105++;
+                                                    bArr6 = bArr;
+                                                    i89 = i16;
+                                                    i91 = i106;
                                                 }
                                             }
                                             z10 = false;
                                             if (!z10) {
                                             }
+                                        } else {
+                                            bArr = bArr6;
                                         }
                                         i104++;
+                                        i105++;
+                                        bArr6 = bArr;
+                                        i89 = i16;
+                                        i91 = i106;
                                     }
                                     z9 = false;
-                                    if (!z9) {
+                                    if (z9) {
                                     }
                                     i104++;
+                                    i105++;
+                                    bArr6 = bArr;
+                                    i89 = i16;
+                                    i91 = i106;
                                 }
                             }
-                            i105 = i16 + 1;
-                            i101 = i17;
+                            bArr = bArr6;
+                            i105++;
+                            bArr6 = bArr;
+                            i89 = i16;
                             i91 = i106;
                         }
                         i102++;
                         i103 = i104;
                     }
-                    int i118 = i91;
-                    int i119 = (i103 * 40) + i101;
-                    int i120 = 0;
-                    for (int i121 = 0; i121 < i94; i121++) {
-                        byte[] bArr9 = bArr5[i121];
-                        int i122 = 0;
-                        while (i122 < i93) {
-                            byte[][] bArr10 = bArr5;
-                            if (bArr9[i122] == 1) {
-                                i120++;
+                    byte[][] bArr10 = bArr6;
+                    int i119 = i91;
+                    int i120 = i89;
+                    int i121 = (i103 * 40) + i101;
+                    int i122 = 0;
+                    for (int i123 = 0; i123 < i94; i123++) {
+                        byte[] bArr11 = bArr10[i123];
+                        for (int i124 = 0; i124 < i93; i124++) {
+                            if (bArr11[i124] == 1) {
+                                i122++;
                             }
-                            i122++;
-                            bArr5 = bArr10;
                         }
                     }
-                    int i123 = i94 * i93;
-                    int abs = (((Math.abs((i120 * 2) - i123) * 10) / i123) * 10) + i119;
+                    int i125 = i94 * i93;
+                    int abs = (((Math.abs((i122 * 2) - i125) * 10) / i125) * 10) + i121;
                     if (abs < i90) {
                         i90 = abs;
-                        i89 = i118;
+                        i89 = i119;
+                    } else {
+                        i89 = i120;
                     }
-                    i91 = i118 + 1;
+                    i91 = i119 + 1;
                 }
                 i15 = i89;
             }
@@ -786,21 +803,21 @@ public abstract class b {
         }
         forName = charset;
         gc.d dVar42 = gc.d.h;
-        int i212 = 8;
-        int i222 = 4;
+        int i202 = 8;
+        int i212 = 4;
         if (z14) {
         }
-        u uVar2 = eVar2.c[bVar.ordinal()];
-        int i412 = eVar2.d;
-        int i422 = uVar2.b;
+        u uVar2 = eVar2.c[bVar2.ordinal()];
+        int i402 = eVar2.d;
+        int i412 = uVar2.b;
         r0[] r0VarArr2 = (r0[]) uVar2.c;
         length = r0VarArr2.length;
         i13 = i7;
-        int i432 = i13;
+        int i422 = i13;
         while (i13 < length) {
         }
-        int i442 = i412 - (i432 * i422);
-        i14 = i442 * 8;
+        int i432 = i402 - (i422 * i412);
+        i14 = i432 * 8;
         if (aVar.b <= i14) {
         }
     }

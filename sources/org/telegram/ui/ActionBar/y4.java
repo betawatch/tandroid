@@ -23,7 +23,7 @@ import bi.nd;
 import c8.ha;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.u10;
@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class y4 extends FrameLayout implements te.b, ls, a6, s4 {
     public CharSequence D;
@@ -107,7 +107,7 @@ public class y4 extends FrameLayout implements te.b, ls, a6, s4 {
         nd ndVar = new nd(this, context);
         this.b = ndVar;
         ndVar.setVisibility(8);
-        ndVar.setContentDescription(hd.M0(2131754878, null));
+        ndVar.setContentDescription(id.M0(2131754878, null));
         ndVar.setOnClickListener(new v4(this, 0));
         addView(ndVar, ha.e(46, 46, 51));
     }
@@ -889,7 +889,7 @@ public class y4 extends FrameLayout implements te.b, ls, a6, s4 {
         this.w = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         this.w.setImageResource(R.drawable.ic_close_white);
-        this.w.setContentDescription(hd.M0(2131752099, null));
+        this.w.setContentDescription(id.M0(2131752099, null));
         this.w.setOnClickListener(new v4(this, i10));
         this.r.addView(this.w, ha.d(42, 42.0f, 21, 0.0f, 0.0f, 2.0f, 0.0f));
         C();
@@ -1249,7 +1249,7 @@ public class y4 extends FrameLayout implements te.b, ls, a6, s4 {
     }
 
     public final void x(int i7, boolean z9) {
-        String E = hd.E(i7, ' ');
+        String E = id.E(i7, ' ');
         l();
         this.f.c(E, z9 && t() && this.G, true);
     }

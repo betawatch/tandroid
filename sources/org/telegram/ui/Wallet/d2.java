@@ -1,48 +1,56 @@
 package org.telegram.ui.Wallet;
 
-import android.util.Base64;
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class d2 {
-    public final String a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final long e;
-    public final boolean f;
+    public final long a;
+    public final List b;
+    public final long c;
 
     public d2(JSONObject jSONObject) {
-        String string = jSONObject.getString("address");
-        this.a = string;
-        if (string.contains(":") || !WalletEngine2.isValidAddress(string)) {
-            throw new IllegalArgumentException("Expected a friendly destination address");
+        long optLong = jSONObject.optLong("valid_until", 0L);
+        this.a = optLong;
+        JSONArray jSONArray = jSONObject.getJSONArray("messages");
+        if (jSONArray.length() == 0 || jSONArray.length() > 255 || optLong < 0) {
+            throw new JSONException("Invalid transaction");
         }
-        this.f = (Base64.decode(string.replace('-', '+').replace('_', '/'), 2)[0] & Byte.MAX_VALUE) == 17;
-        Object obj = jSONObject.get("amount");
-        if (obj instanceof String) {
-            String str = (String) obj;
-            if (str.matches("[0-9]+")) {
-                long parseLong = Long.parseLong(str);
-                this.e = parseLong;
-                if (jSONObject.has("extra_currency") && jSONObject.getJSONObject("extra_currency").length() != 0) {
-                    throw new IllegalArgumentException("Extra currencies are not supported");
-                }
-                if (parseLong < 0) {
-                    throw new IllegalArgumentException("Transfer amount must not be negative");
-                }
-                String string2 = jSONObject.has("payload") ? jSONObject.getString("payload") : null;
-                this.b = string2;
-                String string3 = jSONObject.has("stateInit") ? jSONObject.getString("stateInit") : null;
-                this.c = string3;
-                if ((string2 != null && !WalletEngine2.isValidCellBoc(string2)) || (string3 != null && !WalletEngine2.isValidCellBoc(string3))) {
-                    throw new IllegalArgumentException("Invalid transaction cell");
-                }
-                this.d = WalletEngine2.textCommentFromBody(string2);
-                return;
+        ArrayList arrayList = new ArrayList();
+        long j3 = 0;
+        int i7 = 0;
+        while (i7 < jSONArray.length()) {
+            c2 c2Var = new c2(jSONArray.getJSONObject(i7));
+            long j10 = c2Var.e;
+            long j11 = j3 + j10;
+            if (!((j10 ^ j3) < 0) && !((j3 ^ j11) >= 0)) {
+                throw new ArithmeticException();
             }
+            arrayList.add(c2Var);
+            i7++;
+            j3 = j11;
         }
-        throw new IllegalArgumentException("Invalid transfer amount");
+        this.c = j3;
+        this.b = DesugarCollections.unmodifiableList(arrayList);
+    }
+
+    public final String[] a() {
+        List list = this.b;
+        String[] strArr = new String[list.size() * 5];
+        for (int i7 = 0; i7 < list.size(); i7++) {
+            c2 c2Var = (c2) list.get(i7);
+            int i10 = i7 * 5;
+            strArr[i10] = c2Var.a;
+            strArr[i10 + 1] = Long.toString(c2Var.e);
+            strArr[i10 + 2] = c2Var.b;
+            strArr[i10 + 3] = c2Var.c;
+            strArr[i10 + 4] = c2Var.f ? "1" : "0";
+        }
+        return strArr;
     }
 }

@@ -4,7 +4,7 @@ import android.graphics.RectF;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ru0 implements Runnable {
     public final /* synthetic */ int a;
@@ -71,7 +71,7 @@ public final /* synthetic */ class ru0 implements Runnable {
                         hcVar = org.telegram.ui.Components.hc.a0(LaunchActivity.T());
                     }
                     if (hcVar != null) {
-                        org.telegram.ui.Components.cc I = hcVar.I(R.raw.msg_antispam, org.telegram.messenger.hd.M0(2131746223, null), org.telegram.messenger.hd.M0(2131746186, null));
+                        org.telegram.ui.Components.cc I = hcVar.I(R.raw.msg_antispam, org.telegram.messenger.id.M0(2131746225, null), org.telegram.messenger.id.M0(2131746188, null));
                         I.j = 5000;
                         I.j();
                         break;
@@ -90,7 +90,7 @@ public final /* synthetic */ class ru0 implements Runnable {
             case 12:
                 org.telegram.ui.Components.m20 m20Var = (org.telegram.ui.Components.m20) obj;
                 m20Var.dismiss();
-                vf.c.t(m20Var.getContext(), org.telegram.messenger.hd.M0(2131746617, null));
+                vf.c.t(m20Var.getContext(), org.telegram.messenger.id.M0(2131746619, null));
                 break;
             case 13:
                 SecretMediaViewer secretMediaViewer = (SecretMediaViewer) ((org.telegram.ui.Components.v50) obj).c;
@@ -130,44 +130,44 @@ public final /* synthetic */ class ru0 implements Runnable {
                 c51Var.m0.a(c51Var.j0.e0, c51Var.k0.isAttachedToWindow());
                 break;
             case 21:
-                ((z81) obj).J.r.f();
+                ((a91) obj).J.r.f();
                 break;
             case 22:
-                ((h91) obj).b.G0();
+                ((i91) obj).b.G0();
                 break;
             case 23:
                 ((VoIPFeedbackActivity) obj).finish();
                 break;
             case 24:
-                ((vb1) obj).a.y();
-                break;
-            case 25:
                 ((wb1) obj).a.y();
                 break;
+            case 25:
+                ((xb1) obj).a.y();
+                break;
             case 26:
-                ec1 ec1Var = ((ub1) obj).b;
-                ec1Var.K0.e();
+                fc1 fc1Var = ((vb1) obj).b;
+                fc1Var.K0.e();
                 org.telegram.ui.Components.voip.e2.d().getClass();
                 if (VoIPService.getSharedInstance() != null) {
                     VoIPService.getSharedInstance().swapSinks();
                 }
-                ec1Var.Y.setCornerRadius(-1.0f);
-                ec1Var.c0.d.release();
-                ec1Var.d0.d.release();
-                ec1Var.b0.release();
-                ec1Var.c();
-                ec1Var.t0.d();
+                fc1Var.Y.setCornerRadius(-1.0f);
+                fc1Var.c0.d.release();
+                fc1Var.d0.d.release();
+                fc1Var.b0.release();
+                fc1Var.c();
+                fc1Var.t0.d();
                 org.telegram.ui.Components.voip.e2.S = false;
-                ec1Var.D0 = false;
-                ec1.l1 = null;
+                fc1Var.D0 = false;
+                fc1.l1 = null;
                 org.telegram.ui.Components.voip.f2.d();
                 break;
             case 27:
-                cc1 cc1Var = (cc1) obj;
-                cc1Var.getClass();
+                dc1 dc1Var = (dc1) obj;
+                dc1Var.getClass();
                 if (VoIPService.getSharedState() != null) {
                     VoIPService.getSharedState().acceptIncomingCall();
-                    if (cc1Var.a.m0 && VoIPService.getSharedInstance() != null) {
+                    if (dc1Var.a.m0 && VoIPService.getSharedInstance() != null) {
                         VoIPService.getSharedInstance().requestVideoCall(false);
                         break;
                     }

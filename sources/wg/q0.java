@@ -4,7 +4,7 @@ import android.view.ViewGroup;
 import c8.ha;
 import di.p4;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.m5;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
@@ -17,7 +17,7 @@ import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.fk0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class q0 extends na {
     public final ArrayList P1;
@@ -76,7 +76,7 @@ public final class q0 extends na {
 
     @Override // org.telegram.ui.Components.na
     public final CharSequence O0() {
-        return hd.M0(2131753321, null);
+        return id.M0(2131753321, null);
     }
 
     public final void d1(boolean z9) {
@@ -84,9 +84,9 @@ public final class q0 extends na {
         d0Var.setShowZero(false);
         ArrayList arrayList = this.P1;
         if (arrayList.size() > 1) {
-            d0Var.i(hd.M0(2131753316, null), z9, true);
+            d0Var.i(id.M0(2131753316, null), z9, true);
         } else {
-            d0Var.i(hd.M0(2131753321, null), z9, true);
+            d0Var.i(id.M0(2131753321, null), z9, true);
         }
         d0Var.c(arrayList.size(), z9);
         d0Var.setEnabled(arrayList.size() > 0);

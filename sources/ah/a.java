@@ -13,7 +13,7 @@ import bi.w;
 import c8.ha;
 import c8.ka;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.w70;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class a extends LinearLayout {
     public final /* synthetic */ int a = 1;
@@ -102,12 +102,12 @@ public final class a extends LinearLayout {
         w wVar = new w(1, context, f6Var, true);
         this.c = wVar;
         wVar.setMinWidth(g0.L(200.0f));
-        wVar.i(hd.M0(2131746714, null), false, true);
+        wVar.i(id.M0(2131746716, null), false, true);
         addView(wVar, ha.r(-2, 44, 17));
         ei.k kVar = new ei.k(context, f6Var);
         this.d = kVar;
         r6.V(kVar, i7, f6Var);
-        kVar.setText(hd.M0(2131746702, null));
+        kVar.setText(id.M0(2131746704, null));
         kVar.setTextSize(1, 14.0f);
         kVar.setTextAlignment(4);
         kVar.setGravity(17);

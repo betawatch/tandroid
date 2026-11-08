@@ -8,7 +8,7 @@ import android.os.RemoteException;
 import c8.xb;
 import f7.t0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class a extends r6.a {
     public final String a;
@@ -40,10 +40,10 @@ public final class a extends r6.a {
         k kVar = this.c;
         if (kVar != null) {
             try {
-                Parcel R0 = kVar.R0(kVar.P0(), 2);
-                a7.a M0 = a7.b.M0(R0.readStrongBinder());
-                R0.recycle();
-                if (a7.b.N0(M0) == null) {
+                Parcel r12 = kVar.r1(kVar.p1(), 2);
+                a7.a m12 = a7.b.m1(r12.readStrongBinder());
+                r12.recycle();
+                if (a7.b.n1(m12) == null) {
                 } else {
                     throw new ClassCastException();
                 }

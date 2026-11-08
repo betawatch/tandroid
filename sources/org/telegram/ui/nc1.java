@@ -1,33 +1,59 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
+import android.util.LongSparseArray;
+import android.widget.TextView;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class nc1 extends View {
-    public int a;
-    public final /* synthetic */ WallpapersListActivity b;
+public final class nc1 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ WallpapersListActivity a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nc1(WallpapersListActivity wallpapersListActivity, Context context) {
-        super(context);
-        this.b = wallpapersListActivity;
+    public nc1(WallpapersListActivity wallpapersListActivity) {
+        this.a = wallpapersListActivity;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        WallpapersListActivity wallpapersListActivity = this.b;
-        wallpapersListActivity.s.setColor(this.a);
-        canvas.drawCircle(org.telegram.messenger.g0.L(25.0f), org.telegram.messenger.g0.L(31.0f), org.telegram.messenger.g0.L(18.0f), wallpapersListActivity.s);
-        if (this.a == org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.d6, false)) {
-            canvas.drawCircle(org.telegram.messenger.g0.L(25.0f), org.telegram.messenger.g0.L(31.0f), org.telegram.messenger.g0.L(18.0f), wallpapersListActivity.w);
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i7) {
+        org.telegram.ui.ActionBar.y4 y4Var;
+        org.telegram.ui.ActionBar.y4 y4Var2;
+        WallpapersListActivity wallpapersListActivity = this.a;
+        LongSparseArray longSparseArray = wallpapersListActivity.e0;
+        if (i7 == -1) {
+            y4Var = ((org.telegram.ui.ActionBar.f2) wallpapersListActivity).simpleActionBar;
+            if (!y4Var.s()) {
+                wallpapersListActivity.finishFragment();
+                return;
+            }
+            longSparseArray.clear();
+            y4Var2 = ((org.telegram.ui.ActionBar.f2) wallpapersListActivity).simpleActionBar;
+            y4Var2.r();
+            wallpapersListActivity.I0();
+            return;
         }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        setMeasuredDimension(org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(62.0f));
+        if (i7 != 4) {
+            if (i7 == 3) {
+                ww wwVar = new ww(org.telegram.ui.Cells.f1.h(3, "onlySelect", "dialogsType", true));
+                wwVar.C2 = new mc1(this);
+                wallpapersListActivity.presentFragment(wwVar);
+                return;
+            }
+            return;
+        }
+        if (wallpapersListActivity.getParentActivity() == null) {
+            return;
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(wallpapersListActivity.getParentActivity());
+        String G = org.telegram.messenger.id.G(longSparseArray.size(), "DeleteBackground", new Object[0]);
+        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+        u1Var.R = G;
+        u1Var.T = org.telegram.messenger.id.a0("DeleteChatBackgroundsAlert", null, 2131751555, new Object[0]);
+        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751599, null), new mc1(this));
+        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
+        wallpapersListActivity.showDialog(u1Var);
+        TextView textView = (TextView) u1Var.d(-1);
+        if (textView != null) {
+            org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.q7, null);
+        }
     }
 }

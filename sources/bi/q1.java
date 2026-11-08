@@ -21,15 +21,15 @@ import org.telegram.ui.Components.b51;
 import org.telegram.ui.Components.bm;
 import org.telegram.ui.Components.c60;
 import org.telegram.ui.Components.ca0;
-import org.telegram.ui.Components.cz;
 import org.telegram.ui.Components.di;
 import org.telegram.ui.Components.dl0;
-import org.telegram.ui.Components.ey;
-import org.telegram.ui.Components.ez;
+import org.telegram.ui.Components.dz;
 import org.telegram.ui.Components.fj;
+import org.telegram.ui.Components.fy;
 import org.telegram.ui.Components.fz;
 import org.telegram.ui.Components.gi0;
-import org.telegram.ui.Components.gy;
+import org.telegram.ui.Components.gz;
+import org.telegram.ui.Components.hy;
 import org.telegram.ui.Components.ia0;
 import org.telegram.ui.Components.ii0;
 import org.telegram.ui.Components.pj0;
@@ -50,7 +50,7 @@ import org.telegram.ui.ks;
 import org.telegram.ui.nw;
 import org.telegram.ui.oq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class q1 extends pj0 {
     public final /* synthetic */ int e3;
@@ -83,8 +83,8 @@ public final class q1 extends pj0 {
             case 7:
                 return view != ((org.telegram.ui.y6) this.f3).W;
             case 19:
-                ez ezVar = (ez) this.f3;
-                return ezVar.isEnabled() && !((nw) ezVar.J).b.j2;
+                fz fzVar = (fz) this.f3;
+                return fzVar.isEnabled() && !((nw) fzVar.J).b.j2;
             default:
                 return super.F0(view);
         }
@@ -99,9 +99,9 @@ public final class q1 extends pj0 {
             case 13:
                 return ((org.telegram.ui.Components.na) this.f3).J0(view, f10, f11);
             case 19:
-                if (((ez) this.f3).n) {
+                if (((fz) this.f3).n) {
                     int L = org.telegram.messenger.g0.L(6.0f);
-                    RectF rectF = ((cz) view).f;
+                    RectF rectF = ((dz) view).f;
                     float f12 = L;
                     if (rectF.left - f12 < f10 && rectF.right + f12 > f10) {
                         return false;
@@ -239,7 +239,7 @@ public final class q1 extends pj0 {
                 for (int i12 = 0; i12 < getChildCount(); i12++) {
                     View childAt2 = getChildAt(i12);
                     if (childAt2 instanceof org.telegram.ui.Cells.q1) {
-                        ((org.telegram.ui.Cells.q1) childAt2).x3(v8Var.getMeasuredWidth(), v8Var.getBackgroundSizeY());
+                        ((org.telegram.ui.Cells.q1) childAt2).y3(v8Var.getMeasuredWidth(), v8Var.getBackgroundSizeY());
                     }
                 }
                 int childCount = getChildCount();
@@ -790,7 +790,7 @@ public final class q1 extends pj0 {
             case 18:
                 if (getParent() != null && getParent().getParent() != null) {
                     getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1) || canScrollHorizontally(1));
-                    ((gy) this.f3).h.requestDisallowInterceptTouchEvent(true);
+                    ((hy) this.f3).h.requestDisallowInterceptTouchEvent(true);
                 }
                 break;
             case 26:
@@ -945,7 +945,7 @@ public final class q1 extends pj0 {
                 }
                 break;
             case 20:
-                if (!((fz) this.f3).p1) {
+                if (!((gz) this.f3).p1) {
                     super.requestLayout();
                     break;
                 }
@@ -973,7 +973,7 @@ public final class q1 extends pj0 {
         switch (this.e3) {
             case 19:
                 super.setAlpha(f10);
-                ((ez) this.f3).invalidate();
+                ((fz) this.f3).invalidate();
                 break;
             case 29:
                 super.setAlpha(f10);
@@ -1006,10 +1006,10 @@ public final class q1 extends pj0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q1(gy gyVar, Context context, ey eyVar) {
+    public q1(hy hyVar, Context context, fy fyVar) {
         super(context, null);
         this.e3 = 18;
-        this.f3 = gyVar;
+        this.f3 = hyVar;
         setNestedScrollingEnabled(true);
         setSelectorRadius(org.telegram.messenger.g0.L(4.0f));
         org.telegram.ui.ActionBar.r6.m(this, 20, org.telegram.ui.ActionBar.k6.i6, this.n2);
@@ -1019,7 +1019,7 @@ public final class q1 extends pj0 {
         jg.b0 b0Var = new jg.b0(8);
         b0Var.j1(0);
         setLayoutManager(b0Var);
-        setAdapter(eyVar);
+        setAdapter(fyVar);
     }
 
     private final void z1(int i7) {

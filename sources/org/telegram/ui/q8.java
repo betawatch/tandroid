@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q8 implements Runnable {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class q8 implements Runnable {
                 return;
             }
             int i10 = 0;
-            String S0 = org.telegram.messenger.hd.E0().S0(lowerCase, true, false);
+            String S0 = org.telegram.messenger.id.E0().S0(lowerCase, true, false);
             if (lowerCase.equals(S0) || S0.length() == 0) {
                 S0 = null;
             }
@@ -170,7 +170,7 @@ public final /* synthetic */ class q8 implements Runnable {
                 jlVar.Q.l(i18, messageObject.f1(), true, org.telegram.messenger.ij.B0(messageObject.k) == jlVar.Q.b7 ? 1 : 0, true, 0);
                 return;
             case 4:
-                org.telegram.ui.Wallet.y5.J0(this.b, ((org.telegram.ui.Components.ik) this.c).getContext(), (org.telegram.ui.ActionBar.f6) this.d);
+                org.telegram.ui.Wallet.x5.J0(this.b, ((org.telegram.ui.Components.ik) this.c).getContext(), (org.telegram.ui.ActionBar.f6) this.d);
                 return;
             case 5:
                 org.telegram.ui.Components.bn bnVar = (org.telegram.ui.Components.bn) this.c;
@@ -186,10 +186,10 @@ public final /* synthetic */ class q8 implements Runnable {
                     return;
                 }
             case 6:
-                org.telegram.ui.Components.fu fuVar = (org.telegram.ui.Components.fu) this.c;
+                org.telegram.ui.Components.gu guVar = (org.telegram.ui.Components.gu) this.c;
                 a0.h hVar = (a0.h) this.d;
                 int i20 = this.b;
-                org.telegram.ui.ActionBar.f2 f2Var = fuVar.R2.j1;
+                org.telegram.ui.ActionBar.f2 f2Var = guVar.R2.j1;
                 if (f2Var instanceof an) {
                     an anVar2 = (an) f2Var;
                     anVar2.f8();
@@ -208,14 +208,14 @@ public final /* synthetic */ class q8 implements Runnable {
                 }
                 return;
             case 7:
-                org.telegram.ui.Components.cx cxVar = (org.telegram.ui.Components.cx) this.c;
+                org.telegram.ui.Components.dx dxVar = (org.telegram.ui.Components.dx) this.c;
                 org.telegram.ui.ActionBar.u1[] u1VarArr = (org.telegram.ui.ActionBar.u1[]) this.d;
                 int i21 = this.b;
                 org.telegram.ui.ActionBar.u1 u1Var = u1VarArr[0];
                 if (u1Var == null) {
                     return;
                 }
-                u1Var.setOnCancelListener(new bi.g0(cxVar, i21, i14));
+                u1Var.setOnCancelListener(new bi.g0(dxVar, i21, i14));
                 u1VarArr[0].show();
                 return;
             case 8:
@@ -316,7 +316,7 @@ public final /* synthetic */ class q8 implements Runnable {
                     org.telegram.messenger.a8.b("InstantCamera create camera session " + i28);
                 }
                 if (o40Var.A0 && i28 == o40Var.z0) {
-                    o40Var.p("camera open submitted: surface=" + i28);
+                    o40Var.q("camera open submitted: surface=" + i28);
                 }
                 if (!o40Var.r0) {
                     if (i28 == 1) {
@@ -324,7 +324,7 @@ public final /* synthetic */ class q8 implements Runnable {
                     }
                     surfaceTexture.setDefaultBufferSize(o40Var.m0[0].getWidth(), o40Var.m0[0].getHeight());
                     o40Var.s0 = new CameraSession(o40Var.H, o40Var.m0[0], o40Var.n0, 256, true);
-                    o40Var.v();
+                    o40Var.w();
                     org.telegram.ui.Components.a40 a40Var = o40Var.l0;
                     CameraSession cameraSession = o40Var.s0;
                     Handler handler = a40Var.getHandler();
@@ -451,9 +451,9 @@ public final /* synthetic */ class q8 implements Runnable {
                 ArrayList arrayList5 = hh0Var.r;
                 ArrayList arrayList6 = hh0Var.n;
                 if (arrayList6.isEmpty() || arrayList6.size() < i31) {
-                    G = org.telegram.messenger.hd.G(i31, "ReactionsCount", new Object[0]);
+                    G = org.telegram.messenger.id.G(i31, "ReactionsCount", new Object[0]);
                 } else {
-                    G = String.format(org.telegram.messenger.hd.K0(i31, "Reacted"), i31 == arrayList6.size() ? String.valueOf(i31) : i31 + "/" + arrayList6.size());
+                    G = String.format(org.telegram.messenger.id.K0(i31, "Reacted"), i31 == arrayList6.size() ? String.valueOf(i31) : i31 + "/" + arrayList6.size());
                 }
                 if (hh0Var.getMeasuredWidth() > 0) {
                     hh0Var.w = hh0Var.getMeasuredWidth();
@@ -529,7 +529,7 @@ public final /* synthetic */ class q8 implements Runnable {
                                     }
                                 }
                             }
-                            org.telegram.ui.Components.lz lzVar = hh0Var.a;
+                            org.telegram.ui.Components.mz mzVar = hh0Var.a;
                             org.telegram.ui.Components.z8 z8Var = hh0Var.c;
                             hh0Var.setEnabled(arrayList.size() <= 0);
                             for (i11 = 0; i11 < 3; i11++) {
@@ -545,26 +545,26 @@ public final /* synthetic */ class q8 implements Runnable {
                             } else {
                                 if (size3 != 2) {
                                     f10 = 0.0f;
-                                    if (org.telegram.messenger.hd.a0) {
+                                    if (org.telegram.messenger.id.a0) {
                                         f10 = org.telegram.messenger.g0.L(12.0f);
                                     }
                                     z8Var.setTranslationX(f10);
                                     z8Var.a(false);
                                     textView.animate().alpha(1.0f).setDuration(220L).start();
                                     z8Var.animate().alpha(1.0f).setDuration(220L).start();
-                                    lzVar.animate().alpha(0.0f).setDuration(220L).setListener(new org.telegram.ui.Components.t9(lzVar)).start();
+                                    mzVar.animate().alpha(0.0f).setDuration(220L).setListener(new org.telegram.ui.Components.t9(mzVar)).start();
                                     return;
                                 }
                                 L = org.telegram.messenger.g0.L(12.0f);
                             }
                             f10 = L;
-                            if (org.telegram.messenger.hd.a0) {
+                            if (org.telegram.messenger.id.a0) {
                             }
                             z8Var.setTranslationX(f10);
                             z8Var.a(false);
                             textView.animate().alpha(1.0f).setDuration(220L).start();
                             z8Var.animate().alpha(1.0f).setDuration(220L).start();
-                            lzVar.animate().alpha(0.0f).setDuration(220L).setListener(new org.telegram.ui.Components.t9(lzVar)).start();
+                            mzVar.animate().alpha(0.0f).setDuration(220L).setListener(new org.telegram.ui.Components.t9(mzVar)).start();
                             return;
                         }
                     }
@@ -583,7 +583,7 @@ public final /* synthetic */ class q8 implements Runnable {
                 i10 = 0;
                 while (i10 < size2) {
                 }
-                org.telegram.ui.Components.lz lzVar2 = hh0Var.a;
+                org.telegram.ui.Components.mz mzVar2 = hh0Var.a;
                 org.telegram.ui.Components.z8 z8Var2 = hh0Var.c;
                 hh0Var.setEnabled(arrayList.size() <= 0);
                 while (i11 < 3) {
@@ -592,13 +592,13 @@ public final /* synthetic */ class q8 implements Runnable {
                 if (size3 != 1) {
                 }
                 f10 = L;
-                if (org.telegram.messenger.hd.a0) {
+                if (org.telegram.messenger.id.a0) {
                 }
                 z8Var2.setTranslationX(f10);
                 z8Var2.a(false);
                 textView.animate().alpha(1.0f).setDuration(220L).start();
                 z8Var2.animate().alpha(1.0f).setDuration(220L).start();
-                lzVar2.animate().alpha(0.0f).setDuration(220L).setListener(new org.telegram.ui.Components.t9(lzVar2)).start();
+                mzVar2.animate().alpha(0.0f).setDuration(220L).setListener(new org.telegram.ui.Components.t9(mzVar2)).start();
                 return;
             case 14:
                 org.telegram.ui.Components.jo0 jo0Var = (org.telegram.ui.Components.jo0) this.c;

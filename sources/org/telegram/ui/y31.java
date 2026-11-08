@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y31 implements org.telegram.ui.Components.dj0, te.b {
     public final /* synthetic */ c51 a;
@@ -46,7 +46,7 @@ public final /* synthetic */ class y31 implements org.telegram.ui.Components.dj0
             final org.telegram.messenger.ij ijVar = ((z41) c51Var.y0.get(i7 - i10)).b;
             if (!ijVar.y4()) {
                 org.telegram.ui.Components.k60 H = org.telegram.ui.Components.k60.H(c51Var, view);
-                H.c(R.drawable.msg_stats, org.telegram.messenger.hd.M0(2131743550, null), new Runnable() { // from class: org.telegram.ui.x31
+                H.c(R.drawable.msg_stats, org.telegram.messenger.id.M0(2131743552, null), new Runnable() { // from class: org.telegram.ui.x31
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i11) {
@@ -67,7 +67,7 @@ public final /* synthetic */ class y31 implements org.telegram.ui.Components.dj0
                         }
                     }
                 }, false);
-                H.c(R.drawable.msg_msgbubble3, org.telegram.messenger.hd.M0(2131743551, null), new Runnable() { // from class: org.telegram.ui.x31
+                H.c(R.drawable.msg_msgbubble3, org.telegram.messenger.id.M0(2131743553, null), new Runnable() { // from class: org.telegram.ui.x31
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i12) {

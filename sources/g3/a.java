@@ -25,7 +25,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class a implements o {
     public static final int[] s = {13, 14, 16, 18, 20, 21, 27, 32, 6, 7, 6, 6, 1, 1, 1, 1};
@@ -97,9 +97,9 @@ public final class a implements o {
         }
         z zVar = (z) c0Var;
         u uVar = zVar.b;
-        long j11 = uVar.b == 0 ? -9223372036854775807L : uVar.j(m0.c(zVar.a, j3));
-        this.k = j11;
-        if (Math.abs(this.q - j11) < 20000) {
+        long m10 = uVar.b == 0 ? -9223372036854775807L : uVar.m(m0.c(zVar.a, j3));
+        this.k = m10;
+        if (Math.abs(this.q - m10) < 20000) {
             return;
         }
         this.p = true;
@@ -162,7 +162,7 @@ public final class a implements o {
                     long position = pVar.getPosition() + this.f;
                     u uVar = zVar.b;
                     int i13 = uVar.b;
-                    if (i13 == 0 || j3 - uVar.j(i13 - 1) >= 100000) {
+                    if (i13 == 0 || j3 - uVar.m(i13 - 1) >= 100000) {
                         u uVar2 = zVar.a;
                         u uVar3 = zVar.b;
                         if (uVar3.b == 0 && j3 > 0) {

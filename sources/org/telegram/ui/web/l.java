@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -28,7 +28,7 @@ import org.telegram.ui.Components.ui;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.nt0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class l extends n41 {
     public h f;
@@ -175,7 +175,7 @@ public final class l extends n41 {
 
     @Override // org.telegram.ui.Components.n41
     public final CharSequence a0() {
-        return hd.M0(2131742940, null);
+        return id.M0(2131742942, null);
     }
 
     @Override // org.telegram.ui.Components.n41
@@ -223,21 +223,21 @@ public final class l extends n41 {
         this.x.setTextColor(getThemedColor(k6.y8));
         this.x.setOnTouchListener(new ei.b(2));
         n10.addView(this.x, ha.m(1.0f, 0, -1, 65, 0, 0));
-        this.s = n10.h(R.id.menu_link, R.drawable.msg_message, org.telegram.messenger.g0.L(54.0f), hd.M0(2131754877, null));
-        n10.h(R.id.menu_delete, R.drawable.msg_delete, org.telegram.messenger.g0.L(54.0f), hd.M0(2131751599, null));
+        this.s = n10.h(R.id.menu_link, R.drawable.msg_message, org.telegram.messenger.g0.L(54.0f), id.M0(2131754877, null));
+        n10.h(R.id.menu_delete, R.drawable.msg_delete, org.telegram.messenger.g0.L(54.0f), id.M0(2131751599, null));
         org.telegram.ui.ActionBar.r0 c10 = this.actionBar.q().c(0, R.drawable.outline_header_search, getResourceProvider());
         c10.N();
         c10.H = new u2(this);
         this.r = c10;
-        c10.setSearchFieldHint(hd.M0(2131745837, null));
-        this.r.setContentDescription(hd.M0(2131745837, null));
+        c10.setSearchFieldHint(id.M0(2131745839, null));
+        this.r.setContentDescription(id.M0(2131745839, null));
         EditTextBoldCursor searchField = this.r.getSearchField();
         r6.V(searchField, i10, getResourceProvider());
         r6.E(searchField, k6.Gj, getResourceProvider());
         r6.w(searchField, i10, getResourceProvider());
         this.a.j(new ui(this, 24));
         av0 av0Var = new av0(context, null, 1, null);
-        av0Var.d.setText(hd.M0(2131742920, null));
+        av0Var.d.setText(id.M0(2131742922, null));
         av0Var.e.setVisibility(8);
         av0Var.e(false, false);
         av0Var.setAnimateLayoutChange(true);

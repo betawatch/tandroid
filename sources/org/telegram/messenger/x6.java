@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.rt0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class x6 {
     public static volatile x6[] g = new x6[4];
@@ -101,7 +101,7 @@ public final class x6 {
         AlertDialog$Builder w1Var = z9 ? new org.telegram.ui.ActionBar.w1(0, activity, f6Var) : new AlertDialog$Builder(0, activity, f6Var);
         TextView[] textViewArr = new TextView[1];
         boolean z10 = ijVar == null || (message = ijVar.k) == null || message.factcheck == null;
-        String M0 = hd.M0(2131750853, null);
+        String M0 = id.M0(2131750853, null);
         org.telegram.ui.ActionBar.u1 u1Var = w1Var.a;
         u1Var.R = M0;
         int i11 = this.a;
@@ -114,7 +114,7 @@ public final class x6 {
         t6Var.setTextSize(1, 18.0f);
         org.telegram.ui.ActionBar.r6.V(t6Var, org.telegram.ui.ActionBar.k6.j5, f6Var);
         org.telegram.ui.ActionBar.r6.m(t6Var, 34, org.telegram.ui.ActionBar.k6.Li, f6Var);
-        t6Var.setHintText(hd.M0(2131750850, null));
+        t6Var.setHintText(id.M0(2131750850, null));
         t6Var.setFocusable(true);
         t6Var.setInputType(147457);
         org.telegram.ui.ActionBar.r6.G(t6Var, org.telegram.ui.ActionBar.k6.k6, org.telegram.ui.ActionBar.k6.l6, org.telegram.ui.ActionBar.k6.p7, f6Var);
@@ -134,8 +134,8 @@ public final class x6 {
         w1Var.c();
         w1Var.o(linearLayout);
         u1Var.a = g0.L(292.0f);
-        w1Var.k(hd.M0(2131751355, null), new r6(this, t6Var, i12, ijVar, z11));
-        w1Var.h(hd.M0(2131752589, "Cancel"), new ni.a(15));
+        w1Var.k(id.M0(2131751355, null), new r6(this, t6Var, i12, ijVar, z11));
+        w1Var.h(id.M0(2131752589, "Cancel"), new ni.a(15));
         if (z9) {
             i = u1Var;
             u1VarArr[0] = u1Var;

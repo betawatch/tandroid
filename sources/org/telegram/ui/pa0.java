@@ -56,7 +56,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public int A0;
@@ -503,9 +503,9 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
             LatLng latLng = new LatLng(latitude, longitude);
             try {
                 v7.f fVar = (v7.f) aVar.a;
-                Parcel P0 = fVar.P0();
-                v7.b.b(P0, latLng);
-                fVar.T0(P0, 3);
+                Parcel p12 = fVar.p1();
+                v7.b.b(p12, latLng);
+                fVar.t1(p12, 3);
             } catch (RemoteException e10) {
                 throw new androidx.car.app.j(e10);
             }
@@ -801,48 +801,48 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
         org.telegram.ui.ActionBar.e5 o4 = this.simpleActionBar.o();
         org.telegram.ui.ActionBar.f5 b10 = o4.b(0, R.drawable.msg_map_type);
         this.d = b10;
-        b10.e(2, R.drawable.msg_map, org.telegram.messenger.hd.M0(2131748689, null));
-        this.d.e(3, R.drawable.msg_satellite, org.telegram.messenger.hd.M0(2131745949, null));
-        this.d.e(4, R.drawable.msg_hybrid, org.telegram.messenger.hd.M0(2131749274, null));
-        this.d.setContentDescription(org.telegram.messenger.hd.M0(2131754839, null));
+        b10.e(2, R.drawable.msg_map, org.telegram.messenger.id.M0(2131748691, null));
+        this.d.e(3, R.drawable.msg_satellite, org.telegram.messenger.id.M0(2131745951, null));
+        this.d.e(4, R.drawable.msg_hybrid, org.telegram.messenger.id.M0(2131749276, null));
+        this.d.setContentDescription(org.telegram.messenger.id.M0(2131754839, null));
         TLRPC.TL_channelLocation tL_channelLocation2 = this.B0;
         int i12 = this.H0;
         if (tL_channelLocation2 != null) {
-            this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131752220, null));
+            this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131752220, null));
         } else {
             org.telegram.messenger.ij ijVar4 = this.D0;
             if (ijVar4 == null) {
-                this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131745457, null));
+                this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131745459, null));
                 if (i12 != 4) {
                     org.telegram.ui.ActionBar.f5 b11 = o4.b(0, R.drawable.outline_header_search);
                     b11.N();
                     b11.B0 = new kg.v1(this, 15);
                     this.r = b11;
-                    b11.setSearchFieldHint(org.telegram.messenger.hd.M0(2131745837, null));
-                    this.r.setContentDescription(org.telegram.messenger.hd.M0(2131745837, null));
+                    b11.setSearchFieldHint(org.telegram.messenger.id.M0(2131745839, null));
+                    this.r.setContentDescription(org.telegram.messenger.id.M0(2131745839, null));
                 }
             } else if (ijVar4.D3()) {
-                this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131753966, null));
+                this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131753966, null));
                 org.telegram.ui.ActionBar.f5 b12 = o4.b(0, R.drawable.ic_ab_other);
                 this.V = b12;
-                b12.e(6, R.drawable.filled_directions, org.telegram.messenger.hd.M0(2131750472, null));
+                b12.e(6, R.drawable.filled_directions, org.telegram.messenger.id.M0(2131750474, null));
             } else {
                 if (i12 != 3) {
                     String str = this.D0.k.media.title;
                     if (str == null || str.length() <= 0) {
-                        this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131752220, null));
+                        this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131752220, null));
                     } else {
-                        this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131745405, null));
+                        this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131745407, null));
                     }
                 }
                 if (i12 != 3) {
                     org.telegram.ui.ActionBar.f5 b13 = o4.b(0, R.drawable.ic_ab_other);
                     this.V = b13;
-                    b13.e(1, R.drawable.msg_openin, org.telegram.messenger.hd.M0(2131747795, null));
+                    b13.e(1, R.drawable.msg_openin, org.telegram.messenger.id.M0(2131747797, null));
                     if (!getLocationController().i(this.l0) && this.P0) {
-                        this.V.e(5, R.drawable.msg_location, org.telegram.messenger.hd.M0(2131745613, null));
+                        this.V.e(5, R.drawable.msg_location, org.telegram.messenger.id.M0(2131745615, null));
                     }
-                    this.V.setContentDescription(org.telegram.messenger.hd.M0(2131754839, null));
+                    this.V.setContentDescription(org.telegram.messenger.id.M0(2131754839, null));
                 }
             }
         }
@@ -870,7 +870,7 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
             textView.setGravity(17);
             textView.setPadding(org.telegram.messenger.g0.L(24.0f), 0, org.telegram.messenger.g0.L(24.0f), 0);
             this.simpleActionBar.addView(textView, c8.ha.e(-2, 58, 1));
-            textView.setText(org.telegram.messenger.hd.M0(2131747794, null));
+            textView.setText(org.telegram.messenger.id.M0(2131747796, null));
             textView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.y90
                 public final /* synthetic */ pa0 b;
 
@@ -916,9 +916,9 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
                             } else {
                                 try {
                                     v7.f fVar = (v7.f) ((m8.a) d0Var2.a).a;
-                                    Parcel O0 = fVar.O0(fVar.P0(), 6);
-                                    double readDouble = O0.readDouble();
-                                    O0.recycle();
+                                    Parcel o12 = fVar.o1(fVar.p1(), 6);
+                                    double readDouble = o12.readDouble();
+                                    o12.recycle();
                                     pa0Var.L = readDouble;
                                 } catch (RemoteException e11) {
                                     throw new androidx.car.app.j(e11);
@@ -954,8 +954,8 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
                             dg0Var.setPadding(i16, (org.telegram.messenger.g0.L(8.0f) + rect.top) - 1, i16, 0);
                             dg0Var.setVisibility(4);
                             hg0Var.addView(dg0Var, 0, c8.ha.e(-1, -2, 80));
-                            org.telegram.messenger.hd.l();
-                            hg0Var.O = org.telegram.messenger.hd.g0.booleanValue();
+                            org.telegram.messenger.id.l();
+                            hg0Var.O = org.telegram.messenger.id.g0.booleanValue();
                             hg0Var.M = a22;
                             hg0Var.I = aa0Var;
                             org.telegram.ui.Components.hb0 hb0Var = new org.telegram.ui.Components.hb0(parentActivity, null);
@@ -972,7 +972,7 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
                             FrameLayout frameLayout2 = new FrameLayout(parentActivity);
                             eg0Var.addView(frameLayout2, c8.ha.t(-1, -2, 51, 22, 0, 0, 4));
                             TextView textView2 = new TextView(parentActivity);
-                            textView2.setText(org.telegram.messenger.hd.M0(2131748755, null));
+                            textView2.setText(org.telegram.messenger.id.M0(2131748757, null));
                             org.telegram.messenger.k5.n(textView2, org.telegram.ui.ActionBar.k6.j5, null, 1, 20.0f);
                             frameLayout2.addView(textView2, c8.ha.d(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
                             textView2.setOnTouchListener(new ei.b(20));
@@ -1077,11 +1077,11 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
                                 int i18 = org.telegram.ui.ActionBar.k6.L5;
                                 alertDialog$Builder.m(R.raw.permission_request_location, 72, pa0Var.getThemedColor(i18), null);
                                 alertDialog$Builder.n(i18, pa0Var.getResourceProvider());
-                                SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131747303, null));
+                                SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131747305, null));
                                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                                 u1Var.T = X2;
-                                alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131747299, null), new aa0(pa0Var, i15));
-                                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747830, null), null);
+                                alertDialog$Builder.h(org.telegram.messenger.id.M0(2131747301, null), new aa0(pa0Var, i15));
+                                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747832, null), null);
                                 pa0Var.showDialog(u1Var);
                                 return;
                             }
@@ -1132,7 +1132,7 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         org.telegram.ui.ActionBar.r6.t(imageView3, i14, resourceProvider, mode);
         this.a.setTag(Integer.valueOf(i14));
-        this.a.setContentDescription(org.telegram.messenger.hd.M0(2131754831, null));
+        this.a.setContentDescription(org.telegram.messenger.id.M0(2131754831, null));
         this.X.addView(this.a, c8.ha.e(58, 58, 85));
         final int i15 = 2;
         this.a.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.y90
@@ -1180,9 +1180,9 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
                         } else {
                             try {
                                 v7.f fVar = (v7.f) ((m8.a) d0Var2.a).a;
-                                Parcel O0 = fVar.O0(fVar.P0(), 6);
-                                double readDouble = O0.readDouble();
-                                O0.recycle();
+                                Parcel o12 = fVar.o1(fVar.p1(), 6);
+                                double readDouble = o12.readDouble();
+                                o12.recycle();
                                 pa0Var.L = readDouble;
                             } catch (RemoteException e11) {
                                 throw new androidx.car.app.j(e11);
@@ -1218,8 +1218,8 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
                         dg0Var.setPadding(i16, (org.telegram.messenger.g0.L(8.0f) + rect.top) - 1, i16, 0);
                         dg0Var.setVisibility(4);
                         hg0Var.addView(dg0Var, 0, c8.ha.e(-1, -2, 80));
-                        org.telegram.messenger.hd.l();
-                        hg0Var.O = org.telegram.messenger.hd.g0.booleanValue();
+                        org.telegram.messenger.id.l();
+                        hg0Var.O = org.telegram.messenger.id.g0.booleanValue();
                         hg0Var.M = a22;
                         hg0Var.I = aa0Var;
                         org.telegram.ui.Components.hb0 hb0Var = new org.telegram.ui.Components.hb0(parentActivity, null);
@@ -1236,7 +1236,7 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
                         FrameLayout frameLayout2 = new FrameLayout(parentActivity);
                         eg0Var.addView(frameLayout2, c8.ha.t(-1, -2, 51, 22, 0, 0, 4));
                         TextView textView2 = new TextView(parentActivity);
-                        textView2.setText(org.telegram.messenger.hd.M0(2131748755, null));
+                        textView2.setText(org.telegram.messenger.id.M0(2131748757, null));
                         org.telegram.messenger.k5.n(textView2, org.telegram.ui.ActionBar.k6.j5, null, 1, 20.0f);
                         frameLayout2.addView(textView2, c8.ha.d(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
                         textView2.setOnTouchListener(new ei.b(20));
@@ -1341,11 +1341,11 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
                             int i18 = org.telegram.ui.ActionBar.k6.L5;
                             alertDialog$Builder.m(R.raw.permission_request_location, 72, pa0Var.getThemedColor(i18), null);
                             alertDialog$Builder.n(i18, pa0Var.getResourceProvider());
-                            SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131747303, null));
+                            SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131747305, null));
                             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                             u1Var.T = X2;
-                            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131747299, null), new aa0(pa0Var, i152));
-                            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747830, null), null);
+                            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131747301, null), new aa0(pa0Var, i152));
+                            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747832, null), null);
                             pa0Var.showDialog(u1Var);
                             return;
                         }
@@ -1390,7 +1390,7 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
         org.telegram.ui.ActionBar.r6.V(this.b, org.telegram.ui.ActionBar.k6.Ci, this.resourceProvider);
         this.b.setTypeface(org.telegram.messenger.g0.o());
         this.b.setPadding(org.telegram.messenger.g0.L(22.0f), 0, org.telegram.messenger.g0.L(22.0f), 0);
-        this.b.setText(org.telegram.messenger.hd.M0(2131748743, null));
+        this.b.setText(org.telegram.messenger.id.M0(2131748745, null));
         this.X.addView(this.b, c8.ha.e(-2, 58, 81));
         final int i16 = 3;
         this.b.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.y90
@@ -1438,9 +1438,9 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
                         } else {
                             try {
                                 v7.f fVar = (v7.f) ((m8.a) d0Var2.a).a;
-                                Parcel O0 = fVar.O0(fVar.P0(), 6);
-                                double readDouble = O0.readDouble();
-                                O0.recycle();
+                                Parcel o12 = fVar.o1(fVar.p1(), 6);
+                                double readDouble = o12.readDouble();
+                                o12.recycle();
                                 pa0Var.L = readDouble;
                             } catch (RemoteException e11) {
                                 throw new androidx.car.app.j(e11);
@@ -1476,8 +1476,8 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
                         dg0Var.setPadding(i162, (org.telegram.messenger.g0.L(8.0f) + rect.top) - 1, i162, 0);
                         dg0Var.setVisibility(4);
                         hg0Var.addView(dg0Var, 0, c8.ha.e(-1, -2, 80));
-                        org.telegram.messenger.hd.l();
-                        hg0Var.O = org.telegram.messenger.hd.g0.booleanValue();
+                        org.telegram.messenger.id.l();
+                        hg0Var.O = org.telegram.messenger.id.g0.booleanValue();
                         hg0Var.M = a22;
                         hg0Var.I = aa0Var;
                         org.telegram.ui.Components.hb0 hb0Var = new org.telegram.ui.Components.hb0(parentActivity, null);
@@ -1494,7 +1494,7 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
                         FrameLayout frameLayout2 = new FrameLayout(parentActivity);
                         eg0Var.addView(frameLayout2, c8.ha.t(-1, -2, 51, 22, 0, 0, 4));
                         TextView textView22 = new TextView(parentActivity);
-                        textView22.setText(org.telegram.messenger.hd.M0(2131748755, null));
+                        textView22.setText(org.telegram.messenger.id.M0(2131748757, null));
                         org.telegram.messenger.k5.n(textView22, org.telegram.ui.ActionBar.k6.j5, null, 1, 20.0f);
                         frameLayout2.addView(textView22, c8.ha.d(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
                         textView22.setOnTouchListener(new ei.b(20));
@@ -1599,11 +1599,11 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
                             int i18 = org.telegram.ui.ActionBar.k6.L5;
                             alertDialog$Builder.m(R.raw.permission_request_location, 72, pa0Var.getThemedColor(i18), null);
                             alertDialog$Builder.n(i18, pa0Var.getResourceProvider());
-                            SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131747303, null));
+                            SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131747305, null));
                             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                             u1Var.T = X2;
-                            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131747299, null), new aa0(pa0Var, i152));
-                            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747830, null), null);
+                            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131747301, null), new aa0(pa0Var, i152));
+                            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747832, null), null);
                             pa0Var.showDialog(u1Var);
                             return;
                         }
@@ -1646,7 +1646,7 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
         F0(imageView4);
         org.telegram.ui.ActionBar.r6.t(this.c, org.telegram.ui.ActionBar.k6.ij, getResourceProvider(), mode);
         this.c.setScaleType(scaleType);
-        this.c.setContentDescription(org.telegram.messenger.hd.M0(2131754847, null));
+        this.c.setContentDescription(org.telegram.messenger.id.M0(2131754847, null));
         this.W.addView(this.c, c8.ha.e(58, 58, 53));
         this.c.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.y90
             public final /* synthetic */ pa0 b;
@@ -1693,9 +1693,9 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
                         } else {
                             try {
                                 v7.f fVar = (v7.f) ((m8.a) d0Var2.a).a;
-                                Parcel O0 = fVar.O0(fVar.P0(), 6);
-                                double readDouble = O0.readDouble();
-                                O0.recycle();
+                                Parcel o12 = fVar.o1(fVar.p1(), 6);
+                                double readDouble = o12.readDouble();
+                                o12.recycle();
                                 pa0Var.L = readDouble;
                             } catch (RemoteException e11) {
                                 throw new androidx.car.app.j(e11);
@@ -1731,8 +1731,8 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
                         dg0Var.setPadding(i162, (org.telegram.messenger.g0.L(8.0f) + rect.top) - 1, i162, 0);
                         dg0Var.setVisibility(4);
                         hg0Var.addView(dg0Var, 0, c8.ha.e(-1, -2, 80));
-                        org.telegram.messenger.hd.l();
-                        hg0Var.O = org.telegram.messenger.hd.g0.booleanValue();
+                        org.telegram.messenger.id.l();
+                        hg0Var.O = org.telegram.messenger.id.g0.booleanValue();
                         hg0Var.M = a22;
                         hg0Var.I = aa0Var;
                         org.telegram.ui.Components.hb0 hb0Var = new org.telegram.ui.Components.hb0(parentActivity, null);
@@ -1749,7 +1749,7 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
                         FrameLayout frameLayout2 = new FrameLayout(parentActivity);
                         eg0Var.addView(frameLayout2, c8.ha.t(-1, -2, 51, 22, 0, 0, 4));
                         TextView textView22 = new TextView(parentActivity);
-                        textView22.setText(org.telegram.messenger.hd.M0(2131748755, null));
+                        textView22.setText(org.telegram.messenger.id.M0(2131748757, null));
                         org.telegram.messenger.k5.n(textView22, org.telegram.ui.ActionBar.k6.j5, null, 1, 20.0f);
                         frameLayout2.addView(textView22, c8.ha.d(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
                         textView22.setOnTouchListener(new ei.b(20));
@@ -1854,11 +1854,11 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
                             int i18 = org.telegram.ui.ActionBar.k6.L5;
                             alertDialog$Builder.m(R.raw.permission_request_location, 72, pa0Var.getThemedColor(i18), null);
                             alertDialog$Builder.n(i18, pa0Var.getResourceProvider());
-                            SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131747303, null));
+                            SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131747305, null));
                             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                             u1Var.T = X2;
-                            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131747299, null), new aa0(pa0Var, i152));
-                            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747830, null), null);
+                            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131747301, null), new aa0(pa0Var, i152));
+                            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747832, null), null);
                             pa0Var.showDialog(u1Var);
                             return;
                         }
@@ -1944,7 +1944,7 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
                 this.h.setGravity(17);
                 this.h.setTypeface(org.telegram.messenger.g0.o());
                 this.h.setTextSize(1, 17.0f);
-                this.h.setText(org.telegram.messenger.hd.M0(2131748178, null));
+                this.h.setText(org.telegram.messenger.id.M0(2131748180, null));
                 TextView f10 = org.telegram.messenger.camera.q.f(this.e, this.h, c8.ha.t(-2, -2, 17, 0, 11, 0, 0), context);
                 this.n = f10;
                 org.telegram.ui.ActionBar.r6.V(f10, i17, getResourceProvider());
@@ -2365,7 +2365,7 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
         this.h.setGravity(17);
         this.h.setTypeface(org.telegram.messenger.g0.o());
         this.h.setTextSize(1, 17.0f);
-        this.h.setText(org.telegram.messenger.hd.M0(2131748178, null));
+        this.h.setText(org.telegram.messenger.id.M0(2131748180, null));
         TextView f102 = org.telegram.messenger.camera.q.f(this.e, this.h, c8.ha.t(-2, -2, 17, 0, 11, 0, 0), context);
         this.n = f102;
         org.telegram.ui.ActionBar.r6.V(f102, i172, getResourceProvider());
@@ -2847,9 +2847,9 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
                         fVar.getClass();
                         try {
                             v7.i iVar = (v7.i) fVar.a;
-                            Parcel P0 = iVar.P0();
-                            v7.b.b(P0, latLng);
-                            iVar.T0(P0, 3);
+                            Parcel p12 = iVar.p1();
+                            v7.b.b(p12, latLng);
+                            iVar.t1(p12, 3);
                         } catch (RemoteException e10) {
                             throw new androidx.car.app.j(e10);
                         }
@@ -2865,9 +2865,9 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
             fVar2.getClass();
             try {
                 v7.i iVar2 = (v7.i) fVar2.a;
-                Parcel P02 = iVar2.P0();
-                v7.b.b(P02, latLng2);
-                iVar2.T0(P02, 3);
+                Parcel p13 = iVar2.p1();
+                v7.b.b(p13, latLng2);
+                iVar2.t1(p13, 3);
                 if (this.p0 == la0Var.a) {
                     this.E.b(((nb.a) org.telegram.messenger.t0.k()).newCameraUpdateLatLng(la0Var.e.a()));
                 }
@@ -2971,9 +2971,9 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
                     int i7 = org.telegram.ui.ActionBar.k6.L5;
                     alertDialog$Builder.m(R.raw.permission_request_location, 72, getThemedColor(i7), null);
                     alertDialog$Builder.n(i7, getResourceProvider());
-                    alertDialog$Builder.a.T = org.telegram.messenger.hd.M0(2131749529, null);
-                    alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751806, null), new aa0(this, 3));
-                    alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+                    alertDialog$Builder.a.T = org.telegram.messenger.id.M0(2131749531, null);
+                    alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751806, null), new aa0(this, 3));
+                    alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
                     showDialog(alertDialog$Builder.a);
                     return false;
                 }
@@ -3025,10 +3025,10 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
         bVar3.getClass();
         try {
             l8.e eVar = (l8.e) bVar3.b;
-            Parcel P0 = eVar.P0();
-            v7.b.b(P0, bVar2);
-            Parcel O0 = eVar.O0(P0, 35);
-            IBinder readStrongBinder = O0.readStrongBinder();
+            Parcel p12 = eVar.p1();
+            v7.b.b(p12, bVar2);
+            Parcel o12 = eVar.o1(p12, 35);
+            IBinder readStrongBinder = o12.readStrongBinder();
             int i10 = v7.g.b;
             if (readStrongBinder == null) {
                 fVar = null;
@@ -3036,7 +3036,7 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
                 IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.model.internal.ICircleDelegate");
                 fVar = queryLocalInterface instanceof v7.h ? (v7.h) queryLocalInterface : new v7.f(readStrongBinder, "com.google.android.gms.maps.model.internal.ICircleDelegate", 11);
             }
-            O0.recycle();
+            o12.recycle();
             m8.a aVar = new m8.a(fVar);
             m4.d0 d0Var = new m4.d0(faVar, aVar, z9);
             faVar.c.put(aVar, d0Var);
@@ -3229,7 +3229,7 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
         }
         try {
             l8.f fVar = (l8.f) mVar.c;
-            fVar.T0(fVar.P0(), 6);
+            fVar.t1(fVar.p1(), 6);
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
         }
@@ -3587,9 +3587,9 @@ public class pa0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.me
         }
         e12.edit().putInt("proximityhint", i7 + 1).commit();
         if (org.telegram.messenger.m5.E(this.l0)) {
-            this.s.u(org.telegram.messenger.hd.a0("ProximityTooltioUser", null, 2131746611, org.telegram.messenger.t10.j(getMessagesController().a2(Long.valueOf(this.l0)), true)));
+            this.s.u(org.telegram.messenger.id.a0("ProximityTooltioUser", null, 2131746613, org.telegram.messenger.t10.j(getMessagesController().a2(Long.valueOf(this.l0)), true)));
         } else {
-            this.s.u(org.telegram.messenger.hd.M0(2131746612, null));
+            this.s.u(org.telegram.messenger.id.M0(2131746614, null));
         }
         this.s.w();
     }

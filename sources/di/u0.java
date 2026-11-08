@@ -23,7 +23,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -46,7 +46,7 @@ import org.telegram.ui.Components.zg0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.e61;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class u0 extends FrameLayout implements ls {
     public boolean D;
@@ -275,11 +275,11 @@ public abstract class u0 extends FrameLayout implements ls {
     }
 
     private CharSequence getStarsToastSubtitle() {
-        return org.telegram.messenger.g0.X2(hd.H(',', "PaidMessageSentSubtitle", Math.max(0, (int) this.R)));
+        return org.telegram.messenger.g0.X2(id.H(',', "PaidMessageSentSubtitle", Math.max(0, (int) this.R)));
     }
 
     private String getStarsToastTitle() {
-        return hd.M0(2131745026, null);
+        return id.M0(2131745028, null);
     }
 
     private int getTotalMyStars() {
@@ -912,7 +912,7 @@ public abstract class u0 extends FrameLayout implements ls {
             this.a0.b.setText(getStarsToastTitle());
             ac acVar = new ac(getContext(), bVar, true, false);
             this.b0 = acVar;
-            acVar.e(hd.M0(2131745024, null));
+            acVar.e(id.M0(2131745026, null));
             this.b0.b = new z((g2) this, i7);
             vb vbVar = new vb(getContext(), bVar);
             this.c0 = vbVar;

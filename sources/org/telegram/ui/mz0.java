@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mz0 implements Runnable {
     public final /* synthetic */ int a;
@@ -23,8 +23,8 @@ public final /* synthetic */ class mz0 implements Runnable {
                     rz0Var.a0 = r2.S() / rz0Var.x.U();
                     pz0 pz0Var = rz0Var.N;
                     if (pz0Var != null) {
-                        pz0Var.nc = (rz0Var.x.U() - rz0Var.x.S()) / 1000;
-                        rz0Var.N.R3();
+                        pz0Var.oc = (rz0Var.x.U() - rz0Var.x.S()) / 1000;
+                        rz0Var.N.S3();
                         org.telegram.ui.Components.pm0 seekBarWaveform = rz0Var.N.getSeekBarWaveform();
                         if (seekBarWaveform != null) {
                             float f10 = rz0Var.a0;

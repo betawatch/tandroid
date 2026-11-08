@@ -17,7 +17,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class ix implements org.telegram.messenger.ls {
     public static final HashSet L = new HashSet();
@@ -721,7 +721,7 @@ public class ix implements org.telegram.messenger.ls {
                     org.telegram.messenger.t0.b.getSharedPreferences("mainconfig", 0).edit().putInt("emojiInteractionsHintCount", org.telegram.messenger.iz.d1).apply();
                     org.telegram.ui.Components.cv0 cv0Var = new org.telegram.ui.Components.cv0(anVar.getParentActivity(), null, 1, -1, q1Var.getMessageObject().G2() ? q1Var.getMessageObject().F0() : org.telegram.messenger.ui.b0(this.b).T(q1Var.getMessageObject().W1()), anVar.getResourceProvider());
                     cv0Var.c.setVisibility(8);
-                    cv0Var.b.setText(org.telegram.messenger.i6.m(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0("EmojiInteractionTapHint", null, 2131751178, anVar.f.first_name)), cv0Var.b.getPaint().getFontMetricsInt(), false, null, 0));
+                    cv0Var.b.setText(org.telegram.messenger.i6.m(org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0("EmojiInteractionTapHint", null, 2131751178, anVar.f.first_name)), cv0Var.b.getPaint().getFontMetricsInt(), false, null, 0));
                     cv0Var.b.setTypeface(null);
                     cv0Var.b.setMaxLines(3);
                     cv0Var.b.setSingleLine(false);
@@ -797,11 +797,11 @@ public class ix implements org.telegram.messenger.ls {
         }
         org.telegram.ui.Components.cv0 cv0Var = new org.telegram.ui.Components.cv0(this.G.getContext(), null, 1, -1, ijVar.F0(), anVar.getResourceProvider());
         cv0Var.b.setText(tL_messages_stickerSet.set.title);
-        cv0Var.c.setText(org.telegram.messenger.hd.M0(2131746947, null));
+        cv0Var.c.setText(org.telegram.messenger.id.M0(2131746949, null));
         org.telegram.ui.Components.ac acVar = new org.telegram.ui.Components.ac(anVar.getParentActivity(), anVar.getResourceProvider(), true);
         cv0Var.setButton(acVar);
         acVar.b = new org.telegram.ui.Components.l51(19, this, ijVar);
-        acVar.e(org.telegram.messenger.hd.M0(2131743564, null));
+        acVar.e(org.telegram.messenger.id.M0(2131743566, null));
         org.telegram.ui.Components.cc g10 = org.telegram.ui.Components.cc.g(anVar, cv0Var, 2750);
         g10.b = ijVar.f1();
         g10.j();

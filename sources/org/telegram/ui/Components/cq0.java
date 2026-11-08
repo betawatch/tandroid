@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class cq0 extends ns0 {
     public float u3;
@@ -99,7 +99,7 @@ public final class cq0 extends ns0 {
                 int measuredWidth = getMeasuredWidth() - org.telegram.messenger.g0.L(60.0f);
                 StaticLayout staticLayout = this.o3;
                 if (staticLayout == null || staticLayout.getWidth() != measuredWidth) {
-                    this.o3 = new StaticLayout(org.telegram.messenger.hd.M0(xs0Var.A0() ? f2Var != null && org.telegram.messenger.t3.V(f2Var.getMessagesController().M0(Long.valueOf(-xs0Var.l1))) ? 2131746632 : 2131746628 : 2131746627, null), this.n3, measuredWidth, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+                    this.o3 = new StaticLayout(org.telegram.messenger.id.M0(xs0Var.A0() ? f2Var != null && org.telegram.messenger.t3.V(f2Var.getMessagesController().M0(Long.valueOf(-xs0Var.l1))) ? 2131746634 : 2131746630 : 2131746629, null), this.n3, measuredWidth, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
                     this.p3 = 0.0f;
                     this.q3 = measuredWidth;
                     for (int i7 = 0; i7 < this.o3.getLineCount(); i7++) {

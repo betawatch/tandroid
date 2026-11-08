@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class vp implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -18,10 +18,10 @@ public final class vp implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ vp(Object obj, org.telegram.ui.Components.lz lzVar, int i7, int i10) {
+    public /* synthetic */ vp(Object obj, org.telegram.ui.Components.mz mzVar, int i7, int i10) {
         this.a = i10;
         this.d = obj;
-        this.b = lzVar;
+        this.b = mzVar;
         this.c = i7;
     }
 

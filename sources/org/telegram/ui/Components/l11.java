@@ -16,7 +16,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l11 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public boolean D;
@@ -175,7 +175,7 @@ public final class l11 extends FrameLayout implements org.telegram.ui.ActionBar.
         setLayout(z9);
         this.P = true;
         this.O = true;
-        String M0 = org.telegram.messenger.hd.M0(2131748250, null);
+        String M0 = org.telegram.messenger.id.M0(2131748252, null);
         TextView textView = this.w;
         textView.setText(M0);
         textView.setVisibility(0);
@@ -199,7 +199,7 @@ public final class l11 extends FrameLayout implements org.telegram.ui.ActionBar.
         this.N = -1L;
         this.P = true;
         this.O = false;
-        String M0 = org.telegram.messenger.hd.M0(z9 ? 2131753064 : 2131754288, null);
+        String M0 = org.telegram.messenger.id.M0(z9 ? 2131753064 : 2131754288, null);
         TextView textView = this.w;
         textView.setText(M0);
         textView.setVisibility(z9 ? 8 : 0);
@@ -259,7 +259,7 @@ public final class l11 extends FrameLayout implements org.telegram.ui.ActionBar.
             i6Var.t(this.G, z12, true);
         } else if (i7 > 0) {
             this.F = z9 ? org.telegram.ui.ActionBar.k6.V8 : org.telegram.ui.ActionBar.k6.U8;
-            i6Var.t(org.telegram.messenger.hd.E(i7, ','), z12, true);
+            i6Var.t(org.telegram.messenger.id.E(i7, ','), z12, true);
         } else {
             this.F = org.telegram.ui.ActionBar.k6.V8;
             i6Var.t("", z12, true);

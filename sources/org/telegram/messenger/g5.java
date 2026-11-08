@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class g5 extends c1 {
     public static Locale n0;
@@ -134,7 +134,7 @@ public final class g5 extends c1 {
         hashMap.put("Ý", "Y");
         hashMap.put("Ţ", "Y");
         if (i7 == 0) {
-            Utilities.e.c(new x4(this, 9));
+            Utilities.e.c(new k4(this, 8));
         }
     }
 
@@ -152,7 +152,7 @@ public final class g5 extends c1 {
             str2 = str2.trim();
         }
         StringBuilder sb2 = new StringBuilder((str != null ? str.length() : 0) + (str2 != null ? str2.length() : 0) + 1);
-        if (hd.b0 == 1) {
+        if (id.b0 == 1) {
             if (str == null || str.length() <= 0) {
                 if (str2 != null && str2.length() > 0) {
                     if (i7 > 0 && str2.length() > i7 + 2) {
@@ -205,7 +205,7 @@ public final class g5 extends c1 {
     }
 
     public static String o(TLObject tLObject) {
-        return tLObject instanceof TLRPC.User ? p((TLRPC.User) tLObject) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : hd.M0(2131749327, null);
+        return tLObject instanceof TLRPC.User ? p((TLRPC.User) tLObject) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : id.M0(2131749329, null);
     }
 
     public static String p(TLRPC.User user) {
@@ -308,7 +308,7 @@ public final class g5 extends c1 {
                 a8.b("load contacts from cache");
             }
             yr messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new qq(messagesStorage, 13));
+            messagesStorage.a.c(new rq(messagesStorage, 18));
             return;
         }
         if (r2.a) {
@@ -316,13 +316,13 @@ public final class g5 extends c1 {
         }
         TLRPC.TL_contacts_getContacts tL_contacts_getContacts = new TLRPC.TL_contacts_getContacts();
         tL_contacts_getContacts.hash = j3;
-        getConnectionsManager().sendRequest(tL_contacts_getContacts, new p4(this, j3, 0));
+        getConnectionsManager().sendRequest(tL_contacts_getContacts, new v4(this, j3, 0));
     }
 
     public final void B() {
         if (this.F == 0) {
             this.F = 1;
-            getConnectionsManager().sendRequest(new TL_account.getGlobalPrivacySettings(), new r4(this, 1));
+            getConnectionsManager().sendRequest(new TL_account.getGlobalPrivacySettings(), new q4(this, 1));
         }
     }
 
@@ -351,7 +351,7 @@ public final class g5 extends c1 {
     public final void D(boolean z9) {
         if (this.G == 0) {
             this.G = 1;
-            getConnectionsManager().sendRequest(new TL_account.getAccountTTL(), new r4(this, 2));
+            getConnectionsManager().sendRequest(new TL_account.getAccountTTL(), new q4(this, 2));
         }
         B();
         int i7 = 0;
@@ -440,12 +440,12 @@ public final class g5 extends c1 {
     }
 
     public final void E(HashMap hashMap, ArrayList arrayList, HashMap hashMap2, boolean z9) {
-        Utilities.e.c(new iy(this, z9, new ArrayList(this.e0), hashMap2, hashMap, arrayList));
+        Utilities.e.c(new gy(this, z9, new ArrayList(this.e0), hashMap2, hashMap, arrayList));
     }
 
     public final void F(final HashMap hashMap, final boolean z9, final boolean z10, final boolean z11, final boolean z12, final boolean z13, final boolean z14) {
         if (z10 || this.r) {
-            Utilities.e.c(new Runnable() { // from class: org.telegram.messenger.i4
+            Utilities.e.c(new Runnable() { // from class: org.telegram.messenger.b5
                 /* JADX WARN: Code restructure failed: missing block: B:129:0x0335, code lost:
                 
                     if (r9.intValue() == 1) goto L134;
@@ -871,7 +871,7 @@ public final class g5 extends c1 {
                                             arrayList7.clear();
                                         }
                                         g5Var2.getMessagesStorage().Z0(hashMap18, false, false);
-                                        g0.h3(new v4(g5Var2, hashMap16, arrayList6, hashMap17, 0));
+                                        g0.h3(new u4(g5Var2, hashMap16, arrayList6, hashMap17, 0));
                                         break;
                                     case 1:
                                         g5 g5Var3 = g5Var;
@@ -887,7 +887,7 @@ public final class g5 extends c1 {
                                             g5Var3.c(arrayList8, null, null, null);
                                             arrayList8.clear();
                                         }
-                                        g0.h3(new v4(g5Var3, hashMap16, arrayList6, hashMap17, 1));
+                                        g0.h3(new u4(g5Var3, hashMap16, arrayList6, hashMap17, 1));
                                         break;
                                     default:
                                         g5 g5Var4 = g5Var;
@@ -903,7 +903,7 @@ public final class g5 extends c1 {
                                             g5Var4.c(arrayList9, null, null, null);
                                             arrayList9.clear();
                                         }
-                                        g0.h3(new v4(g5Var4, hashMap16, arrayList6, hashMap17, 2));
+                                        g0.h3(new u4(g5Var4, hashMap16, arrayList6, hashMap17, 2));
                                         break;
                                 }
                             }
@@ -940,7 +940,7 @@ public final class g5 extends c1 {
                                             arrayList72.clear();
                                         }
                                         g5Var2.getMessagesStorage().Z0(hashMap182, false, false);
-                                        g0.h3(new v4(g5Var2, hashMap18, arrayList7, hashMap19, 0));
+                                        g0.h3(new u4(g5Var2, hashMap18, arrayList7, hashMap19, 0));
                                         break;
                                     case 1:
                                         g5 g5Var3 = g5Var;
@@ -956,7 +956,7 @@ public final class g5 extends c1 {
                                             g5Var3.c(arrayList8, null, null, null);
                                             arrayList8.clear();
                                         }
-                                        g0.h3(new v4(g5Var3, hashMap18, arrayList7, hashMap19, 1));
+                                        g0.h3(new u4(g5Var3, hashMap18, arrayList7, hashMap19, 1));
                                         break;
                                     default:
                                         g5 g5Var4 = g5Var;
@@ -972,7 +972,7 @@ public final class g5 extends c1 {
                                             g5Var4.c(arrayList9, null, null, null);
                                             arrayList9.clear();
                                         }
-                                        g0.h3(new v4(g5Var4, hashMap18, arrayList7, hashMap19, 2));
+                                        g0.h3(new u4(g5Var4, hashMap18, arrayList7, hashMap19, 2));
                                         break;
                                 }
                             }
@@ -1033,7 +1033,7 @@ public final class g5 extends c1 {
                                                 arrayList72.clear();
                                             }
                                             g5Var2.getMessagesStorage().Z0(hashMap182, false, false);
-                                            g0.h3(new v4(g5Var2, hashMap21, arrayList8, hashMap22, 0));
+                                            g0.h3(new u4(g5Var2, hashMap21, arrayList8, hashMap22, 0));
                                             break;
                                         case 1:
                                             g5 g5Var3 = g5Var;
@@ -1049,7 +1049,7 @@ public final class g5 extends c1 {
                                                 g5Var3.c(arrayList82, null, null, null);
                                                 arrayList82.clear();
                                             }
-                                            g0.h3(new v4(g5Var3, hashMap21, arrayList8, hashMap22, 1));
+                                            g0.h3(new u4(g5Var3, hashMap21, arrayList8, hashMap22, 1));
                                             break;
                                         default:
                                             g5 g5Var4 = g5Var;
@@ -1065,7 +1065,7 @@ public final class g5 extends c1 {
                                                 g5Var4.c(arrayList9, null, null, null);
                                                 arrayList9.clear();
                                             }
-                                            g0.h3(new v4(g5Var4, hashMap21, arrayList8, hashMap22, 2));
+                                            g0.h3(new u4(g5Var4, hashMap21, arrayList8, hashMap22, 2));
                                             break;
                                     }
                                 }
@@ -1340,20 +1340,20 @@ public final class g5 extends c1 {
                                                     String string5 = query.getString(3);
                                                     ArrayList arrayList4 = d5Var2.f;
                                                     if (string5 == null) {
-                                                        string5 = hd.M0(2131747290, null);
+                                                        string5 = id.M0(2131747292, null);
                                                     }
                                                     arrayList4.add(string5);
                                                 } else if (i13 == 1) {
-                                                    d5Var2.f.add(hd.M0(2131747292, null));
+                                                    d5Var2.f.add(id.M0(2131747294, null));
                                                 } else {
                                                     if (i13 == 2) {
-                                                        d5Var2.f.add(hd.M0(2131747290, null));
+                                                        d5Var2.f.add(id.M0(2131747292, null));
                                                     } else if (i13 == 3) {
-                                                        d5Var2.f.add(hd.M0(2131747280, null));
+                                                        d5Var2.f.add(id.M0(2131747282, null));
                                                     } else if (i13 == 12) {
-                                                        d5Var2.f.add(hd.M0(2131747291, null));
+                                                        d5Var2.f.add(id.M0(2131747293, null));
                                                     } else {
-                                                        d5Var2.f.add(hd.M0(2131747281, null));
+                                                        d5Var2.f.add(id.M0(2131747283, null));
                                                     }
                                                     hashMap5.put(substring, d5Var2);
                                                     contentResolver3 = contentResolver2;
@@ -1587,7 +1587,7 @@ public final class g5 extends c1 {
                                                             d5Var4.e.add(f5Var2.d);
                                                             d5Var4.g.add(str7);
                                                             d5Var4.h.add(0);
-                                                            d5Var4.f.add(hd.M0(2131747281, null));
+                                                            d5Var4.f.add(id.M0(2131747283, null));
                                                             HashMap hashMap7 = hashMap2 == null ? new HashMap() : hashMap2;
                                                             try {
                                                                 hashMap7.put(f5Var2.b, d5Var4);
@@ -1708,7 +1708,7 @@ public final class g5 extends c1 {
         messagesController.w1.clear();
         SharedPreferences.Editor edit = qp.s1(this.currentAccount).e7.edit();
         edit.putBoolean("needGetStatuses", true).commit();
-        getConnectionsManager().sendRequest(new TLRPC.TL_contacts_getStatuses(), new s4(2, this, edit));
+        getConnectionsManager().sendRequest(new TLRPC.TL_contacts_getStatuses(), new r4(2, this, edit));
     }
 
     public final void J(boolean z9) {
@@ -1807,7 +1807,7 @@ public final class g5 extends c1 {
                 }
             }
         }
-        Collections.sort(arrayList, new u4(u(), 1));
+        Collections.sort(arrayList, new t4(u(), 1));
         this.a0 = arrayList;
     }
 
@@ -1868,7 +1868,7 @@ public final class g5 extends c1 {
         newInsert3.withValue("mimetype", "vnd.android.cursor.item/vnd.org.telegram.messenger.android.profile");
         newInsert3.withValue("data1", Long.valueOf(user.id));
         newInsert3.withValue("data2", "Telegram Profile");
-        newInsert3.withValue("data3", hd.a0("ContactShortcutMessage", null, 2131751786, str));
+        newInsert3.withValue("data3", id.a0("ContactShortcutMessage", null, 2131751786, str));
         newInsert3.withValue("data4", Long.valueOf(user.id));
         arrayList.add(newInsert3.build());
         ContentProviderOperation.Builder newInsert4 = ContentProviderOperation.newInsert(uri);
@@ -1876,7 +1876,7 @@ public final class g5 extends c1 {
         newInsert4.withValue("mimetype", "vnd.android.cursor.item/vnd.org.telegram.messenger.android.call");
         newInsert4.withValue("data1", Long.valueOf(user.id));
         newInsert4.withValue("data2", "Telegram Voice Call");
-        newInsert4.withValue("data3", hd.a0("ContactShortcutVoiceCall", null, 2131751784, str));
+        newInsert4.withValue("data3", id.a0("ContactShortcutVoiceCall", null, 2131751784, str));
         newInsert4.withValue("data4", Long.valueOf(user.id));
         arrayList.add(newInsert4.build());
         ContentProviderOperation.Builder newInsert5 = ContentProviderOperation.newInsert(uri);
@@ -1884,7 +1884,7 @@ public final class g5 extends c1 {
         newInsert5.withValue("mimetype", "vnd.android.cursor.item/vnd.org.telegram.messenger.android.call.video");
         newInsert5.withValue("data1", Long.valueOf(user.id));
         newInsert5.withValue("data2", "Telegram Video Call");
-        newInsert5.withValue("data3", hd.a0("ContactShortcutVideoCall", null, 2131751785, str));
+        newInsert5.withValue("data3", id.a0("ContactShortcutVideoCall", null, 2131751785, str));
         newInsert5.withValue("data4", Long.valueOf(user.id));
         arrayList.add(newInsert5.build());
     }
@@ -1964,7 +1964,7 @@ public final class g5 extends c1 {
             getMessagesStorage().f(sb2.toString(), sb3.toString());
         }
         if (z9) {
-            Utilities.d.c(new x4(this, 3));
+            Utilities.d.c(new k4(this, 2));
         } else {
             g0.h3(new ng(this, arrayList4, arrayList5, 15));
         }
@@ -1973,7 +1973,7 @@ public final class g5 extends c1 {
     public final void d(boolean z9) {
         Collator u10 = u();
         if (z9) {
-            Collections.sort(this.e0, new t4(this, u10, 0));
+            Collections.sort(this.e0, new s4(this, u10, 0));
         }
         HashMap hashMap = new HashMap();
         ArrayList arrayList = new ArrayList();
@@ -1999,7 +1999,7 @@ public final class g5 extends c1 {
                 arrayList2.add(tL_contact);
             }
         }
-        Collections.sort(arrayList, new u4(u10, 0));
+        Collections.sort(arrayList, new t4(u10, 0));
         this.g0 = hashMap;
         this.h0 = arrayList;
     }
@@ -2062,7 +2062,7 @@ public final class g5 extends c1 {
         }
         if (this.y == null || Math.abs((System.currentTimeMillis() / 1000) - i7) >= 86400) {
             this.D = true;
-            getConnectionsManager().sendRequest(new TLRPC.TL_help_getInviteText(), new r4(this, 0), 2);
+            getConnectionsManager().sendRequest(new TLRPC.TL_help_getInviteText(), new q4(this, 0), 2);
         }
     }
 
@@ -2224,7 +2224,7 @@ public final class g5 extends c1 {
             arrayList2.add(Long.valueOf(user.id));
             tL_contacts_deleteContacts.id.add(q12);
         }
-        getConnectionsManager().sendRequest(tL_contacts_deleteContacts, new q4(this, arrayList2, arrayList, z9, ((TLRPC.User) arrayList.get(0)).first_name));
+        getConnectionsManager().sendRequest(tL_contacts_deleteContacts, new p4(this, arrayList2, arrayList, z9, ((TLRPC.User) arrayList.get(0)).first_name));
     }
 
     public final void j(long j3) {
@@ -2282,7 +2282,7 @@ public final class g5 extends c1 {
     }
 
     public final void l() {
-        Utilities.e.c(new x4(this, 1));
+        Utilities.e.c(new k4(this, 1));
     }
 
     public final String s(int i7) {
@@ -2291,12 +2291,12 @@ public final class g5 extends c1 {
             str = "https://telegram.org/dl";
         }
         if (i7 <= 1) {
-            return hd.a0(null, null, 2131749115, str);
+            return id.a0(null, null, 2131749117, str);
         }
         try {
-            return String.format(hd.K0(i7, "InviteTextNum"), Integer.valueOf(i7), str);
+            return String.format(id.K0(i7, "InviteTextNum"), Integer.valueOf(i7), str);
         } catch (Exception unused) {
-            return hd.a0(null, null, 2131749115, str);
+            return id.a0(null, null, 2131749117, str);
         }
     }
 

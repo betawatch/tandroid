@@ -37,7 +37,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class aj extends sl {
     public final r1.g A3;
@@ -441,11 +441,11 @@ public final class aj extends sl {
                     if (!t0Var.S()) {
                         return;
                     }
-                    org.telegram.ui.Wallet.d4 d4Var = t0Var.I0;
+                    org.telegram.ui.Wallet.c4 c4Var = t0Var.I0;
                     float f10 = (x11 - t0Var.K0) - (t0Var.j0 / 2.0f);
                     float paddingTop = (y10 - t0Var.L0) - t0Var.getPaddingTop();
-                    org.telegram.ui.Wallet.c4 c4Var = d4Var.m;
-                    if (c4Var != null && c4Var.n && d4Var.w.contains((int) f10, (int) paddingTop)) {
+                    org.telegram.ui.Wallet.b4 b4Var = c4Var.m;
+                    if (b4Var != null && b4Var.n && c4Var.w.contains((int) f10, (int) paddingTop)) {
                         return;
                     }
                 }
@@ -871,13 +871,13 @@ public final class aj extends sl {
                     t4Var6.setBounds(L5, i24 - omVar2.b, omVar2.a, i24);
                     m.c3 c3Var3 = c3Var2;
                     if (z19) {
-                        t4Var6.e(canvas, c3Var3, paint3);
+                        t4Var6.d(canvas, c3Var3, paint3);
                     }
-                    t4Var6.e(canvas, c3Var3, paint2);
+                    t4Var6.d(canvas, c3Var3, paint2);
                     if (z21) {
-                        t4Var6.e(canvas, c3Var3, org.telegram.ui.ActionBar.k6.h2);
+                        t4Var6.d(canvas, c3Var3, org.telegram.ui.ActionBar.k6.h2);
                     }
-                    t4Var6.e(canvas, c3Var3, paint);
+                    t4Var6.d(canvas, c3Var3, paint);
                     if (z14) {
                         c3Var2 = c3Var3;
                         i10 = L5;
@@ -2037,10 +2037,10 @@ public final class aj extends sl {
                         } else {
                             if (z11) {
                                 i10 = 0;
-                                M0 = org.telegram.messenger.hd.a0(null, null, 2131744309, org.telegram.messenger.qp.s1(voVar4.e0).M0(Long.valueOf(-voVar4.i0)).title);
+                                M0 = org.telegram.messenger.id.a0(null, null, 2131744311, org.telegram.messenger.qp.s1(voVar4.e0).M0(Long.valueOf(-voVar4.i0)).title);
                             } else {
                                 i10 = 0;
-                                M0 = org.telegram.messenger.hd.M0(2131744312, null);
+                                M0 = org.telegram.messenger.id.M0(2131744314, null);
                             }
                             int measureText = (int) textPaint.measureText((CharSequence) M0, i10, M0.length());
                             voVar4.y = measureText;
@@ -2048,22 +2048,22 @@ public final class aj extends sl {
                             voVar4.y = C;
                             voVar4.s = org.telegram.ui.Components.mu0.c(M0, textPaint, C, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.END, C, 1, true);
                             if (!voVar4.V) {
-                                M02 = org.telegram.messenger.hd.M0(2131744310, null);
-                                M03 = org.telegram.messenger.hd.M0(2131746326, null);
+                                M02 = org.telegram.messenger.id.M0(2131744312, null);
+                                M03 = org.telegram.messenger.id.M0(2131746328, null);
                             } else if (z11) {
-                                M02 = org.telegram.messenger.hd.M0(2131744308, null);
-                                M03 = org.telegram.messenger.hd.M0(2131746325, null);
+                                M02 = org.telegram.messenger.id.M0(2131744310, null);
+                                M03 = org.telegram.messenger.id.M0(2131746327, null);
                             } else {
                                 boolean z12 = voVar4.W;
                                 if (z12 && (i11 = voVar4.a) != voVar4.f0 && i11 != 0) {
-                                    M02 = org.telegram.messenger.hd.M0(2131744314, null);
-                                    M03 = org.telegram.messenger.hd.M0(2131746329, null);
+                                    M02 = org.telegram.messenger.id.M0(2131744316, null);
+                                    M03 = org.telegram.messenger.id.M0(2131746331, null);
                                 } else if (z12) {
-                                    M02 = org.telegram.messenger.hd.M0(2131744311, null);
-                                    M03 = org.telegram.messenger.hd.M0(2131746327, null);
+                                    M02 = org.telegram.messenger.id.M0(2131744313, null);
+                                    M03 = org.telegram.messenger.id.M0(2131746329, null);
                                 } else {
-                                    M02 = org.telegram.messenger.hd.M0(2131744313, null);
-                                    M03 = org.telegram.messenger.hd.M0(2131746328, null);
+                                    M02 = org.telegram.messenger.id.M0(2131744315, null);
+                                    M03 = org.telegram.messenger.id.M0(2131746330, null);
                                 }
                             }
                             int measureText2 = (int) textPaint2.measureText(M02);
@@ -2492,12 +2492,12 @@ public final class aj extends sl {
 
     @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.ViewParent
     public final void requestDisallowInterceptTouchEvent(boolean z9) {
-        org.telegram.ui.Components.ck0 a42;
+        org.telegram.ui.Components.ck0 b42;
         org.telegram.ui.Components.p71 p71Var;
         super.requestDisallowInterceptTouchEvent(z9);
         View view = this.F3.r9;
         if (view != null) {
-            if ((view instanceof org.telegram.ui.Cells.q1) && (a42 = ((org.telegram.ui.Cells.q1) view).a4()) != null && (p71Var = a42.d0) != null && a42.e0 && p71Var.w && !p71Var.E) {
+            if ((view instanceof org.telegram.ui.Cells.q1) && (b42 = ((org.telegram.ui.Cells.q1) view).b4()) != null && (p71Var = b42.d0) != null && b42.e0 && p71Var.w && !p71Var.E) {
                 if (!p71Var.x) {
                     return;
                 }

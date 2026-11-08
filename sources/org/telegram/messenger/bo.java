@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bo implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class bo implements RequestDelegate {
                     iz.f = i7;
                     qpVar.getUserConfig().v(false);
                 }
-                g0.h3(new wj(qpVar, 4));
+                g0.h3(new vj(qpVar, 4));
                 break;
             case 1:
                 i7 i7Var = (i7) this.c;
@@ -73,7 +73,7 @@ public final /* synthetic */ class bo implements RequestDelegate {
                 }
                 break;
             case 2:
-                g0.h3(new k7((ui) this.c, (TLRPC.StickerSet) this.d, this.b, 9));
+                g0.h3(new l7((ui) this.c, (TLRPC.StickerSet) this.d, this.b, 9));
                 break;
             case 3:
                 ui uiVar = (ui) this.c;

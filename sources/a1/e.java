@@ -52,7 +52,7 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
@@ -69,7 +69,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.mm0;
 import v0.o;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -323,7 +323,7 @@ public final /* synthetic */ class e implements Runnable {
                                 default:
                                     l1 l1Var = s0Var3.d;
                                     if (l1Var != null && !s0Var3.isFinished) {
-                                        l1Var.d1(R.drawable.msg_download, hd.M0(2131746470, null), null);
+                                        l1Var.d1(R.drawable.msg_download, id.M0(2131746472, null), null);
                                         break;
                                     }
                                     break;
@@ -362,7 +362,7 @@ public final /* synthetic */ class e implements Runnable {
                             default:
                                 l1 l1Var = s0Var32.d;
                                 if (l1Var != null && !s0Var32.isFinished) {
-                                    l1Var.d1(R.drawable.msg_download, hd.M0(2131746470, null), null);
+                                    l1Var.d1(R.drawable.msg_download, id.M0(2131746472, null), null);
                                     break;
                                 }
                                 break;
@@ -483,10 +483,10 @@ public final /* synthetic */ class e implements Runnable {
                 f2 T = LaunchActivity.T();
                 if (T != null) {
                     if (tL_error == null || !"STARGIFT_ALREADY_BURNED".equalsIgnoreCase(tL_error.text)) {
-                        k5.o(null, 2131743882, hc.a0(T), R.raw.error, 36);
+                        k5.o(null, 2131743884, hc.a0(T), R.raw.error, 36);
                         return;
                     } else {
-                        k5.o(null, 2131743881, hc.a0(T), R.raw.fire_on, 36);
+                        k5.o(null, 2131743883, hc.a0(T), R.raw.fire_on, 36);
                         return;
                     }
                 }
@@ -498,7 +498,7 @@ public final /* synthetic */ class e implements Runnable {
                 if (l10.longValue() < 0 && (M0 = qp.s1(k7Var.a).M0(Long.valueOf(-l10.longValue()))) != null) {
                     str3 = M0.title;
                 }
-                cc Q = k7Var.k().Q(R.raw.contact_check, 36, g0.X2(TextUtils.isEmpty(str3) ? hd.M0(2131749615, null) : hd.a0(null, null, 2131749616, str3)));
+                cc Q = k7Var.k().Q(R.raw.contact_check, 36, g0.X2(TextUtils.isEmpty(str3) ? id.M0(2131749617, null) : id.a0(null, null, 2131749618, str3)));
                 Q.t = true;
                 Q.j();
                 return;
@@ -509,7 +509,7 @@ public final /* synthetic */ class e implements Runnable {
                     k7Var2.t1();
                     return;
                 } else {
-                    cc Q2 = k7Var2.k().Q(R.raw.error, 36, hd.a0(null, null, 2131743879, "NO_BALANCE"));
+                    cc Q2 = k7Var2.k().Q(R.raw.error, 36, id.a0(null, null, 2131743881, "NO_BALANCE"));
                     Q2.t = true;
                     Q2.j();
                     return;

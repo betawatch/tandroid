@@ -18,7 +18,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g5;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a6;
@@ -29,10 +29,10 @@ import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.pj0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class q0 extends pj0 implements a6 {
-    public static final o0[] j3 = {new o0(R.drawable.search_media_filled, 2131745408, new TLRPC.TL_inputMessagesFilterPhotoVideo(), 0), new o0(R.drawable.search_links_filled, 2131745411, new TLRPC.TL_inputMessagesFilterUrl(), 2), new o0(R.drawable.search_files_filled, 2131745415, new TLRPC.TL_inputMessagesFilterDocument(), 1), new o0(R.drawable.search_music_filled, 2131745406, new TLRPC.TL_inputMessagesFilterMusic(), 3), new o0(R.drawable.search_voice_filled, 2131745403, new TLRPC.TL_inputMessagesFilterRoundVoice(), 5)};
+    public static final o0[] j3 = {new o0(R.drawable.search_media_filled, 2131745410, new TLRPC.TL_inputMessagesFilterPhotoVideo(), 0), new o0(R.drawable.search_links_filled, 2131745413, new TLRPC.TL_inputMessagesFilterUrl(), 2), new o0(R.drawable.search_files_filled, 2131745417, new TLRPC.TL_inputMessagesFilterDocument(), 1), new o0(R.drawable.search_music_filled, 2131745408, new TLRPC.TL_inputMessagesFilterMusic(), 3), new o0(R.drawable.search_voice_filled, 2131745405, new TLRPC.TL_inputMessagesFilterRoundVoice(), 5)};
     public static final Pattern k3 = Pattern.compile("20[0-9]{1,2}");
     public static final Pattern l3 = Pattern.compile("(\\w{3,}) ([0-9]{0,4})");
     public static final Pattern m3 = Pattern.compile("([0-9]{0,4}) (\\w{2,})");
@@ -77,7 +77,7 @@ public final class q0 extends pj0 implements a6 {
             return;
         }
         calendar.add(2, 1);
-        arrayList.add(new m0(timeInMillis2, hd.E0().v0().format(timeInMillis2), calendar.getTimeInMillis() - 1));
+        arrayList.add(new m0(timeInMillis2, id.E0().v0().format(timeInMillis2), calendar.getTimeInMillis() - 1));
     }
 
     public static void B1(String str, ArrayList arrayList) {
@@ -89,7 +89,7 @@ public final class q0 extends pj0 implements a6 {
         if (trim.length() < 3) {
             return;
         }
-        if (hd.M0(2131745709, null).toLowerCase().startsWith(trim) || "today".startsWith(trim)) {
+        if (id.M0(2131745711, null).toLowerCase().startsWith(trim) || "today".startsWith(trim)) {
             Calendar calendar = Calendar.getInstance();
             int i7 = calendar.get(1);
             int i10 = calendar.get(2);
@@ -97,10 +97,10 @@ public final class q0 extends pj0 implements a6 {
             calendar.set(i7, i10, i11, 0, 0, 0);
             long timeInMillis = calendar.getTimeInMillis();
             calendar.set(i7, i10, i11 + 1, 0, 0, 0);
-            arrayList.add(new m0(timeInMillis, hd.M0(2131745709, null), calendar.getTimeInMillis() - 1));
+            arrayList.add(new m0(timeInMillis, id.M0(2131745711, null), calendar.getTimeInMillis() - 1));
             return;
         }
-        if (hd.M0(2131745708, null).toLowerCase().startsWith(trim) || "yesterday".startsWith(trim)) {
+        if (id.M0(2131745710, null).toLowerCase().startsWith(trim) || "yesterday".startsWith(trim)) {
             Calendar calendar2 = Calendar.getInstance();
             int i12 = calendar2.get(1);
             int i13 = calendar2.get(2);
@@ -108,7 +108,7 @@ public final class q0 extends pj0 implements a6 {
             calendar2.set(i12, i13, i14, 0, 0, 0);
             long timeInMillis2 = calendar2.getTimeInMillis() - 86400000;
             calendar2.set(i12, i13, i14 + 1, 0, 0, 0);
-            arrayList.add(new m0(timeInMillis2, hd.M0(2131745708, null), calendar2.getTimeInMillis() - 86400001));
+            arrayList.add(new m0(timeInMillis2, id.M0(2131745710, null), calendar2.getTimeInMillis() - 86400001));
             return;
         }
         Calendar calendar3 = Calendar.getInstance();
@@ -117,7 +117,7 @@ public final class q0 extends pj0 implements a6 {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE", Locale.ENGLISH);
             for (int i16 = 0; i16 < 7; i16++) {
                 calendar3.set(7, i16);
-                if (hd.E0().B0().format(calendar3.getTime()).toLowerCase().startsWith(trim) || simpleDateFormat.format(calendar3.getTime()).toLowerCase().startsWith(trim)) {
+                if (id.E0().B0().format(calendar3.getTime()).toLowerCase().startsWith(trim) || simpleDateFormat.format(calendar3.getTime()).toLowerCase().startsWith(trim)) {
                     i15 = i16;
                     break;
                 }
@@ -136,7 +136,7 @@ public final class q0 extends pj0 implements a6 {
             calendar4.set(i17, i18, i19, 0, 0, 0);
             long timeInMillis4 = calendar4.getTimeInMillis();
             calendar4.set(i17, i18, i19 + 1, 0, 0, 0);
-            arrayList.add(new m0(timeInMillis4, hd.E0().B0().format(timeInMillis4), calendar4.getTimeInMillis() - 1));
+            arrayList.add(new m0(timeInMillis4, id.E0().B0().format(timeInMillis4), calendar4.getTimeInMillis() - 1));
             return;
         }
         Matcher matcher = n3.matcher(trim);
@@ -185,7 +185,7 @@ public final class q0 extends pj0 implements a6 {
                 calendar5.set(i20, parseInt4, parseInt3, 0, 0, 0);
                 long timeInMillis5 = calendar5.getTimeInMillis();
                 calendar5.set(i20, parseInt4, parseInt3 + 1, 0, 0, 0);
-                arrayList.add(new m0(timeInMillis5, hd.E0().D0().format(timeInMillis5), calendar5.getTimeInMillis() - 1));
+                arrayList.add(new m0(timeInMillis5, id.E0().D0().format(timeInMillis5), calendar5.getTimeInMillis() - 1));
                 return;
             }
             return;
@@ -256,14 +256,14 @@ public final class q0 extends pj0 implements a6 {
                 long timeInMillis9 = calendar8.getTimeInMillis();
                 if (timeInMillis9 <= timeInMillis8) {
                     calendar8.add(2, 1);
-                    arrayList.add(new m0(timeInMillis9, hd.E0().v0().format(timeInMillis9), calendar8.getTimeInMillis() - 1));
+                    arrayList.add(new m0(timeInMillis9, id.E0().v0().format(timeInMillis9), calendar8.getTimeInMillis() - 1));
                 }
             }
         }
     }
 
     public static int C1(String str) {
-        String[] strArr = {hd.M0(2131749085, null).toLowerCase(), hd.M0(2131750830, null).toLowerCase(), hd.M0(2131748682, null).toLowerCase(), hd.M0(2131754173, null).toLowerCase(), hd.M0(2131748661, null).toLowerCase(), hd.M0(2131749063, null).toLowerCase(), hd.M0(2131749065, null).toLowerCase(), hd.M0(2131753895, null).toLowerCase(), hd.M0(2131745566, null).toLowerCase(), hd.M0(2131747829, null).toLowerCase(), hd.M0(2131747834, null).toLowerCase(), hd.M0(2131751606, null).toLowerCase()};
+        String[] strArr = {id.M0(2131749087, null).toLowerCase(), id.M0(2131750830, null).toLowerCase(), id.M0(2131748684, null).toLowerCase(), id.M0(2131754173, null).toLowerCase(), id.M0(2131748663, null).toLowerCase(), id.M0(2131749065, null).toLowerCase(), id.M0(2131749067, null).toLowerCase(), id.M0(2131753895, null).toLowerCase(), id.M0(2131745568, null).toLowerCase(), id.M0(2131747831, null).toLowerCase(), id.M0(2131747836, null).toLowerCase(), id.M0(2131751606, null).toLowerCase()};
         String[] strArr2 = new String[12];
         Calendar calendar = Calendar.getInstance();
         for (int i7 = 1; i7 <= 12; i7++) {
@@ -297,9 +297,9 @@ public final class q0 extends pj0 implements a6 {
                     calendar.set(i13, i10, i7 + 2, 0, 0, 0);
                     long timeInMillis3 = calendar.getTimeInMillis() - 1;
                     if (i13 == i12) {
-                        arrayList.add(new m0(timeInMillis2, hd.E0().q0().format(timeInMillis2), timeInMillis3));
+                        arrayList.add(new m0(timeInMillis2, id.E0().q0().format(timeInMillis2), timeInMillis3));
                     } else {
-                        arrayList.add(new m0(timeInMillis2, hd.E0().D0().format(timeInMillis2), timeInMillis3));
+                        arrayList.add(new m0(timeInMillis2, id.E0().D0().format(timeInMillis2), timeInMillis3));
                     }
                 }
             }
@@ -319,14 +319,14 @@ public final class q0 extends pj0 implements a6 {
                 Object obj = arrayList.get(i7);
                 if (obj instanceof TLRPC.User) {
                     TLRPC.User user = (TLRPC.User) obj;
-                    o0 o0Var = new o0(R.drawable.search_users_filled, 4, p10.i(p10.s0).f().id == user.id ? hd.M0(2131745902, null) : g5.m(10, user.first_name, user.last_name));
+                    o0 o0Var = new o0(R.drawable.search_users_filled, 4, p10.i(p10.s0).f().id == user.id ? id.M0(2131745904, null) : g5.m(10, user.first_name, user.last_name));
                     o0Var.f = user;
                     arrayList4.add(o0Var);
                 } else if (obj instanceof TLRPC.Chat) {
                     TLRPC.Chat chat = (TLRPC.Chat) obj;
                     String str = chat.title;
                     if (str.length() > 12) {
-                        str = rf.b.q(str.substring(0, 10), "...");
+                        str = rf.b.r(str.substring(0, 10), "...");
                     }
                     o0 o0Var2 = new o0(R.drawable.search_users_filled, 4, str);
                     o0Var2.f = chat;

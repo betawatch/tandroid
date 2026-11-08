@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class by0 implements org.telegram.ui.Cells.l1 {
     public final /* synthetic */ boolean a;
@@ -186,7 +186,7 @@ public final class by0 implements org.telegram.ui.Cells.l1 {
 
     @Override // org.telegram.ui.Cells.l1
     public final String y(long j3) {
-        return org.telegram.messenger.hd.M0(this.a ? this.b ? 2131744278 : 2131744286 : 2131744280, null);
+        return org.telegram.messenger.id.M0(this.a ? this.b ? 2131744280 : 2131744288 : 2131744282, null);
     }
 
     @Override // org.telegram.ui.Cells.l1

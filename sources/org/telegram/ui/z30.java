@@ -19,7 +19,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class z30 extends FrameLayout {
     public final RectF D;
@@ -67,7 +67,7 @@ public final class z30 extends FrameLayout {
         ch0Var.setScaleType(ImageView.ScaleType.CENTER);
         ch0Var.setAnimation(zg0Var);
         ch0Var.setTag(this.r == 0.0d ? 1 : null);
-        addView(ch0Var, c8.ha.d(-2, 40.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 16, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(ch0Var, c8.ha.d(-2, 40.0f, (org.telegram.messenger.id.a0 ? 5 : 3) | 16, 0.0f, 0.0f, 0.0f, 0.0f));
         zg0Var.P(this.r == 0.0d ? 17 : 34);
         zg0Var.N(zg0Var.f - 1, false, true);
         TextView textView = new TextView(context);
@@ -81,8 +81,8 @@ public final class z30 extends FrameLayout {
         double H = org.telegram.messenger.t3.H(groupCallParticipant) / 100.0d;
         Locale locale = Locale.US;
         textView.setText(((int) (H > 0.0d ? Math.max(H, 1.0d) : 0.0d)) + "%");
-        textView.setPadding(org.telegram.messenger.hd.a0 ? 0 : org.telegram.messenger.g0.L(43.0f), 0, org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(43.0f) : 0, 0);
-        addView(textView, c8.ha.e(-2, -2, (org.telegram.messenger.hd.a0 ? 5 : 3) | 16));
+        textView.setPadding(org.telegram.messenger.id.a0 ? 0 : org.telegram.messenger.g0.L(43.0f), 0, org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(43.0f) : 0, 0);
+        addView(textView, c8.ha.e(-2, -2, (org.telegram.messenger.id.a0 ? 5 : 3) | 16));
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(org.telegram.messenger.g0.L(1.5f));
         paint.setStrokeCap(Paint.Cap.ROUND);

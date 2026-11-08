@@ -1,48 +1,59 @@
 package org.telegram.ui.Wallet;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import org.telegram.ui.Components.a80;
+import android.content.Context;
+import android.graphics.SurfaceTexture;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
-public final class b4 extends a80 {
-    public final Paint M;
-    public final /* synthetic */ d4 N;
+public final class b4 extends vg.r {
+    public final /* synthetic */ int D = 0;
+    public final /* synthetic */ Object E;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b4(d4 d4Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(f6Var);
-        this.N = d4Var;
-        Paint paint = new Paint(1);
-        this.M = paint;
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+    public b4(o8 o8Var, Context context, l lVar) {
+        super(context, lVar, 0);
+        this.E = o8Var;
     }
 
-    @Override // org.telegram.ui.Components.a80
-    public final void b(Canvas canvas, Path path) {
-        super.b(canvas, path);
-        d4 d4Var = this.N;
-        RectF rectF = d4Var.f;
-        if (d4Var.o0 != null) {
-            canvas.saveLayer(rectF, null);
-            d4Var.o0.c((org.telegram.messenger.g0.L(206.0f) - d4Var.o0.k()) / 2.0f, (rectF.bottom - org.telegram.messenger.g0.L(7.0f)) - d4Var.o0.i(), 1.0f, -1, canvas);
-            Shader shader = this.x.getShader();
-            Paint paint = this.M;
-            paint.setShader(shader);
-            canvas.drawRect(rectF, paint);
-            canvas.restore();
+    @Override // vg.r
+    public final void a() {
+        switch (this.D) {
+            case 0:
+                c4 c4Var = (c4) this.E;
+                c4Var.o = true;
+                setPaused(true);
+                setVisibility(8);
+                c4Var.a.invalidate();
+                break;
+            default:
+                setPaused(true);
+                setVisibility(8);
+                ((o8) this.E).a.setVisibility(0);
+                break;
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void invalidateSelf() {
-        super.invalidateSelf();
-        this.N.a.invalidate();
+    @Override // vg.r, android.view.TextureView.SurfaceTextureListener
+    public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+        switch (this.D) {
+            case 1:
+                ImageView imageView = ((o8) this.E).a;
+                super.onSurfaceTextureUpdated(surfaceTexture);
+                if (this.n && imageView.getVisibility() == 0) {
+                    imageView.setVisibility(4);
+                    break;
+                }
+                break;
+            default:
+                super.onSurfaceTextureUpdated(surfaceTexture);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b4(c4 c4Var, Context context, y3 y3Var) {
+        super(context, y3Var, 2);
+        this.E = c4Var;
     }
 }

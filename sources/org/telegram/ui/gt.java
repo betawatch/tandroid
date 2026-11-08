@@ -13,7 +13,7 @@ import java.util.Arrays;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class gt extends org.telegram.ui.Components.pj0 {
     public static final /* synthetic */ int w3 = 0;
@@ -244,7 +244,7 @@ public final class gt extends org.telegram.ui.Components.pj0 {
         arrayList2.add(new ct(0, false));
         long j3 = 0;
         int i16 = 1;
-        String a02 = this.q3 > 0 ? org.telegram.messenger.hd.a0(null, null, 2131742809, org.telegram.messenger.hd.E0().z0().format(A1())) : org.telegram.messenger.hd.a0(null, null, 2131748188, org.telegram.messenger.hd.E0().z0().format(A1()));
+        String a02 = this.q3 > 0 ? org.telegram.messenger.id.a0(null, null, 2131742811, org.telegram.messenger.id.E0().z0().format(A1())) : org.telegram.messenger.id.a0(null, null, 2131748190, org.telegram.messenger.id.E0().z0().format(A1()));
         arrayList2.add(new ct(1, a02));
         ArrayList arrayList3 = new ArrayList();
         int i17 = 0;
@@ -287,10 +287,10 @@ public final class gt extends org.telegram.ui.Components.pj0 {
                         int i20 = iArr[0];
                         int i21 = iArr[i15];
                         if (j11 != j10) {
-                            concat = org.telegram.messenger.hd.M0(kt.x[i18], null);
+                            concat = org.telegram.messenger.id.M0(kt.x[i18], null);
                         } else {
                             CharSequence[] charSequenceArr = new CharSequence[3];
-                            charSequenceArr[0] = org.telegram.messenger.hd.M0(kt.x[i18], null);
+                            charSequenceArr[0] = org.telegram.messenger.id.M0(kt.x[i18], null);
                             charSequenceArr[i15] = "  ";
                             charSequenceArr[c10] = spannableString2;
                             concat = TextUtils.concat(charSequenceArr);
@@ -364,12 +364,12 @@ public final class gt extends org.telegram.ui.Components.pj0 {
                     if (i30 == 0) {
                         if (j14 > j12 || i28 > 0) {
                             int i31 = i29 + 1;
-                            arrayList3.add(i31, ct.b(org.telegram.messenger.hd.H(',', "OutgoingCallsCount", i28), org.telegram.messenger.g0.i0(j14, false, false)));
+                            arrayList3.add(i31, ct.b(org.telegram.messenger.id.H(',', "OutgoingCallsCount", i28), org.telegram.messenger.g0.i0(j14, false, false)));
                             i29 = i31;
                         }
                         if (j13 > j12 || i27 > 0) {
                             i12 = i29 + 1;
-                            arrayList3.add(i12, ct.b(org.telegram.messenger.hd.H(',', "IncomingCallsCount", i27), org.telegram.messenger.g0.i0(j13, false, false)));
+                            arrayList3.add(i12, ct.b(org.telegram.messenger.id.H(',', "IncomingCallsCount", i27), org.telegram.messenger.g0.i0(j13, false, false)));
                             i11 = i12;
                         }
                         i11 = i29;
@@ -377,23 +377,23 @@ public final class gt extends org.telegram.ui.Components.pj0 {
                         if (i30 != 1) {
                             if (j14 > j12 || i28 > 0) {
                                 int i32 = i29 + 1;
-                                arrayList3.add(i32, ct.b(TextUtils.concat(spannableString, " ", org.telegram.messenger.g0.X2(org.telegram.messenger.hd.H(',', "FilesSentCount", i28))), org.telegram.messenger.g0.i0(j14, false, false)));
+                                arrayList3.add(i32, ct.b(TextUtils.concat(spannableString, " ", org.telegram.messenger.g0.X2(org.telegram.messenger.id.H(',', "FilesSentCount", i28))), org.telegram.messenger.g0.i0(j14, false, false)));
                                 i29 = i32;
                             }
                             if (j13 > j12 || i27 > 0) {
                                 i12 = i29 + 1;
-                                arrayList3.add(i12, ct.b(TextUtils.concat(spannableString4, " ", org.telegram.messenger.g0.X2(org.telegram.messenger.hd.H(',', "FilesReceivedCount", i27))), org.telegram.messenger.g0.i0(j13, false, false)));
+                                arrayList3.add(i12, ct.b(TextUtils.concat(spannableString4, " ", org.telegram.messenger.g0.X2(org.telegram.messenger.id.H(',', "FilesReceivedCount", i27))), org.telegram.messenger.g0.i0(j13, false, false)));
                                 i11 = i12;
                             }
                         } else {
                             if (j14 > j12 || i28 > 0) {
                                 int i33 = i29 + 1;
-                                arrayList3.add(i33, ct.b(TextUtils.concat(spannableString, " ", org.telegram.messenger.hd.M0(2131752651, null)), org.telegram.messenger.g0.i0(j14, false, false)));
+                                arrayList3.add(i33, ct.b(TextUtils.concat(spannableString, " ", org.telegram.messenger.id.M0(2131752651, null)), org.telegram.messenger.g0.i0(j14, false, false)));
                                 i29 = i33;
                             }
                             if (j13 > j12 || i27 > 0) {
                                 int i34 = i29 + 1;
-                                arrayList3.add(i34, ct.b(TextUtils.concat(spannableString4, " ", org.telegram.messenger.hd.M0(2131752652, null)), org.telegram.messenger.g0.i0(j13, false, false)));
+                                arrayList3.add(i34, ct.b(TextUtils.concat(spannableString4, " ", org.telegram.messenger.id.M0(2131752652, null)), org.telegram.messenger.g0.i0(j13, false, false)));
                                 i11 = i34;
                             }
                         }
@@ -405,13 +405,13 @@ public final class gt extends org.telegram.ui.Components.pj0 {
             }
             arrayList2.addAll(arrayList3);
             if (!this.t3) {
-                arrayList2.add(new ct(3, org.telegram.messenger.hd.M0(2131751676, null) + "\n"));
+                arrayList2.add(new ct(3, org.telegram.messenger.id.M0(2131751676, null) + "\n"));
             }
         }
         if (!this.t3) {
-            arrayList2.add(new ct(4, org.telegram.messenger.hd.M0(2131743972, null)));
-            arrayList2.add(new ct(-1, R.drawable.msg_filled_data_sent, -11565578, -13276952, org.telegram.messenger.hd.M0(2131752651, null), org.telegram.messenger.g0.i0(this.s3, false, false)));
-            arrayList2.add(new ct(-1, R.drawable.msg_filled_data_received, -11154873, -14175180, org.telegram.messenger.hd.M0(2131752652, null), org.telegram.messenger.g0.i0(this.r3, false, false)));
+            arrayList2.add(new ct(4, org.telegram.messenger.id.M0(2131743974, null)));
+            arrayList2.add(new ct(-1, R.drawable.msg_filled_data_sent, -11565578, -13276952, org.telegram.messenger.id.M0(2131752651, null), org.telegram.messenger.g0.i0(this.s3, false, false)));
+            arrayList2.add(new ct(-1, R.drawable.msg_filled_data_received, -11154873, -14175180, org.telegram.messenger.id.M0(2131752652, null), org.telegram.messenger.g0.i0(this.r3, false, false)));
         }
         if (arrayList3.isEmpty()) {
             i7 = 3;
@@ -423,28 +423,28 @@ public final class gt extends org.telegram.ui.Components.pj0 {
             if (arrayList3.isEmpty()) {
                 arrayList2.add(new ct(i7, false));
             }
-            arrayList2.add(new ct(-2, R.drawable.msg_download_settings, -11565578, -13276952, org.telegram.messenger.hd.M0(2131753771, null), null));
+            arrayList2.add(new ct(-2, R.drawable.msg_download_settings, -11565578, -13276952, org.telegram.messenger.id.M0(2131753771, null), null));
             int i35 = this.f3;
             if (i35 != 1) {
                 i10 = 3;
                 if (i35 != 3) {
                     str = null;
-                    M0 = org.telegram.messenger.hd.M0(2131753768, null);
+                    M0 = org.telegram.messenger.id.M0(2131753768, null);
                 } else {
                     str = null;
-                    M0 = org.telegram.messenger.hd.M0(2131753769, null);
+                    M0 = org.telegram.messenger.id.M0(2131753769, null);
                 }
             } else {
                 str = null;
                 i10 = 3;
-                M0 = org.telegram.messenger.hd.M0(2131753770, null);
+                M0 = org.telegram.messenger.id.M0(2131753770, null);
             }
             arrayList2.add(new ct(i10, M0));
         } else {
             str = null;
         }
         if (!arrayList3.isEmpty()) {
-            arrayList2.add(new ct(5, org.telegram.messenger.hd.M0(2131746092, str)));
+            arrayList2.add(new ct(5, org.telegram.messenger.id.M0(2131746094, str)));
         }
         arrayList2.add(new ct(3, false));
         org.telegram.ui.Components.yh0 yh0Var = this.h3;

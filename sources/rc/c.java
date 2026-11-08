@@ -3,34 +3,34 @@ package rc;
 import h2.j0;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static void a(f5.u uVar, f5.u uVar2) {
-        boolean k10;
+        boolean n10;
         int[] iArr = {0};
         do {
-            k10 = uVar.k(iArr[0]);
+            n10 = uVar.n(iArr[0]);
             iArr[0] = iArr[0] + 1;
-            int o4 = uVar.o(iArr, 2);
-            if (o4 == 0) {
+            int s5 = uVar.s(iArr, 2);
+            if (s5 == 0) {
                 int i7 = ((iArr[0] + 7) & (-8)) / 8;
-                int i10 = ((uVar.i(i7 + 1) & 255) * 256) + (uVar.i(i7) & 255);
-                int i11 = i7 + 4;
+                int l10 = ((uVar.l(i7 + 1) & 255) * 256) + (uVar.l(i7) & 255);
+                int i10 = i7 + 4;
                 uVar2.getClass();
                 byte[] array = ((ByteBuffer) uVar.c).array();
                 int capacity = ((ByteBuffer) uVar2.c).capacity();
-                int i12 = uVar2.b + i10;
-                if (capacity < i12) {
-                    uVar2.h(i12 + 1024);
+                int i11 = uVar2.b + l10;
+                if (capacity < i11) {
+                    uVar2.i(i11 + 1024);
                 }
-                ((ByteBuffer) uVar2.c).put(array, i11, i10);
-                uVar2.b += i10;
-                iArr[0] = (i11 + i10) * 8;
-            } else if (o4 == 1) {
+                ((ByteBuffer) uVar2.c).put(array, i10, l10);
+                uVar2.b += l10;
+                iArr[0] = (i10 + l10) * 8;
+            } else if (s5 == 1) {
                 b(uVar, iArr, uVar2, g.e, f.e);
             } else {
-                if (o4 != 2) {
+                if (s5 != 2) {
                     throw new ab.a0(String.format("[%s] Bad compression type '11' at the bit index '%d'.", c.class.getSimpleName(), Integer.valueOf(iArr[0])));
                 }
                 j0[] j0VarArr = new j0[2];
@@ -38,9 +38,9 @@ public abstract class c {
                 b(uVar, iArr, uVar2, j0VarArr[0], j0VarArr[1]);
             }
             if (uVar.b <= iArr[0] / 8) {
-                k10 = true;
+                n10 = true;
             }
-        } while (!k10);
+        } while (!n10);
     }
 
     public static void b(f5.u uVar, int[] iArr, f5.u uVar2, j0 j0Var, j0 j0Var2) {
@@ -61,13 +61,13 @@ public abstract class c {
                     if (i7 <= i12) {
                         i12 = i10;
                     }
-                    bArr[i11] = uVar2.i(i12);
+                    bArr[i11] = uVar2.l(i12);
                     i11++;
                     i12++;
                 }
-                uVar2.n(bArr);
+                uVar2.r(bArr);
             } else {
-                uVar2.m(m10);
+                uVar2.q(m10);
             }
         }
     }

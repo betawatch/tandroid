@@ -45,7 +45,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.jk0;
 import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.lt;
+import org.telegram.ui.Components.mt;
 import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.rx0;
@@ -67,13 +67,13 @@ import org.telegram.ui.jy0;
 import org.telegram.ui.ke;
 import org.telegram.ui.lk0;
 import org.telegram.ui.lo0;
-import org.telegram.ui.m81;
+import org.telegram.ui.n81;
 import org.telegram.ui.ny0;
 import org.telegram.ui.oy0;
 import org.telegram.ui.qf;
 import org.telegram.ui.sj0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a3 implements Runnable {
     public final /* synthetic */ int a;
@@ -95,44 +95,44 @@ public final /* synthetic */ class a3 implements Runnable {
     }
 
     private final void a() {
-        org.telegram.ui.Wallet.f2 f2Var = (org.telegram.ui.Wallet.f2) this.b;
+        org.telegram.ui.Wallet.e2 e2Var = (org.telegram.ui.Wallet.e2) this.b;
         String str = (String) this.c;
         c20 c20Var = (c20) this.e;
-        org.telegram.ui.Wallet.b2 b2Var = (org.telegram.ui.Wallet.b2) this.f;
-        org.telegram.ui.Wallet.k0 k0Var = (org.telegram.ui.Wallet.k0) this.h;
+        org.telegram.ui.Wallet.a2 a2Var = (org.telegram.ui.Wallet.a2) this.f;
+        org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) this.h;
         TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) this.d;
         if (str != null) {
             c20Var.a(str);
-        } else if (!f2Var.A(b2Var) || f2Var.j(b2Var)) {
+        } else if (!e2Var.A(a2Var) || e2Var.j(a2Var)) {
             c20Var.a("Request expired or wallet changed");
         } else {
-            f2Var.f.sendRequestTyped(sendtransfer, new d3.b(1), new t3(f2Var, c20Var, b2Var, k0Var, sendtransfer, 6));
+            e2Var.f.sendRequestTyped(sendtransfer, new d3.b(1), new t3(e2Var, c20Var, a2Var, j0Var, sendtransfer, 6));
         }
     }
 
     private final void b() {
-        org.telegram.ui.Wallet.u2 u2Var = (org.telegram.ui.Wallet.u2) this.b;
+        org.telegram.ui.Wallet.t2 t2Var = (org.telegram.ui.Wallet.t2) this.b;
         int[] iArr = (int[]) this.c;
         TextView textView = (TextView) this.e;
-        org.telegram.ui.Wallet.g7 g7Var = (org.telegram.ui.Wallet.g7) this.f;
-        org.telegram.ui.Wallet.n0 n0Var = (org.telegram.ui.Wallet.n0) this.h;
-        org.telegram.ui.Wallet.e2 e2Var = (org.telegram.ui.Wallet.e2) this.d;
-        if (u2Var.e || u2Var.d) {
+        org.telegram.ui.Wallet.f7 f7Var = (org.telegram.ui.Wallet.f7) this.f;
+        org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) this.h;
+        org.telegram.ui.Wallet.d2 d2Var = (org.telegram.ui.Wallet.d2) this.d;
+        if (t2Var.e || t2Var.d) {
             return;
         }
         iArr[0] = 0;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(" ");
         spannableStringBuilder.setSpan(new b80(org.telegram.messenger.g0.L(80.0f), textView), 0, spannableStringBuilder.length(), 33);
-        textView.setText(org.telegram.messenger.hd.V(null, null, 2131743121, spannableStringBuilder));
-        g7Var.run();
-        WalletEngine2 walletEngine2 = n0Var.b;
+        textView.setText(org.telegram.messenger.id.V(null, null, 2131743123, spannableStringBuilder));
+        f7Var.run();
+        WalletEngine2 walletEngine2 = m0Var.b;
         if (walletEngine2 != null) {
-            walletEngine2.previewTonConnect(e2Var, new org.telegram.ui.Wallet.f1(u2Var, iArr, n0Var, textView, e2Var, g7Var, 4));
+            walletEngine2.previewTonConnect(d2Var, new org.telegram.ui.Wallet.e1(t2Var, iArr, m0Var, textView, d2Var, f7Var, 4));
             return;
         }
         iArr[0] = 3;
-        textView.setText(org.telegram.messenger.hd.M0(2131742987, null));
-        g7Var.run();
+        textView.setText(org.telegram.messenger.id.M0(2131742989, null));
+        f7Var.run();
     }
 
     private final void c() {
@@ -146,7 +146,7 @@ public final /* synthetic */ class a3 implements Runnable {
         if (tLObject == null) {
             if (tL_error != null) {
                 if ("URL_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                    new org.telegram.ui.Components.hc(x0Var, f6Var).I(R.raw.error, org.telegram.messenger.hd.M0(2131753128, null), org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.uj, f6Var), org.telegram.messenger.hd.a0(null, null, 2131753130, str2))).j();
+                    new org.telegram.ui.Components.hc(x0Var, f6Var).I(R.raw.error, org.telegram.messenger.id.M0(2131753128, null), org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.uj, f6Var), org.telegram.messenger.id.a0(null, null, 2131753130, str2))).j();
                     return;
                 } else {
                     new org.telegram.ui.Components.hc(x0Var, f6Var).f0(tL_error, false);
@@ -232,7 +232,7 @@ public final /* synthetic */ class a3 implements Runnable {
                     qp.s1(k7Var.a).S3(tL_users_userFull.chats, false);
                     TLRPC.UserFull userFull = tL_users_userFull.full_user;
                     if (userFull != null && (disallowedGiftsSettings = userFull.disallowed_stargifts) != null && disallowedGiftsSettings.disallow_unique_stargifts) {
-                        org.telegram.messenger.camera.q.s(org.telegram.messenger.hd.a0(null, null, 2131743743, org.telegram.messenger.m5.t(l10.longValue())), new org.telegram.ui.Components.hc(f1VarArr[0].c, k7Var.I0), R.raw.error, 36);
+                        org.telegram.messenger.camera.q.s(org.telegram.messenger.id.a0(null, null, 2131743745, org.telegram.messenger.m5.t(l10.longValue())), new org.telegram.ui.Components.hc(f1VarArr[0].c, k7Var.I0), R.raw.error, 36);
                         break;
                     } else {
                         sVar.run();
@@ -267,7 +267,7 @@ public final /* synthetic */ class a3 implements Runnable {
                     linearLayout.setOrientation(1);
                     linearLayout.setPadding(org.telegram.messenger.g0.L(23.0f), 0, org.telegram.messenger.g0.L(23.0f), 0);
                     TextView b10 = c8.qa.b(k7Var2.getContext(), 16.0f, org.telegram.ui.ActionBar.k6.j5, false, null);
-                    b10.setText(org.telegram.messenger.hd.M0(2131750040, null));
+                    b10.setText(org.telegram.messenger.id.M0(2131750042, null));
                     linearLayout.addView(b10, c8.ha.k(0.0f, 0.0f, 0.0f, 16.0f, -1, -2));
                     tx0 tx0Var = new tx0(k7Var2.getContext(), k7Var2.I0);
                     rx0 a10 = tx0Var.a(charSequence);
@@ -277,10 +277,10 @@ public final /* synthetic */ class a3 implements Runnable {
                     lVar.setGravity(17);
                     linearLayout.addView(tx0Var, c8.ha.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, k7Var2.getContext(), k7Var2.I0);
-                    alertDialog$Builder.a.R = org.telegram.messenger.hd.M0(2131750039, null);
+                    alertDialog$Builder.a.R = org.telegram.messenger.id.M0(2131750041, null);
                     alertDialog$Builder.o(linearLayout);
-                    alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
-                    alertDialog$Builder.k(dd.T0(org.telegram.messenger.hd.a0(null, null, 2131750041, Integer.valueOf((int) j3))), new org.telegram.ui.ActionBar.r1() { // from class: bi.x3
+                    alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
+                    alertDialog$Builder.k(dd.T0(org.telegram.messenger.id.a0(null, null, 2131750043, Integer.valueOf((int) j3))), new org.telegram.ui.ActionBar.r1() { // from class: bi.x3
                         @Override // org.telegram.ui.ActionBar.r1
                         public final void g(org.telegram.ui.ActionBar.u1 u1Var, int i16) {
                             vf.b h = u1Var.h(-1, true, true);
@@ -302,22 +302,22 @@ public final /* synthetic */ class a3 implements Runnable {
             case 2:
                 ea eaVar = (ea) obj6;
                 List list = (List) obj4;
-                org.telegram.ui.Wallet.v1 v1Var = (org.telegram.ui.Wallet.v1) obj5;
+                org.telegram.ui.Wallet.u1 u1Var = (org.telegram.ui.Wallet.u1) obj5;
                 TLRPC.TL_inputStorePaymentStarsGiveaway tL_inputStorePaymentStarsGiveaway = (TLRPC.TL_inputStorePaymentStarsGiveaway) obj3;
                 f5.f fVar = (f5.f) obj2;
                 Activity activity = (Activity) obj;
                 if (list.isEmpty()) {
-                    org.telegram.messenger.g0.h3(new b8(v1Var, i14));
+                    org.telegram.messenger.g0.h3(new b8(u1Var, i14));
                     break;
                 } else {
                     f5.l lVar2 = (f5.l) list.get(0);
                     if (lVar2.a() == null) {
-                        org.telegram.messenger.g0.h3(new b8(v1Var, 1));
+                        org.telegram.messenger.g0.h3(new b8(u1Var, 1));
                         break;
                     } else {
                         TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
                         tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentStarsGiveaway;
-                        ConnectionsManager.getInstance(eaVar.a).sendRequest(tL_payments_canPurchaseStore, new c8(lVar2, fVar, v1Var, activity, tL_inputStorePaymentStarsGiveaway, list, 0));
+                        ConnectionsManager.getInstance(eaVar.a).sendRequest(tL_payments_canPurchaseStore, new c8(lVar2, fVar, u1Var, activity, tL_inputStorePaymentStarsGiveaway, list, 0));
                         break;
                     }
                 }
@@ -507,7 +507,7 @@ public final /* synthetic */ class a3 implements Runnable {
                     });
                     duration.addListener(new org.telegram.ui.a9(atomicBoolean, w70Var, str5));
                     duration.start();
-                    new org.telegram.ui.Components.hc(v2Var.E, f6Var).I(R.raw.linkbroken, org.telegram.messenger.hd.M0(2131749474, null), org.telegram.messenger.hd.M0(2131749475, null)).j();
+                    new org.telegram.ui.Components.hc(v2Var.E, f6Var).I(R.raw.linkbroken, org.telegram.messenger.id.M0(2131749476, null), org.telegram.messenger.id.M0(2131749477, null)).j();
                     break;
                 }
                 break;
@@ -554,7 +554,7 @@ public final /* synthetic */ class a3 implements Runnable {
                     }
                     if (org.telegram.messenger.t3.x(chat, channelParticipant, 6) || org.telegram.messenger.t3.x(chat, channelParticipant, 7)) {
                         str = null;
-                        org.telegram.ui.Cells.f1.t(null, 2131746064, arrayList5, R.drawable.msg_block2, arrayList6);
+                        org.telegram.ui.Cells.f1.t(null, 2131746066, arrayList5, R.drawable.msg_block2, arrayList6);
                         arrayList7.add(33);
                     } else {
                         str = null;
@@ -573,7 +573,7 @@ public final /* synthetic */ class a3 implements Runnable {
                 k60 I = k60.I(anVar, q1Var);
                 jk0 jk0Var = new jk0(anVar.getParentActivity(), anVar.xa);
                 I.p = new ge(jk0Var, i14);
-                I.c(R.drawable.msg_copy, org.telegram.messenger.hd.M0(2131751766, null), new ke(anVar, jk0Var, (String) obj2, 2), false);
+                I.c(R.drawable.msg_copy, org.telegram.messenger.id.M0(2131751766, null), new ke(anVar, jk0Var, (String) obj2, 2), false);
                 if (tLObject8 instanceof TLRPC.TL_payments_bankCardData) {
                     TLRPC.TL_payments_bankCardData tL_payments_bankCardData = (TLRPC.TL_payments_bankCardData) tLObject8;
                     ArrayList<TLRPC.TL_bankCardOpenUrl> arrayList8 = tL_payments_bankCardData.open_urls;
@@ -607,7 +607,7 @@ public final /* synthetic */ class a3 implements Runnable {
                 } else {
                     dVar2.setLoading(false);
                     p6Var2.dismiss();
-                    org.telegram.messenger.k5.o(null, 2131746952, new org.telegram.ui.Components.hc(org.telegram.ui.Components.xa.a(context), f6Var2), R.raw.chats_infotip, 36);
+                    org.telegram.messenger.k5.o(null, 2131746954, new org.telegram.ui.Components.hc(org.telegram.ui.Components.xa.a(context), f6Var2), R.raw.chats_infotip, 36);
                     runnable2.run();
                     break;
                 }
@@ -754,14 +754,14 @@ public final /* synthetic */ class a3 implements Runnable {
                     if ("PASSWORD_HASH_INVALID".equals(tL_error8.text)) {
                         if (inputCheckPasswordSRP == null) {
                             AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(a21Var.b2);
-                            String M0 = org.telegram.messenger.hd.M0(org.telegram.messenger.t3.V(a21Var.P1) ? 2131751323 : 2131751316, null);
-                            org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder2.a;
-                            u1Var.R = M0;
-                            u1Var.T = org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131751293, a21Var.P1.title, t10.j(user3, true)));
-                            alertDialog$Builder2.k(org.telegram.messenger.hd.M0(2131751297, null), new lk0(14, a21Var, user3));
-                            alertDialog$Builder2.h(org.telegram.messenger.hd.M0(2131752589, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.r11
+                            String M0 = org.telegram.messenger.id.M0(org.telegram.messenger.t3.V(a21Var.P1) ? 2131751323 : 2131751316, null);
+                            org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder2.a;
+                            u1Var2.R = M0;
+                            u1Var2.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131751293, a21Var.P1.title, t10.j(user3, true)));
+                            alertDialog$Builder2.k(org.telegram.messenger.id.M0(2131751297, null), new lk0(14, a21Var, user3));
+                            alertDialog$Builder2.h(org.telegram.messenger.id.M0(2131752589, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.r11
                                 @Override // org.telegram.ui.ActionBar.r1
-                                public final void g(org.telegram.ui.ActionBar.u1 u1Var2, int i22) {
+                                public final void g(org.telegram.ui.ActionBar.u1 u1Var3, int i22) {
                                     switch (i14) {
                                         case 0:
                                             a21Var.Z1.setLoading(false);
@@ -772,7 +772,7 @@ public final /* synthetic */ class a3 implements Runnable {
                                             org.telegram.ui.ActionBar.f2 T3 = LaunchActivity.T();
                                             if (T3 != null) {
                                                 a21Var2.dismiss();
-                                                T3.presentFragment(new ya1(6, null));
+                                                T3.presentFragment(new za1(6, null));
                                                 break;
                                             }
                                             break;
@@ -806,7 +806,7 @@ public final /* synthetic */ class a3 implements Runnable {
                             org.telegram.ui.ActionBar.f2 T4 = LaunchActivity.T();
                             if (T4 != null) {
                                 a21Var.dismiss();
-                                T4.presentFragment(new m81(1));
+                                T4.presentFragment(new n81(1));
                                 break;
                             }
                         } else {
@@ -821,7 +821,7 @@ public final /* synthetic */ class a3 implements Runnable {
                             twoStepVerificationActivity.t0();
                         }
                         AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(a21Var.b2);
-                        alertDialog$Builder3.a.R = org.telegram.messenger.hd.M0(2131751298, null);
+                        alertDialog$Builder3.a.R = org.telegram.messenger.id.M0(2131751298, null);
                         LinearLayout linearLayout2 = new LinearLayout(a21Var.b2);
                         linearLayout2.setPadding(org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(24.0f), 0);
                         linearLayout2.setOrientation(1);
@@ -830,7 +830,7 @@ public final /* synthetic */ class a3 implements Runnable {
                         int i22 = org.telegram.ui.ActionBar.k6.j5;
                         org.telegram.ui.ActionBar.r6.V(textView3, i22, null);
                         textView3.setTextSize(1, 16.0f);
-                        textView3.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 48);
+                        textView3.setGravity((org.telegram.messenger.id.a0 ? 5 : 3) | 48);
                         if (org.telegram.messenger.t3.V(a21Var.P1)) {
                             org.telegram.messenger.k5.r(null, null, 2131751284, new Object[]{t10.j(user3, true)}, textView3);
                         } else {
@@ -842,15 +842,15 @@ public final /* synthetic */ class a3 implements Runnable {
                         linearLayout2.addView(linearLayout3, c8.ha.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
                         ImageView imageView = new ImageView(a21Var.b2);
                         imageView.setImageResource(R.drawable.list_circle);
-                        imageView.setPadding(org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(11.0f) : 0, org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.hd.a0 ? 0 : org.telegram.messenger.g0.L(11.0f), 0);
+                        imageView.setPadding(org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(11.0f) : 0, org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.id.a0 ? 0 : org.telegram.messenger.g0.L(11.0f), 0);
                         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
                         org.telegram.ui.ActionBar.r6.t(imageView, i22, null, mode);
                         TextView textView4 = new TextView(a21Var.b2);
                         org.telegram.ui.ActionBar.r6.V(textView4, i22, null);
                         textView4.setTextSize(1, 16.0f);
-                        textView4.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 48);
-                        textView4.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131751301, null)));
-                        if (org.telegram.messenger.hd.a0) {
+                        textView4.setGravity((org.telegram.messenger.id.a0 ? 5 : 3) | 48);
+                        textView4.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131751301, null)));
+                        if (org.telegram.messenger.id.a0) {
                             linearLayout3.addView(textView4, c8.ha.o(-1, -2));
                             linearLayout3.addView(imageView, c8.ha.r(-2, -2, 5));
                         } else {
@@ -862,14 +862,14 @@ public final /* synthetic */ class a3 implements Runnable {
                         linearLayout2.addView(linearLayout4, c8.ha.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
                         ImageView imageView2 = new ImageView(a21Var.b2);
                         imageView2.setImageResource(R.drawable.list_circle);
-                        imageView2.setPadding(org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(11.0f) : 0, org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.hd.a0 ? 0 : org.telegram.messenger.g0.L(11.0f), 0);
+                        imageView2.setPadding(org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(11.0f) : 0, org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.id.a0 ? 0 : org.telegram.messenger.g0.L(11.0f), 0);
                         org.telegram.ui.ActionBar.r6.t(imageView2, i22, null, mode);
                         TextView textView5 = new TextView(a21Var.b2);
                         org.telegram.ui.ActionBar.r6.V(textView5, i22, null);
                         textView5.setTextSize(1, 16.0f);
-                        textView5.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 48);
-                        textView5.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131751300, null)));
-                        if (org.telegram.messenger.hd.a0) {
+                        textView5.setGravity((org.telegram.messenger.id.a0 ? 5 : 3) | 48);
+                        textView5.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131751300, null)));
+                        if (org.telegram.messenger.id.a0) {
                             linearLayout4.addView(textView5, c8.ha.o(-1, -2));
                             i7 = 5;
                             linearLayout4.addView(imageView2, c8.ha.r(-2, -2, 5));
@@ -880,9 +880,9 @@ public final /* synthetic */ class a3 implements Runnable {
                         }
                         if ("PASSWORD_MISSING".equals(tL_error8.text)) {
                             final int i23 = 1;
-                            alertDialog$Builder3.k(org.telegram.messenger.hd.M0(2131751292, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.r11
+                            alertDialog$Builder3.k(org.telegram.messenger.id.M0(2131751292, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.r11
                                 @Override // org.telegram.ui.ActionBar.r1
-                                public final void g(org.telegram.ui.ActionBar.u1 u1Var2, int i222) {
+                                public final void g(org.telegram.ui.ActionBar.u1 u1Var3, int i222) {
                                     switch (i23) {
                                         case 0:
                                             a21Var.Z1.setLoading(false);
@@ -893,7 +893,7 @@ public final /* synthetic */ class a3 implements Runnable {
                                             org.telegram.ui.ActionBar.f2 T32 = LaunchActivity.T();
                                             if (T32 != null) {
                                                 a21Var2.dismiss();
-                                                T32.presentFragment(new ya1(6, null));
+                                                T32.presentFragment(new za1(6, null));
                                                 break;
                                             }
                                             break;
@@ -907,9 +907,9 @@ public final /* synthetic */ class a3 implements Runnable {
                                 }
                             });
                             final int i24 = 2;
-                            alertDialog$Builder3.h(org.telegram.messenger.hd.M0(2131752589, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.r11
+                            alertDialog$Builder3.h(org.telegram.messenger.id.M0(2131752589, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.r11
                                 @Override // org.telegram.ui.ActionBar.r1
-                                public final void g(org.telegram.ui.ActionBar.u1 u1Var2, int i222) {
+                                public final void g(org.telegram.ui.ActionBar.u1 u1Var3, int i222) {
                                     switch (i24) {
                                         case 0:
                                             a21Var.Z1.setLoading(false);
@@ -920,7 +920,7 @@ public final /* synthetic */ class a3 implements Runnable {
                                             org.telegram.ui.ActionBar.f2 T32 = LaunchActivity.T();
                                             if (T32 != null) {
                                                 a21Var2.dismiss();
-                                                T32.presentFragment(new ya1(6, null));
+                                                T32.presentFragment(new za1(6, null));
                                                 break;
                                             }
                                             break;
@@ -937,12 +937,12 @@ public final /* synthetic */ class a3 implements Runnable {
                             TextView textView6 = new TextView(a21Var.b2);
                             org.telegram.ui.ActionBar.r6.V(textView6, i22, null);
                             textView6.setTextSize(1, 16.0f);
-                            org.telegram.messenger.k5.m(textView6, (org.telegram.messenger.hd.a0 ? i7 : 3) | 48, null, 2131751299);
+                            org.telegram.messenger.k5.m(textView6, (org.telegram.messenger.id.a0 ? i7 : 3) | 48, null, 2131751299);
                             linearLayout2.addView(textView6, c8.ha.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
                             final int i25 = 3;
-                            alertDialog$Builder3.h(org.telegram.messenger.hd.M0(2131747830, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.r11
+                            alertDialog$Builder3.h(org.telegram.messenger.id.M0(2131747832, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.r11
                                 @Override // org.telegram.ui.ActionBar.r1
-                                public final void g(org.telegram.ui.ActionBar.u1 u1Var2, int i222) {
+                                public final void g(org.telegram.ui.ActionBar.u1 u1Var3, int i222) {
                                     switch (i25) {
                                         case 0:
                                             a21Var.Z1.setLoading(false);
@@ -953,7 +953,7 @@ public final /* synthetic */ class a3 implements Runnable {
                                             org.telegram.ui.ActionBar.f2 T32 = LaunchActivity.T();
                                             if (T32 != null) {
                                                 a21Var2.dismiss();
-                                                T32.presentFragment(new ya1(6, null));
+                                                T32.presentFragment(new za1(6, null));
                                                 break;
                                             }
                                             break;
@@ -973,56 +973,56 @@ public final /* synthetic */ class a3 implements Runnable {
                 }
                 break;
             case 19:
-                org.telegram.ui.Wallet.f2 f2Var = (org.telegram.ui.Wallet.f2) obj6;
-                org.telegram.ui.Wallet.b2 b2Var = (org.telegram.ui.Wallet.b2) obj4;
-                org.telegram.ui.Wallet.k0 k0Var = (org.telegram.ui.Wallet.k0) obj5;
+                org.telegram.ui.Wallet.e2 e2Var = (org.telegram.ui.Wallet.e2) obj6;
+                org.telegram.ui.Wallet.a2 a2Var = (org.telegram.ui.Wallet.a2) obj4;
+                org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) obj5;
                 org.telegram.ui.Wallet.t tVar = (org.telegram.ui.Wallet.t) obj3;
                 JSONObject jSONObject = (JSONObject) obj2;
                 String str7 = (String) obj;
-                if (!f2Var.A(b2Var) || f2Var.j(b2Var)) {
-                    f2Var.y(b2Var, k0Var, null, 0, "Request expired or wallet changed", tVar);
+                if (!e2Var.A(a2Var) || e2Var.j(a2Var)) {
+                    e2Var.y(a2Var, j0Var, null, 0, "Request expired or wallet changed", tVar);
                     break;
                 } else {
-                    f2Var.y(b2Var, k0Var, jSONObject, jSONObject == null ? 0 : -1, str7, tVar);
+                    e2Var.y(a2Var, j0Var, jSONObject, jSONObject == null ? 0 : -1, str7, tVar);
                     break;
                 }
                 break;
             case 20:
-                org.telegram.ui.Wallet.f2 f2Var2 = (org.telegram.ui.Wallet.f2) obj6;
+                org.telegram.ui.Wallet.e2 e2Var2 = (org.telegram.ui.Wallet.e2) obj6;
                 byte[] bArr2 = (byte[]) obj5;
                 org.telegram.ui.Wallet.t tVar2 = (org.telegram.ui.Wallet.t) obj3;
                 TL_wallet.tonConnectSession tonconnectsession = (TL_wallet.tonConnectSession) obj2;
-                org.telegram.ui.Wallet.c2 c2Var = (org.telegram.ui.Wallet.c2) obj;
-                org.telegram.ui.Wallet.n0 n0Var = f2Var2.b;
-                if (!TextUtils.equals((String) obj4, n0Var.t()) || !Arrays.equals(bArr2, n0Var.y())) {
+                org.telegram.ui.Wallet.b2 b2Var = (org.telegram.ui.Wallet.b2) obj;
+                org.telegram.ui.Wallet.m0 m0Var2 = e2Var2.b;
+                if (!TextUtils.equals((String) obj4, m0Var2.t()) || !Arrays.equals(bArr2, m0Var2.y())) {
                     tVar2.a("Wallet or TON Connect session changed. Open the request again.");
                     break;
                 } else {
                     TL_wallet.tonConnectCloseSession tonconnectclosesession = new TL_wallet.tonConnectCloseSession();
                     tonconnectclosesession.session_id = tonconnectsession.id;
-                    tonconnectclosesession.body = c2Var.c;
-                    f2Var2.f.sendRequestTyped(tonconnectclosesession, new d3.b(i13), new org.telegram.ui.Wallet.d(tVar2, i12));
+                    tonconnectclosesession.body = b2Var.c;
+                    e2Var2.f.sendRequestTyped(tonconnectclosesession, new d3.b(i13), new org.telegram.ui.Wallet.d(tVar2, i12));
                     break;
                 }
                 break;
             case 21:
                 byte[] bArr3 = (byte[]) obj5;
-                org.telegram.ui.Wallet.c2 c2Var2 = (org.telegram.ui.Wallet.c2) obj3;
-                byte[] bArr4 = c2Var2.b;
-                org.telegram.ui.Wallet.v1 v1Var2 = (org.telegram.ui.Wallet.v1) obj2;
+                org.telegram.ui.Wallet.b2 b2Var2 = (org.telegram.ui.Wallet.b2) obj3;
+                byte[] bArr4 = b2Var2.b;
+                org.telegram.ui.Wallet.u1 u1Var3 = (org.telegram.ui.Wallet.u1) obj2;
                 TL_wallet.tonConnectSession tonconnectsession2 = (TL_wallet.tonConnectSession) obj;
-                org.telegram.ui.Wallet.n0 n0Var2 = ((org.telegram.ui.Wallet.f2) obj6).b;
-                if (!TextUtils.equals((String) obj4, n0Var2.t()) || !Arrays.equals(bArr3, n0Var2.y())) {
+                org.telegram.ui.Wallet.m0 m0Var3 = ((org.telegram.ui.Wallet.e2) obj6).b;
+                if (!TextUtils.equals((String) obj4, m0Var3.t()) || !Arrays.equals(bArr3, m0Var3.y())) {
                     Arrays.fill(bArr4, (byte) 0);
-                    v1Var2.a(null, "Wallet changed. Open the request again.");
+                    u1Var3.a(null, "Wallet changed. Open the request again.");
                     break;
                 } else {
                     TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession = new TL_wallet.inputTonConnectOauthSession();
                     inputtonconnectoauthsession.session_id = tonconnectsession2.id;
                     inputtonconnectoauthsession.challenge_answer = bArr4;
-                    inputtonconnectoauthsession.body = c2Var2.c;
-                    inputtonconnectoauthsession.proof = c2Var2.d;
-                    v1Var2.a(inputtonconnectoauthsession, null);
+                    inputtonconnectoauthsession.body = b2Var2.c;
+                    inputtonconnectoauthsession.proof = b2Var2.d;
+                    u1Var3.a(inputtonconnectoauthsession, null);
                     break;
                 }
             case 22:
@@ -1041,7 +1041,7 @@ public final /* synthetic */ class a3 implements Runnable {
                 d();
                 break;
             default:
-                final zh.h1 h1Var = (zh.h1) obj6;
+                final zh.g1 g1Var2 = (zh.g1) obj6;
                 TLObject tLObject11 = (TLObject) obj4;
                 ub ubVar = (ub) obj3;
                 final c20 c20Var3 = (c20) obj2;
@@ -1051,33 +1051,33 @@ public final /* synthetic */ class a3 implements Runnable {
                     ubVar.run();
                     break;
                 } else if (tLObject11 instanceof TL_stars.checkCanSendGiftResultFail) {
-                    AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(0, h1Var.getContext(), h1Var.I0);
-                    String M02 = org.telegram.messenger.hd.M0(2131749751, null);
-                    org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder4.a;
-                    u1Var2.R = M02;
-                    u1Var2.T = ij.h0(((TL_stars.checkCanSendGiftResultFail) tLObject11).reason, false);
-                    alertDialog$Builder4.k(org.telegram.messenger.hd.M0(2131747830, null), null);
+                    AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(0, g1Var2.getContext(), g1Var2.I0);
+                    String M02 = org.telegram.messenger.id.M0(2131749753, null);
+                    org.telegram.ui.ActionBar.u1 u1Var4 = alertDialog$Builder4.a;
+                    u1Var4.R = M02;
+                    u1Var4.T = ij.h0(((TL_stars.checkCanSendGiftResultFail) tLObject11).reason, false);
+                    alertDialog$Builder4.k(org.telegram.messenger.id.M0(2131747832, null), null);
                     final org.telegram.ui.ActionBar.u1 p10 = alertDialog$Builder4.p();
-                    final lt ltVar = p10.n;
-                    if (ltVar != null) {
-                        ltVar.setOnLinkPressListener(new v70() { // from class: zh.o0
+                    final mt mtVar = p10.n;
+                    if (mtVar != null) {
+                        mtVar.setOnLinkPressListener(new v70() { // from class: zh.n0
                             @Override // org.telegram.ui.Components.v70
                             public final void a(ClickableSpan clickableSpan) {
-                                h1 h1Var2 = h1.this;
-                                h1Var2.getClass();
+                                g1 g1Var3 = g1.this;
+                                g1Var3.getClass();
                                 p10.dismiss();
                                 c20 c20Var4 = c20Var3;
                                 if (c20Var4 != null) {
                                     c20Var4.a(Boolean.FALSE);
                                 }
-                                h1Var2.dismiss();
-                                clickableSpan.onClick(ltVar);
+                                g1Var3.dismiss();
+                                clickableSpan.onClick(mtVar);
                             }
                         });
                         break;
                     }
                 } else if (tL_error9 != null) {
-                    new org.telegram.ui.Components.hc(h1Var.c, h1Var.I0).f0(tL_error9, false);
+                    new org.telegram.ui.Components.hc(g1Var2.c, g1Var2.I0).f0(tL_error9, false);
                     break;
                 }
                 break;
@@ -1164,9 +1164,9 @@ public final /* synthetic */ class a3 implements Runnable {
         this.h = str2;
     }
 
-    public /* synthetic */ a3(zh.h1 h1Var, org.telegram.ui.ActionBar.u1 u1Var, TLObject tLObject, ub ubVar, c20 c20Var, TLRPC.TL_error tL_error) {
+    public /* synthetic */ a3(zh.g1 g1Var, org.telegram.ui.ActionBar.u1 u1Var, TLObject tLObject, ub ubVar, c20 c20Var, TLRPC.TL_error tL_error) {
         this.a = 27;
-        this.b = h1Var;
+        this.b = g1Var;
         this.e = u1Var;
         this.c = tLObject;
         this.f = ubVar;

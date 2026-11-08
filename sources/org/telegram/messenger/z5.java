@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.r51;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class z5 extends c1 implements ls {
     public static volatile z5[] T = new z5[4];
@@ -375,7 +375,7 @@ public final class z5 extends c1 implements ls {
         TLRPC.MessageMedia messageMedia;
         if (ijVar.D == 23) {
             int i7 = iz.a;
-            return (!rc.e(1024) || (storyItem = ((TLRPC.TL_messageMediaStory) ij.n1(ijVar)).storyItem) == null || (messageMedia = storyItem.media) == null || messageMedia.document == null || !storyItem.isPublic) ? false : true;
+            return (!sc.e(1024) || (storyItem = ((TLRPC.TL_messageMediaStory) ij.n1(ijVar)).storyItem) == null || (messageMedia = storyItem.media) == null || messageMedia.document == null || !storyItem.isPublic) ? false : true;
         }
         if (ijVar.Y0 != null) {
             return true;

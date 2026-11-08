@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.mo0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class x4 extends mo0 {
     public final /* synthetic */ k7 R2;
@@ -33,23 +33,23 @@ public final class x4 extends mo0 {
             if (hVar.m() == 1) {
                 long j3 = hVar.j(0);
                 if (j3 == p10.i(this.a).n) {
-                    org.telegram.ui.Components.cc G = k10.G(R.raw.saved_messages, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131748885, new Object[0])));
+                    org.telegram.ui.Components.cc G = k10.G(R.raw.saved_messages, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131748887, new Object[0])));
                     G.r = false;
                     G.t = true;
                     G.j();
                 } else if (j3 < 0) {
-                    org.telegram.ui.Components.cc G2 = k10.G(R.raw.forward, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131748889, tL_forumTopic != null ? tL_forumTopic.title : qp.s1(this.a).M0(Long.valueOf(-j3)).title)));
+                    org.telegram.ui.Components.cc G2 = k10.G(R.raw.forward, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131748891, tL_forumTopic != null ? tL_forumTopic.title : qp.s1(this.a).M0(Long.valueOf(-j3)).title)));
                     G2.r = false;
                     G2.t = true;
                     G2.j();
                 } else {
-                    org.telegram.ui.Components.cc G3 = k10.G(R.raw.forward, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131748889, qp.s1(this.a).a2(Long.valueOf(j3)).first_name)));
+                    org.telegram.ui.Components.cc G3 = k10.G(R.raw.forward, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131748891, qp.s1(this.a).a2(Long.valueOf(j3)).first_name)));
                     G3.r = false;
                     G3.t = true;
                     G3.j();
                 }
             } else {
-                org.telegram.ui.Components.cc Q = k10.Q(R.raw.forward, 36, org.telegram.messenger.g0.X2(org.telegram.messenger.hd.G(hVar.m(), "LinkSharedToManyChats", Integer.valueOf(hVar.m()))));
+                org.telegram.ui.Components.cc Q = k10.Q(R.raw.forward, 36, org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(hVar.m(), "LinkSharedToManyChats", Integer.valueOf(hVar.m()))));
                 Q.r = false;
                 Q.t = true;
                 Q.j();

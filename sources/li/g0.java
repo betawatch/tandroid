@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.dg;
 import org.telegram.messenger.e8;
 import org.telegram.messenger.gc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.qb;
 import org.telegram.messenger.qp;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.di;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -43,11 +43,11 @@ public final /* synthetic */ class g0 implements Runnable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r13v11, types: [org.telegram.messenger.hd] */
+    /* JADX WARN: Type inference failed for: r13v11, types: [org.telegram.messenger.id] */
     /* JADX WARN: Type inference failed for: r6v0 */
     /* JADX WARN: Type inference failed for: r6v14 */
     /* JADX WARN: Type inference failed for: r6v4, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r7v7, types: [org.telegram.messenger.hd] */
+    /* JADX WARN: Type inference failed for: r7v7, types: [org.telegram.messenger.id] */
     /* JADX WARN: Type inference failed for: r9v21 */
     /* JADX WARN: Type inference failed for: r9v23 */
     /* JADX WARN: Type inference failed for: r9v28 */
@@ -112,7 +112,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 bjVar.getClass();
                 String lowerCase = ((String) obj3).trim().toLowerCase();
                 if (lowerCase.length() != 0) {
-                    String S0 = hd.E0().S0(lowerCase, true, false);
+                    String S0 = id.E0().S0(lowerCase, true, false);
                     if (lowerCase.equals(S0) || S0.length() == 0) {
                         S0 = null;
                     }
@@ -142,7 +142,7 @@ public final /* synthetic */ class g0 implements Runnable {
                                     i7 = i16;
                                     TLRPC.User a22 = qp.s1(i13).a2(Long.valueOf(tL_contact.user_id));
                                     String lowerCase2 = org.telegram.messenger.g5.m(0, a22.first_name, a22.last_name).toLowerCase();
-                                    String S02 = hd.E0().S0(lowerCase2, true, false);
+                                    String S02 = id.E0().S0(lowerCase2, true, false);
                                     if (lowerCase2.equals(S02)) {
                                         S02 = null;
                                     }
@@ -186,12 +186,12 @@ public final /* synthetic */ class g0 implements Runnable {
                             bj bjVar4 = bjVar2;
                             String lowerCase3 = org.telegram.messenger.g5.m(r62, d5Var.i, d5Var.j).toLowerCase();
                             ArrayList arrayList5 = arrayList;
-                            String S03 = hd.E0().S0(lowerCase3, true, r62);
+                            String S03 = id.E0().S0(lowerCase3, true, r62);
                             TLRPC.User user = d5Var.m;
                             if (user != null) {
                                 strArr = strArr2;
                                 String lowerCase4 = org.telegram.messenger.g5.m(r62, user.first_name, user.last_name).toLowerCase();
-                                str3 = hd.E0().S0(lowerCase3, true, r62);
+                                str3 = id.E0().S0(lowerCase3, true, r62);
                                 str2 = lowerCase4;
                             } else {
                                 strArr = strArr2;
@@ -300,7 +300,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 final p4.a1 a1Var = (p4.a1) obj;
                 ui.e eVar = ((p4.c1) obj4).b;
                 if (!eVar.G(vVar, i13)) {
-                    p4.c1.R0(d0Var, vVar, i12, new p4.m1(-4));
+                    p4.c1.r1(d0Var, vVar, i12, new p4.m1(-4));
                     break;
                 } else {
                     pb.b bVar = d0Var.e;
@@ -310,12 +310,12 @@ public final /* synthetic */ class g0 implements Runnable {
                         eVar.f(vVar, i13, new p4.g() { // from class: p4.v0
                             @Override // p4.g
                             public final m9.y run() {
-                                return (m9.y) a1.this.i(d0Var, vVar, i12);
+                                return (m9.y) a1.this.l(d0Var, vVar, i12);
                             }
                         });
                         break;
                     } else {
-                        a1Var.i(d0Var, vVar, i12);
+                        a1Var.l(d0Var, vVar, i12);
                         eVar.f(vVar, i13, new p4.u0());
                         break;
                     }

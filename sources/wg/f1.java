@@ -28,7 +28,7 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.g5;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.p10;
@@ -64,9 +64,9 @@ import org.telegram.ui.mg0;
 import org.telegram.ui.ng0;
 import org.telegram.ui.og0;
 import org.telegram.ui.s00;
-import zh.h1;
+import zh.g1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class f1 extends na implements ls {
     public static d1 B2;
@@ -153,7 +153,7 @@ public class f1 extends na implements ls {
         this.R1 = ng0Var;
         r6.i(i11, ng0Var, f6Var);
         ng0Var.setOnSearchTextChange(new y0(this, i13));
-        ng0Var.b.r(hd.M0((!hashSet.isEmpty() || i10 == 1 || i10 == 2 || i10 == 3 || i10 == 4) ? 2131745837 : 2131749649, null), false);
+        ng0Var.b.r(id.M0((!hashSet.isEmpty() || i10 == 1 || i10 == 2 || i10 == 3 || i10 == 4) ? 2131745839 : 2131749651, null), false);
         l00 l00Var = new l00(14, getContext(), this);
         this.S1 = l00Var;
         ViewGroup viewGroup = this.b;
@@ -360,13 +360,13 @@ public class f1 extends na implements ls {
         int i7 = this.P1;
         if (i7 != 0) {
             if (i7 == 1) {
-                return hd.M0(2131749606, null);
+                return id.M0(2131749608, null);
             }
             if (i7 != 2) {
-                return i7 != 4 ? hd.M0(2131749599, null) : hd.M0(2131743426, null);
+                return i7 != 4 ? id.M0(2131749601, null) : id.M0(2131743428, null);
             }
         }
-        return hd.M0(2131749600, null);
+        return id.M0(2131749602, null);
     }
 
     @Override // org.telegram.ui.Components.na
@@ -608,20 +608,20 @@ public class f1 extends na implements ls {
                 if (arrayList2.size() == 1) {
                     long j3 = ((TLRPC.User) arrayList2.get(0)).id;
                     if (t10.b(qp.s1(p10.s0).b2(j3))) {
-                        org.telegram.messenger.camera.q.s(hd.a0(null, null, 2131743743, m5.t(j3)), new hc(this.c, this.I0), R.raw.error, 36);
+                        org.telegram.messenger.camera.q.s(id.a0(null, null, 2131743745, m5.t(j3)), new hc(this.c, this.I0), R.raw.error, 36);
                         return;
                     }
-                    h1 h1Var = new h1(getContext(), this.a, j3, c10, new y0(this, r5 ? 1 : 0));
+                    g1 g1Var = new g1(getContext(), this.a, j3, c10, new y0(this, r5 ? 1 : 0));
                     t1 t1Var = this.n2;
-                    h1Var.e1(t1Var != null && t1Var.a(j3));
-                    h1Var.show();
+                    g1Var.e1(t1Var != null && t1Var.a(j3));
+                    g1Var.show();
                 }
             }
         }
     }
 
     public final void m1() {
-        String H = this.P1 == 4 ? hd.H(',', "UserSelectorLimit", h1()) : hd.M0(2131753272, null);
+        String H = this.P1 == 4 ? id.H(',', "UserSelectorLimit", h1()) : id.M0(2131753272, null);
         f6 f6Var = this.I0;
         l2 l2Var = this.c;
         new hc(l2Var, f6Var).Q(R.raw.chats_infotip, 36, H).k(true);
@@ -638,15 +638,15 @@ public class f1 extends na implements ls {
         int i7 = this.P1;
         HashSet hashSet = this.Z1;
         if (i7 == 4) {
-            spannableStringBuilder.append((CharSequence) hd.M0(2131752623, null));
+            spannableStringBuilder.append((CharSequence) id.M0(2131752623, null));
         } else if (hashSet.size() != 0) {
-            spannableStringBuilder.append((CharSequence) hd.M0(2131749660, "GiftPremiumProceedBtn"));
-        } else if (hd.a0) {
-            spannableStringBuilder.append((CharSequence) hd.M0(2131749673, "GiftPremiumChooseRecipientsBtn"));
+            spannableStringBuilder.append((CharSequence) id.M0(2131749662, "GiftPremiumProceedBtn"));
+        } else if (id.a0) {
+            spannableStringBuilder.append((CharSequence) id.M0(2131749675, "GiftPremiumChooseRecipientsBtn"));
             spannableStringBuilder.append((CharSequence) "d").setSpan(this.m2, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
         } else {
             spannableStringBuilder.append((CharSequence) "d").setSpan(this.m2, 0, 1, 33);
-            spannableStringBuilder.append((CharSequence) hd.M0(2131749673, "GiftPremiumChooseRecipientsBtn"));
+            spannableStringBuilder.append((CharSequence) id.M0(2131749675, "GiftPremiumChooseRecipientsBtn"));
         }
         og0Var.c(hashSet.size(), true);
         og0Var.i(spannableStringBuilder, z9, false);
@@ -700,7 +700,7 @@ public class f1 extends na implements ls {
                     this.x2 = xpVar;
                 }
                 xp xpVar2 = this.x2;
-                String M0 = hd.M0(2131750106, null);
+                String M0 = id.M0(2131750108, null);
                 xg.h hVar2 = new xg.h(3, true);
                 hVar2.i = 5;
                 hVar2.r = xpVar2;
@@ -724,10 +724,10 @@ public class f1 extends na implements ls {
                     f10 = 40.0f;
                     f11 = 24.0f;
                 }
-                String t6 = org.telegram.ui.Wallet.n0.x(this.a).t();
+                String t6 = org.telegram.ui.Wallet.m0.x(this.a).t();
                 int i12 = this.A2;
                 if (i12 > 0) {
-                    str = hd.G(i12, "Gift2ExportTONUnlocksIn", new Object[0]);
+                    str = id.G(i12, "Gift2ExportTONUnlocksIn", new Object[0]);
                 } else if (t6 == null || t6.length() < 20) {
                     str = "";
                 } else {
@@ -753,7 +753,7 @@ public class f1 extends na implements ls {
                     str = spannableStringBuilder;
                 }
                 xp xpVar4 = this.w2;
-                String M02 = hd.M0(2131750103, null);
+                String M02 = id.M0(2131750105, null);
                 xg.h hVar3 = new xg.h(3, true);
                 hVar3.i = 4;
                 hVar3.r = xpVar4;
@@ -776,9 +776,9 @@ public class f1 extends na implements ls {
                     this.q2 = xpVar5;
                 }
                 xp xpVar6 = this.q2;
-                String M03 = hd.M0(2131749989, null);
+                String M03 = id.M0(2131749991, null);
                 int i16 = this.A2;
-                String G = i16 > 0 ? hd.G(i16, "Gift2ExportTONUnlocksIn", new Object[0]) : "";
+                String G = i16 > 0 ? id.G(i16, "Gift2ExportTONUnlocksIn", new Object[0]) : "";
                 xg.h hVar4 = new xg.h(3, true);
                 hVar4.i = 2;
                 hVar4.r = xpVar6;
@@ -792,7 +792,7 @@ public class f1 extends na implements ls {
             }
             if ((i11 == 0 || i11 == 2) && b22 != null && b22.birthday == null) {
                 L = org.telegram.messenger.g0.L(50.0f);
-                String M04 = hd.M0(2131749575, null);
+                String M04 = id.M0(2131749577, null);
                 xg.h hVar5 = new xg.h(9, false);
                 hVar5.i = 1;
                 hVar5.j = R.drawable.menu_birthday;
@@ -802,7 +802,7 @@ public class f1 extends na implements ls {
                 L = 0;
             }
             if (this.s2 != null && i11 == 4) {
-                String M05 = hd.M0(2131743421, null);
+                String M05 = id.M0(2131743423, null);
                 xg.h hVar6 = new xg.h(9, false);
                 hVar6.i = 3;
                 hVar6.j = R.drawable.msg2_link2;
@@ -811,12 +811,12 @@ public class f1 extends na implements ls {
             }
             t1 t1Var2 = this.n2;
             if (t1Var2 != null) {
-                L = d1(hd.M0(2131753704, null), arrayList3, t1Var2.b) + d1(hd.M0(2131753711, null), arrayList3, t1Var2.c) + L + d1(hd.M0(2131753705, null), arrayList3, t1Var2.d);
+                L = d1(id.M0(2131753704, null), arrayList3, t1Var2.b) + d1(id.M0(2131753711, null), arrayList3, t1Var2.c) + L + d1(id.M0(2131753705, null), arrayList3, t1Var2.d);
             }
             if ((i11 == 0 || i11 == 2) && (f12 = p10.i(this.a).f()) != null) {
-                arrayList3.add(xg.h.b(hd.M0(2131750098, null)));
+                arrayList3.add(xg.h.b(id.M0(2131750100, null)));
                 xg.h c10 = xg.h.c(f12, hashSet3.contains(Long.valueOf(f12.id)));
-                c10.h = hd.M0(2131750099, null);
+                c10.h = id.M0(2131750101, null);
                 arrayList3.add(c10);
             }
             ArrayList arrayList4 = new ArrayList();
@@ -851,7 +851,7 @@ public class f1 extends na implements ls {
                 j3 = 0;
                 if (!arrayList6.isEmpty()) {
                     L += org.telegram.messenger.g0.L(32.0f);
-                    hVar = xg.h.b(hd.M0(2131749671, null));
+                    hVar = xg.h.b(id.M0(2131749673, null));
                     arrayList3.add(hVar);
                     arrayList3.addAll(arrayList6);
                     ArrayList arrayList7 = this.e2;
@@ -922,7 +922,7 @@ public class f1 extends na implements ls {
                         size = i22;
                     }
                     if (hVar != null && arrayList4.size() > 0 && !hashSet3.isEmpty()) {
-                        String M06 = hd.M0(2131751458, null);
+                        String M06 = id.M0(2131751458, null);
                         z11 = false;
                         z0 z0Var = new z0(0 == true ? 1 : 0, this, arrayList4);
                         hVar.h = M06;
@@ -956,7 +956,7 @@ public class f1 extends na implements ls {
             while (i10 < size) {
             }
             if (hVar != null) {
-                String M062 = hd.M0(2131751458, null);
+                String M062 = id.M0(2131751458, null);
                 z11 = false;
                 z0 z0Var2 = new z0(0 == true ? 1 : 0, this, arrayList4);
                 hVar.h = M062;

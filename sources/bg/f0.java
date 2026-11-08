@@ -13,7 +13,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.q1;
@@ -53,7 +53,7 @@ import org.telegram.ui.Components.xs0;
 import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.bh;
 import org.telegram.ui.ca;
-import org.telegram.ui.ec1;
+import org.telegram.ui.fc1;
 import org.telegram.ui.ia;
 import org.telegram.ui.la;
 import org.telegram.ui.nu;
@@ -61,7 +61,7 @@ import org.telegram.ui.wq0;
 import org.telegram.ui.ws0;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f0 implements i30, r1, g6, dj0, qr, f5.m, z2, q1, h2.j {
     public final /* synthetic */ int a;
@@ -171,7 +171,7 @@ public final /* synthetic */ class f0 implements i30, r1, g6, dj0, qr, f5.m, z2,
                 nl0 nl0Var = (nl0) arrayList.get(i7);
                 k60 H = k60.H(f2Var, view);
                 H.i = 3;
-                H.c(R.drawable.menu_tag_rename, hd.M0(TextUtils.isEmpty(nl0Var.c) ? 2131745882 : 2131745870, null), new a1(ql0Var, i10, nl0Var, f6Var, 26), false);
+                H.c(R.drawable.menu_tag_rename, id.M0(TextUtils.isEmpty(nl0Var.c) ? 2131745884 : 2131745872, null), new a1(ql0Var, i10, nl0Var, f6Var, 26), false);
                 H.Z();
                 return true;
             }
@@ -181,14 +181,14 @@ public final /* synthetic */ class f0 implements i30, r1, g6, dj0, qr, f5.m, z2,
 
     @Override // org.telegram.ui.Components.voip.z2
     public void d(a3 a3Var) {
-        ec1 ec1Var = (ec1) this.c;
+        fc1 fc1Var = (fc1) this.c;
         b3 b3Var = (b3) this.d;
         VoIPService voIPService = (VoIPService) this.e;
         if (VoIPService.getSharedInstance() != null) {
-            org.telegram.messenger.g0.r(ec1Var.R0);
-            ec1Var.Q0 = false;
-            VoIPService.getSharedInstance().toggleSpeakerphoneOrShowRouteSheet(ec1Var.b, false, Integer.valueOf(this.b));
-            ec1Var.l(b3Var, voIPService);
+            org.telegram.messenger.g0.r(fc1Var.R0);
+            fc1Var.Q0 = false;
+            VoIPService.getSharedInstance().toggleSpeakerphoneOrShowRouteSheet(fc1Var.b, false, Integer.valueOf(this.b));
+            fc1Var.l(b3Var, voIPService);
         }
     }
 
@@ -254,7 +254,7 @@ public final /* synthetic */ class f0 implements i30, r1, g6, dj0, qr, f5.m, z2,
                 connectionsManager.sendRequest(toggleusername, new RequestDelegate() { // from class: org.telegram.ui.ba
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        org.telegram.messenger.g0.h3(new org.telegram.messenger.lw(ca.this, str, tLObject, i14, z10, tL_error, tL_username, z9));
+                        org.telegram.messenger.g0.h3(new org.telegram.messenger.kw(ca.this, str, tLObject, i14, z10, tL_error, tL_username, z9));
                     }
                 });
                 laVar.x.add(tL_username.username);

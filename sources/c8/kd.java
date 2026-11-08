@@ -15,7 +15,7 @@ import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class kd {
     public static int a(MediaExtractor mediaExtractor) {
@@ -156,7 +156,7 @@ public abstract class kd {
                 }
                 if (dequeueOutputBuffer2 == -2) {
                     MediaFormat outputFormat = mediaCodec2.getOutputFormat();
-                    i16 = wi.m.f(outputFormat);
+                    i16 = wi.n.f(outputFormat);
                     w0Var.w(outputFormat);
                 } else if (dequeueOutputBuffer2 >= 0) {
                     ByteBuffer outputBuffer = mediaCodec2.getOutputBuffer(dequeueOutputBuffer2);
@@ -241,7 +241,7 @@ public abstract class kd {
                 MediaFormat trackFormat = mediaExtractor.getTrackFormat(a10);
                 mediaCodec = MediaCodec.createEncoderByType("video/avc");
                 try {
-                    mediaCodec.configure(wi.m.c(i7, i10, i11), (Surface) null, (MediaCrypto) null, 1);
+                    mediaCodec.configure(wi.n.c(i7, i10, i11), (Surface) null, (MediaCrypto) null, 1);
                     createInputSurface = mediaCodec.createInputSurface();
                 } catch (IllegalArgumentException e10) {
                     e = e10;

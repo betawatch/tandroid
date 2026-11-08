@@ -1,101 +1,70 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class zu extends Drawable {
-    public final /* synthetic */ int a;
-    public RectF b;
-    public Paint c;
+public final class zu extends vk0 {
+    public long h;
+    public boolean n;
+    public float r;
+    public final /* synthetic */ bv s;
 
-    public zu(int i7, byte b10) {
-        this.a = i7;
-        switch (i7) {
-            case 2:
-                break;
-            default:
-                this.b = new RectF();
-                this.c = new Paint(1);
-                break;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zu(bv bvVar, Context context) {
+        super(context);
+        this.s = bvVar;
+        boolean z9 = bvVar.n;
+        this.n = z9;
+        this.r = z9 ? 1.0f : 0.0f;
+        setSmoothScrollingEnabled(true);
+        setHorizontalScrollBarEnabled(false);
+        setVerticalScrollBarEnabled(false);
+        setNestedScrollingEnabled(true);
+        org.telegram.ui.c61 c61Var = new org.telegram.ui.c61(11, context, this);
+        this.b = c61Var;
+        c61Var.setOrientation(0);
+        addView(this.b, new FrameLayout.LayoutParams(-2, -1));
+        for (int i7 = 0; i7 < 8; i7++) {
+            int i10 = bv.e0[i7];
+            yu yuVar = new yu(this, context, bv.f0[i7]);
+            yuVar.setContentDescription(bv.f(i7));
+            this.b.addView(yuVar);
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                RectF rectF = this.b;
-                rectF.set(0.0f, 0.0f, org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(30.0f));
-                canvas.drawRoundRect(rectF, org.telegram.messenger.g0.N(8.0f), org.telegram.messenger.g0.N(8.0f), this.c);
-                break;
-            case 1:
-                RectF rectF2 = this.b;
-                rectF2.set(getBounds());
-                float height = rectF2.height() * 0.2f;
-                canvas.drawRoundRect(rectF2, height, height, this.c);
-                break;
-            default:
-                RectF rectF3 = this.b;
-                rectF3.set(getBounds());
-                rectF3.inset(0.0f, (rectF3.height() - org.telegram.messenger.g0.L(28.0f)) / 2.0f);
-                canvas.drawRoundRect(rectF3, org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(14.0f), this.c);
-                break;
+    public final void d(MotionEvent motionEvent) {
+        if (!this.n || this.d) {
+            return;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        switch (this.a) {
-            case 0:
-                return -3;
-            case 1:
-                return -3;
-            default:
-                return -2;
+        int action = motionEvent.getAction();
+        if (action != 0) {
+            if (action == 1) {
+                this.a = false;
+                return;
+            } else if (action != 2) {
+                return;
+            }
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        switch (this.a) {
-            case 0:
-                this.c.setAlpha(i7);
-                break;
-            case 1:
-                this.c.setAlpha(i7);
-                break;
-            default:
-                this.c.setAlpha(i7);
-                break;
+        this.a = true;
+        if (!this.d) {
+            this.e = -1;
         }
+        this.s.requestDisallowInterceptTouchEvent(true);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        switch (this.a) {
-            case 1:
-                this.c.setColorFilter(colorFilter);
-                break;
-        }
+    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.W1(this.r, org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(Math.min(5.7f, this.b.getChildCount()) * 32.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(30.0f), TLObject.FLAG_30));
     }
 
-    public zu(int i7) {
-        this.a = 0;
-        Paint paint = new Paint();
-        this.c = paint;
-        this.b = new RectF();
-        paint.setAlpha(45);
-        paint.setColor(i7);
-    }
-
-    private final void a(ColorFilter colorFilter) {
-    }
-
-    private final void b(ColorFilter colorFilter) {
+    @Override // org.telegram.ui.Components.vk0, android.widget.HorizontalScrollView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        d(motionEvent);
+        return super.onTouchEvent(motionEvent);
     }
 }

@@ -10,7 +10,7 @@ import java.util.Scanner;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class zk0 extends AsyncTask {
     public final /* synthetic */ uc.a a;
@@ -168,7 +168,7 @@ public final class zk0 extends AsyncTask {
             return;
         }
         if (str == null) {
-            org.telegram.ui.Components.v4.t0(org.telegram.messenger.hd.M0(2131747403, null), hl0Var);
+            org.telegram.ui.Components.v4.t0(org.telegram.messenger.id.M0(2131747405, null), hl0Var);
         } else {
             hl0Var.w0 = str;
             hl0Var.z0();

@@ -69,7 +69,7 @@ import r0.l0;
 import s4.s0;
 import zd.b0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListener, lf.b, f5.y, com.google.android.gms.common.api.internal.p, ib.b, g9.k, i6.a {
     public final /* synthetic */ int a;
@@ -219,9 +219,9 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
         TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
         q6.m.i("Not connected to device", e0Var.G == 2);
         j6.f fVar = (j6.f) wVar.n();
-        Parcel P0 = fVar.P0();
-        P0.writeString(str);
-        fVar.U0(P0, 5);
+        Parcel p12 = fVar.p1();
+        p12.writeString(str);
+        fVar.u1(p12, 5);
         synchronized (e0Var.t) {
             try {
                 if (e0Var.q != null) {
@@ -310,7 +310,7 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
         synchronized (lVar.d) {
             for (int beginBroadcast = lVar.f.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
                 try {
-                    ((b) lVar.f.getBroadcastItem(beginBroadcast)).x0(wVar);
+                    ((b) lVar.f.getBroadcastItem(beginBroadcast)).S0(wVar);
                 } catch (RemoteException | SecurityException e10) {
                     h2.a.d("MediaSessionCompat", "Dead object in setPlaybackState.", e10);
                 }

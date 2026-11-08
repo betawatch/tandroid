@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class n80 {
     public static final Pattern a = Pattern.compile("^\\[\\^([^\\]]+)\\]:[ \\t]*(.*)$");
@@ -1038,7 +1038,7 @@ public abstract class n80 {
         j80Var.y();
         if (!linkedHashMap.isEmpty()) {
             TL_iv.pageBlockDetails pageblockdetails = new TL_iv.pageBlockDetails();
-            String M0 = org.telegram.messenger.hd.M0(2131749190, null);
+            String M0 = org.telegram.messenger.id.M0(2131749192, null);
             TL_iv.textBold textbold = new TL_iv.textBold();
             textbold.text = n(M0);
             pageblockdetails.title = textbold;
@@ -1074,9 +1074,9 @@ public abstract class n80 {
                 textanchor.name = rf.b.i("fn-", str6);
                 textanchor.text = e10;
                 TL_iv.pageBlockParagraph pageblockparagraph = new TL_iv.pageBlockParagraph();
-                String q10 = rf.b.q(str6, ". ");
+                String r10 = rf.b.r(str6, ". ");
                 TL_iv.textBold textbold2 = new TL_iv.textBold();
-                textbold2.text = n(q10);
+                textbold2.text = n(r10);
                 TL_iv.RichText[] richTextArr = {textbold2, textanchor};
                 TL_iv.textConcat textconcat2 = new TL_iv.textConcat();
                 for (int i14 = 0; i14 < 2; i14++) {

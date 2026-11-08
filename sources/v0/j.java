@@ -19,7 +19,7 @@ import org.telegram.ui.Components.db0;
 import x2.e0;
 import x2.z0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j implements v5.e, u9.d, ua.a, OnFailureListener, j2.g, r1, db0, g9.k, h2.j, t3.g {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class j implements v5.e, u9.d, ua.a, OnFailureListe
     @Override // v5.e
     public Object apply(Object obj) {
         switch (this.a) {
-            case 4:
+            case 5:
                 Cursor rawQuery = ((SQLiteDatabase) obj).rawQuery("SELECT distinct t._id, t.backend_name, t.priority, t.extras FROM transport_contexts AS t, events AS e WHERE e.context_id = t._id", new String[0]);
                 try {
                     ArrayList arrayList = new ArrayList();
@@ -52,18 +52,16 @@ public final /* synthetic */ class j implements v5.e, u9.d, ua.a, OnFailureListe
                 } finally {
                     rawQuery.close();
                 }
-            case 21:
-                return ((f3.o) obj).a().getClass().getSimpleName();
             case 22:
-                return i0.q(h9.o.y(((e0) obj).o().b, new j(24)));
-            case 24:
+                return ((f3.o) obj).a().getClass().getSimpleName();
+            case 23:
+                return i0.q(h9.o.y(((e0) obj).o().b, new j(25)));
+            case 25:
                 return Integer.valueOf(((m1) obj).c);
-            case 27:
-                return Long.valueOf(((c4.a) obj).b);
             case 28:
-                return Long.valueOf(((c4.a) obj).c);
+                return Long.valueOf(((c4.a) obj).b);
             default:
-                return (z3.q) obj;
+                return Long.valueOf(((c4.a) obj).c);
         }
     }
 
@@ -81,7 +79,7 @@ public final /* synthetic */ class j implements v5.e, u9.d, ua.a, OnFailureListe
     @Override // ua.a
     public void c(ua.b bVar) {
         switch (this.a) {
-            case 10:
+            case 11:
                 if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                     Log.d("FirebaseCrashlytics", "AnalyticsConnector now available.", null);
                 }
@@ -102,14 +100,14 @@ public final /* synthetic */ class j implements v5.e, u9.d, ua.a, OnFailureListe
     public Object e(r7 r7Var) {
         va.d lambda$getComponents$0;
         switch (this.a) {
-            case 5:
-                return (ScheduledExecutorService) ExecutorsRegistrar.a.get();
             case 6:
-                return (ScheduledExecutorService) ExecutorsRegistrar.c.get();
+                return (ScheduledExecutorService) ExecutorsRegistrar.a.get();
             case 7:
-                return (ScheduledExecutorService) ExecutorsRegistrar.b.get();
+                return (ScheduledExecutorService) ExecutorsRegistrar.c.get();
             case 8:
-                u9.m mVar = ExecutorsRegistrar.a;
+                return (ScheduledExecutorService) ExecutorsRegistrar.b.get();
+            case 9:
+                u9.n nVar = ExecutorsRegistrar.a;
                 return v9.j.a;
             default:
                 lambda$getComponents$0 = FirebaseInstallationsRegistrar.lambda$getComponents$0(r7Var);
@@ -120,9 +118,9 @@ public final /* synthetic */ class j implements v5.e, u9.d, ua.a, OnFailureListe
     @Override // org.telegram.ui.ActionBar.r1
     public void g(u1 u1Var, int i7) {
         switch (this.a) {
-            case 14:
+            case 15:
                 break;
-            case 17:
+            case 18:
                 u1Var.dismiss();
                 break;
             default:
@@ -134,7 +132,7 @@ public final /* synthetic */ class j implements v5.e, u9.d, ua.a, OnFailureListe
     @Override // org.telegram.ui.Components.db0
     public String h(int i7) {
         switch (this.a) {
-            case 15:
+            case 16:
                 return String.valueOf(i7);
             default:
                 return String.format("%02d", Integer.valueOf(i7 * 5));
@@ -147,7 +145,7 @@ public final /* synthetic */ class j implements v5.e, u9.d, ua.a, OnFailureListe
     }
 
     public /* synthetic */ j(androidx.emoji2.text.f fVar) {
-        this.a = 10;
+        this.a = 11;
     }
 
     private final void d(u1 u1Var, int i7) {

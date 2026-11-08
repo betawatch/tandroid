@@ -42,7 +42,7 @@ import org.telegram.ui.Components.x70;
 import org.telegram.ui.sg0;
 import org.telegram.ui.tg0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class jv implements org.telegram.ui.Cells.t9, ex0 {
     public static Paint T;
@@ -425,8 +425,8 @@ public final class jv implements org.telegram.ui.Cells.t9, ex0 {
                             LinearLayout f10 = k5.f(context, 1);
                             TextView g10 = k5.g(context, 1, 16.0f);
                             g10.setTypeface(g0.o());
-                            g10.setText(hd.M0(2131749191, null));
-                            g10.setGravity((hd.a0 ? 5 : 3) | 16);
+                            g10.setText(id.M0(2131749193, null));
+                            g10.setGravity((id.a0 ? 5 : 3) | 16);
                             int i7 = org.telegram.ui.ActionBar.k6.j5;
                             org.telegram.ui.ActionBar.r6.V(g10, i7, kvVar.D);
                             g10.setPadding(g0.L(22.0f), 0, g0.L(22.0f), 0);

@@ -9,7 +9,7 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class cu0 {
     public final a4.k a;
@@ -114,7 +114,7 @@ public final class cu0 {
     public final void b(Canvas canvas, View view) {
         int i7;
         bu0 bu0Var;
-        if (view == null || canvas == null || !org.telegram.messenger.rc.e(32)) {
+        if (view == null || canvas == null || !org.telegram.messenger.sc.e(32)) {
             return;
         }
         c();

@@ -19,7 +19,7 @@ import java.util.TreeSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ug0 implements LeadingMarginSpan {
     public final float[] D;
@@ -162,7 +162,7 @@ public final class ug0 implements LeadingMarginSpan {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static ArrayList d(ct ctVar, Layout layout, ArrayList arrayList, boolean[] zArr) {
+    public static ArrayList d(dt dtVar, Layout layout, ArrayList arrayList, boolean[] zArr) {
         CharSequence charSequence;
         ug0[] ug0VarArr;
         boolean z9;
@@ -171,7 +171,7 @@ public final class ug0 implements LeadingMarginSpan {
         int i7;
         boolean z11;
         int i10;
-        ct ctVar2 = ctVar;
+        dt dtVar2 = dtVar;
         if (layout != null) {
             CharSequence text = layout.getText();
             if (text != null && (text instanceof Spannable)) {
@@ -186,7 +186,7 @@ public final class ug0 implements LeadingMarginSpan {
                 while (i11 < ug0VarArr2.length) {
                     ug0 ug0Var = ug0VarArr2[i11];
                     boolean z13 = ug0Var.n;
-                    qg0 qg0Var = new qg0(ctVar2, layout, spannable, ug0Var);
+                    qg0 qg0Var = new qg0(dtVar2, layout, spannable, ug0Var);
                     if (ug0Var.a) {
                         int i12 = ug0Var.c;
                         if (i12 == 0 || text.charAt(i12 - 1) == '\n') {
@@ -199,7 +199,7 @@ public final class ug0 implements LeadingMarginSpan {
                                 spannable.removeSpan(ug0VarArr2[i11].s);
                                 spannable.setSpan(ug0VarArr2[i11], ug0Var.c, i13, 33);
                                 spannable.setSpan(ug0VarArr2[i11].s, ug0Var.c, i13, 33);
-                                qg0Var = new qg0(ctVar2, layout, spannable, ug0VarArr2[i11]);
+                                qg0Var = new qg0(dtVar2, layout, spannable, ug0VarArr2[i11]);
                             }
                             boolean z14 = spannable instanceof SpannableStringBuilder;
                             ug0 ug0Var2 = qg0Var.e;
@@ -291,7 +291,7 @@ public final class ug0 implements LeadingMarginSpan {
                             ug0VarArr = ug0VarArr2;
                             z10 = z12;
                             i11++;
-                            ctVar2 = ctVar;
+                            dtVar2 = dtVar;
                             z12 = z10;
                             text = charSequence;
                             ug0VarArr2 = ug0VarArr;
@@ -312,7 +312,7 @@ public final class ug0 implements LeadingMarginSpan {
                     }
                     arrayList2.add(qg0Var);
                     i11++;
-                    ctVar2 = ctVar;
+                    dtVar2 = dtVar;
                     z12 = z10;
                     text = charSequence;
                     ug0VarArr2 = ug0VarArr;

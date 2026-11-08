@@ -8,7 +8,7 @@ import android.widget.TextView;
 import c8.ha;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.qp;
 import org.telegram.ui.ActionBar.f6;
@@ -19,7 +19,7 @@ import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.sq0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class c extends oj0 {
     public final f6 c;
@@ -42,17 +42,17 @@ public final class c extends oj0 {
         y0Var.p = 0.0f;
         y0Var.q = 1.0f;
         qp s12 = qp.s1(i7);
-        arrayList.add(new d(s12.D4, s12.E4, hd.M0(2131749378, null), hd.a0(null, null, 2131749379, Integer.valueOf(s12.E4))));
-        arrayList.add(new d(s12.P4, s12.Q4, hd.M0(2131747247, null), hd.a0(null, null, 2131747248, Integer.valueOf(s12.Q4))));
-        arrayList.add(new d(s12.R4, s12.S4, hd.M0(2131746588, null), hd.a0(null, null, 2131746589, Integer.valueOf(s12.S4))));
-        arrayList.add(new d(s12.F4, s12.G4, hd.M0(2131745903, null), hd.a0(null, null, 2131745904, Integer.valueOf(s12.G4))));
-        arrayList.add(new d(s12.H4, s12.I4, hd.M0(2131750840, null), hd.a0(null, null, 2131750841, Integer.valueOf(s12.I4))));
-        arrayList.add(new d(s12.X4, s12.Y4, hd.M0(2131753719, null), hd.a0(null, null, 2131753720, Integer.valueOf(s12.I4))));
-        arrayList.add(new d(s12.T4, s12.U4, hd.M0(2131752554, null), hd.a0(null, null, 2131752555, Integer.valueOf(s12.I4))));
-        arrayList.add(new d(s12.L4, s12.M4, hd.M0(2131750612, null), hd.a0(null, null, 2131750613, Integer.valueOf(s12.M4))));
-        arrayList.add(new d(s12.N4, s12.O4, hd.M0(2131752215, null), hd.a0(null, null, 2131752216, Integer.valueOf(s12.O4))));
-        arrayList.add(new d(3, 4, hd.M0(2131751810, null), hd.a0(null, null, 2131751811, 4)));
-        arrayList.add(new d(s12.w4, s12.x4, hd.M0(2131745316, null), hd.a0(null, null, 2131745317, Integer.valueOf(s12.x4))));
+        arrayList.add(new d(s12.D4, s12.E4, id.M0(2131749380, null), id.a0(null, null, 2131749381, Integer.valueOf(s12.E4))));
+        arrayList.add(new d(s12.P4, s12.Q4, id.M0(2131747249, null), id.a0(null, null, 2131747250, Integer.valueOf(s12.Q4))));
+        arrayList.add(new d(s12.R4, s12.S4, id.M0(2131746590, null), id.a0(null, null, 2131746591, Integer.valueOf(s12.S4))));
+        arrayList.add(new d(s12.F4, s12.G4, id.M0(2131745905, null), id.a0(null, null, 2131745906, Integer.valueOf(s12.G4))));
+        arrayList.add(new d(s12.H4, s12.I4, id.M0(2131750840, null), id.a0(null, null, 2131750841, Integer.valueOf(s12.I4))));
+        arrayList.add(new d(s12.X4, s12.Y4, id.M0(2131753719, null), id.a0(null, null, 2131753720, Integer.valueOf(s12.I4))));
+        arrayList.add(new d(s12.T4, s12.U4, id.M0(2131752554, null), id.a0(null, null, 2131752555, Integer.valueOf(s12.I4))));
+        arrayList.add(new d(s12.L4, s12.M4, id.M0(2131750612, null), id.a0(null, null, 2131750613, Integer.valueOf(s12.M4))));
+        arrayList.add(new d(s12.N4, s12.O4, id.M0(2131752215, null), id.a0(null, null, 2131752216, Integer.valueOf(s12.O4))));
+        arrayList.add(new d(3, 4, id.M0(2131751810, null), id.a0(null, null, 2131751811, 4)));
+        arrayList.add(new d(s12.w4, s12.x4, id.M0(2131745318, null), id.a0(null, null, 2131745319, Integer.valueOf(s12.x4))));
         this.d = 1;
         this.e = 1;
         this.d = arrayList.size() + 1;
@@ -115,7 +115,7 @@ public final class c extends oj0 {
             imageView.setImageDrawable(ia.e.c(context.getDrawable(R.drawable.other_2x_large), (y0) ia.e.d().b));
             f10.addView(imageView, ha.d(40, 28.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
             TextView textView = new TextView(context);
-            textView.setText(hd.M0(2131751350, null));
+            textView.setText(id.M0(2131751350, null));
             textView.setGravity(17);
             textView.setTextSize(1, 20.0f);
             r6.V(textView, k6.G6, f6Var);

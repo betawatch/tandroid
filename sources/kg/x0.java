@@ -14,9 +14,9 @@ import org.telegram.ui.Components.i6;
 import org.telegram.ui.Components.ik;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.z4;
-import org.telegram.ui.Wallet.n9;
+import org.telegram.ui.Wallet.m9;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class x0 extends EditTextBoldCursor {
     public final /* synthetic */ int G1 = 1;
@@ -69,7 +69,7 @@ public final class x0 extends EditTextBoldCursor {
                 break;
             default:
                 super.dispatchDraw(canvas);
-                int a13 = this.H1.a(k6.w0(this.I1 <= 0 ? k6.p7 : k6.P5, ((n9) this.K1).getResourceProvider()), false);
+                int a13 = this.H1.a(k6.w0(this.I1 <= 0 ? k6.p7 : k6.P5, ((m9) this.K1).getResourceProvider()), false);
                 i6 i6Var4 = this.J1;
                 i6Var4.u(a13);
                 int L2 = org.telegram.messenger.g0.L(48.0f) + ((getWidth() + getScrollX()) - getPaddingRight());
@@ -92,7 +92,7 @@ public final class x0 extends EditTextBoldCursor {
         }
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ct, android.widget.TextView
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.dt, android.widget.TextView
     public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
         switch (this.G1) {
             case 0:
@@ -201,9 +201,9 @@ public final class x0 extends EditTextBoldCursor {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x0(n9 n9Var, Activity activity) {
+    public x0(m9 m9Var, Activity activity) {
         super(activity);
-        this.K1 = n9Var;
+        this.K1 = m9Var;
         this.I1 = 960;
         this.H1 = new z4(this);
         i6 i6Var = new i6(false, true, true);

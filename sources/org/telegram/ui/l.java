@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -168,13 +168,13 @@ public final /* synthetic */ class l implements RequestDelegate {
                                                         if (str != null) {
                                                             int i17 = i13;
                                                             String[] strArr2 = new String[i14];
-                                                            strArr2[z12 ? 1 : 0] = org.telegram.messenger.hd.M0(2131745469, null);
+                                                            strArr2[z12 ? 1 : 0] = org.telegram.messenger.id.M0(2131745471, null);
                                                             strArr2[i17] = str;
                                                             strArr = strArr2;
                                                             i13 = i17;
                                                         } else {
                                                             strArr = new String[i13];
-                                                            strArr[z12 ? 1 : 0] = org.telegram.messenger.hd.M0(2131745469, null);
+                                                            strArr[z12 ? 1 : 0] = org.telegram.messenger.id.M0(2131745471, null);
                                                         }
                                                         arrayList.add(new org.telegram.messenger.cp(charSequence, strArr, D));
                                                     }
@@ -218,38 +218,38 @@ public final /* synthetic */ class l implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new e51((StickersActivity) obj, 1));
                 break;
             case 22:
-                m81 m81Var = (m81) obj;
+                n81 n81Var = (n81) obj;
                 if (tL_error == null) {
                     TLRPC.TL_messages_inactiveChats tL_messages_inactiveChats = (TLRPC.TL_messages_inactiveChats) tLObject2;
                     ArrayList arrayList2 = new ArrayList();
                     for (int i18 = 0; i18 < tL_messages_inactiveChats.chats.size(); i18++) {
                         TLRPC.Chat chat = tL_messages_inactiveChats.chats.get(i18);
-                        int currentTime = (m81Var.getConnectionsManager().getCurrentTime() - tL_messages_inactiveChats.dates.get(i18).intValue()) / 86400;
-                        String G = currentTime < 30 ? org.telegram.messenger.hd.G(currentTime, "Days", new Object[0]) : currentTime < 365 ? org.telegram.messenger.hd.G(currentTime / 30, "Months", new Object[0]) : org.telegram.messenger.hd.G(currentTime / 365, "Years", new Object[0]);
+                        int currentTime = (n81Var.getConnectionsManager().getCurrentTime() - tL_messages_inactiveChats.dates.get(i18).intValue()) / 86400;
+                        String G = currentTime < 30 ? org.telegram.messenger.id.G(currentTime, "Days", new Object[0]) : currentTime < 365 ? org.telegram.messenger.id.G(currentTime / 30, "Months", new Object[0]) : org.telegram.messenger.id.G(currentTime / 365, "Years", new Object[0]);
                         if (org.telegram.messenger.t3.n0(chat)) {
-                            arrayList2.add(org.telegram.messenger.hd.a0("InactiveChatSignature", null, 2131749210, org.telegram.messenger.hd.G(chat.participants_count, "Members", new Object[0]), G));
+                            arrayList2.add(org.telegram.messenger.id.a0("InactiveChatSignature", null, 2131749212, org.telegram.messenger.id.G(chat.participants_count, "Members", new Object[0]), G));
                         } else if (org.telegram.messenger.t3.T(chat)) {
-                            arrayList2.add(org.telegram.messenger.hd.a0("InactiveChannelSignature", null, 2131749211, G));
+                            arrayList2.add(org.telegram.messenger.id.a0("InactiveChannelSignature", null, 2131749213, G));
                         } else {
-                            arrayList2.add(org.telegram.messenger.hd.a0("InactiveChatSignature", null, 2131749210, org.telegram.messenger.hd.G(chat.participants_count, "Members", new Object[0]), G));
+                            arrayList2.add(org.telegram.messenger.id.a0("InactiveChatSignature", null, 2131749212, org.telegram.messenger.id.G(chat.participants_count, "Members", new Object[0]), G));
                         }
                     }
-                    org.telegram.messenger.g0.h3(new t21(m81Var, arrayList2, tL_messages_inactiveChats, i10));
+                    org.telegram.messenger.g0.h3(new t21(n81Var, arrayList2, tL_messages_inactiveChats, i10));
                     break;
                 }
                 break;
             case 23:
-                db1 db1Var = (db1) obj;
-                db1Var.getClass();
-                org.telegram.messenger.g0.h3(new by0(i12, db1Var, tLObject2));
+                eb1 eb1Var = (eb1) obj;
+                eb1Var.getClass();
+                org.telegram.messenger.g0.h3(new by0(i12, eb1Var, tLObject2));
                 break;
             case 24:
                 org.telegram.messenger.g0.h3(new ru0((WallpapersListActivity) obj, i11));
                 break;
             default:
-                rc1 rc1Var = (rc1) obj;
+                sc1 sc1Var = (sc1) obj;
                 if (tLObject2 != null) {
-                    org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.n(i12, rc1Var, tLObject2));
+                    org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.n(i12, sc1Var, tLObject2));
                     break;
                 }
                 break;

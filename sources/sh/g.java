@@ -5,14 +5,14 @@ import android.text.TextUtils;
 import c8.zc;
 import java.util.ArrayList;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.n0;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class g {
     public static int a(ij ijVar) {
@@ -65,7 +65,7 @@ public abstract class g {
                         String str = arrayList2.get(i11);
                         i11++;
                         String str2 = str;
-                        String i02 = hd.i0(2131750520, str2);
+                        String i02 = id.i0(2131750522, str2);
                         if (!TextUtils.isEmpty(i02)) {
                             str2 = i02;
                         }
@@ -73,7 +73,7 @@ public abstract class g {
                     }
                     boolean z9 = tL_messageMediaPoll.poll.subscribers_only;
                     if (arrayList.size() == 1) {
-                        return g0.X2(hd.a0(null, null, z9 ? 2131747116 : 2131747113, arrayList.get(0)));
+                        return g0.X2(id.a0(null, null, z9 ? 2131747118 : 2131747115, arrayList.get(0)));
                     }
                     StringBuffer stringBuffer = new StringBuffer();
                     for (int i12 = 0; i12 < arrayList.size() - 1; i12++) {
@@ -82,14 +82,14 @@ public abstract class g {
                         }
                         stringBuffer.append((String) arrayList.get(i12));
                     }
-                    return g0.X2(hd.a0(null, null, z9 ? 2131747115 : 2131747112, stringBuffer, jg.g.i(1, arrayList)));
+                    return g0.X2(id.a0(null, null, z9 ? 2131747117 : 2131747114, stringBuffer, jg.g.i(1, arrayList)));
                 }
                 if (zc.a(i7, 1)) {
                     TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
-                    return g0.X2(hd.a0(null, null, 2131747117, m5.u(qp.s1(i10).M0(Long.valueOf(-(messageFwdHeader != null ? m5.o(messageFwdHeader.from_id) : ij.B0(ijVar.k)))))));
+                    return g0.X2(id.a0(null, null, 2131747119, m5.u(qp.s1(i10).M0(Long.valueOf(-(messageFwdHeader != null ? m5.o(messageFwdHeader.from_id) : ij.B0(ijVar.k)))))));
                 }
                 if (zc.a(i7, 2)) {
-                    return g0.X2(hd.M0(2131747114, null));
+                    return g0.X2(id.M0(2131747116, null));
                 }
             }
         }

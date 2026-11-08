@@ -22,7 +22,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.gf;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.t10;
@@ -38,7 +38,7 @@ import org.telegram.ui.Components.g31;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x1 implements Runnable {
     public final /* synthetic */ int a;
@@ -369,7 +369,7 @@ public final /* synthetic */ class x1 implements Runnable {
                 TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) this.b;
                 TLRPC.User user3 = (TLRPC.User) this.d;
                 org.telegram.messenger.g0.g(connectedbotstarref.url);
-                hc.a0(q3Var).I(R.raw.copy, hd.M0(2131754333, null), org.telegram.messenger.g0.X2(hd.a0(null, null, 2131754334, hi.j.J0(connectedbotstarref.commission_permille), t10.p(user3)))).j();
+                hc.a0(q3Var).I(R.raw.copy, id.M0(2131754333, null), org.telegram.messenger.g0.X2(id.a0(null, null, 2131754334, hi.j.J0(connectedbotstarref.commission_permille), t10.p(user3)))).j();
                 return;
             case 15:
                 hi.q3.D0((hi.q3) this.c, (TLObject) this.d, (org.telegram.ui.ActionBar.u1) this.b);
@@ -513,7 +513,7 @@ public final /* synthetic */ class x1 implements Runnable {
                     return;
                 } else {
                     cVar.a.b(false);
-                    org.telegram.messenger.k5.p(null, 2131743880, hc.a0(cVar), null);
+                    org.telegram.messenger.k5.p(null, 2131743882, hc.a0(cVar), null);
                     return;
                 }
             case 23:
@@ -526,7 +526,7 @@ public final /* synthetic */ class x1 implements Runnable {
                     return;
                 } else if (tLObject8 instanceof TLRPC.TL_boolFalse) {
                     mVar.f.b(false);
-                    org.telegram.messenger.k5.p(null, 2131743880, hc.a0(mVar), null);
+                    org.telegram.messenger.k5.p(null, 2131743882, hc.a0(mVar), null);
                     return;
                 } else {
                     if (mVar.E != null) {
@@ -567,7 +567,7 @@ public final /* synthetic */ class x1 implements Runnable {
                 tL_connectedBot.recipients = tL_businessBotRecipients;
                 org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
                 if (T != null) {
-                    hc.a0(T).Q(R.raw.contact_check, 36, hd.a0(null, null, 2131752784, t10.p(i0Var.Q1))).j();
+                    hc.a0(T).Q(R.raw.contact_check, 36, id.a0(null, null, 2131752784, t10.p(i0Var.Q1))).j();
                     return;
                 }
                 return;
@@ -584,7 +584,7 @@ public final /* synthetic */ class x1 implements Runnable {
                     return;
                 } else {
                     s0Var.a.b(false);
-                    org.telegram.messenger.k5.p(null, 2131743880, hc.a0(s0Var), null);
+                    org.telegram.messenger.k5.p(null, 2131743882, hc.a0(s0Var), null);
                     return;
                 }
             case 28:

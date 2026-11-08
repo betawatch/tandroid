@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class v8 extends FrameLayout {
     public final u8 D;
@@ -17,8 +17,8 @@ public abstract class v8 extends FrameLayout {
     public i5 b;
     public l9 c;
     public l9 d;
-    public e10 e;
-    public e10 f;
+    public f10 e;
+    public f10 f;
     public final TextView h;
     public final TLRPC.TL_emojiList n;
     public final int r;
@@ -52,16 +52,16 @@ public abstract class v8 extends FrameLayout {
         int i11 = iArr[1];
         int i12 = iArr[2];
         int i13 = iArr[3];
-        e10 e10Var = new e10();
-        this.e = e10Var;
-        e10Var.d(i10, i11, i12, i13);
+        f10 f10Var = new f10();
+        this.e = f10Var;
+        f10Var.d(i10, i11, i12, i13);
         TextView textView = new TextView(context);
         this.h = textView;
         textView.setTextSize(1, 12.0f);
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.J7, null);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setGravity(17);
-        textView.setText(org.telegram.messenger.hd.M0(2131743798, null));
+        textView.setText(org.telegram.messenger.id.M0(2131743800, null));
         addView(textView, c8.ha.d(-1, 28.0f, 80, 10.0f, 10.0f, 10.0f, 10.0f));
     }
 
@@ -115,13 +115,13 @@ public abstract class v8 extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        e10 e10Var = this.e;
-        if (e10Var != null) {
-            e10Var.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        f10 f10Var = this.e;
+        if (f10Var != null) {
+            f10Var.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
         }
-        e10 e10Var2 = this.f;
-        if (e10Var2 != null) {
-            e10Var2.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        f10 f10Var2 = this.f;
+        if (f10Var2 != null) {
+            f10Var2.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
         }
         float f10 = this.x;
         if (f10 == 1.0f) {

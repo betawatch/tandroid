@@ -7,9 +7,9 @@ import android.os.Handler;
 import android.view.Surface;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.rt;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public interface l {
     void a(int i7, int i10, int i11, long j3);
@@ -18,15 +18,15 @@ public interface l {
 
     void c(int i7);
 
-    void d();
+    void d(org.telegram.ui.web.w wVar);
 
-    void e(int i7, long j3);
+    void e();
 
-    int f();
+    void f(int i7, long j3);
 
     void flush();
 
-    int g(MediaCodec.BufferInfo bufferInfo);
+    int g();
 
     ByteBuffer getInputBuffer(int i7);
 
@@ -34,15 +34,15 @@ public interface l {
 
     MediaFormat getOutputFormat();
 
-    void h(d3.k kVar, Handler handler);
+    int h(MediaCodec.BufferInfo bufferInfo);
 
-    void i(int i7);
+    void i(d3.k kVar, Handler handler);
 
-    void j(Surface surface);
+    void j(int i7);
 
-    boolean k(qt qtVar);
+    void k(Surface surface);
 
-    void l(ti.p pVar);
+    boolean l(rt rtVar);
 
     void m(ArrayList arrayList);
 

@@ -1,45 +1,35 @@
 package org.telegram.utils.twidget;
 
-import android.graphics.BlendMode;
-import android.graphics.Paint;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
-public abstract class b {
-    public static final BlendMode[] a;
+public interface b extends IInterface {
+    void G0(long j3, float f10);
 
-    static {
-        BlendMode blendMode;
-        BlendMode blendMode2;
-        BlendMode blendMode3;
-        BlendMode blendMode4;
-        BlendMode blendMode5;
-        BlendMode blendMode6;
-        BlendMode blendMode7;
-        BlendMode blendMode8;
-        BlendMode blendMode9;
-        blendMode = BlendMode.SRC_OVER;
-        blendMode2 = BlendMode.SRC_IN;
-        blendMode3 = BlendMode.DST_IN;
-        blendMode4 = BlendMode.PLUS;
-        blendMode5 = BlendMode.SCREEN;
-        blendMode6 = BlendMode.OVERLAY;
-        blendMode7 = BlendMode.COLOR_DODGE;
-        blendMode8 = BlendMode.COLOR_BURN;
-        blendMode9 = BlendMode.SOFT_LIGHT;
-        a = new BlendMode[]{blendMode, blendMode2, BlendMode.SRC_OUT, BlendMode.SRC_ATOP, BlendMode.DST_OVER, blendMode3, BlendMode.DST_OUT, BlendMode.DST_ATOP, blendMode4, BlendMode.SRC, BlendMode.XOR, BlendMode.MULTIPLY, blendMode5, blendMode6, BlendMode.DARKEN, BlendMode.LIGHTEN, blendMode7, blendMode8, BlendMode.HARD_LIGHT, blendMode9, BlendMode.DIFFERENCE, BlendMode.EXCLUSION, BlendMode.HUE, BlendMode.SATURATION, BlendMode.COLOR, BlendMode.LUMINOSITY};
-    }
+    void J(long j3);
 
-    public static void a(int i7, Paint paint) {
-        BlendMode blendMode;
-        if (i7 > 0) {
-            BlendMode[] blendModeArr = a;
-            if (i7 < blendModeArr.length) {
-                blendMode = blendModeArr[i7];
-                paint.setBlendMode(blendMode);
-            }
-        }
-        blendMode = null;
-        paint.setBlendMode(blendMode);
-    }
+    void M0(long j3);
+
+    void R(long j3, byte[] bArr);
+
+    void Y0(long j3, int i7, float f10, float f11, int i10);
+
+    void b1();
+
+    void d1(long j3, byte[] bArr);
+
+    void e0(long j3, byte[] bArr);
+
+    void j0(long j3, int i7, float f10, float f11, int i10, boolean z9, boolean z10, int i11, int i12);
+
+    void s(long j3, float f10, boolean z9, boolean z10, boolean z11);
+
+    long t(byte[] bArr, byte[] bArr2, float f10, float f11, int i7, byte[] bArr3, byte[] bArr4, byte[] bArr5, byte[] bArr6, boolean z9, d dVar);
+
+    void u(long j3, long j10, int i7, byte[] bArr);
+
+    void u0(long j3, boolean z9);
+
+    void v(boolean z9, boolean z10, byte[] bArr);
 }

@@ -1,10 +1,10 @@
 package ch;
 
 import c8.ha;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -32,10 +32,10 @@ public final /* synthetic */ class p implements Runnable {
                     qVar.m1 = 1.0f;
                     qVar.setWillNotDraw(false);
                     rVar.b = qVar;
-                    int L = org.telegram.messenger.g0.L(4.0f) + (hd.a0 ? 0 : i10);
+                    int L = org.telegram.messenger.g0.L(4.0f) + (id.a0 ? 0 : i10);
                     int L2 = org.telegram.messenger.g0.L(4.0f);
                     int L3 = org.telegram.messenger.g0.L(4.0f);
-                    if (!hd.a0) {
+                    if (!id.a0) {
                         i10 = 0;
                     }
                     qVar.setPadding(L, L2, L3 + i10, org.telegram.messenger.g0.L(i7));

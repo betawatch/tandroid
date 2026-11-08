@@ -1,56 +1,27 @@
 package org.telegram.ui.Wallet;
 
-import android.graphics.Rect;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.Iterator;
+import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class r7 implements View.OnLayoutChangeListener {
+public final /* synthetic */ class r7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ o7 b;
 
-    public /* synthetic */ r7(Object obj, int i7) {
+    public /* synthetic */ r7(o7 o7Var, int i7) {
         this.a = i7;
-        this.b = obj;
+        this.b = o7Var;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                c8 c8Var = (c8) this.b;
-                c8Var.getClass();
-                if (i11 - i7 != i15 - i13 || i12 - i10 != i16 - i14) {
-                    Iterator it = c8Var.f.values().iterator();
-                    while (it.hasNext()) {
-                        ((b8) it.next()).K = false;
-                    }
-                    c8Var.f0();
-                    break;
-                }
+                this.b.animate().rotation(0.0f).setDuration(120L).start();
                 break;
             default:
-                f8 f8Var = (f8) this.b;
-                if (i12 - i10 >= i16 - i14) {
-                    f8Var.getClass();
-                    break;
-                } else {
-                    ArrayList arrayList = f8Var.w;
-                    int size = arrayList.size();
-                    int i17 = 0;
-                    while (i17 < size) {
-                        Object obj = arrayList.get(i17);
-                        i17++;
-                        oa oaVar = (oa) obj;
-                        if (oaVar.hasFocus()) {
-                            oaVar.requestRectangleOnScreen(new Rect(0, 0, oaVar.getWidth(), oaVar.getHeight()), true);
-                            break;
-                        }
-                    }
-                    break;
-                }
+                this.b.animate().scaleX(1.0f).scaleY(1.0f).setDuration(260L).setInterpolator(new OvershootInterpolator(2.0f)).start();
+                break;
         }
     }
 }

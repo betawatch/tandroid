@@ -33,11 +33,11 @@ import org.telegram.ui.Components.n5;
 import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.r5;
 import org.telegram.ui.Components.r70;
-import org.telegram.ui.Components.uy;
 import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.vy;
 import org.telegram.ui.Components.x70;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class l extends TextView implements r9 {
     public static Field R;
@@ -192,7 +192,7 @@ public class l extends TextView implements r9 {
                 this.H = null;
             }
         }
-        if (this.H == null && !(this.r && ((GestureDetector) ((uy) this.a.d).b).onTouchEvent(motionEvent))) {
+        if (this.H == null && !(this.r && ((GestureDetector) ((vy) this.a.d).b).onTouchEvent(motionEvent))) {
             return super.dispatchTouchEvent(motionEvent);
         }
         return true;

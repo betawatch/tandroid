@@ -10,7 +10,7 @@ import java.util.Timer;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.d5;
 import org.telegram.messenger.g5;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.t10;
 import org.telegram.messenger.t3;
@@ -21,13 +21,13 @@ import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Cells.g6;
 import org.telegram.ui.Cells.m8;
 import org.telegram.ui.Cells.x3;
-import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.tm;
 import org.telegram.ui.Components.xi0;
-import org.telegram.ui.Components.xz;
+import org.telegram.ui.Components.yz;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class s1 extends oj0 {
     public boolean D;
@@ -156,13 +156,13 @@ public abstract class s1 extends oj0 {
             if (i10 == 1) {
                 x3 x3Var = (x3) view;
                 if (i7 == this.J) {
-                    x3Var.setText(hd.M0(2131749106, null));
+                    x3Var.setText(id.M0(2131749108, null));
                     return;
                 } else if (E(i7) == null) {
-                    x3Var.setText(hd.M0(2131749534, null));
+                    x3Var.setText(id.M0(2131749536, null));
                     return;
                 } else {
-                    x3Var.setText(hd.M0(2131747282, null));
+                    x3Var.setText(id.M0(2131747284, null));
                     return;
                 }
             }
@@ -177,7 +177,7 @@ public abstract class s1 extends oj0 {
             String str2 = (String) E(i7);
             m8 m8Var = (m8) view;
             m8Var.g(-1, k6.o6);
-            m8Var.k(hd.a0(null, null, 2131754452, pf.b.c().b("+" + str2)), false);
+            m8Var.k(id.a0(null, null, 2131754452, pf.b.c().b("+" + str2)), false);
             return;
         }
         TLObject tLObject = (TLObject) E(i7);
@@ -212,7 +212,7 @@ public abstract class s1 extends oj0 {
                     charSequence = null;
                     g6 g6Var = (g6) view;
                     if (z9) {
-                        charSequence = hd.M0(2131745902, null);
+                        charSequence = id.M0(2131745904, null);
                     }
                     g6Var.x(tLObject, null, charSequence, charSequence2, false, z9);
                     g6Var.w(this.h.h(j3) >= 0, false);
@@ -237,7 +237,7 @@ public abstract class s1 extends oj0 {
                         } else {
                             A1++;
                         }
-                        spannableStringBuilder.setSpan(new xz(k6.q6, null), A1, length + A1, 33);
+                        spannableStringBuilder.setSpan(new yz(k6.q6, null), A1, length + A1, 33);
                     }
                     str = spannableStringBuilder;
                 } catch (Exception e10) {
@@ -280,11 +280,11 @@ public abstract class s1 extends oj0 {
         } else if (i7 != 5) {
             view = new m8(16, context, false);
         } else {
-            lz lzVar = new lz(context, null);
-            lzVar.setIsSingleCell(true);
-            lzVar.setViewType(29);
-            r6.i(k6.d6, lzVar, null);
-            view = lzVar;
+            mz mzVar = new mz(context, null);
+            mzVar.setIsSingleCell(true);
+            mzVar.setViewType(29);
+            r6.i(k6.d6, mzVar, null);
+            view = mzVar;
         }
         return new xi0(view);
     }

@@ -15,13 +15,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.bn;
 import org.telegram.ui.Components.bw0;
-import org.telegram.ui.Components.fx;
-import org.telegram.ui.Components.qu;
-import org.telegram.ui.Components.yw;
+import org.telegram.ui.Components.gx;
+import org.telegram.ui.Components.ru;
 import org.telegram.ui.Components.z70;
+import org.telegram.ui.Components.zw;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v3 implements c20 {
     public final /* synthetic */ int a;
@@ -64,10 +64,10 @@ public final /* synthetic */ class v3 implements c20 {
                 n3Var.getClass();
                 ArrayList arrayList2 = new ArrayList(1);
                 arrayList2.add((TLRPC.InputStickerSet) obj);
-                qu quVar = new qu(((di.p9) obj3).f, n3Var.getContext(), (org.telegram.ui.ActionBar.f6) obj2, arrayList2);
+                ru ruVar = new ru(((di.p9) obj3).f, n3Var.getContext(), (org.telegram.ui.ActionBar.f6) obj2, arrayList2);
                 di.b4 b4Var = n3Var.z0.z1;
                 if (b4Var != null) {
-                    ((di.g9) b4Var).h(quVar);
+                    ((di.g9) b4Var).h(ruVar);
                     break;
                 }
                 break;
@@ -99,7 +99,7 @@ public final /* synthetic */ class v3 implements c20 {
                 di.r6 r6Var = (di.r6) obj;
                 di.i4 i4Var2 = ((di.z3) obj4).x;
                 i4Var2.B1.c(r6Var.a, i4Var2.k1, (TL_stories.StoryItem) obj3);
-                org.telegram.messenger.camera.q.s(org.telegram.messenger.hd.a0(null, null, 2131744732, r6Var.b), new org.telegram.ui.Components.hc(i4Var2.L0, (org.telegram.ui.ActionBar.f6) obj2), R.raw.contact_check, 36);
+                org.telegram.messenger.camera.q.s(org.telegram.messenger.id.a0(null, null, 2131744734, r6Var.b), new org.telegram.ui.Components.hc(i4Var2.L0, (org.telegram.ui.ActionBar.f6) obj2), R.raw.contact_check, 36);
                 break;
             case 4:
                 fi.m6 m6Var = (fi.m6) obj4;
@@ -164,7 +164,7 @@ public final /* synthetic */ class v3 implements c20 {
                     break;
                 }
             case 8:
-                fx fxVar = (fx) obj4;
+                gx gxVar = (gx) obj4;
                 ArrayList arrayList3 = (ArrayList) obj3;
                 Runnable runnable = (Runnable) obj2;
                 ArrayList arrayList4 = (ArrayList) obj;
@@ -176,13 +176,13 @@ public final /* synthetic */ class v3 implements c20 {
                     if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
                         arrayList = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
                     } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
-                        TLRPC.TL_messages_stickerSet l02 = ui.b0(fxVar.a.F.c1).l0(ui.Z(stickerSetCovered.set), Integer.valueOf(stickerSetCovered.set.hash), true, false, null);
+                        TLRPC.TL_messages_stickerSet l02 = ui.b0(gxVar.a.F.c1).l0(ui.Z(stickerSetCovered.set), Integer.valueOf(stickerSetCovered.set.hash), true, false, null);
                         arrayList = l02 != null ? l02.documents : null;
                     } else {
                         arrayList = stickerSetCovered.covers;
                     }
                     if (arrayList != null && !arrayList.isEmpty()) {
-                        arrayList3.add(new yw(stickerSetCovered, arrayList));
+                        arrayList3.add(new zw(stickerSetCovered, arrayList));
                     }
                 }
                 runnable.run();
@@ -236,20 +236,20 @@ public final /* synthetic */ class v3 implements c20 {
                 }
                 break;
             case 12:
-                zh.m mVar = (zh.m) obj4;
-                mVar.getClass();
+                zh.l lVar = (zh.l) obj4;
+                lVar.getClass();
                 ((boolean[]) obj3)[0] = false;
-                new zh.d(mVar.getContext(), (org.telegram.ui.ActionBar.f6) obj2, mVar.d2, (List) obj).show();
+                new zh.d(lVar.getContext(), (org.telegram.ui.ActionBar.f6) obj2, lVar.d2, (List) obj).show();
                 break;
             default:
-                zh.v vVar = (zh.v) obj4;
+                zh.u uVar = (zh.u) obj4;
                 org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj2;
                 List list = (List) obj;
-                vVar.getClass();
+                uVar.getClass();
                 ((boolean[]) obj3)[0] = false;
-                if (vVar.e2 != null) {
-                    new zh.d(vVar.getContext(), f6Var, vVar.e2, list).show();
-                    vVar.dismiss();
+                if (uVar.e2 != null) {
+                    new zh.d(uVar.getContext(), f6Var, uVar.e2, list).show();
+                    uVar.dismiss();
                     break;
                 }
                 break;

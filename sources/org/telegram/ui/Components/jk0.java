@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class jk0 extends Dialog {
     public static final /* synthetic */ int O = 0;
@@ -79,9 +79,9 @@ public final class jk0 extends Dialog {
         this.n = cVar;
         cVar.h = new jh.k(e5Var);
         cVar.i = e5Var;
-        qt qtVar = new qt(this, 3);
+        rt rtVar = new rt(this, 3);
         WeakHashMap weakHashMap = r0.i0.a;
-        r0.a0.i(e5Var, qtVar);
+        r0.a0.i(e5Var, rtVar);
     }
 
     public static void d(org.telegram.messenger.v10 v10Var) {
@@ -219,7 +219,7 @@ public final class jk0 extends Dialog {
         }
         if (arrayList == null) {
             f10 = q1Var.getTextX();
-            f11 = q1Var.getTextY() + q1Var.Gc;
+            f11 = q1Var.getTextY() + q1Var.Hc;
             arrayList = messageObject.z2;
             f12 = messageObject.v2;
         }
@@ -416,7 +416,7 @@ public final class jk0 extends Dialog {
                                         bitmap = createBitmap;
                                         Paint paint5 = new Paint(3);
                                         paint5.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-                                        q1Var.B3();
+                                        q1Var.C3();
                                         TextPaint textPaint = new TextPaint(layout.getPaint());
                                         textPaint.set(layout.getPaint());
                                         spannableStringBuilder = new SpannableStringBuilder(r5.cloneSpans(layout.getText(), -1, textPaint.getFontMetricsInt()));
@@ -466,7 +466,7 @@ public final class jk0 extends Dialog {
                                 bitmap = null;
                                 Paint paint52 = new Paint(3);
                                 paint52.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-                                q1Var.B3();
+                                q1Var.C3();
                                 TextPaint textPaint2 = new TextPaint(layout.getPaint());
                                 textPaint2.set(layout.getPaint());
                                 spannableStringBuilder = new SpannableStringBuilder(r5.cloneSpans(layout.getText(), -1, textPaint2.getFontMetricsInt()));

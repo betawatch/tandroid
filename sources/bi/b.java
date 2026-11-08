@@ -8,7 +8,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.vr;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -32,21 +32,21 @@ public final /* synthetic */ class b implements Runnable {
                 break;
             case 1:
                 org.telegram.ui.ActionBar.u1[] u1VarArr = new org.telegram.ui.ActionBar.u1[1];
-                SpannableStringBuilder V2 = org.telegram.messenger.g0.V2(org.telegram.messenger.g0.L2(org.telegram.messenger.hd.M0(2131754175, null), f6Var, new qr(u1VarArr, 0)));
+                SpannableStringBuilder V2 = org.telegram.messenger.g0.V2(org.telegram.messenger.g0.L2(org.telegram.messenger.id.M0(2131754175, null), f6Var, new qr(u1VarArr, 0)));
                 Matcher matcher = Pattern.compile("@([a-zA-Z0-9_-]+)").matcher(V2);
                 while (matcher.find()) {
                     V2.setSpan(new org.telegram.messenger.v(u1VarArr, context, matcher.group(1)), matcher.start(), matcher.end(), 33);
                 }
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, f6Var);
-                String M0 = org.telegram.messenger.hd.M0(2131754174, null);
+                String M0 = org.telegram.messenger.id.M0(2131754174, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
                 u1Var.T = V2;
-                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131754176, null), null);
+                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131754176, null), null);
                 u1VarArr[0] = alertDialog$Builder.p();
                 break;
             default:
-                org.telegram.ui.Wallet.y5.I0(context, f6Var);
+                org.telegram.ui.Wallet.x5.I0(context, f6Var);
                 break;
         }
     }

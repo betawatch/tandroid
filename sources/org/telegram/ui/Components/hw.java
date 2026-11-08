@@ -1,29 +1,26 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
-/* loaded from: classes3.dex */
-public final class hw extends g.p {
-    public final /* synthetic */ gy c;
+import androidx.recyclerview.widget.RecyclerView;
 
-    public hw(gy gyVar) {
-        this.c = gyVar;
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
+/* loaded from: classes3.dex */
+public final class hw extends v4.s {
+    public final /* synthetic */ hy Q;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hw(hy hyVar) {
+        super(8);
+        this.Q = hyVar;
     }
 
-    @Override // g.p
-    public final int i(int i7) {
-        gy gyVar = this.c;
-        pw pwVar = gyVar.R;
-        gw gwVar = gyVar.Q;
-        v4.g0 adapter = gyVar.P.getAdapter();
-        gx gxVar = gyVar.S;
-        if (adapter == gxVar) {
-            int d = gxVar.d(i7);
-            if (d == 1 || d == 3 || d == 2 || d == 4 || d == 5) {
-                return gwVar.J;
-            }
-        } else if ((gyVar.d0 && i7 == 0) || i7 == pwVar.d || i7 == pwVar.c || i7 == pwVar.f || pwVar.r.indexOfKey(i7) >= 0 || pwVar.w.indexOfKey(i7) >= 0) {
-            return gwVar.J;
+    @Override // v4.b0, v4.n0
+    public final void v0(RecyclerView recyclerView, v4.a1 a1Var, int i7) {
+        try {
+            fi.j1 j1Var = new fi.j1(2, recyclerView.getContext(), this);
+            j1Var.a = i7;
+            w0(j1Var);
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
-        return 1;
     }
 }

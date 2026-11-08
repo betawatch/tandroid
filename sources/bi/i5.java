@@ -3,16 +3,16 @@ package bi;
 import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class i5 extends k7 {
     public final /* synthetic */ int t3 = 0;
     public final /* synthetic */ org.telegram.ui.Components.na u3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i5(zh.h1 h1Var, Context context, int i7, long j3, org.telegram.ui.ActionBar.f6 f6Var) {
+    public i5(zh.g1 g1Var, Context context, int i7, long j3, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context, i7, j3, f6Var, null);
-        this.u3 = h1Var;
+        this.u3 = g1Var;
     }
 
     @Override // org.telegram.ui.ActionBar.v2
@@ -29,8 +29,8 @@ public final class i5 extends k7 {
     public org.telegram.ui.Components.hc k() {
         switch (this.t3) {
             case 1:
-                zh.h1 h1Var = (zh.h1) this.u3;
-                return new org.telegram.ui.Components.hc(h1Var.c, h1Var.I0);
+                zh.g1 g1Var = (zh.g1) this.u3;
+                return new org.telegram.ui.Components.hc(g1Var.c, g1Var.I0);
             default:
                 return super.k();
         }

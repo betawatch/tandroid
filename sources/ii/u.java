@@ -8,7 +8,7 @@ import java.io.Serializable;
 import org.telegram.messenger.a20;
 import org.telegram.messenger.b20;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t10;
@@ -22,11 +22,11 @@ import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.an;
-import org.telegram.ui.v91;
+import org.telegram.ui.w91;
 import r0.h1;
 import r0.k1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u implements a20, r0.m, b20 {
     public final /* synthetic */ int a;
@@ -84,7 +84,7 @@ public final /* synthetic */ class u implements a20, r0.m, b20 {
         z10 = false;
         if (z9) {
             k60 F = k60.F(d0Var.c, null, view);
-            F.c(R.drawable.msg_cancel, hd.M0(2131751915, null), new m(d0Var, z10, z11, j3, 1), true);
+            F.c(R.drawable.msg_cancel, id.M0(2131751915, null), new m(d0Var, z10, z11, j3, 1), true);
             F.W(d0Var.r1.d.U0(view, true));
             F.Z();
             return Boolean.valueOf(z13);
@@ -167,7 +167,7 @@ public final /* synthetic */ class u implements a20, r0.m, b20 {
                                     qg.d.a(anVar2, xr.a(j3, qp.s1(d0Var.a).e7.getLong(p0.o(chat.id, "forumlasttopic"), 1L)));
                                     f2Var.presentFragment(anVar2);
                                 } else {
-                                    f2Var.presentFragment(new v91(bundle));
+                                    f2Var.presentFragment(new w91(bundle));
                                 }
                                 d0Var.dismiss();
                                 break;

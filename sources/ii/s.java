@@ -12,7 +12,7 @@ import hi.u1;
 import hi.x3;
 import java.util.WeakHashMap;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t3;
 import org.telegram.tgnet.TLRPC;
@@ -27,7 +27,7 @@ import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class s extends f2 implements te.b {
     public final te.a a;
@@ -95,7 +95,7 @@ public final class s extends f2 implements te.b {
         this.actionBar.setBackButtonDrawable(new y1(false));
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new bi.s(this, 7));
-        this.actionBar.setTitle(hd.M0(2131751895, null));
+        this.actionBar.setTitle(id.M0(2131751895, null));
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
         int i10 = k6.a7;
@@ -127,7 +127,7 @@ public final class s extends f2 implements te.b {
         int f10 = i0.a.f(0.125f, getThemedColor(k6.d6), getThemedColor(k6.G6));
         this.x = f10;
         dVar2.setColor(f10);
-        this.n.setText(hd.M0(2131751900, null));
+        this.n.setText(id.M0(2131751900, null));
         this.n.f();
         this.n.setOnClickListener(new View.OnClickListener(this) { // from class: ii.r
             public final /* synthetic */ s b;
@@ -151,7 +151,7 @@ public final class s extends f2 implements te.b {
         this.f.addView(this.n, ha.q(0, 48, 1.0f, 0, 4, 0, 4, 0));
         fi.d dVar3 = new fi.d(context, this.resourceProvider, true);
         this.h = dVar3;
-        dVar3.setText(hd.M0(2131751902, null));
+        dVar3.setText(id.M0(2131751902, null));
         this.h.f();
         fi.d dVar4 = this.h;
         final int i11 = z9 ? 1 : 0;
@@ -178,8 +178,8 @@ public final class s extends f2 implements te.b {
         this.c.addView(this.f, ha.e(-1, -2, 80));
         av0 av0Var = new av0(getParentActivity(), null, 16, this.resourceProvider);
         this.r = av0Var;
-        av0Var.d.setText(hd.M0(2131748224, null));
-        this.r.e.setText(hd.M0(2131748223, null));
+        av0Var.d.setText(id.M0(2131748226, null));
+        this.r.e.setText(id.M0(2131748225, null));
         this.r.setAnimateLayoutChange(true);
         this.r.setVisibility(8);
         this.c.addView(this.r, ha.e(-2, -2, 17));

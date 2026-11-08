@@ -3,14 +3,14 @@ package vh;
 import android.view.View;
 import android.view.WindowInsets;
 import org.telegram.messenger.g0;
-import org.telegram.ui.Components.s00;
+import org.telegram.ui.Components.t00;
 import r0.k1;
 import r0.m;
 import sg.t0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b implements s00, m {
+public final /* synthetic */ class b implements t00, m {
     public final /* synthetic */ g a;
 
     public /* synthetic */ b(g gVar) {
@@ -26,7 +26,7 @@ public final /* synthetic */ class b implements s00, m {
         return k1.b;
     }
 
-    @Override // org.telegram.ui.Components.s00
+    @Override // org.telegram.ui.Components.t00
     public void a(int i7) {
         int min = Math.min(i7, g0.L(144.0f));
         if (i7 > 0) {

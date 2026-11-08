@@ -37,7 +37,7 @@ import org.telegram.messenger.re;
 import org.telegram.ui.Components.hr;
 import org.telegram.ui.Components.r31;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class m0 extends android.support.v4.media.session.s {
     public static final int z;
@@ -321,7 +321,7 @@ public final class m0 extends android.support.v4.media.session.s {
         if (hVar == null) {
             return;
         }
-        i0(20, new org.telegram.ui.web.a0(4, this, hVar), ((q4.l) this.n.b).c(), true);
+        i0(20, new org.telegram.ui.web.a0(3, this, hVar), ((q4.l) this.n.b).c(), true);
     }
 
     @Override // android.support.v4.media.session.s
@@ -510,7 +510,7 @@ public final class m0 extends android.support.v4.media.session.s {
                     i0(1, new g0(this, 6), ((q4.l) qVar.b).c(), false);
                     return;
                 } else if (i7 != 31) {
-                    i0(i7, new org.telegram.ui.web.a0(3, this, d), ((q4.l) qVar.b).c(), true);
+                    i0(i7, new org.telegram.ui.web.a0(2, this, d), ((q4.l) qVar.b).c(), true);
                     return;
                 } else {
                     obj.getClass();

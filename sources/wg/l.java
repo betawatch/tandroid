@@ -7,7 +7,7 @@ import bi.g5;
 import bi.w4;
 import fi.r7;
 import java.util.HashSet;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.v2;
 import org.telegram.ui.Components.cc;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l extends v2 {
     public static l l1;
@@ -105,12 +105,12 @@ public final class l extends v2 {
         r0 r0Var = new r0(w0Var, 0);
         r0 r0Var2 = new r0(w0Var, 6);
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, f6Var);
-        String M0 = hd.M0(2131743836, "UnsavedChanges");
+        String M0 = id.M0(2131743838, "UnsavedChanges");
         u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
-        u1Var.T = i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : hd.M0(2131753596, "BoostingApplyChangesCountries") : hd.M0(2131753597, "BoostingApplyChangesChannels") : hd.M0(2131753595, "BoostingApplyChangesUsers");
-        alertDialog$Builder.k(hd.M0(2131754216, "ApplyTheme"), new u5.e(r0Var, 7));
-        alertDialog$Builder.h(hd.M0(2131751407, "Discard"), new u5.e(r0Var2, 4));
+        u1Var.T = i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : id.M0(2131753596, "BoostingApplyChangesCountries") : id.M0(2131753597, "BoostingApplyChangesChannels") : id.M0(2131753595, "BoostingApplyChangesUsers");
+        alertDialog$Builder.k(id.M0(2131754216, "ApplyTheme"), new u5.e(r0Var, 7));
+        alertDialog$Builder.h(id.M0(2131751407, "Discard"), new u5.e(r0Var2, 4));
         alertDialog$Builder.p();
     }
 }

@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class am extends ViewGroup {
     public long D;
@@ -74,7 +74,7 @@ public final class am extends ViewGroup {
         setWillNotDraw(false);
         org.telegram.ui.Cells.t0 t0Var = new org.telegram.ui.Cells.t0(context, bmVar.n, true);
         this.a = t0Var;
-        t0Var.setCustomText(org.telegram.messenger.hd.M0(2131753960, null));
+        t0Var.setCustomText(org.telegram.messenger.id.M0(2131753960, null));
         addView(t0Var);
     }
 
@@ -450,10 +450,10 @@ public final class am extends ViewGroup {
                 zlVar.n = (width2 - Math.max(f16, previewScale)) / 2.0f;
                 zlVar.o = (Math.max(f16, previewScale) + amVar.getWidth()) / 2.0f;
                 zlVar.q = Math.max(i14 * 2, previewScale2);
-                zlVar.x.q(0, (int) previewScale, (int) previewScale2, 0, 0, 0, false, false);
+                zlVar.x.p(0, (int) previewScale, (int) previewScale2, 0, 0, 0, false, false);
                 t4Var.setBounds((int) zlVar.n, (int) zlVar.p, (int) zlVar.o, (int) zlVar.q);
                 t4Var.setAlpha((int) ((zlVar.d <= 0.0f ? 1.0f - interpolation : zlVar.f <= 0.0f ? interpolation : 1.0f) * 255.0f));
-                t4Var.e(canvas, zlVar.y, null);
+                t4Var.d(canvas, zlVar.y, null);
                 zlVar.p += f16;
                 zlVar.n += f16;
                 zlVar.q -= f16;
@@ -481,7 +481,7 @@ public final class am extends ViewGroup {
             } else {
                 if (zlVar.u == null || zlVar.v != j3) {
                     zlVar.v = j3;
-                    zlVar.u = new my0(bi.dd.a1(false, org.telegram.messenger.hd.H(',', "UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
+                    zlVar.u = new my0(bi.dd.a1(false, org.telegram.messenger.id.H(',', "UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
                 }
                 float L = org.telegram.messenger.g0.L(28.0f) + zlVar.u.c;
                 float L2 = org.telegram.messenger.g0.L(32.0f);

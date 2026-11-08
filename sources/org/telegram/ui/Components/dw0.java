@@ -7,7 +7,7 @@ import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class dw0 {
     public static void a(TLRPC.TL_messages_stickerSet tL_messages_stickerSet, org.telegram.ui.ActionBar.f2 f2Var, org.telegram.ui.ActionBar.f6 f6Var) {
@@ -27,12 +27,12 @@ public abstract class dw0 {
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, f6Var);
-        String M0 = org.telegram.messenger.hd.M0(2131744860, null);
+        String M0 = org.telegram.messenger.id.M0(2131744862, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
-        u1Var.T = org.telegram.messenger.hd.M0(2131744861, null);
-        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751599, null), new f2(18, runnable, stickerSet));
-        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+        u1Var.T = org.telegram.messenger.id.M0(2131744863, null);
+        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751599, null), new f2(18, runnable, stickerSet));
+        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
         u1Var.show();
         TextView textView = (TextView) u1Var.d(-1);
         if (textView != null) {
@@ -43,10 +43,10 @@ public abstract class dw0 {
     public static void c(TLRPC.StickerSet stickerSet, org.telegram.ui.ActionBar.f6 f6Var, Context context, org.telegram.messenger.v10 v10Var) {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, f6Var);
         boolean z9 = stickerSet != null;
-        String M0 = org.telegram.messenger.hd.M0(z9 ? 2131751223 : 2131748261, null);
+        String M0 = org.telegram.messenger.id.M0(z9 ? 2131751223 : 2131748263, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
-        u1Var.T = org.telegram.messenger.hd.M0(2131744865, null);
+        u1Var.T = org.telegram.messenger.id.M0(2131744867, null);
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setPadding(org.telegram.messenger.g0.L(24.0f), 0, org.telegram.messenger.g0.L(20.0f), 0);
         bw0 bw0Var = new bw0(context);
@@ -64,7 +64,7 @@ public abstract class dw0 {
         bw0Var.setImeOptions(6);
         bw0Var.setBackground(null);
         bw0Var.requestFocus();
-        bw0Var.setPadding(org.telegram.messenger.g0.L(org.telegram.messenger.hd.a0 ? 28.0f : 0.0f), 0, org.telegram.messenger.g0.L(org.telegram.messenger.hd.a0 ? 0.0f : 28.0f), 0);
+        bw0Var.setPadding(org.telegram.messenger.g0.L(org.telegram.messenger.id.a0 ? 28.0f : 0.0f), 0, org.telegram.messenger.g0.L(org.telegram.messenger.id.a0 ? 0.0f : 28.0f), 0);
         frameLayout.addView(bw0Var);
         NumberTextView numberTextView = new NumberTextView(context);
         numberTextView.setCenterAlign(true);
@@ -72,7 +72,7 @@ public abstract class dw0 {
         numberTextView.a(50, false);
         numberTextView.setTextColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.B6, false));
         numberTextView.setImportantForAccessibility(2);
-        frameLayout.addView(numberTextView, c8.ha.d(26, 20.0f, (org.telegram.messenger.hd.a0 ? 3 : 5) | 16, 0.0f, 2.0f, 4.0f, 0.0f));
+        frameLayout.addView(numberTextView, c8.ha.d(26, 20.0f, (org.telegram.messenger.id.a0 ? 3 : 5) | 16, 0.0f, 2.0f, 4.0f, 0.0f));
         bw0Var.addTextChangedListener(new cw0(numberTextView, bw0Var));
         if (z9) {
             bw0Var.setText(stickerSet.title);
@@ -80,8 +80,8 @@ public abstract class dw0 {
         }
         alertDialog$Builder.o(frameLayout);
         u1Var.G = 4;
-        alertDialog$Builder.k(org.telegram.messenger.hd.M0(z9 ? 2131751355 : 2131751753, null), new a3.g(bw0Var, v10Var, context, z9, 6));
-        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), new ax(bw0Var, 23));
+        alertDialog$Builder.k(org.telegram.messenger.id.M0(z9 ? 2131751355 : 2131751753, null), new a3.g(bw0Var, v10Var, context, z9, 6));
+        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), new bx(bw0Var, 23));
         org.telegram.ui.ActionBar.u1 p10 = alertDialog$Builder.p();
         p10.j0 = false;
         bw0Var.setOnEditorActionListener(new t0(p10, 9));

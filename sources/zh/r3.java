@@ -1,47 +1,33 @@
 package zh;
 
-import bi.ea;
-import bi.k7;
-import bi.uc;
+import java.util.ArrayList;
+import java.util.Arrays;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ b4 b;
+    public final /* synthetic */ TLRPC.User b;
 
-    public /* synthetic */ r3(b4 b4Var, int i7) {
+    public /* synthetic */ r3(int i7, TLRPC.User user) {
         this.a = i7;
-        this.b = b4Var;
+        this.b = user;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i7 = this.a;
+        TLRPC.User user = this.b;
+        switch (i7) {
             case 0:
-                this.b.f1(false);
+                wg.j0.l1(new ArrayList(Arrays.asList(user)));
                 break;
             case 1:
-                this.b.f1(true);
-                break;
-            case 2:
-                b4 b4Var = this.b;
-                k7 k7Var = new k7(b4Var.getContext(), b4Var.Q1, b4Var.R1, b4Var.I0, null);
-                long j3 = b4Var.U1.id;
-                String str = b4Var.X1;
-                k7Var.f3 = true;
-                ea.y(k7Var.a, false).K(j3, new ai.f1(3, k7Var, str));
-                break;
-            case 3:
-                b4 b4Var2 = this.b;
-                v.g1(b4Var2.getContext(), b4Var2.U1, b4Var2.I0);
-                break;
-            case 4:
-                b4 b4Var3 = this.b;
-                new uc(b4Var3.getContext(), b4Var3.I0).show();
+                wg.j0.l1(new ArrayList(Arrays.asList(user)));
                 break;
             default:
-                this.b.dismiss();
+                wg.j0.l1(new ArrayList(Arrays.asList(user)));
                 break;
         }
     }

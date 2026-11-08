@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t60 implements org.telegram.messenger.c20 {
     public final /* synthetic */ int a;
@@ -128,25 +128,25 @@ public final /* synthetic */ class t60 implements org.telegram.messenger.c20 {
                 break;
             case 3:
                 fi.d dVar = (fi.d) obj6;
-                org.telegram.ui.Wallet.z2 z2Var = (org.telegram.ui.Wallet.z2) obj5;
+                org.telegram.ui.Wallet.y2 y2Var = (org.telegram.ui.Wallet.y2) obj5;
                 org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj4;
                 org.telegram.ui.Wallet.g gVar = (org.telegram.ui.Wallet.g) obj3;
-                org.telegram.ui.Wallet.b2 b2Var = (org.telegram.ui.Wallet.b2) obj2;
+                org.telegram.ui.Wallet.a2 a2Var = (org.telegram.ui.Wallet.a2) obj2;
                 String str3 = (String) obj;
                 ((fi.d) obj7).setLoading(false);
                 dVar.setLoading(false);
                 if (str3 != null) {
-                    org.telegram.ui.Components.hc.c0(str3, z2Var.E, f6Var);
+                    org.telegram.ui.Components.hc.c0(str3, y2Var.E, f6Var);
                     gVar.run();
-                    dVar.setEnabled((b2Var.n || b2Var.o) ? false : true);
+                    dVar.setEnabled((a2Var.n || a2Var.o) ? false : true);
                     break;
                 } else {
-                    z2Var.dismiss();
+                    y2Var.dismiss();
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.a3 a3Var = (org.telegram.ui.Wallet.a3) obj4;
+                org.telegram.ui.Wallet.z2 z2Var = (org.telegram.ui.Wallet.z2) obj4;
                 org.telegram.ui.ActionBar.f6 f6Var2 = (org.telegram.ui.ActionBar.f6) obj3;
                 jg.w0 w0Var = (jg.w0) obj2;
                 String str4 = (String) obj;
@@ -154,11 +154,11 @@ public final /* synthetic */ class t60 implements org.telegram.messenger.c20 {
                 ((fi.d) obj6).setEnabled(true);
                 ((ImageView) obj5).setEnabled(true);
                 if (str4 != null) {
-                    org.telegram.ui.Components.hc.c0(str4, a3Var.E, f6Var2);
+                    org.telegram.ui.Components.hc.c0(str4, z2Var.E, f6Var2);
                     w0Var.run();
                     break;
                 } else {
-                    a3Var.dismiss();
+                    z2Var.dismiss();
                     break;
                 }
         }

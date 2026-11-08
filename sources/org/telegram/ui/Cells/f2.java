@@ -4,15 +4,15 @@ import android.graphics.ColorMatrixColorFilter;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import org.telegram.ui.Components.ez;
 import org.telegram.ui.Components.fd0;
+import org.telegram.ui.Components.fz;
 import org.telegram.ui.Components.q71;
 import org.telegram.ui.Components.r71;
 import org.telegram.ui.Components.w61;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class f2 extends org.telegram.ui.Components.l6 {
     public final /* synthetic */ int b;
@@ -64,15 +64,15 @@ public final class f2 extends org.telegram.ui.Components.l6 {
                 b8Var.b.invalidate();
                 break;
             case 3:
-                ez ezVar = (ez) this.c;
-                ezVar.w0 = f10;
-                int i7 = ezVar.U;
-                org.telegram.ui.ActionBar.f6 f6Var = ezVar.a;
-                ezVar.T.setColor(i0.a.f(f10, org.telegram.ui.ActionBar.k6.w0(i7, f6Var), org.telegram.ui.ActionBar.k6.w0(ezVar.c0, f6Var)));
-                bi.q1 q1Var = ezVar.F;
+                fz fzVar = (fz) this.c;
+                fzVar.w0 = f10;
+                int i7 = fzVar.U;
+                org.telegram.ui.ActionBar.f6 f6Var = fzVar.a;
+                fzVar.T.setColor(i0.a.f(f10, org.telegram.ui.ActionBar.k6.w0(i7, f6Var), org.telegram.ui.ActionBar.k6.w0(fzVar.c0, f6Var)));
+                bi.q1 q1Var = fzVar.F;
                 q1Var.g1();
                 q1Var.invalidate();
-                ((ez) obj).invalidate();
+                ((fz) obj).invalidate();
                 break;
             case 4:
                 w61 w61Var = (w61) this.c;
@@ -109,7 +109,7 @@ public final class f2 extends org.telegram.ui.Components.l6 {
             case 2:
                 return Float.valueOf(((org.telegram.ui.Components.b8) this.c).H2);
             case 3:
-                return Float.valueOf(((ez) this.c).w0);
+                return Float.valueOf(((fz) this.c).w0);
             case 4:
                 return Float.valueOf(((w61) this.c).y);
             case 5:

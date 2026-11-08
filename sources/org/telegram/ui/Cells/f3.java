@@ -7,16 +7,16 @@ import android.text.SpannableStringBuilder;
 import android.view.ActionMode;
 import android.view.Menu;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.ui.Components.kt;
+import org.telegram.messenger.id;
+import org.telegram.ui.Components.lt;
 import org.telegram.ui.Components.rt0;
 import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.uy0;
 import org.telegram.ui.Components.vy0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class f3 extends kt {
+public final class f3 extends lt {
     public final /* synthetic */ org.telegram.ui.ActionBar.f6 V;
     public final /* synthetic */ boolean W;
     public final /* synthetic */ h3 a0;
@@ -29,40 +29,40 @@ public final class f3 extends kt {
         this.W = z9;
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.lt
     public final boolean a() {
         return this.a0.r && super.a();
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.lt
     public final boolean b() {
         return this.a0.s;
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.lt
     public final int h() {
         return this.a0.a();
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.lt
     public final void i(ActionMode actionMode, Menu menu) {
         if (menu.findItem(R.id.menu_bold) != null) {
             return;
         }
         menu.removeItem(android.R.id.shareText);
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_spoiler, 6, hd.M0(2131745263, null));
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(hd.M0(2131753671, null));
+        menu.add(R.id.menu_groupbolditalic, R.id.menu_spoiler, 6, id.M0(2131745265, null));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(id.M0(2131753671, null));
         spannableStringBuilder.setSpan(new u31(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_bold, 7, spannableStringBuilder);
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(hd.M0(2131749086, null));
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(id.M0(2131749088, null));
         spannableStringBuilder2.setSpan(new u31(org.telegram.messenger.g0.o1("fonts/rmediumitalic.ttf")), 0, spannableStringBuilder2.length(), 33);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_italic, 8, spannableStringBuilder2);
-        SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(hd.M0(2131744438, null));
+        SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(id.M0(2131744440, null));
         uy0 uy0Var = new uy0();
         uy0Var.a = 8 | uy0Var.a;
         spannableStringBuilder3.setSpan(new vy0(uy0Var, 0), 0, spannableStringBuilder3.length(), 33);
         menu.add(R.id.menu_groupbolditalic, R.id.menu_strike, 9, spannableStringBuilder3);
-        menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 10, hd.M0(2131746336, null));
+        menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 10, id.M0(2131746338, null));
     }
 
     @Override // android.view.View

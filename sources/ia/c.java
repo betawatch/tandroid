@@ -40,7 +40,7 @@ import org.telegram.ui.web.a0;
 import p1.g;
 import w7.s;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class c {
     public Object a;
@@ -103,8 +103,8 @@ public final class c {
         return (b) ((AtomicReference) this.h).get();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0442  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0426 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x043f  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0423 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -168,7 +168,7 @@ public final class c {
                         default:
                             v5.g gVar3 = (v5.g) ((v5.d) this.b.c);
                             gVar3.getClass();
-                            return (Iterable) gVar3.c(new a0(17, gVar3, iVar2));
+                            return (Iterable) gVar3.c(new a0(16, gVar3, iVar2));
                     }
                 }
             })).booleanValue()) {
@@ -215,7 +215,7 @@ public final class c {
                         default:
                             v5.g gVar3 = (v5.g) ((v5.d) this.b.c);
                             gVar3.getClass();
-                            return (Iterable) gVar3.c(new a0(17, gVar3, iVar2));
+                            return (Iterable) gVar3.c(new a0(16, gVar3, iVar2));
                     }
                 }
             });
@@ -340,7 +340,7 @@ public final class c {
                             str6 = str6.concat(" eventUptimeMs");
                         }
                         if (((Long) cVar.g) == null) {
-                            str6 = rf.b.q(str6, " timezoneOffsetSeconds");
+                            str6 = rf.b.r(str6, " timezoneOffsetSeconds");
                         }
                         if (!str6.isEmpty()) {
                             throw new IllegalStateException("Missing required properties:".concat(str6));
@@ -375,31 +375,32 @@ public final class c {
                     str = null;
                 }
                 try {
-                    h6.m mVar2 = new h6.m(url, mVar, str, 13);
+                    int i15 = 13;
+                    h6.m mVar2 = new h6.m(url, mVar, str, i15);
                     y yVar = new y(bVar, 19);
-                    int i15 = 5;
+                    int i16 = 5;
                     do {
                         c10 = yVar.c(mVar2);
                         URL url2 = (URL) c10.c;
                         if (url2 != null) {
                             cc.a(url2, "CctTransportBackend", "Following redirect to: %s");
-                            mVar2 = new h6.m(url2, (m) mVar2.c, (String) mVar2.d, 13);
+                            mVar2 = new h6.m(url2, (m) mVar2.c, (String) mVar2.d, i15);
                         } else {
                             mVar2 = null;
                         }
                         if (mVar2 == null) {
                             break;
                         } else {
-                            i15--;
+                            i16--;
                         }
-                    } while (i15 >= 1);
-                    int i16 = c10.a;
-                    if (i16 == 200) {
+                    } while (i16 >= 1);
+                    int i17 = c10.a;
+                    if (i17 == 200) {
                         aVar2 = new p5.a(1, c10.b);
                     } else {
-                        if (i16 >= 500 || i16 == 404) {
+                        if (i17 >= 500 || i17 == 404) {
                             aVar = new p5.a(2, -1L);
-                        } else if (i16 == 400) {
+                        } else if (i17 == 400) {
                             try {
                                 aVar = new p5.a(4, -1L);
                             } catch (IOException e10) {
@@ -430,7 +431,7 @@ public final class c {
             cVar2 = this;
             iVar2 = iVar;
             j10 = j3;
-            gVar.f(new a0(12, cVar2, iterable));
+            gVar.f(new a0(11, cVar2, iterable));
             if (i11 == 1) {
                 j10 = Math.max(j10, aVar2.b);
                 if (bArr != null) {
@@ -447,7 +448,7 @@ public final class c {
                         hashMap2.put(str8, 1);
                     }
                 }
-                gVar.f(new a0(13, cVar2, hashMap2));
+                gVar.f(new a0(12, cVar2, hashMap2));
             }
             bArr2 = bArr;
         }

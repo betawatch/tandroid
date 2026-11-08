@@ -9,14 +9,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.ef0;
 import org.telegram.ui.xm0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class u2 extends org.telegram.ui.ActionBar.n0 {
     public final /* synthetic */ int a;
@@ -122,7 +122,7 @@ public final class u2 extends org.telegram.ui.ActionBar.n0 {
                     w3Var2.f3.O(true);
                     z0Var.a.e3.h1(0, 0);
                 }
-                z0Var.y.d.setText(hd.M0(TextUtils.isEmpty(z0Var.r) ? 2131742919 : 2131742918, null));
+                z0Var.y.d.setText(id.M0(TextUtils.isEmpty(z0Var.r) ? 2131742921 : 2131742920, null));
                 break;
         }
     }
@@ -232,7 +232,7 @@ public final class u2 extends org.telegram.ui.ActionBar.n0 {
                         ConnectionsManager.getInstance(i7).cancelRequest(xm0Var.y, true);
                         xm0Var.y = 0;
                     }
-                    xm0Var.N.d.setText(hd.M0(2131748168, null));
+                    xm0Var.N.d.setText(id.M0(2131748170, null));
                     xm0Var.N.e(false, true);
                     xm0Var.o0();
                     break;
@@ -274,7 +274,7 @@ public final class u2 extends org.telegram.ui.ActionBar.n0 {
                     org.telegram.ui.ActionBar.m5 m5Var2 = (org.telegram.ui.ActionBar.m5) this.b;
                     org.telegram.messenger.g0.r(m5Var2);
                     org.telegram.messenger.g0.i3(m5Var2, 500L);
-                    z0Var.y.d.setText(hd.M0(TextUtils.isEmpty(obj4) ? 2131742919 : 2131742918, null));
+                    z0Var.y.d.setText(id.M0(TextUtils.isEmpty(obj4) ? 2131742921 : 2131742920, null));
                 }
                 w3 w3Var2 = z0Var.a;
                 if (w3Var2 != null) {

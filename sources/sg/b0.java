@@ -16,8 +16,9 @@ import java.util.List;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.ui.ActionBar.m3;
+import org.telegram.ui.o61;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class b0 {
     public static final b0 e;
@@ -32,9 +33,9 @@ public final class b0 {
 
     static {
         boolean z9 = false;
-        b0 b0Var = new b0("roboto", "PhotoEditorTypefaceRoboto", new m4.d0(new s0.b(9), z9));
+        b0 b0Var = new b0("roboto", "PhotoEditorTypefaceRoboto", new m4.d0(new s0.b(10), z9));
         e = b0Var;
-        f = Arrays.asList(b0Var, new b0("italic", "PhotoEditorTypefaceItalic", new m4.d0(new s0.b(10), z9)), new b0("serif", "PhotoEditorTypefaceSerif", new m4.d0(new s0.b(11), z9)), new b0("condensed", "PhotoEditorTypefaceCondensed", new m4.d0(new s0.b(12), z9)), new b0("mono", "PhotoEditorTypefaceMono", new m4.d0(new s0.b(13), z9)), new b0("mw_bold", "PhotoEditorTypefaceMerriweather", new m4.d0(new s0.b(14), z9)));
+        f = Arrays.asList(b0Var, new b0("italic", "PhotoEditorTypefaceItalic", new m4.d0(new s0.b(11), z9)), new b0("serif", "PhotoEditorTypefaceSerif", new m4.d0(new s0.b(12), z9)), new b0("condensed", "PhotoEditorTypefaceCondensed", new m4.d0(new s0.b(13), z9)), new b0("mono", "PhotoEditorTypefaceMono", new m4.d0(new s0.b(14), z9)), new b0("mw_bold", "PhotoEditorTypefaceMerriweather", new m4.d0(new s0.b(15), z9)));
         g = Arrays.asList("Google Sans", "Dancing Script", "Carrois Gothic SC", "Cutive Mono", "Droid Sans Mono", "Coming Soon");
     }
 
@@ -202,7 +203,7 @@ public final class b0 {
         }
         if (arrayList == null && !i) {
             i = true;
-            Utilities.i.c(new org.telegram.ui.Wallet.z(13));
+            Utilities.i.c(new o61(15));
         }
         return f;
     }

@@ -62,8 +62,8 @@ import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.camera.CameraSession;
 import org.telegram.messenger.d20;
 import org.telegram.messenger.gc;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i20;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.j20;
 import org.telegram.messenger.p10;
@@ -98,8 +98,8 @@ import org.telegram.ui.Components.ch0;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.j6;
 import org.telegram.ui.Components.jc;
-import org.telegram.ui.Components.jz;
 import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.kz;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.n41;
 import org.telegram.ui.Components.y9;
@@ -107,7 +107,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.mm0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d0 implements Runnable {
     public final /* synthetic */ int a;
@@ -561,9 +561,9 @@ public final /* synthetic */ class d0 implements Runnable {
                 k7Var2.d3 = true;
                 k7Var2.i2(ijVar, null);
                 k7Var2.s2(0, true, null);
-                jz jzVar = k7Var2.S1;
-                if (jzVar != null) {
-                    jzVar.c(true);
+                kz kzVar = k7Var2.S1;
+                if (kzVar != null) {
+                    kzVar.c(true);
                 }
                 ea.y(k7Var2.a, false).O();
                 v9 G = ea.y(k7Var2.a, false).G(p10.i(k7Var2.a).e(), false);
@@ -592,9 +592,9 @@ public final /* synthetic */ class d0 implements Runnable {
                     return;
                 }
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, k7Var3.getContext(), k7Var3.I0);
-                alertDialog$Builder.a.R = hd.M0(2131750261, null);
-                alertDialog$Builder.a.T = hd.M0(2131750262, null);
-                jg.g.C(null, 2131747830, alertDialog$Builder, null);
+                alertDialog$Builder.a.R = id.M0(2131750263, null);
+                alertDialog$Builder.a.T = id.M0(2131750264, null);
+                jg.g.C(null, 2131747832, alertDialog$Builder, null);
                 return;
             case 8:
                 k7 k7Var4 = (k7) this.d;
@@ -631,39 +631,39 @@ public final /* synthetic */ class d0 implements Runnable {
                 d6Var.G.animate().alpha(1.0f).start();
                 d6Var.R.animate().alpha(0.0f).start();
                 d6Var.P.animate().alpha(1.0f).start();
-                d6Var.M.setText(org.telegram.messenger.g0.X2(hd.G(arrayList3.size(), "GiftCraftFailedText", new Object[0])));
-                j6Var.setText(hd.M0(2131749794, null));
+                d6Var.M.setText(org.telegram.messenger.g0.X2(id.G(arrayList3.size(), "GiftCraftFailedText", new Object[0])));
+                j6Var.setText(id.M0(2131749796, null));
                 j6Var.setTranslationY(org.telegram.messenger.g0.L(6.0f));
                 d6Var.I.setAlpha(0.0f);
                 if (d6Var.O != null) {
                     int i14 = 0;
                     while (true) {
-                        zh.z0[] z0VarArr = d6Var.O;
-                        if (i14 < z0VarArr.length) {
-                            org.telegram.messenger.g0.E2(z0VarArr[i14]);
+                        zh.y0[] y0VarArr = d6Var.O;
+                        if (i14 < y0VarArr.length) {
+                            org.telegram.messenger.g0.E2(y0VarArr[i14]);
                             i14++;
                         } else {
                             d6Var.O = null;
                         }
                     }
                 }
-                d6Var.O = new zh.z0[arrayList3.size()];
+                d6Var.O = new zh.y0[arrayList3.size()];
                 int i15 = 0;
                 while (i15 < arrayList3.size()) {
                     TL_stars.StarGift starGift3 = (TL_stars.StarGift) arrayList3.get(i15);
-                    zh.z0 z0Var = new zh.z0(d6Var.W, d6Var.getContext(), d6Var.a);
-                    z0Var.h(starGift3, false, false, false, false, true);
-                    z0Var.y.setVisibility(8);
-                    z0Var.setRibbonColor(-3065286);
-                    l9 l9Var = z0Var.D;
+                    zh.y0 y0Var = new zh.y0(d6Var.W, d6Var.getContext(), d6Var.a);
+                    y0Var.h(starGift3, false, false, false, false, true);
+                    y0Var.y.setVisibility(8);
+                    y0Var.setRibbonColor(-3065286);
+                    l9 l9Var = y0Var.D;
                     FrameLayout.LayoutParams e11 = ha.e(42, 42, 17);
-                    z0Var.E = e11;
+                    y0Var.E = e11;
                     l9Var.setLayoutParams(e11);
                     int i16 = i15 + 1;
                     boolean z13 = i16 >= arrayList3.size();
                     LinearLayout linearLayout = d6Var.N;
-                    d6Var.O[i15] = z0Var;
-                    linearLayout.addView(z0Var, ha.q(74, 74, 0.0f, 51, 0, 0, z13 ? 0 : 6, 0));
+                    d6Var.O[i15] = y0Var;
+                    linearLayout.addView(y0Var, ha.q(74, 74, 0.0f, 51, 0, 0, z13 ? 0 : 6, 0));
                     i15 = i16;
                 }
                 return;
@@ -750,10 +750,10 @@ public final /* synthetic */ class d0 implements Runnable {
                 va D = va.D(activity, z3Var2.x.l2);
                 h4 h4Var = z3Var2.x.v2;
                 long j3 = (h4Var == null || (o9Var = (o9) h4Var.c) == null) ? 0L : o9Var.currentPosition;
-                fi.z0 z0Var2 = qp.s1(z3Var2.x.l2).P1().w;
+                fi.z0 z0Var = qp.s1(z3Var2.x.l2).P1().w;
                 TL_stories.StoryItem storyItem2 = z3Var2.x.x1.a;
                 long j10 = storyItem2.dialogId;
-                ArrayList arrayList4 = z0Var2.b;
+                ArrayList arrayList4 = z0Var.b;
                 int size = arrayList4.size();
                 while (i13 < size) {
                     Object obj = arrayList4.get(i13);
@@ -968,7 +968,7 @@ public final /* synthetic */ class d0 implements Runnable {
                 f6 f6Var = (f6) this.b;
                 TLRPC.User user = (TLRPC.User) this.c;
                 org.telegram.messenger.g0.g(connectedbotstarref.url);
-                new hc(v2Var2.E, f6Var).I(R.raw.copy, hd.M0(2131754333, null), org.telegram.messenger.g0.X2(hd.a0(null, null, 2131754334, hi.j.J0(connectedbotstarref.commission_permille), t10.p(user)))).j();
+                new hc(v2Var2.E, f6Var).I(R.raw.copy, id.M0(2131754333, null), org.telegram.messenger.g0.X2(id.a0(null, null, 2131754334, hi.j.J0(connectedbotstarref.commission_permille), t10.p(user)))).j();
                 return;
             case 19:
                 hi.q3.A0((hi.q3) this.d, (Context) this.e, (TLRPC.User) this.b, (TL_payments.connectedBotStarRef) this.c);

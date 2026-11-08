@@ -19,7 +19,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class ia extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.Components.w5 D;
@@ -98,9 +98,9 @@ public abstract class ia extends FrameLayout implements org.telegram.ui.ActionBa
         boolean z11 = this.a;
         org.telegram.ui.Components.j6 j6Var = this.f;
         if (z11) {
-            j6Var.c(org.telegram.messenger.hd.M0(this.H ? 2131743647 : this.G ? 2131743648 : 2131743646, null), z10, !this.G);
+            j6Var.c(org.telegram.messenger.id.M0(this.H ? 2131743649 : this.G ? 2131743650 : 2131743648, null), z10, !this.G);
         } else {
-            j6Var.c(org.telegram.messenger.hd.M0(this.H ? 2131743651 : this.G ? 2131743652 : 2131743650, null), z10, !this.G);
+            j6Var.c(org.telegram.messenger.id.M0(this.H ? 2131743653 : this.G ? 2131743654 : 2131743652, null), z10, !this.G);
         }
         boolean z12 = this.G || this.H;
         ValueAnimator valueAnimator = this.F;
@@ -143,8 +143,8 @@ public abstract class ia extends FrameLayout implements org.telegram.ui.ActionBa
             k5Var.l("@" + str, false);
         } else {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("@");
-            SpannableString spannableString = new SpannableString(org.telegram.messenger.hd.M0(2131743649, null));
-            spannableString.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.H6, this.b), 0, spannableString.length(), 33);
+            SpannableString spannableString = new SpannableString(org.telegram.messenger.id.M0(2131743651, null));
+            spannableString.setSpan(new org.telegram.ui.Components.yz(org.telegram.ui.ActionBar.k6.H6, this.b), 0, spannableString.length(), 33);
             spannableStringBuilder.append((CharSequence) spannableString);
             k5Var.l(spannableStringBuilder, false);
         }

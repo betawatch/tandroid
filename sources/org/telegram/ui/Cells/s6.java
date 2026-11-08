@@ -14,7 +14,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLObject;
@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.fs;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class s6 extends FrameLayout {
     public int a;
@@ -203,9 +203,9 @@ public final class s6 extends FrameLayout {
             l9Var.setRoundRadius(org.telegram.messenger.g0.L(21.0f));
             l9Var.e(a22, w8Var);
             textView4.setText(t10.p(a22));
-            textView3.setText(hd.M0(2131745561, null));
+            textView3.setText(id.M0(2131745563, null));
             if (TLObject.hasFlag(tL_connectedBot.flags, 2)) {
-                textView2.setText(hd.a0(null, null, 2131745559, hd.x(tL_connectedBot.date, false)));
+                textView2.setText(id.a0(null, null, 2131745561, id.x(tL_connectedBot.date, false)));
                 return;
             }
             return;
@@ -231,10 +231,10 @@ public final class s6 extends FrameLayout {
             textView4.setText(sb2);
             if ((tL_authorization.flags & 1) != 0) {
                 setTag(Integer.valueOf(org.telegram.ui.ActionBar.k6.I6));
-                e12 = hd.M0(2131747825, null);
+                e12 = id.M0(2131747827, null);
             } else {
                 setTag(Integer.valueOf(org.telegram.ui.ActionBar.k6.A6));
-                e12 = hd.e1(tL_authorization.date_active);
+                e12 = id.e1(tL_authorization.date_active);
             }
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
             if (tL_authorization.country.length() != 0) {
@@ -269,7 +269,7 @@ public final class s6 extends FrameLayout {
             }
             int i10 = org.telegram.ui.ActionBar.k6.A6;
             setTag(Integer.valueOf(i10));
-            textView.setText(hd.e1(tL_webAuthorization.date_active));
+            textView.setText(id.e1(tL_webAuthorization.date_active));
             org.telegram.ui.ActionBar.r6.V(textView, i10, null);
             StringBuilder sb4 = new StringBuilder();
             if (tL_webAuthorization.ip.length() != 0) {
@@ -308,7 +308,7 @@ public final class s6 extends FrameLayout {
         setContentAlpha(1.0f - this.s.e(false, 0.0f));
         if (this.r) {
             int i7 = this.a == 1 ? 49 : 72;
-            canvas.drawLine(hd.a0 ? 0.0f : org.telegram.messenger.g0.L(i7), getMeasuredHeight() - 1, getMeasuredWidth() - (hd.a0 ? org.telegram.messenger.g0.L(i7) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+            canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(i7), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? org.telegram.messenger.g0.L(i7) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
         }
     }
 

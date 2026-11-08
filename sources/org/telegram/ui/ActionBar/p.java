@@ -16,7 +16,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.t10;
 import org.telegram.messenger.w7;
@@ -30,7 +30,7 @@ import org.telegram.ui.Components.dz0;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.lg0;
-import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.uo;
 import org.telegram.ui.Components.xq;
@@ -56,7 +56,7 @@ import org.telegram.ui.w8;
 import org.telegram.ui.y6;
 import org.telegram.ui.zd;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -212,10 +212,10 @@ public final /* synthetic */ class p implements Runnable {
                         p4Var.getMessagesController().I4(p4Var.Z() * 60, ((Long) arrayList5.get(i17)).longValue());
                     }
                     if (p4Var.Z() > 0) {
-                        org.telegram.messenger.camera.q.s(hd.a0("AutodeleteTimerEnabledForChats", null, 2131753778, hd.c0(p4Var.Z() * 60), hd.G(arrayList5.size(), "Chats", Integer.valueOf(arrayList5.size()))), hc.a0(p4Var), R.raw.fire_on, 36);
+                        org.telegram.messenger.camera.q.s(id.a0("AutodeleteTimerEnabledForChats", null, 2131753778, id.c0(p4Var.Z() * 60), id.G(arrayList5.size(), "Chats", Integer.valueOf(arrayList5.size()))), hc.a0(p4Var), R.raw.fire_on, 36);
                         break;
                     } else {
-                        hc.a0(p4Var).Q(R.raw.fire_off, 36, hd.a0("AutodeleteTimerDisabledForChats", null, 2131753779, hd.G(arrayList5.size(), "Chats", Integer.valueOf(arrayList5.size())))).j();
+                        hc.a0(p4Var).Q(R.raw.fire_off, 36, id.a0("AutodeleteTimerDisabledForChats", null, 2131753779, id.G(arrayList5.size(), "Chats", Integer.valueOf(arrayList5.size())))).j();
                         break;
                     }
                 }
@@ -261,7 +261,7 @@ public final /* synthetic */ class p implements Runnable {
                 y6.c0((y6) obj2, (u1) obj);
                 break;
             case 13:
-                lg0 lg0Var = new lg0((Context) obj2, hd.M0(2131749169, null), ((String[]) obj)[0], hd.M0(2131746508, null), false);
+                lg0 lg0Var = new lg0((Context) obj2, id.M0(2131749171, null), ((String[]) obj)[0], id.M0(2131746510, null), false);
                 lg0Var.I0();
                 lg0Var.show();
                 break;
@@ -360,7 +360,7 @@ public final /* synthetic */ class p implements Runnable {
                 break;
             case 19:
                 mb mbVar = (mb) obj2;
-                hc.a0(mbVar).Q(R.raw.ic_ban, 36, org.telegram.messenger.g0.X2(hd.a0(null, null, 2131746058, t10.j((TLRPC.User) obj, true)))).k(false);
+                hc.a0(mbVar).Q(R.raw.ic_ban, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131746060, t10.j((TLRPC.User) obj, true)))).k(false);
                 mbVar.a1();
                 break;
             case 20:
@@ -370,7 +370,7 @@ public final /* synthetic */ class p implements Runnable {
                     org.telegram.messenger.k5.o(null, 2131752466, hc.a0(mbVar2), R.raw.msg_antispam, 36);
                     break;
                 } else {
-                    org.telegram.messenger.k5.o(null, 2131743880, tLObject instanceof TLRPC.TL_boolFalse ? hc.a0(mbVar2) : hc.a0(mbVar2), R.raw.error, 36);
+                    org.telegram.messenger.k5.o(null, 2131743882, tLObject instanceof TLRPC.TL_boolFalse ? hc.a0(mbVar2) : hc.a0(mbVar2), R.raw.error, 36);
                     break;
                 }
             case 21:
@@ -421,11 +421,11 @@ public final /* synthetic */ class p implements Runnable {
                         ncVar.f();
                     }
                     e61Var.animate().alpha(1.0f).setDuration(150L).start();
-                    lz lzVar = pcVar.e;
+                    mz mzVar = pcVar.e;
                     if (pcVar.n) {
-                        org.telegram.messenger.g0.Z3(lzVar, false, 1.0f, true, true);
+                        org.telegram.messenger.g0.Z3(mzVar, false, 1.0f, true, true);
                     } else {
-                        org.telegram.messenger.g0.Z3(lzVar, true, 1.0f, true, true);
+                        org.telegram.messenger.g0.Z3(mzVar, true, 1.0f, true, true);
                     }
                     if (i12 >= 0 && (e61Var.getLayoutManager() instanceof v4.b0)) {
                         ((v4.b0) e61Var.getLayoutManager()).h1(i12, (org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(83.0f)) / 2);

@@ -7,13 +7,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.gf;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.vi0;
 import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class z2 extends vi0 {
     public final /* synthetic */ f3 c;
@@ -39,7 +39,7 @@ public final class z2 extends vi0 {
             i10 = i7 - 3;
         } else if (f3Var.d0) {
             if (i10 >= 0 && i10 < f3Var.b0.size()) {
-                return hd.e0(((e7) f3Var.b0.get(i10)).d / 1000, true);
+                return id.e0(((e7) f3Var.b0.get(i10)).d / 1000, true);
             }
             i10 -= f3Var.b0.size();
         }
@@ -51,7 +51,7 @@ public final class z2 extends vi0 {
         if (Build.VERSION.SDK_INT <= 28) {
             j3 /= 1000;
         }
-        return hd.e0(j3, true);
+        return id.e0(j3, true);
     }
 
     @Override // org.telegram.ui.Components.vi0
@@ -149,10 +149,10 @@ public final class z2 extends vi0 {
             } else if (gfVar.b) {
                 StringBuilder sb2 = new StringBuilder();
                 org.telegram.messenger.camera.q.q(null, 2131753933, sb2, ", ");
-                sb2.append(hd.z(gfVar.E));
+                sb2.append(id.z(gfVar.E));
                 b3Var.O = sb2.toString();
             } else {
-                b3Var.O = hd.M0(2131753948, null);
+                b3Var.O = id.M0(2131753948, null);
             }
             b3Var.b(gfVar);
             b3Var.invalidate();

@@ -70,7 +70,7 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.ez;
 import org.telegram.messenger.gz;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.ls;
@@ -112,10 +112,10 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.go0;
 import org.telegram.ui.jo0;
 import org.telegram.ui.o9;
-import org.telegram.ui.r81;
+import org.telegram.ui.s81;
 import org.telegram.ui.s9;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public abstract class x0 extends FrameLayout implements ls, a6 {
     public static boolean Q0 = true;
@@ -237,7 +237,7 @@ public abstract class x0 extends FrameLayout implements ls, a6 {
         addView(c4Var, ha.e(-1, -2, 48));
         TextView textView = new TextView(context);
         this.f = textView;
-        textView.setText(hd.M0(2131752913, null));
+        textView.setText(id.M0(2131752913, null));
         r6.V(textView, k6.y6, f6Var);
         textView.setTextSize(1, 15.0f);
         textView.setGravity(17);
@@ -1459,21 +1459,21 @@ public abstract class x0 extends FrameLayout implements ls, a6 {
                     final u0 u0Var2 = this.a;
                     final String[] strArr = {"cancelled"};
                     AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(getContext(), f6Var);
-                    alertDialog$Builder2.l(hd.L0(2131745421));
+                    alertDialog$Builder2.l(id.L0(2131745423));
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                     String p10 = t10.p(this.U);
                     if (TextUtils.isEmpty(p10)) {
-                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.X2(hd.L0(2131754069)));
+                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.X2(id.L0(2131754069)));
                     } else {
-                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.X2(hd.Z(2131754066, p10)));
+                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.X2(id.Z(2131754066, p10)));
                     }
                     final boolean z19 = qp.s1(this.M).G0.indexOfKey(this.U.id) >= 0;
                     if (z19) {
                         spannableStringBuilder.append((CharSequence) "\n\n");
-                        spannableStringBuilder.append((CharSequence) hd.L0(2131754068));
+                        spannableStringBuilder.append((CharSequence) id.L0(2131754068));
                     }
                     alertDialog$Builder2.g(spannableStringBuilder);
-                    alertDialog$Builder2.k(hd.L0(2131745462), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.web.s
+                    alertDialog$Builder2.k(id.L0(2131745464), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.web.s
                         @Override // org.telegram.ui.ActionBar.r1
                         public final void g(org.telegram.ui.ActionBar.u1 u1Var, int i20) {
                             strArr[0] = null;
@@ -1497,7 +1497,7 @@ public abstract class x0 extends FrameLayout implements ls, a6 {
                             }
                         }
                     });
-                    alertDialog$Builder2.h(hd.L0(2131752589), new go0(16));
+                    alertDialog$Builder2.h(id.L0(2131752589), new go0(16));
                     Y(4, alertDialog$Builder2.a(), new t(strArr, i19, u0Var2, o7Var, 0));
                     return;
                 case '\f':
@@ -2059,15 +2059,15 @@ public abstract class x0 extends FrameLayout implements ls, a6 {
                     final Runnable[] runnableArr = {new org.telegram.ui.Wallet.n(29, this, o7Var)};
                     AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(getContext(), f6Var);
                     if (TextUtils.isEmpty(str12)) {
-                        alertDialog$Builder3.l(hd.L0(2131753141));
+                        alertDialog$Builder3.l(id.L0(2131753141));
                         i7 = 0;
-                        alertDialog$Builder3.g(org.telegram.messenger.g0.X2(hd.Z(2131753142, t10.p(this.U))));
+                        alertDialog$Builder3.g(org.telegram.messenger.g0.X2(id.Z(2131753142, t10.p(this.U))));
                     } else {
                         i7 = 0;
-                        alertDialog$Builder3.l(org.telegram.messenger.g0.X2(hd.Z(2131753142, t10.p(this.U))));
+                        alertDialog$Builder3.l(org.telegram.messenger.g0.X2(id.Z(2131753142, t10.p(this.U))));
                         alertDialog$Builder3.g(str12);
                     }
-                    alertDialog$Builder3.k(hd.L0(2131754284), new org.telegram.ui.ActionBar.r1(this) { // from class: org.telegram.ui.web.v
+                    alertDialog$Builder3.k(id.L0(2131754284), new org.telegram.ui.ActionBar.r1(this) { // from class: org.telegram.ui.web.v
                         public final /* synthetic */ x0 b;
 
                         {
@@ -2108,7 +2108,7 @@ public abstract class x0 extends FrameLayout implements ls, a6 {
                         }
                     });
                     final int i30 = 1;
-                    alertDialog$Builder3.h(hd.L0(2131752589), new org.telegram.ui.ActionBar.r1(this) { // from class: org.telegram.ui.web.v
+                    alertDialog$Builder3.h(id.L0(2131752589), new org.telegram.ui.ActionBar.r1(this) { // from class: org.telegram.ui.web.v
                         public final /* synthetic */ x0 b;
 
                         {
@@ -2578,7 +2578,7 @@ public abstract class x0 extends FrameLayout implements ls, a6 {
                     int i7 = k6.G6;
                     Context context2 = context;
                     TextView b10 = qa.b(context2, 20.0f, i7, true, null);
-                    b10.setText(hd.M0(2131752990, null));
+                    b10.setText(id.M0(2131752990, null));
                     b10.setGravity(17);
                     f10.addView(b10, ha.t(-1, -2, 7, 32, 0, 32, 10));
                     TextView b11 = qa.b(context2, 14.0f, i7, false, null);
@@ -2592,7 +2592,7 @@ public abstract class x0 extends FrameLayout implements ls, a6 {
                     z8Var.setFixedSize(12);
                     f10.addView(z8Var, ha.t(-1, 12, 7, 0, 0, 0, 0));
                     n4 n4Var = new n4(context2, resourceProvider);
-                    n4Var.setText(hd.M0(2131752992, null));
+                    n4Var.setText(id.M0(2131752992, null));
                     f10.addView(n4Var, ha.t(-1, -2, 7, 0, 0, 0, 0));
                     fi.d dVar = new fi.d(context2, resourceProvider, true);
                     ArrayList arrayList = new ArrayList();
@@ -2621,7 +2621,7 @@ public abstract class x0 extends FrameLayout implements ls, a6 {
                     u uVar3 = uVar;
                     boolean[] zArr2 = zArr;
                     LinearLayout linearLayout2 = f10;
-                    dVar.i(hd.M0(2131752994, null), false, z9);
+                    dVar.i(id.M0(2131752994, null), false, z9);
                     dVar.setEnabled(strArr[0] != null);
                     linearLayout2.addView(dVar, ha.t(-1, 48, 7, 8, 8, 8, 4));
                     l10.N = linearLayout2;
@@ -2673,7 +2673,7 @@ public abstract class x0 extends FrameLayout implements ls, a6 {
             AnimatorSet animatorSet = new AnimatorSet();
             Property property = View.ALPHA;
             animatorSet.playTogether(ObjectAnimator.ofFloat(this.a, (Property<u0, Float>) property, 1.0f), ObjectAnimator.ofFloat(c4Var, (Property<c4, Float>) property, 0.0f));
-            animatorSet.addListener(new r81(this, 13));
+            animatorSet.addListener(new s81(this, 13));
             animatorSet.start();
         }
         this.b = str;
@@ -2915,7 +2915,7 @@ public abstract class x0 extends FrameLayout implements ls, a6 {
 
     public final void Z(String str) {
         StringBuilder sb2 = new StringBuilder();
-        sb2.append(hd.M0(2131743880, "UnknownError"));
+        sb2.append(id.M0(2131743882, "UnknownError"));
         sb2.append(str != null ? ": ".concat(str) : "");
         i(sb2.toString());
     }

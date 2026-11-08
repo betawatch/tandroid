@@ -23,24 +23,24 @@ import org.telegram.ui.cn;
 import org.telegram.ui.fw;
 import org.telegram.ui.g40;
 import org.telegram.ui.kx;
-import org.telegram.ui.lb1;
+import org.telegram.ui.mb1;
 import org.telegram.ui.mj;
 import org.telegram.ui.my0;
-import org.telegram.ui.nb1;
 import org.telegram.ui.nm;
 import org.telegram.ui.ny0;
-import org.telegram.ui.o91;
+import org.telegram.ui.ob1;
 import org.telegram.ui.oy0;
-import org.telegram.ui.q91;
+import org.telegram.ui.p91;
 import org.telegram.ui.r91;
+import org.telegram.ui.s91;
 import org.telegram.ui.sq0;
 import org.telegram.ui.sv;
-import org.telegram.ui.v91;
+import org.telegram.ui.w91;
 import org.telegram.ui.ww;
 import org.telegram.ui.yz;
 import org.telegram.ui.zs;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class g5 extends m61 {
     public final /* synthetic */ int a;
@@ -103,31 +103,31 @@ public final class g5 extends m61 {
                 ((ny0) view).a(i10);
                 break;
             case 7:
-                r91 r91Var = (r91) obj;
-                r91Var.M(view, i7, r91Var.d0, true);
+                s91 s91Var = (s91) obj;
+                s91Var.M(view, i7, s91Var.d0, true);
                 break;
             case 8:
-                nb1 nb1Var = (nb1) obj;
-                SparseArray sparseArray = nb1Var.a;
-                lb1 lb1Var = (lb1) sparseArray.get(i7);
-                if (lb1Var != null) {
-                    f2Var = lb1Var.a;
+                ob1 ob1Var = (ob1) obj;
+                SparseArray sparseArray = ob1Var.a;
+                mb1 mb1Var = (mb1) sparseArray.get(i7);
+                if (mb1Var != null) {
+                    f2Var = mb1Var.a;
                 } else {
-                    org.telegram.ui.ActionBar.f2 a02 = nb1Var.a0(i7);
-                    lb1 lb1Var2 = new lb1(a02);
-                    sparseArray.put(i7, lb1Var2);
+                    org.telegram.ui.ActionBar.f2 a02 = ob1Var.a0(i7);
+                    mb1 mb1Var2 = new mb1(a02);
+                    sparseArray.put(i7, mb1Var2);
                     f2Var = a02;
-                    lb1Var = lb1Var2;
+                    mb1Var = mb1Var2;
                 }
-                if (!lb1Var.b) {
+                if (!mb1Var.b) {
                     f2Var.onFragmentCreate();
-                    lb1Var.b = true;
+                    mb1Var.b = true;
                 }
-                f2Var.setParentLayout(nb1Var.getParentLayout());
-                f2Var.setSimpleMenuOverlayHost(nb1Var);
+                f2Var.setParentLayout(ob1Var.getParentLayout());
+                f2Var.setSimpleMenuOverlayHost(ob1Var);
                 if (f2Var.getFragmentView() == null) {
                     f2Var.performCreateView((Context) this.b);
-                    f2Var.setTitleOverlayText(nb1Var.n, nb1Var.r, nb1Var.s);
+                    f2Var.setTitleOverlayText(ob1Var.n, ob1Var.r, ob1Var.s);
                 }
                 FrameLayout frameLayout2 = (FrameLayout) view;
                 frameLayout2.removeAllViews();
@@ -143,11 +143,11 @@ public final class g5 extends m61 {
                 }
                 WeakHashMap weakHashMap2 = r0.i0.a;
                 r0.y.c(frameLayout2);
-                nb1Var.checkSystemBarColors();
-                nb1Var.Z();
+                ob1Var.checkSystemBarColors();
+                ob1Var.Z();
                 break;
             case 9:
-                org.telegram.ui.Wallet.y5.Y0((q41) view, false);
+                org.telegram.ui.Wallet.x5.Y0((q41) view, false);
                 break;
         }
     }
@@ -261,40 +261,40 @@ public final class g5 extends m61 {
                 frameLayout4.setOnClickListener(new my0(this, 9));
                 return frameLayout4;
             case 7:
-                r91 r91Var = (r91) this.c;
-                v91 v91Var = r91Var.v0;
+                s91 s91Var = (s91) this.c;
+                w91 w91Var = s91Var.v0;
                 if (i7 == 1) {
-                    return r91Var.V;
+                    return s91Var.V;
                 }
                 if (i7 == 2) {
-                    i10 = ((org.telegram.ui.ActionBar.f2) v91Var).currentAccount;
-                    dl0 dl0Var2 = new dl0(i10, v91Var);
-                    dl0Var2.b.j(new q91(0));
-                    dl0Var2.setUiCallback(r91Var);
+                    i10 = ((org.telegram.ui.ActionBar.f2) w91Var).currentAccount;
+                    dl0 dl0Var2 = new dl0(i10, w91Var);
+                    dl0Var2.b.j(new r91(0));
+                    dl0Var2.setUiCallback(s91Var);
                     return dl0Var2;
                 }
-                yz yzVar2 = new yz(v91Var);
-                yzVar2.setChatPreviewDelegate(r91Var.t0);
-                yzVar2.setUiCallback(r91Var);
-                yzVar2.b.j(new q91(1));
+                yz yzVar2 = new yz(w91Var);
+                yzVar2.setChatPreviewDelegate(s91Var.t0);
+                yzVar2.setUiCallback(s91Var);
+                yzVar2.b.j(new r91(1));
                 return yzVar2;
             case 8:
                 return new sq0((Context) this.b, 13);
             case 9:
-                org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) this.c;
-                q41[] q41VarArr = y5Var.r0;
+                org.telegram.ui.Wallet.x5 x5Var = (org.telegram.ui.Wallet.x5) this.c;
+                q41[] q41VarArr = x5Var.r0;
                 q41 q41Var = q41VarArr[i7];
                 if (q41Var != null) {
                     return q41Var;
                 }
                 Context context2 = (Context) this.b;
-                i11 = ((org.telegram.ui.ActionBar.f2) y5Var).currentAccount;
-                i12 = ((org.telegram.ui.ActionBar.f2) y5Var).classGuid;
+                i11 = ((org.telegram.ui.ActionBar.f2) x5Var).currentAccount;
+                i12 = ((org.telegram.ui.ActionBar.f2) x5Var).classGuid;
                 org.telegram.ui.Components.q qVar = new org.telegram.ui.Components.q(this, i7, 2);
-                org.telegram.ui.Wallet.i4 i4Var = new org.telegram.ui.Wallet.i4(y5Var);
-                org.telegram.ui.Wallet.i4 i4Var2 = new org.telegram.ui.Wallet.i4(y5Var);
-                f6Var = ((org.telegram.ui.ActionBar.f2) y5Var).resourceProvider;
-                kx kxVar = new kx(context2, i11, i12, false, qVar, i4Var, i4Var2, f6Var, i7 == 1 ? 3 : -1, 1);
+                org.telegram.ui.Wallet.h4 h4Var = new org.telegram.ui.Wallet.h4(x5Var);
+                org.telegram.ui.Wallet.h4 h4Var2 = new org.telegram.ui.Wallet.h4(x5Var);
+                f6Var = ((org.telegram.ui.ActionBar.f2) x5Var).resourceProvider;
+                kx kxVar = new kx(context2, i11, i12, false, qVar, h4Var, h4Var2, f6Var, i7 == 1 ? 3 : -1, 1);
                 if (i7 == 1) {
                     kxVar.setPadding(org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(12.0f));
                 }
@@ -337,10 +337,10 @@ public final class g5 extends m61 {
             case 7:
                 return ((ArrayList) this.b).size();
             case 8:
-                ((nb1) this.c).getClass();
+                ((ob1) this.c).getClass();
                 return 4;
             case 9:
-                return ((org.telegram.ui.Wallet.y5) this.c).f0 ? 2 : 1;
+                return ((org.telegram.ui.Wallet.x5) this.c).f0 ? 2 : 1;
             default:
                 return 2;
         }
@@ -366,7 +366,7 @@ public final class g5 extends m61 {
         switch (i10) {
             case 1:
                 if (i7 == 0) {
-                    return org.telegram.messenger.hd.M0(2131746709, null);
+                    return org.telegram.messenger.id.M0(2131746711, null);
                 }
                 String O0 = k21.O0(((di.j6) ((sp0) this.c).f.get(i7 - 1)).E, null, null);
                 if (O0 == null) {
@@ -374,30 +374,30 @@ public final class g5 extends m61 {
                 }
                 return O0.substring(0, 1).toUpperCase() + O0.substring(1);
             case 2:
-                return i7 != 1 ? i7 != 2 ? org.telegram.messenger.hd.M0(2131745710, null) : org.telegram.messenger.hd.M0(2131745713, null) : org.telegram.messenger.hd.M0(2131745739, null);
+                return i7 != 1 ? i7 != 2 ? org.telegram.messenger.id.M0(2131745712, null) : org.telegram.messenger.id.M0(2131745715, null) : org.telegram.messenger.id.M0(2131745741, null);
             case 3:
                 ArrayList arrayList = (ArrayList) obj;
                 if (((em0) arrayList.get(i7)).a == 0) {
-                    return org.telegram.messenger.hd.M0(2131745824, null);
+                    return org.telegram.messenger.id.M0(2131745826, null);
                 }
                 if (((em0) arrayList.get(i7)).a == 1) {
-                    return org.telegram.messenger.hd.M0(2131752258, null);
+                    return org.telegram.messenger.id.M0(2131752258, null);
                 }
                 if (((em0) arrayList.get(i7)).a == 4) {
-                    return org.telegram.messenger.hd.M0(2131754178, null);
+                    return org.telegram.messenger.id.M0(2131754178, null);
                 }
                 if (((em0) arrayList.get(i7)).a == 6) {
-                    return org.telegram.messenger.hd.M0(2131745734, null);
+                    return org.telegram.messenger.id.M0(2131745736, null);
                 }
                 if (((em0) arrayList.get(i7)).a == 2) {
-                    return org.telegram.messenger.hd.M0(2131751344, null);
+                    return org.telegram.messenger.id.M0(2131751344, null);
                 }
                 if (((em0) arrayList.get(i7)).a == 5) {
-                    return org.telegram.messenger.hd.M0(2131746583, null);
+                    return org.telegram.messenger.id.M0(2131746585, null);
                 }
                 jg.o0 o0Var = jg.q0.j3[((em0) arrayList.get(i7)).b];
                 String str = o0Var.c;
-                return str != null ? str : org.telegram.messenger.hd.M0(o0Var.b, null);
+                return str != null ? str : org.telegram.messenger.id.M0(o0Var.b, null);
             case 4:
             case 5:
             case 6:
@@ -406,17 +406,17 @@ public final class g5 extends m61 {
                 return super.g(i7);
             case 7:
                 ArrayList arrayList2 = (ArrayList) obj;
-                if (((o91) arrayList2.get(i7)).a == 0) {
-                    return org.telegram.messenger.hd.M0(2131745757, null);
+                if (((p91) arrayList2.get(i7)).a == 0) {
+                    return org.telegram.messenger.id.M0(2131745759, null);
                 }
-                if (((o91) arrayList2.get(i7)).a == 1) {
-                    return org.telegram.messenger.hd.M0(2131751344, null);
+                if (((p91) arrayList2.get(i7)).a == 1) {
+                    return org.telegram.messenger.id.M0(2131751344, null);
                 }
-                jg.o0 o0Var2 = jg.q0.j3[((o91) arrayList2.get(i7)).b];
+                jg.o0 o0Var2 = jg.q0.j3[((p91) arrayList2.get(i7)).b];
                 String str2 = o0Var2.c;
-                return str2 != null ? str2 : org.telegram.messenger.hd.M0(o0Var2.b, null);
+                return str2 != null ? str2 : org.telegram.messenger.id.M0(o0Var2.b, null);
             case 9:
-                return org.telegram.messenger.hd.M0(i7 == 0 ? 2131742983 : 2131743171, null);
+                return org.telegram.messenger.id.M0(i7 == 0 ? 2131742985 : 2131743173, null);
         }
     }
 
@@ -458,13 +458,13 @@ public final class g5 extends m61 {
                 return i7 == 0 ? 0 : 1;
             case 7:
                 ArrayList arrayList2 = (ArrayList) this.b;
-                if (((o91) arrayList2.get(i7)).a == 0) {
+                if (((p91) arrayList2.get(i7)).a == 0) {
                     return 1;
                 }
-                if (((o91) arrayList2.get(i7)).a == 1) {
+                if (((p91) arrayList2.get(i7)).a == 1) {
                     return 2;
                 }
-                return ((o91) arrayList2.get(i7)).a + i7;
+                return ((p91) arrayList2.get(i7)).a + i7;
             case 9:
             case 10:
                 return i7;
@@ -516,27 +516,27 @@ public final class g5 extends m61 {
         l();
     }
 
-    public g5(r91 r91Var) {
+    public g5(s91 s91Var) {
         this.a = 7;
-        this.c = r91Var;
+        this.c = s91Var;
         ArrayList arrayList = new ArrayList();
         this.b = arrayList;
-        arrayList.add(new o91(0));
-        o91 o91Var = new o91(2);
-        o91Var.b = 0;
-        arrayList.add(o91Var);
-        o91 o91Var2 = new o91(2);
-        o91Var2.b = 1;
-        arrayList.add(o91Var2);
-        o91 o91Var3 = new o91(2);
-        o91Var3.b = 2;
-        arrayList.add(o91Var3);
-        o91 o91Var4 = new o91(2);
-        o91Var4.b = 3;
-        arrayList.add(o91Var4);
-        o91 o91Var5 = new o91(2);
-        o91Var5.b = 4;
-        arrayList.add(o91Var5);
+        arrayList.add(new p91(0));
+        p91 p91Var = new p91(2);
+        p91Var.b = 0;
+        arrayList.add(p91Var);
+        p91 p91Var2 = new p91(2);
+        p91Var2.b = 1;
+        arrayList.add(p91Var2);
+        p91 p91Var3 = new p91(2);
+        p91Var3.b = 2;
+        arrayList.add(p91Var3);
+        p91 p91Var4 = new p91(2);
+        p91Var4.b = 3;
+        arrayList.add(p91Var4);
+        p91 p91Var5 = new p91(2);
+        p91Var5.b = 4;
+        arrayList.add(p91Var5);
     }
 
     public g5(wg.a0 a0Var, wg.w0 w0Var) {

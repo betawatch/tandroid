@@ -24,14 +24,14 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.ui.ActionBar.m3;
 import org.telegram.ui.Components.a10;
 import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.qt;
-import org.telegram.ui.Components.x00;
+import org.telegram.ui.Components.c10;
+import org.telegram.ui.Components.rt;
 import org.telegram.ui.Components.y00;
 import org.telegram.ui.Components.z00;
 import org.telegram.ui.PhotoViewer;
 import s4.o0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class q extends Handler {
     public final /* synthetic */ int a;
@@ -107,10 +107,10 @@ public final class q extends Handler {
         if (obj == bVar3.x && bVar3.k()) {
             bVar3.x = null;
             synchronized (bVar3.o) {
-                qt qtVar = bVar3.y;
-                qtVar.getClass();
+                rt rtVar = bVar3.y;
+                rtVar.getClass();
                 aVar = new qb.a(21);
-                ((f0) qtVar.b).f();
+                ((f0) rtVar.b).f();
                 bVar3.y = null;
             }
             if ((obj2 instanceof Exception) || (obj2 instanceof NoSuchMethodError)) {
@@ -231,59 +231,59 @@ public final class q extends Handler {
                 ((org.telegram.messenger.b) this.b).i = false;
                 return;
             case 5:
-                z00 z00Var = (z00) this.b;
-                y00 y00Var = z00Var.g;
+                a10 a10Var = (a10) this.b;
+                z00 z00Var = a10Var.g;
                 int i11 = message.what;
                 if (i11 == 1) {
-                    y00Var.getClass();
+                    z00Var.getClass();
                     return;
                 }
                 if (i11 == 2) {
-                    z00Var.f.removeMessages(3);
-                    z00Var.j = false;
-                    z00Var.k = true;
-                    y00Var.onLongPress(z00Var.n);
+                    a10Var.f.removeMessages(3);
+                    a10Var.j = false;
+                    a10Var.k = true;
+                    z00Var.onLongPress(a10Var.n);
                     return;
                 }
                 if (i11 != 3) {
                     throw new RuntimeException("Unknown message " + message);
                 }
-                x00 x00Var = z00Var.h;
-                if (x00Var != null) {
-                    if (z00Var.i) {
-                        z00Var.j = true;
+                y00 y00Var = a10Var.h;
+                if (y00Var != null) {
+                    if (a10Var.i) {
+                        a10Var.j = true;
                         return;
                     } else {
-                        ((PhotoViewer) x00Var).Y1(z00Var.n);
+                        ((PhotoViewer) y00Var).Y1(a10Var.n);
                         return;
                     }
                 }
                 return;
             case 6:
-                a10 a10Var = (a10) this.b;
-                b10 b10Var = a10Var.f;
+                b10 b10Var = (b10) this.b;
+                c10 c10Var = b10Var.f;
                 int i12 = message.what;
                 if (i12 == 1) {
-                    b10Var.onShowPress(a10Var.m);
+                    c10Var.onShowPress(b10Var.m);
                     return;
                 }
                 if (i12 == 2) {
-                    a10Var.e.removeMessages(3);
-                    a10Var.i = false;
-                    a10Var.j = true;
-                    b10Var.onLongPress(a10Var.m);
+                    b10Var.e.removeMessages(3);
+                    b10Var.i = false;
+                    b10Var.j = true;
+                    c10Var.onLongPress(b10Var.m);
                     return;
                 }
                 if (i12 != 3) {
                     throw new RuntimeException("Unknown message " + message);
                 }
-                b10 b10Var2 = a10Var.g;
-                if (b10Var2 != null) {
-                    if (a10Var.h) {
-                        a10Var.i = true;
+                c10 c10Var2 = b10Var.g;
+                if (c10Var2 != null) {
+                    if (b10Var.h) {
+                        b10Var.i = true;
                         return;
                     } else {
-                        b10Var2.onSingleTapConfirmed(a10Var.m);
+                        c10Var2.onSingleTapConfirmed(b10Var.m);
                         return;
                     }
                 }

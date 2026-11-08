@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class jq0 implements ej0 {
     public final /* synthetic */ zp0 a;
@@ -132,13 +132,13 @@ public final class jq0 implements ej0 {
                                             return z9;
                                         }
                                         org.telegram.ui.ActionBar.z0 z0Var = new org.telegram.ui.ActionBar.z0(xs0Var2.getContext(), false, false);
-                                        z0Var.j(org.telegram.messenger.hd.M0(2131747810, null), R.drawable.msg_channel, null);
+                                        z0Var.j(org.telegram.messenger.id.M0(2131747812, null), R.drawable.msg_channel, null);
                                         z0Var.setMinimumWidth(org.telegram.messenger.qs.q2);
                                         int i14 = 12;
                                         z0Var.setOnClickListener(new la0(jr0Var, i14));
                                         actionBarPopupWindow$ActionBarPopupWindowLayout.addView(z0Var);
                                         org.telegram.ui.ActionBar.z0 z0Var2 = new org.telegram.ui.ActionBar.z0(xs0Var2.getContext(), false, false);
-                                        z0Var2.j(org.telegram.messenger.hd.M0(2131746661, null), R.drawable.msg_addbot, null);
+                                        z0Var2.j(org.telegram.messenger.id.M0(2131746663, null), R.drawable.msg_addbot, null);
                                         z0Var2.setMinimumWidth(org.telegram.messenger.qs.q2);
                                         z0Var2.setOnClickListener(new bi.la(jr0Var, (TLRPC.Chat) tLObject, i7, i14));
                                         actionBarPopupWindow$ActionBarPopupWindowLayout.addView(z0Var2);

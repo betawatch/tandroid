@@ -14,11 +14,11 @@ import org.telegram.ui.Components.n40;
 import org.telegram.ui.Components.nf0;
 import org.telegram.ui.Components.si0;
 import org.telegram.ui.Components.w7;
-import org.telegram.ui.Components.xw;
 import org.telegram.ui.Components.yq0;
+import org.telegram.ui.Components.yw;
 import org.telegram.ui.vp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class m2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -141,22 +141,22 @@ public final class m2 extends AnimatorListenerAdapter {
                 ((w7) obj).a[i10].setVisibility(8);
                 break;
             case 9:
-                xw xwVar = (xw) obj;
-                xwVar.r.setVisibility(i10 == 1 ? 0 : 8);
-                xwVar.h.setVisibility(i10 == 2 ? 0 : 8);
-                xwVar.n.setVisibility(i10 == 3 ? 0 : 8);
+                yw ywVar = (yw) obj;
+                ywVar.r.setVisibility(i10 == 1 ? 0 : 8);
+                ywVar.h.setVisibility(i10 == 2 ? 0 : 8);
+                ywVar.n.setVisibility(i10 == 3 ? 0 : 8);
                 break;
             case 10:
                 n40 n40Var = (n40) obj;
-                if (i10 == n40Var.s0) {
+                if (i10 == n40Var.t0) {
                     n40Var.x.setRotationY(0.0f);
-                    n40Var.q0 = true;
-                    n40Var.b0 = null;
+                    n40Var.r0 = true;
+                    n40Var.c0 = null;
                     StringBuilder sb2 = new StringBuilder("RoundVideo camera flip visual animation completed: elapsedMs=");
                     cameraFlipElapsedMs = n40Var.getCameraFlipElapsedMs();
                     sb2.append(cameraFlipElapsedMs);
                     a8.b(sb2.toString());
-                    n40.m(n40Var);
+                    n40.n(n40Var);
                     break;
                 }
                 break;
@@ -192,10 +192,10 @@ public final class m2 extends AnimatorListenerAdapter {
     public void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 9:
-                xw xwVar = (xw) this.c;
-                xwVar.r.setVisibility(0);
-                xwVar.h.setVisibility(0);
-                xwVar.n.setVisibility(0);
+                yw ywVar = (yw) this.c;
+                ywVar.r.setVisibility(0);
+                ywVar.h.setVisibility(0);
+                ywVar.n.setVisibility(0);
                 break;
             default:
                 super.onAnimationStart(animator);

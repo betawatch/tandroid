@@ -8,18 +8,18 @@ import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.ic;
-import org.telegram.messenger.rc;
+import org.telegram.messenger.sc;
 import org.telegram.ui.Components.is;
 import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class k1 extends is {
     public int M;
     public int N;
     public ArrayList O;
     public final ArrayList P = new ArrayList();
-    public final boolean Q = rc.e(8200);
+    public final boolean Q = sc.e(8200);
     public final /* synthetic */ m1 R;
 
     public k1(m1 m1Var) {

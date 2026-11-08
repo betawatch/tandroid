@@ -13,7 +13,7 @@ import li.k4;
 import li.m4;
 import li.p3;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ml;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -40,11 +40,11 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.bg0;
 import org.telegram.ui.d10;
 import org.telegram.ui.xf;
-import org.telegram.ui.yb1;
+import org.telegram.ui.zb1;
 import tg.i2;
 import ug.f1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -136,9 +136,9 @@ public final /* synthetic */ class g implements View.OnClickListener {
                 int i13 = eVar.a;
                 boolean z9 = eVar.r;
                 eVar.r = !z9;
-                eVar.h.c(hd.M0(!z9 ? 2131753701 : 2131753698, null), true, true);
+                eVar.h.c(id.M0(!z9 ? 2131753701 : 2131753698, null), true, true);
                 j6Var.a();
-                j6Var.c(hd.M0(eVar.r ? 2131753699 : 2131753700, null), true, true);
+                j6Var.c(id.M0(eVar.r ? 2131753699 : 2131753700, null), true, true);
                 if (eVar.r) {
                     eVar.x |= 1;
                 } else {
@@ -265,13 +265,13 @@ public final /* synthetic */ class g implements View.OnClickListener {
                 }
                 break;
             case 19:
-                yb1 yb1Var = (yb1) obj;
-                if (!yb1Var.a) {
-                    if (yb1Var.x != 0) {
-                        yb1Var.a(false, true);
+                zb1 zb1Var = (zb1) obj;
+                if (!zb1Var.a) {
+                    if (zb1Var.x != 0) {
+                        zb1Var.a(false, true);
                         break;
                     } else {
-                        ((Activity) yb1Var.getContext()).startActivityForResult(((MediaProjectionManager) yb1Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
+                        ((Activity) zb1Var.getContext()).startActivityForResult(((MediaProjectionManager) zb1Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
                         break;
                     }
                 }
@@ -279,12 +279,12 @@ public final /* synthetic */ class g implements View.OnClickListener {
             case 20:
                 org.telegram.ui.web.j jVar2 = (org.telegram.ui.web.j) obj;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(jVar2.getContext());
-                String M0 = hd.M0(2131742915, null);
+                String M0 = id.M0(2131742917, null);
                 u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
-                u1Var.T = hd.M0(2131742916, null);
-                alertDialog$Builder.k(hd.M0(2131747830, null), new org.telegram.ui.web.a(jVar2));
-                alertDialog$Builder.h(hd.M0(2131752589, null), null);
+                u1Var.T = id.M0(2131742918, null);
+                alertDialog$Builder.k(id.M0(2131747832, null), new org.telegram.ui.web.a(jVar2));
+                alertDialog$Builder.h(id.M0(2131752589, null), null);
                 alertDialog$Builder.p();
                 break;
             case 21:

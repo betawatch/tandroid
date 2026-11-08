@@ -47,7 +47,7 @@ import org.telegram.ui.uq0;
 import org.telegram.ui.xo0;
 import org.telegram.ui.zp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a;
@@ -119,7 +119,7 @@ public final /* synthetic */ class i0 implements Runnable {
                         k7Var.k().f0(tL_error, false);
                         return;
                     } else {
-                        k7Var.k().t(org.telegram.messenger.hd.M0(2131743880, null), null).k(false);
+                        k7Var.k().t(org.telegram.messenger.id.M0(2131743882, null), null).k(false);
                         return;
                     }
                 }
@@ -245,9 +245,9 @@ public final /* synthetic */ class i0 implements Runnable {
                 org.telegram.messenger.g0.i3(new w8(profileActivity, 0), 200L);
                 org.telegram.ui.Components.hc a03 = org.telegram.ui.Components.hc.a0(profileActivity);
                 TLRPC.Document document2 = starGift3.sticker;
-                String M0 = org.telegram.messenger.hd.M0(2131745110, null);
+                String M0 = org.telegram.messenger.id.M0(2131745112, null);
                 if (charSequence == null) {
-                    charSequence = org.telegram.messenger.g0.X2(org.telegram.messenger.hd.G((int) j14, "StarsGiftCompletedChannelText", str4));
+                    charSequence = org.telegram.messenger.g0.X2(org.telegram.messenger.id.G((int) j14, "StarsGiftCompletedChannelText", str4));
                 }
                 a03.s(document2, M0, charSequence).k(false);
                 return;
@@ -477,31 +477,31 @@ public final /* synthetic */ class i0 implements Runnable {
                 boolean[] zArr3 = (boolean[]) this.d;
                 ConnectionsManager connectionsManager = (ConnectionsManager) this.e;
                 int[] iArr = (int[]) this.b;
-                org.telegram.utils.twidget.u uVar = (org.telegram.utils.twidget.u) this.f;
+                org.telegram.utils.twidget.v0 v0Var = (org.telegram.utils.twidget.v0) this.f;
                 long j24 = this.c;
                 if (zArr3[0]) {
                     return;
                 }
                 zArr3[0] = true;
                 connectionsManager.cancelRequest(iArr[0], true);
-                uVar.a(3, null, j24);
+                v0Var.b(3, null, j24);
                 return;
             default:
-                zh.h1 h1Var = (zh.h1) this.d;
+                zh.g1 g1Var = (zh.g1) this.d;
                 v9 v9Var2 = (v9) this.e;
                 long j25 = this.c;
                 c20 c20Var2 = (c20) this.f;
                 Context context = (Context) this.b;
-                org.telegram.ui.Components.jb jbVar = h1Var.c2;
+                org.telegram.ui.Components.jb jbVar = g1Var.c2;
                 int i20 = 0;
                 while (i20 < i11) {
                     SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
                     if (i20 == i12) {
-                        a02 = org.telegram.messenger.hd.M0(2131749962, str3);
+                        a02 = org.telegram.messenger.id.M0(2131749964, str3);
                     } else {
                         Object[] objArr = new Object[i12];
-                        objArr[i13] = h1Var.V1;
-                        a02 = org.telegram.messenger.hd.a0(str3, str3, 2131749958, objArr);
+                        objArr[i13] = g1Var.V1;
+                        a02 = org.telegram.messenger.id.a0(str3, str3, 2131749960, objArr);
                     }
                     spannableStringBuilder2.append((CharSequence) org.telegram.messenger.g0.X2(a02));
                     String str11 = " ";
@@ -530,7 +530,7 @@ public final /* synthetic */ class i0 implements Runnable {
                         SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
                         Object[] objArr2 = new Object[1];
                         objArr2[i21] = org.telegram.messenger.m5.t(j25);
-                        spannableStringBuilder3.append((CharSequence) org.telegram.messenger.hd.a0(null, null, 2131749956, objArr2).replaceAll(str12, " "));
+                        spannableStringBuilder3.append((CharSequence) org.telegram.messenger.id.a0(null, null, 2131749958, objArr2).replaceAll(str12, " "));
                         spannableStringBuilder3.append((CharSequence) " ");
                         Iterator it = hashSet2.iterator();
                         while (it.hasNext()) {
@@ -540,12 +540,12 @@ public final /* synthetic */ class i0 implements Runnable {
                         }
                         spannableStringBuilder3.append((CharSequence) " >");
                         spannableStringBuilder = spannableStringBuilder2;
-                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.H2(org.telegram.messenger.g0.k2(spannableStringBuilder3, new ea0(h1Var, c20Var2, j25, 4)), true));
+                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.H2(org.telegram.messenger.g0.k2(spannableStringBuilder3, new ea0(g1Var, c20Var2, j25, 4)), true));
                     } else {
                         spannableStringBuilder = spannableStringBuilder2;
-                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.H2(org.telegram.messenger.g0.k2(org.telegram.messenger.hd.M0(2131749957, null), new pa(context, 12)), true));
+                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.H2(org.telegram.messenger.g0.k2(org.telegram.messenger.id.M0(2131749959, null), new pa(context, 12)), true));
                     }
-                    org.telegram.ui.Components.jb jbVar2 = i20 == 0 ? jbVar : h1Var.d2;
+                    org.telegram.ui.Components.jb jbVar2 = i20 == 0 ? jbVar : g1Var.d2;
                     jbVar2.setText(spannableStringBuilder);
                     jbVar2.setMaxWidth(fi.m3.a(jbVar2.getText(), jbVar2.getPaint()));
                     i20++;
@@ -631,9 +631,9 @@ public final /* synthetic */ class i0 implements Runnable {
         this.b = tLObject2;
     }
 
-    public /* synthetic */ i0(zh.h1 h1Var, v9 v9Var, long j3, c20 c20Var, Context context) {
+    public /* synthetic */ i0(zh.g1 g1Var, v9 v9Var, long j3, c20 c20Var, Context context) {
         this.a = 17;
-        this.d = h1Var;
+        this.d = g1Var;
         this.e = v9Var;
         this.c = j3;
         this.f = c20Var;

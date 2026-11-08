@@ -12,7 +12,7 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class xd extends LinearLayout {
     public final LinearLayout a;
@@ -77,7 +77,7 @@ public final class xd extends LinearLayout {
             if (i10 == 0 && !wdVar.a) {
                 linearLayoutArr[i10].setVisibility(8);
             } else if (i10 != 1 || wdVar.g) {
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(rf.b.q(str, " "));
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(rf.b.r(str, " "));
                 boolean equalsIgnoreCase = "TON".equalsIgnoreCase(str);
                 TextView[] textViewArr = this.c;
                 if (equalsIgnoreCase) {
@@ -85,7 +85,7 @@ public final class xd extends LinearLayout {
                     int indexOf2 = format.indexOf(46);
                     if (indexOf2 >= 0) {
                         i7 = i10;
-                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.E((long) Math.floor(wdVar.d / 1.0E9d), ' '));
+                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.E((long) Math.floor(wdVar.d / 1.0E9d), ' '));
                         spannableStringBuilder.append((CharSequence) format.substring(indexOf2));
                     } else {
                         i7 = i10;
@@ -96,7 +96,7 @@ public final class xd extends LinearLayout {
                     i7 = i10;
                     if ("XTR".equalsIgnoreCase(str)) {
                         if (i7 == 0) {
-                            spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.E(wdVar.d, ' '));
+                            spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.E(wdVar.d, ' '));
                         } else {
                             spannableStringBuilder.append((CharSequence) bi.dd.M0(wdVar.i, 0.8f, ' '));
                         }

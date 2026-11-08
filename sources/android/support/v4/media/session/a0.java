@@ -109,14 +109,14 @@ import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.bi;
 import org.telegram.ui.Components.di;
 import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.ny;
+import org.telegram.ui.Components.oy;
 import org.telegram.ui.Components.q51;
 import org.telegram.ui.Components.qg;
-import org.telegram.ui.Components.ry;
+import org.telegram.ui.Components.sy;
 import org.telegram.ui.Components.t51;
 import org.telegram.ui.lm0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class a0 implements oa.a, lm0, bi, com.google.android.gms.common.api.internal.p, q51, ib.b {
     public static int e;
@@ -171,7 +171,7 @@ public class a0 implements oa.a, lm0, bi, com.google.android.gms.common.api.inte
         if (!str.endsWith("&")) {
             sb3 = "&".concat(sb3);
         }
-        return rf.b.q(str, sb3);
+        return rf.b.r(str, sb3);
     }
 
     public static void g(Bundle bundle) {
@@ -215,10 +215,10 @@ public class a0 implements oa.a, lm0, bi, com.google.android.gms.common.api.inte
         TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
         q6.m.i("Not connected to device", e0Var.G == 2);
         j6.f fVar = (j6.f) wVar.n();
-        Parcel P0 = fVar.P0();
-        P0.writeString(str);
-        com.google.android.gms.internal.cast.t.c(P0, iVar);
-        fVar.U0(P0, 13);
+        Parcel p12 = fVar.p1();
+        p12.writeString(str);
+        com.google.android.gms.internal.cast.t.c(p12, iVar);
+        fVar.u1(p12, 13);
         synchronized (e0Var.s) {
             try {
                 if (e0Var.p != null) {
@@ -873,11 +873,11 @@ public class a0 implements oa.a, lm0, bi, com.google.android.gms.common.api.inte
             int i15 = y5Var.h;
             h51Var2.d = i14;
             h51Var2.e = i15;
-            ry ryVar = h51Var2.b;
-            if (ryVar == null) {
+            sy syVar = h51Var2.b;
+            if (syVar == null) {
                 return;
             }
-            ryVar.postRunnable(new ny(ryVar, i14, i15, 0));
+            syVar.postRunnable(new oy(syVar, i14, i15, 0));
         }
     }
 
@@ -1023,7 +1023,7 @@ public class a0 implements oa.a, lm0, bi, com.google.android.gms.common.api.inte
         synchronized (uVar.d) {
             for (int beginBroadcast = uVar.e.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
                 try {
-                    ((b) uVar.e.getBroadcastItem(beginBroadcast)).F0(playbackStateCompat);
+                    ((b) uVar.e.getBroadcastItem(beginBroadcast)).e1(playbackStateCompat);
                 } catch (RemoteException unused) {
                 }
             }

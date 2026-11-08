@@ -14,7 +14,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class n10 extends FrameLayout {
     public float a;
@@ -22,7 +22,7 @@ public final class n10 extends FrameLayout {
     public boolean c;
     public AnimatorSet d;
     public final m10 e;
-    public final l10 f;
+    public final vs f;
     public final /* synthetic */ float h;
     public final /* synthetic */ p10 n;
 
@@ -32,7 +32,7 @@ public final class n10 extends FrameLayout {
         this.n = p10Var;
         this.h = f10;
         this.e = new m10(this);
-        this.f = new l10(0);
+        this.f = new vs(2);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -381,7 +381,7 @@ public final class n10 extends FrameLayout {
         ofFloat9.setStartDelay((long) (f30 * 0.7f));
         ofFloat9.setDuration((long) (f30 * 0.3f));
         animatorSet.playTogether(ofFloat9);
-        org.telegram.messenger.g0.i3(new org.telegram.messenger.pd(29), 370L);
+        org.telegram.messenger.g0.i3(new vs(1), 370L);
         long j10 = j3 + 530;
         ObjectAnimator ofFloat10 = ObjectAnimator.ofFloat(p5Var, (Property<fi.p5, Float>) property, 1.0f, 1.05f);
         ofFloat10.setDuration(j10);

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ib implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ View a;
@@ -37,7 +37,7 @@ public final class ib implements ViewTreeObserver.OnPreDrawListener {
             int heightWithKeyboard = (mbVar.X.getHeightWithKeyboard() - org.telegram.messenger.g0.L(48.0f)) - mbVar.w.getTop();
             float y10 = view.getY();
             kVar3 = ((org.telegram.ui.ActionBar.f2) mbVar).actionBar;
-            ((org.telegram.ui.Cells.q1) view).z3(i7, measuredHeight2 - i7, heightWithKeyboard, 0.0f, (y10 + kVar3.getMeasuredHeight()) - mbVar.X.getBackgroundTranslationY(), mbVar.X.getMeasuredWidth(), mbVar.X.getBackgroundSizeY(), 0, 0, 0);
+            ((org.telegram.ui.Cells.q1) view).A3(i7, measuredHeight2 - i7, heightWithKeyboard, 0.0f, (y10 + kVar3.getMeasuredHeight()) - mbVar.X.getBackgroundTranslationY(), mbVar.X.getMeasuredWidth(), mbVar.X.getBackgroundSizeY(), 0, 0, 0);
             return true;
         }
         if (!(view2 instanceof org.telegram.ui.Cells.t0)) {

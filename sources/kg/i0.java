@@ -11,7 +11,7 @@ import android.widget.TextView;
 import c8.ha;
 import fi.h9;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t10;
@@ -29,7 +29,7 @@ import org.telegram.ui.Components.r2;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class i0 extends na {
     public static final int c2 = -1;
@@ -80,7 +80,7 @@ public final class i0 extends na {
         TextView textView2 = new TextView(activity);
         textView2.setTextSize(1, 14.0f);
         r6.V(textView2, k6.y6, f6Var);
-        k5.m(textView2, 17, null, 2131745561);
+        k5.m(textView2, 17, null, 2131745563);
         linearLayout.addView(textView2, ha.s(-1, -2, 1, 32.0f, 0.0f, 32.0f, 3.66f));
         String n10 = t10.n(a22);
         if (!TextUtils.isEmpty(n10)) {
@@ -110,13 +110,13 @@ public final class i0 extends na {
         int w02 = k6.w0(k6.kk, this.I0);
         this.b2 = w02;
         dVar.setColor(w02);
-        dVar.setText(hd.M0(2131744206, null));
+        dVar.setText(id.M0(2131744208, null));
         dVar.setOnClickListener(new ah.g(this, tL_connectedBot, r2Var, 12));
         frameLayout.addView(dVar, ha.d(-1, 48.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
         fi.d dVar2 = new fi.d(activity, f6Var, true);
         dVar2.setRoundRadius(24);
         this.V1 = dVar2;
-        dVar2.setText(hd.M0(2131752785, null));
+        dVar2.setText(id.M0(2131752785, null));
         dVar2.setOnClickListener(new bi.r(20, this, tL_connectedBot));
         frameLayout.addView(dVar2, ha.d(-1, 48.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
         d1(false);

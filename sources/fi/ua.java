@@ -14,15 +14,15 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gy;
+import org.telegram.ui.Components.hy;
 import org.telegram.ui.Components.ii0;
-import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.rt;
 import org.telegram.ui.Components.rt0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ua extends rt0 {
-    public final qt f0;
+    public final rt f0;
     public final ScaleGestureDetector g0;
     public boolean h0;
     public boolean i0;
@@ -37,7 +37,7 @@ public final class ua extends rt0 {
         super(activity, null);
         this.n0 = vaVar;
         this.j0 = false;
-        this.f0 = new qt(activity, new sa(this));
+        this.f0 = new rt(activity, new sa(this));
         this.g0 = new ScaleGestureDetector(activity, new ta(this));
     }
 
@@ -314,7 +314,7 @@ public final class ua extends rt0 {
     @Override // org.telegram.ui.Components.rt0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
         int i13;
-        gy emojiView;
+        hy emojiView;
         int measuredWidth = getMeasuredWidth();
         int measuredHeight = getMeasuredHeight();
         va vaVar = this.n0;
@@ -360,9 +360,9 @@ public final class ua extends rt0 {
         }
         x9 x9Var = vaVar.v1;
         if (x9Var != null) {
-            gy gyVar = x9Var.Y1;
-            if (gyVar != null) {
-                gyVar.layout(vaVar.Y, (measuredHeight - vaVar.b0) - gyVar.getMeasuredHeight(), measuredWidth - vaVar.a0, measuredHeight - vaVar.b0);
+            hy hyVar = x9Var.Y1;
+            if (hyVar != null) {
+                hyVar.layout(vaVar.Y, (measuredHeight - vaVar.b0) - hyVar.getMeasuredHeight(), measuredWidth - vaVar.a0, measuredHeight - vaVar.b0);
             }
             ii0 ii0Var = vaVar.v1.I1;
             if (ii0Var != null) {
@@ -434,7 +434,7 @@ public final class ua extends rt0 {
         }
         la laVar = vaVar.c1;
         if (laVar != null) {
-            gy emojiView = laVar.f.getEmojiView();
+            hy emojiView = laVar.f.getEmojiView();
             Q();
             org.telegram.messenger.g0.L(20.0f);
             if (emojiView != null) {
@@ -443,9 +443,9 @@ public final class ua extends rt0 {
         }
         x9 x9Var = vaVar.v1;
         if (x9Var != null) {
-            gy gyVar = x9Var.Y1;
-            if (gyVar != null) {
-                gyVar.measure(View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(vaVar.v1.Y1.getLayoutParams().height, TLObject.FLAG_30));
+            hy hyVar = x9Var.Y1;
+            if (hyVar != null) {
+                hyVar.measure(View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(vaVar.v1.Y1.getLayoutParams().height, TLObject.FLAG_30));
             }
             ii0 ii0Var = vaVar.v1.I1;
             if (ii0Var != null) {

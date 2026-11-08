@@ -6,7 +6,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class di implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -24,8 +24,7 @@ public final /* synthetic */ class di implements RequestDelegate {
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         int i7 = this.a;
-        int i10 = 2;
-        int i11 = 1;
+        int i10 = 1;
         Object obj = this.d;
         Object obj2 = this.c;
         c1 c1Var = this.b;
@@ -37,10 +36,9 @@ public final /* synthetic */ class di implements RequestDelegate {
                     uiVar.getFileRefController().u(new Object[]{tL_messages_faveSticker}, obj2);
                     break;
                 } else {
-                    g0.h3(new fg(uiVar, i10));
+                    g0.h3(new fg(uiVar, 2));
                     break;
                 }
-                break;
             case 1:
                 ui uiVar2 = (ui) c1Var;
                 TLRPC.TL_messages_saveRecentSticker tL_messages_saveRecentSticker = (TLRPC.TL_messages_saveRecentSticker) obj;
@@ -133,7 +131,7 @@ public final /* synthetic */ class di implements RequestDelegate {
                     }
                 } else {
                     qpVar6.O3((TLRPC.Updates) tLObject, false);
-                    g0.h3(new sn(qpVar6, i10));
+                    g0.h3(new sn(qpVar6, 3));
                     if (runnable != null) {
                         runnable.run();
                         break;
@@ -141,17 +139,17 @@ public final /* synthetic */ class di implements RequestDelegate {
                 }
                 break;
             case 9:
-                g0.h3(new yw((gz) c1Var, (String) obj2, (List) obj, i11));
+                g0.h3(new xw((gz) c1Var, (String) obj2, (List) obj, i10));
                 break;
             case 10:
-                g0.h3(new em((gz) c1Var, tLObject, (sy) obj2, (String) obj, 24));
+                g0.h3(new em((gz) c1Var, tLObject, (sy) obj2, (String) obj, 23));
                 break;
             default:
                 gz gzVar = (gz) c1Var;
                 org.telegram.ui.ActionBar.f2 f2Var3 = (org.telegram.ui.ActionBar.f2) obj2;
                 TLRPC.TL_messages_editMessage tL_messages_editMessage = (TLRPC.TL_messages_editMessage) obj;
                 if (tL_error != null) {
-                    g0.h3(new uw(gzVar, tL_error, f2Var3, tL_messages_editMessage, 0));
+                    g0.h3(new tw(gzVar, tL_error, f2Var3, tL_messages_editMessage, 0));
                     break;
                 } else {
                     gzVar.getMessagesController().O3((TLRPC.Updates) tLObject, false);

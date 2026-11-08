@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sb implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -73,16 +73,16 @@ public final /* synthetic */ class sb implements Runnable {
                 org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
                 if (T != null) {
                     if (z10 && !TextUtils.isEmpty(starsSubscription.title)) {
-                        a02 = org.telegram.messenger.hd.a0(null, null, 2131745001, org.telegram.messenger.hd.u(starsSubscription.until_date, false), starsSubscription.title);
+                        a02 = org.telegram.messenger.id.a0(null, null, 2131745003, org.telegram.messenger.id.u(starsSubscription.until_date, false), starsSubscription.title);
                         z9 = false;
                     } else if (!z11 || TextUtils.isEmpty(starsSubscription.title)) {
                         z9 = false;
-                        a02 = org.telegram.messenger.hd.a0(null, null, 2131744997, org.telegram.messenger.hd.u(starsSubscription.until_date, false));
+                        a02 = org.telegram.messenger.id.a0(null, null, 2131744999, org.telegram.messenger.id.u(starsSubscription.until_date, false));
                     } else {
                         z9 = false;
-                        a02 = org.telegram.messenger.hd.a0(null, null, 2131745000, org.telegram.messenger.hd.u(starsSubscription.until_date, false), starsSubscription.title);
+                        a02 = org.telegram.messenger.id.a0(null, null, 2131745002, org.telegram.messenger.id.u(starsSubscription.until_date, false), starsSubscription.title);
                     }
-                    org.telegram.ui.Components.hc.a0(T).V(Collections.singletonList(tLObject), org.telegram.messenger.hd.M0(2131744998, null), org.telegram.messenger.g0.X2(a02), null).k(z9);
+                    org.telegram.ui.Components.hc.a0(T).V(Collections.singletonList(tLObject), org.telegram.messenger.id.M0(2131745000, null), org.telegram.messenger.g0.X2(a02), null).k(z9);
                     return;
                 }
                 return;
@@ -115,7 +115,7 @@ public final /* synthetic */ class sb implements Runnable {
                     try {
                         try {
                             xVar.g();
-                            wi.n nVar = t0Var.m;
+                            wi.o oVar = t0Var.m;
                             ?? sb2 = new StringBuilder("preview output finalized: size=");
                             wi.t0 t0Var2 = t0Var;
                             try {
@@ -125,7 +125,7 @@ public final /* synthetic */ class sb implements Runnable {
                                 sb2.append(", elapsedMs=");
                                 r42 = wi.t0.f(nanoTime);
                                 sb2.append(r42);
-                                nVar.b(sb2.toString());
+                                oVar.b(sb2.toString());
                                 t0Var2.g();
                                 try {
                                     if (z14) {
@@ -144,14 +144,14 @@ public final /* synthetic */ class sb implements Runnable {
                                             }
                                         }
                                         t0Var = t0Var2;
-                                        t0Var.t(file3, i7, t0Var.J, t0Var.K, z15, i12);
+                                        t0Var.u(file3, i7, t0Var.K, t0Var.L, z15, i12);
                                         file2 = file3;
                                     } else {
                                         r42 = file3;
                                         File file4 = xVar.a;
-                                        long j3 = t0Var2.N;
+                                        long j3 = t0Var2.O;
                                         if (j3 <= 0) {
-                                            j3 = t0Var2.H;
+                                            j3 = t0Var2.I;
                                         }
                                         ExecutorService executorService = t0Var2.k;
                                         t0Var2 = t0Var2;
@@ -184,7 +184,7 @@ public final /* synthetic */ class sb implements Runnable {
                                             }
                                         }
                                     }
-                                    t0Var.U = null;
+                                    t0Var.V = null;
                                     if (file2 != null) {
                                         c8.jd.c(file2);
                                     }

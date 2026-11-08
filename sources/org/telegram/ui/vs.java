@@ -5,7 +5,7 @@ import android.app.Activity;
 import android.text.TextUtils;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class vs extends org.telegram.ui.Cells.b5 {
     public final /* synthetic */ int e;
@@ -28,18 +28,18 @@ public final class vs extends org.telegram.ui.Cells.b5 {
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.j5, null);
         org.telegram.messenger.camera.q.n(textView, 1, 16.0f, 1, 1);
         textView.setSingleLine(true);
-        textView.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 48);
+        textView.setGravity((org.telegram.messenger.id.a0 ? 5 : 3) | 48);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setImportantForAccessibility(2);
-        addView(textView, c8.ha.d(-1, -1.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
+        addView(textView, c8.ha.d(-1, -1.0f, (org.telegram.messenger.id.a0 ? 5 : 3) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
         TextView textView2 = new TextView(activity);
         this.b = textView2;
         org.telegram.ui.ActionBar.r6.V(textView2, org.telegram.ui.ActionBar.k6.n5, null);
         org.telegram.messenger.camera.q.n(textView2, 1, 16.0f, 1, 1);
         textView2.setSingleLine(true);
-        textView2.setGravity((org.telegram.messenger.hd.a0 ? 3 : 5) | 48);
+        textView2.setGravity((org.telegram.messenger.id.a0 ? 3 : 5) | 48);
         textView2.setImportantForAccessibility(2);
-        addView(textView2, c8.ha.d(-2, -1.0f, (org.telegram.messenger.hd.a0 ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
+        addView(textView2, c8.ha.d(-2, -1.0f, (org.telegram.messenger.id.a0 ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
         org.telegram.ui.Cells.h0 h0Var = new org.telegram.ui.Cells.h0(activity);
         this.c = h0Var;
         h0Var.setReportChanges(true);

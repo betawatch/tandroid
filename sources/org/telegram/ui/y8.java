@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class y8 implements org.telegram.ui.Components.ab {
     public final /* synthetic */ int a;
@@ -172,12 +172,12 @@ public final class y8 implements org.telegram.ui.Components.ab {
                 }
                 return org.telegram.messenger.g0.W1(Math.min(1.0f, r02), L, Math.max(L, i13));
             default:
-                v91 v91Var = (v91) this.b;
-                sq0 sq0Var = v91Var.o0;
+                w91 w91Var = (w91) this.b;
+                sq0 sq0Var = w91Var.o0;
                 if (sq0Var == null || sq0Var.getVisibility() != 0) {
                     return 0;
                 }
-                return v91Var.o0.getMeasuredHeight();
+                return w91Var.o0.getMeasuredHeight();
         }
         return i10 + i11;
     }

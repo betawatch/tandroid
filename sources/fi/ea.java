@@ -4,9 +4,9 @@ import android.animation.ValueAnimator;
 import org.telegram.messenger.ls;
 import org.telegram.ui.hm0;
 import org.telegram.ui.rc;
-import org.telegram.ui.u71;
+import org.telegram.ui.v71;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ea implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -52,10 +52,10 @@ public final class ea implements ValueAnimator.AnimatorUpdateListener {
                 }
                 break;
             default:
-                u71 u71Var = (u71) this.c;
-                u71Var.j2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                u71Var.i2.invalidate();
-                if (!this.b && u71Var.j2 > 0.5f) {
+                v71 v71Var = (v71) this.c;
+                v71Var.j2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                v71Var.i2.invalidate();
+                if (!this.b && v71Var.j2 > 0.5f) {
                     this.b = true;
                     break;
                 }

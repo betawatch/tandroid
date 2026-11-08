@@ -28,7 +28,7 @@ import org.telegram.ui.Components.k21;
 import org.telegram.ui.qy0;
 import org.telegram.ui.wn0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class f10 extends c1 {
     public static final List M = Arrays.asList("en", "ar", "zh", "fr", "de", "it", "ja", "ko", "pt", "ru", "es", "uk");
@@ -98,7 +98,7 @@ public final class f10 extends c1 {
     }
 
     public static String j() {
-        String str = hd.E0().B.f;
+        String str = id.E0().B.f;
         return str != null ? str.split("_")[0] : str;
     }
 
@@ -145,7 +145,7 @@ public final class f10 extends c1 {
         if (O == null) {
             LinkedHashSet linkedHashSet = new LinkedHashSet();
             try {
-                linkedHashSet.add(hd.E0().B.f);
+                linkedHashSet.add(id.E0().B.f);
             } catch (Exception e10) {
                 a8.g(e10, true);
             }
@@ -319,9 +319,9 @@ public final class f10 extends c1 {
                                 z00Var = new z00();
                                 arrayList.add(z00Var);
                             }
-                            hr hrVar = z00Var.a;
-                            if (hrVar != null) {
-                                g0.r(hrVar);
+                            ir irVar = z00Var.a;
+                            if (irVar != null) {
+                                g0.r(irVar);
                             }
                             this.x.add(Integer.valueOf(ijVar.f1()));
                             z00Var.b.add(Integer.valueOf(ijVar.f1()));
@@ -331,9 +331,9 @@ public final class f10 extends c1 {
                             z00Var.e = str;
                             z00Var.g = z00Var.g + length;
                             z00 z00Var2 = z00Var;
-                            hr hrVar2 = new hr(this, B0, z00Var2, 8);
-                            z00Var2.a = hrVar2;
-                            g0.i3(hrVar2, z00Var2.f);
+                            ir irVar2 = new ir(this, B0, z00Var2, 8);
+                            z00Var2.a = irVar2;
+                            g0.i3(irVar2, z00Var2.f);
                             z00Var2.f /= 2;
                         }
                     } catch (Throwable th4) {
@@ -1288,9 +1288,9 @@ public final class f10 extends c1 {
                                             a10Var = new a10();
                                             arrayList.add(a10Var);
                                         }
-                                        hr hrVar = a10Var.a;
-                                        if (hrVar != null) {
-                                            g0.r(hrVar);
+                                        ir irVar = a10Var.a;
+                                        if (irVar != null) {
+                                            g0.r(irVar);
                                         }
                                         this.x.add(Integer.valueOf(ijVar2.f1()));
                                         a10Var.b.add(Integer.valueOf(ijVar2.f1()));
@@ -1298,9 +1298,9 @@ public final class f10 extends c1 {
                                         a10Var.c.add(x10Var);
                                         a10Var.d = m10;
                                         a10 a10Var2 = a10Var;
-                                        hr hrVar2 = new hr(this, B03, a10Var2, 7);
-                                        a10Var2.a = hrVar2;
-                                        g0.i3(hrVar2, a10Var2.e);
+                                        ir irVar2 = new ir(this, B03, a10Var2, 7);
+                                        a10Var2.a = irVar2;
+                                        g0.i3(irVar2, a10Var2.e);
                                         a10Var2.e /= 2;
                                         return;
                                     } catch (Throwable th2) {
@@ -1539,7 +1539,7 @@ public final class f10 extends c1 {
             return qy0.d0().contains(str);
         }
         try {
-            return TextUtils.equals(hd.E0().B.f, str);
+            return TextUtils.equals(id.E0().B.f, str);
         } catch (Exception unused) {
             return false;
         }

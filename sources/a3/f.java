@@ -51,11 +51,11 @@ import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.m20;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.zg0;
-import org.telegram.ui.Wallet.c8;
+import org.telegram.ui.Wallet.b8;
+import org.telegram.ui.Wallet.f5;
 import org.telegram.ui.Wallet.g5;
-import org.telegram.ui.Wallet.h5;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -281,22 +281,22 @@ public final /* synthetic */ class f implements Runnable {
                 ((w1) this.b).onBackPressed();
                 return;
             case 21:
-                g5 g5Var = (g5) ((j7) this.b);
-                c8 c8Var = g5Var.c.j0;
-                if (c8Var != null) {
-                    TL_wallet.nftItem nftitem = g5Var.b;
-                    if (c8Var.A()) {
-                        c8Var.c0(c8Var.v(nftitem));
+                f5 f5Var = (f5) ((j7) this.b);
+                b8 b8Var = f5Var.c.j0;
+                if (b8Var != null) {
+                    TL_wallet.nftItem nftitem = f5Var.b;
+                    if (b8Var.A()) {
+                        b8Var.c0(b8Var.v(nftitem));
                         return;
                     }
                     return;
                 }
                 return;
             case 22:
-                h5 h5Var = (h5) ((i7) this.b);
-                c8 c8Var2 = h5Var.b.j0;
-                if (c8Var2 != null) {
-                    c8Var2.b0(h5Var.a);
+                g5 g5Var = (g5) ((i7) this.b);
+                b8 b8Var2 = g5Var.b.j0;
+                if (b8Var2 != null) {
+                    b8Var2.b0(g5Var.a);
                     return;
                 }
                 return;

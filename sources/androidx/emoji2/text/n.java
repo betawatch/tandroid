@@ -11,12 +11,12 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.r5;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.e10;
+import org.telegram.ui.Components.f10;
 import org.telegram.ui.Components.voip.e2;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.s2;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class n implements Runnable {
     public static final /* synthetic */ n b = new n(1);
@@ -52,7 +52,7 @@ public final class n implements Runnable {
                 return;
             case 2:
                 Math.abs(Utilities.b.nextInt() % 3);
-                e10[] e10VarArr = r7.a;
+                f10[] f10VarArr = r7.a;
                 qs.f(p10.s0).k(2, 0);
                 g0.i3(r7.o, 1000L);
                 LaunchActivity.Q().getFragmentView();

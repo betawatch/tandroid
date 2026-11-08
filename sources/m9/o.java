@@ -16,7 +16,7 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class o extends n9.a implements y {
     public static final boolean d;
@@ -407,25 +407,25 @@ public abstract class o extends n9.a implements y {
                     t6.append(timeUnit.toString().toLowerCase(locale));
                     String sb2 = t6.toString();
                     if (nanos + 1000 < j10) {
-                        String q10 = rf.b.q(sb2, " (plus ");
+                        String r10 = rf.b.r(sb2, " (plus ");
                         long j13 = -nanos;
                         long convert = timeUnit.convert(j13, TimeUnit.NANOSECONDS);
                         long nanos2 = j13 - timeUnit.toNanos(convert);
                         boolean z10 = (convert == j10 || nanos2 > 1000) ? z9 : false;
                         if (convert > j10) {
-                            String str = q10 + convert + " " + lowerCase;
+                            String str = r10 + convert + " " + lowerCase;
                             if (z10) {
-                                str = rf.b.q(str, ",");
+                                str = rf.b.r(str, ",");
                             }
-                            q10 = rf.b.q(str, " ");
+                            r10 = rf.b.r(str, " ");
                         }
                         if (z10) {
-                            q10 = q10 + nanos2 + " nanoseconds ";
+                            r10 = r10 + nanos2 + " nanoseconds ";
                         }
-                        sb2 = rf.b.q(q10, "delay)");
+                        sb2 = rf.b.r(r10, "delay)");
                     }
                     if (isDone()) {
-                        throw new TimeoutException(rf.b.q(sb2, " but future completed as timeout expired"));
+                        throw new TimeoutException(rf.b.r(sb2, " but future completed as timeout expired"));
                     }
                     throw new TimeoutException(p0.D(sb2, " for ", oVar));
                 }

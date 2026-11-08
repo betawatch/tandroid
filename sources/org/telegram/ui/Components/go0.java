@@ -9,7 +9,7 @@ import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class go0 implements Runnable {
     public final /* synthetic */ int a;
@@ -86,7 +86,7 @@ public final /* synthetic */ class go0 implements Runnable {
                             org.telegram.messenger.g0.h3(new org.telegram.ui.q8(jo0Var5, jo0Var5.r, new ArrayList(), 14));
                             break;
                         } else {
-                            String S0 = org.telegram.messenger.hd.E0().S0(lowerCase, true, false);
+                            String S0 = org.telegram.messenger.id.E0().S0(lowerCase, true, false);
                             if (lowerCase.equals(S0) || S0.length() == 0) {
                                 S0 = null;
                             }
@@ -137,7 +137,7 @@ public final /* synthetic */ class go0 implements Runnable {
                                 while (queryFinalized2.next()) {
                                     String stringValue = queryFinalized2.stringValue(2);
                                     int i21 = i20;
-                                    String S02 = org.telegram.messenger.hd.E0().S0(stringValue, true, false);
+                                    String S02 = org.telegram.messenger.id.E0().S0(stringValue, true, false);
                                     if (stringValue.equals(S02)) {
                                         S02 = null;
                                     }
@@ -229,7 +229,7 @@ public final /* synthetic */ class go0 implements Runnable {
                                 SQLiteCursor queryFinalized3 = sQLiteDatabase2.queryFinalized("SELECT data, name FROM chats WHERE uid IN(" + TextUtils.join(",", arrayList2) + ")", new Object[0]);
                                 while (queryFinalized3.next()) {
                                     String stringValue2 = queryFinalized3.stringValue(1);
-                                    String S03 = org.telegram.messenger.hd.E0().S0(stringValue2, true, false);
+                                    String S03 = org.telegram.messenger.id.E0().S0(stringValue2, true, false);
                                     if (stringValue2.equals(S03)) {
                                         S03 = null;
                                     }
@@ -277,7 +277,7 @@ public final /* synthetic */ class go0 implements Runnable {
                                 if (hVar.h(queryFinalized4.longValue(3)) < 0) {
                                     char c10 = 2;
                                     String stringValue3 = queryFinalized4.stringValue(2);
-                                    String S04 = org.telegram.messenger.hd.E0().S0(stringValue3, true, false);
+                                    String S04 = org.telegram.messenger.id.E0().S0(stringValue3, true, false);
                                     if (stringValue3.equals(S04)) {
                                         S04 = null;
                                     }

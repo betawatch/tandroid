@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class ht0 extends FrameLayout implements r0.l {
     public static final /* synthetic */ int l0 = 0;
@@ -51,7 +51,7 @@ public class ht0 extends FrameLayout implements r0.l {
     public boolean g0;
     public long h;
     public boolean h0;
-    public final uy i0;
+    public final vy i0;
     public final ui j0;
     public final rk k0;
     public int n;
@@ -67,7 +67,7 @@ public class ht0 extends FrameLayout implements r0.l {
         this.x = new e2.r0();
         this.y = new int[2];
         this.D = new qj0();
-        this.i0 = new uy(this, 5);
+        this.i0 = new vy(this, 5);
         this.j0 = new ui(this, 16);
         this.k0 = new rk(3, this);
         setClipChildren(false);
@@ -102,7 +102,7 @@ public class ht0 extends FrameLayout implements r0.l {
             j3.append(recyclerView.getAdapter() == null ? 0 : recyclerView.getAdapter().b());
             str = j3.toString();
         }
-        return rf.b.q(str, ")");
+        return rf.b.r(str, ")");
     }
 
     private void setBleed(RecyclerView recyclerView) {
@@ -571,17 +571,17 @@ public class ht0 extends FrameLayout implements r0.l {
         }
         this.P = view;
         try {
-            uy uyVar = this.i0;
+            vy vyVar = this.i0;
             int i14 = 0;
             boolean z9 = view == recyclerView;
             if (z9 && i10 > 0 && i12 > 0) {
-                ht0 ht0Var = (ht0) uyVar.b;
+                ht0 ht0Var = (ht0) vyVar.b;
                 dt0 dt0Var = ht0Var.N;
                 if (dt0Var != null && dt0Var.b() != -1) {
                     i14 = ht0Var.t(ht0Var.F, i12);
                 }
             } else if (!z9 && i12 < 0) {
-                ht0 ht0Var2 = (ht0) uyVar.b;
+                ht0 ht0Var2 = (ht0) vyVar.b;
                 i14 = ht0Var2.t(ht0Var2.E, i12);
             }
             iArr[1] = iArr[1] + i14;
@@ -813,29 +813,29 @@ public class ht0 extends FrameLayout implements r0.l {
         }
         this.P = view;
         try {
-            uy uyVar = this.i0;
+            vy vyVar = this.i0;
             int i12 = 0;
             if (view == recyclerView) {
                 if (i10 >= 0) {
-                    ht0 ht0Var = (ht0) uyVar.b;
+                    ht0 ht0Var = (ht0) vyVar.b;
                     float n10 = ht0Var.n();
                     if (!Float.isInfinite(n10)) {
                         n10 = Math.max(0.0f, n10 - ht0Var.U);
                     }
                 }
-                ht0 ht0Var2 = (ht0) uyVar.b;
+                ht0 ht0Var2 = (ht0) vyVar.b;
                 dt0 dt0Var = ht0Var2.N;
                 if (dt0Var != null && dt0Var.b() != -1) {
                     i12 = ht0Var2.t(ht0Var2.F, i10);
                 }
             } else if (i10 > 0) {
-                ht0 ht0Var3 = (ht0) uyVar.b;
+                ht0 ht0Var3 = (ht0) vyVar.b;
                 float n11 = ht0Var3.n();
                 if (!Float.isInfinite(n11)) {
                     n11 = Math.max(0.0f, n11 - ht0Var3.U);
                 }
                 int min = Float.isInfinite(n11) ? i10 : Math.min(i10, Math.max(0, Math.round(n11)));
-                ht0 ht0Var4 = (ht0) uyVar.b;
+                ht0 ht0Var4 = (ht0) vyVar.b;
                 i12 = ht0Var4.t(ht0Var4.E, min);
             }
             iArr[1] = iArr[1] + i12;

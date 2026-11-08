@@ -4,7 +4,7 @@ import android.graphics.Typeface;
 import android.widget.TextView;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class n6 extends za {
     public n6(LaunchActivity launchActivity, org.telegram.ui.w80 w80Var) {
@@ -22,6 +22,6 @@ public final class n6 extends za {
         qVar.setOuterPadding(org.telegram.messenger.g0.L(8.0f));
         qVar.setBackgroundOuterPadding(org.telegram.messenger.g0.L(24.0f));
         qVar.setForeground(w80Var.c);
-        org.telegram.messenger.k5.r(null, null, 2131754238, new Object[]{org.telegram.messenger.hd.M0(w80Var.d, null)}, textView);
+        org.telegram.messenger.k5.r(null, null, 2131754238, new Object[]{org.telegram.messenger.id.M0(w80Var.d, null)}, textView);
     }
 }

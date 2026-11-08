@@ -8,7 +8,7 @@ import c8.ha;
 import hi.x3;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
@@ -28,7 +28,7 @@ import org.telegram.ui.Components.v4;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class f extends f2 implements ls {
     public ri.c a;
@@ -45,7 +45,7 @@ public final class f extends f2 implements ls {
         f fVar2;
         if (x31Var.d == 1) {
             fVar2 = fVar;
-            v4.O(fVar.getParentActivity(), fVar2, hd.M0(2131751906, null), null, hd.M0(2131751907, null), null, ConnectionsManager.DEFAULT_DATACENTER_ID, hd.M0(2131751753, null), fVar.resourceProvider, new b(fVar));
+            v4.O(fVar.getParentActivity(), fVar2, id.M0(2131751906, null), null, id.M0(2131751907, null), null, ConnectionsManager.DEFAULT_DATACENTER_ID, id.M0(2131751753, null), fVar.resourceProvider, new b(fVar));
         } else {
             fVar2 = fVar;
         }
@@ -107,8 +107,8 @@ public final class f extends f2 implements ls {
         r6.i(k6.a7, frameLayout, null);
         e eVar = new e(context, this.resourceProvider);
         this.h = eVar;
-        eVar.setTitle(hd.M0(2131751847, null));
-        this.h.setSubtitle(hd.M0(this.d != null ? 2131751933 : t3.V(this.c) ? 2131751932 : 2131751931, null));
+        eVar.setTitle(id.M0(2131751847, null));
+        this.h.setSubtitle(id.M0(this.d != null ? 2131751933 : t3.V(this.c) ? 2131751932 : 2131751931, null));
         this.h.setTag(-33024);
         TLRPC.User user = this.d;
         if (user != null) {
@@ -146,7 +146,7 @@ public final class f extends f2 implements ls {
             }
             g6 g6Var = (g6) B1;
             ArrayList<TL_communities.CommunityPeer> arrayList = chatFull.linked_peers;
-            g6Var.setSubLabel(hd.G(arrayList != null ? arrayList.size() : 0, "Chats", new Object[0]));
+            g6Var.setSubLabel(id.G(arrayList != null ? arrayList.size() : 0, "Chats", new Object[0]));
         }
     }
 

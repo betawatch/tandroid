@@ -9,10 +9,10 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.hc;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.e10;
+import org.telegram.ui.Components.f10;
 import org.telegram.ui.Components.mu0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class n4 {
     public final ImageReceiver a;
@@ -52,7 +52,7 @@ public final class n4 {
             r7.x(imageReceiver, storyItem);
         } else {
             x6 x6Var = r5Var.b;
-            e10[] e10VarArr = r7.a;
+            f10[] f10VarArr = r7.a;
             if (x6Var.c.K) {
                 imageReceiver.r0(hc.g(x6Var.f), "320_180", null, null, null, 0L, null, null, 0);
             } else {

@@ -28,7 +28,7 @@ import p4.g1;
 import p4.v;
 import p4.y0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n implements h2.j, h2.o, RequestDelegateTimestamp, r1, wr, y0, a1 {
     public final /* synthetic */ int a;
@@ -72,7 +72,7 @@ public final /* synthetic */ class n implements h2.j, h2.o, RequestDelegateTimes
     @Override // p4.y0
     public void c(g1 g1Var, v vVar) {
         c1 c1Var = (c1) this.d;
-        g1Var.s(c1Var.M0(vVar, g1Var, this.b), this.c);
+        g1Var.s(c1Var.m1(vVar, g1Var, this.b), this.c);
     }
 
     @Override // org.telegram.ui.ActionBar.r1
@@ -154,16 +154,16 @@ public final /* synthetic */ class n implements h2.j, h2.o, RequestDelegateTimes
         }
     }
 
-    @Override // p4.a1
-    public Object i(d0 d0Var, v vVar, int i7) {
-        List list = (List) this.d;
-        int i10 = this.b;
-        return d0Var.q(vVar, list, i10 == -1 ? d0Var.t.o0() : i10, i10 == -1 ? d0Var.t.l() : this.c);
-    }
-
     @Override // h2.o
     public void invoke(Object obj) {
         ((m2.b) obj).d((m2.a) this.d, this.b, this.c);
+    }
+
+    @Override // p4.a1
+    public Object l(d0 d0Var, v vVar, int i7) {
+        List list = (List) this.d;
+        int i10 = this.b;
+        return d0Var.q(vVar, list, i10 == -1 ? d0Var.t.o0() : i10, i10 == -1 ? d0Var.t.l() : this.c);
     }
 
     @Override // org.telegram.tgnet.RequestDelegateTimestamp

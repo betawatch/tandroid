@@ -23,19 +23,19 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.ay;
 import org.telegram.ui.Components.bz0;
+import org.telegram.ui.Components.cy;
 import org.telegram.ui.Components.cz0;
 import org.telegram.ui.Components.dz0;
 import org.telegram.ui.Components.hl;
-import org.telegram.ui.Components.l10;
+import org.telegram.ui.Components.vs;
 import org.telegram.ui.Components.yu0;
-import org.telegram.ui.Components.zx;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.a01;
 import org.telegram.ui.cn0;
 import org.telegram.ui.mc0;
 import org.telegram.ui.pn0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nb implements c20 {
     public final /* synthetic */ int a;
@@ -115,18 +115,18 @@ public final /* synthetic */ class nb implements c20 {
                 }
                 break;
             case 2:
-                zx zxVar = (zx) this.c;
+                ay ayVar = (ay) this.c;
                 boolean z11 = this.b;
                 Runnable runnable = (Runnable) this.d;
                 ArrayList arrayList = (ArrayList) obj;
-                ArrayList arrayList2 = zxVar.r;
-                ay ayVar = zxVar.x;
-                if (ayVar.M == zxVar.b) {
+                ArrayList arrayList2 = ayVar.r;
+                cy cyVar = ayVar.x;
+                if (cyVar.M == ayVar.b) {
                     int i13 = 0;
                     if (z11) {
                         int size = arrayList2.size();
                         arrayList2.clear();
-                        ayVar.D = size == arrayList.size();
+                        cyVar.D = size == arrayList.size();
                     }
                     arrayList2.addAll(arrayList);
                     int size2 = arrayList.size();
@@ -134,9 +134,9 @@ public final /* synthetic */ class nb implements c20 {
                         Object obj2 = arrayList.get(i13);
                         i13++;
                         TLRPC.Document document = (TLRPC.Document) obj2;
-                        zxVar.w.put(document.id, document);
+                        ayVar.w.put(document.id, document);
                     }
-                    zxVar.f.put(arrayList2, ayVar.N);
+                    ayVar.f.put(arrayList2, cyVar.N);
                     runnable.run();
                     break;
                 }
@@ -292,13 +292,13 @@ public final /* synthetic */ class nb implements c20 {
                                 Utilities.i.c(new pn0(photoViewer, b10, 3));
                                 cn0 cn0Var = new cn0(photoViewer, 14);
                                 mc0 mc0Var = new mc0(photoViewer, b10, cn0Var, 19);
-                                l10 l10Var = new l10(25);
+                                vs vsVar = new vs(27);
                                 bz0 bz0Var = thanosEffect.a;
                                 if (bz0Var != null) {
-                                    bz0Var.c(matrix3, bitmap2, mc0Var, l10Var);
+                                    bz0Var.c(matrix3, bitmap2, mc0Var, vsVar);
                                     Choreographer.getInstance().postFrameCallback(thanosEffect.b);
                                 } else {
-                                    thanosEffect.c.add(new cz0(matrix3, bitmap2, mc0Var, l10Var));
+                                    thanosEffect.c.add(new cz0(matrix3, bitmap2, mc0Var, vsVar));
                                 }
                                 org.telegram.messenger.g0.i3(cn0Var, 1200L);
                             }

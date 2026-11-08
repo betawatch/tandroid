@@ -14,17 +14,17 @@ import android.view.View;
 import android.view.WindowInsets;
 import android.widget.FrameLayout;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.ft;
-import org.telegram.ui.Components.gy;
-import org.telegram.ui.Components.kt;
+import org.telegram.ui.Components.gt;
+import org.telegram.ui.Components.hy;
+import org.telegram.ui.Components.lt;
 import org.telegram.ui.Components.rt0;
 import org.telegram.ui.Components.uc;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.ys;
+import org.telegram.ui.Components.zs;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class g extends kt {
+public final class g extends lt {
     public org.telegram.ui.Components.ca V;
     public fh.g W;
     public final /* synthetic */ org.telegram.ui.ActionBar.f6 a0;
@@ -39,7 +39,7 @@ public final class g extends kt {
         this.b0 = y9Var;
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.lt
     public final boolean b() {
         return true;
     }
@@ -53,10 +53,10 @@ public final class g extends kt {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.lt
     public final void f() {
         super.f();
-        gy emojiView = getEmojiView();
+        hy emojiView = getEmojiView();
         if (emojiView != null) {
             m mVar = this.c0;
             if (mVar.getEditTextStyle() == 2 || mVar.getEditTextStyle() == 3) {
@@ -77,13 +77,13 @@ public final class g extends kt {
         }
     }
 
-    @Override // org.telegram.ui.Components.kt
-    public final void g(Canvas canvas, ft ftVar) {
+    @Override // org.telegram.ui.Components.lt
+    public final void g(Canvas canvas, gt gtVar) {
         Bitmap bitmap;
         int i7;
         int i10;
         WindowInsets rootWindowInsets;
-        View view = ftVar;
+        View view = gtVar;
         m mVar = this.c0;
         dh.j jVar = mVar.d;
         RectF rectF = mVar.y0;
@@ -148,17 +148,17 @@ public final class g extends kt {
         canvas.drawRoundRect(rectF, 0.0f, 0.0f, paint);
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.lt
     public final void p() {
         this.c0.L.a();
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.lt
     public final void q(int i7, int i10) {
         this.c0.s(i7, i10);
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.lt
     public final boolean t(int i7) {
         m mVar = this.c0;
         g gVar = mVar.f;
@@ -183,7 +183,7 @@ public final class g extends kt {
             objectAnimator3.cancel();
         }
         gVar.getEditText().setScrollY(mVar.a0);
-        ys editText = gVar.getEditText();
+        zs editText = gVar.getEditText();
         int i10 = mVar.a0;
         mVar.b0 = i7;
         ObjectAnimator ofInt = ObjectAnimator.ofInt(editText, "scrollY", i10, i7);
@@ -195,12 +195,12 @@ public final class g extends kt {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.lt
     public final void u() {
         this.c0.L.e = true;
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.lt
     public final void y() {
         this.c0.L.a();
     }

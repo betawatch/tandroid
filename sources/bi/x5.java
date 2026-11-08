@@ -42,7 +42,7 @@ import org.telegram.ui.Components.ii0;
 import org.telegram.ui.Components.jk0;
 import org.telegram.ui.Components.qa0;
 import org.telegram.ui.Components.sb0;
-import org.telegram.ui.Components.tx;
+import org.telegram.ui.Components.ux;
 import org.telegram.ui.Components.vo;
 import org.telegram.ui.Components.wk0;
 import org.telegram.ui.Components.xq;
@@ -56,15 +56,15 @@ import org.telegram.ui.ru0;
 import org.telegram.ui.rz0;
 import org.telegram.ui.u01;
 import org.telegram.ui.u50;
-import org.telegram.ui.u71;
 import org.telegram.ui.v01;
+import org.telegram.ui.v71;
 import org.telegram.ui.vp0;
 import org.telegram.ui.w01;
 import org.telegram.ui.x90;
 import org.telegram.ui.xr;
 import org.telegram.ui.z10;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class x5 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -182,8 +182,8 @@ public final class x5 extends FrameLayout {
                 canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), 1.0f, paint3);
                 break;
             case 14:
-                tx txVar = (tx) this.c;
-                if (!txVar.G.u0 && txVar.x > 0.0f) {
+                ux uxVar = (ux) this.c;
+                if (!uxVar.G.u0 && uxVar.x > 0.0f) {
                     if (((Paint) this.b) == null) {
                         Paint paint4 = new Paint();
                         this.b = paint4;
@@ -192,7 +192,7 @@ public final class x5 extends FrameLayout {
                     }
                     canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), qs.e4, 31);
                     super.dispatchDraw(canvas);
-                    ((Paint) this.b).setAlpha((int) (txVar.x * 255.0f));
+                    ((Paint) this.b).setAlpha((int) (uxVar.x * 255.0f));
                     canvas.drawRect(0.0f, 0.0f, org.telegram.messenger.g0.L(18.0f), getMeasuredHeight(), (Paint) this.b);
                     canvas.restore();
                     break;
@@ -323,7 +323,7 @@ public final class x5 extends FrameLayout {
                 break;
             case 29:
                 super.dispatchDraw(canvas);
-                ((org.telegram.ui.Wallet.y5) this.c).getClass();
+                ((org.telegram.ui.Wallet.x5) this.c).getClass();
                 break;
             default:
                 super.dispatchDraw(canvas);
@@ -473,12 +473,12 @@ public final class x5 extends FrameLayout {
                 }
                 return false;
             case 29:
-                org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) this.c;
-                if (view != y5Var.s0 || !y5Var.F) {
+                org.telegram.ui.Wallet.x5 x5Var = (org.telegram.ui.Wallet.x5) this.c;
+                if (view != x5Var.s0 || !x5Var.F) {
                     return super.drawChild(canvas, view, j3);
                 }
                 int save = canvas.save();
-                canvas.concat(y5Var.I);
+                canvas.concat(x5Var.I);
                 boolean drawChild4 = super.drawChild(canvas, view, j3);
                 canvas.restoreToCount(save);
                 return drawChild4;
@@ -501,7 +501,7 @@ public final class x5 extends FrameLayout {
     public void f(float f10) {
         org.telegram.ui.Components.j6 j6Var = (org.telegram.ui.Components.j6) this.b;
         j6Var.a();
-        j6Var.c(String.format("%d%%", Integer.valueOf((int) Math.ceil(c8.j9.a(f10, 0.0f, 1.0f) * 100.0f))), !org.telegram.messenger.hd.a0, true);
+        j6Var.c(String.format("%d%%", Integer.valueOf((int) Math.ceil(c8.j9.a(f10, 0.0f, 1.0f) * 100.0f))), !org.telegram.messenger.id.a0, true);
         org.telegram.ui.r6 r6Var = (org.telegram.ui.r6) this.c;
         r6Var.c = f10;
         r6Var.invalidate();
@@ -546,7 +546,7 @@ public final class x5 extends FrameLayout {
         switch (this.a) {
             case 28:
                 super.invalidate();
-                org.telegram.ui.ActionBar.l0 l0Var = ((u71) this.c).u0;
+                org.telegram.ui.ActionBar.l0 l0Var = ((v71) this.c).u0;
                 if (l0Var != null) {
                     l0Var.invalidate();
                     break;
@@ -585,7 +585,7 @@ public final class x5 extends FrameLayout {
                 break;
             case 29:
                 super.onAttachedToWindow();
-                getViewTreeObserver().addOnPreDrawListener((org.telegram.ui.Wallet.l5) this.b);
+                getViewTreeObserver().addOnPreDrawListener((org.telegram.ui.Wallet.k5) this.b);
                 break;
             default:
                 super.onAttachedToWindow();
@@ -619,7 +619,7 @@ public final class x5 extends FrameLayout {
                 ((SecretMediaViewer) this.b).h.R();
                 break;
             case 29:
-                getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.Wallet.l5) this.b);
+                getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.Wallet.k5) this.b);
                 super.onDetachedFromWindow();
                 break;
             default:
@@ -847,19 +847,19 @@ public final class x5 extends FrameLayout {
                 org.telegram.ui.ActionBar.k6.i3.setBounds(0, 0, getMeasuredWidth(), intrinsicHeight2);
                 org.telegram.ui.ActionBar.k6.i3.draw(canvas);
                 Paint paint2 = (Paint) this.b;
-                paint2.setColor(((u71) this.c).getThemedColor(org.telegram.ui.ActionBar.k6.Ge));
+                paint2.setColor(((v71) this.c).getThemedColor(org.telegram.ui.ActionBar.k6.Ge));
                 canvas.drawRect(0.0f, intrinsicHeight2, getMeasuredWidth(), getMeasuredHeight(), paint2);
                 break;
             case 28:
                 int[] iArr = (int[]) this.b;
-                u71 u71Var = (u71) this.c;
+                v71 v71Var = (v71) this.c;
                 if (!org.telegram.messenger.g0.D) {
                     getLocationInWindow(iArr);
-                    if (u71Var.t0.getTranslationY() != iArr[1]) {
-                        u71Var.t0.setTranslationY(-r0);
-                        u71Var.u0.invalidate();
+                    if (v71Var.t0.getTranslationY() != iArr[1]) {
+                        v71Var.t0.setTranslationY(-r0);
+                        v71Var.u0.invalidate();
                     }
-                    if (SystemClock.elapsedRealtime() < u71Var.Q) {
+                    if (SystemClock.elapsedRealtime() < v71Var.Q) {
                         invalidate();
                         break;
                     }
@@ -1411,7 +1411,7 @@ public final class x5 extends FrameLayout {
         setWillNotDraw(false);
         TextView textView = new TextView(context);
         textView.setTextColor(-1);
-        textView.setText(org.telegram.messenger.hd.M0(2131743255, null));
+        textView.setText(org.telegram.messenger.id.M0(2131743257, null));
         textView.setTextSize(1, 15.0f);
         textView.setGravity(1);
         textView.setTypeface(org.telegram.messenger.g0.o());
@@ -1419,7 +1419,7 @@ public final class x5 extends FrameLayout {
         textView2.setTextSize(1, 15.0f);
         textView2.setTextColor(-1);
         textView2.setGravity(1);
-        textView2.setText(org.telegram.messenger.hd.M0(2131743256, null));
+        textView2.setText(org.telegram.messenger.id.M0(2131743258, null));
         addView(textView, c8.ha.d(-1, -2.0f, 3, 0.0f, 24.0f, 0.0f, 0.0f));
         addView(textView2, c8.ha.d(-1, -2.0f, 3, 0.0f, 50.0f, 0.0f, 0.0f));
     }
@@ -1450,11 +1450,11 @@ public final class x5 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x5(org.telegram.ui.Wallet.y5 y5Var, Context context) {
+    public x5(org.telegram.ui.Wallet.x5 x5Var, Context context) {
         super(context);
         this.a = 29;
-        this.c = y5Var;
-        this.b = new org.telegram.ui.Wallet.l5(0, this);
+        this.c = x5Var;
+        this.b = new org.telegram.ui.Wallet.k5(0, this);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -1500,17 +1500,17 @@ public final class x5 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x5(u71 u71Var, Context context, int i7) {
+    public x5(v71 v71Var, Context context, int i7) {
         super(context);
         this.a = i7;
         switch (i7) {
             case 28:
-                this.c = u71Var;
+                this.c = v71Var;
                 super(context);
                 this.b = new int[2];
                 break;
             default:
-                this.c = u71Var;
+                this.c = v71Var;
                 this.b = new Paint();
                 break;
         }

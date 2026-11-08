@@ -4,7 +4,7 @@ import android.os.Bundle;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ea0 implements Runnable {
     public final /* synthetic */ int a;
@@ -113,15 +113,15 @@ public final /* synthetic */ class ea0 implements Runnable {
                 hVar.t();
                 return;
             default:
-                zh.h1 h1Var = (zh.h1) this.c;
+                zh.g1 g1Var = (zh.g1) this.c;
                 org.telegram.messenger.c20 c20Var = (org.telegram.messenger.c20) this.d;
                 long j13 = this.b;
-                h1Var.getClass();
+                g1Var.getClass();
                 org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
                 if (T == null) {
                     return;
                 }
-                h1Var.dismiss();
+                g1Var.dismiss();
                 if (c20Var != null) {
                     c20Var.a(Boolean.FALSE);
                 }

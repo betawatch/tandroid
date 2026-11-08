@@ -10,7 +10,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class dp0 implements is {
     public final /* synthetic */ String a;
@@ -199,11 +199,11 @@ public final class dp0 implements is {
     }
 
     @Override // org.telegram.ui.is
-    public final void u(CharSequence charSequence, String str, org.telegram.ui.Components.ex exVar) {
+    public final void u(CharSequence charSequence, String str, org.telegram.ui.Components.fx fxVar) {
         PhotoViewer photoViewer = this.h;
         photoViewer.v7 = true;
         R();
-        photoViewer.o5.p(this.a, this.b, str, charSequence, false, 0L, null, null, photoViewer.r1(), this.c.c, exVar, null);
+        photoViewer.o5.p(this.a, this.b, str, charSequence, false, 0L, null, null, photoViewer.r1(), this.c.c, fxVar, null);
     }
 
     @Override // org.telegram.ui.is

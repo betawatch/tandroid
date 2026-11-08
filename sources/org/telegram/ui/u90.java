@@ -15,7 +15,7 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class u90 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final /* synthetic */ w90 D;
@@ -38,7 +38,7 @@ public final class u90 extends FrameLayout implements org.telegram.ui.ActionBar.
         super(context);
         this.D = w90Var;
         LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
+        linearLayout.setGravity(org.telegram.messenger.id.a0 ? 5 : 3);
         linearLayout.setImportantForAccessibility(4);
         TextView textView = new TextView(context);
         boolean z9 = true;
@@ -46,8 +46,8 @@ public final class u90 extends FrameLayout implements org.telegram.ui.ActionBar.
         com.google.android.recaptcha.internal.a.q(textView, 1, 15.0f);
         int i7 = org.telegram.ui.ActionBar.k6.L6;
         org.telegram.ui.ActionBar.r6.V(textView, i7, null);
-        textView.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
-        textView.setText(org.telegram.messenger.hd.N0("LiteBatteryTitle"));
+        textView.setGravity(org.telegram.messenger.id.a0 ? 5 : 3);
+        textView.setText(org.telegram.messenger.id.N0("LiteBatteryTitle"));
         linearLayout.addView(textView, c8.ha.r(-2, -2, 16));
         boolean z10 = false;
         org.telegram.ui.Cells.a2 a2Var = new org.telegram.ui.Cells.a2(context, z9, z10, z10);
@@ -63,7 +63,7 @@ public final class u90 extends FrameLayout implements org.telegram.ui.ActionBar.
         this.h = mm0Var;
         mm0Var.setReportChanges(true);
         mm0Var.setDelegate(new f(this, 20));
-        mm0Var.setProgress(org.telegram.messenger.rc.c() / 100.0f);
+        mm0Var.setProgress(org.telegram.messenger.sc.c() / 100.0f);
         mm0Var.setImportantForAccessibility(2);
         addView(mm0Var, c8.ha.d(-1, 44.0f, 48, 6.0f, 68.0f, 6.0f, 0.0f));
         FrameLayout frameLayout = new FrameLayout(context);
@@ -74,7 +74,7 @@ public final class u90 extends FrameLayout implements org.telegram.ui.ActionBar.
         int i10 = org.telegram.ui.ActionBar.k6.y6;
         textView2.setTextColor(org.telegram.ui.ActionBar.k6.x0(null, i10, false));
         textView2.setGravity(3);
-        textView2.setText(org.telegram.messenger.hd.M0(2131748873, null));
+        textView2.setText(org.telegram.messenger.id.M0(2131748875, null));
         frameLayout.addView(textView2, c8.ha.e(-2, -2, 19));
         org.telegram.ui.Cells.a2 a2Var2 = new org.telegram.ui.Cells.a2(this, context);
         this.e = a2Var2;
@@ -96,7 +96,7 @@ public final class u90 extends FrameLayout implements org.telegram.ui.ActionBar.
         textView3.setTextSize(1, 13.0f);
         textView3.setTextColor(org.telegram.ui.ActionBar.k6.x0(null, i10, false));
         textView3.setGravity(5);
-        textView3.setText(org.telegram.messenger.hd.M0(2131748872, null));
+        textView3.setText(org.telegram.messenger.id.M0(2131748874, null));
         frameLayout.addView(textView3, c8.ha.e(-2, -2, 21));
         addView(frameLayout, c8.ha.d(-1, -2.0f, 55, 21.0f, 52.0f, 21.0f, 0.0f));
         this.n = new org.telegram.ui.Components.tt0(c10 == true ? 1 : 0, this);
@@ -104,21 +104,21 @@ public final class u90 extends FrameLayout implements org.telegram.ui.ActionBar.
     }
 
     public final void a() {
-        int c10 = org.telegram.messenger.rc.c();
+        int c10 = org.telegram.messenger.sc.c();
         org.telegram.ui.Cells.a2 a2Var = this.e;
         a2Var.a();
         final int i7 = 0;
         final int i10 = 1;
         if (c10 <= 0) {
-            a2Var.c(org.telegram.messenger.hd.M0(2131748875, null), !org.telegram.messenger.hd.a0, true);
+            a2Var.c(org.telegram.messenger.id.M0(2131748877, null), !org.telegram.messenger.id.a0, true);
         } else if (c10 >= 100) {
-            a2Var.c(org.telegram.messenger.hd.M0(2131748874, null), !org.telegram.messenger.hd.a0, true);
+            a2Var.c(org.telegram.messenger.id.M0(2131748876, null), !org.telegram.messenger.id.a0, true);
         } else {
             float f10 = c10;
             this.a.a(true, f10 / 100.0f);
-            a2Var.c(org.telegram.messenger.g0.K2(org.telegram.messenger.hd.M0(2131748866, null), TextUtils.concat(String.format("%d%% ", Integer.valueOf(Math.round(f10))), this.b), "%s"), !org.telegram.messenger.hd.a0, true);
+            a2Var.c(org.telegram.messenger.g0.K2(org.telegram.messenger.id.M0(2131748868, null), TextUtils.concat(String.format("%d%% ", Integer.valueOf(Math.round(f10))), this.b), "%s"), !org.telegram.messenger.id.a0, true);
         }
-        String upperCase = org.telegram.messenger.hd.M0(org.telegram.messenger.rc.f() ? 2131748872 : 2131748873, null).toUpperCase();
+        String upperCase = org.telegram.messenger.id.M0(org.telegram.messenger.sc.f() ? 2131748874 : 2131748875, null).toUpperCase();
         org.telegram.ui.Cells.a2 a2Var2 = this.c;
         a2Var2.setText(upperCase);
         boolean z9 = c10 > 0 && c10 < 100;

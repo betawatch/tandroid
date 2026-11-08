@@ -16,14 +16,14 @@ import org.telegram.ui.Components.di;
 import org.telegram.ui.Components.ec0;
 import org.telegram.ui.Components.fm0;
 import org.telegram.ui.Components.hg0;
-import org.telegram.ui.Components.iy;
+import org.telegram.ui.Components.jy;
 import org.telegram.ui.Components.mo0;
 import org.telegram.ui.Components.s01;
 import org.telegram.ui.Components.v4;
 import org.telegram.ui.Components.vj;
 import org.telegram.ui.Components.vo;
-import org.telegram.ui.Components.vt;
 import org.telegram.ui.Components.wk;
+import org.telegram.ui.Components.wt;
 import org.telegram.ui.Components.xs0;
 import org.telegram.ui.Components.yv0;
 import org.telegram.ui.ah0;
@@ -33,7 +33,7 @@ import org.telegram.ui.hl0;
 import org.telegram.ui.la;
 import org.telegram.ui.mb;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -93,10 +93,10 @@ public final /* synthetic */ class b implements View.OnTouchListener {
                 int i19 = vo.c2;
                 break;
             case 17:
-                vt vtVar = vt.O1;
+                wt wtVar = wt.O1;
                 break;
             case 18:
-                int i20 = iy.h;
+                int i20 = jy.h;
                 break;
             case 19:
                 int[] iArr = ec0.i0;

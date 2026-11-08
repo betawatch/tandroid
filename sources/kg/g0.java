@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import c8.ha;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
@@ -22,17 +22,17 @@ import org.telegram.ui.ActionBar.s6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.ci;
 import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.iy;
+import org.telegram.ui.Components.jy;
 import org.telegram.ui.Components.vh;
 import org.telegram.ui.Components.xi0;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.zh;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class g0 extends vh implements a6, ls, te.b {
     public final e0 D;
-    public final iy E;
+    public final jy E;
     public final zh F;
     public final te.a n;
     public final FrameLayout r;
@@ -56,15 +56,15 @@ public final class g0 extends vh implements a6, ls, te.b {
         ah.j jVar = new ah.j(this, 8);
         ah.i iVar = zhVar.r;
         iVar.addTextChangedListener(jVar);
-        iVar.setHint(hd.M0(2131752656, null));
+        iVar.setHint(id.M0(2131752656, null));
         frameLayout.addView(ciVar, ha.g());
         FrameLayout.LayoutParams d = ha.d(-1, 48.0f, 51, 7.0f, 8.0f, 7.0f, 4.0f);
         ((ViewGroup.MarginLayoutParams) d).topMargin += org.telegram.messenger.g0.m;
         frameLayout.addView(zhVar, d);
-        iy iyVar = new iy(context, f6Var);
-        this.E = iyVar;
-        iyVar.c();
-        addView(iyVar, ha.d(-1, -1.0f, 51, 0.0f, 52.0f, 0.0f, 0.0f));
+        jy jyVar = new jy(context, f6Var);
+        this.E = jyVar;
+        jyVar.c();
+        addView(jyVar, ha.d(-1, -1.0f, 51, 0.0f, 52.0f, 0.0f, 0.0f));
         bi.q1 q1Var = new bi.q1(this, context, f6Var, 5);
         this.s = q1Var;
         q1Var.r1();
@@ -152,9 +152,9 @@ public final class g0 extends vh implements a6, ls, te.b {
 
     public final void Q() {
         View childAt;
-        iy iyVar = this.E;
-        if (iyVar.getVisibility() == 0 && (childAt = this.s.getChildAt(0)) != null) {
-            iyVar.setTranslationY((childAt.getTop() + (iyVar.getMeasuredHeight() - getMeasuredHeight())) / 2);
+        jy jyVar = this.E;
+        if (jyVar.getVisibility() == 0 && (childAt = this.s.getChildAt(0)) != null) {
+            jyVar.setTranslationY((childAt.getTop() + (jyVar.getMeasuredHeight() - getMeasuredHeight())) / 2);
         }
     }
 

@@ -2,7 +2,7 @@ package u7;
 
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class v extends a8.q implements w {
     public v() {
@@ -10,7 +10,7 @@ public abstract class v extends a8.q implements w {
     }
 
     @Override // a8.q
-    public final boolean L0(Parcel parcel, int i7) {
+    public final boolean l1(Parcel parcel, int i7) {
         if (i7 != 1) {
             if (i7 != 2) {
                 return false;
@@ -20,7 +20,7 @@ public abstract class v extends a8.q implements w {
         }
         t tVar = (t) d.a(parcel, t.CREATOR);
         d.b(parcel);
-        v0(tVar);
+        P0(tVar);
         return true;
     }
 }

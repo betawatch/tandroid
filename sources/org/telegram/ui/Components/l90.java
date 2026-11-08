@@ -17,7 +17,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l90 extends FrameLayout implements org.telegram.messenger.ls, org.telegram.ui.ActionBar.a6 {
     public int D;
@@ -70,7 +70,7 @@ public final class l90 extends FrameLayout implements org.telegram.messenger.ls,
         textPaint.setColor(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.E8, f6Var));
         int i12 = 2;
         if (arrayList.size() > 1) {
-            SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(i10 == 0 ? org.telegram.messenger.hd.G(arrayList.size(), "MessageContainsEmojiPacks", new Object[0]) : org.telegram.messenger.hd.G(arrayList.size(), "MessageContainsReactionsPacks", new Object[0]));
+            SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(i10 == 0 ? org.telegram.messenger.id.G(arrayList.size(), "MessageContainsEmojiPacks", new Object[0]) : org.telegram.messenger.id.G(arrayList.size(), "MessageContainsReactionsPacks", new Object[0]));
             this.n = X2;
             u31[] u31VarArr = (u31[]) X2.getSpans(0, X2.length(), u31.class);
             for (int i13 = 0; u31VarArr != null && i13 < u31VarArr.length; i13++) {
@@ -83,12 +83,12 @@ public final class l90 extends FrameLayout implements org.telegram.messenger.ls,
         }
         if (arrayList.size() != 1) {
             if (i10 == 4) {
-                this.n = org.telegram.messenger.g0.S2(org.telegram.messenger.hd.M0(2131744866, null), org.telegram.ui.ActionBar.k6.Uc, 2, null, f6Var);
+                this.n = org.telegram.messenger.g0.S2(org.telegram.messenger.id.M0(2131744868, null), org.telegram.ui.ActionBar.k6.Uc, 2, null, f6Var);
                 return;
             }
             return;
         }
-        String M0 = i10 == 0 ? org.telegram.messenger.hd.M0(2131748596, null) : i10 == 3 ? org.telegram.messenger.hd.M0(2131748592, null) : org.telegram.messenger.hd.M0(2131748591, null);
+        String M0 = i10 == 0 ? org.telegram.messenger.id.M0(2131748598, null) : i10 == 3 ? org.telegram.messenger.id.M0(2131748594, null) : org.telegram.messenger.id.M0(2131748593, null);
         String[] split = M0.split("%s");
         if (split.length <= 1) {
             this.n = M0;

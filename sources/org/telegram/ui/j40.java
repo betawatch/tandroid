@@ -12,7 +12,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class j40 extends rc {
     public float A0;
@@ -69,17 +69,17 @@ public final class j40 extends rc {
 
     @Override // org.telegram.ui.rc
     public final int H0() {
-        return 2131749440;
-    }
-
-    @Override // org.telegram.ui.rc
-    public final int I0() {
         return 2131749442;
     }
 
     @Override // org.telegram.ui.rc
+    public final int I0() {
+        return 2131749444;
+    }
+
+    @Override // org.telegram.ui.rc
     public final int L0() {
-        return 2131749438;
+        return 2131749440;
     }
 
     @Override // org.telegram.ui.rc
@@ -89,7 +89,7 @@ public final class j40 extends rc {
 
     @Override // org.telegram.ui.rc
     public final int N0() {
-        return 2131749439;
+        return 2131749441;
     }
 
     @Override // org.telegram.ui.rc
@@ -109,22 +109,22 @@ public final class j40 extends rc {
 
     @Override // org.telegram.ui.rc
     public final int R0() {
-        return 2131749403;
+        return 2131749405;
     }
 
     @Override // org.telegram.ui.rc
     public final int S0() {
-        return 2131749397;
+        return 2131749399;
     }
 
     @Override // org.telegram.ui.rc
     public final int T0() {
-        return 2131749398;
+        return 2131749400;
     }
 
     @Override // org.telegram.ui.rc
     public final int U0() {
-        return 2131749383;
+        return 2131749385;
     }
 
     @Override // org.telegram.ui.rc
@@ -134,7 +134,7 @@ public final class j40 extends rc {
 
     @Override // org.telegram.ui.rc
     public final int W0() {
-        return 2131749384;
+        return 2131749386;
     }
 
     @Override // org.telegram.ui.rc
@@ -177,7 +177,7 @@ public final class j40 extends rc {
         if (kcVar != null) {
             TextView textView = kcVar.d;
             TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = this.c;
-            textView.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.G(tL_premium_boostsStatus != null ? tL_premium_boostsStatus.boosts : 0, "BoostingGroupBoostCount", new Object[0])));
+            textView.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(tL_premium_boostsStatus != null ? tL_premium_boostsStatus.boosts : 0, "BoostingGroupBoostCount", new Object[0])));
         }
     }
 

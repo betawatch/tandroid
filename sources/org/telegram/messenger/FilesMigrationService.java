@@ -25,7 +25,7 @@ import java.util.function.Consumer;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.bv0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class FilesMigrationService extends Service {
     public static boolean c = false;
@@ -77,20 +77,20 @@ public class FilesMigrationService extends Service {
         textView.setGravity(8388611);
         int i10 = org.telegram.ui.ActionBar.k6.j5;
         k5.n(textView, i10, null, 1, 20.0f);
-        textView.setText(hd.M0(2131748430, null));
+        textView.setText(id.M0(2131748432, null));
         e10.addView(textView, c8.ha.d(-1, -2.0f, 0, 21.0f, 30.0f, 21.0f, 0.0f));
         TextView textView2 = new TextView(parentActivity);
         textView2.setGravity(8388611);
         textView2.setTextSize(1, 15.0f);
         org.telegram.ui.ActionBar.r6.V(textView2, i10, null);
-        textView2.setText(g0.X2(hd.M0(2131748431, null)));
+        textView2.setText(g0.X2(id.M0(2131748433, null)));
         e10.addView(textView2, c8.ha.d(-1, -2.0f, 0, 21.0f, 15.0f, 21.0f, 16.0f));
         TextView textView3 = new TextView(parentActivity);
         textView3.setPadding(g0.L(34.0f), 0, g0.L(34.0f), 0);
         textView3.setGravity(17);
         textView3.setTextSize(1, 14.0f);
         textView3.setTypeface(g0.o());
-        textView3.setText(hd.M0(2131748432, null));
+        textView3.setText(id.M0(2131748434, null));
         org.telegram.ui.ActionBar.r6.V(textView3, org.telegram.ui.ActionBar.k6.Gi, null);
         textView3.setBackground(org.telegram.ui.ActionBar.z5.f(org.telegram.ui.ActionBar.k6.Ci, 6.0f));
         e10.addView(textView3, c8.ha.d(-1, 48.0f, 0, 16.0f, 15.0f, 16.0f, 16.0f));
@@ -179,7 +179,7 @@ public class FilesMigrationService extends Service {
     @Override // android.app.Service
     public final int onStartCommand(Intent intent, int i7, int i10) {
         dt.i();
-        Notification build = z8.b(this, dt.j0).setContentTitle(hd.M0(2131748429, null)).setAutoCancel(false).setSmallIcon(R.drawable.notification).build();
+        Notification build = z8.b(this, dt.j0).setContentTitle(id.M0(2131748431, null)).setAutoCancel(false).setSmallIcon(R.drawable.notification).build();
         d = true;
         new k2.k(this).start();
         try {

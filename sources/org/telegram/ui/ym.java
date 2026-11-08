@@ -34,7 +34,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ym implements org.telegram.ui.ActionBar.f6, org.telegram.ui.Components.ea0 {
     public Bitmap A;
@@ -92,7 +92,7 @@ public final class ym implements org.telegram.ui.ActionBar.f6, org.telegram.ui.C
             t();
         }
         if (z9 || ThemeEditorView.p != null) {
-            org.telegram.messenger.g0.h3(new org.telegram.messenger.pd(14));
+            org.telegram.messenger.g0.h3(new org.telegram.messenger.rc(16));
         } else {
             org.telegram.ui.ActionBar.k6.t1(true, true);
         }
@@ -803,7 +803,7 @@ public final class ym implements org.telegram.ui.ActionBar.f6, org.telegram.ui.C
                 int h10 = h(org.telegram.ui.ActionBar.k6.De);
                 int h11 = h(org.telegram.ui.ActionBar.k6.Ee);
                 org.telegram.ui.Components.qa0 qa0Var2 = new org.telegram.ui.Components.qa0();
-                qa0Var2.s(qa0Var2.u, r3Var2.j(this.q ? 1 : 0).settings.intensity);
+                qa0Var2.s(r3Var2.j(this.q ? 1 : 0).settings.intensity, qa0Var2.u);
                 TLRPC.Document e10 = r3Var2.e();
                 if (qa0Var2.y == null) {
                     ImageReceiver imageReceiver = new ImageReceiver(null);

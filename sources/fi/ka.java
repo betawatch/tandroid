@@ -13,7 +13,7 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.g20;
 import org.telegram.ui.pc0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ka extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final class ka extends ClickableSpan {
                 break;
             case 6:
                 ik ikVar = (ik) this.b;
-                org.telegram.ui.Wallet.y5.J0(ikVar.n, ikVar.getContext(), ikVar.a);
+                org.telegram.ui.Wallet.x5.J0(ikVar.n, ikVar.getContext(), ikVar.a);
                 break;
             case 7:
                 ((ActionBarLayout) ((LaunchActivity) this.b).M()).S(new PremiumPreviewFragment(0, "gift"));
@@ -64,10 +64,10 @@ public final class ka extends ClickableSpan {
                 ((pc0) this.b).p(false);
                 break;
             case 9:
-                org.telegram.ui.Wallet.n9 n9Var = (org.telegram.ui.Wallet.n9) this.b;
-                Activity parentActivity = n9Var.getParentActivity();
-                i7 = ((org.telegram.ui.ActionBar.f2) n9Var).currentAccount;
-                org.telegram.ui.Wallet.y5.J0(i7, parentActivity, n9Var.getResourceProvider());
+                org.telegram.ui.Wallet.m9 m9Var = (org.telegram.ui.Wallet.m9) this.b;
+                Activity parentActivity = m9Var.getParentActivity();
+                i7 = ((org.telegram.ui.ActionBar.f2) m9Var).currentAccount;
+                org.telegram.ui.Wallet.x5.J0(i7, parentActivity, m9Var.getResourceProvider());
                 break;
             case 10:
                 ug.i0 i0Var = ((ug.b0) this.b).c;
@@ -115,7 +115,7 @@ public final class ka extends ClickableSpan {
                 textPaint.setUnderlineText(false);
                 break;
             case 9:
-                textPaint.setColor(((org.telegram.ui.Wallet.n9) obj).getThemedColor(org.telegram.ui.ActionBar.k6.Ci));
+                textPaint.setColor(((org.telegram.ui.Wallet.m9) obj).getThemedColor(org.telegram.ui.ActionBar.k6.Ci));
                 textPaint.setUnderlineText(false);
                 break;
             case 10:

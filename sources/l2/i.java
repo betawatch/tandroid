@@ -6,7 +6,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class i implements w0 {
     public static i h;
@@ -20,7 +20,7 @@ public final class i implements w0 {
     public i() {
         this.c = new ArrayList();
         this.d = new ArrayList();
-        this.e = new ti.r(this);
+        this.e = new ti.q(this);
     }
 
     public static i d() {
@@ -77,7 +77,7 @@ public final class i implements w0 {
     }
 
     public void f() {
-        ((ti.r) this.e).j();
+        ((ti.q) this.e).j();
     }
 
     public void h(b bVar) {
@@ -97,23 +97,23 @@ public final class i implements w0 {
     public void i(ti.o oVar, int i7) {
         g("dismissed, prevState=" + i7);
         ((ArrayList) this.c).remove(oVar);
-        ti.r rVar = (ti.r) this.e;
-        if (oVar == rVar.e) {
-            rVar.e = null;
+        ti.q qVar = (ti.q) this.e;
+        if (oVar == qVar.e) {
+            qVar.e = null;
         }
-        if (oVar == rVar.f) {
-            ti.q qVar = rVar.g;
-            View view = rVar.h;
-            rVar.f = null;
-            rVar.g = null;
-            rVar.h = null;
-            ti.s sVar = rVar.c;
-            if (sVar != null) {
-                sVar.a(null, null);
+        if (oVar == qVar.f) {
+            ti.p pVar = qVar.g;
+            View view = qVar.h;
+            qVar.f = null;
+            qVar.g = null;
+            qVar.h = null;
+            ti.r rVar = qVar.c;
+            if (rVar != null) {
+                rVar.a(null, null);
             }
-            if (qVar != null) {
-                SurfaceTexture surfaceTexture = qVar.a;
-                qVar.a = null;
+            if (pVar != null) {
+                SurfaceTexture surfaceTexture = pVar.a;
+                pVar.a = null;
                 if (surfaceTexture != null) {
                     surfaceTexture.release();
                 }
@@ -121,12 +121,12 @@ public final class i implements w0 {
             if (view != null) {
                 oVar.a.y(view);
             }
-            LaunchActivity launchActivity = rVar.b;
-            if (launchActivity != null && rVar.i && org.telegram.messenger.g0.H1(launchActivity)) {
-                rVar.b.moveTaskToBack(false);
+            LaunchActivity launchActivity = qVar.b;
+            if (launchActivity != null && qVar.i && org.telegram.messenger.g0.H1(launchActivity)) {
+                qVar.b.moveTaskToBack(false);
             }
-            rVar.i = false;
-            bg.v0 v0Var = rVar.d;
+            qVar.i = false;
+            bg.v0 v0Var = qVar.d;
             if (v0Var != null) {
                 v0Var.c(false);
             }

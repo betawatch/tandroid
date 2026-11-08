@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Button;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.dg;
@@ -13,7 +13,7 @@ import org.telegram.ui.Components.mo0;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class w1 extends dg {
     public final /* synthetic */ int n0 = 0;
@@ -92,7 +92,7 @@ public final class w1 extends dg {
         switch (this.n0) {
             case 3:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(hd.G(((ww) this.o0).I2.size(), "AccDescrShareInChats", new Object[0]));
+                accessibilityNodeInfo.setText(id.G(((ww) this.o0).I2.size(), "AccDescrShareInChats", new Object[0]));
                 accessibilityNodeInfo.setClassName(Button.class.getName());
                 accessibilityNodeInfo.setLongClickable(true);
                 accessibilityNodeInfo.setClickable(true);

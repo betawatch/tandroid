@@ -1,87 +1,25 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class d91 implements org.telegram.ui.Components.xn {
-    public final /* synthetic */ TLRPC.TL_forumTopic a;
-    public final /* synthetic */ v91 b;
+public final class d91 implements View.OnClickListener {
+    public final /* synthetic */ w91 a;
 
-    public d91(v91 v91Var, TLRPC.TL_forumTopic tL_forumTopic) {
-        this.b = v91Var;
-        this.a = tL_forumTopic;
+    public d91(w91 w91Var) {
+        this.a = w91Var;
     }
 
-    @Override // org.telegram.ui.Components.xn
-    public final void L() {
-        int i7;
-        v91 v91Var = this.b;
-        i7 = ((org.telegram.ui.ActionBar.f2) v91Var).currentAccount;
-        SharedPreferences sharedPreferences = org.telegram.messenger.qp.s1(i7).d7;
-        StringBuilder sb2 = new StringBuilder("sound_enabled_");
-        long j3 = v91Var.a;
-        TLRPC.TL_forumTopic tL_forumTopic = this.a;
-        sb2.append(org.telegram.messenger.dt.v(-j3, tL_forumTopic.id, false));
-        boolean z9 = sharedPreferences.getBoolean(sb2.toString(), true);
-        boolean z10 = !z9;
-        sharedPreferences.edit().putBoolean("sound_enabled_" + org.telegram.messenger.dt.v(-j3, tL_forumTopic.id, false), z10).apply();
-        v91Var.finishPreviewFragment();
-        if (org.telegram.ui.Components.hc.a(v91Var)) {
-            org.telegram.ui.Components.hc.S(z9 ? 1 : 0, v91Var, v91Var.getResourceProvider()).j();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.xn
-    public final void R(int i7) {
-        v91 v91Var = this.b;
-        long j3 = v91Var.a;
-        v91Var.finishPreviewFragment();
-        TLRPC.TL_forumTopic tL_forumTopic = this.a;
-        if (i7 != 0) {
-            v91Var.getNotificationsController().H(-j3, i7, tL_forumTopic.id);
-            if (org.telegram.ui.Components.hc.a(v91Var)) {
-                org.telegram.ui.Components.hc.z(v91Var, 5, i7, v91Var.getResourceProvider()).j();
-                return;
-            }
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        w91 w91Var = this.a;
+        if (w91Var.M == 1) {
+            org.telegram.ui.Components.v4.g0(w91Var, -w91Var.a, null, w91Var.g(), null, false, w91Var.J, new na(this, 4), w91Var.getResourceProvider());
             return;
         }
-        if (v91Var.getMessagesController().r2(-j3, tL_forumTopic.id, null)) {
-            v91Var.getNotificationsController().G(-j3, tL_forumTopic.id, false);
-        }
-        if (org.telegram.ui.Components.hc.a(v91Var)) {
-            org.telegram.ui.Components.hc.z(v91Var, 4, i7, v91Var.getResourceProvider()).j();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.xn
-    public final void dismiss() {
-        this.b.finishPreviewFragment();
-    }
-
-    @Override // org.telegram.ui.Components.xn
-    public final void p() {
-        v91 v91Var = this.b;
-        v91Var.finishPreviewFragment();
-        org.telegram.messenger.qp messagesController = v91Var.getMessagesController();
-        long j3 = v91Var.a;
-        TLRPC.TL_forumTopic tL_forumTopic = this.a;
-        boolean r22 = messagesController.r2(-j3, tL_forumTopic.id, null);
-        v91Var.getNotificationsController().G(-j3, tL_forumTopic.id, !r22);
-        if (org.telegram.ui.Components.hc.a(v91Var)) {
-            org.telegram.ui.Components.hc.z(v91Var, !r22 ? 3 : 4, !r22 ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, v91Var.getResourceProvider()).j();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.xn
-    public final void y() {
-        this.b.finishPreviewFragment();
-        org.telegram.messenger.g0.i3(new by0(19, this, this.a), 500L);
-    }
-
-    @Override // org.telegram.ui.Components.xn
-    public final /* synthetic */ void n() {
+        w91Var.getMessagesController().m(w91Var.a, w91Var.getUserConfig().f(), 0, null, w91Var, false, new x81(w91Var, 2), new y81(w91Var), null);
+        org.telegram.messenger.qs.e().k(org.telegram.messenger.qs.I4, new Object[0]);
+        w91Var.S0(false);
     }
 }

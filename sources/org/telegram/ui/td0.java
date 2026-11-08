@@ -11,7 +11,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class td0 implements org.telegram.messenger.x10 {
     public final /* synthetic */ int a;
@@ -90,7 +90,7 @@ public final /* synthetic */ class td0 implements org.telegram.messenger.x10 {
                         break;
                     }
                 } else if (w70Var != null && "CANCELLED".equals(str2)) {
-                    w70Var.setText(org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131744907, null), new qd0(be0Var, 3)), true));
+                    w70Var.setText(org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(2131744909, null), new qd0(be0Var, 3)), true));
                     break;
                 }
                 break;
@@ -170,8 +170,8 @@ public final /* synthetic */ class td0 implements org.telegram.messenger.x10 {
                         }
                         v2Var.O = str;
                         v2Var.P = false;
-                        String M0 = org.telegram.messenger.hd.M0(2131747816, null);
-                        String M02 = org.telegram.messenger.hd.M0(2131751762, null);
+                        String M0 = org.telegram.messenger.id.M0(2131747818, null);
+                        String M02 = org.telegram.messenger.id.M0(2131751762, null);
                         CharSequence[] charSequenceArr = new CharSequence[2];
                         charSequenceArr[0] = M0;
                         charSequenceArr[z11] = M02;
@@ -187,7 +187,7 @@ public final /* synthetic */ class td0 implements org.telegram.messenger.x10 {
                                 if (i15 == 1) {
                                     String str3 = str;
                                     org.telegram.messenger.g0.g(str3);
-                                    String M03 = z10 ? org.telegram.messenger.hd.M0(2131747294, "PhoneCopied") : str3.startsWith("#") ? org.telegram.messenger.hd.M0(2131749361, "HashtagCopied") : str3.startsWith("@") ? org.telegram.messenger.hd.M0(2131743666, "UsernameCopied") : org.telegram.messenger.hd.M0(2131748920, "LinkCopied");
+                                    String M03 = z10 ? org.telegram.messenger.id.M0(2131747296, "PhoneCopied") : str3.startsWith("#") ? org.telegram.messenger.id.M0(2131749363, "HashtagCopied") : str3.startsWith("@") ? org.telegram.messenger.id.M0(2131743668, "UsernameCopied") : org.telegram.messenger.id.M0(2131748922, "LinkCopied");
                                     if (org.telegram.messenger.g0.I3()) {
                                         new org.telegram.ui.Components.hc(photoViewer2.e0, photoViewer2.v2).Q(R.raw.voip_invite, 36, M03).j();
                                     }
@@ -219,8 +219,8 @@ public final /* synthetic */ class td0 implements org.telegram.messenger.x10 {
                     }
                     v2Var.O = str;
                     v2Var.P = false;
-                    String M03 = org.telegram.messenger.hd.M0(2131747816, null);
-                    String M022 = org.telegram.messenger.hd.M0(2131751762, null);
+                    String M03 = org.telegram.messenger.id.M0(2131747818, null);
+                    String M022 = org.telegram.messenger.id.M0(2131751762, null);
                     CharSequence[] charSequenceArr2 = new CharSequence[2];
                     charSequenceArr2[0] = M03;
                     charSequenceArr2[z11] = M022;
@@ -236,7 +236,7 @@ public final /* synthetic */ class td0 implements org.telegram.messenger.x10 {
                             if (i15 == 1) {
                                 String str3 = str;
                                 org.telegram.messenger.g0.g(str3);
-                                String M032 = z10 ? org.telegram.messenger.hd.M0(2131747294, "PhoneCopied") : str3.startsWith("#") ? org.telegram.messenger.hd.M0(2131749361, "HashtagCopied") : str3.startsWith("@") ? org.telegram.messenger.hd.M0(2131743666, "UsernameCopied") : org.telegram.messenger.hd.M0(2131748920, "LinkCopied");
+                                String M032 = z10 ? org.telegram.messenger.id.M0(2131747296, "PhoneCopied") : str3.startsWith("#") ? org.telegram.messenger.id.M0(2131749363, "HashtagCopied") : str3.startsWith("@") ? org.telegram.messenger.id.M0(2131743668, "UsernameCopied") : org.telegram.messenger.id.M0(2131748922, "LinkCopied");
                                 if (org.telegram.messenger.g0.I3()) {
                                     new org.telegram.ui.Components.hc(photoViewer2.e0, photoViewer2.v2).Q(R.raw.voip_invite, 36, M032).j();
                                 }

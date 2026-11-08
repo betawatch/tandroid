@@ -17,7 +17,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class uj extends kj0 {
     public jg.o0 D;
@@ -148,7 +148,7 @@ public final class uj extends kj0 {
         if (i10 < arrayList.size()) {
             x3Var.setAlpha(1.0f);
             if (((ArrayList) this.Q.get((String) arrayList.get(i10))) != null) {
-                x3Var.setText((i10 != 0 || this.s.isEmpty()) ? org.telegram.messenger.hd.e0(((org.telegram.messenger.ij) r1.get(0)).k.date, false) : org.telegram.messenger.hd.M0(2131749534, null));
+                x3Var.setText((i10 != 0 || this.s.isEmpty()) ? org.telegram.messenger.id.e0(((org.telegram.messenger.ij) r1.get(0)).k.date, false) : org.telegram.messenger.id.M0(2131749536, null));
             }
         }
         return view;
@@ -176,7 +176,7 @@ public final class uj extends kj0 {
             if (((ArrayList) hashMap.get((String) arrayList.get(i13))) == null) {
                 return;
             }
-            ((org.telegram.ui.Cells.x3) view).setText((i13 != 0 || this.s.isEmpty()) ? org.telegram.messenger.hd.e0(((org.telegram.messenger.ij) r3.get(0)).k.date, false) : org.telegram.messenger.hd.M0(2131749534, null));
+            ((org.telegram.ui.Cells.x3) view).setText((i13 != 0 || this.s.isEmpty()) ? org.telegram.messenger.id.e0(((org.telegram.messenger.ij) r3.get(0)).k.date, false) : org.telegram.messenger.id.M0(2131749536, null));
             return;
         }
         if (i12 == 1 || i12 == 4) {
@@ -511,7 +511,7 @@ public final class uj extends kj0 {
                     vjVar.I = animatorSet2;
                     kj kjVar = vjVar.r;
                     Property property = View.TRANSLATION_Y;
-                    animatorSet2.playTogether(ObjectAnimator.ofFloat(kjVar, (Property<kj, Float>) property, !z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f), ObjectAnimator.ofFloat(q0Var, (Property<jg.q0, Float>) property, !z10 ? 0.0f : -org.telegram.messenger.g0.L(44.0f)), ObjectAnimator.ofFloat(vjVar.J, (Property<lz, Float>) property, !z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f), ObjectAnimator.ofFloat(vjVar.L, (Property<di.f5, Float>) property, z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f));
+                    animatorSet2.playTogether(ObjectAnimator.ofFloat(kjVar, (Property<kj, Float>) property, !z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f), ObjectAnimator.ofFloat(q0Var, (Property<jg.q0, Float>) property, !z10 ? 0.0f : -org.telegram.messenger.g0.L(44.0f)), ObjectAnimator.ofFloat(vjVar.J, (Property<mz, Float>) property, !z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f), ObjectAnimator.ofFloat(vjVar.L, (Property<di.f5, Float>) property, z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f));
                     vjVar.I.addListener(new z5(this, 12));
                     vjVar.I.setInterpolator(xq.g);
                     vjVar.I.setDuration(180L);
@@ -538,7 +538,7 @@ public final class uj extends kj0 {
         vjVar.I = animatorSet22;
         kj kjVar2 = vjVar.r;
         Property property2 = View.TRANSLATION_Y;
-        animatorSet22.playTogether(ObjectAnimator.ofFloat(kjVar2, (Property<kj, Float>) property2, !z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f), ObjectAnimator.ofFloat(q0Var, (Property<jg.q0, Float>) property2, !z10 ? 0.0f : -org.telegram.messenger.g0.L(44.0f)), ObjectAnimator.ofFloat(vjVar.J, (Property<lz, Float>) property2, !z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f), ObjectAnimator.ofFloat(vjVar.L, (Property<di.f5, Float>) property2, z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f));
+        animatorSet22.playTogether(ObjectAnimator.ofFloat(kjVar2, (Property<kj, Float>) property2, !z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f), ObjectAnimator.ofFloat(q0Var, (Property<jg.q0, Float>) property2, !z10 ? 0.0f : -org.telegram.messenger.g0.L(44.0f)), ObjectAnimator.ofFloat(vjVar.J, (Property<mz, Float>) property2, !z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f), ObjectAnimator.ofFloat(vjVar.L, (Property<di.f5, Float>) property2, z10 ? org.telegram.messenger.g0.L(44.0f) : 0.0f));
         vjVar.I.addListener(new z5(this, 12));
         vjVar.I.setInterpolator(xq.g);
         vjVar.I.setDuration(180L);
@@ -561,10 +561,10 @@ public final class uj extends kj0 {
         if (i7 != 0) {
             if (i7 != 1) {
                 if (i7 == 2) {
-                    lz lzVar = new lz(context, vjVar.a);
-                    lzVar.setViewType(3);
-                    lzVar.setIsSingleCell(true);
-                    x3Var = lzVar;
+                    mz mzVar = new mz(context, vjVar.a);
+                    mzVar.setViewType(3);
+                    mzVar.setIsSingleCell(true);
+                    x3Var = mzVar;
                 } else if (i7 != 4) {
                     view = new View(context);
                     view.setTag(-33024);

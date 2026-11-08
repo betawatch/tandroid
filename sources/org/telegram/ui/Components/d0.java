@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class d0 extends LinearLayout {
     public final /* synthetic */ int a = 0;
@@ -67,11 +67,11 @@ public final class d0 extends LinearLayout {
                 super.dispatchDraw(canvas);
                 break;
             default:
-                org.telegram.ui.Wallet.t5 t5Var = (org.telegram.ui.Wallet.t5) this.h;
-                float e11 = t5Var.f.e(false, t5Var.d);
+                org.telegram.ui.Wallet.s5 s5Var = (org.telegram.ui.Wallet.s5) this.h;
+                float e11 = s5Var.f.e(false, s5Var.d);
                 double d2 = e11;
                 int floor2 = (int) Math.floor(d2);
-                TextView[] textViewArr = t5Var.c;
+                TextView[] textViewArr = s5Var.c;
                 int j3 = Utilities.j(floor2, textViewArr.length, 0);
                 int j10 = Utilities.j((int) Math.ceil(d2), textViewArr.length, 0);
                 RectF rectF4 = this.b;
@@ -141,9 +141,9 @@ public final class d0 extends LinearLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d0(org.telegram.ui.Wallet.t5 t5Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public d0(org.telegram.ui.Wallet.s5 s5Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
-        this.h = t5Var;
+        this.h = s5Var;
         this.f = f6Var;
         this.b = new RectF();
         this.c = new RectF();

@@ -50,7 +50,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g20;
 import org.telegram.messenger.gc;
 import org.telegram.messenger.h20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -65,8 +65,8 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.dh;
 import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.gy;
 import org.telegram.ui.Components.hg;
+import org.telegram.ui.Components.hy;
 import org.telegram.ui.Components.ii0;
 import org.telegram.ui.Components.jg;
 import org.telegram.ui.Components.mt0;
@@ -77,7 +77,7 @@ import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
     public final j5 A0;
@@ -129,7 +129,7 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
     public final TextView X0;
     public final int[] X1;
     public final TextView Y0;
-    public gy Y1;
+    public hy Y1;
     public final TextView Z0;
     public boolean Z1;
     public final Paint a1;
@@ -368,7 +368,7 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
         textView.setTextColor(-1);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setTextSize(1, 16.0f);
-        textView.setText(hd.M0(2131747266, null));
+        textView.setText(id.M0(2131747268, null));
         linearLayout.addView(org.telegram.messenger.camera.q.e(context, R.drawable.photo_zoomout), c8.ha.t(24, 24, 16, 0, 0, 8, 0));
         linearLayout.addView(textView, c8.ha.r(-2, -2, 16));
         linearLayout.setAlpha(0.0f);
@@ -378,7 +378,7 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
         this.X0 = textView2;
         textView2.setBackground(org.telegram.ui.ActionBar.k6.h0(822083583, 7, -1));
         textView2.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
-        textView2.setText(hd.M0(2131747278, null));
+        textView2.setText(id.M0(2131747280, null));
         textView2.setGravity(16);
         textView2.setTextColor(-1);
         textView2.setTypeface(org.telegram.messenger.g0.o());
@@ -466,7 +466,7 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
         TextView i16 = org.telegram.ui.Cells.f1.i(frameLayout, textView2, c8.ha.d(-2, 32.0f, 5, 0.0f, 0.0f, 4.0f, 0.0f), context);
         this.Y0 = i16;
         i16.setBackground(org.telegram.ui.ActionBar.k6.h0(822083583, 7, -1));
-        i16.setText(hd.M0(2131752101, null));
+        i16.setText(id.M0(2131752101, null));
         i16.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
         i16.setGravity(16);
         i16.setTextColor(-1);
@@ -556,7 +556,7 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
         TextView i18 = org.telegram.ui.Cells.f1.i(frameLayout, i16, c8.ha.d(-2, 32.0f, 51, 4.0f, 0.0f, 0.0f, 0.0f), context);
         this.Z0 = i18;
         i18.setBackground(org.telegram.ui.ActionBar.k6.h0(822083583, 7, -1));
-        i18.setText(hd.M0(2131751355, null));
+        i18.setText(id.M0(2131751355, null));
         i18.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
         i18.setGravity(16);
         i18.setTextColor(-1);
@@ -836,7 +836,7 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
         k2Var.getEditText().setGravity(i7 != 1 ? i7 != 2 ? 19 : 21 : 17);
         if (i7 == 1) {
             i10 = 4;
-        } else if (i7 == 2 ? !hd.a0 : hd.a0) {
+        } else if (i7 == 2 ? !id.a0 : id.a0) {
             i10 = 3;
         }
         k2Var.getEditText().setTextAlignment(i10);
@@ -950,7 +950,7 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
         this.C0.addView(this.F0, c8.ha.d(-1, 40.0f, 80, 52.0f, 0.0f, 52.0f, 0.0f));
         TextView textView = new TextView(context);
         this.Q0 = textView;
-        textView.setText(hd.M0(2131747276, null).toUpperCase());
+        textView.setText(id.M0(2131747278, null).toUpperCase());
         TextView textView2 = this.Q0;
         int i10 = org.telegram.ui.ActionBar.k6.i6;
         g5 g5Var = this.p1;
@@ -999,7 +999,7 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
         this.F0.addView(this.Q0, c8.ha.l(1.0f, 0, -2));
         TextView textView3 = new TextView(context);
         this.R0 = textView3;
-        textView3.setText(hd.M0(2131747275, null).toUpperCase());
+        textView3.setText(id.M0(2131747277, null).toUpperCase());
         org.telegram.ui.ActionBar.r6.R(this.R0, org.telegram.ui.ActionBar.k6.h0(org.telegram.ui.ActionBar.k6.w0(i10, g5Var), 7, -1), null, org.telegram.ui.ActionBar.r6.N(i10), g5Var);
         this.R0.setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
         this.R0.setOnClickListener(new View.OnClickListener(this) { // from class: fi.d4
@@ -1045,7 +1045,7 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
         this.F0.addView(this.R0, c8.ha.l(1.0f, 0, -2));
         TextView textView4 = new TextView(context);
         this.S0 = textView4;
-        textView4.setText(hd.M0(2131747274, null).toUpperCase());
+        textView4.setText(id.M0(2131747276, null).toUpperCase());
         org.telegram.ui.ActionBar.r6.R(this.S0, org.telegram.ui.ActionBar.k6.h0(org.telegram.ui.ActionBar.k6.w0(i10, g5Var), 7, -1), null, org.telegram.ui.ActionBar.r6.N(i10), g5Var);
         this.S0.setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
         this.S0.setTextColor(-1);
@@ -1637,20 +1637,20 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
         x4 x4Var = this.x1;
         int i10 = 1;
         if (i7 == 1) {
-            gy gyVar = this.Y1;
-            boolean z9 = gyVar != null && gyVar.getVisibility() == 0;
-            gy gyVar2 = this.Y1;
+            hy hyVar = this.Y1;
+            boolean z9 = hyVar != null && hyVar.getVisibility() == 0;
+            hy hyVar2 = this.Y1;
             ua uaVar = this.v1;
-            if (gyVar2 != null && gyVar2.c1 != p10.s0) {
-                uaVar.removeView(gyVar2);
+            if (hyVar2 != null && hyVar2.c1 != p10.s0) {
+                uaVar.removeView(hyVar2);
                 this.Y1 = null;
             }
             if (this.Y1 == null) {
-                gy gyVar3 = new gy(null, true, false, false, getContext(), false, null, null, true, this.p1, false, false);
-                this.Y1 = gyVar3;
-                gyVar3.x2 = false;
-                gyVar3.U0 = true;
-                gyVar3.setVisibility(8);
+                hy hyVar3 = new hy(null, true, false, false, getContext(), false, null, null, true, this.p1, false, false);
+                this.Y1 = hyVar3;
+                hyVar3.x2 = false;
+                hyVar3.U0 = true;
+                hyVar3.setVisibility(8);
                 if (org.telegram.messenger.g0.Q1()) {
                     this.Y1.setForseMultiwindowLayout(true);
                 }
@@ -1659,7 +1659,7 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
             }
             this.Y1.setVisibility(0);
             this.Z1 = true;
-            gy gyVar4 = this.Y1;
+            hy hyVar4 = this.Y1;
             if (this.e2 <= 0) {
                 if (org.telegram.messenger.g0.Q1()) {
                     this.e2 = org.telegram.messenger.g0.L(150.0f);
@@ -1676,9 +1676,9 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
             }
             Point point = org.telegram.messenger.g0.q;
             int paddingUnderContainer = uaVar.getPaddingUnderContainer() + (point.x > point.y ? this.f2 : this.e2);
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) gyVar4.getLayoutParams();
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) hyVar4.getLayoutParams();
             layoutParams.height = paddingUnderContainer;
-            gyVar4.setLayoutParams(layoutParams);
+            hyVar4.setLayoutParams(layoutParams);
             if (!org.telegram.messenger.g0.E && !org.telegram.messenger.g0.Q1()) {
                 tg.j jVar = this.s0;
                 if (jVar instanceof tg.k2) {
@@ -1709,11 +1709,11 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
             if (emojiButton2 != null) {
                 emojiButton2.j(hg.e, true);
             }
-            gy gyVar5 = this.Y1;
-            if (gyVar5 != null) {
+            hy hyVar5 = this.Y1;
+            if (hyVar5 != null) {
                 this.Z1 = false;
                 if (org.telegram.messenger.g0.D || org.telegram.messenger.g0.E) {
-                    gyVar5.setVisibility(8);
+                    hyVar5.setVisibility(8);
                 }
             }
             if (i7 == 0) {
@@ -1746,7 +1746,7 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
                 m7Var.f2 = true;
                 m7Var.g2 = false;
             }
-            String M0 = hd.M0(2131744642, null);
+            String M0 = id.M0(2131744644, null);
             d dVar = m7Var.T1;
             dVar.i(M0, false, true);
             bi.o0 o0Var = m7Var.P1;
@@ -3631,7 +3631,7 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
                                                 while (i25 < p0Var3.getChildCount()) {
                                                     View childAt3 = p0Var3.getChildAt(i25);
                                                     if (childAt3 instanceof org.telegram.ui.Cells.q1) {
-                                                        ((org.telegram.ui.Cells.q1) childAt3).Fc = z21;
+                                                        ((org.telegram.ui.Cells.q1) childAt3).Gc = z21;
                                                     }
                                                     i25++;
                                                     z21 = true;
@@ -3643,7 +3643,7 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
                                                 while (i26 < p0Var3.getChildCount()) {
                                                     View childAt4 = p0Var3.getChildAt(i26);
                                                     if (childAt4 instanceof org.telegram.ui.Cells.q1) {
-                                                        ((org.telegram.ui.Cells.q1) childAt4).Fc = z22;
+                                                        ((org.telegram.ui.Cells.q1) childAt4).Gc = z22;
                                                     }
                                                     i26++;
                                                     z22 = false;
@@ -3731,8 +3731,8 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
             G0(0);
         }
         if (z9) {
-            gy gyVar = this.Y1;
-            if (gyVar == null || gyVar.getVisibility() != 0) {
+            hy hyVar = this.Y1;
+            if (hyVar == null || hyVar.getVisibility() != 0) {
                 t0();
                 return;
             }
@@ -3813,8 +3813,8 @@ public abstract class o5 extends st0 implements tg.g1, tg.h, tg.c1, qt0, ra {
     }
 
     public final void t0() {
-        gy gyVar;
-        if (!this.Z1 && (gyVar = this.Y1) != null && gyVar.getVisibility() != 8) {
+        hy hyVar;
+        if (!this.Z1 && (hyVar = this.Y1) != null && hyVar.getVisibility() != 8) {
             this.Y1.setVisibility(8);
         }
         int i7 = this.c2;

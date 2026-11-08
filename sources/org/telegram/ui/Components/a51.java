@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class a51 extends r00 {
+public final class a51 extends s00 {
     public final ah.i J;
     public final /* synthetic */ b51 K;
 
@@ -16,7 +16,7 @@ public final class a51 extends r00 {
         ah.i iVar = this.r;
         this.J = iVar;
         iVar.setImeOptions(268435459);
-        iVar.setHint(org.telegram.messenger.hd.M0(2131743340, null));
+        iVar.setHint(org.telegram.messenger.id.M0(2131743342, null));
         iVar.addTextChangedListener(new ah.j(this, 26));
         iVar.setOnEditorActionListener(new t0(this, 11));
     }

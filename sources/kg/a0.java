@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.view.View;
 import fi.h9;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.p2;
 import org.telegram.messenger.qp;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.x31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.UsersSelectActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class a0 {
     public final Context a;
@@ -64,19 +64,19 @@ public final class a0 {
             }
             if ((d & 2) != 0) {
                 if (!TextUtils.isEmpty(str2)) {
-                    str2 = rf.b.q(str2, ", ");
+                    str2 = rf.b.r(str2, ", ");
                 }
                 str2 = jg.g.l(2131750728, null, com.google.android.recaptcha.internal.a.m(str2));
             }
             if ((d & 4) != 0) {
                 if (!TextUtils.isEmpty(str2)) {
-                    str2 = rf.b.q(str2, ", ");
+                    str2 = rf.b.r(str2, ", ");
                 }
                 str2 = jg.g.l(2131750792, null, com.google.android.recaptcha.internal.a.m(str2));
             }
             if ((d & 8) != 0) {
                 if (!TextUtils.isEmpty(str2)) {
-                    str2 = rf.b.q(str2, ", ");
+                    str2 = rf.b.r(str2, ", ");
                 }
                 str2 = jg.g.l(2131750721, null, com.google.android.recaptcha.internal.a.m(str2));
             }
@@ -84,7 +84,7 @@ public final class a0 {
             if (!arrayList2.isEmpty()) {
                 if (TextUtils.isEmpty(str2)) {
                     StringBuilder m10 = com.google.android.recaptcha.internal.a.m(str2);
-                    m10.append(hd.H(',', "Chats", arrayList2.size()));
+                    m10.append(id.H(',', "Chats", arrayList2.size()));
                     str2 = m10.toString();
                 } else {
                     StringBuilder j3 = rf.b.j(str2, " + ");
@@ -93,9 +93,9 @@ public final class a0 {
                 }
             }
             if (TextUtils.isEmpty(str2)) {
-                str2 = hd.M0(2131752777, null);
+                str2 = id.M0(2131752777, null);
             }
-            x31 f10 = x31.f(hd.M0(2131752778, null), str2, 101);
+            x31 f10 = x31.f(id.M0(2131752778, null), str2, 101);
             f10.g = z9;
             arrayList.add(f10);
         }
@@ -107,19 +107,19 @@ public final class a0 {
                 }
                 if ((d & 2) != 0) {
                     if (!TextUtils.isEmpty(str)) {
-                        str = rf.b.q(str, ", ");
+                        str = rf.b.r(str, ", ");
                     }
                     str = jg.g.l(2131750728, null, com.google.android.recaptcha.internal.a.m(str));
                 }
                 if ((d & 4) != 0) {
                     if (!TextUtils.isEmpty(str)) {
-                        str = rf.b.q(str, ", ");
+                        str = rf.b.r(str, ", ");
                     }
                     str = jg.g.l(2131750792, null, com.google.android.recaptcha.internal.a.m(str));
                 }
                 if ((d & 8) != 0) {
                     if (!TextUtils.isEmpty(str)) {
-                        str = rf.b.q(str, ", ");
+                        str = rf.b.r(str, ", ");
                     }
                     str = jg.g.l(2131750721, null, com.google.android.recaptcha.internal.a.m(str));
                 }
@@ -128,7 +128,7 @@ public final class a0 {
             if (!arrayList3.isEmpty()) {
                 if (TextUtils.isEmpty(str)) {
                     StringBuilder m11 = com.google.android.recaptcha.internal.a.m(str);
-                    m11.append(hd.H(',', "Chats", arrayList3.size()));
+                    m11.append(id.H(',', "Chats", arrayList3.size()));
                     str = m11.toString();
                 } else {
                     StringBuilder j10 = rf.b.j(str, " + ");
@@ -137,9 +137,9 @@ public final class a0 {
                 }
             }
             if (TextUtils.isEmpty(str)) {
-                str = hd.M0(2131752779, null);
+                str = id.M0(2131752779, null);
             }
-            x31 f11 = x31.f(hd.M0(2131752780, null), str, qs.o1);
+            x31 f11 = x31.f(id.M0(2131752780, null), str, qs.o1);
             f11.g = z9;
             arrayList.add(f11);
         }
@@ -341,12 +341,12 @@ public final class a0 {
         boolean z12 = x31Var.w;
         String B1 = qp.s1(this.b).B1(x31Var.x, false);
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, this.a, this.c);
-        String M0 = hd.M0(!z12 ? 2131752686 : 2131752684, null);
+        String M0 = id.M0(!z12 ? 2131752686 : 2131752684, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
-        u1Var.T = hd.a0(null, null, !z12 ? 2131752687 : 2131752685, B1);
-        alertDialog$Builder.k(hd.M0(2131746320, null), new ab.j(this, z12, x31Var, i10));
-        alertDialog$Builder.h(hd.M0(2131752589, null), null);
+        u1Var.T = id.a0(null, null, !z12 ? 2131752687 : 2131752685, B1);
+        alertDialog$Builder.k(id.M0(2131746322, null), new ab.j(this, z12, x31Var, i10));
+        alertDialog$Builder.h(id.M0(2131752589, null), null);
         if (f2Var != null) {
             f2Var.showDialog(u1Var);
             return true;

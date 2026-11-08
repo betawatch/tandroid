@@ -19,7 +19,7 @@ import android.view.ViewConfiguration;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -33,7 +33,7 @@ import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.wk0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l0 {
     public boolean A;
@@ -664,7 +664,7 @@ public final class l0 {
         int i11 = org.telegram.ui.ActionBar.k6.Wc;
         q1 q1Var = this.a;
         textPaint.setColor(org.telegram.ui.ActionBar.k6.w0(i11, q1Var.Pb));
-        this.g = new StaticLayout(hd.M0(2131752391, null), textPaint, this.d.m1(), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+        this.g = new StaticLayout(id.M0(2131752391, null), textPaint, this.d.m1(), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
         this.h = r0.getWidth();
         this.i = 0.0f;
         for (int i12 = 0; i12 < this.g.getLineCount(); i12++) {
@@ -724,7 +724,7 @@ public final class l0 {
             }
         }
         if (this.v == null) {
-            my0 my0Var = new my0(hd.M0(this.c > 0 ? 2131745320 : 2131745318, null), 14.0f, org.telegram.messenger.g0.o());
+            my0 my0Var = new my0(id.M0(this.c > 0 ? 2131745322 : 2131745320, null), 14.0f, org.telegram.messenger.g0.o());
             my0Var.o = true;
             this.v = my0Var;
         }

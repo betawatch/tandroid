@@ -12,7 +12,7 @@ import di.u;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
@@ -22,7 +22,7 @@ import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.y8;
 import org.telegram.ui.fe;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class d {
     public final f2 a;
@@ -140,7 +140,7 @@ public final class d {
                 this.h.setBackground(h02);
             }
             r6.t(this.h, k6.Re, f2Var.getResourceProvider(), PorterDuff.Mode.MULTIPLY);
-            this.h.setContentDescription(hd.M0(2131752041, null));
+            this.h.setContentDescription(id.M0(2131752041, null));
             this.h.setImageResource(R.drawable.miniplayer_close);
             this.h.setScaleType(ImageView.ScaleType.CENTER);
             this.h.setOnClickListener(new View.OnClickListener(this) { // from class: yh.a
@@ -200,7 +200,7 @@ public final class d {
         }
         if (this.k != i7) {
             this.k = i7;
-            this.g.setText(hd.G(i7, "JoinUsersRequests", new Object[0]));
+            this.g.setText(id.G(i7, "JoinUsersRequests", new Object[0]));
             a(true, z9);
             if (list == null || list.isEmpty()) {
                 return;

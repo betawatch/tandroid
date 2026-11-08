@@ -22,7 +22,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.fj;
 import org.telegram.messenger.fu;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.kv;
 import org.telegram.messenger.qp;
@@ -32,7 +32,7 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class z0 extends AccessibilityNodeProvider {
     public final q1 a;
@@ -431,7 +431,7 @@ public final class z0 extends AccessibilityNodeProvider {
                                 str2 = "AccDescrQuizIncorrectAnswer";
                                 i11 = 2131754794;
                             }
-                            sb2.append(hd.M0(i11, str2));
+                            sb2.append(id.M0(i11, str2));
                         }
                     } else {
                         obtain.setClassName("android.widget.Button");
@@ -458,7 +458,7 @@ public final class z0 extends AccessibilityNodeProvider {
             if (i7 == 495) {
                 obtain.setClassName("android.widget.Button");
                 obtain.setEnabled(true);
-                obtain.setText(hd.L0(2131754795));
+                obtain.setText(id.L0(2131754795));
                 obtain.addAction(16);
                 rect.set(q1Var.n5 - org.telegram.messenger.g0.L(8.0f), q1Var.o5 - org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(32.0f) + q1Var.n5, org.telegram.messenger.g0.L(32.0f) + q1Var.o5);
                 obtain.setBoundsInParent(rect);
@@ -495,9 +495,9 @@ public final class z0 extends AccessibilityNodeProvider {
                         obtain.setClassName("android.widget.ImageButton");
                         obtain.setEnabled(true);
                         if (q1Var.F2(q1Var.P5)) {
-                            obtain.setContentDescription(hd.M0(2131754819, "AccDescrOpenChat"));
+                            obtain.setContentDescription(id.M0(2131754819, "AccDescrOpenChat"));
                         } else {
-                            obtain.setContentDescription(hd.M0(2131745460, "ShareFile"));
+                            obtain.setContentDescription(id.M0(2131745462, "ShareFile"));
                         }
                         obtain.addAction(16);
                         int i38 = (int) q1Var.Q8;
@@ -513,7 +513,7 @@ public final class z0 extends AccessibilityNodeProvider {
                     } else if (i7 == 497) {
                         obtain.setEnabled(true);
                         StringBuilder sb3 = new StringBuilder();
-                        org.telegram.messenger.camera.q.q("Reply", 2131746262, sb3, ", ");
+                        org.telegram.messenger.camera.q.q("Reply", 2131746264, sb3, ", ");
                         StaticLayout staticLayout3 = q1Var.P7;
                         if (staticLayout3 != null) {
                             sb3.append(staticLayout3.getText());
@@ -567,11 +567,11 @@ public final class z0 extends AccessibilityNodeProvider {
                         int repliesCount = q1Var.getRepliesCount();
                         ij ijVar2 = q1Var.P5;
                         if (ijVar2 == null || ijVar2.Q5() || q1Var.P5.H2()) {
-                            S = (q1Var.t6 || repliesCount <= 0) ? null : hd.S(null, repliesCount);
+                            S = (q1Var.t6 || repliesCount <= 0) ? null : id.S(null, repliesCount);
                         } else if (q1Var.t6) {
-                            S = hd.M0(2131743553, "ViewInChat");
+                            S = id.M0(2131743555, "ViewInChat");
                         } else {
-                            S = repliesCount == 0 ? hd.M0(2131749007, "LeaveAComment") : hd.G(repliesCount, "CommentsCount", new Object[0]);
+                            S = repliesCount == 0 ? id.M0(2131749009, "LeaveAComment") : id.G(repliesCount, "CommentsCount", new Object[0]);
                         }
                         if (S != null) {
                             obtain.setText(S);
@@ -596,7 +596,7 @@ public final class z0 extends AccessibilityNodeProvider {
                             str = "AccActionOpenTranscription";
                             i10 = 2131754931;
                         }
-                        obtain.setText(hd.M0(i10, str));
+                        obtain.setText(id.M0(i10, str));
                         obtain.addAction(16);
                         if (q1Var.I4 != null) {
                             rect.set((int) q1Var.C1().b, (int) q1Var.C1().c, (int) (q1Var.C1().b + q1Var.I4.u()), (int) (q1Var.C1().c + q1Var.I4.h()));
@@ -696,15 +696,15 @@ public final class z0 extends AccessibilityNodeProvider {
                         if (collectionItemInfo != null) {
                             accessibilityNodeInfo2.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(collectionItemInfo.getRowIndex(), 1, 0, 1, false));
                         }
-                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, hd.M0(2131754936, "AccActionMessageOptions")));
+                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, id.M0(2131754936, "AccActionMessageOptions")));
                         int iconForCurrentState = q1Var.getIconForCurrentState();
-                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, iconForCurrentState != 0 ? iconForCurrentState != 1 ? iconForCurrentState != 2 ? iconForCurrentState != 3 ? iconForCurrentState != 5 ? q1Var.P5.D == 16 ? hd.M0(2131752633, "CallAgain") : null : hd.M0(2131754933, "AccActionOpenFile") : hd.M0(2131754941, "AccActionCancelDownload") : hd.M0(2131754938, "AccActionDownload") : hd.M0(2131754930, "AccActionPause") : hd.M0(2131754929, "AccActionPlay")));
-                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, hd.M0(2131754937, "AccActionEnterSelectionMode")));
+                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, iconForCurrentState != 0 ? iconForCurrentState != 1 ? iconForCurrentState != 2 ? iconForCurrentState != 3 ? iconForCurrentState != 5 ? q1Var.P5.D == 16 ? id.M0(2131752633, "CallAgain") : null : id.M0(2131754933, "AccActionOpenFile") : id.M0(2131754941, "AccActionCancelDownload") : id.M0(2131754938, "AccActionDownload") : id.M0(2131754930, "AccActionPause") : id.M0(2131754929, "AccActionPlay")));
+                        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, id.M0(2131754937, "AccActionEnterSelectionMode")));
                         if (q1Var.getMiniIconForCurrentState() == 2) {
-                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_small_button, hd.M0(2131754938, "AccActionDownload")));
+                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_small_button, id.M0(2131754938, "AccActionDownload")));
                         }
                         if (!q1Var.I8 || q1Var.r8) {
-                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, hd.M0(2131744329, "SummaryTitle")));
+                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, id.M0(2131744331, "SummaryTitle")));
                         }
                         arrayList6 = q1Var.P5.z2;
                         if (arrayList6 != null) {
@@ -717,7 +717,7 @@ public final class z0 extends AccessibilityNodeProvider {
                                 Object obj3 = arrayList6.get(i44);
                                 i44++;
                                 if (((fj) obj3).N) {
-                                    accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_copy_code, hd.M0(2131751765, "CopyCode")));
+                                    accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_copy_code, id.M0(2131751765, "CopyCode")));
                                     break;
                                 }
                             }
@@ -824,7 +824,7 @@ public final class z0 extends AccessibilityNodeProvider {
                             }
                         }
                         if (staticLayoutArr[0] != null && staticLayoutArr[1] != null) {
-                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_open_forwarded_origin, hd.M0(2131754932, "AccActionOpenForwardedOrigin")));
+                            accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_open_forwarded_origin, id.M0(2131754932, "AccActionOpenForwardedOrigin")));
                         }
                         if (q1Var.j1 && q1Var.getBackground() == null) {
                             return accessibilityNodeInfo2;
@@ -853,7 +853,7 @@ public final class z0 extends AccessibilityNodeProvider {
                         j10 = j3;
                     } else if (q1Var.Y8) {
                         j10 = j3;
-                        spannableStringBuilder.append(' ').append((CharSequence) hd.Z(q1Var.W8 ? 2131754727 : 2131754726, adminAccessibilityText));
+                        spannableStringBuilder.append(' ').append((CharSequence) id.Z(q1Var.W8 ? 2131754727 : 2131754726, adminAccessibilityText));
                     } else {
                         j10 = j3;
                         spannableStringBuilder.append((CharSequence) ", ").append(adminAccessibilityText);
@@ -875,7 +875,7 @@ public final class z0 extends AccessibilityNodeProvider {
                 if (document != null && q1Var.L1 == 1) {
                     s5 = org.telegram.messenger.w7.s(document);
                     if (s5.indexOf(46) != -1) {
-                        spannableStringBuilder.append((CharSequence) hd.Z(2131754889, s5.substring(s5.lastIndexOf(46) + 1).toUpperCase(Locale.ROOT)));
+                        spannableStringBuilder.append((CharSequence) id.Z(2131754889, s5.substring(s5.lastIndexOf(46) + 1).toUpperCase(Locale.ROOT)));
                     }
                 }
                 kvVar = q1Var.P5.w2;
@@ -933,7 +933,7 @@ public final class z0 extends AccessibilityNodeProvider {
                                     spanned = spanned2;
                                 } else {
                                     spanned = spanned2;
-                                    spannableStringBuilder3.insert(spanStart, (CharSequence) (((Object) (TextUtils.isEmpty(jVar.a) ? hd.L0(2131754897) : hd.Z(2131754896, fj.b(jVar.a)))) + ". "));
+                                    spannableStringBuilder3.insert(spanStart, (CharSequence) (((Object) (TextUtils.isEmpty(jVar.a) ? id.L0(2131754897) : id.Z(2131754896, fj.b(jVar.a)))) + ". "));
                                 }
                                 i54++;
                                 length4 = i55;
@@ -947,21 +947,21 @@ public final class z0 extends AccessibilityNodeProvider {
                 if (q1Var.M1 != null && (((i14 = q1Var.L1) == 1 || i14 == 2 || i14 == 4) && q1Var.N3 == 1 && q1Var.z3 != null)) {
                     spannableStringBuilder.append((CharSequence) "\n");
                     boolean p42 = q1Var.P5.p4();
-                    spannableStringBuilder.append((CharSequence) hd.Y(!p42 ? 2131754742 : 2131754888, !p42 ? "AccDescrUploadProgress" : "AccDescrDownloadProgress", org.telegram.messenger.g0.i0(q1Var.P5.F0, false, false), org.telegram.messenger.g0.i0(q1Var.z1, false, false)));
+                    spannableStringBuilder.append((CharSequence) id.Y(!p42 ? 2131754742 : 2131754888, !p42 ? "AccDescrUploadProgress" : "AccDescrDownloadProgress", org.telegram.messenger.g0.i0(q1Var.P5.F0, false, false), org.telegram.messenger.g0.i0(q1Var.z1, false, false)));
                 }
                 if (!q1Var.P5.J3()) {
                     spannableStringBuilder.append((CharSequence) "\n");
-                    spannableStringBuilder.append((CharSequence) hd.Y(2131754832, "AccDescrMusicInfo", q1Var.P5.x1(true), q1Var.P5.z1(true)));
+                    spannableStringBuilder.append((CharSequence) id.Y(2131754832, "AccDescrMusicInfo", q1Var.P5.x1(true), q1Var.P5.z1(true)));
                     spannableStringBuilder.append((CharSequence) ", ");
-                    spannableStringBuilder.append((CharSequence) hd.z((int) q1Var.P5.L0()));
+                    spannableStringBuilder.append((CharSequence) id.z((int) q1Var.P5.L0()));
                 } else if (q1Var.P5.Q4() || q1Var.xb) {
                     spannableStringBuilder.append((CharSequence) ", ");
-                    spannableStringBuilder.append((CharSequence) hd.z((int) q1Var.P5.L0()));
+                    spannableStringBuilder.append((CharSequence) id.z((int) q1Var.P5.L0()));
                     spannableStringBuilder.append((CharSequence) ", ");
                     if (q1Var.P5.S2()) {
-                        spannableStringBuilder.append((CharSequence) hd.M0(2131754838, "AccDescrMsgNotPlayed"));
+                        spannableStringBuilder.append((CharSequence) id.M0(2131754838, "AccDescrMsgNotPlayed"));
                     } else {
-                        spannableStringBuilder.append((CharSequence) hd.M0(2131754837, "AccDescrMsgPlayed"));
+                        spannableStringBuilder.append((CharSequence) id.M0(2131754837, "AccDescrMsgPlayed"));
                     }
                 }
                 if (q1Var.i5 != null) {
@@ -969,17 +969,17 @@ public final class z0 extends AccessibilityNodeProvider {
                     spannableStringBuilder.append((CharSequence) q1Var.i5.question.text);
                     spannableStringBuilder.append((CharSequence) ", ");
                     if (q1Var.W4) {
-                        M0 = hd.M0(2131750696, "FinalResults");
+                        M0 = id.M0(2131750696, "FinalResults");
                     } else {
                         TLRPC.Poll poll2 = q1Var.i5;
-                        M0 = poll2.quiz ? poll2.public_voters ? hd.M0(2131746444, "QuizPoll") : hd.M0(2131754248, "AnonymousQuizPoll") : poll2.public_voters ? hd.M0(2131746587, "PublicPoll") : hd.M0(2131754249, "AnonymousPoll");
+                        M0 = poll2.quiz ? poll2.public_voters ? id.M0(2131746446, "QuizPoll") : id.M0(2131754248, "AnonymousQuizPoll") : poll2.public_voters ? id.M0(2131746589, "PublicPoll") : id.M0(2131754249, "AnonymousPoll");
                     }
                     spannableStringBuilder.append((CharSequence) M0);
                 }
                 if (q1Var.M1 != null) {
                     if (q1Var.L1 == 4) {
                         spannableStringBuilder.append((CharSequence) ", ");
-                        spannableStringBuilder.append((CharSequence) hd.z((int) q1Var.P5.L0()));
+                        spannableStringBuilder.append((CharSequence) id.z((int) q1Var.P5.L0()));
                     }
                     if (q1Var.N3 == 0 || q1Var.L1 == 1) {
                         spannableStringBuilder.append((CharSequence) ", ");
@@ -996,18 +996,18 @@ public final class z0 extends AccessibilityNodeProvider {
                 if (q1Var.P5.O3()) {
                     spannableStringBuilder.append((CharSequence) "\n");
                     StringBuilder sb5 = new StringBuilder();
-                    org.telegram.messenger.camera.q.q("TodayAt", 2131744113, sb5, " ");
+                    org.telegram.messenger.camera.q.q("TodayAt", 2131744115, sb5, " ");
                     sb5.append((Object) q1Var.D9);
-                    spannableStringBuilder.append((CharSequence) hd.Y(2131754789, "AccDescrReceivedDate", sb5.toString()));
+                    spannableStringBuilder.append((CharSequence) id.Y(2131754789, "AccDescrReceivedDate", sb5.toString()));
                 } else if (q1Var.P5.r4()) {
                     spannableStringBuilder.append((CharSequence) "\n");
                     if (q1Var.P5.p1) {
-                        spannableStringBuilder.append((CharSequence) hd.Y(2131754781, "AccDescrScheduledDate", q1Var.D9));
+                        spannableStringBuilder.append((CharSequence) id.Y(2131754781, "AccDescrScheduledDate", q1Var.D9));
                     } else {
                         StringBuilder sb6 = new StringBuilder();
-                        org.telegram.messenger.camera.q.q("TodayAt", 2131744113, sb6, " ");
+                        org.telegram.messenger.camera.q.q("TodayAt", 2131744115, sb6, " ");
                         sb6.append((Object) q1Var.D9);
-                        spannableStringBuilder.append((CharSequence) hd.Y(2131754765, "AccDescrSentDate", sb6.toString()));
+                        spannableStringBuilder.append((CharSequence) id.Y(2131754765, "AccDescrSentDate", sb6.toString()));
                         spannableStringBuilder.append((CharSequence) ", ");
                         if (q1Var.P5.G4()) {
                             str3 = "AccDescrMsgUnread";
@@ -1016,11 +1016,11 @@ public final class z0 extends AccessibilityNodeProvider {
                             str3 = "AccDescrMsgRead";
                             i13 = 2131754836;
                         }
-                        spannableStringBuilder.append((CharSequence) hd.M0(i13, str3));
+                        spannableStringBuilder.append((CharSequence) id.M0(i13, str3));
                     }
                 } else if (q1Var.P5.p4()) {
                     spannableStringBuilder.append((CharSequence) "\n");
-                    spannableStringBuilder.append((CharSequence) hd.M0(2131754835, "AccDescrMsgSending"));
+                    spannableStringBuilder.append((CharSequence) id.M0(2131754835, "AccDescrMsgSending"));
                     RadialProgress2 radialProgress2 = q1Var.P0;
                     float f15 = (radialProgress2.c ? radialProgress2.j : radialProgress2.i).w;
                     if (f15 > 0.0f) {
@@ -1028,11 +1028,11 @@ public final class z0 extends AccessibilityNodeProvider {
                     }
                 } else if (q1Var.P5.o4()) {
                     spannableStringBuilder.append((CharSequence) "\n");
-                    spannableStringBuilder.append((CharSequence) hd.M0(2131754834, "AccDescrMsgSendingError"));
+                    spannableStringBuilder.append((CharSequence) id.M0(2131754834, "AccDescrMsgSendingError"));
                 }
                 if (q1Var.getRepliesCount() > 0 && !q1Var.d2()) {
                     spannableStringBuilder.append((CharSequence) "\n");
-                    spannableStringBuilder.append((CharSequence) hd.G(q1Var.getRepliesCount(), "AccDescrNumberOfReplies", new Object[0]));
+                    spannableStringBuilder.append((CharSequence) id.G(q1Var.getRepliesCount(), "AccDescrNumberOfReplies", new Object[0]));
                 }
                 tL_messageReactions = q1Var.P5.k.reactions;
                 if (tL_messageReactions != null && (arrayList5 = tL_messageReactions.results) != null) {
@@ -1055,16 +1055,16 @@ public final class z0 extends AccessibilityNodeProvider {
                                 }
                             }
                             if (z13) {
-                                spannableStringBuilder.append((CharSequence) hd.Y(2131754725, "AccDescrYouReactedWith", str5));
+                                spannableStringBuilder.append((CharSequence) id.Y(2131754725, "AccDescrYouReactedWith", str5));
                             } else {
-                                spannableStringBuilder.append((CharSequence) hd.Y(2131754791, "AccDescrReactedWith", str4, str5));
+                                spannableStringBuilder.append((CharSequence) id.Y(2131754791, "AccDescrReactedWith", str4, str5));
                             }
                         } else if (i56 > 1) {
                             spannableStringBuilder.append((CharSequence) "\n");
-                            spannableStringBuilder.append((CharSequence) hd.G(reactionCount.count, "AccDescrNumberOfPeopleReactions", str5));
+                            spannableStringBuilder.append((CharSequence) id.G(reactionCount.count, "AccDescrNumberOfPeopleReactions", str5));
                         }
                     } else {
-                        spannableStringBuilder.append((CharSequence) hd.M0(2131746386, "Reactions")).append((CharSequence) ": ");
+                        spannableStringBuilder.append((CharSequence) id.M0(2131746388, "Reactions")).append((CharSequence) ": ");
                         int size8 = q1Var.P5.k.reactions.results.size();
                         int i57 = 0;
                         while (i57 < size8) {
@@ -1082,7 +1082,7 @@ public final class z0 extends AccessibilityNodeProvider {
                 if ((q1Var.P5.k.flags & 1024) == 0) {
                     spannableStringBuilder.append((CharSequence) "\n");
                     i12 = 0;
-                    spannableStringBuilder.append((CharSequence) hd.G(q1Var.P5.k.views, "AccDescrNumberOfViews", new Object[0]));
+                    spannableStringBuilder.append((CharSequence) id.G(q1Var.P5.k.views, "AccDescrNumberOfViews", new Object[0]));
                 } else {
                     i12 = 0;
                 }
@@ -1103,15 +1103,15 @@ public final class z0 extends AccessibilityNodeProvider {
                 collectionItemInfo = accessibilityNodeInfo2.getCollectionItemInfo();
                 if (collectionItemInfo != null) {
                 }
-                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, hd.M0(2131754936, "AccActionMessageOptions")));
+                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, id.M0(2131754936, "AccActionMessageOptions")));
                 int iconForCurrentState2 = q1Var.getIconForCurrentState();
-                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, iconForCurrentState2 != 0 ? iconForCurrentState2 != 1 ? iconForCurrentState2 != 2 ? iconForCurrentState2 != 3 ? iconForCurrentState2 != 5 ? q1Var.P5.D == 16 ? hd.M0(2131752633, "CallAgain") : null : hd.M0(2131754933, "AccActionOpenFile") : hd.M0(2131754941, "AccActionCancelDownload") : hd.M0(2131754938, "AccActionDownload") : hd.M0(2131754930, "AccActionPause") : hd.M0(2131754929, "AccActionPlay")));
-                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, hd.M0(2131754937, "AccActionEnterSelectionMode")));
+                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, iconForCurrentState2 != 0 ? iconForCurrentState2 != 1 ? iconForCurrentState2 != 2 ? iconForCurrentState2 != 3 ? iconForCurrentState2 != 5 ? q1Var.P5.D == 16 ? id.M0(2131752633, "CallAgain") : null : id.M0(2131754933, "AccActionOpenFile") : id.M0(2131754941, "AccActionCancelDownload") : id.M0(2131754938, "AccActionDownload") : id.M0(2131754930, "AccActionPause") : id.M0(2131754929, "AccActionPlay")));
+                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, id.M0(2131754937, "AccActionEnterSelectionMode")));
                 if (q1Var.getMiniIconForCurrentState() == 2) {
                 }
                 if (!q1Var.I8) {
                 }
-                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, hd.M0(2131744329, "SummaryTitle")));
+                accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, id.M0(2131744331, "SummaryTitle")));
                 arrayList6 = q1Var.P5.z2;
                 if (arrayList6 != null) {
                 }
@@ -1166,7 +1166,7 @@ public final class z0 extends AccessibilityNodeProvider {
                     }
                 }
                 if (staticLayoutArr[0] != null) {
-                    accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_open_forwarded_origin, hd.M0(2131754932, "AccActionOpenForwardedOrigin")));
+                    accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_open_forwarded_origin, id.M0(2131754932, "AccActionOpenForwardedOrigin")));
                 }
                 if (q1Var.j1) {
                 }
@@ -1208,7 +1208,7 @@ public final class z0 extends AccessibilityNodeProvider {
         if (q1Var.M1 != null) {
             spannableStringBuilder.append((CharSequence) "\n");
             boolean p422 = q1Var.P5.p4();
-            spannableStringBuilder.append((CharSequence) hd.Y(!p422 ? 2131754742 : 2131754888, !p422 ? "AccDescrUploadProgress" : "AccDescrDownloadProgress", org.telegram.messenger.g0.i0(q1Var.P5.F0, false, false), org.telegram.messenger.g0.i0(q1Var.z1, false, false)));
+            spannableStringBuilder.append((CharSequence) id.Y(!p422 ? 2131754742 : 2131754888, !p422 ? "AccDescrUploadProgress" : "AccDescrDownloadProgress", org.telegram.messenger.g0.i0(q1Var.P5.F0, false, false), org.telegram.messenger.g0.i0(q1Var.z1, false, false)));
         }
         if (!q1Var.P5.J3()) {
         }
@@ -1222,7 +1222,7 @@ public final class z0 extends AccessibilityNodeProvider {
         }
         if (q1Var.getRepliesCount() > 0) {
             spannableStringBuilder.append((CharSequence) "\n");
-            spannableStringBuilder.append((CharSequence) hd.G(q1Var.getRepliesCount(), "AccDescrNumberOfReplies", new Object[0]));
+            spannableStringBuilder.append((CharSequence) id.G(q1Var.getRepliesCount(), "AccDescrNumberOfReplies", new Object[0]));
         }
         tL_messageReactions = q1Var.P5.k.reactions;
         if (tL_messageReactions != null) {
@@ -1245,15 +1245,15 @@ public final class z0 extends AccessibilityNodeProvider {
         collectionItemInfo = accessibilityNodeInfo2.getCollectionItemInfo();
         if (collectionItemInfo != null) {
         }
-        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, hd.M0(2131754936, "AccActionMessageOptions")));
+        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_msg_options, id.M0(2131754936, "AccActionMessageOptions")));
         int iconForCurrentState22 = q1Var.getIconForCurrentState();
-        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, iconForCurrentState22 != 0 ? iconForCurrentState22 != 1 ? iconForCurrentState22 != 2 ? iconForCurrentState22 != 3 ? iconForCurrentState22 != 5 ? q1Var.P5.D == 16 ? hd.M0(2131752633, "CallAgain") : null : hd.M0(2131754933, "AccActionOpenFile") : hd.M0(2131754941, "AccActionCancelDownload") : hd.M0(2131754938, "AccActionDownload") : hd.M0(2131754930, "AccActionPause") : hd.M0(2131754929, "AccActionPlay")));
-        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, hd.M0(2131754937, "AccActionEnterSelectionMode")));
+        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, iconForCurrentState22 != 0 ? iconForCurrentState22 != 1 ? iconForCurrentState22 != 2 ? iconForCurrentState22 != 3 ? iconForCurrentState22 != 5 ? q1Var.P5.D == 16 ? id.M0(2131752633, "CallAgain") : null : id.M0(2131754933, "AccActionOpenFile") : id.M0(2131754941, "AccActionCancelDownload") : id.M0(2131754938, "AccActionDownload") : id.M0(2131754930, "AccActionPause") : id.M0(2131754929, "AccActionPlay")));
+        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, id.M0(2131754937, "AccActionEnterSelectionMode")));
         if (q1Var.getMiniIconForCurrentState() == 2) {
         }
         if (!q1Var.I8) {
         }
-        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, hd.M0(2131744329, "SummaryTitle")));
+        accessibilityNodeInfo2.addAction(new AccessibilityNodeInfo.AccessibilityAction(R.id.acc_action_summarize, id.M0(2131744331, "SummaryTitle")));
         arrayList6 = q1Var.P5.z2;
         if (arrayList6 != null) {
         }
@@ -1321,7 +1321,7 @@ public final class z0 extends AccessibilityNodeProvider {
             return true;
         }
         if (i10 == 64) {
-            q1Var.h3(i7, 32768, null);
+            q1Var.i3(i7, 32768, null);
             return true;
         }
         r4 = null;
@@ -1348,13 +1348,13 @@ public final class z0 extends AccessibilityNodeProvider {
                         U = false;
                     }
                     if (U) {
-                        q1Var.h3(i7, 1, null);
+                        q1Var.i3(i7, 1, null);
                         int i12 = iArr[0];
                         if (b10.r != null && i12 == 0) {
                             objArr = 1;
                         }
                         if (objArr != null) {
-                            D = hd.M0(b10.G() ? 2131754902 : 2131754830, null);
+                            D = id.M0(b10.G() ? 2131754902 : 2131754830, null);
                         } else {
                             D = b10.D();
                         }
@@ -1366,7 +1366,7 @@ public final class z0 extends AccessibilityNodeProvider {
                 ClickableSpan a10 = a(i7, true);
                 if (a10 != null) {
                     q1Var.Ra.N0(q1Var, a10, false);
-                    q1Var.h3(i7, 1, null);
+                    q1Var.i3(i7, 1, null);
                     return true;
                 }
             } else {
@@ -1387,7 +1387,7 @@ public final class z0 extends AccessibilityNodeProvider {
                                     }
                                 }
                             }
-                            q1Var.h3(i7, 1, null);
+                            q1Var.i3(i7, 1, null);
                             return true;
                         }
                     } else if (i7 >= 500) {
@@ -1399,7 +1399,7 @@ public final class z0 extends AccessibilityNodeProvider {
                                 arrayList.add(p1Var.s);
                                 q1Var.Ra.j(q1Var, arrayList, -1, 0, 0);
                             }
-                            q1Var.h3(i7, 1, null);
+                            q1Var.i3(i7, 1, null);
                             return true;
                         }
                     } else {
@@ -1491,7 +1491,7 @@ public final class z0 extends AccessibilityNodeProvider {
                 ClickableSpan a11 = a(i7, false);
                 if (a11 != null) {
                     q1Var.Ra.N0(q1Var, a11, false);
-                    q1Var.h3(i7, 1, null);
+                    q1Var.i3(i7, 1, null);
                     return true;
                 }
             }
@@ -1499,7 +1499,7 @@ public final class z0 extends AccessibilityNodeProvider {
             ClickableSpan a12 = a(i7, i7 >= 3000);
             if (a12 != null && (l1Var = q1Var.Ra) != null) {
                 l1Var.N0(q1Var, a12, true);
-                q1Var.h3(i7, 2, null);
+                q1Var.i3(i7, 2, null);
             }
         }
         return true;

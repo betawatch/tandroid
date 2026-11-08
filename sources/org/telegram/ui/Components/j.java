@@ -6,7 +6,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -41,8 +41,8 @@ public final /* synthetic */ class j implements View.OnLongClickListener {
                     }
                     boolean z9 = g0Var.d2 == org.telegram.messenger.p10.i(g0Var.a).e();
                     k60 F = k60.F(g0Var.c, f6Var, g0Var.x2);
-                    F.l(R.drawable.input_notify_off, org.telegram.messenger.hd.M0(2131745584, null), new a(g0Var, 4), !z9);
-                    F.c(R.drawable.msg_calendar2, org.telegram.messenger.hd.M0(z9 ? 2131745515 : 2131745860, null), new l2.z0(g0Var, context, f6Var, 25), false);
+                    F.l(R.drawable.input_notify_off, org.telegram.messenger.id.M0(2131745586, null), new a(g0Var, 4), !z9);
+                    F.c(R.drawable.msg_calendar2, org.telegram.messenger.id.M0(z9 ? 2131745517 : 2131745862, null), new l2.z0(g0Var, context, f6Var, 25), false);
                     F.Z();
                     break;
                 }
@@ -71,7 +71,7 @@ public final /* synthetic */ class j implements View.OnLongClickListener {
                             }
                             bg0Var.p(arrayList);
                             k60 F2 = k60.F(chatActivityEnterView.m1, f6Var2, chatActivityEnterView.F1);
-                            ha0 ha0Var = new ha0(chatActivityEnterView.getContext(), R.raw.position_below, org.telegram.messenger.hd.M0(2131752560, null), R.raw.position_above, org.telegram.messenger.hd.M0(2131752559, null), chatActivityEnterView.W3);
+                            ha0 ha0Var = new ha0(chatActivityEnterView.getContext(), R.raw.position_below, org.telegram.messenger.id.M0(2131752560, null), R.raw.position_above, org.telegram.messenger.id.M0(2131752559, null), chatActivityEnterView.W3);
                             ha0Var.a(!chatActivityEnterView.R4, false);
                             ha0Var.setOnClickListener(new di.u3(chatActivityEnterView, arrayList, ha0Var, bg0Var, 10));
                             F2.q(ha0Var);

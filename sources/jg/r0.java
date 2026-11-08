@@ -13,7 +13,7 @@ import java.util.Locale;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.cb;
 import org.telegram.messenger.g5;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.p10;
@@ -38,7 +38,7 @@ import org.telegram.ui.Components.xp;
 import org.telegram.ui.ja0;
 import org.telegram.ui.la0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class r0 extends c {
     public int D;
@@ -299,18 +299,18 @@ public class r0 extends c {
         if (q6Var != null) {
             int i7 = this.K;
             if (i7 == 8) {
-                q6Var.b(hd.M0(2131745512, null), !TextUtils.isEmpty(this.H) ? this.H : !TextUtils.isEmpty(this.I) ? this.I : this.Q ? hd.M0(2131748778, null) : hd.M0(2131743878, null));
+                q6Var.b(id.M0(2131745514, null), !TextUtils.isEmpty(this.H) ? this.H : !TextUtils.isEmpty(this.I) ? this.I : this.Q ? id.M0(2131748780, null) : id.M0(2131743880, null));
                 q6Var.setHasLocation(true);
                 return;
             }
             str = "";
             if (i7 != 4 && this.G == null) {
                 if (this.F != null) {
-                    q6Var.b(hd.M0(2131745612, null), hd.a0(null, null, 2131754693, hd.G((int) this.F.getAccuracy(), "Meters", new Object[0])));
+                    q6Var.b(id.M0(2131745614, null), id.a0(null, null, 2131754693, id.G((int) this.F.getAccuracy(), "Meters", new Object[0])));
                     q6Var.setHasLocation(true);
                     return;
                 } else {
-                    q6Var.b(hd.M0(2131745612, null), this.a0 ? "" : hd.M0(2131748778, null));
+                    q6Var.b(id.M0(2131745614, null), this.a0 ? "" : id.M0(2131748780, null));
                     q6Var.setHasLocation(!this.a0);
                     return;
                 }
@@ -320,7 +320,7 @@ public class r0 extends c {
             } else if (TextUtils.isEmpty(this.I)) {
                 Location location = this.G;
                 if ((location == null && this.F == null) || this.Q) {
-                    str = hd.M0(2131748778, null);
+                    str = id.M0(2131748780, null);
                 } else if (location != null) {
                     str = String.format(Locale.US, "(%f,%f)", Double.valueOf(location.getLatitude()), Double.valueOf(this.G.getLongitude()));
                 } else {
@@ -328,18 +328,18 @@ public class r0 extends c {
                     if (location2 != null) {
                         str = String.format(Locale.US, "(%f,%f)", Double.valueOf(location2.getLatitude()), Double.valueOf(this.F.getLongitude()));
                     } else if (!this.a0) {
-                        str = hd.M0(2131748778, null);
+                        str = id.M0(2131748780, null);
                     }
                 }
             } else {
                 str = this.I;
             }
             if (this.W) {
-                q6Var.b(hd.M0(2131753937, null), str);
+                q6Var.b(id.M0(2131753937, null), str);
             } else if (i7 == 4) {
-                q6Var.b(hd.M0(2131752211, null), str);
+                q6Var.b(id.M0(2131752211, null), str);
             } else {
-                q6Var.b(hd.M0(2131745591, null), str);
+                q6Var.b(id.M0(2131745593, null), str);
             }
             q6Var.setHasLocation(true);
         }
@@ -460,7 +460,7 @@ public class r0 extends c {
             return;
         }
         if (i10 == 2) {
-            ((n4) view).setText(hd.M0(2131748836, null));
+            ((n4) view).setText(id.M0(2131748838, null));
             return;
         }
         if (i10 == 6) {
@@ -569,12 +569,12 @@ public class r0 extends c {
         location3.setLatitude(a10.a);
         location3.setLongitude(a10.b);
         int i13 = la0Var.b.edit_date;
-        String D = hd.D(i13 != 0 ? i13 : r11.date);
+        String D = id.D(i13 != 0 ? i13 : r11.date);
         if (location2 == null) {
             textView2.setText(D);
             return;
         }
-        textView2.setText(D + " - " + hd.y(location3.distanceTo(location2), 0, null));
+        textView2.setText(D + " - " + id.y(location3.distanceTo(location2), 0, null));
     }
 
     @Override // v4.g0

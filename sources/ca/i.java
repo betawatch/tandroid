@@ -21,26 +21,25 @@ import o5.r;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gf;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.j20;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.ny;
+import org.telegram.ui.Components.oy;
 import org.telegram.ui.Components.q51;
-import org.telegram.ui.Components.ry;
+import org.telegram.ui.Components.sy;
 import org.telegram.ui.Components.t51;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.je0;
 import org.telegram.ui.li0;
 import org.telegram.ui.lp0;
 import org.telegram.ui.wo0;
-import ti.q;
 import v4.d0;
 import v4.g0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class i implements l, d0, q51, a0 {
     public final /* synthetic */ int a;
@@ -236,12 +235,12 @@ public class i implements l, d0, q51, a0 {
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, photoViewer.D, photoViewer.v2);
-        String M0 = hd.M0(R.string.AppName, "AppName");
+        String M0 = id.M0(R.string.AppName, "AppName");
         u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
-        u1Var.T = hd.M0(2131752562, null);
-        alertDialog$Builder.k(hd.M0(2131747816, "Open"), new li0(this, 2));
-        alertDialog$Builder.h(hd.M0(2131752589, "Cancel"), null);
+        u1Var.T = id.M0(2131752562, null);
+        alertDialog$Builder.k(id.M0(2131747818, "Open"), new li0(this, 2));
+        alertDialog$Builder.h(id.M0(2131752589, "Cancel"), null);
         photoViewer.P2(alertDialog$Builder);
     }
 
@@ -293,14 +292,14 @@ public class i implements l, d0, q51, a0 {
     @Override // org.telegram.ui.Components.q51
     public boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         PhotoViewer photoViewer = (PhotoViewer) this.c;
-        q qVar = photoViewer.P8;
-        if (qVar != null) {
+        ti.p pVar = photoViewer.P8;
+        if (pVar != null) {
             photoViewer.P8 = null;
-            qVar.a = surfaceTexture;
-            if (qVar.getSurfaceTexture() != surfaceTexture) {
-                qVar.setSurfaceTexture(surfaceTexture);
+            pVar.a = surfaceTexture;
+            if (pVar.getSurfaceTexture() != surfaceTexture) {
+                pVar.setSurfaceTexture(surfaceTexture);
             }
-            qVar.setVisibility(0);
+            pVar.setVisibility(0);
             return true;
         }
         if (photoViewer.E3) {
@@ -343,9 +342,9 @@ public class i implements l, d0, q51, a0 {
                 h51 h51Var = (h51) photoViewer.B2;
                 h51Var.d = i12;
                 h51Var.e = i10;
-                ry ryVar = h51Var.b;
-                if (ryVar != null) {
-                    ryVar.postRunnable(new ny(ryVar, i12, i10, 0));
+                sy syVar = h51Var.b;
+                if (syVar != null) {
+                    syVar.postRunnable(new oy(syVar, i12, i10, 0));
                 }
                 if (photoViewer.c2 == 1) {
                     photoViewer.w2();

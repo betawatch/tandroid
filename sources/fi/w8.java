@@ -12,12 +12,12 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.ui.Components.he0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w8 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -118,16 +118,16 @@ public final /* synthetic */ class w8 implements View.OnClickListener {
                     if (vaVar.g0 == -1) {
                         m3 m3Var = vaVar.k1;
                         if (e7Var2.Y) {
-                            M0 = hd.M0((!isEmpty || z11) ? 2131744593 : 2131744461, null);
+                            M0 = id.M0((!isEmpty || z11) ? 2131744595 : 2131744463, null);
                         } else {
-                            M0 = hd.M0((!isEmpty || z11) ? 2131744592 : 2131744460, null);
+                            M0 = id.M0((!isEmpty || z11) ? 2131744594 : 2131744462, null);
                         }
                         boolean z12 = vaVar.k1.V;
                         if (m3Var.getMeasuredWidth() < 0) {
                             m3Var.G = M0;
                         } else {
                             org.telegram.ui.Components.i6 i6Var = m3Var.H;
-                            if (!hd.a0 && z12) {
+                            if (!id.a0 && z12) {
                                 z9 = true;
                             }
                             i6Var.t(M0, z9, true);
@@ -171,7 +171,7 @@ public final /* synthetic */ class w8 implements View.OnClickListener {
                 if (y9Var2 != null && vaVar.f0 == 0) {
                     y9Var2.toggleDual();
                     vaVar.F0.setValue(vaVar.B0.isDual());
-                    vaVar.F0.setContentDescription(hd.M0(vaVar.B0.isDual() ? 2131754886 : 2131754887, null));
+                    vaVar.F0.setContentDescription(id.M0(vaVar.B0.isDual() ? 2131754886 : 2131754887, null));
                     vaVar.l1.f(true);
                     qp.e1().edit().putInt("storydualhint", 2).apply();
                     if (vaVar.m1.V) {

@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class kt0 extends FrameLayout {
     public org.telegram.ui.Components.j9 a;
@@ -41,7 +41,7 @@ public final class kt0 extends FrameLayout {
         i10 = ((org.telegram.ui.ActionBar.f2) privacyControlActivity).currentAccount;
         TLRPC.User a22 = s12.a2(Long.valueOf(org.telegram.messenger.p10.i(i10).e()));
         TLRPC.TL_message tL_message = new TLRPC.TL_message();
-        tL_message.message = org.telegram.messenger.hd.M0(2131746831, null);
+        tL_message.message = org.telegram.messenger.id.M0(2131746833, null);
         tL_message.date = currentTimeMillis - 3540;
         tL_message.dialog_id = 1L;
         tL_message.flags = org.telegram.messenger.qs.k4;
@@ -67,7 +67,7 @@ public final class kt0 extends FrameLayout {
         q1Var.setDelegate(new nb.a(19));
         q1Var.e6 = false;
         q1Var.setFullyDraw(true);
-        q1Var.v3(ijVar, null, false, false, false, false);
+        q1Var.w3(ijVar, null, false, false, false, false);
         addView(q1Var, c8.ha.o(-1, -2));
     }
 

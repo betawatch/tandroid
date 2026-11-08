@@ -27,7 +27,7 @@ import org.telegram.messenger.a20;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.gf;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -45,7 +45,7 @@ import org.telegram.ui.Components.qi0;
 import org.telegram.ui.Components.sp0;
 import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q4 implements g7, j9, xh.j, r0.m, OnSuccessListener, w10, dj0, org.telegram.ui.ActionBar.r1, qi0, a20, sg.l1, CameraController.VideoTakeCallback, ft0, h9.h1, f3.g, h2.o {
     public final /* synthetic */ int a;
@@ -161,7 +161,7 @@ public final /* synthetic */ class q4 implements g7, j9, xh.j, r0.m, OnSuccessLi
         if (((Integer) number).intValue() != -1) {
             return Boolean.FALSE;
         }
-        new ei.q(sp0Var.a, hd.M0(2131746692, null), new ai.i(sp0Var, 15)).show();
+        new ei.q(sp0Var.a, id.M0(2131746694, null), new ai.i(sp0Var, 15)).show();
         return Boolean.TRUE;
     }
 
@@ -352,7 +352,7 @@ public final /* synthetic */ class q4 implements g7, j9, xh.j, r0.m, OnSuccessLi
                     c1Var.presentFragment(w1Var);
                     break;
                 } else if (x31Var2.a == 5 && i13 >= 0 && i13 < c1Var.f.length) {
-                    if (!hd.a0 ? floatValue < view.getMeasuredWidth() - org.telegram.messenger.g0.L(76.0f) : floatValue > org.telegram.messenger.g0.L(76.0f)) {
+                    if (!id.a0 ? floatValue < view.getMeasuredWidth() - org.telegram.messenger.g0.L(76.0f) : floatValue > org.telegram.messenger.g0.L(76.0f)) {
                         int i14 = (x31Var2.d + 6) % 7;
                         int i15 = 0;
                         for (int i16 = 0; i16 < c1Var.f[i14].size(); i16++) {
@@ -452,7 +452,7 @@ public final /* synthetic */ class q4 implements g7, j9, xh.j, r0.m, OnSuccessLi
                     int i28 = x31Var3.d % 3;
                     if (i28 == 0) {
                         Activity parentActivity = e1Var2.getParentActivity();
-                        String M0 = hd.M0(2131752750, null);
+                        String M0 = id.M0(2131752750, null);
                         int i29 = b1Var2.a;
                         if (b1Var != null) {
                             i22 = b1Var.b + 1;
@@ -500,7 +500,7 @@ public final /* synthetic */ class q4 implements g7, j9, xh.j, r0.m, OnSuccessLi
                         break;
                     } else if (i28 == 1) {
                         Activity parentActivity2 = e1Var2.getParentActivity();
-                        String M02 = hd.M0(2131752756, null);
+                        String M02 = id.M0(2131752756, null);
                         int i30 = b1Var2.b;
                         int i31 = b1Var2.a + 1;
                         if (b1Var3 != null) {

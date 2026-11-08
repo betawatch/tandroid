@@ -24,7 +24,7 @@ import org.telegram.messenger.re;
 import org.telegram.messenger.ye;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class MediaCodecVideoConvertor {
     private static final int MAX_DECODER_INPUTS_PER_LOOP = 8;
@@ -39,17 +39,18 @@ public class MediaCodecVideoConvertor {
     private mf callback;
     private long endPresentationTime;
     private MediaExtractor extractor;
+    private boolean legacyCodecSetup;
     private Muxer muxer;
     private String outputMimeType;
 
-    /* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+    /* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
     public class ConversionCanceledException extends RuntimeException {
         public ConversionCanceledException() {
             super("canceled conversion");
         }
     }
 
-    /* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+    /* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
     public static class ConvertVideoParams {
         int account;
         long avatarStartTime;
@@ -142,7 +143,7 @@ public class MediaCodecVideoConvertor {
         }
     }
 
-    /* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+    /* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
     public class DecoderFeeder extends Thread {
         private ByteBuffer audioBuffer;
         private final int audioIndex;
@@ -247,7 +248,7 @@ public class MediaCodecVideoConvertor {
                                             if (j11 > j3) {
                                                 j3 = j11;
                                             }
-                                            ((re) MediaCodecVideoConvertor.this.callback).k(writeSampleData, (j3 / 1000.0f) / this.durationS);
+                                            ((re) MediaCodecVideoConvertor.this.callback).l(writeSampleData, (j3 / 1000.0f) / this.durationS);
                                         }
                                     } finally {
                                     }
@@ -265,7 +266,7 @@ public class MediaCodecVideoConvertor {
         }
     }
 
-    /* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+    /* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
     public static class MixedSoundInfo {
         final String audioFile;
         public long audioOffset;
@@ -327,10 +328,10 @@ public class MediaCodecVideoConvertor {
         	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:77)
         */
     /* JADX WARN: Finally extract failed */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:1025:? -> B:1018:0x1568). Please report as a decompilation issue!!! */
-    private boolean convertVideoInternal(org.telegram.messenger.video.MediaCodecVideoConvertor.ConvertVideoParams r116, boolean r117, int r118) {
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:1038:? -> B:1029:0x15c8). Please report as a decompilation issue!!! */
+    private boolean convertVideoInternal(org.telegram.messenger.video.MediaCodecVideoConvertor.ConvertVideoParams r114, boolean r115, int r116) {
         /*
-            Method dump skipped, instructions count: 7804
+            Method dump skipped, instructions count: 7888
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.video.MediaCodecVideoConvertor.convertVideoInternal(org.telegram.messenger.video.MediaCodecVideoConvertor$ConvertVideoParams, boolean, int):boolean");
@@ -737,7 +738,7 @@ public class MediaCodecVideoConvertor {
                                 if (j16 <= j14) {
                                     j16 = j14;
                                 }
-                                ((re) mfVar).k(writeSampleData, (j16 / f10) / f11);
+                                ((re) mfVar).l(writeSampleData, (j16 / f10) / f11);
                                 j14 = j16;
                             }
                             if (!z10) {
@@ -817,7 +818,7 @@ public class MediaCodecVideoConvertor {
         return this.endPresentationTime;
     }
 
-    /* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+    /* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
     public static class Muxer {
         public final MediaMuxer mediaMuxer;
         public final MP4Builder mp4Builder;

@@ -9,7 +9,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class g20 extends oj0 {
     public final Context c;
@@ -115,11 +115,11 @@ public final class g20 extends oj0 {
             }
             org.telegram.ui.Cells.x3 x3Var = (org.telegram.ui.Cells.x3) view;
             if (i10 == this.s) {
-                x3Var.setText(org.telegram.messenger.hd.M0(2131752377, null));
+                x3Var.setText(org.telegram.messenger.id.M0(2131752377, null));
                 return;
             } else {
                 if (i10 == this.w) {
-                    x3Var.setText(org.telegram.messenger.hd.M0(2131749534, null));
+                    x3Var.setText(org.telegram.messenger.id.M0(2131749536, null));
                     return;
                 }
                 return;

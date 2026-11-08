@@ -9,7 +9,7 @@ import di.f5;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -22,13 +22,13 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.kj;
-import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.uj;
 import org.telegram.ui.Components.vj;
 import org.telegram.ui.Components.w70;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -66,7 +66,7 @@ public final /* synthetic */ class g3 implements Runnable {
      */
     /* JADX WARN: Code restructure failed: missing block: B:79:0x0208, code lost:
     
-        r9.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.vp(r13, (org.telegram.ui.Components.lz) r2, r1, r11));
+        r9.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.vp(r13, (org.telegram.ui.Components.mz) r2, r1, r11));
      */
     /* JADX WARN: Code restructure failed: missing block: B:80:0x0216, code lost:
     
@@ -164,7 +164,7 @@ public final /* synthetic */ class g3 implements Runnable {
                                 }
                             }
                         }
-                        new hc(q3.K0(context, i11, connectedbotstarref, j10, f6Var).E, f6Var).V(Arrays.asList(user), hd.M0(2131754335, null), hd.M0(2131754336, null), null).j();
+                        new hc(q3.K0(context, i11, connectedbotstarref, j10, f6Var).E, f6Var).V(Arrays.asList(user), id.M0(2131754335, null), id.M0(2131754336, null), null).j();
                         break;
                     }
                 }
@@ -232,13 +232,13 @@ public final /* synthetic */ class g3 implements Runnable {
                         ujVar.V = arrayList9.size() >= i16;
                         if (arrayList9.isEmpty()) {
                             if (TextUtils.isEmpty(ujVar.K) && this.f == 0 && j3 == 0) {
-                                lVar.setText(hd.M0(2131745802, null));
+                                lVar.setText(id.M0(2131745804, null));
                                 w70Var.setVisibility(0);
-                                w70Var.setText(hd.M0(2131745807, null));
+                                w70Var.setText(id.M0(2131745809, null));
                             } else {
-                                lVar.setText(hd.M0(2131745801, null));
+                                lVar.setText(id.M0(2131745803, null));
                                 w70Var.setVisibility(0);
-                                w70Var.setText(hd.M0(2131745808, null));
+                                w70Var.setText(id.M0(2131745810, null));
                             }
                         }
                         if (!z9) {
@@ -246,7 +246,7 @@ public final /* synthetic */ class g3 implements Runnable {
                             if (arrayList5 != null) {
                                 arrayList10.addAll(arrayList5);
                             }
-                            if (str.length() >= 3 && (hd.M0(2131745902, null).toLowerCase().startsWith(str) || "saved messages".startsWith(str))) {
+                            if (str.length() >= 3 && (id.M0(2131745904, null).toLowerCase().startsWith(str) || "saved messages".startsWith(str))) {
                                 int i18 = 0;
                                 while (true) {
                                     if (i18 >= arrayList10.size()) {
@@ -266,7 +266,7 @@ public final /* synthetic */ class g3 implements Runnable {
                         while (i20 < size) {
                             kj kjVar3 = kjVar2;
                             View childAt = kjVar3.getChildAt(i20);
-                            if (childAt instanceof lz) {
+                            if (childAt instanceof mz) {
                                 i19 = RecyclerView.R(childAt);
                                 view = childAt;
                             }
@@ -287,9 +287,9 @@ public final /* synthetic */ class g3 implements Runnable {
                     } else {
                         xh.l lVar2 = f5Var.d;
                         w70 w70Var2 = f5Var.e;
-                        lVar2.setText(hd.M0(2131745801, null));
+                        lVar2.setText(id.M0(2131745803, null));
                         w70Var2.setVisibility(0);
-                        w70Var2.setText(hd.M0(2131745808, null));
+                        w70Var2.setText(id.M0(2131745810, null));
                         f5Var.e(false, true);
                         break;
                     }

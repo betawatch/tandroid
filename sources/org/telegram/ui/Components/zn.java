@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class zn extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.ActionBar.f6 a;
@@ -40,7 +40,7 @@ public final class zn extends FrameLayout implements org.telegram.ui.ActionBar.a
         org.telegram.ui.ActionBar.k5 k5Var3 = new org.telegram.ui.ActionBar.k5(context);
         this.e = k5Var3;
         k5Var3.setTextSize(14);
-        k5Var3.l(org.telegram.messenger.hd.M0(2131744273, null), false);
+        k5Var3.l(org.telegram.messenger.id.M0(2131744275, null), false);
         k5Var3.setAlpha(0.0f);
         addView(k5Var3, c8.ha.d(-1, 18.0f, 51, 52.0f, 24.0f, 0.0f, 0.0f));
         org.telegram.ui.pk pkVar = new org.telegram.ui.pk(this, context, new xh.f());

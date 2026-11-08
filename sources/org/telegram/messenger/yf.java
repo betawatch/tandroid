@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yf implements Runnable {
     public final /* synthetic */ int a;
@@ -156,7 +156,7 @@ public final /* synthetic */ class yf implements Runnable {
                 byteBuffer.limit(i7);
             }
         }
-        mediaController.M1.c(new y4(24, f3Var, byteBuffer));
+        mediaController.M1.c(new x4(24, f3Var, byteBuffer));
     }
 
     private final void d() {
@@ -300,7 +300,7 @@ public final /* synthetic */ class yf implements Runnable {
         yr yrVar = (yr) this.c;
         yrVar.x1((vo) this.d, this.b);
         yrVar.j(false);
-        g0.h3(new qq(yrVar, 17));
+        g0.h3(new rq(yrVar, 16));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -812,8 +812,8 @@ public final /* synthetic */ class yf implements Runnable {
                     g0.c cVar = new g0.c();
                     cVar.a = context;
                     cVar.b = "compose";
-                    cVar.e = hd.M0(2131748274, null);
-                    cVar.f = hd.M0(2131748274, null);
+                    cVar.e = id.M0(2131748276, null);
+                    cVar.f = id.M0(2131748276, null);
                     cVar.h = IconCompat.d(t0.b, R.drawable.shortcut_compose);
                     cVar.m = 0;
                     cVar.c = new Intent[]{intent};
@@ -1414,7 +1414,7 @@ public final /* synthetic */ class yf implements Runnable {
                     i19++;
                     longSparseIntArray3 = longSparseIntArray;
                 }
-                g0.h3(new iy(qpVar, tL_messages_dialogs, hVar, hVar2, z12, longSparseIntArray3));
+                g0.h3(new gy(qpVar, tL_messages_dialogs, hVar, hVar2, z12, longSparseIntArray3));
                 return;
             case 2:
                 h();

@@ -23,7 +23,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.v10;
@@ -52,7 +52,6 @@ import org.telegram.ui.fk0;
 import org.telegram.ui.fw;
 import org.telegram.ui.i7;
 import org.telegram.ui.i9;
-import org.telegram.ui.id;
 import org.telegram.ui.jd;
 import org.telegram.ui.kp;
 import org.telegram.ui.m7;
@@ -68,7 +67,7 @@ import org.telegram.ui.y6;
 import org.telegram.ui.ys;
 import org.telegram.ui.zd;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -140,7 +139,7 @@ public final /* synthetic */ class l1 implements View.OnClickListener {
                             org.telegram.ui.web.j jVar = g4Var.i0;
                             Bitmap favicon = webView != null ? webView.getFavicon() : null;
                             if (TextUtils.isEmpty(title)) {
-                                title = hd.M0(2131742927, null);
+                                title = id.M0(2131742929, null);
                             }
                             String str2 = TextUtils.isEmpty(u10) ? "about:blank" : u10;
                             org.telegram.ui.x xVar = new org.telegram.ui.x(g4Var, u10, i13);
@@ -273,7 +272,7 @@ public final /* synthetic */ class l1 implements View.OnClickListener {
                     pd pdVar = zdVar.G0;
                     if (pdVar == null || !pdVar.Q) {
                         TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
-                        id idVar = new id(zdVar, twoStepVerificationActivity, i13);
+                        org.telegram.ui.id idVar = new org.telegram.ui.id(zdVar, twoStepVerificationActivity, i13);
                         twoStepVerificationActivity.Z = 1;
                         twoStepVerificationActivity.b0 = idVar;
                         dVar.setLoading(true);
@@ -321,7 +320,7 @@ public final /* synthetic */ class l1 implements View.OnClickListener {
                 LinearLayout f10 = org.telegram.messenger.k5.f(context, 1);
                 org.telegram.ui.Cells.n4 n4Var = new org.telegram.ui.Cells.n4(context, k6.n5, 23, 15, false, null);
                 n4Var.setHeight(47);
-                n4Var.setText(hd.M0(2131752233, "ChatHistory"));
+                n4Var.setText(id.M0(2131752233, "ChatHistory"));
                 f10.addView(n4Var);
                 LinearLayout linearLayout = new LinearLayout(context);
                 linearLayout.setOrientation(1);
@@ -334,11 +333,11 @@ public final /* synthetic */ class l1 implements View.OnClickListener {
                     h6Var.setTag(Integer.valueOf(i18));
                     r6.R(h6VarArr[i18], k6.N0(false), r92, r6.N(k6.i6), r92);
                     if (i18 == 0) {
-                        h6VarArr[i18].b(hd.M0(2131752228, "ChatHistoryVisible"), hd.M0(2131752227, "ChatHistoryVisibleInfo"), true, !pnVar.J0);
+                        h6VarArr[i18].b(id.M0(2131752228, "ChatHistoryVisible"), id.M0(2131752227, "ChatHistoryVisibleInfo"), true, !pnVar.J0);
                     } else if (org.telegram.messenger.t3.T(pnVar.w0)) {
-                        h6VarArr[i18].b(hd.M0(2131752232, "ChatHistoryHidden"), hd.M0(2131752231, "ChatHistoryHiddenInfo"), false, pnVar.J0);
+                        h6VarArr[i18].b(id.M0(2131752232, "ChatHistoryHidden"), id.M0(2131752231, "ChatHistoryHiddenInfo"), false, pnVar.J0);
                     } else {
-                        h6VarArr[i18].b(hd.M0(2131752232, "ChatHistoryHidden"), hd.M0(2131752230, "ChatHistoryHiddenInfo2"), false, pnVar.J0);
+                        h6VarArr[i18].b(id.M0(2131752232, "ChatHistoryHidden"), id.M0(2131752230, "ChatHistoryHiddenInfo2"), false, pnVar.J0);
                     }
                     linearLayout.addView(h6VarArr[i18], ha.o(-1, -2));
                     h6VarArr[i18].setOnClickListener(new org.telegram.ui.z(pnVar, h6VarArr, f1Var, 8));
@@ -558,7 +557,7 @@ public final /* synthetic */ class l1 implements View.OnClickListener {
                         o7 o7Var = new o7(5, b8Var.getContext(), null, false);
                         b8Var.F2 = o7Var;
                         o7Var.setExtraTranslationY(org.telegram.messenger.g0.L(6.0f));
-                        b8Var.F2.setText(hd.M0(2131745270, null));
+                        b8Var.F2.setText(id.M0(2131745272, null));
                         b8Var.u1.addView(b8Var.F2, ha.d(-2, -2.0f, 48, 0.0f, 0.0f, 6.0f, 0.0f));
                         b8Var.F2.c(b8Var.L1);
                     }
@@ -626,13 +625,13 @@ public final /* synthetic */ class l1 implements View.OnClickListener {
                     k60 F = k60.F(frameLayout, new di.b(), ucVar.U0);
                     ucVar.W0 = F;
                     F.s = 0;
-                    F.p(13, org.telegram.messenger.g0.L(200.0f), hd.M0(2131744136, null));
+                    F.p(13, org.telegram.messenger.g0.L(200.0f), id.M0(2131744138, null));
                     ucVar.W0.k();
                     int[] iArr = ucVar.b1;
                     int length = iArr.length;
                     for (int i23 = 0; i23 < length; i23++) {
                         int i24 = iArr[i23];
-                        ucVar.W0.c(0, i24 == 0 ? hd.M0(2131744137, null) : i24 == Integer.MAX_VALUE ? hd.M0(2131744135, null) : hd.G(i24, "Seconds", new Object[0]), new org.telegram.ui.Components.r2(ucVar, i24, i12), false);
+                        ucVar.W0.c(0, i24 == 0 ? id.M0(2131744139, null) : i24 == Integer.MAX_VALUE ? id.M0(2131744137, null) : id.G(i24, "Seconds", new Object[0]), new org.telegram.ui.Components.r2(ucVar, i24, i12), false);
                         if (ucVar.a1 == i24) {
                             ucVar.W0.L();
                         }

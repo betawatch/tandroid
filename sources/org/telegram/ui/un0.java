@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.Comparator;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class un0 implements Comparator {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final /* synthetic */ class un0 implements Comparator {
                 }
                 return j11 < j12 ? -1 : 0;
             case 6:
-                return Integer.compare(((org.telegram.ui.Wallet.j0) obj2).b, ((org.telegram.ui.Wallet.j0) obj).b);
+                return Integer.compare(((org.telegram.ui.Wallet.i0) obj2).b, ((org.telegram.ui.Wallet.i0) obj).b);
             case 7:
                 return Integer.compare(((TL_wallet.walletTransaction) obj2).date, ((TL_wallet.walletTransaction) obj).date);
             case 8:
@@ -61,7 +61,7 @@ public final /* synthetic */ class un0 implements Comparator {
             case 10:
                 return (int) (((org.telegram.ui.web.i) obj2).c - ((org.telegram.ui.web.i) obj).c);
             case 11:
-                return Long.compare(((org.telegram.utils.twidget.m) obj2).y, ((org.telegram.utils.twidget.m) obj).y);
+                return Long.compare(((org.telegram.utils.twidget.k0) obj2).y, ((org.telegram.utils.twidget.k0) obj).y);
             case 12:
                 return ((s2.e) obj).a.compareTo(((s2.e) obj2).a);
             case 13:

@@ -32,7 +32,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxBase;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l51 implements ff0 {
     public final an A;
@@ -286,10 +286,10 @@ public final class l51 implements ff0 {
                 StaticLayout staticLayout3 = this.p;
                 if (staticLayout3.getLineRight(i17) != staticLayout3.getWidth() || staticLayout3.getLineLeft(i17) == f11) {
                     i12 = lineCount;
-                    spannableString2.setSpan(new org.telegram.ui.Components.hy(false), this.p.getLineStart(i17), this.p.getLineEnd(i17), 0);
+                    spannableString2.setSpan(new org.telegram.ui.Components.iy(false), this.p.getLineStart(i17), this.p.getLineEnd(i17), 0);
                 } else {
                     i12 = lineCount;
-                    spannableString.setSpan(new org.telegram.ui.Components.hy(false), this.p.getLineStart(i17), this.p.getLineEnd(i17), 0);
+                    spannableString.setSpan(new org.telegram.ui.Components.iy(false), this.p.getLineStart(i17), this.p.getLineEnd(i17), 0);
                     float lineLeft2 = this.p.getLineLeft(i17);
                     if (lineLeft2 < f17) {
                         f17 = lineLeft2;
@@ -352,7 +352,7 @@ public final class l51 implements ff0 {
         ciVar.a();
         ((ViewGroup) ciVar.d).invalidate();
         this.D.d();
-        ofFloat.addListener(new org.telegram.ui.Components.i10(this, ciVar, q1Var, qjVar, anVar));
+        ofFloat.addListener(new org.telegram.ui.Components.j10(this, ciVar, q1Var, qjVar, anVar));
         if (org.telegram.messenger.iz.o() != 2 || (L1 = q1Var.L1(true)) == null) {
             return;
         }
@@ -563,7 +563,7 @@ public final class l51 implements ff0 {
         if (L1 != null) {
             imageReceiver = imageReceiver2;
             q1Var2.setBackgroundTopY(ciVar.getTop() - pj0Var.getTop());
-            Drawable l10 = L1.l();
+            Drawable k10 = L1.k();
             f19 = f61;
             f21 = f17;
             if (f21 != 1.0f) {
@@ -583,11 +583,11 @@ public final class l51 implements ff0 {
                 f20 = f65;
             }
             f22 = f12;
-            if (l10 != null) {
-                l10.setAlpha((int) (f22 * 255.0f));
-                l10.setBounds((int) backgroundDrawableLeft, (int) f67, L, (int) b10);
-                l10.draw(canvas2);
-                l10.setAlpha(org.telegram.messenger.qs.e4);
+            if (k10 != null) {
+                k10.setAlpha((int) (f22 * 255.0f));
+                k10.setBounds((int) backgroundDrawableLeft, (int) f67, L, (int) b10);
+                k10.draw(canvas2);
+                k10.setAlpha(org.telegram.messenger.qs.e4);
             }
             L1.setAlpha((int) (f21 * 255.0f));
             L1.setBounds((int) backgroundDrawableLeft, (int) f67, L, (int) b10);

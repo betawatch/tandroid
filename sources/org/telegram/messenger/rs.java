@@ -12,7 +12,7 @@ import java.util.Map;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rs implements Runnable {
     public final /* synthetic */ int a;
@@ -157,7 +157,7 @@ public final /* synthetic */ class rs implements Runnable {
                     i14++;
                 }
                 yr messagesStorage = dtVar5.getMessagesStorage();
-                messagesStorage.a.c(new qq(messagesStorage, 18));
+                messagesStorage.a.c(new rq(messagesStorage, 17));
                 if (z9) {
                     dtVar5.Z(false);
                     break;
@@ -233,7 +233,7 @@ public final /* synthetic */ class rs implements Runnable {
                 arrayList4.clear();
                 dtVar8.E.b();
                 yr messagesStorage2 = dtVar8.getMessagesStorage();
-                messagesStorage2.a.c(new qq(messagesStorage2, 15));
+                messagesStorage2.a.c(new rq(messagesStorage2, 14));
                 if (!isEmpty) {
                     dtVar8.Z(false);
                     break;
@@ -262,7 +262,7 @@ public final /* synthetic */ class rs implements Runnable {
                             i16--;
                         } else {
                             yr messagesStorage4 = dtVar9.getMessagesStorage();
-                            messagesStorage4.a.c(new yq(5, messagesStorage4, ctVar));
+                            messagesStorage4.a.c(new zq(5, messagesStorage4, ctVar));
                         }
                     }
                     i16++;

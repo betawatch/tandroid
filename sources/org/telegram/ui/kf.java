@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kf implements org.telegram.ui.Components.qh0 {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class kf implements org.telegram.ui.Components.qh0 
     }
 
     @Override // org.telegram.ui.Components.qh0
-    public final void b(long j3, TLRPC.MessagePeerReaction messagePeerReaction) {
+    public final void d(long j3, TLRPC.MessagePeerReaction messagePeerReaction) {
         switch (this.a) {
             case 0:
                 if (messagePeerReaction != null && messagePeerReaction.reaction != null) {
@@ -51,7 +51,7 @@ public final /* synthetic */ class kf implements org.telegram.ui.Components.qh0 
                                         } else {
                                             anVar2.getClass();
                                         }
-                                        new org.telegram.ui.Components.lr(anVar2, anVar2.e, arrayList, arrayList2, channelParticipantArr2, anVar2.b7, (int) anVar2.b(), anVar2.f4, true, new org.telegram.messenger.pd(12)).show();
+                                        new org.telegram.ui.Components.lr(anVar2, anVar2.e, arrayList, arrayList2, channelParticipantArr2, anVar2.b7, (int) anVar2.b(), anVar2.f4, true, new org.telegram.messenger.rc(14)).show();
                                         break;
                                     default:
                                         an anVar3 = anVar;
@@ -63,7 +63,7 @@ public final /* synthetic */ class kf implements org.telegram.ui.Components.qh0 
                                         } else {
                                             anVar3.getClass();
                                         }
-                                        new org.telegram.ui.Components.lr(anVar3, anVar3.e, arrayList, arrayList2, channelParticipantArr3, anVar3.b7, (int) anVar3.b(), anVar3.f4, true, new org.telegram.messenger.pd(12)).show();
+                                        new org.telegram.ui.Components.lr(anVar3, anVar3.e, arrayList, arrayList2, channelParticipantArr3, anVar3.b7, (int) anVar3.b(), anVar3.f4, true, new org.telegram.messenger.rc(14)).show();
                                         break;
                                 }
                             }
@@ -102,7 +102,7 @@ public final /* synthetic */ class kf implements org.telegram.ui.Components.qh0 
                                     } else {
                                         anVar22.getClass();
                                     }
-                                    new org.telegram.ui.Components.lr(anVar22, anVar22.e, arrayList3, arrayList4, channelParticipantArr22, anVar22.b7, (int) anVar22.b(), anVar22.f4, true, new org.telegram.messenger.pd(12)).show();
+                                    new org.telegram.ui.Components.lr(anVar22, anVar22.e, arrayList3, arrayList4, channelParticipantArr22, anVar22.b7, (int) anVar22.b(), anVar22.f4, true, new org.telegram.messenger.rc(14)).show();
                                     break;
                                 default:
                                     an anVar3 = anVar2;
@@ -114,7 +114,7 @@ public final /* synthetic */ class kf implements org.telegram.ui.Components.qh0 
                                     } else {
                                         anVar3.getClass();
                                     }
-                                    new org.telegram.ui.Components.lr(anVar3, anVar3.e, arrayList3, arrayList4, channelParticipantArr3, anVar3.b7, (int) anVar3.b(), anVar3.f4, true, new org.telegram.messenger.pd(12)).show();
+                                    new org.telegram.ui.Components.lr(anVar3, anVar3.e, arrayList3, arrayList4, channelParticipantArr3, anVar3.b7, (int) anVar3.b(), anVar3.f4, true, new org.telegram.messenger.rc(14)).show();
                                     break;
                             }
                         }

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -18,7 +18,7 @@ import org.telegram.ui.Components.k60;
 import org.telegram.ui.an;
 import org.telegram.ui.bg0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s4 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -160,13 +160,13 @@ public final /* synthetic */ class s4 implements View.OnLongClickListener {
                             boolean z10 = anVar != null && t10.B(anVar.j());
                             if (anVar != null && anVar.R6()) {
                                 int i14 = 0;
-                                F2.c(R.drawable.msg_calendar2, hd.M0(z10 ? 2131745515 : 2131745860, null), new bi.r3(pVar, b12, 13), false);
+                                F2.c(R.drawable.msg_calendar2, id.M0(z10 ? 2131745517 : 2131745862, null), new bi.r3(pVar, b12, 13), false);
                                 if (!z10 && b12 > 0) {
-                                    F2.c(R.drawable.msg_online, hd.M0(2131745587, null), new li.d(pVar, i14), false);
+                                    F2.c(R.drawable.msg_online, id.M0(2131745589, null), new li.d(pVar, i14), false);
                                 }
                             }
                             if (!z10) {
-                                F2.c(R.drawable.input_notify_off, hd.M0(2131745584, null), new li.d(pVar, i10), false);
+                                F2.c(R.drawable.input_notify_off, id.M0(2131745586, null), new li.d(pVar, i10), false);
                             }
                             F2.Y();
                             pVar.O.o(F2);

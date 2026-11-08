@@ -11,7 +11,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.webrtc.OrientationHelper;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class va extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -88,7 +88,7 @@ public final class va extends AnimatorListenerAdapter {
                 org.telegram.ui.Components.t40 t40Var = ((hl) lVar.c).c.Q.p3;
                 if (t40Var != null) {
                     t40Var.setIsMessageTransition(false);
-                    ((hl) lVar.c).c.Q.p3.c(true);
+                    ((hl) lVar.c).c.Q.p3.d(true);
                     ((hl) lVar.c).c.Q.p3.setVisibility(4);
                     break;
                 }
@@ -153,10 +153,10 @@ public final class va extends AnimatorListenerAdapter {
                 }
                 break;
             case 13:
-                yb1 yb1Var = (yb1) this.b;
-                if (!yb1Var.a) {
-                    yb1Var.V.w.S = true;
-                    yb1Var.V.w.invalidate();
+                zb1 zb1Var = (zb1) this.b;
+                if (!zb1Var.a) {
+                    zb1Var.V.w.S = true;
+                    zb1Var.V.w.invalidate();
                     break;
                 }
                 break;

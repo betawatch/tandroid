@@ -22,10 +22,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 import m4.d0;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.vy;
 import p4.r0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class e implements m {
     public final Set D;
@@ -47,7 +47,7 @@ public final class e implements m {
     public final boolean h;
     public final d0 n;
     public final pb.b r;
-    public final uy s;
+    public final vy s;
     public final long w;
     public final ArrayList x;
     public final Set y;
@@ -64,7 +64,7 @@ public final class e implements m {
         this.h = z10;
         this.r = bVar;
         this.n = new d0(19);
-        this.s = new uy(this, 9);
+        this.s = new vy(this, 9);
         this.x = new ArrayList();
         this.y = Collections.newSetFromMap(new IdentityHashMap());
         this.D = Collections.newSetFromMap(new IdentityHashMap());
@@ -370,7 +370,7 @@ public final class e implements m {
         d dVar = new d(this, jVar);
         Handler handler = this.J;
         handler.getClass();
-        handler.post(new org.telegram.ui.web.w(19, dVar, uVar));
+        handler.post(new org.telegram.ui.web.w(14, dVar, uVar));
         return dVar;
     }
 

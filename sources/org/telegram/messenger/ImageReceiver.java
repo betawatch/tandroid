@@ -30,7 +30,7 @@ import org.telegram.ui.Components.jb0;
 import org.telegram.ui.Components.li0;
 import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class ImageReceiver implements ls, org.telegram.ui.Components.o5 {
     public static final PorterDuffColorFilter G1;
@@ -815,7 +815,7 @@ public class ImageReceiver implements ls, org.telegram.ui.Components.o5 {
 
     public final void b() {
         gc D = gc.D();
-        D.s.c(new k7(D, this, this.w, 3));
+        D.s.c(new l7(D, this, this.w, 3));
     }
 
     public final void b0(int i7) {
@@ -1630,7 +1630,7 @@ public class ImageReceiver implements ls, org.telegram.ui.Components.o5 {
             this.w = i7;
             if (this.x1 && K()) {
                 gc D = gc.D();
-                D.s.c(new k7(D, this, this.w, 3));
+                D.s.c(new l7(D, this, this.w, 3));
             }
         }
     }
@@ -2431,7 +2431,7 @@ public class ImageReceiver implements ls, org.telegram.ui.Components.o5 {
                         videoSize = w7.R(photo);
                         if (videoSize == null && z9) {
                             qp.s1(this.d);
-                            if (qp.B2(user) && user.photo.has_video && rc.e(1024)) {
+                            if (qp.B2(user) && user.photo.has_video && sc.e(1024)) {
                                 b22 = qp.s1(this.d).b2(user.id);
                                 if (b22 != null) {
                                     qp.s1(this.d).W2(user, this.p0, false, null);

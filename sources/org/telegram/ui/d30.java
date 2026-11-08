@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class d30 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -310,9 +310,9 @@ public final class d30 extends AnimatorListenerAdapter {
                 ((c51) obj).a0.setVisibility(8);
                 break;
             default:
-                u71 u71Var = ((j71) obj).a;
-                if (!u71Var.q1.a()) {
-                    u71Var.S1.setVisibility(8);
+                v71 v71Var = ((k71) obj).a;
+                if (!v71Var.q1.a()) {
+                    v71Var.S1.setVisibility(8);
                     break;
                 }
                 break;

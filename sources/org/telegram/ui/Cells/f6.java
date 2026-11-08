@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLObject;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.xq;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.aw0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class f6 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.ActionBar.f6 a;
@@ -47,7 +47,7 @@ public abstract class f6 extends FrameLayout implements org.telegram.ui.ActionBa
         this.b = textView;
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setTextSize(1, 14.0f);
-        textView.setText(hd.M0(2131746684, null));
+        textView.setText(id.M0(2131746686, null));
         f10.addView(textView, c8.ha.r(-2, -2, 51));
         mp mpVar = new mp(context);
         this.c = mpVar;
@@ -95,9 +95,9 @@ public abstract class f6 extends FrameLayout implements org.telegram.ui.ActionBa
                 iArr[0] = i7;
                 S = String.valueOf(i7);
             } else {
-                S = hd.S(iArr, chat.participants_count);
+                S = id.S(iArr, chat.participants_count);
             }
-            mpVar.c(hd.G(iArr[0], "Subscribers", new Object[0]).replace(String.format("%d", Integer.valueOf(iArr[0])), S), true, true);
+            mpVar.c(id.G(iArr[0], "Subscribers", new Object[0]).replace(String.format("%d", Integer.valueOf(iArr[0])), S), true, true);
             boolean z11 = arrayList == null || arrayList.isEmpty();
             this.e = z11;
             t2 t2Var = this.d;

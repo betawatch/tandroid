@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class t31 extends FrameLayout implements org.telegram.messenger.ls {
     public v4.s0 D;
@@ -63,7 +63,7 @@ public final class t31 extends FrameLayout implements org.telegram.messenger.ls 
         org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.h5, frameLayout, f6Var);
         h31 h31Var = new h31(this, context, f6Var);
         this.h = h31Var;
-        h31Var.setHint(org.telegram.messenger.hd.M0(2131745706, null));
+        h31Var.setHint(org.telegram.messenger.id.M0(2131745708, null));
         frameLayout.addView(h31Var, c8.ha.e(-1, -1, 48));
         i31 i31Var = new i31(this, context, p31Var);
         this.n = i31Var;
@@ -143,7 +143,7 @@ public final class t31 extends FrameLayout implements org.telegram.messenger.ls 
         if (inputStickerSet2 != null) {
             p31 p31Var = this.b;
             p31Var.getClass();
-            yv0 yv0Var = new yv0(getContext(), this.y, inputStickerSet2, null, p31Var instanceof aw ? new m31(this) : null, this.P);
+            yv0 yv0Var = new yv0(getContext(), this.y, inputStickerSet2, null, p31Var instanceof bw ? new m31(this) : null, this.P);
             yv0Var.a2 = false;
             yv0Var.T1 = new n31(this, inputStickerSet2);
             this.y.showDialog(yv0Var);

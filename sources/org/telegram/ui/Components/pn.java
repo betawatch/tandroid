@@ -21,7 +21,7 @@ import java.util.Locale;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class pn extends LinearLayout implements org.telegram.ui.ActionBar.a6 {
     public static final /* synthetic */ int L = 0;
@@ -81,8 +81,8 @@ public abstract class pn extends LinearLayout implements org.telegram.ui.ActionB
         c8.ka.a(this.n);
         e();
         updateColors();
-        String M0 = org.telegram.messenger.hd.M0(2131748192, null);
-        String M02 = org.telegram.messenger.hd.M0(2131748190, null);
+        String M0 = org.telegram.messenger.id.M0(2131748194, null);
+        String M02 = org.telegram.messenger.id.M0(2131748192, null);
         textView.setText(M0);
         textView2.setText(M02);
         textView2.setMaxWidth(fi.m3.a(textView2.getText(), textView2.getPaint()));
@@ -229,11 +229,11 @@ public abstract class pn extends LinearLayout implements org.telegram.ui.ActionB
     public final void d(CharSequence charSequence, CharSequence charSequence2) {
         this.H = true;
         if (TextUtils.isEmpty(charSequence == null ? null : charSequence.toString().trim())) {
-            charSequence = org.telegram.messenger.hd.M0(2131748192, null);
+            charSequence = org.telegram.messenger.id.M0(2131748194, null);
         }
         this.b.setText(charSequence);
         if (TextUtils.isEmpty(charSequence2 == null ? null : charSequence2.toString().trim())) {
-            charSequence2 = org.telegram.messenger.hd.M0(2131748190, null);
+            charSequence2 = org.telegram.messenger.id.M0(2131748192, null);
         }
         TextView textView = this.c;
         textView.setText(charSequence2);

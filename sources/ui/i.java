@@ -32,15 +32,14 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.r0;
 import org.telegram.messenger.t0;
 import org.telegram.ui.Components.r31;
-import org.telegram.ui.Components.yz;
+import org.telegram.ui.Components.zz;
 import org.telegram.ui.hy0;
 import org.telegram.ui.n1;
 import org.telegram.ui.web.q1;
-import ti.p;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
-public final class i implements yz {
+public final class i implements zz {
     public static i A;
     public static final Object y = new Object();
     public static i z;
@@ -160,7 +159,7 @@ public final class i implements yz {
                                 hVar.e = true;
                                 iVar.n(1, andUpdate, null);
                             }
-                            iVar.j.execute(new p(11, iVar, hVar));
+                            iVar.j.execute(new u9.f(6, iVar, hVar));
                         }
                         try {
                             accept.close();
@@ -325,7 +324,7 @@ public final class i implements yz {
         }
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public final void b() {
         g0.h3(new f(this, 2));
     }
@@ -620,7 +619,7 @@ public final class i implements yz {
         }
     }
 
-    @Override // org.telegram.ui.Components.yz
+    @Override // org.telegram.ui.Components.zz
     public final void a() {
     }
 }

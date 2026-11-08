@@ -15,8 +15,8 @@ import c8.ha;
 import c8.ka;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i6;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.qs;
@@ -29,11 +29,11 @@ import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.v70;
 import org.telegram.ui.Components.w70;
-import org.telegram.ui.Components.xz;
+import org.telegram.ui.Components.yz;
 import org.telegram.ui.af;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class l extends FrameLayout {
     public static final /* synthetic */ int n = 0;
@@ -80,7 +80,7 @@ public final class l extends FrameLayout {
         n6 L2 = r6.L(0.1f, i7);
         textView2.setBackground(d02);
         r6.k(textView2, d02, L2, null, f6Var);
-        textView2.setText(hd.M0(2131753155, null));
+        textView2.setText(id.M0(2131753155, null));
         linearLayout.addView(textView2, ha.q(-2, 17, 0.0f, 19, 5, 1, 0, 0));
         TextView textView3 = new TextView(activity);
         this.e = textView3;
@@ -168,10 +168,10 @@ public final class l extends FrameLayout {
                 l9Var.setVisibility(8);
                 imageView.setVisibility(0);
                 z10 = false;
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(hd.M0(2131745259, null));
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(id.M0(2131745261, null));
                 int i7 = k6.Ci;
                 f6 f6Var = this.a;
-                spannableStringBuilder.setSpan(new xz(i7, f6Var), 0, spannableStringBuilder.length(), 33);
+                spannableStringBuilder.setSpan(new yz(i7, f6Var), 0, spannableStringBuilder.length(), 33);
                 spannableStringBuilder.append((CharSequence) " \u2009");
                 spannableStringBuilder.append(m10);
                 measureText = textView.getPaint().measureText(spannableStringBuilder.toString());
@@ -180,8 +180,8 @@ public final class l extends FrameLayout {
                 measureText2 = ((L - textView2.getPaint().measureText(textView2.getText().toString())) - org.telegram.messenger.g0.L(32.0f)) - org.telegram.messenger.g0.L(!z10 ? 58.0f : 0.0f);
                 TextView textView3 = this.e;
                 if (measureText <= measureText2) {
-                    spannableStringBuilder = new SpannableStringBuilder(hd.M0(2131745259, null));
-                    spannableStringBuilder.setSpan(new xz(i7, f6Var), 0, spannableStringBuilder.length(), 33);
+                    spannableStringBuilder = new SpannableStringBuilder(id.M0(2131745261, null));
+                    spannableStringBuilder.setSpan(new yz(i7, f6Var), 0, spannableStringBuilder.length(), 33);
                     textView3.setVisibility(0);
                     textView3.setText(m10);
                 } else {
@@ -221,10 +221,10 @@ public final class l extends FrameLayout {
             imageView.setVisibility(8);
         }
         z10 = z9;
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(hd.M0(2131745259, null));
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(id.M0(2131745261, null));
         int i72 = k6.Ci;
         f6 f6Var2 = this.a;
-        spannableStringBuilder2.setSpan(new xz(i72, f6Var2), 0, spannableStringBuilder2.length(), 33);
+        spannableStringBuilder2.setSpan(new yz(i72, f6Var2), 0, spannableStringBuilder2.length(), 33);
         spannableStringBuilder2.append((CharSequence) " \u2009");
         spannableStringBuilder2.append(m10);
         measureText = textView.getPaint().measureText(spannableStringBuilder2.toString());

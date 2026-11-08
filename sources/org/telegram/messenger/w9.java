@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class w9 extends c1 {
     public static volatile w9[] h = new w9[4];
@@ -169,14 +169,14 @@ public final class w9 extends c1 {
         getConnectionsManager().sendRequestTyped(getstargiftupgradeattributes, new d3.b(1), new r9(c20Var, 0));
     }
 
-    public final void k(long j3, zh.l lVar, long j10, ii.g0 g0Var) {
+    public final void k(long j3, zh.k kVar, long j10, ii.g0 g0Var) {
         t9 t9Var = (t9) this.b.get(j3);
         if (t9Var == null || t9Var.f) {
             g0Var.a(Boolean.FALSE, null);
             return;
         }
         if (!bi.ea.y(this.currentAccount, false).e) {
-            bi.ea.y(this.currentAccount, false).r(new l9(this, g0Var, j3, lVar, j10));
+            bi.ea.y(this.currentAccount, false).r(new l9(this, g0Var, j3, kVar, j10));
             return;
         }
         s9 s9Var = t9Var.b;
@@ -187,15 +187,15 @@ public final class w9 extends c1 {
         tL_inputInvoiceStarGiftAuctionBid.gift_id = j3;
         tL_inputInvoiceStarGiftAuctionBid.bid_amount = j10;
         tL_inputInvoiceStarGiftAuctionBid.update_bid = z9;
-        if (lVar != null) {
-            long j11 = lVar.a;
+        if (kVar != null) {
+            long j11 = kVar.a;
             if (j11 == 0) {
                 tL_inputInvoiceStarGiftAuctionBid.peer = new TLRPC.TL_inputPeerSelf();
             } else {
                 tL_inputInvoiceStarGiftAuctionBid.peer = getMessagesController().j1(j11);
             }
-            tL_inputInvoiceStarGiftAuctionBid.message = lVar.c;
-            tL_inputInvoiceStarGiftAuctionBid.hide_name = lVar.b;
+            tL_inputInvoiceStarGiftAuctionBid.message = kVar.c;
+            tL_inputInvoiceStarGiftAuctionBid.hide_name = kVar.b;
         } else if (!z9) {
             tL_inputInvoiceStarGiftAuctionBid.peer = new TLRPC.TL_inputPeerSelf();
             tL_inputInvoiceStarGiftAuctionBid.hide_name = false;

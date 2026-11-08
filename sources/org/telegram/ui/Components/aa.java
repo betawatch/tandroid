@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class aa implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -36,18 +36,18 @@ public final class aa implements View.OnAttachStateChangeListener {
                 my0Var.k = r5.update(my0Var.l, (View) obj, my0Var.k, my0Var.b);
                 break;
             default:
-                org.telegram.ui.Wallet.d4 d4Var = (org.telegram.ui.Wallet.d4) obj2;
-                org.telegram.ui.Wallet.c4 c4Var = d4Var.m;
-                if (c4Var != null) {
-                    c4Var.setPaused(!d4Var.n);
+                org.telegram.ui.Wallet.c4 c4Var = (org.telegram.ui.Wallet.c4) obj2;
+                org.telegram.ui.Wallet.b4 b4Var = c4Var.m;
+                if (b4Var != null) {
+                    b4Var.setPaused(!c4Var.n);
                 }
-                d4Var.a.isAttachedToWindow();
-                int i10 = d4Var.v0;
+                c4Var.a.isAttachedToWindow();
+                int i10 = c4Var.v0;
                 if (-1 != i10) {
                     if (i10 >= 0) {
-                        org.telegram.messenger.qs.f(i10).n(d4Var.x0, 67);
+                        org.telegram.messenger.qs.f(i10).n(c4Var.x0, 67);
                     }
-                    d4Var.v0 = -1;
+                    c4Var.v0 = -1;
                     break;
                 }
                 break;
@@ -76,44 +76,44 @@ public final class aa implements View.OnAttachStateChangeListener {
                 r5.release((View) this.b, ((my0) this.c).k);
                 break;
             default:
-                org.telegram.ui.Wallet.d4 d4Var = (org.telegram.ui.Wallet.d4) this.c;
-                org.telegram.ui.Cells.t0 t0Var = d4Var.a;
-                d4Var.f();
-                d4Var.M = false;
-                d4Var.N = 0L;
-                d4Var.k();
-                r1.g gVar = d4Var.Z;
+                org.telegram.ui.Wallet.c4 c4Var = (org.telegram.ui.Wallet.c4) this.c;
+                org.telegram.ui.Cells.t0 t0Var = c4Var.a;
+                c4Var.f();
+                c4Var.M = false;
+                c4Var.N = 0L;
+                c4Var.k();
+                r1.g gVar = c4Var.Z;
                 if (gVar != null) {
                     gVar.d();
-                    d4Var.Z = null;
+                    c4Var.Z = null;
                 }
-                d4Var.a0 = 1.0f;
+                c4Var.a0 = 1.0f;
                 t0Var.invalidate();
                 if (t0Var.getParent() instanceof View) {
                     ((View) t0Var.getParent()).invalidate();
                 }
-                d4Var.l();
-                org.telegram.ui.Wallet.i6 i6Var = d4Var.k;
+                c4Var.l();
+                org.telegram.ui.Wallet.h6 h6Var = c4Var.k;
                 org.telegram.ui.Cells.t0 t0Var2 = (org.telegram.ui.Cells.t0) this.b;
-                WeakHashMap weakHashMap = i6Var.e;
+                WeakHashMap weakHashMap = h6Var.e;
                 weakHashMap.remove(t0Var2);
                 if (weakHashMap.isEmpty()) {
-                    i6Var.a();
+                    h6Var.a();
                 }
                 t0Var.isAttachedToWindow();
-                int i7 = d4Var.v0;
+                int i7 = c4Var.v0;
                 if (-1 != i7) {
                     if (i7 >= 0) {
-                        org.telegram.messenger.qs.f(i7).n(d4Var.x0, 67);
+                        org.telegram.messenger.qs.f(i7).n(c4Var.x0, 67);
                     }
-                    d4Var.v0 = -1;
+                    c4Var.v0 = -1;
                 }
-                org.telegram.ui.Wallet.c4 c4Var = d4Var.m;
-                if (c4Var != null) {
-                    c4Var.setPaused(true);
+                org.telegram.ui.Wallet.b4 b4Var = c4Var.m;
+                if (b4Var != null) {
+                    b4Var.setPaused(true);
                 }
-                d4Var.l.stop();
-                d4Var.H = false;
+                c4Var.l.stop();
+                c4Var.H = false;
                 break;
         }
     }

@@ -13,7 +13,7 @@ import java.util.Map;
 import l2.t1;
 import org.telegram.ui.hy0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class w0 implements e0, f3.q, b3.j, b3.m, a1 {
     public static final Map i0;
@@ -242,7 +242,7 @@ public final class w0 implements e0, f3.q, b3.j, b3.m, a1 {
 
     @Override // f3.q
     public final void f(f3.c0 c0Var) {
-        this.H.post(new wi.q(3, this, c0Var));
+        this.H.post(new u9.f(28, this, c0Var));
     }
 
     @Override // x2.e1

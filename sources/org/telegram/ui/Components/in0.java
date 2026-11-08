@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class in0 implements Runnable {
     public final /* synthetic */ int a;
@@ -17,22 +17,22 @@ public final /* synthetic */ class in0 implements Runnable {
             case 0:
                 mo0 mo0Var = this.b;
                 mo0Var.s2 = true;
-                r00 r00Var = mo0Var.q2;
-                r00Var.r.setText("");
-                org.telegram.messenger.g0.K3(r00Var.r);
+                s00 s00Var = mo0Var.q2;
+                s00Var.r.setText("");
+                org.telegram.messenger.g0.K3(s00Var.r);
                 break;
             default:
-                l10 l10Var = new l10(3);
+                vs vsVar = new vs(5);
                 mo0 mo0Var2 = this.b;
                 if (!mo0Var2.d) {
-                    l10Var.run();
+                    vsVar.run();
                     break;
                 } else {
-                    r00 r00Var2 = mo0Var2.q2;
-                    if (r00Var2 != null) {
-                        org.telegram.messenger.g0.v1(r00Var2.r);
+                    s00 s00Var2 = mo0Var2.q2;
+                    if (s00Var2 != null) {
+                        org.telegram.messenger.g0.v1(s00Var2.r);
                     }
-                    org.telegram.messenger.g0.i3(l10Var, 300L);
+                    org.telegram.messenger.g0.i3(vsVar, 300L);
                     break;
                 }
         }

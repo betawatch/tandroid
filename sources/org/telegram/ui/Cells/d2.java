@@ -7,10 +7,10 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class d2 extends FrameLayout {
     public final org.telegram.ui.Components.j6 a;
@@ -25,7 +25,7 @@ public final class d2 extends FrameLayout {
         int i7 = org.telegram.ui.ActionBar.k6.G6;
         org.telegram.ui.ActionBar.r6.Z(j6Var, i7, f6Var);
         j6Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        j6Var.setGravity(hd.a0 ? 5 : 3);
+        j6Var.setGravity(id.a0 ? 5 : 3);
         j6Var.setImportantForAccessibility(2);
         j6Var.setOnWidthUpdatedListener(new f(this, 2));
         addView(j6Var, c8.ha.i(-2.0f, -2.0f, 8388627, 21.0f, 0.0f, 38.0f, 3.0f));
@@ -39,7 +39,7 @@ public final class d2 extends FrameLayout {
 
     public final void a() {
         float c10 = this.a.getDrawable().c() + org.telegram.messenger.g0.L(1.0f);
-        boolean z9 = hd.a0;
+        boolean z9 = id.a0;
         View view = this.b;
         if (z9) {
             view.setTranslationX(-c10);

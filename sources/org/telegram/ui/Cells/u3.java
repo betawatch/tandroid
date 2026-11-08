@@ -15,15 +15,15 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ag0;
-import org.telegram.ui.Components.xz;
+import org.telegram.ui.Components.yz;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class u3 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public int D;
@@ -73,13 +73,13 @@ public final class u3 extends FrameLayout implements org.telegram.ui.ActionBar.a
             ag0 ag0Var = new ag0(context);
             this.d = ag0Var;
             org.telegram.ui.ActionBar.r6.V(ag0Var, org.telegram.ui.ActionBar.k6.Gi, f6Var);
-            ag0Var.setText(hd.M0(2131754486, null));
+            ag0Var.setText(id.M0(2131754486, null));
             addView(ag0Var, z9 ? c8.ha.i(-2.0f, 28.0f, 8388661, 0.0f, 16.0f, 14.0f, 0.0f) : c8.ha.d(-2, 28.0f, 53, 0.0f, 16.0f, 14.0f, 0.0f));
             TextView textView3 = new TextView(context);
             this.e = textView3;
             textView3.setGravity(17);
             org.telegram.messenger.k5.n(textView3, org.telegram.ui.ActionBar.k6.Fi, f6Var, 1, 14.0f);
-            textView3.setText(hd.M0(2131744856, null));
+            textView3.setText(id.M0(2131744858, null));
             addView(textView3, z9 ? c8.ha.i(-2.0f, 28.0f, 8388661, 0.0f, 16.0f, 14.0f, 0.0f) : c8.ha.d(-2, 28.0f, 53, 0.0f, 16.0f, 14.0f, 0.0f));
         }
         setWillNotDraw(false);
@@ -125,9 +125,9 @@ public final class u3 extends FrameLayout implements org.telegram.ui.ActionBar.a
         } else if (i10 != 0) {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.f.set.title);
             try {
-                xz xzVar = new xz(org.telegram.ui.ActionBar.k6.q6, this.I);
+                yz yzVar = new yz(org.telegram.ui.ActionBar.k6.q6, this.I);
                 int i11 = this.D;
-                spannableStringBuilder.setSpan(xzVar, i11, this.E + i11, 33);
+                spannableStringBuilder.setSpan(yzVar, i11, this.E + i11, 33);
             } catch (Exception unused) {
             }
             textView.setText(spannableStringBuilder);
@@ -136,9 +136,9 @@ public final class u3 extends FrameLayout implements org.telegram.ui.ActionBar.a
         boolean z12 = stickerSet.emojis;
         TextView textView2 = this.c;
         if (z12) {
-            textView2.setText(hd.G(stickerSet.count, "EmojiCount", new Object[0]));
+            textView2.setText(id.G(stickerSet.count, "EmojiCount", new Object[0]));
         } else {
-            textView2.setText(hd.G(stickerSet.count, "Stickers", new Object[0]));
+            textView2.setText(id.G(stickerSet.count, "Stickers", new Object[0]));
         }
         this.w = z9;
         if (this.a) {

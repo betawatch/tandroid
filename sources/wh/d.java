@@ -10,7 +10,7 @@ import android.text.TextUtils;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.g5;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -20,7 +20,7 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Components.w8;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class d implements ValueAnimator.AnimatorUpdateListener {
     public final h a;
@@ -61,7 +61,7 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
             TLRPC.User a22 = qp.s1(i7).a2(Long.valueOf(j3));
             w8Var.r(a22);
             if (t10.B(a22)) {
-                str2 = hd.M0(2131745902, null);
+                str2 = id.M0(2131745904, null);
                 w8Var.g(1);
                 w8Var.p = 0.75f;
                 imageReceiver = imageReceiver2;

@@ -13,13 +13,13 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.ui.Components.ys;
+import org.telegram.ui.Components.zs;
 import org.telegram.ui.e11;
 import org.telegram.ui.i01;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class z5 extends ys {
+public final class z5 extends zs {
     public final /* synthetic */ int Y1;
     public final /* synthetic */ Object Z1;
 
@@ -45,7 +45,7 @@ public final class z5 extends ys {
         }
     }
 
-    @Override // org.telegram.ui.Components.ct
+    @Override // org.telegram.ui.Components.dt
     public int e() {
         switch (this.Y1) {
             case 0:
@@ -92,7 +92,7 @@ public final class z5 extends ys {
         }
     }
 
-    @Override // org.telegram.ui.Components.ys, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ct, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.zs, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.dt, android.widget.TextView, android.view.View
     public void onDraw(Canvas canvas) {
         switch (this.Y1) {
             case 0:
@@ -125,7 +125,7 @@ public final class z5 extends ys {
         }
     }
 
-    @Override // org.telegram.ui.Components.ct, android.view.View
+    @Override // org.telegram.ui.Components.dt, android.view.View
     public void onSizeChanged(int i7, int i10, int i11, int i12) {
         switch (this.Y1) {
             case 2:
@@ -138,7 +138,7 @@ public final class z5 extends ys {
         }
     }
 
-    @Override // org.telegram.ui.Components.ys, android.widget.EditText, android.widget.TextView
+    @Override // org.telegram.ui.Components.zs, android.widget.EditText, android.widget.TextView
     public boolean onTextContextMenuItem(int i7) {
         ClipData primaryClip;
         switch (this.Y1) {
@@ -189,7 +189,7 @@ public final class z5 extends ys {
         return super.onTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.ys, org.telegram.ui.Components.EditTextBoldCursor, android.view.View
+    @Override // org.telegram.ui.Components.zs, org.telegram.ui.Components.EditTextBoldCursor, android.view.View
     public ActionMode startActionMode(ActionMode.Callback callback, int i7) {
         switch (this.Y1) {
             case 0:
@@ -208,7 +208,7 @@ public final class z5 extends ys {
         this.Z1 = drawable;
     }
 
-    @Override // org.telegram.ui.Components.ys, org.telegram.ui.Components.EditTextBoldCursor, android.view.View
+    @Override // org.telegram.ui.Components.zs, org.telegram.ui.Components.EditTextBoldCursor, android.view.View
     public ActionMode startActionMode(ActionMode.Callback callback) {
         switch (this.Y1) {
             case 0:

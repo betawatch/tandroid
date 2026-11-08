@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class eb implements org.telegram.ui.Cells.l1 {
     public final /* synthetic */ jb a;
@@ -52,7 +52,7 @@ public final class eb implements org.telegram.ui.Cells.l1 {
     @Override // org.telegram.ui.Cells.l1
     public final void D1(org.telegram.messenger.ij ijVar, String str, String str2, String str3, String str4, int i7, int i10) {
         mb mbVar = this.a.n;
-        org.telegram.ui.Components.vt.N0(mbVar, ijVar, mbVar.B0, str2, str3, str4, str, i7, i10, -1, false);
+        org.telegram.ui.Components.wt.N0(mbVar, ijVar, mbVar.B0, str2, str3, str4, str, i7, i10, -1, false);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -95,7 +95,7 @@ public final class eb implements org.telegram.ui.Cells.l1 {
             org.telegram.ui.Components.a41 a41Var = (org.telegram.ui.Components.a41) characterStyle;
             org.telegram.messenger.g0.g(a41Var.a.subSequence(a41Var.b, a41Var.c).toString());
             if (org.telegram.messenger.g0.I3()) {
-                Toast.makeText(mbVar.getParentActivity(), org.telegram.messenger.hd.M0(2131744195, null), 0).show();
+                Toast.makeText(mbVar.getParentActivity(), org.telegram.messenger.id.M0(2131744197, null), 0).show();
                 return;
             }
             return;
@@ -143,7 +143,7 @@ public final class eb implements org.telegram.ui.Cells.l1 {
             org.telegram.ui.ActionBar.v2 h = org.telegram.messenger.camera.q.h(mbVar.getParentActivity(), false, 1, null);
             h.O = url2;
             h.P = false;
-            CharSequence[] charSequenceArr = {org.telegram.messenger.hd.M0(2131747816, null), org.telegram.messenger.hd.M0(2131751767, null)};
+            CharSequence[] charSequenceArr = {org.telegram.messenger.id.M0(2131747818, null), org.telegram.messenger.id.M0(2131751767, null)};
             og.j jVar = new og.j(2, this, url2);
             h.L = charSequenceArr;
             h.K = jVar;
@@ -157,12 +157,12 @@ public final class eb implements org.telegram.ui.Cells.l1 {
                 return;
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(mbVar.getParentActivity());
-            String M02 = org.telegram.messenger.hd.M0(2131747778, null);
+            String M02 = org.telegram.messenger.id.M0(2131747780, null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.R = M02;
-            u1Var.T = org.telegram.messenger.hd.a0(null, null, 2131747781, url3);
-            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747816, null), new ni.c(5, mbVar, url3));
-            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+            u1Var.T = org.telegram.messenger.id.a0(null, null, 2131747783, url3);
+            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747818, null), new ni.c(5, mbVar, url3));
+            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
             mbVar.showDialog(u1Var);
             return;
         }
@@ -579,7 +579,7 @@ public final class eb implements org.telegram.ui.Cells.l1 {
                 }
                 org.telegram.ui.ActionBar.j6 v = org.telegram.ui.ActionBar.k6.v(file, messageObject.I0(), null, true);
                 if (v != null) {
-                    mbVar.presentFragment(new u71(v));
+                    mbVar.presentFragment(new v71(v));
                     return;
                 }
                 mbVar.g0 = -1;

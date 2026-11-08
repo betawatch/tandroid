@@ -17,10 +17,10 @@ import org.telegram.messenger.qp;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.xn;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.ba1;
+import org.telegram.ui.ca1;
 import org.telegram.ui.gx0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ua implements OnFailureListener, f3.p, f3.q, o2.i, xn, wi.w0 {
     public final /* synthetic */ int a;
@@ -266,12 +266,12 @@ public final /* synthetic */ class ua implements OnFailureListener, f3.p, f3.q, 
     public void n() {
         Bundle bundle = new Bundle();
         bundle.putLong("dialog_id", this.b);
-        ba1 ba1Var = new ba1(bundle);
-        ba1Var.d = new ArrayList();
-        ba1Var.e = new HashSet();
+        ca1 ca1Var = new ca1(bundle);
+        ca1Var.d = new ArrayList();
+        ca1Var.e = new HashSet();
         ProfileActivity profileActivity = (ProfileActivity) this.c;
-        ba1Var.e = profileActivity.h5;
-        profileActivity.presentFragment(ba1Var);
+        ca1Var.e = profileActivity.h5;
+        profileActivity.presentFragment(ca1Var);
     }
 
     @Override // o2.i

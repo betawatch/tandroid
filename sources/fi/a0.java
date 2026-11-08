@@ -8,11 +8,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.k60;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -69,7 +69,7 @@ public final /* synthetic */ class a0 implements Runnable {
                         imageView.setScaleType(ImageView.ScaleType.CENTER);
                         frameLayout.addView(imageView, c8.ha.d(24, 24.0f, 19, 12.0f, 12.0f, 12.0f, 12.0f));
                         TextView textView = new TextView(e0Var.getContext());
-                        textView.setText(hd.M0(2131744706, null));
+                        textView.setText(id.M0(2131744708, null));
                         textView.setTextSize(1, 13.0f);
                         textView.setTextColor(-1);
                         frameLayout.addView(textView, c8.ha.d(-1, -2.0f, 23, 47.0f, 8.0f, 24.0f, 8.0f));
@@ -85,8 +85,8 @@ public final /* synthetic */ class a0 implements Runnable {
                             F.o();
                         }
                         F.T = qs.x3;
-                        F.c(R.drawable.menu_camera_retake, hd.M0(2131744812, null), new a0(e0Var, 4), false);
-                        F.c(R.drawable.msg_delete, hd.M0(2131751599, null), new a0(e0Var, 5), true);
+                        F.c(R.drawable.menu_camera_retake, id.M0(2131744814, null), new a0(e0Var, 4), false);
+                        F.c(R.drawable.msg_delete, id.M0(2131751599, null), new a0(e0Var, 5), true);
                         F.o();
                         F.r(frameLayout, c8.ha.o(qs.x3, -2));
                         F.p = new ai.m0(10);

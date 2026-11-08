@@ -17,12 +17,12 @@ import fi.s4;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.q;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
     public final Paint a;
@@ -98,7 +98,7 @@ public final class f extends FrameLayout {
             }
         });
         imageView.setOnLongClickListener(new s4(this, 5));
-        imageView.setContentDescription(hd.M0(2131754840, null));
+        imageView.setContentDescription(id.M0(2131754840, null));
         addView(imageView, ha.e(70, 64, 19));
         ImageView imageView2 = new ImageView(context);
         this.c = imageView2;
@@ -142,7 +142,7 @@ public final class f extends FrameLayout {
             }
         });
         imageView2.setVisibility(8);
-        imageView2.setContentDescription(hd.M0(2131754922, null));
+        imageView2.setContentDescription(id.M0(2131754922, null));
         addView(imageView2, ha.e(70, 64, 19));
         ImageView imageView3 = new ImageView(context);
         this.d = imageView3;
@@ -186,7 +186,7 @@ public final class f extends FrameLayout {
                 }
             }
         });
-        imageView3.setContentDescription(hd.M0(2131754783, null));
+        imageView3.setContentDescription(id.M0(2131754783, null));
         addView(imageView3, ha.e(70, 64, 21));
         TextPaint textPaint = new TextPaint(1);
         this.h = textPaint;

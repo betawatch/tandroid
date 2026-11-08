@@ -17,9 +17,9 @@ import fi.h9;
 import org.telegram.messenger.k9;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.lt0;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.vy;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public abstract class b4 extends FrameLayout {
     public static final lt0 b0 = new lt0(new g2.c(29), new x3(0));
@@ -45,7 +45,7 @@ public abstract class b4 extends FrameLayout {
     public float W;
     public Object a;
     public float a0;
-    public final uy b;
+    public final vy b;
     public boolean c;
     public boolean d;
     public float e;
@@ -70,7 +70,7 @@ public abstract class b4 extends FrameLayout {
         this.S = false;
         this.T = org.telegram.messenger.g0.L(60.0f);
         this.U = true;
-        this.b = new uy(context, new z3(this, ViewConfiguration.get(context).getScaledTouchSlop(), 0));
+        this.b = new vy(context, new z3(this, ViewConfiguration.get(context).getScaledTouchSlop(), 0));
         Point point = org.telegram.messenger.g0.q;
         this.H = org.telegram.messenger.g0.L(point.x > point.y ? 8.0f : 64.0f);
     }

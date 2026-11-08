@@ -9,11 +9,11 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import c8.j9;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.vy;
 import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class m1 extends View {
     public final w5 D;
@@ -27,7 +27,7 @@ public final class m1 extends View {
     public final Paint a;
     public final Paint b;
     public final Path c;
-    public final uy d;
+    public final vy d;
     public final RectF e;
     public boolean f;
     public boolean h;
@@ -52,7 +52,7 @@ public final class m1 extends View {
         this.D = new w5(this);
         this.H = new sg.j1(1.0f, 0.016773745f, -1);
         this.J = true;
-        this.d = new uy(context, new k1(this));
+        this.d = new vy(context, new k1(this));
         paint2.setColor(-1);
         paint2.setShadowLayer(org.telegram.messenger.g0.L(4.0f), 0.0f, org.telegram.messenger.g0.L(2.0f), 1342177280);
         paint.setColor(1090519039);

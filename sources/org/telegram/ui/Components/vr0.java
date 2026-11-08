@@ -10,7 +10,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class vr0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.ActionBar.f6 a;
@@ -36,7 +36,7 @@ public final class vr0 extends FrameLayout implements org.telegram.ui.ActionBar.
         addView(view, c8.ha.c(60.0f, -1));
         fi.d dVar = new fi.d(context, f6Var, true);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.M0(z9 ? 2131748328 : 2131748326, null));
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.M0(z9 ? 2131748330 : 2131748328, null));
         spannableStringBuilder.append((CharSequence) " ");
         SpannableString spannableString = new SpannableString("l");
         spannableString.setSpan(new wp(R.drawable.msg_mini_lock2, 0), 0, 1, 33);
@@ -51,7 +51,7 @@ public final class vr0 extends FrameLayout implements org.telegram.ui.ActionBar.
         org.telegram.ui.ActionBar.r6.V(w70Var, org.telegram.ui.ActionBar.k6.G6, f6Var);
         org.telegram.ui.ActionBar.r6.H(w70Var, org.telegram.ui.ActionBar.k6.n6, f6Var);
         w70Var.setLineSpacing(org.telegram.messenger.g0.L(3.0f), 1.0f);
-        SpannableStringBuilder x22 = org.telegram.messenger.g0.x2(org.telegram.messenger.hd.M0(z9 ? 2131748327 : 2131748325, null), new ir0(ir0Var, 1));
+        SpannableStringBuilder x22 = org.telegram.messenger.g0.x2(org.telegram.messenger.id.M0(z9 ? 2131748329 : 2131748327, null), new ir0(ir0Var, 1));
         SpannableString spannableString2 = new SpannableString("" + org.telegram.messenger.qp.s1(i7).x4);
         spannableString2.setSpan(new u31(org.telegram.messenger.g0.o()), 0, spannableString2.length(), 33);
         w70Var.setText(org.telegram.messenger.g0.K2(x22, spannableString2, "%s"));

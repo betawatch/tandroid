@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ab0 implements r1.d {
     public final /* synthetic */ int a;
@@ -29,9 +29,9 @@ public final /* synthetic */ class ab0 implements r1.d {
                     ViewGroup viewGroup = pd0Var.b;
                     PointF pointF = pd0Var.D;
                     jh.k.b(view, viewGroup, pointF);
-                    org.telegram.ui.Components.p00 p00Var = pd0Var.h;
-                    p00Var.setTranslationX(pointF.x);
-                    p00Var.setTranslationY(pointF.y);
+                    org.telegram.ui.Components.q00 q00Var = pd0Var.h;
+                    q00Var.setTranslationX(pointF.x);
+                    q00Var.setTranslationY(pointF.y);
                     pd0Var.requestLayout();
                     break;
                 }

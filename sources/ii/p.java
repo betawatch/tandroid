@@ -20,7 +20,7 @@ import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.qp;
@@ -53,7 +53,7 @@ import org.telegram.ui.an;
 import org.telegram.ui.oq;
 import org.telegram.ui.wq0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class p extends f2 implements i30, ls, te.b {
     public RadialProgressView D;
@@ -116,8 +116,8 @@ public final class p extends f2 implements i30, ls, te.b {
         boolean z12 = b10 == 1 || b10 == 2;
         if (z11 || z12) {
             k60 F = k60.F(pVar.d, null, view);
-            F.l(R.drawable.msg_viewintopic, hd.M0(t6 ? 2131751910 : z10 ? 2131751909 : 2131751908, null), new h(pVar, j3, i7), z12);
-            F.m(R.drawable.msg_cancel, new m(pVar, t6, z10, j3, 0), hd.M0(2131751915, null), z11, true);
+            F.l(R.drawable.msg_viewintopic, id.M0(t6 ? 2131751910 : z10 ? 2131751909 : 2131751908, null), new h(pVar, j3, i7), z12);
+            F.m(R.drawable.msg_cancel, new m(pVar, t6, z10, j3, 0), id.M0(2131751915, null), z11, true);
             F.W(pVar.e.U0(view, true));
             F.Z();
             return true;
@@ -285,7 +285,7 @@ public final class p extends f2 implements i30, ls, te.b {
         vVar.setInputType(vVar.getInputType() | TLObject.FLAG_14);
         vVar.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(11.0f));
         vVar.setMinHeight(org.telegram.messenger.g0.L(50.0f));
-        e5Var.addView(vVar, ha.d(-1, -2.0f, (hd.a0 ? 5 : 3) | 16, 13.0f, 0.0f, 13.0f, 0.0f));
+        e5Var.addView(vVar, ha.d(-1, -2.0f, (id.a0 ? 5 : 3) | 16, 13.0f, 0.0f, 13.0f, 0.0f));
         this.r = e5Var;
         vVar.setText(m10);
         ((bi.v) this.r.b).setSelection(m10.length());
@@ -293,7 +293,7 @@ public final class p extends f2 implements i30, ls, te.b {
         ei.k kVar = new ei.k(this, context);
         this.H = kVar;
         r6.V(kVar, k6.Gi, getResourceProvider());
-        this.H.setText(hd.M0(2131745947, null));
+        this.H.setText(id.M0(2131745949, null));
         this.H.setTypeface(org.telegram.messenger.g0.o());
         this.H.setTextSize(1, 14.0f);
         this.H.setGravity(17);

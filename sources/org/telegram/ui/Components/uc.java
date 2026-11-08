@@ -20,7 +20,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class uc extends fi.m {
     public boolean R0;
@@ -72,10 +72,10 @@ public abstract class uc extends fi.m {
         i6Var.u(-1);
         boolean z9 = this instanceof org.telegram.ui.ap0;
         if (z9) {
-            i6Var.t(org.telegram.messenger.hd.M0(2131748324, null), true, true);
+            i6Var.t(org.telegram.messenger.id.M0(2131748326, null), true, true);
             this.f1 = context.getResources().getDrawable(R.drawable.menu_link_below);
         } else {
-            i6Var.t(org.telegram.messenger.hd.M0(2131748323, null), true, true);
+            i6Var.t(org.telegram.messenger.id.M0(2131748325, null), true, true);
             this.f1 = context.getResources().getDrawable(R.drawable.menu_link_above);
         }
         ImageView imageView = new ImageView(context);
@@ -123,7 +123,7 @@ public abstract class uc extends fi.m {
         imageView3.setColorFilter(new PorterDuffColorFilter(-1140850689, PorterDuff.Mode.MULTIPLY));
         imageView3.setBackground(org.telegram.ui.ActionBar.k6.h0(1090519039, 1, org.telegram.messenger.g0.L(16.0f)));
         addView(imageView3, c8.ha.d(44, 44.0f, 53, 8.0f, 0.0f, 8.0f, 0.0f));
-        imageView3.setContentDescription(org.telegram.messenger.hd.M0(2131755006, null));
+        imageView3.setContentDescription(org.telegram.messenger.id.M0(2131755006, null));
         c8.ka.a(imageView3);
         this.f.getEditText().addTextChangedListener(new ah.j(this, 14));
         imageView3.setVisibility(8);
@@ -221,7 +221,7 @@ public abstract class uc extends fi.m {
             fi.m3 m3Var3 = new fi.m3(getContext(), 3);
             this.Z0 = m3Var3;
             m3Var3.r(true);
-            this.Z0.u(org.telegram.messenger.hd.M0(2131754992, null));
+            this.Z0.u(org.telegram.messenger.id.M0(2131754992, null));
             this.Z0.p(1.0f, ((-imageView.getWidth()) / 2.0f) + org.telegram.messenger.g0.L(4.0f));
             addView(this.Z0, c8.ha.d(-1, 200.0f, 48, 0.0f, -196.0f, 0.0f, 0.0f));
             fi.m3 m3Var4 = this.Z0;
@@ -354,7 +354,7 @@ public abstract class uc extends fi.m {
         } else if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && icVar.i) {
             if (motionEvent.getAction() == 1) {
                 A();
-                this.g1.t(org.telegram.messenger.hd.M0(this instanceof org.telegram.ui.ap0 ? 2131748324 : 2131748323, null), true, true);
+                this.g1.t(org.telegram.messenger.id.M0(this instanceof org.telegram.ui.ap0 ? 2131748326 : 2131748325, null), true, true);
             }
             icVar.c(false);
             return true;

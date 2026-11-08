@@ -1,44 +1,29 @@
 package r2;
 
-import c8.p0;
-import java.util.Arrays;
-import org.telegram.tgnet.TLObject;
+import java.util.List;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
-public final class e extends y2.f {
-    public byte[] s;
-    public volatile boolean w;
-    public byte[] x;
+public final class e extends y2.b {
+    public final List d;
+    public final long e;
 
-    @Override // b3.l
-    public final void a() {
-        try {
-            this.r.open(this.b);
-            int i7 = 0;
-            int i10 = 0;
-            while (i7 != -1 && !this.w) {
-                byte[] bArr = this.s;
-                if (bArr.length < i10 + TLObject.FLAG_14) {
-                    this.s = Arrays.copyOf(bArr, bArr.length + TLObject.FLAG_14);
-                }
-                i7 = this.r.read(this.s, i10, TLObject.FLAG_14);
-                if (i7 != -1) {
-                    i10 += i7;
-                }
-            }
-            if (!this.w) {
-                this.x = Arrays.copyOf(this.s, i10);
-            }
-            p0.a(this.r);
-        } catch (Throwable th2) {
-            p0.a(this.r);
-            throw th2;
-        }
+    public e(long j3, List list) {
+        super(0L, list.size() - 1);
+        this.e = j3;
+        this.d = list;
     }
 
-    @Override // b3.l
-    public final void q0() {
-        this.w = true;
+    @Override // y2.m
+    public final long E() {
+        a();
+        s2.k kVar = (s2.k) this.d.get((int) this.c);
+        return this.e + kVar.e + kVar.c;
+    }
+
+    @Override // y2.m
+    public final long w() {
+        a();
+        return this.e + ((s2.k) this.d.get((int) this.c)).e;
     }
 }

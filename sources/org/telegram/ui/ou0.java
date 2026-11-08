@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ou0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -90,7 +90,7 @@ public final /* synthetic */ class ou0 implements View.OnClickListener {
                         boolean z10 = z9;
                         profileActivity.x5 = new org.telegram.messenger.video.n(profileActivity, e10, arrayList, z9);
                         bi.i0 i0Var = new bi.i0(profileActivity, zArr2, arrayList, zArr, e10, 15);
-                        (z10 ? org.telegram.ui.Components.hc.a0(profileActivity).L(R.raw.contact_check, org.telegram.messenger.hd.G(i7, "StorySavedTitle", new Object[0]), org.telegram.messenger.hd.M0(2131744485, null), org.telegram.messenger.hd.M0(2131743886, null), i0Var).j() : org.telegram.ui.Components.hc.a0(profileActivity).J(R.raw.chats_archived, org.telegram.messenger.hd.G(i7, "StoryArchived", new Object[0]), org.telegram.messenger.hd.M0(2131743886, null), 5000, false, i0Var).j()).v = new qn0(22, profileActivity, zArr2);
+                        (z10 ? org.telegram.ui.Components.hc.a0(profileActivity).L(R.raw.contact_check, org.telegram.messenger.id.G(i7, "StorySavedTitle", new Object[0]), org.telegram.messenger.id.M0(2131744487, null), org.telegram.messenger.id.M0(2131743888, null), i0Var).j() : org.telegram.ui.Components.hc.a0(profileActivity).J(R.raw.chats_archived, org.telegram.messenger.id.G(i7, "StoryArchived", new Object[0]), org.telegram.messenger.id.M0(2131743888, null), 5000, false, i0Var).j()).v = new qn0(22, profileActivity, zArr2);
                         break;
                     }
                 } else {
@@ -118,7 +118,7 @@ public final /* synthetic */ class ou0 implements View.OnClickListener {
                     if (!arrayList2.isEmpty()) {
                         bi.f9 f9Var = new bi.f9(profileActivity, a10, u12, arrayList2);
                         profileActivity.getMessagesController().P1().f0(u12, a10, arrayList2);
-                        org.telegram.ui.Components.hc.a0(profileActivity).K(R.raw.chats_archived, org.telegram.messenger.g0.X2(org.telegram.messenger.hd.G(arrayList2.size(), "StoryRemovedFromAlbumTitle", w10)), org.telegram.messenger.hd.M0(2131743886, null), f9Var).j();
+                        org.telegram.ui.Components.hc.a0(profileActivity).K(R.raw.chats_archived, org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(arrayList2.size(), "StoryRemovedFromAlbumTitle", w10)), org.telegram.messenger.id.M0(2131743888, null), f9Var).j();
                         break;
                     }
                 }
@@ -129,17 +129,17 @@ public final /* synthetic */ class ou0 implements View.OnClickListener {
                 c51Var.p0(i11, true);
                 break;
             default:
-                org.telegram.ui.Wallet.oa oaVar = (org.telegram.ui.Wallet.oa) obj;
-                EditText editText = oaVar.a;
-                TextView[] textViewArr = oaVar.N;
+                org.telegram.ui.Wallet.na naVar = (org.telegram.ui.Wallet.na) obj;
+                EditText editText = naVar.a;
+                TextView[] textViewArr = naVar.N;
                 TextView textView = textViewArr[i11];
                 if (textView != null && !TextUtils.isEmpty(textView.getText())) {
                     String charSequence = textViewArr[i11].getText().toString();
                     editText.setText(charSequence);
                     editText.setSelection(charSequence.length());
-                    oaVar.a();
-                    oaVar.a();
-                    Runnable runnable = oaVar.r;
+                    naVar.a();
+                    naVar.a();
+                    Runnable runnable = naVar.r;
                     if (runnable != null) {
                         editText.post(runnable);
                         break;

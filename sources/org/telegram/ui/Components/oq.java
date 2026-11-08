@@ -7,7 +7,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class oq extends na {
     public final r60 P1;
@@ -47,7 +47,7 @@ public final class oq extends na {
         textView.setSingleLine(true);
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(W ? org.telegram.messenger.hd.a0(null, null, 2131743456, new Object[0]) : org.telegram.messenger.hd.a0(null, null, 2131743325, new Object[0]));
+        textView.setText(W ? org.telegram.messenger.id.a0(null, null, 2131743458, new Object[0]) : org.telegram.messenger.id.a0(null, null, 2131743327, new Object[0]));
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.Gi, null);
         int L = org.telegram.messenger.g0.L(8.0f);
         int i10 = org.telegram.ui.ActionBar.k6.Ci;
@@ -68,10 +68,10 @@ public final class oq extends na {
         textView2.setTypeface(org.telegram.messenger.g0.o());
         if (W) {
             z9 = false;
-            a02 = org.telegram.messenger.hd.a0(null, null, 2131743463, new Object[0]);
+            a02 = org.telegram.messenger.id.a0(null, null, 2131743465, new Object[0]);
         } else {
             z9 = false;
-            a02 = org.telegram.messenger.hd.a0(null, null, 2131743342, new Object[0]);
+            a02 = org.telegram.messenger.id.a0(null, null, 2131743344, new Object[0]);
         }
         textView2.setText(a02);
         textView2.setLetterSpacing(0.025f);
@@ -156,6 +156,6 @@ public final class oq extends na {
 
     @Override // org.telegram.ui.Components.na
     public final CharSequence O0() {
-        return this.T1 ? org.telegram.messenger.hd.M0(2131744904, null) : org.telegram.messenger.hd.M0(2131744901, null);
+        return this.T1 ? org.telegram.messenger.id.M0(2131744906, null) : org.telegram.messenger.id.M0(2131744903, null);
     }
 }

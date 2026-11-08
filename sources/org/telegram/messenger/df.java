@@ -4,7 +4,7 @@ import android.os.RemoteException;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class df implements e2.a1 {
     public final /* synthetic */ int a = 0;
@@ -38,7 +38,7 @@ public final class df implements e2.a1 {
                     if (((p4.g1) ((WeakReference) this.c).get()) != null) {
                         b10.s = b10.s.d(q1Var);
                         b10.c.a(true, true);
-                        b10.d(new org.telegram.utils.twidget.a(q1Var, 16));
+                        b10.d(new org.telegram.utils.twidget.e(q1Var, 17));
                         break;
                     }
                 }
@@ -158,7 +158,7 @@ public final class df implements e2.a1 {
                         b10.s = b10.s.c(l1Var, g1Var.R0(), i7);
                         b10.c.a(false, true);
                         try {
-                            b10.h.j.s(l1Var);
+                            b10.h.j.t(l1Var);
                             break;
                         } catch (RemoteException e10) {
                             h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
@@ -471,13 +471,13 @@ public final class df implements e2.a1 {
                                     a8.ia.p(z9);
                                     b10.s = new p4.e1(v0Var, i10, l1Var, b1Var, b1Var2, i11, w0Var, i7, z10, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, dVar, oVar, i14, z11, z12, i15, i16, i17, z13, z14, o0Var2, j3, j10, j11, s1Var, q1Var);
                                     b10.c.a(true, true);
-                                    b10.h.j.q(i7);
+                                    b10.h.j.r(i7);
                                     break;
                                 }
                             } else {
                                 q1Var = q1Var2;
                             }
-                            b10.h.j.q(i7);
+                            b10.h.j.r(i7);
                         } catch (RemoteException e10) {
                             h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
                         }
@@ -829,13 +829,13 @@ public final class df implements e2.a1 {
                                 a8.ia.p(z9);
                                 b10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z10, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, dVar, oVar, i14, z11, z12, i15, i16, i17, z13, z14, o0Var2, j3, j10, j11, s1Var, q1Var);
                                 b10.c.a(true, true);
-                                b10.h.j.p(o0Var);
+                                b10.h.j.q(o0Var);
                                 break;
                             }
                         } else {
                             q1Var = q1Var2;
                         }
-                        b10.h.j.p(o0Var);
+                        b10.h.j.q(o0Var);
                     } catch (RemoteException e10) {
                         h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
                     }
@@ -939,7 +939,7 @@ public final class df implements e2.a1 {
                     for (int i7 = 0; i7 < w10.size(); i7++) {
                         p4.v vVar = (p4.v) w10.get(i7);
                         eVar.A(vVar);
-                        b10.c(vVar, new org.telegram.utils.twidget.a(15));
+                        b10.c(vVar, new org.telegram.utils.twidget.e(16));
                     }
                     break;
                 }
@@ -1000,13 +1000,13 @@ public final class df implements e2.a1 {
                                     a8.ia.p(z9);
                                     b10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z10, x1Var, l1Var2, i12, o0Var2, f10, f11, eVar, i13, dVar, oVar, i14, z11, z12, i15, i16, i17, z13, z14, o0Var, j3, j10, j11, s1Var, q1Var);
                                     b10.c.a(true, true);
-                                    b10.h.j.u();
+                                    b10.h.j.v();
                                     break;
                                 }
                             } else {
                                 q1Var = q1Var2;
                             }
-                            b10.h.j.u();
+                            b10.h.j.v();
                         } catch (RemoteException e10) {
                             h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
                         }
@@ -1145,13 +1145,13 @@ public final class df implements e2.a1 {
                                     a8.ia.p(z10);
                                     b10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z9, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, dVar, oVar, i14, z11, z12, i15, i16, i17, z13, z14, o0Var2, j3, j10, j11, s1Var, q1Var);
                                     b10.c.a(true, true);
-                                    b10.h.j.r(z9);
+                                    b10.h.j.s(z9);
                                     break;
                                 }
                             } else {
                                 q1Var = q1Var2;
                             }
-                            b10.h.j.r(z9);
+                            b10.h.j.s(z9);
                         } catch (RemoteException e10) {
                             h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
                         }
@@ -1177,7 +1177,7 @@ public final class df implements e2.a1 {
                     if (((p4.g1) ((WeakReference) this.c).get()) != null) {
                         b10.s = b10.s.a(s1Var);
                         b10.c.a(true, false);
-                        b10.d(new org.telegram.utils.twidget.a(s1Var, 14));
+                        b10.d(new org.telegram.utils.twidget.e(s1Var, 15));
                         break;
                     }
                 }
@@ -1238,13 +1238,13 @@ public final class df implements e2.a1 {
                                     a8.ia.p(z9);
                                     b10.s = new p4.e1(v0Var, i7, l1Var, b1Var, b1Var2, i10, w0Var, i11, z10, x1Var, l1Var2, i12, o0Var, f10, f11, eVar, i13, dVar, oVar, i14, z11, z12, i15, i16, i17, z13, z14, o0Var2, j3, j10, j11, s1Var, q1Var);
                                     b10.c.a(true, true);
-                                    b10.h.j.n(l0Var);
+                                    b10.h.j.o(l0Var);
                                     break;
                                 }
                             } else {
                                 q1Var = q1Var2;
                             }
-                            b10.h.j.n(l0Var);
+                            b10.h.j.o(l0Var);
                         } catch (RemoteException e10) {
                             h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
                         }

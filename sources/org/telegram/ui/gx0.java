@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class gx0 extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public int D;
@@ -89,12 +89,12 @@ public final class gx0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
             Parcelable parcelable = null;
             if (i7 == gx0Var.X) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, f6Var);
-                String M0 = org.telegram.messenger.hd.M0(2131746103, null);
+                String M0 = org.telegram.messenger.id.M0(2131746105, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
-                u1Var.T = org.telegram.messenger.hd.M0(2131746104, null);
-                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131746119, null), new bx0(gx0Var, str));
-                alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+                u1Var.T = org.telegram.messenger.id.M0(2131746106, null);
+                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131746121, null), new bx0(gx0Var, str));
+                alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
                 gx0Var.showDialog(u1Var);
                 TextView textView = (TextView) u1Var.d(-1);
                 if (textView != null) {
@@ -505,7 +505,7 @@ public final class gx0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
             FrameLayout frameLayout = new FrameLayout(parentActivity2);
             p3Var.addView(frameLayout, c8.ha.t(-1, -2, 51, 22, 0, 0, 4));
             TextView textView2 = new TextView(parentActivity2);
-            textView2.setText(org.telegram.messenger.hd.M0(2131748119, null));
+            textView2.setText(org.telegram.messenger.id.M0(2131748121, null));
             textView2.setTextColor(f10);
             com.google.android.recaptcha.internal.a.q(textView2, 1, 20.0f);
             frameLayout.addView(textView2, c8.ha.d(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
@@ -525,7 +525,7 @@ public final class gx0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
             mdVar.setTypeface(org.telegram.messenger.g0.o());
             int L = org.telegram.messenger.g0.L(8.0f);
             mdVar.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.k0(L, L, L, L, f13, f14, f14));
-            mdVar.setText(org.telegram.messenger.hd.M0(2131753866, null));
+            mdVar.setText(org.telegram.messenger.id.M0(2131753866, null));
             p3Var.addView(mdVar, c8.ha.t(-1, 48, 83, 16, 15, 16, 16));
             zq zqVar = new zq(6);
             g4Var.setOnValueChangedListener(zqVar);
@@ -604,10 +604,10 @@ public final class gx0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
             this.simpleActionBar.setTitle(M0.title);
         }
         if (this.n) {
-            this.simpleActionBar.setSubtitle(org.telegram.messenger.hd.M0(2131747894, null));
-            this.simpleActionBar.n(org.telegram.messenger.hd.M0(2131745947, null));
+            this.simpleActionBar.setSubtitle(org.telegram.messenger.id.M0(2131747896, null));
+            this.simpleActionBar.n(org.telegram.messenger.id.M0(2131745949, null));
         } else {
-            this.simpleActionBar.setSubtitle(org.telegram.messenger.hd.M0(2131751685, null));
+            this.simpleActionBar.setSubtitle(org.telegram.messenger.id.M0(2131751685, null));
         }
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
@@ -673,7 +673,7 @@ public final class gx0 extends org.telegram.ui.ActionBar.f2 implements org.teleg
         Uri uri = (Uri) intent.getParcelableExtra("android.intent.extra.ringtone.PICKED_URI");
         String str = null;
         if (uri != null && (ringtone = RingtoneManager.getRingtone(org.telegram.messenger.t0.b, uri)) != null) {
-            str = i7 == 13 ? uri.equals(Settings.System.DEFAULT_RINGTONE_URI) ? org.telegram.messenger.hd.M0(2131751600, null) : ringtone.getTitle(getParentActivity()) : uri.equals(Settings.System.DEFAULT_NOTIFICATION_URI) ? org.telegram.messenger.hd.M0(2131745281, null) : ringtone.getTitle(getParentActivity());
+            str = i7 == 13 ? uri.equals(Settings.System.DEFAULT_RINGTONE_URI) ? org.telegram.messenger.id.M0(2131751600, null) : ringtone.getTitle(getParentActivity()) : uri.equals(Settings.System.DEFAULT_NOTIFICATION_URI) ? org.telegram.messenger.id.M0(2131745283, null) : ringtone.getTitle(getParentActivity());
             ringtone.stop();
         }
         SharedPreferences.Editor edit = org.telegram.messenger.qp.s1(this.currentAccount).d7.edit();

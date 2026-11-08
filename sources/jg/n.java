@@ -24,7 +24,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g5;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -62,7 +62,7 @@ import org.telegram.ui.Cells.z8;
 import org.telegram.ui.Components.ch0;
 import org.telegram.ui.Components.kg0;
 import org.telegram.ui.Components.ks;
-import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.p6;
 import org.telegram.ui.Components.pj0;
@@ -78,7 +78,7 @@ import org.telegram.ui.sw;
 import org.telegram.ui.vw;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class n extends oj0 implements p2 {
     public boolean D;
@@ -362,16 +362,16 @@ public class n extends oj0 implements p2 {
             int i15 = this.h == 3 ? 2 : 4;
             for (int i16 = 0; i16 < i15; i16++) {
                 if (i16 == 0) {
-                    M0 = hd.M0(2131751878, null);
+                    M0 = id.M0(2131751878, null);
                     arrayList = arrayList2;
                 } else if (i16 == 1) {
-                    M0 = hd.M0(2131751875, null);
+                    M0 = id.M0(2131751875, null);
                     arrayList = arrayList3;
                 } else if (i16 == 2) {
-                    M0 = hd.M0(2131751876, null);
+                    M0 = id.M0(2131751876, null);
                     arrayList = arrayList4;
                 } else {
-                    M0 = hd.M0(2131751873, null);
+                    M0 = id.M0(2131751873, null);
                     arrayList = arrayList5;
                 }
                 if (!arrayList.isEmpty()) {
@@ -777,10 +777,10 @@ public class n extends oj0 implements p2 {
                     String str3 = chat.title;
                     if (!t3.T(chat) || chat.megagroup) {
                         int i14 = chat.participants_count;
-                        H = i14 != 0 ? hd.H(',', "Members", i14) : chat.has_geo ? hd.M0(2131748641, null) : !t3.t0(chat) ? hd.M0(2131748640, null).toLowerCase() : hd.M0(2131748637, null).toLowerCase();
+                        H = i14 != 0 ? id.H(',', "Members", i14) : chat.has_geo ? id.M0(2131748643, null) : !t3.t0(chat) ? id.M0(2131748642, null).toLowerCase() : id.M0(2131748639, null).toLowerCase();
                     } else {
                         int i15 = chat.participants_count;
-                        H = i15 != 0 ? hd.H(',', "Subscribers", i15) : !t3.t0(chat) ? hd.M0(2131752329, null).toLowerCase() : hd.M0(2131752318, null).toLowerCase();
+                        H = i15 != 0 ? id.H(',', "Subscribers", i15) : !t3.t0(chat) ? id.M0(2131752329, null).toLowerCase() : id.M0(2131752318, null).toLowerCase();
                     }
                     str2 = str3;
                     str = H;
@@ -790,7 +790,7 @@ public class n extends oj0 implements p2 {
                     if (a22 != 0) {
                         String p10 = t10.p(a22);
                         chat2 = a22;
-                        str = t10.z(a22) ? "" : a22.bot ? hd.M0(2131753156, null) : hd.d0(i12, a22, null, null);
+                        str = t10.z(a22) ? "" : a22.bot ? id.M0(2131753156, null) : id.d0(i12, a22, null, null);
                         str2 = p10;
                     } else {
                         str = "";
@@ -863,22 +863,22 @@ public class n extends oj0 implements p2 {
             if (z2Var.r != F) {
                 z2Var.r = F;
                 if (F == 0 || F == 1) {
-                    M02 = hd.M0(2131748227, null);
-                    textView.setText(hd.M0(2131748229, null));
+                    M02 = id.M0(2131748229, null);
+                    textView.setText(id.M0(2131748231, null));
                     i10 = R.raw.utyan_newborn;
                 } else if (F != 2) {
                     ch0Var.setAutoRepeat(true);
-                    M02 = hd.M0(2131750809, null);
-                    textView.setText(hd.M0(2131750810, null));
+                    M02 = id.M0(2131750809, null);
+                    textView.setText(id.M0(2131750810, null));
                     i10 = R.raw.filter_new;
                 } else {
                     ch0Var.setAutoRepeat(false);
                     if (this.x) {
-                        textView.setText(hd.M0(2131750724, null));
-                        M02 = hd.M0(2131750723, null);
+                        textView.setText(id.M0(2131750724, null));
+                        M02 = id.M0(2131750723, null);
                     } else {
-                        textView.setText(hd.M0(2131750726, null));
-                        M02 = hd.M0(2131750725, null);
+                        textView.setText(id.M0(2131750726, null));
+                        M02 = id.M0(2131750725, null);
                     }
                     i10 = R.raw.filter_no_chats;
                 }
@@ -886,7 +886,7 @@ public class n extends oj0 implements p2 {
                 if (z2Var.r == 1) {
                     if (z2Var.d) {
                         z2Var.a = 1.0f;
-                        String M03 = hd.M0(2131748228, null);
+                        String M03 = id.M0(2131748230, null);
                         if (org.telegram.messenger.g0.Q1() && !org.telegram.messenger.g0.P1()) {
                             M03 = M03.replace('\n', ' ');
                         }
@@ -944,11 +944,11 @@ public class n extends oj0 implements p2 {
             n4 n4Var = (n4) view;
             int i18 = this.h;
             if (i18 != 11 && i18 != 12 && i18 != 13) {
-                n4Var.setText(hd.M0((this.f == 0 && this.e) ? 2131751804 : 2131742827, null));
+                n4Var.setText(id.M0((this.f == 0 && this.e) ? 2131751804 : 2131742829, null));
             } else if (i7 == 0) {
-                n4Var.setText(hd.M0(2131749248, null));
+                n4Var.setText(id.M0(2131749250, null));
             } else {
-                n4Var.setText(hd.M0(2131749247, null));
+                n4Var.setText(id.M0(2131749249, null));
             }
         } else if (i11 != 11) {
             TLRPC.RequestPeerType requestPeerType = this.T;
@@ -967,15 +967,15 @@ public class n extends oj0 implements p2 {
                         if (i19 != 0) {
                             if (i19 != 1) {
                                 if (i19 == 2) {
-                                    n4Var2.setText(hd.M0(2131750775, null));
+                                    n4Var2.setText(id.M0(2131750775, null));
                                     break;
                                 }
                             } else {
-                                n4Var2.setText(hd.M0(2131748303, null));
+                                n4Var2.setText(id.M0(2131748305, null));
                                 break;
                             }
                         } else {
-                            n4Var2.setText(hd.M0(2131748304, null));
+                            n4Var2.setText(id.M0(2131748306, null));
                             break;
                         }
                         break;
@@ -990,7 +990,7 @@ public class n extends oj0 implements p2 {
                         TL_chatlists.TL_chatlists_chatlistUpdates tL_chatlists_chatlistUpdates = ((l) this.M.get(i7)).i;
                         if (tL_chatlists_chatlistUpdates != null) {
                             int size = tL_chatlists_chatlistUpdates.missing_peers.size();
-                            b3Var.b(org.telegram.messenger.g0.S2(hd.G(size, "FolderUpdatesTitle", new Object[0]), k6.I6, 0, null, null), hd.G(size, "FolderUpdatesSubtitle", new Object[0]));
+                            b3Var.b(org.telegram.messenger.g0.S2(id.G(size, "FolderUpdatesTitle", new Object[0]), k6.I6, 0, null, null), id.G(size, "FolderUpdatesSubtitle", new Object[0]));
                             break;
                         }
                         break;
@@ -1001,26 +1001,26 @@ public class n extends oj0 implements p2 {
                                 if (wwVar == null || !wwVar.N0) {
                                     if (this.h == 3) {
                                         if (i7 == 0) {
-                                            x3Var.setText(hd.M0(2131750587, null));
+                                            x3Var.setText(id.M0(2131750587, null));
                                             break;
                                         } else {
-                                            x3Var.setText(hd.M0(2131746260, null));
+                                            x3Var.setText(id.M0(2131746262, null));
                                             break;
                                         }
                                     }
                                 } else if (i7 == 0) {
-                                    x3Var.setText(hd.M0(2131746261, null));
+                                    x3Var.setText(id.M0(2131746263, null));
                                     break;
                                 } else {
-                                    x3Var.setText(hd.M0(2131746260, null));
+                                    x3Var.setText(id.M0(2131746262, null));
                                     break;
                                 }
                                 break;
                             case 21:
                                 t2 t2Var2 = (t2) view;
                                 o2 o2Var = new o2();
-                                o2Var.a = hd.M0(2131744772, null);
-                                o2Var.b = hd.M0(2131744773, null);
+                                o2Var.a = id.M0(2131744774, null);
+                                o2Var.b = id.M0(2131744775, null);
                                 t2Var2.s2 = false;
                                 t2Var2.t2 = false;
                                 t2Var2.setDialog(o2Var);
@@ -1038,13 +1038,13 @@ public class n extends oj0 implements p2 {
                                 if (J2 instanceof TLRPC.Chat) {
                                     TLRPC.Chat chat3 = (TLRPC.Chat) J2;
                                     t2Var3.Q0 = t3.e0(i12, chat3);
-                                    t2Var3.setCustomMessageWithoutRebuild(hd.G(chat3.participants_count, "Members", new Object[0]));
+                                    t2Var3.setCustomMessageWithoutRebuild(id.G(chat3.participants_count, "Members", new Object[0]));
                                     t2Var3.d0(-chat3.id, null, 0, false, false);
                                     break;
                                 } else {
                                     TLRPC.User user = (TLRPC.User) J2;
                                     t2Var3.Q0 = t3.f0(i12, user);
-                                    t2Var3.setCustomMessageWithoutRebuild(hd.M0(2131753156, null));
+                                    t2Var3.setCustomMessageWithoutRebuild(id.M0(2131753156, null));
                                     t2Var3.d0(user.id, null, 0, false, false);
                                     break;
                                 }
@@ -1058,18 +1058,18 @@ public class n extends oj0 implements p2 {
                 int i20 = k6.q6;
                 m8Var.g(i20, i20);
                 if (requestPeerType == null) {
-                    m8Var.o(R.drawable.msg_groups_create, hd.M0(2131751747, null), this.f != 0);
+                    m8Var.o(R.drawable.msg_groups_create, id.M0(2131751747, null), this.f != 0);
                 } else if (requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast) {
-                    m8Var.o(R.drawable.msg_channel_create, hd.M0(2131751752, null), true);
+                    m8Var.o(R.drawable.msg_channel_create, id.M0(2131751752, null), true);
                 } else {
-                    m8Var.o(R.drawable.msg_groups_create, hd.M0(2131751746, null), true);
+                    m8Var.o(R.drawable.msg_groups_create, id.M0(2131751746, null), true);
                 }
                 m8Var.y = true;
                 m8Var.setOffsetFromImage(75);
             }
         } else {
             z8 z8Var = (z8) view;
-            z8Var.setText(hd.M0(2131744268, null));
+            z8Var.setText(id.M0(2131744270, null));
             if (this.O == null) {
                 Drawable drawable = this.c.getResources().getDrawable(R.drawable.arrow_newchat);
                 this.O = drawable;
@@ -1106,7 +1106,7 @@ public class n extends oj0 implements p2 {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r14v4, types: [org.telegram.ui.Cells.t2] */
     /* JADX WARN: Type inference failed for: r2v10 */
-    /* JADX WARN: Type inference failed for: r2v13, types: [org.telegram.ui.Components.lz] */
+    /* JADX WARN: Type inference failed for: r2v13, types: [org.telegram.ui.Components.mz] */
     /* JADX WARN: Type inference failed for: r2v14, types: [android.view.ViewGroup, org.telegram.ui.Cells.n4] */
     /* JADX WARN: Type inference failed for: r2v17 */
     /* JADX WARN: Type inference failed for: r2v18, types: [android.view.View, org.telegram.ui.Cells.u2, org.telegram.ui.Cells.z] */
@@ -1171,7 +1171,7 @@ public class n extends oj0 implements p2 {
                 break;
             case 1:
             case 13:
-                r22 = new lz(context, null);
+                r22 = new mz(context, null);
                 r22.setIsSingleCell(true);
                 int i13 = i7 == 13 ? 18 : 7;
                 r22.setViewType(i13);
@@ -1185,13 +1185,13 @@ public class n extends oj0 implements p2 {
                 break;
             case 2:
                 r22 = new n4(context);
-                r22.setText(hd.M0(2131746359, null));
+                r22.setText(id.M0(2131746361, null));
                 TextView textView = new TextView(context);
                 com.google.android.recaptcha.internal.a.q(textView, 1, 15.0f);
-                org.telegram.messenger.camera.q.o(textView, k6.L6, null, null, 2131746358);
+                org.telegram.messenger.camera.q.o(textView, k6.L6, null, null, 2131746360);
                 int i14 = 3;
-                textView.setGravity((hd.a0 ? 3 : 5) | 16);
-                r22.addView(textView, ha.d(-1, -1.0f, (hd.a0 ? 3 : 5) | 48, 17.0f, 15.0f, 17.0f, 0.0f));
+                textView.setGravity((id.a0 ? 3 : 5) | 16);
+                r22.addView(textView, ha.d(-1, -1.0f, (id.a0 ? 3 : 5) | 48, 17.0f, 15.0f, 17.0f, 0.0f));
                 textView.setOnClickListener(new ii.g(this, i14));
                 break;
             case 3:

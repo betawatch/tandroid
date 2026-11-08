@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.r70;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class j5 extends View {
     public final TextPaint a;
@@ -95,11 +95,11 @@ public final class j5 extends View {
         long o4 = org.telegram.messenger.m5.o(savedStarGift.from_id);
         long o10 = org.telegram.messenger.m5.o(savedStarGift.gift.owner_id);
         if (e10 == o4) {
-            set(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, savedStarGift.gift.crafted ? 2131749610 : 2131749611, org.telegram.messenger.hd.r(savedStarGift.date, false))));
+            set(org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, savedStarGift.gift.crafted ? 2131749612 : 2131749613, org.telegram.messenger.id.r(savedStarGift.date, false))));
         } else if (e10 == o10) {
-            set(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131749592, org.telegram.messenger.m5.s(i7, o4), org.telegram.messenger.hd.r(savedStarGift.date, false))));
+            set(org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749594, org.telegram.messenger.m5.s(i7, o4), org.telegram.messenger.id.r(savedStarGift.date, false))));
         } else {
-            set(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131749591, org.telegram.messenger.m5.s(i7, o4), org.telegram.messenger.m5.s(i7, o10), org.telegram.messenger.hd.r(savedStarGift.date, false))));
+            set(org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749593, org.telegram.messenger.m5.s(i7, o4), org.telegram.messenger.m5.s(i7, o10), org.telegram.messenger.id.r(savedStarGift.date, false))));
         }
     }
 
@@ -175,11 +175,11 @@ public final class j5 extends View {
         long o4 = org.telegram.messenger.m5.o(peer);
         long o10 = org.telegram.messenger.m5.o(tL_messageActionStarGiftUnique.peer);
         if (e10 == o4) {
-            set(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, (tL_messageActionStarGiftUnique.craft || tL_messageActionStarGiftUnique.gift.crafted) ? 2131749610 : 2131749611, org.telegram.messenger.hd.r(ijVar.k.date, false))));
+            set(org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, (tL_messageActionStarGiftUnique.craft || tL_messageActionStarGiftUnique.gift.crafted) ? 2131749612 : 2131749613, org.telegram.messenger.id.r(ijVar.k.date, false))));
         } else if (e10 == o10) {
-            set(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131749592, org.telegram.messenger.m5.s(i7, o4), org.telegram.messenger.hd.r(ijVar.k.date, false))));
+            set(org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749594, org.telegram.messenger.m5.s(i7, o4), org.telegram.messenger.id.r(ijVar.k.date, false))));
         } else {
-            set(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131749591, org.telegram.messenger.m5.s(i7, o4), org.telegram.messenger.m5.s(i7, o10), org.telegram.messenger.hd.r(ijVar.k.date, false))));
+            set(org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749593, org.telegram.messenger.m5.s(i7, o4), org.telegram.messenger.m5.s(i7, o10), org.telegram.messenger.id.r(ijVar.k.date, false))));
         }
         setVisibility(0);
     }

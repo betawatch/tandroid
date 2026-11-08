@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import c8.ha;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_account;
@@ -22,7 +22,7 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.r6;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class t extends FrameLayout {
     public final k5 a;
@@ -53,14 +53,14 @@ public final class t extends FrameLayout {
         this.a = k5Var;
         k5Var.setTextSize(15);
         r6.Y(k5Var, k6.G6, null);
-        k5Var.setGravity(hd.a0 ? 5 : 3);
+        k5Var.setGravity(id.a0 ? 5 : 3);
         addView(k5Var, ha.i(-1.0f, 20.0f, 55, 64.0f, 10.0f, 14.0f, 0.0f));
         k5 k5Var2 = new k5(context);
         this.c = k5Var2;
         k5Var2.setTextSize(14);
         int i10 = k6.z6;
         r6.Y(k5Var2, i10, null);
-        k5Var2.setGravity(hd.a0 ? 3 : 5);
+        k5Var2.setGravity(id.a0 ? 3 : 5);
         addView(k5Var2, ha.i(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
         xh.l lVar = new xh.l(context);
         this.b = lVar;
@@ -68,7 +68,7 @@ public final class t extends FrameLayout {
         lVar.setMaxLines(1);
         lVar.setEllipsize(TextUtils.TruncateAt.END);
         r6.V(lVar, i10, f6Var);
-        lVar.setGravity(hd.a0 ? 5 : 3);
+        lVar.setGravity(id.a0 ? 5 : 3);
         lVar.r = false;
         lVar.setUseAlphaForEmoji(false);
         qs.i(lVar);
@@ -83,14 +83,14 @@ public final class t extends FrameLayout {
             if (W0 == null) {
                 W0 = k6.k0;
             }
-            canvas.drawRect(org.telegram.messenger.g0.L(hd.a0 ? 0.0f : 64.0f), getMeasuredHeight() - 1, getWidth() - org.telegram.messenger.g0.L(hd.a0 ? 64.0f : 0.0f), getMeasuredHeight(), W0);
+            canvas.drawRect(org.telegram.messenger.g0.L(id.a0 ? 0.0f : 64.0f), getMeasuredHeight() - 1, getWidth() - org.telegram.messenger.g0.L(id.a0 ? 64.0f : 0.0f), getMeasuredHeight(), W0);
         }
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
         super.onLayout(z9, i7, i10, i11, i12);
-        boolean z10 = hd.a0;
+        boolean z10 = id.a0;
         k5 k5Var = this.c;
         k5 k5Var2 = this.a;
         if (z10) {

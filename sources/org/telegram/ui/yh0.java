@@ -5,7 +5,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yh0 implements org.telegram.messenger.c20 {
     public final /* synthetic */ int[] a;
@@ -76,9 +76,9 @@ public final /* synthetic */ class yh0 implements org.telegram.messenger.c20 {
                     }
                     v2Var2.dismiss();
                     org.telegram.ui.Components.hc a10 = bi0.a();
-                    String M0 = org.telegram.messenger.hd.M0(2131753128, null);
+                    String M0 = org.telegram.messenger.id.M0(2131753128, null);
                     String str3 = str2;
-                    a10.I(R.raw.error, M0, TextUtils.isEmpty(str3) ? org.telegram.messenger.hd.M0(2131753129, null) : org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.uj, f6Var), org.telegram.messenger.hd.a0(null, null, 2131753130, str3))).j();
+                    a10.I(R.raw.error, M0, TextUtils.isEmpty(str3) ? org.telegram.messenger.id.M0(2131753129, null) : org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.k6.w0(org.telegram.ui.ActionBar.k6.uj, f6Var), org.telegram.messenger.id.a0(null, null, 2131753130, str3))).j();
                 }
             }
         });

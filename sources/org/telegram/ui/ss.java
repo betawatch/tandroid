@@ -16,7 +16,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ss extends org.telegram.ui.Components.na {
     public final FrameLayout P1;
@@ -84,11 +84,11 @@ public final class ss extends org.telegram.ui.Components.na {
         e10.addView(frameLayout2, c8.ha.t(80, 80, 1, 2, 21, 2, 13));
         int i12 = org.telegram.ui.ActionBar.k6.G6;
         org.telegram.ui.Components.w70 a10 = c8.qa.a(activity, 20.0f, i12, true, this.I0);
-        a10.setText(org.telegram.messenger.hd.M0(2131749482, null));
+        a10.setText(org.telegram.messenger.id.M0(2131749484, null));
         a10.setGravity(17);
         e10.addView(a10, c8.ha.t(-1, -2, 1, 2, 0, 2, 4));
         org.telegram.ui.Components.w70 a11 = c8.qa.a(activity, 14.0f, i12, false, this.I0);
-        a11.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131749483, null)));
+        a11.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131749485, null)));
         a11.setGravity(17);
         a11.setMaxWidth(fi.m3.a(a11.getText(), a11.getPaint()));
         e10.addView(a11, c8.ha.t(-1, -2, 1, 2, 0, 2, 23));
@@ -112,7 +112,7 @@ public final class ss extends org.telegram.ui.Components.na {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) "x  ");
         spannableStringBuilder.setSpan(new org.telegram.ui.Components.wp(R.drawable.profile_phone, 0), 0, 1, 33);
-        spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.M0(2131749480, null));
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.M0(2131749482, null));
         dVar.i(spannableStringBuilder, false, true);
         e11.addView(dVar, c8.ha.q(-1, 48, 1.0f, org.telegram.messenger.qs.E1, 0, 0, 6, 0));
         dVar.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.rs
@@ -142,7 +142,7 @@ public final class ss extends org.telegram.ui.Components.na {
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
         spannableStringBuilder2.append((CharSequence) "x  ");
         spannableStringBuilder2.setSpan(new org.telegram.ui.Components.wp(R.drawable.profile_video, 0), 0, 1, 33);
-        spannableStringBuilder2.append((CharSequence) org.telegram.messenger.hd.M0(2131749481, null));
+        spannableStringBuilder2.append((CharSequence) org.telegram.messenger.id.M0(2131749483, null));
         dVar2.i(spannableStringBuilder2, false, true);
         e11.addView(dVar2, c8.ha.q(-1, 48, 1.0f, org.telegram.messenger.qs.E1, 6, 0, 0, 0));
         final int i13 = 2;
@@ -183,7 +183,7 @@ public final class ss extends org.telegram.ui.Components.na {
 
     @Override // org.telegram.ui.Components.na
     public final CharSequence O0() {
-        return org.telegram.messenger.hd.M0(2131749482, null);
+        return org.telegram.messenger.id.M0(2131749484, null);
     }
 
     public final void d1(boolean z9) {

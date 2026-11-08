@@ -8,12 +8,12 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.hc;
 import org.telegram.messenger.ic;
 import org.telegram.messenger.p10;
-import org.telegram.messenger.rc;
+import org.telegram.messenger.sc;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l1 extends View {
     public xp a;
@@ -54,7 +54,7 @@ public final class l1 extends View {
         this.b = true;
         this.h = document.id;
         int i7 = k2.y1;
-        org.telegram.ui.Components.i5 l10 = org.telegram.ui.Components.i5.l(this.c, rc.e(z9 ? 1 : 16388) ? 3 : 13, document);
+        org.telegram.ui.Components.i5 l10 = org.telegram.ui.Components.i5.l(this.c, sc.e(z9 ? 1 : 16388) ? 3 : 13, document);
         this.d = l10;
         if (this.w) {
             l10.a(this);
@@ -176,7 +176,7 @@ public final class l1 extends View {
         this.f.H0(!this.b ? this : this.e);
         TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false);
         String str = "video/webm".equals(document.mime_type) ? "80_80_g" : "80_80";
-        if (!rc.e(1)) {
+        if (!sc.e(1)) {
             str = str.concat("_firstframe");
         }
         this.f.r0(hc.b(document), str, hc.c(w10, document), "80_80", null, 0L, null, document, 0);

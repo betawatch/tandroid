@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ps0 extends org.telegram.ui.Components.oj0 {
     public final /* synthetic */ PremiumPreviewFragment c;
@@ -87,17 +87,17 @@ public final class ps0 extends org.telegram.ui.Components.oj0 {
         String str2 = null;
         if (i7 != premiumPreviewFragment.D && i7 != premiumPreviewFragment.E && i7 != premiumPreviewFragment.H) {
             if (i7 == premiumPreviewFragment.s) {
-                ((org.telegram.ui.Cells.n4) view).setText(org.telegram.messenger.hd.M0(2131746993, null));
+                ((org.telegram.ui.Cells.n4) view).setText(org.telegram.messenger.id.M0(2131746995, null));
                 return;
             }
             if (i7 == premiumPreviewFragment.G) {
-                ((org.telegram.ui.Cells.n4) view).setText(org.telegram.messenger.hd.M0(2131745351, null));
+                ((org.telegram.ui.Cells.n4) view).setText(org.telegram.messenger.id.M0(2131745353, null));
                 return;
             }
             if (i7 == premiumPreviewFragment.showAdsRow) {
                 TLRPC.UserFull b22 = premiumPreviewFragment.getMessagesController().b2(premiumPreviewFragment.getUserConfig().e());
                 org.telegram.ui.Cells.m8 m8Var = (org.telegram.ui.Cells.m8) view;
-                String M0 = org.telegram.messenger.hd.M0(2131745353, null);
+                String M0 = org.telegram.messenger.id.M0(2131745355, null);
                 if (b22 != null && !b22.sponsored_enabled) {
                     r6 = false;
                 }
@@ -114,12 +114,12 @@ public final class ps0 extends org.telegram.ui.Components.oj0 {
         }
         z8Var2.setFixedSize(0);
         if (i7 == premiumPreviewFragment.H) {
-            z8Var2.setText(org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131745352, null), new ef0(this, 27)), true));
+            z8Var2.setText(org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(2131745354, null), new ef0(this, 27)), true));
             return;
         }
         int i13 = premiumPreviewFragment.D;
         if (i7 == i13 && premiumPreviewFragment.g0 == 1) {
-            z8Var2.setText(org.telegram.messenger.hd.M0(2131746992, null));
+            z8Var2.setText(org.telegram.messenger.id.M0(2131746994, null));
             return;
         }
         if (i7 != i13 || (tL_help_premiumPromo = premiumPreviewFragment.getMediaDataController().D) == null) {

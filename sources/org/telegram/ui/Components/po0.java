@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class po0 extends FrameLayout implements org.telegram.messenger.ls {
     public static final /* synthetic */ int I = 0;
@@ -147,14 +147,14 @@ public final class po0 extends FrameLayout implements org.telegram.messenger.ls 
                 sb2.append(", ");
             }
             if (longValue == this.d) {
-                sb2.append(org.telegram.messenger.hd.M0(2131745902, null));
+                sb2.append(org.telegram.messenger.id.M0(2131745904, null));
             } else {
                 sb2.append(arrayList.size() == 1 ? org.telegram.messenger.m5.l(this.c, longValue) : org.telegram.messenger.m5.s(this.c, longValue));
             }
         }
-        String a02 = org.telegram.messenger.hd.a0(null, null, 2131745440, sb2.toString());
+        String a02 = org.telegram.messenger.id.a0(null, null, 2131745442, sb2.toString());
         org.telegram.ui.ActionBar.k5 k5Var = (org.telegram.ui.ActionBar.k5) i1Var.e;
-        return (arrayList.size() > 2 || k5Var.getPaint().measureText(a02) > ((float) (k5Var.getMeasuredWidth() <= 0 ? org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(140.0f) : k5Var.getMeasuredWidth()))) ? org.telegram.messenger.hd.G(arrayList.size(), "ShareSendToMany", new Object[0]) : a02;
+        return (arrayList.size() > 2 || k5Var.getPaint().measureText(a02) > ((float) (k5Var.getMeasuredWidth() <= 0 ? org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(140.0f) : k5Var.getMeasuredWidth()))) ? org.telegram.messenger.id.G(arrayList.size(), "ShareSendToMany", new Object[0]) : a02;
     }
 
     public final void d() {
@@ -296,7 +296,7 @@ public final class po0 extends FrameLayout implements org.telegram.messenger.ls 
                 ((FrameLayout) i1Var.h).setVisibility(8);
                 ((l9) i1Var.r).setVisibility(8);
                 ((ImageView) i1Var.s).setVisibility(0);
-                ((org.telegram.ui.ActionBar.k5) i1Var.d).l(org.telegram.messenger.hd.M0(2131750470, null), false);
+                ((org.telegram.ui.ActionBar.k5) i1Var.d).l(org.telegram.messenger.id.M0(2131750472, null), false);
                 ((org.telegram.ui.ActionBar.k5) i1Var.e).l(str == null ? "" : str, false);
                 ((LinearLayout) i1Var.b).setClickable(false);
                 d();
@@ -433,13 +433,13 @@ public final class po0 extends FrameLayout implements org.telegram.messenger.ls 
             }
             int size2 = arrayList2.size();
             if (size2 == 1) {
-                k5Var2.l(org.telegram.messenger.hd.M0(((org.telegram.messenger.gf) arrayList2.get(0)).b ? 2131745434 : 2131745445, null), false);
+                k5Var2.l(org.telegram.messenger.id.M0(((org.telegram.messenger.gf) arrayList2.get(0)).b ? 2131745436 : 2131745447, null), false);
             } else if (i11 == 0) {
-                k5Var2.l(org.telegram.messenger.hd.G(size2, "ShareSendPhotos", new Object[0]), false);
+                k5Var2.l(org.telegram.messenger.id.G(size2, "ShareSendPhotos", new Object[0]), false);
             } else if (i12 == 0) {
-                k5Var2.l(org.telegram.messenger.hd.G(size2, "ShareSendVideos", new Object[0]), false);
+                k5Var2.l(org.telegram.messenger.id.G(size2, "ShareSendVideos", new Object[0]), false);
             } else {
-                k5Var2.l(org.telegram.messenger.hd.G(size2, "ShareSendItems", new Object[0]), false);
+                k5Var2.l(org.telegram.messenger.id.G(size2, "ShareSendItems", new Object[0]), false);
             }
             k5Var.l(c(i1Var), false);
             b(l9VarArr[0], arrayList2.size() > 0 ? (org.telegram.messenger.gf) arrayList2.get(0) : null);

@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ph implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class ph implements RequestDelegate {
                         TL_account.TL_emojiStatuses tL_emojiStatuses = (TL_account.TL_emojiStatuses) tLObject;
                         uiVar.D0[i7] = tL_emojiStatuses.hash;
                         uiVar.E0[i7] = tL_emojiStatuses.statuses;
-                        uiVar.getMessagesStorage().a.c(new k7(uiVar, i7, tL_emojiStatuses, 8));
+                        uiVar.getMessagesStorage().a.c(new l7(uiVar, i7, tL_emojiStatuses, 8));
                         g0.h3(new fg(uiVar, 1));
                         break;
                     }

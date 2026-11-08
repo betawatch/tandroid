@@ -3,7 +3,7 @@ package com.google.android.gms.internal.clearcut;
 import android.database.ContentObserver;
 import android.os.Handler;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.pd;
+import org.telegram.messenger.rc;
 
 /* loaded from: classes.dex */
 public final class f2 extends ContentObserver {
@@ -27,9 +27,9 @@ public final class f2 extends ContentObserver {
                 if (runnable != null) {
                     org.telegram.messenger.g0.r(runnable);
                 }
-                pd pdVar = new pd(2);
-                MediaController.Y1 = pdVar;
-                org.telegram.messenger.g0.i3(pdVar, 2000L);
+                rc rcVar = new rc(4);
+                MediaController.Y1 = rcVar;
+                org.telegram.messenger.g0.i3(rcVar, 2000L);
                 break;
             case 2:
                 super.onChange(z9);

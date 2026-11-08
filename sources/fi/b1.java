@@ -11,7 +11,7 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import org.telegram.messenger.camera.CameraSessionWrapper;
 import org.telegram.messenger.camera.CameraView;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -20,7 +20,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class b1 extends CameraView {
     public static final int[] a0 = {1893745684, -215458996, -862041025, -1258375037, -1320049076, -215749424, 1901578030, -215451421, 1908491424, -1321491332, -1155551678, 1908524435, 976847578, -1489198134, 1910814392, -713271737, -2010722764, 1407170066, -821405251, -1394190955, -1394190055, 1407170066, 1407159934, 1407172057, 1231389747, -2076538925, 41497626, 846150482, -1198092731, -251277614, -2073158771, 1273004781};
@@ -169,7 +169,7 @@ public abstract class b1 extends CameraView {
             }
             va vaVar = y9Var.b0;
             vaVar.F0.setValue(y9Var.isDual());
-            vaVar.F0.setContentDescription(hd.M0(y9Var.isDual() ? 2131754886 : 2131754887, null));
+            vaVar.F0.setContentDescription(id.M0(y9Var.isDual() ? 2131754886 : 2131754887, null));
         }
         t(true);
     }
@@ -182,11 +182,11 @@ public abstract class b1 extends CameraView {
                 this.a = false;
                 edit.putBoolean("dual_available", false).apply();
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
-                String M0 = hd.M0(2131751341, null);
+                String M0 = id.M0(2131751341, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
-                u1Var.T = hd.M0(2131751342, null);
-                jg.g.C(null, 2131747830, alertDialog$Builder, null);
+                u1Var.T = id.M0(2131751342, null);
+                jg.g.C(null, 2131747832, alertDialog$Builder, null);
             }
             t(false);
             toggleDual();

@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class of implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -720,7 +720,7 @@ public final /* synthetic */ class of implements View.OnLongClickListener {
                             r62 = 0;
                             f6Var = f6Var2;
                             j10 = j13;
-                            org.telegram.ui.Components.ha0 ha0Var = new org.telegram.ui.Components.ha0(context, R.raw.position_below, org.telegram.messenger.hd.M0(2131752560, null), R.raw.position_above, org.telegram.messenger.hd.M0(2131752559, null), f6Var);
+                            org.telegram.ui.Components.ha0 ha0Var = new org.telegram.ui.Components.ha0(context, R.raw.position_below, org.telegram.messenger.id.M0(2131752560, null), R.raw.position_above, org.telegram.messenger.id.M0(2131752559, null), f6Var);
                             TLRPC.Message message = ijVar4.k;
                             boolean z20 = diVar4.T1;
                             message.invert_media = z20;
@@ -737,7 +737,7 @@ public final /* synthetic */ class of implements View.OnLongClickListener {
                             if ((anVar2 == null || !org.telegram.messenger.t3.p0(anVar8.e)) && ((anVar8 != null && anVar8.R6()) || diVar4.s2.c())) {
                                 j11 = j10;
                                 anVar3 = anVar8;
-                                F.c(R.drawable.msg_calendar2, org.telegram.messenger.hd.M0(B ? 2131745515 : 2131745860, r62), new bi.d3(diVar4, j11, f6Var, 21), false);
+                                F.c(R.drawable.msg_calendar2, org.telegram.messenger.id.M0(B ? 2131745517 : 2131745862, r62), new bi.d3(diVar4, j11, f6Var, 21), false);
                             } else {
                                 j11 = j10;
                                 anVar3 = anVar8;
@@ -750,24 +750,24 @@ public final /* synthetic */ class of implements View.OnLongClickListener {
                         if ((vhVar3 == chatAttachAlertPhotoLayout || vhVar3 == diVar4.h2) && vhVar3.getSelectedItemsCount() == 1 && anVar3 != null && org.telegram.messenger.t3.p0(anVar3.e)) {
                             anVar4 = anVar3;
                             j12 = j11;
-                            F.c(R.drawable.input_suggest_paid_24, org.telegram.messenger.hd.M0(2131747068, r62), new bi.w2(diVar4, j11, anVar4, f6Var, 16), false);
+                            F.c(R.drawable.input_suggest_paid_24, org.telegram.messenger.id.M0(2131747070, r62), new bi.w2(diVar4, j11, anVar4, f6Var, 16), false);
                         } else {
                             anVar4 = anVar3;
                             j12 = j11;
                         }
                         if (diVar4.B3 == null && !B) {
-                            F.c(R.drawable.input_notify_off, org.telegram.messenger.hd.M0(2131745584, r62), new org.telegram.ui.Components.qg(diVar4, i18), false);
+                            F.c(R.drawable.input_notify_off, org.telegram.messenger.id.M0(2131745586, r62), new org.telegram.ui.Components.qg(diVar4, i18), false);
                         }
                         if (diVar4.B3 == null && z11 && anVar4 != null && org.telegram.messenger.t3.V(anVar4.e) && (chatFull = anVar4.p8) != null && chatFull.paid_media_allowed) {
-                            F.c(R.drawable.menu_feature_paid, org.telegram.messenger.hd.M0(2131747729, r62), r62, false);
+                            F.c(R.drawable.menu_feature_paid, org.telegram.messenger.id.M0(2131747731, r62), r62, false);
                             org.telegram.ui.ActionBar.z0 y10 = F.y();
                             y10.setOnClickListener(new di.u3(diVar4, context, y10, f6Var, 12));
                             long starsPrice = chatAttachAlertPhotoLayout.getStarsPrice();
                             if (starsPrice > 0) {
-                                y10.setText(org.telegram.messenger.hd.M0(2131747727, r62));
-                                y10.setSubtext(org.telegram.messenger.hd.G((int) starsPrice, "Stars", new Object[0]));
+                                y10.setText(org.telegram.messenger.id.M0(2131747729, r62));
+                                y10.setSubtext(org.telegram.messenger.id.G((int) starsPrice, "Stars", new Object[0]));
                             } else {
-                                y10.setText(org.telegram.messenger.hd.M0(2131747729, r62));
+                                y10.setText(org.telegram.messenger.id.M0(2131747731, r62));
                                 y10.setSubtext(r62);
                             }
                             diVar4.Y1.r(starsPrice);

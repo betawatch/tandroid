@@ -8,7 +8,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class t20 extends FrameLayout {
     public final int a;
@@ -40,7 +40,7 @@ public final class t20 extends FrameLayout {
         frameLayout.addView(imageView, c8.ha.e(56, 56, 49));
         TextView textView = new TextView(activity);
         org.telegram.ui.ActionBar.r6.V(textView, i10, f6Var);
-        textView.setText(org.telegram.messenger.hd.M0(2131749352, null));
+        textView.setText(org.telegram.messenger.id.M0(2131749354, null));
         textView.setGravity(17);
         frameLayout.addView(textView, c8.ha.d(-2, -2.0f, 81, 0.0f, 56.0f, 0.0f, 0.0f));
         addView(frameLayout, c8.ha.e(org.telegram.messenger.qs.n3, -2, 17));

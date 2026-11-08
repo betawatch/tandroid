@@ -6,7 +6,7 @@ import android.view.View;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ni implements org.telegram.ui.Components.cj0 {
     public final /* synthetic */ an a;
@@ -43,7 +43,7 @@ public final class ni implements org.telegram.ui.Components.cj0 {
                 long j3 = tL_messageActionWalletTonConnectRequest.session_id;
                 int f12 = messageObject2.f1();
                 f6Var = ((org.telegram.ui.ActionBar.f2) anVar).resourceProvider;
-                org.telegram.ui.Wallet.f2.q(parentActivity, i10, j3, f12, f6Var, null);
+                org.telegram.ui.Wallet.e2.q(parentActivity, i10, j3, f12, f6Var, null);
                 return;
             }
         }

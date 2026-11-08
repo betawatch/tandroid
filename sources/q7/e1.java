@@ -5,15 +5,15 @@ import java.io.Closeable;
 import java.io.EOFException;
 import java.io.IOException;
 import java.util.ArrayDeque;
-import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.rt;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class e1 implements Closeable {
     public final ByteArrayInputStream a;
     public d1 b;
     public final byte[] c = new byte[8];
-    public final qt d = new qt(10);
+    public final rt d = new rt(10);
 
     public e1(ByteArrayInputStream byteArrayInputStream) {
         this.a = byteArrayInputStream;
@@ -80,9 +80,9 @@ public final class e1 implements Closeable {
     public final d1 d() {
         if (this.b == null) {
             int read = this.a.read();
-            qt qtVar = this.d;
+            rt rtVar = this.d;
             if (read == -1) {
-                qtVar.o0();
+                rtVar.o0();
                 return null;
             }
             d1 d1Var = new d1(read);
@@ -93,15 +93,15 @@ public final class e1 implements Closeable {
                 if (b10 != -32) {
                     if (b10 != 0 && b10 != 32) {
                         if (b10 == 64) {
-                            qtVar.p0(-1L);
+                            rtVar.p0(-1L);
                         } else {
                             if (b10 != 96) {
                                 throw new IllegalStateException(jg.g.j((this.b.a >> 5) & 7, "invalid major type: "));
                             }
-                            qtVar.p0(-2L);
+                            rtVar.p0(-2L);
                         }
-                        long q02 = qtVar.q0();
-                        ArrayDeque arrayDeque = (ArrayDeque) qtVar.b;
+                        long q02 = rtVar.q0();
+                        ArrayDeque arrayDeque = (ArrayDeque) rtVar.b;
                         if (q02 == 1) {
                             arrayDeque.pop();
                         } else if (q02 > 1) {
@@ -116,17 +116,17 @@ public final class e1 implements Closeable {
                         }
                     }
                 } else if (d1Var.b == 31) {
-                    long q03 = qtVar.q0();
+                    long q03 = rtVar.q0();
                     if (q03 >= 0) {
                         throw new IOException(a8.p0.o(q03, "expected indefinite length scope but found "));
                     }
                     if (q03 == -5) {
                         throw new IOException("expected a value for dangling key in indefinite-length map");
                     }
-                    ((ArrayDeque) qtVar.b).pop();
+                    ((ArrayDeque) rtVar.b).pop();
                 }
             }
-            long q04 = qtVar.q0();
+            long q04 = rtVar.q0();
             if (q04 == -1) {
                 j3 = q04;
             }

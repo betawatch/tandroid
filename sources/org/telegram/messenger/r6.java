@@ -9,7 +9,7 @@ import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.qa0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r6 implements org.telegram.ui.ActionBar.r1, ResultCallback {
     public final /* synthetic */ boolean a;
@@ -70,7 +70,7 @@ public final /* synthetic */ class r6 implements org.telegram.ui.ActionBar.r1, R
         if (list != null) {
             qa0Var.S = new Random(j3).nextInt(qa0Var.R.size());
         }
-        qa0Var.s(bitmap, i7);
+        qa0Var.s(i7, bitmap);
         qa0Var.t(this.b);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ymVar.i = ofFloat;

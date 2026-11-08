@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qr implements org.telegram.ui.Components.dj0, r0.m, org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ ContactsActivity a;
@@ -87,7 +87,7 @@ public final /* synthetic */ class qr implements org.telegram.ui.Components.dj0,
             contactsController.getNotificationCenter().k(org.telegram.messenger.qs.O, new Object[0]);
             org.telegram.ui.Components.ub ubVar = new org.telegram.ui.Components.ub(parentActivity, contactsActivity.getResourceProvider());
             ubVar.setTimer();
-            ubVar.b.setText(org.telegram.messenger.hd.G(hashMap.size(), "ContactsDeletedUndo", new Object[0]));
+            ubVar.b.setText(org.telegram.messenger.id.G(hashMap.size(), "ContactsDeletedUndo", new Object[0]));
             org.telegram.ui.Components.ac acVar = new org.telegram.ui.Components.ac(parentActivity, contactsActivity.getResourceProvider(), true, true);
             acVar.b = new org.telegram.messenger.b4(27, contactsController, hashMap);
             acVar.c = new org.telegram.messenger.w4(contactsController, arrayList, 1);

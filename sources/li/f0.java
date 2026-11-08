@@ -15,7 +15,7 @@ import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gu;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
@@ -24,7 +24,7 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class f0 extends y implements org.telegram.ui.ActionBar.a6 {
     public final ArrayList D;
@@ -61,7 +61,7 @@ public final class f0 extends y implements org.telegram.ui.ActionBar.a6 {
         this.x = x1Var;
         final int i11 = 1;
         x1Var.setSelected(true);
-        x1Var.setContentDescription(hd.M0(2131754486, null));
+        x1Var.setContentDescription(id.M0(2131754486, null));
         x1Var.setOnClickListener(new View.OnClickListener(this) { // from class: li.b0
             public final /* synthetic */ f0 b;
 
@@ -100,7 +100,7 @@ public final class f0 extends y implements org.telegram.ui.ActionBar.a6 {
         addView(x1Var, ha.e(38, 38, 21));
         TextView textView = new TextView(context);
         this.y = textView;
-        textView.setText(hd.M0(2131746013, null));
+        textView.setText(id.M0(2131746015, null));
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setGravity(17);

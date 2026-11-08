@@ -9,10 +9,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class t8 extends FrameLayout {
     public static Paint d;
@@ -32,8 +32,8 @@ public final class t8 extends FrameLayout {
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.G6, f6Var);
         org.telegram.messenger.camera.q.n(textView, 1, 16.0f, 1, 1);
         textView.setSingleLine(true);
-        textView.setGravity((hd.a0 ? 5 : 3) | 16);
-        addView(textView, c8.ha.d(-1, -1.0f, (hd.a0 ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
+        textView.setGravity((id.a0 ? 5 : 3) | 16);
+        addView(textView, c8.ha.d(-1, -1.0f, (id.a0 ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
     }
 
     public final void a(ArrayList arrayList, boolean z9) {
@@ -63,14 +63,14 @@ public final class t8 extends FrameLayout {
         Canvas canvas2;
         if (this.b) {
             canvas2 = canvas;
-            canvas2.drawLine(hd.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (hd.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+            canvas2.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
         } else {
             canvas2 = canvas;
         }
         int i7 = this.c;
         if (i7 != 0) {
             d.setColor(i7);
-            canvas2.drawCircle(hd.a0 ? org.telegram.messenger.g0.L(33.0f) : getMeasuredWidth() - org.telegram.messenger.g0.L(33.0f), getMeasuredHeight() / 2, org.telegram.messenger.g0.L(10.0f), d);
+            canvas2.drawCircle(id.a0 ? org.telegram.messenger.g0.L(33.0f) : getMeasuredWidth() - org.telegram.messenger.g0.L(33.0f), getMeasuredHeight() / 2, org.telegram.messenger.g0.L(10.0f), d);
         }
     }
 

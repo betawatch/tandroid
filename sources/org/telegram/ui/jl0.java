@@ -4,7 +4,7 @@ import android.content.Context;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jl0 implements org.telegram.messenger.c20 {
     public final /* synthetic */ int a = 0;
@@ -29,29 +29,29 @@ public final /* synthetic */ class jl0 implements org.telegram.messenger.c20 {
                 hm0.a0((hm0) this.e, this.b, this.c, this.d, (il0) this.f, (TLRPC.TL_payments_paymentFormStarGift) obj);
                 break;
             default:
-                zh.l3 l3Var = (zh.l3) this.e;
+                zh.k3 k3Var = (zh.k3) this.e;
                 TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift = (TLRPC.TL_payments_paymentFormStarGift) obj;
                 ((org.telegram.ui.ActionBar.u1) this.f).dismiss();
                 if (tL_payments_paymentFormStarGift != null) {
                     bi.h6 h6Var = new bi.h6(this.b, tL_payments_paymentFormStarGift);
-                    Context context = l3Var.getContext();
-                    org.telegram.ui.ActionBar.f6 f6Var = l3Var.I0;
-                    int i7 = l3Var.a;
+                    Context context = k3Var.getContext();
+                    org.telegram.ui.ActionBar.f6 f6Var = k3Var.I0;
+                    int i7 = k3Var.a;
                     StringBuilder sb2 = new StringBuilder();
                     TL_stars.TL_starGiftUnique tL_starGiftUnique = this.c;
                     sb2.append(tL_starGiftUnique.title);
                     sb2.append(" #");
                     String m10 = jg.g.m(tL_starGiftUnique.num, ',', sb2);
                     long j3 = this.d;
-                    new bi.k6(context, f6Var, tL_starGiftUnique, h6Var, i7, j3, m10, true, new bi.mc(l3Var, tL_starGiftUnique, j3, 2)).b();
+                    new bi.k6(context, f6Var, tL_starGiftUnique, h6Var, i7, j3, m10, true, new bi.mc(k3Var, tL_starGiftUnique, j3, 2)).b();
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ jl0(zh.l3 l3Var, org.telegram.ui.ActionBar.u1 u1Var, cg.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3) {
-        this.e = l3Var;
+    public /* synthetic */ jl0(zh.k3 k3Var, org.telegram.ui.ActionBar.u1 u1Var, cg.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3) {
+        this.e = k3Var;
         this.f = u1Var;
         this.b = bVar;
         this.c = tL_starGiftUnique;

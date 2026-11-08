@@ -26,7 +26,7 @@ import java.util.HashMap;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.r2;
@@ -44,7 +44,7 @@ import org.telegram.ui.Components.j6;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.sq0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x implements Runnable {
     public final /* synthetic */ int a;
@@ -113,10 +113,10 @@ public final /* synthetic */ class x implements Runnable {
                     final s2 s2Var = new s2(x0Var2, o7Var, str5, str6, 15);
                     HashMap hashMap = hi.g0.g;
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
-                    String M0 = hd.M0(2131753095, null);
+                    String M0 = id.M0(2131753095, null);
                     org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                     u1Var.R = M0;
-                    u1Var.T = org.telegram.messenger.g0.X2(hd.a0(null, null, 2131753096, p10));
+                    u1Var.T = org.telegram.messenger.g0.X2(id.a0(null, null, 2131753096, p10));
                     LinearLayout linearLayout = new LinearLayout(context);
                     linearLayout.setPadding(org.telegram.messenger.g0.L(22.0f), 0, org.telegram.messenger.g0.L(22.0f), 0);
                     linearLayout.setOrientation(0);
@@ -158,7 +158,7 @@ public final /* synthetic */ class x implements Runnable {
                     linearLayout.addView(linearLayout2, ha.t(-1, -2, 23, 0, 0, 0, 2));
                     alertDialog$Builder.o(linearLayout);
                     final boolean[] zArr = new boolean[1];
-                    alertDialog$Builder.h(hd.M0(2131752589, null), new org.telegram.ui.ActionBar.r1() { // from class: hi.z
+                    alertDialog$Builder.h(id.M0(2131752589, null), new org.telegram.ui.ActionBar.r1() { // from class: hi.z
                         @Override // org.telegram.ui.ActionBar.r1
                         public final void g(org.telegram.ui.ActionBar.u1 u1Var2, int i14) {
                             switch (i11) {
@@ -181,7 +181,7 @@ public final /* synthetic */ class x implements Runnable {
                             }
                         }
                     });
-                    alertDialog$Builder.k(hd.M0(2131753097, null), new org.telegram.ui.ActionBar.r1() { // from class: hi.z
+                    alertDialog$Builder.k(id.M0(2131753097, null), new org.telegram.ui.ActionBar.r1() { // from class: hi.z
                         @Override // org.telegram.ui.ActionBar.r1
                         public final void g(org.telegram.ui.ActionBar.u1 u1Var2, int i14) {
                             switch (i10) {
@@ -248,7 +248,7 @@ public final /* synthetic */ class x implements Runnable {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str9));
                     request.setMimeType(str10);
                     request.addRequestHeader("User-Agent", str11);
-                    request.setDescription(hd.M0(2131742929, null));
+                    request.setDescription(id.M0(2131742931, null));
                     request.setTitle(str12);
                     request.setNotificationVisibility(1);
                     request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, str12);
@@ -258,7 +258,7 @@ public final /* synthetic */ class x implements Runnable {
                     }
                     x0 x0Var5 = u0Var.Q;
                     if (x0Var5 != null) {
-                        new hc(x0Var5, x0Var5.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(hd.a0(null, null, 2131742928, str12))).k(true);
+                        new hc(x0Var5, x0Var5.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742930, str12))).k(true);
                         break;
                     }
                 } catch (Exception e10) {
@@ -318,7 +318,7 @@ public final /* synthetic */ class x implements Runnable {
                                     if (bArr == null) {
                                     }
                                     launchActivity2.p1 = new ii.c(botWebViewContainer$WebViewProxy, 16);
-                                    launchActivity2.startActivityForResult(Intent.createChooser(intent, hd.M0(2131745460, null)), 521);
+                                    launchActivity2.startActivityForResult(Intent.createChooser(intent, id.M0(2131745462, null)), 521);
                                     return;
                                 }
                             } catch (Exception e13) {
@@ -394,7 +394,7 @@ public final /* synthetic */ class x implements Runnable {
                                 intent2.setType("text/plain");
                             }
                             launchActivity2.p1 = new ii.c(botWebViewContainer$WebViewProxy, 16);
-                            launchActivity2.startActivityForResult(Intent.createChooser(intent2, hd.M0(2131745460, null)), 521);
+                            launchActivity2.startActivityForResult(Intent.createChooser(intent2, id.M0(2131745462, null)), 521);
                         }
                     }
                 }

@@ -5,11 +5,11 @@ import android.util.SparseArray;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.v91;
+import org.telegram.ui.w91;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uo0 implements m00, org.telegram.messenger.wr, org.telegram.ui.qw {
+public final /* synthetic */ class uo0 implements n00, org.telegram.messenger.wr, org.telegram.ui.qw {
     public final /* synthetic */ xs0 a;
 
     public /* synthetic */ uo0(xs0 xs0Var) {
@@ -40,7 +40,7 @@ public final /* synthetic */ class uo0 implements m00, org.telegram.messenger.wr
     }
 
     @Override // org.telegram.ui.qw
-    public boolean y(org.telegram.ui.ww wwVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, v91 v91Var) {
+    public boolean y(org.telegram.ui.ww wwVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, w91 w91Var) {
         int i11;
         xs0 xs0Var = this.a;
         SparseArray[] sparseArrayArr = xs0Var.b1;

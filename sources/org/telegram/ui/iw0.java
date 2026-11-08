@@ -7,9 +7,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.iw0;
-import org.telegram.ui.ya1;
+import org.telegram.ui.za1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class iw0 extends org.telegram.ui.Cells.x6 {
     public final /* synthetic */ jw0 h;
@@ -25,9 +25,9 @@ public final class iw0 extends org.telegram.ui.Cells.x6 {
         this.a = textView;
         com.google.android.recaptcha.internal.a.q(textView, 1, 15.0f);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 16);
+        textView.setGravity((org.telegram.messenger.id.a0 ? 5 : 3) | 16);
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.L6, f6Var);
-        addView(textView, c8.ha.t(-1, -2, (org.telegram.messenger.hd.a0 ? 5 : 3) | 48, 21, 15, 21, 0));
+        addView(textView, c8.ha.t(-1, -2, (org.telegram.messenger.id.a0 ? 5 : 3) | 48, 21, 15, 21, 0));
         org.telegram.ui.Components.w70 w70Var = new org.telegram.ui.Components.w70(context, f6Var);
         this.b = w70Var;
         org.telegram.ui.ActionBar.r6.V(w70Var, org.telegram.ui.ActionBar.k6.G6, f6Var);
@@ -36,8 +36,8 @@ public final class iw0 extends org.telegram.ui.Cells.x6 {
         org.telegram.ui.ActionBar.r6.D(w70Var, org.telegram.ui.ActionBar.k6.K6, f6Var);
         final int i10 = 0;
         w70Var.setMovementMethod(new org.telegram.messenger.c0(false));
-        w70Var.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
-        addView(w70Var, c8.ha.t(-2, -2, org.telegram.messenger.hd.a0 ? 5 : 3, 21, 14, 21, 0));
+        w70Var.setGravity(org.telegram.messenger.id.a0 ? 5 : 3);
+        addView(w70Var, c8.ha.t(-2, -2, org.telegram.messenger.id.a0 ? 5 : 3, 21, 14, 21, 0));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         addView(linearLayout, c8.ha.k(21.0f, 16.0f, 21.0f, 15.0f, -1, 44));
@@ -74,7 +74,7 @@ public final class iw0 extends org.telegram.ui.Cells.x6 {
                                 int i12 = iw0Var2.e;
                                 ProfileActivity profileActivity = iw0Var2.h.e;
                                 if (i12 != 0) {
-                                    profileActivity.presentFragment(new ya1(8, null));
+                                    profileActivity.presentFragment(new za1(8, null));
                                     break;
                                 } else {
                                     profileActivity.presentFragment(new org.telegram.ui.g(3));
@@ -104,7 +104,7 @@ public final class iw0 extends org.telegram.ui.Cells.x6 {
                                 int i12 = iw0Var2.e;
                                 ProfileActivity profileActivity = iw0Var2.h.e;
                                 if (i12 != 0) {
-                                    profileActivity.presentFragment(new ya1(8, null));
+                                    profileActivity.presentFragment(new za1(8, null));
                                     break;
                                 } else {
                                     profileActivity.presentFragment(new org.telegram.ui.g(3));

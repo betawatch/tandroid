@@ -25,7 +25,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class dx extends FrameLayout {
     public org.telegram.ui.Components.j9 a;
@@ -51,7 +51,7 @@ public final class dx extends FrameLayout {
         LinearLayout f10 = org.telegram.messenger.k5.f(context, 1);
         addView(f10, c8.ha.e(-2, -2, 17));
         org.telegram.ui.Cells.t0 t0Var = new org.telegram.ui.Cells.t0(context);
-        t0Var.setCustomText(org.telegram.messenger.hd.M0(2131742870, null));
+        t0Var.setCustomText(org.telegram.messenger.id.M0(2131742872, null));
         f10.addView(t0Var, c8.ha.t(-2, -2, 17, 0, 0, 0, 4));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
@@ -165,7 +165,7 @@ public final class dx extends FrameLayout {
         ex exVar = this.r;
         ArrayList arrayList = exVar.e;
         int i12 = exVar.x;
-        int i13 = 2131745902;
+        int i13 = 2131745904;
         int i14 = 8;
         int i15 = 0;
         ViewGroup[] viewGroupArr3 = this.n;
@@ -192,7 +192,7 @@ public final class dx extends FrameLayout {
                         if (org.telegram.messenger.m5.E(dialog3.id)) {
                             user2 = exVar.getMessagesController().a2(Long.valueOf(dialog3.id));
                             if (user2 != null) {
-                                String M02 = org.telegram.messenger.t10.B(user2) ? org.telegram.messenger.hd.M0(i13, r12) : org.telegram.messenger.t10.z(user2) ? org.telegram.messenger.hd.M0(2131746265, r12) : org.telegram.messenger.t10.x(user2) ? org.telegram.messenger.hd.M0(2131749327, r12) : org.telegram.messenger.g5.m(0, user2.first_name, user2.last_name);
+                                String M02 = org.telegram.messenger.t10.B(user2) ? org.telegram.messenger.id.M0(i13, r12) : org.telegram.messenger.t10.z(user2) ? org.telegram.messenger.id.M0(2131746267, r12) : org.telegram.messenger.t10.x(user2) ? org.telegram.messenger.id.M0(2131749329, r12) : org.telegram.messenger.g5.m(0, user2.first_name, user2.last_name);
                                 if (org.telegram.messenger.t10.z(user2) || org.telegram.messenger.t10.B(user2) || (userProfilePhoto2 = user2.photo) == null || (fileLocation5 = userProfilePhoto2.photo_small) == 0) {
                                     i11 = i16;
                                 } else {
@@ -316,9 +316,9 @@ public final class dx extends FrameLayout {
                                     TLRPC.Message message = ijVar.k;
                                     TLRPC.MessageMedia messageMedia = message.media;
                                     if ((messageMedia instanceof TLRPC.TL_messageMediaPhoto) && (messageMedia.photo instanceof TLRPC.TL_photoEmpty) && messageMedia.ttl_seconds != 0) {
-                                        charSequence3 = org.telegram.messenger.hd.M0(2131753947, null);
+                                        charSequence3 = org.telegram.messenger.id.M0(2131753947, null);
                                     } else if ((messageMedia instanceof TLRPC.TL_messageMediaDocument) && (messageMedia.document instanceof TLRPC.TL_documentEmpty) && messageMedia.ttl_seconds != 0) {
-                                        charSequence3 = org.telegram.messenger.hd.M0(2131753932, null);
+                                        charSequence3 = org.telegram.messenger.id.M0(2131753932, null);
                                     } else if (ijVar.z != null) {
                                         if (org.telegram.messenger.ij.M4(message)) {
                                             str4 = "📹 ";
@@ -354,7 +354,7 @@ public final class dx extends FrameLayout {
                                         }
                                     }
                                 } else {
-                                    String M04 = ijVar.Q3() ? org.telegram.messenger.hd.M0(2131750502, r12) : user3 != null ? org.telegram.messenger.t10.j(user3, true).replace("\n", "") : "DELETED";
+                                    String M04 = ijVar.Q3() ? org.telegram.messenger.id.M0(2131750504, r12) : user3 != null ? org.telegram.messenger.t10.j(user3, true).replace("\n", "") : "DELETED";
                                     CharSequence charSequence6 = ijVar.z;
                                     try {
                                         if (charSequence6 != null) {
@@ -409,9 +409,9 @@ public final class dx extends FrameLayout {
                                                 objArr2[0] = charSequence2.replace('\n', ' ');
                                                 objArr2[c11] = M04;
                                                 SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr2));
-                                                valueOf2.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.o9, null), M04.length() + 2, valueOf2.length(), 33);
+                                                valueOf2.setSpan(new org.telegram.ui.Components.yz(org.telegram.ui.ActionBar.k6.o9, null), M04.length() + 2, valueOf2.length(), 33);
                                                 spannableStringBuilder = valueOf2;
-                                                spannableStringBuilder.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.k9, null), 0, M04.length() + 1, 33);
+                                                spannableStringBuilder.setSpan(new org.telegram.ui.Components.yz(org.telegram.ui.ActionBar.k6.k9, null), 0, M04.length() + 1, 33);
                                                 charSequence3 = spannableStringBuilder;
                                             }
                                             c11 = 1;
@@ -419,12 +419,12 @@ public final class dx extends FrameLayout {
                                             objArr22[0] = charSequence2.replace('\n', ' ');
                                             objArr22[c11] = M04;
                                             SpannableStringBuilder valueOf22 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr22));
-                                            valueOf22.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.o9, null), M04.length() + 2, valueOf22.length(), 33);
+                                            valueOf22.setSpan(new org.telegram.ui.Components.yz(org.telegram.ui.ActionBar.k6.o9, null), M04.length() + 2, valueOf22.length(), 33);
                                             spannableStringBuilder = valueOf22;
-                                            spannableStringBuilder.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.k9, null), 0, M04.length() + 1, 33);
+                                            spannableStringBuilder.setSpan(new org.telegram.ui.Components.yz(org.telegram.ui.ActionBar.k6.k9, null), 0, M04.length() + 1, 33);
                                             charSequence3 = spannableStringBuilder;
                                         }
-                                        spannableStringBuilder.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.k9, null), 0, M04.length() + 1, 33);
+                                        spannableStringBuilder.setSpan(new org.telegram.ui.Components.yz(org.telegram.ui.ActionBar.k6.k9, null), 0, M04.length() + 1, 33);
                                         charSequence3 = spannableStringBuilder;
                                     } catch (Exception e10) {
                                         org.telegram.messenger.a8.g(e10, true);
@@ -433,13 +433,13 @@ public final class dx extends FrameLayout {
                                     spannableStringBuilder = valueOf;
                                 }
                             }
-                            ((TextView) viewGroupArr2[i11].findViewById(R.id.shortcut_widget_item_time)).setText(org.telegram.messenger.hd.e1(ijVar.k.date));
+                            ((TextView) viewGroupArr2[i11].findViewById(R.id.shortcut_widget_item_time)).setText(org.telegram.messenger.id.e1(ijVar.k.date));
                             ((TextView) viewGroupArr2[i11].findViewById(R.id.shortcut_widget_item_message)).setText(charSequence3.toString());
                             ((TextView) viewGroupArr2[i11].findViewById(R.id.shortcut_widget_item_message)).setTextColor(color);
                         } else {
                             viewGroupArr2 = viewGroupArr3;
                             if (dialog3.last_message_date != 0) {
-                                ((TextView) viewGroupArr2[i11].findViewById(R.id.shortcut_widget_item_time)).setText(org.telegram.messenger.hd.e1(dialog3.last_message_date));
+                                ((TextView) viewGroupArr2[i11].findViewById(R.id.shortcut_widget_item_time)).setText(org.telegram.messenger.id.e1(dialog3.last_message_date));
                             } else {
                                 ((TextView) viewGroupArr2[i11].findViewById(R.id.shortcut_widget_item_time)).setText("");
                             }
@@ -460,7 +460,7 @@ public final class dx extends FrameLayout {
                     i16 = i11 + 1;
                     viewGroupArr3 = viewGroupArr2;
                     i15 = 0;
-                    i13 = 2131745902;
+                    i13 = 2131745904;
                     r12 = 0;
                     i14 = 8;
                 }
@@ -470,7 +470,7 @@ public final class dx extends FrameLayout {
                 i16 = i11 + 1;
                 viewGroupArr3 = viewGroupArr2;
                 i15 = 0;
-                i13 = 2131745902;
+                i13 = 2131745904;
                 r12 = 0;
                 i14 = 8;
             }
@@ -532,11 +532,11 @@ public final class dx extends FrameLayout {
                             if (org.telegram.messenger.m5.E(dialog2.id)) {
                                 user = exVar.getMessagesController().a2(Long.valueOf(dialog2.id));
                                 if (org.telegram.messenger.t10.B(user)) {
-                                    str = org.telegram.messenger.hd.M0(2131745902, null);
+                                    str = org.telegram.messenger.id.M0(2131745904, null);
                                 } else if (org.telegram.messenger.t10.z(user)) {
-                                    str = org.telegram.messenger.hd.M0(2131746265, null);
+                                    str = org.telegram.messenger.id.M0(2131746267, null);
                                 } else {
-                                    str = org.telegram.messenger.t10.x(user) ? org.telegram.messenger.hd.M0(2131749327, null) : org.telegram.messenger.t10.j(user, true);
+                                    str = org.telegram.messenger.t10.x(user) ? org.telegram.messenger.id.M0(2131749329, null) : org.telegram.messenger.t10.j(user, true);
                                     if (!org.telegram.messenger.t10.z(user) || org.telegram.messenger.t10.B(user) || user == null || (userProfilePhoto = user.photo) == null || (fileLocation3 = userProfilePhoto.photo_small) == null || fileLocation3.volume_id == 0 || fileLocation3.local_id == 0) {
                                         chat = null;
                                         fileLocation2 = null;

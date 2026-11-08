@@ -17,7 +17,7 @@ import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class r8 extends c1 {
     public static volatile r8[] s = new r8[4];
@@ -1687,7 +1687,7 @@ public final class r8 extends c1 {
                                                                         i11 = size8;
                                                                         i12 = i27;
                                                                         getMessagesStorage().m1(arrayList10, null, true, true);
-                                                                        g0.h3(new y4(13, this, user));
+                                                                        g0.h3(new x4(13, this, user));
                                                                     }
                                                                     bArr = h;
                                                                 } else {
@@ -1809,7 +1809,7 @@ public final class r8 extends c1 {
                                                             }
                                                         }
                                                         if (z9) {
-                                                            g0.h3(new y4(14, this, tL_messages_stickerSet));
+                                                            g0.h3(new x4(14, this, tL_messages_stickerSet));
                                                         }
                                                     } else if (tLObject instanceof TLRPC.TL_messages_recentStickers) {
                                                         TLRPC.TL_messages_recentStickers tL_messages_recentStickers = (TLRPC.TL_messages_recentStickers) tLObject;

@@ -10,14 +10,14 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.ht0;
-import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.mz;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract /* synthetic */ class f1 {
     public static /* synthetic */ String A(int i7) {
@@ -86,8 +86,8 @@ public abstract /* synthetic */ class f1 {
         return (drawable.getIntrinsicHeight() / i7) + i10;
     }
 
-    public static int g(lz lzVar, int i7) {
-        return lzVar.c(lzVar.getMeasuredWidth()) + i7;
+    public static int g(mz mzVar, int i7) {
+        return mzVar.c(mzVar.getMeasuredWidth()) + i7;
     }
 
     public static Bundle h(int i7, String str, String str2, boolean z9) {
@@ -103,7 +103,7 @@ public abstract /* synthetic */ class f1 {
     }
 
     public static Integer j(int i7, ArrayList arrayList, int i10, ArrayList arrayList2, int i11) {
-        arrayList.add(hd.M0(i7, null));
+        arrayList.add(id.M0(i7, null));
         arrayList2.add(Integer.valueOf(i10));
         return Integer.valueOf(i11);
     }
@@ -140,7 +140,7 @@ public abstract /* synthetic */ class f1 {
     }
 
     public static void q(int i7, ArrayList arrayList, ArrayList arrayList2, Integer num) {
-        arrayList.add(hd.M0(i7, null));
+        arrayList.add(id.M0(i7, null));
         arrayList2.add(num);
     }
 
@@ -153,7 +153,7 @@ public abstract /* synthetic */ class f1 {
     }
 
     public static void t(String str, int i7, ArrayList arrayList, int i10, ArrayList arrayList2) {
-        arrayList.add(hd.M0(i7, str));
+        arrayList.add(id.M0(i7, str));
         arrayList2.add(Integer.valueOf(i10));
     }
 

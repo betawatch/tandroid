@@ -1,48 +1,20 @@
 package org.telegram.ui.Wallet;
 
+import android.util.Base64;
 import org.json.JSONObject;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class b2 {
-    public final TL_wallet.tonConnectSession a;
-    public final int b;
-    public final int c;
-    public final String d;
-    public final String e;
-    public final e2 f;
-    public final byte[] g;
-    public final String h;
-    public final String i;
-    public final String j;
-    public final String k;
-    public final int l;
-    public boolean m;
-    public boolean n;
-    public boolean o;
-    public boolean p;
-    public boolean q;
-    public Runnable r;
+    public final String a;
+    public final byte[] b;
+    public final byte[] c;
+    public TL_wallet.walletOwnershipProof d;
 
-    public b2(TL_wallet.tonConnectPending tonconnectpending, TL_wallet.tonConnectRequest tonconnectrequest, JSONObject jSONObject, String str, byte[] bArr) {
-        this.a = tonconnectpending.session;
-        this.b = tonconnectrequest.msg_id;
-        this.c = tonconnectrequest.expires;
-        tonconnectrequest.body.clone();
-        this.i = tonconnectrequest.trace_id;
-        this.d = jSONObject.getString("id");
-        this.e = jSONObject.optString("method");
-        int optInt = jSONObject.optInt("errorCode", -1);
-        this.l = optInt;
-        String str2 = null;
-        this.j = jSONObject.optString("errorMessage", null);
-        this.f = (optInt >= 0 || !jSONObject.has("transaction")) ? null : new e2(jSONObject.getJSONObject("transaction"));
-        if (optInt < 0 && jSONObject.has("data")) {
-            str2 = jSONObject.getJSONObject("data").toString();
-        }
-        this.k = str2;
-        this.h = str;
-        this.g = (byte[]) bArr.clone();
+    public b2(JSONObject jSONObject) {
+        this.a = jSONObject.getString("clientId");
+        this.b = jSONObject.has("challengeAnswer") ? Base64.decode(jSONObject.getString("challengeAnswer"), 2) : null;
+        this.c = jSONObject.has("body") ? Base64.decode(jSONObject.getString("body"), 2) : null;
     }
 }

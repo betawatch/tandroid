@@ -10,9 +10,9 @@ import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ie0;
 import org.telegram.ui.je0;
-import org.telegram.ui.lb1;
+import org.telegram.ui.mb1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class i {
     public final RenderNode a;
@@ -44,7 +44,7 @@ public final class i {
         SparseArray sparseArray = je0Var.a;
         int size = sparseArray.size();
         for (int i7 = 0; i7 < size; i7++) {
-            f2 f2Var = ((lb1) sparseArray.valueAt(i7)).a;
+            f2 f2Var = ((mb1) sparseArray.valueAt(i7)).a;
             View view = f2Var.fragmentView;
             if (view != null && jh.k.c(view, je0Var.b, rectF) && rectF.right > 0.0f && rectF.left < je0Var.fragmentView.getMeasuredWidth() && (f2Var instanceof ie0)) {
                 ie0 ie0Var = (ie0) f2Var;
@@ -70,7 +70,7 @@ public final class i {
             beginRecording.drawColor(je0Var.getThemedColor(k6.d6));
             int size2 = sparseArray2.size();
             for (int i10 = 0; i10 < size2; i10++) {
-                f2 f2Var2 = ((lb1) sparseArray2.valueAt(i10)).a;
+                f2 f2Var2 = ((mb1) sparseArray2.valueAt(i10)).a;
                 View view3 = f2Var2.fragmentView;
                 if (view3 != null && jh.k.c(view3, je0Var.b, rectF2) && rectF2.right > 0.0f && rectF2.left < je0Var.fragmentView.getMeasuredWidth() && (f2Var2 instanceof ie0)) {
                     ie0 ie0Var2 = (ie0) f2Var2;

@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class bg0 extends Dialog implements org.telegram.messenger.ls {
     public float D;
@@ -217,7 +217,7 @@ public class bg0 extends Dialog implements org.telegram.messenger.ls {
         this.d0.setClipChildren(false);
         this.d0.setClipToPadding(false);
         this.d0.setVisibility(0);
-        this.d0.setHint(org.telegram.messenger.hd.M0(2131754443, null));
+        this.d0.setHint(org.telegram.messenger.id.M0(2131754443, null));
         this.d0.setBubbleOffset(org.telegram.messenger.g0.L(-25.0f));
         this.d0.setMiniBubblesOffset(org.telegram.messenger.g0.L(2.0f));
         this.F.addView(this.c0, c8.ha.d(-2, 300.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
@@ -368,7 +368,7 @@ public class bg0 extends Dialog implements org.telegram.messenger.ls {
             return;
         }
         ijVar.K1 = true;
-        q1Var2.v3(ijVar, q1Var2.getCurrentMessagesGroup(), q1Var2.H2(), q1Var2.I2(), q1Var2.z2(), false);
+        q1Var2.w3(ijVar, q1Var2.getCurrentMessagesGroup(), q1Var2.H2(), q1Var2.I2(), q1Var2.z2(), false);
         xf0Var.getAdapter().g(i11);
     }
 
@@ -607,7 +607,7 @@ public class bg0 extends Dialog implements org.telegram.messenger.ls {
                         if (arrayList5.size() != djVar3.f.size()) {
                             djVar3.a();
                         }
-                        q1Var2.Sc = 0;
+                        q1Var2.Tc = 0;
                         int i16 = 0;
                         i10 = 0;
                         while (i16 < arrayList5.size()) {
@@ -622,7 +622,7 @@ public class bg0 extends Dialog implements org.telegram.messenger.ls {
                                 org.telegram.ui.Cells.q1 q1Var3 = q1Var2;
                                 arrayList2 = arrayList5;
                                 djVar = djVar3;
-                                q1Var3.u3(ijVar3, djVar, false, false, false, false);
+                                q1Var3.v3(ijVar3, djVar, false, false, false, false);
                                 q1Var = q1Var3;
                                 i10 += q1Var.a7;
                             }
@@ -636,12 +636,12 @@ public class bg0 extends Dialog implements org.telegram.messenger.ls {
                     }
                 }
                 i7 = i14;
-                q1Var2.u3(ijVar2, djVar3, false, false, false, false);
+                q1Var2.v3(ijVar2, djVar3, false, false, false, false);
                 z2Var.o0 = false;
                 imageReceiver.o0 = false;
                 imageReceiver2.o0 = false;
                 imageReceiver3.o0 = false;
-                q1Var2.O3();
+                q1Var2.P3();
                 i10 = q1Var2.a7;
             }
             this.N = Math.max(i15, i10);
@@ -696,7 +696,7 @@ public class bg0 extends Dialog implements org.telegram.messenger.ls {
     public final void r(long j3) {
         TLRPC.Message message;
         TLRPC.MessageMedia messageMedia;
-        this.x0 = j3 > 0 ? new org.telegram.ui.Components.my0(bi.dd.a1(false, org.telegram.messenger.hd.H(',', "UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, org.telegram.messenger.g0.o()) : null;
+        this.x0 = j3 > 0 ? new org.telegram.ui.Components.my0(bi.dd.a1(false, org.telegram.messenger.id.H(',', "UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, org.telegram.messenger.g0.o()) : null;
         if (this.y0 == null) {
             Paint paint = new Paint(1);
             this.y0 = paint;

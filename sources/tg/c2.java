@@ -46,7 +46,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.gz;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.j20;
@@ -70,8 +70,9 @@ import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.jn0;
 import org.telegram.ui.n41;
+import org.telegram.ui.o61;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class c2 extends FrameLayout implements ls {
     public static final /* synthetic */ int r0 = 0;
@@ -494,7 +495,7 @@ public final class c2 extends FrameLayout implements ls {
         if (a2Var.m != null) {
             h();
             a2Var.m.a(a2Var.b, a2Var.e.document);
-            org.telegram.messenger.g0.i3(new org.telegram.ui.Wallet.z(16), 250L);
+            org.telegram.messenger.g0.i3(new o61(18), 250L);
             return;
         }
         final int i11 = 0;
@@ -2341,7 +2342,7 @@ public final class c2 extends FrameLayout implements ls {
         if (s0Var != null) {
             s0Var.setProgress(1.0f);
         }
-        org.telegram.messenger.g0.i3(new org.telegram.ui.Wallet.h2(this, i7, 9), 450L);
+        org.telegram.messenger.g0.i3(new org.telegram.ui.Wallet.g2(this, i7, 8), 450L);
         c20 c20Var2 = a2Var.n;
         if (c20Var2 != null) {
             c20Var2.a(Boolean.TRUE);
@@ -2793,7 +2794,7 @@ public final class c2 extends FrameLayout implements ls {
             d4Var.a(arrayList);
             return;
         }
-        ub.a a11 = ub.a.a(bitmap, i7);
+        ub.a a11 = ub.a.a(i7, bitmap);
         a10.g(a11).addOnSuccessListener(new m3(d4Var, 24)).addOnFailureListener(new i6(this, bitmap, i7, jn0Var, d4Var, 5));
         if (this.c0 == null) {
             xb.a aVar2 = xb.a.b;
@@ -2809,7 +2810,7 @@ public final class c2 extends FrameLayout implements ls {
             b8 b8Var = new b8();
             b8Var.c = y7.b;
             pb.m.a.execute(new pa(taVar, new wa(b8Var, 1), a8.c, taVar.b(), 0));
-            new ImageLabelerImpl((pb.e) cVar2.a.R0(aVar2), (Executor) cVar2.b.a.get(), new n6.c("vision.ica", 1L)).g(a11).addOnSuccessListener(new m3(this, 25)).addOnFailureListener(new s0.b(18));
+            new ImageLabelerImpl((pb.e) cVar2.a.R0(aVar2), (Executor) cVar2.b.a.get(), new n6.c("vision.ica", 1L)).g(a11).addOnSuccessListener(new m3(this, 25)).addOnFailureListener(new s0.b(19));
         }
         ArrayList arrayList2 = ui.b0(this.a).n;
         for (int i14 = 0; i14 < Math.min(arrayList2.size(), 9); i14++) {
@@ -2985,7 +2986,7 @@ public final class c2 extends FrameLayout implements ls {
                 }
                 if (c20Var2 == null) {
                     if (c2Var.d0 == null) {
-                        c2Var.d0 = new fi.s0(c2Var.getContext(), hd.M0(2131746918, null));
+                        c2Var.d0 = new fi.s0(c2Var.getContext(), id.M0(2131746920, null));
                     }
                     c2Var.d0.setOnCancelListener(new t1(c2Var, i7));
                     if (c2Var.d0.getParent() == null) {

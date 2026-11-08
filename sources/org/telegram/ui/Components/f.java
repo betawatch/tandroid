@@ -13,7 +13,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -189,7 +189,7 @@ public final /* synthetic */ class f implements Runnable {
                 org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(diVar3.D3);
                 TLRPC.TL_attachMenuBots tL_attachMenuBots = b02.b;
                 if (tL_attachMenuBots != null) {
-                    b02.getMessagesStorage().a.c(new org.telegram.messenger.ik(b02.e, 2, b02.a, b02, tL_attachMenuBots));
+                    b02.getMessagesStorage().a.c(new org.telegram.messenger.hk(b02.e, 2, b02.a, b02, tL_attachMenuBots));
                     break;
                 }
                 break;
@@ -249,7 +249,7 @@ public final /* synthetic */ class f implements Runnable {
                 diVar5.W1.presentFragment(org.telegram.ui.an.ra(user.id));
                 break;
             case 22:
-                org.telegram.messenger.k5.o(null, 2131743202, new hc((ik) this.c, (org.telegram.ui.ActionBar.f6) this.b), R.raw.copy, 36);
+                org.telegram.messenger.k5.o(null, 2131743204, new hc((ik) this.c, (org.telegram.ui.ActionBar.f6) this.b), R.raw.copy, 36);
                 break;
             case 23:
                 wk wkVar = (wk) this.c;

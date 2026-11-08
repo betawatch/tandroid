@@ -7,14 +7,14 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import java.util.HashSet;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.fl0;
 import org.telegram.ui.Components.uu0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class e2 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.ActionBar.f6 a;
@@ -71,7 +71,7 @@ public final class e2 extends FrameLayout implements org.telegram.ui.ActionBar.a
         iVar.setLines(1);
         iVar.setSingleLine(true);
         iVar.setImeOptions(268435459);
-        iVar.setHint(hd.M0(2131745837, null));
+        iVar.setHint(id.M0(2131745839, null));
         int i13 = org.telegram.ui.ActionBar.k6.Ai;
         org.telegram.ui.ActionBar.r6.m(iVar, 30, i13, f6Var);
         org.telegram.ui.ActionBar.r6.m(iVar, 36, i13, f6Var);

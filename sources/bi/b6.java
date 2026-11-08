@@ -12,10 +12,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class b6 extends FrameLayout {
-    public final zh.w0 a;
+    public final zh.v0 a;
     public final FrameLayout b;
     public final org.telegram.ui.Components.l9 c;
     public final TextView d;
@@ -37,11 +37,11 @@ public final class b6 extends FrameLayout {
         frameLayout.addView(imageView, c8.ha.e(24, 24, 17));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.b = frameLayout2;
-        zh.w0 w0Var = new zh.w0(frameLayout2, null, false);
-        this.a = w0Var;
-        frameLayout2.setBackground(w0Var);
-        w0Var.s = org.telegram.messenger.g0.L(18.0f);
-        w0Var.v = false;
+        zh.v0 v0Var = new zh.v0(frameLayout2, null, false);
+        this.a = v0Var;
+        frameLayout2.setBackground(v0Var);
+        v0Var.s = org.telegram.messenger.g0.L(18.0f);
+        v0Var.v = false;
         frameLayout.addView(frameLayout2, c8.ha.e(-1, -1, qs.E1));
         frameLayout2.setAlpha(0.0f);
         frameLayout2.setScaleX(0.6f);
@@ -76,9 +76,9 @@ public final class b6 extends FrameLayout {
             TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) ea.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
             TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) ea.l(starGift.attributes, TL_stars.starGiftAttributePattern.class);
             TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) ea.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
-            zh.w0 w0Var = this.a;
-            w0Var.d(stargiftattributebackdrop);
-            w0Var.e(stargiftattributepattern);
+            zh.v0 v0Var = this.a;
+            v0Var.d(stargiftattributebackdrop);
+            v0Var.e(stargiftattributepattern);
             dd.c1(this.c.getImageReceiver(), stargiftattributemodel.document, 52);
             int b10 = org.telegram.ui.ActionBar.k6.b(-0.05f, -0.15f, org.telegram.ui.ActionBar.k6.r1(0.88f, stargiftattributebackdrop.edge_color | (-16777216)));
             String J0 = hi.j.J0(starGift.craft_chance_permille);

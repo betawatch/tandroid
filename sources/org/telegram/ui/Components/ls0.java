@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ls0 extends kj0 {
     public final Context r;
@@ -91,7 +91,7 @@ public final class ls0 extends kj0 {
         }
         if (i7 < xs0Var.v1[3].c.size()) {
             view.setAlpha(1.0f);
-            ((org.telegram.ui.Cells.x3) view).setText(org.telegram.messenger.hd.e0(((org.telegram.messenger.ij) ((ArrayList) xs0Var.v1[3].d.get((String) xs0Var.v1[3].c.get(i7))).get(0)).k.date, false));
+            ((org.telegram.ui.Cells.x3) view).setText(org.telegram.messenger.id.e0(((org.telegram.messenger.ij) ((ArrayList) xs0Var.v1[3].d.get((String) xs0Var.v1[3].c.get(i7))).get(0)).k.date, false));
         }
         return view;
     }
@@ -119,7 +119,7 @@ public final class ls0 extends kj0 {
         if (i12 == 3) {
             org.telegram.messenger.ij ijVar = (org.telegram.messenger.ij) arrayList.get(0);
             if (view instanceof org.telegram.ui.Cells.x3) {
-                ((org.telegram.ui.Cells.x3) view).setText(org.telegram.messenger.hd.e0(ijVar.k.date, false));
+                ((org.telegram.ui.Cells.x3) view).setText(org.telegram.messenger.id.e0(ijVar.k.date, false));
                 return;
             }
             return;
@@ -165,11 +165,11 @@ public final class ls0 extends kj0 {
                 X.setLayoutParams(new v4.o0(-1, -1));
                 return new xi0(X);
             }
-            lz lzVar = new lz(context, f6Var);
-            lzVar.setIsSingleCell(true);
-            lzVar.x = false;
-            lzVar.setViewType(5);
-            x3Var = lzVar;
+            mz mzVar = new mz(context, f6Var);
+            mzVar.setIsSingleCell(true);
+            mzVar.x = false;
+            mzVar.setViewType(5);
+            x3Var = mzVar;
         }
         return jg.g.r(x3Var, x3Var, -1, -2);
     }

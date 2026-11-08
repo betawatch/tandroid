@@ -16,7 +16,7 @@ import m.q3;
 import q6.m;
 import q6.w;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class a extends q6.h implements com.google.android.gms.common.api.c {
     public final boolean F;
@@ -42,14 +42,14 @@ public final class a extends q6.h implements com.google.android.gms.common.api.c
             w wVar = new w(2, account, num.intValue(), b10);
             e eVar = (e) n();
             g gVar = new g(1, wVar);
-            Parcel J0 = eVar.J0();
-            n7.a.b(J0, gVar);
-            n7.a.c(J0, cVar);
-            eVar.K0(J0, 12);
+            Parcel j12 = eVar.j1();
+            n7.a.b(j12, gVar);
+            n7.a.c(j12, cVar);
+            eVar.k1(j12, 12);
         } catch (RemoteException e10) {
             Log.w("SignInClientImpl", "Remote service probably died when signIn is called");
             try {
-                cVar.A0(new h(1, new n6.a(8, null, null), null));
+                cVar.V0(new h(1, new n6.a(8, null, null), null));
             } catch (RemoteException unused) {
                 Log.wtf("SignInClientImpl", "ISignInCallbacks#onSignInComplete should be executed from the same process, unexpected RemoteException.", e10);
             }

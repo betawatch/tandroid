@@ -17,7 +17,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class i5 implements RemoteViewsService.RemoteViewsFactory {
     public ArrayList a;
@@ -102,12 +102,12 @@ public final class i5 implements RemoteViewsService.RemoteViewsFactory {
         String str4 = null;
         if (this.h) {
             RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_deleted);
-            remoteViews.setTextViewText(R.id.widget_deleted_text, hd.M0(2131742875, null));
+            remoteViews.setTextViewText(R.id.widget_deleted_text, id.M0(2131742877, null));
             return remoteViews;
         }
         if (i7 >= getCount() - 1) {
             RemoteViews remoteViews2 = new RemoteViews(context.getPackageName(), R.layout.widget_edititem);
-            remoteViews2.setTextViewText(R.id.widget_edititem_text, hd.M0(2131744257, null));
+            remoteViews2.setTextViewText(R.id.widget_edititem_text, id.M0(2131744259, null));
             Bundle bundle = new Bundle();
             bundle.putInt("appWidgetId", this.c);
             bundle.putInt("appWidgetType", 1);
@@ -131,7 +131,7 @@ public final class i5 implements RemoteViewsService.RemoteViewsFactory {
                 Long l10 = (Long) arrayList.get(i16);
                 if (m5.E(l10.longValue())) {
                     TLRPC.User a22 = qp.s1(cVar.a).a2(l10);
-                    String M0 = t10.B(a22) ? hd.M0(2131745902, str4) : t10.z(a22) ? hd.M0(2131746265, str4) : t10.x(a22) ? hd.M0(2131749327, str4) : t10.j(a22, true);
+                    String M0 = t10.B(a22) ? id.M0(2131745904, str4) : t10.z(a22) ? id.M0(2131746267, str4) : t10.x(a22) ? id.M0(2131749329, str4) : t10.j(a22, true);
                     if (t10.z(a22) || t10.B(a22) || a22 == null || (userProfilePhoto = a22.photo) == null || (fileLocation2 = userProfilePhoto.photo_small) == null || fileLocation2.volume_id == 0 || fileLocation2.local_id == 0) {
                         String str5 = str4;
                         str2 = M0;

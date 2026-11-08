@@ -4,7 +4,7 @@ import android.graphics.Point;
 import android.view.View;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class wr0 implements r0.m, org.telegram.ui.Components.u51, org.telegram.ui.Components.co0, org.telegram.ui.Components.lm0, org.telegram.ui.Components.bm0 {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final class wr0 implements r0.m, org.telegram.ui.Components.u51, org.tele
     public void A(float f10) {
         Point point = org.telegram.messenger.g0.q;
         if (point.x > point.y) {
-            ((r91) this.b).v0.movePreviewFragment(f10);
+            ((s91) this.b).v0.movePreviewFragment(f10);
         }
     }
 
@@ -35,9 +35,9 @@ public final class wr0 implements r0.m, org.telegram.ui.Components.u51, org.tele
 
     @Override // org.telegram.ui.Components.bm0
     public void O(org.telegram.ui.Cells.t2 t2Var) {
-        v91 v91Var = ((r91) this.b).v0;
-        HashSet hashSet = v91.q1;
-        v91Var.Q0(t2Var);
+        w91 w91Var = ((s91) this.b).v0;
+        HashSet hashSet = w91.q1;
+        w91Var.Q0(t2Var);
     }
 
     @Override // r0.m
@@ -51,11 +51,11 @@ public final class wr0 implements r0.m, org.telegram.ui.Components.u51, org.tele
                 zr0Var.c.requestLayout();
                 break;
             default:
-                f81 f81Var = (f81) this.b;
+                g81 g81Var = (g81) this.b;
                 i0.b g11 = k1Var.a.g(519);
-                f81Var.n = g11;
-                f81Var.c.setPadding(g11.a, g11.b, g11.c, g11.d);
-                f81Var.b.requestLayout();
+                g81Var.n = g11;
+                g81Var.c.setPadding(g11.a, g11.b, g11.c, g11.d);
+                g81Var.b.requestLayout();
                 break;
         }
         return r0.k1.b;
@@ -96,7 +96,7 @@ public final class wr0 implements r0.m, org.telegram.ui.Components.u51, org.tele
     public void finish() {
         Point point = org.telegram.messenger.g0.q;
         if (point.x > point.y) {
-            ((r91) this.b).v0.finishPreviewFragment();
+            ((s91) this.b).v0.finishPreviewFragment();
         }
     }
 

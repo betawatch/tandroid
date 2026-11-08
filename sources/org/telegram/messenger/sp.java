@@ -12,7 +12,7 @@ import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sp implements Runnable {
     public final /* synthetic */ int a;
@@ -42,16 +42,15 @@ public final /* synthetic */ class sp implements Runnable {
         SQLiteDatabase sQLiteDatabase3;
         SQLitePreparedStatement executeFast;
         int i7 = this.a;
-        int i10 = 7;
         SQLiteCursor sQLiteCursor = null;
-        r7 = null;
-        r7 = null;
-        r7 = null;
+        r6 = null;
+        r6 = null;
+        r6 = null;
         SQLitePreparedStatement sQLitePreparedStatement = null;
         sQLiteCursor = null;
         sQLiteCursor = null;
         SQLiteCursor sQLiteCursor2 = null;
-        int i11 = 0;
+        int i10 = 0;
         yr yrVar2 = this.b;
         ArrayList arrayList = this.c;
         switch (i7) {
@@ -112,16 +111,16 @@ public final /* synthetic */ class sp implements Runnable {
                                     return;
                                 }
                                 int m10 = hVar.m();
-                                while (i11 < m10) {
-                                    long j3 = hVar.j(i11);
-                                    ArrayList arrayList3 = (ArrayList) hVar.n(i11);
-                                    g0.h3(new sp(yrVar3, arrayList3, i10));
+                                while (i10 < m10) {
+                                    long j3 = hVar.j(i10);
+                                    ArrayList arrayList3 = (ArrayList) hVar.n(i10);
+                                    g0.h3(new sp(yrVar3, arrayList3, 8));
                                     yr yrVar4 = yrVar3;
                                     try {
                                         yrVar4.U1(arrayList3, null, null, null, null);
                                         yrVar4.Q0(0, 0, j3, arrayList3, true);
                                         yrVar4.S1(j3, 0L, arrayList3, null);
-                                        i11++;
+                                        i10++;
                                         yrVar3 = yrVar4;
                                     } catch (Exception e12) {
                                         e = e12;
@@ -161,48 +160,48 @@ public final /* synthetic */ class sp implements Runnable {
                 HashSet hashSet = new HashSet();
                 a0.h hVar2 = new a0.h();
                 a0.h hVar3 = new a0.h();
-                int i12 = 0;
+                int i11 = 0;
                 boolean z10 = false;
-                while (i12 < arrayList.size()) {
-                    vr vrVar = (vr) arrayList.get(i12);
+                while (i11 < arrayList.size()) {
+                    vr vrVar = (vr) arrayList.get(i11);
                     TLRPC.TL_messageReactions tL_messageReactions = vrVar.b;
                     long j10 = vrVar.a;
                     TLRPC.TL_messageReactions tL_messageReactions2 = vrVar.c;
                     hVar2.b();
                     hVar3.b();
                     if (tL_messageReactions != null && tL_messageReactions.results != null && tL_messageReactions.reactions_as_tags) {
-                        int i13 = 0;
-                        while (i13 < tL_messageReactions.results.size()) {
-                            ch.o0 d = ch.o0.d(tL_messageReactions.results.get(i13).reaction);
+                        int i12 = 0;
+                        while (i12 < tL_messageReactions.results.size()) {
+                            ch.o0 d = ch.o0.d(tL_messageReactions.results.get(i12).reaction);
                             hVar2.k(d, d.h);
-                            i13++;
+                            i12++;
                             yrVar2 = yrVar2;
                         }
                     }
                     yr yrVar5 = yrVar2;
                     if (tL_messageReactions2 != null && tL_messageReactions2.results != null && tL_messageReactions2.reactions_as_tags) {
-                        for (int i14 = 0; i14 < tL_messageReactions2.results.size(); i14++) {
-                            ch.o0 d2 = ch.o0.d(tL_messageReactions2.results.get(i14).reaction);
+                        for (int i13 = 0; i13 < tL_messageReactions2.results.size(); i13++) {
+                            ch.o0 d2 = ch.o0.d(tL_messageReactions2.results.get(i13).reaction);
                             hVar3.k(d2, d2.h);
                         }
                     }
-                    for (int i15 = 0; i15 < hVar2.m(); i15++) {
-                        long j11 = hVar2.j(i15);
-                        ch.o0 o0Var = (ch.o0) hVar2.n(i15);
+                    for (int i14 = 0; i14 < hVar2.m(); i14++) {
+                        long j11 = hVar2.j(i14);
+                        ch.o0 o0Var = (ch.o0) hVar2.n(i14);
                         if (!hVar3.d(j11) && yrVar5.getMessagesController().s5(j10, o0Var, false)) {
                             hashSet.add(Long.valueOf(j10));
                             z10 = true;
                         }
                     }
-                    for (int i16 = 0; i16 < hVar3.m(); i16++) {
-                        long j12 = hVar3.j(i16);
-                        ch.o0 o0Var2 = (ch.o0) hVar3.n(i16);
+                    for (int i15 = 0; i15 < hVar3.m(); i15++) {
+                        long j12 = hVar3.j(i15);
+                        ch.o0 o0Var2 = (ch.o0) hVar3.n(i15);
                         if (!hVar2.d(j12) && yrVar5.getMessagesController().s5(j10, o0Var2, true)) {
                             hashSet.add(Long.valueOf(j10));
                             z10 = true;
                         }
                     }
-                    i12++;
+                    i11++;
                     yrVar2 = yrVar5;
                 }
                 yr yrVar6 = yrVar2;
@@ -215,20 +214,20 @@ public final /* synthetic */ class sp implements Runnable {
                 yrVar2.getMessagesController().S3(arrayList, true);
                 return;
             case 7:
-                yrVar2.getNotificationCenter().k(7, arrayList, 0L, Boolean.FALSE);
-                return;
-            case 8:
                 ArrayList arrayList4 = yrVar2.H;
                 arrayList4.clear();
                 SparseArray sparseArray = yrVar2.I;
                 sparseArray.clear();
                 arrayList4.addAll(arrayList);
-                while (i11 < arrayList.size()) {
-                    ((vo) arrayList.get(i11)).f = i11;
-                    sparseArray.put(((vo) arrayList.get(i11)).a, (vo) arrayList.get(i11));
-                    i11++;
+                while (i10 < arrayList.size()) {
+                    ((vo) arrayList.get(i10)).f = i10;
+                    sparseArray.put(((vo) arrayList.get(i10)).a, (vo) arrayList.get(i10));
+                    i10++;
                 }
                 yrVar2.z1();
+                return;
+            case 8:
+                yrVar2.getNotificationCenter().k(7, arrayList, 0L, Boolean.FALSE);
                 return;
             case 9:
                 yrVar2.getFileLoader().g(arrayList);
@@ -237,8 +236,8 @@ public final /* synthetic */ class sp implements Runnable {
                 z5 downloadController = yrVar2.getDownloadController();
                 downloadController.getClass();
                 int size = arrayList.size();
-                for (int i17 = 0; i17 < size; i17++) {
-                    a6 a6Var = (a6) downloadController.h.get((Pair) arrayList.get(i17));
+                for (int i16 = 0; i16 < size; i16++) {
+                    a6 a6Var = (a6) downloadController.h.get((Pair) arrayList.get(i16));
                     if (a6Var != null) {
                         TLObject tLObject = a6Var.a;
                         if (tLObject instanceof TLRPC.Document) {
@@ -261,20 +260,20 @@ public final /* synthetic */ class sp implements Runnable {
                 yrVar2.getClass();
                 HashSet hashSet2 = new HashSet();
                 long[] jArr = new long[1];
-                int i18 = 0;
+                int i17 = 0;
                 boolean z11 = false;
-                while (i18 < arrayList.size()) {
+                while (i17 < arrayList.size()) {
                     ui mediaDataController = yrVar2.getMediaDataController();
-                    int intValue = ((Integer) arrayList.get(i18)).intValue();
+                    int intValue = ((Integer) arrayList.get(i17)).intValue();
                     ArrayList arrayList5 = mediaDataController.c1;
-                    int i19 = 0;
+                    int i18 = 0;
                     while (true) {
-                        if (i19 >= arrayList5.size()) {
+                        if (i18 >= arrayList5.size()) {
                             ijVar = null;
-                        } else if (((ij) arrayList5.get(i19)).f1() == intValue) {
-                            ijVar = (ij) arrayList5.get(i19);
+                        } else if (((ij) arrayList5.get(i18)).f1() == intValue) {
+                            ijVar = (ij) arrayList5.get(i18);
                         } else {
-                            i19++;
+                            i18++;
                         }
                     }
                     if (ijVar == null || ij.B0(ijVar.k) != mediaDataController.getUserConfig().e()) {
@@ -288,7 +287,7 @@ public final /* synthetic */ class sp implements Runnable {
                         hashSet2.add(Long.valueOf(jArr[0]));
                         z11 = true;
                     }
-                    i18++;
+                    i17++;
                     z11 = z11;
                 }
                 if (z11) {
@@ -322,11 +321,11 @@ public final /* synthetic */ class sp implements Runnable {
                 }
                 try {
                     int size2 = arrayList.size();
-                    for (int i20 = 0; i20 < size2; i20++) {
-                        TLRPC.Message message = (TLRPC.Message) arrayList.get(i20);
+                    for (int i19 = 0; i19 < size2; i19++) {
+                        TLRPC.Message message = (TLRPC.Message) arrayList.get(i19);
                         executeFast.requery();
-                        int i21 = message.stickerVerified;
-                        executeFast.bindInteger(1, i21 == 0 ? 1 : i21 == 2 ? 2 : 0);
+                        int i20 = message.stickerVerified;
+                        executeFast.bindInteger(1, i20 == 0 ? 1 : i20 == 2 ? 2 : 0);
                         executeFast.bindInteger(2, message.id);
                         executeFast.bindLong(3, ij.B0(message));
                         executeFast.step();
@@ -337,9 +336,9 @@ public final /* synthetic */ class sp implements Runnable {
                 } catch (Exception e18) {
                     e = e18;
                     sQLitePreparedStatement = executeFast;
-                    i11 = 1;
+                    i10 = 1;
                     yrVar2.o(e, true);
-                    if (i11 != 0 && (sQLiteDatabase3 = yrVar2.b) != null) {
+                    if (i10 != 0 && (sQLiteDatabase3 = yrVar2.b) != null) {
                         sQLiteDatabase3.commitTransaction();
                     }
                     if (sQLitePreparedStatement != null) {
@@ -350,8 +349,8 @@ public final /* synthetic */ class sp implements Runnable {
                 } catch (Throwable th6) {
                     th = th6;
                     sQLitePreparedStatement = executeFast;
-                    i11 = 1;
-                    if (i11 != 0 && (sQLiteDatabase2 = yrVar2.b) != null) {
+                    i10 = 1;
+                    if (i10 != 0 && (sQLiteDatabase2 = yrVar2.b) != null) {
                         sQLiteDatabase2.commitTransaction();
                     }
                     if (sQLitePreparedStatement != null) {
@@ -360,8 +359,8 @@ public final /* synthetic */ class sp implements Runnable {
                     throw th;
                 }
             case 16:
-                for (int i22 = 0; i22 < arrayList.size(); i22++) {
-                    yrVar2.getNotificationCenter().k(48, arrayList.get(i22));
+                for (int i21 = 0; i21 < arrayList.size(); i21++) {
+                    yrVar2.getNotificationCenter().k(48, arrayList.get(i21));
                 }
                 return;
             case 17:
@@ -379,9 +378,9 @@ public final /* synthetic */ class sp implements Runnable {
             default:
                 yrVar2.getClass();
                 int size3 = arrayList.size();
-                while (i11 < size3) {
-                    Object obj = arrayList.get(i11);
-                    i11++;
+                while (i10 < size3) {
+                    Object obj = arrayList.get(i10);
+                    i10++;
                     yrVar2.getMessagesController().r3((ij) obj);
                 }
                 return;

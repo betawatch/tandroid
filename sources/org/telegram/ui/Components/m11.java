@@ -23,9 +23,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.u81;
+import org.telegram.ui.v81;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class m11 extends FrameLayout implements org.telegram.messenger.ls, te.b, org.telegram.ui.ActionBar.a6 {
     public static final /* synthetic */ int l0 = 0;
@@ -1745,7 +1745,7 @@ public final class m11 extends FrameLayout implements org.telegram.messenger.ls,
             }
             TLRPC.Chat chat = M0;
             k60Var = I;
-            k60Var.c(R.drawable.msg_clear, org.telegram.messenger.hd.M0(2131752089, null), new bi.w2(this, k60Var, o4, chat, 17), false);
+            k60Var.c(R.drawable.msg_clear, org.telegram.messenger.id.M0(2131752089, null), new bi.w2(this, k60Var, o4, chat, 17), false);
             long j10 = chat.id;
             if (org.telegram.messenger.t3.p0(chat) && org.telegram.messenger.t3.A(i11, chat, 24)) {
                 long j11 = chat.linked_monoforum_id;
@@ -1756,7 +1756,7 @@ public final class m11 extends FrameLayout implements org.telegram.messenger.ls,
             TLRPC.Chat M02 = org.telegram.messenger.qp.s1(i11).M0(Long.valueOf(j10));
             TLRPC.User a23 = org.telegram.messenger.qp.s1(i11).a2(Long.valueOf(o4));
             if (a23 != null && org.telegram.messenger.t3.w(2, M02)) {
-                k60Var.c(R.drawable.msg_remove, org.telegram.messenger.hd.M0(2131753726, null), null, false);
+                k60Var.c(R.drawable.msg_remove, org.telegram.messenger.id.M0(2131753726, null), null, false);
                 org.telegram.ui.ActionBar.z0 y10 = k60Var.y();
                 y10.setVisibility(8);
                 org.telegram.messenger.qp s13 = org.telegram.messenger.qp.s1(i11);
@@ -1771,9 +1771,9 @@ public final class m11 extends FrameLayout implements org.telegram.messenger.ls,
                 qpVar = s12;
                 m11Var = this;
                 tL_forumTopic2 = tL_forumTopic;
-                I.c(z11 ? R.drawable.msg_unpin : R.drawable.msg_pin, org.telegram.messenger.hd.M0(z11 ? 2131751453 : 2131751454, null), new kn0(this, I, qpVar, tL_forumTopic, 4), false);
+                I.c(z11 ? R.drawable.msg_unpin : R.drawable.msg_pin, org.telegram.messenger.id.M0(z11 ? 2131751453 : 2131751454, null), new kn0(this, I, qpVar, tL_forumTopic, 4), false);
                 if (tL_forumTopic2.pinned && !z9) {
-                    I.c(R.drawable.tabs_reorder, org.telegram.messenger.hd.M0(2131750708, null), new w01(m11Var, i12), false);
+                    I.c(R.drawable.tabs_reorder, org.telegram.messenger.id.M0(2131750708, null), new w01(m11Var, i12), false);
                 }
                 i7 = 15;
             } else {
@@ -1783,7 +1783,7 @@ public final class m11 extends FrameLayout implements org.telegram.messenger.ls,
                 m11Var = this;
             }
             if (org.telegram.messenger.t3.y(i7, M0) || org.telegram.messenger.t10.v(a22)) {
-                I.c(R.drawable.outline_profile_edit_24, org.telegram.messenger.hd.M0(2131751217, null), new Runnable(m11Var) { // from class: org.telegram.ui.Components.y01
+                I.c(R.drawable.outline_profile_edit_24, org.telegram.messenger.id.M0(2131751217, null), new Runnable(m11Var) { // from class: org.telegram.ui.Components.y01
                     public final /* synthetic */ m11 b;
 
                     {
@@ -1800,7 +1800,7 @@ public final class m11 extends FrameLayout implements org.telegram.messenger.ls,
                         switch (i14) {
                             case 0:
                                 k60Var2.u();
-                                m11Var4.s.presentFragment(u81.f0(-m11Var4.f, tL_forumTopic3.id));
+                                m11Var4.s.presentFragment(v81.f0(-m11Var4.f, tL_forumTopic3.id));
                                 break;
                             case 1:
                                 m11Var4.getClass();
@@ -1811,23 +1811,23 @@ public final class m11 extends FrameLayout implements org.telegram.messenger.ls,
                                 k60Var2.u();
                                 HashSet hashSet = new HashSet();
                                 hashSet.add(Integer.valueOf(tL_forumTopic3.id));
-                                l10 l10Var = new l10(7);
+                                vs vsVar = new vs(9);
                                 m11 m11Var5 = this.b;
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(m11Var5.getContext());
-                                String K0 = org.telegram.messenger.hd.K0(hashSet.size(), "DeleteTopics");
+                                String K0 = org.telegram.messenger.id.K0(hashSet.size(), "DeleteTopics");
                                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                                 u1Var.R = K0;
                                 ArrayList arrayList = new ArrayList(hashSet);
                                 long j12 = m11Var5.e0;
                                 if (hashSet.size() == 1) {
                                     m11Var3 = m11Var5;
-                                    u1Var.T = org.telegram.messenger.hd.a0(null, null, 2131751499, org.telegram.messenger.qp.s1(m11Var5.e).q7.f(-m11Var5.f, ((Integer) arrayList.get(0)).intValue()).title);
+                                    u1Var.T = org.telegram.messenger.id.a0(null, null, 2131751499, org.telegram.messenger.qp.s1(m11Var5.e).q7.f(-m11Var5.f, ((Integer) arrayList.get(0)).intValue()).title);
                                 } else {
                                     m11Var3 = m11Var5;
-                                    u1Var.T = org.telegram.messenger.hd.M0(2131751498, null);
+                                    u1Var.T = org.telegram.messenger.id.M0(2131751498, null);
                                 }
-                                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751599, null), new bi.n4(m11Var3, arrayList, j12, hashSet, l10Var));
-                                alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), new il0(13));
+                                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751599, null), new bi.n4(m11Var3, arrayList, j12, hashSet, vsVar));
+                                alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), new il0(13));
                                 u1Var.show();
                                 TextView textView = (TextView) u1Var.d(-1);
                                 if (textView != null) {
@@ -1845,8 +1845,8 @@ public final class m11 extends FrameLayout implements org.telegram.messenger.ls,
             final long j13 = m11Var.f;
             qn qnVar = new qn(I, currentAccount, j13, j12, anVar, resourceProvider);
             final k60 J = I.J();
-            J.c(R.drawable.msg_arrow_back, org.telegram.messenger.hd.M0(2131753756, null), new org.telegram.ui.gq0(I, 27), false);
-            J.c(R.drawable.msg_tone_on, org.telegram.messenger.hd.M0(2131745276, null), new Runnable() { // from class: org.telegram.ui.Components.rn
+            J.c(R.drawable.msg_arrow_back, org.telegram.messenger.id.M0(2131753756, null), new org.telegram.ui.gq0(I, 27), false);
+            J.c(R.drawable.msg_tone_on, org.telegram.messenger.id.M0(2131745278, null), new Runnable() { // from class: org.telegram.ui.Components.rn
                 @Override // java.lang.Runnable
                 public final void run() {
                     k60.this.u();
@@ -1866,8 +1866,8 @@ public final class m11 extends FrameLayout implements org.telegram.messenger.ls,
                 }
             }, false);
             final org.telegram.ui.ActionBar.z0 y11 = J.y();
-            J.c(R.drawable.msg_mute_period, org.telegram.messenger.hd.M0(2131748307, null), new ai.a1(I, resourceProvider, currentAccount, qnVar, 21), false);
-            J.c(R.drawable.msg_customize, org.telegram.messenger.hd.M0(2131747916, null), new sn(I, j13, j12, anVar, resourceProvider), false);
+            J.c(R.drawable.msg_mute_period, org.telegram.messenger.id.M0(2131748309, null), new ai.a1(I, resourceProvider, currentAccount, qnVar, 21), false);
+            J.c(R.drawable.msg_customize, org.telegram.messenger.id.M0(2131747918, null), new sn(I, j13, j12, anVar, resourceProvider), false);
             J.c(0, "", new bi.ra(I, currentAccount, j13, j12, anVar, resourceProvider), false);
             final org.telegram.ui.ActionBar.z0 y12 = J.y();
             new Runnable() { // from class: org.telegram.ui.Components.tn
@@ -1882,17 +1882,17 @@ public final class m11 extends FrameLayout implements org.telegram.messenger.ls,
                     org.telegram.ui.ActionBar.z0 z0Var = y12;
                     org.telegram.ui.ActionBar.z0 z0Var2 = y11;
                     if (r22) {
-                        z0Var.j(org.telegram.messenger.hd.M0(2131743849, null), R.drawable.msg_unmute, null);
+                        z0Var.j(org.telegram.messenger.id.M0(2131743851, null), R.drawable.msg_unmute, null);
                         i14 = org.telegram.ui.ActionBar.k6.x6;
                         z0Var2.setVisibility(8);
                     } else {
-                        z0Var.j(org.telegram.messenger.hd.M0(2131748305, null), R.drawable.msg_mute, null);
+                        z0Var.j(org.telegram.messenger.id.M0(2131748307, null), R.drawable.msg_mute, null);
                         int i16 = org.telegram.ui.ActionBar.k6.q7;
                         z0Var2.setVisibility(0);
                         if (org.telegram.messenger.qp.s1(i15).s2(j14, j15)) {
-                            z0Var2.j(org.telegram.messenger.hd.M0(2131745278, null), R.drawable.msg_tone_off, null);
+                            z0Var2.j(org.telegram.messenger.id.M0(2131745280, null), R.drawable.msg_tone_off, null);
                         } else {
-                            z0Var2.j(org.telegram.messenger.hd.M0(2131745276, null), R.drawable.msg_tone_on, null);
+                            z0Var2.j(org.telegram.messenger.id.M0(2131745278, null), R.drawable.msg_tone_on, null);
                         }
                         i14 = i16;
                     }
@@ -1904,11 +1904,11 @@ public final class m11 extends FrameLayout implements org.telegram.messenger.ls,
             org.telegram.messenger.qp qpVar2 = qpVar;
             boolean r22 = qpVar2.r2(j15, j14, null);
             int i14 = r22 ? R.drawable.msg_unmute : R.drawable.msg_mute;
-            int i15 = r22 ? 2131743850 : 2131748313;
+            int i15 = r22 ? 2131743852 : 2131748315;
             TLRPC.Chat chat2 = M0;
             m11Var2 = this;
             k60Var = I;
-            k60Var.c(i14, org.telegram.messenger.hd.M0(i15, null), new jv0(m11Var2, qpVar2, tL_forumTopic, I, J, 2), false);
+            k60Var.c(i14, org.telegram.messenger.id.M0(i15, null), new jv0(m11Var2, qpVar2, tL_forumTopic, I, J, 2), false);
             if (!org.telegram.messenger.t3.i(i11, chat2, tL_forumTopic) || org.telegram.messenger.t10.u(a22)) {
                 z10 = false;
                 i10 = 1;
@@ -1916,7 +1916,7 @@ public final class m11 extends FrameLayout implements org.telegram.messenger.ls,
                 boolean z12 = tL_forumTopic.closed;
                 i10 = 1;
                 z10 = false;
-                k60Var.c(z12 ? R.drawable.msg_topic_restart : R.drawable.msg_topic_close, org.telegram.messenger.hd.M0(z12 ? 2131746085 : 2131752039, null), new Runnable(m11Var2) { // from class: org.telegram.ui.Components.y01
+                k60Var.c(z12 ? R.drawable.msg_topic_restart : R.drawable.msg_topic_close, org.telegram.messenger.id.M0(z12 ? 2131746087 : 2131752039, null), new Runnable(m11Var2) { // from class: org.telegram.ui.Components.y01
                     public final /* synthetic */ m11 b;
 
                     {
@@ -1933,7 +1933,7 @@ public final class m11 extends FrameLayout implements org.telegram.messenger.ls,
                         switch (i142) {
                             case 0:
                                 k60Var2.u();
-                                m11Var4.s.presentFragment(u81.f0(-m11Var4.f, tL_forumTopic3.id));
+                                m11Var4.s.presentFragment(v81.f0(-m11Var4.f, tL_forumTopic3.id));
                                 break;
                             case 1:
                                 m11Var4.getClass();
@@ -1944,23 +1944,23 @@ public final class m11 extends FrameLayout implements org.telegram.messenger.ls,
                                 k60Var2.u();
                                 HashSet hashSet = new HashSet();
                                 hashSet.add(Integer.valueOf(tL_forumTopic3.id));
-                                l10 l10Var = new l10(7);
+                                vs vsVar = new vs(9);
                                 m11 m11Var5 = this.b;
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(m11Var5.getContext());
-                                String K0 = org.telegram.messenger.hd.K0(hashSet.size(), "DeleteTopics");
+                                String K0 = org.telegram.messenger.id.K0(hashSet.size(), "DeleteTopics");
                                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                                 u1Var.R = K0;
                                 ArrayList arrayList = new ArrayList(hashSet);
                                 long j122 = m11Var5.e0;
                                 if (hashSet.size() == 1) {
                                     m11Var3 = m11Var5;
-                                    u1Var.T = org.telegram.messenger.hd.a0(null, null, 2131751499, org.telegram.messenger.qp.s1(m11Var5.e).q7.f(-m11Var5.f, ((Integer) arrayList.get(0)).intValue()).title);
+                                    u1Var.T = org.telegram.messenger.id.a0(null, null, 2131751499, org.telegram.messenger.qp.s1(m11Var5.e).q7.f(-m11Var5.f, ((Integer) arrayList.get(0)).intValue()).title);
                                 } else {
                                     m11Var3 = m11Var5;
-                                    u1Var.T = org.telegram.messenger.hd.M0(2131751498, null);
+                                    u1Var.T = org.telegram.messenger.id.M0(2131751498, null);
                                 }
-                                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751599, null), new bi.n4(m11Var3, arrayList, j122, hashSet, l10Var));
-                                alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), new il0(13));
+                                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751599, null), new bi.n4(m11Var3, arrayList, j122, hashSet, vsVar));
+                                alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), new il0(13));
                                 u1Var.show();
                                 TextView textView = (TextView) u1Var.d(-1);
                                 if (textView != null) {
@@ -1974,7 +1974,7 @@ public final class m11 extends FrameLayout implements org.telegram.messenger.ls,
             }
             if (org.telegram.messenger.t3.e(i11, chat2, tL_forumTopic)) {
                 final int i16 = 2;
-                k60Var.c(R.drawable.msg_delete, org.telegram.messenger.hd.K0(i10, "DeleteTopics"), new Runnable(m11Var2) { // from class: org.telegram.ui.Components.y01
+                k60Var.c(R.drawable.msg_delete, org.telegram.messenger.id.K0(i10, "DeleteTopics"), new Runnable(m11Var2) { // from class: org.telegram.ui.Components.y01
                     public final /* synthetic */ m11 b;
 
                     {
@@ -1991,7 +1991,7 @@ public final class m11 extends FrameLayout implements org.telegram.messenger.ls,
                         switch (i142) {
                             case 0:
                                 k60Var2.u();
-                                m11Var4.s.presentFragment(u81.f0(-m11Var4.f, tL_forumTopic3.id));
+                                m11Var4.s.presentFragment(v81.f0(-m11Var4.f, tL_forumTopic3.id));
                                 break;
                             case 1:
                                 m11Var4.getClass();
@@ -2002,23 +2002,23 @@ public final class m11 extends FrameLayout implements org.telegram.messenger.ls,
                                 k60Var2.u();
                                 HashSet hashSet = new HashSet();
                                 hashSet.add(Integer.valueOf(tL_forumTopic3.id));
-                                l10 l10Var = new l10(7);
+                                vs vsVar = new vs(9);
                                 m11 m11Var5 = this.b;
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(m11Var5.getContext());
-                                String K0 = org.telegram.messenger.hd.K0(hashSet.size(), "DeleteTopics");
+                                String K0 = org.telegram.messenger.id.K0(hashSet.size(), "DeleteTopics");
                                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                                 u1Var.R = K0;
                                 ArrayList arrayList = new ArrayList(hashSet);
                                 long j122 = m11Var5.e0;
                                 if (hashSet.size() == 1) {
                                     m11Var3 = m11Var5;
-                                    u1Var.T = org.telegram.messenger.hd.a0(null, null, 2131751499, org.telegram.messenger.qp.s1(m11Var5.e).q7.f(-m11Var5.f, ((Integer) arrayList.get(0)).intValue()).title);
+                                    u1Var.T = org.telegram.messenger.id.a0(null, null, 2131751499, org.telegram.messenger.qp.s1(m11Var5.e).q7.f(-m11Var5.f, ((Integer) arrayList.get(0)).intValue()).title);
                                 } else {
                                     m11Var3 = m11Var5;
-                                    u1Var.T = org.telegram.messenger.hd.M0(2131751498, null);
+                                    u1Var.T = org.telegram.messenger.id.M0(2131751498, null);
                                 }
-                                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751599, null), new bi.n4(m11Var3, arrayList, j122, hashSet, l10Var));
-                                alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), new il0(13));
+                                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751599, null), new bi.n4(m11Var3, arrayList, j122, hashSet, vsVar));
+                                alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), new il0(13));
                                 u1Var.show();
                                 TextView textView = (TextView) u1Var.d(-1);
                                 if (textView != null) {

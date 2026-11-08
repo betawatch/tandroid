@@ -6,13 +6,13 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.g70;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class e7 extends FrameLayout {
     public final org.telegram.ui.Components.l9 a;
@@ -63,7 +63,7 @@ public final class e7 extends FrameLayout {
     }
 
     public void setAsNewBotForumTopic(boolean z9) {
-        this.c.setText(hd.M0(z9 ? 2131745436 : 2131745435, null));
+        this.c.setText(id.M0(z9 ? 2131745438 : 2131745437, null));
         org.telegram.ui.Components.l9 l9Var = this.a;
         l9Var.setAnimatedEmojiDrawable(null);
         qg.a aVar = new qg.a(qg.a.k[0]);

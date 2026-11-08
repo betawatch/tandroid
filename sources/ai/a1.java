@@ -30,7 +30,7 @@ import org.telegram.messenger.c20;
 import org.telegram.messenger.camera.CameraSession;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.gf;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.p10;
@@ -70,8 +70,8 @@ import org.telegram.ui.Components.qn;
 import org.telegram.ui.Components.u20;
 import org.telegram.ui.Components.v4;
 import org.telegram.ui.Components.voip.y1;
-import org.telegram.ui.Components.vz;
 import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.wz;
 import org.telegram.ui.Components.xs0;
 import org.telegram.ui.Components.zl;
 import org.telegram.ui.an;
@@ -86,7 +86,7 @@ import org.telegram.ui.vm;
 import org.telegram.ui.xf;
 import org.telegram.ui.ym;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a1 implements Runnable {
     public final /* synthetic */ int a;
@@ -168,7 +168,7 @@ public final /* synthetic */ class a1 implements Runnable {
     /* JADX WARN: Type inference failed for: r11v4 */
     /* JADX WARN: Type inference failed for: r11v5, types: [android.view.View, java.lang.String] */
     /* JADX WARN: Type inference failed for: r11v6 */
-    /* JADX WARN: Type inference failed for: r12v20, types: [org.telegram.messenger.hd] */
+    /* JADX WARN: Type inference failed for: r12v20, types: [org.telegram.messenger.id] */
     /* JADX WARN: Type inference failed for: r14v0 */
     /* JADX WARN: Type inference failed for: r14v13, types: [boolean] */
     /* JADX WARN: Type inference failed for: r14v14 */
@@ -192,7 +192,7 @@ public final /* synthetic */ class a1 implements Runnable {
         qj qjVar;
         TLRPC.EncryptedChat encryptedChat;
         ArrayList arrayList;
-        vz vzVar;
+        wz wzVar;
         ?? r19;
         long C1;
         boolean z9;
@@ -367,13 +367,13 @@ public final /* synthetic */ class a1 implements Runnable {
                 h0Var.G0 = !z14;
                 x3Var.setRightTextMargin(16);
                 if (h0Var.G0) {
-                    i7 = 2131745340;
+                    i7 = 2131745342;
                     r11 = 0;
                 } else {
                     r11 = 0;
-                    i7 = 2131745341;
+                    i7 = 2131745343;
                 }
-                String M0 = hd.M0(i7, r11);
+                String M0 = id.M0(i7, r11);
                 boolean z16 = h0Var.G0;
                 w3 w3Var = x3Var.b;
                 w3Var.c(M0, true, z16);
@@ -826,12 +826,12 @@ public final /* synthetic */ class a1 implements Runnable {
                         } catch (Exception unused) {
                         }
                     }
-                    vzVar = new vz(f2Var3, i13, arrayList15);
+                    wzVar = new wz(f2Var3, i13, arrayList15);
                 } else {
-                    vzVar = new vz(f2Var3, i13, null);
+                    wzVar = new wz(f2Var3, i13, null);
                 }
-                vzVar.t2 = c20Var;
-                f2Var3.showDialog(vzVar);
+                wzVar.t2 = c20Var;
+                f2Var3.showDialog(wzVar);
                 return;
             case 24:
                 g20 g20Var = (g20) obj3;
@@ -843,7 +843,7 @@ public final /* synthetic */ class a1 implements Runnable {
                     org.telegram.messenger.g0.h3(new q8(g20Var, i13, new ArrayList(), i39));
                     return;
                 }
-                String S0 = hd.E0().S0(lowerCase, true, false);
+                String S0 = id.E0().S0(lowerCase, true, false);
                 if (lowerCase.equals(S0) || S0.length() == 0) {
                     S0 = null;
                 }
@@ -875,7 +875,7 @@ public final /* synthetic */ class a1 implements Runnable {
                     TLRPC.User a22 = qp.s1(g20Var.x.a).a2(Long.valueOf(C1));
                     if (!t10.B(a22)) {
                         String lowerCase2 = t10.p(a22).toLowerCase();
-                        String S02 = hd.E0().S0(lowerCase2, z11, r14);
+                        String S02 = id.E0().S0(lowerCase2, z11, r14);
                         if (lowerCase2.equals(S02)) {
                             S02 = null;
                         }

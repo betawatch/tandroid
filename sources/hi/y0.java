@@ -29,12 +29,12 @@ import org.telegram.ui.Components.q6;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.tp;
-import org.telegram.ui.vc1;
+import org.telegram.ui.wc1;
 import org.telegram.ui.web.HttpGetFileTask;
 import org.telegram.ui.ww;
 import org.telegram.ui.x60;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -216,7 +216,7 @@ public final /* synthetic */ class y0 implements Runnable {
                             q6Var.setColor(k6.x0(null, k6.ia, false));
                             r6.i(k6.L5, q6Var, null);
                             q6Var.setAttachBot(tL_attachMenuBot);
-                            vc1.a(launchActivity, new tp(launchActivity, i11, this.c, wwVar, f2Var, user, str6), null);
+                            wc1.a(launchActivity, new tp(launchActivity, i11, this.c, wwVar, f2Var, user, str6), null);
                             break;
                         } else {
                             if (wwVar != null) {

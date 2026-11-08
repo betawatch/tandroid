@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class kx extends org.telegram.ui.Components.q41 {
     public final /* synthetic */ int m3;
@@ -62,9 +62,9 @@ public final class kx extends org.telegram.ui.Components.q41 {
     public boolean u1(View view) {
         switch (this.m3) {
             case 1:
-                if (view instanceof org.telegram.ui.Wallet.w3) {
-                    org.telegram.ui.Wallet.w3 w3Var = (org.telegram.ui.Wallet.w3) view;
-                    if (w3Var.F > 0.0f || w3Var.I.d()) {
+                if (view instanceof org.telegram.ui.Wallet.v3) {
+                    org.telegram.ui.Wallet.v3 v3Var = (org.telegram.ui.Wallet.v3) view;
+                    if (v3Var.F > 0.0f || v3Var.I.d()) {
                         return false;
                     }
                 }

@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import n6.c;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.rt;
 import pb.g;
 import pb.j;
 import q6.k;
@@ -37,7 +37,7 @@ import y7.l7;
 import y7.m6;
 import y7.n6;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class LanguageIdentifierImpl implements b {
     public final e9 a;
@@ -101,11 +101,11 @@ public class LanguageIdentifierImpl implements b {
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 try {
                     String e10 = eVar2.e(str2.substring(0, Math.min(str2.length(), qs.e3)));
-                    qt qtVar = new qt(27);
+                    rt rtVar = new rt(27);
                     com.google.android.gms.internal.clearcut.e eVar3 = new com.google.android.gms.internal.clearcut.e();
                     eVar3.b = e10;
-                    qtVar.b = new h7(eVar3);
-                    languageIdentifierImpl.j(elapsedRealtime, z10, new j7(qtVar), m6.b);
+                    rtVar.b = new h7(eVar3);
+                    languageIdentifierImpl.j(elapsedRealtime, z10, new j7(rtVar), m6.b);
                     return e10;
                 } catch (RuntimeException e11) {
                     languageIdentifierImpl.j(elapsedRealtime, z10, null, m6.c);

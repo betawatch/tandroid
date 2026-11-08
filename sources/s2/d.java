@@ -19,10 +19,10 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class d implements b3.j {
-    public static final s0.b J = new s0.b(7);
+    public static final s0.b J = new s0.b(8);
     public i0 D;
     public i0 E;
     public Uri F;
@@ -34,7 +34,7 @@ public final class d implements b3.j {
     public wa f;
     public b3.o h;
     public Handler n;
-    public r2.l r;
+    public r2.k r;
     public p s;
     public t0 w;
     public i0 x;

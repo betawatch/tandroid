@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class hs extends org.telegram.ui.Components.oj0 {
     public final /* synthetic */ ArrayList c;
@@ -34,7 +34,7 @@ public final class hs extends org.telegram.ui.Components.oj0 {
         org.telegram.ui.Components.l9 l9Var = jsVar.a;
         jsVar.d = stickerSetCovered;
         if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
-            k5Var.l(org.telegram.messenger.hd.M0(2131748261, null), false);
+            k5Var.l(org.telegram.messenger.id.M0(2131748263, null), false);
             l9Var.setImageResource(R.drawable.msg_addbot);
             return;
         }

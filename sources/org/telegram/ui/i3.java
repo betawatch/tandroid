@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class i3 extends org.telegram.ui.web.x0 {
     public final /* synthetic */ k3 T0;
@@ -30,9 +30,9 @@ public final class i3 extends org.telegram.ui.web.x0 {
             b3 b3Var2 = k3Var.r;
             String url = getWebView() != null ? getWebView().getUrl() : null;
             TextView textView = b3Var2.e;
-            b3Var2.d.setText(org.telegram.messenger.hd.M0(2131742923, null));
+            b3Var2.d.setText(org.telegram.messenger.id.M0(2131742925, null));
             String u10 = org.telegram.ui.web.x0.u(url);
-            textView.setText(org.telegram.messenger.i6.m(org.telegram.messenger.g0.X2((u10 == null || Uri.parse(u10) == null || Uri.parse(u10).getAuthority() == null) ? org.telegram.messenger.hd.M0(2131742926, null) : org.telegram.messenger.hd.a0(null, null, 2131742924, Uri.parse(u10).getAuthority())), textView.getPaint().getFontMetricsInt(), false, null, 0));
+            textView.setText(org.telegram.messenger.i6.m(org.telegram.messenger.g0.X2((u10 == null || Uri.parse(u10) == null || Uri.parse(u10).getAuthority() == null) ? org.telegram.messenger.id.M0(2131742928, null) : org.telegram.messenger.id.a0(null, null, 2131742926, Uri.parse(u10).getAuthority())), textView.getPaint().getFontMetricsInt(), false, null, 0));
             b3Var2.f.setText(str);
             b3 b3Var3 = k3Var.r;
             int i7 = org.telegram.ui.ActionBar.k6.Dl;

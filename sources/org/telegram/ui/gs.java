@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class gs implements Runnable {
     public final /* synthetic */ ks a;
@@ -293,21 +293,21 @@ public final class gs implements Runnable {
                     is isVar28 = ksVar.l;
                     if (isVar28 == null || !isVar28.B()) {
                         if (ksVar.l.y()) {
-                            arrayList.add(org.telegram.messenger.hd.M0(2131745589, null));
+                            arrayList.add(org.telegram.messenger.id.M0(2131745591, null));
                             arrayList3.add(valueOf4);
                             arrayList2.add(0);
                         }
                         org.telegram.ui.Cells.f1.t(null, 2131754374, arrayList, R.drawable.msg_fave, arrayList3);
                         arrayList2.add(1);
                     } else {
-                        org.telegram.ui.Cells.f1.t(null, 2131745525, arrayList, R.drawable.menu_sticker_add, arrayList3);
+                        org.telegram.ui.Cells.f1.t(null, 2131745527, arrayList, R.drawable.menu_sticker_add, arrayList3);
                         arrayList2.add(0);
                     }
                 }
                 is isVar29 = ksVar.l;
                 if (isVar29 == null || !isVar29.B()) {
                     is isVar30 = ksVar.l;
-                    arrayList.add(org.telegram.messenger.hd.M0((isVar30 == null || !isVar30.J()) ? 2131754370 : 2131744850, null));
+                    arrayList.add(org.telegram.messenger.id.M0((isVar30 == null || !isVar30.J()) ? 2131754370 : 2131744852, null));
                     is isVar31 = ksVar.l;
                     if (isVar31 != null && isVar31.J()) {
                         i30 = R.drawable.msg_replace;
@@ -318,8 +318,8 @@ public final class gs implements Runnable {
                 int i31 = 7;
                 org.telegram.ui.ActionBar.z0 z0Var = new org.telegram.ui.ActionBar.z0(0, ksVar.w, ksVar.c0, true, false);
                 z0Var.setItemHeight(44);
-                z0Var.j(org.telegram.messenger.hd.M0(2131753756, null), R.drawable.msg_arrow_back, null);
-                z0Var.getTextView().setPadding(org.telegram.messenger.hd.a0 ? 0 : org.telegram.messenger.g0.L(40.0f), 0, org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(40.0f) : 0, 0);
+                z0Var.j(org.telegram.messenger.id.M0(2131753756, null), R.drawable.msg_arrow_back, null);
+                z0Var.getTextView().setPadding(org.telegram.messenger.id.a0 ? 0 : org.telegram.messenger.g0.L(40.0f), 0, org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(40.0f) : 0, 0);
                 FrameLayout frameLayout = new FrameLayout(ksVar.z.getContext());
                 LinearLayout linearLayout = new LinearLayout(ksVar.z.getContext());
                 org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.G8, linearLayout, ksVar.c0);
@@ -390,7 +390,7 @@ public final class gs implements Runnable {
                     ksVar.P.setClipChildren(false);
                     ksVar.P.setClipToPadding(false);
                     ksVar.P.setVisibility(0);
-                    ksVar.P.setHint(org.telegram.messenger.hd.M0(2131744849, null));
+                    ksVar.P.setHint(org.telegram.messenger.id.M0(2131744851, null));
                     ksVar.P.setBubbleOffset(-org.telegram.messenger.g0.L(105.0f));
                     ksVar.P.setMiniBubblesOffset(-org.telegram.messenger.g0.L(14.0f));
                     FrameLayout frameLayout2 = new FrameLayout(ksVar.z.getContext());
@@ -456,7 +456,7 @@ public final class gs implements Runnable {
                         if (isVar20.k(i24)) {
                             isVar25 = ksVar.l;
                             if (!isVar25.c()) {
-                                org.telegram.ui.Cells.f1.q(2131745589, arrayList5, arrayList7, valueOf4);
+                                org.telegram.ui.Cells.f1.q(2131745591, arrayList5, arrayList7, valueOf4);
                                 arrayList6.add(0);
                             }
                         }
@@ -465,19 +465,19 @@ public final class gs implements Runnable {
                         if (isVar21.k(i25)) {
                             isVar24 = ksVar.l;
                             if (!isVar24.c()) {
-                                arrayList5.add(org.telegram.messenger.hd.L0(2131745584));
+                                arrayList5.add(org.telegram.messenger.id.L0(2131745586));
                                 arrayList7.add(valueOf3);
                                 arrayList6.add(6);
                             }
                         }
                         isVar22 = ksVar.l;
                         if (isVar22.b()) {
-                            org.telegram.ui.Cells.f1.q(2131745861, arrayList5, arrayList7, valueOf2);
+                            org.telegram.ui.Cells.f1.q(2131745863, arrayList5, arrayList7, valueOf2);
                             arrayList6.add(3);
                         }
                         isVar23 = ksVar.l;
                         if (isVar23.f()) {
-                            org.telegram.ui.Cells.f1.q(2131749226, arrayList5, arrayList7, valueOf5);
+                            org.telegram.ui.Cells.f1.q(2131749228, arrayList5, arrayList7, valueOf5);
                             arrayList6.add(5);
                         }
                     } else {
@@ -492,7 +492,7 @@ public final class gs implements Runnable {
                                 document16 = ksVar.W;
                             }
                         }
-                        arrayList5.add(z10 ? org.telegram.messenger.hd.L0(2131751539) : org.telegram.messenger.hd.L0(2131754374));
+                        arrayList5.add(z10 ? org.telegram.messenger.id.L0(2131751539) : org.telegram.messenger.id.L0(2131754374));
                         if (!z10) {
                             i37 = R.drawable.msg_fave;
                         }
@@ -503,7 +503,7 @@ public final class gs implements Runnable {
                     if (isVar14 != null && (inputStickerSet = ksVar.a0) != null && !(inputStickerSet instanceof TLRPC.TL_inputStickerSetEmpty)) {
                         isVar19 = ksVar.l;
                         if (isVar19.Q()) {
-                            arrayList5.add(org.telegram.messenger.hd.Z(2131743549, new Object[0]));
+                            arrayList5.add(org.telegram.messenger.id.Z(2131743551, new Object[0]));
                             arrayList7.add(Integer.valueOf(R.drawable.msg_media));
                             arrayList6.add(1);
                         }
@@ -536,7 +536,7 @@ public final class gs implements Runnable {
                                     isVar16 = ksVar.l;
                                     unused = ksVar.W;
                                     if (isVar16.I()) {
-                                        arrayList5.add(org.telegram.messenger.hd.L0(2131751496));
+                                        arrayList5.add(org.telegram.messenger.id.L0(2131751496));
                                         arrayList7.add(valueOf5);
                                         arrayList6.add(8);
                                     }
@@ -635,7 +635,7 @@ public final class gs implements Runnable {
                             isVar9 = ksVar.l;
                             i16 = ksVar.V;
                             if (isVar9.k(i16)) {
-                                org.telegram.ui.Cells.f1.q(2131745627, arrayList8, arrayList10, valueOf4);
+                                org.telegram.ui.Cells.f1.q(2131745629, arrayList8, arrayList10, valueOf4);
                                 arrayList9.add(0);
                             }
                             isVar10 = ksVar.l;
@@ -643,24 +643,24 @@ public final class gs implements Runnable {
                             Boolean P = isVar10.P(document5);
                             if (P != null) {
                                 if (P.booleanValue()) {
-                                    org.telegram.ui.Cells.f1.q(2131745547, arrayList8, arrayList10, valueOf);
+                                    org.telegram.ui.Cells.f1.q(2131745549, arrayList8, arrayList10, valueOf);
                                     arrayList9.add(1);
                                 } else {
-                                    org.telegram.ui.Cells.f1.q(2131746287, arrayList8, arrayList10, valueOf);
+                                    org.telegram.ui.Cells.f1.q(2131746289, arrayList8, arrayList10, valueOf);
                                     arrayList9.add(2);
                                 }
                             }
                             isVar11 = ksVar.l;
                             document6 = ksVar.W;
                             if (isVar11.E(document6)) {
-                                arrayList8.add(org.telegram.messenger.hd.L0(2131751764));
+                                arrayList8.add(org.telegram.messenger.id.L0(2131751764));
                                 arrayList10.add(Integer.valueOf(R.drawable.msg_copy));
                                 arrayList9.add(3);
                             }
                             isVar12 = ksVar.l;
                             document7 = ksVar.W;
                             if (isVar12.N(document7)) {
-                                org.telegram.ui.Cells.f1.q(2131746310, arrayList8, arrayList10, valueOf5);
+                                org.telegram.ui.Cells.f1.q(2131746312, arrayList8, arrayList10, valueOf5);
                                 arrayList9.add(4);
                             }
                             i17 = ksVar.r;
@@ -677,7 +677,7 @@ public final class gs implements Runnable {
                                             document11 = ksVar.W;
                                         }
                                     }
-                                    arrayList8.add(A02 ? org.telegram.messenger.hd.L0(2131751539) : org.telegram.messenger.hd.L0(2131754374));
+                                    arrayList8.add(A02 ? org.telegram.messenger.id.L0(2131751539) : org.telegram.messenger.id.L0(2131754374));
                                     arrayList10.add(Integer.valueOf(A02 ? R.drawable.msg_unfave : R.drawable.msg_fave));
                                     arrayList9.add(5);
                                 }
@@ -810,7 +810,7 @@ public final class gs implements Runnable {
                         if (isVar2.k(i12)) {
                             isVar7 = ksVar.l;
                             if (!isVar7.c()) {
-                                org.telegram.ui.Cells.f1.q(2131745624, arrayList11, arrayList13, valueOf4);
+                                org.telegram.ui.Cells.f1.q(2131745626, arrayList11, arrayList13, valueOf4);
                                 arrayList12.add(0);
                             }
                         }
@@ -819,13 +819,13 @@ public final class gs implements Runnable {
                         if (isVar3.k(i13)) {
                             isVar6 = ksVar.l;
                             if (!isVar6.c()) {
-                                org.telegram.ui.Cells.f1.q(2131745584, arrayList11, arrayList13, valueOf3);
+                                org.telegram.ui.Cells.f1.q(2131745586, arrayList11, arrayList13, valueOf3);
                                 arrayList12.add(4);
                             }
                         }
                         isVar4 = ksVar.l;
                         if (isVar4.b()) {
-                            org.telegram.ui.Cells.f1.q(2131745861, arrayList11, arrayList13, valueOf2);
+                            org.telegram.ui.Cells.f1.q(2131745863, arrayList11, arrayList13, valueOf2);
                             arrayList12.add(3);
                         }
                         document = ksVar.W;
@@ -857,11 +857,11 @@ public final class gs implements Runnable {
                                 i52++;
                             }
                             if (z9) {
-                                arrayList11.add(org.telegram.messenger.hd.Y(2131751599, "Delete", new Object[0]));
+                                arrayList11.add(org.telegram.messenger.id.Y(2131751599, "Delete", new Object[0]));
                                 arrayList13.add(valueOf5);
                                 arrayList12.add(1);
                             } else {
-                                arrayList11.add(org.telegram.messenger.hd.Y(2131745931, "SaveToGIFs", new Object[0]));
+                                arrayList11.add(org.telegram.messenger.id.Y(2131745933, "SaveToGIFs", new Object[0]));
                                 arrayList13.add(Integer.valueOf(R.drawable.msg_gif_add));
                                 arrayList12.add(2);
                             }

@@ -26,7 +26,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gf;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.we;
@@ -35,7 +35,7 @@ import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class g6 extends View implements o2 {
     public boolean A0;
@@ -934,7 +934,7 @@ public final class g6 extends View implements o2 {
                             this.z0 = false;
                             this.G0.e(true, 1.0f);
                             k3 k3Var = ((s9) this.a).a.T0;
-                            k3Var.a.t(hd.M0(2131744662, null), true, true);
+                            k3Var.a.t(id.M0(2131744664, null), true, true);
                             k3Var.invalidate();
                         } else {
                             this.r0 = false;

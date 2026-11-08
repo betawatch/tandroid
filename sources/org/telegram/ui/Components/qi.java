@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class qi extends vh {
     public bi.q1 n;
@@ -75,7 +75,7 @@ public final class qi extends vh {
             diVar.R2.getTitleTextView().setBuildFullLayout(true);
         } catch (Exception unused) {
         }
-        diVar.R2.setTitle(org.telegram.messenger.hd.M0(2131745664, null));
+        diVar.R2.setTitle(org.telegram.messenger.id.M0(2131745666, null));
         this.s.h1(0, 0);
     }
 

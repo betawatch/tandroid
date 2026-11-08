@@ -6,9 +6,9 @@ import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class ih extends kt {
+public final class ih extends lt {
     public final /* synthetic */ di V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -17,10 +17,10 @@ public final class ih extends kt {
         this.V = diVar;
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.lt
     public final void f() {
         super.f();
-        gy emojiView = getEmojiView();
+        hy emojiView = getEmojiView();
         if (emojiView != null) {
             emojiView.w0 = false;
             emojiView.x2 = false;
@@ -29,7 +29,7 @@ public final class ih extends kt {
         }
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.lt
     public final void i(ActionMode actionMode, Menu menu) {
         org.telegram.ui.ActionBar.f2 f2Var = this.V.W1;
         if (f2Var instanceof org.telegram.ui.an) {
@@ -57,7 +57,7 @@ public final class ih extends kt {
         this.V.Q1();
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.lt
     public final void q(int i7, int i10) {
         di diVar = this.V;
         diVar.Q1();

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.SparseIntArray;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class o01 extends t01 {
     public final /* synthetic */ int m3;
@@ -47,16 +47,16 @@ public final class o01 extends t01 {
                         }
                         int keyAt = sparseIntArray.keyAt(i11);
                         int valueAt = sparseIntArray.valueAt(i11);
-                        org.telegram.ui.Components.tw twVar = valueAt >= 0 ? (org.telegram.ui.Components.tw) q11Var.M0.get(valueAt) : null;
-                        if (twVar != null) {
-                            boolean z9 = twVar.h;
-                            int size = twVar.c.size();
+                        org.telegram.ui.Components.uw uwVar = valueAt >= 0 ? (org.telegram.ui.Components.uw) q11Var.M0.get(valueAt) : null;
+                        if (uwVar != null) {
+                            boolean z9 = uwVar.h;
+                            int size = uwVar.c.size();
                             if (!z9) {
                                 size = Math.min(24, size);
                             }
                             if (I0 > keyAt && I0 <= keyAt + 1 + size) {
-                                org.telegram.ui.Components.av avVar = q11Var.d0;
-                                avVar.j(((avVar.E == null || !avVar.b0) ? 0 : 1) + (avVar.D != null ? 1 : 0) + valueAt, true);
+                                org.telegram.ui.Components.bv bvVar = q11Var.d0;
+                                bvVar.j(((bvVar.E == null || !bvVar.b0) ? 0 : 1) + (bvVar.D != null ? 1 : 0) + valueAt, true);
                             }
                         }
                         i11++;

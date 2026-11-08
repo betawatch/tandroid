@@ -27,10 +27,10 @@ import org.telegram.ui.Components.v41;
 import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.z70;
-import org.telegram.ui.r81;
+import org.telegram.ui.s81;
 import org.telegram.ui.z40;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class p0 extends FrameLayout implements z70 {
     public final org.telegram.ui.Components.voip.n D;
@@ -111,7 +111,7 @@ public class p0 extends FrameLayout implements z70 {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.s, this.r ? 1.0f : 0.0f);
         this.x = ofFloat;
         ofFloat.addUpdateListener(new m4(this, 12));
-        this.x.addListener(new r81(this, 18));
+        this.x.addListener(new s81(this, 18));
         this.x.setDuration(250L);
         this.x.setInterpolator(xq.f);
         this.x.start();

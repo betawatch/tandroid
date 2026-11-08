@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import bi.ab;
 import bi.x5;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -17,7 +17,7 @@ import org.telegram.ui.a11;
 import org.telegram.ui.an;
 import org.telegram.ui.q11;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class w extends q11 {
     public final /* synthetic */ ii0 e2;
@@ -47,7 +47,7 @@ public final class w extends q11 {
                 x5Var.performHapticFeedback(3);
             } catch (Exception unused) {
             }
-            new hc(x5Var, null).r(document, org.telegram.messenger.g0.X2(hd.M0(2131743862, null)), hd.M0(2131747032, null), new ab(this, 10)).j();
+            new hc(x5Var, null).r(document, org.telegram.messenger.g0.X2(id.M0(2131743864, null)), id.M0(2131747034, null), new ab(this, 10)).j();
             return;
         }
         if (l10 == null && document == null) {

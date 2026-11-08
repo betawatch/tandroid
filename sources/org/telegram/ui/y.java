@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y implements org.telegram.messenger.c20 {
     public final /* synthetic */ int a;
@@ -296,9 +296,9 @@ public final /* synthetic */ class y implements org.telegram.messenger.c20 {
                             kbVar.a.setScaleY(0.8f);
                             kbVar.a.setImageDrawable(org.telegram.messenger.i6.f("🎲"));
                         }
-                        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(org.telegram.messenger.hd.M0(2131745237, null));
+                        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(org.telegram.messenger.id.M0(2131745239, null));
                         spannableStringBuilder2.append((CharSequence) bi.dd.P0(j3));
-                        spannableStringBuilder2.append((CharSequence) "  ").append((CharSequence) org.telegram.ui.Components.kc.b(org.telegram.messenger.hd.M0(2131745235, null), new by0(10, anVar3, kVar), anVar3.getResourceProvider(), null));
+                        spannableStringBuilder2.append((CharSequence) "  ").append((CharSequence) org.telegram.ui.Components.kc.b(org.telegram.messenger.id.M0(2131745237, null), new by0(10, anVar3, kVar), anVar3.getResourceProvider(), null));
                         org.telegram.messenger.g0.E2(kbVar.b);
                         org.telegram.ui.Components.jc jcVar = new org.telegram.ui.Components.jc(anVar3.getContext());
                         kbVar.b = jcVar;
@@ -314,7 +314,7 @@ public final /* synthetic */ class y implements org.telegram.messenger.c20 {
                         kbVar.b.setSingleLine(false);
                         kbVar.b.setMaxLines(2);
                         org.telegram.ui.Components.ac acVar = new org.telegram.ui.Components.ac(anVar3.getContext(), anVar3.getResourceProvider(), true);
-                        acVar.e(org.telegram.messenger.hd.M0(2131745236, null));
+                        acVar.e(org.telegram.messenger.id.M0(2131745238, null));
                         acVar.b = new p31(kVar, j3, i13);
                         kbVar.setButton(acVar);
                         org.telegram.ui.Components.hc.a0(anVar3).b(kbVar, 2750).j();
@@ -338,19 +338,19 @@ public final /* synthetic */ class y implements org.telegram.messenger.c20 {
                 } else if (contentsettings != null && contentsettings.sensitive_can_change) {
                     org.telegram.ui.Cells.c2 c2Var = new org.telegram.ui.Cells.c2(1, anVar4.getParentActivity(), anVar4.getResourceProvider());
                     c2Var.setBackground(org.telegram.ui.ActionBar.k6.N0(false));
-                    c2Var.e(org.telegram.messenger.hd.M0(2131748481, null), "", zArr[0], false, false);
-                    c2Var.setPadding(org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(16.0f) : org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(8.0f) : org.telegram.messenger.g0.L(16.0f), 0);
+                    c2Var.e(org.telegram.messenger.id.M0(2131748483, null), "", zArr[0], false, false);
+                    c2Var.setPadding(org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(16.0f) : org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(8.0f) : org.telegram.messenger.g0.L(16.0f), 0);
                     frameLayout.addView(c2Var, c8.ha.d(-1, 48.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
                     c2Var.setOnClickListener(new j8(i12, zArr));
                 }
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, anVar4.getParentActivity(), anVar4.getResourceProvider());
-                alertDialog$Builder.a.R = org.telegram.messenger.hd.M0(2131748472, null);
-                alertDialog$Builder.a.T = org.telegram.messenger.hd.M0(objArr != false ? 2131748474 : 2131748475, null);
+                alertDialog$Builder.a.R = org.telegram.messenger.id.M0(2131748474, null);
+                alertDialog$Builder.a.T = org.telegram.messenger.id.M0(objArr != false ? 2131748476 : 2131748477, null);
                 alertDialog$Builder.o(frameLayout);
                 alertDialog$Builder.a.G = 9;
-                alertDialog$Builder.h(org.telegram.messenger.hd.M0(objArr != false ? 2131748473 : 2131752589, null), null);
+                alertDialog$Builder.h(org.telegram.messenger.id.M0(objArr != false ? 2131748475 : 2131752589, null), null);
                 if (objArr == false) {
-                    alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131748480, null), new yl(lmVar2, q1Var, zArr, z10, contentsettings));
+                    alertDialog$Builder.k(org.telegram.messenger.id.M0(2131748482, null), new yl(lmVar2, q1Var, zArr, z10, contentsettings));
                 }
                 anVar4.showDialog(alertDialog$Builder.a);
                 break;
@@ -383,7 +383,7 @@ public final /* synthetic */ class y implements org.telegram.messenger.c20 {
                     bVar.b();
                 }
                 if ((l12 != null ? org.telegram.messenger.qp.s1(launchActivity.O).e2(l12.longValue()) : null) != null) {
-                    new zh.h1(launchActivity, iArr[0], l12.longValue(), null, null).show();
+                    new zh.g1(launchActivity, iArr[0], l12.longValue(), null, null).show();
                     break;
                 } else {
                     org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
@@ -402,7 +402,7 @@ public final /* synthetic */ class y implements org.telegram.messenger.c20 {
                 userArr[0] = a22;
                 if (a22 == null) {
                     p90Var.c();
-                    org.telegram.messenger.k5.p(null, 2131748133, p90.d(), null);
+                    org.telegram.messenger.k5.p(null, 2131748135, p90.d(), null);
                     break;
                 } else {
                     kn0Var.run();

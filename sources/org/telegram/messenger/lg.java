@@ -24,7 +24,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class lg implements Runnable {
     public final /* synthetic */ int a;
@@ -856,7 +856,7 @@ public final /* synthetic */ class lg implements Runnable {
         int i7;
         yr yrVar = (yr) this.b;
         ArrayList arrayList = (ArrayList) this.c;
-        ck ckVar = (ck) this.d;
+        bk bkVar = (bk) this.d;
         yrVar.getClass();
         int size = arrayList.size();
         int i10 = 0;
@@ -877,7 +877,7 @@ public final /* synthetic */ class lg implements Runnable {
             }
         }
         yrVar.g1(arrayList, true);
-        ckVar.run();
+        bkVar.run();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:23:0x009d, code lost:
@@ -1019,13 +1019,13 @@ public final /* synthetic */ class lg implements Runnable {
                 ui uiVar2 = (ui) this.b;
                 TLObject tLObject = (TLObject) this.c;
                 TLRPC.Document document = (TLRPC.Document) this.d;
-                yf.c cVar = uiVar2.z0;
+                yf.d dVar = uiVar2.z0;
                 if (tLObject != null) {
                     if (tLObject instanceof TL_account.TL_savedRingtoneConverted) {
-                        cVar.a(((TL_account.TL_savedRingtoneConverted) tLObject).document);
+                        dVar.a(((TL_account.TL_savedRingtoneConverted) tLObject).document);
                         return;
                     } else {
-                        cVar.a(document);
+                        dVar.a(document);
                         return;
                     }
                 }
@@ -1369,7 +1369,7 @@ public final /* synthetic */ class lg implements Runnable {
             case 16:
                 yr yrVar = (yr) this.b;
                 ArrayList arrayList9 = (ArrayList) this.c;
-                dk dkVar = (dk) this.d;
+                ck ckVar = (ck) this.d;
                 yrVar.getClass();
                 int size4 = arrayList9.size();
                 while (i17 < size4) {
@@ -1399,7 +1399,7 @@ public final /* synthetic */ class lg implements Runnable {
                     }
                 }
                 yrVar.g1(arrayList9, true);
-                dkVar.run();
+                ckVar.run();
                 return;
             case 17:
                 yr yrVar2 = (yr) this.b;
@@ -1606,7 +1606,7 @@ public final /* synthetic */ class lg implements Runnable {
                 h();
                 return;
             default:
-                ((MediaBrowserService.Result) ((p1) this.d).b).sendResult(((wz) this.b).d((String) this.c));
+                ((MediaBrowserService.Result) ((j1) this.d).b).sendResult(((wz) this.b).d((String) this.c));
                 return;
         }
     }

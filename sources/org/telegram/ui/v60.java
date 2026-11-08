@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v60 implements org.telegram.messenger.c20 {
     public final /* synthetic */ int a;
@@ -46,14 +46,14 @@ public final /* synthetic */ class v60 implements org.telegram.messenger.c20 {
                     } else {
                         org.telegram.ui.Components.hc X = org.telegram.ui.Components.hc.X();
                         if (X != null) {
-                            org.telegram.messenger.k5.o(null, 2131744607, X, R.raw.story_bomb1, 36);
+                            org.telegram.messenger.k5.o(null, 2131744609, X, R.raw.story_bomb1, 36);
                             break;
                         }
                     }
                 } else {
                     org.telegram.ui.Components.hc X2 = org.telegram.ui.Components.hc.X();
                     if (X2 != null) {
-                        org.telegram.messenger.k5.o(null, 2131744607, X2, R.raw.story_bomb2, 36);
+                        org.telegram.messenger.k5.o(null, 2131744609, X2, R.raw.story_bomb2, 36);
                         break;
                     }
                 }
@@ -78,14 +78,14 @@ public final /* synthetic */ class v60 implements org.telegram.messenger.c20 {
                     } else {
                         org.telegram.ui.Components.hc X3 = org.telegram.ui.Components.hc.X();
                         if (X3 != null) {
-                            org.telegram.messenger.k5.o(null, 2131744607, X3, R.raw.story_bomb1, 36);
+                            org.telegram.messenger.k5.o(null, 2131744609, X3, R.raw.story_bomb1, 36);
                             break;
                         }
                     }
                 } else {
                     org.telegram.ui.Components.hc X4 = org.telegram.ui.Components.hc.X();
                     if (X4 != null) {
-                        org.telegram.messenger.k5.o(null, 2131744607, X4, R.raw.story_bomb2, 36);
+                        org.telegram.messenger.k5.o(null, 2131744609, X4, R.raw.story_bomb2, 36);
                         break;
                     }
                 }

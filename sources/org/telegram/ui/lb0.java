@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class lb0 extends yq {
     public final /* synthetic */ int h;
@@ -34,7 +34,7 @@ public final class lb0 extends yq {
                     break;
                 }
             default:
-                ((ya1) this.n).H0();
+                ((za1) this.n).H0();
                 break;
         }
     }

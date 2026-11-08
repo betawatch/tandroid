@@ -6,7 +6,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ae implements Runnable {
     public final /* synthetic */ int a;
@@ -33,14 +33,14 @@ public final /* synthetic */ class ae implements Runnable {
                     boolean T = org.telegram.messenger.t3.T(anVar.e);
                     org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                     if (!T || anVar.e.megagroup) {
-                        u1Var.T = org.telegram.messenger.hd.M0(2131749082, null);
-                        u1Var.R = org.telegram.messenger.hd.M0(2131749081, null);
+                        u1Var.T = org.telegram.messenger.id.M0(2131749084, null);
+                        u1Var.R = org.telegram.messenger.id.M0(2131749083, null);
                     } else {
-                        u1Var.T = org.telegram.messenger.hd.M0(2131749084, null);
-                        u1Var.R = org.telegram.messenger.hd.M0(2131749083, null);
+                        u1Var.T = org.telegram.messenger.id.M0(2131749086, null);
+                        u1Var.R = org.telegram.messenger.id.M0(2131749085, null);
                     }
-                    alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131749080, null), new fe(anVar, 2));
-                    alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), new fe(anVar, 3));
+                    alertDialog$Builder.k(org.telegram.messenger.id.M0(2131749082, null), new fe(anVar, 2));
+                    alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), new fe(anVar, 3));
                     anVar.showDialog(u1Var);
                     break;
                 }
@@ -86,7 +86,7 @@ public final /* synthetic */ class ae implements Runnable {
                 anVar.H7();
                 break;
             case 7:
-                u81 f02 = u81.f0(-anVar.j6, 0L);
+                v81 f02 = v81.f0(-anVar.j6, 0L);
                 f02.D = anVar;
                 anVar.presentFragment(f02);
                 break;
@@ -153,13 +153,13 @@ public final /* synthetic */ class ae implements Runnable {
                 break;
             case 19:
                 ae aeVar = new ae(anVar, 10);
-                if (org.telegram.utils.twidget.p.x()) {
+                if (org.telegram.utils.twidget.n0.z()) {
                     aeVar.run();
                     break;
                 } else {
-                    org.telegram.ui.Components.dt dtVar = new org.telegram.ui.Components.dt(aeVar, 26);
-                    org.telegram.utils.twidget.p.h.add(dtVar);
-                    org.telegram.messenger.g0.i3(dtVar, 150L);
+                    org.telegram.ui.Components.et etVar = new org.telegram.ui.Components.et(aeVar, 26);
+                    org.telegram.utils.twidget.n0.h.add(etVar);
+                    org.telegram.messenger.g0.i3(etVar, 150L);
                     break;
                 }
             case 20:

@@ -18,7 +18,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class zr0 extends Dialog {
     public float D;
@@ -98,8 +98,8 @@ public final class zr0 extends Dialog {
         vr0Var2.addView(vr0Var3, c8.ha.e(-1, -1, org.telegram.messenger.qs.E1));
         org.telegram.ui.Components.ga0 ga0Var = new org.telegram.ui.Components.ga0(activity, f6Var);
         this.n = ga0Var;
-        ga0Var.a(0, org.telegram.messenger.hd.M0(2131747167, null));
-        ga0Var.a(1, org.telegram.messenger.hd.M0(2131747166, null));
+        ga0Var.a(0, org.telegram.messenger.id.M0(2131747169, null));
+        ga0Var.a(1, org.telegram.messenger.id.M0(2131747168, null));
         vr0Var2.addView(ga0Var, c8.ha.e(-1, 66, 80));
         ga0Var.setOnTabClick(new r3(g1Var, 19));
         fh.g c10 = cVar.c(ga0Var, null, false);
@@ -112,7 +112,7 @@ public final class zr0 extends Dialog {
         this.h = textView;
         textView.setTextSize(1, 13.0f);
         textView.setTextColor(ga0Var.getColor());
-        textView.setText(org.telegram.messenger.hd.M0(2131747168, null));
+        textView.setText(org.telegram.messenger.id.M0(2131747170, null));
         textView.setGravity(17);
         vr0Var2.addView(textView, c8.ha.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 66.0f));
         wr0 wr0Var = new wr0(this, i7);

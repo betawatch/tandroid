@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class rk implements kl {
     public final /* synthetic */ an a;
@@ -68,13 +68,13 @@ public final class rk implements kl {
             if (z10) {
                 org.telegram.ui.Components.zb zbVar = new org.telegram.ui.Components.zb(anVar.getParentActivity(), ymVar);
                 zbVar.c(R.raw.ic_unpin, 28, 28, "Pin", "Line");
-                zbVar.b.setText(org.telegram.messenger.hd.M0(2131747223, null));
-                zbVar.c.setText(org.telegram.messenger.hd.M0(2131747222, null));
+                zbVar.b.setText(org.telegram.messenger.id.M0(2131747225, null));
+                zbVar.c.setText(org.telegram.messenger.id.M0(2131747224, null));
                 zaVar = zbVar;
             } else {
                 org.telegram.ui.Components.kb kbVar = new org.telegram.ui.Components.kb(anVar.getParentActivity(), ymVar);
                 kbVar.c(R.raw.ic_unpin, 28, 28, "Pin", "Line");
-                kbVar.b.setText(org.telegram.messenger.hd.G(a92, "MessagesUnpinned", new Object[0]));
+                kbVar.b.setText(org.telegram.messenger.id.G(a92, "MessagesUnpinned", new Object[0]));
                 zaVar = kbVar;
             }
             org.telegram.ui.Components.ac acVar = new org.telegram.ui.Components.ac(anVar.getParentActivity(), ymVar, true);

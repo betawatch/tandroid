@@ -15,7 +15,7 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Components.r60;
 import org.telegram.ui.Components.t60;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -43,9 +43,9 @@ public final /* synthetic */ class a1 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Wallet.k0 k0Var;
+        org.telegram.ui.Wallet.j0 j0Var;
         String i7;
-        org.telegram.ui.Wallet.b2 b2Var;
+        org.telegram.ui.Wallet.a2 a2Var;
         switch (this.a) {
             case 0:
                 org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.b;
@@ -91,30 +91,30 @@ public final /* synthetic */ class a1 implements Runnable {
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.f2 f2Var2 = (org.telegram.ui.Wallet.f2) this.b;
+                org.telegram.ui.Wallet.e2 e2Var = (org.telegram.ui.Wallet.e2) this.b;
                 TL_wallet.tonConnectPending tonconnectpending = (TL_wallet.tonConnectPending) this.d;
                 TL_wallet.tonConnectRequest tonconnectrequest = (TL_wallet.tonConnectRequest) this.f;
-                org.telegram.ui.Wallet.k0 k0Var2 = (org.telegram.ui.Wallet.k0) this.h;
+                org.telegram.ui.Wallet.j0 j0Var2 = (org.telegram.ui.Wallet.j0) this.h;
                 String str = (String) this.n;
                 byte[] bArr = (byte[]) this.r;
-                org.telegram.ui.Wallet.v1 v1Var = (org.telegram.ui.Wallet.v1) this.s;
-                f2Var2.getClass();
+                org.telegram.ui.Wallet.u1 u1Var3 = (org.telegram.ui.Wallet.u1) this.s;
+                e2Var.getClass();
                 try {
-                    k0Var = k0Var2;
+                    j0Var = j0Var2;
                 } catch (Exception e11) {
                     e = e11;
-                    k0Var = k0Var2;
+                    j0Var = j0Var2;
                 }
                 try {
-                    b2Var = new org.telegram.ui.Wallet.b2(tonconnectpending, tonconnectrequest, org.telegram.ui.Wallet.f2.g(k0Var2, tonconnectpending.session, str, bArr, tonconnectrequest.body, f2Var2.f.getCurrentTime()), str, bArr);
+                    a2Var = new org.telegram.ui.Wallet.a2(tonconnectpending, tonconnectrequest, org.telegram.ui.Wallet.e2.g(j0Var2, tonconnectpending.session, str, bArr, tonconnectrequest.body, e2Var.f.getCurrentTime()), str, bArr);
                     i7 = null;
                 } catch (Exception e12) {
                     e = e12;
-                    i7 = org.telegram.ui.Wallet.f2.i("decode request", e);
-                    b2Var = null;
-                    org.telegram.messenger.g0.h3(new pb(f2Var2, b2Var, v1Var, i7, this.c, this.e, k0Var));
+                    i7 = org.telegram.ui.Wallet.e2.i("decode request", e);
+                    a2Var = null;
+                    org.telegram.messenger.g0.h3(new pb(e2Var, a2Var, u1Var3, i7, this.c, this.e, j0Var));
                 }
-                org.telegram.messenger.g0.h3(new pb(f2Var2, b2Var, v1Var, i7, this.c, this.e, k0Var));
+                org.telegram.messenger.g0.h3(new pb(e2Var, a2Var, u1Var3, i7, this.c, this.e, j0Var));
         }
     }
 
@@ -130,14 +130,14 @@ public final /* synthetic */ class a1 implements Runnable {
         this.s = peer;
     }
 
-    public /* synthetic */ a1(org.telegram.ui.Wallet.f2 f2Var, TL_wallet.tonConnectPending tonconnectpending, TL_wallet.tonConnectRequest tonconnectrequest, org.telegram.ui.Wallet.k0 k0Var, String str, byte[] bArr, org.telegram.ui.Wallet.v1 v1Var, long j3, int i7) {
-        this.b = f2Var;
+    public /* synthetic */ a1(org.telegram.ui.Wallet.e2 e2Var, TL_wallet.tonConnectPending tonconnectpending, TL_wallet.tonConnectRequest tonconnectrequest, org.telegram.ui.Wallet.j0 j0Var, String str, byte[] bArr, org.telegram.ui.Wallet.u1 u1Var, long j3, int i7) {
+        this.b = e2Var;
         this.d = tonconnectpending;
         this.f = tonconnectrequest;
-        this.h = k0Var;
+        this.h = j0Var;
         this.n = str;
         this.r = bArr;
-        this.s = v1Var;
+        this.s = u1Var;
         this.c = j3;
         this.e = i7;
     }

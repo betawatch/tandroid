@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class g extends a8.q {
     public final /* synthetic */ int b;
@@ -26,7 +26,7 @@ public abstract class g extends a8.q {
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // a8.q
-    public final boolean K0(int i7, Parcel parcel, Parcel parcel2) {
+    public final boolean k1(int i7, Parcel parcel, Parcel parcel2) {
         int i10 = 2;
         int i11 = 0;
         switch (this.b) {
@@ -61,7 +61,7 @@ public abstract class g extends a8.q {
                         s4.r b11 = s4.r.b(bundle3);
                         if (b11 != null) {
                             if (Looper.myLooper() == Looper.getMainLooper()) {
-                                pVar2.N0(b11, readInt);
+                                pVar2.n1(b11, readInt);
                             } else {
                                 new y(Looper.getMainLooper(), 0).post(new androidx.activity.g(pVar2, b11, readInt, i10));
                             }
@@ -75,7 +75,7 @@ public abstract class g extends a8.q {
                         s4.r b12 = s4.r.b(bundle4);
                         if (b12 != null) {
                             if (Looper.myLooper() == Looper.getMainLooper()) {
-                                pVar3.O0(b12);
+                                pVar3.o1(b12);
                             } else {
                                 new y(Looper.getMainLooper(), 0).post(new m9.u(8, pVar3, b12));
                             }

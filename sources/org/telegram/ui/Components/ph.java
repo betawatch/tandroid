@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class ph extends org.telegram.ui.ActionBar.i1 {
     public final /* synthetic */ qh x;
@@ -13,7 +13,7 @@ public final class ph extends org.telegram.ui.ActionBar.i1 {
 
     @Override // org.telegram.ui.ActionBar.i1
     public final boolean b() {
-        gy gyVar;
+        hy hyVar;
         di diVar = this.x.k0;
         if ((!diVar.I || diVar.o2) && diVar.m3) {
             vh vhVar = diVar.s2;
@@ -22,14 +22,14 @@ public final class ph extends org.telegram.ui.ActionBar.i1 {
             }
             vh vhVar2 = diVar.s2;
             bn bnVar = diVar.d2;
-            if (vhVar2 == bnVar && ((gyVar = bnVar.E) == null || gyVar.getVisibility() != 0)) {
+            if (vhVar2 == bnVar && ((hyVar = bnVar.E) == null || hyVar.getVisibility() != 0)) {
                 return true;
             }
             vh vhVar3 = diVar.s2;
             bn bnVar2 = diVar.e2;
             if (vhVar3 == bnVar2) {
-                gy gyVar2 = bnVar2.E;
-                return gyVar2 == null || gyVar2.getVisibility() != 0;
+                hy hyVar2 = bnVar2.E;
+                return hyVar2 == null || hyVar2.getVisibility() != 0;
             }
         }
         return false;

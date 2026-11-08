@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class e2 extends FrameLayout implements org.telegram.ui.Cells.h9, c3 {
     public final o50 a;
@@ -96,7 +96,7 @@ public final class e2 extends FrameLayout implements org.telegram.ui.Cells.h9, c
         if (str2.length() == spannableString.length()) {
             String b10 = ni.s.b(str);
             if (!b10.isEmpty() && !str2.isEmpty()) {
-                ni.m.a.d(str2, b10, new ab.g(29, spannableString, pVar));
+                ni.m.a.d(str2, b10, new zh.i3(spannableString, pVar));
             }
         }
         return spannableString;

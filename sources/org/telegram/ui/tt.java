@@ -16,7 +16,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class tt extends LinearLayout implements org.telegram.ui.ActionBar.a6 {
     public boolean D;
@@ -63,17 +63,17 @@ public final class tt extends LinearLayout implements org.telegram.ui.ActionBar.
         e61Var.setFocusable(false);
         e61Var.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
         e61Var.setOnItemClickListener(new di.p4(16, this, f2Var));
-        org.telegram.ui.Components.lz lzVar = new org.telegram.ui.Components.lz(getContext(), null);
-        lzVar.setViewType(14);
-        lzVar.setVisibility(0);
+        org.telegram.ui.Components.mz mzVar = new org.telegram.ui.Components.mz(getContext(), null);
+        mzVar.setViewType(14);
+        mzVar.setVisibility(0);
         if (i7 == 0 || i7 == -1) {
-            frameLayout.addView(lzVar, c8.ha.d(-1, 104.0f, 8388611, 0.0f, 8.0f, 0.0f, 8.0f));
+            frameLayout.addView(mzVar, c8.ha.d(-1, 104.0f, 8388611, 0.0f, 8.0f, 0.0f, 8.0f));
             frameLayout.addView(e61Var, c8.ha.d(-1, 104.0f, 8388611, 0.0f, 8.0f, 0.0f, 8.0f));
         } else {
-            frameLayout.addView(lzVar, c8.ha.d(-1, 104.0f, 8388611, 0.0f, 8.0f, 0.0f, 8.0f));
+            frameLayout.addView(mzVar, c8.ha.d(-1, 104.0f, 8388611, 0.0f, 8.0f, 0.0f, 8.0f));
             frameLayout.addView(e61Var, c8.ha.d(-1, -2.0f, 8388611, 0.0f, 8.0f, 0.0f, 8.0f));
         }
-        e61Var.setEmptyView(lzVar);
+        e61Var.setEmptyView(mzVar);
         e61Var.W1 = true;
         e61Var.X1 = 0;
         if (i7 == 0) {
@@ -92,17 +92,17 @@ public final class tt extends LinearLayout implements org.telegram.ui.ActionBar.
             addView(m8Var, c8.ha.c(-2.0f, -1));
             org.telegram.ui.Cells.m8 m8Var2 = new org.telegram.ui.Cells.m8(context);
             this.f = m8Var2;
-            m8Var2.o(R.drawable.msg_colors, org.telegram.messenger.hd.M0(2131745492, null), false);
+            m8Var2.o(R.drawable.msg_colors, org.telegram.messenger.id.M0(2131745494, null), false);
             addView(m8Var2, c8.ha.c(-2.0f, -1));
             m8Var.setOnClickListener(new org.telegram.ui.Components.xd(i10, this, context, f2Var));
             zg0Var.h = true;
             m8Var2.setOnClickListener(new a(f2Var, 18));
             if (org.telegram.ui.ActionBar.k6.k1()) {
-                m8Var.p(org.telegram.messenger.hd.M0(2131745467, null), zg0Var, true);
+                m8Var.p(org.telegram.messenger.id.M0(2131745469, null), zg0Var, true);
                 m8Var.x += 2;
             } else {
                 zg0Var.M(zg0Var.e[0] - 1);
-                m8Var.p(org.telegram.messenger.hd.M0(2131745468, null), zg0Var, true);
+                m8Var.p(org.telegram.messenger.id.M0(2131745470, null), zg0Var, true);
                 m8Var.x += 2;
             }
         }
@@ -327,7 +327,7 @@ public final class tt extends LinearLayout implements org.telegram.ui.ActionBar.
                 if (!zg0Var.k0) {
                     this.d.M(org.telegram.ui.ActionBar.k6.k1() ? 0 : this.d.e[0] - 1);
                 }
-                this.e.p(org.telegram.messenger.hd.M0(org.telegram.ui.ActionBar.k6.k1() ? 2131745467 : 2131745468, null), this.d, true);
+                this.e.p(org.telegram.messenger.id.M0(org.telegram.ui.ActionBar.k6.k1() ? 2131745469 : 2131745470, null), this.d, true);
                 this.e.x += 2;
             }
         }

@@ -17,12 +17,12 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.l61;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class y6 extends View {
     public final org.telegram.ui.Components.i6 D;
@@ -108,11 +108,11 @@ public class y6 extends View {
             i6Var2.setCallback(this);
             i6Var2.u(-1);
             if (i7 == 1) {
-                i6Var2.t(hd.M0(2131750692, null), true, true);
+                i6Var2.t(id.M0(2131750692, null), true, true);
             } else if (i7 == 2) {
-                i6Var2.t(hd.M0(2131750693, null), true, true);
+                i6Var2.t(id.M0(2131750693, null), true, true);
             } else if (i7 == 3) {
-                i6Var2.t(hd.M0(2131742955, null), true, true);
+                i6Var2.t(id.M0(2131742957, null), true, true);
             }
         }
         i6Var.t("", true, true);
@@ -275,7 +275,7 @@ public class y6 extends View {
             this.O = i11;
             this.P = org.telegram.messenger.g0.L(48.0f);
         } else if (i12 == 0) {
-            this.O = (int) Math.min(textPaint.measureText(hd.M0(2131744721, null)) + org.telegram.messenger.g0.L(88.0f), View.MeasureSpec.getSize(i7));
+            this.O = (int) Math.min(textPaint.measureText(id.M0(2131744723, null)) + org.telegram.messenger.g0.L(88.0f), View.MeasureSpec.getSize(i7));
             this.P = org.telegram.messenger.g0.L(48.0f);
         } else {
             this.O = org.telegram.messenger.g0.L(190.0f);

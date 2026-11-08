@@ -9,24 +9,24 @@ import org.webrtc.GlRectDrawer;
 import org.webrtc.VideoFrame;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class q0 implements VideoSink {
     public final EglRenderer a;
     public SurfaceTexture b;
     public boolean c;
 
-    public q0(ti.q qVar) {
+    public q0(ti.p pVar) {
         EglRenderer eglRenderer = new EglRenderer("pip-egl");
         this.a = eglRenderer;
         eglRenderer.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), EglBase.CONFIG_PLAIN, new GlRectDrawer());
-        qVar.setSurfaceTextureListener(new w30(this, 3));
-        SurfaceTexture surfaceTexture = qVar.getSurfaceTexture();
-        if (surfaceTexture == null || qVar.a == null) {
+        pVar.setSurfaceTextureListener(new w30(this, 3));
+        SurfaceTexture surfaceTexture = pVar.getSurfaceTexture();
+        if (surfaceTexture == null || pVar.a == null) {
             return;
         }
-        int width = qVar.getWidth();
-        int height = qVar.getHeight();
+        int width = pVar.getWidth();
+        int height = pVar.getHeight();
         if (this.c || this.b == surfaceTexture) {
             return;
         }

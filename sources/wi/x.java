@@ -12,13 +12,13 @@ import org.telegram.messenger.video.Mp4Movie;
 import org.telegram.ui.Cells.f1;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class x {
     public final File a;
     public final int b;
     public final boolean c;
-    public final n d;
+    public final o d;
     public final org.telegram.ui.web.a0 e;
     public MP4Builder i;
     public MediaFormat j;
@@ -40,11 +40,11 @@ public final class x {
     public long q = Long.MIN_VALUE;
     public final MediaCodec.BufferInfo u = new MediaCodec.BufferInfo();
 
-    public x(File file, int i7, boolean z9, n nVar, org.telegram.ui.web.a0 a0Var) {
+    public x(File file, int i7, boolean z9, o oVar, org.telegram.ui.web.a0 a0Var) {
         this.a = file;
         this.b = i7;
         this.c = z9;
-        this.d = nVar;
+        this.d = oVar;
         this.e = a0Var;
     }
 
@@ -418,7 +418,7 @@ public final class x {
         ByteBuffer byteBuffer2;
         MediaCodec.BufferInfo bufferInfo2;
         String d;
-        n nVar = this.d;
+        o oVar = this.d;
         if (z9) {
             try {
                 r2 = this.v ? null : e(byteBuffer, bufferInfo);
@@ -427,7 +427,7 @@ public final class x {
                 bufferInfo2 = this.u;
                 if (!this.v) {
                     this.v = true;
-                    nVar.b("first video sample prepared: " + r2 + ", outputSize=" + bufferInfo2.size);
+                    oVar.b("first video sample prepared: " + r2 + ", outputSize=" + bufferInfo2.size);
                 }
             } catch (Exception e10) {
                 if (!z9) {
@@ -442,7 +442,7 @@ public final class x {
                 }
                 StringBuilder sb2 = new StringBuilder("MP4 sample write failed: track=");
                 String str = MediaStreamTrack.AUDIO_TRACK_KIND;
-                nVar.a(f1.n(z9 ? MediaStreamTrack.VIDEO_TRACK_KIND : MediaStreamTrack.AUDIO_TRACK_KIND, ", ", r2, sb2), e10);
+                oVar.a(f1.n(z9 ? MediaStreamTrack.VIDEO_TRACK_KIND : MediaStreamTrack.AUDIO_TRACK_KIND, ", ", r2, sb2), e10);
                 StringBuilder sb3 = new StringBuilder("Unable to write ");
                 if (z9) {
                     str = MediaStreamTrack.VIDEO_TRACK_KIND;

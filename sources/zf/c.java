@@ -3,12 +3,17 @@ package zf;
 import android.os.IBinder;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class c implements e {
     public IBinder a;
 
-    public final boolean H0(b bVar) {
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this.a;
+    }
+
+    public final boolean h1(b bVar) {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
@@ -23,7 +28,7 @@ public final class c implements e {
         }
     }
 
-    public final boolean I0() {
+    public final boolean i1() {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
@@ -36,10 +41,5 @@ public final class c implements e {
             obtain2.recycle();
             obtain.recycle();
         }
-    }
-
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
     }
 }

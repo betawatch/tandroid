@@ -11,7 +11,7 @@ import c8.ha;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.s9;
 import org.telegram.tgnet.TLObject;
@@ -24,7 +24,7 @@ import org.telegram.ui.Components.i6;
 import org.telegram.ui.Components.j6;
 import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class e extends FrameLayout implements a6 {
     public final fi.d a;
@@ -80,7 +80,7 @@ public final class e extends FrameLayout implements a6 {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("*");
         spannableStringBuilder.setSpan(this.h, 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.append((CharSequence) "  ");
-        spannableStringBuilder.append((CharSequence) hd.M0(2131750414, null));
+        spannableStringBuilder.append((CharSequence) id.M0(2131750416, null));
         spannableStringBuilder.append((CharSequence) "  ");
         spannableStringBuilder.append((CharSequence) h02);
         this.a.i(spannableStringBuilder, z9, true);
@@ -89,17 +89,17 @@ public final class e extends FrameLayout implements a6 {
     public final void b(boolean z9) {
         s9 s9Var = this.d;
         if (s9Var.f != null) {
-            this.b.c(hd.a0(null, null, 2131750413, hd.E(r1.current_round, ','), hd.E(s9Var.f.total_rounds, ',')), z9, true);
+            this.b.c(id.a0(null, null, 2131750415, id.E(r1.current_round, ','), id.E(s9Var.f.total_rounds, ',')), z9, true);
         }
         String m10 = jg.g.m(s9Var.e.bid_amount, ',', new StringBuilder("⭐️"));
         int d = s9Var.d();
         wp[] wpVarArr = this.n;
         j6 j6Var = this.c;
         if (d == 2 || d == 3) {
-            j6Var.c(dd.a1(false, org.telegram.messenger.g0.X2(hd.a0(null, null, 2131750415, m10)), 0.66f, wpVarArr), z9, true);
+            j6Var.c(dd.a1(false, org.telegram.messenger.g0.X2(id.a0(null, null, 2131750417, m10)), 0.66f, wpVarArr), z9, true);
             r6.Z(j6Var, k6.q7, null);
         } else {
-            j6Var.c(dd.a1(false, org.telegram.messenger.g0.X2(hd.a0(null, null, 2131750416, m10, Integer.valueOf(s9Var.i))), 0.66f, wpVarArr), z9, true);
+            j6Var.c(dd.a1(false, org.telegram.messenger.g0.X2(id.a0(null, null, 2131750418, m10, Integer.valueOf(s9Var.i))), 0.66f, wpVarArr), z9, true);
             r6.Z(j6Var, k6.G6, null);
         }
     }

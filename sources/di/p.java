@@ -20,19 +20,19 @@ import java.util.HashMap;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.dh0;
-import org.telegram.ui.Components.e10;
+import org.telegram.ui.Components.f10;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.pv;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class p extends FrameLayout {
     public org.telegram.ui.ActionBar.k5 D;
@@ -368,11 +368,11 @@ public final class p extends FrameLayout {
                         ImageReceiver imageReceiver5 = imageReceiver2;
                         if (f16 > 0.0f) {
                             if (r7.d == null) {
-                                e10 e10Var = new e10();
-                                r7.d = e10Var;
-                                e10Var.a = true;
-                                e10Var.b = true;
-                                e10Var.c.setStrokeWidth(org.telegram.messenger.g0.N(2.0f));
+                                f10 f10Var = new f10();
+                                r7.d = f10Var;
+                                f10Var.a = true;
+                                f10Var.b = true;
+                                f10Var.c.setStrokeWidth(org.telegram.messenger.g0.N(2.0f));
                                 r7.d.c.setStyle(Paint.Style.STROKE);
                                 r7.d.c.setStrokeCap(Paint.Cap.ROUND);
                             }
@@ -596,7 +596,7 @@ public final class p extends FrameLayout {
         this.D.i(null);
         if (y6Var.Q(j3)) {
             this.D.setTextSize(10);
-            this.D.l(hd.M0(2131750846, null), false);
+            this.D.l(id.M0(2131750846, null), false);
             this.U = false;
             return;
         }
@@ -639,7 +639,7 @@ public final class p extends FrameLayout {
                     org.telegram.messenger.g0.i3(pvVar.k0, 500L);
                     this.U = false;
                     this.D.setTextSize(10);
-                    this.D.l(hd.M0(2131748300, null), false);
+                    this.D.l(id.M0(2131748302, null), false);
                     return;
                 }
                 if (this.f == null) {

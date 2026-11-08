@@ -5,7 +5,7 @@ import android.os.SystemClock;
 import android.view.View;
 import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y70 implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ int a;
@@ -37,9 +37,9 @@ public final /* synthetic */ class y70 implements ViewTreeObserver.OnGlobalLayou
                 }
                 break;
             default:
-                u71 u71Var = (u71) obj;
-                u71Var.Q = SystemClock.elapsedRealtime() + 1500;
-                u71Var.l0.invalidate();
+                v71 v71Var = (v71) obj;
+                v71Var.Q = SystemClock.elapsedRealtime() + 1500;
+                v71Var.l0.invalidate();
                 break;
         }
     }

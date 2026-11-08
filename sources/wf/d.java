@@ -40,7 +40,7 @@ import yc.f;
 import yc.g;
 import yc.i;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class d extends i {
     public static final e l;
@@ -69,7 +69,7 @@ public final class d extends i {
         this.i = null;
         this.j = false;
         this.k = new AtomicInteger();
-        this.f = new j(13);
+        this.f = new j(14);
         this.g = new sa.d(11);
         this.e = new ExtendedDefaultDataSourceFactory(t0.b, "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20150101 Firefox/47.0 (Chrome)");
     }
@@ -165,8 +165,7 @@ public final class d extends i {
         n10.append(" ");
         n10.append(dVar.f);
         n10.append(" ");
-        n10.append((String) dVar.i.get("range"));
-        Log.d("CAST_SERVER", n10.toString());
+        rf.b.p(n10, (String) dVar.i.get("range"), "CAST_SERVER");
         try {
             g k10 = k(dVar);
             gg ggVar = k10.e;

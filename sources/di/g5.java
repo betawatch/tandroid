@@ -10,20 +10,20 @@ import bi.ab;
 import c8.ha;
 import c8.ka;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.la0;
-import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.oa0;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.w70;
 import org.telegram.ui.Components.xi0;
 import org.telegram.ui.c61;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class g5 extends oj0 {
     public final ArrayList c = new ArrayList();
@@ -253,11 +253,11 @@ public final class g5 extends oj0 {
                 view = new org.telegram.ui.Cells.v3(k5Var.getContext(), 70);
                 break;
             case 4:
-                lz lzVar = new lz(k5Var.getContext(), bVar);
-                lzVar.setIsSingleCell(true);
-                lzVar.setViewType(28);
-                lzVar.x = false;
-                view = lzVar;
+                mz mzVar = new mz(k5Var.getContext(), bVar);
+                mzVar.setIsSingleCell(true);
+                mzVar.setViewType(28);
+                mzVar.x = false;
+                view = mzVar;
                 break;
             case 5:
             case 7:
@@ -267,23 +267,23 @@ public final class g5 extends oj0 {
                 xh.l lVar = f5Var.d;
                 if (i7 == 7) {
                     lVar.setVisibility(8);
-                    f5Var.setSubtitle(hd.M0(2131748166, null));
+                    f5Var.setSubtitle(id.M0(2131748168, null));
                 } else if (i7 == 8) {
                     lVar.setVisibility(8);
-                    f5Var.setSubtitle(hd.M0(2131748221, null));
+                    f5Var.setSubtitle(id.M0(2131748223, null));
                 } else if (i7 == 10) {
                     lVar.setVisibility(0);
-                    lVar.setText(hd.M0(2131745563, null));
-                    f5Var.setSubtitle(hd.M0(2131745565, null));
+                    lVar.setText(id.M0(2131745565, null));
+                    f5Var.setSubtitle(id.M0(2131745567, null));
                 } else if (k5Var.F.j) {
                     lVar.setVisibility(8);
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.X2(hd.M0(2131750872, null)));
+                    spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.X2(id.M0(2131750872, null)));
                     boolean D3 = qp.s1(i10).D3();
                     w70 w70Var = f5Var.e;
                     if (!D3) {
                         spannableStringBuilder.append((CharSequence) "\n\n");
-                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.U2(hd.M0(2131750871, null), new Runnable() { // from class: di.c5
+                        spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.U2(id.M0(2131750871, null), new Runnable() { // from class: di.c5
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (i12) {
@@ -296,7 +296,7 @@ public final class g5 extends oj0 {
                                 }
                             }
                         }));
-                        String M0 = hd.M0(2131749009, null);
+                        String M0 = id.M0(2131749011, null);
                         Runnable runnable = new Runnable() { // from class: di.c5
                             @Override // java.lang.Runnable
                             public final void run() {
@@ -341,24 +341,24 @@ public final class g5 extends oj0 {
                 } else {
                     lVar.setVisibility(0);
                     if (k5Var.F.f) {
-                        lVar.setText(hd.M0(2131748174, null));
-                        f5Var.setSubtitle(hd.M0(2131748172, null));
+                        lVar.setText(id.M0(2131748176, null));
+                        f5Var.setSubtitle(id.M0(2131748174, null));
                     } else {
-                        lVar.setText(hd.M0(2131748131, null));
-                        f5Var.setSubtitle(hd.M0(2131748130, null));
+                        lVar.setText(id.M0(2131748133, null));
+                        f5Var.setSubtitle(id.M0(2131748132, null));
                     }
                 }
                 f5Var.e(false, false);
                 view = f5Var;
                 break;
             case 6:
-                lz lzVar2 = new lz(k5Var.getContext(), bVar);
-                lzVar2.setIsSingleCell(true);
-                lzVar2.setIgnoreHeightCheck(true);
-                lzVar2.setItemsCount(20);
-                lzVar2.setViewType(28);
-                lzVar2.x = false;
-                view = lzVar2;
+                mz mzVar2 = new mz(k5Var.getContext(), bVar);
+                mzVar2.setIsSingleCell(true);
+                mzVar2.setIgnoreHeightCheck(true);
+                mzVar2.setItemsCount(20);
+                mzVar2.setViewType(28);
+                mzVar2.x = false;
+                view = mzVar2;
                 break;
             case 11:
             case 12:
@@ -373,9 +373,9 @@ public final class g5 extends oj0 {
                 w70Var2.setGravity(17);
                 w70Var2.setDisablePaddingsOffsetY(true);
                 if (i7 == 11) {
-                    w70Var2.setText(org.telegram.messenger.g0.U2(hd.M0(2131744447, null), new ab(this, 23)));
+                    w70Var2.setText(org.telegram.messenger.g0.U2(id.M0(2131744449, null), new ab(this, 23)));
                 } else {
-                    w70Var2.setText(hd.M0(2131745564, null));
+                    w70Var2.setText(id.M0(2131745566, null));
                 }
                 w70Var2.setLayoutParams(new v4.o0(-1, -2));
                 view = w70Var2;

@@ -12,7 +12,7 @@ import java.util.HashSet;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class b11 extends org.telegram.ui.Components.oj0 {
     public int c;
@@ -192,11 +192,11 @@ public final class b11 extends org.telegram.ui.Components.oj0 {
                     w01Var.b(false);
                 }
             } else if (i7 == this.e) {
-                w01Var.a(org.telegram.messenger.hd.M0(2131751197, null), false);
+                w01Var.a(org.telegram.messenger.id.M0(2131751197, null), false);
             } else if (i13 == 14) {
-                w01Var.a(org.telegram.messenger.hd.M0(2131744877, null), false);
+                w01Var.a(org.telegram.messenger.id.M0(2131744879, null), false);
             } else {
-                w01Var.a(org.telegram.messenger.hd.M0(2131754756, null), false);
+                w01Var.a(org.telegram.messenger.id.M0(2131754756, null), false);
             }
             w01Var.c.setVisibility(8);
             return;
@@ -324,7 +324,7 @@ public final class b11 extends org.telegram.ui.Components.oj0 {
             TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) org.telegram.messenger.ui.b0(i14).r.get(o0Var.f);
             if (tL_availableReaction != null) {
                 org.telegram.messenger.rz f10 = org.telegram.messenger.t5.f(tL_availableReaction.activate_animation, org.telegram.ui.ActionBar.k6.m6, 0.2f, null);
-                if (org.telegram.messenger.rc.e(8200)) {
+                if (org.telegram.messenger.sc.e(8200)) {
                     ch.o0 o0Var3 = o0Var;
                     a11Var3.h.u0(org.telegram.messenger.hc.b(tL_availableReaction.select_animation), "60_60_pcache", org.telegram.messenger.hc.b(tL_availableReaction.select_animation), "30_30_firstframe", null, null, f10, 0L, "tgs", o0Var3, 0);
                     o0Var = o0Var3;

@@ -1,13 +1,13 @@
 package org.telegram.ui.ActionBar;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.Components.gy;
-import org.telegram.ui.Components.kt;
+import org.telegram.ui.Components.hy;
+import org.telegram.ui.Components.lt;
 import org.telegram.ui.Components.n40;
 import org.telegram.ui.Components.si0;
 import org.telegram.ui.vp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -39,24 +39,24 @@ public final /* synthetic */ class i2 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 2:
-                kt ktVar = (kt) this.c;
+                lt ltVar = (lt) this.c;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ktVar.d.setTranslationY(floatValue2);
+                ltVar.d.setTranslationY(floatValue2);
                 int i10 = this.b;
                 float f10 = i10;
                 float f11 = 1.0f - (floatValue2 / f10);
-                ktVar.R = f11;
-                if (i10 > 0 && ((i7 = ktVar.L) == 2 || i7 == 3)) {
-                    ktVar.d.setAlpha(f11);
+                ltVar.R = f11;
+                if (i10 > 0 && ((i7 = ltVar.L) == 2 || i7 == 3)) {
+                    ltVar.d.setAlpha(f11);
                 }
-                ktVar.c(floatValue2 - f10);
+                ltVar.c(floatValue2 - f10);
                 break;
             case 3:
-                ((gy) this.c).Q0[this.b] = (int) ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ((hy) this.c).Q0[this.b] = (int) ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
             case 4:
                 n40 n40Var = (n40) this.c;
-                if (this.b == n40Var.s0) {
+                if (this.b == n40Var.t0) {
                     float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                     if (floatValue3 >= 0.5f) {
                         floatValue3 -= 1.0f;

@@ -23,7 +23,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class DataSettingsActivity extends org.telegram.ui.ActionBar.f2 {
     public int D;
@@ -84,7 +84,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.f2 {
     /* JADX WARN: Type inference failed for: r11v15 */
     /* JADX WARN: Type inference failed for: r11v3, types: [java.lang.String, org.telegram.ui.ActionBar.r1] */
     /* JADX WARN: Type inference failed for: r11v5, types: [java.lang.String] */
-    /* JADX WARN: Type inference failed for: r11v6, types: [boolean[], java.lang.String, org.telegram.messenger.ed] */
+    /* JADX WARN: Type inference failed for: r11v6, types: [boolean[], java.lang.String, org.telegram.messenger.fd] */
     /* JADX WARN: Type inference failed for: r11v8 */
     /* JADX WARN: Type inference failed for: r18v0, types: [java.lang.Object, org.telegram.ui.ActionBar.f2, org.telegram.ui.DataSettingsActivity] */
     /* JADX WARN: Type inference failed for: r4v10, types: [java.lang.Object, org.telegram.ui.ActionBar.AlertDialog$Builder] */
@@ -111,7 +111,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.f2 {
         int i14 = 1;
         if (i7 == i12 || i7 == ((DataSettingsActivity) dataSettingsActivity).saveToGalleryChannelsRow || i7 == ((DataSettingsActivity) dataSettingsActivity).saveToGalleryPeerRow) {
             int i15 = i7 == i12 ? 2 : i7 == ((DataSettingsActivity) dataSettingsActivity).saveToGalleryChannelsRow ? 4 : 1;
-            if ((!org.telegram.messenger.hd.a0 || f10 > org.telegram.messenger.g0.L(76.0f)) && (org.telegram.messenger.hd.a0 || f10 < view.getMeasuredWidth() - org.telegram.messenger.g0.L(76.0f))) {
+            if ((!org.telegram.messenger.id.a0 || f10 > org.telegram.messenger.g0.L(76.0f)) && (org.telegram.messenger.id.a0 || f10 < view.getMeasuredWidth() - org.telegram.messenger.g0.L(76.0f))) {
                 dataSettingsActivity.presentFragment(new SaveToGallerySettingsActivity(rf.b.f(i15, TeXSymbolParser.TYPE_ATTR)));
                 return;
             } else {
@@ -123,7 +123,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.f2 {
         final int i16 = 0;
         if (i7 == dataSettingsActivity.e || i7 == dataSettingsActivity.f || i7 == dataSettingsActivity.h) {
             int i17 = 2;
-            if ((!org.telegram.messenger.hd.a0 || f10 > org.telegram.messenger.g0.L(76.0f)) && (org.telegram.messenger.hd.a0 || f10 < view.getMeasuredWidth() - org.telegram.messenger.g0.L(76.0f))) {
+            if ((!org.telegram.messenger.id.a0 || f10 > org.telegram.messenger.g0.L(76.0f)) && (org.telegram.messenger.id.a0 || f10 < view.getMeasuredWidth() - org.telegram.messenger.g0.L(76.0f))) {
                 dataSettingsActivity.presentFragment(new DataAutoDownloadActivity(i7 == dataSettingsActivity.e ? 0 : i7 == dataSettingsActivity.h ? 1 : 2));
                 return;
             }
@@ -174,11 +174,11 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.f2 {
                 return;
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(dataSettingsActivity.getParentActivity());
-            String M0 = org.telegram.messenger.hd.M0(2131746110, null);
+            String M0 = org.telegram.messenger.id.M0(2131746112, null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.R = M0;
-            u1Var.T = org.telegram.messenger.hd.M0(2131746111, null);
-            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131746119, null), new org.telegram.ui.ActionBar.r1(dataSettingsActivity) { // from class: org.telegram.ui.xs
+            u1Var.T = org.telegram.messenger.id.M0(2131746113, null);
+            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131746121, null), new org.telegram.ui.ActionBar.r1(dataSettingsActivity) { // from class: org.telegram.ui.xs
                 public final /* synthetic */ DataSettingsActivity b;
 
                 {
@@ -199,7 +199,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.f2 {
                     }
                 }
             });
-            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
             dataSettingsActivity.showDialog(u1Var);
             TextView textView = (TextView) u1Var.d(-1);
             if (textView != null) {
@@ -225,8 +225,8 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.f2 {
                     }
                 }
                 Activity parentActivity = dataSettingsActivity.getParentActivity();
-                String[] strArr = {org.telegram.messenger.hd.M0(2131743796, null), org.telegram.messenger.hd.M0(2131743794, null), org.telegram.messenger.hd.M0(2131743795, null), org.telegram.messenger.hd.M0(2131743797, null)};
-                String M02 = org.telegram.messenger.hd.M0(2131743230, null);
+                String[] strArr = {org.telegram.messenger.id.M0(2131743798, null), org.telegram.messenger.id.M0(2131743796, null), org.telegram.messenger.id.M0(2131743797, null), org.telegram.messenger.id.M0(2131743799, null)};
+                String M02 = org.telegram.messenger.id.M0(2131743232, null);
                 ys ysVar = new ys(dataSettingsActivity, e12, i7);
                 Pattern pattern = org.telegram.ui.Components.v4.a;
                 LinearLayout e10 = org.telegram.messenger.k5.e(parentActivity, 1);
@@ -247,15 +247,15 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.f2 {
                 org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder2.a;
                 u1Var2.R = M02;
                 alertDialog$Builder2.o(e10);
-                alertDialog$Builder2.k(org.telegram.messenger.hd.M0(2131752589, null), null);
+                alertDialog$Builder2.k(org.telegram.messenger.id.M0(2131752589, null), null);
                 dataSettingsActivity.setVisibleDialog(u1Var2);
                 u1Var2.show();
                 return;
             }
             i13 = 0;
             Activity parentActivity2 = dataSettingsActivity.getParentActivity();
-            String[] strArr2 = {org.telegram.messenger.hd.M0(2131743796, null), org.telegram.messenger.hd.M0(2131743794, null), org.telegram.messenger.hd.M0(2131743795, null), org.telegram.messenger.hd.M0(2131743797, null)};
-            String M022 = org.telegram.messenger.hd.M0(2131743230, null);
+            String[] strArr2 = {org.telegram.messenger.id.M0(2131743798, null), org.telegram.messenger.id.M0(2131743796, null), org.telegram.messenger.id.M0(2131743797, null), org.telegram.messenger.id.M0(2131743799, null)};
+            String M022 = org.telegram.messenger.id.M0(2131743232, null);
             ys ysVar2 = new ys(dataSettingsActivity, e12, i7);
             Pattern pattern2 = org.telegram.ui.Components.v4.a;
             LinearLayout e102 = org.telegram.messenger.k5.e(parentActivity2, 1);
@@ -266,7 +266,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.f2 {
             org.telegram.ui.ActionBar.u1 u1Var22 = alertDialog$Builder22.a;
             u1Var22.R = M022;
             alertDialog$Builder22.o(e102);
-            alertDialog$Builder22.k(org.telegram.messenger.hd.M0(2131752589, null), null);
+            alertDialog$Builder22.k(org.telegram.messenger.id.M0(2131752589, null), null);
             dataSettingsActivity.setVisibleDialog(u1Var22);
             u1Var22.show();
             return;
@@ -314,32 +314,32 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.f2 {
             }
             if (i7 == dataSettingsActivity.J) {
                 int i21 = org.telegram.messenger.iz.a;
-                org.telegram.messenger.rc.i = !org.telegram.messenger.rc.e(2048) ? org.telegram.messenger.rc.d(true) | 2048 : org.telegram.messenger.rc.d(true) & (-2049);
-                org.telegram.messenger.rc.k();
+                org.telegram.messenger.sc.i = !org.telegram.messenger.sc.e(2048) ? org.telegram.messenger.sc.d(true) | 2048 : org.telegram.messenger.sc.d(true) & (-2049);
+                org.telegram.messenger.sc.k();
                 if (view instanceof org.telegram.ui.Cells.r8) {
-                    ((org.telegram.ui.Cells.r8) view).setChecked(org.telegram.messenger.rc.e(2048));
+                    ((org.telegram.ui.Cells.r8) view).setChecked(org.telegram.messenger.sc.e(2048));
                     return;
                 }
                 return;
             }
             if (i7 == dataSettingsActivity.K) {
                 int i22 = org.telegram.messenger.iz.a;
-                org.telegram.messenger.rc.i = !org.telegram.messenger.rc.e(1024) ? org.telegram.messenger.rc.d(true) | 1024 : org.telegram.messenger.rc.d(true) & (-1025);
-                org.telegram.messenger.rc.k();
+                org.telegram.messenger.sc.i = !org.telegram.messenger.sc.e(1024) ? org.telegram.messenger.sc.d(true) | 1024 : org.telegram.messenger.sc.d(true) & (-1025);
+                org.telegram.messenger.sc.k();
                 if (view instanceof org.telegram.ui.Cells.r8) {
-                    ((org.telegram.ui.Cells.r8) view).setChecked(org.telegram.messenger.rc.e(1024));
+                    ((org.telegram.ui.Cells.r8) view).setChecked(org.telegram.messenger.sc.e(1024));
                     return;
                 }
                 return;
             }
             if (i7 == ((DataSettingsActivity) dataSettingsActivity).clearDraftsRow) {
                 AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(dataSettingsActivity.getParentActivity());
-                String M03 = org.telegram.messenger.hd.M0(2131754117, null);
+                String M03 = org.telegram.messenger.id.M0(2131754117, null);
                 org.telegram.ui.ActionBar.u1 u1Var3 = alertDialog$Builder3.a;
                 u1Var3.R = M03;
-                u1Var3.T = org.telegram.messenger.hd.M0(2131754118, null);
+                u1Var3.T = org.telegram.messenger.id.M0(2131754118, null);
                 final int i23 = 1;
-                alertDialog$Builder3.k(org.telegram.messenger.hd.M0(2131751599, null), new org.telegram.ui.ActionBar.r1(dataSettingsActivity) { // from class: org.telegram.ui.xs
+                alertDialog$Builder3.k(org.telegram.messenger.id.M0(2131751599, null), new org.telegram.ui.ActionBar.r1(dataSettingsActivity) { // from class: org.telegram.ui.xs
                     public final /* synthetic */ DataSettingsActivity b;
 
                     {
@@ -360,7 +360,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.f2 {
                         }
                     }
                 });
-                alertDialog$Builder3.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+                alertDialog$Builder3.h(org.telegram.messenger.id.M0(2131752589, null), null);
                 dataSettingsActivity.showDialog(u1Var3);
                 TextView textView2 = (TextView) u1Var3.d(-1);
                 if (textView2 != null) {
@@ -372,7 +372,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.f2 {
             return;
         }
         ?? alertDialog$Builder4 = new AlertDialog$Builder(dataSettingsActivity.getParentActivity());
-        String M04 = org.telegram.messenger.hd.M0(2131744821, null);
+        String M04 = org.telegram.messenger.id.M0(2131744823, null);
         org.telegram.ui.ActionBar.u1 u1Var4 = alertDialog$Builder4.a;
         u1Var4.R = M04;
         LinearLayout linearLayout2 = new LinearLayout(dataSettingsActivity.getParentActivity());
@@ -415,12 +415,12 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.f2 {
                         if (contains) {
                             Object[] objArr = new Object[i26];
                             objArr[0] = org.telegram.messenger.g0.i0(file.getFreeSpace(), false, false);
-                            a02 = org.telegram.messenger.hd.a0(r112, r112, 2131744819, objArr);
+                            a02 = org.telegram.messenger.id.a0(r112, r112, 2131744821, objArr);
                             r11 = r112;
                         } else {
                             Object[] objArr2 = new Object[i26];
                             objArr2[0] = org.telegram.messenger.g0.i0(file.getFreeSpace(), false, false);
-                            a02 = org.telegram.messenger.hd.a0(r112, r112, 2131744820, objArr2);
+                            a02 = org.telegram.messenger.id.a0(r112, r112, 2131744822, objArr2);
                             r11 = r112;
                         }
                     } else {
@@ -429,9 +429,9 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.f2 {
                         objArr3[0] = org.telegram.messenger.g0.i0(file.getFreeSpace(), false, false);
                         objArr3[i26] = absolutePath3;
                         r11 = 0;
-                        a02 = org.telegram.messenger.hd.a0(null, null, 2131744818, objArr3);
+                        a02 = org.telegram.messenger.id.a0(null, null, 2131744820, objArr3);
                     }
-                    r4Var.b.setText(org.telegram.messenger.hd.M0(contains ? 2131749187 : 2131745841, r11));
+                    r4Var.b.setText(org.telegram.messenger.id.M0(contains ? 2131749189 : 2131745843, r11));
                     r4Var.c.setText(a02);
                     RadioButton radioButton = r4Var.a;
                     radioButton.a(false, false);
@@ -451,7 +451,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.f2 {
                     i18 = 2131752589;
                 }
                 ?? r113 = obj;
-                alertDialog$Builder4.h(org.telegram.messenger.hd.M0(i18, r113), r113);
+                alertDialog$Builder4.h(org.telegram.messenger.id.M0(i18, r113), r113);
                 dataSettingsActivity.showDialog(u1Var4);
             }
         }
@@ -462,7 +462,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.f2 {
         while (i10 < size) {
         }
         ?? r1132 = obj;
-        alertDialog$Builder4.h(org.telegram.messenger.hd.M0(i18, r1132), r1132);
+        alertDialog$Builder4.h(org.telegram.messenger.id.M0(i18, r1132), r1132);
         dataSettingsActivity.showDialog(u1Var4);
     }
 
@@ -524,7 +524,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.f2 {
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131751678, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131751678, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new w9(this, 24));
         org.telegram.ui.ActionBar.q4 q4Var = this.parentLayout;
         if (q4Var != null && ((ActionBarLayout) q4Var).T0) {

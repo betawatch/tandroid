@@ -2,10 +2,10 @@ package org.telegram.ui.web;
 
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class f1 {
     public static ArrayList d;
@@ -29,13 +29,13 @@ public final class f1 {
             d = new ArrayList();
             int i7 = 1;
             while (true) {
-                String c10 = c(hd.N0("SearchEngine" + i7 + "Name"));
+                String c10 = c(id.N0("SearchEngine" + i7 + "Name"));
                 if (c10 == null) {
                     break;
                 }
-                String c11 = c(hd.N0("SearchEngine" + i7 + "SearchURL"));
-                String c12 = c(hd.N0("SearchEngine" + i7 + "AutocompleteURL"));
-                c(hd.N0("SearchEngine" + i7 + "PrivacyPolicyURL"));
+                String c11 = c(id.N0("SearchEngine" + i7 + "SearchURL"));
+                String c12 = c(id.N0("SearchEngine" + i7 + "AutocompleteURL"));
+                c(id.N0("SearchEngine" + i7 + "PrivacyPolicyURL"));
                 d.add(new f1(c10, c11, c12));
                 i7++;
             }

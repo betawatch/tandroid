@@ -11,7 +11,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rj implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -112,7 +112,7 @@ public final /* synthetic */ class rj implements RequestDelegate {
                 if (tL_error == null) {
                     final int i10 = 3;
                     final qp qpVar4 = this.b;
-                    g0.h3(new Runnable() { // from class: org.telegram.messenger.mk
+                    g0.h3(new Runnable() { // from class: org.telegram.messenger.lk
                         @Override // java.lang.Runnable
                         public final void run() {
                             Set set;
@@ -277,7 +277,7 @@ public final /* synthetic */ class rj implements RequestDelegate {
             case 6:
                 final int i11 = 4;
                 final qp qpVar5 = this.b;
-                g0.h3(new Runnable() { // from class: org.telegram.messenger.mk
+                g0.h3(new Runnable() { // from class: org.telegram.messenger.lk
                     @Override // java.lang.Runnable
                     public final void run() {
                         Set set;
@@ -483,7 +483,7 @@ public final /* synthetic */ class rj implements RequestDelegate {
             case 11:
                 final int i13 = 2;
                 final qp qpVar10 = this.b;
-                g0.h3(new Runnable() { // from class: org.telegram.messenger.mk
+                g0.h3(new Runnable() { // from class: org.telegram.messenger.lk
                     @Override // java.lang.Runnable
                     public final void run() {
                         Set set;
@@ -641,7 +641,7 @@ public final /* synthetic */ class rj implements RequestDelegate {
                 qpVar11.getClass();
                 if (tLObject != null) {
                     qpVar11.O3((TLRPC.Updates) tLObject, false);
-                    g0.h3(new wj(qpVar11, 24));
+                    g0.h3(new vj(qpVar11, 25));
                     break;
                 }
                 break;
@@ -649,7 +649,7 @@ public final /* synthetic */ class rj implements RequestDelegate {
                 if (tLObject != null) {
                     qp qpVar12 = this.b;
                     qpVar12.O3((TLRPC.Updates) tLObject, false);
-                    g0.h3(new wj(qpVar12, 28));
+                    g0.h3(new vj(qpVar12, 29));
                     break;
                 }
                 break;
@@ -665,7 +665,7 @@ public final /* synthetic */ class rj implements RequestDelegate {
             case 15:
                 final int i14 = 6;
                 final qp qpVar14 = this.b;
-                g0.h3(new Runnable() { // from class: org.telegram.messenger.mk
+                g0.h3(new Runnable() { // from class: org.telegram.messenger.lk
                     @Override // java.lang.Runnable
                     public final void run() {
                         Set set;
@@ -823,14 +823,14 @@ public final /* synthetic */ class rj implements RequestDelegate {
                 qpVar15.getClass();
                 if (tLObject != null) {
                     qpVar15.O3((TLRPC.Updates) tLObject, false);
-                    g0.h3(new wj(qpVar15, 27));
+                    g0.h3(new vj(qpVar15, 28));
                     break;
                 }
                 break;
             case 17:
                 final int i15 = 0;
                 final qp qpVar16 = this.b;
-                g0.h3(new Runnable() { // from class: org.telegram.messenger.mk
+                g0.h3(new Runnable() { // from class: org.telegram.messenger.lk
                     @Override // java.lang.Runnable
                     public final void run() {
                         Set set;
@@ -1041,7 +1041,7 @@ public final /* synthetic */ class rj implements RequestDelegate {
                         ArrayList arrayList6 = new ArrayList();
                         arrayList6.add(a22);
                         qpVar18.getMessagesStorage().m1(arrayList6, null, false, true);
-                        g0.h3(new wj(qpVar18, 0));
+                        g0.h3(new vj(qpVar18, 0));
                         break;
                     }
                 }
@@ -1147,7 +1147,7 @@ public final /* synthetic */ class rj implements RequestDelegate {
             case 25:
                 final int i23 = 5;
                 final qp qpVar23 = this.b;
-                g0.h3(new Runnable() { // from class: org.telegram.messenger.mk
+                g0.h3(new Runnable() { // from class: org.telegram.messenger.lk
                     @Override // java.lang.Runnable
                     public final void run() {
                         Set set;
@@ -1304,7 +1304,7 @@ public final /* synthetic */ class rj implements RequestDelegate {
                 final qp qpVar24 = this.b;
                 qpVar24.getClass();
                 final int i24 = 1;
-                g0.h3(new Runnable() { // from class: org.telegram.messenger.mk
+                g0.h3(new Runnable() { // from class: org.telegram.messenger.lk
                     @Override // java.lang.Runnable
                     public final void run() {
                         Set set;

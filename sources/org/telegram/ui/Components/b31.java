@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class b31 extends v4.s0 {
     public final /* synthetic */ int a = 1;
@@ -17,7 +17,7 @@ public final class b31 extends v4.s0 {
 
     @Override // v4.s0
     public final void a(RecyclerView recyclerView, int i7) {
-        org.telegram.ui.Wallet.t8 t8Var;
+        org.telegram.ui.Wallet.s8 s8Var;
         switch (this.a) {
             case 0:
                 if (i7 == 0) {
@@ -26,8 +26,8 @@ public final class b31 extends v4.s0 {
                 }
                 break;
             default:
-                if (i7 == 1 && (t8Var = ((org.telegram.ui.Wallet.y5) ((bi.g5) this.c).c).i0) != null) {
-                    t8Var.a();
+                if (i7 == 1 && (s8Var = ((org.telegram.ui.Wallet.x5) ((bi.g5) this.c).c).i0) != null) {
+                    s8Var.a();
                     break;
                 }
                 break;
@@ -55,12 +55,12 @@ public final class b31 extends v4.s0 {
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) ((bi.g5) this.c).c;
+                org.telegram.ui.Wallet.x5 x5Var = (org.telegram.ui.Wallet.x5) ((bi.g5) this.c).c;
                 if (this.b != 0) {
-                    recyclerView.post(new org.telegram.ui.Wallet.f4(y5Var, 14));
+                    recyclerView.post(new org.telegram.ui.Wallet.e4(x5Var, 14));
                     break;
                 } else {
-                    y5Var.E0();
+                    x5Var.E0();
                     break;
                 }
         }

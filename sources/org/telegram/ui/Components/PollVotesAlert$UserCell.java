@@ -10,7 +10,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class PollVotesAlert$UserCell extends LinearLayout implements org.telegram.ui.ActionBar.a6 {
     public ArrayList D;
@@ -49,7 +49,7 @@ public class PollVotesAlert$UserCell extends LinearLayout implements org.telegra
         org.telegram.ui.ActionBar.r6.Y(k5Var, i7, null);
         k5Var.setTypeface(org.telegram.messenger.g0.o());
         k5Var.setTextSize(16);
-        k5Var.setGravity((org.telegram.messenger.hd.a0 ? 5 : 3) | 16);
+        k5Var.setGravity((org.telegram.messenger.id.a0 ? 5 : 3) | 16);
         addView(k5Var, c8.ha.q(0, 24, 1.0f, 16, 0, 0, 0, 0));
         TextView textView = new TextView(context);
         this.c = textView;
@@ -108,7 +108,7 @@ public class PollVotesAlert$UserCell extends LinearLayout implements org.telegra
                 L = org.telegram.messenger.g0.L(65.0f);
                 L2 = org.telegram.messenger.g0.L(60.0f);
             }
-            if (org.telegram.messenger.hd.a0) {
+            if (org.telegram.messenger.id.a0) {
                 L = (getMeasuredWidth() - L) - L2;
             }
             qe0Var.D1.set(L, r5 - org.telegram.messenger.g0.L(4.0f), L + L2, org.telegram.messenger.g0.L(4.0f) + r5);
@@ -120,14 +120,14 @@ public class PollVotesAlert$UserCell extends LinearLayout implements org.telegra
                 L3 = org.telegram.messenger.g0.L(131.0f);
                 L4 = org.telegram.messenger.g0.L(80.0f);
             }
-            if (org.telegram.messenger.hd.a0) {
+            if (org.telegram.messenger.id.a0) {
                 L3 = (getMeasuredWidth() - L3) - L4;
             }
             qe0Var.D1.set(L3, r5 - org.telegram.messenger.g0.L(4.0f), L3 + L4, org.telegram.messenger.g0.L(4.0f) + r5);
             canvas.drawRoundRect(qe0Var.D1, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), qe0Var.x1);
         }
         if (this.s) {
-            canvas.drawLine(org.telegram.messenger.hd.a0 ? 0.0f : org.telegram.messenger.g0.L(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(64.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+            canvas.drawLine(org.telegram.messenger.id.a0 ? 0.0f : org.telegram.messenger.g0.L(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(64.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
         }
     }
 

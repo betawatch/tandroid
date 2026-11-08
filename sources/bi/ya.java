@@ -18,13 +18,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.cv0;
-import org.telegram.ui.Components.qu;
+import org.telegram.ui.Components.ru;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.q10;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ya implements c20 {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class ya implements c20 {
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 if (savedStarGift != null) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(jcVar.getText());
-                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) org.telegram.ui.Components.kc.b(org.telegram.messenger.hd.M0(2131745220, null), new ai.a1(this.b, context, f6Var, savedStarGift, 2), f6Var, null));
+                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) org.telegram.ui.Components.kc.b(org.telegram.messenger.id.M0(2131745222, null), new ai.a1(this.b, context, f6Var, savedStarGift, 2), f6Var, null));
                     jcVar.setText(spannableStringBuilder);
                     break;
                 }
@@ -106,16 +106,16 @@ public final /* synthetic */ class ya implements c20 {
                 }
                 break;
             case 3:
-                qu quVar = (qu) obj4;
+                ru ruVar = (ru) obj4;
                 int[] iArr = (int[]) obj3;
                 ArrayList arrayList = (ArrayList) obj2;
-                org.telegram.ui.ActionBar.f2 f2Var2 = quVar.j1;
+                org.telegram.ui.ActionBar.f2 f2Var2 = ruVar.j1;
                 iArr[0] = iArr[0] + 1;
                 if (((Boolean) obj).booleanValue()) {
                     iArr[1] = iArr[1] + 1;
                 }
                 if (iArr[0] == i11 && iArr[1] > 0) {
-                    quVar.dismiss();
+                    ruVar.dismiss();
                     org.telegram.ui.Components.cc.g(f2Var2, new cv0(f2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, f2Var2.getResourceProvider()), 1500).j();
                     break;
                 }
@@ -135,7 +135,7 @@ public final /* synthetic */ class ya implements c20 {
                 if (tL_storyAlbum == null) {
                     org.telegram.ui.Components.hc X = org.telegram.ui.Components.hc.X();
                     if (X != null) {
-                        org.telegram.messenger.k5.o(null, 2131744731, X, R.raw.story_bomb2, 36);
+                        org.telegram.messenger.k5.o(null, 2131744733, X, R.raw.story_bomb2, 36);
                         break;
                     }
                 } else {
@@ -176,9 +176,9 @@ public final /* synthetic */ class ya implements c20 {
         }
     }
 
-    public /* synthetic */ ya(qu quVar, int[] iArr, int i7, ArrayList arrayList) {
+    public /* synthetic */ ya(ru ruVar, int[] iArr, int i7, ArrayList arrayList) {
         this.a = 3;
-        this.c = quVar;
+        this.c = ruVar;
         this.d = iArr;
         this.b = i7;
         this.e = arrayList;

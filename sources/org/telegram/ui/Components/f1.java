@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PrivacyControlActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f1 implements Runnable {
     public final /* synthetic */ int a;
@@ -37,8 +37,8 @@ public final /* synthetic */ class f1 implements Runnable {
                     } else {
                         ((View) arrayList.get(i7)).setVisibility(8);
                         if (arrayList.get(i7) instanceof org.telegram.ui.Cells.q1) {
-                            ((org.telegram.ui.Cells.q1) arrayList.get(i7)).i3(false, false);
-                            ((org.telegram.ui.Cells.q1) arrayList.get(i7)).k3(false, false, false);
+                            ((org.telegram.ui.Cells.q1) arrayList.get(i7)).j3(false, false);
+                            ((org.telegram.ui.Cells.q1) arrayList.get(i7)).l3(false, false, false);
                         }
                         i7++;
                     }

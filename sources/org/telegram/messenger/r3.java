@@ -3,7 +3,6 @@ package org.telegram.messenger;
 import android.net.Uri;
 import android.os.SystemClock;
 import android.text.TextUtils;
-import android.util.Log;
 import android.util.SparseArray;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,7 +20,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.c40;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class r3 {
     public static int R;
@@ -604,15 +603,11 @@ public final class r3 {
                         if (C1 > j12) {
                             j3 = elapsedRealtime;
                             TLRPC.User a22 = qp.s1(this.C.a).a2(Long.valueOf(C1));
-                            StringBuilder t10 = a8.p0.t(C1, "left remove from speaking ", " ");
-                            t10.append(a22 == null ? null : a22.first_name);
-                            Log.d("GroupCall", t10.toString());
+                            rf.b.p(a8.p0.t(C1, "left remove from speaking ", " "), a22 == null ? null : a22.first_name, "GroupCall");
                         } else {
                             j3 = elapsedRealtime;
                             TLRPC.Chat M0 = qp.s1(this.C.a).M0(Long.valueOf(-C1));
-                            StringBuilder t11 = a8.p0.t(C1, "left remove from speaking ", " ");
-                            t11.append(M0 == null ? null : M0.title);
-                            Log.d("GroupCall", t11.toString());
+                            rf.b.p(a8.p0.t(C1, "left remove from speaking ", " "), M0 == null ? null : M0.title, "GroupCall");
                         }
                         hVar.l(C1);
                         z15 = z17;
@@ -658,14 +653,10 @@ public final class r3 {
                         hVar.l(C1);
                         if (C1 > j12) {
                             TLRPC.User a23 = qp.s1(this.C.a).a2(Long.valueOf(C1));
-                            StringBuilder t12 = a8.p0.t(C1, "muted remove from speaking ", " ");
-                            t12.append(a23 == null ? null : a23.first_name);
-                            Log.d("GroupCall", t12.toString());
+                            rf.b.p(a8.p0.t(C1, "muted remove from speaking ", " "), a23 == null ? null : a23.first_name, "GroupCall");
                         } else {
                             TLRPC.Chat M02 = qp.s1(this.C.a).M0(Long.valueOf(-C1));
-                            StringBuilder t13 = a8.p0.t(C1, "muted remove from speaking ", " ");
-                            t13.append(M02 == null ? null : M02.title);
-                            Log.d("GroupCall", t13.toString());
+                            rf.b.p(a8.p0.t(C1, "muted remove from speaking ", " "), M02 == null ? null : M02.title, "GroupCall");
                         }
                         z15 = z17;
                     }

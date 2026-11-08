@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class la implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -161,14 +161,14 @@ public final /* synthetic */ class la implements Runnable {
                 if (eVar.D(vVar)) {
                     if (i1Var == null) {
                         if (!eVar.H(vVar, i11)) {
-                            p4.c1.R0(d0Var, vVar, i10, new p4.m1(-4));
+                            p4.c1.r1(d0Var, vVar, i10, new p4.m1(-4));
                             break;
                         }
                     } else if (!eVar.I(vVar, i1Var)) {
-                        p4.c1.R0(d0Var, vVar, i10, new p4.m1(-4));
+                        p4.c1.r1(d0Var, vVar, i10, new p4.m1(-4));
                         break;
                     }
-                    a1Var.i(d0Var, vVar, i10);
+                    a1Var.l(d0Var, vVar, i10);
                     break;
                 }
                 break;

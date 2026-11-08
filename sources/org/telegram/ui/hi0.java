@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class hi0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -61,12 +61,12 @@ public final class hi0 extends org.telegram.ui.ActionBar.j {
                     }
                 } else if (i7 == 0) {
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(proxyListActivity.getParentActivity());
-                    String M0 = org.telegram.messenger.hd.M0(arrayList.size() > 1 ? 2131751511 : 2131751512, null);
+                    String M0 = org.telegram.messenger.id.M0(arrayList.size() > 1 ? 2131751511 : 2131751512, null);
                     org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                     u1Var.T = M0;
-                    alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
-                    u1Var.R = org.telegram.messenger.hd.M0(2131751510, null);
-                    alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751599, null), new li0(this, 13));
+                    alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
+                    u1Var.R = org.telegram.messenger.id.M0(2131751510, null);
+                    alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751599, null), new li0(this, 13));
                     proxyListActivity.showDialog(u1Var);
                     TextView textView = (TextView) u1Var.d(-1);
                     if (textView != null) {
@@ -88,7 +88,7 @@ public final class hi0 extends org.telegram.ui.ActionBar.j {
                     Intent intent = new Intent("android.intent.action.SEND");
                     intent.setType("text/plain");
                     intent.putExtra("android.intent.extra.TEXT", sb2.toString());
-                    Intent createChooser = Intent.createChooser(intent, org.telegram.messenger.hd.M0(arrayList.size() > 1 ? 2131745458 : 2131745459, null));
+                    Intent createChooser = Intent.createChooser(intent, org.telegram.messenger.id.M0(arrayList.size() > 1 ? 2131745460 : 2131745461, null));
                     createChooser.setFlags(TLObject.FLAG_28);
                     ((Context) obj).startActivity(createChooser);
                     l4 l4Var = proxyListActivity.a;

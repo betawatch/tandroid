@@ -8,13 +8,13 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.t0;
 import org.telegram.ui.ActionBar.i1;
 import org.telegram.ui.ActionBar.m5;
-import org.telegram.ui.Components.hz;
+import org.telegram.ui.Components.iz;
 import r0.h1;
 import r0.k1;
 import te.k;
 import te.l;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class h implements f, e, c {
     public d D;
@@ -26,7 +26,7 @@ public class h implements f, e, c {
     public final l c = new l();
     public final l d = new l();
     public final h2.f e = new h2.f((int[]) null);
-    public final hz f;
+    public final iz f;
     public final Runnable h;
     public boolean n;
     public k1 r;
@@ -38,18 +38,18 @@ public class h implements f, e, c {
     /* JADX WARN: Multi-variable type inference failed */
     public h(Runnable runnable) {
         ii.c cVar = new ii.c(this, 19);
-        hz hzVar = new hz();
-        hzVar.c = b.a;
-        hzVar.d = new m5(hzVar, 24);
-        hzVar.b = cVar;
+        iz izVar = new iz();
+        izVar.c = b.a;
+        izVar.d = new m5(izVar, 24);
+        izVar.b = cVar;
         Typeface typeface = g0.a;
         float f10 = 1.0f;
         try {
             f10 = Settings.Global.getFloat(t0.b.getContentResolver(), "animator_duration_scale", 1.0f);
         } catch (Exception unused) {
         }
-        hzVar.a = (long) (f10 * 250.0f * 1.1f);
-        this.f = hzVar;
+        izVar.a = (long) (f10 * 250.0f * 1.1f);
+        this.f = izVar;
         this.s = 1;
         this.y = new g(this, 0);
         this.h = runnable;
@@ -157,12 +157,12 @@ public class h implements f, e, c {
         if (b10 != null) {
             bVar2 = b10.a.f(8);
         }
-        hz hzVar = this.f;
-        b bVar3 = (b) hzVar.c;
+        iz izVar = this.f;
+        b bVar3 = (b) izVar.c;
         boolean z10 = bVar2.d > 0;
         b bVar4 = !z9 ? z10 ? b.d : b.a : z10 ? b.c : b.b;
         if (bVar3 != bVar4) {
-            hzVar.a(bVar4, false);
+            izVar.a(bVar4, false);
         }
         int i10 = this.s;
         if (i10 == 2) {

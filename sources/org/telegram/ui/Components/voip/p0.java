@@ -11,11 +11,11 @@ import android.widget.FrameLayout;
 import c8.ha;
 import fi.v3;
 import org.telegram.messenger.qs;
-import org.telegram.messenger.rc;
+import org.telegram.messenger.sc;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class p0 extends FrameLayout {
     public final o0 a;
@@ -43,7 +43,7 @@ public final class p0 extends FrameLayout {
         animatorSet.playTogether(ObjectAnimator.ofFloat(this, (Property<p0, Float>) View.SCALE_X, 1.0f, 1.05f, 1.0f, 1.05f, 1.0f), ObjectAnimator.ofFloat(this, (Property<p0, Float>) View.SCALE_Y, 1.0f, 1.05f, 1.0f, 1.05f, 1.0f));
         this.c.setInterpolator(xq.g);
         this.c.setDuration(3000L);
-        boolean e10 = rc.e(512);
+        boolean e10 = sc.e(512);
         this.f = e10;
         if (e10) {
             this.c.start();

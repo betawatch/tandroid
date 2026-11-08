@@ -37,7 +37,7 @@ import x2.e0;
 import x2.q1;
 import x2.r;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class b implements e0, d1, y2.h {
     public static final Pattern R = Pattern.compile("CC([1-4])=(.+)");
@@ -289,14 +289,14 @@ public final class b implements e0, d1, y2.h {
             aVarArr[i35] = aVar4;
             int i36 = -1;
             if (i33 != -1) {
-                String q10 = rf.b.q(l12, ":emsg");
+                String r10 = rf.b.r(l12, ":emsg");
                 t tVar3 = new t();
-                tVar3.a = q10;
+                tVar3.a = r10;
                 tVar3.r = s0.n("application/x-emsg");
                 tVar3.l = l12;
                 u[] uVarArr6 = new u[z11];
                 uVarArr6[0] = new u(tVar3);
-                m1VarArr[i33] = new m1(q10, uVarArr6);
+                m1VarArr[i33] = new m1(r10, uVarArr6);
                 a aVar5 = new a(5, 1, iArr8, i35, -1, -1, -1, t1Var2);
                 iArr8 = iArr8;
                 i35 = i35;
@@ -304,7 +304,7 @@ public final class b implements e0, d1, y2.h {
                 i36 = -1;
             }
             if (i11 != i36) {
-                String q11 = rf.b.q(l12, ":cc");
+                String r11 = rf.b.r(l12, ":cc");
                 aVarArr[i11] = new a(3, 1, iArr8, i35, -1, -1, -1, i0.r(uVarArr4[i26]));
                 s(waVar, uVarArr4[i26]);
                 int i37 = 0;
@@ -318,7 +318,7 @@ public final class b implements e0, d1, y2.h {
                     uVarArr7[i37] = new u(a11);
                     i37++;
                 }
-                m1VarArr[i11] = new m1(q11, uVarArr4[i26]);
+                m1VarArr[i11] = new m1(r11, uVarArr4[i26]);
             }
             i26++;
             size2 = i31;

@@ -19,7 +19,7 @@ import org.telegram.ui.Components.a80;
 import org.telegram.ui.Components.b41;
 import org.telegram.ui.Components.uy0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class gu {
     public static final Paint C;
@@ -125,11 +125,11 @@ public final class gu {
             if (b6Var == b6Var2 && z13) {
                 b6Var = org.telegram.ui.ActionBar.b6.w;
             }
-            org.telegram.ui.Components.xz xzVar = new org.telegram.ui.Components.xz(!booleanValue ? b6Var.f : b6Var.c, null);
-            xzVar.c = !z9 ? 0.5f : 1.0f;
+            org.telegram.ui.Components.yz yzVar = new org.telegram.ui.Components.yz(!booleanValue ? b6Var.f : b6Var.c, null);
+            yzVar.c = !z9 ? 0.5f : 1.0f;
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(spannableStringBuilder);
             if (z12) {
-                spannableStringBuilder2.setSpan(xzVar, 0, spannableStringBuilder2.length(), 33);
+                spannableStringBuilder2.setSpan(yzVar, 0, spannableStringBuilder2.length(), 33);
             } else {
                 spannableStringBuilder2.setSpan(new b41("", (uy0) null), 0, spannableStringBuilder2.length(), 33);
             }
@@ -196,7 +196,7 @@ public final class gu {
                         this.l = w02;
                         this.m = new PorterDuffColorFilter(this.l, PorterDuff.Mode.SRC_IN);
                     }
-                    xzVar.b = i13;
+                    yzVar.b = i13;
                     runnable.run();
                     drawable = this.i;
                     if (drawable == null) {
@@ -232,7 +232,7 @@ public final class gu {
             }
             this.l = w02;
             this.m = new PorterDuffColorFilter(this.l, PorterDuff.Mode.SRC_IN);
-            xzVar.b = i13;
+            yzVar.b = i13;
             runnable.run();
             drawable = this.i;
             if (drawable == null) {
@@ -243,8 +243,8 @@ public final class gu {
         if (b6Var == b6Var2) {
             b6Var = org.telegram.ui.ActionBar.b6.w;
         }
-        org.telegram.ui.Components.xz xzVar2 = new org.telegram.ui.Components.xz(!booleanValue ? b6Var.f : b6Var.c, null);
-        xzVar2.c = !z9 ? 0.5f : 1.0f;
+        org.telegram.ui.Components.yz yzVar2 = new org.telegram.ui.Components.yz(!booleanValue ? b6Var.f : b6Var.c, null);
+        yzVar2.c = !z9 ? 0.5f : 1.0f;
         SpannableStringBuilder spannableStringBuilder22 = new SpannableStringBuilder(spannableStringBuilder);
         if (z12) {
         }
@@ -293,7 +293,7 @@ public final class gu {
             }
             this.l = w02;
             this.m = new PorterDuffColorFilter(this.l, PorterDuff.Mode.SRC_IN);
-            xzVar2.b = i13;
+            yzVar2.b = i13;
             runnable.run();
             drawable = this.i;
             if (drawable == null) {
@@ -324,7 +324,7 @@ public final class gu {
         }
         this.l = w02;
         this.m = new PorterDuffColorFilter(this.l, PorterDuff.Mode.SRC_IN);
-        xzVar2.b = i13;
+        yzVar2.b = i13;
         runnable.run();
         drawable = this.i;
         if (drawable == null) {

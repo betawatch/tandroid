@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class bn extends vh implements org.telegram.ui.ActionBar.a6, qt0, org.telegram.messenger.ls {
     public static final /* synthetic */ int r1 = 0;
@@ -36,7 +36,7 @@ public final class bn extends vh implements org.telegram.ui.ActionBar.a6, qt0, o
     public int C0;
     public final y20 D;
     public int D0;
-    public gy E;
+    public hy E;
     public int E0;
     public final fi.q3 F;
     public int F0;
@@ -235,7 +235,7 @@ public final class bn extends vh implements org.telegram.ui.ActionBar.a6, qt0, o
                     if (smVar != null) {
                         smVar.f();
                     }
-                    y20Var.setText(org.telegram.messenger.hd.M0(2131747181, null));
+                    y20Var.setText(org.telegram.messenger.id.M0(2131747183, null));
                     y20Var.c(a6Var.getCheckBox());
                     ImageView imageView = y20Var.b;
                     imageView.setTranslationX(imageView.getTranslationX() + org.telegram.messenger.g0.L(48.0f));
@@ -414,7 +414,7 @@ public final class bn extends vh implements org.telegram.ui.ActionBar.a6, qt0, o
         if (b10 instanceof th.g) {
             th.g gVar = (th.g) b10;
             TLRPC.Document F0 = gVar.b.F0();
-            bnVar.l0(i7, new fi.u4(org.telegram.messenger.ij.y1(F0), org.telegram.messenger.ij.w1(F0) + " - " + org.telegram.messenger.hd.R((int) org.telegram.messenger.ij.H0(F0)), gVar, 2), org.telegram.messenger.g0.L(240.0f), org.telegram.messenger.g0.L(60.0f));
+            bnVar.l0(i7, new fi.u4(org.telegram.messenger.ij.y1(F0), org.telegram.messenger.ij.w1(F0) + " - " + org.telegram.messenger.id.R((int) org.telegram.messenger.ij.H0(F0)), gVar, 2), org.telegram.messenger.g0.L(240.0f), org.telegram.messenger.g0.L(60.0f));
             return;
         }
         if (b10 instanceof th.f) {
@@ -545,11 +545,11 @@ public final class bn extends vh implements org.telegram.ui.ActionBar.a6, qt0, o
         } catch (Exception unused) {
         }
         if (this.n) {
-            diVar.R2.setTitle(org.telegram.messenger.hd.M0(2131744055, null));
+            diVar.R2.setTitle(org.telegram.messenger.id.M0(2131744057, null));
         } else if (this.e0) {
-            diVar.R2.setTitle(org.telegram.messenger.hd.M0(2131748263, null));
+            diVar.R2.setTitle(org.telegram.messenger.id.M0(2131748265, null));
         } else {
-            diVar.R2.setTitle(org.telegram.messenger.hd.M0(2131748264, null));
+            diVar.R2.setTitle(org.telegram.messenger.id.M0(2131748266, null));
         }
         diVar.L1();
         this.x.h1(0, 0);
@@ -688,12 +688,12 @@ public final class bn extends vh implements org.telegram.ui.ActionBar.a6, qt0, o
         if (!z9) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.b.W1.getParentActivity());
             boolean z10 = this.n;
-            String M0 = org.telegram.messenger.hd.M0(z10 ? 2131752567 : 2131752573, null);
+            String M0 = org.telegram.messenger.id.M0(z10 ? 2131752567 : 2131752573, null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.R = M0;
-            u1Var.T = org.telegram.messenger.hd.M0(z10 ? 2131752568 : 2131752574, null);
-            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747579, null), new u(this, 23));
-            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+            u1Var.T = org.telegram.messenger.id.M0(z10 ? 2131752568 : 2131752574, null);
+            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747581, null), new u(this, 23));
+            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
             alertDialog$Builder.p();
         }
         return z9;
@@ -759,11 +759,11 @@ public final class bn extends vh implements org.telegram.ui.ActionBar.a6, qt0, o
 
     public final void Z(org.telegram.ui.Cells.m8 m8Var, boolean z9) {
         if (this.V != 0) {
-            m8Var.q(org.telegram.messenger.hd.M0(2131747129, null), org.telegram.messenger.hd.Q(this.V), z9, false);
+            m8Var.q(org.telegram.messenger.id.M0(2131747131, null), org.telegram.messenger.id.Q(this.V), z9, false);
         } else if (this.U != 0) {
-            m8Var.q(org.telegram.messenger.hd.M0(2131747131, null), org.telegram.messenger.hd.G(this.U / 3600, "Hours", new Object[0]), z9, false);
+            m8Var.q(org.telegram.messenger.id.M0(2131747133, null), org.telegram.messenger.id.G(this.U / 3600, "Hours", new Object[0]), z9, false);
         } else {
-            m8Var.q(org.telegram.messenger.hd.M0(2131747129, null), null, z9, false);
+            m8Var.q(org.telegram.messenger.id.M0(2131747131, null), null, z9, false);
         }
     }
 
@@ -839,12 +839,12 @@ public final class bn extends vh implements org.telegram.ui.ActionBar.a6, qt0, o
         boolean z10 = dVar.b(i10) != null;
         if (z9 && z10 && (f2Var = this.b.W1) != null) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, f2Var.getParentActivity(), this.a);
-            String M0 = org.telegram.messenger.hd.M0(!this.c0 ? 2131751405 : 2131751403, null);
+            String M0 = org.telegram.messenger.id.M0(!this.c0 ? 2131751405 : 2131751403, null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.R = M0;
-            u1Var.T = org.telegram.messenger.hd.M0(!this.c0 ? 2131751404 : 2131751402, null);
-            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751599, null), new a3.h(this, view, a6Var, 29));
-            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+            u1Var.T = org.telegram.messenger.id.M0(!this.c0 ? 2131751404 : 2131751402, null);
+            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751599, null), new a3.h(this, view, a6Var, 29));
+            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
             u1Var.setOnCancelListener(new tg(view, i7));
             u1Var.show();
             TextView textView = (TextView) u1Var.d(-1);
@@ -909,9 +909,9 @@ public final class bn extends vh implements org.telegram.ui.ActionBar.a6, qt0, o
         TLRPC.WebPage webPage;
         if (i7 != org.telegram.messenger.qs.w0) {
             if (i7 == org.telegram.messenger.qs.i4) {
-                gy gyVar = this.E;
-                if (gyVar != null) {
-                    gyVar.P.g1();
+                hy hyVar = this.E;
+                if (hyVar != null) {
+                    hyVar.P.g1();
                 }
                 org.telegram.ui.Cells.a6 a6Var = this.g1;
                 if (a6Var != null) {
@@ -944,11 +944,11 @@ public final class bn extends vh implements org.telegram.ui.ActionBar.a6, qt0, o
         if (this.I) {
             int i7 = 0;
             if (this.a1) {
-                gy gyVar = this.E;
-                gyVar.P.C0();
-                gyVar.I.scrollTo(0, 0);
-                gyVar.E(1);
-                gyVar.Q.h1(0, 0);
+                hy hyVar = this.E;
+                hyVar.P.C0();
+                hyVar.I.scrollTo(0, 0);
+                hyVar.E(1);
+                hyVar.Q.h1(0, 0);
                 this.E.t(false);
                 if (z9) {
                     this.E.A();
@@ -957,8 +957,8 @@ public final class bn extends vh implements org.telegram.ui.ActionBar.a6, qt0, o
                 k0(0);
             }
             if (z9) {
-                gy gyVar2 = this.E;
-                if (gyVar2 == null || gyVar2.getVisibility() != 0) {
+                hy hyVar2 = this.E;
+                if (hyVar2 == null || hyVar2.getVisibility() != 0) {
                     f0();
                     return;
                 }
@@ -974,9 +974,9 @@ public final class bn extends vh implements org.telegram.ui.ActionBar.a6, qt0, o
     }
 
     public final void f0() {
-        gy gyVar;
+        hy hyVar;
         jg emojiButton;
-        if (!this.a1 && (gyVar = this.E) != null && gyVar.getVisibility() != 8) {
+        if (!this.a1 && (hyVar = this.E) != null && hyVar.getVisibility() != 8) {
             org.telegram.ui.Cells.a6 a6Var = this.g1;
             if (a6Var != null && (emojiButton = a6Var.getEmojiButton()) != null) {
                 emojiButton.j(hg.e, false);
@@ -1131,7 +1131,7 @@ public final class bn extends vh implements org.telegram.ui.ActionBar.a6, qt0, o
                 if (!containsKey) {
                     TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
                     getwebpagepreview.message = str;
-                    ConnectionsManager.getInstance(oVar.a).sendRequestTyped(getwebpagepreview, new d3.b(1), new org.telegram.ui.Wallet.v1(4, oVar, str));
+                    ConnectionsManager.getInstance(oVar.a).sendRequestTyped(getwebpagepreview, new d3.b(1), new org.telegram.ui.Wallet.u1(4, oVar, str));
                 }
             }
             a0(eVar, false);
@@ -1161,12 +1161,12 @@ public final class bn extends vh implements org.telegram.ui.ActionBar.a6, qt0, o
                 if (emojiButton != null) {
                     emojiButton.j(hg.e, true);
                 }
-                gy gyVar = this.E;
-                if (gyVar != null) {
+                hy hyVar = this.E;
+                if (hyVar != null) {
                     this.a1 = false;
                     this.h1 = false;
                     if (org.telegram.messenger.g0.D || org.telegram.messenger.g0.E) {
-                        gyVar.setVisibility(8);
+                        hyVar.setVisibility(8);
                     }
                 }
                 if (i7 == 0) {
@@ -1176,23 +1176,23 @@ public final class bn extends vh implements org.telegram.ui.ActionBar.a6, qt0, o
                 diVar.l3.requestLayout();
                 return;
             }
-            gy gyVar2 = this.E;
-            boolean z9 = gyVar2 != null && gyVar2.getVisibility() == 0;
-            gy gyVar3 = this.E;
-            if (gyVar3 != null && gyVar3.c1 != org.telegram.messenger.p10.s0) {
-                diVar.l3.removeView(gyVar3);
+            hy hyVar2 = this.E;
+            boolean z9 = hyVar2 != null && hyVar2.getVisibility() == 0;
+            hy hyVar3 = this.E;
+            if (hyVar3 != null && hyVar3.c1 != org.telegram.messenger.p10.s0) {
+                diVar.l3.removeView(hyVar3);
                 this.E = null;
             }
             if (this.E == null) {
-                gy gyVar4 = new gy(null, true, false, false, getContext(), true, null, null, true, this.a, false, false);
-                this.E = gyVar4;
-                gyVar4.c = 3;
-                gyVar4.w0 = false;
-                gyVar4.x2 = false;
-                gyVar4.setShouldDrawBackground(false);
-                gy gyVar5 = this.E;
-                gyVar5.U0 = false;
-                gyVar5.setVisibility(8);
+                hy hyVar4 = new hy(null, true, false, false, getContext(), true, null, null, true, this.a, false, false);
+                this.E = hyVar4;
+                hyVar4.c = 3;
+                hyVar4.w0 = false;
+                hyVar4.x2 = false;
+                hyVar4.setShouldDrawBackground(false);
+                hy hyVar5 = this.E;
+                hyVar5.U0 = false;
+                hyVar5.setVisibility(8);
                 if (org.telegram.messenger.g0.Q1()) {
                     this.E.setForseMultiwindowLayout(true);
                 }
@@ -1202,7 +1202,7 @@ public final class bn extends vh implements org.telegram.ui.ActionBar.a6, qt0, o
             }
             this.E.setVisibility(0);
             this.a1 = true;
-            gy gyVar6 = this.E;
+            hy hyVar6 = this.E;
             if (this.c1 <= 0) {
                 if (org.telegram.messenger.g0.Q1()) {
                     this.c1 = org.telegram.messenger.g0.L(150.0f);
@@ -1219,9 +1219,9 @@ public final class bn extends vh implements org.telegram.ui.ActionBar.a6, qt0, o
             }
             Point point = org.telegram.messenger.g0.q;
             int i11 = point.x > point.y ? this.d1 : this.c1;
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) gyVar6.getLayoutParams();
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) hyVar6.getLayoutParams();
             layoutParams.height = org.telegram.messenger.g0.n + i11;
-            gyVar6.setLayoutParams(layoutParams);
+            hyVar6.setLayoutParams(layoutParams);
             if (!org.telegram.messenger.g0.E && !org.telegram.messenger.g0.Q1() && (a6Var = this.g1) != null) {
                 org.telegram.messenger.g0.v1(a6Var.getEditField());
             }
@@ -1249,8 +1249,8 @@ public final class bn extends vh implements org.telegram.ui.ActionBar.a6, qt0, o
         k60 F = k60.F(this, null, new View(getContext()));
         F.s = 0;
         F.t = false;
-        F.c(R.drawable.msg_replace, org.telegram.messenger.hd.M0(2131746270, null), new dm(this, i7, 1), false);
-        F.c(R.drawable.msg_delete, org.telegram.messenger.hd.M0(2131751599, null), new dm(this, i7, 2), true);
+        F.c(R.drawable.msg_replace, org.telegram.messenger.id.M0(2131746272, null), new dm(this, i7, 1), false);
+        F.c(R.drawable.msg_delete, org.telegram.messenger.id.M0(2131751599, null), new dm(this, i7, 2), true);
         jk0 jk0Var = new jk0(getContext(), this.a);
         F.p = new org.telegram.ui.ge(jk0Var, 1);
         F.S = org.telegram.messenger.g0.L(185.0f);
@@ -1439,9 +1439,9 @@ public final class bn extends vh implements org.telegram.ui.ActionBar.a6, qt0, o
         org.telegram.messenger.qs.f(diVar.D3).n(this, org.telegram.messenger.qs.w0);
         if (this.I) {
             org.telegram.messenger.qs.e().n(this, org.telegram.messenger.qs.i4);
-            gy gyVar = this.E;
-            if (gyVar != null) {
-                diVar.l3.removeView(gyVar);
+            hy hyVar = this.E;
+            if (hyVar != null) {
+                diVar.l3.removeView(hyVar);
             }
         }
     }
@@ -1576,7 +1576,7 @@ public final class bn extends vh implements org.telegram.ui.ActionBar.a6, qt0, o
                                 if (smVar != null) {
                                     smVar.f();
                                 }
-                                String M0 = org.telegram.messenger.hd.M0(2131747154, null);
+                                String M0 = org.telegram.messenger.id.M0(2131747156, null);
                                 y20 y20Var = this.D;
                                 y20Var.setText(M0);
                                 y20Var.c(a6Var.getCheckBox());

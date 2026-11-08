@@ -9,7 +9,7 @@ import android.view.SubMenu;
 import j$.util.Objects;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class h90 implements Menu {
     public final k60 a;
@@ -17,11 +17,11 @@ public final class h90 implements Menu {
     public final Runnable c;
     public final qs d;
 
-    public h90(k60 k60Var, ys ysVar) {
-        Objects.requireNonNull(ysVar);
-        s2 s2Var = new s2(ysVar, 5);
-        Runnable onPremiumMenuLockClickListener = ysVar.getOnPremiumMenuLockClickListener();
-        qs qsVar = new qs(ysVar, 2);
+    public h90(k60 k60Var, zs zsVar) {
+        Objects.requireNonNull(zsVar);
+        s2 s2Var = new s2(zsVar, 5);
+        Runnable onPremiumMenuLockClickListener = zsVar.getOnPremiumMenuLockClickListener();
+        qs qsVar = new qs(zsVar, 2);
         this.a = k60Var;
         this.b = s2Var;
         this.c = onPremiumMenuLockClickListener;
@@ -117,7 +117,7 @@ public final class h90 implements Menu {
 
     @Override // android.view.Menu
     public final MenuItem add(int i7, int i10, int i11, int i12) {
-        add(i7, i10, i11, org.telegram.messenger.hd.M0(i12, null));
+        add(i7, i10, i11, org.telegram.messenger.id.M0(i12, null));
         return null;
     }
 

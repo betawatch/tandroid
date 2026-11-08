@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.p10;
@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ag0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class q3 extends FrameLayout implements ls, org.telegram.ui.ActionBar.a6 {
     public boolean D;
@@ -62,8 +62,8 @@ public final class q3 extends FrameLayout implements ls, org.telegram.ui.ActionB
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        textView.setGravity(hd.a0 ? 5 : 3);
-        boolean z9 = hd.a0;
+        textView.setGravity(id.a0 ? 5 : 3);
+        boolean z9 = id.a0;
         addView(textView, c8.ha.d(-2, -2.0f, z9 ? 5 : 3, z9 ? 22.0f : 71.0f, 10.0f, z9 ? 71.0f : 22.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.d = textView2;
@@ -71,30 +71,30 @@ public final class q3 extends FrameLayout implements ls, org.telegram.ui.ActionB
         org.telegram.messenger.camera.q.n(textView2, 1, 13.0f, 1, 1);
         textView2.setSingleLine(true);
         textView2.setEllipsize(truncateAt);
-        textView2.setGravity(hd.a0 ? 5 : 3);
-        boolean z10 = hd.a0;
+        textView2.setGravity(id.a0 ? 5 : 3);
+        boolean z10 = id.a0;
         addView(textView2, c8.ha.d(-2, -2.0f, z10 ? 5 : 3, z10 ? 100.0f : 71.0f, 35.0f, z10 ? 71.0f : 100.0f, 0.0f));
         org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(context);
         this.e = l9Var;
         l9Var.setAspectFit(true);
         l9Var.setLayerNum(1);
-        boolean z11 = hd.a0;
+        boolean z11 = id.a0;
         addView(l9Var, c8.ha.d(48, 48.0f, (z11 ? 5 : 3) | 48, z11 ? 0.0f : 12.0f, 8.0f, z11 ? 12.0f : 0.0f, 0.0f));
         ag0 ag0Var = new ag0(context);
         this.f = ag0Var;
-        ag0Var.setText(hd.M0(2131754486, null));
+        ag0Var.setText(id.M0(2131754486, null));
         org.telegram.ui.ActionBar.r6.V(ag0Var, org.telegram.ui.ActionBar.k6.Gi, null);
         addView(ag0Var, c8.ha.i(-2.0f, 28.0f, 8388661, 0.0f, 18.0f, 14.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.h = textView3;
         textView3.setGravity(17);
         org.telegram.messenger.k5.n(textView3, org.telegram.ui.ActionBar.k6.Fi, null, 1, 14.0f);
-        textView3.setText(hd.M0(2131744856, null));
+        textView3.setText(id.M0(2131744858, null));
         addView(textView3, c8.ha.i(-2.0f, 28.0f, 8388661, 0.0f, 16.0f, 14.0f, 0.0f));
         ug.p0 p0Var = new ug.p0(org.telegram.messenger.g0.L(4.0f), context, f6Var, false);
         this.n = p0Var;
         p0Var.setIcon(R.raw.unlock_icon);
-        p0Var.b(hd.M0(2131743877, null), new a(this, 4), false);
+        p0Var.b(id.M0(2131743879, null), new a(this, 4), false);
         p0Var.setVisibility(8);
         try {
             ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) p0Var.getIconView().getLayoutParams();
@@ -130,7 +130,7 @@ public final class q3 extends FrameLayout implements ls, org.telegram.ui.ActionB
         textView.setText(str);
         textView.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
         TLRPC.StickerSet stickerSet2 = stickerSetCovered.set;
-        this.d.setText(hd.G(stickerSet2.count, stickerSet2.emojis ? "EmojiCount" : "Stickers", new Object[0]));
+        this.d.setText(id.G(stickerSet2.count, stickerSet2.emojis ? "EmojiCount" : "Stickers", new Object[0]));
         boolean z12 = stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered;
         int i7 = this.b;
         if (!z12 || (stickerSet = stickerSetCovered.set) == null) {
@@ -347,7 +347,7 @@ public final class q3 extends FrameLayout implements ls, org.telegram.ui.ActionB
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.y) {
-            canvas.drawLine(hd.a0 ? 0.0f : org.telegram.messenger.g0.L(71.0f), getHeight() - 1, getWidth() - (hd.a0 ? org.telegram.messenger.g0.L(71.0f) : 0), getHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
+            canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(71.0f), getHeight() - 1, getWidth() - (id.a0 ? org.telegram.messenger.g0.L(71.0f) : 0), getHeight() - 1, org.telegram.ui.ActionBar.k6.k0);
         }
     }
 

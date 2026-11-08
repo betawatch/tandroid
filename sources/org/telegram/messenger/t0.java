@@ -25,8 +25,9 @@ import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.w80;
+import org.telegram.utils.twidget.WidgetEngineService;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class t0 extends Application {
     public static volatile boolean D = true;
@@ -279,7 +280,7 @@ public abstract class t0 extends Application {
         f = true;
         as.f(b);
         try {
-            hd.E0();
+            id.E0();
         } catch (Exception e10) {
             e10.printStackTrace();
         }
@@ -297,7 +298,7 @@ public abstract class t0 extends Application {
             e12.printStackTrace();
         }
         try {
-            rc.h(b.registerReceiver(new q0(1), new IntentFilter("android.intent.action.BATTERY_CHANGED")));
+            sc.h(b.registerReceiver(new q0(1), new IntentFilter("android.intent.action.BATTERY_CHANGED")));
         } catch (Throwable th2) {
             a8.g(th2, true);
         }
@@ -323,11 +324,11 @@ public abstract class t0 extends Application {
             if (f10 != null) {
                 qp.s1(i7).X3(f10, true, false);
                 yr messagesStorage = gz.C(i7).getMessagesStorage();
-                messagesStorage.a.c(new qq(messagesStorage, 29));
+                messagesStorage.a.c(new rq(messagesStorage, 23));
             }
         }
         ((t0) b).getClass();
-        g0.i3(new ai.m0(21), 1000L);
+        g0.i3(new ai.m0(23), 1000L);
         if (r2.a) {
             a8.b("app initied");
         }
@@ -335,10 +336,11 @@ public abstract class t0 extends Application {
         for (int i10 = 0; i10 < 4; i10++) {
             g5 r10 = g5.r(i10);
             r10.a = null;
-            Utilities.e.c(new x4(r10, 0));
+            Utilities.e.c(new k4(r10, 0));
             z5.q(i10);
         }
         r1.i().q();
+        g0.i3(new ai.m0(19), 3000L);
     }
 
     public static void x() {
@@ -366,7 +368,7 @@ public abstract class t0 extends Application {
     public final void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
         try {
-            hd.E0().W0(configuration);
+            id.E0().W0(configuration);
             g0.v(b, configuration);
             VideoCapturerDevice.checkScreenCapturerSize();
             g0.d3();
@@ -384,6 +386,9 @@ public abstract class t0 extends Application {
         } catch (Throwable unused) {
         }
         super.onCreate();
+        if (WidgetEngineService.c()) {
+            return;
+        }
         Typeface typeface = g0.a;
         if (r2.a) {
             a8.b("Hello World!");
@@ -423,12 +428,12 @@ public abstract class t0 extends Application {
         try {
             ConnectionsManager.native_setJava(false);
             new r0(this);
-            new b(new ai.m0(19));
+            new b(new ai.m0(20));
             if (r2.a) {
                 a8.b("load libs time = " + (SystemClock.elapsedRealtime() - s));
             }
             d = new Handler(b.getMainLooper());
-            g0.h3(new ai.m0(20));
+            g0.h3(new ai.m0(21));
             w80[] values = w80.values();
             int length = values.length;
             int i11 = 0;

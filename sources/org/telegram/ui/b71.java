@@ -3,20 +3,18 @@ package org.telegram.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class b71 extends AnimatorListenerAdapter {
-    public final /* synthetic */ u71 a;
+    public final /* synthetic */ v71 a;
 
-    public b71(u71 u71Var) {
-        this.a = u71Var;
+    public b71(v71 v71Var) {
+        this.a = v71Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        u71 u71Var = this.a;
-        if (u71Var.X0 == null) {
-            u71Var.K0[0].setVisibility(4);
-        }
+        v71 v71Var = this.a;
+        v71Var.K0[v71Var.X0 != null ? (char) 0 : (char) 2].setVisibility(4);
     }
 }

@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fo implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -24,12 +24,12 @@ public final /* synthetic */ class fo implements View.OnClickListener {
             case 0:
                 di diVar = voVar.O1;
                 if (diVar.s2 != diVar.a2) {
-                    voVar.Q1.setText(org.telegram.messenger.hd.M0(2131745538, null));
+                    voVar.Q1.setText(org.telegram.messenger.id.M0(2131745540, null));
                     di diVar2 = voVar.O1;
                     diVar2.F1(diVar2.a2);
                     break;
                 } else {
-                    voVar.Q1.setText(org.telegram.messenger.hd.M0(2131752138, null));
+                    voVar.Q1.setText(org.telegram.messenger.id.M0(2131752138, null));
                     di diVar3 = voVar.O1;
                     if (diVar3.i2 == null) {
                         Context context = diVar3.getContext();

@@ -2,10 +2,10 @@ package di;
 
 import android.view.View;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.Components.k60;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v1 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -24,8 +24,8 @@ public final /* synthetic */ class v1 implements View.OnLongClickListener {
             case 0:
                 if (!i4Var.B0(true)) {
                     k60 F = k60.F(i4Var.s0.w, i4Var.k0, view);
-                    F.c(R.drawable.msg_edit, hd.M0(2131748809, null), new w1(i4Var, 6), false);
-                    F.l(R.drawable.menu_delete_paid, hd.M0(2131748808, null), new w1(i4Var, 7), i4Var.u3 > 0);
+                    F.c(R.drawable.msg_edit, id.M0(2131748811, null), new w1(i4Var, 6), false);
+                    F.l(R.drawable.menu_delete_paid, id.M0(2131748810, null), new w1(i4Var, 7), i4Var.u3 > 0);
                     F.V(5);
                     F.U = true;
                     F.Z();

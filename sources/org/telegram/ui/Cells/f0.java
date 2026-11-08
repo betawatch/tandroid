@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.gc;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.qs;
@@ -34,7 +34,7 @@ import org.telegram.ui.Components.r70;
 import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.x70;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class f0 extends View {
     public int D;
@@ -199,10 +199,10 @@ public abstract class f0 extends View {
                             Object[] objArr = new Object[2];
                             objArr[0] = org.telegram.messenger.m5.l(this.x, j3);
                             objArr[z11] = str2;
-                            org.telegram.messenger.k5.q(null, null, 2131748690, objArr, spannableStringBuilder);
+                            org.telegram.messenger.k5.q(null, null, 2131748692, objArr, spannableStringBuilder);
                             z12 = false;
                         } else {
-                            String M0 = hd.M0(2131753060, null);
+                            String M0 = id.M0(2131753060, null);
                             if (z9) {
                                 spannableStringBuilder.append((CharSequence) M0);
                                 spannableStringBuilder.append((CharSequence) "\n\n");
@@ -320,10 +320,10 @@ public abstract class f0 extends View {
         canvas.translate(getSideMenuWidth() / 2.0f, 0.0f);
         int width = (getWidth() - this.e) / 2;
         int L = org.telegram.messenger.g0.L(2.0f) + this.D;
-        Drawable l10 = org.telegram.ui.ActionBar.k6.q3.l();
-        if (l10 != null) {
-            l10.setBounds(width, L, this.e + width, this.f + L);
-            l10.draw(canvas);
+        Drawable k10 = org.telegram.ui.ActionBar.k6.q3.k();
+        if (k10 != null) {
+            k10.setBounds(width, L, this.e + width, this.f + L);
+            k10.draw(canvas);
         }
         Point point = org.telegram.messenger.g0.q;
         int i7 = point.x;
@@ -339,7 +339,7 @@ public abstract class f0 extends View {
             drawable = org.telegram.ui.ActionBar.k6.R0("drawableMsgInMedia");
         }
         org.telegram.ui.ActionBar.t4 t4Var = (org.telegram.ui.ActionBar.t4) drawable;
-        t4Var.p((int) getY(), i7, i10);
+        t4Var.o((int) getY(), i7, i10);
         t4Var.setBounds(width, 0, this.e + width, this.f);
         t4Var.draw(canvas);
         y yVar = this.J;

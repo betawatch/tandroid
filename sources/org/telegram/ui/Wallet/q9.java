@@ -1,70 +1,39 @@
 package org.telegram.ui.Wallet;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.text.TextUtils;
-import android.view.View;
+import org.telegram.messenger.c20;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q9 implements View.OnClickListener {
+public final /* synthetic */ class q9 implements c20 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x9 b;
+    public final /* synthetic */ w9 b;
 
-    public /* synthetic */ q9(x9 x9Var, int i7) {
+    public /* synthetic */ q9(w9 w9Var, int i7) {
         this.a = i7;
-        this.b = x9Var;
+        this.b = w9Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // org.telegram.messenger.c20
+    public final void a(Object obj) {
+        ah.i iVar;
         switch (this.a) {
             case 0:
-                x9 x9Var = this.b;
-                if (x9Var.y != null) {
-                    org.telegram.messenger.g0.v1(x9Var.N);
-                    x9Var.m0(x9Var.y, null);
-                    break;
-                }
-                break;
-            case 1:
-                x9 x9Var2 = this.b;
-                if (x9Var2.y != null) {
-                    org.telegram.messenger.g0.v1(x9Var2.N);
-                    x9Var2.m0(x9Var2.y, null);
-                    break;
-                }
-                break;
-            case 2:
-                x9 x9Var3 = this.b;
-                ClipboardManager clipboardManager = (ClipboardManager) x9Var3.getParentActivity().getSystemService("clipboard");
-                if (clipboardManager != null && clipboardManager.hasPrimaryClip()) {
-                    ClipData primaryClip = clipboardManager.getPrimaryClip();
-                    if (primaryClip != null && primaryClip.getItemCount() != 0) {
-                        CharSequence coerceToText = primaryClip.getItemAt(0).coerceToText(x9Var3.getParentActivity());
-                        if (!TextUtils.isEmpty(coerceToText)) {
-                            x9Var3.N.setText(coerceToText.toString().trim());
-                            ah.i iVar = x9Var3.N;
-                            iVar.setSelection(iVar.length());
-                            break;
-                        } else {
-                            x9Var3.S = false;
-                            x9Var3.p0(true);
-                            break;
-                        }
-                    } else {
-                        x9Var3.S = false;
-                        x9Var3.p0(true);
-                        break;
-                    }
-                } else {
-                    x9Var3.S = false;
-                    x9Var3.p0(true);
-                    break;
-                }
+                w9.e0(this.b, (String) obj);
                 break;
             default:
-                this.b.i0();
+                TLRPC.User user = (TLRPC.User) obj;
+                w9 w9Var = this.b;
+                if (!w9Var.isFinished && (iVar = w9Var.N) != null) {
+                    if (user != null) {
+                        org.telegram.messenger.g0.v1(iVar);
+                        w9Var.m0(null, user);
+                        break;
+                    } else {
+                        org.telegram.messenger.g0.h3(new r9(w9Var, 1));
+                        break;
+                    }
+                }
                 break;
         }
     }

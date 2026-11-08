@@ -1,10 +1,11 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class k10 implements ValueAnimator.AnimatorUpdateListener {
+public final class k10 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ p10 b;
 
@@ -13,29 +14,17 @@ public final class k10 implements ValueAnimator.AnimatorUpdateListener {
         this.b = p10Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 p10 p10Var = this.b;
-                p10Var.s.x = (int) floatValue;
-                p10Var.i();
-                n10 n10Var = p10Var.a;
-                if (n10Var.getParent() != null) {
-                    p10Var.n.updateViewLayout(n10Var, p10Var.s);
-                    break;
-                }
+                p10Var.b.setVisibility(8);
+                p10Var.E = false;
+                p10Var.F = 0.0f;
                 break;
             default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                p10 p10Var2 = this.b;
-                p10Var2.s.y = (int) floatValue2;
-                n10 n10Var2 = p10Var2.a;
-                if (n10Var2.getParent() != null) {
-                    p10Var2.n.updateViewLayout(n10Var2, p10Var2.s);
-                    break;
-                }
+                this.b.e.setVisibility(8);
                 break;
         }
     }

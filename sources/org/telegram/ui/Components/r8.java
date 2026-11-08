@@ -11,14 +11,14 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class r8 extends View {
     public p8 a;
     public final w5 b;
     public boolean c;
     public boolean d;
-    public final e10 e;
+    public final f10 e;
     public Drawable f;
     public Drawable h;
     public boolean n;
@@ -33,7 +33,7 @@ public final class r8 extends View {
         this.x = t8Var;
         w5 w5Var = new w5(400L, org.telegram.messenger.g0.H);
         this.b = w5Var;
-        this.e = new e10();
+        this.e = new f10();
         w5Var.a = this;
     }
 
@@ -59,10 +59,10 @@ public final class r8 extends View {
             int i10 = p8Var.d;
             int i11 = p8Var.e;
             int i12 = p8Var.f;
-            e10 e10Var = this.e;
-            e10Var.d(i7, i10, i11, i12);
-            e10Var.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-            paint = e10Var.c;
+            f10 f10Var = this.e;
+            f10Var.d(i7, i10, i11, i12);
+            f10Var.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+            paint = f10Var.c;
         } else {
             if (this.s == null) {
                 Paint paint2 = new Paint(1);

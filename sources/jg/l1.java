@@ -16,16 +16,16 @@ import c8.ha;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.Components.xz;
 import org.telegram.ui.Components.y8;
+import org.telegram.ui.Components.yz;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l1 extends FrameLayout {
     public final f6 a;
@@ -98,11 +98,11 @@ public final class l1 extends FrameLayout {
         boolean isEmpty = TextUtils.isEmpty(str);
         TextView[] textViewArr = this.c;
         if (isEmpty) {
-            textViewArr[0].setText(hd.H(' ', "HashtagStoriesFound", k6Var.J));
+            textViewArr[0].setText(id.H(' ', "HashtagStoriesFound", k6Var.J));
         } else {
-            textViewArr[0].setText(c(hd.K("HashtagStoriesFoundChannel", k6Var.J, ' ', rf.b.i("@", str))));
+            textViewArr[0].setText(c(id.K("HashtagStoriesFoundChannel", k6Var.J, ' ', rf.b.i("@", str))));
         }
-        this.d[0].setText(hd.a0(null, null, 2131749347, k6Var.C));
+        this.d[0].setText(id.a0(null, null, 2131749349, k6Var.C));
         return i10 > 0;
     }
 
@@ -110,11 +110,11 @@ public final class l1 extends FrameLayout {
         boolean isEmpty = TextUtils.isEmpty(str2);
         TextView[] textViewArr = this.c;
         if (isEmpty) {
-            textViewArr[1].setText(hd.H(' ', "HashtagMessagesFound", i7));
+            textViewArr[1].setText(id.H(' ', "HashtagMessagesFound", i7));
         } else {
-            textViewArr[1].setText(c(hd.K("HashtagMessagesFoundChannel", i7, ' ', rf.b.i("@", str2))));
+            textViewArr[1].setText(c(id.K("HashtagMessagesFoundChannel", i7, ' ', rf.b.i("@", str2))));
         }
-        this.d[1].setText(hd.a0(null, null, 2131749356, str));
+        this.d[1].setText(id.a0(null, null, 2131749358, str));
     }
 
     public final SpannableStringBuilder c(String str) {
@@ -127,7 +127,7 @@ public final class l1 extends FrameLayout {
                 int spanStart = Q2.getSpanStart(characterStyleArr[i10]);
                 int spanEnd = Q2.getSpanEnd(characterStyleArr[i10]);
                 Q2.removeSpan(characterStyleArr[i10]);
-                Q2.setSpan(new xz(k6.Ci, f6Var), spanStart, spanEnd, 0);
+                Q2.setSpan(new yz(k6.Ci, f6Var), spanStart, spanEnd, 0);
             }
             return Q2;
         } catch (Exception e10) {

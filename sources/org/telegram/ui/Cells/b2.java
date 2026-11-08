@@ -7,10 +7,10 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.w70;
-import org.telegram.ui.Components.xz;
+import org.telegram.ui.Components.yz;
 import org.telegram.ui.bd;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class b2 extends w70 {
     public final /* synthetic */ int L;
@@ -89,7 +89,7 @@ public final class b2 extends w70 {
                     int indexOf = charSequence.toString().indexOf(10);
                     if (indexOf >= 0) {
                         charSequence.replace(indexOf, indexOf + 1, " ");
-                        charSequence.setSpan(new xz(org.telegram.ui.ActionBar.k6.p7, ((org.telegram.ui.ka) this.M).e.getResourceProvider()), 0, indexOf, 33);
+                        charSequence.setSpan(new yz(org.telegram.ui.ActionBar.k6.p7, ((org.telegram.ui.ka) this.M).e.getResourceProvider()), 0, indexOf, 33);
                     }
                     u31[] u31VarArr = (u31[]) charSequence.getSpans(0, charSequence.length(), u31.class);
                     for (int i7 = 0; i7 < u31VarArr.length; i7++) {
@@ -106,7 +106,7 @@ public final class b2 extends w70 {
                     int indexOf2 = charSequence.toString().indexOf(10);
                     if (indexOf2 >= 0) {
                         charSequence.replace(indexOf2, indexOf2 + 1, " ");
-                        charSequence.setSpan(new xz(org.telegram.ui.ActionBar.k6.p7, bdVar.getResourceProvider()), 0, indexOf2, 33);
+                        charSequence.setSpan(new yz(org.telegram.ui.ActionBar.k6.p7, bdVar.getResourceProvider()), 0, indexOf2, 33);
                     }
                     u31[] u31VarArr2 = (u31[]) charSequence.getSpans(0, charSequence.length(), u31.class);
                     EditTextBoldCursor editTextBoldCursor = bdVar.y;

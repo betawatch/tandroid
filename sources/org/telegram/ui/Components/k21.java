@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class k21 extends org.telegram.ui.ActionBar.v2 implements org.telegram.messenger.ls {
     public static final String[] O1 = {"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:94.0) Gecko/20100101 Firefox/94.0", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:95.0) Gecko/20100101 Firefox/95.0", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36"};
@@ -175,7 +175,7 @@ public abstract class k21 extends org.telegram.ui.ActionBar.v2 implements org.te
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.Gi, null);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setTextSize(1, 14.0f);
-        textView.setText(org.telegram.messenger.hd.M0(2131752037, null));
+        textView.setText(org.telegram.messenger.id.M0(2131752037, null));
         int x02 = org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Ci, false);
         this.z1 = x02;
         textView.setBackground(org.telegram.ui.ActionBar.z5.e(x02, 24.0f));
@@ -247,7 +247,7 @@ public abstract class k21 extends org.telegram.ui.ActionBar.v2 implements org.te
     }
 
     public static String M0() {
-        return org.telegram.messenger.qp.e1().getString("translate_to_language", org.telegram.messenger.hd.E0().y.getLanguage());
+        return org.telegram.messenger.qp.e1().getString("translate_to_language", org.telegram.messenger.id.E0().y.getLanguage());
     }
 
     public static HashMap N0(CharSequence charSequence) {
@@ -272,7 +272,7 @@ public abstract class k21 extends org.telegram.ui.ActionBar.v2 implements org.te
     }
 
     public static String O0(String str, boolean[] zArr, boolean[] zArr2) {
-        org.telegram.messenger.ed edVar;
+        org.telegram.messenger.fd fdVar;
         String str2;
         if (str == null || str.equals("und") || str.equals("auto")) {
             return null;
@@ -282,7 +282,7 @@ public abstract class k21 extends org.telegram.ui.ActionBar.v2 implements org.te
             str3 = "no";
         }
         if (zArr != null) {
-            String N0 = org.telegram.messenger.hd.N0("TranslateLanguage" + str3.toUpperCase());
+            String N0 = org.telegram.messenger.id.N0("TranslateLanguage" + str3.toUpperCase());
             boolean z9 = (N0 == null || N0.startsWith("LOC_ERR")) ? false : true;
             zArr[0] = z9;
             if (z9) {
@@ -290,7 +290,7 @@ public abstract class k21 extends org.telegram.ui.ActionBar.v2 implements org.te
             }
         }
         if (zArr2 != null) {
-            String N02 = org.telegram.messenger.hd.N0("TranslateLanguageGenitive" + str3.toUpperCase());
+            String N02 = org.telegram.messenger.id.N0("TranslateLanguageGenitive" + str3.toUpperCase());
             boolean z10 = (N02 == null || N02.startsWith("LOC_ERR")) ? false : true;
             zArr2[0] = z10;
             if (z10) {
@@ -307,26 +307,26 @@ public abstract class k21 extends org.telegram.ui.ActionBar.v2 implements org.te
         if ("no".equals(str)) {
             str = "nb";
         }
-        org.telegram.messenger.ed edVar2 = org.telegram.messenger.hd.E0().B;
-        Iterator it = org.telegram.messenger.hd.E0().N.values().iterator();
+        org.telegram.messenger.fd fdVar2 = org.telegram.messenger.id.E0().B;
+        Iterator it = org.telegram.messenger.id.E0().N.values().iterator();
         while (true) {
             if (!it.hasNext()) {
-                edVar = null;
+                fdVar = null;
                 break;
             }
-            edVar = (org.telegram.messenger.ed) it.next();
-            String str4 = edVar.d;
-            if (str4 != null && str4.equals("remote") && ((str2 = edVar.c) == null || !str2.endsWith("_raw"))) {
-                String str5 = edVar.f;
+            fdVar = (org.telegram.messenger.fd) it.next();
+            String str4 = fdVar.d;
+            if (str4 != null && str4.equals("remote") && ((str2 = fdVar.c) == null || !str2.endsWith("_raw"))) {
+                String str5 = fdVar.f;
                 if (str5 != null && str5.equals(str)) {
                     break;
                 }
             }
         }
-        if (edVar == null) {
+        if (fdVar == null) {
             return null;
         }
-        return (edVar2 == null || !"en".equals(edVar2.f)) ? edVar.a : edVar.b;
+        return (fdVar2 == null || !"en".equals(fdVar2.f)) ? fdVar.a : fdVar.b;
     }
 
     public static TLRPC.TL_textWithEntities P0(TLRPC.TL_textWithEntities tL_textWithEntities, TLRPC.TL_textWithEntities tL_textWithEntities2) {

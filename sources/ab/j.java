@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 import org.telegram.messenger.gf;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.kf;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t0;
@@ -35,7 +35,7 @@ import org.telegram.ui.Components.di;
 import org.telegram.ui.Components.tl;
 import org.telegram.ui.Components.v8;
 import org.telegram.ui.Components.voip.y1;
-import org.telegram.ui.Components.w00;
+import org.telegram.ui.Components.x00;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
@@ -47,15 +47,15 @@ import org.telegram.ui.co;
 import org.telegram.ui.fo;
 import org.telegram.ui.gz;
 import org.telegram.ui.i9;
-import org.telegram.ui.la1;
+import org.telegram.ui.ma1;
 import org.telegram.ui.pi0;
 import org.telegram.ui.si0;
 import org.telegram.ui.vr;
 import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j implements Continuation, la1, r1, cj0, vr, androidx.car.app.utils.a {
+public final /* synthetic */ class j implements Continuation, ma1, r1, cj0, vr, androidx.car.app.utils.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -106,7 +106,7 @@ public final /* synthetic */ class j implements Continuation, la1, r1, cj0, vr, 
                 return;
             }
             f2 Q = f2Var == null ? LaunchActivity.Q() : f2Var;
-            if (Q == null || (view instanceof w00)) {
+            if (Q == null || (view instanceof x00)) {
                 return;
             }
             int i11 = Build.VERSION.SDK_INT;
@@ -323,16 +323,16 @@ public final /* synthetic */ class j implements Continuation, la1, r1, cj0, vr, 
                     break;
                 } catch (Exception unused) {
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(f2Var2.getParentActivity());
-                    alertDialog$Builder.a.R = hd.M0(2131746072, null);
-                    alertDialog$Builder.a.T = hd.M0(2131748198, "NoMailInstalled");
-                    alertDialog$Builder.k(hd.M0(2131747830, "OK"), null);
+                    alertDialog$Builder.a.R = id.M0(2131746074, null);
+                    alertDialog$Builder.a.T = id.M0(2131748200, "NoMailInstalled");
+                    alertDialog$Builder.k(id.M0(2131747832, "OK"), null);
                     f2Var2.showDialog(alertDialog$Builder.a);
                     return;
                 }
         }
     }
 
-    @Override // org.telegram.ui.la1
+    @Override // org.telegram.ui.ma1
     public void j(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         k7 k7Var = (k7) this.c;
         TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.d;

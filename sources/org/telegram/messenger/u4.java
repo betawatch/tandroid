@@ -1,105 +1,67 @@
 package org.telegram.messenger;
 
-import java.text.Collator;
-import java.util.Comparator;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class u4 implements Comparator {
+public final /* synthetic */ class u4 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Collator b;
+    public final /* synthetic */ g5 b;
+    public final /* synthetic */ HashMap c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ HashMap e;
 
-    public /* synthetic */ u4(Collator collator, int i7) {
-        this.a = i7;
-        this.b = collator;
+    public /* synthetic */ u4(g5 g5Var, ArrayList arrayList, HashMap hashMap, HashMap hashMap2) {
+        this.a = 4;
+        this.b = g5Var;
+        this.d = arrayList;
+        this.c = hashMap;
+        this.e = hashMap2;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        String str;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                String str2 = (String) obj;
-                String str3 = (String) obj2;
-                char charAt = str2.charAt(0);
-                char charAt2 = str3.charAt(0);
-                if (charAt == '#') {
-                    return 1;
-                }
-                if (charAt2 == '#') {
-                    return -1;
-                }
-                return this.b.compare(str2, str3);
+                HashMap hashMap = this.e;
+                g5 g5Var = this.b;
+                g5Var.E(this.c, this.d, hashMap, true);
+                g5Var.N();
+                g5Var.getNotificationCenter().k(25, new Object[0]);
+                g5Var.getNotificationCenter().k(26, new Object[0]);
+                break;
             case 1:
-                d5 d5Var = (d5) obj;
-                d5 d5Var2 = (d5) obj2;
-                String str4 = d5Var.i;
-                if (str4.length() == 0) {
-                    str4 = d5Var.j;
-                }
-                String str5 = d5Var2.i;
-                if (str5.length() == 0) {
-                    str5 = d5Var2.j;
-                }
-                return this.b.compare(str4, str5);
+                HashMap hashMap2 = this.e;
+                g5 g5Var2 = this.b;
+                g5Var2.E(this.c, this.d, hashMap2, true);
+                g5Var2.N();
+                g5Var2.getNotificationCenter().k(25, new Object[0]);
+                g5Var2.getNotificationCenter().k(26, new Object[0]);
+                break;
             case 2:
-                String str6 = "";
-                if (obj instanceof TLRPC.User) {
-                    TLRPC.User user = (TLRPC.User) obj;
-                    str = g5.m(0, user.first_name, user.last_name);
-                } else if (obj instanceof d5) {
-                    d5 d5Var3 = (d5) obj;
-                    TLRPC.User user2 = d5Var3.m;
-                    str = user2 != null ? g5.m(0, user2.first_name, user2.last_name) : g5.m(0, d5Var3.i, d5Var3.j);
-                } else {
-                    str = "";
-                }
-                if (obj2 instanceof TLRPC.User) {
-                    TLRPC.User user3 = (TLRPC.User) obj2;
-                    str6 = g5.m(0, user3.first_name, user3.last_name);
-                } else if (obj2 instanceof d5) {
-                    d5 d5Var4 = (d5) obj2;
-                    TLRPC.User user4 = d5Var4.m;
-                    str6 = user4 != null ? g5.m(0, user4.first_name, user4.last_name) : g5.m(0, d5Var4.i, d5Var4.j);
-                }
-                return this.b.compare(str, str6);
+                this.b.E(this.c, this.d, this.e, true);
+                break;
             case 3:
-                String str7 = (String) obj;
-                String str8 = (String) obj2;
-                char charAt3 = str7.charAt(0);
-                char charAt4 = str8.charAt(0);
-                if (charAt3 == '#') {
-                    return 1;
-                }
-                if (charAt4 == '#') {
-                    return -1;
-                }
-                return this.b.compare(str7, str8);
-            case 4:
-                String str9 = (String) obj;
-                String str10 = (String) obj2;
-                char charAt5 = str9.charAt(0);
-                char charAt6 = str10.charAt(0);
-                if (charAt5 == '#') {
-                    return 1;
-                }
-                if (charAt6 == '#') {
-                    return -1;
-                }
-                return this.b.compare(str9, str10);
+                HashMap hashMap3 = this.e;
+                g5 g5Var3 = this.b;
+                g5Var3.E(this.c, this.d, hashMap3, true);
+                g5Var3.getNotificationCenter().k(26, new Object[0]);
+                break;
             default:
-                String str11 = (String) obj;
-                String str12 = (String) obj2;
-                char charAt7 = str11.charAt(0);
-                char charAt8 = str12.charAt(0);
-                if (charAt7 == '#') {
-                    return 1;
-                }
-                if (charAt8 == '#') {
-                    return -1;
-                }
-                return this.b.compare(str11, str12);
+                g5 g5Var4 = this.b;
+                g5Var4.c0 = this.d;
+                g5Var4.d0 = this.c;
+                g5Var4.b0 = this.e;
+                break;
         }
+    }
+
+    public /* synthetic */ u4(g5 g5Var, HashMap hashMap, ArrayList arrayList, HashMap hashMap2, int i7) {
+        this.a = i7;
+        this.b = g5Var;
+        this.c = hashMap;
+        this.d = arrayList;
+        this.e = hashMap2;
     }
 }

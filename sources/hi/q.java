@@ -10,7 +10,7 @@ import c8.ha;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.WeakHashMap;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.t10;
 import org.telegram.ui.ActionBar.k6;
@@ -20,7 +20,7 @@ import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.f5;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class q extends org.telegram.ui.ActionBar.f2 {
     public q41 a;
@@ -52,7 +52,7 @@ public final class q extends org.telegram.ui.ActionBar.f2 {
             i10.L(!oVar.b);
             arrayList.add(i10);
         }
-        arrayList.add(x31.C(hd.M0(2131746860, null)));
+        arrayList.add(x31.C(id.M0(2131746862, null)));
     }
 
     public static void a0(q qVar, x31 x31Var) {
@@ -87,7 +87,7 @@ public final class q extends org.telegram.ui.ActionBar.f2 {
     public final View createView(Context context) {
         this.actionBar.setBackButtonDrawable(new org.telegram.ui.ActionBar.y1(false));
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(hd.M0(2131746862, null));
+        this.actionBar.setTitle(id.M0(2131746864, null));
         this.actionBar.setActionBarMenuOnItemClick(new bi.s(this, 3));
         FrameLayout frameLayout = new FrameLayout(context);
         r6.i(k6.a7, frameLayout, this.resourceProvider);

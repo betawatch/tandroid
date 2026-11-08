@@ -29,7 +29,7 @@ import org.telegram.messenger.ShareBroadcastReceiver;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.r2;
@@ -45,7 +45,7 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.h2;
+import org.telegram.ui.Wallet.g2;
 import org.telegram.ui.g4;
 import org.telegram.ui.k3;
 import org.telegram.ui.web.u0;
@@ -54,7 +54,7 @@ import sa.d;
 import sg.i0;
 import v6.e;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static i0 a;
@@ -230,7 +230,7 @@ public abstract class c {
             zf.e eVar2 = (zf.e) eVar.a;
             zf.b bVar = new zf.b(dVar);
             try {
-                if (((zf.c) eVar2).H0(bVar)) {
+                if (((zf.c) eVar2).h1(bVar)) {
                     i0Var = new i0(14, bVar, (ComponentName) eVar.b);
                 }
             } catch (RemoteException unused) {
@@ -808,7 +808,7 @@ public abstract class c {
                         getwebpagepreview.message = uri2.toString();
                         str4 = str3;
                         z18 = z16;
-                        int i10 = 10;
+                        int i10 = 9;
                         bVar2 = bVar;
                         try {
                             int sendRequest = ConnectionsManager.getInstance(p10.s0).sendRequest(getwebpagepreview, new org.telegram.ui.g0(bVar2, u1VarArr, i7, uri2, context, z18));
@@ -816,7 +816,7 @@ public abstract class c {
                                 bVar2.d();
                                 return;
                             } else {
-                                g0.i3(new h2(u1VarArr, sendRequest, i10), 1000L);
+                                g0.i3(new g2(u1VarArr, sendRequest, i10), 1000L);
                                 return;
                             }
                         } catch (Exception unused) {
@@ -882,7 +882,7 @@ public abstract class c {
                         Bundle bundle = new Bundle();
                         bundle.putBinder("android.support.customtabs.extra.SESSION", e10 == null ? null : (zf.b) e10.b);
                         intent3.putExtras(bundle);
-                        String M0 = hd.M0(2131751762, null);
+                        String M0 = id.M0(2131751762, null);
                         ArrayList<? extends Parcelable> arrayList = new ArrayList<>();
                         Bundle bundle2 = new Bundle();
                         bundle2.putString("android.support.customtabs.customaction.MENU_ITEM_TITLE", M0);
@@ -892,7 +892,7 @@ public abstract class c {
                         intent3.putExtra("android.support.customtabs.extra.TOOLBAR_COLOR", k6.x0(null, k6.S8, false));
                         intent3.putExtra("android.support.customtabs.extra.TITLE_VISIBILITY", 1);
                         Bitmap decodeResource = BitmapFactory.decodeResource(context.getResources(), R.drawable.msg_filled_shareout);
-                        String M02 = hd.M0(2131745460, null);
+                        String M02 = id.M0(2131745462, null);
                         z20 = false;
                         PendingIntent broadcast2 = PendingIntent.getBroadcast(t0.b, 0, intent2, 33554432);
                         Bundle bundle3 = new Bundle();

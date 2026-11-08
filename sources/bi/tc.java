@@ -9,7 +9,7 @@ import org.telegram.messenger.ls;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.jz;
+import org.telegram.ui.Components.kz;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
@@ -19,13 +19,13 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.qj;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class tc extends org.telegram.ui.Components.na implements ls {
     public final long P1;
     public final ah.a Q1;
     public final FrameLayout R1;
-    public final jz S1;
+    public final kz S1;
     public Runnable T1;
     public final TLRPC.InputPeer U1;
     public final boolean V1;
@@ -66,7 +66,7 @@ public final class tc extends org.telegram.ui.Components.na implements ls {
         ah.a aVar = new ah.a(this.a, context, f6Var);
         TextView textView = (TextView) aVar.e;
         this.Q1 = aVar;
-        ((TextView) aVar.d).setText(org.telegram.messenger.hd.G((int) Math.max(0L, j3 - ea.y(this.a, false).p().amount), "StarsNeededTitle", new Object[0]));
+        ((TextView) aVar.d).setText(org.telegram.messenger.id.G((int) Math.max(0L, j3 - ea.y(this.a, false).p().amount), "StarsNeededTitle", new Object[0]));
         if (i7 == 1) {
             str2 = "StarsNeededTextBuySubscription";
         } else {
@@ -83,7 +83,7 @@ public final class tc extends org.telegram.ui.Components.na implements ls {
                         } else {
                             str3 = "StarsNeededTextLink_" + str.toLowerCase();
                         }
-                        String N0 = org.telegram.messenger.hd.N0(str3);
+                        String N0 = org.telegram.messenger.id.N0(str3);
                     } else {
                         str2 = i7 == 5 ? "StarsNeededTextReactions" : i7 == 6 ? "StarsNeededTextGift" : i7 == 12 ? "StarsNeededTextGiftChannel" : i7 == 13 ? "StarsNeededTextPrivateMessage" : i7 == 10 ? "StarsNeededTextGiftUpgrade" : i7 == 11 ? "StarsNeededTextGiftTransfer" : i7 == 9 ? "StarsNeededBizText" : i7 == 14 ? "StarsNeededTextGiftBuyResale" : i7 == 15 ? "StarsNeededTextSearch" : i7 == 16 ? "StarsNeededRemoveGiftDescription" : i7 == 17 ? "StarsNeededLiveComments" : "StarsNeededText";
                     }
@@ -95,9 +95,9 @@ public final class tc extends org.telegram.ui.Components.na implements ls {
         if (TextUtils.isEmpty(str3)) {
             textView.setText("");
         } else {
-            String a02 = org.telegram.messenger.hd.a0(str3, null, 0, str);
+            String a02 = org.telegram.messenger.id.a0(str3, null, 0, str);
             a02 = (a02 == null || a02.startsWith("LOC_ERR")) ? null : a02;
-            textView.setText(org.telegram.messenger.g0.X2(a02 == null ? org.telegram.messenger.hd.N0(str3) : a02));
+            textView.setText(org.telegram.messenger.g0.X2(a02 == null ? org.telegram.messenger.id.N0(str3) : a02));
             textView.setMaxWidth(fi.m3.a(textView.getText(), textView.getPaint()));
         }
         this.l1.setTitle(O0());
@@ -109,17 +109,17 @@ public final class tc extends org.telegram.ui.Components.na implements ls {
         org.telegram.ui.ActionBar.r6.V(w70Var, org.telegram.ui.ActionBar.k6.B6, f6Var);
         org.telegram.ui.ActionBar.r6.H(w70Var, org.telegram.ui.ActionBar.k6.Uc, f6Var);
         if (k10) {
-            w70Var.setText(org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131744968, null), new ab(this, 3)));
+            w70Var.setText(org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(2131744970, null), new ab(this, 3)));
         } else {
-            w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131745050, null)));
+            w70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131745052, null)));
         }
         w70Var.setGravity(17);
         w70Var.setMaxWidth(fi.m3.a(w70Var.getText(), w70Var.getPaint()));
         frameLayout.addView(w70Var, c8.ha.e(-2, -1, 17));
         org.telegram.ui.ActionBar.r6.i(org.telegram.ui.ActionBar.k6.h5, frameLayout, f6Var);
-        jz jzVar = new jz(getContext());
-        this.S1 = jzVar;
-        this.b.addView(jzVar, c8.ha.c(-1.0f, -1));
+        kz kzVar = new kz(getContext());
+        this.S1 = kzVar;
+        this.b.addView(kzVar, c8.ha.c(-1.0f, -1));
         l41 l41Var = this.W1;
         if (l41Var != null) {
             l41Var.O(false);
@@ -160,7 +160,7 @@ public final class tc extends org.telegram.ui.Components.na implements ls {
             long j3 = ea.y(this.a, false).p().amount;
             TextView textView = (TextView) this.Q1.d;
             long j10 = this.P1;
-            textView.setText(org.telegram.messenger.hd.H(',', "StarsNeededTitle", (int) (j10 - j3)));
+            textView.setText(org.telegram.messenger.id.H(',', "StarsNeededTitle", (int) (j10 - j3)));
             org.telegram.ui.Components.ja jaVar = this.l1;
             if (jaVar != null) {
                 jaVar.setTitle(O0());
@@ -187,7 +187,7 @@ public final class tc extends org.telegram.ui.Components.na implements ls {
     public final void show() {
         qj qjVar;
         if (!this.V1) {
-            org.telegram.messenger.k5.o(null, 2131747396, new org.telegram.ui.Components.hc(org.telegram.ui.Components.xa.a(getContext()), this.I0), R.raw.stars_topup, 36);
+            org.telegram.messenger.k5.o(null, 2131747398, new org.telegram.ui.Components.hc(org.telegram.ui.Components.xa.a(getContext()), this.I0), R.raw.stars_topup, 36);
             return;
         }
         if (ea.y(this.a, false).p().amount >= this.P1) {

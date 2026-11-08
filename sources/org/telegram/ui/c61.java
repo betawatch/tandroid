@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class c61 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -72,11 +72,11 @@ public final class c61 extends LinearLayout {
             case 17:
                 int width2 = getWidth() / 2;
                 int height = getHeight() / 2;
-                yb1 yb1Var = (yb1) this.b;
-                Camera camera = yb1Var.L;
+                zb1 zb1Var = (zb1) this.b;
+                Camera camera = zb1Var.L;
                 camera.save();
                 camera.rotateY(7.0f);
-                Matrix matrix = yb1Var.M;
+                Matrix matrix = zb1Var.M;
                 camera.getMatrix(matrix);
                 camera.restore();
                 float f12 = -width2;
@@ -92,7 +92,7 @@ public final class c61 extends LinearLayout {
                 canvas.restore();
                 camera.save();
                 camera.rotateY(-7.0f);
-                Matrix matrix2 = yb1Var.N;
+                Matrix matrix2 = zb1Var.N;
                 camera.getMatrix(matrix2);
                 camera.restore();
                 matrix2.preTranslate(f12, f13);
@@ -104,16 +104,16 @@ public final class c61 extends LinearLayout {
                 canvas.restore();
                 break;
             case 25:
-                zh.g1 g1Var = (zh.g1) this.b;
-                RectF rectF = g1Var.h;
-                RectF rectF2 = g1Var.f;
-                RectF rectF3 = g1Var.e;
-                Paint paint = g1Var.n;
+                zh.f1 f1Var = (zh.f1) this.b;
+                RectF rectF = f1Var.h;
+                RectF rectF2 = f1Var.f;
+                RectF rectF3 = f1Var.e;
+                Paint paint = f1Var.n;
                 paint.setColor(org.telegram.ui.ActionBar.k6.r1(0.1f, org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.c6, false)));
-                float e10 = g1Var.c.e(false, g1Var.b);
+                float e10 = f1Var.c.e(false, f1Var.b);
                 double d = e10;
                 int floor = (int) Math.floor(d);
-                ArrayList arrayList = g1Var.d;
+                ArrayList arrayList = f1Var.d;
                 int j3 = Utilities.j(floor, arrayList.size() - 1, 0);
                 int j10 = Utilities.j((int) Math.ceil(d), arrayList.size() - 1, 0);
                 if (j3 < arrayList.size()) {
@@ -376,7 +376,7 @@ public final class c61 extends LinearLayout {
         switch (this.a) {
             case 22:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setVisibleToUser(((ec1) this.b).A0);
+                accessibilityNodeInfo.setVisibleToUser(((fc1) this.b).A0);
                 break;
             default:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
@@ -402,14 +402,14 @@ public final class c61 extends LinearLayout {
                 int i13 = (i12 - i10) / 2;
                 for (int i14 = 0; i14 < getChildCount(); i14++) {
                     View childAt = getChildAt(i14);
-                    if (childAt != ((org.telegram.ui.Components.yu) this.b).s.F && childAt != null) {
+                    if (childAt != ((org.telegram.ui.Components.zu) this.b).s.F && childAt != null) {
                         childAt.layout(paddingLeft, i13 - (childAt.getMeasuredHeight() / 2), childAt.getMeasuredWidth() + paddingLeft, (childAt.getMeasuredHeight() / 2) + i13);
                         paddingLeft = org.telegram.messenger.k5.C(2.0f, childAt.getMeasuredWidth(), paddingLeft);
                     }
                 }
                 break;
             case 12:
-                ((org.telegram.ui.Components.r00) this.b).c.a(getMeasuredWidth());
+                ((org.telegram.ui.Components.s00) this.b).c.a(getMeasuredWidth());
                 super.onLayout(z9, i7, i10, i11, i12);
                 break;
             case 13:
@@ -541,11 +541,11 @@ public final class c61 extends LinearLayout {
                 super.onMeasure((!org.telegram.ui.ActionBar.i4.b(i4Var) || (size = i4Var.J) == null) ? i7 : View.MeasureSpec.makeMeasureSpec(size.getWidth(), TLObject.FLAG_30), i11);
                 break;
             case 11:
-                super.onMeasure(Math.max(View.MeasureSpec.getSize(i7), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(((org.telegram.ui.Components.yu) this.b).b.getChildCount() * 32), TLObject.FLAG_30)), i11);
+                super.onMeasure(Math.max(View.MeasureSpec.getSize(i7), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(((org.telegram.ui.Components.zu) this.b).b.getChildCount() * 32), TLObject.FLAG_30)), i11);
                 break;
             case 16:
                 super.onMeasure(i7, i10);
-                if (org.telegram.messenger.hd.a0) {
+                if (org.telegram.messenger.id.a0) {
                     ((org.telegram.ui.Components.i21) this.b).c.setPivotX(getMeasuredWidth());
                     break;
                 }
@@ -581,10 +581,10 @@ public final class c61 extends LinearLayout {
                 }
             case 21:
                 super.onMeasure(i7, i10);
-                ya1 ya1Var = (ya1) this.b;
-                ViewGroup.MarginLayoutParams marginLayoutParams7 = (ViewGroup.MarginLayoutParams) ya1Var.c.getLayoutParams();
-                int L = org.telegram.messenger.g0.L(8.0f) + (ya1Var.a.getVisibility() == 8 ? org.telegram.messenger.g0.m : 0);
-                if (ya1Var.O == 2 && org.telegram.messenger.g0.O1()) {
+                za1 za1Var = (za1) this.b;
+                ViewGroup.MarginLayoutParams marginLayoutParams7 = (ViewGroup.MarginLayoutParams) za1Var.c.getLayoutParams();
+                int L = org.telegram.messenger.g0.L(8.0f) + (za1Var.a.getVisibility() == 8 ? org.telegram.messenger.g0.m : 0);
+                if (za1Var.O == 2 && org.telegram.messenger.g0.O1()) {
                     Point point = org.telegram.messenger.g0.q;
                     if (point.x <= point.y) {
                         i12 = org.telegram.messenger.g0.L(32.0f);
@@ -594,7 +594,7 @@ public final class c61 extends LinearLayout {
                 break;
             case 23:
                 super.onMeasure(i7, i10);
-                setMeasuredDimension(getMeasuredWidth(), Math.round((1.0f - ((org.telegram.ui.Wallet.y5) this.b).A0) * getMeasuredHeight()));
+                setMeasuredDimension(getMeasuredWidth(), Math.round((1.0f - ((org.telegram.ui.Wallet.x5) this.b).A0) * getMeasuredHeight()));
                 break;
             default:
                 super.onMeasure(i7, i10);
@@ -623,7 +623,7 @@ public final class c61 extends LinearLayout {
                 org.telegram.ui.Components.l9 l9Var = av0Var.b;
                 if (getVisibility() == 8 && i7 == 0) {
                     av0Var.c();
-                    if (org.telegram.messenger.rc.e(3)) {
+                    if (org.telegram.messenger.sc.e(3)) {
                         l9Var.getImageReceiver().P0(false);
                     }
                 } else if (i7 == 8) {
@@ -650,7 +650,7 @@ public final class c61 extends LinearLayout {
         this.b = new org.telegram.ui.ActionBar.z0[]{r0, r0, r0, r0, r0};
         final int i7 = 1;
         setOrientation(1);
-        org.telegram.ui.ActionBar.z0 c10 = org.telegram.ui.ActionBar.r0.c(false, false, this, R.drawable.msg_speed_0_2, org.telegram.messenger.hd.M0(2131745264, null), false, null);
+        org.telegram.ui.ActionBar.z0 c10 = org.telegram.ui.ActionBar.r0.c(false, false, this, R.drawable.msg_speed_0_2, org.telegram.messenger.id.M0(2131745266, null), false, null);
         c10.d(-328966, -328966);
         final int i10 = 0;
         c10.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.n31
@@ -688,7 +688,7 @@ public final class c61 extends LinearLayout {
             }
         });
         c10.setSelectorColor(268435455);
-        org.telegram.ui.ActionBar.z0 c11 = org.telegram.ui.ActionBar.r0.c(false, false, this, R.drawable.msg_speed_slow, org.telegram.messenger.hd.M0(2131745267, null), false, null);
+        org.telegram.ui.ActionBar.z0 c11 = org.telegram.ui.ActionBar.r0.c(false, false, this, R.drawable.msg_speed_slow, org.telegram.messenger.id.M0(2131745269, null), false, null);
         c11.d(-328966, -328966);
         c11.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.n31
             @Override // android.view.View.OnClickListener
@@ -725,7 +725,7 @@ public final class c61 extends LinearLayout {
             }
         });
         c11.setSelectorColor(268435455);
-        org.telegram.ui.ActionBar.z0 c12 = org.telegram.ui.ActionBar.r0.c(false, false, this, R.drawable.msg_speed_normal, org.telegram.messenger.hd.M0(2131745268, null), false, null);
+        org.telegram.ui.ActionBar.z0 c12 = org.telegram.ui.ActionBar.r0.c(false, false, this, R.drawable.msg_speed_normal, org.telegram.messenger.id.M0(2131745270, null), false, null);
         c12.d(-328966, -328966);
         final int i11 = 2;
         c12.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.n31
@@ -763,7 +763,7 @@ public final class c61 extends LinearLayout {
             }
         });
         c12.setSelectorColor(268435455);
-        org.telegram.ui.ActionBar.z0 c13 = org.telegram.ui.ActionBar.r0.c(false, false, this, R.drawable.msg_speed_fast, org.telegram.messenger.hd.M0(2131745271, null), false, null);
+        org.telegram.ui.ActionBar.z0 c13 = org.telegram.ui.ActionBar.r0.c(false, false, this, R.drawable.msg_speed_fast, org.telegram.messenger.id.M0(2131745273, null), false, null);
         c13.d(-328966, -328966);
         final int i12 = 3;
         c13.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.n31
@@ -801,7 +801,7 @@ public final class c61 extends LinearLayout {
             }
         });
         c13.setSelectorColor(268435455);
-        org.telegram.ui.ActionBar.z0 c14 = org.telegram.ui.ActionBar.r0.c(false, false, this, R.drawable.msg_speed_superfast, org.telegram.messenger.hd.M0(2131745265, null), false, null);
+        org.telegram.ui.ActionBar.z0 c14 = org.telegram.ui.ActionBar.r0.c(false, false, this, R.drawable.msg_speed_superfast, org.telegram.messenger.id.M0(2131745267, null), false, null);
         c14.d(-328966, -328966);
         final int i13 = 4;
         c14.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.n31
@@ -844,7 +844,7 @@ public final class c61 extends LinearLayout {
         sq0Var.setBackgroundColor(-15198184);
         addView(sq0Var);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) sq0Var.getLayoutParams();
-        if (org.telegram.messenger.hd.a0) {
+        if (org.telegram.messenger.id.a0) {
             layoutParams.gravity = 5;
         }
         layoutParams.width = -1;

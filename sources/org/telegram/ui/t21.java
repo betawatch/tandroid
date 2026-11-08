@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t21 implements Runnable {
     public final /* synthetic */ int a;
@@ -81,28 +81,28 @@ public final /* synthetic */ class t21 implements Runnable {
                     return;
                 }
             case 3:
-                x71 x71Var = (x71) obj3;
+                y71 y71Var = (y71) obj3;
                 String str = (String) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                x71Var.y = 0;
-                String str2 = x71Var.D;
+                y71Var.y = 0;
+                String str2 = y71Var.D;
                 if (str2 != null && str2.equals(str)) {
                     if (tL_error3 == null || (!"THEME_SLUG_INVALID".equals(tL_error3.text) && !"THEME_SLUG_OCCUPIED".equals(tL_error3.text))) {
-                        x71Var.f0(org.telegram.ui.ActionBar.k6.w6, org.telegram.messenger.hd.a0("SetUrlAvailable", null, 2131745509, str));
+                        y71Var.f0(org.telegram.ui.ActionBar.k6.w6, org.telegram.messenger.id.a0("SetUrlAvailable", null, 2131745511, str));
                         break;
                     } else {
-                        x71Var.f0(org.telegram.ui.ActionBar.k6.p7, org.telegram.messenger.hd.M0(2131745507, null));
+                        y71Var.f0(org.telegram.ui.ActionBar.k6.p7, org.telegram.messenger.id.M0(2131745509, null));
                         break;
                     }
                 }
                 break;
             case 4:
-                x71.b0((x71) obj3, (TLRPC.TL_error) obj2, (TL_account.updateTheme) obj);
+                y71.b0((y71) obj3, (TLRPC.TL_error) obj2, (TL_account.updateTheme) obj);
                 break;
             case 5:
-                f81 f81Var = (f81) obj3;
+                g81 g81Var = (g81) obj3;
                 an anVar = (an) obj2;
-                org.telegram.messenger.ij ijVar = f81Var.G;
+                org.telegram.messenger.ij ijVar = g81Var.G;
                 int i12 = ((TLRPC.TodoItem) obj).id;
                 if (ijVar != null && (message = ijVar.k) != null && (message.media instanceof TLRPC.TL_messageMediaToDo)) {
                     org.telegram.messenger.ij.B0(message);
@@ -115,93 +115,93 @@ public final /* synthetic */ class t21 implements Runnable {
                     qmVar.f();
                 }
                 anVar.fc(ijVar, qmVar);
-                f81Var.c(false);
+                g81Var.c(false);
                 break;
             case 6:
-                m81 m81Var = (m81) obj3;
-                ArrayList arrayList = m81Var.h;
+                n81 n81Var = (n81) obj3;
+                ArrayList arrayList = n81Var.h;
                 arrayList.clear();
-                ArrayList arrayList2 = m81Var.f;
+                ArrayList arrayList2 = n81Var.f;
                 arrayList2.clear();
                 arrayList.addAll((ArrayList) obj2);
                 arrayList2.addAll(((TLRPC.TL_messages_inactiveChats) obj).chats);
-                m81Var.d.f();
-                if (m81Var.a.getMeasuredHeight() > 0) {
+                n81Var.d.f();
+                if (n81Var.a.getMeasuredHeight() > 0) {
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    m81Var.D = ofFloat;
-                    ofFloat.addUpdateListener(new gz0(m81Var, 11));
-                    m81Var.D.setDuration(100L);
-                    m81Var.D.start();
+                    n81Var.D = ofFloat;
+                    ofFloat.addUpdateListener(new gz0(n81Var, 11));
+                    n81Var.D.setDuration(100L);
+                    n81Var.D.start();
                 } else {
-                    m81Var.E = 1.0f;
+                    n81Var.E = 1.0f;
                 }
-                org.telegram.messenger.g0.r(m81Var.I);
-                if (m81Var.F.getVisibility() == 0) {
-                    m81Var.F.animate().alpha(0.0f).setListener(new i81(m81Var, 2)).start();
+                org.telegram.messenger.g0.r(n81Var.I);
+                if (n81Var.F.getVisibility() == 0) {
+                    n81Var.F.animate().alpha(0.0f).setListener(new j81(n81Var, 2)).start();
                     break;
                 }
                 break;
             case 7:
-                v91 v91Var = (v91) obj3;
-                v91Var.s.d((ArrayList) obj2, v91Var.a);
+                w91 w91Var = (w91) obj3;
+                w91Var.s.d((ArrayList) obj2, w91Var.a);
                 ((Runnable) obj).run();
                 break;
             case 8:
-                r91 r91Var = (r91) obj3;
+                s91 s91Var = (s91) obj3;
                 String str3 = (String) obj2;
                 TLObject tLObject = (TLObject) obj;
-                ArrayList arrayList3 = r91Var.f0;
-                if (str3.equals(r91Var.d0)) {
-                    int i13 = r91Var.m0;
-                    r91Var.r0 = false;
-                    r91Var.n0 = false;
+                ArrayList arrayList3 = s91Var.f0;
+                if (str3.equals(s91Var.d0)) {
+                    int i13 = s91Var.m0;
+                    s91Var.r0 = false;
+                    s91Var.n0 = false;
                     if (tLObject instanceof TLRPC.messages_Messages) {
                         TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                         for (int i14 = 0; i14 < messages_messages.messages.size(); i14++) {
                             TLRPC.Message message2 = messages_messages.messages.get(i14);
-                            i7 = ((org.telegram.ui.ActionBar.f2) r91Var.v0).currentAccount;
+                            i7 = ((org.telegram.ui.ActionBar.f2) s91Var.v0).currentAccount;
                             org.telegram.messenger.ij ijVar2 = new org.telegram.messenger.ij(i7, message2, false, false);
                             ijVar2.L5(str3, true);
                             arrayList3.add(ijVar2);
                         }
-                        r91Var.N();
+                        s91Var.N();
                         if (arrayList3.size() < messages_messages.count && !messages_messages.messages.isEmpty()) {
                             z9 = true;
                         }
-                        r91Var.o0 = z9;
+                        s91Var.o0 = z9;
                     } else {
-                        r91Var.o0 = false;
+                        s91Var.o0 = false;
                     }
-                    if (r91Var.m0 == 0) {
-                        r91Var.p0.e(r91Var.n0, true);
+                    if (s91Var.m0 == 0) {
+                        s91Var.p0.e(s91Var.n0, true);
                     }
-                    r91Var.q0.b(i13);
+                    s91Var.q0.b(i13);
                     break;
                 }
                 break;
             default:
-                jb1 jb1Var = (jb1) obj3;
+                kb1 kb1Var = (kb1) obj3;
                 ArrayList arrayList4 = (ArrayList) obj2;
                 ArrayList arrayList5 = (ArrayList) obj;
-                jg.z1 z1Var = jb1Var.f;
-                if (jb1Var.n) {
-                    jb1Var.h = null;
-                    jb1Var.d = arrayList4;
-                    jb1Var.e = arrayList5;
+                jg.z1 z1Var = kb1Var.f;
+                if (kb1Var.n) {
+                    kb1Var.h = null;
+                    kb1Var.d = arrayList4;
+                    kb1Var.e = arrayList5;
                     z1Var.f(arrayList4, null);
-                    if (jb1Var.n && !z1Var.e()) {
-                        jb1Var.w.f.e(false, true);
+                    if (kb1Var.n && !z1Var.e()) {
+                        kb1Var.w.f.e(false, true);
                     }
-                    jb1Var.f();
+                    kb1Var.f();
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ t21(x71 x71Var, String str, TLRPC.TL_error tL_error) {
+    public /* synthetic */ t21(y71 y71Var, String str, TLRPC.TL_error tL_error) {
         this.a = 3;
-        this.d = x71Var;
+        this.d = y71Var;
         this.c = str;
         this.b = tL_error;
     }

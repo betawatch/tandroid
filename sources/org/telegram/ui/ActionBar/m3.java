@@ -34,13 +34,13 @@ import org.telegram.messenger.qs;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.hr;
 import org.telegram.ui.Components.l51;
-import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.rt;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.cn0;
 import org.telegram.ui.up0;
 import org.webrtc.GlGenericDrawer;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m3 implements r0.m, GlGenericDrawer.TextureCallback, org.telegram.ui.Components.voip.b1, lc, d5.a, r1, c0.j, p4.c0, p4.a1, h2.j, p4.y0, g9.k, sg.z, te.b, t0.e, sg.l1, OnSuccessListener, w5.b {
     public final /* synthetic */ int a;
@@ -164,7 +164,7 @@ public final /* synthetic */ class m3 implements r0.m, GlGenericDrawer.TextureCa
     @Override // c0.j
     public Object d(c0.i iVar) {
         p4.d0 d0Var = (p4.d0) this.b;
-        d0Var.o.post(new org.telegram.ui.web.w(15, d0Var, iVar));
+        d0Var.o.post(new org.telegram.ui.web.w(10, d0Var, iVar));
         return "onPlayRequested";
     }
 
@@ -280,57 +280,8 @@ public final /* synthetic */ class m3 implements r0.m, GlGenericDrawer.TextureCa
         }
     }
 
-    @Override // p4.a1
-    public Object i(p4.d0 d0Var, p4.v vVar, int i7) {
-        int i10 = this.a;
-        Object obj = this.b;
-        switch (i10) {
-            case 8:
-                return d0Var.l(vVar, (h9.i0) obj);
-            default:
-                p4.y0 y0Var = (p4.y0) obj;
-                m9.w wVar = m9.w.b;
-                if (!d0Var.j()) {
-                    y0Var.c(d0Var.t, vVar);
-                    p4.c1.R0(d0Var, vVar, i7, new p4.m1(0));
-                }
-                return m9.w.b;
-        }
-    }
-
-    @Override // t0.e
-    public boolean k(qt qtVar, int i7, Bundle bundle) {
-        r0.d dVar;
-        m.t tVar = (m.t) this.b;
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 25 && (i7 & 1) != 0) {
-            try {
-                ((t0.h) qtVar.b).e();
-                Parcelable parcelable = (Parcelable) ((t0.h) qtVar.b).h();
-                bundle = bundle == null ? new Bundle() : new Bundle(bundle);
-                bundle.putParcelable("androidx.core.view.extra.INPUT_CONTENT_INFO", parcelable);
-            } catch (Exception e10) {
-                Log.w("InputConnectionCompat", "Can't insert content from IME; requestPermission() failed", e10);
-                return false;
-            }
-        }
-        t0.h hVar = (t0.h) qtVar.b;
-        ClipData clipData = new ClipData(hVar.getDescription(), new ClipData.Item(hVar.c()));
-        if (i10 >= 31) {
-            dVar = new m2.i(clipData, 2);
-        } else {
-            r0.e eVar = new r0.e();
-            eVar.b = clipData;
-            eVar.c = 2;
-            dVar = eVar;
-        }
-        dVar.b(hVar.f());
-        dVar.setExtras(bundle);
-        return r0.i0.h(tVar, dVar.build()) == null;
-    }
-
     @Override // d5.a
-    public void l(WebView webView, wa waVar, Uri uri, boolean z9, e5.f fVar) {
+    public void i(WebView webView, wa waVar, Uri uri, boolean z9, e5.f fVar) {
         org.telegram.ui.web.u0 u0Var = (org.telegram.ui.web.u0) this.b;
         org.telegram.ui.web.x0 x0Var = u0Var.Q;
         if (webView != u0Var || x0Var == null) {
@@ -362,6 +313,55 @@ public final /* synthetic */ class m3 implements r0.m, GlGenericDrawer.TextureCa
             x0Var.g("onBotWebMessage ignored: invalid payload length");
         } catch (JSONException e10) {
             a8.g(e10, true);
+        }
+    }
+
+    @Override // t0.e
+    public boolean k(rt rtVar, int i7, Bundle bundle) {
+        r0.d dVar;
+        m.t tVar = (m.t) this.b;
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 25 && (i7 & 1) != 0) {
+            try {
+                ((t0.h) rtVar.b).e();
+                Parcelable parcelable = (Parcelable) ((t0.h) rtVar.b).h();
+                bundle = bundle == null ? new Bundle() : new Bundle(bundle);
+                bundle.putParcelable("androidx.core.view.extra.INPUT_CONTENT_INFO", parcelable);
+            } catch (Exception e10) {
+                Log.w("InputConnectionCompat", "Can't insert content from IME; requestPermission() failed", e10);
+                return false;
+            }
+        }
+        t0.h hVar = (t0.h) rtVar.b;
+        ClipData clipData = new ClipData(hVar.getDescription(), new ClipData.Item(hVar.c()));
+        if (i10 >= 31) {
+            dVar = new m2.i(clipData, 2);
+        } else {
+            r0.e eVar = new r0.e();
+            eVar.b = clipData;
+            eVar.c = 2;
+            dVar = eVar;
+        }
+        dVar.b(hVar.f());
+        dVar.setExtras(bundle);
+        return r0.i0.h(tVar, dVar.build()) == null;
+    }
+
+    @Override // p4.a1
+    public Object l(p4.d0 d0Var, p4.v vVar, int i7) {
+        int i10 = this.a;
+        Object obj = this.b;
+        switch (i10) {
+            case 8:
+                return d0Var.l(vVar, (h9.i0) obj);
+            default:
+                p4.y0 y0Var = (p4.y0) obj;
+                m9.w wVar = m9.w.b;
+                if (!d0Var.j()) {
+                    y0Var.c(d0Var.t, vVar);
+                    p4.c1.r1(d0Var, vVar, i7, new p4.m1(0));
+                }
+                return m9.w.b;
         }
     }
 

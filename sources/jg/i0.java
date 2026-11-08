@@ -4,7 +4,8 @@ import android.animation.ValueAnimator;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import bi.x5;
-import org.telegram.ui.Components.ez;
+import org.telegram.ui.Components.az;
+import org.telegram.ui.Components.fz;
 import org.telegram.ui.Components.g90;
 import org.telegram.ui.Components.ht0;
 import org.telegram.ui.Components.ii0;
@@ -13,12 +14,11 @@ import org.telegram.ui.Components.p61;
 import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.z01;
-import org.telegram.ui.Components.zy;
 import org.telegram.ui.StickersActivity;
 import org.telegram.ui.nw;
 import org.telegram.ui.oq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class i0 extends v4.b0 {
     public final /* synthetic */ int I;
@@ -90,7 +90,7 @@ public final class i0 extends v4.b0 {
     public int m0(int i7, v4.v0 v0Var, v4.a1 a1Var) {
         switch (this.I) {
             case 2:
-                k60 k60Var = ((nw) ((ez) this.J).J).b.L0;
+                k60 k60Var = ((nw) ((fz) this.J).J).b.L0;
                 if (k60Var != null && k60Var.D()) {
                     i7 = 0;
                 }
@@ -190,9 +190,9 @@ public final class i0 extends v4.b0 {
     public void v0(RecyclerView recyclerView, v4.a1 a1Var, int i7) {
         switch (this.I) {
             case 2:
-                zy zyVar = new zy(this, recyclerView.getContext());
-                zyVar.a = i7;
-                w0(zyVar);
+                az azVar = new az(this, recyclerView.getContext());
+                azVar.a = i7;
+                w0(azVar);
                 break;
             case 8:
                 p61 p61Var = new p61(this, recyclerView.getContext());

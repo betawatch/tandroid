@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class lq0 extends lz {
+public final class lq0 extends mz {
     public final /* synthetic */ zp0 U;
     public final /* synthetic */ xs0 V;
 
@@ -16,12 +16,12 @@ public final class lq0 extends lz {
         this.U = zp0Var;
     }
 
-    @Override // org.telegram.ui.Components.lz
+    @Override // org.telegram.ui.Components.mz
     public final int getColumnsCount() {
         return this.V.o1[xs0.z0(this.U.E) ? 1 : 0];
     }
 
-    @Override // org.telegram.ui.Components.lz
+    @Override // org.telegram.ui.Components.mz
     public final int getViewType() {
         setIsSingleCell(false);
         int i7 = this.U.E;
@@ -50,7 +50,7 @@ public final class lq0 extends lz {
         return 6;
     }
 
-    @Override // org.telegram.ui.Components.lz, android.view.View
+    @Override // org.telegram.ui.Components.mz, android.view.View
     public final void onDraw(Canvas canvas) {
         xs0 xs0Var = this.V;
         xs0Var.V0.setColor(xs0Var.s0(org.telegram.ui.ActionBar.k6.d6));

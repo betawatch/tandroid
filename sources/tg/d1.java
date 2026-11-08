@@ -8,10 +8,10 @@ import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.ActionBar.z5;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class d1 extends TextView {
     public boolean a;
@@ -34,7 +34,7 @@ public final class d1 extends TextView {
         canvas.restore();
         if (this.a) {
             int y10 = org.telegram.messenger.camera.q.y(16.0f, getHeight(), 2);
-            if (hd.a0) {
+            if (id.a0) {
                 this.b.setBounds(org.telegram.messenger.g0.L(7.0f), y10, org.telegram.messenger.g0.L(23.0f), org.telegram.messenger.g0.L(16.0f) + y10);
             } else {
                 this.b.setBounds(getWidth() - org.telegram.messenger.g0.L(23.0f), y10, getWidth() - org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(16.0f) + y10);
@@ -46,7 +46,7 @@ public final class d1 extends TextView {
     public void setCurrent(boolean z9) {
         this.a = z9;
         if (z9) {
-            setPadding(org.telegram.messenger.g0.L(hd.a0 ? 27.0f : 12.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(hd.a0 ? 12.0f : 27.0f), org.telegram.messenger.g0.L(6.0f));
+            setPadding(org.telegram.messenger.g0.L(id.a0 ? 27.0f : 12.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(id.a0 ? 12.0f : 27.0f), org.telegram.messenger.g0.L(6.0f));
             setBackground(z5.d(0, z5.b(1090519039), org.telegram.messenger.g0.L(32.0f)));
         } else {
             setPadding(org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(14.0f));

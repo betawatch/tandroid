@@ -140,10 +140,10 @@ import org.telegram.ui.Components.tx0;
 import org.telegram.ui.Components.u31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.qn0;
-import org.telegram.ui.u71;
+import org.telegram.ui.v71;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class g0 {
     public static final int C;
@@ -489,7 +489,7 @@ public abstract class g0 {
                 str = "universal " + Build.CPU_ABI + " " + Build.CPU_ABI2;
             }
             Locale locale = Locale.US;
-            return hd.a0("TelegramVersion", null, 2131744211, "v" + packageInfo.versionName + " (" + i10 + ") " + str);
+            return id.a0("TelegramVersion", null, 2131744213, "v" + packageInfo.versionName + " (" + i10 + ") " + str);
         } catch (Exception e10) {
             a8.g(e10, true);
             return null;
@@ -775,14 +775,14 @@ public abstract class g0 {
             if (!TextUtils.isEmpty(str)) {
                 return new String[]{str.replace('_', '-')};
             }
-            String Q0 = hd.Q0();
-            ed edVar = hd.E0().B;
-            String str3 = edVar.e;
+            String Q0 = id.Q0();
+            fd fdVar = id.E0().B;
+            String str3 = fdVar.e;
             String replace = str3 == null ? "" : str3.replace("_", "-");
             boolean isEmpty = TextUtils.isEmpty(replace);
             String str4 = replace;
             if (isEmpty) {
-                str4 = edVar.c();
+                str4 = fdVar.c();
             }
             if (!Q0.contains(str4) && !str4.contains(Q0)) {
                 str2 = str4;
@@ -1056,9 +1056,9 @@ public abstract class g0 {
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(f2Var.getParentActivity());
             ((nb.a) t0.k()).getClass();
-            alertDialog$Builder.a.T = hd.M0(2131749195, null);
-            alertDialog$Builder.k(hd.M0(2131747830, null), new o(i7, str, f2Var));
-            alertDialog$Builder.h(hd.M0(2131752589, null), null);
+            alertDialog$Builder.a.T = id.M0(2131749197, null);
+            alertDialog$Builder.k(id.M0(2131747832, null), new o(i7, str, f2Var));
+            alertDialog$Builder.h(id.M0(2131752589, null), null);
             f2Var.showDialog(alertDialog$Builder.a);
             return false;
         }
@@ -1244,33 +1244,33 @@ public abstract class g0 {
             linearLayout.setOrientation(1);
             v2Var.N = linearLayout;
             TextView b10 = c8.qa.b(launchActivity, 20.0f, org.telegram.ui.ActionBar.k6.j5, true, null);
-            b10.setText(hd.M0(2131743776, null));
+            b10.setText(id.M0(2131743778, null));
             linearLayout.addView(b10, c8.ha.t(-1, -2, 55, 22, 18, 22, 0));
             tx0 tx0Var = new tx0(launchActivity, null);
             linearLayout.addView(tx0Var, c8.ha.t(-1, -2, 55, 14, 18, 14, 0));
             if (!TextUtils.isEmpty(str)) {
-                tx0Var.c(hd.M0(2131743792, null), str, null, null);
+                tx0Var.c(id.M0(2131743794, null), str, null, null);
             }
             if (i7 != 0) {
-                tx0Var.c(hd.M0(2131743787, null), Integer.toString(i7), null, null);
+                tx0Var.c(id.M0(2131743789, null), Integer.toString(i7), null, null);
             }
             if (!TextUtils.isEmpty(str4)) {
-                tx0Var.c(hd.M0(2131743785, null), str4, null, null);
+                tx0Var.c(id.M0(2131743787, null), str4, null, null);
             }
             if (!TextUtils.isEmpty(str2)) {
-                tx0Var.c(hd.M0(2131743775, null), str2, null, null);
+                tx0Var.c(id.M0(2131743777, null), str2, null, null);
             }
             if (!TextUtils.isEmpty(str3)) {
-                tx0Var.c(hd.M0(2131743788, null), str3, null, null);
+                tx0Var.c(id.M0(2131743790, null), str3, null, null);
             }
             org.telegram.ui.Components.jc[] jcVarArr = new org.telegram.ui.Components.jc[1];
-            tx0Var.c(hd.M0(2131746599, null), "", null, jcVarArr);
+            tx0Var.c(id.M0(2131746601, null), "", null, jcVarArr);
             ((View) jcVarArr[0].getParent()).setPadding(0, 0, 0, 0);
             jcVarArr[0].setDisablePaddingsOffsetY(true);
             jcVarArr[0].setPadding(L(12.66f), L(9.33f), L(12.66f), L(9.33f));
-            jcVarArr[0].setText(O2(hd.M0(2131746608, null), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Uc, false), new em(new boolean[1], jcVarArr, aVar, launchActivity, 5)));
+            jcVarArr[0].setText(O2(id.M0(2131746610, null), org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.Uc, false), new em(new boolean[1], jcVarArr, aVar, launchActivity, 5)));
             if (!TextUtils.isEmpty(str4)) {
-                rx0 a10 = tx0Var.a(hd.M0(2131743777, null));
+                rx0 a10 = tx0Var.a(id.M0(2131743779, null));
                 a10.setFilled(true);
                 xh.l lVar = (xh.l) a10.getChildAt(0);
                 lVar.setTextSize(1, 11.0f);
@@ -1278,7 +1278,7 @@ public abstract class g0 {
             }
             fi.d dVar = new fi.d(launchActivity, null, true);
             dVar.setRoundRadius(24);
-            dVar.setText(hd.M0(2131751808, null));
+            dVar.setText(id.M0(2131751808, null));
             final org.telegram.ui.ActionBar.g2 g2Var = v2Var.x0;
             dVar.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.m
                 @Override // android.view.View.OnClickListener
@@ -1301,7 +1301,7 @@ public abstract class g0 {
                             g2Var.run();
                         }
                     }
-                    qs.e().k(qs.P4, 6, hd.M0(2131746609, null));
+                    qs.e().k(qs.P4, 6, id.M0(2131746611, null));
                     g2Var.run();
                 }
             });
@@ -1529,7 +1529,7 @@ public abstract class g0 {
                 return "";
             }
         }
-        String S0 = hd.E0().S0(str, true, false);
+        String S0 = id.E0().S0(str, true, false);
         return S0 == null ? "" : S0;
     }
 
@@ -2845,7 +2845,7 @@ public abstract class g0 {
     }
 
     public static SpannableStringBuilder d4(CharSequence charSequence, Runnable runnable) {
-        SpannableString spannableString = new SpannableString(hd.M0(2131749008, null));
+        SpannableString spannableString = new SpannableString(id.M0(2131749010, null));
         spannableString.setSpan(new w(0, runnable), 0, spannableString.length(), 33);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
         spannableStringBuilder.append((CharSequence) " ");
@@ -2869,12 +2869,12 @@ public abstract class g0 {
             return !TextUtils.isEmpty(str) ? z9 ? String.format(Locale.US, "https://maps.googleapis.com/maps/api/staticmap?center=%.6f,%.6f&zoom=%d&size=%dx%d&maptype=roadmap&scale=%d&markers=color:red%%7Csize:mid%%7C%.6f,%.6f&sensor=false&key=%s", Double.valueOf(d2), Double.valueOf(d10), Integer.valueOf(i12), Integer.valueOf(i10), Integer.valueOf(i11), Integer.valueOf(min), Double.valueOf(d2), Double.valueOf(d10), str) : String.format(Locale.US, "https://maps.googleapis.com/maps/api/staticmap?center=%.6f,%.6f&zoom=%d&size=%dx%d&maptype=roadmap&scale=%d&key=%s", Double.valueOf(d2), Double.valueOf(d10), Integer.valueOf(i12), Integer.valueOf(i10), Integer.valueOf(i11), Integer.valueOf(min), str) : z9 ? String.format(Locale.US, "https://maps.googleapis.com/maps/api/staticmap?center=%.6f,%.6f&zoom=%d&size=%dx%d&maptype=roadmap&scale=%d&markers=color:red%%7Csize:mid%%7C%.6f,%.6f&sensor=false", Double.valueOf(d2), Double.valueOf(d10), Integer.valueOf(i12), Integer.valueOf(i10), Integer.valueOf(i11), Integer.valueOf(min), Double.valueOf(d2), Double.valueOf(d10)) : String.format(Locale.US, "https://maps.googleapis.com/maps/api/staticmap?center=%.6f,%.6f&zoom=%d&size=%dx%d&maptype=roadmap&scale=%d", Double.valueOf(d2), Double.valueOf(d10), Integer.valueOf(i12), Integer.valueOf(i10), Integer.valueOf(i11), Integer.valueOf(min));
         }
         String[] strArr = {"ru_RU", "tr_TR"};
-        ed edVar = hd.E0().B;
+        fd fdVar = id.E0().B;
         String str2 = null;
         int i16 = 0;
         while (i16 < i14) {
             int i17 = i14;
-            if (strArr[i16].toLowerCase().contains(edVar.c)) {
+            if (strArr[i16].toLowerCase().contains(fdVar.c)) {
                 str2 = strArr[i16];
             }
             i16++;
@@ -3976,7 +3976,7 @@ public abstract class g0 {
             return String.format(Locale.ENGLISH, "%.1f%s", Float.valueOf(f12 / 10.0f), strArr[i11]);
         }
         Locale locale = Locale.ENGLISH;
-        return rf.b.q(f0((int) f10), strArr[i11]);
+        return rf.b.r(f0((int) f10), strArr[i11]);
     }
 
     public static Typeface o1(String str) {
@@ -4238,7 +4238,7 @@ public abstract class g0 {
             String trim2 = substring.trim();
             int length2 = spannableStringBuilder.length();
             spannableStringBuilder.append((CharSequence) trim2);
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.q6, null), length2, trim2.length() + length2, 33);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.yz(org.telegram.ui.ActionBar.k6.q6, null), length2, trim2.length() + length2, 33);
             i7 = length;
         }
         if (i7 != -1 && i7 < trim.length()) {
@@ -4336,7 +4336,7 @@ public abstract class g0 {
         if (f2Var != null && file.getName().toLowerCase().endsWith("attheme")) {
             org.telegram.ui.ActionBar.j6 v10 = org.telegram.ui.ActionBar.k6.v(file, ijVar.I0(), null, true);
             if (v10 != null) {
-                f2Var.presentFragment(new u71(v10));
+                f2Var.presentFragment(new v71(v10));
                 return;
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity);
@@ -4347,8 +4347,8 @@ public abstract class g0 {
             alertDialog$Builder.m(R.raw.not_available, 52, f2Var.getThemedColor(i7), hashMap);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.W = true;
-            u1Var.T = hd.M0(2131749199, null);
-            alertDialog$Builder.k(hd.M0(2131747830, null), null);
+            u1Var.T = id.M0(2131749201, null);
+            alertDialog$Builder.k(id.M0(2131747832, null), null);
             f2Var.showDialog(u1Var);
             return;
         }
@@ -4395,10 +4395,10 @@ public abstract class g0 {
                 alertDialog$Builder2.m(R.raw.not_available, 52, f2Var.getThemedColor(i10), hashMap2);
                 org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder2.a;
                 u1Var2.W = true;
-                alertDialog$Builder2.k(hd.M0(2131747830, null), null);
+                alertDialog$Builder2.k(id.M0(2131747832, null), null);
                 Object[] objArr = new Object[1];
                 objArr[c10] = ijVar.F0().mime_type;
-                u1Var2.T = hd.a0("NoHandleAppInstalled", null, 2131748204, objArr);
+                u1Var2.T = id.a0("NoHandleAppInstalled", null, 2131748206, objArr);
                 f2Var.showDialog(u1Var2);
             }
         } catch (Exception unused3) {
@@ -5043,7 +5043,7 @@ public abstract class g0 {
         int indexOf = lowerCase.indexOf(str);
         while (indexOf >= 0) {
             try {
-                valueOf.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.k6.q6, f6Var), indexOf, Math.min(str.length() + indexOf, charSequence.length()), 0);
+                valueOf.setSpan(new org.telegram.ui.Components.yz(org.telegram.ui.ActionBar.k6.q6, f6Var), indexOf, Math.min(str.length() + indexOf, charSequence.length()), 0);
             } catch (Exception e10) {
                 a8.g(e10, true);
             }

@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sf implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class sf implements ValueAnimator.AnimatorUpdateLis
                 ImageView imageView = nx0Var.c;
                 imageView.setTranslationX(T1);
                 org.telegram.ui.Components.wo woVar = nx0Var.f;
-                woVar.setTranslationX((org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(32.0f) : -org.telegram.messenger.g0.L(32.0f)) + T1);
+                woVar.setTranslationX((org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(32.0f) : -org.telegram.messenger.g0.L(32.0f)) + T1);
                 float f10 = (floatValue3 * 0.5f) + 0.5f;
                 woVar.setScaleX(f10);
                 woVar.setScaleY(f10);
@@ -71,18 +71,18 @@ public final /* synthetic */ class sf implements ValueAnimator.AnimatorUpdateLis
                 imageView.setAlpha(f11);
                 break;
             case 5:
-                org.telegram.ui.Wallet.d4 d4Var = (org.telegram.ui.Wallet.d4) this.c;
-                d4Var.getClass();
-                d4Var.R = ((((Float) valueAnimator.getAnimatedValue()).floatValue() * 240.0f) + this.b) % 360.0f;
-                d4Var.a.invalidate();
+                org.telegram.ui.Wallet.c4 c4Var = (org.telegram.ui.Wallet.c4) this.c;
+                c4Var.getClass();
+                c4Var.R = ((((Float) valueAnimator.getAnimatedValue()).floatValue() * 240.0f) + this.b) % 360.0f;
+                c4Var.a.invalidate();
                 break;
             default:
-                org.telegram.ui.Wallet.p8 p8Var = (org.telegram.ui.Wallet.p8) this.c;
-                p8Var.getClass();
+                org.telegram.ui.Wallet.o8 o8Var = (org.telegram.ui.Wallet.o8) this.c;
+                o8Var.getClass();
                 float floatValue4 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                p8Var.c = p8Var.c();
-                p8Var.d = this.b * floatValue4;
-                p8Var.s = floatValue4 > 0.0f;
+                o8Var.c = o8Var.c();
+                o8Var.d = this.b * floatValue4;
+                o8Var.s = floatValue4 > 0.0f;
                 break;
         }
     }

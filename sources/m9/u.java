@@ -21,7 +21,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import org.telegram.messenger.WearAuthListenerService;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.hi;
-import org.telegram.messenger.p1;
+import org.telegram.messenger.j1;
 import org.telegram.messenger.q1;
 import org.telegram.messenger.r1;
 import org.telegram.messenger.uz;
@@ -35,7 +35,7 @@ import org.telegram.ui.kq;
 import org.telegram.ui.ll;
 import org.telegram.ui.oq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class u implements Runnable {
     public final /* synthetic */ int a;
@@ -194,7 +194,7 @@ public final class u implements Runnable {
                 zVar.e.c((androidx.biometric.u) this.b);
                 return;
             case 8:
-                ((com.google.android.gms.internal.cast.p) this.b).O0((s4.r) this.c);
+                ((com.google.android.gms.internal.cast.p) this.b).o1((s4.r) this.c);
                 return;
             case 9:
                 ((e0.c) this.b).a = this.c;
@@ -275,11 +275,11 @@ public final class u implements Runnable {
                 return;
             case 16:
                 f5.b bVar3 = (f5.b) this.b;
-                p1 p1Var = (p1) this.c;
+                j1 j1Var = (j1) this.c;
                 f5.f fVar3 = f5.z.i;
                 bVar3.y(24, 7, fVar3);
                 com.google.android.gms.internal.play_billing.p pVar = com.google.android.gms.internal.play_billing.r.b;
-                ((q1) p1Var.b).a(fVar3, com.google.android.gms.internal.play_billing.v.e);
+                ((q1) j1Var.b).a(fVar3, com.google.android.gms.internal.play_billing.v.e);
                 return;
             case 17:
                 f5.b bVar4 = (f5.b) this.b;

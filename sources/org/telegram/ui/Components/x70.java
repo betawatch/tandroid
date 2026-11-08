@@ -12,7 +12,7 @@ import android.text.style.CharacterStyle;
 import android.view.ViewConfiguration;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class x70 {
     public static final ArrayList s = new ArrayList();
@@ -33,7 +33,7 @@ public final class x70 {
     public final Path l = new Path();
     public long o = -1;
     public long p = -1;
-    public final boolean r = !org.telegram.messenger.rc.e(360928);
+    public final boolean r = !org.telegram.messenger.sc.e(360928);
 
     public x70(CharacterStyle characterStyle, org.telegram.ui.ActionBar.f6 f6Var, float f10, float f11, int i7) {
         this.i = characterStyle;

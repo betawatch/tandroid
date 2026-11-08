@@ -26,7 +26,7 @@ import di.h3;
 import fi.p5;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
@@ -39,8 +39,8 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.m5;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.dt;
-import org.telegram.ui.Components.g10;
+import org.telegram.ui.Components.et;
+import org.telegram.ui.Components.h10;
 import org.telegram.ui.Components.l51;
 import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.t41;
@@ -53,7 +53,7 @@ import org.telegram.ui.mk;
 import org.telegram.ui.v10;
 import org.telegram.ui.z10;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class k0 extends FrameLayout {
     public boolean A0;
@@ -106,7 +106,7 @@ public abstract class k0 extends FrameLayout {
     public final p5 f0;
     public boolean g0;
     public long h;
-    public final dt h0;
+    public final et h0;
     public r3 i0;
     public final c40 j0;
     public final kg.k k0;
@@ -140,7 +140,7 @@ public abstract class k0 extends FrameLayout {
         final int i7 = 1;
         this.V = true;
         final z10 z10Var = (z10) this;
-        this.h0 = new dt(z10Var, 19);
+        this.h0 = new et(z10Var, 19);
         this.y0 = 1.0f;
         int i10 = 2;
         this.K0 = new UndoView[2];
@@ -238,13 +238,13 @@ public abstract class k0 extends FrameLayout {
         textView.setTextColor(-1);
         textView.setTextSize(1, 15.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(hd.M0(2131752599, null));
+        textView.setText(id.M0(2131752599, null));
         TextView textView2 = new TextView(context);
         this.e0 = textView2;
         textView2.setTextColor(-1);
         textView2.setTextSize(1, 15.0f);
         textView2.setTypeface(org.telegram.messenger.g0.o());
-        textView2.setText(hd.M0(2131752598, null));
+        textView2.setText(id.M0(2131752598, null));
         addView(textView, ha.e(-2, -2, 51));
         addView(textView2, ha.e(-2, -2, 51));
         ImageView imageView = new ImageView(context);
@@ -252,7 +252,7 @@ public abstract class k0 extends FrameLayout {
         imageView.setVisibility(4);
         imageView.setAlpha(0.0f);
         imageView.setImageResource(R.drawable.ic_goinline);
-        imageView.setContentDescription(hd.M0(2131754808, null));
+        imageView.setContentDescription(id.M0(2131754808, null));
         int L4 = org.telegram.messenger.g0.L(4.0f);
         imageView.setPadding(L4, L4, L4, L4);
         imageView.setBackground(k6.h0(i0.a.o(-1, 55), 1, -1));
@@ -294,13 +294,13 @@ public abstract class k0 extends FrameLayout {
             if (c40Var.R3 != null) {
                 c40Var.q5.a(!r1.V, true);
             }
-            dt dtVar = this.h0;
+            et etVar = this.h0;
             if (!z9 || !this.b) {
                 this.g0 = false;
-                org.telegram.messenger.g0.r(dtVar);
+                org.telegram.messenger.g0.r(etVar);
             } else if (!this.g0) {
                 this.g0 = true;
-                org.telegram.messenger.g0.i3(dtVar, 3000L);
+                org.telegram.messenger.g0.i3(etVar, 3000L);
             }
             y yVar = this.D;
             if (yVar != null) {
@@ -575,12 +575,12 @@ public abstract class k0 extends FrameLayout {
                 v10Var = this.G;
                 if (v10Var.getVisibility() != 0) {
                     for (int i11 = 0; i11 < v10Var.getChildCount(); i11++) {
-                        g10 g10Var = (g10) v10Var.getChildAt(i11);
-                        if (g10Var.getVisibility() == 0 && g10Var.getAlpha() != 0.0f) {
+                        h10 h10Var = (h10) v10Var.getChildAt(i11);
+                        if (h10Var.getVisibility() == 0 && h10Var.getAlpha() != 0.0f) {
                             canvas.save();
-                            canvas.translate(v10Var.getX() + g10Var.getX(), v10Var.getY() + g10Var.getY());
-                            canvas.scale(g10Var.getScaleX(), g10Var.getScaleY(), g10Var.getMeasuredWidth() / 2.0f, g10Var.getMeasuredHeight() / 2.0f);
-                            g10Var.c(canvas);
+                            canvas.translate(v10Var.getX() + h10Var.getX(), v10Var.getY() + h10Var.getY());
+                            canvas.scale(h10Var.getScaleX(), h10Var.getScaleY(), h10Var.getMeasuredWidth() / 2.0f, h10Var.getMeasuredHeight() / 2.0f);
+                            h10Var.c(canvas);
                             canvas.restore();
                         }
                     }
@@ -664,11 +664,11 @@ public abstract class k0 extends FrameLayout {
 
     public final void e() {
         boolean z9 = this.g0;
-        dt dtVar = this.h0;
+        et etVar = this.h0;
         if (z9) {
-            org.telegram.messenger.g0.r(dtVar);
+            org.telegram.messenger.g0.r(etVar);
         }
-        org.telegram.messenger.g0.i3(dtVar, 3000L);
+        org.telegram.messenger.g0.i3(etVar, 3000L);
         this.g0 = true;
     }
 
@@ -733,7 +733,7 @@ public abstract class k0 extends FrameLayout {
         y yVar2;
         u uVar;
         r rVar;
-        g10 g10Var;
+        h10 h10Var;
         r rVar2;
         s3 s3Var2;
         if (s3Var == null && this.e == null) {
@@ -789,9 +789,9 @@ public abstract class k0 extends FrameLayout {
                     if (rVar3 != null) {
                         rVar3.setRenderer(null);
                     }
-                    g10 g10Var2 = this.D.d;
-                    if (g10Var2 != null) {
-                        g10Var2.setRenderer(null);
+                    h10 h10Var2 = this.D.d;
+                    if (h10Var2 != null) {
+                        h10Var2.setRenderer(null);
                     }
                     r rVar4 = this.D.e;
                     if (rVar4 != null) {
@@ -835,10 +835,10 @@ public abstract class k0 extends FrameLayout {
                                 yVar2 = new y(this, this.i0, c40Var);
                                 y yVar7 = this.D;
                                 r rVar5 = yVar7.c;
-                                g10 g10Var3 = yVar7.d;
+                                h10 h10Var3 = yVar7.d;
                                 r rVar6 = yVar7.e;
                                 yVar2.c = rVar5;
-                                yVar2.d = g10Var3;
+                                yVar2.d = h10Var3;
                                 yVar2.e = rVar6;
                                 yVar2.g(this.b, false);
                                 yVar2.j(false);
@@ -846,9 +846,9 @@ public abstract class k0 extends FrameLayout {
                                 if (rVar7 != null) {
                                     rVar7.setRenderer(yVar2);
                                 }
-                                g10 g10Var4 = this.D.d;
-                                if (g10Var4 != null) {
-                                    g10Var4.setRenderer(yVar2);
+                                h10 h10Var4 = this.D.d;
+                                if (h10Var4 != null) {
+                                    h10Var4.setRenderer(yVar2);
                                 }
                                 r rVar8 = this.D.e;
                                 if (rVar8 != null) {
@@ -857,10 +857,10 @@ public abstract class k0 extends FrameLayout {
                                 y yVar8 = new y(this, this.i0, c40Var);
                                 yVar8.x = yVar.x;
                                 r rVar9 = yVar.c;
-                                g10 g10Var5 = yVar.d;
+                                h10 h10Var5 = yVar.d;
                                 r rVar10 = yVar.e;
                                 yVar8.c = rVar9;
-                                yVar8.d = g10Var5;
+                                yVar8.d = h10Var5;
                                 yVar8.e = rVar10;
                                 yVar8.g(this.b, false);
                                 yVar8.j(false);
@@ -871,9 +871,9 @@ public abstract class k0 extends FrameLayout {
                                 if (rVar != null) {
                                     rVar.setRenderer(yVar8);
                                 }
-                                g10Var = yVar.d;
-                                if (g10Var != null) {
-                                    g10Var.setRenderer(yVar8);
+                                h10Var = yVar.d;
+                                if (h10Var != null) {
+                                    h10Var.setRenderer(yVar8);
                                 }
                                 rVar2 = yVar.e;
                                 if (rVar2 != null) {
@@ -908,10 +908,10 @@ public abstract class k0 extends FrameLayout {
                         y yVar82 = new y(this, this.i0, c40Var);
                         yVar82.x = yVar.x;
                         r rVar92 = yVar.c;
-                        g10 g10Var52 = yVar.d;
+                        h10 h10Var52 = yVar.d;
                         r rVar102 = yVar.e;
                         yVar82.c = rVar92;
-                        yVar82.d = g10Var52;
+                        yVar82.d = h10Var52;
                         yVar82.e = rVar102;
                         yVar82.g(this.b, false);
                         yVar82.j(false);
@@ -921,8 +921,8 @@ public abstract class k0 extends FrameLayout {
                         rVar = yVar.c;
                         if (rVar != null) {
                         }
-                        g10Var = yVar.d;
-                        if (g10Var != null) {
+                        h10Var = yVar.d;
+                        if (h10Var != null) {
                         }
                         rVar2 = yVar.e;
                         if (rVar2 != null) {
@@ -978,10 +978,10 @@ public abstract class k0 extends FrameLayout {
                     y yVar11 = new y(this, this.i0, c40Var);
                     y yVar12 = this.D;
                     r rVar11 = yVar12.c;
-                    g10 g10Var6 = yVar12.d;
+                    h10 h10Var6 = yVar12.d;
                     r rVar12 = yVar12.e;
                     yVar11.c = rVar11;
-                    yVar11.d = g10Var6;
+                    yVar11.d = h10Var6;
                     yVar11.e = rVar12;
                     yVar11.g(this.b, false);
                     yVar11.j(false);
@@ -989,9 +989,9 @@ public abstract class k0 extends FrameLayout {
                     if (rVar13 != null) {
                         rVar13.setRenderer(yVar11);
                     }
-                    g10 g10Var7 = this.D.d;
-                    if (g10Var7 != null) {
-                        g10Var7.setRenderer(yVar11);
+                    h10 h10Var7 = this.D.d;
+                    if (h10Var7 != null) {
+                        h10Var7.setRenderer(yVar11);
                     }
                     r rVar14 = this.D.e;
                     if (rVar14 != null) {
@@ -1487,7 +1487,7 @@ public abstract class k0 extends FrameLayout {
             invalidate();
             return;
         }
-        String K0 = hd.K0(i12, "MembersAreSpeakingToast");
+        String K0 = id.K0(i12, "MembersAreSpeakingToast");
         int indexOf = K0.indexOf("un1");
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(K0);
         spannableStringBuilder2.replace(indexOf, indexOf + 3, (CharSequence) spannableStringBuilder);

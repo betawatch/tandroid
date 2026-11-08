@@ -1,9 +1,9 @@
 package sg;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.vy;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -28,9 +28,9 @@ public final /* synthetic */ class d0 implements ValueAnimator.AnimatorUpdateLis
                                 j0 j0Var2 = j0Var;
                                 j0Var2.getClass();
                                 j0Var2.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                uy uyVar = j0Var2.a;
-                                if (uyVar != null) {
-                                    uyVar.b();
+                                vy vyVar = j0Var2.a;
+                                if (vyVar != null) {
+                                    vyVar.b();
                                     break;
                                 }
                                 break;
@@ -38,9 +38,9 @@ public final /* synthetic */ class d0 implements ValueAnimator.AnimatorUpdateLis
                                 j0 j0Var3 = j0Var;
                                 j0Var3.getClass();
                                 j0Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                uy uyVar2 = j0Var3.a;
-                                if (uyVar2 != null) {
-                                    uyVar2.b();
+                                vy vyVar2 = j0Var3.a;
+                                if (vyVar2 != null) {
+                                    vyVar2.b();
                                     break;
                                 }
                                 break;
@@ -59,9 +59,9 @@ public final /* synthetic */ class d0 implements ValueAnimator.AnimatorUpdateLis
                                 j0 j0Var22 = j0Var2;
                                 j0Var22.getClass();
                                 j0Var22.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                uy uyVar = j0Var22.a;
-                                if (uyVar != null) {
-                                    uyVar.b();
+                                vy vyVar = j0Var22.a;
+                                if (vyVar != null) {
+                                    vyVar.b();
                                     break;
                                 }
                                 break;
@@ -69,9 +69,9 @@ public final /* synthetic */ class d0 implements ValueAnimator.AnimatorUpdateLis
                                 j0 j0Var3 = j0Var2;
                                 j0Var3.getClass();
                                 j0Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                uy uyVar2 = j0Var3.a;
-                                if (uyVar2 != null) {
-                                    uyVar2.b();
+                                vy vyVar2 = j0Var3.a;
+                                if (vyVar2 != null) {
+                                    vyVar2.b();
                                     break;
                                 }
                                 break;

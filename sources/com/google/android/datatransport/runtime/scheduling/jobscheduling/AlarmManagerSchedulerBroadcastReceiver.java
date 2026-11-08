@@ -10,10 +10,10 @@ import java.util.concurrent.Executor;
 import o5.i;
 import o5.s;
 import org.telegram.ui.Components.pp0;
-import org.telegram.ui.Wallet.z;
+import org.telegram.ui.o61;
 import y5.a;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
     public static final /* synthetic */ int a = 0;
@@ -32,6 +32,6 @@ public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
             a10.c = Base64.decode(queryParameter2, 0);
         }
         c cVar = s.a().d;
-        ((Executor) cVar.e).execute(new pp0(cVar, a10.h(), i7, new z(17), 24));
+        ((Executor) cVar.e).execute(new pp0(cVar, a10.h(), i7, new o61(19), 24));
     }
 }

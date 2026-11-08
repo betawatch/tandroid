@@ -30,7 +30,7 @@ import org.telegram.ui.Components.zg0;
 import org.telegram.ui.rt;
 import org.telegram.ui.tt;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nb implements Runnable {
     public final /* synthetic */ int a;
@@ -156,7 +156,7 @@ public final /* synthetic */ class nb implements Runnable {
                     }
                     if (qpVar.z0.indexOfKey(chat.id) < 0) {
                         if (aVar != null) {
-                            org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.messenger.vk
+                            org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.messenger.uk
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     switch (i10) {
@@ -173,7 +173,7 @@ public final /* synthetic */ class nb implements Runnable {
                         qpVar.J0(chat.id, 3, 0L, null);
                     } else if (aVar != null) {
                         final char c12 = c10 == true ? 1 : 0;
-                        org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.messenger.vk
+                        org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.messenger.uk
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (c12) {
@@ -338,10 +338,10 @@ public final /* synthetic */ class nb implements Runnable {
                     ttVar.h.start();
                 }
                 if (org.telegram.ui.ActionBar.k6.k1()) {
-                    m8Var.p(org.telegram.messenger.hd.M0(2131745467, null), zg0Var, true);
+                    m8Var.p(org.telegram.messenger.id.M0(2131745469, null), zg0Var, true);
                     m8Var.x += 2;
                 } else {
-                    m8Var.p(org.telegram.messenger.hd.M0(2131745468, null), zg0Var, true);
+                    m8Var.p(org.telegram.messenger.id.M0(2131745470, null), zg0Var, true);
                     m8Var.x += 2;
                 }
                 org.telegram.ui.ActionBar.k6.M1(f2Var);

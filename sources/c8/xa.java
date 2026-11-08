@@ -4,8 +4,9 @@ import android.util.LongSparseArray;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.c20;
+import org.telegram.ui.o61;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class xa {
     public static boolean a;
@@ -39,7 +40,7 @@ public abstract class xa {
         a = true;
         c = new ArrayList();
         d = new LongSparseArray();
-        Utilities.e.c(new org.telegram.ui.Wallet.z(6));
+        Utilities.e.c(new o61(8));
     }
 
     public static void c(org.telegram.ui.web.y0 y0Var) {
@@ -54,8 +55,8 @@ public abstract class xa {
             c.add(y0Var);
             d.put(y0Var.a, y0Var);
         }
-        int i7 = 5;
-        org.telegram.messenger.g0.r(new org.telegram.ui.Wallet.z(i7));
-        org.telegram.messenger.g0.i3(new org.telegram.ui.Wallet.z(i7), 1000L);
+        int i7 = 7;
+        org.telegram.messenger.g0.r(new o61(i7));
+        org.telegram.messenger.g0.i3(new o61(i7), 1000L);
     }
 }

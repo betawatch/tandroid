@@ -7,7 +7,7 @@ import android.os.Message;
 import android.os.RemoteException;
 import c8.ab;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class b0 extends Handler {
     public boolean a;
@@ -49,7 +49,7 @@ public final class b0 extends Handler {
         d0Var.s = c10;
         boolean z9 = this.a;
         boolean z10 = this.b;
-        e1 a12 = c1Var.a1(c10);
+        e1 A1 = c1Var.A1(c10);
         ui.e eVar = c1Var.b;
         h9.i0 w10 = eVar.w();
         for (int i10 = 0; i10 < w10.size(); i10++) {
@@ -72,7 +72,7 @@ public final class b0 extends Handler {
                         uVar.getClass();
                         if (B == null) {
                             vVar = vVar2;
-                            e1Var = a12;
+                            e1Var = A1;
                         } else {
                             vVar = vVar2;
                             e1Var = B;

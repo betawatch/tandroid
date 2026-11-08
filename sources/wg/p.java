@@ -3,14 +3,14 @@ package wg;
 import bi.ud;
 import java.util.Collections;
 import org.telegram.messenger.a8;
-import org.telegram.ui.Components.ex;
+import org.telegram.ui.Components.fx;
 import org.telegram.ui.Components.l41;
 import org.telegram.ui.Components.n40;
-import org.telegram.ui.Components.qt;
-import zh.f2;
-import zh.h1;
+import org.telegram.ui.Components.rt;
+import zh.d2;
+import zh.g1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class p implements Runnable {
         long cameraFlipElapsedMs;
         switch (this.a) {
             case 0:
-                ((ex) this.b).a(Collections.EMPTY_LIST);
+                ((fx) this.b).a(Collections.EMPTY_LIST);
                 break;
             case 1:
                 ((v) this.b).a(null);
@@ -41,14 +41,14 @@ public final /* synthetic */ class p implements Runnable {
                 c0Var.o1.showDialog(f1Var);
                 break;
             case 3:
-                n40 n40Var = (n40) ((qt) this.b).b;
-                n40Var.p0 = true;
+                n40 n40Var = (n40) ((rt) this.b).b;
+                n40Var.q0 = true;
                 StringBuilder sb2 = new StringBuilder("RoundVideo camera flip first frame: elapsedMs=");
                 cameraFlipElapsedMs = n40Var.getCameraFlipElapsedMs();
                 sb2.append(cameraFlipElapsedMs);
                 a8.b(sb2.toString());
-                n40Var.v(true);
-                n40.m(n40Var);
+                n40Var.w(true);
+                n40.n(n40Var);
                 break;
             case 4:
                 yh.l lVar = (yh.l) this.b;
@@ -56,36 +56,36 @@ public final /* synthetic */ class p implements Runnable {
                 lVar.e(true);
                 break;
             case 5:
-                zh.m mVar = (zh.m) this.b;
-                mVar.Z1.setTranslationX(mVar.Y1.getAnimatedWidth() + org.telegram.messenger.g0.L(28.0f));
+                zh.l lVar2 = (zh.l) this.b;
+                lVar2.Z1.setTranslationX(lVar2.Y1.getAnimatedWidth() + org.telegram.messenger.g0.L(28.0f));
                 break;
             case 6:
-                ((zh.c0) this.b).onBackPressed();
+                ((zh.b0) this.b).onBackPressed();
                 break;
             case 7:
-                l41 l41Var = ((h1) this.b).Q1;
+                l41 l41Var = ((g1) this.b).Q1;
                 if (l41Var != null) {
                     l41Var.O(false);
                     break;
                 }
                 break;
             case 8:
-                ((zh.w0) this.b).c();
+                ((zh.v0) this.b).c();
                 break;
             case 9:
-                ((zh.c1) this.b).invalidateSelf();
+                ((zh.b1) this.b).invalidateSelf();
                 break;
             case 10:
-                zh.e1 e1Var = (zh.e1) this.b;
-                ud udVar = e1Var.e;
+                zh.d1 d1Var = (zh.d1) this.b;
+                ud udVar = d1Var.e;
                 if (udVar != null) {
                     udVar.d();
-                    e1Var.invalidateSelf();
+                    d1Var.invalidateSelf();
                     break;
                 }
                 break;
             default:
-                ((f2) this.b).p();
+                ((d2) this.b).p();
                 break;
         }
     }

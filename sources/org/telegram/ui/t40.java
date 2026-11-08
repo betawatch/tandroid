@@ -5,7 +5,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t40 implements Runnable {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class t40 implements Runnable {
                 } else {
                     boolean z10 = true;
                     ?? r62 = 0;
-                    String S0 = org.telegram.messenger.hd.E0().S0(lowerCase, true, false);
+                    String S0 = org.telegram.messenger.id.E0().S0(lowerCase, true, false);
                     if (lowerCase.equals(S0) || S0.isEmpty()) {
                         S0 = null;
                     }
@@ -92,7 +92,7 @@ public final /* synthetic */ class t40 implements Runnable {
                             arrayList2 = arrayList;
                             r62 = 0;
                         }
-                        String S02 = org.telegram.messenger.hd.E0().S0(str, z10, r62);
+                        String S02 = org.telegram.messenger.id.E0().S0(str, z10, r62);
                         if (str.equals(S02)) {
                             S02 = null;
                         }

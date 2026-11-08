@@ -24,7 +24,7 @@ import java.util.LinkedHashMap;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class r implements ComponentCallbacks, View.OnCreateContextMenuListener, androidx.lifecycle.t, androidx.lifecycle.u0, androidx.lifecycle.i, w4.e {
     public static final Object j0 = new Object();
@@ -371,7 +371,7 @@ public abstract class r implements ComponentCallbacks, View.OnCreateContextMenuL
         }
         printWriter.print(str);
         printWriter.println("Child " + this.L + ":");
-        this.L.w(rf.b.q(str, "  "), fileDescriptor, printWriter, strArr);
+        this.L.w(rf.b.r(str, "  "), fileDescriptor, printWriter, strArr);
     }
 
     public final q j() {

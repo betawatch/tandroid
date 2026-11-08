@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Rect;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class v1 extends qh.c implements te.b {
     public static final /* synthetic */ int w = 0;
@@ -24,7 +24,7 @@ public final class v1 extends qh.c implements te.b {
         org.telegram.ui.ActionBar.k6.r1(0.1254902f, org.telegram.ui.ActionBar.k6.w0(i7, f6Var));
         this.e.setColor(r12);
         int i10 = 2;
-        this.n = new qh.b[]{qh.b.c(context, f6Var, qh.a.G, 2131749624), qh.b.c(context, f6Var, qh.a.w, 2131749641), qh.b.c(context, f6Var, qh.a.J, 2131749622)};
+        this.n = new qh.b[]{qh.b.c(context, f6Var, qh.a.G, 2131749626), qh.b.c(context, f6Var, qh.a.w, 2131749643), qh.b.c(context, f6Var, qh.a.J, 2131749624)};
         int i11 = 0;
         while (true) {
             qh.b[] bVarArr = this.n;

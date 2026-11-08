@@ -25,7 +25,7 @@ import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Cells.t0;
 import org.telegram.ui.aj;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class e extends View implements ViewTreeObserver.OnPreDrawListener, ViewTreeObserver.OnScrollChangedListener, ViewTreeObserver.OnGlobalLayoutListener {
     public static final RectF H = new RectF();
@@ -82,9 +82,9 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
         this.h = ajVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:130:0x02aa  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x02c4 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:137:0x0214  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x029c  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x02af A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:137:0x020d  */
     /* JADX WARN: Removed duplicated region for block: B:85:0x017d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -97,9 +97,8 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
         long j3;
         String str2;
         LongSparseArray longSparseArray2;
-        boolean z10;
         LongSparseArray longSparseArray3;
-        boolean z11;
+        boolean z10;
         RectF rectF;
         ij messageObject;
         int i7;
@@ -215,7 +214,6 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
                         j3 = uptimeMillis;
                         str2 = str;
                         longSparseArray2 = longSparseArray;
-                        z10 = true;
                     } else {
                         String str3 = str;
                         longSparseArray2 = longSparseArray;
@@ -236,31 +234,41 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
                         dVar3.j = Math.max(dVar3.j, height);
                         if (dVar3.i || dVar3.g <= 300) {
                             str2 = str3;
-                            z10 = true;
                         } else {
                             if (r2.a) {
+                                StringBuilder sb2 = new StringBuilder();
+                                sb2.append(j20);
+                                sb2.append(" ");
+                                sb2.append(j18);
                                 str2 = str3;
-                                Log.d(str2, j20 + " " + j18 + " in viewport");
+                                rf.b.p(sb2, " in viewport", str2);
                             } else {
                                 str2 = str3;
                             }
-                            z10 = true;
                             dVar3.i = true;
                         }
                     }
                     if (!z9 || dVar3.g <= j16 || j3 - 300 <= dVar3.f) {
                         longSparseArray3 = longSparseArray2;
-                        z11 = dVar3.i;
-                        if (!z11 && dVar3.g > 300000) {
+                        z10 = dVar3.i;
+                        if (!z10 && dVar3.g > 300000) {
                             arrayList.add(dVar3.a());
                             longSparseArray3.removeAt(size4);
                             if (r2.a) {
-                                Log.d(str2, j20 + " " + j18 + " out of time");
+                                StringBuilder sb3 = new StringBuilder();
+                                sb3.append(j20);
+                                sb3.append(" ");
+                                sb3.append(j18);
+                                rf.b.p(sb3, " out of time", str2);
                             }
-                        } else if (!z11 && dVar3.e != j3 && (j18 == j16 || rectF7 == null)) {
+                        } else if (!z10 && dVar3.e != j3 && (j18 == j16 || rectF7 == null)) {
                             longSparseArray3.removeAt(size4);
                             if (!r2.a) {
-                                Log.d(str2, j20 + " " + j18 + " out of screen");
+                                StringBuilder sb4 = new StringBuilder();
+                                sb4.append(j20);
+                                sb4.append(" ");
+                                sb4.append(j18);
+                                rf.b.p(sb4, " out of screen", str2);
                             }
                         }
                     } else {
@@ -274,8 +282,8 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
                         }
                     }
                     size4--;
-                    str = str2;
                     longSparseArray = longSparseArray3;
+                    str = str2;
                     j13 = j19;
                     longSparseArray4 = longSparseArray5;
                     uptimeMillis = j3;
@@ -287,17 +295,17 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
             if (z9) {
             }
             longSparseArray3 = longSparseArray2;
-            z11 = dVar3.i;
-            if (!z11) {
+            z10 = dVar3.i;
+            if (!z10) {
             }
-            if (!z11) {
+            if (!z10) {
                 longSparseArray3.removeAt(size4);
                 if (!r2.a) {
                 }
             }
             size4--;
-            str = str2;
             longSparseArray = longSparseArray3;
+            str = str2;
             j13 = j19;
             longSparseArray4 = longSparseArray5;
             uptimeMillis = j3;

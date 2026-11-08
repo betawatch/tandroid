@@ -23,7 +23,7 @@ import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Cells.c2;
 import org.telegram.ui.Components.i30;
 import org.telegram.ui.Components.jk0;
-import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.rt;
 import org.telegram.ui.Components.t4;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.an;
@@ -31,10 +31,9 @@ import org.telegram.ui.c40;
 import org.telegram.ui.rv0;
 import org.telegram.ui.wq0;
 import org.telegram.ui.ww;
-import ti.p;
 import wg.f1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e0 implements i30, r1, c7, t4, w5.b, v9.g {
     public final /* synthetic */ int a;
@@ -85,19 +84,19 @@ public final /* synthetic */ class e0 implements i30, r1, c7, t4, w5.b, v9.g {
     }
 
     @Override // v9.g
-    public ScheduledFuture a(final qt qtVar) {
+    public ScheduledFuture a(final rt rtVar) {
         switch (this.a) {
             case 7:
                 v9.f fVar = (v9.f) this.c;
                 Runnable runnable = (Runnable) this.d;
-                return fVar.b.schedule(new v9.d(fVar, runnable, qtVar, 1), this.b, (TimeUnit) this.e);
+                return fVar.b.schedule(new v9.d(fVar, runnable, rtVar, 1), this.b, (TimeUnit) this.e);
             default:
                 final v9.f fVar2 = (v9.f) this.c;
                 final Callable callable = (Callable) this.d;
                 return fVar2.b.schedule(new Callable() { // from class: v9.e
                     @Override // java.util.concurrent.Callable
                     public final Object call() {
-                        return f.this.a.submit(new p(15, callable, qtVar));
+                        return f.this.a.submit(new u9.f(10, callable, rtVar));
                     }
                 }, this.b, (TimeUnit) this.e);
         }

@@ -25,7 +25,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.pn;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b0 implements x10 {
     public final /* synthetic */ int a;
@@ -236,7 +236,7 @@ public final /* synthetic */ class b0 implements x10 {
                 }
                 return;
             case 4:
-                final org.telegram.ui.Wallet.n0 n0Var = (org.telegram.ui.Wallet.n0) this.b;
+                final org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) this.b;
                 v10 v10Var2 = (v10) this.c;
                 TL_wallet.secretPhraseParts secretphraseparts = (TL_wallet.secretPhraseParts) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
@@ -245,7 +245,7 @@ public final /* synthetic */ class b0 implements x10 {
                     if (tL_error == null || (str = tL_error.text) == null) {
                         str = "NULL_ERROR";
                     }
-                    org.telegram.ui.Wallet.n0.j("getSecretPhrase: no secret parts: ".concat(str));
+                    org.telegram.ui.Wallet.m0.j("getSecretPhrase: no secret parts: ".concat(str));
                     if (tL_error != null && (str2 = tL_error.text) != null) {
                         str5 = str2;
                     }
@@ -255,11 +255,11 @@ public final /* synthetic */ class b0 implements x10 {
                 final org.telegram.ui.Wallet.d dVar = new org.telegram.ui.Wallet.d(v10Var2, 2);
                 ArrayList<Integer> arrayList3 = secretphraseparts.dcs;
                 if (arrayList3.size() <= 0) {
-                    org.telegram.ui.Wallet.n0.j("getSecretPhrase: no secret parts, zero dcs");
+                    org.telegram.ui.Wallet.m0.j("getSecretPhrase: no secret parts, zero dcs");
                     dVar.a(null, "WALLET_SECRET_PARTS_EMPTY");
                     return;
                 }
-                final org.telegram.ui.ActionBar.u1 u1Var2 = new org.telegram.ui.ActionBar.u1(3, org.telegram.ui.Wallet.n0.w(), null);
+                final org.telegram.ui.ActionBar.u1 u1Var2 = new org.telegram.ui.ActionBar.u1(3, org.telegram.ui.Wallet.m0.w(), null);
                 u1Var2.r(500L);
                 final long key_generate_temporary_private_key = ConferenceCall.key_generate_temporary_private_key();
                 byte[] key_to_public_key = ConferenceCall.key_to_public_key(key_generate_temporary_private_key);
@@ -269,14 +269,14 @@ public final /* synthetic */ class b0 implements x10 {
                 final int i12 = 0;
                 while (i12 < arrayList3.size()) {
                     final int intValue = arrayList3.get(i12).intValue();
-                    org.telegram.ui.Wallet.n0.H("getSecretPhrase: requesting " + i12 + " part from dc" + intValue);
+                    org.telegram.ui.Wallet.m0.H("getSecretPhrase: requesting " + i12 + " part from dc" + intValue);
                     TL_wallet.fetchEncryptedSecretPhrasePart fetchencryptedsecretphrasepart = new TL_wallet.fetchEncryptedSecretPhrasePart();
                     fetchencryptedsecretphrasepart.token = secretphraseparts.token;
                     fetchencryptedsecretphrasepart.public_key = key_to_public_key;
-                    ConnectionsManager.getInstance(n0Var.a).sendRequestTyped(fetchencryptedsecretphrasepart, new d3.b(1), new v10() { // from class: org.telegram.ui.Wallet.y
+                    ConnectionsManager.getInstance(m0Var.a).sendRequestTyped(fetchencryptedsecretphrasepart, new d3.b(1), new v10() { // from class: org.telegram.ui.Wallet.y
                         @Override // org.telegram.messenger.v10
                         public final void a(Object obj4, Object obj5) {
-                            n0 n0Var2 = n0.this;
+                            m0 m0Var2 = m0.this;
                             boolean[] zArr2 = zArr;
                             int i13 = i12;
                             TL_wallet.encryptedSecretPhrasePart[] encryptedsecretphrasepartArr2 = encryptedsecretphrasepartArr;
@@ -289,15 +289,15 @@ public final /* synthetic */ class b0 implements x10 {
                             zArr2[i13] = true;
                             encryptedsecretphrasepartArr2[i13] = (TL_wallet.encryptedSecretPhrasePart) obj4;
                             tL_errorArr2[i13] = (TLRPC.TL_error) obj5;
-                            n0.H("getSecretPhrase: received " + i13 + " part from dc" + i14);
+                            m0.H("getSecretPhrase: received " + i13 + " part from dc" + i14);
                             for (int i15 = 0; i15 < zArr2.length; i15++) {
                                 if (!zArr2[i15]) {
                                     z12 = false;
                                 }
                             }
                             if (z12) {
-                                n0.H("getSecretPhrase: received all parts");
-                                j jVar = new j((Object) n0Var2, (Object) u1Var3, (Object) dVar2, 3);
+                                m0.H("getSecretPhrase: received all parts");
+                                j jVar = new j((Object) m0Var2, (Object) u1Var3, (Object) dVar2, 3);
                                 for (int i16 = 0; i16 < encryptedsecretphrasepartArr2.length; i16++) {
                                     TL_wallet.encryptedSecretPhrasePart encryptedsecretphrasepart = encryptedsecretphrasepartArr2[i16];
                                     if (encryptedsecretphrasepart == null) {
@@ -308,7 +308,7 @@ public final /* synthetic */ class b0 implements x10 {
                                             str6 = "NULL_ERROR";
                                         }
                                         n10.append(str6);
-                                        n0.j(n10.toString());
+                                        m0.j(n10.toString());
                                         String str7 = tL_error2.text;
                                         jVar.a(null, str7 != null ? str7 : "NULL_ERROR");
                                         return;
@@ -317,12 +317,12 @@ public final /* synthetic */ class b0 implements x10 {
                                         StringBuilder n11 = jg.g.n(i16, "getSecretPhrase: part ", " length < 33 (len=");
                                         n11.append(encryptedsecretphrasepartArr2[i16].data.length);
                                         n11.append(")");
-                                        n0.j(n11.toString());
+                                        m0.j(n11.toString());
                                         jVar.a(null, "WALLET_PART_" + i16 + "_INVALID");
                                         return;
                                     }
                                 }
-                                Utilities.d.c(new bi.w2(n0Var2, encryptedsecretphrasepartArr2, j10, jVar, 24));
+                                Utilities.d.c(new bi.w2(m0Var2, encryptedsecretphrasepartArr2, j10, jVar, 24));
                             }
                         }
                     }, intValue, 0);
@@ -331,13 +331,13 @@ public final /* synthetic */ class b0 implements x10 {
                 }
                 return;
             case 5:
-                org.telegram.ui.Wallet.n0 n0Var2 = (org.telegram.ui.Wallet.n0) this.b;
+                org.telegram.ui.Wallet.m0 m0Var2 = (org.telegram.ui.Wallet.m0) this.b;
                 org.telegram.ui.Wallet.t tVar = (org.telegram.ui.Wallet.t) this.c;
                 TL_wallet.WalletState walletState = (TL_wallet.WalletState) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 if (tL_error2 == null) {
-                    n0Var2.l0(walletState);
-                    n0Var2.R();
+                    m0Var2.l0(walletState);
+                    m0Var2.R();
                     tVar.a(null);
                     return;
                 } else {
@@ -349,22 +349,22 @@ public final /* synthetic */ class b0 implements x10 {
                     return;
                 }
             default:
-                org.telegram.ui.Wallet.n0 n0Var3 = (org.telegram.ui.Wallet.n0) this.b;
-                org.telegram.ui.Wallet.k8 k8Var = (org.telegram.ui.Wallet.k8) this.c;
+                org.telegram.ui.Wallet.m0 m0Var3 = (org.telegram.ui.Wallet.m0) this.b;
+                org.telegram.ui.Wallet.j8 j8Var = (org.telegram.ui.Wallet.j8) this.c;
                 TL_wallet.WalletState walletState2 = (TL_wallet.WalletState) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
                 if (tL_error3 == null) {
-                    n0Var3.l0(walletState2);
-                    k8Var.a(null);
+                    m0Var3.l0(walletState2);
+                    j8Var.a(null);
                     return;
                 }
                 String str7 = tL_error3.text;
                 if (str7 == null) {
                     str7 = "NULL_ERROR";
                 }
-                org.telegram.ui.Wallet.n0.j("failed to disable backup: ".concat(str7));
+                org.telegram.ui.Wallet.m0.j("failed to disable backup: ".concat(str7));
                 String str8 = tL_error3.text;
-                k8Var.a(str8 != null ? str8 : "NULL_ERROR");
+                j8Var.a(str8 != null ? str8 : "NULL_ERROR");
                 return;
         }
     }

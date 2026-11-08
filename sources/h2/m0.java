@@ -51,7 +51,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class m0 {
     public static final String a;
@@ -699,14 +699,14 @@ public abstract class m0 {
         int i10 = 0;
         while (i10 <= i7) {
             int i11 = (i10 + i7) >>> 1;
-            if (uVar.j(i11) < j3) {
+            if (uVar.m(i11) < j3) {
                 i10 = i11 + 1;
             } else {
                 i7 = i11 - 1;
             }
         }
         int i12 = i7 + 1;
-        if (i12 < uVar.b && uVar.j(i12) == j3) {
+        if (i12 < uVar.b && uVar.m(i12) == j3) {
             return i12;
         }
         if (i7 == -1) {

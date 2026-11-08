@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.m3;
 import org.telegram.ui.Components.us;
 import org.telegram.ui.jo0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class c1 extends Binder implements m {
     public final WeakReference a;
@@ -47,17 +47,17 @@ public final class c1 extends Binder implements m {
         this.e = y1.h;
     }
 
-    public static m9.y K0(d0 d0Var, v vVar, int i7, a1 a1Var, h2.j jVar) {
+    public static m9.y k1(d0 d0Var, v vVar, int i7, a1 a1Var, h2.j jVar) {
         if (d0Var.j()) {
             return m9.w.b;
         }
-        m9.y yVar = (m9.y) a1Var.i(d0Var, vVar, i7);
+        m9.y yVar = (m9.y) a1Var.l(d0Var, vVar, i7);
         m9.e0 e0Var = new m9.e0();
         yVar.b(new jo0(d0Var, e0Var, jVar, yVar, 24), m9.r.a);
         return e0Var;
     }
 
-    public static void R0(d0 d0Var, v vVar, int i7, m1 m1Var) {
+    public static void r1(d0 d0Var, v vVar, int i7, m1 m1Var) {
         try {
             u uVar = vVar.d;
             uVar.getClass();
@@ -68,11 +68,84 @@ public final class c1 extends Binder implements m {
         }
     }
 
-    public static m3 S0(h2.j jVar) {
+    public static m3 s1(h2.j jVar) {
         return new m3(new m3(jVar, 11), 10);
     }
 
-    public final void H0(l lVar, Bundle bundle) {
+    public final e1 A1(e1 e1Var) {
+        h9.i0 i0Var = e1Var.F.a;
+        h9.z zVar = new h9.z(4, 10);
+        wa waVar = new wa(4, 10);
+        for (int i7 = 0; i7 < i0Var.size(); i7++) {
+            e2.m1 m1Var = ((r1) i0Var.get(i7)).b;
+            String str = (String) this.d.get(m1Var);
+            if (str == null) {
+                StringBuilder sb2 = new StringBuilder();
+                int i10 = this.f;
+                this.f = i10 + 1;
+                String str2 = h2.m0.a;
+                sb2.append(Integer.toString(i10, 36));
+                sb2.append("-");
+                sb2.append(m1Var.b);
+                str = sb2.toString();
+            }
+            zVar.G(m1Var, str);
+            waVar.v(m1Var.b, str);
+        }
+        this.d = zVar.b == 0 ? s1.r : new s1(zVar.b, (Object[]) zVar.c);
+        this.e = waVar.d(false);
+        h9.f0 p10 = h9.i0.p();
+        for (int i11 = 0; i11 < i0Var.size(); i11++) {
+            r1 r1Var = (r1) i0Var.get(i11);
+            p10.c(new r1(B1(r1Var.b), r1Var.c, r1Var.d, r1Var.e));
+        }
+        e1 a10 = e1Var.a(new e2.s1(p10.f()));
+        q1 q1Var = a10.G;
+        if (q1Var.H.isEmpty()) {
+            return a10;
+        }
+        p1 c10 = q1Var.a().c();
+        h2 it = q1Var.H.values().iterator();
+        while (it.hasNext()) {
+            e2.n1 n1Var = (e2.n1) it.next();
+            c10.a(new e2.n1(B1(n1Var.a), n1Var.b));
+        }
+        return a10.d(c10.b());
+    }
+
+    public final e2.m1 B1(e2.m1 m1Var) {
+        String str = (String) this.d.get(m1Var);
+        if (str == null) {
+            str = m1Var.b;
+        }
+        int i7 = 0;
+        while (true) {
+            int i10 = m1Var.a;
+            e2.u[] uVarArr = m1Var.d;
+            if (i7 >= i10) {
+                return new e2.m1(str, uVarArr);
+            }
+            if (uVarArr[i7].m != null) {
+                e2.u[] uVarArr2 = new e2.u[i10];
+                for (int i11 = 0; i11 < m1Var.a; i11++) {
+                    e2.u uVar = uVarArr[i11];
+                    String str2 = uVar.m;
+                    String str3 = str2 != null ? (String) this.e.get(str2) : null;
+                    if (str3 != null) {
+                        e2.t a10 = uVar.a();
+                        a10.l = str3;
+                        uVarArr2[i11] = new e2.u(a10);
+                    } else {
+                        uVarArr2[i11] = uVar;
+                    }
+                }
+                return new e2.m1(str, uVarArr2);
+            }
+            i7++;
+        }
+    }
+
+    public final void h1(l lVar, Bundle bundle) {
         WeakReference weakReference = this.a;
         d0 d0Var = (d0) weakReference.get();
         if (lVar == null || bundle == null || d0Var == null) {
@@ -119,14 +192,14 @@ public final class c1 extends Binder implements m {
         }
     }
 
-    public final void I0(l lVar, int i7) {
+    public final void i1(l lVar, int i7) {
         if (lVar == null) {
             return;
         }
-        P0(lVar, i7, 26, S0(new r0(1)));
+        p1(lVar, i7, 26, s1(new r0(2)));
     }
 
-    public final void J0(l lVar, int i7, i1 i1Var, int i10, a1 a1Var) {
+    public final void j1(l lVar, int i7, i1 i1Var, int i10, a1 a1Var) {
         long clearCallingIdentity = Binder.clearCallingIdentity();
         try {
             d0 d0Var = (d0) this.a.get();
@@ -144,14 +217,14 @@ public final class c1 extends Binder implements m {
         }
     }
 
-    public final void L0(l lVar, int i7) {
+    public final void l1(l lVar, int i7) {
         if (lVar == null) {
             return;
         }
-        P0(lVar, i7, 26, S0(new org.telegram.utils.twidget.a(23)));
+        p1(lVar, i7, 26, s1(new org.telegram.utils.twidget.e(24)));
     }
 
-    public final int M0(v vVar, g1 g1Var, int i7) {
+    public final int m1(v vVar, g1 g1Var, int i7) {
         if (g1Var.p0(17)) {
             ui.e eVar = this.b;
             if (!eVar.G(vVar, 17) && eVar.G(vVar, 16)) {
@@ -161,7 +234,7 @@ public final class c1 extends Binder implements m {
         return i7;
     }
 
-    public final void N0(l lVar, int i7, Bundle bundle, Bundle bundle2, boolean z9) {
+    public final void n1(l lVar, int i7, Bundle bundle, Bundle bundle2, boolean z9) {
         i1 i1Var;
         Bundle o4 = h2.m0.o(bundle2);
         if (lVar == null || bundle == null || o4 == null) {
@@ -181,7 +254,7 @@ public final class c1 extends Binder implements m {
                 i1Var = new i1(string, o10);
             }
             if (!d.j(i1Var.b)) {
-                J0(lVar, i7, i1Var, 0, new t0(new org.telegram.utils.twidget.a(z9, i1Var, o4), 1));
+                j1(lVar, i7, i1Var, 0, new t0(new org.telegram.utils.twidget.e(z9, i1Var, o4), 1));
                 return;
             }
             long clearCallingIdentity = Binder.clearCallingIdentity();
@@ -204,186 +277,8 @@ public final class c1 extends Binder implements m {
         }
     }
 
-    public final void O0(v vVar, int i7) {
-        Q0(vVar, i7, 1, S0(new org.telegram.ui.web.a0(6, this, vVar)));
-    }
-
-    public final void P0(l lVar, int i7, int i10, m3 m3Var) {
-        v x10 = this.b.x(lVar.asBinder());
-        if (x10 != null) {
-            Q0(x10, i7, i10, m3Var);
-        }
-    }
-
-    public final void Q0(v vVar, int i7, int i10, a1 a1Var) {
-        long clearCallingIdentity = Binder.clearCallingIdentity();
-        try {
-            d0 d0Var = (d0) this.a.get();
-            if (d0Var != null && !d0Var.j()) {
-                h2.m0.W(d0Var.l, new li.g0(this, vVar, i10, d0Var, i7, a1Var));
-                Binder.restoreCallingIdentity(clearCallingIdentity);
-            }
-        } finally {
-            Binder.restoreCallingIdentity(clearCallingIdentity);
-        }
-    }
-
-    public final void T0(l lVar, int i7, boolean z9) {
-        if (lVar == null) {
-            return;
-        }
-        P0(lVar, i7, 26, S0(new l2.x(5, z9)));
-    }
-
-    public final void U0(l lVar, int i7, int i10) {
-        if (lVar == null || i10 < 0) {
-            return;
-        }
-        P0(lVar, i7, 25, S0(new l2.u(i10, 9)));
-    }
-
-    public final void V0(l lVar, int i7, Bundle bundle, boolean z9) {
-        v x10;
-        if (lVar == null || bundle == null || (x10 = this.b.x(lVar.asBinder())) == null) {
-            return;
-        }
-        try {
-            Q0(x10, i7, 31, new t0(new org.telegram.ui.web.a0(8, new ab.y(9, e2.l0.a(x10.c, bundle), z9), new r0(13)), 1));
-        } catch (RuntimeException e10) {
-            h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e10);
-        }
-    }
-
-    public final void W0(l lVar, int i7, Bundle bundle, long j3) {
-        v x10;
-        if (lVar == null || bundle == null || (x10 = this.b.x(lVar.asBinder())) == null) {
-            return;
-        }
-        try {
-            Q0(x10, i7, 31, new t0(new org.telegram.ui.web.a0(8, new di.c1(e2.l0.a(x10.c, bundle), j3, 12), new r0(13)), 1));
-        } catch (RuntimeException e10) {
-            h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e10);
-        }
-    }
-
-    public final void X0(l lVar, int i7, IBinder iBinder, boolean z9) {
-        v x10;
-        if (lVar == null || iBinder == null || (x10 = this.b.x(lVar.asBinder())) == null) {
-            return;
-        }
-        try {
-            h9.i0 a10 = e2.g.a(iBinder);
-            h9.f0 p10 = h9.i0.p();
-            for (int i10 = 0; i10 < a10.size(); i10++) {
-                Bundle bundle = (Bundle) a10.get(i10);
-                bundle.getClass();
-                p10.c(e2.l0.a(x10.c, bundle));
-            }
-            Q0(x10, i7, 20, new t0(new org.telegram.ui.web.a0(8, new ab.y(11, p10.f(), z9), new r0(13)), 1));
-        } catch (RuntimeException e10) {
-            h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e10);
-        }
-    }
-
-    public final void Y0(l lVar, int i7, IBinder iBinder, int i10, long j3) {
-        v x10;
-        if (lVar == null || iBinder == null) {
-            return;
-        }
-        if ((i10 == -1 || i10 >= 0) && (x10 = this.b.x(lVar.asBinder())) != null) {
-            try {
-                h9.i0 a10 = e2.g.a(iBinder);
-                h9.f0 p10 = h9.i0.p();
-                for (int i11 = 0; i11 < a10.size(); i11++) {
-                    Bundle bundle = (Bundle) a10.get(i11);
-                    bundle.getClass();
-                    p10.c(e2.l0.a(x10.c, bundle));
-                }
-                Q0(x10, i7, 20, new t0(new org.telegram.ui.web.a0(8, new c4.n(p10.f(), i10, j3, 7), new r0(13)), 1));
-            } catch (RuntimeException e10) {
-                h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e10);
-            }
-        }
-    }
-
-    public final void Z0(l lVar, int i7, float f10) {
-        if (lVar == null || f10 < 0.0f || f10 > 1.0f) {
-            return;
-        }
-        P0(lVar, i7, 24, S0(new l2.t(f10, 2)));
-    }
-
-    public final e1 a1(e1 e1Var) {
-        h9.i0 i0Var = e1Var.F.a;
-        h9.z zVar = new h9.z(4, 10);
-        wa waVar = new wa(4, 10);
-        for (int i7 = 0; i7 < i0Var.size(); i7++) {
-            e2.m1 m1Var = ((r1) i0Var.get(i7)).b;
-            String str = (String) this.d.get(m1Var);
-            if (str == null) {
-                StringBuilder sb2 = new StringBuilder();
-                int i10 = this.f;
-                this.f = i10 + 1;
-                String str2 = h2.m0.a;
-                sb2.append(Integer.toString(i10, 36));
-                sb2.append("-");
-                sb2.append(m1Var.b);
-                str = sb2.toString();
-            }
-            zVar.G(m1Var, str);
-            waVar.v(m1Var.b, str);
-        }
-        this.d = zVar.b == 0 ? s1.r : new s1(zVar.b, (Object[]) zVar.c);
-        this.e = waVar.d(false);
-        h9.f0 p10 = h9.i0.p();
-        for (int i11 = 0; i11 < i0Var.size(); i11++) {
-            r1 r1Var = (r1) i0Var.get(i11);
-            p10.c(new r1(b1(r1Var.b), r1Var.c, r1Var.d, r1Var.e));
-        }
-        e1 a10 = e1Var.a(new e2.s1(p10.f()));
-        q1 q1Var = a10.G;
-        if (q1Var.H.isEmpty()) {
-            return a10;
-        }
-        p1 c10 = q1Var.a().c();
-        h2 it = q1Var.H.values().iterator();
-        while (it.hasNext()) {
-            e2.n1 n1Var = (e2.n1) it.next();
-            c10.a(new e2.n1(b1(n1Var.a), n1Var.b));
-        }
-        return a10.d(c10.b());
-    }
-
-    public final e2.m1 b1(e2.m1 m1Var) {
-        String str = (String) this.d.get(m1Var);
-        if (str == null) {
-            str = m1Var.b;
-        }
-        int i7 = 0;
-        while (true) {
-            int i10 = m1Var.a;
-            e2.u[] uVarArr = m1Var.d;
-            if (i7 >= i10) {
-                return new e2.m1(str, uVarArr);
-            }
-            if (uVarArr[i7].m != null) {
-                e2.u[] uVarArr2 = new e2.u[i10];
-                for (int i11 = 0; i11 < m1Var.a; i11++) {
-                    e2.u uVar = uVarArr[i11];
-                    String str2 = uVar.m;
-                    String str3 = str2 != null ? (String) this.e.get(str2) : null;
-                    if (str3 != null) {
-                        e2.t a10 = uVar.a();
-                        a10.l = str3;
-                        uVarArr2[i11] = new e2.u(a10);
-                    } else {
-                        uVarArr2[i11] = uVar;
-                    }
-                }
-                return new e2.m1(str, uVarArr2);
-            }
-            i7++;
-        }
+    public final void o1(v vVar, int i7) {
+        q1(vVar, i7, 1, s1(new org.telegram.ui.web.a0(5, this, vVar)));
     }
 
     @Override // android.os.Binder
@@ -417,58 +312,58 @@ public final class c1 extends Binder implements m {
         q a14 = null;
         switch (i7) {
             case 3002:
-                Z0(p.H0(parcel.readStrongBinder()), parcel.readInt(), parcel.readFloat());
+                z1(p.h1(parcel.readStrongBinder()), parcel.readInt(), parcel.readFloat());
                 return true;
             case 3003:
-                U0(p.H0(parcel.readStrongBinder()), parcel.readInt(), parcel.readInt());
+                u1(p.h1(parcel.readStrongBinder()), parcel.readInt(), parcel.readInt());
                 return true;
             case 3004:
-                L0(p.H0(parcel.readStrongBinder()), parcel.readInt());
+                l1(p.h1(parcel.readStrongBinder()), parcel.readInt());
                 return true;
             case 3005:
-                I0(p.H0(parcel.readStrongBinder()), parcel.readInt());
+                i1(p.h1(parcel.readStrongBinder()), parcel.readInt());
                 return true;
             case 3006:
-                T0(p.H0(parcel.readStrongBinder()), parcel.readInt(), parcel.readInt() != 0);
+                t1(p.h1(parcel.readStrongBinder()), parcel.readInt(), parcel.readInt() != 0);
                 return true;
             case 3007:
-                V0(p.H0(parcel.readStrongBinder()), parcel.readInt(), (Bundle) za.a(parcel, Bundle.CREATOR), true);
+                v1(p.h1(parcel.readStrongBinder()), parcel.readInt(), (Bundle) za.a(parcel, Bundle.CREATOR), true);
                 return true;
             case 3008:
-                W0(p.H0(parcel.readStrongBinder()), parcel.readInt(), (Bundle) za.a(parcel, Bundle.CREATOR), parcel.readLong());
+                w1(p.h1(parcel.readStrongBinder()), parcel.readInt(), (Bundle) za.a(parcel, Bundle.CREATOR), parcel.readLong());
                 return true;
             case 3009:
-                V0(p.H0(parcel.readStrongBinder()), parcel.readInt(), (Bundle) za.a(parcel, Bundle.CREATOR), parcel.readInt() != 0);
+                v1(p.h1(parcel.readStrongBinder()), parcel.readInt(), (Bundle) za.a(parcel, Bundle.CREATOR), parcel.readInt() != 0);
                 return true;
             case 3010:
-                X0(p.H0(parcel.readStrongBinder()), parcel.readInt(), parcel.readStrongBinder(), true);
+                x1(p.h1(parcel.readStrongBinder()), parcel.readInt(), parcel.readStrongBinder(), true);
                 return true;
             case 3011:
-                X0(p.H0(parcel.readStrongBinder()), parcel.readInt(), parcel.readStrongBinder(), parcel.readInt() != 0);
+                x1(p.h1(parcel.readStrongBinder()), parcel.readInt(), parcel.readStrongBinder(), parcel.readInt() != 0);
                 return true;
             case 3012:
-                Y0(p.H0(parcel.readStrongBinder()), parcel.readInt(), parcel.readStrongBinder(), parcel.readInt(), parcel.readLong());
+                y1(p.h1(parcel.readStrongBinder()), parcel.readInt(), parcel.readStrongBinder(), parcel.readInt(), parcel.readLong());
                 return true;
             case 3013:
-                l H0 = p.H0(parcel.readStrongBinder());
+                l h12 = p.h1(parcel.readStrongBinder());
                 int readInt = parcel.readInt();
                 boolean z9 = parcel.readInt() != 0;
-                if (H0 != null) {
-                    P0(H0, readInt, 1, S0(new l2.x(4, z9)));
+                if (h12 != null) {
+                    p1(h12, readInt, 1, s1(new l2.x(4, z9)));
                     return true;
                 }
                 return true;
             case 3014:
-                l H02 = p.H0(parcel.readStrongBinder());
+                l h13 = p.h1(parcel.readStrongBinder());
                 int readInt2 = parcel.readInt();
                 Bundle bundle = (Bundle) za.a(parcel, Bundle.CREATOR);
-                if (H02 != null && bundle != null) {
+                if (h13 != null && bundle != null) {
                     try {
                         m1 a15 = m1.a(bundle);
                         long clearCallingIdentity = Binder.clearCallingIdentity();
                         try {
                             ui.e eVar = this.b;
-                            IBinder asBinder = H02.asBinder();
+                            IBinder asBinder = h13.asBinder();
                             synchronized (eVar.b) {
                                 try {
                                     v x24 = eVar.x(asBinder);
@@ -488,79 +383,79 @@ public final class c1 extends Binder implements m {
                 }
                 return true;
             case 3015:
-                l H03 = p.H0(parcel.readStrongBinder());
+                l h14 = p.h1(parcel.readStrongBinder());
                 parcel.readInt();
-                H0(H03, (Bundle) za.a(parcel, Bundle.CREATOR));
+                h1(h14, (Bundle) za.a(parcel, Bundle.CREATOR));
                 return true;
             case 3016:
-                l H04 = p.H0(parcel.readStrongBinder());
+                l h15 = p.h1(parcel.readStrongBinder());
                 int readInt3 = parcel.readInt();
                 Parcelable.Creator creator = Bundle.CREATOR;
-                N0(H04, readInt3, (Bundle) za.a(parcel, creator), (Bundle) za.a(parcel, creator), false);
+                n1(h15, readInt3, (Bundle) za.a(parcel, creator), (Bundle) za.a(parcel, creator), false);
                 return true;
             case 3017:
-                l H05 = p.H0(parcel.readStrongBinder());
+                l h16 = p.h1(parcel.readStrongBinder());
                 int readInt4 = parcel.readInt();
                 int readInt5 = parcel.readInt();
-                if (H05 != null && (readInt5 == 2 || readInt5 == 0 || readInt5 == 1)) {
-                    P0(H05, readInt4, 15, S0(new l2.u(readInt5, 8)));
+                if (h16 != null && (readInt5 == 2 || readInt5 == 0 || readInt5 == 1)) {
+                    p1(h16, readInt4, 15, s1(new l2.u(readInt5, 8)));
                     return true;
                 }
                 return true;
             case 3018:
-                l H06 = p.H0(parcel.readStrongBinder());
+                l h17 = p.h1(parcel.readStrongBinder());
                 int readInt6 = parcel.readInt();
                 boolean z10 = parcel.readInt() != 0;
-                if (H06 != null) {
-                    P0(H06, readInt6, 14, S0(new l2.x(6, z10)));
+                if (h17 != null) {
+                    p1(h17, readInt6, 14, s1(new l2.x(6, z10)));
                     return true;
                 }
                 return true;
             case 3019:
-                l H07 = p.H0(parcel.readStrongBinder());
+                l h18 = p.h1(parcel.readStrongBinder());
                 int readInt7 = parcel.readInt();
                 int readInt8 = parcel.readInt();
-                if (H07 != null && readInt8 >= 0) {
-                    P0(H07, readInt7, 20, new m3(new o0(this, readInt8, 4), 10));
+                if (h18 != null && readInt8 >= 0) {
+                    p1(h18, readInt7, 20, new m3(new o0(this, readInt8, 4), 10));
                     return true;
                 }
                 return true;
             case 3020:
-                l H08 = p.H0(parcel.readStrongBinder());
+                l h19 = p.h1(parcel.readStrongBinder());
                 int readInt9 = parcel.readInt();
                 int readInt10 = parcel.readInt();
                 int readInt11 = parcel.readInt();
-                if (H08 != null && readInt10 >= 0 && readInt11 >= readInt10) {
-                    P0(H08, readInt9, 20, new m3(new n0(this, readInt10, readInt11), 10));
+                if (h19 != null && readInt10 >= 0 && readInt11 >= readInt10) {
+                    p1(h19, readInt9, 20, new m3(new n0(this, readInt10, readInt11), 10));
                     return true;
                 }
                 return true;
             case 3021:
-                l H09 = p.H0(parcel.readStrongBinder());
+                l h110 = p.h1(parcel.readStrongBinder());
                 int readInt12 = parcel.readInt();
-                if (H09 != null) {
-                    P0(H09, readInt12, 20, S0(new r0(11)));
+                if (h110 != null) {
+                    p1(h110, readInt12, 20, s1(new r0(12)));
                     return true;
                 }
                 return true;
             case 3022:
-                l H010 = p.H0(parcel.readStrongBinder());
+                l h111 = p.h1(parcel.readStrongBinder());
                 int readInt13 = parcel.readInt();
                 int readInt14 = parcel.readInt();
                 int readInt15 = parcel.readInt();
-                if (H010 != null && readInt14 >= 0 && readInt15 >= 0) {
-                    P0(H010, readInt13, 20, S0(new gh.c(readInt14, readInt15, 5)));
+                if (h111 != null && readInt14 >= 0 && readInt15 >= 0) {
+                    p1(h111, readInt13, 20, s1(new gh.c(readInt14, readInt15, 5)));
                     return true;
                 }
                 return true;
             case 3023:
-                l H011 = p.H0(parcel.readStrongBinder());
+                l h112 = p.h1(parcel.readStrongBinder());
                 int readInt16 = parcel.readInt();
                 final int readInt17 = parcel.readInt();
                 final int readInt18 = parcel.readInt();
                 final int readInt19 = parcel.readInt();
-                if (H011 != null && readInt17 >= 0 && readInt18 >= readInt17 && readInt19 >= 0) {
-                    P0(H011, readInt16, 20, S0(new h2.j() { // from class: p4.q0
+                if (h112 != null && readInt17 >= 0 && readInt18 >= readInt17 && readInt19 >= 0) {
+                    p1(h112, readInt16, 20, s1(new h2.j() { // from class: p4.q0
                         @Override // h2.j
                         public final void accept(Object obj) {
                             ((g1) obj).u0(readInt17, readInt18, readInt19);
@@ -570,83 +465,83 @@ public final class c1 extends Binder implements m {
                 }
                 return true;
             case 3024:
-                l H012 = p.H0(parcel.readStrongBinder());
+                l h113 = p.h1(parcel.readStrongBinder());
                 int readInt20 = parcel.readInt();
-                if (H012 != null && (x10 = this.b.x(H012.asBinder())) != null) {
-                    O0(x10, readInt20);
+                if (h113 != null && (x10 = this.b.x(h113.asBinder())) != null) {
+                    o1(x10, readInt20);
                     return true;
                 }
                 return true;
             case 3025:
-                l H013 = p.H0(parcel.readStrongBinder());
+                l h114 = p.h1(parcel.readStrongBinder());
                 int readInt21 = parcel.readInt();
-                if (H013 != null && (x11 = this.b.x(H013.asBinder())) != null) {
-                    Q0(x11, readInt21, 1, S0(new org.telegram.utils.twidget.a(20)));
+                if (h114 != null && (x11 = this.b.x(h114.asBinder())) != null) {
+                    q1(x11, readInt21, 1, s1(new org.telegram.utils.twidget.e(21)));
                     return true;
                 }
                 return true;
             case 3026:
-                l H014 = p.H0(parcel.readStrongBinder());
+                l h115 = p.h1(parcel.readStrongBinder());
                 int readInt22 = parcel.readInt();
-                if (H014 != null) {
-                    P0(H014, readInt22, 2, S0(new r0(9)));
+                if (h115 != null) {
+                    p1(h115, readInt22, 2, s1(new r0(10)));
                     return true;
                 }
                 return true;
             case 3027:
-                l H015 = p.H0(parcel.readStrongBinder());
+                l h116 = p.h1(parcel.readStrongBinder());
                 int readInt23 = parcel.readInt();
                 Bundle bundle2 = (Bundle) za.a(parcel, Bundle.CREATOR);
-                if (H015 != null && bundle2 != null) {
+                if (h116 != null && bundle2 != null) {
                     try {
-                        P0(H015, readInt23, 13, S0(new m3(new e2.w0(bundle2.getFloat(e2.w0.e, 1.0f), bundle2.getFloat(e2.w0.f, 1.0f)), 9)));
+                        p1(h116, readInt23, 13, s1(new m3(new e2.w0(bundle2.getFloat(e2.w0.e, 1.0f), bundle2.getFloat(e2.w0.f, 1.0f)), 9)));
                     } catch (RuntimeException e11) {
                         h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for PlaybackParameters", e11);
                     }
                 }
                 return true;
             case 3028:
-                l H016 = p.H0(parcel.readStrongBinder());
+                l h117 = p.h1(parcel.readStrongBinder());
                 int readInt24 = parcel.readInt();
                 float readFloat = parcel.readFloat();
-                if (H016 != null && readFloat > 0.0f) {
-                    P0(H016, readInt24, 13, S0(new l2.t(readFloat, 1)));
+                if (h117 != null && readFloat > 0.0f) {
+                    p1(h117, readInt24, 13, s1(new l2.t(readFloat, 1)));
                     return true;
                 }
                 return true;
             case 3029:
-                l H017 = p.H0(parcel.readStrongBinder());
+                l h118 = p.h1(parcel.readStrongBinder());
                 int readInt25 = parcel.readInt();
                 Bundle bundle3 = (Bundle) za.a(parcel, Bundle.CREATOR);
-                if (H017 != null && bundle3 != null && (x12 = this.b.x(H017.asBinder())) != null) {
+                if (h118 != null && bundle3 != null && (x12 = this.b.x(h118.asBinder())) != null) {
                     try {
                         final e2.l0 a16 = e2.l0.a(x12.c, bundle3);
                         final int i11 = 2;
-                        Q0(x12, readInt25, 20, new t0(new org.telegram.ui.web.a0(9, new a1() { // from class: p4.p0
+                        q1(x12, readInt25, 20, new t0(new org.telegram.ui.web.a0(8, new a1() { // from class: p4.p0
                             @Override // p4.a1
-                            public final Object i(d0 d0Var, v vVar, int i12) {
+                            public final Object l(d0 d0Var, v vVar, int i12) {
                                 switch (i11) {
                                 }
                                 return d0Var.l(vVar, h9.i0.u(a16));
                             }
-                        }, new r0(3)), 1));
+                        }, new r0(4)), 1));
                     } catch (RuntimeException e12) {
                         h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e12);
                     }
                 }
                 return true;
             case 3030:
-                l H018 = p.H0(parcel.readStrongBinder());
+                l h119 = p.h1(parcel.readStrongBinder());
                 int readInt26 = parcel.readInt();
                 int readInt27 = parcel.readInt();
                 Bundle bundle4 = (Bundle) za.a(parcel, Bundle.CREATOR);
-                if (H018 != null && bundle4 != null && readInt27 >= 0 && (x13 = this.b.x(H018.asBinder())) != null) {
+                if (h119 != null && bundle4 != null && readInt27 >= 0 && (x13 = this.b.x(h119.asBinder())) != null) {
                     try {
                         final e2.l0 a17 = e2.l0.a(x13.c, bundle4);
                         final int i12 = 0;
-                        Q0(x13, readInt26, 20, new t0(new org.telegram.ui.web.a0(9, new a1() { // from class: p4.p0
+                        q1(x13, readInt26, 20, new t0(new org.telegram.ui.web.a0(8, new a1() { // from class: p4.p0
                             @Override // p4.a1
-                            public final Object i(d0 d0Var, v vVar, int i122) {
+                            public final Object l(d0 d0Var, v vVar, int i122) {
                                 switch (i12) {
                                 }
                                 return d0Var.l(vVar, h9.i0.u(a17));
@@ -658,10 +553,10 @@ public final class c1 extends Binder implements m {
                 }
                 return true;
             case 3031:
-                l H019 = p.H0(parcel.readStrongBinder());
+                l h120 = p.h1(parcel.readStrongBinder());
                 int readInt28 = parcel.readInt();
                 IBinder readStrongBinder = parcel.readStrongBinder();
-                if (H019 != null && readStrongBinder != null && (x14 = this.b.x(H019.asBinder())) != null) {
+                if (h120 != null && readStrongBinder != null && (x14 = this.b.x(h120.asBinder())) != null) {
                     try {
                         h9.i0 a18 = e2.g.a(readStrongBinder);
                         h9.f0 p10 = h9.i0.p();
@@ -670,18 +565,18 @@ public final class c1 extends Binder implements m {
                             bundle5.getClass();
                             p10.c(e2.l0.a(x14.c, bundle5));
                         }
-                        Q0(x14, readInt28, 20, new t0(new org.telegram.ui.web.a0(9, new l2.z(3, p10.f()), new r0(2)), 1));
+                        q1(x14, readInt28, 20, new t0(new org.telegram.ui.web.a0(8, new l2.z(3, p10.f()), new r0(3)), 1));
                     } catch (RuntimeException e14) {
                         h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e14);
                     }
                 }
                 return true;
             case 3032:
-                l H020 = p.H0(parcel.readStrongBinder());
+                l h121 = p.h1(parcel.readStrongBinder());
                 int readInt29 = parcel.readInt();
                 int readInt30 = parcel.readInt();
                 IBinder readStrongBinder2 = parcel.readStrongBinder();
-                if (H020 != null && readStrongBinder2 != null && readInt30 >= 0 && (x15 = this.b.x(H020.asBinder())) != null) {
+                if (h121 != null && readStrongBinder2 != null && readInt30 >= 0 && (x15 = this.b.x(h121.asBinder())) != null) {
                     try {
                         h9.i0 a19 = e2.g.a(readStrongBinder2);
                         h9.f0 p11 = h9.i0.p();
@@ -690,41 +585,41 @@ public final class c1 extends Binder implements m {
                             bundle6.getClass();
                             p11.c(e2.l0.a(x15.c, bundle6));
                         }
-                        Q0(x15, readInt29, 20, new t0(new org.telegram.ui.web.a0(9, new l2.z(2, p11.f()), new o0(this, readInt30, 3)), 1));
+                        q1(x15, readInt29, 20, new t0(new org.telegram.ui.web.a0(8, new l2.z(2, p11.f()), new o0(this, readInt30, 3)), 1));
                     } catch (RuntimeException e15) {
                         h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e15);
                     }
                 }
                 return true;
             case 3033:
-                l H021 = p.H0(parcel.readStrongBinder());
+                l h122 = p.h1(parcel.readStrongBinder());
                 int readInt31 = parcel.readInt();
                 Bundle bundle7 = (Bundle) za.a(parcel, Bundle.CREATOR);
-                if (H021 != null && bundle7 != null && (x16 = this.b.x(H021.asBinder())) != null) {
+                if (h122 != null && bundle7 != null && (x16 = this.b.x(h122.asBinder())) != null) {
                     try {
-                        Q0(x16, readInt31, 19, S0(new l2.r(e2.o0.b(x16.c, bundle7))));
+                        q1(x16, readInt31, 19, s1(new l2.r(e2.o0.b(x16.c, bundle7))));
                     } catch (RuntimeException e16) {
                         h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for MediaMetadata", e16);
                     }
                 }
                 return true;
             case 3034:
-                l H022 = p.H0(parcel.readStrongBinder());
+                l h123 = p.h1(parcel.readStrongBinder());
                 int readInt32 = parcel.readInt();
-                if (H022 != null && (x17 = this.b.x(H022.asBinder())) != null) {
-                    Q0(x17, readInt32, 3, S0(new r0(5)));
+                if (h123 != null && (x17 = this.b.x(h123.asBinder())) != null) {
+                    q1(x17, readInt32, 3, s1(new r0(6)));
                     return true;
                 }
                 return true;
             case 3035:
-                l H023 = p.H0(parcel.readStrongBinder());
+                l h124 = p.h1(parcel.readStrongBinder());
                 parcel.readInt();
-                if (H023 != null) {
+                if (h124 != null) {
                     long clearCallingIdentity2 = Binder.clearCallingIdentity();
                     try {
                         d0 d0Var = (d0) this.a.get();
                         if (d0Var != null && !d0Var.j()) {
-                            h2.m0.W(d0Var.l, new org.telegram.ui.web.w(17, this, H023));
+                            h2.m0.W(d0Var.l, new org.telegram.ui.web.w(12, this, h124));
                             return true;
                         }
                         return true;
@@ -733,92 +628,92 @@ public final class c1 extends Binder implements m {
                 }
                 return true;
             case 3036:
-                l H024 = p.H0(parcel.readStrongBinder());
+                l h125 = p.h1(parcel.readStrongBinder());
                 int readInt33 = parcel.readInt();
-                if (H024 != null) {
-                    P0(H024, readInt33, 4, S0(new r0(7)));
+                if (h125 != null) {
+                    p1(h125, readInt33, 4, s1(new r0(8)));
                     return true;
                 }
                 return true;
             case 3037:
-                l H025 = p.H0(parcel.readStrongBinder());
+                l h126 = p.h1(parcel.readStrongBinder());
                 int readInt34 = parcel.readInt();
                 int readInt35 = parcel.readInt();
-                if (H025 != null && readInt35 >= 0) {
-                    P0(H025, readInt34, 10, new m3(new o0(this, readInt35, 0), 10));
+                if (h126 != null && readInt35 >= 0) {
+                    p1(h126, readInt34, 10, new m3(new o0(this, readInt35, 0), 10));
                     return true;
                 }
                 return true;
             case 3038:
-                l H026 = p.H0(parcel.readStrongBinder());
+                l h127 = p.h1(parcel.readStrongBinder());
                 int readInt36 = parcel.readInt();
                 long readLong = parcel.readLong();
-                if (H026 != null) {
-                    P0(H026, readInt36, 5, S0(new n2.c0(readLong)));
+                if (h127 != null) {
+                    p1(h127, readInt36, 5, s1(new n2.c0(readLong)));
                     return true;
                 }
                 return true;
             case 3039:
-                l H027 = p.H0(parcel.readStrongBinder());
+                l h128 = p.h1(parcel.readStrongBinder());
                 int readInt37 = parcel.readInt();
                 int readInt38 = parcel.readInt();
                 long readLong2 = parcel.readLong();
-                if (H027 != null && readInt38 >= 0) {
-                    P0(H027, readInt37, 10, new m3(new c4.n(this, readInt38, readLong2, 6), 10));
+                if (h128 != null && readInt38 >= 0) {
+                    p1(h128, readInt37, 10, new m3(new c4.n(this, readInt38, readLong2, 6), 10));
                     return true;
                 }
                 return true;
             case 3040:
-                l H028 = p.H0(parcel.readStrongBinder());
+                l h129 = p.h1(parcel.readStrongBinder());
                 int readInt39 = parcel.readInt();
-                if (H028 != null && (x18 = this.b.x(H028.asBinder())) != null) {
-                    Q0(x18, readInt39, 11, S0(new org.telegram.utils.twidget.a(24)));
+                if (h129 != null && (x18 = this.b.x(h129.asBinder())) != null) {
+                    q1(x18, readInt39, 11, s1(new org.telegram.utils.twidget.e(25)));
                     return true;
                 }
                 return true;
             case 3041:
-                l H029 = p.H0(parcel.readStrongBinder());
+                l h130 = p.h1(parcel.readStrongBinder());
                 int readInt40 = parcel.readInt();
-                if (H029 != null && (x19 = this.b.x(H029.asBinder())) != null) {
-                    Q0(x19, readInt40, 12, S0(new org.telegram.utils.twidget.a(28)));
+                if (h130 != null && (x19 = this.b.x(h130.asBinder())) != null) {
+                    q1(x19, readInt40, 12, s1(new org.telegram.utils.twidget.e(29)));
                     return true;
                 }
                 return true;
             case 3042:
-                l H030 = p.H0(parcel.readStrongBinder());
+                l h131 = p.h1(parcel.readStrongBinder());
                 int readInt41 = parcel.readInt();
-                if (H030 != null) {
-                    P0(H030, readInt41, 6, S0(new org.telegram.utils.twidget.a(26)));
+                if (h131 != null) {
+                    p1(h131, readInt41, 6, s1(new org.telegram.utils.twidget.e(27)));
                     return true;
                 }
                 return true;
             case 3043:
-                l H031 = p.H0(parcel.readStrongBinder());
+                l h132 = p.h1(parcel.readStrongBinder());
                 int readInt42 = parcel.readInt();
-                if (H031 != null) {
-                    P0(H031, readInt42, 8, S0(new org.telegram.utils.twidget.a(21)));
+                if (h132 != null) {
+                    p1(h132, readInt42, 8, s1(new org.telegram.utils.twidget.e(22)));
                     return true;
                 }
                 return true;
             case 3044:
-                l H032 = p.H0(parcel.readStrongBinder());
+                l h133 = p.h1(parcel.readStrongBinder());
                 int readInt43 = parcel.readInt();
                 Surface surface = (Surface) za.a(parcel, Surface.CREATOR);
-                if (H032 != null) {
-                    P0(H032, readInt43, 27, S0(new org.telegram.ui.web.a0(7, this, surface)));
+                if (h133 != null) {
+                    p1(h133, readInt43, 27, s1(new org.telegram.ui.web.a0(6, this, surface)));
                     return true;
                 }
                 return true;
             case 3045:
-                l H033 = p.H0(parcel.readStrongBinder());
-                if (H033 != null) {
+                l h134 = p.h1(parcel.readStrongBinder());
+                if (h134 != null) {
                     long clearCallingIdentity3 = Binder.clearCallingIdentity();
                     try {
                         d0 d0Var2 = (d0) this.a.get();
                         if (d0Var2 != null && !d0Var2.j()) {
-                            v x25 = this.b.x(H033.asBinder());
+                            v x25 = this.b.x(h134.asBinder());
                             if (x25 != null) {
-                                h2.m0.W(d0Var2.l, new org.telegram.ui.web.w(18, this, x25));
+                                h2.m0.W(d0Var2.l, new org.telegram.ui.web.w(13, this, x25));
                             }
                             return true;
                         }
@@ -828,44 +723,44 @@ public final class c1 extends Binder implements m {
                 }
                 return true;
             case 3046:
-                l H034 = p.H0(parcel.readStrongBinder());
+                l h135 = p.h1(parcel.readStrongBinder());
                 int readInt44 = parcel.readInt();
-                if (H034 != null && (x20 = this.b.x(H034.asBinder())) != null) {
-                    Q0(x20, readInt44, 7, S0(new org.telegram.utils.twidget.a(25)));
+                if (h135 != null && (x20 = this.b.x(h135.asBinder())) != null) {
+                    q1(x20, readInt44, 7, s1(new org.telegram.utils.twidget.e(26)));
                     return true;
                 }
                 return true;
             case 3047:
-                l H035 = p.H0(parcel.readStrongBinder());
+                l h136 = p.h1(parcel.readStrongBinder());
                 int readInt45 = parcel.readInt();
-                if (H035 != null && (x21 = this.b.x(H035.asBinder())) != null) {
-                    Q0(x21, readInt45, 9, S0(new org.telegram.utils.twidget.a(29)));
+                if (h136 != null && (x21 = this.b.x(h136.asBinder())) != null) {
+                    q1(x21, readInt45, 9, s1(new r0(0)));
                     return true;
                 }
                 return true;
             case 3048:
-                l H036 = p.H0(parcel.readStrongBinder());
+                l h137 = p.h1(parcel.readStrongBinder());
                 int readInt46 = parcel.readInt();
                 Bundle bundle8 = (Bundle) za.a(parcel, Bundle.CREATOR);
-                if (H036 != null && bundle8 != null) {
+                if (h137 != null && bundle8 != null) {
                     try {
-                        P0(H036, readInt46, 29, S0(new org.telegram.ui.web.a0(5, this, q1.b(bundle8))));
+                        p1(h137, readInt46, 29, s1(new org.telegram.ui.web.a0(4, this, q1.b(bundle8))));
                     } catch (RuntimeException e17) {
                         h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for TrackSelectionParameters", e17);
                     }
                 }
                 return true;
             case 3049:
-                l H037 = p.H0(parcel.readStrongBinder());
+                l h138 = p.h1(parcel.readStrongBinder());
                 int readInt47 = parcel.readInt();
                 String readString = parcel.readString();
                 Bundle bundle9 = (Bundle) za.a(parcel, Bundle.CREATOR);
-                if (H037 != null && readString != null && bundle9 != null) {
+                if (h138 != null && readString != null && bundle9 != null) {
                     if (TextUtils.isEmpty(readString)) {
                         h2.a.l("MediaSessionStub", "setRatingWithMediaId(): Ignoring empty mediaId");
                     } else {
                         try {
-                            J0(H037, readInt47, null, 40010, new t0(new r0(readString, 0, e2.d1.a(bundle9)), 1));
+                            j1(h138, readInt47, null, 40010, new t0(new r0(readString, 1, e2.d1.a(bundle9)), 1));
                         } catch (RuntimeException e18) {
                             h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for Rating", e18);
                         }
@@ -873,52 +768,52 @@ public final class c1 extends Binder implements m {
                 }
                 return true;
             case 3050:
-                l H038 = p.H0(parcel.readStrongBinder());
+                l h139 = p.h1(parcel.readStrongBinder());
                 int readInt48 = parcel.readInt();
                 Bundle bundle10 = (Bundle) za.a(parcel, Bundle.CREATOR);
-                if (H038 != null && bundle10 != null) {
+                if (h139 != null && bundle10 != null) {
                     try {
-                        J0(H038, readInt48, null, 40010, new t0(new r0(e2.d1.a(bundle10), 14), 1));
+                        j1(h139, readInt48, null, 40010, new t0(new r0(e2.d1.a(bundle10), 15), 1));
                     } catch (RuntimeException e19) {
                         h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for Rating", e19);
                     }
                 }
                 return true;
             case 3051:
-                l H039 = p.H0(parcel.readStrongBinder());
+                l h140 = p.h1(parcel.readStrongBinder());
                 int readInt49 = parcel.readInt();
                 int readInt50 = parcel.readInt();
                 int readInt51 = parcel.readInt();
-                if (H039 != null && readInt50 >= 0) {
-                    P0(H039, readInt49, 33, S0(new gh.c(readInt50, readInt51, 4)));
+                if (h140 != null && readInt50 >= 0) {
+                    p1(h140, readInt49, 33, s1(new gh.c(readInt50, readInt51, 4)));
                     return true;
                 }
                 return true;
             case 3052:
-                l H040 = p.H0(parcel.readStrongBinder());
+                l h141 = p.h1(parcel.readStrongBinder());
                 int readInt52 = parcel.readInt();
                 int readInt53 = parcel.readInt();
-                if (H040 != null) {
-                    P0(H040, readInt52, 34, S0(new l2.u(readInt53, 7)));
+                if (h141 != null) {
+                    p1(h141, readInt52, 34, s1(new l2.u(readInt53, 7)));
                     return true;
                 }
                 return true;
             case 3053:
-                l H041 = p.H0(parcel.readStrongBinder());
+                l h142 = p.h1(parcel.readStrongBinder());
                 int readInt54 = parcel.readInt();
                 int readInt55 = parcel.readInt();
-                if (H041 != null) {
-                    P0(H041, readInt54, 34, S0(new l2.u(readInt55, 6)));
+                if (h142 != null) {
+                    p1(h142, readInt54, 34, s1(new l2.u(readInt55, 6)));
                     return true;
                 }
                 return true;
             case 3054:
-                l H042 = p.H0(parcel.readStrongBinder());
+                l h143 = p.h1(parcel.readStrongBinder());
                 int readInt56 = parcel.readInt();
                 final boolean z11 = parcel.readInt() != 0;
                 final int readInt57 = parcel.readInt();
-                if (H042 != null) {
-                    P0(H042, readInt56, 34, S0(new h2.j() { // from class: p4.s0
+                if (h143 != null) {
+                    p1(h143, readInt56, 34, s1(new h2.j() { // from class: p4.s0
                         @Override // h2.j
                         public final void accept(Object obj) {
                             ((g1) obj).J(readInt57, z11);
@@ -928,17 +823,17 @@ public final class c1 extends Binder implements m {
                 }
                 return true;
             case 3055:
-                l H043 = p.H0(parcel.readStrongBinder());
+                l h144 = p.h1(parcel.readStrongBinder());
                 int readInt58 = parcel.readInt();
                 int readInt59 = parcel.readInt();
                 Bundle bundle11 = (Bundle) za.a(parcel, Bundle.CREATOR);
-                if (H043 != null && bundle11 != null && readInt59 >= 0 && (x22 = this.b.x(H043.asBinder())) != null) {
+                if (h144 != null && bundle11 != null && readInt59 >= 0 && (x22 = this.b.x(h144.asBinder())) != null) {
                     try {
                         final e2.l0 a20 = e2.l0.a(x22.c, bundle11);
                         final int i15 = 1;
-                        Q0(x22, readInt58, 20, new t0(new org.telegram.ui.web.a0(9, new a1() { // from class: p4.p0
+                        q1(x22, readInt58, 20, new t0(new org.telegram.ui.web.a0(8, new a1() { // from class: p4.p0
                             @Override // p4.a1
-                            public final Object i(d0 d0Var3, v vVar, int i122) {
+                            public final Object l(d0 d0Var3, v vVar, int i122) {
                                 switch (i15) {
                                 }
                                 return d0Var3.l(vVar, h9.i0.u(a20));
@@ -950,12 +845,12 @@ public final class c1 extends Binder implements m {
                 }
                 return true;
             case 3056:
-                l H044 = p.H0(parcel.readStrongBinder());
+                l h145 = p.h1(parcel.readStrongBinder());
                 int readInt60 = parcel.readInt();
                 int readInt61 = parcel.readInt();
                 int readInt62 = parcel.readInt();
                 IBinder readStrongBinder3 = parcel.readStrongBinder();
-                if (H044 != null && readStrongBinder3 != null && readInt61 >= 0 && readInt62 >= readInt61 && (x23 = this.b.x(H044.asBinder())) != null) {
+                if (h145 != null && readStrongBinder3 != null && readInt61 >= 0 && readInt62 >= readInt61 && (x23 = this.b.x(h145.asBinder())) != null) {
                     try {
                         h9.i0 a21 = e2.g.a(readStrongBinder3);
                         h9.f0 p12 = h9.i0.p();
@@ -964,75 +859,75 @@ public final class c1 extends Binder implements m {
                             bundle12.getClass();
                             p12.c(e2.l0.a(x23.c, bundle12));
                         }
-                        Q0(x23, readInt60, 20, new t0(new org.telegram.ui.web.a0(9, new m3(p12.f(), 8), new n0(this, readInt61, readInt62)), 1));
+                        q1(x23, readInt60, 20, new t0(new org.telegram.ui.web.a0(8, new m3(p12.f(), 8), new n0(this, readInt61, readInt62)), 1));
                     } catch (RuntimeException e21) {
                         h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e21);
                     }
                 }
                 return true;
             case 3057:
-                l H045 = p.H0(parcel.readStrongBinder());
+                l h146 = p.h1(parcel.readStrongBinder());
                 int readInt63 = parcel.readInt();
                 Bundle bundle13 = (Bundle) za.a(parcel, Bundle.CREATOR);
                 boolean z12 = parcel.readInt() != 0;
-                if (H045 != null && bundle13 != null) {
+                if (h146 != null && bundle13 != null) {
                     try {
-                        P0(H045, readInt63, 35, S0(new ab.y(10, e2.e.a(bundle13), z12)));
+                        p1(h146, readInt63, 35, s1(new ab.y(10, e2.e.a(bundle13), z12)));
                     } catch (RuntimeException e22) {
                         h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for AudioAttributes", e22);
                     }
                 }
                 return true;
             case 3058:
-                l H046 = p.H0(parcel.readStrongBinder());
+                l h147 = p.h1(parcel.readStrongBinder());
                 int readInt64 = parcel.readInt();
-                if (H046 != null) {
-                    P0(H046, readInt64, 24, S0(new org.telegram.utils.twidget.a(19)));
+                if (h147 != null) {
+                    p1(h147, readInt64, 24, s1(new org.telegram.utils.twidget.e(20)));
                     return true;
                 }
                 return true;
             case 3059:
-                l H047 = p.H0(parcel.readStrongBinder());
+                l h148 = p.h1(parcel.readStrongBinder());
                 int readInt65 = parcel.readInt();
-                if (H047 != null) {
-                    P0(H047, readInt65, 24, S0(new r0(6)));
+                if (h148 != null) {
+                    p1(h148, readInt65, 24, s1(new r0(7)));
                     return true;
                 }
                 return true;
             case 3060:
-                l H048 = p.H0(parcel.readStrongBinder());
+                l h149 = p.h1(parcel.readStrongBinder());
                 int readInt66 = parcel.readInt();
                 Parcelable.Creator creator2 = Bundle.CREATOR;
-                N0(H048, readInt66, (Bundle) za.a(parcel, creator2), (Bundle) za.a(parcel, creator2), parcel.readInt() != 0);
+                n1(h149, readInt66, (Bundle) za.a(parcel, creator2), (Bundle) za.a(parcel, creator2), parcel.readInt() != 0);
                 return true;
             case 3061:
-                l H049 = p.H0(parcel.readStrongBinder());
+                l h150 = p.h1(parcel.readStrongBinder());
                 int readInt67 = parcel.readInt();
                 Surface surface2 = (Surface) za.a(parcel, Surface.CREATOR);
                 int readInt68 = parcel.readInt();
                 int readInt69 = parcel.readInt();
-                if (H049 != null) {
-                    P0(H049, readInt67, 27, S0(new us(this, surface2, readInt68, readInt69)));
+                if (h150 != null) {
+                    p1(h150, readInt67, 27, s1(new us(this, surface2, readInt68, readInt69)));
                     return true;
                 }
                 return true;
             case 3062:
-                l H050 = p.H0(parcel.readStrongBinder());
+                l h151 = p.h1(parcel.readStrongBinder());
                 int readInt70 = parcel.readInt();
                 int readInt71 = parcel.readInt();
                 int readInt72 = parcel.readInt();
-                if (H050 != null) {
-                    P0(H050, readInt70, 27, S0(new n0(this, readInt71, readInt72)));
+                if (h151 != null) {
+                    p1(h151, readInt70, 27, s1(new n0(this, readInt71, readInt72)));
                     return true;
                 }
                 return true;
             default:
                 switch (i7) {
                     case 4001:
-                        l H051 = p.H0(parcel.readStrongBinder());
+                        l h152 = p.h1(parcel.readStrongBinder());
                         int readInt73 = parcel.readInt();
                         Bundle bundle14 = (Bundle) za.a(parcel, Bundle.CREATOR);
-                        if (H051 != null) {
+                        if (h152 != null) {
                             if (bundle14 != null) {
                                 try {
                                     a14 = q.a(bundle14);
@@ -1040,30 +935,30 @@ public final class c1 extends Binder implements m {
                                     h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for LibraryParams", e23);
                                 }
                             }
-                            J0(H051, readInt73, null, 50000, new t0(new r0(a14, 8), 0));
+                            j1(h152, readInt73, null, 50000, new t0(new r0(a14, 9), 0));
                         }
                         return true;
                     case 4002:
-                        l H052 = p.H0(parcel.readStrongBinder());
+                        l h153 = p.h1(parcel.readStrongBinder());
                         int readInt74 = parcel.readInt();
                         String readString2 = parcel.readString();
-                        if (H052 != null) {
+                        if (h153 != null) {
                             if (TextUtils.isEmpty(readString2)) {
                                 h2.a.l("MediaSessionStub", "getItem(): Ignoring empty mediaId");
                                 return true;
                             }
-                            J0(H052, readInt74, null, 50004, new t0(new org.telegram.utils.twidget.a(readString2, 27), 0));
+                            j1(h153, readInt74, null, 50004, new t0(new org.telegram.utils.twidget.e(readString2, 28), 0));
                             return true;
                         }
                         return true;
                     case 4003:
-                        l H053 = p.H0(parcel.readStrongBinder());
+                        l h154 = p.h1(parcel.readStrongBinder());
                         int readInt75 = parcel.readInt();
                         String readString3 = parcel.readString();
                         int readInt76 = parcel.readInt();
                         int readInt77 = parcel.readInt();
                         Bundle bundle15 = (Bundle) za.a(parcel, Bundle.CREATOR);
-                        if (H053 != null) {
+                        if (h154 != null) {
                             if (TextUtils.isEmpty(readString3)) {
                                 h2.a.l("MediaSessionStub", "getChildren(): Ignoring empty parentId");
                             } else if (readInt76 < 0) {
@@ -1078,16 +973,16 @@ public final class c1 extends Binder implements m {
                                         h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for LibraryParams", e24);
                                     }
                                 }
-                                J0(H053, readInt75, null, 50003, new t0(new org.telegram.utils.twidget.a(readString3, readInt76, readInt77, a13), 0));
+                                j1(h154, readInt75, null, 50003, new t0(new org.telegram.utils.twidget.e(readString3, readInt76, readInt77, a13), 0));
                             }
                         }
                         return true;
                     case 4004:
-                        l H054 = p.H0(parcel.readStrongBinder());
+                        l h155 = p.h1(parcel.readStrongBinder());
                         int readInt78 = parcel.readInt();
                         String readString4 = parcel.readString();
                         Bundle bundle16 = (Bundle) za.a(parcel, Bundle.CREATOR);
-                        if (H054 != null) {
+                        if (h155 != null) {
                             if (TextUtils.isEmpty(readString4)) {
                                 h2.a.l("MediaSessionStub", "search(): Ignoring empty query");
                             } else {
@@ -1098,18 +993,18 @@ public final class c1 extends Binder implements m {
                                         h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for LibraryParams", e25);
                                     }
                                 }
-                                J0(H054, readInt78, null, 50005, new t0(new r0(readString4, 12, a12), 0));
+                                j1(h155, readInt78, null, 50005, new t0(new r0(readString4, 13, a12), 0));
                             }
                         }
                         return true;
                     case 4005:
-                        l H055 = p.H0(parcel.readStrongBinder());
+                        l h156 = p.h1(parcel.readStrongBinder());
                         int readInt79 = parcel.readInt();
                         String readString5 = parcel.readString();
                         int readInt80 = parcel.readInt();
                         int readInt81 = parcel.readInt();
                         Bundle bundle17 = (Bundle) za.a(parcel, Bundle.CREATOR);
-                        if (H055 != null) {
+                        if (h156 != null) {
                             if (TextUtils.isEmpty(readString5)) {
                                 h2.a.l("MediaSessionStub", "getSearchResult(): Ignoring empty query");
                             } else if (readInt80 < 0) {
@@ -1124,16 +1019,16 @@ public final class c1 extends Binder implements m {
                                         h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for LibraryParams", e26);
                                     }
                                 }
-                                J0(H055, readInt79, null, 50006, new t0(new r0(readString5, readInt80, readInt81, a11), 0));
+                                j1(h156, readInt79, null, 50006, new t0(new r0(readString5, readInt80, readInt81, a11), 0));
                             }
                         }
                         return true;
                     case 4006:
-                        l H056 = p.H0(parcel.readStrongBinder());
+                        l h157 = p.h1(parcel.readStrongBinder());
                         int readInt82 = parcel.readInt();
                         String readString6 = parcel.readString();
                         Bundle bundle18 = (Bundle) za.a(parcel, Bundle.CREATOR);
-                        if (H056 != null) {
+                        if (h157 != null) {
                             if (TextUtils.isEmpty(readString6)) {
                                 h2.a.l("MediaSessionStub", "subscribe(): Ignoring empty parentId");
                             } else {
@@ -1144,20 +1039,20 @@ public final class c1 extends Binder implements m {
                                         h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for LibraryParams", e27);
                                     }
                                 }
-                                J0(H056, readInt82, null, 50001, new t0(new r0(readString6, 10, a10), 0));
+                                j1(h157, readInt82, null, 50001, new t0(new r0(readString6, 11, a10), 0));
                             }
                         }
                         return true;
                     case 4007:
-                        l H057 = p.H0(parcel.readStrongBinder());
+                        l h158 = p.h1(parcel.readStrongBinder());
                         int readInt83 = parcel.readInt();
                         String readString7 = parcel.readString();
-                        if (H057 != null) {
+                        if (h158 != null) {
                             if (TextUtils.isEmpty(readString7)) {
                                 h2.a.l("MediaSessionStub", "unsubscribe(): Ignoring empty parentId");
                                 return true;
                             }
-                            J0(H057, readInt83, null, 50002, new t0(new org.telegram.utils.twidget.a(readString7, 17), 0));
+                            j1(h158, readInt83, null, 50002, new t0(new org.telegram.utils.twidget.e(readString7, 18), 0));
                             return true;
                         }
                         return true;
@@ -1165,6 +1060,111 @@ public final class c1 extends Binder implements m {
                         return super.onTransact(i7, parcel, parcel2, i10);
                 }
         }
+    }
+
+    public final void p1(l lVar, int i7, int i10, m3 m3Var) {
+        v x10 = this.b.x(lVar.asBinder());
+        if (x10 != null) {
+            q1(x10, i7, i10, m3Var);
+        }
+    }
+
+    public final void q1(v vVar, int i7, int i10, a1 a1Var) {
+        long clearCallingIdentity = Binder.clearCallingIdentity();
+        try {
+            d0 d0Var = (d0) this.a.get();
+            if (d0Var != null && !d0Var.j()) {
+                h2.m0.W(d0Var.l, new li.g0(this, vVar, i10, d0Var, i7, a1Var));
+                Binder.restoreCallingIdentity(clearCallingIdentity);
+            }
+        } finally {
+            Binder.restoreCallingIdentity(clearCallingIdentity);
+        }
+    }
+
+    public final void t1(l lVar, int i7, boolean z9) {
+        if (lVar == null) {
+            return;
+        }
+        p1(lVar, i7, 26, s1(new l2.x(5, z9)));
+    }
+
+    public final void u1(l lVar, int i7, int i10) {
+        if (lVar == null || i10 < 0) {
+            return;
+        }
+        p1(lVar, i7, 25, s1(new l2.u(i10, 9)));
+    }
+
+    public final void v1(l lVar, int i7, Bundle bundle, boolean z9) {
+        v x10;
+        if (lVar == null || bundle == null || (x10 = this.b.x(lVar.asBinder())) == null) {
+            return;
+        }
+        try {
+            q1(x10, i7, 31, new t0(new org.telegram.ui.web.a0(7, new ab.y(9, e2.l0.a(x10.c, bundle), z9), new r0(14)), 1));
+        } catch (RuntimeException e10) {
+            h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e10);
+        }
+    }
+
+    public final void w1(l lVar, int i7, Bundle bundle, long j3) {
+        v x10;
+        if (lVar == null || bundle == null || (x10 = this.b.x(lVar.asBinder())) == null) {
+            return;
+        }
+        try {
+            q1(x10, i7, 31, new t0(new org.telegram.ui.web.a0(7, new di.c1(e2.l0.a(x10.c, bundle), j3, 12), new r0(14)), 1));
+        } catch (RuntimeException e10) {
+            h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e10);
+        }
+    }
+
+    public final void x1(l lVar, int i7, IBinder iBinder, boolean z9) {
+        v x10;
+        if (lVar == null || iBinder == null || (x10 = this.b.x(lVar.asBinder())) == null) {
+            return;
+        }
+        try {
+            h9.i0 a10 = e2.g.a(iBinder);
+            h9.f0 p10 = h9.i0.p();
+            for (int i10 = 0; i10 < a10.size(); i10++) {
+                Bundle bundle = (Bundle) a10.get(i10);
+                bundle.getClass();
+                p10.c(e2.l0.a(x10.c, bundle));
+            }
+            q1(x10, i7, 20, new t0(new org.telegram.ui.web.a0(7, new ab.y(11, p10.f(), z9), new r0(14)), 1));
+        } catch (RuntimeException e10) {
+            h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e10);
+        }
+    }
+
+    public final void y1(l lVar, int i7, IBinder iBinder, int i10, long j3) {
+        v x10;
+        if (lVar == null || iBinder == null) {
+            return;
+        }
+        if ((i10 == -1 || i10 >= 0) && (x10 = this.b.x(lVar.asBinder())) != null) {
+            try {
+                h9.i0 a10 = e2.g.a(iBinder);
+                h9.f0 p10 = h9.i0.p();
+                for (int i11 = 0; i11 < a10.size(); i11++) {
+                    Bundle bundle = (Bundle) a10.get(i11);
+                    bundle.getClass();
+                    p10.c(e2.l0.a(x10.c, bundle));
+                }
+                q1(x10, i7, 20, new t0(new org.telegram.ui.web.a0(7, new c4.n(p10.f(), i10, j3, 7), new r0(14)), 1));
+            } catch (RuntimeException e10) {
+                h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e10);
+            }
+        }
+    }
+
+    public final void z1(l lVar, int i7, float f10) {
+        if (lVar == null || f10 < 0.0f || f10 > 1.0f) {
+            return;
+        }
+        p1(lVar, i7, 24, s1(new l2.t(f10, 2)));
     }
 
     @Override // android.os.IInterface

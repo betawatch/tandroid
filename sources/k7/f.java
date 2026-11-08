@@ -8,7 +8,7 @@ import j7.m;
 import j7.r;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class f extends q implements a {
     public final /* synthetic */ int b;
@@ -23,26 +23,7 @@ public final class f extends q implements a {
     }
 
     @Override // k7.a
-    public void D0(Status status, j7.c cVar) {
-        j.e(status, "status");
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // k7.a
-    public void f0(Status status, j7.f fVar) {
-        switch (this.b) {
-            case 0:
-                j.e(status, "status");
-                k8.a(status, fVar, this.c);
-                return;
-            default:
-                j.e(status, "status");
-                throw new UnsupportedOperationException();
-        }
-    }
-
-    @Override // k7.a
-    public void p0(Status status, m mVar) {
+    public void H0(Status status, m mVar) {
         switch (this.b) {
             case 1:
                 j.e(status, "status");
@@ -55,8 +36,27 @@ public final class f extends q implements a {
     }
 
     @Override // k7.a
-    public void q0(Status status, r rVar) {
+    public void I0(Status status, r rVar) {
         j.e(status, "status");
         throw new UnsupportedOperationException();
+    }
+
+    @Override // k7.a
+    public void a1(Status status, j7.c cVar) {
+        j.e(status, "status");
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // k7.a
+    public void w0(Status status, j7.f fVar) {
+        switch (this.b) {
+            case 0:
+                j.e(status, "status");
+                k8.a(status, fVar, this.c);
+                return;
+            default:
+                j.e(status, "status");
+                throw new UnsupportedOperationException();
+        }
     }
 }

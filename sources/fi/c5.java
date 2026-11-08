@@ -4,13 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.hc;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class c5 extends k2 {
     public final /* synthetic */ o5 A1;
@@ -36,12 +36,12 @@ public final class c5 extends k2 {
             int i11 = qp.s1(this.a).o5;
             org.telegram.ui.ActionBar.l2 l2Var = this.c;
             if (i7 >= i11 && !p10.i(this.a).q()) {
-                String G = hd.G(qp.s1(this.a).p5, "StoryPremiumWidgets2", new Object[0]);
+                String G = id.G(qp.s1(this.a).p5, "StoryPremiumWidgets2", new Object[0]);
                 try {
                     l2Var.performHapticFeedback(3);
                 } catch (Exception unused) {
                 }
-                new hc(l2Var, this.I0).I(R.raw.star_premium_2, hd.M0(2131749198, null), org.telegram.messenger.g0.S2(G, org.telegram.ui.ActionBar.k6.Uc, 0, new di.s7(this, 17), this.I0)).k(true);
+                new hc(l2Var, this.I0).I(R.raw.star_premium_2, id.M0(2131749200, null), org.telegram.messenger.g0.S2(G, org.telegram.ui.ActionBar.k6.Uc, 0, new di.s7(this, 17), this.I0)).k(true);
                 return false;
             }
             if (i7 >= qp.s1(this.a).p5) {
@@ -49,7 +49,7 @@ public final class c5 extends k2 {
                     l2Var.performHapticFeedback(3);
                 } catch (Exception unused2) {
                 }
-                new hc(l2Var, this.I0).I(R.raw.chats_infotip, hd.M0(2131748977, "LimitReached"), hd.G(qp.s1(this.a).p5, "StoryReactionsWidgetLimit2", new Object[0])).k(true);
+                new hc(l2Var, this.I0).I(R.raw.chats_infotip, id.M0(2131748979, "LimitReached"), id.G(qp.s1(this.a).p5, "StoryReactionsWidgetLimit2", new Object[0])).k(true);
                 return false;
             }
         }

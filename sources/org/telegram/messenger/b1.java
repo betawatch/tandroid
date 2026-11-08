@@ -11,7 +11,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b1 implements Runnable {
     public final /* synthetic */ int a;
@@ -253,7 +253,7 @@ public final /* synthetic */ class b1 implements Runnable {
                                     executeFast2.bindLong(6, tL_forumTopic.id);
                                     executeFast2.step();
                                     nativeByteBuffer2.reuse();
-                                    g0.h3(new ik(yrVar, j12, tL_forumTopic2, i22, 5));
+                                    g0.h3(new hk(yrVar, j12, tL_forumTopic2, i22, 5));
                                     executeFast = executeFast2;
                                     break;
                                 } catch (Exception e13) {
@@ -310,7 +310,7 @@ public final /* synthetic */ class b1 implements Runnable {
                         executeFast2.bindLong(6, tL_forumTopic.id);
                         executeFast2.step();
                         nativeByteBuffer22.reuse();
-                        g0.h3(new ik(yrVar, j12, tL_forumTopic2, i22, 5));
+                        g0.h3(new hk(yrVar, j12, tL_forumTopic2, i22, 5));
                         executeFast = executeFast2;
                     }
                 } catch (Exception e14) {

@@ -5,11 +5,11 @@ import android.animation.AnimatorListenerAdapter;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.view.KeyEvent;
-import org.telegram.ui.Components.g10;
+import org.telegram.ui.Components.h10;
 import org.telegram.ui.Components.sr0;
 import org.telegram.ui.Components.xs0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class p2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -35,13 +35,13 @@ public final class p2 extends AnimatorListenerAdapter {
                 a3Var.l();
                 break;
             case 1:
-                g10 g10Var = (g10) this.d;
-                g10Var.L = this.b;
-                g10Var.M = this.c;
-                g10Var.F.setColorFilter(new PorterDuffColorFilter(g10Var.L, PorterDuff.Mode.MULTIPLY));
-                g10Var.E.setColor(g10Var.L);
-                g10Var.r.setColor(g10Var.M);
-                g10Var.J.d(i0.a.o(g10Var.M, 38));
+                h10 h10Var = (h10) this.d;
+                h10Var.L = this.b;
+                h10Var.M = this.c;
+                h10Var.F.setColorFilter(new PorterDuffColorFilter(h10Var.L, PorterDuff.Mode.MULTIPLY));
+                h10Var.E.setColor(h10Var.L);
+                h10Var.r.setColor(h10Var.M);
+                h10Var.J.d(i0.a.o(h10Var.M, 38));
                 break;
             case 2:
                 xs0 xs0Var = (xs0) this.d;

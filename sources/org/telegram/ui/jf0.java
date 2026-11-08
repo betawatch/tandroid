@@ -13,7 +13,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class jf0 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final ArrayList a;
@@ -23,7 +23,7 @@ public final class jf0 extends FrameLayout implements org.telegram.ui.ActionBar.
     public final org.telegram.ui.ActionBar.k5 e;
     public final int f;
     public final boolean h;
-    public final org.telegram.ui.Components.lz n;
+    public final org.telegram.ui.Components.mz n;
     public boolean r;
     public e61 s;
     public int w;
@@ -36,12 +36,12 @@ public final class jf0 extends FrameLayout implements org.telegram.ui.ActionBar.
         this.f = i7;
         boolean z9 = ijVar.i4() || org.telegram.messenger.ij.S4(ijVar.k);
         this.h = z9;
-        org.telegram.ui.Components.lz lzVar = new org.telegram.ui.Components.lz(context, null);
-        this.n = lzVar;
-        lzVar.e(org.telegram.ui.ActionBar.k6.G8, org.telegram.ui.ActionBar.k6.i6, -1);
-        lzVar.setViewType(13);
-        lzVar.setIsSingleCell(false);
-        addView(lzVar, c8.ha.c(-1.0f, -2));
+        org.telegram.ui.Components.mz mzVar = new org.telegram.ui.Components.mz(context, null);
+        this.n = mzVar;
+        mzVar.e(org.telegram.ui.ActionBar.k6.G8, org.telegram.ui.ActionBar.k6.i6, -1);
+        mzVar.setViewType(13);
+        mzVar.setIsSingleCell(false);
+        addView(mzVar, c8.ha.c(-1.0f, -2));
         org.telegram.ui.ActionBar.k5 k5Var = new org.telegram.ui.ActionBar.k5(context);
         this.e = k5Var;
         k5Var.setTextSize(16);
@@ -120,14 +120,14 @@ public final class jf0 extends FrameLayout implements org.telegram.ui.ActionBar.
         if (arrayList2.size() == 1 && arrayList.get(0) != null) {
             k5Var.l(org.telegram.messenger.g5.o((TLObject) arrayList.get(0)), false);
         } else if (arrayList2.size() == 0) {
-            k5Var.l(org.telegram.messenger.hd.M0(2131748123, null), false);
+            k5Var.l(org.telegram.messenger.id.M0(2131748125, null), false);
         } else {
-            k5Var.l(org.telegram.messenger.hd.G(arrayList2.size(), this.h ? "MessagePlayed" : "MessageSeen", new Object[0]), false);
+            k5Var.l(org.telegram.messenger.id.G(arrayList2.size(), this.h ? "MessagePlayed" : "MessageSeen", new Object[0]), false);
         }
         k5Var.animate().alpha(1.0f).setDuration(220L).start();
         z8Var.animate().alpha(1.0f).setDuration(220L).start();
-        org.telegram.ui.Components.lz lzVar = this.n;
-        lzVar.animate().alpha(0.0f).setDuration(220L).setListener(new org.telegram.ui.Components.t9(lzVar)).start();
+        org.telegram.ui.Components.mz mzVar = this.n;
+        mzVar.animate().alpha(0.0f).setDuration(220L).setListener(new org.telegram.ui.Components.t9(mzVar)).start();
         e61 e61Var = this.s;
         if (e61Var != null) {
             e61Var.getAdapter();
@@ -141,17 +141,17 @@ public final class jf0 extends FrameLayout implements org.telegram.ui.ActionBar.
             i7 = View.MeasureSpec.makeMeasureSpec(view.getWidth(), TLObject.FLAG_30);
         }
         this.r = true;
-        org.telegram.ui.Components.lz lzVar = this.n;
-        boolean z9 = lzVar.getVisibility() == 0;
+        org.telegram.ui.Components.mz mzVar = this.n;
+        boolean z9 = mzVar.getVisibility() == 0;
         org.telegram.ui.ActionBar.k5 k5Var = this.e;
         k5Var.setVisibility(8);
         if (z9) {
-            lzVar.setVisibility(8);
+            mzVar.setVisibility(8);
         }
         super.onMeasure(i7, i10);
         if (z9) {
-            lzVar.getLayoutParams().width = getMeasuredWidth();
-            lzVar.setVisibility(0);
+            mzVar.getLayoutParams().width = getMeasuredWidth();
+            mzVar.setVisibility(0);
         }
         k5Var.setVisibility(0);
         k5Var.getLayoutParams().width = getMeasuredWidth() - org.telegram.messenger.g0.L(40.0f);

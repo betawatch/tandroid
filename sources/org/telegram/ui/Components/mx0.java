@@ -14,7 +14,7 @@ import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class mx0 extends View {
     public static final yw0 S = new yw0(0);
@@ -85,7 +85,7 @@ public final class mx0 extends View {
     }
 
     public static void g(String str) {
-        throw new IllegalArgumentException(rf.b.q(str, ". "));
+        throw new IllegalArgumentException(rf.b.r(str, ". "));
     }
 
     public static void k(hx0 hx0Var, int i7, int i10, int i11, int i12) {

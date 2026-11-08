@@ -21,7 +21,7 @@ import bi.nc;
 import c8.ha;
 import java.util.ArrayList;
 import java.util.Collections;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
@@ -32,7 +32,7 @@ import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class n0 extends FrameLayout implements j60 {
     public final xh.l D;
@@ -395,10 +395,10 @@ public final class n0 extends FrameLayout implements j60 {
             spannableStringBuilder2.append((CharSequence) org.telegram.messenger.m5.l(i12, s0Var.c));
             spannableStringBuilder2.append((CharSequence) str2);
             int length2 = spannableStringBuilder2.length();
-            spannableStringBuilder2.append((CharSequence) hd.M0(2131748824, null));
+            spannableStringBuilder2.append((CharSequence) id.M0(2131748826, null));
             spannableStringBuilder2.setSpan(new k0(0), length2, spannableStringBuilder2.length(), 33);
             this.r.setText(spannableStringBuilder2);
-            this.s.setText(hd.M0(2131748827, null));
+            this.s.setText(id.M0(2131748829, null));
             textView.setVisibility(8);
             textView2.setVisibility(8);
         } else {

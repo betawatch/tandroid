@@ -16,10 +16,10 @@ import android.text.TextPaint;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class p80 extends Drawable {
-    public ax A;
+    public bx A;
     public org.telegram.ui.ActionBar.t4 B;
     public LinearGradient C;
     public Matrix D;
@@ -81,7 +81,7 @@ public final class p80 extends Drawable {
 
     public final void a(boolean z9) {
         org.telegram.ui.ActionBar.t4 t4Var = this.B;
-        if (t4Var == null || !t4Var.m() || this.E) {
+        if (t4Var == null || !t4Var.l() || this.E) {
             return;
         }
         Rect bounds = getBounds();
@@ -311,7 +311,7 @@ public final class p80 extends Drawable {
         Paint paint3 = this.e;
         Paint paint4 = this.d;
         Paint paint5 = this.b;
-        if (t4Var != null && t4Var.m() && !this.E) {
+        if (t4Var != null && t4Var.l() && !this.E) {
             Shader shader = this.B.a;
             paint5.setShader(shader);
             paint4.setShader(shader);
@@ -1667,9 +1667,9 @@ public final class p80 extends Drawable {
     @Override // android.graphics.drawable.Drawable
     public final void invalidateSelf() {
         super.invalidateSelf();
-        ax axVar = this.A;
-        if (axVar != null) {
-            ((View) axVar.b).invalidate();
+        bx bxVar = this.A;
+        if (bxVar != null) {
+            ((View) bxVar.b).invalidate();
         }
     }
 

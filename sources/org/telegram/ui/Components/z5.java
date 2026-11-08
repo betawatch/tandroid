@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class z5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -225,51 +225,51 @@ public final class z5 extends AnimatorListenerAdapter {
                 bqVar.c = -1;
                 break;
             case 21:
-                kt ktVar = (kt) this.b;
-                ktVar.O = false;
-                ktVar.d.setTranslationY(0.0f);
-                ktVar.d.setAlpha(0.0f);
-                ktVar.c(0.0f);
-                ktVar.R = 0.0f;
-                ktVar.j();
+                lt ltVar = (lt) this.b;
+                ltVar.O = false;
+                ltVar.d.setTranslationY(0.0f);
+                ltVar.d.setAlpha(0.0f);
+                ltVar.c(0.0f);
+                ltVar.R = 0.0f;
+                ltVar.j();
                 break;
             case 22:
-                ((st) this.b).a.F1 = false;
+                ((tt) this.b).a.F1 = false;
                 break;
             case 23:
                 super.onAnimationEnd(animator);
-                ((ju) this.b).d = null;
+                ((ku) this.b).d = null;
                 break;
             case 24:
-                ((gy) this.b).W = null;
+                ((hy) this.b).W = null;
                 break;
             case 25:
                 super.onAnimationEnd(animator);
-                ((px) this.b).n = null;
+                ((qx) this.b).n = null;
                 break;
             case 26:
-                ((cz) this.b).a();
+                ((dz) this.b).a();
                 break;
             case 27:
-                ez ezVar = (ez) this.b;
-                ezVar.U = ezVar.c0;
-                ezVar.b0 = ezVar.f0;
-                ezVar.V = ezVar.d0;
-                ezVar.W = ezVar.e0;
-                ezVar.c0 = -1;
-                ezVar.d0 = -1;
-                ezVar.e0 = -1;
-                ezVar.f0 = -1;
+                fz fzVar = (fz) this.b;
+                fzVar.U = fzVar.c0;
+                fzVar.b0 = fzVar.f0;
+                fzVar.V = fzVar.d0;
+                fzVar.W = fzVar.e0;
+                fzVar.c0 = -1;
+                fzVar.d0 = -1;
+                fzVar.e0 = -1;
+                fzVar.f0 = -1;
                 break;
             case 28:
-                rz rzVar = (rz) this.b;
-                rzVar.w = 1.0f;
-                rzVar.invalidate();
+                sz szVar = (sz) this.b;
+                szVar.w = 1.0f;
+                szVar.invalidate();
                 break;
             default:
                 n40 n40Var = (n40) this.b;
-                if (animator == n40Var.W) {
-                    n40Var.c(true);
+                if (animator == n40Var.a0) {
+                    n40Var.d(true);
                     n40Var.setVisibility(4);
                     break;
                 }

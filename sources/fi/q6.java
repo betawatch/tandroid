@@ -23,14 +23,14 @@ import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class q6 extends View {
     public boolean D;
     public p6 E;
     public View F;
     public Object G;
-    public org.telegram.messenger.k7 H;
+    public org.telegram.messenger.l7 H;
     public String I;
     public final int[] J;
     public final int[] K;
@@ -211,11 +211,11 @@ public final class q6 extends View {
     public void setLink(String str) {
         boolean isEmpty = TextUtils.isEmpty(str);
         u8 u8Var = this.b;
-        org.telegram.messenger.k7 k7Var = null;
+        org.telegram.messenger.l7 l7Var = null;
         if (isEmpty) {
-            org.telegram.messenger.k7 k7Var2 = this.H;
-            if (k7Var2 != null) {
-                k7Var2.run();
+            org.telegram.messenger.l7 l7Var2 = this.H;
+            if (l7Var2 != null) {
+                l7Var2.run();
                 this.H = null;
             }
             if (this.D) {
@@ -244,9 +244,9 @@ public final class q6 extends View {
             }
             return;
         }
-        org.telegram.messenger.k7 k7Var3 = this.H;
-        if (k7Var3 != null) {
-            k7Var3.run();
+        org.telegram.messenger.l7 l7Var3 = this.H;
+        if (l7Var3 != null) {
+            l7Var3.run();
             this.H = null;
         }
         this.E = null;
@@ -270,13 +270,13 @@ public final class q6 extends View {
                             m6Var.a(new o6(str, (TLRPC.Chat) f22));
                         }
                     }
-                    k7Var = s12.d2().a(str3, queryParameter, new bi.v3(m6Var, s12, str, 4));
+                    l7Var = s12.d2().a(str3, queryParameter, new bi.v3(m6Var, s12, str, 4));
                 }
             }
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
-            m6Var.a(k7Var);
+            m6Var.a(l7Var);
         }
-        this.H = k7Var;
+        this.H = l7Var;
     }
 }

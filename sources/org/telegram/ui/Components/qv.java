@@ -1,43 +1,78 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class qv extends v4.s {
-    public final /* synthetic */ gy Q;
+public final class qv extends rg.d {
+    public boolean f3;
+    public final /* synthetic */ hy g3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qv(gy gyVar) {
-        super(5);
-        this.Q = gyVar;
+    public qv(hy hyVar, Context context) {
+        super(context, null);
+        this.g3 = hyVar;
     }
 
-    @Override // v4.s, v4.b0, v4.n0
-    public final int o0(int i7, v4.v0 v0Var, v4.a1 a1Var) {
-        int o02 = super.o0(i7, v0Var, a1Var);
-        gy gyVar = this.Q;
-        if (o02 != 0 && gyVar.D0.getScrollState() == 1) {
-            gyVar.X1 = false;
-            gyVar.Z();
-        }
-        if (gyVar.T0 == null) {
-            jg.e1 e1Var = new jg.e1(gyVar, gyVar.c1, gyVar.t1.a(), gyVar.t1.f(), 1);
-            gyVar.T0 = e1Var;
-            e1Var.a();
-        }
-        gyVar.T0.b();
-        return o02;
+    @Override // rg.d, org.telegram.ui.Components.pj0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        this.g3.n2.g();
     }
 
-    @Override // v4.b0, v4.n0
-    public final void v0(RecyclerView recyclerView, v4.a1 a1Var, int i7) {
-        try {
-            mi.m mVar = new mi.m(recyclerView.getContext(), 2);
-            mVar.a = i7;
-            w0(mVar);
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void l0(int i7) {
+        hy hyVar = this.g3;
+        cy cyVar = hyVar.z0;
+        if (hyVar.C0 != null) {
+            hyVar.B0.setUnderlineHeight(hyVar.D0.canScrollVertically(-1) ? org.telegram.messenger.g0.f1() : 0);
         }
+        if (cyVar != null && getAdapter() == cyVar && cyVar.d == 0) {
+            cy cyVar2 = cyVar.O.x;
+            if (cyVar2.Q.G0.F || cyVar2.D) {
+                return;
+            }
+            if (hyVar.E0.N0() + 50 > cyVar.b()) {
+                ay ayVar = cyVar.O;
+                Objects.requireNonNull(ayVar);
+                org.telegram.messenger.g0.h3(new pv(ayVar, 0));
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        hy hyVar = this.g3;
+        if (hyVar.f) {
+            return false;
+        }
+        org.telegram.ui.ks p10 = org.telegram.ui.ks.p();
+        qv qvVar = hyVar.D0;
+        hyVar.getMeasuredHeight();
+        return super.onInterceptTouchEvent(motionEvent) || p10.q(motionEvent, qvVar, hyVar.g2, this.n2);
+    }
+
+    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        hy hyVar = this.g3;
+        if (hyVar.I0 && hyVar.y0.b() > 0) {
+            this.f3 = true;
+            hyVar.E0.h1(0, 0);
+            hyVar.I0 = false;
+            this.f3 = false;
+        }
+        super.onLayout(z9, i7, i10, i11, i12);
+        hyVar.q(true);
+    }
+
+    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.f3) {
+            return;
+        }
+        super.requestLayout();
     }
 }

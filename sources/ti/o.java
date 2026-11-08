@@ -32,15 +32,15 @@ import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.j51;
 import org.telegram.ui.Components.qm0;
-import org.telegram.ui.Components.qt;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.rt;
 import org.telegram.ui.Components.v50;
+import org.telegram.ui.Components.vy;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.w;
 import sg.t0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class o {
     public final m a;
@@ -65,7 +65,7 @@ public final class o {
         this.c = 0;
         iVar.K = true;
         iVar.d();
-        g0.i3(new w(29, iVar, c20Var), 100L);
+        g0.i3(new w(24, iVar, c20Var), 100L);
         this.b.f();
     }
 
@@ -142,7 +142,7 @@ public final class o {
         }
     }
 
-    public final q g(Activity activity, Bitmap bitmap, boolean z9) {
+    public final p g(Activity activity, Bitmap bitmap, boolean z9) {
         int i7;
         if (this.c != 0) {
             throw new IllegalStateException("startFloating in state " + this.c);
@@ -195,7 +195,7 @@ public final class o {
         iVar2.p = scaleGestureDetector;
         scaleGestureDetector.setQuickScaleEnabled(false);
         iVar2.p.setStylusScaleEnabled(false);
-        iVar2.q = new qt(activity2, new h(iVar2, scaledTouchSlop));
+        iVar2.q = new rt(activity2, new h(iVar2, scaledTouchSlop));
         iVar2.i = new e(iVar2, activity2, i10);
         org.telegram.ui.e eVar = new org.telegram.ui.e(3, activity2, iVar2);
         iVar2.h = eVar;
@@ -211,7 +211,7 @@ public final class o {
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         iVar2.l.setVisibility(8);
         iVar2.i.addView(iVar2.l, ha.c(-1.0f, -1));
-        j51Var.n = new uy(iVar2, 21);
+        j51Var.n = new vy(iVar2, 21);
         iVar2.m = new e(iVar2, activity2, i11);
         e eVar3 = iVar2.m;
         Objects.requireNonNull(eVar3);
@@ -412,9 +412,9 @@ public final class o {
             g0.E2(D);
             iVar2.i.addView(iVar2.k, 0, ha.c(-1.0f, -1));
         } else {
-            q qVar = new q(activity2);
-            iVar2.j = qVar;
-            iVar2.i.addView(qVar, 0, ha.c(-1.0f, -1));
+            p pVar = new p(activity2);
+            iVar2.j = pVar;
+            iVar2.i.addView(pVar, 0, ha.c(-1.0f, -1));
         }
         if (bitmap != null && iVar2.j != null) {
             iVar2.l.setImageBitmap(bitmap);
@@ -436,9 +436,9 @@ public final class o {
             i7 = 1;
         }
         iVar2.k();
-        q qVar2 = iVar2.j;
+        p pVar2 = iVar2.j;
         this.c = i7;
         iVar.f();
-        return qVar2;
+        return pVar2;
     }
 }

@@ -1,66 +1,45 @@
 package org.telegram.utils.twidget;
 
-import android.graphics.Canvas;
-import android.graphics.Picture;
+import android.graphics.BlendMode;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
-public final class f extends g {
-    public final Picture e;
-    public boolean f;
+public abstract class f {
+    public static final BlendMode[] a;
 
-    public f(int i7, int i10, int i11, int i12) {
-        super(i7, i10, i11, i12);
-        this.e = new Picture();
+    static {
+        BlendMode blendMode;
+        BlendMode blendMode2;
+        BlendMode blendMode3;
+        BlendMode blendMode4;
+        BlendMode blendMode5;
+        BlendMode blendMode6;
+        BlendMode blendMode7;
+        BlendMode blendMode8;
+        BlendMode blendMode9;
+        blendMode = BlendMode.SRC_OVER;
+        blendMode2 = BlendMode.SRC_IN;
+        blendMode3 = BlendMode.DST_IN;
+        blendMode4 = BlendMode.PLUS;
+        blendMode5 = BlendMode.SCREEN;
+        blendMode6 = BlendMode.OVERLAY;
+        blendMode7 = BlendMode.COLOR_DODGE;
+        blendMode8 = BlendMode.COLOR_BURN;
+        blendMode9 = BlendMode.SOFT_LIGHT;
+        a = new BlendMode[]{blendMode, blendMode2, BlendMode.SRC_OUT, BlendMode.SRC_ATOP, BlendMode.DST_OVER, blendMode3, BlendMode.DST_OUT, BlendMode.DST_ATOP, blendMode4, BlendMode.SRC, BlendMode.XOR, BlendMode.MULTIPLY, blendMode5, blendMode6, BlendMode.DARKEN, BlendMode.LIGHTEN, blendMode7, blendMode8, BlendMode.HARD_LIGHT, blendMode9, BlendMode.DIFFERENCE, BlendMode.EXCLUSION, BlendMode.HUE, BlendMode.SATURATION, BlendMode.COLOR, BlendMode.LUMINOSITY};
     }
 
-    @Override // org.telegram.utils.twidget.g
-    public final Canvas a() {
-        this.f = true;
-        return this.e.beginRecording(Math.max(1, this.c - this.a), Math.max(1, this.d - this.b));
-    }
-
-    @Override // org.telegram.utils.twidget.g
-    public final boolean b(Canvas canvas) {
-        return true;
-    }
-
-    @Override // org.telegram.utils.twidget.g
-    public final void c() {
-        if (this.f) {
-            e();
+    public static void a(int i7, Paint paint) {
+        BlendMode blendMode;
+        if (i7 > 0) {
+            BlendMode[] blendModeArr = a;
+            if (i7 < blendModeArr.length) {
+                blendMode = blendModeArr[i7];
+                paint.setBlendMode(blendMode);
+            }
         }
-    }
-
-    @Override // org.telegram.utils.twidget.g
-    public final void d(Canvas canvas, float f10) {
-        Canvas canvas2;
-        int save;
-        if (this.f || f10 <= 0.0f) {
-            return;
-        }
-        int i7 = this.b;
-        int i10 = this.a;
-        if (f10 < 1.0f) {
-            canvas2 = canvas;
-            save = canvas2.saveLayerAlpha(i10, i7, this.c, this.d, Math.round(f10 * 255.0f));
-        } else {
-            canvas2 = canvas;
-            save = canvas2.save();
-        }
-        canvas2.translate(i10, i7);
-        canvas2.drawPicture(this.e);
-        canvas2.restoreToCount(save);
-    }
-
-    @Override // org.telegram.utils.twidget.g
-    public final void e() {
-        this.e.endRecording();
-        this.f = false;
-    }
-
-    @Override // org.telegram.utils.twidget.g
-    public final boolean f() {
-        return true;
+        blendMode = null;
+        paint.setBlendMode(blendMode);
     }
 }

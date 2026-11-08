@@ -26,8 +26,8 @@ import java.util.LinkedHashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g5;
 import org.telegram.messenger.hc;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i6;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.ls;
@@ -67,7 +67,7 @@ import org.telegram.ui.Components.xi0;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class i1 extends oj0 implements ls {
     public ArrayList A0;
@@ -514,13 +514,13 @@ public final class i1 extends oj0 implements ls {
                 } else {
                     TLRPC.User user2 = this.w0;
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.G0.getParentActivity());
-                    String M0 = hd.M0(2131745424, null);
+                    String M0 = id.M0(2131745426, null);
                     org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                     u1Var.R = M0;
-                    u1Var.T = hd.M0(2131745425, null);
+                    u1Var.T = id.M0(2131745427, null);
                     boolean[] zArr = new boolean[1];
-                    alertDialog$Builder.k(hd.M0(2131747830, null), new a3.h(this, zArr, user2, 13));
-                    alertDialog$Builder.h(hd.M0(2131752589, null), new ab.g(17, this, zArr));
+                    alertDialog$Builder.k(id.M0(2131747832, null), new a3.h(this, zArr, user2, 13));
+                    alertDialog$Builder.h(id.M0(2131752589, null), new ab.g(17, this, zArr));
                     this.G0.showDialog(u1Var, new u3(this, zArr, 4));
                 }
             }
@@ -1756,13 +1756,13 @@ public final class i1 extends oj0 implements ls {
             TLRPC.Chat chat = this.G0.e;
             if (chat != null) {
                 if (!t3.N(chat) && (tL_chatBannedRights = chat.default_banned_rights) != null && tL_chatBannedRights.send_inline) {
-                    textView.setText(hd.M0(2131749543, null));
+                    textView.setText(id.M0(2131749545, null));
                     return;
                 } else if (org.telegram.messenger.g0.D1(chat.banned_rights)) {
-                    textView.setText(hd.M0(2131753967, null));
+                    textView.setText(id.M0(2131753967, null));
                     return;
                 } else {
-                    textView.setText(hd.a0("AttachInlineRestricted", null, 2131753968, hd.v(chat.banned_rights.until_date)));
+                    textView.setText(id.a0("AttachInlineRestricted", null, 2131753968, id.v(chat.banned_rights.until_date)));
                     return;
                 }
             }
@@ -1898,8 +1898,8 @@ public final class i1 extends oj0 implements ls {
                     textView.setSingleLine(true);
                     textView.setEllipsize(TextUtils.TruncateAt.END);
                     textView.setMaxLines(1);
-                    textView.setGravity(hd.a0 ? 5 : 3);
-                    g0Var.addView(textView, ha.d(-2, -2.0f, (hd.a0 ? 5 : 3) | 16, 14.0f, 0.0f, 14.0f, 0.0f));
+                    textView.setGravity(id.a0 ? 5 : 3);
+                    g0Var.addView(textView, ha.d(-2, -2.0f, (id.a0 ? 5 : 3) | 16, 14.0f, 0.0f, 14.0f, 0.0f));
                     view2 = g0Var;
                 } else if (i7 == 3) {
                     TextView textView2 = new TextView(context);

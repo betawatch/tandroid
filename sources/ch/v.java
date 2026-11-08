@@ -19,7 +19,7 @@ import org.telegram.ui.Components.u80;
 import org.telegram.ui.Components.yv0;
 import org.telegram.ui.web.x0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class v implements ab {
     public final /* synthetic */ int a;
@@ -63,9 +63,9 @@ public final class v implements ab {
                 break;
             default:
                 gb gbVar = ccVar.e;
-                zh.i0 i0Var = (zh.i0) this.b;
-                fh.g c10 = i0Var.l1.c(gbVar, null, true);
-                gh.e eVar = new gh.e(i0Var.I0);
+                zh.h0 h0Var = (zh.h0) this.b;
+                fh.g c10 = h0Var.l1.c(gbVar, null, true);
+                gh.e eVar = new gh.e(h0Var.I0);
                 eVar.e = new g2.c(9);
                 float N = org.telegram.messenger.g0.N(0.5f);
                 float N2 = org.telegram.messenger.g0.N(0.5f);

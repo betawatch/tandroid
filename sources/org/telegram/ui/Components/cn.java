@@ -7,10 +7,10 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class cn extends vh {
-    public final iy n;
+    public final jy n;
     public final pj0 r;
     public final int s;
     public final org.telegram.ui.x7 w;
@@ -19,25 +19,25 @@ public final class cn extends vh {
     public cn(int i7, Context context, org.telegram.ui.ActionBar.f6 f6Var, di diVar) {
         super(context, f6Var, diVar);
         this.s = i7;
-        iy iyVar = new iy(context, f6Var);
-        this.n = iyVar;
-        iyVar.setText(org.telegram.messenger.hd.M0(2131748179, null));
-        iyVar.setOnTouchListener(null);
-        iyVar.setTextSize(16);
-        addView(iyVar, c8.ha.c(-2.0f, -1));
-        iyVar.a(R.raw.media_forbidden, org.telegram.messenger.qs.g2, org.telegram.messenger.qs.g2);
+        jy jyVar = new jy(context, f6Var);
+        this.n = jyVar;
+        jyVar.setText(org.telegram.messenger.id.M0(2131748181, null));
+        jyVar.setOnTouchListener(null);
+        jyVar.setTextSize(16);
+        addView(jyVar, c8.ha.c(-2.0f, -1));
+        jyVar.a(R.raw.media_forbidden, org.telegram.messenger.qs.g2, org.telegram.messenger.qs.g2);
         TLRPC.Chat Y0 = this.b.Y0();
         int i10 = 4;
         if (i7 == 1) {
-            iyVar.setText(org.telegram.messenger.t3.L(7, Y0));
+            jyVar.setText(org.telegram.messenger.t3.L(7, Y0));
         } else if (i7 == 3) {
-            iyVar.setText(org.telegram.messenger.t3.L(18, Y0));
+            jyVar.setText(org.telegram.messenger.t3.L(18, Y0));
         } else if (i7 == 4) {
-            iyVar.setText(org.telegram.messenger.t3.L(19, Y0));
+            jyVar.setText(org.telegram.messenger.t3.L(19, Y0));
         } else {
-            iyVar.setText(org.telegram.messenger.t3.L(22, Y0));
+            jyVar.setText(org.telegram.messenger.t3.L(22, Y0));
         }
-        iyVar.c();
+        jyVar.c();
         pj0 pj0Var = new pj0(context, f6Var);
         this.r = pj0Var;
         pj0Var.setSectionsType(2);

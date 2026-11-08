@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y40 implements org.telegram.ui.Components.cj0, ma0 {
     public final /* synthetic */ d50 a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class y40 implements org.telegram.ui.Components.cj0
         org.telegram.ui.ActionBar.g1 g1Var = d50Var.x;
         if (g1Var == null || !g1Var.isShowing()) {
             org.telegram.messenger.re reVar = new org.telegram.messenger.re(d50Var.getParentActivity(), null, new f(d50Var, 19), true, 1, null);
-            reVar.t(d50Var.W);
+            reVar.u(d50Var.W);
             org.telegram.ui.ActionBar.g1 g1Var2 = new org.telegram.ui.ActionBar.g1((ActionBarPopupWindow$ActionBarPopupWindowLayout) reVar.b, -2, -2);
             d50Var.x = g1Var2;
             g1Var2.e = true;

@@ -8,12 +8,12 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.hc;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
-import org.telegram.messenger.rc;
+import org.telegram.messenger.sc;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.my0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class k4 implements org.telegram.messenger.x5 {
     public boolean D;
@@ -110,7 +110,7 @@ public final class k4 implements org.telegram.messenger.x5 {
         if (z10) {
             this.h = true;
             this.w = null;
-            imageReceiver.q0(hc.f(((TLRPC.TL_messageExtendedMediaPreview) messageExtendedMedia).thumb, ijVar.k), rf.b.q(j3, "_b2"), null, null, ijVar, 0);
+            imageReceiver.q0(hc.f(((TLRPC.TL_messageExtendedMediaPreview) messageExtendedMedia).thumb, ijVar.k), rf.b.r(j3, "_b2"), null, null, ijVar, 0);
             ColorMatrix colorMatrix = new ColorMatrix();
             colorMatrix.setSaturation(1.4f);
             org.telegram.messenger.g0.h(colorMatrix, -0.1f);
@@ -123,7 +123,7 @@ public final class k4 implements org.telegram.messenger.x5 {
         boolean z11 = ijVar.h2;
         this.h = z11;
         if (z11) {
-            j3 = rf.b.q(j3, "_b3");
+            j3 = rf.b.r(j3, "_b3");
         }
         String str = j3;
         imageReceiver.o1 = null;
@@ -144,7 +144,7 @@ public final class k4 implements org.telegram.messenger.x5 {
         boolean z14 = this.x;
         if (!z12 && !z14 && z13) {
             int i11 = iz.a;
-            if (rc.e(1024)) {
+            if (sc.e(1024)) {
                 z9 = true;
                 this.D = z9;
                 if (!z14 || !z13 || (document2 = tL_messageMediaDocument.document) == null) {

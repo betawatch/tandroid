@@ -29,11 +29,11 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public ScrollView D;
-    public org.telegram.ui.Components.p00 E;
+    public org.telegram.ui.Components.q00 E;
     public org.telegram.ui.Components.t11 F;
     public boolean G;
     public boolean H;
@@ -50,17 +50,17 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
     public int S;
     public int T;
     public boolean U;
-    public final ea1 V;
+    public final fa1 V;
     public boolean W;
     public int X;
-    public ia1 Y;
+    public ja1 Y;
     public int Z;
-    public ka1 a;
+    public la1 a;
     public String a0;
     public org.telegram.ui.Components.pj0 b;
-    public la1 b0;
+    public ma1 b0;
     public org.telegram.ui.Components.ch0 c;
-    public final ea1 c0;
+    public final fa1 c0;
     private int changePasswordRow;
     public TextView d;
     public TextView e;
@@ -72,15 +72,15 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
     private int turnPasswordOffRow;
     public org.telegram.ui.Components.lb0 w;
     public org.telegram.ui.ActionBar.u1 x;
-    public org.telegram.ui.Components.iy y;
+    public org.telegram.ui.Components.jy y;
 
     public TwoStepVerificationActivity() {
         super(null);
         this.J = true;
         this.K = new byte[0];
-        this.V = new ea1(this, 2);
+        this.V = new fa1(this, 2);
         this.X = -1;
-        this.c0 = new ea1(this, 3);
+        this.c0 = new fa1(this, 3);
     }
 
     public static /* synthetic */ void Z(TwoStepVerificationActivity twoStepVerificationActivity, TLRPC.TL_error tL_error, TLObject tLObject) {
@@ -105,17 +105,17 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
 
     public static void b0(TwoStepVerificationActivity twoStepVerificationActivity, TLRPC.TL_error tL_error) {
         if ("SRP_ID_INVALID".equals(tL_error.text)) {
-            ConnectionsManager.getInstance(twoStepVerificationActivity.currentAccount).sendRequest(new TL_account.getPassword(), new da1(twoStepVerificationActivity, 5), 8);
+            ConnectionsManager.getInstance(twoStepVerificationActivity.currentAccount).sendRequest(new TL_account.getPassword(), new ea1(twoStepVerificationActivity, 5), 8);
             return;
         }
         twoStepVerificationActivity.t0();
         if ("PASSWORD_HASH_INVALID".equals(tL_error.text)) {
             twoStepVerificationActivity.v0(twoStepVerificationActivity.w, twoStepVerificationActivity.s, true);
         } else if (!tL_error.text.startsWith("FLOOD_WAIT")) {
-            twoStepVerificationActivity.B0(org.telegram.messenger.hd.M0(R.string.AppName, null), tL_error.text);
+            twoStepVerificationActivity.B0(org.telegram.messenger.id.M0(R.string.AppName, null), tL_error.text);
         } else {
             int intValue = Utilities.z(tL_error.text).intValue();
-            twoStepVerificationActivity.B0(org.telegram.messenger.hd.M0(R.string.AppName, null), org.telegram.messenger.hd.a0("FloodWaitTime", null, 2131750687, intValue < 60 ? org.telegram.messenger.hd.G(intValue, "Seconds", new Object[0]) : org.telegram.messenger.hd.G(intValue / 60, "Minutes", new Object[0])));
+            twoStepVerificationActivity.B0(org.telegram.messenger.id.M0(R.string.AppName, null), org.telegram.messenger.id.a0("FloodWaitTime", null, 2131750687, intValue < 60 ? org.telegram.messenger.id.G(intValue, "Seconds", new Object[0]) : org.telegram.messenger.id.G(intValue / 60, "Minutes", new Object[0])));
         }
     }
 
@@ -124,7 +124,7 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
             twoStepVerificationActivity.t0();
         }
         if (!z9) {
-            org.telegram.ui.Components.v4.u0(twoStepVerificationActivity.getParentActivity(), org.telegram.messenger.hd.M0(2131743821, null), true);
+            org.telegram.ui.Components.v4.u0(twoStepVerificationActivity.getParentActivity(), org.telegram.messenger.id.M0(2131743823, null), true);
             return;
         }
         twoStepVerificationActivity.K = bArr;
@@ -135,9 +135,9 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
             return;
         }
         if (!TextUtils.isEmpty(twoStepVerificationActivity.I.email_unconfirmed_pattern)) {
-            ya1 ya1Var = new ya1(twoStepVerificationActivity.currentAccount, 5, twoStepVerificationActivity.I);
-            ya1Var.I0(twoStepVerificationActivity.K, twoStepVerificationActivity.L, twoStepVerificationActivity.M, true);
-            twoStepVerificationActivity.presentFragment(ya1Var, true);
+            za1 za1Var = new za1(twoStepVerificationActivity.currentAccount, 5, twoStepVerificationActivity.I);
+            za1Var.I0(twoStepVerificationActivity.K, twoStepVerificationActivity.L, twoStepVerificationActivity.M, true);
+            twoStepVerificationActivity.presentFragment(za1Var, true);
             return;
         }
         org.telegram.messenger.g0.v1(twoStepVerificationActivity.s);
@@ -176,7 +176,7 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
 
     public static void e0(TwoStepVerificationActivity twoStepVerificationActivity, TLRPC.TL_error tL_error, TLObject tLObject) {
         if (tL_error != null && "SRP_ID_INVALID".equals(tL_error.text)) {
-            ConnectionsManager.getInstance(twoStepVerificationActivity.currentAccount).sendRequest(new TL_account.getPassword(), new da1(twoStepVerificationActivity, 6), 8);
+            ConnectionsManager.getInstance(twoStepVerificationActivity.currentAccount).sendRequest(new TL_account.getPassword(), new ea1(twoStepVerificationActivity, 6), 8);
             return;
         }
         twoStepVerificationActivity.t0();
@@ -190,10 +190,10 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
         }
         if (tL_error != null) {
             if (!tL_error.text.startsWith("FLOOD_WAIT")) {
-                twoStepVerificationActivity.B0(org.telegram.messenger.hd.M0(R.string.AppName, null), tL_error.text);
+                twoStepVerificationActivity.B0(org.telegram.messenger.id.M0(R.string.AppName, null), tL_error.text);
             } else {
                 int intValue = Utilities.z(tL_error.text).intValue();
-                twoStepVerificationActivity.B0(org.telegram.messenger.hd.M0(R.string.AppName, null), org.telegram.messenger.hd.a0("FloodWaitTime", null, 2131750687, intValue < 60 ? org.telegram.messenger.hd.G(intValue, "Seconds", new Object[0]) : org.telegram.messenger.hd.G(intValue / 60, "Minutes", new Object[0])));
+                twoStepVerificationActivity.B0(org.telegram.messenger.id.M0(R.string.AppName, null), org.telegram.messenger.id.a0("FloodWaitTime", null, 2131750687, intValue < 60 ? org.telegram.messenger.id.G(intValue, "Seconds", new Object[0]) : org.telegram.messenger.id.G(intValue / 60, "Minutes", new Object[0])));
             }
         }
     }
@@ -204,7 +204,7 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
             TL_account.Password password = (TL_account.Password) tLObject;
             twoStepVerificationActivity.I = password;
             if (!n0(password, false)) {
-                org.telegram.ui.Components.v4.u0(twoStepVerificationActivity.getParentActivity(), org.telegram.messenger.hd.M0(2131743821, null), true);
+                org.telegram.ui.Components.v4.u0(twoStepVerificationActivity.getParentActivity(), org.telegram.messenger.id.M0(2131743823, null), true);
                 return;
             }
             if (!z9 || z10) {
@@ -232,32 +232,32 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
 
     public static void h0(TwoStepVerificationActivity twoStepVerificationActivity, int i7) {
         if (i7 == twoStepVerificationActivity.O || i7 == twoStepVerificationActivity.changePasswordRow) {
-            ya1 ya1Var = new ya1(twoStepVerificationActivity.currentAccount, 0, twoStepVerificationActivity.I);
-            ya1Var.J.add(twoStepVerificationActivity);
-            ya1Var.I0(twoStepVerificationActivity.K, twoStepVerificationActivity.L, twoStepVerificationActivity.M, false);
-            twoStepVerificationActivity.presentFragment(ya1Var);
+            za1 za1Var = new za1(twoStepVerificationActivity.currentAccount, 0, twoStepVerificationActivity.I);
+            za1Var.J.add(twoStepVerificationActivity);
+            za1Var.I0(twoStepVerificationActivity.K, twoStepVerificationActivity.L, twoStepVerificationActivity.M, false);
+            twoStepVerificationActivity.presentFragment(za1Var);
             return;
         }
         if (i7 == twoStepVerificationActivity.Q || i7 == twoStepVerificationActivity.R) {
-            ya1 ya1Var2 = new ya1(twoStepVerificationActivity.currentAccount, 3, twoStepVerificationActivity.I);
-            ya1Var2.J.add(twoStepVerificationActivity);
-            ya1Var2.I0(twoStepVerificationActivity.K, twoStepVerificationActivity.L, twoStepVerificationActivity.M, true);
-            twoStepVerificationActivity.presentFragment(ya1Var2);
+            za1 za1Var2 = new za1(twoStepVerificationActivity.currentAccount, 3, twoStepVerificationActivity.I);
+            za1Var2.J.add(twoStepVerificationActivity);
+            za1Var2.I0(twoStepVerificationActivity.K, twoStepVerificationActivity.L, twoStepVerificationActivity.M, true);
+            twoStepVerificationActivity.presentFragment(za1Var2);
             return;
         }
         if (i7 == twoStepVerificationActivity.turnPasswordOffRow) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(twoStepVerificationActivity.getParentActivity());
-            String M0 = org.telegram.messenger.hd.M0(2131743941, null);
+            String M0 = org.telegram.messenger.id.M0(2131743943, null);
             if (twoStepVerificationActivity.I.has_secure_values) {
-                M0 = jg.g.l(2131743942, null, rf.b.j(M0, "\n\n"));
+                M0 = jg.g.l(2131743944, null, rf.b.j(M0, "\n\n"));
             }
-            String M02 = org.telegram.messenger.hd.M0(2131743940, null);
-            String M03 = org.telegram.messenger.hd.M0(2131751436, null);
+            String M02 = org.telegram.messenger.id.M0(2131743942, null);
+            String M03 = org.telegram.messenger.id.M0(2131751436, null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.T = M0;
             u1Var.R = M02;
-            alertDialog$Builder.k(M03, new ca1(twoStepVerificationActivity, 2));
-            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
+            alertDialog$Builder.k(M03, new da1(twoStepVerificationActivity, 2));
+            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
             twoStepVerificationActivity.showDialog(u1Var);
             TextView textView = (TextView) u1Var.d(-1);
             if (textView != null) {
@@ -269,12 +269,12 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
     public static /* synthetic */ void i0(TwoStepVerificationActivity twoStepVerificationActivity, TL_account.updatePasswordSettings updatepasswordsettings) {
         if (updatepasswordsettings.password == null) {
             if (twoStepVerificationActivity.I.current_algo == null) {
-                ConnectionsManager.getInstance(twoStepVerificationActivity.currentAccount).sendRequest(new TL_account.getPassword(), new da1(twoStepVerificationActivity, 3), 8);
+                ConnectionsManager.getInstance(twoStepVerificationActivity.currentAccount).sendRequest(new TL_account.getPassword(), new ea1(twoStepVerificationActivity, 3), 8);
                 return;
             }
             updatepasswordsettings.password = twoStepVerificationActivity.q0();
         }
-        ConnectionsManager.getInstance(twoStepVerificationActivity.currentAccount).sendRequest(updatepasswordsettings, new da1(twoStepVerificationActivity, 4), 10);
+        ConnectionsManager.getInstance(twoStepVerificationActivity.currentAccount).sendRequest(updatepasswordsettings, new ea1(twoStepVerificationActivity, 4), 10);
     }
 
     public static void j0(TwoStepVerificationActivity twoStepVerificationActivity, byte[] bArr, TLObject tLObject, byte[] bArr2) {
@@ -330,20 +330,20 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
         twoStepVerificationActivity.t0();
         if (tL_error != null) {
             if (!tL_error.text.startsWith("FLOOD_WAIT")) {
-                twoStepVerificationActivity.B0(org.telegram.messenger.hd.M0(R.string.AppName, null), tL_error.text);
+                twoStepVerificationActivity.B0(org.telegram.messenger.id.M0(R.string.AppName, null), tL_error.text);
                 return;
             } else {
                 int intValue = Utilities.z(tL_error.text).intValue();
-                twoStepVerificationActivity.B0(org.telegram.messenger.hd.M0(R.string.AppName, null), org.telegram.messenger.hd.a0("FloodWaitTime", null, 2131750687, intValue < 60 ? org.telegram.messenger.hd.G(intValue, "Seconds", new Object[0]) : org.telegram.messenger.hd.G(intValue / 60, "Minutes", new Object[0])));
+                twoStepVerificationActivity.B0(org.telegram.messenger.id.M0(R.string.AppName, null), org.telegram.messenger.id.a0("FloodWaitTime", null, 2131750687, intValue < 60 ? org.telegram.messenger.id.G(intValue, "Seconds", new Object[0]) : org.telegram.messenger.id.G(intValue / 60, "Minutes", new Object[0])));
                 return;
             }
         }
         TL_account.Password password = twoStepVerificationActivity.I;
         password.email_unconfirmed_pattern = ((TLRPC.TL_auth_passwordRecovery) tLObject).email_pattern;
-        ja1 ja1Var = new ja1(twoStepVerificationActivity, twoStepVerificationActivity.currentAccount, password);
-        ja1Var.J.add(twoStepVerificationActivity);
-        ja1Var.I0(twoStepVerificationActivity.K, twoStepVerificationActivity.L, twoStepVerificationActivity.M, false);
-        twoStepVerificationActivity.presentFragment(ja1Var);
+        ka1 ka1Var = new ka1(twoStepVerificationActivity, twoStepVerificationActivity.currentAccount, password);
+        ka1Var.J.add(twoStepVerificationActivity);
+        ka1Var.I0(twoStepVerificationActivity.K, twoStepVerificationActivity.L, twoStepVerificationActivity.M, false);
+        twoStepVerificationActivity.presentFragment(ka1Var);
     }
 
     public static boolean n0(TL_account.Password password, boolean z9) {
@@ -384,7 +384,7 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747830, null), null);
+        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747832, null), null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = str;
         u1Var.T = str2;
@@ -393,12 +393,12 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
 
     public final void C0() {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-        String M0 = org.telegram.messenger.hd.M0(2131742949, null);
+        String M0 = org.telegram.messenger.id.M0(2131742951, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
-        u1Var.T = org.telegram.messenger.hd.G(this.X, "ForceSetPasswordAlertMessageShort", new Object[0]);
-        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131743934, null), null);
-        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131750595, null), new ca1(this, 0));
+        u1Var.T = org.telegram.messenger.id.G(this.X, "ForceSetPasswordAlertMessageShort", new Object[0]);
+        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131743936, null), null);
+        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131750595, null), new da1(this, 0));
         org.telegram.ui.ActionBar.r6.V((TextView) alertDialog$Builder.p().d(-2), org.telegram.ui.ActionBar.k6.q7, null);
     }
 
@@ -413,13 +413,13 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
             return;
         }
         int i7 = this.I.pending_reset_date;
-        ea1 ea1Var = this.c0;
+        fa1 fa1Var = this.c0;
         if (i7 != 0) {
             int currentTime = getConnectionsManager().getCurrentTime();
             int i10 = this.I.pending_reset_date;
             if (currentTime <= i10) {
                 int max = Math.max(1, i10 - getConnectionsManager().getCurrentTime());
-                this.h.setText(org.telegram.messenger.hd.a0("RestorePasswordResetIn", null, 2131746070, max > 86400 ? org.telegram.messenger.hd.G(max / 86400, "Days", new Object[0]) : max >= 3600 ? org.telegram.messenger.hd.G(max / 3600, "Hours", new Object[0]) : String.format(Locale.US, "%02d:%02d", Integer.valueOf(max / 60), Integer.valueOf(max % 60))));
+                this.h.setText(org.telegram.messenger.id.a0("RestorePasswordResetIn", null, 2131746072, max > 86400 ? org.telegram.messenger.id.G(max / 86400, "Days", new Object[0]) : max >= 3600 ? org.telegram.messenger.id.G(max / 3600, "Hours", new Object[0]) : String.format(Locale.US, "%02d:%02d", Integer.valueOf(max / 60), Integer.valueOf(max % 60))));
                 org.telegram.ui.ActionBar.r6.V(this.h, org.telegram.ui.ActionBar.k6.D6, null);
                 if (this.n.getVisibility() != 8) {
                     this.n.setVisibility(8);
@@ -428,12 +428,12 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
                     this.h.setVisibility(0);
                 }
                 this.r.setVisibility(0);
-                org.telegram.messenger.g0.r(ea1Var);
-                org.telegram.messenger.g0.i3(ea1Var, 1000L);
+                org.telegram.messenger.g0.r(fa1Var);
+                org.telegram.messenger.g0.i3(fa1Var, 1000L);
                 if (this.I == null && this.n != null && this.h.getVisibility() == 0) {
                     return;
                 }
-                org.telegram.messenger.g0.r(ea1Var);
+                org.telegram.messenger.g0.r(fa1Var);
                 textView = this.r;
                 if (textView == null) {
                     textView.setVisibility(8);
@@ -446,19 +446,19 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
             this.h.setVisibility(8);
         }
         if (this.I.pending_reset_date == 0) {
-            this.n.l(org.telegram.messenger.hd.M0(2131750592, null), false);
+            this.n.l(org.telegram.messenger.id.M0(2131750592, null), false);
             this.r.setVisibility(8);
             this.n.setVisibility(0);
         } else {
-            this.n.l(org.telegram.messenger.hd.M0(2131746094, null), false);
+            this.n.l(org.telegram.messenger.id.M0(2131746096, null), false);
             this.r.setVisibility(0);
             this.n.setVisibility(0);
         }
         org.telegram.ui.ActionBar.r6.Y(this.n, org.telegram.ui.ActionBar.k6.q6, null);
-        org.telegram.messenger.g0.r(ea1Var);
+        org.telegram.messenger.g0.r(fa1Var);
         if (this.I == null) {
         }
-        org.telegram.messenger.g0.r(ea1Var);
+        org.telegram.messenger.g0.r(fa1Var);
         textView = this.r;
         if (textView == null) {
         }
@@ -561,7 +561,7 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
                 } else {
                     this.s.setHint(this.I.hint);
                 }
-                org.telegram.messenger.g0.i3(new ea1(this, 0), 200L);
+                org.telegram.messenger.g0.i3(new fa1(this, 0), 200L);
             }
         }
     }
@@ -649,7 +649,7 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
                 linearLayout.addView(this.e, c8.ha.t(-2, -2, 1, 42, 8, 42, 0));
                 org.telegram.ui.Components.lb0 lb0Var = new org.telegram.ui.Components.lb0(context, null);
                 this.w = lb0Var;
-                lb0Var.setText(org.telegram.messenger.hd.M0(2131751117, null));
+                lb0Var.setText(org.telegram.messenger.id.M0(2131751117, null));
                 this.w.b(1.0f, 1.0f, false);
                 linearLayout.addView(this.w, c8.ha.t(-1, -2, 1, 24, 24, 24, 0));
                 EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
@@ -666,7 +666,7 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
                 int i16 = org.telegram.ui.ActionBar.k6.l6;
                 org.telegram.ui.ActionBar.r6.w(editTextBoldCursor2, i16, null);
                 this.s.setCursorWidth(1.5f);
-                this.s.setContentDescription(org.telegram.messenger.hd.M0(2131751117, null));
+                this.s.setContentDescription(org.telegram.messenger.id.M0(2131751117, null));
                 int L = org.telegram.messenger.g0.L(16.0f);
                 this.s.setPadding(L, L, L, L);
                 this.w.addView(this.s, c8.ha.c(-2.0f, -1));
@@ -679,13 +679,13 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
                 this.f = textView2;
                 org.telegram.ui.ActionBar.r6.V(textView2, i15, null);
                 this.f.setTextSize(1, 14.0f);
-                this.f.setGravity((!org.telegram.messenger.hd.a0 ? 5 : 3) | 48);
-                this.f.setText(org.telegram.messenger.hd.M0(2131742819, null));
-                TextView f11 = org.telegram.messenger.camera.q.f(linearLayout, this.f, c8.ha.t(-2, -2, (!org.telegram.messenger.hd.a0 ? 5 : 3) | 48, 40, 30, 40, 0), context);
+                this.f.setGravity((!org.telegram.messenger.id.a0 ? 5 : 3) | 48);
+                this.f.setText(org.telegram.messenger.id.M0(2131742821, null));
+                TextView f11 = org.telegram.messenger.camera.q.f(linearLayout, this.f, c8.ha.t(-2, -2, (!org.telegram.messenger.id.a0 ? 5 : 3) | 48, 40, 30, 40, 0), context);
                 this.h = f11;
                 org.telegram.ui.ActionBar.r6.V(f11, i15, null);
                 this.h.setTextSize(1, 12.0f);
-                this.h.setGravity((!org.telegram.messenger.hd.a0 ? 5 : 3) | 48);
+                this.h.setGravity((!org.telegram.messenger.id.a0 ? 5 : 3) | 48);
                 linearLayout.addView(this.h, c8.ha.k(40.0f, 8.0f, 40.0f, 0.0f, -1, -2));
                 LinearLayout linearLayout2 = new LinearLayout(context);
                 linearLayout2.setOrientation(1);
@@ -698,7 +698,7 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
                 this.n.setGravity(19);
                 this.n.setPadding(org.telegram.messenger.g0.L(32.0f), 0, org.telegram.messenger.g0.L(32.0f), 0);
                 frameLayout.addView(this.n, c8.ha.d(-1, 56.0f, 80, 0.0f, 0.0f, 0.0f, 16.0f));
-                this.n.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ha1
+                this.n.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ia1
                     public final /* synthetic */ TwoStepVerificationActivity b;
 
                     {
@@ -726,11 +726,11 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
                 textView3.setTextSize(1, 15.0f);
                 this.r.setGravity(19);
                 this.r.setPadding(org.telegram.messenger.g0.L(32.0f), 0, org.telegram.messenger.g0.L(32.0f), 0);
-                this.r.setText(org.telegram.messenger.hd.M0(2131752571, null));
+                this.r.setText(org.telegram.messenger.id.M0(2131752571, null));
                 org.telegram.ui.ActionBar.r6.V(this.r, org.telegram.ui.ActionBar.k6.q6, null);
                 this.r.setVisibility(8);
                 frameLayout.addView(this.r, c8.ha.d(-1, 56.0f, 80, 0.0f, 0.0f, 0.0f, 16.0f));
-                this.r.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ha1
+                this.r.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ia1
                     public final /* synthetic */ TwoStepVerificationActivity b;
 
                     {
@@ -753,11 +753,11 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
                     }
                 });
                 h6.m.g(this.r);
-                org.telegram.ui.Components.p00 p00Var = new org.telegram.ui.Components.p00(context, this.resourceProvider, false);
-                this.E = p00Var;
-                h6.m.g(p00Var);
+                org.telegram.ui.Components.q00 q00Var = new org.telegram.ui.Components.q00(context, this.resourceProvider, false);
+                this.E = q00Var;
+                h6.m.g(q00Var);
                 final int i18 = 2;
-                this.E.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ha1
+                this.E.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ia1
                     public final /* synthetic */ TwoStepVerificationActivity b;
 
                     {
@@ -785,13 +785,13 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
                 this.F.setProgress(0.0f);
                 this.F.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.O9, false));
                 this.F.setDrawBackground(false);
-                this.E.setContentDescription(org.telegram.messenger.hd.M0(2131748249, null));
+                this.E.setContentDescription(org.telegram.messenger.id.M0(2131748251, null));
                 this.E.addView(this.F, c8.ha.e(56, 56, 17));
                 this.E.a(this.F);
-                frameLayout.addView(this.E, org.telegram.ui.Components.p00.b());
-                org.telegram.ui.Components.iy iyVar = new org.telegram.ui.Components.iy(context, null);
-                this.y = iyVar;
-                iyVar.b();
+                frameLayout.addView(this.E, org.telegram.ui.Components.q00.b());
+                org.telegram.ui.Components.jy jyVar = new org.telegram.ui.Components.jy(context, null);
+                this.y = jyVar;
+                jyVar.b();
                 frameLayout.addView(this.y, c8.ha.c(-1.0f, -1));
                 org.telegram.ui.Components.pj0 pj0Var = new org.telegram.ui.Components.pj0(context, null);
                 this.b = pj0Var;
@@ -801,13 +801,13 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
                 this.b.setVerticalScrollBarEnabled(false);
                 frameLayout.addView(this.b, c8.ha.c(-1.0f, -1));
                 org.telegram.ui.Components.pj0 pj0Var2 = this.b;
-                ka1 ka1Var = new ka1(this, context);
-                this.a = ka1Var;
-                pj0Var2.setAdapter(ka1Var);
+                la1 la1Var = new la1(this, context);
+                this.a = la1Var;
+                pj0Var2.setAdapter(la1Var);
                 this.b.setOnItemClickListener(new vx0(this, 11));
-                ia1 ia1Var = new ia1(context, null);
-                this.Y = ia1Var;
-                ia1Var.setSize(org.telegram.messenger.g0.L(20.0f));
+                ja1 ja1Var = new ja1(context, null);
+                this.Y = ja1Var;
+                ja1Var.setSize(org.telegram.messenger.g0.L(20.0f));
                 this.Y.setAlpha(0.0f);
                 this.Y.setScaleX(0.1f);
                 this.Y.setScaleY(0.1f);
@@ -817,25 +817,25 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
                 if (this.J || this.b0 != null) {
                     this.actionBar.setTitle(null);
                 } else {
-                    this.actionBar.setTitle(org.telegram.messenger.hd.M0(2131743932, null));
+                    this.actionBar.setTitle(org.telegram.messenger.id.M0(2131743934, null));
                 }
                 if (this.b0 == null) {
-                    this.d.setText(org.telegram.messenger.hd.M0(2131742806, null));
+                    this.d.setText(org.telegram.messenger.id.M0(2131742808, null));
                     int i19 = this.Z;
                     if (i19 == 1) {
-                        this.e.setText(org.telegram.messenger.hd.M0(2131747212, null));
+                        this.e.setText(org.telegram.messenger.id.M0(2131747214, null));
                     } else if (i19 == 2) {
-                        org.telegram.messenger.k5.r(null, null, 2131747215, new Object[]{this.a0}, this.e);
+                        org.telegram.messenger.k5.r(null, null, 2131747217, new Object[]{this.a0}, this.e);
                     } else if (i19 == 3) {
-                        org.telegram.messenger.k5.r(null, null, 2131747214, new Object[]{this.a0}, this.e);
+                        org.telegram.messenger.k5.r(null, null, 2131747216, new Object[]{this.a0}, this.e);
                     } else {
-                        this.e.setText(org.telegram.messenger.hd.M0(2131747213, null));
+                        this.e.setText(org.telegram.messenger.id.M0(2131747215, null));
                     }
                     this.e.setVisibility(0);
                 } else {
-                    this.d.setText(org.telegram.messenger.hd.M0(2131742806, null));
+                    this.d.setText(org.telegram.messenger.id.M0(2131742808, null));
                     this.e.setVisibility(0);
-                    this.e.setText(org.telegram.messenger.hd.M0(2131748723, null));
+                    this.e.setText(org.telegram.messenger.id.M0(2131748725, null));
                 }
                 if (this.J) {
                     org.telegram.ui.ActionBar.r6.i(i13, this.fragmentView, null);
@@ -869,7 +869,7 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
         linearLayout.addView(this.e, c8.ha.t(-2, -2, 1, 42, 8, 42, 0));
         org.telegram.ui.Components.lb0 lb0Var2 = new org.telegram.ui.Components.lb0(context, null);
         this.w = lb0Var2;
-        lb0Var2.setText(org.telegram.messenger.hd.M0(2131751117, null));
+        lb0Var2.setText(org.telegram.messenger.id.M0(2131751117, null));
         this.w.b(1.0f, 1.0f, false);
         linearLayout.addView(this.w, c8.ha.t(-1, -2, 1, 24, 24, 24, 0));
         EditTextBoldCursor editTextBoldCursor3 = new EditTextBoldCursor(context);
@@ -886,7 +886,7 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
         int i162 = org.telegram.ui.ActionBar.k6.l6;
         org.telegram.ui.ActionBar.r6.w(editTextBoldCursor22, i162, null);
         this.s.setCursorWidth(1.5f);
-        this.s.setContentDescription(org.telegram.messenger.hd.M0(2131751117, null));
+        this.s.setContentDescription(org.telegram.messenger.id.M0(2131751117, null));
         int L2 = org.telegram.messenger.g0.L(16.0f);
         this.s.setPadding(L2, L2, L2, L2);
         this.w.addView(this.s, c8.ha.c(-2.0f, -1));
@@ -899,13 +899,13 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
         this.f = textView22;
         org.telegram.ui.ActionBar.r6.V(textView22, i152, null);
         this.f.setTextSize(1, 14.0f);
-        this.f.setGravity((!org.telegram.messenger.hd.a0 ? 5 : 3) | 48);
-        this.f.setText(org.telegram.messenger.hd.M0(2131742819, null));
-        TextView f112 = org.telegram.messenger.camera.q.f(linearLayout, this.f, c8.ha.t(-2, -2, (!org.telegram.messenger.hd.a0 ? 5 : 3) | 48, 40, 30, 40, 0), context);
+        this.f.setGravity((!org.telegram.messenger.id.a0 ? 5 : 3) | 48);
+        this.f.setText(org.telegram.messenger.id.M0(2131742821, null));
+        TextView f112 = org.telegram.messenger.camera.q.f(linearLayout, this.f, c8.ha.t(-2, -2, (!org.telegram.messenger.id.a0 ? 5 : 3) | 48, 40, 30, 40, 0), context);
         this.h = f112;
         org.telegram.ui.ActionBar.r6.V(f112, i152, null);
         this.h.setTextSize(1, 12.0f);
-        this.h.setGravity((!org.telegram.messenger.hd.a0 ? 5 : 3) | 48);
+        this.h.setGravity((!org.telegram.messenger.id.a0 ? 5 : 3) | 48);
         linearLayout.addView(this.h, c8.ha.k(40.0f, 8.0f, 40.0f, 0.0f, -1, -2));
         LinearLayout linearLayout22 = new LinearLayout(context);
         linearLayout22.setOrientation(1);
@@ -918,7 +918,7 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
         this.n.setGravity(19);
         this.n.setPadding(org.telegram.messenger.g0.L(32.0f), 0, org.telegram.messenger.g0.L(32.0f), 0);
         frameLayout.addView(this.n, c8.ha.d(-1, 56.0f, 80, 0.0f, 0.0f, 0.0f, 16.0f));
-        this.n.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ha1
+        this.n.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ia1
             public final /* synthetic */ TwoStepVerificationActivity b;
 
             {
@@ -946,11 +946,11 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
         textView32.setTextSize(1, 15.0f);
         this.r.setGravity(19);
         this.r.setPadding(org.telegram.messenger.g0.L(32.0f), 0, org.telegram.messenger.g0.L(32.0f), 0);
-        this.r.setText(org.telegram.messenger.hd.M0(2131752571, null));
+        this.r.setText(org.telegram.messenger.id.M0(2131752571, null));
         org.telegram.ui.ActionBar.r6.V(this.r, org.telegram.ui.ActionBar.k6.q6, null);
         this.r.setVisibility(8);
         frameLayout.addView(this.r, c8.ha.d(-1, 56.0f, 80, 0.0f, 0.0f, 0.0f, 16.0f));
-        this.r.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ha1
+        this.r.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ia1
             public final /* synthetic */ TwoStepVerificationActivity b;
 
             {
@@ -973,11 +973,11 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
             }
         });
         h6.m.g(this.r);
-        org.telegram.ui.Components.p00 p00Var2 = new org.telegram.ui.Components.p00(context, this.resourceProvider, false);
-        this.E = p00Var2;
-        h6.m.g(p00Var2);
+        org.telegram.ui.Components.q00 q00Var2 = new org.telegram.ui.Components.q00(context, this.resourceProvider, false);
+        this.E = q00Var2;
+        h6.m.g(q00Var2);
         final int i182 = 2;
-        this.E.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ha1
+        this.E.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ia1
             public final /* synthetic */ TwoStepVerificationActivity b;
 
             {
@@ -1005,13 +1005,13 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
         this.F.setProgress(0.0f);
         this.F.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.O9, false));
         this.F.setDrawBackground(false);
-        this.E.setContentDescription(org.telegram.messenger.hd.M0(2131748249, null));
+        this.E.setContentDescription(org.telegram.messenger.id.M0(2131748251, null));
         this.E.addView(this.F, c8.ha.e(56, 56, 17));
         this.E.a(this.F);
-        frameLayout.addView(this.E, org.telegram.ui.Components.p00.b());
-        org.telegram.ui.Components.iy iyVar2 = new org.telegram.ui.Components.iy(context, null);
-        this.y = iyVar2;
-        iyVar2.b();
+        frameLayout.addView(this.E, org.telegram.ui.Components.q00.b());
+        org.telegram.ui.Components.jy jyVar2 = new org.telegram.ui.Components.jy(context, null);
+        this.y = jyVar2;
+        jyVar2.b();
         frameLayout.addView(this.y, c8.ha.c(-1.0f, -1));
         org.telegram.ui.Components.pj0 pj0Var3 = new org.telegram.ui.Components.pj0(context, null);
         this.b = pj0Var3;
@@ -1021,13 +1021,13 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
         this.b.setVerticalScrollBarEnabled(false);
         frameLayout.addView(this.b, c8.ha.c(-1.0f, -1));
         org.telegram.ui.Components.pj0 pj0Var22 = this.b;
-        ka1 ka1Var2 = new ka1(this, context);
-        this.a = ka1Var2;
-        pj0Var22.setAdapter(ka1Var2);
+        la1 la1Var2 = new la1(this, context);
+        this.a = la1Var2;
+        pj0Var22.setAdapter(la1Var2);
         this.b.setOnItemClickListener(new vx0(this, 11));
-        ia1 ia1Var2 = new ia1(context, null);
-        this.Y = ia1Var2;
-        ia1Var2.setSize(org.telegram.messenger.g0.L(20.0f));
+        ja1 ja1Var2 = new ja1(context, null);
+        this.Y = ja1Var2;
+        ja1Var2.setSize(org.telegram.messenger.g0.L(20.0f));
         this.Y.setAlpha(0.0f);
         this.Y.setScaleX(0.1f);
         this.Y.setScaleY(0.1f);
@@ -1088,12 +1088,12 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131752575, null), new ca1(this, 1));
-        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752576, null), null);
-        String M0 = org.telegram.messenger.hd.M0(2131752571, null);
+        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131752575, null), new da1(this, 1));
+        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752576, null), null);
+        String M0 = org.telegram.messenger.id.M0(2131752571, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
-        u1Var.T = org.telegram.messenger.hd.M0(2131752577, null);
+        u1Var.T = org.telegram.messenger.id.M0(2131752577, null);
         showDialog(u1Var);
     }
 
@@ -1162,17 +1162,17 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
     public final void onThemeColorsChanged() {
         try {
             super.onThemeColorsChanged();
-            org.telegram.ui.Components.iy iyVar = this.y;
-            if (iyVar != null) {
-                iyVar.setProgressBarColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.h6, false));
+            org.telegram.ui.Components.jy jyVar = this.y;
+            if (jyVar != null) {
+                jyVar.setProgressBarColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.h6, false));
             }
             org.telegram.ui.Components.t11 t11Var = this.F;
             if (t11Var != null) {
                 t11Var.setColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.O9, false));
             }
-            ia1 ia1Var = this.Y;
-            if (ia1Var != null) {
-                ia1Var.setProgressColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.l6, false));
+            ja1 ja1Var = this.Y;
+            if (ja1Var != null) {
+                ja1Var.setProgressColor(org.telegram.ui.ActionBar.k6.x0(null, org.telegram.ui.ActionBar.k6.l6, false));
             }
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
@@ -1224,9 +1224,9 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
     public final void s0(Runnable runnable, boolean z9, boolean z10) {
         if (!z10) {
             this.G = true;
-            ka1 ka1Var = this.a;
-            if (ka1Var != null) {
-                ka1Var.f();
+            la1 la1Var = this.a;
+            if (la1Var != null) {
+                la1Var.f();
             }
         }
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.getPassword(), new di.f6(this, z10, z9, runnable), 10);
@@ -1235,7 +1235,7 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
     public final void t0() {
         if (!this.J) {
             AnimatorSet animatorSet = new AnimatorSet();
-            animatorSet.playTogether(ObjectAnimator.ofFloat(this.Y, (Property<ia1, Float>) View.ALPHA, 0.0f), ObjectAnimator.ofFloat(this.Y, (Property<ia1, Float>) View.SCALE_X, 0.1f), ObjectAnimator.ofFloat(this.Y, (Property<ia1, Float>) View.SCALE_Y, 0.1f));
+            animatorSet.playTogether(ObjectAnimator.ofFloat(this.Y, (Property<ja1, Float>) View.ALPHA, 0.0f), ObjectAnimator.ofFloat(this.Y, (Property<ja1, Float>) View.SCALE_X, 0.1f), ObjectAnimator.ofFloat(this.Y, (Property<ja1, Float>) View.SCALE_Y, 0.1f));
             animatorSet.setInterpolator(org.telegram.ui.Components.xq.f);
             animatorSet.start();
             return;
@@ -1258,7 +1258,7 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
         }
         if (!this.J) {
             AnimatorSet animatorSet = new AnimatorSet();
-            animatorSet.playTogether(ObjectAnimator.ofFloat(this.Y, (Property<ia1, Float>) View.ALPHA, 1.0f), ObjectAnimator.ofFloat(this.Y, (Property<ia1, Float>) View.SCALE_X, 1.0f), ObjectAnimator.ofFloat(this.Y, (Property<ia1, Float>) View.SCALE_Y, 1.0f));
+            animatorSet.playTogether(ObjectAnimator.ofFloat(this.Y, (Property<ja1, Float>) View.ALPHA, 1.0f), ObjectAnimator.ofFloat(this.Y, (Property<ja1, Float>) View.SCALE_X, 1.0f), ObjectAnimator.ofFloat(this.Y, (Property<ja1, Float>) View.SCALE_Y, 1.0f));
             animatorSet.setInterpolator(org.telegram.ui.Components.xq.f);
             animatorSet.start();
             return;
@@ -1285,14 +1285,14 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
             editTextBoldCursor.setText("");
         }
         lb0Var.a(1.0f);
-        org.telegram.messenger.g0.G3(5.0f, lb0Var, new ea1(this, 1));
+        org.telegram.messenger.g0.G3(5.0f, lb0Var, new fa1(this, 1));
     }
 
     public final void w0() {
         TL_account.Password password = this.I;
         if (password.pending_reset_date == 0 && password.has_recovery) {
             u0(true);
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TLRPC.TL_auth_requestPasswordRecovery(), new da1(this, 1), 10);
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TLRPC.TL_auth_requestPasswordRecovery(), new ea1(this, 1), 10);
             return;
         }
         if (getParentActivity() == null) {
@@ -1300,12 +1300,12 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
         }
         if (this.I.pending_reset_date == 0) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131746119, null), new ca1(this, 4));
-            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
-            String M0 = org.telegram.messenger.hd.M0(2131746094, null);
+            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131746121, null), new da1(this, 4));
+            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
+            String M0 = org.telegram.messenger.id.M0(2131746096, null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.R = M0;
-            u1Var.T = org.telegram.messenger.hd.M0(2131746073, null);
+            u1Var.T = org.telegram.messenger.id.M0(2131746075, null);
             showDialog(u1Var);
             return;
         }
@@ -1314,12 +1314,12 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
             return;
         }
         AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(getParentActivity());
-        alertDialog$Builder2.k(org.telegram.messenger.hd.M0(2131746119, null), new ca1(this, 3));
-        alertDialog$Builder2.h(org.telegram.messenger.hd.M0(2131752589, null), null);
-        String M02 = org.telegram.messenger.hd.M0(2131746094, null);
+        alertDialog$Builder2.k(org.telegram.messenger.id.M0(2131746121, null), new da1(this, 3));
+        alertDialog$Builder2.h(org.telegram.messenger.id.M0(2131752589, null), null);
+        String M02 = org.telegram.messenger.id.M0(2131746096, null);
         org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder2.a;
         u1Var2.R = M02;
-        u1Var2.T = org.telegram.messenger.hd.M0(2131746067, null);
+        u1Var2.T = org.telegram.messenger.id.M0(2131746069, null);
         showDialog(u1Var2);
         TextView textView = (TextView) u1Var2.d(-1);
         if (textView != null) {
@@ -1353,6 +1353,6 @@ public class TwoStepVerificationActivity extends org.telegram.ui.ActionBar.f2 im
 
     public final void z0() {
         u0(true);
-        getConnectionsManager().sendRequest(new TL_account.resetPassword(), new da1(this, 0));
+        getConnectionsManager().sendRequest(new TL_account.resetPassword(), new ea1(this, 0));
     }
 }

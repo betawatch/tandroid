@@ -3,25 +3,25 @@ package hi;
 import android.text.SpannableStringBuilder;
 import java.util.Arrays;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.v91;
+import org.telegram.ui.w91;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o1 implements c20 {
-    public final /* synthetic */ v91 a;
+    public final /* synthetic */ w91 a;
     public final /* synthetic */ ww b;
     public final /* synthetic */ long c;
     public final /* synthetic */ int d;
 
-    public /* synthetic */ o1(v91 v91Var, ww wwVar, long j3, int i7) {
-        this.a = v91Var;
+    public /* synthetic */ o1(w91 w91Var, ww wwVar, long j3, int i7) {
+        this.a = w91Var;
         this.b = wwVar;
         this.c = j3;
         this.d = i7;
@@ -33,10 +33,10 @@ public final /* synthetic */ class o1 implements c20 {
         String str;
         TLRPC.Chat chat;
         Boolean bool = (Boolean) obj;
-        v91 v91Var = this.a;
+        w91 w91Var = this.a;
         ww wwVar = this.b;
-        if (v91Var != null) {
-            v91Var.finishFragment();
+        if (w91Var != null) {
+            w91Var.finishFragment();
             wwVar.removeSelfFromStack();
         } else {
             wwVar.finishFragment();
@@ -62,7 +62,7 @@ public final /* synthetic */ class o1 implements c20 {
             }
         }
         hc a02 = hc.a0(T);
-        SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(hd.a0(null, null, bool.booleanValue() ? 2131752988 : 2131752987, str));
+        SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(id.a0(null, null, bool.booleanValue() ? 2131752988 : 2131752987, str));
         a02.getClass();
         a02.V(Arrays.asList(chat), X2, null, null).k(false);
     }

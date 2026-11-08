@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.v10;
@@ -20,12 +20,12 @@ import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.mo0;
 import org.telegram.ui.WallpapersListActivity;
 import org.telegram.ui.lk0;
-import org.telegram.ui.mc1;
-import org.telegram.ui.rc1;
-import org.telegram.ui.xc1;
+import org.telegram.ui.nc1;
+import org.telegram.ui.sc1;
 import org.telegram.ui.yc1;
+import org.telegram.ui.zc1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -48,12 +48,12 @@ public final /* synthetic */ class n implements Runnable {
         Object obj2 = this.b;
         switch (i11) {
             case 0:
-                qp.s1(((n0) obj2).a).O3((TLRPC.Updates) obj, false);
+                qp.s1(((m0) obj2).a).O3((TLRPC.Updates) obj, false);
                 break;
             case 1:
-                n0 n0Var = (n0) obj2;
-                n0.H("enable backup: ready! getting secret phrase...");
-                n0Var.z(new bi.p5(23, n0Var, (g8) obj), false, true);
+                m0 m0Var = (m0) obj2;
+                m0.H("enable backup: ready! getting secret phrase...");
+                m0Var.z(new bi.p5(23, m0Var, (f8) obj), false, true);
                 break;
             case 2:
                 boolean[] zArr = (boolean[]) obj2;
@@ -65,16 +65,16 @@ public final /* synthetic */ class n implements Runnable {
                 }
                 break;
             case 3:
-                n0 n0Var2 = (n0) obj2;
+                m0 m0Var2 = (m0) obj2;
                 j jVar = (j) obj;
-                n0.H("emulate disable backup: ready");
-                if (n0Var2.v() > 0) {
-                    WalletEngine2 walletEngine2 = n0Var2.b;
+                m0.H("emulate disable backup: ready");
+                if (m0Var2.v() > 0) {
+                    WalletEngine2 walletEngine2 = m0Var2.b;
                     if (walletEngine2 != null) {
-                        walletEngine2.emulateRotateKey(new d(n0Var2, jVar));
+                        walletEngine2.emulateRotateKey(new d(m0Var2, jVar));
                         break;
                     } else {
-                        n0.j("emulate disable backup: no engine!");
+                        m0.j("emulate disable backup: no engine!");
                         jVar.a(null, "NULL_ENGINE");
                         break;
                     }
@@ -87,14 +87,14 @@ public final /* synthetic */ class n implements Runnable {
                 ((ai.e) obj2).a(null, exc.getMessage() == null ? "NULL_ERROR" : exc.getMessage());
                 break;
             case 5:
-                qp.s1(((f2) obj2).a).O3((TLRPC.Updates) obj, false);
+                qp.s1(((e2) obj2).a).O3((TLRPC.Updates) obj, false);
                 break;
             case 6:
-                u2 u2Var = (u2) obj2;
-                z2 z2Var = (z2) obj;
-                if (!u2Var.e) {
-                    z2Var.c0 = true;
-                    Runnable runnable = u2Var.g;
+                t2 t2Var = (t2) obj2;
+                y2 y2Var = (y2) obj;
+                if (!t2Var.e) {
+                    y2Var.c0 = true;
+                    Runnable runnable = t2Var.g;
                     if (runnable != null) {
                         runnable.run();
                         break;
@@ -103,14 +103,14 @@ public final /* synthetic */ class n implements Runnable {
                 break;
             case 7:
                 org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) obj2;
-                f2Var.presentFragment(new n9(f2Var.getCurrentAccount(), ((TL_wallet.card) obj).address));
+                f2Var.presentFragment(new m9(f2Var.getCurrentAccount(), ((TL_wallet.card) obj).address));
                 break;
             case 8:
                 TextView[] textViewArr = (TextView[]) obj2;
                 SpannableString[] spannableStringArr = (SpannableString[]) obj;
                 if (textViewArr[0] != null) {
                     if (spannableStringArr[0] == null) {
-                        SpannableString spannableString = new SpannableString(hd.M0(2131748778, null));
+                        SpannableString spannableString = new SpannableString(id.M0(2131748780, null));
                         spannableStringArr[0] = spannableString;
                         spannableString.setSpan(new b80(org.telegram.messenger.g0.L(150.0f), textViewArr[0]), 0, spannableStringArr[0].length(), 33);
                     }
@@ -126,15 +126,15 @@ public final /* synthetic */ class n implements Runnable {
                 ((di.r) obj2).a(((TL_wallet.walletTransaction[]) obj)[0]);
                 break;
             case 11:
-                ((y5) obj2).P0.remove((g7) obj);
+                ((x5) obj2).P0.remove((f7) obj);
                 break;
             case 12:
-                a3[] a3VarArr = (a3[]) obj2;
-                a3VarArr[0].setOnDismissListener(new m2((TLRPC.User) obj, i12));
-                a3VarArr[0].dismiss();
+                z2[] z2VarArr = (z2[]) obj2;
+                z2VarArr[0].setOnDismissListener(new l2((TLRPC.User) obj, i12));
+                z2VarArr[0].dismiss();
                 break;
             case 13:
-                new hc(((a3[]) obj2)[0].E, (org.telegram.ui.ActionBar.f6) obj).Q(R.raw.copy, 36, hd.M0(2131743202, null)).k(false);
+                new hc(((z2[]) obj2)[0].E, (org.telegram.ui.ActionBar.f6) obj).Q(R.raw.copy, 36, id.M0(2131743204, null)).k(false);
                 break;
             case 14:
                 super/*android.widget.TextView*/.onDraw((Canvas) obj);
@@ -146,44 +146,44 @@ public final /* synthetic */ class n implements Runnable {
                 super/*org.telegram.ui.Components.j6*/.onDraw((Canvas) obj);
                 break;
             case 17:
-                ((ViewGroup) obj).removeView(((o6) obj2).h);
+                ((ViewGroup) obj).removeView(((n6) obj2).h);
                 break;
             case 18:
                 ((c20) obj2).a((TL_wallet.walletTransaction) obj);
                 break;
             case 19:
-                c8 c8Var = (c8) obj2;
+                b8 b8Var = (b8) obj2;
                 TLRPC.UserFull userFull = (TLRPC.UserFull) obj;
-                if (!c8Var.a1 && userFull != null) {
+                if (!b8Var.a1 && userFull != null) {
                     TL_wallet.card cardVar = userFull.wallet_card;
                     if (cardVar == null) {
                         cardVar = new TL_wallet.card();
                     }
-                    c8Var.d(cardVar);
+                    b8Var.d(cardVar);
                     break;
                 }
                 break;
             case 20:
-                f8 f8Var = (f8) obj2;
+                e8 e8Var = (e8) obj2;
                 org.telegram.ui.ActionBar.f2 f2Var2 = (org.telegram.ui.ActionBar.f2) obj;
-                if ((f2Var2 instanceof y5) && hc.a(f2Var2)) {
-                    hc.a0(f2Var2).I(R.raw.contact_check, hd.M0(2131743090, null), hd.M0(2131743089, null)).j();
+                if ((f2Var2 instanceof x5) && hc.a(f2Var2)) {
+                    hc.a0(f2Var2).I(R.raw.contact_check, id.M0(2131743092, null), id.M0(2131743091, null)).j();
                 }
-                f8Var.finishFragment();
+                e8Var.finishFragment();
                 break;
             case 21:
-                ((r0) obj).B();
-                ((o8) obj2).a.f3.O(true);
+                ((q0) obj).B();
+                ((n8) obj2).a.f3.O(true);
                 break;
             case 22:
-                o8 o8Var = (o8) obj;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, o8Var.getParentActivity(), o8Var.getResourceProvider());
-                String M0 = hd.M0(2131743132, null);
+                n8 n8Var = (n8) obj;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, n8Var.getParentActivity(), n8Var.getResourceProvider());
+                String M0 = id.M0(2131743134, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
-                u1Var.T = hd.M0(2131743134, null);
-                alertDialog$Builder.h(hd.M0(2131752589, null), null);
-                alertDialog$Builder.k(hd.M0(2131743137, null), new lk0(27, o8Var, (n0) obj2));
+                u1Var.T = id.M0(2131743136, null);
+                alertDialog$Builder.h(id.M0(2131752589, null), null);
+                alertDialog$Builder.k(id.M0(2131743139, null), new lk0(27, n8Var, (m0) obj2));
                 alertDialog$Builder.d(-1);
                 alertDialog$Builder.p();
                 break;
@@ -192,48 +192,48 @@ public final /* synthetic */ class n implements Runnable {
                 ((Runnable) obj).run();
                 break;
             case 24:
-                ((ViewGroup) obj).removeView(((ba) obj2).h);
+                ((ViewGroup) obj).removeView(((aa) obj2).h);
                 break;
             case 25:
-                mc1 mc1Var = (mc1) obj2;
+                nc1 nc1Var = (nc1) obj2;
                 int[] iArr = (int[]) obj;
-                mc1Var.getClass();
+                nc1Var.getClass();
                 int i13 = iArr[0] - 1;
                 iArr[0] = i13;
                 if (i13 == 0) {
-                    mc1Var.a.G0(true);
+                    nc1Var.a.G0(true);
                     break;
                 }
                 break;
             case 26:
-                rc1 rc1Var = (rc1) obj2;
+                sc1 sc1Var = (sc1) obj2;
                 String str = (String) obj;
-                rc1Var.d.clear();
-                rc1Var.e.clear();
-                rc1Var.f = true;
-                rc1Var.F(str, "", true);
-                rc1Var.h = str;
-                rc1Var.f();
-                rc1Var.D = null;
+                sc1Var.d.clear();
+                sc1Var.e.clear();
+                sc1Var.f = true;
+                sc1Var.F(str, "", true);
+                sc1Var.h = str;
+                sc1Var.f();
+                sc1Var.D = null;
                 break;
             case 27:
-                rc1 rc1Var2 = (rc1) obj2;
+                sc1 sc1Var2 = (sc1) obj2;
                 TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) ((TLObject) obj);
-                WallpapersListActivity wallpapersListActivity = rc1Var2.E;
+                WallpapersListActivity wallpapersListActivity = sc1Var2.E;
                 i7 = ((org.telegram.ui.ActionBar.f2) wallpapersListActivity).currentAccount;
                 qp.s1(i7).Y3(tL_contacts_resolvedPeer.users, false);
                 i10 = ((org.telegram.ui.ActionBar.f2) wallpapersListActivity).currentAccount;
                 qp.s1(i10).S3(tL_contacts_resolvedPeer.chats, false);
                 wallpapersListActivity.getMessagesStorage().m1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
-                String str2 = rc1Var2.y;
-                rc1Var2.y = null;
-                rc1Var2.F(str2, "", false);
+                String str2 = sc1Var2.y;
+                sc1Var2.y = null;
+                sc1Var2.F(str2, "", false);
                 break;
             case 28:
                 String str3 = (String) obj;
-                yc1 yc1Var = ((xc1) obj2).a;
-                Activity parentActivity = yc1Var.getParentActivity();
-                ij ijVar = yc1Var.n;
+                zc1 zc1Var = ((yc1) obj2).a;
+                Activity parentActivity = zc1Var.getParentActivity();
+                ij ijVar = zc1Var.n;
                 if (parentActivity != null) {
                     if (org.telegram.messenger.r2.a) {
                         org.telegram.messenger.a8.b(str3);
@@ -244,7 +244,7 @@ public final /* synthetic */ class n implements Runnable {
                     } else if (str3.equals("share_score")) {
                         ijVar.k.with_my_score = true;
                     }
-                    yc1Var.showDialog(mo0.N0(yc1Var.getParentActivity(), ijVar, null, false, yc1Var.h));
+                    zc1Var.showDialog(mo0.N0(zc1Var.getParentActivity(), ijVar, null, false, zc1Var.h));
                     break;
                 }
                 break;
@@ -258,9 +258,9 @@ public final /* synthetic */ class n implements Runnable {
         }
     }
 
-    public /* synthetic */ n(o8 o8Var, n0 n0Var) {
+    public /* synthetic */ n(n8 n8Var, m0 m0Var) {
         this.a = 22;
-        this.c = o8Var;
-        this.b = n0Var;
+        this.c = n8Var;
+        this.b = m0Var;
     }
 }

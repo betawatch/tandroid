@@ -16,7 +16,7 @@ import java.util.LinkedHashMap;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class i5 extends Drawable {
     public static SparseArray r;
@@ -24,7 +24,7 @@ public class i5 extends Drawable {
     public static boolean t;
     public static boolean u;
     public static boolean v;
-    public static final org.telegram.messenger.pd w = new org.telegram.messenger.pd(17);
+    public static final org.telegram.messenger.rc w = new org.telegram.messenger.rc(19);
     public static HashMap x;
     public boolean a;
     public ArrayList b;
@@ -193,8 +193,8 @@ public class i5 extends Drawable {
     }
 
     public static void w() {
-        t = org.telegram.messenger.rc.e(16388);
-        u = org.telegram.messenger.rc.e(8200);
+        t = org.telegram.messenger.sc.e(16388);
+        u = org.telegram.messenger.sc.e(8200);
     }
 
     public final void a(View view) {
@@ -351,21 +351,21 @@ public class i5 extends Drawable {
                 }
                 String str3 = this.d + "_" + this.d;
                 if (i10 == 12) {
-                    str3 = rf.b.q(str3, "_d_nostream");
+                    str3 = rf.b.r(str3, "_d_nostream");
                 }
                 if (i10 != 17 && i10 != 15 && i10 != 14 && i10 != 8 && ((i10 != 1 || org.telegram.messenger.iz.o() < 2) && i10 != 12)) {
-                    str3 = rf.b.q(str3, "_pcache");
+                    str3 = rf.b.r(str3, "_pcache");
                 }
                 if (i10 != 17 && i10 != 0 && i10 != 26 && i10 != 1 && i10 != 14 && i10 != 15 && i10 != 19 && i10 != 20 && i10 != 21) {
-                    str3 = rf.b.q(str3, "_compress");
+                    str3 = rf.b.r(str3, "_compress");
                 }
                 if (i10 == 8) {
-                    str3 = rf.b.q(str3, "firstframe");
+                    str3 = rf.b.r(str3, "firstframe");
                 }
                 TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(this.e.thumbs, 90, false, null, false);
                 if ("video/webm".equals(this.e.mime_type)) {
                     b10 = org.telegram.messenger.hc.b(this.e);
-                    str3 = rf.b.q(str3, "_g");
+                    str3 = rf.b.r(str3, "_g");
                     d = org.telegram.messenger.t5.d(this.e.thumbs, org.telegram.ui.ActionBar.k6.m6, 0.2f, true);
                 } else {
                     if (!"application/x-tgsticker".equals(this.e.mime_type)) {
@@ -399,9 +399,9 @@ public class i5 extends Drawable {
                                             z2Var5.u0(null, null, c11, str5, c10, null, drawable, document3.size, null, document3, 1);
                                         } else if (org.telegram.messenger.ij.L2(this.e, true)) {
                                             di.z2 z2Var6 = this.k;
-                                            String q10 = rf.b.q(str4, "_firstframe");
+                                            String r10 = rf.b.r(str4, "_firstframe");
                                             TLRPC.Document document4 = this.e;
-                                            z2Var6.r0(hcVar, q10, c10, null, drawable, document4.size, null, document4, 1);
+                                            z2Var6.r0(hcVar, r10, c10, null, drawable, document4.size, null, document4, 1);
                                         } else {
                                             di.z2 z2Var7 = this.k;
                                             org.telegram.messenger.hc c12 = org.telegram.messenger.hc.c(w10, this.e);
@@ -675,9 +675,9 @@ public class i5 extends Drawable {
             if (this.a) {
                 return;
             }
-            org.telegram.messenger.pd pdVar = w;
-            org.telegram.messenger.g0.r(pdVar);
-            org.telegram.messenger.g0.i3(pdVar, 5000L);
+            org.telegram.messenger.rc rcVar = w;
+            org.telegram.messenger.g0.r(rcVar);
+            org.telegram.messenger.g0.i3(rcVar, 5000L);
         }
     }
 

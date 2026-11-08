@@ -8,7 +8,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.ez;
 import org.telegram.messenger.gz;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
@@ -17,7 +17,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.hc;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d3 implements c20 {
     public final /* synthetic */ int a = 0;
@@ -101,7 +101,7 @@ public final /* synthetic */ class d3 implements c20 {
                     }
                 }
                 if (l10.longValue() <= 0) {
-                    cc r10 = new hc(i4Var.L0, i4Var.k0).r(e10, hd.M0(2131746388, null), hd.M0(2131743553, null), new ab(e3Var, 19));
+                    cc r10 = new hc(i4Var.L0, i4Var.k0).r(e10, id.M0(2131746390, null), id.M0(2131743555, null), new ab(e3Var, 19));
                     r10.j = 5000;
                     r10.j();
                 }
@@ -124,19 +124,19 @@ public final /* synthetic */ class d3 implements c20 {
                         if (z9) {
                             i10 = R.raw.contact_check;
                         }
-                        hcVar2.Q(i10, 36, hd.M0(z9 ? 2131744583 : 2131744728, null)).j();
+                        hcVar2.Q(i10, 36, id.M0(z9 ? 2131744585 : 2131744730, null)).j();
                         break;
                     } else if (z9) {
-                        new hc(j3Var, f6Var).I(R.raw.contact_check, hd.M0(2131744585, null), hd.M0(2131744584, null)).j();
+                        new hc(j3Var, f6Var).I(R.raw.contact_check, id.M0(2131744587, null), id.M0(2131744586, null)).j();
                         break;
                     } else {
                         hcVar = new hc(j3Var, f6Var);
-                        i11 = 2131744455;
+                        i11 = 2131744457;
                     }
                 } else {
                     hcVar = new hc(j3Var, f6Var);
                     i10 = R.raw.error;
-                    i11 = 2131743880;
+                    i11 = 2131743882;
                 }
                 org.telegram.messenger.k5.o(null, i11, hcVar, i10, 36);
                 break;
@@ -144,9 +144,9 @@ public final /* synthetic */ class d3 implements c20 {
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj4;
                 int i13 = ChatActivityEnterView.s5;
                 ((org.telegram.ui.ActionBar.u1) obj3).dismiss();
-                zh.h1 h1Var = new zh.h1(chatActivityEnterView.getContext(), chatActivityEnterView.Q, ((TLRPC.User) obj2).id, wg.s.c(wg.s.b(1, (List) obj)), null);
-                h1Var.e1(z9);
-                h1Var.show();
+                zh.g1 g1Var = new zh.g1(chatActivityEnterView.getContext(), chatActivityEnterView.Q, ((TLRPC.User) obj2).id, wg.s.c(wg.s.b(1, (List) obj)), null);
+                g1Var.e1(z9);
+                g1Var.show();
                 break;
         }
     }

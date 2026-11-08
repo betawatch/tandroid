@@ -11,7 +11,7 @@ import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class da0 implements q0.a {
     public final /* synthetic */ int a;
@@ -137,13 +137,13 @@ public final /* synthetic */ class da0 implements q0.a {
                     org.telegram.messenger.fa faVar2 = pa0Var.E;
                     x90 x90Var = new x90(pa0Var, 6);
                     wf.b bVar = faVar2.a;
-                    org.telegram.messenger.p1 p1Var = new org.telegram.messenger.p1(x90Var, 6);
+                    org.telegram.messenger.j1 j1Var = new org.telegram.messenger.j1(x90Var, 6);
                     l8.e eVar = (l8.e) bVar.b;
                     try {
-                        k8.c cVar = new k8.c(p1Var, (char) 0);
-                        Parcel P0 = eVar.P0();
-                        v7.b.c(P0, cVar);
-                        eVar.T0(P0, 97);
+                        k8.c cVar = new k8.c(j1Var, (char) 0);
+                        Parcel p12 = eVar.p1();
+                        v7.b.c(p12, cVar);
+                        eVar.t1(p12, 97);
                         LocationManager locationManager = (LocationManager) org.telegram.messenger.t0.b.getSystemService("location");
                         List<String> providers = locationManager.getProviders(true);
                         Location location2 = null;

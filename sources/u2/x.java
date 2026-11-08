@@ -8,9 +8,9 @@ import android.os.Handler;
 import android.view.Surface;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.rt;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class x implements l {
     public final MediaCodec a;
@@ -41,18 +41,18 @@ public final class x implements l {
     }
 
     @Override // u2.l
-    public final void d() {
+    public final void d(org.telegram.ui.web.w wVar) {
+        wVar.run();
+    }
+
+    @Override // u2.l
+    public final void e() {
         this.a.detachOutputSurface();
     }
 
     @Override // u2.l
-    public final void e(int i7, long j3) {
+    public final void f(int i7, long j3) {
         this.a.releaseOutputBuffer(i7, j3);
-    }
-
-    @Override // u2.l
-    public final int f() {
-        return this.a.dequeueInputBuffer(0L);
     }
 
     @Override // u2.l
@@ -61,12 +61,8 @@ public final class x implements l {
     }
 
     @Override // u2.l
-    public final int g(MediaCodec.BufferInfo bufferInfo) {
-        int dequeueOutputBuffer;
-        do {
-            dequeueOutputBuffer = this.a.dequeueOutputBuffer(bufferInfo, 0L);
-        } while (dequeueOutputBuffer == -3);
-        return dequeueOutputBuffer;
+    public final int g() {
+        return this.a.dequeueInputBuffer(0L);
     }
 
     @Override // u2.l
@@ -85,28 +81,32 @@ public final class x implements l {
     }
 
     @Override // u2.l
-    public final void h(d3.k kVar, Handler handler) {
+    public final int h(MediaCodec.BufferInfo bufferInfo) {
+        int dequeueOutputBuffer;
+        do {
+            dequeueOutputBuffer = this.a.dequeueOutputBuffer(bufferInfo, 0L);
+        } while (dequeueOutputBuffer == -3);
+        return dequeueOutputBuffer;
+    }
+
+    @Override // u2.l
+    public final void i(d3.k kVar, Handler handler) {
         this.a.setOnFrameRenderedListener(new a(this, kVar, 1), handler);
     }
 
     @Override // u2.l
-    public final void i(int i7) {
+    public final void j(int i7) {
         this.a.setVideoScalingMode(i7);
     }
 
     @Override // u2.l
-    public final void j(Surface surface) {
+    public final void k(Surface surface) {
         this.a.setOutputSurface(surface);
     }
 
     @Override // u2.l
-    public final /* synthetic */ boolean k(qt qtVar) {
+    public final /* synthetic */ boolean l(rt rtVar) {
         return false;
-    }
-
-    @Override // u2.l
-    public final void l(ti.p pVar) {
-        pVar.run();
     }
 
     @Override // u2.l

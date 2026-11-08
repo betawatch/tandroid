@@ -12,7 +12,7 @@ import com.google.android.gms.internal.vision.t2;
 import java.nio.ByteBuffer;
 import org.telegram.ui.hy0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class n extends b1 {
     public final t2 b;
@@ -42,13 +42,13 @@ public final class n extends b1 {
                     a7.b bVar = new a7.b(bitmap);
                     d3 d3Var = (d3) t2Var.m();
                     q6.m.g(d3Var);
-                    Parcel H0 = d3Var.H0();
+                    Parcel h12 = d3Var.h1();
                     int i7 = com.google.android.gms.internal.vision.a.a;
-                    H0.writeStrongBinder(bVar);
-                    com.google.android.gms.internal.vision.a.a(H0, b10);
-                    Parcel Q0 = d3Var.Q0(H0, 2);
-                    m[] mVarArr2 = (m[]) Q0.createTypedArray(m.CREATOR);
-                    Q0.recycle();
+                    h12.writeStrongBinder(bVar);
+                    com.google.android.gms.internal.vision.a.a(h12, b10);
+                    Parcel q12 = d3Var.q1(h12, 2);
+                    m[] mVarArr2 = (m[]) q12.createTypedArray(m.CREATOR);
+                    q12.recycle();
                     mVarArr = mVarArr2;
                 } catch (RemoteException e10) {
                     Log.e("BarcodeNativeHandle", "Error calling native barcode detector", e10);
@@ -68,13 +68,13 @@ public final class n extends b1 {
                     a7.b bVar2 = new a7.b(y10);
                     d3 d3Var2 = (d3) t2Var.m();
                     q6.m.g(d3Var2);
-                    Parcel H02 = d3Var2.H0();
+                    Parcel h13 = d3Var2.h1();
                     int i10 = com.google.android.gms.internal.vision.a.a;
-                    H02.writeStrongBinder(bVar2);
-                    com.google.android.gms.internal.vision.a.a(H02, b10);
-                    Parcel Q02 = d3Var2.Q0(H02, 1);
-                    m[] mVarArr3 = (m[]) Q02.createTypedArray(m.CREATOR);
-                    Q02.recycle();
+                    h13.writeStrongBinder(bVar2);
+                    com.google.android.gms.internal.vision.a.a(h13, b10);
+                    Parcel q13 = d3Var2.q1(h13, 1);
+                    m[] mVarArr3 = (m[]) q13.createTypedArray(m.CREATOR);
+                    q13.recycle();
                     mVarArr = mVarArr3;
                 } catch (RemoteException e11) {
                     Log.e("BarcodeNativeHandle", "Error calling native barcode detector", e11);

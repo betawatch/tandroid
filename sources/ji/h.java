@@ -21,7 +21,7 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.q;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.a6;
 import org.telegram.ui.ActionBar.f6;
@@ -31,7 +31,7 @@ import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.l9;
 import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class h extends FrameLayout implements a6 {
     public static final /* synthetic */ int H = 0;
@@ -248,7 +248,7 @@ public final class h extends FrameLayout implements a6 {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) "* ");
         spannableStringBuilder.setSpan(new wp(R.drawable.mini_ephemeral_hidden_14, 0), 0, 1, 33);
-        spannableStringBuilder.append((CharSequence) hd.M0(2131751899, null));
+        spannableStringBuilder.append((CharSequence) id.M0(2131751899, null));
         f10.setText(spannableStringBuilder);
         f10.setVisibility(8);
         linearLayout.addView(f10, ha.k(0.0f, 7.0f, 0.0f, 1.33f, -2, -2));
@@ -270,7 +270,7 @@ public final class h extends FrameLayout implements a6 {
             dVar.setBackground(background);
             r6.k(dVar, background, L3, null, f6Var);
         }
-        dVar.i(hd.M0(2131751605, null), false, true);
+        dVar.i(id.M0(2131751605, null), false, true);
         dVar.setOnClickListener(new View.OnClickListener(this) { // from class: ji.d
             public final /* synthetic */ h b;
 
@@ -329,7 +329,7 @@ public final class h extends FrameLayout implements a6 {
         dVar2.setUseWrapContent(true);
         dVar2.setPadding(g0.L(15.0f), 0, g0.L(15.0f), 0);
         dVar2.f();
-        dVar2.i(hd.M0(2131754486, null), false, true);
+        dVar2.i(id.M0(2131754486, null), false, true);
         final int i15 = 3;
         dVar2.setOnClickListener(new View.OnClickListener(this) { // from class: ji.d
             public final /* synthetic */ h b;

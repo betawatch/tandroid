@@ -33,8 +33,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.o61;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class t1 extends FrameLayout implements l0, ls {
     public static final float[] U = {0.02f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.02f};
@@ -70,8 +71,8 @@ public final class t1 extends FrameLayout implements l0, ls {
     public boolean y;
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0107  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0188  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0106  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0187  */
     /* JADX WARN: Type inference failed for: r9v16, types: [android.graphics.Bitmap[], java.io.Serializable] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -128,7 +129,7 @@ public final class t1 extends FrameLayout implements l0, ls {
                 this.n.q0(null, null, s1Var, null, tL_help_premiumPromo, 1);
                 w7.G(this.s).W(document, tL_help_premiumPromo, 3, 0);
                 this.R = document;
-                Utilities.e.c(new ti.p(9, this, document));
+                Utilities.e.c(new u9.f(4, this, document));
                 if (i10 != 1) {
                     k0 k0Var = new k0(0);
                     k0Var.c = new RectF();
@@ -800,7 +801,7 @@ public final class t1 extends FrameLayout implements l0, ls {
         fi.c0 c0Var = this.H;
         if (c0Var != null) {
             this.T = c0Var.getCurrentPosition();
-            this.H.release(new org.telegram.ui.Wallet.z(18));
+            this.H.release(new o61(20));
             this.H = null;
         }
     }
@@ -943,7 +944,7 @@ public final class t1 extends FrameLayout implements l0, ls {
             fi.c0 c0Var = this.H;
             if (c0Var != null) {
                 this.T = c0Var.getCurrentPosition();
-                this.H.release(new org.telegram.ui.Wallet.z(18));
+                this.H.release(new o61(20));
                 this.H = null;
             }
             imageReceiver.Q0();

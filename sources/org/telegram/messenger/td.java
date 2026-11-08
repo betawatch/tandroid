@@ -1,6 +1,6 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class td implements Runnable {
     public final /* synthetic */ int a;
@@ -17,7 +17,7 @@ public final /* synthetic */ class td implements Runnable {
             case 0:
                 LocationSharingService locationSharingService = this.b;
                 locationSharingService.b.postDelayed(locationSharingService.c, 1000L);
-                Utilities.d.c(new pd(1));
+                Utilities.d.c(new rc(3));
                 break;
             default:
                 LocationSharingService locationSharingService2 = this.b;

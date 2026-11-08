@@ -14,7 +14,7 @@ import java.util.TimeZone;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.EditTextBoldCursor;
@@ -26,7 +26,7 @@ import org.telegram.ui.Components.ui;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.nt0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class z0 extends n41 {
     public final c20 e;
@@ -58,7 +58,7 @@ public final class z0 extends n41 {
                     calendar.setTimeInMillis(y0Var.b);
                     int i12 = calendar.get(5) + (calendar.get(2) * 100) + (calendar.get(1) * 10000);
                     if (i11 != i12) {
-                        arrayList.add(x31.r(hd.u(y0Var.b / 1000, false)));
+                        arrayList.add(x31.r(id.u(y0Var.b / 1000, false)));
                         i11 = i12;
                     }
                     String str = this.r;
@@ -80,7 +80,7 @@ public final class z0 extends n41 {
                 calendar.setTimeInMillis(y0Var2.b);
                 int i15 = calendar.get(i7) + (calendar.get(i10) * 100) + (calendar.get(1) * 10000);
                 if (i14 != i15) {
-                    arrayList.add(x31.r(hd.u(y0Var2.b / 1000, false)));
+                    arrayList.add(x31.r(id.u(y0Var2.b / 1000, false)));
                     i14 = i15;
                 }
                 String str2 = this.r;
@@ -109,7 +109,7 @@ public final class z0 extends n41 {
 
     @Override // org.telegram.ui.Components.n41
     public final CharSequence a0() {
-        return hd.M0(2131742921, null);
+        return id.M0(2131742923, null);
     }
 
     @Override // org.telegram.ui.Components.n41
@@ -154,15 +154,15 @@ public final class z0 extends n41 {
         c10.N();
         c10.H = new u2(this);
         this.x = c10;
-        c10.setSearchFieldHint(hd.M0(2131745837, null));
-        this.x.setContentDescription(hd.M0(2131745837, null));
+        c10.setSearchFieldHint(id.M0(2131745839, null));
+        this.x.setContentDescription(id.M0(2131745839, null));
         EditTextBoldCursor searchField = this.x.getSearchField();
         r6.V(searchField, i10, getResourceProvider());
         r6.E(searchField, k6.Gj, getResourceProvider());
         r6.w(searchField, i10, getResourceProvider());
         av0 av0Var = new av0(context, null, 1, null);
         this.y = av0Var;
-        av0Var.d.setText(hd.M0(TextUtils.isEmpty(this.r) ? 2131742919 : 2131742918, null));
+        av0Var.d.setText(id.M0(TextUtils.isEmpty(this.r) ? 2131742921 : 2131742920, null));
         this.y.e.setVisibility(8);
         this.y.e(false, false);
         this.y.setAnimateLayoutChange(true);

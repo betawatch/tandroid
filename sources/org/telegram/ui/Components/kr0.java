@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class kr0 extends oj0 {
     public final Context c;
@@ -65,14 +65,14 @@ public final class kr0 extends oj0 {
                     String str2 = channelParticipant.rank;
                     if (channelParticipant instanceof TLRPC.TL_channelParticipantCreator) {
                         if (TextUtils.isEmpty(str2)) {
-                            str2 = org.telegram.messenger.hd.M0(2131752423, "ChannelCreator");
+                            str2 = org.telegram.messenger.id.M0(2131752423, "ChannelCreator");
                         }
                         z13 = true;
                         z14 = true;
                         z12 = false;
                     } else if (channelParticipant instanceof TLRPC.TL_channelParticipantAdmin) {
                         if (TextUtils.isEmpty(str2)) {
-                            str2 = org.telegram.messenger.hd.M0(2131752520, "ChannelAdmin");
+                            str2 = org.telegram.messenger.id.M0(2131752520, "ChannelAdmin");
                         }
                         z12 = channelParticipant.promoted_by == f2Var.getUserConfig().e();
                         z13 = true;
@@ -91,7 +91,7 @@ public final class kr0 extends oj0 {
                     String str3 = chatParticipant.rank;
                     if (chatParticipant instanceof TLRPC.TL_chatParticipantCreator) {
                         if (TextUtils.isEmpty(str3)) {
-                            str3 = org.telegram.messenger.hd.M0(2131752423, "ChannelCreator");
+                            str3 = org.telegram.messenger.id.M0(2131752423, "ChannelCreator");
                         }
                         str = str3;
                         z9 = true;
@@ -99,7 +99,7 @@ public final class kr0 extends oj0 {
                         z11 = false;
                     } else if (chatParticipant instanceof TLRPC.TL_chatParticipantAdmin) {
                         if (TextUtils.isEmpty(str3)) {
-                            str3 = org.telegram.messenger.hd.M0(2131752520, "ChannelAdmin");
+                            str3 = org.telegram.messenger.id.M0(2131752520, "ChannelAdmin");
                         }
                         z11 = chatParticipant.inviter_id == f2Var.getUserConfig().e();
                         str = str3;

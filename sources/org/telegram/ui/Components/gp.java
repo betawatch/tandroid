@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gp implements Runnable {
     public final /* synthetic */ int a;
@@ -72,26 +72,26 @@ public final /* synthetic */ class gp implements Runnable {
                 ((ns) obj).a();
                 break;
             case 8:
-                ((lt) obj).getClass();
+                ((mt) obj).getClass();
                 break;
             case 9:
-                vf.c.t(((vt) ((org.telegram.ui.n1) obj).b).getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
+                vf.c.t(((wt) ((org.telegram.ui.n1) obj).b).getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
                 break;
             case 10:
-                vt vtVar = ((ut) obj).a;
-                vtVar.o1.setVisibility(4);
-                vtVar.n1.setVisibility(4);
-                ImageView imageView = vtVar.t1;
+                wt wtVar = ((vt) obj).a;
+                wtVar.o1.setVisibility(4);
+                wtVar.n1.setVisibility(4);
+                ImageView imageView = wtVar.t1;
                 imageView.setEnabled(true);
                 imageView.setAlpha(1.0f);
                 break;
             case 11:
-                ((mu) obj).a(true, true);
+                ((nu) obj).a(true, true);
                 break;
             case 12:
-                ew ewVar = (ew) obj;
-                if (ewVar.Z.getEmojiView() != null) {
-                    gy emojiView = ewVar.Z.getEmojiView();
+                fw fwVar = (fw) obj;
+                if (fwVar.Z.getEmojiView() != null) {
+                    hy emojiView = fwVar.Z.getEmojiView();
                     if (!emojiView.f0) {
                         try {
                             SparseIntArray sparseIntArray = emojiView.R.s;
@@ -111,56 +111,56 @@ public final /* synthetic */ class gp implements Runnable {
                 }
                 break;
             case 13:
-                xw xwVar = (xw) obj;
-                xwVar.x.f = true;
-                xwVar.a(true);
+                yw ywVar = (yw) obj;
+                ywVar.x.f = true;
+                ywVar.a(true);
                 break;
             case 14:
-                org.telegram.messenger.g0.V3(((tx) obj).h, true, true);
+                org.telegram.messenger.g0.V3(((ux) obj).h, true, true);
                 break;
             case 15:
-                zx zxVar = (zx) obj;
-                ArrayList arrayList = zxVar.r;
-                ArrayList arrayList2 = zxVar.h;
-                ay ayVar = zxVar.x;
-                int i12 = ayVar.M;
-                gy gyVar = ayVar.Q;
-                pv pvVar = gyVar.D0;
-                if (i12 == zxVar.b) {
+                ay ayVar = (ay) obj;
+                ArrayList arrayList = ayVar.r;
+                ArrayList arrayList2 = ayVar.h;
+                cy cyVar = ayVar.x;
+                int i12 = cyVar.M;
+                hy hyVar = cyVar.Q;
+                qv qvVar = hyVar.D0;
+                if (i12 == ayVar.b) {
                     arrayList2.remove(arrayList);
-                    ayVar.E = zxVar.c;
-                    ayVar.F = zxVar.d;
-                    ayVar.G = zxVar.e;
-                    ayVar.H = zxVar.f;
-                    ayVar.I = arrayList2;
-                    ayVar.J = zxVar.n;
-                    ayVar.K = new ArrayList(arrayList);
-                    gyVar.G0.e(false);
-                    v4.g0 adapter = pvVar.getAdapter();
-                    ay ayVar2 = gyVar.z0;
-                    if (adapter != ayVar2) {
-                        pvVar.setAdapter(ayVar2);
+                    cyVar.E = ayVar.c;
+                    cyVar.F = ayVar.d;
+                    cyVar.G = ayVar.e;
+                    cyVar.H = ayVar.f;
+                    cyVar.I = arrayList2;
+                    cyVar.J = ayVar.n;
+                    cyVar.K = new ArrayList(arrayList);
+                    hyVar.G0.e(false);
+                    v4.g0 adapter = qvVar.getAdapter();
+                    cy cyVar2 = hyVar.z0;
+                    if (adapter != cyVar2) {
+                        qvVar.setAdapter(cyVar2);
                     }
-                    ayVar.f();
+                    cyVar.f();
                     break;
                 }
                 break;
             case 16:
-                ez ezVar = (ez) ((dz) obj).f;
-                ArrayList arrayList3 = ezVar.h;
+                fz fzVar = (fz) ((ez) obj).f;
+                ArrayList arrayList3 = fzVar.h;
                 if (!org.telegram.messenger.p10.i(org.telegram.messenger.p10.s0).q()) {
                     int i13 = 0;
                     while (i13 < arrayList3.size()) {
-                        if (((bz) arrayList3.get(i13)).e && i13 != 0) {
-                            org.telegram.ui.l4 l4Var = ezVar.I;
-                            ez ezVar2 = (ez) l4Var.e;
-                            ArrayList arrayList4 = ezVar2.h;
-                            SparseIntArray sparseIntArray2 = ezVar2.k0;
+                        if (((cz) arrayList3.get(i13)).e && i13 != 0) {
+                            org.telegram.ui.l4 l4Var = fzVar.I;
+                            fz fzVar2 = (fz) l4Var.e;
+                            ArrayList arrayList4 = fzVar2.h;
+                            SparseIntArray sparseIntArray2 = fzVar2.k0;
                             int size = arrayList4.size();
                             if (i13 >= 0 && i13 < size) {
                                 ArrayList T0 = org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).T0();
                                 int i14 = sparseIntArray2.get(i13);
-                                int i15 = ((bz) arrayList4.get(i13)).a;
+                                int i15 = ((cz) arrayList4.get(i13)).a;
                                 for (int i16 = i13 - 1; i16 >= 0; i16--) {
                                     sparseIntArray2.put(i16 + 1, sparseIntArray2.get(i16));
                                 }
@@ -168,30 +168,30 @@ public final /* synthetic */ class gp implements Runnable {
                                 voVar.f = 0;
                                 T0.add(0, voVar);
                                 sparseIntArray2.put(0, i14);
-                                arrayList4.add(0, (bz) arrayList4.remove(i13));
-                                ((bz) arrayList4.get(0)).a = i15;
+                                arrayList4.add(0, (cz) arrayList4.remove(i13));
+                                ((cz) arrayList4.get(0)).a = i15;
                                 for (int i17 = 0; i17 <= i13; i17++) {
-                                    ((bz) arrayList4.get(i17)).a = i17;
+                                    ((cz) arrayList4.get(i17)).a = i17;
                                     ((org.telegram.messenger.vo) T0.get(i17)).f = i17;
                                 }
                                 int i18 = 0;
                                 while (i18 <= i13) {
-                                    if (ezVar2.K == i18) {
+                                    if (fzVar2.K == i18) {
                                         int i19 = i18 == i13 ? 0 : i18 + 1;
-                                        ezVar2.L = i19;
-                                        ezVar2.K = i19;
+                                        fzVar2.L = i19;
+                                        fzVar2.K = i19;
                                     }
-                                    if (ezVar2.q0 == i18) {
+                                    if (fzVar2.q0 == i18) {
                                         int i20 = i18 == i13 ? 0 : i18 + 1;
-                                        ezVar2.r0 = i20;
-                                        ezVar2.q0 = i20;
+                                        fzVar2.r0 = i20;
+                                        fzVar2.q0 = i20;
                                     }
                                     i18++;
                                 }
                                 l4Var.j(i13, 0);
-                                az azVar = ezVar2.J;
-                                int i21 = ((bz) arrayList4.get(i13)).a;
-                                org.telegram.ui.nw nwVar = (org.telegram.ui.nw) azVar;
+                                bz bzVar = fzVar2.J;
+                                int i21 = ((cz) arrayList4.get(i13)).a;
+                                org.telegram.ui.nw nwVar = (org.telegram.ui.nw) bzVar;
                                 int i22 = 0;
                                 while (true) {
                                     org.telegram.ui.vw[] vwVarArr = nwVar.b.e0;
@@ -205,21 +205,21 @@ public final /* synthetic */ class gp implements Runnable {
                                         }
                                         i22++;
                                     } else {
-                                        ezVar2.j();
-                                        ezVar2.D = true;
-                                        ezVar2.F.setItemAnimator(ezVar2.s0);
+                                        fzVar2.j();
+                                        fzVar2.D = true;
+                                        fzVar2.F.setItemAnimator(fzVar2.s0);
                                     }
                                 }
                             }
-                            ezVar.F.v0(0);
-                            org.telegram.ui.mw mwVar = (org.telegram.ui.mw) ezVar;
+                            fzVar.F.v0(0);
+                            org.telegram.ui.mw mwVar = (org.telegram.ui.mw) fzVar;
                             org.telegram.ui.ww wwVar = mwVar.B0;
                             if (!wwVar.getMessagesController().D3()) {
                                 try {
                                     mwVar.performHapticFeedback(3, 1);
                                 } catch (Exception unused2) {
                                 }
-                                cc J = hc.a0(wwVar).J(R.raw.filter_reorder, org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131748943, org.telegram.messenger.hd.M0(2131750808, null))), org.telegram.messenger.hd.M0(2131747032, null), 5000, false, new org.telegram.ui.bh(mwVar, 24));
+                                cc J = hc.a0(wwVar).J(R.raw.filter_reorder, org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131748945, org.telegram.messenger.id.M0(2131750808, null))), org.telegram.messenger.id.M0(2131747034, null), 5000, false, new org.telegram.ui.bh(mwVar, 24));
                                 J.k(true);
                                 wwVar.o3 = J;
                                 break;
@@ -232,9 +232,9 @@ public final /* synthetic */ class gp implements Runnable {
                 }
                 break;
             case 17:
-                jz jzVar = (jz) obj;
-                if (!jzVar.c) {
-                    jzVar.setLayerType(0, null);
+                kz kzVar = (kz) obj;
+                if (!kzVar.c) {
+                    kzVar.setLayerType(0, null);
                     break;
                 }
                 break;
@@ -242,9 +242,9 @@ public final /* synthetic */ class gp implements Runnable {
                 ((p10) obj).h(true);
                 break;
             case 19:
-                org.telegram.ui.fw fwVar = ((wl0) ((u20) obj)).e0;
-                if (!fwVar.w0.canScrollVertically(-1)) {
-                    fwVar.v0.h1(0, 0);
+                org.telegram.ui.fw fwVar2 = ((wl0) ((u20) obj)).e0;
+                if (!fwVar2.w0.canScrollVertically(-1)) {
+                    fwVar2.v0.h1(0, 0);
                     break;
                 }
                 break;
@@ -391,13 +391,13 @@ public final /* synthetic */ class gp implements Runnable {
                 ((fi.u) obj).invalidateSelf();
                 break;
             default:
-                ((wz) obj).invalidateSelf();
+                ((xz) obj).invalidateSelf();
                 break;
         }
     }
 
-    public /* synthetic */ gp(lt ltVar, x70 x70Var, ClickableSpan clickableSpan) {
+    public /* synthetic */ gp(mt mtVar, x70 x70Var, ClickableSpan clickableSpan) {
         this.a = 8;
-        this.b = ltVar;
+        this.b = mtVar;
     }
 }

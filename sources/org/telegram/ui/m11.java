@@ -26,7 +26,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class m11 extends Dialog {
     public final int D;
@@ -88,7 +88,7 @@ public abstract class m11 extends Dialog {
         this.w = actionBarPopupWindow$ActionBarPopupWindowLayout;
         linearLayout.addView(actionBarPopupWindow$ActionBarPopupWindowLayout, c8.ha.t(-2, -2, 17, 0, 0, 0, 0));
         final int i7 = 0;
-        org.telegram.ui.ActionBar.r0.c(true, false, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, org.telegram.messenger.hd.M0(2131745533, null), false, f6Var).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.j11
+        org.telegram.ui.ActionBar.r0.c(true, false, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, org.telegram.messenger.id.M0(2131745535, null), false, f6Var).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.j11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 switch (i7) {
@@ -108,7 +108,7 @@ public abstract class m11 extends Dialog {
             }
         });
         final int i10 = 1;
-        org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, org.telegram.messenger.hd.M0(2131745531, null), false, f6Var).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.j11
+        org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, org.telegram.messenger.id.M0(2131745533, null), false, f6Var).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.j11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 switch (i10) {
@@ -128,7 +128,7 @@ public abstract class m11 extends Dialog {
             }
         });
         final int i11 = 2;
-        org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, org.telegram.messenger.hd.M0(2131745530, null), false, f6Var).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.j11
+        org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, org.telegram.messenger.id.M0(2131745532, null), false, f6Var).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.j11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 switch (i11) {
@@ -148,7 +148,7 @@ public abstract class m11 extends Dialog {
             }
         });
         final int i12 = 3;
-        org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, org.telegram.messenger.hd.M0(2131745532, null), false, f6Var).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.j11
+        org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, org.telegram.messenger.id.M0(2131745534, null), false, f6Var).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.j11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 switch (i12) {
@@ -167,7 +167,7 @@ public abstract class m11 extends Dialog {
                 }
             }
         });
-        org.telegram.ui.ActionBar.r0.c(false, true, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, org.telegram.messenger.hd.M0(2131745528, null), false, f6Var).setOnClickListener(new fk0(8, g01Var, context));
+        org.telegram.ui.ActionBar.r0.c(false, true, actionBarPopupWindow$ActionBarPopupWindowLayout, 0, org.telegram.messenger.id.M0(2131745530, null), false, f6Var).setOnClickListener(new fk0(8, g01Var, context));
         k0Var.addView(linearLayout, c8.ha.e(-2, -2, 17));
         Window window = getWindow();
         if (window != null) {

@@ -3,9 +3,9 @@ package org.telegram.ui.Cells;
 import android.content.Context;
 import android.view.MotionEvent;
 import org.telegram.ui.Components.mm0;
-import org.telegram.ui.v61;
+import org.telegram.ui.w61;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class h0 extends mm0 {
     public final /* synthetic */ int m0;
@@ -50,8 +50,8 @@ public final class h0 extends mm0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h0(Context context, v61 v61Var) {
-        super(context, v61Var, false);
+    public h0(Context context, w61 w61Var) {
+        super(context, w61Var, false);
         this.m0 = 3;
     }
 }

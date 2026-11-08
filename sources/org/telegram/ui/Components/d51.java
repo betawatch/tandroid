@@ -11,10 +11,10 @@ import java.util.Iterator;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class d51 extends Drawable implements o5, r6, org.telegram.messenger.ls {
-    public final e10 a;
+    public final f10 a;
     public final int b;
     public float c;
     public final boolean d;
@@ -28,14 +28,14 @@ public final class d51 extends Drawable implements o5, r6, org.telegram.messenge
     public final TLRPC.TL_videoSizeStickerMarkup x;
 
     public d51(TLRPC.VideoSize videoSize, boolean z9, int i7) {
-        e10 e10Var = new e10();
-        this.a = e10Var;
+        f10 f10Var = new f10();
+        this.a = f10Var;
         this.f = new HashSet();
         this.r = new ImageReceiver(null);
         this.s = org.telegram.messenger.p10.s0;
         this.b = i7;
         this.d = z9;
-        e10Var.d(i0.a.o(videoSize.background_colors.get(0).intValue(), org.telegram.messenger.qs.e4), videoSize.background_colors.size() > 1 ? i0.a.o(videoSize.background_colors.get(1).intValue(), org.telegram.messenger.qs.e4) : 0, videoSize.background_colors.size() > 2 ? i0.a.o(videoSize.background_colors.get(2).intValue(), org.telegram.messenger.qs.e4) : 0, videoSize.background_colors.size() > 3 ? i0.a.o(videoSize.background_colors.get(3).intValue(), org.telegram.messenger.qs.e4) : 0);
+        f10Var.d(i0.a.o(videoSize.background_colors.get(0).intValue(), org.telegram.messenger.qs.e4), videoSize.background_colors.size() > 1 ? i0.a.o(videoSize.background_colors.get(1).intValue(), org.telegram.messenger.qs.e4) : 0, videoSize.background_colors.size() > 2 ? i0.a.o(videoSize.background_colors.get(2).intValue(), org.telegram.messenger.qs.e4) : 0, videoSize.background_colors.size() > 3 ? i0.a.o(videoSize.background_colors.get(3).intValue(), org.telegram.messenger.qs.e4) : 0);
         if (videoSize instanceof TLRPC.TL_videoSizeEmojiMarkup) {
             i5 i5Var = new i5((i7 == 1 && z9) ? 7 : i7 == 2 ? 15 : 8, org.telegram.messenger.p10.s0, ((TLRPC.TL_videoSizeEmojiMarkup) videoSize).emoji_id);
             this.h = i5Var;
@@ -165,9 +165,9 @@ public final class d51 extends Drawable implements o5, r6, org.telegram.messenge
         float f11 = getBounds().top;
         float f12 = getBounds().right;
         float f13 = getBounds().bottom;
-        e10 e10Var = this.a;
-        e10Var.b(f10, f11, f12, f13);
-        Paint paint = e10Var.c;
+        f10 f10Var = this.a;
+        f10Var.b(f10, f11, f12, f13);
+        Paint paint = f10Var.c;
         if (this.e != null) {
             this.c = r1.W0[0];
         }
@@ -175,7 +175,7 @@ public final class d51 extends Drawable implements o5, r6, org.telegram.messenge
         if (f14 == 0.0f) {
             canvas.drawRect(getBounds(), paint);
         } else {
-            canvas.drawRoundRect(e10Var.h, f14, f14, paint);
+            canvas.drawRoundRect(f10Var.h, f14, f14, paint);
         }
         int centerX = getBounds().centerX();
         int centerY = getBounds().centerY();
@@ -211,10 +211,10 @@ public final class d51 extends Drawable implements o5, r6, org.telegram.messenge
         if (this.b != d51Var.b) {
             return false;
         }
-        e10 e10Var = this.a;
-        int i7 = e10Var.d;
-        e10 e10Var2 = d51Var.a;
-        if (i7 != e10Var2.d || e10Var.e != e10Var2.e || e10Var.f != e10Var2.f || e10Var.g != e10Var2.g) {
+        f10 f10Var = this.a;
+        int i7 = f10Var.d;
+        f10 f10Var2 = d51Var.a;
+        if (i7 != f10Var2.d || f10Var.e != f10Var2.e || f10Var.f != f10Var2.f || f10Var.g != f10Var2.g) {
             return false;
         }
         i5 i5Var2 = this.h;

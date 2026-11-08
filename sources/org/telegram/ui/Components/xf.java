@@ -12,7 +12,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xf implements Runnable {
     public final /* synthetic */ int a;
@@ -139,7 +139,7 @@ public final /* synthetic */ class xf implements Runnable {
             case 16:
                 sc scVar = (sc) obj;
                 scVar.getClass();
-                if (org.telegram.messenger.rc.e(512)) {
+                if (org.telegram.messenger.sc.e(512)) {
                     scVar.invalidateSelf();
                     break;
                 }
@@ -204,7 +204,7 @@ public final /* synthetic */ class xf implements Runnable {
                 if (bmVar.Q && (chatAttachAlertPhotoLayout = diVar.a2) != null) {
                     org.telegram.ui.ActionBar.z0 z0Var = chatAttachAlertPhotoLayout.c1;
                     z0Var.setIcon(R.drawable.ic_ab_back);
-                    z0Var.setText(org.telegram.messenger.hd.M0(2131753756, null));
+                    z0Var.setText(org.telegram.messenger.id.M0(2131753756, null));
                     z0Var.setRightIcon(0);
                     break;
                 }

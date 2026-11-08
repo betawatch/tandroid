@@ -8,7 +8,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class xw0 {
     public final int a;
@@ -47,12 +47,12 @@ public final class xw0 {
         String str = ax0.s[Utilities.b.nextInt(3)];
         TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName2 = new TLRPC.TL_inputStickerSetShortName();
         tL_inputStickerSetShortName2.short_name = "EmojiAnimations";
-        org.telegram.messenger.ui.b0(i7).l0(tL_inputStickerSetShortName2, 0, false, false, new org.telegram.ui.Components.ex(22, this, str));
+        org.telegram.messenger.ui.b0(i7).l0(tL_inputStickerSetShortName2, 0, false, false, new org.telegram.ui.Components.fx(22, this, str));
     }
 
     public static xw0 c(int i7, TLRPC.UserFull userFull, xw0 xw0Var) {
         TL_account.TL_birthday tL_birthday;
-        if (!org.telegram.messenger.rc.e(2) || !org.telegram.messenger.v1.d(userFull)) {
+        if (!org.telegram.messenger.sc.e(2) || !org.telegram.messenger.v1.d(userFull)) {
             if (xw0Var == null) {
                 return null;
             }

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class dz extends rg.b {
     public final Context d;
@@ -77,14 +77,14 @@ public final class dz extends rg.b {
             if (j3 > 0) {
                 TLRPC.User a22 = gzVar.getMessagesController().a2(Long.valueOf(j3));
                 if (a22 != null) {
-                    paVar.d(a22, null, a22.bot ? org.telegram.messenger.hd.M0(2131753156, null) : a22.contact ? org.telegram.messenger.hd.M0(2131750793, null) : org.telegram.messenger.hd.M0(2131750722, null), z10);
+                    paVar.d(a22, null, a22.bot ? org.telegram.messenger.id.M0(2131753156, null) : a22.contact ? org.telegram.messenger.id.M0(2131750793, null) : org.telegram.messenger.id.M0(2131750722, null), z10);
                     return;
                 }
                 return;
             }
             TLRPC.Chat M0 = gzVar.getMessagesController().M0(Long.valueOf(-j3));
             if (M0 != null) {
-                paVar.d(M0, null, org.telegram.messenger.t3.Y(M0) ? org.telegram.messenger.hd.M0(2131751990, null) : M0.participants_count != 0 ? org.telegram.messenger.t3.V(M0) ? org.telegram.messenger.hd.H(',', "Subscribers", M0.participants_count) : org.telegram.messenger.hd.H(',', "Members", M0.participants_count) : !org.telegram.messenger.t3.t0(M0) ? (!org.telegram.messenger.t3.T(M0) || M0.megagroup) ? org.telegram.messenger.hd.M0(2131748640, null) : org.telegram.messenger.hd.M0(2131752329, null) : (!org.telegram.messenger.t3.T(M0) || M0.megagroup) ? org.telegram.messenger.hd.M0(2131748637, null) : org.telegram.messenger.hd.M0(2131752318, null), z10);
+                paVar.d(M0, null, org.telegram.messenger.t3.Y(M0) ? org.telegram.messenger.id.M0(2131751990, null) : M0.participants_count != 0 ? org.telegram.messenger.t3.V(M0) ? org.telegram.messenger.id.H(',', "Subscribers", M0.participants_count) : org.telegram.messenger.id.H(',', "Members", M0.participants_count) : !org.telegram.messenger.t3.t0(M0) ? (!org.telegram.messenger.t3.T(M0) || M0.megagroup) ? org.telegram.messenger.id.M0(2131748642, null) : org.telegram.messenger.id.M0(2131752329, null) : (!org.telegram.messenger.t3.T(M0) || M0.megagroup) ? org.telegram.messenger.id.M0(2131748639, null) : org.telegram.messenger.id.M0(2131752318, null), z10);
                 return;
             }
             return;
@@ -110,13 +110,13 @@ public final class dz extends rg.b {
                     gzVar.I = wyVar;
                     wyVar.e(org.telegram.ui.Components.r5.cloneSpans(gzVar.x, -1, wyVar.s.getPaint().getFontMetricsInt(), 0.5f), false);
                     gzVar.I.d(gzVar.getUserConfig().q() ? gzVar.E : -1, false);
-                    gzVar.I.setText(org.telegram.messenger.hd.M0(2131750623, null));
+                    gzVar.I.setText(org.telegram.messenger.id.M0(2131750623, null));
                     break;
                 case 10:
                     em0 em0Var = (em0) view;
                     em0Var.setCloseAsLock(!gzVar.getUserConfig().q());
                     em0Var.a(gzVar.getUserConfig().q() ? gzVar.E : -1, false);
-                    em0Var.setOnColorClick(new org.telegram.ui.Components.ex(11, this, em0Var));
+                    em0Var.setOnColorClick(new org.telegram.ui.Components.fx(11, this, em0Var));
                     break;
                 case 11:
                     xy xyVar = (xy) view;
@@ -138,14 +138,14 @@ public final class dz extends rg.b {
         int i13 = yyVar.k;
         CharSequence charSequence = yyVar.d;
         ImageView imageView2 = pyVar.a;
-        int i14 = org.telegram.messenger.hd.a0 ? -1 : 1;
+        int i14 = org.telegram.messenger.id.a0 ? -1 : 1;
         if (i13 == 0) {
             imageView2.setVisibility(8);
         } else {
             imageView2.setVisibility(0);
             imageView2.setImageResource(i13);
         }
-        if (org.telegram.messenger.hd.a0) {
+        if (org.telegram.messenger.id.a0) {
             ((ViewGroup.MarginLayoutParams) textView.getLayoutParams()).rightMargin = org.telegram.messenger.g0.L(i13 == 0 ? 24.0f : 72.0f);
         } else {
             ((ViewGroup.MarginLayoutParams) textView.getLayoutParams()).leftMargin = org.telegram.messenger.g0.L(i13 == 0 ? 24.0f : 72.0f);
@@ -191,7 +191,7 @@ public final class dz extends rg.b {
                 break;
             case 2:
                 org.telegram.ui.Components.rt0 rt0Var = (org.telegram.ui.Components.rt0) gzVar.fragmentView;
-                String M0 = org.telegram.messenger.hd.M0(2131750733, null);
+                String M0 = org.telegram.messenger.id.M0(2131750733, null);
                 f6Var = ((org.telegram.ui.ActionBar.f2) gzVar).resourceProvider;
                 bz bzVar = new bz(this.d, rt0Var, M0, false, 12, f6Var);
                 gzVar.K = bzVar;
@@ -203,7 +203,7 @@ public final class dz extends rg.b {
                 f3Var.setText(gzVar.x);
                 i10 = ((org.telegram.ui.ActionBar.f2) gzVar).currentAccount;
                 org.telegram.ui.Components.i5.r(i10, gzVar.y);
-                org.telegram.ui.Components.ys editText = f3Var.getEditText();
+                org.telegram.ui.Components.zs editText = f3Var.getEditText();
                 editText.addTextChangedListener(new org.telegram.ui.Cells.j3());
                 editText.addTextChangedListener(new m0(this, 7));
                 editText.setPadding(org.telegram.messenger.g0.L(7.0f), editText.getPaddingTop(), editText.getPaddingRight(), editText.getPaddingBottom());
@@ -220,16 +220,16 @@ public final class dz extends rg.b {
                 ImageView imageView = new ImageView(context);
                 pyVar.a = imageView;
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
-                pyVar.addView(imageView, c8.ha.d(24, 24.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 16, 24.0f, 0.0f, 24.0f, 0.0f));
+                pyVar.addView(imageView, c8.ha.d(24, 24.0f, (org.telegram.messenger.id.a0 ? 5 : 3) | 16, 24.0f, 0.0f, 24.0f, 0.0f));
                 TextView textView = new TextView(context);
                 pyVar.b = textView;
                 textView.setTextSize(1, 16.0f);
                 textView.setLines(1);
                 textView.setSingleLine();
-                boolean z9 = org.telegram.messenger.hd.a0;
+                boolean z9 = org.telegram.messenger.id.a0;
                 textView.setPadding(z9 ? 24 : 0, 0, z9 ? 0 : 24, 0);
-                textView.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
-                boolean z10 = org.telegram.messenger.hd.a0;
+                textView.setGravity(org.telegram.messenger.id.a0 ? 5 : 3);
+                boolean z10 = org.telegram.messenger.id.a0;
                 pyVar.addView(textView, c8.ha.d(-1, -2.0f, 23, z10 ? 0.0f : 72.0f, 0.0f, z10 ? 72.0f : 0.0f, 0.0f));
                 view = pyVar;
                 break;

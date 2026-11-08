@@ -18,7 +18,7 @@ import java.util.HashSet;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.gc;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.p10;
@@ -33,7 +33,7 @@ import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.u31;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class x extends y implements org.telegram.ui.ActionBar.a6, h9, k0, ls, org.telegram.messenger.x5 {
     public final int D;
@@ -219,7 +219,7 @@ public final class x extends y implements org.telegram.ui.ActionBar.a6, h9, k0, 
         if (aVar != null && aVar.g == null) {
             aVar.g = new s();
         }
-        this.H = hd.a0;
+        this.H = id.a0;
         c(aVar);
         this.U.b();
         TLRPC.Document displayDocument = getDisplayDocument();

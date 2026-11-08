@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pe implements org.telegram.messenger.u10 {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class pe implements org.telegram.messenger.u10 {
                 break;
             case 1:
                 an anVar = (an) this.b;
-                if (org.telegram.messenger.rc.e(65536) && org.telegram.ui.Components.dz0.c()) {
+                if (org.telegram.messenger.sc.e(65536) && org.telegram.ui.Components.dz0.c()) {
                     org.telegram.ui.Components.dz0 dz0Var = anVar.x0;
                     if (dz0Var == null || dz0Var.e) {
                         if (anVar.getParentActivity() != null && org.telegram.ui.Components.dz0.c() && anVar.z0 != null && anVar.l1 != null) {
@@ -40,7 +40,7 @@ public final /* synthetic */ class pe implements org.telegram.messenger.u10 {
                 return null;
             case 2:
                 ((an) this.b).getClass();
-                return Boolean.valueOf(org.telegram.ui.Components.dz0.c() && org.telegram.messenger.rc.e(65536));
+                return Boolean.valueOf(org.telegram.ui.Components.dz0.c() && org.telegram.messenger.sc.e(65536));
             default:
                 f2Var = (ProfileActivity) this.b;
                 break;

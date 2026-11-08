@@ -7,7 +7,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class q50 extends oj0 {
     public final /* synthetic */ x50 c;
@@ -99,7 +99,7 @@ public final class q50 extends oj0 {
                 boolean z9 = false;
                 if (i7 != 5) {
                     org.telegram.ui.Cells.x4 x4Var = new org.telegram.ui.Cells.x4(context);
-                    x4Var.b(R.drawable.msg_link, 7, org.telegram.messenger.hd.M0(2131743391, null), true);
+                    x4Var.b(R.drawable.msg_link, 7, org.telegram.messenger.id.M0(2131743393, null), true);
                     int i11 = org.telegram.ui.ActionBar.k6.n5;
                     x4Var.a(i11, i11);
                     view = x4Var;
@@ -110,9 +110,9 @@ public final class q50 extends oj0 {
                     org.telegram.ui.wr wrVar = x50Var.d2;
                     xh.l lVar = p50Var.d;
                     if (wrVar != null) {
-                        lVar.setText(org.telegram.messenger.hd.M0(2131750727, null));
+                        lVar.setText(org.telegram.messenger.id.M0(2131750727, null));
                     } else {
-                        lVar.setText(org.telegram.messenger.hd.M0(2131748222, null));
+                        lVar.setText(org.telegram.messenger.id.M0(2131748224, null));
                     }
                     p50Var.setAnimateLayoutChange(true);
                     view = p50Var;

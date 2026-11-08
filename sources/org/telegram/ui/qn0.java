@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_fragment;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qn0 implements Runnable {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class qn0 implements Runnable {
         String str5;
         SpannableStringBuilder spannableStringBuilder;
         String str6;
-        int i13 = 15;
+        int i13 = 17;
         boolean z10 = true;
         switch (this.a) {
             case 0:
@@ -57,7 +57,7 @@ public final /* synthetic */ class qn0 implements Runnable {
                 tg.o0 o0Var = (tg.o0) this.c;
                 Drawable[] drawableArr = PhotoViewer.Y8;
                 o0Var.e.h();
-                o0Var.c.postRunnable(new org.telegram.ui.Wallet.z(i13));
+                o0Var.c.postRunnable(new o61(i13));
                 photoViewer.e0.removeView(photoViewer.N1);
                 break;
             case 1:
@@ -114,7 +114,7 @@ public final /* synthetic */ class qn0 implements Runnable {
                 pp0 pp0Var = (pp0) this.b;
                 tg.o0 o0Var2 = (tg.o0) this.c;
                 o0Var2.e.h();
-                o0Var2.c.postRunnable(new org.telegram.ui.Wallet.z(i13));
+                o0Var2.c.postRunnable(new o61(i13));
                 try {
                     pp0Var.b.e0.removeView(o0Var2);
                     break;
@@ -316,7 +316,7 @@ public final /* synthetic */ class qn0 implements Runnable {
                 String[] split = str8.split(" ");
                 String[] strArr2 = new String[split.length];
                 for (int i14 = 0; i14 < split.length; i14++) {
-                    String S0 = org.telegram.messenger.hd.E0().S0(split[i14], true, false);
+                    String S0 = org.telegram.messenger.id.E0().S0(split[i14], true, false);
                     strArr2[i14] = S0;
                     if (S0.equals(split[i14])) {
                         strArr2[i14] = null;

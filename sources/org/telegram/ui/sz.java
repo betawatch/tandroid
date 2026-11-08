@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class sz extends org.telegram.ui.Components.oj0 {
     public final /* synthetic */ yz c;
@@ -51,13 +51,13 @@ public final class sz extends org.telegram.ui.Components.oj0 {
             a0Var = new jg.a0(2, viewGroup.getContext(), true);
         } else if (i7 != 3) {
             org.telegram.ui.Cells.x3 x3Var = new org.telegram.ui.Cells.x3(viewGroup.getContext(), null);
-            x3Var.setText(org.telegram.messenger.hd.M0(2131745757, null));
+            x3Var.setText(org.telegram.messenger.id.M0(2131745759, null));
             a0Var = x3Var;
         } else {
-            org.telegram.ui.Components.lz lzVar = new org.telegram.ui.Components.lz(viewGroup.getContext(), null);
-            lzVar.setIsSingleCell(true);
-            lzVar.setViewType(1);
-            a0Var = lzVar;
+            org.telegram.ui.Components.mz mzVar = new org.telegram.ui.Components.mz(viewGroup.getContext(), null);
+            mzVar.setIsSingleCell(true);
+            mzVar.setViewType(1);
+            a0Var = mzVar;
         }
         return jg.g.r(a0Var, a0Var, -1, -2);
     }

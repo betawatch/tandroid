@@ -7,14 +7,14 @@ import j$.time.ZoneId;
 import j$.time.format.TextStyle;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class x1 {
     public static volatile x1[] e = new x1[4];
@@ -78,7 +78,7 @@ public final class x1 {
         StringBuilder m10 = com.google.android.recaptcha.internal.a.m(concat);
         m10.append(i10 < 10 ? "0" : "");
         m10.append(i10);
-        StringBuilder m11 = com.google.android.recaptcha.internal.a.m(rf.b.q(m10.toString(), ":"));
+        StringBuilder m11 = com.google.android.recaptcha.internal.a.m(rf.b.r(m10.toString(), ":"));
         m11.append(i11 < 10 ? "0" : "");
         m11.append(i11);
         return m11.toString();
@@ -151,7 +151,7 @@ public final class x1 {
             return "";
         }
         if (z9) {
-            String displayName = of2.getRules().getOffset(Instant.now()).getDisplayName(TextStyle.FULL, hd.E0().y);
+            String displayName = of2.getRules().getOffset(Instant.now()).getDisplayName(TextStyle.FULL, id.E0().y);
             str2 = "GMT";
             if (displayName.length() != 1 || displayName.charAt(0) != 'Z') {
                 str2 = "GMT".concat(displayName);

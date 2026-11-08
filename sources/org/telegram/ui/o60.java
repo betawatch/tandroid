@@ -3,7 +3,7 @@ package org.telegram.ui;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o60 implements org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class o60 implements org.telegram.ui.ActionBar.r1 {
                 boolean z9 = this.d;
                 boolean z10 = this.e;
                 String str = LaunchActivity.B1;
-                Utilities.e.c(new org.telegram.messenger.j4(org.telegram.messenger.g5.r(i10), hashMap, z9, z10, true));
+                Utilities.e.c(new org.telegram.messenger.i4(org.telegram.messenger.g5.r(i10), hashMap, z9, z10, true));
                 break;
             case 1:
                 int i11 = this.b;
@@ -37,7 +37,7 @@ public final /* synthetic */ class o60 implements org.telegram.ui.ActionBar.r1 {
                 boolean z11 = this.d;
                 boolean z12 = this.e;
                 String str2 = LaunchActivity.B1;
-                Utilities.e.c(new org.telegram.messenger.j4(org.telegram.messenger.g5.r(i11), hashMap2, z11, z12, false));
+                Utilities.e.c(new org.telegram.messenger.i4(org.telegram.messenger.g5.r(i11), hashMap2, z11, z12, false));
                 break;
             default:
                 int i12 = this.b;
@@ -45,7 +45,7 @@ public final /* synthetic */ class o60 implements org.telegram.ui.ActionBar.r1 {
                 boolean z13 = this.d;
                 boolean z14 = this.e;
                 String str3 = LaunchActivity.B1;
-                Utilities.e.c(new org.telegram.messenger.j4(org.telegram.messenger.g5.r(i12), hashMap3, z13, z14, true));
+                Utilities.e.c(new org.telegram.messenger.i4(org.telegram.messenger.g5.r(i12), hashMap3, z13, z14, true));
                 break;
         }
     }

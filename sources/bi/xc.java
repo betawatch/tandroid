@@ -22,7 +22,7 @@ import org.telegram.ui.Components.w70;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.q50;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class xc extends w31 {
     public static final /* synthetic */ int b = 0;
@@ -83,13 +83,13 @@ public final class xc extends w31 {
         layoutParams.bottomMargin = L;
         w70Var.setVisibility(ycVar.y ? 0 : 8);
         textView.setTextSize(1, ycVar.y ? 13.0f : 14.0f);
-        textView.setText(org.telegram.messenger.hd.Q(starsTransaction.date));
+        textView.setText(org.telegram.messenger.id.Q(starsTransaction.date));
         if (starsTransaction.refund) {
-            textView.setText(TextUtils.concat(textView.getText(), " — ", org.telegram.messenger.hd.M0(2131745031, null)));
+            textView.setText(TextUtils.concat(textView.getText(), " — ", org.telegram.messenger.id.M0(2131745033, null)));
         } else if (starsTransaction.failed) {
-            textView.setText(TextUtils.concat(textView.getText(), " — ", org.telegram.messenger.hd.M0(2131745111, null)));
+            textView.setText(TextUtils.concat(textView.getText(), " — ", org.telegram.messenger.id.M0(2131745113, null)));
         } else if (starsTransaction.pending) {
-            textView.setText(TextUtils.concat(textView.getText(), " — ", org.telegram.messenger.hd.M0(2131745054, null)));
+            textView.setText(TextUtils.concat(textView.getText(), " — ", org.telegram.messenger.id.M0(2131745056, null)));
         }
         l9Var2.setTranslationX(0.0f);
         l9Var2.setTranslationY(0.0f);
@@ -97,17 +97,17 @@ public final class xc extends w31 {
         l9Var2.setRoundRadius(org.telegram.messenger.g0.L(46.0f));
         if (starsTransaction.stargift_upgrade && starsTransaction.stargift != null) {
             l9Var2.setImageDrawable(new u6(l9Var2, starsTransaction.stargift, 46, 0.25f));
-            textView3.setText(org.telegram.messenger.hd.M0(2131749922, null));
+            textView3.setText(org.telegram.messenger.id.M0(2131749924, null));
             w70Var.setVisibility(8);
         } else if (starsTransaction.stargift_drop_original_details && starsTransaction.stargift != null) {
             l9Var2.setImageDrawable(new u6(l9Var2, starsTransaction.stargift, 46, 0.25f));
-            textView3.setText(org.telegram.messenger.hd.M0(2131749924, null));
+            textView3.setText(org.telegram.messenger.id.M0(2131749926, null));
             w70Var.setVisibility(8);
         } else {
             if (!starsTransaction.posts_search) {
                 if (o4 != 0) {
                     if (t10.A(o4)) {
-                        str = org.telegram.messenger.hd.M0(2131744926, null);
+                        str = org.telegram.messenger.id.M0(2131744928, null);
                         l9Var2.setImageDrawable(yc.a(44, "fragment"));
                         z11 = false;
                     } else if (o4 >= 0) {
@@ -135,47 +135,47 @@ public final class xc extends w31 {
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x ");
                             spannableStringBuilder.setSpan(new org.telegram.ui.Components.r5(starsTransaction.stargift.getDocument(), w70Var.getPaint().getFontMetricsInt()), 0, 1, 33);
                             if (starsTransaction.amount.negative()) {
-                                spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.M0(starsTransaction.refund ? 2131745214 : 2131745219, null));
+                                spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.M0(starsTransaction.refund ? 2131745216 : 2131745221, null));
                             } else {
-                                spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.M0(starsTransaction.refund ? 2131745218 : 2131745215, null));
+                                spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.M0(starsTransaction.refund ? 2131745220 : 2131745217, null));
                             }
                             w70Var.setText(spannableStringBuilder);
                         } else if (starsTransaction.stargift_resale) {
                             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("x ");
                             spannableStringBuilder2.setSpan(new org.telegram.ui.Components.r5(starsTransaction.stargift.getDocument(), w70Var.getPaint().getFontMetricsInt()), 0, 1, 33);
                             if (starsTransaction.amount.negative()) {
-                                spannableStringBuilder2.append((CharSequence) org.telegram.messenger.hd.M0(starsTransaction.refund ? 2131745214 : 2131745217, null));
+                                spannableStringBuilder2.append((CharSequence) org.telegram.messenger.id.M0(starsTransaction.refund ? 2131745216 : 2131745219, null));
                             } else {
-                                spannableStringBuilder2.append((CharSequence) org.telegram.messenger.hd.M0(starsTransaction.refund ? 2131745216 : 2131745215, null));
+                                spannableStringBuilder2.append((CharSequence) org.telegram.messenger.id.M0(starsTransaction.refund ? 2131745218 : 2131745217, null));
                             }
                             w70Var.setText(spannableStringBuilder2);
                         } else if (starsTransaction.stargift_prepaid_upgrade) {
-                            w70Var.setText(TextUtils.concat(spannableString4, " ", org.telegram.messenger.hd.M0(2131749929, null)));
+                            w70Var.setText(TextUtils.concat(spannableString4, " ", org.telegram.messenger.id.M0(2131749931, null)));
                         } else if (starsTransaction.stargift instanceof TL_stars.TL_starGiftUnique) {
-                            w70Var.setText(org.telegram.messenger.hd.M0(starsTransaction.refund ? 2131745212 : 2131745213, null));
+                            w70Var.setText(org.telegram.messenger.id.M0(starsTransaction.refund ? 2131745214 : 2131745215, null));
                         } else if (starsTransaction.refund) {
-                            w70Var.setText(TextUtils.concat(spannableString4, " ", org.telegram.messenger.hd.M0(starsTransaction.stargift_auction_bid ? 2131749928 : starsTransaction.amount.amount > 0 ? starsTransaction.stargift_upgrade ? 2131749925 : 2131749926 : 2131749927, null)));
+                            w70Var.setText(TextUtils.concat(spannableString4, " ", org.telegram.messenger.id.M0(starsTransaction.stargift_auction_bid ? 2131749930 : starsTransaction.amount.amount > 0 ? starsTransaction.stargift_upgrade ? 2131749927 : 2131749928 : 2131749929, null)));
                         } else {
                             if (starsTransaction.stargift_auction_bid) {
-                                i10 = 2131749931;
+                                i10 = 2131749933;
                             } else if (starsTransaction.amount.amount > 0) {
-                                i10 = 2131749930;
+                                i10 = 2131749932;
                             } else if (starsTransaction.stargift_upgrade) {
                                 str2 = null;
-                                i10 = 2131749922;
-                                w70Var.setText(TextUtils.concat(spannableString4, " ", org.telegram.messenger.hd.M0(i10, str2)));
+                                i10 = 2131749924;
+                                w70Var.setText(TextUtils.concat(spannableString4, " ", org.telegram.messenger.id.M0(i10, str2)));
                             } else {
-                                i10 = 2131749923;
+                                i10 = 2131749925;
                             }
                             str2 = null;
-                            w70Var.setText(TextUtils.concat(spannableString4, " ", org.telegram.messenger.hd.M0(i10, str2)));
+                            w70Var.setText(TextUtils.concat(spannableString4, " ", org.telegram.messenger.id.M0(i10, str2)));
                         }
                     } else if (starsTransaction.subscription) {
                         textView3.setText(str);
                         int i13 = starsTransaction.subscription_period;
                         if (i13 == 2592000) {
                             w70Var.setVisibility(0);
-                            w70Var.setText(org.telegram.messenger.hd.M0(2131744931, null));
+                            w70Var.setText(org.telegram.messenger.id.M0(2131744933, null));
                         } else {
                             String str3 = i13 == 300 ? "5 minutes" : "Minute";
                             w70Var.setVisibility(0);
@@ -185,35 +185,35 @@ public final class xc extends w31 {
                     } else if (starsTransaction.phonegroup_message) {
                         textView3.setText(str);
                         w70Var.setVisibility(z11 ? 8 : 0);
-                        w70Var.setText(org.telegram.messenger.hd.M0(starsTransaction.reaction ? 2131744945 : 2131744946, null));
+                        w70Var.setText(org.telegram.messenger.id.M0(starsTransaction.reaction ? 2131744947 : 2131744948, null));
                     } else if (starsTransaction.paid_message) {
                         textView3.setText(str);
                         w70Var.setVisibility(z11 ? 8 : 0);
-                        w70Var.setText(org.telegram.messenger.hd.H(',', "StarsTransactionMessageFee", starsTransaction.paid_messages));
+                        w70Var.setText(org.telegram.messenger.id.H(',', "StarsTransactionMessageFee", starsTransaction.paid_messages));
                     } else if (starsTransaction.premium_gift) {
                         textView3.setText(str);
                         w70Var.setVisibility(z11 ? 8 : 0);
-                        w70Var.setText(org.telegram.messenger.hd.M0(2131744936, null));
+                        w70Var.setText(org.telegram.messenger.id.M0(2131744938, null));
                     } else if (z16) {
                         textView3.setText(str);
                         w70Var.setVisibility(z11 ? 8 : 0);
                         obj = null;
-                        w70Var.setText(org.telegram.messenger.hd.a0(null, null, 2131745162, hi.j.J0(starsTransaction.starref_commission_permille)));
+                        w70Var.setText(org.telegram.messenger.id.a0(null, null, 2131745164, hi.j.J0(starsTransaction.starref_commission_permille)));
                     } else if (starsTransaction.gift) {
                         textView3.setText(str);
                         w70Var.setVisibility(z11 ? 8 : 0);
-                        w70Var.setText(org.telegram.messenger.hd.M0(2131745103, null));
+                        w70Var.setText(org.telegram.messenger.id.M0(2131745105, null));
                     } else if ((starsTransaction.flags & TLObject.FLAG_13) != 0) {
                         textView3.setText(str);
                         w70Var.setVisibility(z11 ? 8 : 0);
                         obj = null;
-                        w70Var.setText(org.telegram.messenger.hd.M0(2131745094, null));
+                        w70Var.setText(org.telegram.messenger.id.M0(2131745096, null));
                     } else {
                         obj = null;
                         if (starsTransaction.reaction) {
                             textView3.setText(str);
                             w70Var.setVisibility(z11 ? 8 : 0);
-                            w70Var.setText(org.telegram.messenger.hd.M0(2131745032, null));
+                            w70Var.setText(org.telegram.messenger.id.M0(2131745034, null));
                         } else if (starsTransaction.extended_media.isEmpty()) {
                             z10 = z15;
                             if (starsTransaction.photo != null) {
@@ -237,9 +237,9 @@ public final class xc extends w31 {
                             if (z14) {
                                 textView3.setText(str);
                                 w70Var.setVisibility(0);
-                                w70Var.setText(org.telegram.messenger.hd.M0(2131745205, null));
+                                w70Var.setText(org.telegram.messenger.id.M0(2131745207, null));
                             } else {
-                                textView3.setText(org.telegram.messenger.hd.M0(2131745205, null));
+                                textView3.setText(org.telegram.messenger.id.M0(2131745207, null));
                                 w70Var.setVisibility(z11 ? 8 : 0);
                                 w70Var.setText(str);
                             }
@@ -288,34 +288,34 @@ public final class xc extends w31 {
                 } else {
                     z10 = z15;
                     if (starsTransaction.floodskip) {
-                        textView3.setText(org.telegram.messenger.hd.M0(2131744960, null));
-                        w70Var.setText(org.telegram.messenger.hd.H(',', "StarsTransactionFloodskipMessages", starsTransaction.floodskip_number));
+                        textView3.setText(org.telegram.messenger.id.M0(2131744962, null));
+                        w70Var.setText(org.telegram.messenger.id.H(',', "StarsTransactionFloodskipMessages", starsTransaction.floodskip_number));
                         l9Var2.setImageDrawable(yc.a(44, "api"));
                     } else {
                         TL_stars.StarsTransactionPeer starsTransactionPeer = starsTransaction.peer;
                         if (starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerAppStore) {
-                            textView3.setText(org.telegram.messenger.hd.M0(2131744947, null));
+                            textView3.setText(org.telegram.messenger.id.M0(2131744949, null));
                             l9Var2.setImageDrawable(yc.a(44, "ios"));
                         } else if (starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerPlayMarket) {
-                            textView3.setText(org.telegram.messenger.hd.M0(2131744947, null));
+                            textView3.setText(org.telegram.messenger.id.M0(2131744949, null));
                             l9Var2.setImageDrawable(yc.a(44, "android"));
                         } else if (starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerFragment) {
                             if (starsTransaction.gift) {
-                                textView3.setText(org.telegram.messenger.hd.M0(2131745103, null));
-                                w70Var.setText(org.telegram.messenger.hd.M0(z10 ? 2131744929 : 2131744926, null));
+                                textView3.setText(org.telegram.messenger.id.M0(2131745105, null));
+                                w70Var.setText(org.telegram.messenger.id.M0(z10 ? 2131744931 : 2131744928, null));
                                 w70Var.setVisibility(0);
                             } else {
-                                textView3.setText(org.telegram.messenger.hd.M0((z14 || (!starsTransaction.refund ? !starsTransaction.amount.negative() : !starsTransaction.amount.positive())) ? 2131744922 : 2131744952, null));
+                                textView3.setText(org.telegram.messenger.id.M0((z14 || (!starsTransaction.refund ? !starsTransaction.amount.negative() : !starsTransaction.amount.positive())) ? 2131744924 : 2131744954, null));
                             }
                             l9Var2.setImageDrawable(yc.a(44, "fragment"));
                         } else if (starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerPremiumBot) {
-                            textView3.setText(org.telegram.messenger.hd.M0(2131744962, null));
+                            textView3.setText(org.telegram.messenger.id.M0(2131744964, null));
                             l9Var2.setImageDrawable(yc.a(44, "premiumbot"));
                         } else if (starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerUnsupported) {
-                            textView3.setText(org.telegram.messenger.hd.M0(2131744924, null));
+                            textView3.setText(org.telegram.messenger.id.M0(2131744926, null));
                             l9Var2.setImageDrawable(yc.a(44, "?"));
                         } else if (starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerAds) {
-                            textView3.setText(org.telegram.messenger.hd.M0(2131744963, null));
+                            textView3.setText(org.telegram.messenger.id.M0(2131744965, null));
                             l9Var2.setImageDrawable(yc.a(44, "ads"));
                         } else {
                             textView3.setText("");
@@ -344,7 +344,7 @@ public final class xc extends w31 {
                 ycVar.setWillNotDraw(!z13);
             }
             l9Var2.setImageDrawable(yc.a(44, "search"));
-            textView3.setText(org.telegram.messenger.hd.M0(2131744937, null));
+            textView3.setText(org.telegram.messenger.id.M0(2131744939, null));
             w70Var.setVisibility(8);
         }
         z10 = z15;

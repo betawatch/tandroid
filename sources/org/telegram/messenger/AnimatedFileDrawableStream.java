@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class AnimatedFileDrawableStream implements j7 {
     public final int D;
@@ -35,7 +35,7 @@ public class AnimatedFileDrawableStream implements j7 {
         w7 G = w7.G(i7);
         CountDownLatch countDownLatch = new CountDownLatch(1);
         i7[] i7VarArr = new i7[1];
-        w7.J.c(new o7(G, i7VarArr, document, hcVar, obj, i10, this, 0L, z9, i11, countDownLatch));
+        w7.J.c(new k7(G, i7VarArr, document, hcVar, obj, i10, this, 0L, z9, i11, countDownLatch));
         w7.a(countDownLatch, true);
         this.a = i7VarArr[0];
     }
@@ -211,7 +211,7 @@ public class AnimatedFileDrawableStream implements j7 {
                                     i7[] i7VarArr = new i7[i17];
                                     boolean z12 = i17;
                                     i11 = i13;
-                                    w7.J.c(new o7(G, i7VarArr, document, hcVar, obj, i15, this, j3, z11, i16, countDownLatch2));
+                                    w7.J.c(new k7(G, i7VarArr, document, hcVar, obj, i15, this, j3, z11, i16, countDownLatch2));
                                     w7.a(countDownLatch2, z12);
                                     i7 i7Var2 = i7VarArr[i11];
                                     i7 i7Var3 = this.a;

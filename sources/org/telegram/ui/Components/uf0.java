@@ -12,7 +12,7 @@ import android.graphics.RenderNode;
 import android.graphics.Shader;
 import android.view.View;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class uf0 implements vf0 {
     public final float f;
@@ -47,7 +47,7 @@ public final class uf0 implements vf0 {
     }
 
     @Override // org.telegram.ui.Components.vf0
-    public final void b(ax axVar, Canvas canvas) {
+    public final void b(bx bxVar, Canvas canvas) {
         Paint paint;
         float T1;
         float f10;
@@ -101,7 +101,7 @@ public final class uf0 implements vf0 {
             beginRecording.translate(f19, f20);
             int z12 = (int) ((1.0f - org.telegram.messenger.g0.z1(wf0Var.e, 0.5f, 1.0f)) * 255.0f);
             int b10 = c8.j9.b(z12, 0, org.telegram.messenger.qs.e4);
-            wf0.a((wf0) axVar.b, beginRecording);
+            wf0.a((wf0) bxVar.b, beginRecording);
             this.b.endRecording();
             float f21 = this.f;
             float z9 = com.google.android.recaptcha.internal.a.z(f21, 1.0f, 2.0f, com.google.android.recaptcha.internal.a.x(wf0Var.f, 0.5f, f21, (f21 / 4.0f) + 1.0f));

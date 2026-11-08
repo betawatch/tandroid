@@ -10,13 +10,13 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class t5 extends FrameLayout {
     public final int a;
@@ -43,7 +43,7 @@ public final class t5 extends FrameLayout {
         String p10 = t10.p(f10);
         di.d4 d4Var = e4Var.b;
         d4Var.l(org.telegram.messenger.i6.m(p10, d4Var.getPaint().getFontMetricsInt(), false, null, 0), false);
-        e4Var.c(hd.M0(2131745999, null), false);
+        e4Var.c(id.M0(2131746001, null), false);
         s1Var.addView(e4Var, c8.ha.d(-1, -2.0f, 55, 0.0f, 17.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(activity);
         imageView.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_close_white).mutate());
@@ -67,7 +67,7 @@ public final class t5 extends FrameLayout {
         TextView textView = new TextView(activity);
         textView.setTextSize(1, 18.0f);
         textView.setTextColor(1694498815);
-        textView.setText(hd.M0(2131746256, null));
+        textView.setText(id.M0(2131746258, null));
         frameLayout2.addView(textView, c8.ha.d(-2, -2.0f, 19, 24.0f, 0.0f, 24.0f, 0.0f));
         ImageView imageView3 = new ImageView(activity);
         imageView3.setImageResource(R.drawable.input_attach);

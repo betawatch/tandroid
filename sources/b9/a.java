@@ -3,7 +3,7 @@ package b9;
 import android.os.Parcel;
 import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class a extends a8.q implements d0 {
     public a() {
@@ -11,12 +11,17 @@ public abstract class a extends a8.q implements d0 {
     }
 
     @Override // b9.d0
-    public void F(t0 t0Var) {
+    public void H() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // b9.d0
+    public void O(t0 t0Var) {
         throw new UnsupportedOperationException();
     }
 
     @Override // a8.q
-    public final boolean K0(int i7, Parcel parcel, Parcel parcel2) {
+    public final boolean k1(int i7, Parcel parcel, Parcel parcel2) {
         switch (i7) {
             case 2:
                 throw a8.p0.v(parcel);
@@ -31,7 +36,7 @@ public abstract class a extends a8.q implements d0 {
             case 7:
                 t0 t0Var = (t0) i8.a.a(parcel, t0.CREATOR);
                 i8.a.b(parcel);
-                F(t0Var);
+                O(t0Var);
                 break;
             case 8:
                 throw a8.p0.v(parcel);
@@ -41,7 +46,7 @@ public abstract class a extends a8.q implements d0 {
                 throw a8.p0.v(parcel);
             case 11:
                 i8.a.b(parcel);
-                z();
+                H();
                 break;
             case 12:
                 throw a8.p0.v(parcel);
@@ -100,10 +105,5 @@ public abstract class a extends a8.q implements d0 {
         }
         parcel2.writeNoException();
         return true;
-    }
-
-    @Override // b9.d0
-    public void z() {
-        throw new UnsupportedOperationException();
     }
 }

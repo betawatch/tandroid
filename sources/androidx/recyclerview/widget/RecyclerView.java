@@ -42,8 +42,8 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.qt;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.rt;
+import org.telegram.ui.Components.vy;
 import org.telegram.ui.hy0;
 import q0.a;
 import r0.c0;
@@ -79,7 +79,7 @@ import v4.w0;
 import v4.x0;
 import v4.z0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public class RecyclerView extends ViewGroup {
     public static final int[] Q0 = {R.attr.clipToPadding};
@@ -1206,7 +1206,7 @@ public class RecyclerView extends ViewGroup {
             return;
         }
         hy0 hy0Var = this.e;
-        int indexOfChild = ((RecyclerView) ((uy) hy0Var.b).b).indexOfChild(view);
+        int indexOfChild = ((RecyclerView) ((vy) hy0Var.b).b).indexOfChild(view);
         if (indexOfChild >= 0) {
             ((ua) hy0Var.c).I(indexOfChild);
             hy0Var.D(view);
@@ -2363,21 +2363,21 @@ public class RecyclerView extends ViewGroup {
                                     j1Var.a = r11;
                                     j1Var.b = null;
                                     j1Var.c = null;
-                                    j1.d.q(j1Var);
+                                    j1.d.v(j1Var);
                                 }
                             }
                             r11 = 0;
                             j1Var.a = r11;
                             j1Var.b = null;
                             j1Var.c = null;
-                            j1.d.q(j1Var);
+                            j1.d.v(j1Var);
                         }
                         r11 = z11;
                         z9 = z12;
                         j1Var.a = r11;
                         j1Var.b = null;
                         j1Var.c = null;
-                        j1.d.q(j1Var);
+                        j1.d.v(j1Var);
                     }
                     i15--;
                     z12 = z9;
@@ -3351,8 +3351,8 @@ public class RecyclerView extends ViewGroup {
         this.n0 = viewConfiguration.getScaledMaximumFlingVelocity();
         setWillNotDraw(getOverScrollMode() == 2);
         this.c0.a = gVar;
-        this.d = new ug.k0(new qt(this, 22));
-        this.e = new hy0(new uy(this, 25));
+        this.d = new ug.k0(new rt(this, 22));
+        this.e = new hy0(new vy(this, 25));
         WeakHashMap weakHashMap = i0.a;
         if ((i10 >= 26 ? c0.a(this) : 0) == 0 && i10 >= 26) {
             c0.b(this, 8);

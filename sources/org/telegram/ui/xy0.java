@@ -9,7 +9,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class xy0 extends org.telegram.ui.ActionBar.f2 {
     public static final int[] d = {750000, 1000000, 1200000, 2000000};
@@ -27,8 +27,8 @@ public final class xy0 extends org.telegram.ui.ActionBar.f2 {
         if (i7 != 1) {
             if (MediaController.s0(xy0Var.currentAccount) && i7 == 2) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(xy0Var.getParentActivity());
-                alertDialog$Builder.a.R = org.telegram.messenger.hd.M0(2131753922, null);
-                alertDialog$Builder.f(new CharSequence[]{org.telegram.messenger.hd.M0(2131753921, null), org.telegram.messenger.hd.M0(2131753920, null)}, new k4(xy0Var, 0));
+                alertDialog$Builder.a.R = org.telegram.messenger.id.M0(2131753922, null);
+                alertDialog$Builder.f(new CharSequence[]{org.telegram.messenger.id.M0(2131753921, null), org.telegram.messenger.id.M0(2131753920, null)}, new k4(xy0Var, 0));
                 xy0Var.showDialog(alertDialog$Builder.a);
                 return;
             }
@@ -48,7 +48,7 @@ public final class xy0 extends org.telegram.ui.ActionBar.f2 {
     public static void a0(xy0 xy0Var, int i7) {
         if (i7 == 1) {
             xi.a aVar = xi.e.d;
-            boolean z9 = !org.telegram.ui.Components.t40.d(xy0Var.currentAccount);
+            boolean z9 = !org.telegram.ui.Components.t40.e(xy0Var.currentAccount);
             synchronized (aVar) {
                 aVar.d = z9;
                 aVar.c = true;
@@ -58,21 +58,21 @@ public final class xy0 extends org.telegram.ui.ActionBar.f2 {
             ((l4) xy0Var.c).f();
             return;
         }
-        if (!org.telegram.ui.Components.t40.d(xy0Var.currentAccount)) {
+        if (!org.telegram.ui.Components.t40.e(xy0Var.currentAccount)) {
             return;
         }
         int i10 = 0;
         if (i7 == 2) {
-            xy0Var.g0(2131745987, new CharSequence[]{"480p", "360p"}, new go0(6));
+            xy0Var.g0(2131745989, new CharSequence[]{"480p", "360p"}, new go0(6));
             return;
         }
         if (i7 == 3) {
-            xy0Var.g0(2131745997, new CharSequence[]{org.telegram.messenger.hd.M0(2131745996, null), org.telegram.messenger.hd.M0(2131745994, null), org.telegram.messenger.hd.M0(2131745995, null)}, new go0(7));
+            xy0Var.g0(2131745999, new CharSequence[]{org.telegram.messenger.id.M0(2131745998, null), org.telegram.messenger.id.M0(2131745996, null), org.telegram.messenger.id.M0(2131745997, null)}, new go0(7));
             return;
         }
         int i11 = 8;
         if (i7 == 4) {
-            xy0Var.g0(2131745990, new CharSequence[]{"30 FPS", "60 FPS"}, new go0(i11));
+            xy0Var.g0(2131745992, new CharSequence[]{"30 FPS", "60 FPS"}, new go0(i11));
             return;
         }
         if (i7 != 5) {
@@ -89,7 +89,7 @@ public final class xy0 extends org.telegram.ui.ActionBar.f2 {
         while (true) {
             int[] iArr = d;
             if (i10 >= 3) {
-                xy0Var.g0(2131745998, charSequenceArr, new go0(9));
+                xy0Var.g0(2131746000, charSequenceArr, new go0(9));
                 return;
             } else {
                 charSequenceArr[i10] = f0(iArr[i10]);
@@ -116,7 +116,7 @@ public final class xy0 extends org.telegram.ui.ActionBar.f2 {
             case 0:
                 setHasOwnBackground(true);
                 this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-                this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131745986, null));
+                this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131745988, null));
                 this.simpleActionBar.setActionBarMenuOnItemClick(new nt0(this, 7));
                 FrameLayout frameLayout = new FrameLayout(context);
                 this.fragmentView = frameLayout;
@@ -136,7 +136,7 @@ public final class xy0 extends org.telegram.ui.ActionBar.f2 {
             default:
                 setHasOwnBackground(true);
                 this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-                this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131753919, null));
+                this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131753919, null));
                 this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 23));
                 FrameLayout frameLayout2 = new FrameLayout(context);
                 this.fragmentView = frameLayout2;
@@ -159,7 +159,7 @@ public final class xy0 extends org.telegram.ui.ActionBar.f2 {
 
     public void g0(int i7, CharSequence[] charSequenceArr, go0 go0Var) {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-        alertDialog$Builder.a.R = org.telegram.messenger.hd.M0(i7, null);
+        alertDialog$Builder.a.R = org.telegram.messenger.id.M0(i7, null);
         alertDialog$Builder.f(charSequenceArr, new og.j(11, this, go0Var));
         showDialog(alertDialog$Builder.a);
     }

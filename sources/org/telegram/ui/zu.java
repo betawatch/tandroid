@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zu implements Runnable {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class zu implements Runnable {
     public final void run() {
         org.telegram.ui.ActionBar.r0 r0Var;
         int i7;
-        v91 v91Var = null;
+        w91 w91Var = null;
         switch (this.a) {
             case 0:
                 ww wwVar = this.b;
@@ -124,7 +124,7 @@ public final /* synthetic */ class zu implements Runnable {
                         if (i7 == 0) {
                             if (a02 != null) {
                                 try {
-                                    a02.J(R.raw.auto_night_off, i7 == 3 ? org.telegram.messenger.hd.M0(2131753785, "AutoNightSystemModeOff") : org.telegram.messenger.hd.M0(2131753790, "AutoNightModeOff"), org.telegram.messenger.hd.M0(2131745496, "Settings"), 5000, false, cuVar).j();
+                                    a02.J(R.raw.auto_night_off, i7 == 3 ? org.telegram.messenger.id.M0(2131753785, "AutoNightSystemModeOff") : org.telegram.messenger.id.M0(2131753790, "AutoNightModeOff"), org.telegram.messenger.id.M0(2131745498, "Settings"), 5000, false, cuVar).j();
                                 } catch (Exception e10) {
                                     org.telegram.messenger.a8.g(e10, true);
                                 }
@@ -161,11 +161,11 @@ public final /* synthetic */ class zu implements Runnable {
                 ww wwVar9 = this.b;
                 wwVar9.e0[0].a.requestLayout();
                 sv svVar = wwVar9.F3;
-                if (svVar != null && (svVar.getFragment() instanceof v91)) {
-                    v91Var = (v91) wwVar9.F3.getFragment();
+                if (svVar != null && (svVar.getFragment() instanceof w91)) {
+                    w91Var = (w91) wwVar9.F3.getFragment();
                 }
-                if (v91Var != null) {
-                    v91Var.F0();
+                if (w91Var != null) {
+                    w91Var.F0();
                 }
                 wwVar9.S3(false);
                 wwVar9.e5();

@@ -49,7 +49,7 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.Components.j30;
 import org.telegram.ui.Components.pp0;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Wallet.a1;
+import org.telegram.ui.Wallet.y0;
 import org.telegram.ui.Wallet.z0;
 import org.telegram.ui.b5;
 import org.telegram.ui.fx;
@@ -59,7 +59,7 @@ import org.telegram.ui.w0;
 import org.telegram.ui.w4;
 import org.telegram.ui.wm0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class q implements f3.q, wm0 {
     public static q e;
@@ -352,15 +352,15 @@ public final class q implements f3.q, wm0 {
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            z0 z0Var = (z0) obj;
+            y0 y0Var = (y0) obj;
             try {
                 try {
                     rc.u uVar = (rc.u) this.b;
-                    org.telegram.messenger.g0.h3(new pp0(z0Var.c, uVar, z0Var.a, "websocket error: " + a1.a(vVar), 18));
+                    org.telegram.messenger.g0.h3(new pp0(y0Var.c, uVar, y0Var.a, "websocket error: " + z0.a(vVar), 18));
                 } catch (Throwable unused) {
                 }
             } catch (Throwable unused2) {
-                z0Var.getClass();
+                y0Var.getClass();
             }
         }
     }
@@ -382,12 +382,12 @@ public final class q implements f3.q, wm0 {
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            z0 z0Var = (z0) obj;
+            y0 y0Var = (y0) obj;
             try {
                 try {
-                    z0Var.getClass();
+                    y0Var.getClass();
                 } catch (Throwable unused) {
-                    z0Var.getClass();
+                    y0Var.getClass();
                 }
             } catch (Throwable unused2) {
             }
@@ -507,7 +507,7 @@ public final class q implements f3.q, wm0 {
                 while (i7 < size) {
                     Object obj = arrayList2.get(i7);
                     i7++;
-                    arrayList.add((z0) obj);
+                    arrayList.add((y0) obj);
                 }
                 this.d = arrayList;
                 this.a = false;
@@ -526,7 +526,7 @@ public final class q implements f3.q, wm0 {
             Boolean t6 = t();
             this.c = t6;
             if (t6 == null) {
-                ((u9.k) ((ra.b) this.b)).a(new a3.l(9));
+                ((u9.l) ((ra.b) this.b)).a(new a3.l(9));
             }
             this.a = true;
         } catch (Throwable th2) {

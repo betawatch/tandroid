@@ -21,7 +21,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.fp;
 import org.telegram.messenger.gp;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qi;
@@ -97,11 +97,11 @@ import org.telegram.ui.rc;
 import org.telegram.ui.sh0;
 import org.telegram.ui.t00;
 import org.telegram.ui.tt;
-import org.telegram.ui.vc1;
 import org.telegram.ui.w40;
+import org.telegram.ui.wc1;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p4 implements bj0 {
     public final /* synthetic */ int a;
@@ -230,6 +230,7 @@ public final /* synthetic */ class p4 implements bj0 {
     }
 
     private final void f(int i7, View view) {
+        org.telegram.ui.Components.y3 y3Var;
         sg.i0 i0Var;
         wg.a0 a0Var = (wg.a0) this.b;
         org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) this.c;
@@ -389,12 +390,12 @@ public final /* synthetic */ class p4 implements bj0 {
         gVar.setItemCount(5);
         gVar.setTextColor(i16);
         gVar.setTextOffset(-org.telegram.messenger.g0.L(34.0f));
-        org.telegram.ui.Components.y3 y3Var = new org.telegram.ui.Components.y3(context, s4Var, hb0Var, fVar, gVar);
-        y3Var.setOrientation(1);
+        org.telegram.ui.Components.y3 y3Var2 = new org.telegram.ui.Components.y3(context, s4Var, hb0Var, fVar, gVar);
+        y3Var2.setOrientation(1);
         FrameLayout frameLayout = new FrameLayout(context);
-        y3Var.addView(frameLayout, ha.t(-1, -2, 51, 22, 0, 0, 4));
+        y3Var2.addView(frameLayout, ha.t(-1, -2, 51, 22, 0, 0, 4));
         TextView textView = new TextView(context);
-        textView.setText(hd.M0(2131753287, "BoostingSelectDateTime"));
+        textView.setText(id.M0(2131753287, "BoostingSelectDateTime"));
         textView.setTextColor(i16);
         com.google.android.recaptcha.internal.a.q(textView, 1, 20.0f);
         frameLayout.addView(textView, ha.d(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
@@ -402,7 +403,7 @@ public final /* synthetic */ class p4 implements bj0 {
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         linearLayout.setWeightSum(1.0f);
-        y3Var.addView(linearLayout, ha.q(-1, -2, 1.0f, 0, 0, 12, 0, 12));
+        y3Var2.addView(linearLayout, ha.q(-1, -2, 1.0f, 0, 0, 12, 0, 12));
         long currentTimeMillis = System.currentTimeMillis();
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(currentTimeMillis);
@@ -422,20 +423,21 @@ public final /* synthetic */ class p4 implements bj0 {
         hb0Var.setWrapSelectorWheel(false);
         hb0Var.setTag("DAY");
         hb0Var.setFormatter(new t00(currentTimeMillis, calendar, i17, 1));
-        hi.g4 g4Var = new hi.g4(y3Var, fVar, gVar, i19, i20, hb0Var);
+        hi.g4 g4Var = new hi.g4(y3Var2, fVar, gVar, i19, i20, hb0Var);
         hb0Var.setOnValueChangedListener(g4Var);
         fVar.setMinValue(0);
         fVar.setMaxValue(23);
         linearLayout.addView(fVar, ha.l(0.2f, 0, qs.t4));
-        fVar.setFormatter(new v0.j(15));
+        fVar.setFormatter(new v0.j(16));
         fVar.setOnValueChangedListener(g4Var);
         gVar.setMinValue(0);
         gVar.setMaxValue(11);
         gVar.setValue(0);
-        gVar.setFormatter(new v0.j(16));
+        gVar.setFormatter(new v0.j(17));
         linearLayout.addView(gVar, ha.l(0.3f, 0, qs.t4));
         gVar.setOnValueChangedListener(g4Var);
         if (j3 > 0) {
+            y3Var = y3Var2;
             calendar.setTimeInMillis(System.currentTimeMillis());
             calendar.set(12, 0);
             calendar.set(13, 0);
@@ -450,6 +452,8 @@ public final /* synthetic */ class p4 implements bj0 {
             g4Var.n(hb0Var, hb0Var.getValue());
             fVar.getValue();
             g4Var.n(fVar, fVar.getValue());
+        } else {
+            y3Var = y3Var2;
         }
         mb0Var.setPadding(org.telegram.messenger.g0.L(34.0f), 0, org.telegram.messenger.g0.L(34.0f), 0);
         mb0Var.setGravity(17);
@@ -457,7 +461,7 @@ public final /* synthetic */ class p4 implements bj0 {
         mb0Var.setTextSize(1, 14.0f);
         mb0Var.setTypeface(org.telegram.messenger.g0.o());
         mb0Var.setBackground(org.telegram.ui.ActionBar.z5.e(s4Var.h, 8.0f));
-        mb0Var.setText(hd.M0(2131753543, "BoostingConfirm"));
+        mb0Var.setText(id.M0(2131753543, "BoostingConfirm"));
         y3Var.addView(mb0Var, ha.t(-1, 48, 83, 16, 15, 16, 16));
         mb0Var.setOnClickListener(new org.telegram.ui.Components.n1(calendar, hb0Var, fVar, gVar, uVar, f1Var));
         org.telegram.ui.ActionBar.v2 v2Var = (org.telegram.ui.ActionBar.v2) f1Var.b;
@@ -647,12 +651,12 @@ public final /* synthetic */ class p4 implements bj0 {
                 x31 G2 = a0Var.f2.G(i7 - 1);
                 if (G2 != null && G2.d == 1) {
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, a0Var.getContext(), f6Var);
-                    String M0 = hd.M0(2131754998, null);
+                    String M0 = id.M0(2131754998, null);
                     org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                     u1Var.R = M0;
-                    u1Var.T = hd.M0(2131754997, null);
-                    alertDialog$Builder.h(hd.M0(2131752589, null), null);
-                    alertDialog$Builder.k(hd.M0(2131751599, null), new org.telegram.ui.Components.u(a0Var, 0));
+                    u1Var.T = id.M0(2131754997, null);
+                    alertDialog$Builder.h(id.M0(2131752589, null), null);
+                    alertDialog$Builder.k(id.M0(2131751599, null), new org.telegram.ui.Components.u(a0Var, 0));
                     alertDialog$Builder.d(-1);
                     alertDialog$Builder.p();
                     break;
@@ -816,7 +820,7 @@ public final /* synthetic */ class p4 implements bj0 {
                             diVar.T3.Y0(whVar.b);
                             diVar.dismiss();
                         } else if (tL_attachMenuBot.inactive) {
-                            vc1.a(diVar.getContext(), new org.telegram.messenger.voip.k(23, diVar, whVar), null);
+                            wc1.a(diVar.getContext(), new org.telegram.messenger.voip.k(23, diVar, whVar), null);
                         } else {
                             diVar.C1(tL_attachMenuBot.bot_id, null, false, true);
                         }
@@ -953,7 +957,7 @@ public final /* synthetic */ class p4 implements bj0 {
                                     if (t10.n(user3) != null) {
                                         d90Var.z1(i23, i24, "@" + t10.n(user3) + " ", false);
                                     } else {
-                                        SpannableString spannableString = new SpannableString(rf.b.q(t10.j(user3, false), " "));
+                                        SpannableString spannableString = new SpannableString(rf.b.r(t10.j(user3, false), " "));
                                         spannableString.setSpan(new e41("" + user3.id, 3, null), 0, spannableString.length(), 33);
                                         d90Var.z1(i23, i24, spannableString, false);
                                     }
@@ -1186,12 +1190,12 @@ public final /* synthetic */ class p4 implements bj0 {
                             }
                         } else if (!cf0Var.c0) {
                             AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(cf0Var.getParentActivity());
-                            String M02 = hd.M0(2131751576, null);
+                            String M02 = id.M0(2131751576, null);
                             org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder2.a;
                             u1Var2.R = M02;
-                            u1Var2.T = hd.M0(2131751577, null);
-                            alertDialog$Builder2.k(hd.M0(2131751599, null), new org.telegram.ui.pe0(cf0Var));
-                            alertDialog$Builder2.h(hd.M0(2131752589, null), null);
+                            u1Var2.T = id.M0(2131751577, null);
+                            alertDialog$Builder2.k(id.M0(2131751599, null), new org.telegram.ui.pe0(cf0Var));
+                            alertDialog$Builder2.h(id.M0(2131752589, null), null);
                             cf0Var.showDialog(u1Var2);
                             break;
                         }
@@ -1217,7 +1221,7 @@ public final /* synthetic */ class p4 implements bj0 {
                 if (view instanceof ah.r) {
                     ah.r rVar = (ah.r) view;
                     if (rVar.getBoost().cooldown_until_date > 0) {
-                        new hc(q0Var.c, q0Var.I0).G(R.raw.chats_infotip, 5, org.telegram.messenger.g0.X2(hd.G((int) qp.s1(p10.s0).r0, "BoostingWaitWarningPlural", new Object[0]))).k(true);
+                        new hc(q0Var.c, q0Var.I0).G(R.raw.chats_infotip, 5, org.telegram.messenger.g0.X2(id.G((int) qp.s1(p10.s0).r0, "BoostingWaitWarningPlural", new Object[0]))).k(true);
                         break;
                     } else {
                         if (arrayList7.contains(rVar.getBoost())) {

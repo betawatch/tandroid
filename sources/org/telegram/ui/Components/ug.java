@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ug implements eh.a {
     public final /* synthetic */ int a;
@@ -47,13 +47,13 @@ public final /* synthetic */ class ug implements eh.a {
                 }
                 break;
             case 1:
-                gy gyVar = (gy) this.b;
-                sw swVar = gyVar.P;
-                ih.d.a(swVar, canvas, rectF, swVar, gyVar);
-                kv kvVar = gyVar.h0;
-                ih.d.a(kvVar, canvas, rectF, kvVar, gyVar);
-                pv pvVar = gyVar.D0;
-                ih.d.a(pvVar, canvas, rectF, pvVar, gyVar);
+                hy hyVar = (hy) this.b;
+                tw twVar = hyVar.P;
+                ih.d.a(twVar, canvas, rectF, twVar, hyVar);
+                lv lvVar = hyVar.h0;
+                ih.d.a(lvVar, canvas, rectF, lvVar, hyVar);
+                qv qvVar = hyVar.D0;
+                ih.d.a(qvVar, canvas, rectF, qvVar, hyVar);
                 break;
             default:
                 mo0 mo0Var = (mo0) this.b;

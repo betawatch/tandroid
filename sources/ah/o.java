@@ -21,7 +21,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -37,7 +37,7 @@ import org.telegram.ui.Components.c20;
 import org.telegram.ui.Components.w5;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class o extends ScrollView implements a6 {
     public final w5 D;
@@ -112,10 +112,10 @@ public abstract class o extends ScrollView implements a6 {
         iVar.setTextIsSelectable(false);
         iVar.setPadding(0, 0, 0, 0);
         iVar.setImeOptions(268435462);
-        iVar.setGravity((hd.a0 ? 5 : 3) | 16);
+        iVar.setGravity((id.a0 ? 5 : 3) | 16);
         nVar.addView(iVar);
-        iVar.setHintText(hd.M0(2131745837, null));
-        this.c = (int) iVar.getPaint().measureText(hd.M0(2131745837, null));
+        iVar.setHintText(id.M0(2131745839, null));
+        this.c = (int) iVar.getPaint().measureText(id.M0(2131745839, null));
         iVar.addTextChangedListener(new j(this, i7));
     }
 

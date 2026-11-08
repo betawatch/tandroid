@@ -14,7 +14,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class yh0 extends rg.b {
     public final /* synthetic */ int d;
@@ -224,32 +224,32 @@ public final class yh0 extends rg.b {
                                         }
                                         mdVar.setTranslationX(0.0f);
                                         r32.setVisibility(0);
-                                        r32.c(org.telegram.messenger.rc.e(i20), false);
+                                        r32.c(org.telegram.messenger.sc.e(i20), false);
                                         z9 = true;
                                         v90Var.r = Integer.bitCount(i20) > 1;
                                     } else {
                                         z9 = true;
                                         woVar.setVisibility(0);
-                                        woVar.a(org.telegram.messenger.rc.e(i20), false);
+                                        woVar.a(org.telegram.messenger.sc.e(i20), false);
                                         imageView4.setVisibility(8);
                                         r32.setVisibility(8);
                                         j6Var.setVisibility(8);
                                         imageView3.setVisibility(8);
                                         mdVar.setText(charSequence3);
-                                        mdVar.setTranslationX(org.telegram.messenger.g0.L(41.0f) * (org.telegram.messenger.hd.a0 ? -2.2f : 1.0f));
+                                        mdVar.setTranslationX(org.telegram.messenger.g0.L(41.0f) * (org.telegram.messenger.id.a0 ? -2.2f : 1.0f));
                                         v90Var.w = false;
                                         v90Var.r = false;
                                     }
                                     ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) v90Var.b.getLayoutParams();
                                     if (r90Var.a == 3) {
-                                        f10 = (org.telegram.messenger.hd.a0 ? 64 : 75) + 4;
+                                        f10 = (org.telegram.messenger.id.a0 ? 64 : 75) + 4;
                                     } else {
                                         f10 = 8.0f;
                                     }
                                     marginLayoutParams.rightMargin = org.telegram.messenger.g0.L(f10);
                                     v90Var.n = z11;
                                     v90Var.setWillNotDraw((z11 || v90Var.r) ? false : z9);
-                                    v90Var.b(org.telegram.messenger.rc.f(), false);
+                                    v90Var.b(org.telegram.messenger.sc.f(), false);
                                     break;
                                 }
                             } else {
@@ -348,7 +348,7 @@ public final class yh0 extends rg.b {
                     int i15 = org.telegram.ui.ActionBar.k6.i6;
                     org.telegram.ui.ActionBar.r6.R(zqVar2, org.telegram.ui.ActionBar.k6.j0(L, 0, i0.a.o(org.telegram.ui.ActionBar.k6.x0(null, i15, false), 40)), null, org.telegram.ui.ActionBar.r6.h(i15, 40), null);
                     ii0Var.v0.setPadding(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f));
-                    ii0Var.v0.setContentDescription(org.telegram.messenger.hd.M0(2131754883, null));
+                    ii0Var.v0.setContentDescription(org.telegram.messenger.id.M0(2131754883, null));
                     ii0Var.S.addView(ii0Var.v0, c8.ha.e(30, 30, 17));
                     ii0Var.v0.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.xh0
                         public final /* synthetic */ yh0 b;

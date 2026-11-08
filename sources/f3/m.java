@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class m implements r {
     public static final int[] h = {5, 4, 12, 8, 3, 10, 9, 11, 6, 2, 0, 1, 7, 16, 15, 14, 17, 18, 19, 20, 21};
@@ -64,7 +64,7 @@ public final class m implements r {
                 if ((2 & i10) != 0) {
                     i11 |= 128;
                 }
-                arrayList.add(new z3.l(sVar2, i11 | (this.b ? 0 : 16)));
+                arrayList.add(new z3.m(sVar2, i11 | (this.b ? 0 : 16)));
                 break;
             case 9:
                 arrayList.add(new a4.e());

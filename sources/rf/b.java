@@ -2,6 +2,7 @@ package rf;
 
 import android.media.MediaMetadataRetriever;
 import android.os.Bundle;
+import android.util.Log;
 import com.google.android.gms.internal.cast.f4;
 import j$.util.DesugarCollections;
 import java.util.HashMap;
@@ -12,7 +13,7 @@ import org.telegram.messenger.qs;
 import p1.g;
 import y7.e;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class b {
     public static int a(int i7) {
@@ -28,7 +29,7 @@ public abstract /* synthetic */ class b {
             return 0;
         }
         try {
-            return u(str);
+            return v(str);
         } catch (IllegalArgumentException unused) {
             return 0;
         }
@@ -361,15 +362,20 @@ public abstract /* synthetic */ class b {
         }
     }
 
-    public static void p(HashMap hashMap) {
+    public static void p(StringBuilder sb2, String str, String str2) {
+        sb2.append(str);
+        Log.d(str2, sb2.toString());
+    }
+
+    public static void q(HashMap hashMap) {
         DesugarCollections.unmodifiableMap(new HashMap(hashMap));
     }
 
-    public static String q(String str, String str2) {
+    public static String r(String str, String str2) {
         return str + str2;
     }
 
-    public static /* synthetic */ String r(int i7) {
+    public static /* synthetic */ String s(int i7) {
         switch (i7) {
             case 1:
                 return "IDLE";
@@ -394,13 +400,13 @@ public abstract /* synthetic */ class b {
             default:
                 return "null";
         }
-    }
-
-    public static /* synthetic */ String s(int i7) {
-        return i7 != 1 ? i7 != 2 ? i7 != 3 ? i7 != 4 ? "null" : "ERROR" : "CANCELLED" : "AUDIO_REMOVED" : "TRIMMED";
     }
 
     public static /* synthetic */ String t(int i7) {
+        return i7 != 1 ? i7 != 2 ? i7 != 3 ? i7 != 4 ? "null" : "ERROR" : "CANCELLED" : "AUDIO_REMOVED" : "TRIMMED";
+    }
+
+    public static /* synthetic */ String u(int i7) {
         switch (i7) {
             case 1:
                 return "IDLE";
@@ -427,7 +433,7 @@ public abstract /* synthetic */ class b {
         }
     }
 
-    public static /* synthetic */ int u(String str) {
+    public static /* synthetic */ int v(String str) {
         if (str == null) {
             throw new NullPointerException("Name is null");
         }

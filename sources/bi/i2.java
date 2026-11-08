@@ -6,20 +6,20 @@ import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i2 implements c20 {
     public final /* synthetic */ k7 a;
-    public final /* synthetic */ zh.i0 b;
+    public final /* synthetic */ zh.h0 b;
     public final /* synthetic */ cg.b c;
     public final /* synthetic */ TL_stars.TL_starGiftUnique d;
     public final /* synthetic */ long e;
     public final /* synthetic */ TLRPC.TL_textWithEntities f;
     public final /* synthetic */ boolean g;
 
-    public /* synthetic */ i2(k7 k7Var, zh.i0 i0Var, cg.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, boolean z9) {
+    public /* synthetic */ i2(k7 k7Var, zh.h0 h0Var, cg.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, boolean z9) {
         this.a = k7Var;
-        this.b = i0Var;
+        this.b = h0Var;
         this.c = bVar;
         this.d = tL_starGiftUnique;
         this.e = j3;
@@ -32,10 +32,10 @@ public final /* synthetic */ class i2 implements c20 {
         TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift = (TLRPC.TL_payments_paymentFormStarGift) obj;
         final k7 k7Var = this.a;
         k7Var.c2.setLoading(false);
-        final zh.i0 i0Var = this.b;
-        if (i0Var != null && i0Var.C1) {
-            i0Var.C1 = false;
-            i0Var.y1.f(false);
+        final zh.h0 h0Var = this.b;
+        if (h0Var != null && h0Var.C1) {
+            h0Var.C1 = false;
+            h0Var.y1.f(false);
         }
         if (tL_payments_paymentFormStarGift == null) {
             return;
@@ -60,7 +60,7 @@ public final /* synthetic */ class i2 implements c20 {
                 TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift2 = h6Var2.b;
                 TL_stars.TL_starGiftUnique tL_starGiftUnique2 = tL_starGiftUnique;
                 long j10 = j3;
-                x10.h(tL_payments_paymentFormStarGift2, tL_starGiftUnique2, j10, tL_textWithEntities, z9, new w3(k7Var2, bVar, tL_starGiftUnique2, j10, i0Var, 0));
+                x10.h(tL_payments_paymentFormStarGift2, tL_starGiftUnique2, j10, tL_textWithEntities, z9, new w3(k7Var2, bVar, tL_starGiftUnique2, j10, h0Var, 0));
             }
         }).b();
     }

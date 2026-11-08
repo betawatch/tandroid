@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class i7 {
     public static bg.d0 l1;
@@ -102,7 +102,7 @@ public final class i7 {
     public final Runnable h;
     public final byte[] h0;
     public long h1;
-    public y4 i;
+    public x4 i;
     public final byte[] i0;
     public long i1;
     public boolean j;
@@ -337,9 +337,9 @@ public final class i7 {
                 this.Y0 = true;
             }
             p5 p5Var = k1;
-            y4 y4Var = new y4(6, this, arrayList2);
-            this.i = y4Var;
-            p5Var.c(y4Var);
+            x4 x4Var = new x4(6, this, arrayList2);
+            this.i = x4Var;
+            p5Var.c(x4Var);
             i();
         }
     }
@@ -654,12 +654,12 @@ public final class i7 {
             d();
             int i10 = 10;
             if (!this.y && !z10) {
-                k1.c(new iy(2, this, this.M0, this.N0, this.A, this.J0, z9));
+                k1.c(new gy(2, this, this.M0, this.N0, this.A, this.J0, z9));
                 this.M0 = null;
                 this.N0 = null;
                 this.A = null;
                 this.g0.getClass();
-                w7.J.c(new y4(i10, this, this.e1));
+                w7.J.c(new x4(i10, this, this.e1));
                 return;
             }
             this.z = true;
@@ -682,17 +682,17 @@ public final class i7 {
                     f8 f8Var = w7.G(this.R).d;
                     List singletonList = Collections.singletonList(new ci.b(this.J0));
                     f8Var.getClass();
-                    f8Var.h(new y4(i11, f8Var, singletonList));
+                    f8Var.h(new x4(i11, f8Var, singletonList));
                 }
                 if (this.N0 != null) {
                     f8 f8Var2 = w7.G(this.R).d;
                     List singletonList2 = Collections.singletonList(new ci.b(this.N0));
                     f8Var2.getClass();
-                    f8Var2.h(new y4(i11, f8Var2, singletonList2));
+                    f8Var2.h(new x4(i11, f8Var2, singletonList2));
                 }
             }
             this.g0.getClass();
-            w7.J.c(new y4(i10, this, this.e1));
+            w7.J.c(new x4(i10, this, this.e1));
             this.g0.c(this, this.L0);
         }
     }
@@ -1502,10 +1502,10 @@ public final class i7 {
         if (this.W != null) {
             String a10 = Utilities.a(this.X.a);
             if (this.n0) {
-                r12 = rf.b.q(a10, ".temp.enc");
+                r12 = rf.b.r(a10, ".temp.enc");
                 str8 = a8.p0.s(rf.b.j(a10, "."), this.P0, ".enc");
                 if (this.h0 != null) {
-                    r13 = rf.b.q(a10, "_64.iv.enc");
+                    r13 = rf.b.r(a10, "_64.iv.enc");
                     str5 = str8;
                     j3 = 0;
                 }
@@ -1513,18 +1513,18 @@ public final class i7 {
                 str5 = str8;
                 j3 = 0;
             } else {
-                String q10 = rf.b.q(a10, ".temp");
+                String r14 = rf.b.r(a10, ".temp");
                 StringBuilder j15 = rf.b.j(a10, ".");
                 j15.append(this.P0);
                 String sb2 = j15.toString();
                 if (this.h0 != null) {
-                    r13 = rf.b.q(a10, "_64.iv");
-                    r12 = q10;
+                    r13 = rf.b.r(a10, "_64.iv");
+                    r12 = r14;
                     str8 = sb2;
                     str5 = str8;
                     j3 = 0;
                 } else {
-                    r12 = q10;
+                    r12 = r14;
                     str8 = sb2;
                     r13 = null;
                     str5 = str8;
@@ -1712,10 +1712,10 @@ public final class i7 {
             }
             this.J0 = new File(this.U0, str6);
             if (this.a1) {
-                this.K0 = new File(this.U0, rf.b.q(str6, ".gz"));
+                this.K0 = new File(this.U0, rf.b.r(str6, ".gz"));
             }
             if (this.n0) {
-                File file5 = new File(t0.b.getCacheDir(), rf.b.q(str5, ".key"));
+                File file5 = new File(t0.b.getCacheDir(), rf.b.r(str5, ".key"));
                 try {
                     randomAccessFile = new RandomAccessFile(file5, "rws");
                     long length = file5.length();
@@ -2218,7 +2218,7 @@ public final class i7 {
                 return;
             } else {
                 this.S = z11;
-                Utilities.d.c(new y4(5, this, zArr2));
+                Utilities.d.c(new x4(5, this, zArr2));
                 return;
             }
         }

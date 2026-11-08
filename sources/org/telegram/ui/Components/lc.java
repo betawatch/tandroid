@@ -10,7 +10,7 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.RadialGradient;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class lc {
     public float A;
@@ -80,7 +80,7 @@ public final class lc {
     }
 
     public final void a(Canvas canvas, float f10, float f11, float f12, float f13, float f14, float f15, float f16, float f17, float f18, float f19) {
-        if (f19 <= 0.0f || !org.telegram.messenger.rc.e(360928)) {
+        if (f19 <= 0.0f || !org.telegram.messenger.sc.e(360928)) {
             return;
         }
         long currentTimeMillis = System.currentTimeMillis();

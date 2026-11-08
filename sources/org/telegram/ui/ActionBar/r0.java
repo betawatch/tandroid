@@ -42,7 +42,7 @@ import java.util.HashMap;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.u10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
@@ -58,7 +58,7 @@ import org.telegram.ui.c61;
 import org.telegram.ui.ch;
 import org.telegram.ui.eh;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class r0 extends FrameLayout {
     public int D;
@@ -130,7 +130,7 @@ public class r0 extends FrameLayout {
         z0Var.setMinimumWidth(org.telegram.messenger.g0.L(196.0f));
         viewGroup.addView(z0Var);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) z0Var.getLayoutParams();
-        if (hd.a0) {
+        if (id.a0) {
             layoutParams.gravity = 5;
         }
         layoutParams.width = -1;
@@ -860,7 +860,7 @@ public class r0 extends FrameLayout {
         z0Var.setTag(Integer.valueOf(i7));
         this.b.addView(z0Var);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) z0Var.getLayoutParams();
-        if (hd.a0) {
+        if (id.a0) {
             layoutParams.gravity = 5;
         }
         layoutParams.width = -1;
@@ -887,7 +887,7 @@ public class r0 extends FrameLayout {
         TextView textView = new TextView(getContext());
         r6.V(textView, k6.E8, this.m0);
         textView.setBackgroundDrawable(k6.N0(false));
-        if (hd.a0) {
+        if (id.a0) {
             textView.setGravity(21);
         } else {
             textView.setGravity(16);
@@ -901,7 +901,7 @@ public class r0 extends FrameLayout {
         textView.setText(str);
         this.b.addView(textView);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) textView.getLayoutParams();
-        if (hd.a0) {
+        if (id.a0) {
             layoutParams.gravity = 5;
         }
         layoutParams.width = -1;
@@ -991,7 +991,7 @@ public class r0 extends FrameLayout {
         z0Var.setRightIcon(R.drawable.msg_arrowright);
         this.b.addView(z0Var);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) z0Var.getLayoutParams();
-        if (hd.a0) {
+        if (id.a0) {
             layoutParams.gravity = 5;
         }
         layoutParams.width = -1;
@@ -1169,7 +1169,7 @@ public class r0 extends FrameLayout {
             this.h.setEllipsize(TextUtils.TruncateAt.END);
             this.h.setVisibility(8);
             int i12 = 3;
-            this.h.setGravity(hd.a0 ? 5 : 3);
+            this.h.setGravity(id.a0 ? 5 : 3);
             ah.i iVar = new ah.i(i12, getContext(), this);
             this.e = iVar;
             iVar.setScrollContainer(false);
@@ -1201,7 +1201,7 @@ public class r0 extends FrameLayout {
             this.f = linearLayout;
             linearLayout.setOrientation(0);
             this.f.setVisibility(0);
-            if (hd.a0) {
+            if (id.a0) {
                 this.F.addView(this.f, ha.d(-2, 32.0f, 16, 0.0f, 0.0f, 48.0f, 0.0f));
                 this.F.addView(this.e, ha.d(-1, 36.0f, 16, 0.0f, 0.0f, 48.0f, 0.0f));
                 this.F.addView(this.h, ha.d(-2, 36.0f, 21, 0.0f, 5.5f, 48.0f, 0.0f));
@@ -1223,7 +1223,7 @@ public class r0 extends FrameLayout {
             this.s.setScaleX(0.0f);
             this.s.setScaleY(0.0f);
             this.s.setOnClickListener(new z(this, i7));
-            this.s.setContentDescription(hd.M0(2131752099, null));
+            this.s.setContentDescription(id.M0(2131752099, null));
             this.F.addView(this.s, ha.e(48, -1, 21));
         }
     }
@@ -1790,7 +1790,7 @@ public class r0 extends FrameLayout {
                     z0Var.setTag(Integer.valueOf(p0Var.b));
                     this.b.addView(z0Var);
                     LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) z0Var.getLayoutParams();
-                    if (hd.a0) {
+                    if (id.a0) {
                         layoutParams.gravity = 5;
                     }
                     layoutParams.width = -1;
@@ -1815,7 +1815,7 @@ public class r0 extends FrameLayout {
                     z0Var2.getRightIcon().setVisibility(p0Var.m);
                     this.b.addView(z0Var2);
                     LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) z0Var2.getLayoutParams();
-                    if (hd.a0) {
+                    if (id.a0) {
                         layoutParams2.gravity = 5;
                     }
                     layoutParams2.width = -1;

@@ -19,13 +19,13 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class fj extends vh implements org.telegram.ui.ActionBar.a6, org.telegram.messenger.ls, te.b {
     public boolean D;
     public final zi E;
     public final bj F;
-    public final iy G;
+    public final jy G;
     public final ci H;
     public final zh I;
     public wi J;
@@ -52,7 +52,7 @@ public final class fj extends vh implements org.telegram.ui.ActionBar.a6, org.te
         zh zhVar = new zh(context, f6Var, this.b);
         this.I = zhVar;
         zhVar.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
-        String M0 = org.telegram.messenger.hd.M0(2131745768, null);
+        String M0 = org.telegram.messenger.id.M0(2131745770, null);
         ah.i iVar = zhVar.r;
         iVar.setHint(M0);
         iVar.addTextChangedListener(new ah.j(this, 16));
@@ -60,11 +60,11 @@ public final class fj extends vh implements org.telegram.ui.ActionBar.a6, org.te
         FrameLayout.LayoutParams d = c8.ha.d(-1, 48.0f, 51, 7.0f, 8.0f, 7.0f, 4.0f);
         ((ViewGroup.MarginLayoutParams) d).topMargin += org.telegram.messenger.g0.m;
         frameLayout.addView(zhVar, d);
-        iy iyVar = new iy(context, f6Var);
-        this.G = iyVar;
-        iyVar.c();
-        iyVar.setText(org.telegram.messenger.hd.M0(2131748222, null));
-        addView(iyVar, c8.ha.d(-1, -1.0f, 51, 0.0f, 52.0f, 0.0f, 0.0f));
+        jy jyVar = new jy(context, f6Var);
+        this.G = jyVar;
+        jyVar.c();
+        jyVar.setText(org.telegram.messenger.id.M0(2131748224, null));
+        addView(jyVar, c8.ha.d(-1, -1.0f, 51, 0.0f, 52.0f, 0.0f, 0.0f));
         bi.q1 q1Var = new bi.q1(this, context, f6Var, 15);
         this.s = q1Var;
         setBlur3Capture(q1Var);
@@ -181,13 +181,13 @@ public final class fj extends vh implements org.telegram.ui.ActionBar.a6, org.te
         boolean z9;
         HashMap hashMap = this.x;
         if (hashMap.isEmpty() && !this.K) {
-            String a02 = org.telegram.messenger.hd.a0("AttachContactsSlowMode", null, 2131753978, new Object[0]);
+            String a02 = org.telegram.messenger.id.a0("AttachContactsSlowMode", null, 2131753978, new Object[0]);
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getContext(), this.a);
-            String M0 = org.telegram.messenger.hd.M0(R.string.AppName, null);
+            String M0 = org.telegram.messenger.id.M0(R.string.AppName, null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.R = M0;
             u1Var.T = a02;
-            jg.g.C(null, 2131747830, alertDialog$Builder, null);
+            jg.g.C(null, 2131747832, alertDialog$Builder, null);
             return;
         }
         vi a10 = vi.a(obj);
@@ -363,9 +363,9 @@ public final class fj extends vh implements org.telegram.ui.ActionBar.a6, org.te
 
     public final void S() {
         View childAt;
-        iy iyVar = this.G;
-        if (iyVar.getVisibility() == 0 && (childAt = this.s.getChildAt(0)) != null) {
-            iyVar.setTranslationY((childAt.getTop() + (iyVar.getMeasuredHeight() - getMeasuredHeight())) / 2);
+        jy jyVar = this.G;
+        if (jyVar.getVisibility() == 0 && (childAt = this.s.getChildAt(0)) != null) {
+            jyVar.setTranslationY((childAt.getTop() + (jyVar.getMeasuredHeight() - getMeasuredHeight())) / 2);
         }
     }
 

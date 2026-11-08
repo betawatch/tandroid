@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qa0 implements Runnable {
     public final /* synthetic */ int a;
@@ -28,11 +28,11 @@ public final /* synthetic */ class qa0 implements Runnable {
             default:
                 if (ce0Var.getParentActivity() != null && !ce0Var.getParentActivity().isFinishing() && ce0Var.getParentActivity() != null) {
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ce0Var.getParentActivity());
-                    String M0 = org.telegram.messenger.hd.M0(2131746072, null);
+                    String M0 = org.telegram.messenger.id.M0(2131746074, null);
                     org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                     u1Var.R = M0;
-                    u1Var.T = org.telegram.messenger.hd.M0(2131745950, null);
-                    alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747830, null), new ta0(ce0Var, 1));
+                    u1Var.T = org.telegram.messenger.id.M0(2131745952, null);
+                    alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747832, null), new ta0(ce0Var, 1));
                     alertDialog$Builder.p();
                     break;
                 }

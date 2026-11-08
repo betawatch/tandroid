@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class sc extends LinearLayout implements ls {
     public long a;
@@ -42,7 +42,7 @@ public final class sc extends LinearLayout implements ls {
         TextView textView = new TextView(context);
         int i10 = org.telegram.ui.ActionBar.k6.G6;
         org.telegram.ui.ActionBar.r6.V(textView, i10, f6Var);
-        jg.g.v(textView, 1, 13.0f, null, 2131745156);
+        jg.g.v(textView, 1, 13.0f, null, 2131745158);
         textView.setGravity(5);
         textView.setTypeface(org.telegram.messenger.g0.o());
         addView(textView, c8.ha.r(-2, -2, 5));
@@ -125,7 +125,7 @@ public final class sc extends LinearLayout implements ls {
             spannableStringBuilder.append((CharSequence) dd.a1(false, jg.g.m(j3, ' ', new StringBuilder("⭐️")), 0.62f, this.h));
             rcVar.setText(spannableStringBuilder);
         } else {
-            rcVar.setText(org.telegram.messenger.hd.E(j3, ' '));
+            rcVar.setText(org.telegram.messenger.id.E(j3, ' '));
         }
         this.f = j3;
     }

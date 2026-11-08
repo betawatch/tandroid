@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.r80;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s8 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -79,7 +79,7 @@ public final /* synthetic */ class s8 implements Runnable {
                         break;
                     } else {
                         v10Var.a(Boolean.FALSE, null);
-                        X.Q(R.raw.error, 36, org.telegram.messenger.hd.a0(null, null, 2131743879, tL_error != null ? tL_error.text : "FAILED_SEND_STARS")).j();
+                        X.Q(R.raw.error, 36, org.telegram.messenger.id.a0(null, null, 2131743881, tL_error != null ? tL_error.text : "FAILED_SEND_STARS")).j();
                         break;
                     }
                 } else {
@@ -135,7 +135,7 @@ public final /* synthetic */ class s8 implements Runnable {
                         break;
                     } else {
                         v10Var2.a(Boolean.FALSE, null);
-                        X2.Q(R.raw.error, 36, org.telegram.messenger.hd.a0(null, null, 2131743879, tL_error2 != null ? tL_error2.text : "FAILED_SEND_STARS")).j();
+                        X2.Q(R.raw.error, 36, org.telegram.messenger.id.a0(null, null, 2131743881, tL_error2 != null ? tL_error2.text : "FAILED_SEND_STARS")).j();
                         break;
                     }
                 } else {

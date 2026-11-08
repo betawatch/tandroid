@@ -11,15 +11,15 @@ import android.widget.FrameLayout;
 import bi.ec;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.ki0;
 import org.telegram.ui.Components.rt0;
-import org.telegram.ui.Components.xz;
+import org.telegram.ui.Components.yz;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class la extends r {
     public final Path Q1;
@@ -40,18 +40,18 @@ public final class la extends r {
             return false;
         }
         int i10 = qp.s1(this.U).W4;
-        SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(hd.G(Math.round(i10 / qp.s1(this.U).V4), "CaptionPremiumSubtitle", jg.g.j(i10, "")));
+        SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(id.G(Math.round(i10 / qp.s1(this.U).V4), "CaptionPremiumSubtitle", jg.g.j(i10, "")));
         int indexOf = X2.toString().indexOf("__");
         if (indexOf >= 0) {
             X2.replace(indexOf, indexOf + 2, (CharSequence) "");
             int indexOf2 = X2.toString().indexOf("__");
             if (indexOf2 >= 0) {
                 X2.replace(indexOf2, indexOf2 + 2, (CharSequence) "");
-                X2.setSpan(new xz(org.telegram.ui.ActionBar.k6.Uc, this.a), indexOf, indexOf2, 33);
+                X2.setSpan(new yz(org.telegram.ui.ActionBar.k6.Uc, this.a), indexOf, indexOf2, 33);
                 X2.setSpan(new ka(this, i7), indexOf, indexOf2, 33);
             }
         }
-        cc I = new hc(this.R1.l0, this.a).I(R.raw.caption_limit, hd.M0(2131752556, null), X2);
+        cc I = new hc(this.R1.l0, this.a).I(R.raw.caption_limit, id.M0(2131752556, null), X2);
         I.a = 2;
         I.j = 5000;
         I.k(false);

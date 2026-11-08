@@ -13,9 +13,9 @@ import android.text.TextPaint;
 import android.view.ViewConfiguration;
 import android.view.animation.LinearInterpolator;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.s91;
+import org.telegram.ui.t91;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class kg0 {
     public ValueAnimator A;
@@ -48,7 +48,7 @@ public abstract class kg0 {
     public final jg0 a0;
     public final jg0 b0;
     public int c0;
-    public final dt d0;
+    public final et d0;
     public boolean e0;
     public final TextPaint k;
     public final di.j0 l;
@@ -93,7 +93,7 @@ public abstract class kg0 {
         this.U = 1.0f;
         this.a0 = new jg0(this, 3);
         this.b0 = new jg0(this, 4);
-        this.d0 = new dt(this, 9);
+        this.d0 = new et(this, 9);
         this.e0 = false;
         textPaint.setTypeface(org.telegram.messenger.g0.o());
         textPaint.setTextSize(org.telegram.messenger.g0.L(16.0f));
@@ -191,7 +191,7 @@ public abstract class kg0 {
         if (!this.X || this.Y || (t2Var = this.H) == null || this.I == null) {
             return;
         }
-        boolean z11 = t2Var instanceof s91;
+        boolean z11 = t2Var instanceof t91;
         int L = org.telegram.messenger.g0.L(z11 ? 15.0f : 28.0f);
         int L2 = org.telegram.messenger.g0.L(8.0f);
         int L3 = org.telegram.messenger.g0.L(9.0f);
@@ -455,9 +455,9 @@ public abstract class kg0 {
             if (Math.abs(this.a) >= this.Z * 0.5f) {
                 this.e0 = true;
                 org.telegram.ui.Cells.t2 t2Var2 = this.H;
-                dt dtVar = this.d0;
-                t2Var2.removeCallbacks(dtVar);
-                this.H.postDelayed(dtVar, 200L);
+                et etVar = this.d0;
+                t2Var2.removeCallbacks(etVar);
+                this.H.postDelayed(etVar, 200L);
             } else if (!this.e0) {
                 this.x = 1.0f;
                 this.y = true;

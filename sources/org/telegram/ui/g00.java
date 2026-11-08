@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class g00 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public org.telegram.ui.ActionBar.k5 a;
@@ -31,13 +31,13 @@ public final class g00 extends FrameLayout implements org.telegram.ui.ActionBar.
         int i13 = i11 - i7;
         org.telegram.ui.ActionBar.k5 k5Var = this.a;
         int textHeight = ((i12 - i10) - k5Var.getTextHeight()) / 2;
-        if (org.telegram.messenger.hd.a0) {
+        if (org.telegram.messenger.id.a0) {
             L = (getMeasuredWidth() - k5Var.getMeasuredWidth()) - org.telegram.messenger.g0.L(imageView.getVisibility() == 0 ? 64.0f : 23.0f);
         } else {
             L = org.telegram.messenger.g0.L(imageView.getVisibility() == 0 ? 64.0f : 23.0f);
         }
         k5Var.layout(L, textHeight, k5Var.getMeasuredWidth() + L, k5Var.getMeasuredHeight() + textHeight);
-        int L2 = !org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(20.0f) : (i13 - imageView.getMeasuredWidth()) - org.telegram.messenger.g0.L(20.0f);
+        int L2 = !org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(20.0f) : (i13 - imageView.getMeasuredWidth()) - org.telegram.messenger.g0.L(20.0f);
         imageView.layout(L2, 0, imageView.getMeasuredWidth() + L2, imageView.getMeasuredHeight());
     }
 

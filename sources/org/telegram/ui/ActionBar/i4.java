@@ -29,11 +29,11 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import c8.ha;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.ui.c61;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class i4 {
     public final Rect A = new Rect();
@@ -187,7 +187,7 @@ public final class i4 {
         e4Var.setImageDrawable(mutate2);
         TextView textView = new TextView(context);
         this.l = textView;
-        textView.setText(hd.M0(2131753756, null));
+        textView.setText(id.M0(2131753756, null));
         textView.setTextSize(1, 16.0f);
         textView.setAlpha(0.0f);
         View view2 = new View(context);
@@ -543,7 +543,7 @@ public final class i4 {
             h4Var.setAlpha(1.0f);
             h4Var.setVisibility(0);
             e4Var.setImageDrawable(this.m);
-            frameLayout.setContentDescription(hd.M0(2131754839, null));
+            frameLayout.setContentDescription(id.M0(2131754839, null));
             relativeLayout.setX((popupWindow.getWidth() - r3.getWidth()) - i7);
             c61Var.setX(-relativeLayout.getX());
             frameLayout.setX(0.0f);
@@ -567,7 +567,7 @@ public final class i4 {
         h4Var.setAlpha(0.0f);
         h4Var.setVisibility(4);
         e4Var.setImageDrawable(this.n);
-        frameLayout.setContentDescription(hd.M0(2131754839, null));
+        frameLayout.setContentDescription(id.M0(2131754839, null));
         if (this.I == null) {
             relativeLayout.setX(i7);
             relativeLayout.setY(i10);

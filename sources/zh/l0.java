@@ -2,16 +2,16 @@ package zh;
 
 import org.telegram.messenger.c20;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ h1 b;
+    public final /* synthetic */ g1 b;
     public final /* synthetic */ c20 c;
 
-    public /* synthetic */ l0(h1 h1Var, c20 c20Var, int i7) {
+    public /* synthetic */ l0(g1 g1Var, c20 c20Var, int i7) {
         this.a = i7;
-        this.b = h1Var;
+        this.b = g1Var;
         this.c = c20Var;
     }
 
@@ -19,31 +19,31 @@ public final /* synthetic */ class l0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                h1 h1Var = this.b;
+                g1 g1Var = this.b;
                 c20 c20Var = this.c;
                 if (c20Var != null) {
-                    h1Var.getClass();
+                    g1Var.getClass();
                     c20Var.a(Boolean.FALSE);
                 }
-                h1Var.dismiss();
+                g1Var.dismiss();
                 break;
             case 1:
-                h1 h1Var2 = this.b;
+                g1 g1Var2 = this.b;
                 c20 c20Var2 = this.c;
                 if (c20Var2 != null) {
-                    h1Var2.getClass();
+                    g1Var2.getClass();
                     c20Var2.a(Boolean.FALSE);
                 }
-                h1Var2.dismiss();
+                g1Var2.dismiss();
                 break;
             default:
-                h1 h1Var3 = this.b;
+                g1 g1Var3 = this.b;
                 c20 c20Var3 = this.c;
                 if (c20Var3 != null) {
-                    h1Var3.getClass();
+                    g1Var3.getClass();
                     c20Var3.a(Boolean.FALSE);
                 }
-                h1Var3.dismiss();
+                g1Var3.dismiss();
                 break;
         }
     }

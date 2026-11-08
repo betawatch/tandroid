@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.graphics.Paint;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class a implements Runnable {
                 m3Var3.j0 = L2;
                 m3Var3.k0 = r12;
                 paint.setShadowLayer(L, 0.0f, L2, r12);
-                g0Var.t2.u(org.telegram.messenger.hd.M0(2131755000, null));
+                g0Var.t2.u(org.telegram.messenger.id.M0(2131755000, null));
                 g0Var.t2.o(0.5f, 0.0f);
                 fi.m3 m3Var4 = g0Var.t2;
                 m3Var4.d = 8000L;

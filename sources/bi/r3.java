@@ -46,7 +46,7 @@ import org.telegram.ui.o90;
 import org.telegram.ui.th;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r3 implements Runnable {
     public final /* synthetic */ int a;
@@ -70,10 +70,10 @@ public final /* synthetic */ class r3 implements Runnable {
         Object obj = this.c;
         switch (i7) {
             case 0:
-                org.telegram.ui.Components.hc.a0((dd) obj).I(R.raw.stars_topup, org.telegram.messenger.hd.M0(2131750220, null), org.telegram.messenger.hd.H(',', "Gift2Converted", (int) j3)).k(true);
+                org.telegram.ui.Components.hc.a0((dd) obj).I(R.raw.stars_topup, org.telegram.messenger.id.M0(2131750222, null), org.telegram.messenger.id.H(',', "Gift2Converted", (int) j3)).k(true);
                 break;
             case 1:
-                org.telegram.ui.Components.hc.a0((c51) obj).I(R.raw.stars_topup, org.telegram.messenger.hd.M0(2131750220, null), org.telegram.messenger.hd.H(',', "Gift2ConvertedChannel", (int) j3)).k(true);
+                org.telegram.ui.Components.hc.a0((c51) obj).I(R.raw.stars_topup, org.telegram.messenger.id.M0(2131750222, null), org.telegram.messenger.id.H(',', "Gift2ConvertedChannel", (int) j3)).k(true);
                 break;
             case 2:
                 ((di.q) obj).s.h0(j3, false);
@@ -143,7 +143,7 @@ public final /* synthetic */ class r3 implements Runnable {
                     vaVar2.G = qaVar2.b;
                     qaVar2.e();
                     if (iz.o() > 1) {
-                        org.telegram.messenger.rc.e(360928);
+                        org.telegram.messenger.sc.e(360928);
                     }
                 }
                 vaVar2.y = null;
@@ -224,7 +224,7 @@ public final /* synthetic */ class r3 implements Runnable {
                 }
                 break;
             case 20:
-                org.telegram.ui.Components.cc Q2 = org.telegram.ui.Components.hc.a0((org.telegram.ui.y6) obj).Q(R.raw.ic_delete, 36, org.telegram.messenger.hd.a0(null, null, 2131752645, org.telegram.messenger.g0.i0(j3, false, false)));
+                org.telegram.ui.Components.cc Q2 = org.telegram.ui.Components.hc.a0((org.telegram.ui.y6) obj).Q(R.raw.ic_delete, 36, org.telegram.messenger.id.a0(null, null, 2131752645, org.telegram.messenger.g0.i0(j3, false, false)));
                 Q2.r = false;
                 Q2.j();
                 break;
@@ -248,14 +248,14 @@ public final /* synthetic */ class r3 implements Runnable {
                         Context context2 = (f2Var2 == null || f2Var2.getParentActivity() == null) ? ikVar.getContext() : f2Var2.getParentActivity();
                         if (context2 != null) {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context2, f6Var2);
-                            String M0 = org.telegram.messenger.hd.M0(2131743206, null);
+                            String M0 = org.telegram.messenger.id.M0(2131743208, null);
                             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                             u1Var.R = M0;
                             kg.x0 x0Var = new kg.x0(ikVar, context2);
                             x0Var.setTextSize(1, 18.0f);
                             org.telegram.ui.ActionBar.r6.V(x0Var, org.telegram.ui.ActionBar.k6.j5, f6Var2);
                             org.telegram.ui.ActionBar.r6.E(x0Var, org.telegram.ui.ActionBar.k6.t5, f6Var2);
-                            x0Var.setHint(org.telegram.messenger.hd.M0(2131743170, null));
+                            x0Var.setHint(org.telegram.messenger.id.M0(2131743172, null));
                             x0Var.setText(ikVar.s0);
                             x0Var.setSelection(x0Var.length());
                             x0Var.setInputType(147457);
@@ -270,13 +270,13 @@ public final /* synthetic */ class r3 implements Runnable {
                             org.telegram.ui.ActionBar.n6 N = org.telegram.ui.ActionBar.r6.N(i14);
                             c2Var.setBackground(h02);
                             org.telegram.ui.ActionBar.r6.k(c2Var, h02, null, N, f6Var2);
-                            c2Var.e(org.telegram.messenger.hd.M0(2131743078, null), "", !ikVar.t0 || ikVar.getPublicKey() == null, false, false);
+                            c2Var.e(org.telegram.messenger.id.M0(2131743080, null), "", !ikVar.t0 || ikVar.getPublicKey() == null, false, false);
                             c2Var.setMultiline(true);
                             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) c2Var.getCheckBoxView().getLayoutParams();
                             layoutParams.topMargin = 0;
-                            layoutParams.gravity = (org.telegram.messenger.hd.a0 ? 5 : 3) | 16;
+                            layoutParams.gravity = (org.telegram.messenger.id.a0 ? 5 : 3) | 16;
                             c2Var.getCheckBoxView().setLayoutParams(layoutParams);
-                            c2Var.setPadding(org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.hd.a0 ? 0 : org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(12.0f));
+                            c2Var.setPadding(org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.id.a0 ? 0 : org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(12.0f));
                             c2Var.setEnabled(ikVar.getPublicKey() != null);
                             c2Var.setOnClickListener(new org.telegram.ui.Components.a1(c2Var, 1));
                             LinearLayout linearLayout = new LinearLayout(context2);
@@ -286,8 +286,8 @@ public final /* synthetic */ class r3 implements Runnable {
                             u1Var.G = 6;
                             alertDialog$Builder.o(linearLayout);
                             u1Var.a = org.telegram.messenger.g0.L(292.0f);
-                            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), new org.telegram.ui.Components.k2(14));
-                            alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131754486, null), new a3.h(ikVar, x0Var, c2Var, 26));
+                            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), new org.telegram.ui.Components.k2(14));
+                            alertDialog$Builder.k(org.telegram.messenger.id.M0(2131754486, null), new a3.h(ikVar, x0Var, c2Var, 26));
                             ikVar.T0 = u1Var;
                             u1Var.j0 = false;
                             u1Var.setOnShowListener(new org.telegram.ui.Components.g2(x0Var, i11));

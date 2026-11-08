@@ -26,9 +26,9 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.fp;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.gp;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i6;
 import org.telegram.messenger.ic;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.p10;
@@ -47,7 +47,7 @@ import org.telegram.ui.Components.x70;
 import org.telegram.ui.Components.zg0;
 import wg.s;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class c {
     public TextPaint A;
@@ -486,29 +486,29 @@ public final class c {
             }
             int L = g0.L(90.0f);
             int L2 = g0.L(230.0f);
-            SpannableStringBuilder X2 = g0.X2(hd.M0(2131753386, "BoostingGiveawayResultsMsgWinnersSelected"));
+            SpannableStringBuilder X2 = g0.X2(id.M0(2131753386, "BoostingGiveawayResultsMsgWinnersSelected"));
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(X2);
             spannableStringBuilder.setSpan(new RelativeSizeSpan(1.05f), 0, X2.length(), 33);
             this.R = new SpannableStringBuilder();
-            SpannableStringBuilder S2 = g0.S2(hd.K0(tL_messageMediaGiveawayResults.winners_count, "BoostingGiveawayResultsMsgWinnersTitle"), k6.Uc, 0, new b(this, ijVar, tL_messageMediaGiveawayResults, i10), null);
+            SpannableStringBuilder S2 = g0.S2(id.K0(tL_messageMediaGiveawayResults.winners_count, "BoostingGiveawayResultsMsgWinnersTitle"), k6.Uc, 0, new b(this, ijVar, tL_messageMediaGiveawayResults, i10), null);
             this.R.append((CharSequence) g0.K2(S2, g0.X2("**" + tL_messageMediaGiveawayResults.winners_count + "**"), "%1$d"));
             this.R.append((CharSequence) "\n\n");
             this.R.setSpan(new RelativeSizeSpan(0.4f), this.R.length() - 1, this.R.length(), 33);
-            SpannableStringBuilder X22 = g0.X2(hd.K0(tL_messageMediaGiveawayResults.winners_count, "BoostingGiveawayResultsMsgWinners"));
+            SpannableStringBuilder X22 = g0.X2(id.K0(tL_messageMediaGiveawayResults.winners_count, "BoostingGiveawayResultsMsgWinners"));
             this.R.append((CharSequence) X22);
             this.R.setSpan(new RelativeSizeSpan(1.05f), S2.length() + 2, X22.length() + S2.length() + 2, 33);
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
             if (tL_messageMediaGiveawayResults.winners_count != tL_messageMediaGiveawayResults.winners.size()) {
-                spannableStringBuilder2.append((CharSequence) g0.X2(hd.G(tL_messageMediaGiveawayResults.winners_count - tL_messageMediaGiveawayResults.winners.size(), "BoostingGiveawayResultsMsgAllAndMoreWinners", new Object[0])));
+                spannableStringBuilder2.append((CharSequence) g0.X2(id.G(tL_messageMediaGiveawayResults.winners_count - tL_messageMediaGiveawayResults.winners.size(), "BoostingGiveawayResultsMsgAllAndMoreWinners", new Object[0])));
                 spannableStringBuilder2.setSpan(new RelativeSizeSpan(1.05f), 0, spannableStringBuilder2.length(), 33);
                 spannableStringBuilder2.append((CharSequence) "\n");
             }
             boolean z9 = (tL_messageMediaGiveawayResults.flags & 32) != 0;
             this.N = z9;
             if (z9) {
-                spannableStringBuilder2.append((CharSequence) hd.H(' ', "BoostingStarsGiveawayResultsMsgAllWinnersReceivedLinks", (int) tL_messageMediaGiveawayResults.stars));
+                spannableStringBuilder2.append((CharSequence) id.H(' ', "BoostingStarsGiveawayResultsMsgAllWinnersReceivedLinks", (int) tL_messageMediaGiveawayResults.stars));
             } else {
-                spannableStringBuilder2.append((CharSequence) hd.M0(2131753388, null));
+                spannableStringBuilder2.append((CharSequence) id.M0(2131753388, null));
             }
             TextPaint textPaint2 = this.y;
             Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
@@ -537,7 +537,7 @@ public final class c {
                 if (this.p == null) {
                     this.p = g.h(t0.b, org.telegram.messenger.beta.R.drawable.filled_giveaway_stars);
                 }
-                this.q = hd.E((int) tL_messageMediaGiveawayResults.stars, ',');
+                this.q = id.E((int) tL_messageMediaGiveawayResults.stars, ',');
             } else {
                 this.p = null;
                 this.q = "x" + tL_messageMediaGiveawayResults.winners_count;

@@ -63,8 +63,8 @@ import li.f2;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.e3;
-import org.telegram.messenger.hd;
 import org.telegram.messenger.i6;
+import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.p10;
@@ -93,7 +93,7 @@ import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.xq;
 import tg.k2;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f1 implements c20 {
     public final /* synthetic */ int a;
@@ -177,10 +177,10 @@ public final /* synthetic */ class f1 implements c20 {
                         depositstargift.slug = H1.slug;
                         ConnectionsManager.getInstance(k7Var.a).sendRequestTyped(depositstargift, new d3.b(i14), new t3(k7Var, zArr, textView, stargiftdepositpayloadArr, runnableArr, 0));
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, k7Var.getContext(), k7Var.I0);
-                        String M0 = hd.M0(2131750106, null);
+                        String M0 = id.M0(2131750108, null);
                         u1 u1Var = alertDialog$Builder.a;
                         u1Var.R = M0;
-                        u1Var.T = hd.M0(2131750104, null);
+                        u1Var.T = id.M0(2131750106, null);
                         TLRPC.User f10 = p10.i(k7Var.a).f();
                         LinearLayout linearLayout = new LinearLayout(k7Var.getContext());
                         linearLayout.setOrientation(1);
@@ -221,19 +221,19 @@ public final /* synthetic */ class f1 implements c20 {
                         TextView textView4 = new TextView(k7Var.getContext());
                         textView4.setTextSize(1, 15.0f);
                         r6.V(textView4, i17, k7Var.I0);
-                        k5.m(textView4, 17, null, 2131750107);
+                        k5.m(textView4, 17, null, 2131750109);
                         linearLayout.addView(textView4, ha.k(24.0f, 0.0f, 24.0f, 0.0f, -1, -2));
                         LinearLayout linearLayout2 = new LinearLayout(k7Var.getContext());
                         linearLayout2.setOrientation(0);
                         linearLayout2.setGravity(16);
-                        k7Var.l1(linearLayout2, R.drawable.msg_openprofile, 14, i16, hd.M0(2131748301, null), true);
-                        k7Var.l1(linearLayout2, R.drawable.menu_gift, 14, i16, hd.M0(2131746675, null), false);
+                        k7Var.l1(linearLayout2, R.drawable.msg_openprofile, 14, i16, id.M0(2131748303, null), true);
+                        k7Var.l1(linearLayout2, R.drawable.menu_gift, 14, i16, id.M0(2131746677, null), false);
                         linearLayout.addView(linearLayout2, ha.t(-2, -2, 1, 0, 7, 0, 3));
                         linearLayout.addView(textView, ha.k(24.0f, 4.0f, 24.0f, 4.0f, -1, -2));
                         alertDialog$Builder.o(linearLayout);
                         u1Var.G = 20;
-                        alertDialog$Builder.k(hd.M0(2131750108, null), new bg.e0(k7Var, e10, stargiftdepositpayloadArr, f1Var, 1));
-                        alertDialog$Builder.h(hd.M0(2131752589, null), null);
+                        alertDialog$Builder.k(id.M0(2131750110, null), new bg.e0(k7Var, e10, stargiftdepositpayloadArr, f1Var, 1));
+                        alertDialog$Builder.h(id.M0(2131752589, null), null);
                         u1Var.setOnDismissListener(new u3(0, zArr, runnableArr));
                         u1Var.show();
                         break;
@@ -256,14 +256,14 @@ public final /* synthetic */ class f1 implements c20 {
                 if (stargiftupgradepreview != null) {
                     e7Var.setPreviewingAttributes(stargiftupgradepreview.sample_attributes);
                     k7Var2.s2(1, false, null);
-                    e7Var.i(1, hd.M0(2131750135, null), hd.a0(null, null, 2131750136, str), null);
-                    iVarArr[0].setText(hd.M0(2131749865, null));
-                    iVarArr[1].setText(hd.M0(2131749862, null));
-                    iVarArr[2].setText(hd.M0(2131749859, null));
+                    e7Var.i(1, id.M0(2131750137, null), id.a0(null, null, 2131750138, str), null);
+                    iVarArr[0].setText(id.M0(2131749867, null));
+                    iVarArr[1].setText(id.M0(2131749864, null));
+                    iVarArr[2].setText(id.M0(2131749861, null));
                     k7Var2.n2.setVisibility(8);
                     k7Var2.m2.setVisibility(8);
                     dVar.setFilled(true);
-                    dVar.i(hd.M0(2131747830, null), false, true);
+                    dVar.i(id.M0(2131747832, null), false, true);
                     dVar.g(null, false);
                     dVar.setOnClickListener(new y1(k7Var2, 9));
                     k7Var2.show();

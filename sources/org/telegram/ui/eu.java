@@ -7,7 +7,7 @@ import java.util.Arrays;
 import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eu implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -134,7 +134,7 @@ public final /* synthetic */ class eu implements View.OnClickListener {
                 ww.y0(wwVar);
                 break;
             case 15:
-                wwVar.showDialog((org.telegram.ui.ActionBar.v2) org.telegram.ui.Components.v4.l(wwVar.getParentActivity(), org.telegram.messenger.hd.M0(2131751239, null), org.telegram.messenger.hd.M0(2131751244, null), null, new hu(wwVar, 1), new cu(wwVar, 3), false, false, wwVar.getResourceProvider()).b);
+                wwVar.showDialog((org.telegram.ui.ActionBar.v2) org.telegram.ui.Components.v4.l(wwVar.getParentActivity(), org.telegram.messenger.id.M0(2131751239, null), org.telegram.messenger.id.M0(2131751244, null), null, new hu(wwVar, 1), new cu(wwVar, 3), false, false, wwVar.getResourceProvider()).b);
                 break;
             case 16:
                 ww.D0(wwVar);

@@ -16,7 +16,7 @@ import android.widget.FrameLayout;
 import bi.dd;
 import bi.md;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -30,7 +30,7 @@ import org.telegram.ui.Components.my0;
 import org.telegram.ui.Components.wo;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class d7 extends FrameLayout implements ls {
     public final org.telegram.ui.ActionBar.f6 D;
@@ -109,7 +109,7 @@ public class d7 extends FrameLayout implements ls {
     }
 
     public String a() {
-        return hd.M0(2131750487, null);
+        return id.M0(2131750489, null);
     }
 
     public final void b(boolean z9, boolean z10) {
@@ -148,7 +148,7 @@ public class d7 extends FrameLayout implements ls {
                 b7Var.r(this.h);
                 int i10 = this.n;
                 if (i10 != 2 && t10.z(this.h)) {
-                    mdVar.setText(hd.M0(2131746265, null));
+                    mdVar.setText(id.M0(2131746267, null));
                     b7Var.g(12);
                     l9Var.j(null, null, b7Var, this.h);
                 } else if (i10 == 2 || !t10.B(this.h)) {
@@ -164,7 +164,7 @@ public class d7 extends FrameLayout implements ls {
                     }
                     l9Var.e(this.h, b7Var);
                 } else {
-                    mdVar.setText(hd.M0(2131745902, null));
+                    mdVar.setText(id.M0(2131745904, null));
                     b7Var.g(1);
                     l9Var.j(null, null, b7Var, this.h);
                 }

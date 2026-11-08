@@ -11,7 +11,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class if0 extends FrameLayout implements org.telegram.messenger.ls, org.telegram.ui.ActionBar.a6 {
     public static final org.telegram.ui.Components.oa0 n;
@@ -40,10 +40,10 @@ public final class if0 extends FrameLayout implements org.telegram.messenger.ls,
         org.telegram.ui.ActionBar.k5 k5Var = new org.telegram.ui.ActionBar.k5(context);
         this.c = k5Var;
         k5Var.setTextSize(16);
-        k5Var.setEllipsizeByGradient(!org.telegram.messenger.hd.a0);
+        k5Var.setEllipsizeByGradient(!org.telegram.messenger.id.a0);
         k5Var.setImportantForAccessibility(2);
         org.telegram.ui.ActionBar.r6.Y(k5Var, org.telegram.ui.ActionBar.k6.E8, null);
-        k5Var.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
+        k5Var.setGravity(org.telegram.messenger.id.a0 ? 5 : 3);
         this.f = new org.telegram.ui.Components.nu0(this);
         k5Var.setDrawablePadding(org.telegram.messenger.g0.L(3.0f));
         TextView textView = new TextView(context);
@@ -53,8 +53,8 @@ public final class if0 extends FrameLayout implements org.telegram.messenger.ls,
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setImportantForAccessibility(2);
         org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.y6, null);
-        textView.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
-        if (org.telegram.messenger.hd.a0) {
+        textView.setGravity(org.telegram.messenger.id.a0 ? 5 : 3);
+        if (org.telegram.messenger.id.a0) {
             addView(l9Var, c8.ha.d(34, 34.0f, 21, 0.0f, 0.0f, 10.0f, 0.0f));
             addView(k5Var, c8.ha.d(-2, -2.0f, 53, 8.0f, 5.33f, 55.0f, 0.0f));
             addView(textView, c8.ha.d(-2, -2.0f, 53, 13.0f, 19.0f, 55.0f, 0.0f));
@@ -81,7 +81,7 @@ public final class if0 extends FrameLayout implements org.telegram.messenger.ls,
             textView.setVisibility(8);
             k5Var.setTranslationY(org.telegram.messenger.g0.L(9.0f));
         } else {
-            textView.setText(TextUtils.concat((z9 ? r : n).a(getContext(), null), org.telegram.messenger.hd.O(i7)));
+            textView.setText(TextUtils.concat((z9 ? r : n).a(getContext(), null), org.telegram.messenger.id.O(i7)));
             textView.setVisibility(0);
             k5Var.setTranslationY(0.0f);
         }
@@ -123,7 +123,7 @@ public final class if0 extends FrameLayout implements org.telegram.messenger.ls,
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        String a02 = org.telegram.messenger.hd.a0("AccDescrPersonHasSeen", null, 2131754812, this.c.getText());
+        String a02 = org.telegram.messenger.id.a0("AccDescrPersonHasSeen", null, 2131754812, this.c.getText());
         TextView textView = this.d;
         if (textView.getVisibility() == 0) {
             StringBuilder j3 = rf.b.j(a02, " ");

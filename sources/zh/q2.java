@@ -1,42 +1,17 @@
 package zh;
 
-import android.os.Bundle;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.m5;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.jz;
-import org.telegram.ui.an;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class q2 extends an {
-    public boolean rd;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique sd;
-    public final /* synthetic */ long td;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q2(Bundle bundle, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3) {
-        super(bundle);
-        this.sd = tL_starGiftUnique;
-        this.td = j3;
-        this.rd = false;
-    }
-
-    @Override // org.telegram.ui.an, org.telegram.ui.ActionBar.f2
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        if (this.rd) {
-            return;
+public final class q2 extends org.telegram.ui.ActionBar.z0 {
+    @Override // org.telegram.ui.ActionBar.z0, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int size = View.MeasureSpec.getSize(i7);
+        if (View.MeasureSpec.getMode(i7) == Integer.MIN_VALUE) {
+            size = org.telegram.messenger.g0.L(250.0f);
         }
-        this.rd = true;
-        cc O = hc.a0(this).O(this.sd.getDocument(), hd.M0(2131752885, null), hd.a0(null, null, 2131752886, m5.s(this.currentAccount, this.td)));
-        O.r = false;
-        O.j();
-        jz jzVar = this.F9;
-        if (jzVar != null) {
-            jzVar.c(true);
-        }
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i10);
     }
 }

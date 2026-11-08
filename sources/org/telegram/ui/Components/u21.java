@@ -17,7 +17,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class u21 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.ActionBar.f6 a;
@@ -48,7 +48,7 @@ public final class u21 extends FrameLayout implements org.telegram.ui.ActionBar.
         addView(r21Var, c8.ha.c(-2.0f, -1));
         TextView textView = new TextView(context);
         this.d = textView;
-        textView.setText(org.telegram.messenger.hd.M0(2131751462, null));
+        textView.setText(org.telegram.messenger.id.M0(2131751462, null));
         textView.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
         textView.setGravity(17);
         c8.ka.a(textView);
@@ -65,7 +65,7 @@ public final class u21 extends FrameLayout implements org.telegram.ui.ActionBar.
         this.n = imageView;
         imageView.setImageResource(R.drawable.msg_copy);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setContentDescription(org.telegram.messenger.hd.M0(2131751767, null));
+        imageView.setContentDescription(org.telegram.messenger.id.M0(2131751767, null));
         c8.ka.a(imageView);
         addView(imageView, c8.ha.d(38, 38.0f, 85, 0.0f, 0.0f, -16.0f, -12.0f));
         imageView.setVisibility(8);
@@ -99,7 +99,7 @@ public final class u21 extends FrameLayout implements org.telegram.ui.ActionBar.
                 W0 = org.telegram.ui.ActionBar.k6.k0;
             }
             Paint paint = W0;
-            if (org.telegram.messenger.hd.a0) {
+            if (org.telegram.messenger.id.a0) {
                 canvas.drawRect(0.0f, getMeasuredHeight() - 1, view.getRight(), getMeasuredHeight(), paint);
             } else {
                 canvas.drawRect(view.getLeft(), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), paint);

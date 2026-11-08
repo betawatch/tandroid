@@ -5,10 +5,10 @@ import android.view.View;
 import android.widget.TextView;
 import c8.ha;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class z4 extends k.a {
     public final /* synthetic */ a5 c;
@@ -28,7 +28,7 @@ public final class z4 extends k.a {
         j5 j5Var = k5Var.E;
         final int i10 = 0;
         boolean z9 = j5Var != null && j5Var.f;
-        org.telegram.ui.ActionBar.z0 c10 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, z9 ? R.drawable.menu_views_reposts : k5Var.O.a ? R.drawable.menu_views_reactions2 : R.drawable.menu_views_reactions, hd.M0(z9 ? 2131745290 : 2131745291, null), false, k5Var.s);
+        org.telegram.ui.ActionBar.z0 c10 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, z9 ? R.drawable.menu_views_reposts : k5Var.O.a ? R.drawable.menu_views_reactions2 : R.drawable.menu_views_reactions, id.M0(z9 ? 2131745292 : 2131745293, null), false, k5Var.s);
         if (!k5Var.O.a) {
             c10.setAlpha(0.5f);
         }
@@ -87,7 +87,7 @@ public final class z4 extends k.a {
                 }
             }
         });
-        org.telegram.ui.ActionBar.z0 c11 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, !k5Var.O.a ? R.drawable.menu_views_recent2 : R.drawable.menu_views_recent, hd.M0(2131745289, null), false, k5Var.s);
+        org.telegram.ui.ActionBar.z0 c11 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, !k5Var.O.a ? R.drawable.menu_views_recent2 : R.drawable.menu_views_recent, id.M0(2131745291, null), false, k5Var.s);
         if (k5Var.O.a) {
             c11.setAlpha(0.5f);
         }
@@ -149,7 +149,7 @@ public final class z4 extends k.a {
         View d1Var = new org.telegram.ui.ActionBar.d1(org.telegram.ui.ActionBar.k6.H8, a5Var.getContext(), k5Var.s);
         d1Var.setTag(R.id.fit_width_tag, 1);
         actionBarPopupWindow$ActionBarPopupWindowLayout.a(d1Var, ha.o(-1, 8));
-        String M0 = hd.M0(z9 ? 2131744503 : 2131744446, null);
+        String M0 = id.M0(z9 ? 2131744505 : 2131744448, null);
         b bVar = k5Var.s;
         TextView textView = new TextView(actionBarPopupWindow$ActionBarPopupWindowLayout.getContext());
         textView.setTextSize(1, 13.0f);

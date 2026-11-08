@@ -26,7 +26,7 @@ import org.telegram.messenger.ha;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class q3 {
     public Object a;
@@ -101,11 +101,11 @@ public final class q3 {
             synchronized (k8.b.class) {
                 k8.b.a(context);
             }
-            l8.f Y0 = c8.d1.a(context).Y0(new a7.b(context));
-            if (Y0 == null) {
+            l8.f y12 = c8.d1.a(context).y1(new a7.b(context));
+            if (y12 == null) {
                 return;
             }
-            ((cb.c) this.f).v(new h6.m((x5) this.e, Y0));
+            ((cb.c) this.f).v(new h6.m((x5) this.e, y12));
             int size = arrayList.size();
             int i7 = 0;
             while (i7 < size) {

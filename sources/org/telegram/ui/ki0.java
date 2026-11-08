@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ki0 implements org.telegram.messenger.v10 {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class ki0 implements org.telegram.messenger.v10 {
                 ArrayList arrayList = (ArrayList) obj;
                 ArrayList arrayList2 = passkeysActivity.b;
                 passkeysActivity.addPasskeyRow = -1;
-                String M0 = org.telegram.messenger.hd.M0(2131747628, null);
+                String M0 = org.telegram.messenger.id.M0(2131747630, null);
                 org.telegram.ui.Components.x31 x31Var = new org.telegram.ui.Components.x31(2);
                 x31Var.l = M0;
                 x31Var.k = R.raw.passkey;
@@ -40,11 +40,11 @@ public final /* synthetic */ class ki0 implements org.telegram.messenger.v10 {
                 }
                 if (arrayList2.size() + 1 <= ((org.telegram.messenger.j0) passkeysActivity.getMessagesController().x7.z.b).c) {
                     passkeysActivity.addPasskeyRow = arrayList.size();
-                    org.telegram.ui.Components.x31 c10 = org.telegram.ui.Components.x31.c(-1, R.drawable.menu_passkey_add, org.telegram.messenger.hd.M0(2131747649, null));
+                    org.telegram.ui.Components.x31 c10 = org.telegram.ui.Components.x31.c(-1, R.drawable.menu_passkey_add, org.telegram.messenger.id.M0(2131747651, null));
                     c10.q = true;
                     arrayList.add(c10);
                 }
-                arrayList.add(org.telegram.ui.Components.x31.C(org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131747634, null), new ef0(passkeysActivity, 4)), true)));
+                arrayList.add(org.telegram.ui.Components.x31.C(org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(2131747636, null), new ef0(passkeysActivity, 4)), true)));
                 break;
             default:
                 PasskeysActivity.Z(passkeysActivity, (TL_account.Passkey) obj, (String) obj2);

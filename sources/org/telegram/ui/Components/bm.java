@@ -15,7 +15,7 @@ import java.util.HashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class bm extends vh {
     public static final HashMap U = new HashMap();
@@ -345,7 +345,7 @@ public final class bm extends vh {
         interpolator.start();
         if (getSelectedItemsCount() > 1 && (chatAttachAlertPhotoLayout = (diVar = this.b).a2) != null) {
             chatAttachAlertPhotoLayout.c1.setIcon(R.drawable.msg_view_file);
-            diVar.a2.c1.setText(org.telegram.messenger.hd.M0(2131753957, null));
+            diVar.a2.c1.setText(org.telegram.messenger.id.M0(2131753957, null));
             diVar.a2.c1.setRightIcon(R.drawable.msg_arrowright);
         }
         this.w.i(this.P, true);

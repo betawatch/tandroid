@@ -13,10 +13,10 @@ import java.util.HashSet;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.qu;
+import org.telegram.ui.Components.ru;
 import org.telegram.ui.ks;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class v extends pj0 {
     public final /* synthetic */ int e3 = 0;
@@ -63,9 +63,9 @@ public final class v extends pj0 {
                 break;
             default:
                 Paint paint = (Paint) obj;
-                qu quVar = (qu) callback;
-                org.telegram.ui.Components.w5 w5Var = quVar.D1;
-                if (w5Var != null && quVar.B1 >= 0 && quVar.C1 >= 0 && quVar.o1 != null && this.G) {
+                ru ruVar = (ru) callback;
+                org.telegram.ui.Components.w5 w5Var = ruVar.D1;
+                if (w5Var != null && ruVar.B1 >= 0 && ruVar.C1 >= 0 && ruVar.o1 != null && this.G) {
                     float e10 = w5Var.e(false, 0.0f);
                     if (e10 > 0.0f) {
                         int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
@@ -73,7 +73,7 @@ public final class v extends pj0 {
                         for (int i12 = 0; i12 < getChildCount(); i12++) {
                             View childAt = getChildAt(i12);
                             int R = RecyclerView.R(childAt);
-                            if (R != -1 && R >= quVar.B1 && R <= quVar.C1) {
+                            if (R != -1 && R >= ruVar.B1 && R <= ruVar.C1) {
                                 i10 = Math.min(i10, childAt.getTop() + ((int) childAt.getTranslationY()));
                                 i11 = Math.max(i11, childAt.getBottom() + ((int) childAt.getTranslationY()));
                             }
@@ -124,9 +124,9 @@ public final class v extends pj0 {
                 }
                 break;
             case 2:
-                qu quVar = (qu) this.g3;
-                quVar.m1.a();
-                quVar.b.invalidate();
+                ru ruVar = (ru) this.g3;
+                ruVar.m1.a();
+                ruVar.b.invalidate();
                 break;
         }
     }
@@ -136,8 +136,8 @@ public final class v extends pj0 {
         switch (this.e3) {
             case 2:
                 super.onDetachedFromWindow();
-                qu quVar = (qu) this.g3;
-                org.telegram.ui.Components.r5.release(quVar.b, (LongSparseArray<org.telegram.ui.Components.i5>) quVar.i1);
+                ru ruVar = (ru) this.g3;
+                org.telegram.ui.Components.r5.release(ruVar.b, (LongSparseArray<org.telegram.ui.Components.i5>) ruVar.i1);
                 break;
             default:
                 super.onDetachedFromWindow();
@@ -171,8 +171,8 @@ public final class v extends pj0 {
                 return super.onInterceptTouchEvent(motionEvent2);
             default:
                 ks p10 = ks.p();
-                qu quVar = (qu) this.g3;
-                return super.onInterceptTouchEvent(motionEvent) || p10.q(motionEvent, quVar.n1, quVar.E1, this.n2);
+                ru ruVar = (ru) this.g3;
+                return super.onInterceptTouchEvent(motionEvent) || p10.q(motionEvent, ruVar.n1, ruVar.E1, this.n2);
         }
     }
 
@@ -185,7 +185,7 @@ public final class v extends pj0 {
                 break;
             case 2:
                 super.onLayout(z9, i7, i10, i11, i12);
-                ((qu) this.g3).m1.a();
+                ((ru) this.g3).m1.a();
                 break;
             default:
                 super.onLayout(z9, i7, i10, i11, i12);
@@ -198,7 +198,7 @@ public final class v extends pj0 {
         switch (this.e3) {
             case 2:
                 View.MeasureSpec.getSize(i7);
-                ((qu) this.g3).u1.y1(40);
+                ((ru) this.g3).u1.y1(40);
                 super.onMeasure(i7, i10);
                 break;
             default:
@@ -237,9 +237,9 @@ public final class v extends pj0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v(qu quVar, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public v(ru ruVar, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context, f6Var);
-        this.g3 = quVar;
+        this.g3 = ruVar;
         this.f3 = new Paint(1);
     }
 

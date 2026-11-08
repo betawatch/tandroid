@@ -15,7 +15,7 @@ import android.view.animation.OvershootInterpolator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class ty0 extends View {
     public int D;
@@ -257,7 +257,7 @@ public abstract class ty0 extends View {
                 animator.removeAllListeners();
                 this.G.cancel();
             }
-            String M0 = org.telegram.messenger.hd.M0(2131744193, null);
+            String M0 = org.telegram.messenger.id.M0(2131744195, null);
             Matcher matcher = Pattern.compile("\\*\\*.*\\*\\*").matcher(M0);
             String group = matcher.matches() ? matcher.group() : null;
             String replace = M0.replace("**", "");

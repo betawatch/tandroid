@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ef0 implements Runnable {
     public final /* synthetic */ int a;
@@ -86,7 +86,7 @@ public final /* synthetic */ class ef0 implements Runnable {
                 ((kj0) this.b).a.finishFragment();
                 break;
             case 7:
-                org.telegram.ui.Components.v4.u0(((pj0) this.b).e.getParentActivity(), org.telegram.messenger.hd.M0(2131743821, null), true);
+                org.telegram.ui.Components.v4.u0(((pj0) this.b).e.getParentActivity(), org.telegram.messenger.id.M0(2131743823, null), true);
                 break;
             case 8:
                 fi.h2 h2Var = (fi.h2) this.b;
@@ -115,9 +115,9 @@ public final /* synthetic */ class ef0 implements Runnable {
                     int i17 = i15 - (i16 * 60);
                     int i18 = xj0Var2.M;
                     if (i18 == 4 || i18 == 3) {
-                        mb0Var.setText(org.telegram.messenger.hd.a0("CallText", null, 2131752601, Integer.valueOf(i16), Integer.valueOf(i17)));
+                        mb0Var.setText(org.telegram.messenger.id.a0("CallText", null, 2131752601, Integer.valueOf(i16), Integer.valueOf(i17)));
                     } else if (i18 == 2) {
-                        mb0Var.setText(org.telegram.messenger.hd.a0("SmsText", null, 2131745296, Integer.valueOf(i16), Integer.valueOf(i17)));
+                        mb0Var.setText(org.telegram.messenger.id.a0("SmsText", null, 2131745298, Integer.valueOf(i16), Integer.valueOf(i17)));
                     }
                     if (yj0Var != null) {
                         yj0Var.c = 1.0f - (xj0Var2.D / xj0Var2.P);
@@ -151,9 +151,9 @@ public final /* synthetic */ class ef0 implements Runnable {
                             }
                         } else {
                             if (i20 == 4) {
-                                mb0Var.setText(org.telegram.messenger.hd.M0(2131752597, null));
+                                mb0Var.setText(org.telegram.messenger.id.M0(2131752597, null));
                             } else {
-                                mb0Var.setText(org.telegram.messenger.hd.M0(2131745578, null));
+                                mb0Var.setText(org.telegram.messenger.id.M0(2131745580, null));
                             }
                             xj0Var2.o();
                             TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
@@ -280,18 +280,18 @@ public final /* synthetic */ class ef0 implements Runnable {
                     TL_stars.StarGift starGift = (TL_stars.StarGift) bm0Var2.M.get(1);
                     bm0Var2.K = starGift;
                     if (starGift == null) {
-                        zh.d3 d3Var = bm0Var2.J;
-                        if (d3Var != null) {
-                            d3Var.f();
+                        zh.b3 b3Var = bm0Var2.J;
+                        if (b3Var != null) {
+                            b3Var.f();
                             bm0Var2.J = null;
                         }
                     } else {
-                        zh.d3 d3Var2 = bm0Var2.J;
-                        if (d3Var2 == null || d3Var2.b != starGift.id) {
+                        zh.b3 b3Var2 = bm0Var2.J;
+                        if (b3Var2 == null || b3Var2.b != starGift.id) {
                             i11 = ((org.telegram.ui.ActionBar.f2) hm0Var2).currentAccount;
-                            zh.d3 d3Var3 = new zh.d3(i11, bm0Var2.K.id, new r3(zl0Var, 18));
-                            bm0Var2.J = d3Var3;
-                            d3Var3.g(false);
+                            zh.b3 b3Var3 = new zh.b3(i11, bm0Var2.K.id, new r3(zl0Var, 18));
+                            bm0Var2.J = b3Var3;
+                            b3Var3.g(false);
                         }
                     }
                     bm0.a(bm0Var2);

@@ -9,7 +9,7 @@ import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class wo implements Runnable {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class wo implements Runnable {
                                                                 sQLiteCursor.dispose();
                                                             }
                                                             i7 = i10;
-                                                            g0.h3(new k7(yoVar, Math.max(i7, hashMap.size()), hashMap, 16));
+                                                            g0.h3(new l7(yoVar, Math.max(i7, hashMap.size()), hashMap, 16));
                                                             return;
                                                         }
                                                     }
@@ -83,7 +83,7 @@ public final /* synthetic */ class wo implements Runnable {
                                                 if (sQLiteCursor != null) {
                                                 }
                                                 i7 = i10;
-                                                g0.h3(new k7(yoVar, Math.max(i7, hashMap.size()), hashMap, 16));
+                                                g0.h3(new l7(yoVar, Math.max(i7, hashMap.size()), hashMap, 16));
                                                 return;
                                             }
                                         }
@@ -102,7 +102,7 @@ public final /* synthetic */ class wo implements Runnable {
                         }
                     } catch (Exception unused6) {
                     }
-                    g0.h3(new k7(yoVar, Math.max(i7, hashMap.size()), hashMap, 16));
+                    g0.h3(new l7(yoVar, Math.max(i7, hashMap.size()), hashMap, 16));
                     return;
                 } catch (Throwable th4) {
                     th = th4;

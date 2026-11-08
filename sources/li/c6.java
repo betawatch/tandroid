@@ -13,14 +13,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.a00;
 import org.telegram.ui.Components.a41;
 import org.telegram.ui.Components.d41;
 import org.telegram.ui.Components.eu0;
 import org.telegram.ui.Components.uy0;
 import org.telegram.ui.Components.vy0;
-import org.telegram.ui.Components.zz;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public abstract class c6 {
     public static final int[] a = {1, 2, 16, 8, 4, 256, TLObject.FLAG_14, 32768, 65536};
@@ -114,7 +114,7 @@ public abstract class c6 {
                 tL_messageEntityFormattedDate.applyFlags();
                 uy0 uy0Var3 = new uy0();
                 uy0Var3.a |= 128;
-                spannableStringBuilder.setSpan(new zz(charSequence2, uy0Var3, tL_messageEntityFormattedDate), length4, spannableStringBuilder.length(), 33);
+                spannableStringBuilder.setSpan(new a00(charSequence2, uy0Var3, tL_messageEntityFormattedDate), length4, spannableStringBuilder.length(), 33);
                 return;
             }
             return;
@@ -258,7 +258,7 @@ public abstract class c6 {
 
     /* JADX WARN: Code restructure failed: missing block: B:55:0x00f8, code lost:
     
-        if (((org.telegram.ui.Components.zz) r4.e) != ((org.telegram.ui.Components.zz) r8.e)) goto L66;
+        if (((org.telegram.ui.Components.a00) r4.e) != ((org.telegram.ui.Components.a00) r8.e)) goto L66;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -290,9 +290,9 @@ public abstract class c6 {
             if (d41VarArr.length > 0) {
                 b6Var2.c = d41VarArr[0].getURL();
             }
-            zz[] zzVarArr = (zz[]) spanned.getSpans(i7, nextSpanTransition, zz.class);
-            if (zzVarArr.length > 0) {
-                b6Var2.e = zzVarArr[0];
+            a00[] a00VarArr = (a00[]) spanned.getSpans(i7, nextSpanTransition, a00.class);
+            if (a00VarArr.length > 0) {
+                b6Var2.e = a00VarArr[0];
             }
             org.telegram.ui.Components.r5[] r5VarArr = (org.telegram.ui.Components.r5[]) spanned.getSpans(i7, nextSpanTransition, org.telegram.ui.Components.r5.class);
             if (r5VarArr.length > 0) {
@@ -345,8 +345,8 @@ public abstract class c6 {
         int max2 = Math.max(0, Math.min(i10, length));
         if (max < max2 && com.google.android.recaptcha.internal.a.u(editable)) {
             while (max < max2) {
-                int nextSpanTransition = editable.nextSpanTransition(max, max2, zz.class);
-                if (((zz[]) editable.getSpans(max, nextSpanTransition, zz.class)).length != 0) {
+                int nextSpanTransition = editable.nextSpanTransition(max, max2, a00.class);
+                if (((a00[]) editable.getSpans(max, nextSpanTransition, a00.class)).length != 0) {
                     max = nextSpanTransition;
                 }
             }
@@ -471,8 +471,8 @@ public abstract class c6 {
         if (max >= max2) {
             return;
         }
-        for (zz zzVar : (zz[]) editable.getSpans(max, max2, zz.class)) {
-            editable.removeSpan(zzVar);
+        for (a00 a00Var : (a00[]) editable.getSpans(max, max2, a00.class)) {
+            editable.removeSpan(a00Var);
         }
     }
 
@@ -634,11 +634,11 @@ public abstract class c6 {
             texturl.url = (String) b6Var.c;
             richText11 = texturl;
         }
-        zz zzVar = (zz) b6Var.e;
-        if (zzVar == null) {
+        a00 a00Var = (a00) b6Var.e;
+        if (a00Var == null) {
             return richText11;
         }
-        TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate = zzVar.b;
+        TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate = a00Var.b;
         TL_iv.textDate textdate = new TL_iv.textDate();
         textdate.text = richText11;
         textdate.flags = tL_messageEntityFormattedDate.flags;

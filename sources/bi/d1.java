@@ -21,10 +21,10 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.ld0;
 import org.telegram.ui.qw;
-import org.telegram.ui.v91;
+import org.telegram.ui.w91;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d1 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -149,7 +149,7 @@ public final /* synthetic */ class d1 implements View.OnClickListener {
                         }
 
                         @Override // org.telegram.ui.qw
-                        public final boolean y(ww wwVar, ArrayList arrayList2, CharSequence charSequence, boolean z10, boolean z11, int i12, int i13, v91 v91Var) {
+                        public final boolean y(ww wwVar, ArrayList arrayList2, CharSequence charSequence, boolean z10, boolean z11, int i12, int i13, w91 w91Var) {
                             TLRPC.TL_forumTopic f10;
                             TLRPC.Message message;
                             ArrayList arrayList3 = new ArrayList();
@@ -193,11 +193,11 @@ public final /* synthetic */ class d1 implements View.OnClickListener {
                                 i1Var2.U1 = true;
                                 t0Var.a(arrayList3.size() <= 0 ? "USER_DECLINED" : null, arrayList3);
                             }
-                            if (v91Var == null) {
+                            if (w91Var == null) {
                                 wwVar.finishFragment();
                                 return true;
                             }
-                            v91Var.finishFragment();
+                            w91Var.finishFragment();
                             wwVar.removeSelfFromStack();
                             return true;
                         }

@@ -9,7 +9,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class k extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public org.telegram.ui.Components.pj0 a;
@@ -34,17 +34,17 @@ public final class k extends org.telegram.ui.ActionBar.f2 implements org.telegra
         ArrayList arrayList2 = this.h;
         arrayList.addAll(arrayList2);
         arrayList2.clear();
-        arrayList2.add(new i(0, 0, org.telegram.messenger.hd.N0("ArchiveSettingUnmutedFolders")));
-        arrayList2.add(new i(1, 1, org.telegram.messenger.hd.N0("ArchiveSettingUnmutedFoldersCheck")));
-        arrayList2.add(new i(2, 2, org.telegram.messenger.hd.N0("ArchiveSettingUnmutedFoldersInfo")));
+        arrayList2.add(new i(0, 0, org.telegram.messenger.id.N0("ArchiveSettingUnmutedFolders")));
+        arrayList2.add(new i(1, 1, org.telegram.messenger.id.N0("ArchiveSettingUnmutedFoldersCheck")));
+        arrayList2.add(new i(2, 2, org.telegram.messenger.id.N0("ArchiveSettingUnmutedFoldersInfo")));
         if (getMessagesController().T0().size() > 1) {
-            arrayList2.add(new i(0, 3, org.telegram.messenger.hd.N0("ArchiveSettingUnmutedChats")));
-            arrayList2.add(new i(1, 4, org.telegram.messenger.hd.N0("ArchiveSettingUnmutedChatsCheck")));
-            arrayList2.add(new i(2, 5, org.telegram.messenger.hd.N0("ArchiveSettingUnmutedChatsInfo")));
+            arrayList2.add(new i(0, 3, org.telegram.messenger.id.N0("ArchiveSettingUnmutedChats")));
+            arrayList2.add(new i(1, 4, org.telegram.messenger.id.N0("ArchiveSettingUnmutedChatsCheck")));
+            arrayList2.add(new i(2, 5, org.telegram.messenger.id.N0("ArchiveSettingUnmutedChatsInfo")));
         }
-        arrayList2.add(new i(0, 6, org.telegram.messenger.hd.N0("NewChatsFromNonContacts")));
-        arrayList2.add(new i(1, 7, org.telegram.messenger.hd.N0("NewChatsFromNonContactsCheck")));
-        arrayList2.add(new i(2, 8, org.telegram.messenger.hd.N0("ArchiveAndMuteInfo")));
+        arrayList2.add(new i(0, 6, org.telegram.messenger.id.N0("NewChatsFromNonContacts")));
+        arrayList2.add(new i(1, 7, org.telegram.messenger.id.N0("NewChatsFromNonContactsCheck")));
+        arrayList2.add(new i(2, 8, org.telegram.messenger.id.N0("ArchiveAndMuteInfo")));
         j jVar = this.b;
         if (jVar == null) {
             return;
@@ -61,7 +61,7 @@ public final class k extends org.telegram.ui.ActionBar.f2 implements org.telegra
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131754143, null));
+        this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131754143, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 21));
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;

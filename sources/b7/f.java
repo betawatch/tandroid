@@ -21,7 +21,7 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import w7.s;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class f {
     public static final sa.d b;
@@ -97,10 +97,10 @@ public final class f {
         int i7;
         f fVar;
         int i10;
-        a7.a X0;
+        a7.a x12;
         n nVar;
         boolean z9;
-        a7.a X02;
+        a7.a x13;
         Context applicationContext = context.getApplicationContext();
         if (applicationContext == null) {
             throw new b("null application Context");
@@ -225,12 +225,12 @@ public final class f {
                                             }
                                             if (z9) {
                                                 Log.v("DynamiteModule", "Dynamite loader version >= 2, using loadModule2NoCrashUtils");
-                                                X02 = nVar.Y0(new a7.b(applicationContext2), str, i10, new a7.b(cursor2));
+                                                x13 = nVar.y1(new a7.b(applicationContext2), str, i10, new a7.b(cursor2));
                                             } else {
                                                 Log.w("DynamiteModule", "Dynamite loader version < 2, falling back to loadModule2");
-                                                X02 = nVar.X0(new a7.b(applicationContext2), str, i10, new a7.b(cursor2));
+                                                x13 = nVar.x1(new a7.b(applicationContext2), str, i10, new a7.b(cursor2));
                                             }
-                                            Context context3 = (Context) a7.b.N0(X02);
+                                            Context context3 = (Context) a7.b.n1(x13);
                                             if (context3 == null) {
                                                 throw new b("Failed to get module context");
                                             }
@@ -246,27 +246,27 @@ public final class f {
                                             if (h7 == null) {
                                                 throw new b("Failed to create IDynamiteLoader.");
                                             }
-                                            Parcel N0 = h7.N0(h7.P0(), 6);
-                                            int readInt = N0.readInt();
-                                            N0.recycle();
+                                            Parcel n1 = h7.n1(h7.p1(), 6);
+                                            int readInt = n1.readInt();
+                                            n1.recycle();
                                             if (readInt >= 3) {
                                                 k kVar4 = (k) threadLocal.get();
                                                 if (kVar4 == null) {
                                                     throw new b("No cached result cursor holder");
                                                 }
-                                                X0 = h7.a1(new a7.b(context), str, i10, new a7.b(kVar4.a));
+                                                x12 = h7.A1(new a7.b(context), str, i10, new a7.b(kVar4.a));
                                             } else if (readInt == 2) {
                                                 Log.w("DynamiteModule", "IDynamite loader version = 2");
-                                                X0 = h7.Y0(new a7.b(context), str, i10);
+                                                x12 = h7.y1(new a7.b(context), str, i10);
                                             } else {
                                                 Log.w("DynamiteModule", "Dynamite loader version < 2, falling back to createModuleContext");
-                                                X0 = h7.X0(new a7.b(context), str, i10);
+                                                x12 = h7.x1(new a7.b(context), str, i10);
                                             }
-                                            Object N02 = a7.b.N0(X0);
-                                            if (N02 == null) {
+                                            Object n12 = a7.b.n1(x12);
+                                            if (n12 == null) {
                                                 throw new b("Failed to load remote module.");
                                             }
-                                            fVar = new f((Context) N02);
+                                            fVar = new f((Context) n12);
                                         }
                                         return fVar;
                                     } catch (Throwable th2) {
@@ -421,16 +421,16 @@ public final class f {
                         return 0;
                     }
                     try {
-                        Parcel N0 = h7.N0(h7.P0(), 6);
-                        int readInt2 = N0.readInt();
-                        N0.recycle();
+                        Parcel n1 = h7.n1(h7.p1(), 6);
+                        int readInt2 = n1.readInt();
+                        n1.recycle();
                         if (readInt2 >= 3) {
                             ThreadLocal threadLocal = i;
                             k kVar = (k) threadLocal.get();
                             if (kVar != null && (cursor = kVar.a) != null) {
                                 return cursor.getInt(0);
                             }
-                            Cursor cursor3 = (Cursor) a7.b.N0(h7.Z0(new a7.b(context), str, z9, ((Long) j.get()).longValue()));
+                            Cursor cursor3 = (Cursor) a7.b.n1(h7.z1(new a7.b(context), str, z9, ((Long) j.get()).longValue()));
                             if (cursor3 != null) {
                                 try {
                                     if (cursor3.moveToFirst()) {
@@ -481,23 +481,23 @@ public final class f {
                         if (readInt2 == 2) {
                             Log.w("DynamiteModule", "IDynamite loader version = 2, no high precision latency measurement.");
                             a7.b bVar = new a7.b(context);
-                            Parcel P0 = h7.P0();
-                            p7.g.b(P0, bVar);
-                            P0.writeString(str);
-                            P0.writeInt(z9 ? 1 : 0);
-                            Parcel N02 = h7.N0(P0, 5);
-                            readInt = N02.readInt();
-                            N02.recycle();
+                            Parcel p12 = h7.p1();
+                            p7.g.b(p12, bVar);
+                            p12.writeString(str);
+                            p12.writeInt(z9 ? 1 : 0);
+                            Parcel n12 = h7.n1(p12, 5);
+                            readInt = n12.readInt();
+                            n12.recycle();
                         } else {
                             Log.w("DynamiteModule", "IDynamite loader version < 2, falling back to getModuleVersion2");
                             a7.b bVar2 = new a7.b(context);
-                            Parcel P02 = h7.P0();
-                            p7.g.b(P02, bVar2);
-                            P02.writeString(str);
-                            P02.writeInt(z9 ? 1 : 0);
-                            Parcel N03 = h7.N0(P02, 3);
-                            readInt = N03.readInt();
-                            N03.recycle();
+                            Parcel p13 = h7.p1();
+                            p7.g.b(p13, bVar2);
+                            p13.writeString(str);
+                            p13.writeInt(z9 ? 1 : 0);
+                            Parcel n13 = h7.n1(p13, 3);
+                            readInt = n13.readInt();
+                            n13.recycle();
                         }
                         return readInt;
                     } catch (RemoteException e13) {

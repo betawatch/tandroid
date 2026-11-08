@@ -12,9 +12,9 @@ import org.telegram.messenger.ui;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ez;
+import org.telegram.ui.Components.fz;
 import org.telegram.ui.Components.ly0;
-import org.telegram.ui.Components.tv;
+import org.telegram.ui.Components.uv;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ef0;
 import org.telegram.ui.fo;
@@ -24,7 +24,7 @@ import org.telegram.ui.l21;
 import org.telegram.ui.la;
 import org.telegram.ui.xj0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u5 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -43,10 +43,10 @@ public final /* synthetic */ class u5 implements RequestDelegate {
                 Comparator comparator = y6.X;
                 break;
             case 2:
-                org.telegram.messenger.g0.h3(new ai.m0(22));
+                org.telegram.messenger.g0.h3(new ai.m0(24));
                 break;
             case 3:
-                org.telegram.messenger.g0.h3(new ai.m0(22));
+                org.telegram.messenger.g0.h3(new ai.m0(24));
                 break;
             case 4:
                 int[] iArr = fi.b1.a0;
@@ -87,19 +87,19 @@ public final /* synthetic */ class u5 implements RequestDelegate {
                 int i11 = fo.i3;
                 break;
             case 17:
-                org.telegram.messenger.g0.h3(new ai.m0(22));
+                org.telegram.messenger.g0.h3(new ai.m0(24));
                 break;
             case 18:
                 Pattern pattern2 = org.telegram.ui.Components.v4.a;
                 break;
             case 19:
-                int i12 = tv.H0;
+                int i12 = uv.H0;
                 break;
             case 20:
-                int i13 = ez.A0;
+                int i13 = fz.A0;
                 break;
             case 21:
-                org.telegram.messenger.g0.h3(new ai.m0(22));
+                org.telegram.messenger.g0.h3(new ai.m0(24));
                 break;
             case 22:
                 int i14 = ly0.e;

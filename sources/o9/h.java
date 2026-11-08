@@ -7,9 +7,10 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.q;
 import java.util.concurrent.Executor;
 import kotlin.jvm.internal.j;
+import u9.r;
 import zd.v0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class h implements u9.d, q {
     public static final h b = new h(0);
@@ -26,19 +27,19 @@ public final class h implements u9.d, q {
     public Object e(r7 r7Var) {
         switch (this.a) {
             case 0:
-                Object e10 = r7Var.e(new u9.q(q9.a.class, Executor.class));
+                Object e10 = r7Var.e(new r(q9.a.class, Executor.class));
                 j.d(e10, "get(...)");
                 return new v0((Executor) e10);
             case 1:
-                Object e11 = r7Var.e(new u9.q(q9.c.class, Executor.class));
+                Object e11 = r7Var.e(new r(q9.c.class, Executor.class));
                 j.d(e11, "get(...)");
                 return new v0((Executor) e11);
             case 2:
-                Object e12 = r7Var.e(new u9.q(q9.b.class, Executor.class));
+                Object e12 = r7Var.e(new r(q9.b.class, Executor.class));
                 j.d(e12, "get(...)");
                 return new v0((Executor) e12);
             default:
-                Object e13 = r7Var.e(new u9.q(q9.d.class, Executor.class));
+                Object e13 = r7Var.e(new r(q9.d.class, Executor.class));
                 j.d(e13, "get(...)");
                 return new v0((Executor) e13);
         }

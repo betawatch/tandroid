@@ -56,12 +56,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.e6;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
-import org.telegram.messenger.rc;
+import org.telegram.messenger.sc;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -78,7 +78,7 @@ import org.telegram.ui.Components.xq;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class l1 extends View {
     public static int[] D9;
@@ -685,7 +685,7 @@ public final class l1 extends View {
         this.F1 = new RectF();
         this.I1 = -1;
         this.U1 = new Paint(1);
-        this.V1 = hd.M0(2131746469, null);
+        this.V1 = id.M0(2131746471, null);
         this.Y1 = new Paint(1);
         this.a2 = 1;
         this.c2 = new HashMap();
@@ -955,8 +955,8 @@ public final class l1 extends View {
         TextPaint textPaint2 = new TextPaint(qs.N1);
         this.e8 = textPaint2;
         textPaint2.setXfermode(new PorterDuffXfermode(mode2));
-        this.i8 = hd.M0(2131746491, null);
-        this.j8 = hd.M0(2131746501, null);
+        this.i8 = id.M0(2131746493, null);
+        this.j8 = id.M0(2131746503, null);
         int[] iArr = a.b;
         this.r8 = new LinearGradient[iArr.length];
         this.s8 = new int[iArr.length];
@@ -1271,7 +1271,7 @@ public final class l1 extends View {
     }
 
     public static boolean i() {
-        return a0.f() && rc.e(256);
+        return a0.f() && sc.e(256);
     }
 
     public static float i1(int i7) {
@@ -3084,7 +3084,7 @@ public final class l1 extends View {
             long max4 = j3 > 0 ? Math.max(0L, (j3 - (currentTimeMillis2 / 1000)) - 1) : -1L;
             if (max4 != l1Var.N2) {
                 l1Var.N2 = max4;
-                l1Var.O2 = max4 >= 0 ? hd.a0(null, null, 2131746490, String.format(Locale.US, "%d:%02d", Long.valueOf(max4 / 60), Long.valueOf(max4 % 60))) : hd.M0(2131746497, null);
+                l1Var.O2 = max4 >= 0 ? id.a0(null, null, 2131746492, String.format(Locale.US, "%d:%02d", Long.valueOf(max4 / 60), Long.valueOf(max4 % 60))) : id.M0(2131746499, null);
             }
             String str = l1Var.O2;
             textPaint.setTextSize(org.telegram.messenger.g0.L(11.0f));
@@ -4195,7 +4195,7 @@ public final class l1 extends View {
     public final void F0(int i7) {
         if (this.a) {
             if (i7 == 2 && !p10.i(this.b).q()) {
-                d1(0, hd.M0(2131746473, null), hd.M0(2131746472, null));
+                d1(0, id.M0(2131746475, null), id.M0(2131746474, null));
                 i0();
                 return;
             }
@@ -5188,8 +5188,8 @@ public final class l1 extends View {
         TextPaint textPaint = this.C1;
         textPaint.setSubpixelText(true);
         textPaint.setLinearText(false);
-        String[] strArr = {hd.M0(2131746484, null), hd.M0(this.x0 ? 2131746488 : 2131746486, null), hd.M0(2131746483, null)};
-        String[] strArr2 = {null, hd.M0(this.x0 ? 2131746487 : 2131746485, null), null};
+        String[] strArr = {id.M0(2131746486, null), id.M0(this.x0 ? 2131746490 : 2131746488, null), id.M0(2131746485, null)};
+        String[] strArr2 = {null, id.M0(this.x0 ? 2131746489 : 2131746487, null), null};
         int i11 = 0;
         float f33 = L4;
         while (i11 < 3) {
@@ -5822,7 +5822,7 @@ public final class l1 extends View {
                         l1Var.h8 = z17;
                         textPaint2.setTextSize(org.telegram.messenger.g0.L(14.0f));
                         Paint.FontMetrics fontMetrics2 = textPaint2.getFontMetrics();
-                        l1Var.f8 = new StaticLayout(hd.M0(!z18 ? 2131746500 : 2131746492, null), textPaint2, width2, Layout.Alignment.ALIGN_CENTER, 1.0f, org.telegram.messenger.g0.L(18.5f) - (fontMetrics2.descent - fontMetrics2.ascent), false);
+                        l1Var.f8 = new StaticLayout(id.M0(!z18 ? 2131746502 : 2131746494, null), textPaint2, width2, Layout.Alignment.ALIGN_CENTER, 1.0f, org.telegram.messenger.g0.L(18.5f) - (fontMetrics2.descent - fontMetrics2.ascent), false);
                     }
                     float A = com.google.android.recaptcha.internal.a.A(org.telegram.messenger.g0.L(300.0f), ((((fontMetrics.descent - fontMetrics.ascent) + (org.telegram.messenger.g0.L(22.0f) + L10)) + org.telegram.messenger.g0.L(7.0f)) + l1Var.f8.getHeight()) + (l1Var.w1 > 0 ? org.telegram.messenger.g0.L(20.0f) + org.telegram.messenger.g0.L(36.0f) : 0), 2.0f, f61) - org.telegram.messenger.g0.L(8.0f);
                     TLRPC.Document document2 = l1Var.p8;
@@ -6002,7 +6002,7 @@ public final class l1 extends View {
                         TextPaint textPaint6 = l1Var.C1;
                         textPaint6.setColor(-1275068417);
                         textPaint6.setTextSize(org.telegram.messenger.g0.L(14.0f));
-                        String M0 = hd.M0(!l1Var.x1 ? 2131746494 : l1Var.w1 < 0 ? 2131746500 : 2131746493, null);
+                        String M0 = id.M0(!l1Var.x1 ? 2131746496 : l1Var.w1 < 0 ? 2131746502 : 2131746495, null);
                         canvas2.drawText(M0, (f34 - textPaint6.measureText(M0)) / 2.0f, L6 + org.telegram.messenger.g0.L(40.0f), textPaint6);
                     }
                 }
@@ -7243,7 +7243,7 @@ public final class l1 extends View {
     }
 
     public final String a0() {
-        String M0 = hd.M0(2131746478, null);
+        String M0 = id.M0(2131746480, null);
         if (!M0.equals(this.u2)) {
             this.u2 = M0;
             Matcher matcher = Pattern.compile("\\d+").matcher(M0);
@@ -8070,7 +8070,7 @@ public final class l1 extends View {
             }
             l1Var2.G0 = f28;
             if (l1Var2.w0 && !l1Var2.A0 && j3 >= l1Var2.z0) {
-                l1Var2.U0(hd.M0(2131746479, null));
+                l1Var2.U0(id.M0(2131746481, null));
             }
         }
         l1Var2.u1(true);
@@ -8814,13 +8814,13 @@ public final class l1 extends View {
                                     if (this.w0) {
                                         d1(R.drawable.msg_recent, a0(), null);
                                     } else {
-                                        d1(R.drawable.msg_retry, hd.M0(2131746476, null), null);
+                                        d1(R.drawable.msg_retry, id.M0(2131746478, null), null);
                                     }
                                     i0();
                                     return true;
                                 }
                                 if (i15 != 1) {
-                                    U0(hd.M0(2131746477, null));
+                                    U0(id.M0(2131746479, null));
                                     return true;
                                 }
                                 boolean z14 = this.w0;
@@ -8833,7 +8833,7 @@ public final class l1 extends View {
                                 }
                                 this.A2 = -1;
                                 u1(true);
-                                d1(R.drawable.msg_recent, this.w0 ? a0() : hd.M0(2131746475, null), null);
+                                d1(R.drawable.msg_recent, this.w0 ? a0() : id.M0(2131746477, null), null);
                                 if (cVar != null) {
                                     cVar.w(this.w0 ? 1 : 2);
                                     return true;
@@ -9202,7 +9202,7 @@ public final class l1 extends View {
 
     public void setFeeStars(long j3) {
         this.K0 = j3 > 0;
-        String a02 = j3 > 0 ? hd.a0(null, null, 2131746480, hd.E(j3, ',')) : "";
+        String a02 = j3 > 0 ? id.a0(null, null, 2131746482, id.E(j3, ',')) : "";
         int indexOf = a02.indexOf(9733);
         this.I0 = indexOf >= 0 ? a02.substring(0, indexOf) : "";
         if (indexOf >= 0) {
@@ -9376,13 +9376,13 @@ public final class l1 extends View {
                 }
                 this.A2 = ceil;
                 StringBuilder sb3 = new StringBuilder();
-                org.telegram.messenger.camera.q.q(null, 2131746489, sb3, " · ");
-                sb3.append(hd.a0(null, null, 2131746490, String.format(Locale.US, "%d:%02d", Integer.valueOf(ceil / 60), Integer.valueOf(ceil % 60))));
+                org.telegram.messenger.camera.q.q(null, 2131746491, sb3, " · ");
+                sb3.append(id.a0(null, null, 2131746492, String.format(Locale.US, "%d:%02d", Integer.valueOf(ceil / 60), Integer.valueOf(ceil % 60))));
                 sb2 = sb3.toString();
             } else {
                 StringBuilder sb4 = new StringBuilder();
-                org.telegram.messenger.camera.q.q(null, 2131746489, sb4, " · ");
-                sb2 = jg.g.l(2131746482, null, sb4);
+                org.telegram.messenger.camera.q.q(null, 2131746491, sb4, " · ");
+                sb2 = jg.g.l(2131746484, null, sb4);
                 this.A2 = -1;
             }
             if (sb2.equals(this.z2)) {

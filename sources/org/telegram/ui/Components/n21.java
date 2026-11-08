@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n21 implements org.telegram.messenger.v10 {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class n21 implements org.telegram.messenger.v10 {
                 l41Var.F = 1;
                 l41Var.V();
                 String str = v21Var.W1;
-                arrayList.add(p21.j(3, "", str != null ? k21.K0(k21.O0(str, null, null)) : org.telegram.messenger.hd.M0(2131754986, null), null, null));
+                arrayList.add(p21.j(3, "", str != null ? k21.K0(k21.O0(str, null, null)) : org.telegram.messenger.id.M0(2131754986, null), null, null));
                 arrayList.add(t21.i(4, v21Var.S1, v21Var.c2, new lk(26, v21Var, l41Var), new v70() { // from class: org.telegram.ui.Components.o21
                     @Override // org.telegram.ui.Components.v70
                     public final void a(ClickableSpan clickableSpan) {
@@ -55,7 +55,7 @@ public final /* synthetic */ class n21 implements org.telegram.messenger.v10 {
                 l41Var.U();
                 arrayList.add(x31.C(null));
                 l41Var.V();
-                arrayList.add(x31.c(1, R.drawable.msg_copy, org.telegram.messenger.hd.M0(2131743959, null)));
+                arrayList.add(x31.c(1, R.drawable.msg_copy, org.telegram.messenger.id.M0(2131743961, null)));
                 l41Var.U();
                 break;
             default:
@@ -71,13 +71,13 @@ public final /* synthetic */ class n21 implements org.telegram.messenger.v10 {
                         v21Var.b2.O(true);
                         break;
                     } else {
-                        dVar.setText(org.telegram.messenger.hd.M0(2131747830, null));
+                        dVar.setText(org.telegram.messenger.id.M0(2131747832, null));
                         dVar.setOnClickListener(new m21(v21Var, 1));
                         break;
                     }
                 } else {
                     org.telegram.ui.Cells.f1.r(v21Var.E, v21Var.I0, tL_error, false);
-                    dVar.setText(org.telegram.messenger.hd.M0(2131747830, null));
+                    dVar.setText(org.telegram.messenger.id.M0(2131747832, null));
                     dVar.setOnClickListener(new m21(v21Var, 0));
                     break;
                 }

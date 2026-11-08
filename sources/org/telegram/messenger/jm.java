@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jm implements Runnable {
     public final /* synthetic */ int a;
@@ -546,7 +546,7 @@ public final /* synthetic */ class jm implements Runnable {
                                         }
                                         if (sQLiteCursor2 != null) {
                                         }
-                                        g0.h3(new zj(vvVar, arrayList5, arrayList6, arrayList7, arrayList, tvVar, 7));
+                                        g0.h3(new yj(vvVar, arrayList5, arrayList6, arrayList7, arrayList, tvVar, 7));
                                     } catch (Throwable th2) {
                                         th = th2;
                                         if (sQLiteCursor != null) {
@@ -588,7 +588,7 @@ public final /* synthetic */ class jm implements Runnable {
                             if (sQLiteCursor2 != null) {
                                 sQLiteCursor2.dispose();
                             }
-                            g0.h3(new zj(vvVar, arrayList5, arrayList6, arrayList7, arrayList, tvVar, 7));
+                            g0.h3(new yj(vvVar, arrayList5, arrayList6, arrayList7, arrayList, tvVar, 7));
                         }
                     } catch (Exception e12) {
                         e = e12;
@@ -626,7 +626,7 @@ public final /* synthetic */ class jm implements Runnable {
                     }
                     if (sQLiteCursor2 != null) {
                     }
-                    g0.h3(new zj(vvVar, arrayList5, arrayList6, arrayList7, arrayList, tvVar, 7));
+                    g0.h3(new yj(vvVar, arrayList5, arrayList6, arrayList7, arrayList, tvVar, 7));
                 } catch (Throwable th5) {
                     th = th5;
                     sQLiteCursor2 = sQLiteCursor4;
@@ -664,7 +664,7 @@ public final /* synthetic */ class jm implements Runnable {
             sQLiteCursor = null;
             sQLiteCursor2 = null;
         }
-        g0.h3(new zj(vvVar, arrayList5, arrayList6, arrayList7, arrayList, tvVar, 7));
+        g0.h3(new yj(vvVar, arrayList5, arrayList6, arrayList7, arrayList, tvVar, 7));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:133:0x02dc, code lost:
@@ -677,7 +677,7 @@ public final /* synthetic */ class jm implements Runnable {
      */
     /* JADX WARN: Code restructure failed: missing block: B:43:0x01ad, code lost:
     
-        org.telegram.messenger.g0.h3(new org.telegram.messenger.zj(r16, r15, r6, r9, r2, (java.lang.Object) r3, 6));
+        org.telegram.messenger.g0.h3(new org.telegram.messenger.yj(r16, r15, r6, r9, r2, (java.lang.Object) r3, 6));
      */
     /* JADX WARN: Code restructure failed: missing block: B:44:0x01bf, code lost:
     
@@ -696,7 +696,7 @@ public final /* synthetic */ class jm implements Runnable {
     /* JADX WARN: Removed duplicated region for block: B:137:0x02e5  */
     /* JADX WARN: Type inference failed for: r0v2, types: [a0.h] */
     /* JADX WARN: Type inference failed for: r0v26, types: [a0.h] */
-    /* JADX WARN: Type inference failed for: r10v22, types: [org.telegram.ui.Components.ex] */
+    /* JADX WARN: Type inference failed for: r10v22, types: [org.telegram.ui.Components.fx] */
     /* JADX WARN: Type inference failed for: r11v1, types: [org.telegram.messenger.c20] */
     /* JADX WARN: Type inference failed for: r18v4 */
     /* JADX WARN: Type inference failed for: r18v5 */
@@ -1209,7 +1209,7 @@ public final /* synthetic */ class jm implements Runnable {
             default:
                 k00 k00Var = (k00) obj3;
                 TLObject tLObject2 = (TLObject) obj2;
-                ?? r10 = (org.telegram.ui.Components.ex) obj;
+                ?? r10 = (org.telegram.ui.Components.fx) obj;
                 k00Var.getClass();
                 ArrayList arrayList22 = new ArrayList();
                 if (tLObject2 instanceof TLRPC.TL_messages_forumTopics) {

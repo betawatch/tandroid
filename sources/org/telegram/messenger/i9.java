@@ -6,36 +6,35 @@ import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
-import java.util.Locale;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class i9 {
     public static db.a a;
 
-    /* JADX WARN: Code restructure failed: missing block: B:69:0x00da, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x007a, code lost:
     
-        if (r10.checkSelfPermission("android.permission.READ_PHONE_STATE") == 0) goto L52;
+        if (r8.checkSelfPermission("android.permission.READ_PHONE_STATE") == 0) goto L37;
      */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0105  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0106  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00a5  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00a6  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static a4.k a(Context context, db.c cVar) {
+    public static d1 a(Context context, db.c cVar) {
         String str;
-        a4.k kVar = new a4.k(4, (byte) 0);
-        kVar.b = cVar.a;
+        d1 d1Var = new d1();
+        d1Var.a = cVar.a;
         String str2 = cVar.b;
         String str3 = null;
         if (TextUtils.isEmpty(str2)) {
             str2 = null;
         }
-        kVar.c = str2;
+        d1Var.b = str2;
         try {
             TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
             if (telephonyManager != null) {
-                int b10 = b(context, kVar.b);
+                int b10 = b(context, d1Var.a);
                 if (b10 != -1 && Build.VERSION.SDK_INT >= 24) {
                     telephonyManager = telephonyManager.createForSubscriptionId(b10);
                 } else if (telephonyManager.getPhoneCount() > 1) {
@@ -46,24 +45,7 @@ public abstract class i9 {
                     simOperatorName = simCarrierIdName == null ? null : simCarrierIdName.toString();
                 }
                 if (!TextUtils.isEmpty(simOperatorName)) {
-                    kVar.c = simOperatorName;
-                }
-                String simCountryIso = telephonyManager.getSimCountryIso();
-                if (!TextUtils.isEmpty(simCountryIso)) {
-                    Locale locale = hd.E0().y;
-                    Locale locale2 = new Locale("", simCountryIso.toUpperCase(Locale.US));
-                    if (locale == null) {
-                        locale = Locale.getDefault();
-                    }
-                    String displayCountry = locale2.getDisplayCountry(locale);
-                    if (TextUtils.isEmpty(displayCountry)) {
-                        displayCountry = null;
-                    }
-                    kVar.d = displayCountry;
-                }
-                String simOperator = telephonyManager.getSimOperator();
-                if (simOperator != null && simOperator.length() >= 5) {
-                    kVar.e = simOperator.substring(0, 3) + " " + simOperator.substring(3);
+                    d1Var.b = simOperatorName;
                 }
                 int i7 = Build.VERSION.SDK_INT;
                 if (i7 >= 26) {
@@ -73,7 +55,7 @@ public abstract class i9 {
                     if (!TextUtils.isEmpty(str)) {
                         str3 = str;
                     }
-                    kVar.f = str3;
+                    d1Var.c = str3;
                 }
                 if (i7 >= 33 && b10 != -1) {
                     try {
@@ -84,18 +66,18 @@ public abstract class i9 {
                     if (!TextUtils.isEmpty(str)) {
                         if (!TextUtils.isEmpty(str)) {
                         }
-                        kVar.f = str3;
+                        d1Var.c = str3;
                     }
                 }
                 str = telephonyManager.getLine1Number();
                 if (!TextUtils.isEmpty(str)) {
                 }
-                kVar.f = str3;
+                d1Var.c = str3;
             }
         } catch (Exception e10) {
             a8.g(e10, true);
         }
-        return kVar;
+        return d1Var;
     }
 
     public static int b(Context context, int i7) {

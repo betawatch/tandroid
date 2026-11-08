@@ -28,7 +28,7 @@ import org.telegram.ui.Components.ki0;
 import org.telegram.ui.Components.u90;
 import org.telegram.ui.Components.y9;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class u0 extends j {
     public boolean A0;
@@ -104,6 +104,9 @@ public abstract class u0 extends j {
             tL_messageService.message = message2.message;
             tL_messageService.media = message2.media;
             tL_messageService.flags = message2.flags;
+            tL_messageService.flags2 = message2.flags2;
+            tL_messageService.rich_message = message2.rich_message;
+            tL_messageService.translatedRichMessage = message2.translatedRichMessage;
             tL_messageService.mentioned = message2.mentioned;
             tL_messageService.media_unread = message2.media_unread;
             tL_messageService.out = message2.out;

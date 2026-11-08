@@ -10,27 +10,27 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v implements x10 {
-    public final /* synthetic */ n0 a;
-    public final /* synthetic */ g7 b;
+    public final /* synthetic */ m0 a;
+    public final /* synthetic */ f7 b;
     public final /* synthetic */ gz c;
     public final /* synthetic */ ij d;
     public final /* synthetic */ TL_wallet.walletTransaction e;
     public final /* synthetic */ String f;
-    public final /* synthetic */ m0 g;
+    public final /* synthetic */ l0 g;
     public final /* synthetic */ long h;
     public final /* synthetic */ TLRPC.User i;
 
-    public /* synthetic */ v(n0 n0Var, g7 g7Var, gz gzVar, ij ijVar, TL_wallet.walletTransaction wallettransaction, String str, m0 m0Var, long j3, TLRPC.User user) {
-        this.a = n0Var;
-        this.b = g7Var;
+    public /* synthetic */ v(m0 m0Var, f7 f7Var, gz gzVar, ij ijVar, TL_wallet.walletTransaction wallettransaction, String str, l0 l0Var, long j3, TLRPC.User user) {
+        this.a = m0Var;
+        this.b = f7Var;
         this.c = gzVar;
         this.d = ijVar;
         this.e = wallettransaction;
         this.f = str;
-        this.g = m0Var;
+        this.g = l0Var;
         this.h = j3;
         this.i = user;
     }
@@ -40,18 +40,18 @@ public final /* synthetic */ class v implements x10 {
         TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj;
         String str = (String) obj2;
         String str2 = (String) obj3;
-        n0 n0Var = this.a;
-        int i7 = n0Var.a;
-        g7 g7Var = this.b;
+        m0 m0Var = this.a;
+        int i7 = m0Var.a;
+        f7 f7Var = this.b;
         gz gzVar = this.c;
         ij ijVar = this.d;
         if (sendtransfer == null) {
-            g7Var.run();
+            f7Var.run();
             gzVar.k(ijVar, null, false);
             if (str2 == null) {
                 str2 = "NULL_ERROR";
             }
-            n0.j("failed sending: ".concat(str2));
+            m0.j("failed sending: ".concat(str2));
             return;
         }
         TL_wallet.walletTransaction wallettransaction = this.e;
@@ -59,7 +59,7 @@ public final /* synthetic */ class v implements x10 {
             wallettransaction.comment = str;
             wallettransaction.comment_encrypted = true;
         }
-        if (n0.b(n0Var.t(), this.f)) {
+        if (m0.b(m0Var.t(), this.f)) {
             sendtransfer.data_gasless = null;
         }
         wallettransaction.comment_encrypted_preparing = false;
@@ -82,13 +82,13 @@ public final /* synthetic */ class v implements x10 {
         wallettransaction.gasless = sendtransfer.data_gasless != null;
         wallettransaction.gaslessMessageBodyHash = sendtransfer.gaslessMessageBodyHash;
         wallettransaction.normalMessageBodyHash = sendtransfer.normalMessageBodyHash;
-        m0 m0Var = this.g;
-        m0Var.k();
-        m0Var.i();
+        l0 l0Var = this.g;
+        l0Var.k();
+        l0Var.i();
         sendtransfer.random_id = this.h;
         sendtransfer.user_id = qp.s1(i7).q1(this.i);
-        n0Var.S();
-        n0.H("prepared sendTransfer, sending");
-        ConnectionsManager.getInstance(i7).sendRequestTyped(sendtransfer, new d3.b(1), new bi.t3(n0Var, wallettransaction, gzVar, ijVar, g7Var, 4));
+        m0Var.S();
+        m0.H("prepared sendTransfer, sending");
+        ConnectionsManager.getInstance(i7).sendRequestTyped(sendtransfer, new d3.b(1), new bi.t3(m0Var, wallettransaction, gzVar, ijVar, f7Var, 4));
     }
 }

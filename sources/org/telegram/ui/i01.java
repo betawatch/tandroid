@@ -14,7 +14,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class i01 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public ShapeDrawable D;
@@ -139,7 +139,7 @@ public final class i01 extends FrameLayout implements org.telegram.ui.ActionBar.
         z5Var.setBackground(null);
         z5Var.setPadding(0, 0, org.telegram.messenger.g0.L(4.0f), 0);
         z5Var.setTextSize(1, 16.0f);
-        z5Var.setHint(org.telegram.messenger.hd.M0(2131745837, null));
+        z5Var.setHint(org.telegram.messenger.id.M0(2131745839, null));
         org.telegram.ui.ActionBar.r6.E(z5Var, i12, f6Var);
         org.telegram.ui.ActionBar.r6.V(z5Var, org.telegram.ui.ActionBar.k6.G6, f6Var);
         z5Var.setImeOptions(268435459);
@@ -517,7 +517,7 @@ public final class i01 extends FrameLayout implements org.telegram.ui.ActionBar.
             fl0Var.b(r62);
             ImageView imageView = this.b;
             imageView.setClickable(r62);
-            imageView.setContentDescription(r62 != 0 ? org.telegram.messenger.hd.M0(2131754878, null) : null);
+            imageView.setContentDescription(r62 != 0 ? org.telegram.messenger.id.M0(2131754878, null) : null);
             imageView.setImportantForAccessibility(r62 != 0 ? 1 : 2);
         }
     }

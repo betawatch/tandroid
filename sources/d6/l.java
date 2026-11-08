@@ -20,7 +20,7 @@ import org.json.JSONException;
 import org.telegram.messenger.d1;
 import q6.m;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class l extends q {
     public final /* synthetic */ int b = 0;
@@ -32,7 +32,7 @@ public final class l extends q {
     }
 
     @Override // a8.q
-    public final boolean J0(int i7, Parcel parcel, Parcel parcel2) {
+    public final boolean j1(int i7, Parcel parcel, Parcel parcel2) {
         BasePendingResult basePendingResult;
         String e10;
         int i10 = this.b;
@@ -42,7 +42,7 @@ public final class l extends q {
             case 0:
                 RevocationBoundService revocationBoundService = (RevocationBoundService) obj;
                 if (i7 == 1) {
-                    M0();
+                    m1();
                     b a10 = b.a(revocationBoundService);
                     GoogleSignInAccount b10 = a10.b();
                     GoogleSignInOptions googleSignInOptions = GoogleSignInOptions.w;
@@ -84,7 +84,7 @@ public final class l extends q {
                         a11.g();
                     }
                 } else if (i7 == 2) {
-                    M0();
+                    m1();
                     i.o0(revocationBoundService).p0();
                 }
                 break;
@@ -101,7 +101,7 @@ public final class l extends q {
         return true;
     }
 
-    public void M0() {
+    public void m1() {
         if (!x6.b.e((RevocationBoundService) this.c, Binder.getCallingUid())) {
             throw new SecurityException(jg.g.k(Binder.getCallingUid(), "Calling UID ", " is not Google Play services."));
         }

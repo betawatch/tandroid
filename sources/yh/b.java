@@ -8,25 +8,25 @@ import android.view.ViewGroup;
 import bi.q1;
 import c8.ha;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.at;
 import org.telegram.ui.Components.av0;
 import org.telegram.ui.Components.b51;
-import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.bt;
+import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.v80;
 import org.telegram.ui.Components.w80;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 import v4.s0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class b extends b51 {
     public final int K1;
     public final w80 L1;
-    public final lz M1;
+    public final mz M1;
     public final av0 N1;
     public final av0 O1;
     public float P1;
@@ -51,7 +51,7 @@ public final class b extends b51 {
         this.L1 = w80Var;
         w80Var.B = false;
         this.p0 = 75;
-        this.s1.J.setHint(hd.M0(2131745759, null));
+        this.s1.J.setHint(id.M0(2131745761, null));
         h hVar = w80Var.f;
         this.m1 = hVar;
         this.l1 = hVar;
@@ -67,7 +67,7 @@ public final class b extends b51 {
             q1Var.setOnScrollListener(new o0(10, w80Var, onScrollListener));
         }
         int indexOfChild = ((ViewGroup) this.k1.getParent()).indexOfChild(this.k1);
-        lz b10 = w80Var.b();
+        mz b10 = w80Var.b();
         this.M1 = b10;
         this.b.addView(b10, indexOfChild, ha.c(-1.0f, -1));
         av0 a10 = w80Var.a();
@@ -103,7 +103,7 @@ public final class b extends b51 {
                 this.Q1 = true;
                 A0(true);
                 iVar.requestFocus();
-                g0.h3(new at(iVar, 5));
+                g0.h3(new bt(iVar, 5));
             }
         }
         if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {

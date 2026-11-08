@@ -5,7 +5,7 @@ import android.content.Context;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class zn extends org.telegram.ui.Cells.z8 {
     public final /* synthetic */ go D;
@@ -74,7 +74,7 @@ public final class zn extends org.telegram.ui.Cells.z8 {
                 charSequence.replace(indexOf, indexOf + 1, " ");
                 int i7 = org.telegram.ui.ActionBar.k6.p7;
                 f6Var = ((org.telegram.ui.ActionBar.f2) goVar).resourceProvider;
-                charSequence.setSpan(new org.telegram.ui.Components.xz(i7, f6Var), 0, indexOf, 33);
+                charSequence.setSpan(new org.telegram.ui.Components.yz(i7, f6Var), 0, indexOf, 33);
             }
             org.telegram.ui.Components.u31[] u31VarArr = (org.telegram.ui.Components.u31[]) charSequence.getSpans(0, charSequence.length(), org.telegram.ui.Components.u31.class);
             ah.i iVar = goVar.b;

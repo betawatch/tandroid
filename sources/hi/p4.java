@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import c8.ha;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.tl.TL_payments;
@@ -15,7 +15,7 @@ import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.rt0;
 import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class p4 extends org.telegram.ui.ActionBar.f2 implements ls {
     public final long a;
@@ -67,7 +67,7 @@ public final class p4 extends org.telegram.ui.ActionBar.f2 implements ls {
         r6.b(this.actionBar, i7, null, true);
         r6.m(this.actionBar, 3, k6.z8, null);
         r6.m(this.actionBar, 5, i7, null);
-        this.actionBar.setTitle(hd.M0(2131752471, null));
+        this.actionBar.setTitle(id.M0(2131752471, null));
         rt0 rt0Var = new rt0(context, null);
         q41 q41Var = new q41(this, new u1(this, 2), new di.q4(this, 22), null);
         this.c = q41Var;

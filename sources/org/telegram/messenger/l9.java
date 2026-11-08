@@ -10,7 +10,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l9 implements Runnable {
     public final /* synthetic */ int a;
@@ -36,10 +36,10 @@ public final /* synthetic */ class l9 implements Runnable {
                 w9 w9Var = (w9) this.d;
                 ii.g0 g0Var = (ii.g0) this.e;
                 long j3 = this.b;
-                zh.l lVar = (zh.l) this.f;
+                zh.k kVar = (zh.k) this.f;
                 long j10 = this.c;
                 if (bi.ea.y(w9Var.currentAccount, false).e) {
-                    w9Var.k(j3, lVar, j10, g0Var);
+                    w9Var.k(j3, kVar, j10, g0Var);
                     return;
                 } else {
                     g0Var.a(Boolean.FALSE, "NO_BALANCE");
@@ -162,12 +162,12 @@ public final /* synthetic */ class l9 implements Runnable {
         }
     }
 
-    public /* synthetic */ l9(w9 w9Var, ii.g0 g0Var, long j3, zh.l lVar, long j10) {
+    public /* synthetic */ l9(w9 w9Var, ii.g0 g0Var, long j3, zh.k kVar, long j10) {
         this.a = 0;
         this.d = w9Var;
         this.e = g0Var;
         this.b = j3;
-        this.f = lVar;
+        this.f = kVar;
         this.c = j10;
     }
 

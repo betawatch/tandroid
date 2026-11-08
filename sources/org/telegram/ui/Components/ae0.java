@@ -11,7 +11,7 @@ import java.util.Locale;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class ae0 extends FrameLayout {
     public TLRPC.WebPage D;
@@ -28,7 +28,7 @@ public abstract class ae0 extends FrameLayout {
     public LinearLayout c;
     public TextView d;
     public TextView e;
-    public rt f;
+    public st f;
     public bi.ec h;
     public RadialProgressView n;
     public View r;
@@ -197,8 +197,8 @@ public abstract class ae0 extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
-        rt rtVar = this.f;
-        if (rtVar.getParent() == this) {
+        st stVar = this.f;
+        if (stVar.getParent() == this) {
             TLRPC.WebPage webPage = this.D;
             int i11 = webPage.embed_width;
             if (i11 == 0) {
@@ -211,7 +211,7 @@ public abstract class ae0 extends FrameLayout {
             float f10 = i11;
             float f11 = i13;
             float min = Math.min(size / f10, size2 / f11);
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) rtVar.getLayoutParams();
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) stVar.getLayoutParams();
             int i14 = (int) (f10 * min);
             layoutParams.width = i14;
             int i15 = (int) (f11 * min);

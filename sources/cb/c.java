@@ -113,7 +113,7 @@ import sg.j1;
 import sg.l0;
 import tg.l1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class c implements SuccessContinuation, k, androidx.activity.result.b, co0, j, te.b, o0, i0, p, dr0, d90, l1, q51, za, w, OnSuccessListener {
     public static volatile c c;
@@ -240,7 +240,7 @@ public final class c implements SuccessContinuation, k, androidx.activity.result
         obtain.writeStrongBinder(dVar);
         obtain.writeInt(1);
         aVar.writeToParcel(obtain, 0);
-        cVar.H0(obtain, 2);
+        cVar.h1(obtain, 2);
     }
 
     @Override // androidx.emoji2.text.k
@@ -500,7 +500,7 @@ public final class c implements SuccessContinuation, k, androidx.activity.result
             }
             String packageName = context.getPackageName();
             Locale locale = Locale.ROOT;
-            String q10 = rf.b.q(packageName, ".client_cast_analytics_data");
+            String r10 = rf.b.r(packageName, ".client_cast_analytics_data");
             int i10 = 2;
             m0Var.h = bundle.getLong("com.google.android.gms.cast.FLAG_FIRELOG_UPLOAD_MODE") == 0 ? 1 : 2;
             o5.s.b(context);
@@ -508,7 +508,7 @@ public final class c implements SuccessContinuation, k, androidx.activity.result
             if (bundle.containsKey("com.google.android.gms.cast.FLAG_ANALYTICS_LOGGING_BUCKET_SIZE")) {
                 m0Var.e = Long.valueOf(bundle.getLong("com.google.android.gms.cast.FLAG_ANALYTICS_LOGGING_BUCKET_SIZE"));
             }
-            SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(q10, 0);
+            SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(r10, 0);
             if (i7 != 0) {
                 com.google.android.gms.common.api.internal.s b11 = com.google.android.gms.common.api.internal.t.b();
                 b11.c = new h9.f1(rVar, new String[]{"com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_ERROR", "com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_CHANGE_REASON"}, i10);

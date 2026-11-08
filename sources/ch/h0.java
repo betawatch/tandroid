@@ -20,7 +20,7 @@ import org.telegram.ui.Components.zg0;
 import org.telegram.ui.aj;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class h0 extends FrameLayout {
     public final /* synthetic */ f2 a;
@@ -197,7 +197,7 @@ public final class h0 extends FrameLayout {
                 q1 q1Var = (q1) view;
                 f10 = 0.10666667f;
                 m0Var = q1Var.N.k(k0Var3.p);
-                if (q1Var.J && !q1Var.E3()) {
+                if (q1Var.J && !q1Var.F3()) {
                     f12 += org.telegram.messenger.g0.L(2.0f);
                 }
                 paddingTop = q1Var.getPaddingTop();

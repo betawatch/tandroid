@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pb implements Runnable {
     public final /* synthetic */ int a = 3;
@@ -126,41 +126,41 @@ public final /* synthetic */ class pb implements Runnable {
                 }
                 break;
             default:
-                final org.telegram.ui.Wallet.f2 f2Var = (org.telegram.ui.Wallet.f2) obj5;
-                final org.telegram.ui.Wallet.b2 b2Var = (org.telegram.ui.Wallet.b2) obj4;
-                final org.telegram.ui.Wallet.v1 v1Var = (org.telegram.ui.Wallet.v1) obj3;
+                final org.telegram.ui.Wallet.e2 e2Var = (org.telegram.ui.Wallet.e2) obj5;
+                final org.telegram.ui.Wallet.a2 a2Var = (org.telegram.ui.Wallet.a2) obj4;
+                final org.telegram.ui.Wallet.u1 u1Var = (org.telegram.ui.Wallet.u1) obj3;
                 String str = (String) obj2;
-                org.telegram.ui.Wallet.k0 k0Var = (org.telegram.ui.Wallet.k0) obj;
-                f2Var.h = false;
-                if (b2Var == null) {
-                    v1Var.a(null, str);
+                org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) obj;
+                e2Var.h = false;
+                if (a2Var == null) {
+                    u1Var.a(null, str);
                     break;
                 } else {
-                    String str2 = b2Var.e;
-                    if (!f2Var.A(b2Var) || f2Var.j(b2Var)) {
-                        v1Var.a(null, "Request expired or wallet changed");
+                    String str2 = a2Var.e;
+                    if (!e2Var.A(a2Var) || e2Var.j(a2Var)) {
+                        u1Var.a(null, "Request expired or wallet changed");
                         break;
                     } else {
-                        f2Var.g = b2Var;
-                        if ("sendTransaction".equals(str2) && b2Var.f != null) {
-                            if (qp.s1(f2Var.a).e7.contains(org.telegram.ui.Wallet.f2.l(j3, i10) + ".transfer")) {
-                                b2Var.m = true;
-                                f2Var.B(b2Var, k0Var, new c20() { // from class: org.telegram.ui.Wallet.x1
+                        e2Var.g = a2Var;
+                        if ("sendTransaction".equals(str2) && a2Var.f != null) {
+                            if (qp.s1(e2Var.a).e7.contains(org.telegram.ui.Wallet.e2.l(j3, i10) + ".transfer")) {
+                                a2Var.m = true;
+                                e2Var.B(a2Var, j0Var, new c20() { // from class: org.telegram.ui.Wallet.w1
                                     @Override // org.telegram.messenger.c20
                                     public final void a(Object obj6) {
                                         String str3 = (String) obj6;
                                         switch (i12) {
                                             case 0:
-                                                f2 f2Var2 = f2Var;
-                                                f2Var2.getClass();
-                                                b2 b2Var2 = b2Var;
-                                                b2Var2.m = false;
-                                                f2Var2.u(b2Var2);
-                                                v1Var.a(null, str3);
+                                                e2 e2Var2 = e2Var;
+                                                e2Var2.getClass();
+                                                a2 a2Var2 = a2Var;
+                                                a2Var2.m = false;
+                                                e2Var2.u(a2Var2);
+                                                u1Var.a(null, str3);
                                                 break;
                                             default:
-                                                f2Var.u(b2Var);
-                                                v1Var.a(null, str3);
+                                                e2Var.u(a2Var);
+                                                u1Var.a(null, str3);
                                                 break;
                                         }
                                     }
@@ -168,31 +168,31 @@ public final /* synthetic */ class pb implements Runnable {
                                 break;
                             }
                         }
-                        if (b2Var.l >= 0 || "disconnect".equals(str2)) {
-                            k0Var.close();
-                            f2Var.f(b2Var, false, new c20() { // from class: org.telegram.ui.Wallet.x1
+                        if (a2Var.l >= 0 || "disconnect".equals(str2)) {
+                            j0Var.close();
+                            e2Var.f(a2Var, false, new c20() { // from class: org.telegram.ui.Wallet.w1
                                 @Override // org.telegram.messenger.c20
                                 public final void a(Object obj6) {
                                     String str3 = (String) obj6;
                                     switch (i11) {
                                         case 0:
-                                            f2 f2Var2 = f2Var;
-                                            f2Var2.getClass();
-                                            b2 b2Var2 = b2Var;
-                                            b2Var2.m = false;
-                                            f2Var2.u(b2Var2);
-                                            v1Var.a(null, str3);
+                                            e2 e2Var2 = e2Var;
+                                            e2Var2.getClass();
+                                            a2 a2Var2 = a2Var;
+                                            a2Var2.m = false;
+                                            e2Var2.u(a2Var2);
+                                            u1Var.a(null, str3);
                                             break;
                                         default:
-                                            f2Var.u(b2Var);
-                                            v1Var.a(null, str3);
+                                            e2Var.u(a2Var);
+                                            u1Var.a(null, str3);
                                             break;
                                     }
                                 }
                             });
                             break;
                         } else {
-                            v1Var.a(b2Var, null);
+                            u1Var.a(a2Var, null);
                             break;
                         }
                     }
@@ -231,13 +231,13 @@ public final /* synthetic */ class pb implements Runnable {
         this.n = epVar;
     }
 
-    public /* synthetic */ pb(org.telegram.ui.Wallet.f2 f2Var, org.telegram.ui.Wallet.b2 b2Var, org.telegram.ui.Wallet.v1 v1Var, String str, long j3, int i7, org.telegram.ui.Wallet.k0 k0Var) {
-        this.e = f2Var;
-        this.f = b2Var;
-        this.h = v1Var;
+    public /* synthetic */ pb(org.telegram.ui.Wallet.e2 e2Var, org.telegram.ui.Wallet.a2 a2Var, org.telegram.ui.Wallet.u1 u1Var, String str, long j3, int i7, org.telegram.ui.Wallet.j0 j0Var) {
+        this.e = e2Var;
+        this.f = a2Var;
+        this.h = u1Var;
         this.d = str;
         this.b = j3;
         this.c = i7;
-        this.n = k0Var;
+        this.n = j0Var;
     }
 }

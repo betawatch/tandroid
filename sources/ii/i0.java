@@ -2,7 +2,7 @@ package ii;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t3;
@@ -17,7 +17,7 @@ import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.w31;
 import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
 public final class i0 extends w31 {
     static {
@@ -60,7 +60,7 @@ public final class i0 extends w31 {
                 t2Var.e0(S0, 0, 0);
                 return;
             } else {
-                t2Var.setCustomMessageWithoutRebuild(hd.G(chat.participants_count, "Members", new Object[0]));
+                t2Var.setCustomMessageWithoutRebuild(id.G(chat.participants_count, "Members", new Object[0]));
                 t2Var.d0(-chat.id, null, 0, false, false);
                 return;
             }
@@ -74,7 +74,7 @@ public final class i0 extends w31 {
                 t2Var.setCustomMessageWithoutRebuild(null);
                 t2Var.e0(S02, 0, 0);
             } else {
-                t2Var.setCustomMessageWithoutRebuild(hd.M0(2131753156, null));
+                t2Var.setCustomMessageWithoutRebuild(id.M0(2131753156, null));
                 t2Var.d0(user.id, null, 0, false, false);
             }
         }

@@ -21,7 +21,7 @@ import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.ki0;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class j extends FrameLayout {
     public static final List p0 = Arrays.asList(-90, 0, 90, Integer.valueOf(qs.K2));
@@ -35,7 +35,7 @@ public abstract class j extends FrameLayout {
     public boolean K;
     public int L;
     public int M;
-    public org.telegram.ui.Wallet.h2 N;
+    public org.telegram.ui.Wallet.g2 N;
     public float O;
     public ValueAnimator P;
     public ValueAnimator Q;
@@ -310,9 +310,9 @@ public abstract class j extends FrameLayout {
         this.r = true;
         this.y = false;
         this.M = this.L;
-        org.telegram.ui.Wallet.h2 h2Var = this.N;
-        if (h2Var != null) {
-            org.telegram.messenger.g0.r(h2Var);
+        org.telegram.ui.Wallet.g2 g2Var = this.N;
+        if (g2Var != null) {
+            org.telegram.messenger.g0.r(g2Var);
             this.N = null;
         }
         this.V = this.R;
@@ -437,22 +437,22 @@ public abstract class j extends FrameLayout {
                 if (Math.abs(intValue - f10) < 4.0f) {
                     if (this.M != intValue) {
                         this.M = intValue;
-                        org.telegram.ui.Wallet.h2 h2Var = this.N;
-                        if (h2Var != null) {
-                            org.telegram.messenger.g0.r(h2Var);
+                        org.telegram.ui.Wallet.g2 g2Var = this.N;
+                        if (g2Var != null) {
+                            org.telegram.messenger.g0.r(g2Var);
                         }
-                        org.telegram.ui.Wallet.h2 h2Var2 = new org.telegram.ui.Wallet.h2(this, intValue, 7);
-                        this.N = h2Var2;
-                        org.telegram.messenger.g0.i3(h2Var2, 250L);
+                        org.telegram.ui.Wallet.g2 g2Var2 = new org.telegram.ui.Wallet.g2(this, intValue, 6);
+                        this.N = g2Var2;
+                        org.telegram.messenger.g0.i3(g2Var2, 250L);
                     }
                 }
             }
         } else if (z9) {
             if (Math.abs(this.L - f10) >= 12.0f || this.c0) {
                 this.M = -1;
-                org.telegram.ui.Wallet.h2 h2Var3 = this.N;
-                if (h2Var3 != null) {
-                    org.telegram.messenger.g0.r(h2Var3);
+                org.telegram.ui.Wallet.g2 g2Var3 = this.N;
+                if (g2Var3 != null) {
+                    org.telegram.messenger.g0.r(g2Var3);
                     this.N = null;
                 }
                 ValueAnimator valueAnimator = this.P;

@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import c8.ua;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
@@ -18,7 +18,7 @@ import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.w80;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f0 implements bj0 {
     public final /* synthetic */ int a;
@@ -47,14 +47,14 @@ public final /* synthetic */ class f0 implements bj0 {
                 n0 n0Var = (n0) view;
                 s0 s0Var = n0Var.K;
                 k60 F = k60.F((ViewGroup) obj2, new b(), view);
-                F.p(15, -1, hd.a0(null, null, 2131748807, hd.x(s0Var.d, true)));
+                F.p(15, -1, id.a0(null, null, 2131748809, id.x(s0Var.d, true)));
                 F.k();
-                F.c(R.drawable.msg_openprofile, hd.M0(2131747785, null), new bi.a4(27, (p9) obj, s0Var), false);
-                F.l(R.drawable.msg_copy, hd.M0(2131751767, null), new bi.a4(28, g2Var, n0Var), !s0Var.e);
+                F.c(R.drawable.msg_openprofile, id.M0(2131747787, null), new bi.a4(27, (p9) obj, s0Var), false);
+                F.l(R.drawable.msg_copy, id.M0(2131751767, null), new bi.a4(28, g2Var, n0Var), !s0Var.e);
                 if (g2Var.M != p10.i(g2Var.N).e() && !g2Var.f()) {
                     z9 = false;
                 }
-                F.l(R.drawable.msg_delete, hd.M0(2131751599, null), new bi.a4(29, g2Var, s0Var), z9);
+                F.l(R.drawable.msg_delete, id.M0(2131751599, null), new bi.a4(29, g2Var, s0Var), z9);
                 F.Z();
                 break;
             case 1:

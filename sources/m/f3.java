@@ -37,7 +37,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.ae;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.j20;
 import org.telegram.messenger.jz;
@@ -77,7 +77,7 @@ import org.telegram.ui.Components.uj;
 import org.telegram.ui.Components.x70;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class f3 implements Runnable {
     public final /* synthetic */ int a;
@@ -651,7 +651,7 @@ public final class f3 implements Runnable {
                         org.telegram.ui.ActionBar.v2 l10 = k5.l(1, jVar.getContext(), null, false);
                         l10.O = url;
                         l10.P = false;
-                        CharSequence[] charSequenceArr = {hd.M0(2131747816, null), hd.M0(2131751767, null)};
+                        CharSequence[] charSequenceArr = {id.M0(2131747818, null), id.M0(2131751767, null)};
                         DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Cells.d
                             @Override // android.content.DialogInterface.OnClickListener
                             public final void onClick(DialogInterface dialogInterface, int i37) {
@@ -666,11 +666,11 @@ public final class f3 implements Runnable {
                                     org.telegram.messenger.g0.g(str2);
                                     if (org.telegram.messenger.g0.I3()) {
                                         if (str2.startsWith("@")) {
-                                            org.telegram.messenger.k5.o(null, 2131743666, hc.a0(f2Var), R.raw.copy, 36);
+                                            org.telegram.messenger.k5.o(null, 2131743668, hc.a0(f2Var), R.raw.copy, 36);
                                         } else if (str2.startsWith("#") || str2.startsWith("$")) {
-                                            org.telegram.messenger.k5.o(null, 2131749361, hc.a0(f2Var), R.raw.copy, 36);
+                                            org.telegram.messenger.k5.o(null, 2131749363, hc.a0(f2Var), R.raw.copy, 36);
                                         } else {
-                                            org.telegram.messenger.k5.o(null, 2131748920, hc.a0(f2Var), R.raw.copy, 36);
+                                            org.telegram.messenger.k5.o(null, 2131748922, hc.a0(f2Var), R.raw.copy, 36);
                                         }
                                     }
                                 }

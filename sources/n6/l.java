@@ -8,7 +8,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import q6.n0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public abstract class l extends q implements n0 {
     public final int b;
@@ -19,7 +19,7 @@ public abstract class l extends q implements n0 {
         this.b = Arrays.hashCode(bArr);
     }
 
-    public static byte[] N0(String str) {
+    public static byte[] n1(String str) {
         try {
             return str.getBytes("ISO-8859-1");
         } catch (UnsupportedEncodingException e10) {
@@ -27,30 +27,12 @@ public abstract class l extends q implements n0 {
         }
     }
 
-    @Override // a8.q
-    public final boolean K0(int i7, Parcel parcel, Parcel parcel2) {
-        if (i7 == 1) {
-            a7.b bVar = new a7.b(M0());
-            parcel2.writeNoException();
-            p7.g.b(parcel2, bVar);
-            return true;
-        }
-        if (i7 != 2) {
-            return false;
-        }
-        parcel2.writeNoException();
-        parcel2.writeInt(this.b);
-        return true;
-    }
-
-    public abstract byte[] M0();
-
     public final boolean equals(Object obj) {
         if (obj instanceof n0) {
             try {
                 n0 n0Var = (n0) obj;
                 if (((l) n0Var).b == this.b) {
-                    return Arrays.equals(M0(), (byte[]) a7.b.N0(new a7.b(((l) n0Var).M0())));
+                    return Arrays.equals(m1(), (byte[]) a7.b.n1(new a7.b(((l) n0Var).m1())));
                 }
             } catch (RemoteException e10) {
                 Log.e("GoogleCertificates", "Failed to get Google certificates from remote", e10);
@@ -63,4 +45,22 @@ public abstract class l extends q implements n0 {
     public final int hashCode() {
         return this.b;
     }
+
+    @Override // a8.q
+    public final boolean k1(int i7, Parcel parcel, Parcel parcel2) {
+        if (i7 == 1) {
+            a7.b bVar = new a7.b(m1());
+            parcel2.writeNoException();
+            p7.g.b(parcel2, bVar);
+            return true;
+        }
+        if (i7 != 2) {
+            return false;
+        }
+        parcel2.writeNoException();
+        parcel2.writeInt(this.b);
+        return true;
+    }
+
+    public abstract byte[] m1();
 }

@@ -11,9 +11,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.m3;
 import org.telegram.ui.Components.ch0;
-import org.telegram.ui.pb1;
+import org.telegram.ui.qb1;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class c1 extends FrameLayout {
     public final ch0 a;
@@ -110,9 +110,9 @@ public final class c1 extends FrameLayout {
                     ch0Var7.setOnAnimationEndListener(new a1(m5Var, ch0Var7, i10));
                     ch0Var7.d();
                 }
-                pb1 pb1Var = (pb1) m5Var.e;
-                if (pb1Var != null) {
-                    pb1Var.b.L = i15;
+                qb1 qb1Var = (qb1) m5Var.e;
+                if (qb1Var != null) {
+                    qb1Var.b.L = i15;
                 }
             }
         } else if (action == 3 && (b1Var = this.e) != null) {

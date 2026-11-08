@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class v60 extends org.telegram.ui.ActionBar.v2 {
     public boolean i1;
@@ -40,13 +40,13 @@ public abstract class v60 extends org.telegram.ui.ActionBar.v2 {
             }
             int i7 = g12.b.participants_count;
             if (i7 == 0) {
-                f11.setText(org.telegram.messenger.hd.M0(2131748185, null));
+                f11.setText(org.telegram.messenger.id.M0(2131748187, null));
             } else {
-                f11.setText(org.telegram.messenger.hd.G(i7, "Participants", new Object[0]));
+                f11.setText(org.telegram.messenger.id.G(i7, "Participants", new Object[0]));
             }
         } else {
             textView.setText(chat.title);
-            f11.setText(org.telegram.messenger.hd.M0(2131748185, null));
+            f11.setText(org.telegram.messenger.id.M0(2131748187, null));
         }
         u60 u60Var = new u60(context);
         View view = new View(context);
@@ -64,9 +64,9 @@ public abstract class v60 extends org.telegram.ui.ActionBar.v2 {
         u60Var.addView(textView2, c8.ha.e(-2, -2, 17));
         u60Var.setBackground(null);
         if (org.telegram.messenger.t3.W(chat)) {
-            u60Var.setText(org.telegram.messenger.hd.M0(2131743476, null));
+            u60Var.setText(org.telegram.messenger.id.M0(2131743478, null));
         } else {
-            u60Var.setText(org.telegram.messenger.hd.M0(2131743366, null));
+            u60Var.setText(org.telegram.messenger.id.M0(2131743368, null));
         }
         view.setOnClickListener(new h0(this, 28));
         f10.addView(u60Var, c8.ha.t(-1, 50, 51, 0, 30, 0, 0));

@@ -29,7 +29,7 @@ import org.telegram.ui.Components.xg0;
 import org.telegram.ui.Components.zg0;
 import org.telegram.ui.Components.zt0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class vb implements Runnable {
     public Thread a;
@@ -74,7 +74,7 @@ public final class vb implements Runnable {
             qa0 qa0Var = new qa0();
             qa0Var.n(o11, o12, o13, o14);
             qa0Var.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
-            qa0Var.s(bitmap, wallPaper.settings.intensity);
+            qa0Var.s(wallPaper.settings.intensity, bitmap);
             qa0Var.draw(canvas);
             z9 = false;
             i7 = g10;
@@ -126,7 +126,7 @@ public final class vb implements Runnable {
     }
 
     public final void c(BitmapDrawable bitmapDrawable) {
-        g0.h3(new y4(19, this, bitmapDrawable));
+        g0.h3(new x4(19, this, bitmapDrawable));
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(14:933|(2:935|(12:937|938|939|(1:941)(1:963)|942|943|944|945|(2:951|(1:953))|(1:955)(1:958)|956|957))|966|938|939|(0)(0)|942|943|944|945|(4:947|949|951|(0))|(0)(0)|956|957) */

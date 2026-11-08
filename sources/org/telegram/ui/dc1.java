@@ -1,56 +1,53 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
+import android.content.Intent;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final class dc1 extends View {
-    public final Paint a;
-    public final org.telegram.ui.Components.y8 b;
-    public org.telegram.ui.Components.my0 c;
+public final class dc1 implements org.telegram.ui.Components.voip.d {
+    public final /* synthetic */ fc1 a;
 
-    public dc1(Activity activity) {
-        super(activity);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setColor(-14538189);
-        org.telegram.ui.Components.y8 y8Var = new org.telegram.ui.Components.y8(this, false);
-        this.b = y8Var;
-        y8Var.p = org.telegram.messenger.g0.L(100.0f);
-        y8Var.o = org.telegram.messenger.g0.L(30.0f);
-        y8Var.x = false;
-        y8Var.s = org.telegram.messenger.g0.L(24.0f);
-        y8Var.h(org.telegram.messenger.g0.L(18.0f));
-        y8Var.t = 0.58f;
+    public dc1(fc1 fc1Var) {
+        this.a = fc1Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.c == null) {
-            return;
+    public final void a() {
+        fc1 fc1Var = this.a;
+        if (fc1Var.o0 != 17) {
+            if (fc1Var.b.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
+                fc1Var.b.requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 101);
+                return;
+            } else {
+                if (VoIPService.getSharedState() != null) {
+                    fc1Var.i(new ru0(this, 27));
+                    return;
+                }
+                return;
+            }
         }
-        float L = org.telegram.messenger.g0.L(4.0f);
-        org.telegram.ui.Components.y8 y8Var = this.b;
-        float c10 = y8Var.c() + L + org.telegram.messenger.g0.L(7.0f) + this.c.c + org.telegram.messenger.g0.L(13.0f);
-        float L2 = org.telegram.messenger.g0.L(30.0f);
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set((getWidth() - c10) / 2.0f, 0.0f, (getWidth() + c10) / 2.0f, getHeight());
-        float f10 = L2 / 2.0f;
-        canvas.drawRoundRect(rectF, f10, f10, this.a);
-        canvas.save();
-        canvas.translate(rectF.left + org.telegram.messenger.g0.L(4.0f), 0.0f);
-        y8Var.g(canvas);
-        canvas.translate(y8Var.A + org.telegram.messenger.g0.L(7.0f), 0.0f);
-        this.c.c(0.0f, f10, 1.0f, -1, canvas);
-        canvas.restore();
+        Intent intent = new Intent(fc1Var.b, (Class<?>) VoIPService.class);
+        intent.putExtra("user_id", fc1Var.d.id);
+        intent.putExtra("is_outgoing", true);
+        intent.putExtra("start_incall_activity", false);
+        intent.putExtra("video_call", fc1Var.T0);
+        intent.putExtra("can_video_call", fc1Var.T0);
+        intent.putExtra("account", fc1Var.a);
+        try {
+            fc1Var.b.startService(intent);
+        } catch (Throwable th2) {
+            org.telegram.messenger.a8.g(th2, true);
+        }
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(30.0f));
+    public final void b() {
+        fc1 fc1Var = this.a;
+        if (fc1Var.o0 == 17) {
+            fc1Var.t0.b();
+        } else if (VoIPService.getSharedState() != null) {
+            VoIPService.getSharedState().declineIncomingCall();
+        } else {
+            fc1Var.t0.b();
+        }
     }
 }

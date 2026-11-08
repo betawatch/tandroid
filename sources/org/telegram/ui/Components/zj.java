@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zj implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -49,64 +49,64 @@ public final /* synthetic */ class zj implements View.OnTouchListener {
                     return false;
                 }
                 if (motionEvent.getActionMasked() == 0) {
-                    ValueAnimator valueAnimator = n40Var.a0;
+                    ValueAnimator valueAnimator = n40Var.b0;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                     }
-                    n40Var.B0 = false;
-                    n40Var.z0 = motionEvent.getPointerId(0);
-                    n40Var.A0 = -1;
+                    n40Var.C0 = false;
+                    n40Var.A0 = motionEvent.getPointerId(0);
+                    n40Var.B0 = -1;
                     int i7 = n40Var.Q.a;
                     if (i7 == 5) {
                         ImageView imageView = n40Var.H;
                         wi.t0 t0Var = n40Var.O;
                         if (t0Var != null && i7 == 5) {
-                            boolean z9 = n40Var.i0;
-                            n40Var.i0 = !z9;
-                            wi.t0.u();
-                            if (t0Var.Z == 5 && (i0Var = t0Var.V) != null) {
+                            boolean z9 = n40Var.j0;
+                            n40Var.j0 = !z9;
+                            wi.t0.v();
+                            if (t0Var.a0 == 5 && (i0Var = t0Var.W) != null) {
                                 i0Var.T(!z9 ? 0.0f : 1.0f);
                             }
                             org.telegram.messenger.j20 j20Var = n40Var.T;
                             if (j20Var != null) {
-                                j20Var.t = n40Var.i0;
+                                j20Var.t = n40Var.j0;
                             }
                             imageView.animate().cancel();
-                            org.telegram.messenger.camera.q.k(imageView.animate(), n40Var.i0 ? 1.0f : 0.0f, 180L);
+                            org.telegram.messenger.camera.q.k(imageView.animate(), n40Var.j0 ? 1.0f : 0.0f, 180L);
                         }
                     }
                 } else {
                     if (motionEvent.getActionMasked() == 5 && motionEvent.getPointerCount() == 2) {
                         wi.s0 s0Var = n40Var.Q;
                         if (s0Var.a == 3 && !s0Var.f) {
-                            n40Var.z0 = motionEvent.getPointerId(0);
-                            n40Var.A0 = motionEvent.getPointerId(1);
+                            n40Var.A0 = motionEvent.getPointerId(0);
+                            n40Var.B0 = motionEvent.getPointerId(1);
                             float hypot = (float) Math.hypot(motionEvent.getX(1) - motionEvent.getX(0), motionEvent.getY(1) - motionEvent.getY(0));
-                            n40Var.x0 = hypot;
-                            n40Var.B0 = hypot > 0.0f;
-                            n40Var.y0 = 0.0f;
+                            n40Var.y0 = hypot;
+                            n40Var.C0 = hypot > 0.0f;
+                            n40Var.z0 = 0.0f;
                         }
                     }
-                    if (motionEvent.getActionMasked() == 2 && n40Var.B0) {
-                        int findPointerIndex = motionEvent.findPointerIndex(n40Var.z0);
-                        int findPointerIndex2 = motionEvent.findPointerIndex(n40Var.A0);
+                    if (motionEvent.getActionMasked() == 2 && n40Var.C0) {
+                        int findPointerIndex = motionEvent.findPointerIndex(n40Var.A0);
+                        int findPointerIndex2 = motionEvent.findPointerIndex(n40Var.B0);
                         if (findPointerIndex < 0 || findPointerIndex2 < 0) {
-                            n40Var.u();
+                            n40Var.v();
                         } else {
-                            float hypot2 = ((float) Math.hypot(motionEvent.getX(findPointerIndex2) - motionEvent.getX(findPointerIndex), motionEvent.getY(findPointerIndex2) - motionEvent.getY(findPointerIndex))) / n40Var.x0;
+                            float hypot2 = ((float) Math.hypot(motionEvent.getX(findPointerIndex2) - motionEvent.getX(findPointerIndex), motionEvent.getY(findPointerIndex2) - motionEvent.getY(findPointerIndex))) / n40Var.y0;
                             wi.l0 l0Var = n40Var.R;
                             float f10 = l0Var == null ? 1.0f : l0Var.c;
                             float max = f10 > 1.0f ? Math.max(0.0f, Math.min(1.0f, (((Math.max(0.0f, hypot2 - 1.0f) / 1.5f) + 1.0f) - 1.0f) / (f10 - 1.0f))) : 0.0f;
-                            n40Var.y0 = max;
-                            n40Var.O.x(max);
+                            n40Var.z0 = max;
+                            n40Var.O.y(max);
                         }
-                    } else if (motionEvent.getActionMasked() == 6 && n40Var.B0) {
+                    } else if (motionEvent.getActionMasked() == 6 && n40Var.C0) {
                         int pointerId = motionEvent.getPointerId(motionEvent.getActionIndex());
-                        if (pointerId == n40Var.z0 || pointerId == n40Var.A0) {
-                            n40Var.u();
+                        if (pointerId == n40Var.A0 || pointerId == n40Var.B0) {
+                            n40Var.v();
                         }
-                    } else if ((motionEvent.getActionMasked() == 1 || motionEvent.getActionMasked() == 3) && n40Var.B0) {
-                        n40Var.u();
+                    } else if ((motionEvent.getActionMasked() == 1 || motionEvent.getActionMasked() == 3) && n40Var.C0) {
+                        n40Var.v();
                     }
                 }
                 return true;

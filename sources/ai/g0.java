@@ -18,7 +18,7 @@ import org.telegram.ui.an;
 import org.telegram.ui.c20;
 import org.telegram.ui.c40;
 import org.telegram.ui.ce0;
-import org.telegram.ui.f81;
+import org.telegram.ui.g81;
 import org.telegram.ui.pn;
 import org.telegram.ui.pz0;
 import org.telegram.ui.rz0;
@@ -26,7 +26,7 @@ import org.telegram.ui.t3;
 import org.telegram.ui.zr0;
 import tg.i2;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class g0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -255,11 +255,11 @@ public final class g0 extends AnimatorListenerAdapter {
                 }
                 return;
             case 14:
-                f81 f81Var = (f81) this.d;
-                f81Var.y = this.b ? 1.0f : 0.0f;
-                f81Var.b.invalidate();
-                f81Var.c.invalidate();
-                f81Var.e();
+                g81 g81Var = (g81) this.d;
+                g81Var.y = this.b ? 1.0f : 0.0f;
+                g81Var.b.invalidate();
+                g81Var.c.invalidate();
+                g81Var.e();
                 Runnable runnable5 = (Runnable) this.c;
                 if (runnable5 != null) {
                     runnable5.run();

@@ -6,7 +6,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.hm0;
 import org.telegram.ui.il0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w3 implements v10 {
     public final /* synthetic */ int a;
@@ -31,15 +31,15 @@ public final /* synthetic */ class w3 implements v10 {
             case 0:
                 k7 k7Var = (k7) this.d;
                 vf.b bVar = (vf.b) this.e;
-                zh.i0 i0Var = (zh.i0) this.f;
+                zh.h0 h0Var = (zh.h0) this.f;
                 bVar.b();
                 if (((Boolean) obj).booleanValue()) {
                     l5 l5Var = k7Var.J2;
                     if (l5Var != null) {
-                        l5Var.a(this.b, this.c, i0Var != null);
+                        l5Var.a(this.b, this.c, h0Var != null);
                     }
-                    if (i0Var != null) {
-                        org.telegram.messenger.g0.h3(new z3(i0Var, 0));
+                    if (h0Var != null) {
+                        org.telegram.messenger.g0.h3(new z3(h0Var, 0));
                         k7Var.N0 = true;
                     }
                     k7Var.dismiss();

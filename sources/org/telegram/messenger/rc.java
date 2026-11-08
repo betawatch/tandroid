@@ -1,239 +1,210 @@
 package org.telegram.messenger;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.SystemClock;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.os.Bundle;
+import android.os.Environment;
+import android.util.LongSparseArray;
+import java.io.File;
+import java.util.regex.Pattern;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
-public abstract class rc {
-    public static int a = 198684;
-    public static int b = 204383;
-    public static int c = 262143;
-    public static int d = 10;
-    public static int e = 10;
-    public static int f = 10;
-    public static int g = 0;
-    public static boolean h = false;
-    public static int i = 0;
-    public static boolean j = false;
-    public static volatile int k = -1;
-    public static volatile long l;
-    public static volatile boolean m;
-    public static HashSet n;
+public final /* synthetic */ class rc implements Runnable {
+    public final /* synthetic */ int a;
 
-    public static void a(c20 c20Var) {
-        if (n == null) {
-            n = new HashSet();
-        }
-        n.add(c20Var);
+    public /* synthetic */ rc(int i7) {
+        this.a = i7;
     }
 
-    public static int b() {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (!m && (l == 0 || elapsedRealtime - l > 60000)) {
-            m = true;
-            l = elapsedRealtime;
-            Utilities.e.c(new ai.m0(28));
-        }
-        return k;
-    }
-
-    public static int c() {
-        if (!j) {
-            g();
-        }
-        return g;
-    }
-
-    public static int d(boolean z9) {
-        if (!j) {
-            g();
-        }
-        if (!z9) {
-            if (g > 0) {
-                int b10 = b();
-                int i7 = g;
-                if (i7 >= 100 || (b10 >= 0 && b10 <= i7)) {
-                    if (!h) {
-                        h = true;
-                        j(true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.ActionBar.f2 Q;
+        switch (this.a) {
+            case 0:
+                sc.d(false);
+                break;
+            case 1:
+                qs.e().k(qs.x4, new Object[0]);
+                break;
+            case 2:
+                qs.e().k(qs.E4, new Object[0]);
+                break;
+            case 3:
+                int i7 = LocationSharingService.d;
+                for (int i10 = 0; i10 < 4; i10++) {
+                    sd.f(i10).t();
+                }
+                break;
+            case 4:
+                MediaController.Y1 = null;
+                MediaController.O(0);
+                break;
+            case 5:
+                try {
+                    g0.f.n(t0.b);
+                    break;
+                } catch (Exception e10) {
+                    a8.g(e10, true);
+                    return;
+                }
+            case 6:
+                org.telegram.ui.ActionBar.k6.F(false);
+                break;
+            case 7:
+                qs.e().k(qs.d4, new Object[0]);
+                break;
+            case 8:
+                iz.y();
+                break;
+            case 9:
+                try {
+                    File file = new File(Environment.getExternalStorageDirectory(), "Telegram");
+                    File file2 = new File(file, "Telegram Images");
+                    file2.mkdir();
+                    File file3 = new File(file, "Telegram Video");
+                    file3.mkdir();
+                    if (r2.b) {
+                        if (file2.isDirectory()) {
+                            g0.G(new File(file2, ".nomedia"));
+                        }
+                        if (file3.isDirectory()) {
+                            g0.G(new File(file3, ".nomedia"));
+                            break;
+                        }
+                    } else {
+                        if (file2.isDirectory()) {
+                            new File(file2, ".nomedia").delete();
+                        }
+                        if (file3.isDirectory()) {
+                            new File(file3, ".nomedia").delete();
+                            break;
+                        }
                     }
-                    return 0;
+                } catch (Throwable th2) {
+                    a8.g(th2, true);
+                    return;
                 }
-            }
-            if (h) {
-                h = false;
-                j(false);
-            }
-        }
-        return i;
-    }
-
-    public static boolean e(int i7) {
-        if (i7 == 64 && g0.Q1()) {
-            return true;
-        }
-        int d2 = d(false);
-        if ((i7 & 16388) > 0) {
-            i7 = (i7 & (-16389)) | (p10.o() ? 4 : TLObject.FLAG_14);
-        }
-        if ((i7 & 8200) > 0) {
-            i7 = (i7 & (-8201)) | (p10.o() ? 8 : TLObject.FLAG_13);
-        }
-        if ((i7 & 4112) > 0) {
-            i7 = (i7 & (-4113)) | (p10.o() ? 16 : TLObject.FLAG_12);
-        }
-        return (i7 & d2) > 0;
-    }
-
-    public static boolean f() {
-        d(false);
-        return h;
-    }
-
-    public static void g() {
-        int i7 = c;
-        int i10 = f;
-        if (iz.o() == 0) {
-            i7 = a;
-            i10 = d;
-        } else if (iz.o() == 1) {
-            i7 = b;
-            i10 = e;
-        }
-        SharedPreferences e12 = qp.e1();
-        if (!e12.contains("lite_mode6")) {
-            if (e12.contains("lite_mode5")) {
-                i7 = e12.getInt("lite_mode5", i7) & (-262145);
-                e12.edit().putInt("lite_mode6", i7).apply();
-            } else if (e12.contains("lite_mode4")) {
-                i7 = e12.getInt("lite_mode4", i7);
-                e12.edit().putInt("lite_mode5", i7).apply();
-            } else if (e12.contains("lite_mode3")) {
-                i7 = e12.getInt("lite_mode3", i7) | 131072;
-                e12.edit().putInt("lite_mode5", i7).apply();
-            } else if (e12.contains("lite_mode2")) {
-                i7 = e12.getInt("lite_mode2", i7) | 65536;
-                e12.edit().putInt("lite_mode3", i7).apply();
-            } else if (e12.contains("lite_mode")) {
-                i7 = e12.getInt("lite_mode", i7);
-                if (i7 == 4095) {
-                    i7 = c;
+                break;
+            case 10:
+                if (!iz.b && (Q = LaunchActivity.Q()) != null && Q.getParentActivity() != null) {
+                    iz.h0 = null;
+                    iz.y();
+                    int i11 = 11;
+                    gc.D().i(new rc(i11));
+                    iz.b = true;
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(Q.getParentActivity());
+                    alertDialog$Builder.a.R = id.M0(2131745841, null);
+                    alertDialog$Builder.a.S = id.M0(2131745840, null);
+                    alertDialog$Builder.k(id.M0(2131751356, null), new ch(i11));
+                    org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+                    u1Var.setCanceledOnTouchOutside(false);
+                    u1Var.show();
+                    break;
                 }
-            } else {
-                if (e12.contains("light_mode")) {
-                    i7 = (e12.getInt("light_mode", iz.o() == 0 ? 1 : 0) & 1) > 0 ? a : c;
+                break;
+            case 11:
+                int i12 = iz.a;
+                break;
+            case 12:
+                rz.y = null;
+                break;
+            case 13:
+                org.telegram.ui.ActionBar.k6.F(false);
+                break;
+            case 14:
+                int i13 = org.telegram.ui.an.id;
+                break;
+            case 15:
+                ch.k0.b(true);
+                break;
+            case 16:
+                qs e11 = qs.e();
+                Boolean bool = Boolean.TRUE;
+                e11.k(qs.n4, Boolean.FALSE, bool, bool);
+                break;
+            case 17:
+                org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
+                if (T != null) {
+                    org.telegram.ui.ActionBar.d2 d2Var = new org.telegram.ui.ActionBar.d2();
+                    d2Var.a = true;
+                    T.showAsSheet(new PremiumPreviewFragment(0, "schedule_repeat"), d2Var);
+                    break;
                 }
-                if (e12.contains("loopStickers")) {
-                    i7 = e12.getBoolean("loopStickers", true) ? i7 | 2 : i7 & (-3);
-                }
-                if (e12.contains("autoplay_video")) {
-                    i7 = (e12.getBoolean("autoplay_video", true) || e12.getBoolean("autoplay_video_liteforce", false)) ? i7 | 1024 : i7 & (-1025);
-                }
-                if (e12.contains("autoplay_gif")) {
-                    i7 = e12.getBoolean("autoplay_gif", true) ? i7 | 2048 : i7 & (-2049);
-                }
-                if (e12.contains("chatBlur")) {
-                    i7 = e12.getBoolean("chatBlur", true) ? i7 | 256 : i7 & (-257);
-                }
-            }
-        }
-        int i11 = i;
-        int i12 = e12.getInt("lite_mode6", i7);
-        i = i12;
-        if (j) {
-            i(i11, i12);
-        }
-        g = e12.getInt("lite_mode_battery_level", i10);
-        j = true;
-    }
-
-    public static void h(Intent intent) {
-        if (intent == null) {
-            return;
-        }
-        int intExtra = intent.getIntExtra("level", -1);
-        int intExtra2 = intent.getIntExtra("scale", -1);
-        if (intExtra < 0 || intExtra2 <= 0) {
-            return;
-        }
-        int b10 = c8.j9.b(Math.round((intExtra * 100.0f) / intExtra2), 0, 100);
-        l = SystemClock.elapsedRealtime();
-        if (k == b10) {
-            return;
-        }
-        k = b10;
-        g0.h3(new ai.m0(27));
-    }
-
-    public static void i(int i7, int i10) {
-        int i11 = (~i7) & i10;
-        if ((i11 & 28700) > 0) {
-            org.telegram.ui.Components.i5.t();
-        }
-        int i12 = i11 & 32;
-        if (i12 > 0) {
-            int[] iArr = rz.u;
-            rz.A = e(32);
-        }
-        if (i12 > 0) {
-            org.telegram.ui.ActionBar.k6.u1(true);
-        }
-        if (c8.zc.a(i11, 256) || c8.zc.a(i11, 262144)) {
-            oi.q.f();
-        }
-    }
-
-    public static void j(boolean z9) {
-        if (z9) {
-            i(d(true), 0);
-        } else {
-            i(0, d(true));
-        }
-        if (n != null) {
-            g0.h3(new d9(2, z9));
-        }
-    }
-
-    public static void k() {
-        qp.e1().edit().putInt("lite_mode6", i).putInt("lite_mode_battery_level", g).apply();
-    }
-
-    public static void l(TLRPC.TL_jsonObject tL_jsonObject) {
-        for (int i7 = 0; i7 < tL_jsonObject.value.size(); i7++) {
-            TLRPC.TL_jsonObjectValue tL_jsonObjectValue = tL_jsonObject.value.get(i7);
-            if ("settings_mask".equals(tL_jsonObjectValue.key)) {
-                TLRPC.JSONValue jSONValue = tL_jsonObjectValue.value;
-                if (jSONValue instanceof TLRPC.TL_jsonArray) {
-                    ArrayList<TLRPC.JSONValue> arrayList = ((TLRPC.TL_jsonArray) jSONValue).value;
-                    try {
-                        a = (int) ((TLRPC.TL_jsonNumber) arrayList.get(0)).value;
-                        b = (int) ((TLRPC.TL_jsonNumber) arrayList.get(1)).value;
-                        c = (int) ((TLRPC.TL_jsonNumber) arrayList.get(2)).value;
-                    } catch (Exception e10) {
-                        a8.g(e10, true);
+                break;
+            case 18:
+                Pattern pattern = org.telegram.ui.Components.v4.a;
+                break;
+            case 19:
+                g0.r(org.telegram.ui.Components.i5.w);
+                try {
+                    if (org.telegram.ui.Components.i5.r != null) {
+                        for (int i14 = 0; i14 < org.telegram.ui.Components.i5.r.size(); i14++) {
+                            LongSparseArray longSparseArray = (LongSparseArray) org.telegram.ui.Components.i5.r.valueAt(i14);
+                            int i15 = 0;
+                            while (i15 < longSparseArray.size()) {
+                                if (!((org.telegram.ui.Components.i5) longSparseArray.valueAt(i15)).a) {
+                                    longSparseArray.removeAt(i15);
+                                    i15--;
+                                }
+                                i15++;
+                            }
+                        }
+                        break;
                     }
+                } catch (Exception unused) {
+                    boolean z9 = r2.a;
+                    return;
                 }
-            }
-            if ("battery_low".equals(tL_jsonObjectValue.key)) {
-                TLRPC.JSONValue jSONValue2 = tL_jsonObjectValue.value;
-                if (jSONValue2 instanceof TLRPC.TL_jsonArray) {
-                    ArrayList<TLRPC.JSONValue> arrayList2 = ((TLRPC.TL_jsonArray) jSONValue2).value;
-                    try {
-                        d = (int) ((TLRPC.TL_jsonNumber) arrayList2.get(0)).value;
-                        e = (int) ((TLRPC.TL_jsonNumber) arrayList2.get(1)).value;
-                        f = (int) ((TLRPC.TL_jsonNumber) arrayList2.get(2)).value;
-                    } catch (Exception e11) {
-                        a8.g(e11, true);
-                    }
+                break;
+            case 20:
+                org.telegram.ui.Components.b8 b8Var = org.telegram.ui.Components.b8.P2;
+                break;
+            case 21:
+                vv.h();
+                break;
+            case 22:
+                LaunchActivity launchActivity = LaunchActivity.G1;
+                if (launchActivity != null && !launchActivity.isFinishing()) {
+                    Intent intent = new Intent("android.intent.action.VIEW_DOWNLOADS");
+                    intent.setFlags(268468224);
+                    LaunchActivity.G1.startActivity(intent);
+                    break;
                 }
-            }
+                break;
+            case 23:
+                org.telegram.ui.ActionBar.f2 Q2 = LaunchActivity.Q();
+                if (Q2 != null) {
+                    Bundle bundle = new Bundle();
+                    bundle.putLong("user_id", p10.i(Q2.getCurrentAccount()).e());
+                    bundle.putInt("chatMode", 1);
+                    Q2.presentFragment(new org.telegram.ui.an(bundle));
+                    break;
+                }
+                break;
+            case 24:
+                MediaController.B().B0(0, 0, false, false);
+                break;
+            case 25:
+                MediaController.B().B0(0, 0, false, false);
+                break;
+            case 26:
+                break;
+            case 27:
+                int i16 = org.telegram.ui.Components.bn.r1;
+                break;
+            case 28:
+                PhotoViewer.p1().z0(false, false);
+                break;
+            default:
+                PhotoViewer.p1().z0(false, false);
+                break;
         }
-        g();
+    }
+
+    private final void a() {
     }
 }

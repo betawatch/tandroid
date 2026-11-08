@@ -12,7 +12,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h50 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -96,7 +96,7 @@ public final /* synthetic */ class h50 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new org.telegram.ui.Components.kn0((be0) obj2, tL_error, tLObject, (String) obj, 22));
                 break;
             case 12:
-                org.telegram.messenger.g0.h3(new mc0((ah0) obj2, tLObject, (org.telegram.ui.Components.ex) obj, i10));
+                org.telegram.messenger.g0.h3(new mc0((ah0) obj2, tLObject, (org.telegram.ui.Components.fx) obj, i10));
                 break;
             case 13:
                 fj0 fj0Var = (fj0) obj2;

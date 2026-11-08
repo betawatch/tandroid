@@ -3,11 +3,11 @@ package fi;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class q8 {
     public final int a;
@@ -140,40 +140,40 @@ public final class q8 {
         int size;
         ArrayList arrayList = this.f;
         if (!arrayList.isEmpty()) {
-            return hd.G(arrayList.size(), "StoryPrivacyRecipients", new Object[0]);
+            return id.G(arrayList.size(), "StoryPrivacyRecipients", new Object[0]);
         }
         ArrayList arrayList2 = this.b;
         if (arrayList2.isEmpty()) {
-            return hd.M0(2131744534, null);
+            return id.M0(2131744536, null);
         }
         TLRPC.InputPrivacyRule inputPrivacyRule = (TLRPC.InputPrivacyRule) arrayList2.get(0);
         int i7 = this.a;
         if (i7 == 4) {
             TLRPC.InputPrivacyRule inputPrivacyRule2 = arrayList2.size() >= 2 ? (TLRPC.InputPrivacyRule) arrayList2.get(1) : null;
-            return (!(inputPrivacyRule2 instanceof TLRPC.TL_inputPrivacyValueDisallowUsers) || (size = ((TLRPC.TL_inputPrivacyValueDisallowUsers) inputPrivacyRule2).users.size()) <= 0) ? hd.M0(2131744546, null) : hd.G(size, "StoryPrivacyEveryoneExclude", new Object[0]);
+            return (!(inputPrivacyRule2 instanceof TLRPC.TL_inputPrivacyValueDisallowUsers) || (size = ((TLRPC.TL_inputPrivacyValueDisallowUsers) inputPrivacyRule2).users.size()) <= 0) ? id.M0(2131744548, null) : id.G(size, "StoryPrivacyEveryoneExclude", new Object[0]);
         }
         if (i7 == 1) {
-            return hd.M0(2131744553, null);
+            return id.M0(2131744555, null);
         }
         if (i7 == 3 && (inputPrivacyRule instanceof TLRPC.TL_inputPrivacyValueAllowUsers)) {
-            return hd.G(((TLRPC.TL_inputPrivacyValueAllowUsers) inputPrivacyRule).users.size(), "StoryPrivacyContacts", new Object[0]);
+            return id.G(((TLRPC.TL_inputPrivacyValueAllowUsers) inputPrivacyRule).users.size(), "StoryPrivacyContacts", new Object[0]);
         }
         if (i7 == 2) {
             TLRPC.InputPrivacyRule inputPrivacyRule3 = arrayList2.size() >= 2 ? (TLRPC.InputPrivacyRule) arrayList2.get(1) : null;
             if (!(inputPrivacyRule3 instanceof TLRPC.TL_inputPrivacyValueDisallowUsers)) {
-                return hd.M0(2131744561, null);
+                return id.M0(2131744563, null);
             }
             int size2 = ((TLRPC.TL_inputPrivacyValueDisallowUsers) inputPrivacyRule3).users.size();
-            return size2 > 0 ? hd.G(size2, "StoryPrivacyContactsExclude", new Object[0]) : hd.M0(2131744561, null);
+            return size2 > 0 ? id.G(size2, "StoryPrivacyContactsExclude", new Object[0]) : id.M0(2131744563, null);
         }
         if (i7 != 0) {
-            return hd.M0(2131744534, null);
+            return id.M0(2131744536, null);
         }
         if (!(inputPrivacyRule instanceof TLRPC.TL_inputPrivacyValueAllowUsers)) {
-            return hd.M0(2131744534, null);
+            return id.M0(2131744536, null);
         }
         int size3 = ((TLRPC.TL_inputPrivacyValueAllowUsers) inputPrivacyRule).users.size();
-        return size3 <= 0 ? hd.M0(2131744534, null) : hd.G(size3, "StoryPrivacyContacts", new Object[0]);
+        return size3 <= 0 ? id.M0(2131744536, null) : id.G(size3, "StoryPrivacyContacts", new Object[0]);
     }
 
     public q8() {

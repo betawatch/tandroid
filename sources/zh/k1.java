@@ -1,39 +1,30 @@
 package zh;
 
-import org.telegram.messenger.c20;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.ProfileActivity;
-
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k1 implements c20 {
+public final /* synthetic */ class k1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f2 b;
+    public final /* synthetic */ z1 b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ k1(f2 f2Var, int i7) {
-        this.a = i7;
-        this.b = f2Var;
+    public /* synthetic */ k1(z1 z1Var, int i7, int i10) {
+        this.a = i10;
+        this.b = z1Var;
+        this.c = i7;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                f2 f2Var = this.b;
-                f2Var.f(true);
-                u61 u61Var = f2Var.n;
-                int i7 = ((TL_stars.TL_starGiftCollection) obj).collection_id;
-                u61Var.d(i7, f2Var.e.f(i7) + 1);
-                org.telegram.ui.ActionBar.f2 f2Var2 = f2Var.a;
-                if (f2Var2 instanceof ProfileActivity) {
-                    ((ProfileActivity) f2Var2).U4(true);
-                }
-                f2Var.o();
+                this.b.f.scrollBy(0, this.c);
                 break;
             default:
-                f2 f2Var3 = this.b;
-                f2Var3.e.b((String) obj, new k1(f2Var3, 0));
+                fi.w3 w3Var = this.b.f;
+                if (w3Var != null) {
+                    w3Var.setSpanCount(this.c);
+                    break;
+                }
                 break;
         }
     }

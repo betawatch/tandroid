@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class ql0 extends FrameLayout implements org.telegram.messenger.ls {
     public static org.telegram.ui.ActionBar.u1 H;
@@ -102,7 +102,7 @@ public abstract class ql0 extends FrameLayout implements org.telegram.messenger.
         } else {
             charSequence = org.telegram.messenger.i6.m(d.f, textPaint.getFontMetricsInt(), false, null, 0);
         }
-        SpannableStringBuilder append = new SpannableStringBuilder(charSequence).append((CharSequence) "  ").append((CharSequence) org.telegram.messenger.hd.M0(TextUtils.isEmpty(K1) ? 2131745882 : 2131745870, null));
+        SpannableStringBuilder append = new SpannableStringBuilder(charSequence).append((CharSequence) "  ").append((CharSequence) org.telegram.messenger.id.M0(TextUtils.isEmpty(K1) ? 2131745884 : 2131745872, null));
         org.telegram.ui.ActionBar.u1 u1Var = w1Var.a;
         u1Var.R = append;
         final kl0 kl0Var = new kl0(context, f6Var);
@@ -116,7 +116,7 @@ public abstract class ql0 extends FrameLayout implements org.telegram.messenger.
         int i11 = org.telegram.ui.ActionBar.k6.j5;
         org.telegram.ui.ActionBar.r6.V(kl0Var, i11, f6Var);
         org.telegram.ui.ActionBar.r6.m(kl0Var, 34, org.telegram.ui.ActionBar.k6.Li, f6Var);
-        kl0Var.setHintText(org.telegram.messenger.hd.M0(2131745883, null));
+        kl0Var.setHintText(org.telegram.messenger.id.M0(2131745885, null));
         kl0Var.setSingleLine(true);
         kl0Var.setFocusable(true);
         kl0Var.setInputType(TLObject.FLAG_14);
@@ -128,13 +128,13 @@ public abstract class ql0 extends FrameLayout implements org.telegram.messenger.
         TextView textView = new TextView(context);
         org.telegram.ui.ActionBar.r6.V(textView, i11, f6Var);
         textView.setTextSize(1, 16.0f);
-        textView.setText(org.telegram.messenger.hd.M0(2131745881, null));
+        textView.setText(org.telegram.messenger.id.M0(2131745883, null));
         f10.addView(textView, c8.ha.k(24.0f, 5.0f, 24.0f, 12.0f, -1, -2));
         f10.addView(kl0Var, c8.ha.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
         w1Var.o(f10);
         u1Var.a = org.telegram.messenger.g0.L(292.0f);
-        w1Var.k(org.telegram.messenger.hd.M0(2131745947, null), new jg.a2(kl0Var, i7, reaction, 7));
-        w1Var.h(org.telegram.messenger.hd.M0(2131752589, null), new il0(i10));
+        w1Var.k(org.telegram.messenger.id.M0(2131745949, null), new jg.a2(kl0Var, i7, reaction, 7));
+        w1Var.h(org.telegram.messenger.id.M0(2131752589, null), new il0(i10));
         if (z9) {
             H = u1Var;
             u1VarArr[0] = u1Var;
@@ -398,14 +398,14 @@ public abstract class ql0 extends FrameLayout implements org.telegram.messenger.
             SpannableString spannableString = new SpannableString("l");
             spannableString.setSpan(wpVar, 0, spannableString.length(), 17);
             spannableStringBuilder.append((CharSequence) spannableString);
-            spannableStringBuilder.append((CharSequence) " ").append((CharSequence) org.telegram.messenger.hd.M0(2131754381, null));
+            spannableStringBuilder.append((CharSequence) " ").append((CharSequence) org.telegram.messenger.id.M0(2131754381, null));
             q9Var.setText(spannableStringBuilder);
             q9Var.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(4.0f));
             TextView textView = new TextView(getContext());
             org.telegram.ui.ActionBar.r6.V(textView, i13, f6Var);
             textView.setTextSize(1, 12.0f);
             textView.setTypeface(org.telegram.messenger.g0.o());
-            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(org.telegram.messenger.hd.M0(2131754380, null));
+            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(org.telegram.messenger.id.M0(2131754380, null));
             SpannableString spannableString2 = new SpannableString(">");
             Drawable mutate2 = getContext().getResources().getDrawable(R.drawable.msg_arrowright).mutate();
             mutate2.setColorFilter(new PorterDuffColorFilter(i14, mode));

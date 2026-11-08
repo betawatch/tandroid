@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class rc extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
     public TLRPC.EmojiStatus D;
@@ -263,7 +263,7 @@ public class rc extends org.telegram.ui.ActionBar.f2 implements org.telegram.mes
                 int i12 = org.telegram.ui.Components.vo.c2;
                 org.telegram.ui.Components.di diVar = new org.telegram.ui.Components.di(parentActivity, rcVar, false, false, false, f6Var);
                 diVar.n = true;
-                diVar.A1(org.telegram.messenger.hd.M0(2131752139, null));
+                diVar.A1(org.telegram.messenger.id.M0(2131752139, null));
                 diVar.T3 = new org.telegram.ui.Components.mo(diVar, tL_premium_boostsStatus, f6Var, fVar, j11, wbVar, rcVar);
                 diVar.y1(1, false);
                 diVar.e1();
@@ -439,7 +439,7 @@ public class rc extends org.telegram.ui.ActionBar.f2 implements org.telegram.mes
         TLRPC.Chat M0 = getMessagesController().M0(Long.valueOf(j13));
         if (M0 == null) {
             org.telegram.messenger.a8.d("channel is null in ChannelColorAcitivity");
-            org.telegram.messenger.k5.o(null, 2131743880, org.telegram.ui.Components.hc.a0(this), R.raw.error, 36);
+            org.telegram.messenger.k5.o(null, 2131743882, org.telegram.ui.Components.hc.a0(this), R.raw.error, 36);
             return;
         }
         this.P.setLoading(true);
@@ -988,11 +988,11 @@ public class rc extends org.telegram.ui.ActionBar.f2 implements org.telegram.mes
         }
         final int i7 = 0;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getParentActivity(), getResourceProvider());
-        String M0 = org.telegram.messenger.hd.M0(2131752426, null);
+        String M0 = org.telegram.messenger.id.M0(2131752426, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
-        u1Var.T = org.telegram.messenger.hd.M0(2131752425, null);
-        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131751370, null), new org.telegram.ui.ActionBar.r1(this) { // from class: org.telegram.ui.yb
+        u1Var.T = org.telegram.messenger.id.M0(2131752425, null);
+        alertDialog$Builder.h(org.telegram.messenger.id.M0(2131751370, null), new org.telegram.ui.ActionBar.r1(this) { // from class: org.telegram.ui.yb
             public final /* synthetic */ rc b;
 
             {
@@ -1012,7 +1012,7 @@ public class rc extends org.telegram.ui.ActionBar.f2 implements org.telegram.mes
             }
         });
         final int i10 = 1;
-        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131754216, null), new org.telegram.ui.ActionBar.r1(this) { // from class: org.telegram.ui.yb
+        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131754216, null), new org.telegram.ui.ActionBar.r1(this) { // from class: org.telegram.ui.yb
             public final /* synthetic */ rc b;
 
             {
@@ -1072,11 +1072,11 @@ public class rc extends org.telegram.ui.ActionBar.f2 implements org.telegram.mes
         org.telegram.ui.ActionBar.y4 y4Var = this.simpleActionBar;
         if (y4Var != null) {
             y4Var.setBackButtonImage(R.drawable.ic_ab_back);
-            this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131752427, null));
+            this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131752427, null));
             this.simpleActionBar.setActionBarMenuOnItemClick(w9Var);
         } else {
             this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-            this.actionBar.setTitle(org.telegram.messenger.hd.M0(2131752427, null));
+            this.actionBar.setTitle(org.telegram.messenger.id.M0(2131752427, null));
             this.actionBar.setActionBarMenuOnItemClick(w9Var);
         }
         org.telegram.ui.Components.zg0 zg0Var = new org.telegram.ui.Components.zg0(R.raw.sun_outline, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), true, null);
@@ -1131,7 +1131,7 @@ public class rc extends org.telegram.ui.ActionBar.f2 implements org.telegram.mes
         fi.d dVar = new fi.d(context, this.resourceProvider, true);
         dVar.setRoundRadius(24);
         this.P = dVar;
-        dVar.i(org.telegram.messenger.hd.M0(2131754218, null), false, true);
+        dVar.i(org.telegram.messenger.id.M0(2131754218, null), false, true);
         this.P.setOnClickListener(new a(this, 11));
         e1(false);
         FrameLayout frameLayout2 = new FrameLayout(context);
@@ -1203,7 +1203,7 @@ public class rc extends org.telegram.ui.ActionBar.f2 implements org.telegram.mes
             this.I.setSpan(wpVar, 0, 1, 33);
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) this.I).append((CharSequence) org.telegram.messenger.hd.G(Z0, "BoostLevelRequired", new Object[0]));
+        spannableStringBuilder.append((CharSequence) this.I).append((CharSequence) org.telegram.messenger.id.G(Z0, "BoostLevelRequired", new Object[0]));
         this.P.g(spannableStringBuilder, z9);
     }
 

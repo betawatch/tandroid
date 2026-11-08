@@ -8,14 +8,14 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.hc;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u8 implements Runnable {
     public final /* synthetic */ int a;
@@ -336,7 +336,7 @@ public final /* synthetic */ class u8 implements Runnable {
                 vaVar.b1.setShareEnabled(false);
                 t0 t0Var = vaVar.e1;
                 t0Var.getClass();
-                t0Var.c(hd.N0("VideoConvertFail"));
+                t0Var.c(id.N0("VideoConvertFail"));
                 break;
             case 18:
                 vaVar.A0.setCameraThumb(vaVar.z());
@@ -344,7 +344,7 @@ public final /* synthetic */ class u8 implements Runnable {
             case 19:
                 ua uaVar2 = vaVar.n;
                 di.b bVar = vaVar.a;
-                new hc(uaVar2, bVar).Q(R.raw.voip_invite, 36, org.telegram.messenger.g0.S2(hd.M0(2131744582, null), org.telegram.ui.ActionBar.k6.Uc, 0, new u8(vaVar, 27), bVar)).k(true);
+                new hc(uaVar2, bVar).Q(R.raw.voip_invite, 36, org.telegram.messenger.g0.S2(id.M0(2131744584, null), org.telegram.ui.ActionBar.k6.Uc, 0, new u8(vaVar, 27), bVar)).k(true);
                 break;
             case 20:
                 s8 s8Var = vaVar.q0;

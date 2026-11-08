@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import fi.f3;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.ui.Components.nl;
 import org.telegram.ui.Components.oi;
 import org.telegram.ui.Components.vh;
@@ -13,7 +13,7 @@ import v4.a1;
 import v4.s;
 import v4.v0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class h extends s {
     public final /* synthetic */ int Q;
@@ -30,7 +30,7 @@ public final class h extends s {
     public boolean Y0() {
         switch (this.Q) {
             case 4:
-                return ((yv0) this.R).N1 != null && hd.a0;
+                return ((yv0) this.R).N1 != null && id.a0;
             default:
                 return super.Y0();
         }

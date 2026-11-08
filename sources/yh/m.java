@@ -9,7 +9,7 @@ import java.util.Collections;
 import kg.l0;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p5;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t3;
@@ -22,12 +22,11 @@ import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Cells.d5;
 import org.telegram.ui.Cells.e5;
 import org.telegram.ui.Components.av0;
-import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.tp0;
-import wi.q;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public abstract class m implements d5 {
     public final boolean a;
@@ -42,7 +41,7 @@ public abstract class m implements d5 {
     public av0 n;
     public av0 o;
     public pj0 p;
-    public lz q;
+    public mz q;
     public TLRPC.TL_chatInviteImporter r;
     public l s;
     public String t;
@@ -98,20 +97,20 @@ public abstract class m implements d5 {
             av0 av0Var = new av0(f2Var.getParentActivity(), null, 16, f2Var.getResourceProvider());
             this.n = av0Var;
             boolean z9 = this.a;
-            av0Var.d.setText(hd.M0(z9 ? 2131748145 : 2131748194, null));
-            this.n.e.setText(hd.M0(z9 ? 2131748144 : 2131748193, null));
+            av0Var.d.setText(id.M0(z9 ? 2131748147 : 2131748196, null));
+            this.n.e.setText(id.M0(z9 ? 2131748146 : 2131748195, null));
             this.n.setAnimateLayoutChange(true);
             this.n.setVisibility(8);
         }
         return this.n;
     }
 
-    public final lz b() {
+    public final mz b() {
         if (this.q == null) {
             f2 f2Var = this.g;
-            lz lzVar = new lz(f2Var.getParentActivity(), f2Var.getResourceProvider());
-            this.q = lzVar;
-            lzVar.setAlpha(0.0f);
+            mz mzVar = new mz(f2Var.getParentActivity(), f2Var.getResourceProvider());
+            this.q = mzVar;
+            mzVar.setAlpha(0.0f);
             if (this.B) {
                 r6.i(k6.d6, this.q, f2Var.getResourceProvider());
             }
@@ -130,8 +129,8 @@ public abstract class m implements d5 {
             if (this.B) {
                 r6.i(k6.d6, av0Var, f2Var.getResourceProvider());
             }
-            this.o.d.setText(hd.M0(2131748166, null));
-            this.o.e.setText(hd.M0(2131745808, null));
+            this.o.d.setText(id.M0(2131748168, null));
+            this.o.e.setText(id.M0(2131745810, null));
             this.o.setAnimateLayoutChange(true);
             this.o.setVisibility(8);
         }
@@ -324,7 +323,7 @@ public abstract class m implements d5 {
             if (this.y) {
                 g0.v1(this.g.getParentActivity().getCurrentFocus());
             }
-            g0.i3(new q(9, this, (e5) view), this.y ? 100L : 0L);
+            g0.i3(new yf.b(4, this, (e5) view), this.y ? 100L : 0L);
         }
     }
 

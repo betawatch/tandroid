@@ -12,9 +12,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.r81;
+import org.telegram.ui.s81;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class f0 extends LinearLayout {
     public final TextView a;
@@ -86,7 +86,7 @@ public final class f0 extends LinearLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.h = ofFloat;
         ofFloat.addUpdateListener(new ch.u(12, this, z9));
-        this.h.addListener(new r81(this, 15));
+        this.h.addListener(new s81(this, 15));
         this.h.setInterpolator(xq.h);
         this.h.setDuration(420L);
         this.h.start();

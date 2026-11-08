@@ -6,7 +6,7 @@ import org.telegram.messenger.fj;
 import org.telegram.messenger.gj;
 import org.telegram.messenger.ij;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c1 implements Runnable {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class c1 implements Runnable {
                 ob.c cVar = q1Var.x;
                 cVar.a(q1Var.Xb);
                 cVar.a(q1Var.Yb);
-                q1Var.g3();
+                q1Var.h3();
                 ij ijVar = q1Var.P5;
                 if (ijVar != null) {
                     ijVar.n0(null);
@@ -122,7 +122,7 @@ public final /* synthetic */ class c1 implements Runnable {
                 }
                 break;
             default:
-                this.b.g3();
+                this.b.h3();
                 break;
         }
     }

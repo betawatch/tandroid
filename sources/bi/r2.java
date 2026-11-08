@@ -21,7 +21,7 @@ import org.telegram.ui.qw;
 import org.telegram.ui.ww;
 import org.telegram.ui.xv;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r2 implements c20 {
     public final /* synthetic */ int a;
@@ -170,7 +170,7 @@ public final /* synthetic */ class r2 implements c20 {
                 i5 i5Var = (i5) obj3;
                 vf.b bVar = (vf.b) obj;
                 bVar.d();
-                i5Var.s1(j3, new di.s2((zh.h1) obj4, bVar, (c20) obj2, i5Var, 19));
+                i5Var.s1(j3, new di.s2((zh.g1) obj4, bVar, (c20) obj2, i5Var, 19));
                 break;
         }
     }

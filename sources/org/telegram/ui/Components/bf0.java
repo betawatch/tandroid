@@ -5,7 +5,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.Layout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class bf0 {
     public int a;
@@ -111,6 +111,6 @@ public final class bf0 {
         this.b = new ic(ef0Var);
         this.e = new w5(ef0Var, 0L, 250L, xq.f);
         d(0, cf0Var.b, cf0Var.c);
-        c(org.telegram.messenger.hd.M0(cf0Var.a, null));
+        c(org.telegram.messenger.id.M0(cf0Var.a, null));
     }
 }

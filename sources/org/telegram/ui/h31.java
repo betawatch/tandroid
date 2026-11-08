@@ -13,7 +13,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class h31 extends LinearLayout implements org.telegram.ui.ActionBar.a6 {
     public final org.telegram.ui.ActionBar.f6 a;
@@ -60,7 +60,7 @@ public final class h31 extends LinearLayout implements org.telegram.ui.ActionBar
         imageView.setImageResource(R.drawable.msg_arrowright);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         org.telegram.ui.ActionBar.r6.t(imageView, org.telegram.ui.ActionBar.k6.m6, f6Var, PorterDuff.Mode.SRC_IN);
-        if (!org.telegram.messenger.hd.a0) {
+        if (!org.telegram.messenger.id.a0) {
             k5Var.setGravity(19);
             addView(l9Var, c8.ha.t(28, 28, 19, 18, 0, 18, 0));
             addView(k5Var, c8.ha.q(0, -1, 1.0f, org.telegram.messenger.qs.E1, 0, 0, 18, 0));
@@ -139,7 +139,7 @@ public final class h31 extends LinearLayout implements org.telegram.ui.ActionBar
                 int i12 = i11 <= 0 ? 8 : 0;
                 TextView textView = this.e;
                 textView.setVisibility(i12);
-                textView.setText(org.telegram.messenger.hd.E(i11, ','));
+                textView.setText(org.telegram.messenger.id.E(i11, ','));
             }
         }
         g5Var.g(null, false);
@@ -158,7 +158,7 @@ public final class h31 extends LinearLayout implements org.telegram.ui.ActionBar
         }
         TextView textView2 = this.e;
         textView2.setVisibility(i12);
-        textView2.setText(org.telegram.messenger.hd.E(i112, ','));
+        textView2.setText(org.telegram.messenger.id.E(i112, ','));
     }
 
     @Override // org.telegram.ui.ActionBar.a6

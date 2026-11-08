@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class r5 extends FrameLayout {
     public final /* synthetic */ t5 a;
@@ -21,9 +21,9 @@ public final class r5 extends FrameLayout {
         bi.m5 m5Var = new bi.m5(t5Var, getContext());
         bi.m5 m5Var2 = new bi.m5(t5Var, getContext());
         bi.m5 m5Var3 = new bi.m5(t5Var, getContext());
-        m5Var.c(R.drawable.filled_boost_plus, org.telegram.messenger.hd.M0(2131753664, null));
-        m5Var2.c(R.drawable.filled_gift_premium, org.telegram.messenger.hd.M0(2131749552, null));
-        m5Var3.c(R.drawable.filled_info, org.telegram.messenger.hd.M0(2131750831, null));
+        m5Var.c(R.drawable.filled_boost_plus, org.telegram.messenger.id.M0(2131753664, null));
+        m5Var2.c(R.drawable.filled_gift_premium, org.telegram.messenger.id.M0(2131749554, null));
+        m5Var3.c(R.drawable.filled_info, org.telegram.messenger.id.M0(2131750831, null));
         m5Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.p5
             public final /* synthetic */ r5 b;
 

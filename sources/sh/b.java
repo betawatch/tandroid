@@ -13,7 +13,7 @@ import di.b3;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.j0;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
@@ -30,15 +30,15 @@ import org.telegram.ui.Cells.w1;
 import org.telegram.ui.Cells.y;
 import org.telegram.ui.Cells.z5;
 import org.telegram.ui.Components.ci;
-import org.telegram.ui.Components.p00;
+import org.telegram.ui.Components.q00;
 import org.telegram.ui.Components.xq;
-import org.telegram.ui.Wallet.na;
+import org.telegram.ui.Wallet.ma;
 import org.telegram.ui.an;
 import org.telegram.ui.fk0;
 import org.telegram.ui.sq0;
 import org.telegram.ui.xf;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class b extends FrameLayout implements ViewTreeObserver.OnPreDrawListener, a6 {
     public final int[] D;
@@ -81,13 +81,13 @@ public final class b extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
         r6.V(z5Var, k6.G6, f6Var);
         r6.H(z5Var, k6.Uc, f6Var);
         r6.E(z5Var, k6.H6, f6Var);
-        z5Var.setHint(hd.M0(2131747182, null));
+        z5Var.setHint(id.M0(2131747184, null));
         z5Var.setTextSize(1, 15.0f);
         z5Var.setMaxLines(ConnectionsManager.DEFAULT_DATACENTER_ID);
         z5Var.setBackground(null);
         z5Var.setImeOptions(268435462);
         z5Var.setInputType(z5Var.getInputType() | TLObject.FLAG_14);
-        z5Var.addTextChangedListener(new na(this, i7));
+        z5Var.addTextChangedListener(new ma(this, i7));
         b3 b3Var = new b3(activity, 6);
         this.b = b3Var;
         int i11 = k6.Ji;
@@ -125,7 +125,7 @@ public final class b extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
 
     public static void a(b bVar) {
         k5 k5Var = bVar.f;
-        p00.d(k5Var, bVar.H.e);
+        q00.d(k5Var, bVar.H.e);
         int i7 = k6.A6;
         an anVar = bVar.d;
         k5Var.setTextColor(i0.a.f(bVar.I.e, k6.w0(i7, anVar.getResourceProvider()), k6.w0(k6.p7, anVar.getResourceProvider())));

@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.f2 {
     public int a;
@@ -64,16 +64,16 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.f2 
         if (this.c == null) {
             int i10 = this.a;
             if (i10 == 1) {
-                this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131745920, null));
+                this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131745922, null));
             } else if (i10 == 2) {
-                this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131745927, null));
+                this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131745929, null));
             } else {
-                this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131745929, null));
+                this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131745931, null));
             }
         } else if (this.d) {
-            this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131747894, null));
+            this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131747896, null));
         } else {
-            this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131745928, null));
+            this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131745930, null));
         }
         org.telegram.ui.Components.pj0 pj0Var = new org.telegram.ui.Components.pj0(context, null);
         this.r = pj0Var;
@@ -98,7 +98,7 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.f2 
             frameLayout2.setBackground(org.telegram.ui.ActionBar.z5.f(org.telegram.ui.ActionBar.k6.Ci, 8.0f));
             TextView textView = new TextView(getParentActivity());
             textView.setTextSize(1, 14.0f);
-            textView.setText(org.telegram.messenger.hd.M0(this.d ? 2131754432 : 2131745944, null));
+            textView.setText(org.telegram.messenger.id.M0(this.d ? 2131754432 : 2131745946, null));
             textView.setGravity(17);
             textView.setTypeface(org.telegram.messenger.g0.o());
             org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.Gi, null);
@@ -143,20 +143,20 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.f2 
             arrayList2.add(new az0(9));
             arrayList2.add(new az0(3));
         }
-        arrayList2.add(new az0(5, org.telegram.messenger.hd.M0(2131745930, null)));
+        arrayList2.add(new az0(5, org.telegram.messenger.id.M0(2131745932, null)));
         this.e = arrayList2.size();
         arrayList2.add(new az0(6));
         this.f = arrayList2.size();
         arrayList2.add(new az0(6));
         if (this.c != null) {
-            M0 = org.telegram.messenger.hd.M0(2131745925, null);
+            M0 = org.telegram.messenger.id.M0(2131745927, null);
         } else {
             int i7 = this.a;
-            M0 = i7 == 1 ? org.telegram.messenger.hd.M0(2131745923, null) : i7 == 4 ? org.telegram.messenger.hd.M0(2131745926, null) : i7 == 2 ? org.telegram.messenger.hd.M0(2131745924, null) : null;
+            M0 = i7 == 1 ? org.telegram.messenger.id.M0(2131745925, null) : i7 == 4 ? org.telegram.messenger.id.M0(2131745928, null) : i7 == 2 ? org.telegram.messenger.id.M0(2131745926, null) : null;
         }
         arrayList2.add(new az0(7, M0));
         if (c0().b) {
-            arrayList2.add(new az0(5, org.telegram.messenger.hd.M0(2131748667, null)));
+            arrayList2.add(new az0(5, org.telegram.messenger.id.M0(2131748669, null)));
             this.maxVideoSizeRow = arrayList2.size();
             arrayList2.add(new az0(8));
             this.h = arrayList2.size();

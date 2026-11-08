@@ -5,7 +5,7 @@ import android.os.RemoteException;
 import androidx.car.app.j;
 import q6.m;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class a {
     public final v7.h a;
@@ -23,11 +23,11 @@ public final class a {
             v7.h hVar = this.a;
             v7.h hVar2 = ((a) obj).a;
             v7.f fVar = (v7.f) hVar;
-            Parcel P0 = fVar.P0();
-            v7.b.c(P0, hVar2);
-            Parcel O0 = fVar.O0(P0, 17);
-            boolean z9 = O0.readInt() != 0;
-            O0.recycle();
+            Parcel p12 = fVar.p1();
+            v7.b.c(p12, hVar2);
+            Parcel o12 = fVar.o1(p12, 17);
+            boolean z9 = o12.readInt() != 0;
+            o12.recycle();
             return z9;
         } catch (RemoteException e10) {
             throw new j(e10);
@@ -37,9 +37,9 @@ public final class a {
     public final int hashCode() {
         try {
             v7.f fVar = (v7.f) this.a;
-            Parcel O0 = fVar.O0(fVar.P0(), 18);
-            int readInt = O0.readInt();
-            O0.recycle();
+            Parcel o12 = fVar.o1(fVar.p1(), 18);
+            int readInt = o12.readInt();
+            o12.recycle();
             return readInt;
         } catch (RemoteException e10) {
             throw new j(e10);

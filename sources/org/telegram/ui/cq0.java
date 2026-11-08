@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class cq0 extends org.telegram.ui.Components.ae0 {
     public final Rect M;
@@ -26,15 +26,15 @@ public final class cq0 extends org.telegram.ui.Components.ae0 {
         this.L = new org.telegram.ui.Components.ob0(this, 7);
         this.b = photoViewer2;
         this.r = z0Var;
-        org.telegram.ui.Components.rt rtVar = new org.telegram.ui.Components.rt(this, context, context, 1);
-        this.f = rtVar;
-        rtVar.getSettings().setJavaScriptEnabled(true);
-        rtVar.getSettings().setDomStorageEnabled(true);
-        rtVar.getSettings().setMediaPlaybackRequiresUserGesture(false);
-        rtVar.getSettings().setMixedContentMode(0);
-        CookieManager.getInstance().setAcceptThirdPartyCookies(rtVar, true);
-        rtVar.setWebViewClient(new n1(this, 2));
-        addView(rtVar, c8.ha.e(-1, -1, 51));
+        org.telegram.ui.Components.st stVar = new org.telegram.ui.Components.st(this, context, context, 1);
+        this.f = stVar;
+        stVar.getSettings().setJavaScriptEnabled(true);
+        stVar.getSettings().setDomStorageEnabled(true);
+        stVar.getSettings().setMediaPlaybackRequiresUserGesture(false);
+        stVar.getSettings().setMixedContentMode(0);
+        CookieManager.getInstance().setAcceptThirdPartyCookies(stVar, true);
+        stVar.setWebViewClient(new n1(this, 2));
+        addView(stVar, c8.ha.e(-1, -1, 51));
         LinearLayout linearLayout = new LinearLayout(context);
         this.c = linearLayout;
         linearLayout.setOrientation(1);

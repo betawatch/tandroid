@@ -1,43 +1,43 @@
 package zh;
 
 import android.view.View;
-import org.telegram.messenger.b20;
-import org.telegram.messenger.k9;
-import org.telegram.ui.Components.x31;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.id;
+import org.telegram.ui.Components.hc;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h implements org.telegram.ui.ActionBar.r1, b20, k9 {
+public final /* synthetic */ class h implements View.OnClickListener {
     public final /* synthetic */ int a;
+    public final /* synthetic */ l b;
 
-    public /* synthetic */ h(int i7) {
+    public /* synthetic */ h(l lVar, int i7) {
         this.a = i7;
+        this.b = lVar;
     }
 
-    @Override // org.telegram.messenger.b20
-    public Boolean a(x31 x31Var, View view, Integer num, Float f10, Float f11) {
-        return Boolean.FALSE;
-    }
-
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        switch (this.a) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i7 = this.a;
+        l lVar = this.b;
+        switch (i7) {
             case 0:
-                u1Var.dismiss();
+                lVar.dismiss();
                 break;
+            case 1:
+                int value = lVar.U1.getValue();
+                int e10 = (int) lVar.d2.e();
+                if (value >= e10) {
+                    lVar.g1(value);
+                    break;
+                } else {
+                    org.telegram.messenger.g0.F3(lVar.S1);
+                    org.telegram.messenger.camera.q.s(id.G(e10, "Gift2AuctionMinimumBidIncreased", new Object[0]), new hc(lVar.c, lVar.I0), R.raw.info, 36);
+                    break;
+                }
             default:
-                u1Var.dismiss();
+                lVar.U1.setValueAnimated((int) lVar.d2.e());
                 break;
         }
-    }
-
-    @Override // org.telegram.messenger.k9
-    public Object j(Object obj) {
-        int i7 = l3.c2;
-        return 0;
-    }
-
-    public /* synthetic */ h(m3 m3Var) {
-        this.a = 2;
     }
 }

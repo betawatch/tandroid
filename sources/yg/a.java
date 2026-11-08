@@ -6,13 +6,13 @@ import android.graphics.Paint;
 import android.view.View;
 import android.widget.FrameLayout;
 import c8.ha;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.r6;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class a extends FrameLayout {
     public final fi.d a;
@@ -40,7 +40,7 @@ public final class a extends FrameLayout {
         dVar.setShowZero(true);
         dVar.setEnabled(true);
         dVar.c(i7, z9);
-        dVar.i(hd.M0(2131753193, null), z9, true);
+        dVar.i(id.M0(2131753193, null), z9, true);
         r6.i(k6.h5, this.b, this.c);
     }
 
@@ -65,7 +65,7 @@ public final class a extends FrameLayout {
         fi.d dVar = this.a;
         dVar.setShowZero(false);
         dVar.setEnabled(true);
-        dVar.i(hd.a0("Close", null, 2131752041, new Object[0]), false, true);
+        dVar.i(id.a0("Close", null, 2131752041, new Object[0]), false, true);
         this.e = z9;
     }
 
@@ -74,7 +74,7 @@ public final class a extends FrameLayout {
         fi.d dVar = this.a;
         dVar.setShowZero(false);
         dVar.setEnabled(true);
-        dVar.i(z9 ? hd.a0("BoostingUseLink", null, 2131753174, new Object[0]) : hd.a0("OK", null, 2131747830, new Object[0]), false, true);
+        dVar.i(z9 ? id.a0("BoostingUseLink", null, 2131753174, new Object[0]) : id.a0("OK", null, 2131747832, new Object[0]), false, true);
     }
 
     @Override // android.view.View

@@ -22,7 +22,7 @@ import java.util.Locale;
 import m.f3;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.r1;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.k6;
@@ -34,7 +34,7 @@ import org.telegram.ui.Components.q5;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.zd;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout {
     public boolean D;
@@ -222,9 +222,9 @@ public class e extends FrameLayout {
                 }
                 q5Var.setText(charSequence);
                 if (i10 == 1) {
-                    textView3.setText(hd.a0(null, null, i20 == 0 ? 2131752251 : 2131752250, aVar.d));
+                    textView3.setText(id.a0(null, null, i20 == 0 ? 2131752251 : 2131752250, aVar.d));
                 } else if (i10 == 2) {
-                    textView3.setText(dd.a1(false, hd.a0(null, null, i20 == 0 ? 2131752249 : 2131752250, aVar.d), 0.7f, null));
+                    textView3.setText(dd.a1(false, id.a0(null, null, i20 == 0 ? 2131752249 : 2131752250, aVar.d), 0.7f, null));
                 } else {
                     textView3.setText(aVar.d);
                 }

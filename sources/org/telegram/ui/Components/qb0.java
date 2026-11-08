@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final class qb0 extends HorizontalScrollView implements org.telegram.ui.ActionBar.a6 {
     public int D;
@@ -106,8 +106,8 @@ public final class qb0 extends HorizontalScrollView implements org.telegram.ui.A
         this.d.removeAllViews();
         this.f = this.e.getAdapter().b();
         for (int i7 = 0; i7 < this.f; i7++) {
-            if (this.e.getAdapter() instanceof zw) {
-                ((zw) this.e.getAdapter()).getClass();
+            if (this.e.getAdapter() instanceof ax) {
+                ((ax) this.e.getAdapter()).getClass();
                 b(i7, this.e.getAdapter().d(i7));
             } else {
                 b(i7, this.e.getAdapter().d(i7));
@@ -125,8 +125,8 @@ public final class qb0 extends HorizontalScrollView implements org.telegram.ui.A
             if (this.x) {
                 childAt.setPadding(0, 0, 0, 0);
                 childAt.setLayoutParams(new LinearLayout.LayoutParams(-1, -1, 1.0f));
-            } else if (this.e.getAdapter() instanceof zw) {
-                ((zw) this.e.getAdapter()).getClass();
+            } else if (this.e.getAdapter() instanceof ax) {
+                ((ax) this.e.getAdapter()).getClass();
                 int L = org.telegram.messenger.g0.L(i7 == 1 ? 12.0f : 18.0f);
                 childAt.setPadding(L, 0, L, 0);
             } else {

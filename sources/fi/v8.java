@@ -9,7 +9,7 @@ import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
@@ -19,7 +19,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.hc;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v8 implements c20 {
     public final /* synthetic */ int a;
@@ -157,7 +157,7 @@ public final /* synthetic */ class v8 implements c20 {
                     xaVar.getWindow().setAttributes(xaVar.b);
                 }
                 waVar.setTouchable(true);
-                new hc(waVar, bVar).G(R.raw.fire_on, 3, org.telegram.messenger.g0.S2(hd.G(intValue, "StoryPeriodPremium", new Object[0]), org.telegram.ui.ActionBar.k6.Uc, 0, new u8(vaVar, 27), bVar)).k(true);
+                new hc(waVar, bVar).G(R.raw.fire_on, 3, org.telegram.messenger.g0.S2(id.G(intValue, "StoryPeriodPremium", new Object[0]), org.telegram.ui.ActionBar.k6.Uc, 0, new u8(vaVar, 27), bVar)).k(true);
                 break;
             case 6:
                 Boolean bool = (Boolean) obj;

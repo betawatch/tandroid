@@ -10,6 +10,8 @@ import android.net.Uri;
 import android.os.Build;
 import android.text.TextUtils;
 import android.view.Surface;
+import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.JsPromptResult;
 import androidx.car.app.IStartCarApp;
 import androidx.car.app.notification.CarAppNotificationBroadcastReceiver;
@@ -18,6 +20,7 @@ import bi.l5;
 import c8.s9;
 import com.google.android.gms.tasks.OnFailureListener;
 import h9.h2;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -25,10 +28,11 @@ import java.util.ListIterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.messenger.a20;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.ez;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -42,15 +46,18 @@ import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.hc;
 import org.telegram.ui.Components.hr;
 import org.telegram.ui.Components.up0;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.gl0;
+import org.telegram.ui.ql0;
 import org.telegram.ui.qw;
-import org.telegram.ui.v91;
+import org.telegram.ui.w91;
 import org.telegram.ui.ww;
+import zh.c2;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a0 implements org.telegram.ui.ActionBar.r1, p4.l0, h2.j, p4.a1, OnFailureListener, u2.v, w5.b, ua.a, androidx.car.app.utils.b, v5.e, gl0, qw, f3.r, l5 {
+public final /* synthetic */ class a0 implements org.telegram.ui.ActionBar.r1, p4.l0, h2.j, p4.a1, OnFailureListener, u2.v, w5.b, ua.a, androidx.car.app.utils.b, v5.e, gl0, qw, f3.r, l5, a20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -77,24 +84,24 @@ public final /* synthetic */ class a0 implements org.telegram.ui.ActionBar.r1, p
 
     @Override // bi.l5
     public void a(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, boolean z9) {
-        zh.a2 a2Var = (zh.a2) this.b;
+        zh.z1 z1Var = (zh.z1) this.b;
         TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.c;
-        up0 up0Var = a2Var.a;
-        a2Var.e.l.remove(savedStarGift);
-        a2Var.f(true);
-        int i7 = a2Var.b;
+        up0 up0Var = z1Var.a;
+        z1Var.e.l.remove(savedStarGift);
+        z1Var.f(true);
+        int i7 = z1Var.b;
         if (j3 == p10.i(i7).e()) {
             hc a02 = hc.a0(up0Var.a);
             TLRPC.Document document = tL_starGiftUnique.getDocument();
-            String M0 = hd.M0(2131752887, null);
+            String M0 = id.M0(2131752887, null);
             StringBuilder sb2 = new StringBuilder();
             sb2.append(tL_starGiftUnique.title);
             sb2.append(" #");
-            cc O = a02.O(document, M0, hd.a0(null, null, 2131752888, jg.g.m(tL_starGiftUnique.num, ',', sb2)));
+            cc O = a02.O(document, M0, id.a0(null, null, 2131752888, jg.g.m(tL_starGiftUnique.num, ',', sb2)));
             O.r = false;
             O.j();
         } else {
-            cc O2 = hc.a0(up0Var.a).O(tL_starGiftUnique.getDocument(), hd.M0(2131752885, null), hd.a0(null, null, 2131752886, m5.s(i7, j3)));
+            cc O2 = hc.a0(up0Var.a).O(tL_starGiftUnique.getDocument(), id.M0(2131752885, null), id.a0(null, null, 2131752886, m5.s(i7, j3)));
             O2.r = false;
             O2.j();
         }
@@ -107,7 +114,7 @@ public final /* synthetic */ class a0 implements org.telegram.ui.ActionBar.r1, p
     @Override // h2.j
     public void accept(Object obj) {
         switch (this.a) {
-            case 5:
+            case 4:
                 p4.c1 c1Var = (p4.c1) this.b;
                 e2.q1 q1Var = (e2.q1) this.c;
                 p4.g1 g1Var = (p4.g1) obj;
@@ -129,7 +136,7 @@ public final /* synthetic */ class a0 implements org.telegram.ui.ActionBar.r1, p
                 }
                 g1Var.q0(q1Var);
                 break;
-            case 6:
+            case 5:
                 p4.c1 c1Var2 = (p4.c1) this.b;
                 p4.v vVar = (p4.v) this.c;
                 p4.d0 d0Var = (p4.d0) c1Var2.a.get();
@@ -138,7 +145,7 @@ public final /* synthetic */ class a0 implements org.telegram.ui.ActionBar.r1, p
                     break;
                 }
                 break;
-            case 7:
+            case 6:
                 p4.c1 c1Var3 = (p4.c1) this.b;
                 Surface surface = (Surface) this.c;
                 p4.g1 g1Var2 = (p4.g1) obj;
@@ -219,7 +226,7 @@ public final /* synthetic */ class a0 implements org.telegram.ui.ActionBar.r1, p
     @Override // org.telegram.ui.gl0
     public void b(int i7) {
         switch (this.a) {
-            case 20:
+            case 19:
                 wg.v vVar = (wg.v) this.b;
                 wg.v vVar2 = (wg.v) this.c;
                 if (i7 != 1) {
@@ -283,7 +290,7 @@ public final /* synthetic */ class a0 implements org.telegram.ui.ActionBar.r1, p
     @Override // p4.l0
     public void f(p4.v vVar) {
         switch (this.a) {
-            case 3:
+            case 2:
                 ((p4.d) this.c).f(((p4.m0) this.b).h.t);
                 break;
             default:
@@ -333,10 +340,7 @@ public final /* synthetic */ class a0 implements org.telegram.ui.ActionBar.r1, p
                     break;
                 }
                 break;
-            case 2:
-                vf.c.q((Context) this.b, Uri.parse((String) this.c), true, false);
-                break;
-            case 15:
+            case 14:
                 ug.i0 i0Var = (ug.i0) this.b;
                 ArrayList arrayList = (ArrayList) this.c;
                 i0Var.dismiss();
@@ -347,22 +351,22 @@ public final /* synthetic */ class a0 implements org.telegram.ui.ActionBar.r1, p
                     ConnectionsManager.getInstance(i0Var.a).sendRequest(tL_channels_updateUsername, new ug.u(i0Var, 1), 64);
                 }
                 break;
-            case 18:
+            case 17:
                 AtomicBoolean atomicBoolean = (AtomicBoolean) this.b;
                 wg.r0 r0Var = (wg.r0) this.c;
                 atomicBoolean.set(true);
                 r0Var.run();
                 break;
-            case 19:
+            case 18:
                 ((wg.v) this.b).a((TLRPC.TL_premiumGiftCodeOption) this.c);
                 break;
-            case 27:
-                zh.m mVar = (zh.m) this.b;
+            case 26:
+                zh.l lVar = (zh.l) this.b;
                 z5 z5Var = (z5) this.c;
                 try {
                     int parseInt = Integer.parseInt(z5Var.getText().toString().trim());
-                    mVar.g1(parseInt);
-                    mVar.U1.setValue(parseInt);
+                    lVar.g1(parseInt);
+                    lVar.U1.setValue(parseInt);
                     u1Var.dismiss();
                     break;
                 } catch (Throwable th2) {
@@ -371,11 +375,11 @@ public final /* synthetic */ class a0 implements org.telegram.ui.ActionBar.r1, p
                     return;
                 }
             default:
-                zh.o1 o1Var = (zh.o1) this.b;
+                zh.n1 n1Var = (zh.n1) this.b;
                 c20 c20Var = (c20) this.c;
-                String obj = o1Var.getText().toString();
+                String obj = n1Var.getText().toString();
                 if (obj.length() <= 0 || obj.length() > 12) {
-                    org.telegram.messenger.g0.F3(o1Var);
+                    org.telegram.messenger.g0.F3(n1Var);
                     break;
                 } else {
                     c20Var.a(obj);
@@ -389,7 +393,7 @@ public final /* synthetic */ class a0 implements org.telegram.ui.ActionBar.r1, p
     @Override // w5.b
     public Object h() {
         switch (this.a) {
-            case 12:
+            case 11:
                 ia.c cVar = (ia.c) this.b;
                 Iterable iterable = (Iterable) this.c;
                 v5.g gVar = (v5.g) ((v5.d) cVar.c);
@@ -409,13 +413,37 @@ public final /* synthetic */ class a0 implements org.telegram.ui.ActionBar.r1, p
         return null;
     }
 
+    @Override // org.telegram.messenger.a20
+    public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        c2 c2Var = (c2) this.b;
+        fi.d dVar = (fi.d) this.c;
+        View view = (View) obj2;
+        long j3 = ((TL_stars.SavedStarGift) ((x31) obj).G).gift.id;
+        if (c2Var.i1 == j3) {
+            c2Var.i1 = 0L;
+        } else {
+            c2Var.i1 = j3;
+        }
+        dVar.setEnabled(c2Var.i1 != 0);
+        if (view.getParent() instanceof ViewGroup) {
+            ViewGroup viewGroup = (ViewGroup) view.getParent();
+            for (int i7 = 0; i7 < viewGroup.getChildCount(); i7++) {
+                View childAt = viewGroup.getChildAt(i7);
+                if (childAt instanceof ql0) {
+                    ql0 ql0Var = (ql0) childAt;
+                    ql0Var.b(c2Var.i1 == ql0Var.getGiftId(), true);
+                }
+            }
+        }
+    }
+
     @Override // p4.a1
-    public Object i(p4.d0 d0Var, p4.v vVar, int i7) {
+    public Object l(p4.d0 d0Var, p4.v vVar, int i7) {
         switch (this.a) {
-            case 8:
-                return d0Var.j() ? s9.b(new p4.m1(-100)) : h2.m0.g0((m9.y) ((p4.a1) this.b).i(d0Var, vVar, i7), new hr(d0Var, vVar, (p4.r0) this.c, 9));
+            case 7:
+                return d0Var.j() ? s9.b(new p4.m1(-100)) : h2.m0.g0((m9.y) ((p4.a1) this.b).l(d0Var, vVar, i7), new hr(d0Var, vVar, (p4.r0) this.c, 9));
             default:
-                return d0Var.j() ? s9.b(new p4.m1(-100)) : h2.m0.g0((m9.y) ((p4.a1) this.b).i(d0Var, vVar, i7), new hr(d0Var, vVar, (p4.z0) this.c, 10));
+                return d0Var.j() ? s9.b(new p4.m1(-100)) : h2.m0.g0((m9.y) ((p4.a1) this.b).l(d0Var, vVar, i7), new hr(d0Var, vVar, (p4.z0) this.c, 10));
         }
     }
 
@@ -426,16 +454,16 @@ public final /* synthetic */ class a0 implements org.telegram.ui.ActionBar.r1, p
         n1Var.B0 = false;
         a8.g(exc, true);
         if (Build.VERSION.SDK_INT >= 24 && (exc instanceof lb.a) && exc.getMessage() != null && exc.getMessage().contains("segmentation optional module to be downloaded") && n1Var.isAttachedToWindow()) {
-            org.telegram.messenger.g0.i3(new w(26, n1Var, bitmap), 2000L);
+            org.telegram.messenger.g0.i3(new w(21, n1Var, bitmap), 2000L);
         } else {
             n1Var.C0 = true;
         }
     }
 
     @Override // org.telegram.ui.qw
-    public boolean y(ww wwVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, v91 v91Var) {
+    public boolean y(ww wwVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, w91 w91Var) {
         switch (this.a) {
-            case 22:
+            case 21:
                 wg.g0 g0Var = (wg.g0) this.b;
                 String str = (String) this.c;
                 long j3 = 0;

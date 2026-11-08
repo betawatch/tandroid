@@ -14,10 +14,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.vy;
 import org.telegram.ui.hy0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final class v0 {
     public int a;
@@ -376,7 +376,7 @@ public final class v0 {
                 d1 U2 = RecyclerView.U(view);
                 hy0 hy0Var = recyclerView.e;
                 ua uaVar = (ua) hy0Var.c;
-                int indexOfChild = ((RecyclerView) ((uy) hy0Var.b).b).indexOfChild(view);
+                int indexOfChild = ((RecyclerView) ((vy) hy0Var.b).b).indexOfChild(view);
                 if (indexOfChild < 0) {
                     throw new IllegalArgumentException("view is not a child, cannot hide " + view);
                 }
@@ -387,7 +387,7 @@ public final class v0 {
                 hy0Var.M(view);
                 hy0 hy0Var2 = recyclerView.e;
                 ua uaVar2 = (ua) hy0Var2.c;
-                int indexOfChild2 = ((RecyclerView) ((uy) hy0Var2.b).b).indexOfChild(view);
+                int indexOfChild2 = ((RecyclerView) ((vy) hy0Var2.b).b).indexOfChild(view);
                 int B = (indexOfChild2 == -1 || uaVar2.E(indexOfChild2)) ? -1 : indexOfChild2 - uaVar2.B(indexOfChild2);
                 if (B == -1) {
                     throw new IllegalStateException("layout index should not be -1 after unhiding a view:" + U2 + recyclerView.C());

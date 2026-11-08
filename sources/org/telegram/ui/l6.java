@@ -8,7 +8,7 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public class l6 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     public final k0 a;
@@ -23,9 +23,9 @@ public class l6 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
         k0Var.setBackground(org.telegram.ui.ActionBar.z5.f(i7, 24.0f));
         k0Var.setImportantForAccessibility(1);
         c8.ka.b(k0Var, 0.02f, 1.2f);
-        if (org.telegram.messenger.hd.a0) {
+        if (org.telegram.messenger.id.a0) {
             TextView textView = new TextView(context);
-            textView.setText(org.telegram.messenger.hd.M0(2131752098, null));
+            textView.setText(org.telegram.messenger.id.M0(2131752098, null));
             textView.setGravity(17);
             com.google.android.recaptcha.internal.a.q(textView, 1, 14.0f);
             org.telegram.ui.ActionBar.r6.V(textView, org.telegram.ui.ActionBar.k6.Gi, null);
@@ -37,7 +37,7 @@ public class l6 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
         i6Var.n(0.25f, 300L, xqVar);
         i6Var.setCallback(k0Var);
         i6Var.w(org.telegram.messenger.g0.L(14.0f));
-        i6Var.t(org.telegram.messenger.hd.M0(2131752098, null), true, true);
+        i6Var.t(org.telegram.messenger.id.M0(2131752098, null), true, true);
         i6Var.b = 5;
         i6Var.x(org.telegram.messenger.g0.o());
         int i10 = org.telegram.ui.ActionBar.k6.Gi;
@@ -55,7 +55,7 @@ public class l6 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
     }
 
     public final void a(long j3, boolean z9) {
-        String M0 = z9 ? org.telegram.messenger.hd.M0(2131752098, null) : org.telegram.messenger.hd.M0(2131752050, null);
+        String M0 = z9 ? org.telegram.messenger.id.M0(2131752098, null) : org.telegram.messenger.id.M0(2131752050, null);
         org.telegram.ui.Components.i6 i6Var = this.b;
         i6Var.t(M0, true, true);
         String i02 = j3 <= 0 ? "" : org.telegram.messenger.g0.i0(j3, false, false);

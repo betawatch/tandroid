@@ -5,7 +5,7 @@ import org.telegram.messenger.v10;
 import org.telegram.ui.Components.xq;
 import org.telegram.ui.up0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q9 implements q0.a {
     public final /* synthetic */ int a;
@@ -92,9 +92,9 @@ public final /* synthetic */ class q9 implements q0.a {
                         break;
                 }
             default:
-                zh.b4 b4Var = (zh.b4) obj2;
+                zh.a4 a4Var = (zh.a4) obj2;
                 if (((f5.f) obj).a == 0) {
-                    org.telegram.messenger.g0.h3(new zh.r3(b4Var, c10 == true ? 1 : 0));
+                    org.telegram.messenger.g0.h3(new zh.q3(a4Var, c10 == true ? 1 : 0));
                     break;
                 }
                 break;

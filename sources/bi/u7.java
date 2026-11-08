@@ -31,13 +31,13 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.di;
 import org.telegram.ui.Components.ec0;
 import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.q41;
 import org.telegram.ui.Components.qa0;
-import org.telegram.ui.Components.qu;
-import org.telegram.ui.Components.sz;
+import org.telegram.ui.Components.ru;
+import org.telegram.ui.Components.tz;
 import org.telegram.ui.Components.u80;
-import org.telegram.ui.Components.vz;
+import org.telegram.ui.Components.wz;
 import org.telegram.ui.Components.yv0;
 import org.telegram.ui.Components.ze0;
 import org.telegram.ui.FiltersSetupActivity;
@@ -54,7 +54,7 @@ import org.telegram.ui.qf;
 import org.telegram.ui.so;
 import org.telegram.ui.ww;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u7 implements Runnable {
     public final /* synthetic */ int a;
@@ -98,7 +98,7 @@ public final /* synthetic */ class u7 implements Runnable {
                 ((v10) obj2).a(Boolean.valueOf(z9), (String) obj);
                 return;
             case 1:
-                ((org.telegram.ui.Wallet.v1) obj2).a(Boolean.valueOf(z9), (String) obj);
+                ((org.telegram.ui.Wallet.u1) obj2).a(Boolean.valueOf(z9), (String) obj);
                 return;
             case 2:
                 ((mc) obj2).a(Boolean.valueOf(z9), (String) obj);
@@ -333,7 +333,7 @@ public final /* synthetic */ class u7 implements Runnable {
                 an anVar = ((lm) obj2).a;
                 anVar.ac.b();
                 if (!(tLObject2 instanceof TLRPC.TL_messages_stickerSet)) {
-                    org.telegram.ui.Components.hc.a0(anVar).Q(R.raw.error, 36, org.telegram.messenger.hd.M0(z9 ? 2131754435 : 2131754385, null)).k(true);
+                    org.telegram.ui.Components.hc.a0(anVar).Q(R.raw.error, 36, org.telegram.messenger.id.M0(z9 ? 2131754435 : 2131754385, null)).k(true);
                     return;
                 }
                 i7 = ((org.telegram.ui.ActionBar.f2) anVar).currentAccount;
@@ -356,21 +356,21 @@ public final /* synthetic */ class u7 implements Runnable {
                 }
                 ArrayList arrayList11 = new ArrayList(1);
                 arrayList11.add(tL_inputStickerSetID);
-                qu quVar = new qu(anVar, anVar.getParentActivity(), anVar.xa, arrayList11);
+                ru ruVar = new ru(anVar, anVar.getParentActivity(), anVar.xa, arrayList11);
                 boolean T92 = anVar.T9();
-                quVar.h0 = T92;
-                quVar.n = T92;
-                anVar.showDialog(quVar);
+                ruVar.h0 = T92;
+                ruVar.n = T92;
+                anVar.showDialog(ruVar);
                 return;
             case 16:
                 co coVar = (co) obj2;
                 fo foVar = coVar.a;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, foVar.getContext(), foVar.n2);
-                String M0 = org.telegram.messenger.hd.M0(2131743673, null);
+                String M0 = org.telegram.messenger.id.M0(2131743675, null);
                 org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder.a;
                 u1Var2.R = M0;
-                u1Var2.T = org.telegram.messenger.hd.M0(2131743674, null);
-                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747830, null), new ab.j(coVar, (TLRPC.TL_username) obj, z9, 5));
+                u1Var2.T = org.telegram.messenger.id.M0(2131743676, null);
+                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747832, null), new ab.j(coVar, (TLRPC.TL_username) obj, z9, 5));
                 alertDialog$Builder.p();
                 return;
             case 17:
@@ -402,7 +402,7 @@ public final /* synthetic */ class u7 implements Runnable {
                 }
                 return;
             case 20:
-                ((vz) obj2).e1((sz) obj, !z9);
+                ((wz) obj2).e1((tz) obj, !z9);
                 return;
             case 21:
                 u80 u80Var = (u80) obj2;
@@ -440,7 +440,7 @@ public final /* synthetic */ class u7 implements Runnable {
                 }
                 if (q41Var.canScrollVertically(1)) {
                     for (int i18 = 0; i18 < q41Var.getChildCount(); i18++) {
-                        if (!(q41Var.getChildAt(i18) instanceof lz)) {
+                        if (!(q41Var.getChildAt(i18) instanceof mz)) {
                         }
                     }
                     return;
@@ -479,7 +479,7 @@ public final /* synthetic */ class u7 implements Runnable {
                     }
                 }
                 org.telegram.ui.Components.kb kbVar = new org.telegram.ui.Components.kb(wwVar.getParentActivity(), null);
-                kbVar.b.setText(z9 ? org.telegram.messenger.hd.G(i19, "NotificationsMutedHintChats", new Object[0]) : org.telegram.messenger.hd.G(i19, "NotificationsUnmutedHintChats", new Object[0]));
+                kbVar.b.setText(z9 ? org.telegram.messenger.id.G(i19, "NotificationsMutedHintChats", new Object[0]) : org.telegram.messenger.id.G(i19, "NotificationsUnmutedHintChats", new Object[0]));
                 if (z9) {
                     kbVar.d(R.raw.ic_mute, "Body Main", "Body Top", "Line", "Curve Big", "Curve Small");
                 } else {
@@ -488,7 +488,7 @@ public final /* synthetic */ class u7 implements Runnable {
                 org.telegram.ui.Components.cc.g(wwVar, kbVar, 1500).j();
                 return;
             default:
-                ((gy) obj2).e0((sz) obj, !z9);
+                ((gy) obj2).e0((tz) obj, !z9);
                 return;
         }
     }

@@ -36,7 +36,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ce0;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ng implements Runnable {
     public final /* synthetic */ int a;
@@ -279,7 +279,7 @@ public final /* synthetic */ class ng implements Runnable {
             case 3:
                 yr yrVar = (yr) this.c;
                 ArrayList arrayList2 = (ArrayList) this.b;
-                dk dkVar = (dk) this.d;
+                ck ckVar = (ck) this.d;
                 int size = arrayList2.size();
                 while (i13 < size) {
                     Object obj = arrayList2.get(i13);
@@ -319,7 +319,7 @@ public final /* synthetic */ class ng implements Runnable {
                     }
                 }
                 yrVar.g1(arrayList2, true);
-                dkVar.run();
+                ckVar.run();
                 return;
             case 4:
                 org.telegram.ui.Components.v4.c0(((gz) this.c).currentAccount, (TLRPC.TL_error) this.b, null, (TLRPC.TL_messages_forwardMessages) this.d, new Object[0]);
@@ -357,14 +357,14 @@ public final /* synthetic */ class ng implements Runnable {
                     return;
                 }
                 zArr[0] = true;
-                jcVarArr[0].setText(hd.M0(2131746605, null) + "...");
+                jcVarArr[0].setText(id.M0(2131746607, null) + "...");
                 jcVarArr[0].b.f(false);
                 try {
                     ConnectionsManager.getInstance(p10.s0).checkProxy(aVar, new o(i11, zArr, jcVarArr));
                     return;
                 } catch (NumberFormatException unused) {
                     zArr[0] = false;
-                    jcVarArr[0].setText(hd.M0(2131743914, null));
+                    jcVarArr[0].setText(id.M0(2131743916, null));
                     org.telegram.ui.ActionBar.r6.V(jcVarArr[0], org.telegram.ui.ActionBar.k6.p7, null);
                     return;
                 }
@@ -490,10 +490,10 @@ public final /* synthetic */ class ng implements Runnable {
             case 8:
                 ArrayList arrayList5 = (ArrayList) this.c;
                 AtomicInteger atomicInteger = (AtomicInteger) this.b;
-                zj zjVar = (zj) this.d;
+                yj yjVar = (yj) this.d;
                 arrayList5.add(null);
                 if (atomicInteger.get() == arrayList5.size()) {
-                    zjVar.run();
+                    yjVar.run();
                     return;
                 }
                 return;
@@ -551,15 +551,15 @@ public final /* synthetic */ class ng implements Runnable {
                     LaunchActivity launchActivity = LaunchActivity.G1;
                     if (launchActivity == null || !launchActivity.isFinishing()) {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, Q.getContext(), Q.getResourceProvider());
-                        alertDialog$Builder.a.R = hd.M0(R.string.AppName, null);
+                        alertDialog$Builder.a.R = id.M0(R.string.AppName, null);
                         HashMap hashMap2 = new HashMap();
                         int i18 = org.telegram.ui.ActionBar.k6.L5;
                         hashMap2.put("info1", Integer.valueOf(org.telegram.ui.ActionBar.k6.x0(null, i18, false)));
                         hashMap2.put("info2", Integer.valueOf(org.telegram.ui.ActionBar.k6.x0(null, i18, false)));
                         alertDialog$Builder.m(R.raw.not_available, 52, org.telegram.ui.ActionBar.k6.x0(null, i18, false), hashMap2);
                         alertDialog$Builder.a.W = true;
-                        alertDialog$Builder.a.R = hd.M0(2131752329, null);
-                        alertDialog$Builder.a.T = hd.M0(2131752441, null);
+                        alertDialog$Builder.a.R = id.M0(2131752329, null);
+                        alertDialog$Builder.a.T = id.M0(2131752441, null);
                         jg.g.C(null, 2131752041, alertDialog$Builder, null);
                     }
                 }
@@ -755,7 +755,7 @@ public final /* synthetic */ class ng implements Runnable {
                 q5 q5Var = (q5) this.d;
                 r5Var.getClass();
                 runnable2.run();
-                Utilities.e.c(new y4(i12, r5Var, q5Var));
+                Utilities.e.c(new x4(i12, r5Var, q5Var));
                 return;
             case 18:
                 z5 z5Var = (z5) this.c;
@@ -811,7 +811,7 @@ public final /* synthetic */ class ng implements Runnable {
                             sQLiteCursor.dispose();
                         }
                     }
-                    g0.h3(new y4(i11, w00Var, arrayList19));
+                    g0.h3(new x4(i11, w00Var, arrayList19));
                     return;
                 } catch (Throwable th4) {
                     if (sQLiteCursor != null) {

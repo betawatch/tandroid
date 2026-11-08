@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-b660391305224b02968ff30c453f6c938c4db5712846d0adb86e223f946c9ae5 */
+/* compiled from: r8-map-id-5721f848fd1d566b554f20aa5327343ffc22208e2c0d7170c4734a0b506870f4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -178,7 +178,7 @@ public final /* synthetic */ class z implements View.OnClickListener {
             case 10:
                 nr nrVar = (nr) obj3;
                 TLRPC.User user = (TLRPC.User) obj;
-                org.telegram.ui.Components.v4.L((Context) obj2, org.telegram.messenger.hd.M0(2131746087, null), org.telegram.messenger.hd.a0(null, null, 2131746088, user.first_name), org.telegram.messenger.hd.M0(2131746119, null), new fr(nrVar, user, i10), nrVar.r).p();
+                org.telegram.ui.Components.v4.L((Context) obj2, org.telegram.messenger.id.M0(2131746089, null), org.telegram.messenger.id.a0(null, null, 2131746090, user.first_name), org.telegram.messenger.id.M0(2131746121, null), new fr(nrVar, user, i10), nrVar.r).p();
                 break;
             case 11:
                 je0 je0Var = (je0) obj3;
